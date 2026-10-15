@@ -1,0 +1,7 @@
+% id: optimization.newton-method
+% term: Newton iteration for optimization
+% related: optimization.hessian, optimization.gradient-descent
+% source: https://web.stanford.edu/~boyd/cvxbook/
+% status: draft
+
+At a point where $\nabla^2 f(x_k)$ is invertible, the \emph{Newton update} for minimization is $x_{k+1}=x_k-[\nabla^2f(x_k)]^{-1}\nabla f(x_k)$ (or a damped variant).
