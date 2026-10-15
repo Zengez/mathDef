@@ -1,0 +1,53 @@
+name: Broad Wikipedia mathematical concept inventory
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/wikipedia-broad-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  categories:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - group: analysis-geometry
+            seeds: "Functional analysis|Operator theory|Harmonic analysis|Several complex variables|Differential geometry|Algebraic topology"
+          - group: algebra-logic
+            seeds: "Algebraic geometry|Commutative algebra|Category theory|Representation theory|Mathematical logic|Number theory"
+          - group: stochastic-dynamics
+            seeds: "Probability theory|Stochastic processes|Dynamical systems|Ergodic theory|Measure theory|Partial differential equations"
+          - group: discrete-applied
+            seeds: "Combinatorics|Graph theory|Numerical analysis|Special functions|Game theory|Mathematical optimization"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test existing corpus and scanner
+        run: python -m unittest discover -s tests
+      - name: Traverse Wikipedia mathematical categories, recording title-only candidates
+        env:
+          MATHDEF_SEEDS: ${{ matrix.seeds }}
+          MATHDEF_GROUP: ${{ matrix.group }}
+        run: |
+          IFS='|' read -ra SEEDS <<< "$MATHDEF_SEEDS"
+          ARGS=()
+          for seed in "${SEEDS[@]}"; do ARGS+=(--seed "$seed"); done
+          python scripts/wikipedia_candidate_scan.py "${ARGS[@]}" \
+            --depth 2 --max-categories 55 --max-pages 5000 --delay 1.1 \
+            --out "_wikipedia_candidates_${MATHDEF_GROUP}.csv" \
+            > "_wikipedia_summary_${MATHDEF_GROUP}.json"
+          cat "_wikipedia_summary_${MATHDEF_GROUP}.json"
+      - name: Upload discovery inventory for human mathematical review
+        uses: actions/upload-artifact@v4
+        with:
+          name: wikipedia-candidates-${{ matrix.group }}
+          path: |
+            _wikipedia_candidates_${{ matrix.group }}.csv
+            _wikipedia_summary_${{ matrix.group }}.json
+          retention-days: 45
+          if-no-files-found: error

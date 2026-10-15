@@ -37,3 +37,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - **Completed this session:** inspected the live 879-entry tree, Bergman examples, existing coverage review and Wikipedia discovery documentation. Created this checkpoint file.
 - **Completed first mini-batch:** checked the existing `functional.banach-space` definition against the individual Encyclopedia of Mathematics article `https://encyclopediaofmath.org/wiki/Banach_space`, verified completeness terminology, and replaced the previous subject-level reference with this precise article. Existing `topology.topological-space`, `metric.metric-space`, and `topology.compactness` already have direct article links and were left unchanged.
 - **Pending:** further source-repair batches, with the next batch beginning with additional `functional/` entries. The exact post-commit workflow outcome must be verified separately.
+
+## 2026-10-15 continuation — expanded audit
+
+- User approved bounded batches of about 20–30 rather than 5–10; record each commit and build.
+- **Completed:** 14 `functional/` citation/convention repairs in commit `4c4a77c9bc3fdfd2cbf6137b31ecf0f5be53bcca`.
+- **Completed:** 14 additional `functional/` reference repairs in commit `125db0bf10279f98cb8dc20495292a372f48d957`.
+- **Running/pending:** broad category traversal, triggered by a new `.github/workflows/wikipedia-broad-audit.yml` workflow; four independent subject groups with depth 2, max 55 categories and max 5000 title candidates per group. Candidate artifacts are temporary; retain run links and summaries in checkpoint once completed.
+- **Next:** retrieve Wikipedia title-only candidate CSVs; triage graduate-level terms using existing `id`, `term`, `aliases`; inspect specific reference pages and add a bounded batch of genuine missing definitions. Update corpus audit and references, and check deployment before declaring success.
+- Full rigorous mathematical verification of 879 entries remains **incomplete**. Site build and metadata checks do not prove correctness.
