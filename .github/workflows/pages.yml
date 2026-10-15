@@ -23,6 +23,8 @@ jobs:
           python-version: '3.12'
       - name: Check frontend JavaScript syntax
         run: node --check web/app.js
+      - name: Test arXiv candidate scanner
+        run: python -m unittest discover -s tests
       - name: Generate definition index
         run: python scripts/build_index.py
       - uses: actions/configure-pages@v5
