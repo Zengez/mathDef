@@ -37,11 +37,13 @@
       root.innerHTML='<div class="placeholder"><strong>Select a result above</strong><p>The definition and its related terms appear here.</p></div>';return;
     }
     const links=d.related.map((id)=>lookup.get(id)).filter(Boolean);
-    root.innerHTML='<article><div class="subject">'+escape(d.category)+'</div><h4>'+escape(d.term)+'</h4>'+
+    const topicLink=d.source ? '<a class="source" href="'+escape(d.source)+'" target="_blank" rel="noopener noreferrer">Wikipedia topic index ↗</a>' : "";
+    const reviewLabel=d.status==="draft" ? '<span class="draft-label">Draft · not individually reviewed</span>' : (d.status==="reviewed" ? '<span class="reviewed-label">Reviewed entry</span>' : '<span class="draft-label">Prototype entry</span>');
+    root.innerHTML='<article><div class="subject">'+escape(d.category)+'</div><h4>'+escape(d.term)+'</h4>'+reviewLabel+
       (d.aliases.length?'<p class="aliases">Also called: '+d.aliases.map(escape).join(", ")+'</p>':"")+
       '<div class="definition">'+latexBody(d.body)+'</div><div class="related"><h5>Related definitions</h5><div class="related-list">'+
       (links.length?links.map((r)=>'<button type="button" data-related="'+escape(r.id)+'">'+escape(r.term)+' ↗</button>').join(""):'<span class="empty">No related terms entered.</span>')+
-      '</div></div><a class="source" href="'+sourceUrl(d)+'" target="_blank" rel="noopener noreferrer">View LaTeX source ↗</a></article>';
+      '</div></div><div class="source-links">'+topicLink+'<a class="source" href="'+sourceUrl(d)+'" target="_blank" rel="noopener noreferrer">View LaTeX source ↗</a></div></article>';
     root.querySelectorAll("[data-related]").forEach((button)=>button.addEventListener("click",()=>select(side,button.dataset.related)));
     math(root);
   }
@@ -82,7 +84,7 @@
   }).then((data)=>{
     if(!Array.isArray(data))throw new Error("Invalid index");
     entries=data;lookup=new Map(data.map((d)=>[d.id,d]));
-    el("total").textContent=entries.length+" example definitions";
+    el("total").textContent=entries.length+" definitions";
     render("term");render("definition");mode(true);
   }).catch((e)=>{
     el("total").textContent="Load error";el("error").hidden=false;
