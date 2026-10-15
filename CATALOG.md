@@ -2,7 +2,7 @@
 
 Snapshot: 2026-10-15. Counts below are generated from the repository tree; the deployed site is the source for the most current total.
 
-**709 definitions across 31 subject folders.**
+**760 definitions across 31 subject folders.**
 
 | Subject | Folder | Entries |
 |---|---|---:|
@@ -32,9 +32,9 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Numerical analysis | [`definitions/numerical/`](definitions/numerical/) | 35 |
 | Probability and statistics | [`definitions/prob/`](definitions/prob/) | 31 |
 | Real analysis | [`definitions/real/`](definitions/real/) | 22 |
-| Relations | [`definitions/relations/`](definitions/relations/) | 1 |
+| Relations | [`definitions/relations/`](definitions/relations/) | 24 |
 | Schemes and sheaf theory | [`definitions/schemes/`](definitions/schemes/) | 20 |
-| Set theory | [`definitions/sets/`](definitions/sets/) | 3 |
+| Set theory | [`definitions/sets/`](definitions/sets/) | 31 |
 | Smooth manifolds and differential geometry | [`definitions/manifold/`](definitions/manifold/) | 36 |
 | Stochastic processes | [`definitions/stochastic/`](definitions/stochastic/) | 35 |
 
