@@ -56,3 +56,7 @@ Nothing is added automatically to the definitions folder, and no schedule runs.
 Some PDF-only or non-TeX source articles cannot be parsed by this method.
 Review the logs if an individual source fetch fails or if no candidates are found.
 Offline scanner unit tests do not verify live arXiv download availability.
+
+## First successful source-scan trial
+
+The October 15, 2026 math.DS trial inspected 12 recent papers and located 30 explicit LaTeX definition candidates in 7 of them; see [run 38797055015](https://github.com/Zengez/mathDef/actions/runs/38797055015) for the locator-only CSV artifact. Six entries in `definitions/solenoids/` were added only after manual inspection of Hurder and Lukina, [arXiv:2610.20131](https://arxiv.org/abs/2610.20131). The current arXiv-derived collection is 28 independently worded draft definitions from six research papers. The trial does not claim a comprehensive crawl of arXiv, and its candidate counts are not accepted-definition counts.

@@ -2,7 +2,7 @@
 
 Snapshot: 2026-10-15. Counts below are generated from the repository tree; the deployed site is the source for the most current total.
 
-**782 definitions across 36 subject folders.**
+**788 definitions across 37 subject folders.**
 
 | Subject | Folder | Entries |
 |---|---|---:|
@@ -48,6 +48,8 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 
 | Weighted and Bergman analysis | [`definitions/weighted-analysis/`](definitions/weighted-analysis/) | 5 |
 
+| Solenoidal manifolds and odometer groups | [`definitions/solenoids/`](definitions/solenoids/) | 6 |
+
 ## Provenance
 
 Each LaTeX definition file may contain:
@@ -84,6 +86,10 @@ The GitHub Actions site build checks every file's ID, nonempty definition body, 
 
 ## arXiv paper-defined entries (October 2026)
 
-The first targeted inspection added **22** independently worded mathematical definitions from **five actual arXiv research papers**. Unlike subject-list references, each of these stores the paper identifier and version (when known), title, and exact numbered definition with printed page. All remain in draft status until individually checked.
+The first curated and scan-verified batches added **28** independently worded mathematical definitions from **six actual arXiv research papers**. Unlike subject-list references, each of these stores the paper identifier and version (when known), title, and exact numbered definition with printed page. All remain in draft status until individually checked.
 
 A cautious LaTeX candidate scanner and GitHub Actions workflow are documented in [ARXIV_HARVEST.md](ARXIV_HARVEST.md). Candidate discovery is separate from accepting mathematical definitions. The code does not automatically import copyrighted paper text into the website.
+
+### Live candidate scan confirmation
+
+A rate-limited GitHub Actions trial of 12 current math.DS papers identified **30 definition-environment candidates in 7 papers**. The CSV is a *locator-only* review queue, not published definitions. Six new entries were then individually checked in arXiv:2610.20131 (Hurder and Lukina, *Mapping class groups of solenoidal manifolds*), and saved with explicit numbered locators. See [the successful live scan](https://github.com/Zengez/mathDef/actions/runs/38797055015).
