@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DEFS = ROOT / "definitions"
 OUT = ROOT / "_site"
-FIELD = re.compile(r"^%\s*(id|term|aliases|related|source|status):\s*(.*?)\s*$")
+FIELD = re.compile(r"^%\s*(id|term|aliases|related|source|status|arxiv|locator|source_title):\s*(.*?)\s*$")
 ID = re.compile(r"^[a-z0-9]+(?:[.-][a-z0-9]+)*$")
 
 def parse(path):
@@ -37,9 +37,18 @@ def parse(path):
         raise ValueError(f"{path}: source must be an HTTPS reference URL")
     if status not in {"draft", "reviewed", "example"}:
         raise ValueError(f"{path}: invalid status {status}")
+    arxiv = meta.get("arxiv", "")
+    locator = meta.get("locator", "")
+    if arxiv and not re.fullmatch(r"\d{4}\.\d{4,5}(?:v\d+)?", arxiv):
+        raise ValueError(f"{path}: invalid arXiv identifier")
+    if arxiv and source != f"https://arxiv.org/abs/{arxiv.split('v')[0]}":
+        raise ValueError(f"{path}: arXiv source must match the canonical abstract URL")
+    if arxiv and not locator:
+        raise ValueError(f"{path}: arXiv entries require a definition locator")
     return dict(
         id=meta["id"], term=meta["term"], body=body,
-        source=source, status=status,
+        source=source, status=status, arxiv=arxiv,
+        locator=locator, source_title=meta.get("source_title", ""),
         aliases=[v.strip() for v in meta.get("aliases", "").split("|") if v.strip()],
         related=[v.strip() for v in meta.get("related", "").split(",") if v.strip()],
         category=path.parent.relative_to(DEFS).as_posix().replace("/", " / ").title(),
