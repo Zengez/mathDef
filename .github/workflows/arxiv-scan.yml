@@ -1,0 +1,44 @@
+name: Scan arXiv definition candidates
+on:
+  workflow_dispatch:
+    inputs:
+      category:
+        description: "Math category (e.g. math.DS, math.FA, math.AG)"
+        required: true
+        default: "math.DS"
+        type: string
+      max_papers:
+        description: "Recent papers to inspect (1-100)"
+        required: true
+        default: "12"
+        type: string
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run scanner unit tests
+        run: python -m unittest discover -s tests
+      - name: Inspect arXiv sources with rate limits
+        env:
+          ARXIV_CATEGORY: ${{ inputs.category }}
+          ARXIV_COUNT: ${{ inputs.max_papers }}
+        run: |
+          python scripts/arxiv_candidate_scan.py \
+            --category "$ARXIV_CATEGORY" \
+            --max-papers "$ARXIV_COUNT" \
+            --delay 3.5 \
+            --out _arxiv_candidates.csv
+      - name: Upload candidate inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: arxiv-definition-candidates
+          path: _arxiv_candidates.csv
+          if-no-files-found: error
+          retention-days: 30

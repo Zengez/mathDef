@@ -45,3 +45,14 @@ References: https://info.arxiv.org/help/api/tou.html
 and https://info.arxiv.org/help/bulk_data/index.html
 
 Thank you to arXiv for use of its open access interoperability.
+
+## Remote candidate scans
+
+Open GitHub Actions, select Scan arXiv definition candidates, and choose Run workflow.
+Set a mathematics category such as math.DS and a conservative number of papers.
+The workflow saves a downloadable artifact called arxiv-definition-candidates.
+Nothing is added automatically to the definitions folder, and no schedule runs.
+
+Some PDF-only or non-TeX source articles cannot be parsed by this method.
+Review the logs if an individual source fetch fails or if no candidates are found.
+Offline scanner unit tests do not verify live arXiv download availability.
