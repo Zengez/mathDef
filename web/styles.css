@@ -47,3 +47,8 @@ footer{color:#8797aa;font-size:12px;margin:32px 0 8px}
 @media(min-width:850px){.workspace.focused .pane:not(.hidden){display:grid;grid-template-columns:minmax(250px,32%) minmax(0,1fr)}.workspace.focused .pane-head{grid-column:1/-1}.workspace.focused .results{max-height:560px;min-height:360px}.workspace.focused .detail{border-top:0;border-left:1px solid #e9eef5}}
 @media(max-width:800px){.workspace.split{grid-template-columns:1fr}}
 @media(max-width:600px){.shell{padding-top:22px}.masthead{display:block;padding-bottom:28px}.github{display:inline-block;margin-top:17px}.searches{grid-template-columns:1fr}.detail{padding:18px}.toolbar #hint{display:none}}
+
+.draft-label,.reviewed-label{display:inline-block;margin:-4px 0 13px;font-size:11px;color:#7b8ba0}
+.reviewed-label{color:#416a54}
+.source-links{display:flex;flex-wrap:wrap;gap:15px;margin-top:18px}
+.source-links .source{margin:0}
