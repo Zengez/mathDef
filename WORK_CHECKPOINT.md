@@ -80,3 +80,8 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - **Next audits:** prioritize the 35 `stochastic/` original definitions or `scv/` and `linear/`, and separately resolve the 256+ Wikipedia topic-index references from the last metadata audit (freshly compute this figure after editing). Check any convention collisions, especially source-specific paper terminology, before changing stable IDs.
 - **Next discovery:** use the locally saved Wikipedia subject-category CSV inventories to identify more graduate-level missing terms; cross-check IDs and aliases, prefer direct EoM/Stacks/DLMF sources, and add in batches no larger than ~20–30. Do not automatically import biography/theorem/article titles.
 - **No further user input is necessary** for this work.
+
+## Variance-consistency fix (October 15, 2026)
+
+- Caught and corrected a genuine formal wording error: `schemes.presheaf` and `category.simplicial-set` had each described a functor from an opposite category as `contravariant`. In the standard functorial convention these are **covariant functors from the opposite category**, equivalently contravariant functors from the original category. Both now say “a functor from the opposite category (equivalently contravariant from the original category).”
+- This highlights why mathematics-level consistency review is distinct from static syntax validation and why later audits should inspect category-theoretic variance, duals and universal-property orientations.
