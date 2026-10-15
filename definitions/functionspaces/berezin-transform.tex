@@ -1,0 +1,11 @@
+% id: functionspaces.berezin-transform
+% term: Berezin transform
+% related: functionspaces.bergman-kernel, functionspaces.normalized-kernel-section, functionspaces.toeplitz-operator
+% source: https://en.wikipedia.org/wiki/Berezin_transform
+% status: draft
+
+Let $\mathcal H=A^2(\Omega)$ have Bergman kernel $K$ and $K(z,z)>0$. For a bounded measurable symbol $\varphi$, its \emph{Berezin transform} is
+\[
+\widetilde\varphi(z)=\frac{1}{K(z,z)}\int_\Omega\varphi(w)|K(w,z)|^2\,dV(w).
+\]
+Equivalently, $\widetilde\varphi(z)=\langle T_\varphi k_z,k_z\rangle$ for the normalized kernel $k_z$.

@@ -1,0 +1,11 @@
+% id: functionspaces.bergman-distance
+% term: Bergman distance
+% related: functionspaces.bergman-metric, metric.metric-space
+% source: https://en.wikipedia.org/wiki/Bergman_metric
+% status: draft
+
+For a bounded connected domain $\Omega\subseteq\mathbb C^n$ with Bergman metric $g$, the \emph{Bergman distance} between $p,q\in\Omega$ is
+\[
+d_B(p,q)=\inf_\gamma\int_0^1\sqrt{g_{\gamma(t)}(\dot\gamma(t),\dot\gamma(t))}\,dt,
+\]
+where the infimum ranges over piecewise $C^1$ curves $\gamma$ joining $p$ to $q$.

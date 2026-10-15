@@ -1,0 +1,11 @@
+% id: functionspaces.bergman-kernel
+% term: Bergman kernel
+% related: functionspaces.hilbert-bergman-space, functionspaces.bergman-projection, functionspaces.reproducing-kernel
+% source: https://encyclopediaofmath.org/wiki/Bergman_kernel_function
+% status: draft
+
+Let $\Omega\subseteq\mathbb C^n$ be a domain and $A^2(\Omega)$ its square-integrable holomorphic Hilbert space for Lebesgue volume $dV$. The \emph{Bergman kernel} $K_\Omega:\Omega\times\Omega\to\mathbb C$ is the unique reproducing kernel satisfying
+\[
+f(z)=\int_\Omega f(w)K_\Omega(z,w)\,dV(w),\quad f\in A^2(\Omega).
+\]
+Equivalently, for any orthonormal basis $(e_j)$ of $A^2(\Omega)$, $K_\Omega(z,w)=\sum_j e_j(z)\overline{e_j(w)}$.
