@@ -1,6 +1,6 @@
 # Mathematics source review and systematic discovery
 
-**Snapshot:** October 15, 2026. **879 definitions in 39 subject folders.**
+**Snapshot:** October 15, 2026. **908 definitions in 40 subject folders.**
 
 ## Why previous source harvesting missed Bergman space and kernel
 
@@ -119,3 +119,13 @@ By source host, the 879 entries use 365 English Wikipedia URLs,
 301 Encyclopedia of Mathematics URLs, 108 nLab URLs, 41 Stacks Project URLs,
 36 Stanford references, and 28 arXiv paper links. The host count is not
 an endorsement of the accuracy or specificity of an individual link.
+
+## Broad category scan and targeted review — October 15, 2026
+
+- In a GitHub Actions matrix scan, followed depth-two subcategory links from 24 subject-category seeds in four independent groups. Visited **220 categories** (55 in each group), inventorying **11,053 title records**, corresponding to **10,233 distinct Wikipedia article titles** across groups. These are metadata *candidates*, not verified mathematical notions.
+- Added 29 advanced mathematical definitions from the discovered concepts, with per-entry source pages, and verified that the site build passed.
+- Revisited and refined individual source links across **all 36 original functional-analysis definitions** (one earlier Banach-space fix and three additional batches of 14, 14, and 7), including Hausdorff conventions and resolvent signs.
+- Structural consistency and GitHub deployment passed for the 908-definition collection. **The requested full manual rigor/citation audit is still incomplete**; its precise state and proposed next priority areas are documented in [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md).
+- The previous **257 citations pointing to generic Wikipedia topic lists** remain a significant editorial backlog. That figure came from the earlier 879-entry scan, not a fresh verification of every one of the 908 entries. No entry was promoted to `reviewed` solely for acquiring a direct URL.
+
+[Full discovery inventory and source cautions](WIKIPEDIA_BROAD_SCAN_2026-10-15.md).

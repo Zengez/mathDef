@@ -46,3 +46,13 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - **Running/pending:** broad category traversal, triggered by a new `.github/workflows/wikipedia-broad-audit.yml` workflow; four independent subject groups with depth 2, max 55 categories and max 5000 title candidates per group. Candidate artifacts are temporary; retain run links and summaries in checkpoint once completed.
 - **Next:** retrieve Wikipedia title-only candidate CSVs; triage graduate-level terms using existing `id`, `term`, `aliases`; inspect specific reference pages and add a bounded batch of genuine missing definitions. Update corpus audit and references, and check deployment before declaring success.
 - Full rigorous mathematical verification of 879 entries remains **incomplete**. Site build and metadata checks do not prove correctness.
+
+## Completed October 15 broad scan and audit batches — latest checkpoint
+
+- **Live repository inventory:** 908 .tex definitions across 40 subject folders; check live tree before resuming.
+- **Detailed audit of old entries:** all 36 original `functional/` entries have had their mathematics checked at the level of explicit conditions and conventions and broad overview citations replaced by more specific links (one Banach-space fix and commits `4c4a77c9`, `125db0bf`, `d12ace87`). This does NOT make all entries peer-reviewed.
+- **Expanded Wikipedia discovery:** successful GitHub Actions run [38809181537](https://github.com/Zengez/mathDef/actions/runs/38809181537). Four groups, 55 categories/group; 11,053 raw records; 10,233 unique Wikipedia article titles. See [WIKIPEDIA_BROAD_SCAN_2026-10-15.md](WIKIPEDIA_BROAD_SCAN_2026-10-15.md) and workflow [wikipedia-broad-audit.yml](.github/workflows/wikipedia-broad-audit.yml).
+- **Accepted new drafts:** 14 category/matroid definitions in commit `256ad77b`, then 15 operator/geometry/stochastic/PDE/special-function definitions in `8bc6e698`. Both builds completed successfully.
+- **Next editorial batch:** inspect 20–30 previously unreviewed definitions in one underaudited area (suggest `schemes/`, `commalg/`, `stochastic/` or `scv/`), replace broad context citations with specific source pages and correct any mathematical weaknesses. Record IDs explicitly in the next commit/checkpoint. Repeat until all 908+ definitions are reviewed. Do not claim full mathematical audit earlier.
+- **Next discovery batch:** investigate another 20–30 of the most promising names in the candidate artifacts, cross-check IDs and synonyms, reject biographies/theorem-only pages, cite specific mathematical sources, and add only genuine missing concepts.
+- **Important:** AWS/arXiv bulk extraction remains on hold at user's request.

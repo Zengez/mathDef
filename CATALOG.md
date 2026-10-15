@@ -2,7 +2,7 @@
 
 Snapshot: 2026-10-15. Counts below are generated from the repository tree; the deployed site is the source for the most current total.
 
-**879 definitions across 39 subject folders.**
+**908 definitions across 40 subject folders.**
 
 | Subject | Folder | Entries |
 |---|---|---:|
@@ -10,18 +10,18 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Algebraic and analytic number theory | [`definitions/arithmetic/`](definitions/arithmetic/) | 36 |
 | Algebraic topology | [`definitions/alg-topology/`](definitions/alg-topology/) | 36 |
 | Asymmetric quasi-metric spaces | [`definitions/quasimetric/`](definitions/quasimetric/) | 6 |
-| Category theory | [`definitions/category/`](definitions/category/) | 36 |
+| Category theory | [`definitions/category/`](definitions/category/) | 46 |
 | Chromatic metric geometry and TDA | [`definitions/tda/`](definitions/tda/) | 5 |
-| Combinatorics | [`definitions/combin/`](definitions/combin/) | 14 |
+| Combinatorics | [`definitions/combin/`](definitions/combin/) | 18 |
 | Commutative algebra | [`definitions/commalg/`](definitions/commalg/) | 21 |
 | Complex analysis | [`definitions/complex/`](definitions/complex/) | 38 |
 | Computability and complexity theory | [`definitions/computability/`](definitions/computability/) | 27 |
 | Convex analysis and optimization | [`definitions/optimization/`](definitions/optimization/) | 36 |
-| Distributions, Sobolev spaces and PDEs | [`definitions/pde/`](definitions/pde/) | 35 |
+| Distributions, Sobolev spaces and PDEs | [`definitions/pde/`](definitions/pde/) | 36 |
 | Dynamical systems and ODEs | [`definitions/dynamics/`](definitions/dynamics/) | 15 |
 | Elementary number theory | [`definitions/number/`](definitions/number/) | 19 |
 | Foundational analysis | [`definitions/analysis/`](definitions/analysis/) | 3 |
-| Functional analysis and operator theory | [`definitions/functional/`](definitions/functional/) | 36 |
+| Functional analysis and operator theory | [`definitions/functional/`](definitions/functional/) | 41 |
 | Functions and mappings | [`definitions/functions/`](definitions/functions/) | 4 |
 | General topology | [`definitions/topology/`](definitions/topology/) | 32 |
 | Geometry | [`definitions/geometry/`](definitions/geometry/) | 20 |
@@ -40,11 +40,13 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Schemes and sheaf theory | [`definitions/schemes/`](definitions/schemes/) | 20 |
 | Set theory | [`definitions/sets/`](definitions/sets/) | 31 |
 | Several complex variables and complex geometry | [`definitions/scv/`](definitions/scv/) | 41 |
-| Smooth manifolds and differential geometry | [`definitions/manifold/`](definitions/manifold/) | 36 |
+| Smooth manifolds and differential geometry | [`definitions/manifold/`](definitions/manifold/) | 40 |
 | Solenoidal manifolds and odometer groups | [`definitions/solenoids/`](definitions/solenoids/) | 6 |
-| Stochastic processes | [`definitions/stochastic/`](definitions/stochastic/) | 35 |
+| Stochastic processes | [`definitions/stochastic/`](definitions/stochastic/) | 37 |
 | Walk metrics and proximities | [`definitions/graphwalks/`](definitions/graphwalks/) | 1 |
 | Weighted and Bergman analysis | [`definitions/weighted-analysis/`](definitions/weighted-analysis/) | 5 |
+
+| Classical special functions | [`definitions/special/`](definitions/special/) | 3 |
 
 ## Provenance
 
@@ -93,3 +95,9 @@ A rate-limited GitHub Actions trial of 12 current math.DS papers identified **30
 ## October 2026 source and category coverage audit
 
 The [coverage and source-review report](COVERAGE_REVIEW.md) records the audits, prioritized reference sources, and the Wikipedia category workflow. In the current expansion, **91 additional draft definitions** were written from individual mathematical sources, notably Bergman kernels and spaces, analytic function spaces, standard complex analysis, and several complex variables. The initial coverage audit revealed several hundred nonmatching Wikipedia titles, not hundreds of confirmed mathematical omissions; biographies and theorems require triage. 
+
+## Expanded systematic mathematics audit — 15 October 2026
+
+The database now contains **908 draft/example definitions** across **40 folders**. A targeted inspection and repair covered all 36 original functional-analysis entries, followed by 29 independently formulated advanced definitions chosen from a completed depth-two Wikipedia mathematics category scan. None of these entries was indiscriminately reclassified as peer-reviewed.
+
+The [broad discovery report](WIKIPEDIA_BROAD_SCAN_2026-10-15.md) summarizes four independent scans totaling 220 visited Wikipedia categories and 10,233 distinct candidate article titles; a large fraction of unmatched titles are not appropriate mathematical definitions. See also [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md) for the remaining per-entry mathematical QA backlog.

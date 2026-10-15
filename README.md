@@ -1,6 +1,6 @@
 # mathDef
 
-Current collection snapshot: **879 definitions across 39 subject folders** (October 15, 2026). See [the definition catalog](CATALOG.md) for per-subject counts, provenance guidance, and the mathematical review checklist.
+Current collection snapshot: **908 definitions across 40 subject folders** (October 15, 2026). See [the definition catalog](CATALOG.md) for per-subject counts, provenance guidance, and the mathematical review checklist.
 
 An interactive, GitHub-hosted collection of mathematical definitions written in LaTeX.
 
@@ -102,3 +102,7 @@ Added explicit, numbered definitions located in arXiv papers, with precise `arxi
 The later source-review pass added **91** new mathematical definitions, particularly Bergman spaces, Bergman kernels, reproducing-kernel Hilbert spaces, Hardy/Dirichlet/Bloch spaces, complex analysis, and several complex variables. It also replaced the original informal description of a set with the axiomatic-set-theory convention, supplied individual reference links for the initial 21 examples, and added synonyms for several function spaces.
 
 The [Wikipedia discovery and audit tools](WIKIPEDIA_DISCOVERY.md) use MediaWiki's categorymembers API to enumerate article-title candidates and compare against current terms and aliases. Run the [discovery workflow](https://github.com/Zengez/mathDef/actions/workflows/wikipedia-discovery.yml) manually for additional categories. The resulting reports are **review queues**, never automatic imports. See [COVERAGE_REVIEW.md](COVERAGE_REVIEW.md) for reliable reference families, methodological limitations, and editorial follow-up priorities.
+
+## Current staged mathematical review and Wikipedia discovery
+
+An expanded 15 October 2026 category traversal covered 220 Wikipedia mathematics categories and discovered 10,233 unique article titles across four overlapping subject scans. [See scope, results, and limitations](WIKIPEDIA_BROAD_SCAN_2026-10-15.md). The first filtered selection added 29 rigorous-style draft definitions in advanced category theory, matroids, functional analysis, differential geometry, stochastic processes, PDEs, and special functions. The previously broad reference citations of all 36 existing functional-analysis entries were examined and made more specific. This is **not** a claim that all 908 definitions have received complete mathematical or citation reviews.
