@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+"""Editorial metadata audit, not a proof checker for mathematical definitions."""
+import argparse
+import csv
+import json
+from collections import Counter, defaultdict
+from pathlib import Path
+from urllib.parse import urlparse
+
+from scripts.build_index import parse
+from scripts.wikipedia_candidate_scan import normalize
+
+ROOT = Path(__file__).resolve().parent.parent
+FIELDS = ("id", "term", "path", "issue", "detail", "source")
+
+
+def audit_entry(entry, duplicates):
+    issues = []
+    url = entry["source"]
+    if not url:
+        issues.append(("no-source", "No mathematical citation or discovery reference"))
+    elif "en.wikipedia.org/wiki/List_of_" in url or "/Category:" in url:
+        issues.append(("subject-list-only", "Source links to a subject index, not the definition"))
+    if len(entry["body"].strip()) < 90:
+        issues.append(("very-short", "Definition body shorter than 90 characters"))
+    if "\\begin{" in entry["body"]:
+        issues.append(("latex-environment", "Full TeX environments may not render outside KaTeX math"))
+    if entry["body"].count("$") % 2:
+        issues.append(("unbalanced-dollar", "Odd number of dollar math delimiters; check source"))
+    if len(duplicates[normalize(entry["term"])]) > 1:
+        issues.append(("duplicate-term", "Multiple independent IDs use the same displayed name"))
+    if entry["status"] != "reviewed":
+        issues.append(("not-reviewed", "Review status is draft or example"))
+    return issues
+
+
+def audit(definitions):
+    entries = [parse(p) for p in sorted(definitions.rglob("*.tex"))]
+    duplicates = defaultdict(list)
+    for entry in entries:
+        duplicates[normalize(entry["term"])].append(entry["id"])
+    issues = []
+    for entry in entries:
+        for kind, description in audit_entry(entry, duplicates):
+            issues.append({
+                "id": entry["id"], "term": entry["term"], "path": entry["path"],
+                "issue": kind, "detail": description, "source": entry["source"],
+            })
+    return entries, issues, {k: sorted(ids) for k, ids in duplicates.items() if len(ids) > 1}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--definitions", type=Path, default=ROOT / "definitions")
+    parser.add_argument("--out", type=Path, default=Path("_definition_audit.csv"))
+    args = parser.parse_args()
+    entries, issues, dup = audit(args.definitions)
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    with args.out.open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.DictWriter(stream, fieldnames=FIELDS)
+        writer.writeheader()
+        writer.writerows(issues)
+    counts = Counter(x["issue"] for x in issues)
+    hosts = Counter(urlparse(e["source"]).netloc for e in entries if e["source"])
+    summary = {
+        "total": len(entries),
+        "status": dict(Counter(e["status"] for e in entries)),
+        "metadata_issues": dict(counts),
+        "source_hosts": dict(hosts),
+        "duplicate_terms": dup,
+        "audit_report": str(args.out),
+        "note": "These are editorial flags, not validated mathematical errors.",
+    }
+    print(json.dumps(summary, indent=2, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

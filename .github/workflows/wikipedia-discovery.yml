@@ -1,5 +1,8 @@
 name: Discover missing Wikipedia mathematics terms
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/wikipedia-discovery.yml']
   workflow_dispatch:
     inputs:
       category:
@@ -34,6 +37,14 @@ jobs:
             --seed "$WIKI_CATEGORY" --depth "$WIKI_DEPTH" \
             --max-categories 12 --max-pages 1500 \
             --out _wikipedia_candidates.csv
+      - name: Audit mathDef citation and coverage metadata
+        run: python -m scripts.audit_corpus --out _definition_audit.csv
+      - name: Upload editorial audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: definition-editorial-audit
+          path: _definition_audit.csv
+          retention-days: 30
       - name: Upload title-only candidate inventory
         uses: actions/upload-artifact@v4
         with:
