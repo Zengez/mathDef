@@ -1,6 +1,6 @@
 # mathDef
 
-Current collection snapshot: **709 definitions across 31 subject folders** (October 15, 2026). See [the definition catalog](CATALOG.md) for per-subject counts, provenance guidance, and the mathematical review checklist.
+Current collection snapshot: **760 definitions across 31 subject folders** (October 15, 2026). See [the definition catalog](CATALOG.md) for per-subject counts, provenance guidance, and the mathematical review checklist.
 
 An interactive, GitHub-hosted collection of mathematical definitions written in LaTeX.
 
