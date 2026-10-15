@@ -1,0 +1,14 @@
+% id: tda.constrained-gh-distance
+% term: Constrained Gromov-Hausdorff distance
+% related: tda.chromatic-metric-pair, tda.constraint-family-map
+% source: https://arxiv.org/abs/2507.17994
+% arxiv: 2507.17994v1
+% locator: Definition 4.1, p. 9
+% source_title: Gromov-Hausdorff distance between chromatic metric pairs and stability of the six-pack
+% status: draft
+
+For chromatic metric pairs $(A_1,\chi_1)$, $(A_2,\chi_2)$ and $\mathcal C\subseteq\mathcal P(\mathbb N)$, set
+\[
+d_{\rm GH}^{\mathcal C}=\frac12\inf_{f,g\ {\mathcal C}\text{-constrained}}\max\{\operatorname{dis}f,\operatorname{dis}g,\operatorname{codis}(f,g)\}.
+\]
+Here $f:A_1\to A_2$, $g:A_2\to A_1$, with $\operatorname{dis}f=\sup_{u,v\in A_1}|d_1(u,v)-d_2(fu,fv)|$ and $\operatorname{codis}(f,g)=\sup_{u\in A_1,v\in A_2}|d_1(u,gv)-d_2(fu,v)|$.
