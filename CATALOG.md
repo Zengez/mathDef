@@ -2,17 +2,19 @@
 
 Snapshot: 2026-10-15. Counts below are generated from the repository tree; the deployed site is the source for the most current total.
 
-**788 definitions across 37 subject folders.**
+**879 definitions across 39 subject folders.**
 
 | Subject | Folder | Entries |
 |---|---|---:|
 | Abstract algebra | [`definitions/algebra/`](definitions/algebra/) | 29 |
 | Algebraic and analytic number theory | [`definitions/arithmetic/`](definitions/arithmetic/) | 36 |
 | Algebraic topology | [`definitions/alg-topology/`](definitions/alg-topology/) | 36 |
+| Asymmetric quasi-metric spaces | [`definitions/quasimetric/`](definitions/quasimetric/) | 6 |
 | Category theory | [`definitions/category/`](definitions/category/) | 36 |
+| Chromatic metric geometry and TDA | [`definitions/tda/`](definitions/tda/) | 5 |
 | Combinatorics | [`definitions/combin/`](definitions/combin/) | 14 |
 | Commutative algebra | [`definitions/commalg/`](definitions/commalg/) | 21 |
-| Complex analysis | [`definitions/complex/`](definitions/complex/) | 19 |
+| Complex analysis | [`definitions/complex/`](definitions/complex/) | 38 |
 | Computability and complexity theory | [`definitions/computability/`](definitions/computability/) | 27 |
 | Convex analysis and optimization | [`definitions/optimization/`](definitions/optimization/) | 36 |
 | Distributions, Sobolev spaces and PDEs | [`definitions/pde/`](definitions/pde/) | 35 |
@@ -25,9 +27,11 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Geometry | [`definitions/geometry/`](definitions/geometry/) | 20 |
 | Graph theory | [`definitions/graph/`](definitions/graph/) | 19 |
 | Holomorphic dynamics | [`definitions/holodynamics/`](definitions/holodynamics/) | 28 |
+| Holomorphic function spaces and reproducing kernels | [`definitions/functionspaces/`](definitions/functionspaces/) | 31 |
 | Linear algebra | [`definitions/linear/`](definitions/linear/) | 28 |
 | Mathematical logic | [`definitions/logic/`](definitions/logic/) | 15 |
 | Measure theory | [`definitions/measure/`](definitions/measure/) | 15 |
+| Measured group actions | [`definitions/measured-actions/`](definitions/measured-actions/) | 5 |
 | Metric spaces | [`definitions/metric/`](definitions/metric/) | 3 |
 | Numerical analysis | [`definitions/numerical/`](definitions/numerical/) | 35 |
 | Probability and statistics | [`definitions/prob/`](definitions/prob/) | 31 |
@@ -35,20 +39,12 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Relations | [`definitions/relations/`](definitions/relations/) | 24 |
 | Schemes and sheaf theory | [`definitions/schemes/`](definitions/schemes/) | 20 |
 | Set theory | [`definitions/sets/`](definitions/sets/) | 31 |
+| Several complex variables and complex geometry | [`definitions/scv/`](definitions/scv/) | 41 |
 | Smooth manifolds and differential geometry | [`definitions/manifold/`](definitions/manifold/) | 36 |
-| Stochastic processes | [`definitions/stochastic/`](definitions/stochastic/) | 35 |
-
-| Walk metrics and proximities | [`definitions/graphwalks/`](definitions/graphwalks/) | 1 |
-
-| Measured group actions | [`definitions/measured-actions/`](definitions/measured-actions/) | 5 |
-
-| Asymmetric quasi-metric spaces | [`definitions/quasimetric/`](definitions/quasimetric/) | 6 |
-
-| Chromatic metric geometry and TDA | [`definitions/tda/`](definitions/tda/) | 5 |
-
-| Weighted and Bergman analysis | [`definitions/weighted-analysis/`](definitions/weighted-analysis/) | 5 |
-
 | Solenoidal manifolds and odometer groups | [`definitions/solenoids/`](definitions/solenoids/) | 6 |
+| Stochastic processes | [`definitions/stochastic/`](definitions/stochastic/) | 35 |
+| Walk metrics and proximities | [`definitions/graphwalks/`](definitions/graphwalks/) | 1 |
+| Weighted and Bergman analysis | [`definitions/weighted-analysis/`](definitions/weighted-analysis/) | 5 |
 
 ## Provenance
 
@@ -93,3 +89,7 @@ A cautious LaTeX candidate scanner and GitHub Actions workflow are documented in
 ### Live candidate scan confirmation
 
 A rate-limited GitHub Actions trial of 12 current math.DS papers identified **30 definition-environment candidates in 7 papers**. The CSV is a *locator-only* review queue, not published definitions. Six new entries were then individually checked in arXiv:2610.20131 (Hurder and Lukina, *Mapping class groups of solenoidal manifolds*), and saved with explicit numbered locators. See [the successful live scan](https://github.com/Zengez/mathDef/actions/runs/38797055015).
+
+## October 2026 source and category coverage audit
+
+The [coverage and source-review report](COVERAGE_REVIEW.md) records the audits, prioritized reference sources, and the Wikipedia category workflow. In the current expansion, **91 additional draft definitions** were written from individual mathematical sources, notably Bergman kernels and spaces, analytic function spaces, standard complex analysis, and several complex variables. The initial coverage audit revealed several hundred nonmatching Wikipedia titles, not hundreds of confirmed mathematical omissions; biographies and theorems require triage. 
