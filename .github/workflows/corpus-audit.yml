@@ -1,0 +1,34 @@
+name: Audit mathDef corpus metadata
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/corpus-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run repository unit tests
+        run: python -m unittest discover -s tests
+      - name: Run structural definition-index validation
+        run: python scripts/build_index.py
+      - name: Generate full-corpus editorial metadata audit
+        run: |
+          python -m scripts.audit_corpus --out _audit_issues.csv > _audit_summary.json
+          cat _audit_summary.json
+      - name: Save reproducible audit files
+        uses: actions/upload-artifact@v4
+        with:
+          name: mathdef-complete-metadata-audit
+          path: |
+            _audit_issues.csv
+            _audit_summary.json
+          retention-days: 45
+          if-no-files-found: error
