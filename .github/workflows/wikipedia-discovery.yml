@@ -7,7 +7,7 @@ on:
     inputs:
       category:
         description: "Wikipedia mathematics category (e.g. Complex analysis)"
-        default: 'Complex analysis'
+        default: 'Several complex variables'
         required: true
         type: string
       depth:
@@ -30,7 +30,7 @@ jobs:
         run: python -m unittest discover -s tests
       - name: Inventory category titles
         env:
-          WIKI_CATEGORY: ${{ inputs.category || 'Complex analysis' }}
+          WIKI_CATEGORY: ${{ inputs.category || 'Several complex variables' }}
           WIKI_DEPTH: ${{ inputs.depth || '1' }}
         run: |
           python scripts/wikipedia_candidate_scan.py \

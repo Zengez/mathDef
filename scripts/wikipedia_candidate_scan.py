@@ -66,7 +66,7 @@ def load_terms(definitions):
     return terms
 
 
-def classify(title, exact, terms):
+def classify(title, category, terms):
     key = normalize(title)
     matches = sorted(terms.get(key, ()))
     maybe = []
@@ -83,7 +83,9 @@ def classify(title, exact, terms):
     if matches:
         coverage = "present_exact_title_or_alias"
         priority = "already-covered"
-    elif re.search(r"^(?:list|glossary|outline|index|timeline)\b|"
+    elif (re.search(r"(?:analysts|mathematicians|scientists|biographies|scholars)", category, re.I)
+          or re.search(r"^(?:list|glossary|outline|index|timeline|a course of)\b|"
+
                    r"\b(?:biography|bibliography|conjecture|theorem|"
                    r"prize|award)\b", title, flags=re.I):
         coverage = "not_matched"
@@ -152,7 +154,7 @@ def inventory(reader, seeds, depth, max_categories, max_pages, terms):
                     if title not in found:
                         url = "https://en.wikipedia.org/wiki/" + urllib.parse.quote(
                             title.replace(" ", "_"), safe="()")
-                        status, ids, possible, priority = classify(title, False, terms)
+                        status, ids, possible, priority = classify(title, category, terms)
                         found[title] = {
                             "title": title, "wikipedia_url": url,
                             "found_in_category": category,

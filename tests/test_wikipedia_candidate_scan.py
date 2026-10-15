@@ -1,7 +1,7 @@
 import tempfile
 import unittest
 from pathlib import Path
-from scripts.wikipedia_candidate_scan import normalize, load_terms, inventory
+from scripts.wikipedia_candidate_scan import normalize, load_terms, inventory, classify
 
 class FakeReader:
     def request(self, category, continuation=None):
@@ -42,6 +42,11 @@ class WikiScannerTests(unittest.TestCase):
                          "review_high")
         self.assertIn("%C5%91", by_title["Szegő kernel"]["wikipedia_url"])
         self.assertEqual(by_title["A theorem"]["review_priority"], "review_low")
+    def test_people_category_deprioritized(self):
+        status, ids, maybe, priority = classify(
+            "Adolph Winkler Goodman", "Category:Complex analysts", {})
+        self.assertEqual(priority, "review_low")
+
     def test_normalize(self):
         self.assertEqual(normalize("Bergman kernel (several variables)"),
                          "bergman kernel")
