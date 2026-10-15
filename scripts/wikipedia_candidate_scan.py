@@ -87,7 +87,7 @@ def classify(title, category, terms):
           or re.search(r"^(?:list|glossary|outline|index|timeline|a course of)\b|"
 
                    r"\b(?:biography|bibliography|conjecture|theorem|"
-                   r"prize|award)\b", title, flags=re.I):
+                   r"prize|award)\b", title, flags=re.I)):
         coverage = "not_matched"
         priority = "review_low"
     else:
