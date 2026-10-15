@@ -138,3 +138,10 @@ an endorsement of the accuracy or specificity of an individual link.
 - Inspected the LaTeX warning: `combin.stirling-number` used `\begin{smallmatrix}` **inside inline math**. This is valid KaTeX, so it was a *false positive*. Corrected the metadata audit to ignore math-mode TeX environments. Replaced its generic source with a precise Stirling-numbers-of-the-second-kind article and clarified its body in commit `01cc56f4`. The post-change Wikipedia subject-index citation count should thus decrease to 256; verify on the next automated audit.
 - GitHub Pages build and unit tests passed after this correction in [run 38811035189](https://github.com/Zengez/mathDef/actions/runs/38811035189).
 - Future editor should treat these flags as **review priorities, not mathematical error counts**. 908 entries have NOT undergone comprehensive individual proof-level mathematical review; do not mark `reviewed` en masse.
+
+## New measure and algebra continuation (October 15, 2026)
+
+- Existing mathematically inspected entries this pass: **41** (`commalg`: 21, `schemes`: 20), with individually selected subject-appropriate reference pages and clarified definitions; no mass promotion to reviewed status.
+- New entries this pass: **26** (`measure`: 24, `stochastic`: 2), drafted from prior Wikipedia category scan candidates and direct concept pages, with nuanced hypotheses and measure conventions.
+- Current total: **934 definitions in 40 subject folders**. Continue comprehensive audit in separately committed batches rather than claiming all definitions were reviewed.
+- Prior source-only audit counts are historical snapshots and should be recomputed for the modified collection.

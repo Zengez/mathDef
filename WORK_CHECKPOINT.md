@@ -64,3 +64,19 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Inspected the LaTeX warning: `combin.stirling-number` used `\begin{smallmatrix}` **inside inline math**. This is valid KaTeX, so it was a *false positive*. Corrected the metadata audit to ignore math-mode TeX environments. Replaced its generic source with a precise Stirling-numbers-of-the-second-kind article and clarified its body in commit `01cc56f4`. The post-change Wikipedia subject-index citation count should thus decrease to 256; verify on the next automated audit.
 - GitHub Pages build and unit tests passed after this correction in [run 38811035189](https://github.com/Zengez/mathDef/actions/runs/38811035189).
 - Future editor should treat these flags as **review priorities, not mathematical error counts**. 908 entries have NOT undergone comprehensive individual proof-level mathematical review; do not mark `reviewed` en masse.
+
+## Further bounded batches — current session (October 15, 2026)
+
+- Started from **908 entries, 40 folders**, with arXiv bulk work left on hold.
+- **Existing definitions checked and revised: 41** total in this session:
+  - `definitions/commalg/`: all 21 entries, 10 in commit `b97dcf5d` and 11 in commit `7e1b7acb`. Sources now cite direct Stacks sections or specific relevant Wikipedia concepts, rather than the shared Stacks spectrum tag `00DY`. Mathematical edits: local-ring convention and residue field, zero-divisor conventions (0 is included under the literal definition), tensor-product universal property, ring-map formulation of integrality.
+  - `definitions/schemes/`: all 20 entries, 10 in commit `a38bfa9b` and 10 in commit `103378d5`. Replaced the shared affine-scheme reference with specific Stacks sections and a direct EoM irreducibility page; clarified the sheaf condition, closed subscheme and residue field in scheme fibers.
+- **New source-informed draft definitions: 26** total:
+  - Ten signed/Radon measure concepts in commit `26755a6b`.
+  - Sixteen measure/integration/stochastic concepts in commit `96ec55c2`. Related IDs checked before committing.
+  - Includes deliberate treatment of conventions for Radon measures and global vs local convergence in measure. Key source pages: Wikipedia articles on `Radon_measure`, `Signed_measure`, `Bochner_integral`, `Pettis_integral`, and the Stacks Project permanent ring/scheme tags.
+- **New live inventory**: 934 definition files across 40 folders. Builds succeeded through the new measure/integration commits; verify the final scheme/documentation commit workflow before closing the session.
+- **Review-status caution:** these 41 existing entries were individually read and citation/wording checked, but they have NOT been promoted to formally `reviewed`; most of the 934-entry corpus remains mathematically unaudited.
+- **Next audits:** prioritize the 35 `stochastic/` original definitions or `scv/` and `linear/`, and separately resolve the 256+ Wikipedia topic-index references from the last metadata audit (freshly compute this figure after editing). Check any convention collisions, especially source-specific paper terminology, before changing stable IDs.
+- **Next discovery:** use the locally saved Wikipedia subject-category CSV inventories to identify more graduate-level missing terms; cross-check IDs and aliases, prefer direct EoM/Stacks/DLMF sources, and add in batches no larger than ~20–30. Do not automatically import biography/theorem/article titles.
+- **No further user input is necessary** for this work.

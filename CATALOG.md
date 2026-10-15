@@ -2,7 +2,7 @@
 
 Snapshot: 2026-10-15. Counts below are generated from the repository tree; the deployed site is the source for the most current total.
 
-**908 definitions across 40 subject folders.**
+**934 definitions across 40 subject folders.**
 
 | Subject | Folder | Entries |
 |---|---|---:|
@@ -30,7 +30,7 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Holomorphic function spaces and reproducing kernels | [`definitions/functionspaces/`](definitions/functionspaces/) | 31 |
 | Linear algebra | [`definitions/linear/`](definitions/linear/) | 28 |
 | Mathematical logic | [`definitions/logic/`](definitions/logic/) | 15 |
-| Measure theory | [`definitions/measure/`](definitions/measure/) | 15 |
+| Measure theory | [`definitions/measure/`](definitions/measure/) | 39 |
 | Measured group actions | [`definitions/measured-actions/`](definitions/measured-actions/) | 5 |
 | Metric spaces | [`definitions/metric/`](definitions/metric/) | 3 |
 | Numerical analysis | [`definitions/numerical/`](definitions/numerical/) | 35 |
@@ -42,7 +42,7 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Several complex variables and complex geometry | [`definitions/scv/`](definitions/scv/) | 41 |
 | Smooth manifolds and differential geometry | [`definitions/manifold/`](definitions/manifold/) | 40 |
 | Solenoidal manifolds and odometer groups | [`definitions/solenoids/`](definitions/solenoids/) | 6 |
-| Stochastic processes | [`definitions/stochastic/`](definitions/stochastic/) | 37 |
+| Stochastic processes | [`definitions/stochastic/`](definitions/stochastic/) | 39 |
 | Walk metrics and proximities | [`definitions/graphwalks/`](definitions/graphwalks/) | 1 |
 | Weighted and Bergman analysis | [`definitions/weighted-analysis/`](definitions/weighted-analysis/) | 5 |
 
@@ -101,3 +101,13 @@ The [coverage and source-review report](COVERAGE_REVIEW.md) records the audits, 
 The database now contains **908 draft/example definitions** across **40 folders**. A targeted inspection and repair covered all 36 original functional-analysis entries, followed by 29 independently formulated advanced definitions chosen from a completed depth-two Wikipedia mathematics category scan. None of these entries was indiscriminately reclassified as peer-reviewed.
 
 The [broad discovery report](WIKIPEDIA_BROAD_SCAN_2026-10-15.md) summarizes four independent scans totaling 220 visited Wikipedia categories and 10,233 distinct candidate article titles; a large fraction of unmatched titles are not appropriate mathematical definitions. See also [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md) for the remaining per-entry mathematical QA backlog.
+
+## Measure theory and algebra audit, continued (October 15, 2026)
+
+- **934 definitions** are present as individual LaTeX files; structural and mathematical review status are separate.
+- Repaired **21 existing commutative algebra entries**, replacing a shared general Stacks tag with direct Stacks sections or individual mathematical topic pages and tightening definitions of tensor products, integrality, local rings, and zero divisors.
+- Repaired **20 existing scheme/sheaf entries**, replacing a shared affine-scheme Stacks tag with relevant permanent references to the spectrum, presheaves, sheaves, stalks, locally ringed spaces and properties of schemes. Qualified the closed-subscheme and scheme-fiber formulations.
+- Added **26 new advanced measure and stochastic definitions**, using the prior multi-category Wikipedia title inventory and individual concept pages. New topics include Radon regularity, signed measures, Hahn/Jordan decompositions, Radon–Nikodym derivatives, product and completed measures, Pettis/Bochner integration, standard Borel spaces, local martingales and semimartingales.
+- All new definitions remain `status: draft`. Source URLs are direct concept references, but full mathematical peer review and per-definition renderer review remain to be completed.
+
+[Checkpoint with commit IDs and remaining work](WORK_CHECKPOINT.md).

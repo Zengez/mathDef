@@ -1,6 +1,6 @@
 # mathDef
 
-Current collection snapshot: **908 definitions across 40 subject folders** (October 15, 2026). See [the definition catalog](CATALOG.md) for per-subject counts, provenance guidance, and the mathematical review checklist.
+Current collection snapshot: **934 definitions across 40 subject folders** (October 15, 2026). See [the definition catalog](CATALOG.md) for per-subject counts, provenance guidance, and the mathematical review checklist.
 
 An interactive, GitHub-hosted collection of mathematical definitions written in LaTeX.
 
@@ -106,3 +106,7 @@ The [Wikipedia discovery and audit tools](WIKIPEDIA_DISCOVERY.md) use MediaWiki'
 ## Current staged mathematical review and Wikipedia discovery
 
 An expanded 15 October 2026 category traversal covered 220 Wikipedia mathematics categories and discovered 10,233 unique article titles across four overlapping subject scans. [See scope, results, and limitations](WIKIPEDIA_BROAD_SCAN_2026-10-15.md). The first filtered selection added 29 rigorous-style draft definitions in advanced category theory, matroids, functional analysis, differential geometry, stochastic processes, PDEs, and special functions. The previously broad reference citations of all 36 existing functional-analysis entries were examined and made more specific. This is **not** a claim that all 908 definitions have received complete mathematical or citation reviews.
+
+## Continuing mathematical review
+
+The latest incremental work reviewed **41 older entries** in commutative algebra and scheme theory, updated their specific source citations, and added **26 new advanced measure-theory and stochastic-process definitions**. The collection has 934 total entries. The latest batch history, review caveats, and next steps are in [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md). The bibliography and structural checks do not mean every entry has received a mathematical peer review.
