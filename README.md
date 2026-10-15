@@ -79,11 +79,14 @@ the mathematical conventions, and link only related IDs that exist.
 ## Build checks
 
 The builder rejects missing IDs, duplicate IDs, empty bodies, and dangling
-related references. Source metadata is restricted to English Wikipedia
-article URLs. The GitHub workflow checks JavaScript syntax and builds the
+related references. Source metadata must use an HTTPS URL. Links may point to a specific entry or a subject overview; the source provides context for review, not a guarantee that each formulation was independently checked. The GitHub workflow checks JavaScript syntax and builds the
 whole definition index before attempting publication.
 
 **Current limitations:** search uses substring matching rather than full
 LaTeX semantic matching; the front end renders KaTeX-compatible math,
 not arbitrary compilable TeX documents; the expanded collection is a
 draft research corpus, not an exhaustive or peer-reviewed encyclopedia.
+
+## Expanding beyond Wikipedia
+
+Later draft definitions use mathematical references such as the [Encyclopedia of Mathematics](https://encyclopediaofmath.org/wiki/Functional_analysis), [nLab](https://ncatlab.org/nlab/show/category+theory), and [The Stacks Project](https://stacks.math.columbia.edu/tag/0ELP). The `source` URL identifies material consulted for terminology or mathematical context, which may be a subject page rather than an exact statement reference. The original definition prose is written independently and marked `status: draft` pending precise mathematical review.
