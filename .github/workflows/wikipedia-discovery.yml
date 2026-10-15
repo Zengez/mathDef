@@ -28,7 +28,7 @@ jobs:
           python-version: "3.12"
       - name: Offline scanner tests
         run: python -m unittest discover -s tests
-      - name: Inventory category titles
+      - name: Inventory category titles and compare glossary terms
         env:
           WIKI_CATEGORY: ${{ inputs.category || 'Several complex variables' }}
           WIKI_DEPTH: ${{ inputs.depth || '1' }}
