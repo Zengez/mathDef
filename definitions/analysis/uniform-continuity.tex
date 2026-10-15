@@ -1,0 +1,12 @@
+% id: analysis.uniform-continuity
+% term: Uniform continuity
+% related: metric.metric-space, functions.function, topology.continuity
+
+A function $f:(X,d_X)\to(Y,d_Y)$ is \emph{uniformly continuous} if
+\[
+\forall\varepsilon>0\ \exists\delta>0\
+\forall x,x'\in X:\
+d_X(x,x')<\delta\implies d_Y(f(x),f(x'))<\varepsilon.
+\]
+
+The choice of $\delta$ may depend on $\varepsilon$, but not on the point $x$.
