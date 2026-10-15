@@ -1,5 +1,8 @@
 name: Scan arXiv definition candidates
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/arxiv-scan.yml']
   workflow_dispatch:
     inputs:
       category:
@@ -27,8 +30,8 @@ jobs:
         run: python -m unittest discover -s tests
       - name: Inspect arXiv sources with rate limits
         env:
-          ARXIV_CATEGORY: ${{ inputs.category }}
-          ARXIV_COUNT: ${{ inputs.max_papers }}
+          ARXIV_CATEGORY: ${{ inputs.category || 'math.DS' }}
+          ARXIV_COUNT: ${{ inputs.max_papers || '12' }}
         run: |
           python scripts/arxiv_candidate_scan.py \
             --category "$ARXIV_CATEGORY" \
