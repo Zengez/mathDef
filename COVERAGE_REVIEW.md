@@ -97,3 +97,25 @@ definitions, source URL format, and that related IDs resolve. It cannot establis
 that every theorem-level assumption or mathematical equivalence is correct.
 References, source descriptions and review flags are editorial metadata;
 only individual contextual mathematical checking should justify `status: reviewed`.
+
+## Latest automated audit — 879 definitions
+
+The [latest successful discovery and editorial audit run](https://github.com/Zengez/mathDef/actions/runs/38806321333)
+was executed after the 91-definition expansion and the initial reference-link repairs:
+
+- **879** entries: **858** marked draft and **21** marked example; **none** yet individually marked reviewed.
+- **0** entries without a source URL (the first 21 examples now have specific reference pages).
+- **257** entries whose reference remains an overly broad Wikipedia topic list.
+- **82** entries shorter than the audit heuristic's 90-character threshold; these are *review candidates*, not verified defects.
+- **1** entry with a LaTeX environment needing rendering inspection.
+- **2** entries with identical displayed term `Open set` but intentionally different IDs.
+
+A new Several Complex Variables title-level comparison found **126** Wikipedia titles:
+**17** exact matches, **4** possible name variants, **82** high-priority candidate titles,
+and **23** lower-priority pages. High priority means only 'not matched and
+not excluded by the title heuristic', not necessarily a useful definitional article.
+
+By source host, the 879 entries use 365 English Wikipedia URLs,
+301 Encyclopedia of Mathematics URLs, 108 nLab URLs, 41 Stacks Project URLs,
+36 Stanford references, and 28 arXiv paper links. The host count is not
+an endorsement of the accuracy or specificity of an individual link.
