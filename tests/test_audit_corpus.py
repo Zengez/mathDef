@@ -11,6 +11,16 @@ class CorpusAuditTests(unittest.TestCase):
         self.assertIn("no-source", flags)
         self.assertIn("very-short", flags)
         self.assertIn("not-reviewed", flags)
+    def test_katex_environment_inside_math_is_not_flagged(self):
+        entry = {
+            "id": "test.tex", "term": "TeX math",
+            "source": "https://en.wikipedia.org/wiki/Stirling_numbers_of_the_second_kind",
+            "body": r"A combinatorial number $\\left\\{\\begin{smallmatrix}n\\\\k\\end{smallmatrix}\\right\\}$ counts certain set partitions.",
+            "status": "draft", "path": "test.tex",
+        }
+        flags = [kind for kind, _ in audit_entry(entry, {"tex math": ["test.tex"]})]
+        self.assertNotIn("latex-environment", flags)
+
     def test_complete_sample(self):
         entry = {
             "id":"x", "term":"Complete example",

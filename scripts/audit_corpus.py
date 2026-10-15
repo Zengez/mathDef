@@ -3,6 +3,7 @@
 import argparse
 import csv
 import json
+import re
 from collections import Counter, defaultdict
 from pathlib import Path
 from urllib.parse import urlparse
@@ -36,8 +37,13 @@ def audit_entry(entry, duplicates):
         issues.append(("unbalanced-display-math", "Mismatched LaTeX display delimiters"))
     if len(entry["body"].strip()) < 90:
         issues.append(("very-short", "Definition body shorter than 90 characters"))
-    if "\\begin{" in entry["body"]:
-        issues.append(("latex-environment", "Full TeX environments may not render outside KaTeX math"))
+    # KaTeX supports \begin{...} inside math delimiters. Flag only TeX
+    # environments appearing in the prose surrounding math expressions.
+    text_outside_math = re.sub(
+        r"\$\$.*?\$\$|\$[^$]*\$|\\\\\[.*?\\\\\]|\\\\\(.*?\\\\\)",
+        "", entry["body"], flags=re.S)
+    if r"\begin{" in text_outside_math:
+        issues.append(("latex-environment", "TeX environment in prose outside math delimiters"))
     if entry["body"].count("$") % 2:
         issues.append(("unbalanced-dollar", "Odd number of dollar math delimiters; check source"))
     if len(duplicates[normalize(entry["term"])]) > 1:
