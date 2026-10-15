@@ -18,6 +18,8 @@ Create `definitions/<subject>/<name>.tex`:
 % term: Open set
 % aliases: Open subset
 % related: topology.neighborhood, topology.topological-space
+% source: https://en.wikipedia.org/wiki/List_of_general_topology_topics
+% status: draft
 
 Let $(X,\tau)$ be a topological space. A subset $U\subseteq X$
 is \emph{open} if $U\in\tau$.
@@ -53,3 +55,35 @@ Intended site URL: https://zengez.github.io/mathDef/
 
 Definition searches presently match words in the body and raw LaTeX source.
 This initial dataset is illustrative, not a curated reference.
+
+## Wikipedia topic expansion (October 2026)
+
+The initial expansion follows the navigation page
+[Lists of mathematics topics](https://en.wikipedia.org/wiki/Lists_of_mathematics_topics)
+into subject lists and glossaries, including algebra, linear algebra, real
+and complex analysis, topology, number theory, graph theory, probability,
+mathematical logic, and dynamical systems.
+
+Each expansion entry is an **original, concise mathematical formulation**,
+not a verbatim copy of Wikipedia prose. Its optional `source` field links
+to the Wikipedia **topic list used for discovery**, not necessarily to
+the precise article defining that term. It should not be mistaken for a
+formal citation of the individual mathematical statement. New entries have
+`status: draft` until someone checks mathematical precision and scope;
+older illustrative entries use the default `example` status.
+
+When adding content, make sure the term is a genuine definition (rather
+than a theorem, historical entry, or unsupported generalization), check
+the mathematical conventions, and link only related IDs that exist.
+
+## Build checks
+
+The builder rejects missing IDs, duplicate IDs, empty bodies, and dangling
+related references. Source metadata is restricted to English Wikipedia
+article URLs. The GitHub workflow checks JavaScript syntax and builds the
+whole definition index before attempting publication.
+
+**Current limitations:** search uses substring matching rather than full
+LaTeX semantic matching; the front end renders KaTeX-compatible math,
+not arbitrary compilable TeX documents; the expanded collection is a
+draft research corpus, not an exhaustive or peer-reviewed encyclopedia.
