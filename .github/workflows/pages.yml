@@ -18,12 +18,14 @@ jobs:
       url: https://zengez.github.io/mathDef/
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Check frontend JavaScript syntax
+        run: node --check web/app.js
       - name: Generate definition index
         run: python scripts/build_index.py
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
