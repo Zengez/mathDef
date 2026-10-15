@@ -56,3 +56,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - **Next editorial batch:** inspect 20–30 previously unreviewed definitions in one underaudited area (suggest `schemes/`, `commalg/`, `stochastic/` or `scv/`), replace broad context citations with specific source pages and correct any mathematical weaknesses. Record IDs explicitly in the next commit/checkpoint. Repeat until all 908+ definitions are reviewed. Do not claim full mathematical audit earlier.
 - **Next discovery batch:** investigate another 20–30 of the most promising names in the candidate artifacts, cross-check IDs and synonyms, reject biographies/theorem-only pages, cite specific mathematical sources, and add only genuine missing concepts.
 - **Important:** AWS/arXiv bulk extraction remains on hold at user's request.
+
+## Full-corpus metadata scan result and last corrections
+
+- Full **908-definition structural and editorial metadata scan** completed successfully in [GitHub Actions run 38810818349](https://github.com/Zengez/mathDef/actions/runs/38810818349), with downloadable issue-level CSV and machine-readable JSON.
+- Snapshot: 887 draft, 21 example, 0 formally reviewed; 257 generic Wikipedia topic-index references, 35 general EoM subject-overview references, 82 very short bodies, two intentionally overlapping Open set display names, and one potential LaTeX-environment warning.
+- Inspected the LaTeX warning: `combin.stirling-number` used `\begin{smallmatrix}` **inside inline math**. This is valid KaTeX, so it was a *false positive*. Corrected the metadata audit to ignore math-mode TeX environments. Replaced its generic source with a precise Stirling-numbers-of-the-second-kind article and clarified its body in commit `01cc56f4`. The post-change Wikipedia subject-index citation count should thus decrease to 256; verify on the next automated audit.
+- GitHub Pages build and unit tests passed after this correction in [run 38811035189](https://github.com/Zengez/mathDef/actions/runs/38811035189).
+- Future editor should treat these flags as **review priorities, not mathematical error counts**. 908 entries have NOT undergone comprehensive individual proof-level mathematical review; do not mark `reviewed` en masse.
