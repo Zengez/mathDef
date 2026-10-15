@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DEFS = ROOT / "definitions"
 OUT = ROOT / "_site"
-FIELD = re.compile(r"^%\s*(id|term|aliases|related):\s*(.*?)\s*$")
+FIELD = re.compile(r"^%\s*(id|term|aliases|related|source|status):\s*(.*?)\s*$")
 ID = re.compile(r"^[a-z0-9]+(?:[.-][a-z0-9]+)*$")
 
 def parse(path):
@@ -31,8 +31,15 @@ def parse(path):
     body = "\n".join(lines[start:]).strip()
     if not body:
         raise ValueError(f"{path}: definition body is empty")
+    source = meta.get("source", "")
+    status = meta.get("status", "example")
+    if source and not source.startswith("https://en.wikipedia.org/wiki/"):
+        raise ValueError(f"{path}: source must be an English Wikipedia article URL")
+    if status not in {"draft", "reviewed", "example"}:
+        raise ValueError(f"{path}: invalid status {status}")
     return dict(
         id=meta["id"], term=meta["term"], body=body,
+        source=source, status=status,
         aliases=[v.strip() for v in meta.get("aliases", "").split("|") if v.strip()],
         related=[v.strip() for v in meta.get("related", "").split(",") if v.strip()],
         category=path.parent.relative_to(DEFS).as_posix().replace("/", " / ").title(),
