@@ -12,6 +12,13 @@ from scripts.wikipedia_candidate_scan import normalize
 
 ROOT = Path(__file__).resolve().parent.parent
 FIELDS = ("id", "term", "path", "issue", "detail", "source")
+BROAD_REFERENCE_PAGES = {
+    "Functional_analysis", "Numerical_analysis", "Complex_analysis",
+    "Algebraic_geometry", "Category_theory", "General_topology",
+    "Number_theory", "Probability_theory", "Differential_geometry",
+    "Set_theory", "Measure_theory", "Topology", "Mathematics"
+}
+
 
 
 def audit_entry(entry, duplicates):
@@ -21,6 +28,12 @@ def audit_entry(entry, duplicates):
         issues.append(("no-source", "No mathematical citation or discovery reference"))
     elif "en.wikipedia.org/wiki/List_of_" in url or "/Category:" in url:
         issues.append(("subject-list-only", "Source links to a subject index, not the definition"))
+    source_path = urlparse(url).path if url else ""
+    if url and (urlparse(url).netloc == "encyclopediaofmath.org"
+                and source_path.rsplit("/", 1)[-1] in BROAD_REFERENCE_PAGES):
+        issues.append(("general-encyclopedia-overview", "Subject overview should be checked against a direct concept reference"))
+    if entry["body"].count(r"\[") != entry["body"].count(r"\]"):
+        issues.append(("unbalanced-display-math", "Mismatched LaTeX display delimiters"))
     if len(entry["body"].strip()) < 90:
         issues.append(("very-short", "Definition body shorter than 90 characters"))
     if "\\begin{" in entry["body"]:
