@@ -37,7 +37,7 @@
       root.innerHTML='<div class="placeholder"><strong>Select a result above</strong><p>The definition and its related terms appear here.</p></div>';return;
     }
     const links=d.related.map((id)=>lookup.get(id)).filter(Boolean);
-    const topicLink=d.source ? '<a class="source" href="'+escape(d.source)+'" target="_blank" rel="noopener noreferrer">Wikipedia topic index ↗</a>' : "";
+    const topicLink=d.source ? '<a class="source" href="'+escape(d.source)+'" target="_blank" rel="noopener noreferrer">Mathematical reference ↗</a>' : "";
     const reviewLabel=d.status==="draft" ? '<span class="draft-label">Draft · not individually reviewed</span>' : (d.status==="reviewed" ? '<span class="reviewed-label">Reviewed entry</span>' : '<span class="draft-label">Prototype entry</span>');
     root.innerHTML='<article><div class="subject">'+escape(d.category)+'</div><h4>'+escape(d.term)+'</h4>'+reviewLabel+
       (d.aliases.length?'<p class="aliases">Also called: '+d.aliases.map(escape).join(", ")+'</p>':"")+
