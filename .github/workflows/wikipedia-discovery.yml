@@ -1,0 +1,42 @@
+name: Discover missing Wikipedia mathematics terms
+on:
+  workflow_dispatch:
+    inputs:
+      category:
+        description: "Wikipedia mathematics category (e.g. Complex analysis)"
+        default: 'Complex analysis'
+        required: true
+        type: string
+      depth:
+        description: "Subcategory depth 0-2"
+        default: "1"
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Offline scanner tests
+        run: python -m unittest discover -s tests
+      - name: Inventory category titles
+        env:
+          WIKI_CATEGORY: ${{ inputs.category || 'Complex analysis' }}
+          WIKI_DEPTH: ${{ inputs.depth || '1' }}
+        run: |
+          python scripts/wikipedia_candidate_scan.py \
+            --seed "$WIKI_CATEGORY" --depth "$WIKI_DEPTH" \
+            --max-categories 12 --max-pages 1500 \
+            --out _wikipedia_candidates.csv
+      - name: Upload title-only candidate inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: wikipedia-definition-candidates
+          path: _wikipedia_candidates.csv
+          retention-days: 30
