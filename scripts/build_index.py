@@ -33,7 +33,7 @@ def parse(path):
         raise ValueError(f"{path}: definition body is empty")
     source = meta.get("source", "")
     status = meta.get("status", "example")
-    if source and not re.fullmatch(r"https://[A-Za-z0-9.-]+(?:/[A-Za-z0-9_~%!source.startswith("https://en.wikipedia.org/wiki/")'()*+,;=:@/?#.-]*)?", source):
+    if source and (not source.startswith("https://") or any(ch.isspace() for ch in source)):
         raise ValueError(f"{path}: source must be an HTTPS reference URL")
     if status not in {"draft", "reviewed", "example"}:
         raise ValueError(f"{path}: invalid status {status}")
