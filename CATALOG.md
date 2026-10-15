@@ -2,7 +2,7 @@
 
 Snapshot: 2026-10-15. Counts below are generated from the repository tree; the deployed site is the source for the most current total.
 
-**760 definitions across 31 subject folders.**
+**782 definitions across 36 subject folders.**
 
 | Subject | Folder | Entries |
 |---|---|---:|
@@ -38,6 +38,16 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Smooth manifolds and differential geometry | [`definitions/manifold/`](definitions/manifold/) | 36 |
 | Stochastic processes | [`definitions/stochastic/`](definitions/stochastic/) | 35 |
 
+| Walk metrics and proximities | [`definitions/graphwalks/`](definitions/graphwalks/) | 1 |
+
+| Measured group actions | [`definitions/measured-actions/`](definitions/measured-actions/) | 5 |
+
+| Asymmetric quasi-metric spaces | [`definitions/quasimetric/`](definitions/quasimetric/) | 6 |
+
+| Chromatic metric geometry and TDA | [`definitions/tda/`](definitions/tda/) | 5 |
+
+| Weighted and Bergman analysis | [`definitions/weighted-analysis/`](definitions/weighted-analysis/) | 5 |
+
 ## Provenance
 
 Each LaTeX definition file may contain:
@@ -71,3 +81,9 @@ The source URL gives **reference context**, often a broad subject page, and is *
 ## Verification
 
 The GitHub Actions site build checks every file's ID, nonempty definition body, review status, source URL form, and related references. A passing build **does not** verify mathematical truth, citation specificity, or full LaTeX compilation. GitHub Pages builds a static client-side searchable index from the validated files.
+
+## arXiv paper-defined entries (October 2026)
+
+The first targeted inspection added **22** independently worded mathematical definitions from **five actual arXiv research papers**. Unlike subject-list references, each of these stores the paper identifier and version (when known), title, and exact numbered definition with printed page. All remain in draft status until individually checked.
+
+A cautious LaTeX candidate scanner and GitHub Actions workflow are documented in [ARXIV_HARVEST.md](ARXIV_HARVEST.md). Candidate discovery is separate from accepting mathematical definitions. The code does not automatically import copyrighted paper text into the website.

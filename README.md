@@ -1,6 +1,6 @@
 # mathDef
 
-Current collection snapshot: **760 definitions across 31 subject folders** (October 15, 2026). See [the definition catalog](CATALOG.md) for per-subject counts, provenance guidance, and the mathematical review checklist.
+Current collection snapshot: **782 definitions across 36 subject folders** (October 15, 2026). See [the definition catalog](CATALOG.md) for per-subject counts, provenance guidance, and the mathematical review checklist.
 
 An interactive, GitHub-hosted collection of mathematical definitions written in LaTeX.
 
@@ -92,3 +92,7 @@ draft research corpus, not an exhaustive or peer-reviewed encyclopedia.
 ## Expanding beyond Wikipedia
 
 Later draft definitions use mathematical references such as the [Encyclopedia of Mathematics](https://encyclopediaofmath.org/wiki/Functional_analysis), [nLab](https://ncatlab.org/nlab/show/category+theory), and [The Stacks Project](https://stacks.math.columbia.edu/tag/0ELP). The `source` URL identifies material consulted for terminology or mathematical context, which may be a subject page rather than an exact statement reference. The original definition prose is written independently and marked `status: draft` pending precise mathematical review.
+
+## arXiv paper-based definitions
+
+Added explicit, numbered definitions located in arXiv papers, with precise `arxiv`, `locator`, and `source_title` metadata in addition to the canonical paper `source` URL. The first independently paraphrased 22 entries were inspected in five research papers. See [ARXIV_HARVEST.md](ARXIV_HARVEST.md) for a reproducible candidate-scanning workflow and an explicit distinction between locating candidates and editorial acceptance.
