@@ -35,4 +35,5 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 ## Session status
 - **Completed this session:** inspected the live 879-entry tree, Bergman examples, existing coverage review and Wikipedia discovery documentation. Created this checkpoint file.
-- **Pending:** first <=10-entry reference-repair batch and verification workflow.
+- **Completed first mini-batch:** checked the existing `functional.banach-space` definition against the individual Encyclopedia of Mathematics article `https://encyclopediaofmath.org/wiki/Banach_space`, verified completeness terminology, and replaced the previous subject-level reference with this precise article. Existing `topology.topological-space`, `metric.metric-space`, and `topology.compactness` already have direct article links and were left unchanged.
+- **Pending:** further source-repair batches, with the next batch beginning with additional `functional/` entries. The exact post-commit workflow outcome must be verified separately.
