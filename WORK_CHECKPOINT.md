@@ -866,3 +866,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reviewed final six newer graduate set-theory terms: club-set, stationary-set, forcing-poset, generic-filter, continuum-hypothesis, beth-number. Verified direct Wikipedia Generic filter / Forcing, Stationary set and club-set sources. Explicitly named the uncountable regular cardinal scope, stronger-is-smaller forcing order convention, model-relative generic filter dense-set intersection, and CH independence relative to consistency of ZFC.
 - All 12 new set-theory entries now separately audited (ST1 and ST2), in addition to the 31 originals; **43/43** set-theory entries covered at editorial level. Individual-audit total **942/1007**, with **65 remaining**. Draft statuses preserved and full third-party mathematical proof-level review pending.
 - NEXT: audit 12 new dynamics concepts added in discovery G1, then 12 microlocal PDE additions, followed by remaining scattered small folders. Verify metadata and publication checks. AWS/arXiv bulk harvesting paused.
+
+
+## October 16, 2026 — advanced dynamics second-pass DY1
+
+- Began second-pass audit of the twelve new `dynamics/` G1 definitions, reviewing omega-limit-set, alpha-limit-set, nonwandering-point, topological-transitivity, topological-mixing, chain-recurrent-point. Checked EoM Chain recurrence/Wandering point and direct topological dynamics pages. Clarified compactness and invertibility needed for nonempty two-sided limit sets, returning-neighborhood criterion, positive-time transitivity convention, and ε-chain definitions versus flow versions.
+- Cumulative individual-audit count **948/1007**, **59** remaining. NEXT DY2 six: minimal-invariant-set, hyperbolic-fixed-point, lyapunov-exponent, topological-entropy, stable-manifold, unstable-manifold. Keep stable IDs and draft statuses; verify Actions and maintain AWS/arXiv bulk pause.
