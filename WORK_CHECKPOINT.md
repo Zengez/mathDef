@@ -1539,3 +1539,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - The old `Postcritical_set` Wikipedia page was unavailable. Inspected the PDF **page 2** (viewer page index 1) of Buff–Cui–Tan, *Teichmüller spaces and holomorphic dynamics*, which explicitly defines the closure of positive forward critical orbits; source commit `f6005551`. Two remaining stale EoM Julia_set sources for repelling and superattracting periodic points changed to directly read UNAM periodic-point definitions in source commits `fad1da5e` and `e96fb679`. No mathematical body changes required.
 - CV53 ledger commit `d1edfdbe`: **492 verified, 55 corrected, 459 pending, 1 needs_followup** = **547/1007 completed (54.32%)**. All **28 pending holodynamics** sources now checked in CV51 (10), CV52 (10), CV53 (8). No earlier source entries revisited.
 - NEXT: select coherent `complex/` (38), `functional/` (45), or `special/` (3) folder from pending ledger. Preserve the one earlier unresolved `dynamics.invariant-set` record. No formal mathematical peer-review status promotions or CI claims.
+
+## 2026-10-16 — CV54 special-functions citations (three entries, folder complete)
+
+- Inspected the three pending `special/` entries and source articles: Airy Ai, Bessel J_nu and Euler gamma. Compared Airy equation/normalization via Ai(0), Bessel Frobenius series and Bessel ODE on the specified real range, and Euler integral/meromorphic extension.
+- All three original specific sources support the definitions; no link or body edits. CV54 ledger commit `0daa87e3`.
+- Running totals **495 verified, 55 corrected, 456 pending, 1 needs_followup** = **550/1007 completed (54.62%)**. Entire `special/` folder is complete; no existing audits revisited.
+- NEXT: continue the first pending `complex/` entries in bounded batches, then other pending folders; preserve existing needs_followup and draft statuses.
