@@ -463,3 +463,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Began audit of 24 original \`relations/\` entries. Reviewed antichain, antisymmetric relation, binary relation, chain, complete lattice, directed set, equivalence class and equivalence relation. Switched shared EoM Partially ordered set link to concept-level articles for the first seven, retained direct equivalence-relation source for the eighth.
 - Mathematical notes: antisymmetric does not mean nonsymmetric, directed sets may be preorders rather than antisymmetric orders, a complete lattice has empty-family meets/joins, and equivalence classes form partitions. The eighth file lacked explicit status and its default example status was preserved.
 - NEXT R2: next eight original \`relations/\` terms from greatest-lower-bound-poset through preorder, then R3 remaining eight quotient-set through well-order. Build verification after commit. Inventory still 995 across 40 folders.
+
+
+## October 15, 2026 continuation — relations R2
+
+- Reviewed eight more existing \`relations/\` entries: greatest-lower-bound-poset, lattice, least-upper-bound-poset, maximal-element, maximum-element, order-embedding, order-isomorphism, partial-order. Replaced general EoM poset references with concept-specific Wikipedia articles (except partial order, which now uses a direct poset reference).
+- Made ambient poset and existence/uniqueness assumptions explicit for joins and meets; differentiated binary lattice operations from completeness for arbitrary subsets; distinguished maximal from greatest elements; and order embeddings from merely monotone/order-preserving maps.
+- Sixteen of 24 \`relations/\` entries have now been reviewed in R1 and R2. NEXT R3: remaining eight from \`preorder\` through \`well-order\`, then verify latest build/metadata Actions.

@@ -1,7 +1,11 @@
 % id: relations.order-embedding
 % term: Order embedding
 % related: relations.partial-order, relations.order-isomorphism
-% source: https://encyclopediaofmath.org/wiki/Partially_ordered_set
+% source: https://en.wikipedia.org/wiki/Order_embedding
 % status: draft
 
-An \emph{order embedding} between posets $(P,\le_P)$ and $(Q,\le_Q)$ is a function $f:P\to Q$ with $x\le_P y$ if and only if $f(x)\le_Q f(y)$.
+For posets $(P,\le_P)$ and $(Q,\le_Q)$, an \emph{order embedding} is a map $f:P\to Q$ such that for all $x,y\in P$,
+\[
+x\le_P y\quad\Longleftrightarrow\quad f(x)\le_Q f(y).
+\]
+Such a map preserves and reflects order and is necessarily injective by antisymmetry. An order-preserving map without reflection need not be an embedding.
