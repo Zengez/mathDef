@@ -1336,3 +1336,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Citation ledger: `80cd58fe`, **278 verified, 23 corrected, 706 pending, 0 needs_followup**, out of 1007 (301 citation-reviewed).
 - NEXT: finish 18 remaining `linear/` entries in two small batches: first inner-product through norm, then nullity through vector-space. After that `prob/` or another subject cluster. Update this checkpoint after every committed ledger batch, keeping earlier audits untouched.
 - GitHub Actions publication and corpus metadata workflow status is a separate check; do not claim passing without verifying. No new term discovery or UI changes.
+
+
+## October 16, 2026 — citation verification CV27: second ten linear algebra entries
+
+- Checked 10 `linear/` entries: inner product, invertible matrix, kernel, linear combination, linear functional, linear independence, linear map, matrix multiplication, matrix and norm. Opened their cited reference pages, checked core axioms/definitions, especially complex inner-product linearity choice, arbitrary coefficient fields and linear maps between spaces.
+- `linear.linear-map` had EoM `Linear_operator` source that could not be opened here; replaced it with the directly read Wikipedia `Linear_map#Definition_and_first_consequences` (commit `0e36e16d`). The standard m,n>=0 matrix shapes in `linear.matrix` are a permitted mathematical convention not explicitly documented in the basic source article; no formula discrepancy noted.
+- Updated per-entry ledger in commit `bb24b1fb`: **287 verified, 24 corrected, 696 pending, 0 needs_followup**, 311 reviewed of 1007.
+- NEXT: remaining eight `linear/`: nullity, orthogonal-complement, orthogonality, rank, span, subspace, transpose, vector-space; then move to `prob/`. Keep previously reviewed entries untouched, as user requested. No term discovery or unrelated changes.
