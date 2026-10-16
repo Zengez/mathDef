@@ -1360,3 +1360,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All ten existing direct sources covered their core definition and qualifications. No changes to definition files or URL necessary in this batch. Actual pages visited, evidence recorded in `CITATION_AUDIT.csv` commit `197eeffe`.
 - Dedicated ledger tally **304 verified, 25 corrected, 678 pending, 0 needs_followup**, 329/1007 entries checked. Remaining probability terms start `expectation`, `exponential-distribution`, `iid`, `independence`, `markov-chain`, etc. No earlier reviewed citations rechecked.
 - NEXT: CV30 check ten pending `prob/` entries from expectation through probability-space. Keep direct source/hypothesis matching and subsequent checkpoint. Independent CI workflow success remains unconfirmed.
+
+
+## October 16, 2026 — citation verification CV30: expectation and probability distributions (10 entries)
+
+- Read ten direct source articles and compared repo definitions: expectation, exponential distribution, independent-and-identically-distributed, event independence, Markov chains, normal distribution, probability density function, probability mass function, Poisson distribution, probability space.
+- Checked finiteness/absolute-integrability convention for E[X], nonhomogeneous Markov chain versus homogeneous transition law, density Radon–Nikodym context, mutual versus pairwise independence and degenerate distribution endpoints. All source articles supported the key formulas and hypotheses; no edits necessary in this batch.
+- Per-entry ledger commit `f753a495`; tally **314 verified, 25 corrected, 668 pending, 0 needs_followup**, 339/1007 checked. Older already-reviewed entries left untouched.
+- NEXT: `prob/` last eleven entries starting random-variable and ending variance; then select another coherent pending subject. Continue actual citation checks, small commits and checkpoint. Build workflow status remains unverified.
