@@ -986,3 +986,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Verified the `2d9cb43d` metadata and publishing workflows both succeeded. Repository still has 1,007 definition files in 40 folders and the original first-pass audit backlog remains zero.
 - Agreed scope: continue focused citation and cross-definition mathematical-consistency reviews; no independent term harvesting. New terms only when genuine gaps encountered inside existing definition text. Rendering verification and site features deferred; details in `futureConsiderations.md`.
 - NEXT: review other high-reuse sources where warranted and analyze semantic concept/convention mismatches not captured by exact-filename collisions; checkpoint each bounded batch.
+
+
+## October 16, 2026 — CC2 semantic consistency: stopping times and local martingales
+
+- Inspected Brownian/Wiener, spectral/resolvent, projection/isometry, stochastic convergence, several complex variables (Levi/PSH/pseudoconvex/Runge/Stein), functional-analysis and probability/stochastic concept clusters. The examined formulations were compatible except for the identified time-index mismatch.
+- Found a genuine mismatch: stochastic.stopping-time and stochastic.stopped-process treated only discrete time, whereas stochastic.local-martingale relied on continuous-time stopping and stopped processes. Corrected all three in one commit: stopping times and stopped processes now explicitly cover discrete and continuous time, and local martingales spell out the continuous-time conditional expectation property. The two foundational citations now link directly to the relevant Stopping_time and Stopped_process reference articles, whose definitions were checked.
+- Left discrete-time martingale/submartingale/supermartingale entries intentionally discrete; no need to relabel those terms. No unrelated definitions or rendering features were added.
+- NEXT: verify publication/metadata workflows and continue semantic clusters, including probability/measure conventions. First-pass count still 1,007 / 1,007.

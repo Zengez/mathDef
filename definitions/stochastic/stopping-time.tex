@@ -1,7 +1,11 @@
 % id: stochastic.stopping-time
 % term: Stopping time
 % related: stochastic.filtration, stochastic.stopped-process
-% source: https://encyclopediaofmath.org/wiki/Markov_process
+% source: https://en.wikipedia.org/wiki/Stopping_time
 % status: draft
 
-A random time $\tau:\Omega\to\mathbb N_0\cup\{\infty\}$ is a \emph{stopping time} with respect to a filtration $(\mathcal F_n)_{n\ge0}$ if $\{\tau\le n\}\in\mathcal F_n$ for each $n$.
+On a filtered probability space with filtration $(\mathcal F_t)_{t\in T}$, where $T=\mathbb N_0$ or $T=[0,\infty)$, a random time $\tau:\Omega\to T\cup\{\infty\}$ is a \emph{stopping time} if
+\[
+\{\tau\le t\}\in\mathcal F_t\qquad\text{for every }t\in T.
+\]
+Thus, whether stopping has occurred by time $t$ is determined by the information available at time $t$. The same condition covers discrete and continuous time, and $\tau=\infty$ is permitted.
