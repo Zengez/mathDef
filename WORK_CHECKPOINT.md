@@ -1168,3 +1168,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Each cited source directly supports the displayed core definition with its stated conventions. `matroid-rank` references the in-page rank-and-closure subsection; `combin.generating-function` refers to formal ordinary generating functions and correctly excludes convergence requirements; `combin.tutte-polynomial` matches the rank-subset expansion.
 - No source or body edits. Ledger now has 85 verified, 4 corrected, 918 pending. CV4 `ce4ead91` build checks should be verified alongside current commit.
 - This closes a faster batch of low-ambiguity, directly named sources; difficult paper-specific or source-unrelated entries still require individual inspection. The corpus stays at 1007 definitions.
+
+
+## October 16, 2026 — citation verification CV6: ten propositional and quantifier definitions
+
+- Verified 10 additional citations against the stated source articles and their definition/truth-table material: conjunction, inclusive disjunction, classical negation, material implication, logical equivalence, both quantifiers, tautology, contradiction and predicates with free variables.
+- Compared the linked articles' treatment of truth conditions and first-order domain semantics to the existing entries; sources were suitable without edit. Other five logic entries (proofs/models/consistency/proposition/countability) remain pending until their distinct source claims are checked.
+- Current dedicated citation tally: 95 verified, 4 corrected, 908 pending. No new mathematical definitions or deferred features. NEXT: check Pages and corpus workflows, and resume from pending ledger entries after user check-in.
