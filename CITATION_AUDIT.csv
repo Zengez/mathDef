@@ -644,16 +644,16 @@ definitions/optimization/lower-semicontinuous.tex,verified,"https://en.wikipedia
 definitions/optimization/newton-method.tex,verified,"https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization","Derives Hessian times Newton direction = negative gradient; full/damped step and positive-definite Hessian needed for descent, mere invertibility insufficient."
 definitions/optimization/normal-cone.tex,verified,"https://en.wikipedia.org/wiki/Normal_cone_(convex_analysis)","Definition uses outward normals making nonpositive inner product with y-x for all y in convex set; outside point often assigned empty cone."
 definitions/optimization/optimal-solution.tex,verified,"https://en.wikipedia.org/wiki/Mathematical_optimization","Optimizing feasible point attains minimum over feasible set; nonattainment possible despite finite infimum."
-definitions/optimization/optimal-value.tex,pending,,
-definitions/optimization/positive-definite.tex,pending,,
-definitions/optimization/positive-semidefinite.tex,pending,,
-definitions/optimization/projection-onto-convex.tex,pending,,
-definitions/optimization/proper-convex-function.tex,pending,,
-definitions/optimization/proximal-operator.tex,pending,,
-definitions/optimization/quadratic-program.tex,pending,,
-definitions/optimization/quasiconvex-function.tex,pending,,
-definitions/optimization/semidefinite-program.tex,pending,,
-definitions/optimization/slater-condition.tex,pending,,
+definitions/optimization/optimal-value.tex,verified,"https://en.wikipedia.org/wiki/Mathematical_optimization","Optimization problems/notation distinguishes optimum value as infimum or supremum from attainment; repo specifies extended-real and empty-feasible conventions."
+definitions/optimization/positive-definite.tex,verified,"https://en.wikipedia.org/wiki/Definite_matrix","Definitions and eigenvalue criterion for positive definite real symmetric/Hermitian matrices; requires positive quadratic form for every nonzero vector."
+definitions/optimization/positive-semidefinite.tex,verified,"https://en.wikipedia.org/wiki/Definite_matrix","Semidefiniteness allows zero eigenvalues; nonnegative quadratic form on symmetric/Hermitian matrices; Hermitian assumption matters."
+definitions/optimization/projection-onto-convex.tex,corrected,"https://link.springer.com/article/10.1186/s13660-015-0665-9","Previous Projection_onto_convex_sets article is primarily the alternating-projections algorithm, and does not explicitly state this characterization. Springer article Lemma 1 defines nearest-point projection to closed nonempty convex K in R^n and gives exactly <x-P_K(x),z-P_K(x)><=0."
+definitions/optimization/proper-convex-function.tex,verified,"https://en.wikipedia.org/wiki/Proper_convex_function","Definitions section: nonempty finite effective domain and f never equals -infinity; lower semicontinuity not required."
+definitions/optimization/proximal-operator.tex,verified,"https://en.wikipedia.org/wiki/Proximal_operator","Definition for proper lower-semicontinuous convex function on Hilbert space, unique minimizer; scalar lambda parameter is standard rescaling, and optimality inclusion follows from subdifferential."
+definitions/optimization/quadratic-program.tex,verified,"https://en.wikipedia.org/wiki/Quadratic_programming","Quadratic objectives with affine constraints; minimization convex when symmetric quadratic coefficient P is positive semidefinite."
+definitions/optimization/quasiconvex-function.tex,verified,"https://en.wikipedia.org/wiki/Quasiconvex_function","Convex lower-level sets equivalently segment inequality f((1-t)x+ty)<=max(f(x),f(y)); every convex function quasiconvex."
+definitions/optimization/semidefinite-program.tex,verified,"https://en.wikipedia.org/wiki/Semidefinite_programming","Linear objective and affine positive semidefinite symmetric matrix inequality F0+sum x_i Fi >=0 are standard SDP form."
+definitions/optimization/slater-condition.tex,verified,"https://en.wikipedia.org/wiki/Slater%27s_condition","Refined Slater condition allows nonstrict affine inequalities, strict nonlinear inequalities at point in relative interior satisfying equalities; convex strong duality under hypotheses."
 definitions/optimization/strict-convexity.tex,pending,,
 definitions/optimization/strong-convexity.tex,pending,,
 definitions/optimization/strong-duality.tex,pending,,
