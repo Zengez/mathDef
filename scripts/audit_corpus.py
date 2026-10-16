@@ -81,11 +81,18 @@ def main():
         writer.writerows(issues)
     counts = Counter(x["issue"] for x in issues)
     hosts = Counter(urlparse(e["source"]).netloc for e in entries if e["source"])
+    source_urls = Counter(e["source"] for e in entries if e["source"])
+    reused_source_urls = [
+        {"source": url, "count": count}
+        for url, count in sorted(source_urls.items(), key=lambda item: (-item[1], item[0]))
+        if count > 1
+    ][:30]
     summary = {
         "total": len(entries),
         "status": dict(Counter(e["status"] for e in entries)),
         "metadata_issues": dict(counts),
         "source_hosts": dict(hosts),
+        "reused_source_urls_top": reused_source_urls,
         "duplicate_terms": dup,
         "audit_report": str(args.out),
         "note": "These are editorial flags, not validated mathematical errors.",
