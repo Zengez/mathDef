@@ -351,16 +351,16 @@ definitions/functionspaces/bergman-metric.tex,verified,"https://en.wikipedia.org
 definitions/functionspaces/bergman-projection.tex,verified,"https://encyclopediaofmath.org/wiki/Bergman_kernel_function","EoM commentary lines 99-102 states P orthogonal L²→holomorphic L² and integral kernel representation. Operator norm≤1 follows projection."
 definitions/functionspaces/bergman-space.tex,verified,"https://en.wikipedia.org/wiki/Bergman_space","Bergman A^p holomorphic with volume integrable pth power, p≥1 norm and p<1 quasi-norm, A² RKHS."
 definitions/functionspaces/bergman-unit-disk-kernel.tex,verified,"https://en.wikipedia.org/wiki/Bergman_kernel","Bergman kernel article line 131 explicitly gives ordinary area disk kernel 1/[π(1−z conjugate w)²]; normalized-area kernel rescales by π."
-definitions/functionspaces/bloch-space.tex,pending,,
-definitions/functionspaces/composition-operator.tex,pending,,
-definitions/functionspaces/dirichlet-reproducing-kernel.tex,pending,,
-definitions/functionspaces/fock-reproducing-kernel.tex,pending,,
-definitions/functionspaces/hankel-operator.tex,pending,,
-definitions/functionspaces/hardy-h-infinity.tex,pending,,
-definitions/functionspaces/hardy-h2.tex,pending,,
-definitions/functionspaces/hardy-space-disk.tex,pending,,
-definitions/functionspaces/hilbert-bergman-space.tex,pending,,
-definitions/functionspaces/kernel-section.tex,pending,,
+definitions/functionspaces/bloch-space.tex,verified,"https://en.wikipedia.org/wiki/Bloch_space","Definition: finite sup (1−|z|²)|f'(z)|, Bloch norm adds |f(0)| to kill constant seminorm."
+definitions/functionspaces/composition-operator.tex,verified,"https://en.wikipedia.org/wiki/Composition_operator","Composition operator C_phi f=f∘phi, its natural function-space domain may not be full space or bounded."
+definitions/functionspaces/dirichlet-reproducing-kernel.tex,verified,"https://www.dm.unibo.it/~arcozzi/dirichlet_survey.pdf","Read survey PDF §2.3 printed p.7 (viewer p.6 screenshot). Its 1+log(1/(1−z conjugate w)) kernel matches |f(0)|²+π^−1 integral |f'|² norm; alternative norm gives distinct kernel."
+definitions/functionspaces/fock-reproducing-kernel.tex,verified,"https://en.wikipedia.org/wiki/Segal%E2%80%93Bargmann_space","Gaussian normalized Segal-Bargmann space kernel exp(z dot conjugate w), matching π^-n weight."
+definitions/functionspaces/hankel-operator.tex,corrected,"https://people.clas.ufl.edu/sam/files/sahutoglu.pdf","Original Wikipedia Hankel_operator redirects to Hankel matrix, not Bergman Hankel operator. Read S. Sahutoglu lecture PDF first page screenshot defining H_phi=(I-P)(phi f) from A²(Ω) into orthogonal complement on bounded domains. Changed source in ba9139e1."
+definitions/functionspaces/hardy-h-infinity.tex,verified,"https://en.wikipedia.org/wiki/Hardy_space","Hardy H∞ on unit disk is Banach algebra of bounded holomorphic functions with supremum norm; boundary continuity not required."
+definitions/functionspaces/hardy-h2.tex,verified,"https://en.wikipedia.org/wiki/Hardy_space","H² unit-disk coefficient ℓ² norm and 1/(2π) circle L² mean criterion; linear-in-first inner product convention consistent."
+definitions/functionspaces/hardy-space-disk.tex,verified,"https://en.wikipedia.org/wiki/Hardy_space","H^p analytic disk finite radial normalized pth moments and p<1 quasinorm; H∞ treated separately."
+definitions/functionspaces/hilbert-bergman-space.tex,corrected,"https://encyclopediaofmath.org/wiki/Bergman_kernel_function","EoM Bergman_spaces returned 502; inspected accessible same-publisher Bergman_kernel_function defining L²_h(D) as holomorphic L² Hilbert subspace with reproducing kernel and orthogonal projection. Replaced source commit 498d90ae."
+definitions/functionspaces/kernel-section.tex,verified,"https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space","RKHS kernel section K_w=K(.,w), f(w)=<f,K_w> under linear first convention, ||K_w||²=K(w,w)."
 definitions/functionspaces/little-bloch-space.tex,pending,,
 definitions/functionspaces/multiplier-of-function-space.tex,pending,,
 definitions/functionspaces/normalized-kernel-section.tex,pending,,
