@@ -708,16 +708,16 @@ definitions/pde/wave-front-set.tex,pending,,
 definitions/pde/weak-derivative.tex,pending,,
 definitions/pde/weak-solution.tex,pending,,
 definitions/pde/well-posed-problem.tex,pending,,
-definitions/prob/almost-surely.tex,pending,,
-definitions/prob/bernoulli-distribution.tex,pending,,
-definitions/prob/binomial-distribution.tex,pending,,
-definitions/prob/cdf.tex,pending,,
-definitions/prob/conditional-expectation.tex,pending,,
-definitions/prob/conditional-probability.tex,pending,,
-definitions/prob/correlation.tex,pending,,
-definitions/prob/covariance.tex,pending,,
-definitions/prob/distribution.tex,pending,,
-definitions/prob/event.tex,pending,,
+definitions/prob/almost-surely.tex,verified,"https://en.wikipedia.org/wiki/Almost_surely","Formal definition: measurable probability-one event or complement within measurable null set; exceptional points allowed."
+definitions/prob/bernoulli-distribution.tex,verified,"https://en.wikipedia.org/wiki/Bernoulli_distribution","PMF takes p at 1 and 1-p at 0, support {0,1}; p=0 and p=1 are allowable degenerate endpoints."
+definitions/prob/binomial-distribution.tex,verified,"https://en.wikipedia.org/wiki/Binomial_distribution","PMF choose(n,k)p^k(1-p)^(n-k) on k=0..n with endpoint convention; sum of n independent identically distributed Bernoulli variables."
+definitions/prob/cdf.tex,verified,"https://en.wikipedia.org/wiki/Cumulative_distribution_function","CDF F_X(t)=P(X<=t), right continuous, nondecreasing and limits zero/one; characterization for real probability laws."
+definitions/prob/conditional-expectation.tex,verified,"https://en.wikipedia.org/wiki/Conditional_expectation","Measure-theoretic definition: G-measurable integrable Y and equal integrals over each G in sigma algebra; a.s. uniqueness of versions."
+definitions/prob/conditional-probability.tex,verified,"https://en.wikipedia.org/wiki/Conditional_probability","Basic formula P(A|B)=P(A intersect B)/P(B) for P(B)>0; fixed B gives probability measure; null-event quotient undefined."
+definitions/prob/correlation.tex,verified,"https://en.wikipedia.org/wiki/Pearson_correlation_coefficient","Population Pearson correlation covariance divided by product of strictly positive standard deviations; Cauchy-Schwarz bound [-1,1], undefined for zero variance."
+definitions/prob/covariance.tex,verified,"https://en.wikipedia.org/wiki/Covariance","Real-valued covariance E[(X-EX)(Y-EY)] and E[XY]-EX EY, assuming second moments; complex conventions conjugate."
+definitions/prob/distribution.tex,verified,"https://en.wikipedia.org/wiki/Probability_distribution","Distribution of random element is pushforward probability measure, not necessarily PDF; definition applies to measurable codomain."
+definitions/prob/event.tex,verified,"https://en.wikipedia.org/wiki/Event_(probability_theory)","Event is subset of sample space in chosen sigma-algebra; nonmeasurable subsets may exist, and P assigned only to events."
 definitions/prob/expectation.tex,pending,,
 definitions/prob/exponential-distribution.tex,pending,,
 definitions/prob/iid.tex,pending,,
