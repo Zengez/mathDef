@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Toeplitz_operator
 % status: draft
 
-For a domain $\Omega$ and bounded measurable $\varphi:\Omega\to\mathbb C$, the \emph{Bergman Toeplitz operator} $T_\varphi:A^2(\Omega)\to A^2(\Omega)$ is $T_\varphi f=P_\Omega(\varphi f)$, where $P_\Omega$ is the Bergman projection.
+For a domain $\Omega\subseteq\mathbb C^n$, let $P_\Omega$ be the orthogonal projection from $L^2(\Omega)$ onto $A^2(\Omega)$. If $\varphi\in L^\infty(\Omega)$, the \emph{Bergman Toeplitz operator} with symbol $\varphi$ is
+\[
+T_\varphi:A^2(\Omega)\to A^2(\Omega),\qquad T_\varphi f=P_\Omega(\varphi f).
+\]
+It is bounded with $\|T_\varphi\|\le\|\varphi\|_\infty$. Other Toeplitz operator definitions, such as the Hardy-space version, use different projections.

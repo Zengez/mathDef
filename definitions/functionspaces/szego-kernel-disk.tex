@@ -5,8 +5,8 @@
 % source: https://en.wikipedia.org/wiki/Szeg%C5%91_kernel
 % status: draft
 
-For $H^2(\mathbb D)$ with normalized boundary measure $d\theta/(2\pi)$, the \emph{Szegő kernel} is
+For $H^2(\mathbb D)$ with norm $\|f\|_{H^2}^2=\sum_{n\ge0}|a_n|^2$ when $f(z)=\sum a_nz^n$, equivalently with normalized circle measure $d\theta/(2\pi)$, the \emph{Szegő kernel} is
 \[
-S(z,w)=\frac{1}{1-z\bar w},\qquad z,w\in\mathbb D.
+S(z,w)=\frac1{1-z\overline w}.
 \]
-It satisfies $f(w)=\langle f,S(\cdot,w)\rangle_{H^2}$.
+It reproduces evaluations: $f(w)=\langle f,S(\cdot,w)\rangle_{H^2}$. This is distinct from the Bergman kernel $(1-z\overline w)^{-2}$ for normalized planar area.

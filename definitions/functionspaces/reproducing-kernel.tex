@@ -4,8 +4,8 @@
 % source: https://encyclopediaofmath.org/wiki/Reproducing_kernel
 % status: draft
 
-For a reproducing-kernel Hilbert space $\mathcal H$ on $X$, the \emph{reproducing kernel} is the function $K:X\times X\to\mathbb C$ such that $K(\cdot,y)\in\mathcal H$ and
+For an RKHS $\mathcal H$ on $X$, the \emph{reproducing kernel} $K:X\times X\to\mathbb C$ is uniquely characterized by $K(\cdot,y)\in\mathcal H$ and
 \[
-f(y)=\langle f,K(\cdot,y)\rangle_{\mathcal H},\qquad f\in\mathcal H,
+f(y)=\langle f,K(\cdot,y)\rangle_{\mathcal H}\qquad(f\in\mathcal H).
 \]
-where the inner product is linear in its first argument.
+The inner product is taken linear in its first argument. Consequently $K(y,x)=\overline{K(x,y)}$, $K(x,x)\ge0$, and every finite matrix $(K(x_i,x_j))$ is positive semidefinite.
