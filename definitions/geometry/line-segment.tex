@@ -1,7 +1,11 @@
 % id: geometry.line-segment
 % term: Line segment
 % related: geometry.line, geometry.convex-hull
-% source: https://en.wikipedia.org/wiki/List_of_geometry_topics
+% source: https://en.wikipedia.org/wiki/Line_segment
 % status: draft
 
-The \emph{line segment} joining $p,q\in\mathbb R^n$ is $\{(1-t)p+tq:0\le t\le1\}$.
+For points $p,q$ in a real affine space, the \emph{closed line segment} joining them is
+\[
+[p,q]=\{(1-t)p+tq:0\le t\le1\}.
+\]
+If $p=q$ this is the singleton $\{p\}$. The corresponding open segment, when $p\ne q$, uses $0<t<1$.

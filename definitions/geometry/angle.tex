@@ -1,7 +1,11 @@
 % id: geometry.angle
 % term: Angle
 % related: linear.inner-product, geometry.perpendicular-lines
-% source: https://en.wikipedia.org/wiki/List_of_geometry_topics
+% source: https://en.wikipedia.org/wiki/Angle
 % status: draft
 
-For nonzero Euclidean vectors $u,v$, the \emph{angle} $\theta\in[0,\pi]$ between them satisfies $\cos\theta=\langle u,v\rangle/(\|u\|\|v\|)$.
+For nonzero vectors $u,v$ in a real inner-product space, the \emph{unoriented angle} between them is the unique $\theta\in[0,\pi]$ satisfying
+\[
+\cos\theta=\frac{\langle u,v\rangle}{\|u\|\,\|v\|}.
+\]
+The quotient lies in $[-1,1]$ by Cauchy--Schwarz. Zero vectors have no angle under this definition.

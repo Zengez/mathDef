@@ -562,3 +562,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reviewed last three files: space-complexity, time-complexity, turing-machine. Explicit machine-model assumptions and full concept-level source articles replace the old shared overview links.
 - **All 27 original `computability/` entries** individually read and refined in K1 (9), K2 (9), K3a (4), K3b part 1 (2), K3b part 2 (3). No IDs or draft statuses changed; expected corpus remains **995 definitions across 40 folders**. Editorial review does not equal formal mathematical peer review.
 - NEXT: verify Pages and metadata audits, begin `geometry/` (20 entries) and further graduate-level term discovery. Keep AWS/arXiv bulk work paused.
+
+
+## October 16, 2026 — geometry G1
+
+- Reviewed first ten existing `geometry/` definitions, from affine-combination to line, replacing broad Wikipedia geometry topic-list links with individual mathematical concept sources. Each stable ID and draft status preserved.
+- Explicit conventions: affine combinations require coefficients summing to 1; convex combinations also require nonnegative coefficients; empty-set convex hull; nondegenerate circles; inner-product geometry; isometric embeddings versus surjective isometries; degenerate segments and affine-line nonzero direction vectors.
+- NEXT geometry G2: parallel-lines, perpendicular-lines, point, polygon, polyhedron, polytope, radius, ray, sphere, triangle. Corpus stays 995 definitions across 40 subjects. Verify Pages and metadata workflows after G1 and G2.
