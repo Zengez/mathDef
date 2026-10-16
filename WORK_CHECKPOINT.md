@@ -501,3 +501,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Formalized normality requirements for quotient groups and two-sided-ideal requirements for quotient rings, ring identity convention and unital homomorphisms, nonzero quotient necessary for prime ideals, and the zero ring allowance. Clarified semigroup nonemptiness convention and orbit-stabilizer cosets.
 - All **29 original `algebra/` entries** have now been inspected over B1 10, B2a 8, B3 11. Stable IDs and editorial draft statuses preserved; collection remains **995 definitions across 40 folders**. Audit is not mathematical peer review.
 - NEXT: check GitHub Actions build and corpus audit for B3, then audit 36 `arithmetic/` advanced number-theory entries or another unaudited category. Continue graduate-term discovery, with AWS/arXiv bulk hold unchanged.
+
+
+## October 16, 2026 — arithmetic N1
+
+- Audited first 10 `arithmetic/` entries: algebraic-integer, algebraic-number, arithmetic-convolution, class-number, dedekind-domain, degree-number-field, dirichlet-character, dirichlet-l-function, discrete-valuation-ring, euclidean-domain. Replaced an inappropriate generic EoM `P-adic_number` source with individual mathematical concept pages.
+- Important mathematical precision: monic integrality versus algebraicity, field-allowed Dedekind conventions, character as group homomorphism on units including modulus-one edge case, principal versus nonprincipal Dirichlet L-function poles, and DVR's nonfield qualification. All entries still draft; no new IDs and expected total 995 definitions.
+- NEXT: arithmetic N2 (field-discriminant through local-field) then further bounded batches to finish all 36 existing arithmetic entries, with publication and metadata verification at each stage. Preserve bulk arXiv/AWS hold.

@@ -1,7 +1,11 @@
 % id: arithmetic.arithmetic-convolution
 % term: Dirichlet convolution
 % related: number.arithmetic-function, number.mobius-function
-% source: https://encyclopediaofmath.org/wiki/P-adic_number
+% source: https://en.wikipedia.org/wiki/Dirichlet_convolution
 % status: draft
 
-For arithmetic functions $f,g:\mathbb N\to\mathbb C$, their \emph{Dirichlet convolution} is $(f*g)(n)=\sum_{d\mid n} f(d)g(n/d)$.
+For arithmetic functions $f,g:\mathbb Z_{>0}\to\mathbb C$, their \emph{Dirichlet convolution} is the arithmetic function
+\[
+(f*g)(n)=\sum_{d\mid n}f(d)g(n/d),\qquad n\ge1,
+\]
+where the sum is over positive divisors. It is associative and commutative, with identity the function taking value $1$ at $1$ and $0$ elsewhere.

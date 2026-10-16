@@ -1,7 +1,11 @@
 % id: arithmetic.dirichlet-l-function
 % term: Dirichlet L-function
 % related: arithmetic.dirichlet-character, arithmetic.riemann-zeta
-% source: https://encyclopediaofmath.org/wiki/P-adic_number
+% source: https://en.wikipedia.org/wiki/Dirichlet_L-function
 % status: draft
 
-For a Dirichlet character $\chi$ and $\Re s>1$, its \emph{$L$-function} is $L(s,\chi)=\sum_{n=1}^\infty\chi(n)n^{-s}$.
+For a Dirichlet character $\chi$ modulo $q$, its \emph{Dirichlet $L$-function} is initially defined in the half-plane $\Re(s)>1$ by the absolutely convergent Dirichlet series
+\[
+L(s,\chi)=\sum_{n=1}^{\infty}\frac{\chi(n)}{n^s}.
+\]
+It has a meromorphic continuation to $\mathbb C$; the continuation is entire for nonprincipal characters, while a principal character gives a pole at $s=1$.
