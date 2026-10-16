@@ -1,7 +1,7 @@
 % id: optimization.optimal-solution
 % term: Optimal solution
 % related: optimization.optimal-value, optimization.feasible-set
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Mathematical_optimization
 % status: draft
 
-A point $x^*\in C$ is an \emph{optimal solution} of $\min_{x\in C}f(x)$ if $f(x^*)\le f(x)$ for every $x\in C$.
+For a minimization problem $\inf_{x\in C}f(x)$ with feasible set $C$, an \emph{optimal solution} is a feasible point $x^*\in C$ satisfying $f(x^*)\le f(x)$ for every $x\in C$. Equivalently, it attains the infimum. A finite optimal value need not be attained, so an optimal solution need not exist even when $C$ is nonempty.

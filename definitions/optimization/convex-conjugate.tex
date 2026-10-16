@@ -1,11 +1,11 @@
 % id: optimization.convex-conjugate
 % term: Fenchel conjugate
 % related: optimization.proper-convex-function, optimization.subgradient
-% source: https://encyclopediaofmath.org/wiki/Conjugate_function
+% source: https://encyclopediaofmath.org/wiki/Fenchel-Moreau_conjugate_function
 % status: draft
 
-For a function $f:\mathbb R^n\to(-\infty,+\infty]$, its \emph{Fenchel (convex) conjugate} is the extended-real-valued function $f^*:\mathbb R^n\to(-\infty,+\infty]$ defined by
+For an extended-real-valued function $f:\mathbb R^n\to(-\infty,+\infty]$, its \emph{Fenchel (convex) conjugate} is
 \[
 f^*(y)=\sup_{x\in\mathbb R^n}\bigl(\langle y,x\rangle-f(x)\bigr).
 \]
-The definition does not require $f$ itself to be convex; $f^*$ is always convex and lower semicontinuous in the usual finite-dimensional topology.
+It is convex and lower semicontinuous even if $f$ is not convex. If $f$ is proper (finite somewhere), then $f^*$ takes values in $(-\infty,+\infty]$; if $f\equiv+\infty$, it is identically $-\infty$ under the extended-real convention.

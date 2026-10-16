@@ -1,7 +1,11 @@
 % id: optimization.normal-cone
 % term: Normal cone of a convex set
 % related: real.convex-set, optimization.subgradient
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Normal_cone_(convex_analysis)
 % status: draft
 
-For convex $C\subseteq\mathbb R^n$ and $x\in C$, the \emph{normal cone} is $N_C(x)=\{v:\langle v,y-x\rangle\le0\text{ for all }y\in C\}$.
+For a convex set $C\subseteq\mathbb R^n$ and $x\in C$, its \emph{convex-analytic normal cone} is
+\[
+N_C(x)=\{v\in\mathbb R^n:\langle v,y-x\rangle\le0\ \text{for all }y\in C\}.
+\]
+By convention $N_C(x)=\varnothing$ for $x\notin C$. This is the subdifferential of the indicator function of $C$ and uses the outward-normal sign convention.

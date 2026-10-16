@@ -1,7 +1,11 @@
 % id: optimization.kkt-condition
 % term: Karush-Kuhn-Tucker conditions
 % related: optimization.lagrangian, optimization.slater-condition
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions
 % status: draft
 
-For differentiable constrained optimization, the \emph{KKT conditions} comprise primal feasibility, nonnegative inequality multipliers, stationarity $\nabla_x L=0$, and complementary slackness $\lambda_if_i(x)=0$.
+For a differentiable problem minimizing $f_0(x)$ subject to $f_i(x)\le0$ and $h_j(x)=0$, the \emph{Karush--Kuhn--Tucker (KKT) conditions} for a point $x$ and multipliers $(\lambda,\nu)$ are: primal feasibility $f_i(x)\le0$, $h_j(x)=0$; dual feasibility $\lambda_i\ge0$; complementary slackness $\lambda_i f_i(x)=0$; and stationarity
+\[
+\nabla f_0(x)+\sum_i\lambda_i\nabla f_i(x)+\sum_j\nu_j\nabla h_j(x)=0.
+\]
+Under suitable constraint qualifications these are necessary at local optima; in convex problems with affine equalities they are sufficient for global optimality.

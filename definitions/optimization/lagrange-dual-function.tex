@@ -1,7 +1,11 @@
 % id: optimization.lagrange-dual-function
 % term: Lagrange dual function
 % related: optimization.lagrangian, optimization.dual-problem
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Duality_(optimization)
 % status: draft
 
-For a Lagrangian $L(x,\lambda,\nu)$, the \emph{dual function} is $g(\lambda,\nu)=\inf_x L(x,\lambda,\nu)$, taking values in $[-\infty,\infty)$.
+For a minimization problem with decision domain $D$ and Lagrangian $L(x,\lambda,\nu)$, the \emph{Lagrange dual function} is
+\[
+g(\lambda,\nu)=\inf_{x\in D}L(x,\lambda,\nu).
+\]
+For a nonempty domain and finite-valued objective/constraints, $g$ is finite or $-\infty$. It is concave in $(\lambda,\nu)$ regardless of convexity of the primal problem; nonnegative inequality multipliers ensure the resulting lower bound for feasible points.

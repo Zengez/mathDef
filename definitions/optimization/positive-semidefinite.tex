@@ -1,7 +1,7 @@
 % id: optimization.positive-semidefinite
 % term: Positive semidefinite matrix
 % related: linear.matrix, optimization.semidefinite-program
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Definite_matrix
 % status: draft
 
-A real symmetric matrix $A$ is \emph{positive semidefinite} if $x^{\mathsf T}Ax\ge0$ for every $x\in\mathbb R^n$.
+A real symmetric $n\times n$ matrix $A$ is \emph{positive semidefinite} if $x^{\mathsf T}Ax\ge0$ for all $x\in\mathbb R^n$, equivalently every eigenvalue of $A$ is nonnegative. For complex matrices the corresponding definition uses a Hermitian matrix and the form $z^*Az\ge0$. Zero eigenvalues are permitted.

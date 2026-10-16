@@ -1,7 +1,7 @@
 % id: optimization.lower-semicontinuous
 % term: Lower semicontinuity
 % related: topology.open-set, optimization.epigraph
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Semi-continuity
 % status: draft
 
-A function $f:X\to(-\infty,\infty]$ on a topological space is \emph{lower semicontinuous} if $\{x:f(x)>\alpha\}$ is open for each real $\alpha$.
+A function $f:X\to(-\infty,+\infty]$ on a topological space $X$ is \emph{lower semicontinuous} if $\{x\in X:f(x)>a\}$ is open for every real $a$. On a metric space, this is equivalent to $f(x)\le\liminf_{n\to\infty}f(x_n)$ for every sequence $x_n\to x$. For a Euclidean domain, it is equivalent to the epigraph of $f$ being closed.

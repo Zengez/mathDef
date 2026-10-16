@@ -1,7 +1,7 @@
 % id: optimization.newton-method
 % term: Newton iteration for optimization
 % related: optimization.hessian, optimization.gradient-descent
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization
 % status: draft
 
-At a point where $\nabla^2 f(x_k)$ is invertible, the \emph{Newton update} for minimization is $x_{k+1}=x_k-[\nabla^2f(x_k)]^{-1}\nabla f(x_k)$ (or a damped variant).
+For twice differentiable $f:\mathbb R^n\to\mathbb R$, the \emph{Newton direction} at $x_k$ is the solution $d_k$ of $\nabla^2f(x_k)d_k=-\nabla f(x_k)$ when the Hessian is invertible. The full Newton update is $x_{k+1}=x_k+d_k$, and a damped update is $x_{k+1}=x_k+\alpha_k d_k$. The direction is descending when the Hessian is positive definite and $\nabla f(x_k)\ne0$; invertibility alone does not guarantee descent.
