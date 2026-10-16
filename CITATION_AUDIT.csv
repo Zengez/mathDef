@@ -440,16 +440,16 @@ definitions/holodynamics/riemann-sphere.tex,pending,,
 definitions/holodynamics/siegel-disk.tex,pending,,
 definitions/holodynamics/superattracting-periodic-point.tex,pending,,
 definitions/holodynamics/wandering-component.tex,pending,,
-definitions/linear/basis.tex,pending,,
-definitions/linear/characteristic-polynomial.tex,pending,,
-definitions/linear/determinant.tex,pending,,
-definitions/linear/diagonalizable-operator.tex,pending,,
-definitions/linear/dimension.tex,pending,,
-definitions/linear/dual-space.tex,pending,,
-definitions/linear/eigenspace.tex,pending,,
-definitions/linear/eigenvalue.tex,pending,,
-definitions/linear/eigenvector.tex,pending,,
-definitions/linear/image.tex,pending,,
+definitions/linear/basis.tex,verified,"https://en.wikipedia.org/wiki/Basis_(linear_algebra)","Definition section: linearly independent spanning subset of V over F; finite unique expression as linear combination; infinite Schauder expansion explicitly distinct."
+definitions/linear/characteristic-polynomial.tex,verified,"https://en.wikipedia.org/wiki/Characteristic_polynomial","Formal definition p_A(t)=det(tI-A), monic, and det(A-tI) sign (-1)^n; commutative coefficient ring permissible."
+definitions/linear/determinant.tex,verified,"https://en.wikipedia.org/wiki/Determinant","Leibniz formula uses signed sum over permutations of products for square matrices over commutative coefficient rings."
+definitions/linear/diagonalizable-operator.tex,verified,"https://en.wikipedia.org/wiki/Diagonalizable_matrix","Definition/eigenbasis discussion: operator diagonalizable over field iff has basis of eigenvectors; field dependence correctly noted."
+definitions/linear/dimension.tex,verified,"https://en.wikipedia.org/wiki/Dimension_(vector_space)","Definition says all bases of a vector space have common cardinality, called its dimension; arbitrary infinite dimension included."
+definitions/linear/dual-space.tex,corrected,"https://en.wikipedia.org/wiki/Dual_space#Algebraic_dual_space","Algebraic dual space section explicitly defines V* as all linear maps V to F; distinguished from continuous dual. Prior generic EoM linear-functional link could not be opened for statement-level check; retargeted."
+definitions/linear/eigenspace.tex,verified,"https://encyclopediaofmath.org/wiki/Eigen_vector","EoM Eigen vector page and independent Eigenvalues_and_eigenvectors article give eigenspace as ker(T-lambda I), zero included; key assumptions aligned."
+definitions/linear/eigenvalue.tex,verified,"https://encyclopediaofmath.org/wiki/Eigen_value","EoM Eigen value article supports scalar lambda with nonzero v satisfying T(v)=lambda v; no assertion about generalized spectrum."
+definitions/linear/eigenvector.tex,verified,"https://encyclopediaofmath.org/wiki/Eigen_vector","EoM Eigen vector supports nonzero eigenvector with operator relation T(v)=lambda v; excludes zero."
+definitions/linear/image.tex,corrected,"https://en.wikipedia.org/wiki/Linear_map#Kernel,_image_and_the_rank%E2%80%93nullity_theorem","Kernel image and rank-nullity section explicitly defines im(T)={T(v):v in V} subset W and proves linear subspace; broad EoM Operator page replaced by precise inspected source."
 definitions/linear/inner-product.tex,pending,,
 definitions/linear/invertible-matrix.tex,pending,,
 definitions/linear/kernel.tex,pending,,
