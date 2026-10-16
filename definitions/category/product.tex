@@ -1,7 +1,7 @@
 % id: category.product
 % term: Categorical product
 % related: category.category, category.coproduct
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Product_(category_theory)
 % status: draft
 
-A \emph{product} of $A,B$ is an object $P$ with projections $p_A:P\to A$, $p_B:P\to B$ such that each pair $f:X\to A$, $g:X\to B$ factors uniquely through $P$.
+A \emph{binary product} of $A$ and $B$ in a category is an object $P$ with projections $p_A:P\to A$ and $p_B:P\to B$ such that for every pair of arrows $f:X\to A$, $g:X\to B$, there is a unique arrow $u:X\to P$ with $p_A\circ u=f$ and $p_B\circ u=g$. When it exists, the product is unique up to a unique compatible isomorphism.

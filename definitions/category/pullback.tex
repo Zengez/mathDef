@@ -1,7 +1,7 @@
 % id: category.pullback
 % term: Categorical pullback
 % related: category.product, category.pushout
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Pullback_(category_theory)
 % status: draft
 
-Given $f:A\to C$ and $g:B\to C$, a \emph{pullback} is $P$ with maps $P\to A$ and $P\to B$ commuting over $C$ and universal among such cones.
+Given a cospan $A\xrightarrow{f}C\xleftarrow{g}B$, a \emph{pullback} is an object $P$ with arrows $p_A:P\to A$, $p_B:P\to B$ satisfying $f p_A=g p_B$. For any object $X$ with arrows $a:X\to A$, $b:X\to B$ such that $fa=gb$, there is a unique $u:X\to P$ with $p_Au=a$ and $p_Bu=b$. A pullback is a limit of the cospan and need not exist in every category.

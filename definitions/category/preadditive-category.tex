@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Preadditive_category
 % status: draft
 
-A \emph{preadditive category} is a category $\mathcal C$ in which every hom-set $\mathcal C(X,Y)$ is an abelian group and composition is bilinear in each variable.
+A \emph{preadditive category} is a category $\mathcal C$ whose hom-sets $\operatorname{Hom}_{\mathcal C}(X,Y)$ are abelian groups and in which composition is bilinear:
+\[
+(f+g)\circ h=f\circ h+g\circ h,\qquad k\circ(f+g)=k\circ f+k\circ g
+\]
+whenever the morphisms compose. A preadditive category need not possess a zero object or finite biproducts; these are additional requirements for an additive category.

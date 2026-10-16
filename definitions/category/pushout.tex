@@ -1,7 +1,7 @@
 % id: category.pushout
 % term: Categorical pushout
 % related: category.pullback, category.coproduct
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Pushout_(category_theory)
 % status: draft
 
-For a span $B\leftarrow A\to C$, a \emph{pushout} is an object $P$ with maps $B\to P$ and $C\to P$ agreeing on $A$ and universal among such cocones.
+Given a span $B\xleftarrow{f}A\xrightarrow{g}C$, a \emph{pushout} consists of an object $P$ and arrows $i_B:B\to P$, $i_C:C\to P$ with $i_B f=i_Cg$. For any arrows $b:B\to X$, $c:C\to X$ with $bf=cg$, there is a unique $u:P\to X$ with $u i_B=b$ and $u i_C=c$. This is the colimit of the span, dual to a pullback.
