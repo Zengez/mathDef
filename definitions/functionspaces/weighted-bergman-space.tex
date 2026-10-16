@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Bergman_space
 % status: draft
 
-Let $\Omega\subseteq\mathbb C^n$ and let $\omega:\Omega\to(0,\infty)$ be continuous. The \emph{weighted Bergman space} $A_\omega^p(\Omega)$ for $0<p<\infty$ consists of all holomorphic $f$ with $\int_\Omega |f(z)|^p\omega(z)\,dV(z)<\infty$. For $p=2$, it is a Hilbert space with weighted $L^2$ inner product.
+Let $\Omega\subseteq\mathbb C^n$ be a domain and $\omega:\Omega\to(0,\infty)$ a continuous weight. For $0<p<\infty$, the \emph{weighted Bergman space} is
+\[
+A_\omega^p(\Omega)=\left\{f\in\mathcal O(\Omega):\int_\Omega |f(z)|^p\omega(z)\,dV(z)<\infty\right\}.
+\]
+For $p\ge1$ the weighted $L^p$ expression yields a norm, while for $0<p<1$ it is a quasi-norm. When $p=2$, the weighted $L^2$ inner product makes $A_\omega^2$ a Hilbert space with bounded point evaluations, hence a reproducing kernel.
