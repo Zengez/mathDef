@@ -1707,3 +1707,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Resumed from 743/1007 completed; read the first 10 pending `measure/` definitions and their specific linked reference articles, including absolute continuity, a.e. exceptions, atoms, Bochner criterion, Borel sigma algebra, completion, global convergence in measure, Dynkin systems, finite measures, and Hahn decomposition.
 - Verified exact mathematical formulations and qualifiers; no source or body corrections in this batch. Ledger commit `b46c0d54`. Current totals **670 verified, 83 corrected, 251 pending, 3 needs_followup**, **753/1007 completed**.
 - NEXT CV79 begins `measure.inner-regular`, `integrable-function`, `jordan-decomposition`, `lebesgue-integral`, `lebesgue-measure`, `lp-space`, `measurable-function`, `measurable-space`, `measure`, `mutually-singular-measures`. Do not recheck already-completed citations; keep GitHub batch/checkpoint commits.
+
+## 2026-10-16 — CV79 integration and measure regularity (10 entries)
+
+- Checked existing `measure/` inner regular, integrable function, Jordan decomposition, Lebesgue integral, Lebesgue measure, Lp space, measurable function/space, measure, mutually singular measures against source articles.
+- Two unavailable/misdirected sources corrected: `jordan-decomposition` now points at the actually opened Hahn decomposition theorem's Jordan section (source commit `8a6e6b85`), and `mutually-singular-measures` now cites readable `Singular_measure` (source commit `c527e656`). Eight others verified without changes, preserving existing hypotheses/definitions.
+- Evidence ledger CV79 `2c3b0064`: **678 verified, 85 corrected, 241 pending, 3 needs_followup** = **763/1007 completed**. No previously checked rows revisited.
+- NEXT CV80: 10 `measure/` pending from `negative-set-signed-measure`, `null-set`, `outer-measure`, `outer-regular`, `pettis-integrable`, `positive-set-signed-measure`, `probability-measure`, `product-measure`, `quasi-invariant-measure`, `radon-measure`. Save ledger and checkpoint; continue to last nine in CV81.
