@@ -1,7 +1,11 @@
 % id: commalg.flat-module
 % term: Flat module
 % related: commalg.tensor-product, commalg.exact-sequence
-% source: https://stacks.math.columbia.edu/tag/00H9
+% source: https://stacks.math.columbia.edu/tag/00HB
 % status: draft
 
-An $R$-module $M$ is \emph{flat} if the functor $-\otimes_R M$ takes every exact sequence of $R$-modules to an exact sequence.
+Let $R$ be a commutative ring. An $R$-module $M$ is \emph{flat} if the tensor-product functor
+\[
+-\otimes_R M:\operatorname{Mod}_R\longrightarrow\operatorname{Mod}_R
+\]
+is exact: for every exact sequence of $R$-modules $N_1\to N_2\to N_3$, the induced sequence $N_1\otimes_R M\to N_2\otimes_R M\to N_3\otimes_R M$ is exact. Equivalently, tensoring with $M$ preserves injections (its right exactness holds for every module). For noncommutative rings, the corresponding definition distinguishes left and right module structures.
