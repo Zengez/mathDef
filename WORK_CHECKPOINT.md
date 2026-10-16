@@ -1434,3 +1434,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - `arithmetic.p-adic-absolute-value` had EoM `P-adic_number`, which returned 502 and could not be inspected. Replaced with directly verified Wikipedia `P-adic_number#Topological_properties` which explicitly lists norm formula and strong triangle law (commit `114ef7c1`). Other source articles matched their definitions (one `P-adic_integer` redirect does resolve to explicit section and is retained).
 - Dedicated citation evidence ledger commit `17f21802`: **386 verified, 29 corrected, 592 pending, 0 needs_followup** out of 1007 (**415 reviewed**).
 - NEXT: the last **six** `arithmetic/` definitions: transcendental-number, ultrametric, uniformizer, unique-factorization-domain, valuation-ring and valuation. Check those and mark folder complete. Prior citation checks remain untouched per user instruction.
+
+
+## October 16, 2026 — citation verification CV39: arithmetic folder complete (final six)
+
+- Individually checked source definitions for transcendental number, ultrametric, uniformizer, unique factorization domain, valuation ring and normalized discrete valuation. `Uniformizing_parameter` redirects to `Discrete_valuation_ring` and specifically defines the uniformizer, so the existing citation remains suitable. `Valuation_(algebra)` covers general discrete valuations; the repo explicitly chooses normalized nontrivial surjectivity onto Z.
+- All six source references supported their definitions without changes. Ledger commit `ff980c3c` now gives **392 verified, 29 corrected, 586 pending, 0 needs_followup** of 1007 definitions, i.e. **421 citation-reviewed**.
+- **All 36 arithmetic/ entries have been citation-reviewed** in CV36–CV39; earlier audited files not revisited per user. NEXT: pick `optimization/` or `alg-topology/` / another coherent folder, use evidence-backed small batches. Update ledger and checkpoint after each. Source review not equivalent to proof/peer review; CI workflows not independently verified.
