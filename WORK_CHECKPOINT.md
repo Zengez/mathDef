@@ -241,3 +241,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Discovery batch M1 added 12 mathematically formulated graduate microlocal/PDE definitions and cross-reference links. Current inventory **971 definitions, 40 folders**; confirm through GitHub Actions before declaring final deployment.
 - Added broad-trigger-on-definition-changes to GitHub's structural/editorial corpus audit workflow, to make stale metadata visible automatically. The audit generates an issue CSV and JSON summary, not mathematical approval.
 - NEXT: inspect successful Actions run/artifact and update audit issue counts; continue with 20–30 older entries in `alg-topology/`, `real/`, or `dynamics/`. Many broad topic-index citations still remain. Only entries individually reviewed against appropriate references should eventually be promoted, and some may require convention decisions.
+
+## Algebraic topology audit, batch A1 (October 15, 2026)
+
+- Reviewed first 12 existing `alg-topology/` entries: based-space, boundary-operator, boundary, cell-complex, chain-complex, cochain-complex, contractible, covering-map, covering-space, cup-product, cycle, deck-transformation. Replaced shared nLab singular-homology link with direct concept pages from Wikipedia, including the verified source articles on CW complexes, chains and covering spaces.
+- Fixed singular boundary operator to require $n\ge1$, set $\partial_0=0$, identify face inclusions, and explain $\partial^2=0$. Clarified CW closure-finiteness/weak-topology conditions, cup-product commutative coefficients, and group structure of deck transformations.
+- These entries remain draft; don't confuse direct citation URLs with mathematical peer review. Next A2: `deformation-retract`, `euler-characteristic`, `fundamental-class`, `fundamental-group`, `homology-with-coefficients`, `homotopy-equivalence`, `homotopy-group`, `homotopy`, `loop`, `path-homotopy`, `reduced-homology`, `relative-homology`.
