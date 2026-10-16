@@ -1279,3 +1279,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - `algebra.module` previously pointed to an Encyclopedia of Mathematics page unavailable for direct statement comparison in this session. Inspected and substituted concept-specific `Module_(mathematics)` with its explicit module axioms instead (commit `d6b1bc05`). No other source or body edits needed.
 - Ledger commit `8710acad` with per-entry URLs and notes. Citation-specific counts now **209 verified, 20 corrected, 778 pending, 0 needs_followup**, corpus unchanged at 1007.
 - NEXT: finish final nine `algebra/` citations (polynomial-ring, prime-ideal, quotient-group, quotient-ring, ring-homomorphism, ring, semigroup, stabilizer, subgroup), update ledger/checkpoint CV20, then move to another subject folder in bounded batches. GitHub Actions metadata/Pages checks for these recent commits remain separately unverified; do not claim build success without inspecting runs.
+
+
+## October 16, 2026 — citation verification CV20: foundational algebra folder complete (9 entries)
+
+- Opened actual source articles and compared their formal definitions and key qualifications for polynomial ring, prime ideal, quotient group, quotient ring, ring homomorphism, ring, semigroup, stabilizer and subgroup. Explicitly checked field/domain versus noncommutative prime conventions, quotient identity when I=R, identity-preserving ring maps, and G/G_x orbit correspondence.
+- All nine source links supported the entries as written. No text/source changes needed; recorded detailed source evidence in ledger commit `379dd494`.
+- **All 29 algebra definitions have now been citation-reviewed in CV18–CV20**. Dedicated tally **218 verified, 20 corrected, 769 pending, 0 needs_followup** (1007 corpus, 238 evidence-checked total). No definitions were added and draft status remains unchanged.
+- NEXT: select next coherent group, preferably `commalg/` remaining 11 entries or `geometry/` 20, then continue in bounded batches. Verify GitHub Actions publication/index metadata when possible, rather than claiming successful checks without inspection. Keep source-specific evidence and batch commits. Deferred discovery/rendering/features remain out of scope.
