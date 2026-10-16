@@ -1303,3 +1303,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Checked conventions on degenerate points and radii, arccos inner-product domain, orientation, nonnegative convex vs unrestricted affine coefficients, surjectivity of isometries and empty affine hull. All ten existing articles supported the actual displayed definition; no revisions warranted.
 - Ledger evidence commit `4a2fb8b1`: **238 verified, 21 corrected, 748 pending, 0 needs_followup** (1007 total). Ten `geometry/` entries remain.
 - NEXT: remaining `geometry/` terms from parallel-lines through triangle; then check ledger and choose further smaller math domain.
+
+
+## October 16, 2026 — citation verification CV23: entire geometry folder complete (10 entries)
+
+- Independently opened and checked last ten `geometry/` article sections for parallel/perpendicular lines, geometric point, simple polygon, convex polyhedron/polytope, radius, ray, sphere and triangle. Examined the important degeneracy conventions: parallel coincident-line reflexive variant; rays include their initial point except under open-ray convention; polyhedron may be unbounded and conventionally empty, polytope is nonempty finite convex hull; polygon boundary vs filled region.
+- All ten current sources supported the stated definitions with their qualifications; no source/body revisions warranted. `geometry.ray` URL redirects to `Line_(geometry)` which does have an explicit Ray subsection.
+- Ledger evidence commit `20c9e3da`; **all 20 geometry definitions now individually citation-verified**, combined CV22 and CV23. Cumulative **248 verified, 21 corrected, 738 pending, 0 needs_followup**, total 1007 definitions (269 checked).
+- NEXT: continue `real/` (22), `prob/` (31), or another manageable subject. Keep small commits and checkpoint after each. No new terms or peer-review promotions; validate workflows when possible before claiming success.
