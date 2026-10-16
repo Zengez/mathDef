@@ -312,16 +312,16 @@ definitions/functional/hilbert-schmidt-operator.tex,verified,"https://en.wikiped
 definitions/functional/hilbert-space.tex,corrected,"https://en.wikipedia.org/wiki/Hilbert_space","EoM Hilbert_space returned 502; directly read Hilbert space opening definition of complete inner-product space under induced norm; source switched, commit 5e0bc48e."
 definitions/functional/isometry.tex,verified,"https://en.wikipedia.org/wiki/Linear_isometry","Isometry article includes normed-space linear isometries with norm preservation ||Tx||=||x||, distinguishes not necessarily surjective."
 definitions/functional/locally-convex-space.tex,corrected,"https://en.wikipedia.org/wiki/Locally_convex_space#Definition_via_convex_sets","EoM Locally_convex_space unavailable; read locally convex TVS definition via convex neighborhood basis; non-Hausdorff convention noted; source updated commit c4925c4a."
-definitions/functional/normal-operator.tex,pending,,
-definitions/functional/normed-space.tex,pending,,
-definitions/functional/nuclear-operator.tex,pending,,
-definitions/functional/operator-norm.tex,pending,,
-definitions/functional/orthogonal-projection.tex,pending,,
-definitions/functional/peak-function.tex,pending,,
-definitions/functional/peak-point.tex,pending,,
-definitions/functional/projection.tex,pending,,
-definitions/functional/reflexive-space.tex,pending,,
-definitions/functional/resolvent-set.tex,pending,,
+definitions/functional/normal-operator.tex,verified,"https://en.wikipedia.org/wiki/Normal_operator","Exact commutation T*T=TT* on complex Hilbert space; unitary and self-adjoint examples fit."
+definitions/functional/normed-space.tex,corrected,"https://en.wikipedia.org/wiki/Normed_vector_space","EoM Norm page unavailable; directly read normed vector space definition and induced distance ||x−y||, replaced source commit 2cde48fd."
+definitions/functional/nuclear-operator.tex,verified,"https://en.wikipedia.org/wiki/Nuclear_operators_between_Banach_spaces","Absolutely summable rank-one series definition and canonical map from completed projective tensor product; potential noninjectivity reflected accurately."
+definitions/functional/operator-norm.tex,verified,"https://en.wikipedia.org/wiki/Operator_norm","Definition supremum ||Tx|| over ||x||<=1 for bounded map between normed spaces."
+definitions/functional/orthogonal-projection.tex,corrected,"https://en.wikipedia.org/wiki/Projection_(linear_algebra)#Orthogonal_projections","EoM Orthogonal_projector unavailable; directly read Hilbert-space orthogonal projections section, P²=P and P*=P, replaced source commit ee193ba0."
+definitions/functional/peak-function.tex,corrected,"https://en.wikipedia.org/wiki/Shilov_boundary#Uniform_algebras","EoM Boundary page unavailable; directly read uniform algebras subsection defining f(x)=1 and |f(y)|<1 for y≠x; source changed commit 0314f2ec. Entry notes inequality need not be uniformly separated outside x."
+definitions/functional/peak-point.tex,corrected,"https://en.wikipedia.org/wiki/Shilov_boundary#Uniform_algebras","EoM Boundary unavailable; direct uniform-algebra peak-point definition and Shilov membership, with density qualification, in inspected source; source changed a429956c."
+definitions/functional/projection.tex,corrected,"https://en.wikipedia.org/wiki/Projection_(linear_algebra)","EoM Projection article insufficiently retrievable; directly inspected projection linear algebra article giving P²=P, direct-sum decomposition image and kernel, source changed 007164c8."
+definitions/functional/reflexive-space.tex,corrected,"https://en.wikipedia.org/wiki/Reflexive_space","EoM Banach_space source failed; read reflexive-space page showing canonical evaluation into bidual surjective iff reflexive; source changed f440d6ba."
+definitions/functional/resolvent-set.tex,corrected,"https://en.wikipedia.org/wiki/Spectrum_(functional_analysis)#Definition","EoM Spectrum_of_an_operator failed; read exact definition resolvent complement of spectrum with bounded inverse; source changed f9336079. Article writes (T−λI)^−1, repo chooses (λI−T)^−1, consistent sign convention."
 definitions/functional/schauder-basis.tex,pending,,
 definitions/functional/self-adjoint-operator.tex,pending,,
 definitions/functional/seminorm.tex,pending,,
