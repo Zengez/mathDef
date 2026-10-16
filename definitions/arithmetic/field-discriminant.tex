@@ -1,7 +1,11 @@
 % id: arithmetic.field-discriminant
 % term: Discriminant of an integral basis
 % related: arithmetic.ring-of-integers, arithmetic.field-trace
-% source: https://encyclopediaofmath.org/wiki/P-adic_number
+% source: https://en.wikipedia.org/wiki/Discriminant_of_an_algebraic_number_field
 % status: draft
 
-For an integral basis $\alpha_1,\ldots,\alpha_n$ of $\mathcal O_K$, the \emph{field discriminant} is $\det(\operatorname{Tr}_{K/\mathbb Q}(\alpha_i\alpha_j))_{i,j}$.
+Let $K/\mathbb Q$ be a number field of degree $n$ and let $\alpha_1,\ldots,\alpha_n$ be an integral basis of its ring of integers $\mathcal O_K$. Its \emph{field discriminant} is
+\[
+\Delta_K=\det\bigl(\operatorname{Tr}_{K/\mathbb Q}(\alpha_i\alpha_j)\bigr)_{1\le i,j\le n}.
+\]
+The value is an integer independent of the choice of integral basis, since changes of integral basis have determinant $\pm1$.

@@ -508,3 +508,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Audited first 10 `arithmetic/` entries: algebraic-integer, algebraic-number, arithmetic-convolution, class-number, dedekind-domain, degree-number-field, dirichlet-character, dirichlet-l-function, discrete-valuation-ring, euclidean-domain. Replaced an inappropriate generic EoM `P-adic_number` source with individual mathematical concept pages.
 - Important mathematical precision: monic integrality versus algebraicity, field-allowed Dedekind conventions, character as group homomorphism on units including modulus-one edge case, principal versus nonprincipal Dirichlet L-function poles, and DVR's nonfield qualification. All entries still draft; no new IDs and expected total 995 definitions.
 - NEXT: arithmetic N2 (field-discriminant through local-field) then further bounded batches to finish all 36 existing arithmetic entries, with publication and metadata verification at each stage. Preserve bulk arXiv/AWS hold.
+
+
+## October 16, 2026 — arithmetic N2
+
+- Audited 10 original `arithmetic/` entries from field-discriminant through number-field, replacing a shared and mostly irrelevant `P-adic_number` source with concept-specific source articles. No new IDs and all statuses remain draft.
+- Explicitly distinguished finite extension trace/norm from separable or Galois assumptions, described integral-basis invariance of the number-field discriminant, specified nonzero fractional ideals and their Dedekind multiplication, and distinguished a nonarchimedean local field (complete, nontrivially discretely valued, finite residue field) from a generic complete valued field.
+- 20/36 arithmetic entries now inspected. NEXT: `p-adic-absolute-value` through `residue-field` (10), then remaining 6 to finish. Check latest build and source metadata audit and preserve arXiv/AWS hold.
