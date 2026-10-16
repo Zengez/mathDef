@@ -114,3 +114,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - S4 reviewed: stochastic.strong-markov-property, stochastic.submartingale, stochastic.supermartingale, stochastic.tightness, stochastic.uniform-integrability, stochastic.weak-convergence-measures, stochastic.wiener-process, stochastic.local-martingale, stochastic.semimartingale. A crucial correction makes the strong Markov property *formal*, with bounded measurable test functions and a conditional-expectation equation at finite stopping times.
 - All stochastic definitions remain draft; no automated peer-review promotion. Duplicate terminology `brownian-motion` and `wiener-process` remains intentional cross-reference.
 - Next: several complex variables (`scv/`, 41 existing entries), then an independently sourced discovery batch. Inspect math exactness and sources in each batch.
+
+## 2026-10-15 evening continuation, batch C1
+
+- Began several-complex-variables audit: 11 existing IDs checked: scv.defining-function, scv.dolbeault-cohomology, scv.dolbeault-operator, scv.domain-of-holomorphy, scv.exhaustion-function, scv.holomorphic-hull, scv.holomorphic-separability, scv.holomorphically-convex, scv.levi-form, scv.levi-pseudoconvex-boundary, scv.stein-manifold.
+- Corrected `scv.stein-manifold` to explicitly include locally defined holomorphic coordinate systems arising from global functions, following the Encyclopedia of Mathematics definition; its former 2-condition statement omitted that item. Replaced generic analytic-function/Levi references with individual EoM articles on domains of holomorphy and Stein manifolds.
+- Clarified that an exhaustion function's properness formulation needs a lower bound, and that the domain-of-holomorphy/pseudoconvexity equivalence is specifically a finite-dimensional statement.
+- All entries remain draft. Next audit SCV analytic/complex-manifold geometry and pluripotential groups in ~10-entry blocks.
