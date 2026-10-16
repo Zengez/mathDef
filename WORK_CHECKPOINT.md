@@ -386,3 +386,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Inspected 10 additional original \`sets/\` entries: empty-set, equinumerous, finite-set, indexed-family, infinite-set, intersection, inverse-image, limit-ordinal, omega, ordered-pair. Updated citation links individually, retaining EoM Ordinal number **only** for two genuinely ordinal-specific entries.
 - Clarifications include set-theoretic infinitude vs existence of countable subset without choice; nonempty indexed intersection vs need for ambient universe for the empty intersection; ordered pair uniqueness and ordinal vs cardinal distinctions for $\omega$. Nothing promoted to reviewed.
 - S1 and S2 have now audited 21 of 31 existing \`sets/\` files. NEXT S3: final ten from \`ordinal\` through \`union\`; verify GitHub build afterward. 983 definitions, 40 folders, assuming no concurrent changes.
+
+
+## October 15, 2026 continuation — set theory S3 (folder complete)
+
+- Inspected and revised the final ten \`sets/\` definitions: ordinal, power-set, relation-image, set, subset, successor-ordinal, symmetric-difference, transitive-set, uncountable-set, union. Kept direct, conceptually appropriate EoM ordinal and Wikipedia ZFC/power-set/subset URLs; replaced unrelated ordinal references for the other concepts.
+- Explicitly separated ordinal from cardinal notions, clarified subset vs proper subset, empty-family union, transitive-set characterization, and set existence as an axiomatic primitive. The two \`sets.power-set\` and \`sets.subset\` examples had **no explicit status field** in GitHub, so their existing default example status was preserved rather than silently promoting them.
+- **All 31 preexisting \`sets/\` files** now inspected across S1 11, S2 10, S3 10. The definitions remain in their preexisting editorial status (draft or example); no formal peer review assertion. Total still **983 definitions in 40 folders**.
+- NEXT: verify last workflow run, scan corpus citation/short-body flags; audit remaining legacy entries in \`graph/\`, \`combin/\`, \`logic/\`, and other underreviewed subjects. Wikipedia/EoM discovery of genuinely missing graduate terms remains open. Keep AWS/arXiv bulk work paused.
