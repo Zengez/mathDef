@@ -599,16 +599,16 @@ definitions/numerical/discretization-error.tex,verified,"https://en.wikipedia.or
 definitions/numerical/divided-difference.tex,verified,"https://en.wikipedia.org/wiki/Divided_differences","Recursive divided differences over distinct nodes use quotient of order-(j-i-1) differences over endpoint separation."
 definitions/numerical/euler-method.tex,verified,"https://en.wikipedia.org/wiki/Euler_method","Forward explicit Euler step y_(n+1)=y_n+h f(t_n,y_n) for first order initial value ODE."
 definitions/numerical/finite-difference.tex,verified,"https://en.wikipedia.org/wiki/Finite_difference","Centered difference (f(x+h)-f(x-h))/(2h) approximates first derivative with O(h²) smoothness requirement."
-definitions/numerical/finite-element-method.tex,pending,,
-definitions/numerical/fixed-point-iteration.tex,pending,,
-definitions/numerical/forward-error.tex,pending,,
-definitions/numerical/gaussian-elimination.tex,pending,,
-definitions/numerical/interpolation.tex,pending,,
-definitions/numerical/lagrange-interpolation.tex,pending,,
-definitions/numerical/least-squares.tex,pending,,
-definitions/numerical/lu-factorization.tex,pending,,
-definitions/numerical/machine-epsilon.tex,pending,,
-definitions/numerical/matrix-condition-number.tex,pending,,
+definitions/numerical/finite-element-method.tex,verified,"https://en.wikipedia.org/wiki/Finite_element_method","Finite element mesh basis and weak/Galerkin discussion supports conforming finite-dimensional V_h subset V test equation a(u_h,v_h)=ell(v_h), other FEM variants distinguished."
+definitions/numerical/fixed-point-iteration.tex,verified,"https://en.wikipedia.org/wiki/Fixed-point_iteration","Definition iteration x_(k+1)=g(x_k) seeks fixed point satisfying g(x*)=x*; convergence requires extra conditions."
+definitions/numerical/forward-error.tex,verified,"https://en.wikipedia.org/wiki/Error_analysis_(mathematics)","Forward-error-analysis subsection compares returned approximate output with exact problem output, absolute or normed difference."
+definitions/numerical/gaussian-elimination.tex,verified,"https://en.wikipedia.org/wiki/Gaussian_elimination","Elementary row operations produce echelon matrix; pivot swaps avoid zero pivots, exact arithmetic over field."
+definitions/numerical/interpolation.tex,verified,"https://en.wikipedia.org/wiki/Interpolation","Interpolation constructs function from selected class passing through known nodes (x_i,y_i), distinct nodes for single-valued interpolation."
+definitions/numerical/lagrange-interpolation.tex,verified,"https://en.wikipedia.org/wiki/Lagrange_polynomial","Unique degree-at-most n interpolation polynomial for distinct nodes, Lagrange basis product (x-x_k)/(x_j-x_k), valid over a field."
+definitions/numerical/least-squares.tex,verified,"https://en.wikipedia.org/wiki/Linear_least_squares","Linear least squares minimizes Euclidean squared residual ||Ax-b||² over coefficients x; no full rank assumed."
+definitions/numerical/lu-factorization.tex,verified,"https://en.wikipedia.org/wiki/LU_decomposition","A=LU with lower and upper triangular factors, may need row permutation PA=LU to make decomposition exist."
+definitions/numerical/machine-epsilon.tex,verified,"https://en.wikipedia.org/wiki/Machine_epsilon","Definition distinguishes gap above 1 beta^(1-p) from unit roundoff half gap for round-to-nearest and warns of naming convention variation."
+definitions/numerical/matrix-condition-number.tex,verified,"https://en.wikipedia.org/wiki/Condition_number","For nonsingular matrix induced norm kappa(A)=||A||||A^-1||, linear-system sensitivity interpretation."
 definitions/numerical/newton-root.tex,pending,,
 definitions/numerical/normal-equations.tex,pending,,
 definitions/numerical/qr-factorization.tex,pending,,
