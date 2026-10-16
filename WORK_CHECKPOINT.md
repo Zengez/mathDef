@@ -1207,3 +1207,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Evidence and checked URLs recorded per entry in `CITATION_AUDIT.csv` commit `c8008895`. Counts now **123 verified, 11 corrected, 873 pending, 0 needs_followup** (1007 total).
 - All `number/`, `logic/`, `analysis/`, `metric/`, `relations/` entries are now evidence-recorded under the citation-specific ledger. Mathematical status metadata unchanged.
 - NEXT: choose bounded blocks of `sets/` or `topology/` entries with direct articles. Carefully inspect individual clauses before marking verified; do not backfill from first-pass checks. Pages/metadata workflow outcome for recent commits not yet verified via GitHub Actions.
+
+
+## October 16, 2026 — citation verification CV11: cardinality and basic set operations (12 entries)
+
+- Opened and compared concept-specific source pages for `sets.aleph-null`, `beth-number`, `cardinality`, `cartesian-product`, `choice-function`, `club-set`, `cofinality`, `cofinite-set`, `complement`, `continuum-hypothesis`, `countably-infinite-set`, `difference`. In particular read the full Club_set formal closure/unboundedness definition, Cofinality ordinal conventions including cf(0), Axiom_of_choice choice-function statement, and Beth_number relation to GCH.
+- Each was supported by the directly cited specific article and its existing mathematical hypotheses, **no changes** to definition text or URL. Per-entry evidence in ledger commit `71e95856`. Counts now **135 verified, 11 corrected, 861 pending, 0 needs_followup** (1007 definitions total).
+- NEXT: continue sets in alphabetical order starting with `disjoint-family`, `disjoint-union`, `empty-set`, `equinumerous`, `filter-on-set`, `finite-set`, `forcing-poset`, `generic-filter`, `indexed-family`, `infinite-set`, etc. Maintain separate publication workflow verification.
