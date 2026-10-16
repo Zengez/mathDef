@@ -1160,3 +1160,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Graph conventions were explicitly matched to their cited discussion of simple graphs, loop-allowing directed relation models, nonempty connected graphs, and basic empty-graph conventions. The `graph.edge` URL redirects to the Glossary of graph theory and has an explicit `edge` definition; it remains suitable despite the redirect.
 - All 19 found suitable; no source URL or mathematical body changed. Recorded per-entry URL and specific checked concept in the CSV; no automated promotion of status metadata.
 - Counts: 67 verified, 4 corrected, 936 pending. Next: additional direct-source entry clusters; keep evidence quality ahead of raw throughput.
+
+
+## October 16, 2026 — citation verification CV5: 18 combinatorics citations
+
+- Inspected the source articles for all 18 `combin/` terms, matched the formal definitions against the source's definitions, formulas or corresponding explanations: counting factorials/binomials/combinations/permutations/derangements; set and integer partitions/compositions/Stirling/Bell numbers; ordinary generating functions and recurrences; finite matroids and rank/graphic matroids/Tutte polynomial; and graph matchings/perfect matchings.
+- Each cited source directly supports the displayed core definition with its stated conventions. `matroid-rank` references the in-page rank-and-closure subsection; `combin.generating-function` refers to formal ordinary generating functions and correctly excludes convergence requirements; `combin.tutte-polynomial` matches the rank-subset expansion.
+- No source or body edits. Ledger now has 85 verified, 4 corrected, 918 pending. CV4 `ce4ead91` build checks should be verified alongside current commit.
+- This closes a faster batch of low-ambiguity, directly named sources; difficult paper-specific or source-unrelated entries still require individual inspection. The corpus stays at 1007 definitions.
