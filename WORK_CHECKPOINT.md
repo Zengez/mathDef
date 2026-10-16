@@ -521,3 +521,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 - Reviewed eight more `arithmetic/` entries: p-adic-absolute-value, p-adic-field, p-adic-integers, p-adic-valuation, principal-ideal-domain, residue-field, riemann-zeta, ring-of-integers. Corrected mathematical conventions and linked specific concept sources.
 - 28 of 36 original arithmetic definitions now audited. NEXT N3b: final 8 files separable-polynomial, splitting-field, transcendental-number, ultrametric, uniformizer, unique-factorization-domain, valuation-ring, valuation. Preserve IDs and draft status. Expected count remains 995.
+
+
+## October 16, 2026 — arithmetic N3b (36-entry folder complete)
+
+- Reviewed final eight `arithmetic/` definitions: separable-polynomial, splitting-field, transcendental-number, ultrametric, uniformizer, unique-factorization-domain, valuation-ring, valuation. Corrected separation/derivative criterion, non-Galois splitting-field assumptions, normalization of uniformizers, and value-group conventions.
+- All **36 original arithmetic entries** audited in N1 (10), N2 (10), N3a (8) and N3b (8). Stable IDs preserved, draft statuses unchanged, total remains **995 definitions, 40 folders**. Mathematical source review is not formal approval.
+- NEXT: verify Pages and corpus audit for N3b, then advance another underaudited folder (`computability/` or `geometry/`) and another specific-source Wikipedia category discovery batch. The arXiv/AWS bulk work remains on hold.
