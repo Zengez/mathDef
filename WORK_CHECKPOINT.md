@@ -127,3 +127,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Inspected 10 more SCV/pluripotential entries: scv.pluriharmonic-function, scv.plurisubharmonic-function, scv.polynomial-hull, scv.polynomially-convex-set, scv.pseudoconvex-domain, scv.strictly-plurisubharmonic, scv.strongly-pseudoconvex-boundary, scv.subharmonic-function, scv.upper-semicontinuous, scv.complex-tangent-hyperplane; swapped four broad/less-specific sources for individually relevant Encyclopedia of Mathematics articles.
 - Clarified compact **closed sublevel** condition in the pseudoconvex exhaustion definition and its finite-dimensional Levi-problem equivalence, made the $C^2$ convention explicit for strict plurisubharmonicity, and labeled the complex tangent hyperplane precisely.
 - Next SCV audit: remaining geometry/Kähler/Kobayashi entries and analytic polyhedra, about 20; then new advanced terms. Follow up on any concept-level convention conflicts rather than promoting to reviewed.
+
+## 2026-10-15 evening continuation, batch C3
+
+- Examined 10 geometric/analytic SCV definitions: scv.analytic-polyhedron, scv.biholomorphic-map, scv.complex-analytic-subset, scv.complex-line, scv.complex-manifold, scv.complex-polydisc, scv.complex-projective-space, scv.complex-torus, scv.complex-unit-ball, scv.fatou-bieberbach-domain.
+- Clarified relative closedness of analytic subsets, the compactly-contained analytic-polyhedron convention, the natural quotient operation for complex projective space, and that complex tori need not be algebraic. Biholomorphic maps now explicitly refer to complex manifolds and a direct EoM article.
+- Entries were left in draft status and stable IDs preserved. Next final SCV batch: Fubini–Study, automorphism, holomorphic vector bundles, Kähler and Kobayashi geometry, tube domains, $(p,q)$-forms and Hartogs separate holomorphy.
