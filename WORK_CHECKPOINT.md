@@ -1117,3 +1117,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Wrote `CONSISTENCY_REVIEW.md` with covered domains, issues corrected in earlier commits, precise completion boundary, residual risks and next audit phases.
 - **STATUS: THEMATIC CROSS-DEFINITION CONSISTENCY COMPLETE.** Entries remain in `draft` or `example` status. Paper-specific locators, source claims and any citation-discovered inconsistencies are pending future citation review. No term discovery, rendering verification or website features.
 - **STOP and notify user before starting dedicated source-citation audit**, as specifically requested.
+
+
+## October 16, 2026 — citation audit CV0: per-definition verification infrastructure
+
+- Resumed from cross-definition consistency completion commit `8826fe41`; its GitHub Pages workflow passed. Built `CITATION_AUDIT.csv` with 1007 exact definition paths all initially `pending` and `CITATION_AUDIT_PROCESS.md` defining status/evidence requirements. Earlier broad citation sweeps were not backfilled as verified without a comparable per-entry evidence record.
+- NEXT: check source articles/tags against individual mathematical statements in small clusters, write source and review notes into the ledger, correct references or mathematical wording only where needed, commit after each batch. No unrelated new definitions or deferred features.
