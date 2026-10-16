@@ -598,3 +598,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Verified Git tree at `f3365470`: **1007 .tex definitions, 40 subject folders**, `computability/` now **39 entries**. Corpus metadata workflow passed for D2; Pages publication of D2 was still in progress at last check. D1 publication and metadata both passed.
 - Updated current-snapshot totals in `README.md` and `CATALOG.md` and the subject-specific computability count. Older numerical figures in historical review narratives are checkpoints rather than current-state assertions.
 - NEXT: continue with underaudited historical folders (`complex/`, `graph/`, `combin/`, `optimization/` already audited) and direct Wikipedia mathematics category candidate review for more genuinely missing graduate terms. Keep edits in bounded commits, mathematically check conventions and linked sources, and leave drafts unpromoted.
+
+
+## October 16, 2026 — complex analysis audit C1
+
+- Began auditing original `complex/` entries; inspected 10 files from analytic-continuation through complex-number, using direct DLMF, EoM, or Wikipedia concept sources. Corrected analytic continuation to distinguish direct extensions from continuation along compatible germs and paths, which may have monodromy; noted Blaschke zero multiplicities and compact-local convergence, and real differentiability needed for pointwise Cauchy–Riemann equivalence. All existing draft statuses and stable IDs preserved.
+- Corpus remains **1007 definitions in 40 folders**, with 10/38 original complex-analysis definitions inspected in this series. NEXT C2 starts `conformal-map` and continues through `holomorphic-logarithm`, keeping batches small and maintaining the checkpoint. Build/metadata Action result for C1 must be checked separately.
