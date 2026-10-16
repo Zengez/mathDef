@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Heat_kernel
 % status: draft
 
-For $t>0$ and $x\in\mathbb R^n$, the \emph{Euclidean heat kernel} for diffusivity $1$ is $K_t(x)=(4\pi t)^{-n/2}\exp(-|x|^2/(4t))$. It satisfies $(\partial_t-\Delta)K_t=0$ for $t>0$ and converges to $\delta_0$ in distributions as $t\downarrow0$.
+For diffusivity $1$, the \emph{Euclidean heat kernel} on $\mathbb R^n$ is
+\[
+K_t(x)=(4\pi t)^{-n/2}\exp\!\left(-\frac{|x|^2}{4t}\right),\qquad t>0.
+\]
+It has total integral $1$, satisfies $(\partial_t-\Delta)K_t=0$, and tends to the Dirac distribution $\delta_0$ as $t\downarrow0$. For suitable initial data $u_0$, convolution $K_t*u_0$ solves the heat equation with initial value $u_0$.

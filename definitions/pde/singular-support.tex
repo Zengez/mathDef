@@ -1,7 +1,11 @@
 % id: pde.singular-support
 % term: Singular support of a distribution
 % related: pde.distribution, pde.wave-front-set
-% source: https://en.wikipedia.org/wiki/Wave_front_set
+% source: https://en.wikipedia.org/wiki/Singular_support
 % status: draft
 
-For a distribution $u\in\mathcal D'(\Omega)$, its \emph{singular support} $\operatorname{sing\,supp}u$ is the complement of the largest open subset of $\Omega$ on which $u$ agrees with a $C^\infty$ function as a distribution.
+For a distribution $u\in\mathcal D'(\Omega)$ on an open set $\Omega\subseteq\mathbb R^n$, its \emph{singular support} is the closed set
+\[
+\operatorname{sing\,supp}u=\Omega\setminus\bigcup\{V\subseteq\Omega:V\text{ open and }u|_V\text{ is represented by a }C^\infty\text{ function}\}.
+\]
+It records where the distribution fails to be smooth, without encoding the directions of its singularities; the wave front set provides the finer directional information.

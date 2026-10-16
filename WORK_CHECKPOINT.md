@@ -884,3 +884,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 - Reviewed six advanced PDE entries previously added in M1: hormander-symbol-class, pseudodifferential-operator, classical-symbol, elliptic-classical-symbol, parametrix, smoothing-operator. Checked detailed EoM Pseudo-differential operator estimates and microlocal calculus conventions. Distinguishes local-in-x Hörmander symbol bounds from globally controlled symbol classes, polyhomogeneous asymptotics with cutoff, scalar ellipticity, remainder sign convention and properly supported smooth kernels.
 - Cumulative distinct individual-audit count **960/1007**, **47 remain**. NEXT ML2 final six: singular-support, wave-front-set, pseudolocal-operator, fourier-multiplier, bessel-potential-space, heat-kernel. All remain draft; AWS/arXiv bulk harvesting still paused.
+
+
+## October 16, 2026 — microlocal PDE ML2 (48-entry folder complete)
+
+- Reviewed final six newer microlocal/PDE entries: singular-support, wave-front-set, pseudolocal-operator, fourier-multiplier, bessel-potential-space, heat-kernel. Checked the wave-front-set Fourier cutoff conic condition in a direct reference, EoM multiplier/Bessel potential treatment, and Euclidean heat kernel normalization. Explicitly clarified the wave-front projection to singular support and unitary Fourier normalization in Hs.
+- All 12 advanced PDE additions from M1 now have separate second-pass audits in addition to 36 originals; **48/48 PDE entries** covered. Aggregate documented individual audits **966 of 1007**; **41 remain**. No status fields changed and all new terms retain draft status.
+- NEXT: reconcile remaining 41 across small specialist folders (`analysis`, `functions`, `metric`, `quasimetric`, `measured-actions`, `solenoids`, `special`, `tda`, `weighted-analysis`, `graphwalks`) and any remaining original-versus-new category differences. Verify latest metadata and GitHub Pages, continue concept-specific sources, keep bulk arXiv/AWS work paused.
