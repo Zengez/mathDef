@@ -1688,3 +1688,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Existing `computability.graph-algorithm` source `https://en.wikipedia.org/wiki/Graph_algorithm` redirected to *List of algorithms*, not a definition. Replaced with an opened ScienceDirect Graph Algorithms subject overview citing *Electronic Design Automation* (2009), graph input representations and graph-specific computational procedures (commit `db020ef9`). Nine other source references verified.
 - CV75 ledger `15cdfaed`: **642 verified, 82 corrected, 280 pending, 3 needs_followup = 724/1007 completed (71.90%)**. Prior audits unchanged.
 - NEXT CV76: remaining `computability/` pending sorted 10 starting `kolmogorov-complexity`, `language`, `las-vegas-algorithm`, `monte-carlo-algorithm`, `nondeterministic-machine`, etc. Continue per batch and update checkpoint.
+
+## 2026-10-16 — CV76 computability C3 (ten entries)
+
+- Individually checked linked articles for Kolmogorov complexity, formal language, Las Vegas/Monte Carlo algorithms, nondeterministic Turing machines, NP-completeness, NP-hardness, oracle machines, polynomial hierarchy and Karp reductions. Inspected conventions on plain vs prefix-free complexity, existential accept branch, zero vs bounded error and alternation. All ten source references substantively match the existing definitions.
+- No mathematical body or citation edits in this batch. Ledger CV76 commit `b7129f81`: **652 verified, 82 corrected, 270 pending, 3 needs_followup = 734/1007 completed (72.89%)**.
+- NEXT CV77: last nine `computability/` entries, starting `polynomial-time`, `prefix-free-kolmogorov-complexity`, then per pending order. Check sources, commit ledger and checkpoint. Previously completed entries untouched; don't claim CI success.
