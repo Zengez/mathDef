@@ -1255,3 +1255,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All ten original citation targets support the displayed definitions (including the `Limit_point` redirect to Accumulation point); no source or text modifications necessary.
 - Evidence ledger commit `9a3bb6df`; current totals **179 verified, 18 corrected, 810 pending, 0 needs_followup** (1007 total). `topology/` has 12 remaining pending entries.
 - NEXT: remaining topology starting `neighborhood`, `nowhere-dense`, `open-cover`, `open-set`, `path-connected`, `product-topology`, `quotient-topology`, `second-countable`, `separable-space`, `subspace-topology`, `topological-embedding`, `topological-space`. After this run CI and reconcile ledger counts.
+
+
+## October 16, 2026 — citation verification CV17: remaining twelve topology entries; subject complete
+
+- Finished citation verification of all 32 `topology/` entries across CV15–CV17. This final batch checked neighborhood, nowhere dense set, open cover, open set, path connectedness, product topology, quotient topology, second countability, separability, subspace topology, topological embedding, and topological space against actual article sections.
+- **Substantive convention clarification** in `topology.path-connected`: the entry defined path-connected using a universal quantifier over pairs, so empty space qualifies vacuously. Its source `Connected_space#Path_connectedness` instead characterizes path-connected spaces by *exactly one* path component, so empty space does not qualify. Added an explicit warning distinguishing the two conventions (commit `a5fc9d57`); left the chosen mathematical definition intact and linked to the same source with documented limitation.
+- Ledger commit `2767fcab`: **190 verified, 19 corrected, 798 pending, 0 needs_followup** of 1007; all 32 topology entries evidence-recorded. No unrelated definitions, website changes, or status promotions.
+- NEXT: begin `algebra/` or another subject in bounded source-specific batches. Publication workflows still not independently confirmed for latest commits.
