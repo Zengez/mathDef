@@ -624,16 +624,16 @@ definitions/numerical/spectral-norm.tex,verified,"https://en.wikipedia.org/wiki/
 definitions/numerical/spline.tex,verified,"https://en.wikipedia.org/wiki/Spline_(mathematics)","Piecewise polynomial on knot intervals with specified smoothness; continuity level and knot multiplicities vary by spline family."
 definitions/numerical/trapezoidal-rule.tex,verified,"https://en.wikipedia.org/wiki/Trapezoidal_rule","Single-panel trapezoidal quadrature integrates linear endpoint interpolant: (b-a)(f(a)+f(b))/2."
 definitions/numerical/truncation-error.tex,corrected,"https://en.wikipedia.org/wiki/Truncation_error","Old URL Truncation_error_(numerical_analysis) failed to load; direct article defines approximation error from finite truncation. Its ODE/PDE local-defect caveat checked against https://en.wikipedia.org/wiki/Truncation_error_%28numerical_integration%29 and MIT numerical differential equation notes."
-definitions/optimization/affine-function.tex,pending,,
-definitions/optimization/convex-cone.tex,pending,,
-definitions/optimization/convex-conjugate.tex,pending,,
-definitions/optimization/convex-optimization.tex,pending,,
-definitions/optimization/dual-cone.tex,pending,,
-definitions/optimization/dual-problem.tex,pending,,
-definitions/optimization/duality-gap.tex,pending,,
-definitions/optimization/epigraph.tex,pending,,
-definitions/optimization/feasible-set.tex,pending,,
-definitions/optimization/gradient-descent.tex,pending,,
+definitions/optimization/affine-function.tex,corrected,"https://en.wikipedia.org/wiki/Affine_transformation#Affine_maps","The article defines affine transformations as bijections but subsection Affine maps covers general noninvertible f(x)=Ax+b and preservation of affine combinations; refocused fragment."
+definitions/optimization/convex-cone.tex,verified,"https://en.wikipedia.org/wiki/Convex_cone","Nonempty cone closed under nonnegative linear combinations, including 0; author convention on empty cone varies."
+definitions/optimization/convex-conjugate.tex,corrected,"https://en.wikipedia.org/wiki/Convex_conjugate#Definition","EoM Fenchel-Moreau reference unavailable; directly checked convex conjugate definition supremum <y,x>-f(x), with convexity/lower semicontinuity and nonproper f identically +infinity case."
+definitions/optimization/convex-optimization.tex,verified,"https://en.wikipedia.org/wiki/Convex_optimization","Convex objective minimized over convex feasible region; inequality constraints convex and equality constraints affine, independent of algorithm."
+definitions/optimization/dual-cone.tex,verified,"https://en.wikipedia.org/wiki/Dual_cone_and_polar_cone","Dual positive cone defined nonnegative inner products against every x in K, closed convex even when K nonconvex; polar uses opposite sign."
+definitions/optimization/dual-problem.tex,verified,"https://en.wikipedia.org/wiki/Duality_(optimization)","Lagrange dual maximizes inf_x of Lagrangian with lambda>=0 for <= inequalities, unrestricted equality multipliers; weak-duality lower bound for minimization."
+definitions/optimization/duality-gap.tex,verified,"https://en.wikipedia.org/wiki/Duality_gap","Optimization duality gap p*-d* nonnegative by weak duality for finite values; zero gap is equality of optimal values, no attainment required."
+definitions/optimization/epigraph.tex,verified,"https://en.wikipedia.org/wiki/Epigraph_(mathematics)","Epigraph {(x,t): f(x)<=t}; convex iff f convex; closed iff lower semicontinuous in Euclidean setting."
+definitions/optimization/feasible-set.tex,verified,"https://en.wikipedia.org/wiki/Feasible_region","Set of points satisfying constraints, possibly empty/nonconvex; optimal points minimize objective over feasible set."
+definitions/optimization/gradient-descent.tex,verified,"https://en.wikipedia.org/wiki/Gradient_descent","Explicit update x_(k+1)=x_k-alpha_k grad f(x_k); Euclidean steepest descent direction; convergence conditions additional."
 definitions/optimization/gradient.tex,pending,,
 definitions/optimization/hessian.tex,pending,,
 definitions/optimization/kkt-condition.tex,pending,,
