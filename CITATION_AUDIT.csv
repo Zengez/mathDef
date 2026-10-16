@@ -945,16 +945,16 @@ definitions/stochastic/levy-process.tex,verified,"https://en.wikipedia.org/wiki/
 definitions/stochastic/local-martingale.tex,verified,"https://en.wikipedia.org/wiki/Local_martingale","Definition stopped martingale sequence under stopping times tending infinity; actual boundedness/integrability of each stopped process acknowledged."
 definitions/stochastic/markov-kernel.tex,corrected,"https://en.wikipedia.org/wiki/Markov_kernel","EoM Transition_function 502; inspected Markov kernel definition in arbitrary measurable spaces, K(x,.) probability measure and x→K(x,B) measurable; source e9a6f0f5."
 definitions/stochastic/martingale-transform.tex,corrected,"https://stats.libretexts.org/Bookshelves/Probability_Theory/Probability_Mathematical_Statistics_and_Stochastic_Processes_(Siegrist)/17%3A_Martingales/17.02%3A_Properties_and_Constructions","Old Martingale Wikipedia page did not define predictable martingale transforms. Statistics LibreTexts Martingale Transform section explicitly has predictable increments sum H_k(M_k−M_{k−1}), with an alternate initial M0 convention; source commit 8226f9eb."
-definitions/stochastic/martingale.tex,pending,,
-definitions/stochastic/median.tex,pending,,
-definitions/stochastic/moment-generating-function.tex,pending,,
-definitions/stochastic/poisson-process.tex,pending,,
-definitions/stochastic/predictable-process.tex,pending,,
-definitions/stochastic/quadratic-variation.tex,pending,,
-definitions/stochastic/quantile.tex,pending,,
-definitions/stochastic/renewal-process.tex,pending,,
-definitions/stochastic/semimartingale.tex,pending,,
-definitions/stochastic/stationary-increment-process.tex,pending,,
+definitions/stochastic/martingale.tex,corrected,"https://en.wikipedia.org/wiki/Martingale_(probability_theory)#General_definition","Original EoM Martingale returned HTTP 502; checked Wikipedia general definition adapted integrable martingale with conditional expectation E[M_(n+1)|F_n]=M_n. Commit 1384f8b6."
+definitions/stochastic/median.tex,corrected,"https://en.wikipedia.org/wiki/Median","EoM Median statistics page HTTP 502; checked Median definition for a distribution: both tails P(X≤m), P(X≥m) ≥1/2, possibly interval of medians. Commit 93e09d0d."
+definitions/stochastic/moment-generating-function.tex,verified,"https://en.wikipedia.org/wiki/Moment-generating_function","MGF M_X(t)=E[e^{tX}] on real t where expectation exists finitely. Existence on neighborhood of zero is separate property."
+definitions/stochastic/poisson-process.tex,corrected,"https://www.probabilitycourse.com/chapter11/11_1_2_basic_concepts_of_the_poisson_process.php","EoM Poisson_process returned 502; replaced with directly read definition of homogeneous rate lambda counting process, zero start, independent increments and Poisson(lambda(t−s)) law. Commit 4ba9ca83."
+definitions/stochastic/predictable-process.tex,verified,"https://en.wikipedia.org/wiki/Predictable_process","Discrete-time section states X_(n+1) measurable F_n, matching H_n measurable with respect to F_(n−1)."
+definitions/stochastic/quadratic-variation.tex,corrected,"https://en.wikipedia.org/wiki/Quadratic_variation","EoM Stochastic_differential 502; dedicated Quadratic variation definition gives sums of squared increments over partitions converging in probability; continuous semimartingale convention matches. Commit 7f1f5d41."
+definitions/stochastic/quantile.tex,verified,"https://en.wikipedia.org/wiki/Quantile_function","Quantile inverse CDF Q(u)=inf{x:F(x)≥u}, u strictly between 0 and 1; generalized inverse handles distribution jumps."
+definitions/stochastic/renewal-process.tex,corrected,"https://en.wikipedia.org/wiki/Renewal_theory","EoM Renewal_processes 502; checked renewal theory article describing iid positive interarrival times and counting process N(t) from epochs. Commit d0cce01f."
+definitions/stochastic/semimartingale.tex,verified,"https://en.wikipedia.org/wiki/Semimartingale","Definition càdlàg adapted semimartingale as local martingale plus adapted locally finite-variation càdlàg process, no Markov or independent-increment assumption."
+definitions/stochastic/stationary-increment-process.tex,corrected,"https://en.wikipedia.org/wiki/Stationary_increments","EoM process stationary increments 502; inspected Stationary increments definition that law of X_(t+h)−X_t depends only on h. Commit 1d859932."
 definitions/stochastic/stopped-process.tex,pending,,
 definitions/stochastic/stopping-time.tex,pending,,
 definitions/stochastic/strong-markov-property.tex,pending,,
