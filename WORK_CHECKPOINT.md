@@ -148,3 +148,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Special care: the bounded hyperconvex-domain definition uses **negative level compactness** rather than the contradictory compact-sublevel-for-every-real-threshold formula. The pluripolar concept names its global convention; the complex Monge–Ampère determinant uses an explicit normalization; the holomorphic envelope can be multi-sheeted.
 - All IDs and `related` pointers checked against current GitHub tree before committing; new entries remain draft.
 - Next: discovery D2 focused on CR structures, Shilov boundaries, analytic discs and function algebra terminology, followed by build validation and updated catalog/checkpoint.
+
+## 2026-10-15 evening continuation, discovery D2
+
+- Added **14** more precise graduate-level definitions in `functional/` and `scv/`: functional.uniform-algebra, functional.shilov-boundary, functional.peak-point, functional.peak-function, scv.bergman-shilov-boundary, scv.cr-structure, scv.cr-function, scv.hartogs-figure, scv.holomorphic-function-germ, scv.analytic-set-germ, scv.weierstrass-polynomial, scv.holomorphic-vanishing-order, scv.meromorphic-function-on-manifold, scv.divisor.
+- Context references are individual EoM articles on uniform algebras, Bergman–Shilov boundary, CR manifolds, function germs, Weierstrass preparation, and complex analytic divisors. Hartogs figure is an explicit standard model, not a claim that every Hartogs figure uses this normalization.
+- Carefully distinguish the Bergman–Shilov boundary (function-algebra notion) from the Bergman kernel; complex-analytic divisors include integer multiplicities; Weierstrass polynomials have holomorphic coefficients vanishing at the origin.
+- D1 had 11 new SCV entries and D2 14 new entries; the whole session started with 934 definitions, so the current expected collection is **959** definitions (check live tree). All entries are drafts, and the source content was independently paraphrased rather than copied.
+- NEXT: verify latest GitHub Actions build for D2, rerun full-corpus metadata audit, update `CATALOG.md` and `README.md` counts. Then another audit of 20–30 previously unreviewed entries (priority `linear/` or `pde/`) and repair generic source links. Update this checkpoint after each batch.
