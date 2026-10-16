@@ -994,3 +994,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Found a genuine mismatch: stochastic.stopping-time and stochastic.stopped-process treated only discrete time, whereas stochastic.local-martingale relied on continuous-time stopping and stopped processes. Corrected all three in one commit: stopping times and stopped processes now explicitly cover discrete and continuous time, and local martingales spell out the continuous-time conditional expectation property. The two foundational citations now link directly to the relevant Stopping_time and Stopped_process reference articles, whose definitions were checked.
 - Left discrete-time martingale/submartingale/supermartingale entries intentionally discrete; no need to relabel those terms. No unrelated definitions or rendering features were added.
 - NEXT: verify publication/metadata workflows and continue semantic clusters, including probability/measure conventions. First-pass count still 1,007 / 1,007.
+
+
+## October 16, 2026 — citation precision and probabilistic norm consistency SR4
+
+- Continued a targeted check of measure/probability conventions across 19 measure-theory entries (signed/Jordan/Hahn, total variation, support, regularity, product/completion, RN derivative, and Bochner/Pettis integrability) and the stochastic convergence cluster. No general conflict found in the conventions chosen for Radon regularity and signed-measure finiteness.
+- Refined stochastic.convergence-lp to explicitly require that X_n and X belong to L^p(P), making the usual definition genuinely a norm-convergence statement and bringing it into line with the existing measure.lp-space definition and its cited convergence-in-mean reference.
+- Replaced the broad real Monge–Ampere Wikipedia source for scv.complex-monge-ampere-operator with the Encyclopedia of Mathematics Pluripotential_theory article, which explicitly displays the complex Hessian determinant operator and discusses extension beyond smooth plurisubharmonic functions. The mathematical body was already precise and needed no change.
+- Neither review changed the first-pass count or added new catalog entries. NEXT: verify workflows, then review other reused-source and cross-domain clusters; log only verified issues and refrain from gratuitous wording/source churn.

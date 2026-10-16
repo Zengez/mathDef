@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Convergence_of_random_variables
 % status: draft
 
-For random variables $X_n,X$ on a common probability space and $1\le p<\infty$, $X_n$ \emph{converges in $L^p$} to $X$ if $E[|X_n-X|^p]\to0$; equivalently, the $L^p$-norm of $X_n-X$ tends to zero.
+For random variables $X_n,X\in L^p(P)$ on a common probability space and $1\le p<\infty$, one says that $X_n$ \emph{converges in $L^p$} (or in $p$-th mean) to $X$ if
+\[
+E[|X_n-X|^p]\longrightarrow0.
+\]
+Equivalently, $\|X_n-X\|_{L^p(P)}\to0$. The $L^p$ membership assumption ensures the moments and norm are finite; this differs from convergence in probability, which requires no such moment bounds.
