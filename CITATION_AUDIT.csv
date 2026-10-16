@@ -322,16 +322,16 @@ definitions/functional/peak-point.tex,corrected,"https://en.wikipedia.org/wiki/S
 definitions/functional/projection.tex,corrected,"https://en.wikipedia.org/wiki/Projection_(linear_algebra)","EoM Projection article insufficiently retrievable; directly inspected projection linear algebra article giving P²=P, direct-sum decomposition image and kernel, source changed 007164c8."
 definitions/functional/reflexive-space.tex,corrected,"https://en.wikipedia.org/wiki/Reflexive_space","EoM Banach_space source failed; read reflexive-space page showing canonical evaluation into bidual surjective iff reflexive; source changed f440d6ba."
 definitions/functional/resolvent-set.tex,corrected,"https://en.wikipedia.org/wiki/Spectrum_(functional_analysis)#Definition","EoM Spectrum_of_an_operator failed; read exact definition resolvent complement of spectrum with bounded inverse; source changed f9336079. Article writes (T−λI)^−1, repo chooses (λI−T)^−1, consistent sign convention."
-definitions/functional/schauder-basis.tex,pending,,
-definitions/functional/self-adjoint-operator.tex,pending,,
-definitions/functional/seminorm.tex,pending,,
-definitions/functional/separable-banach.tex,pending,,
-definitions/functional/shilov-boundary.tex,pending,,
-definitions/functional/spectral-measure.tex,pending,,
-definitions/functional/spectral-radius.tex,pending,,
-definitions/functional/spectrum.tex,pending,,
-definitions/functional/topological-vector-space.tex,pending,,
-definitions/functional/trace-class-operator.tex,pending,,
+definitions/functional/schauder-basis.tex,verified,"https://en.wikipedia.org/wiki/Schauder_basis","Definition section: ordered sequence of vectors with unique norm-convergent series for each x in Banach space, contrasted with finite Hamel basis."
+definitions/functional/self-adjoint-operator.tex,verified,"https://en.wikipedia.org/wiki/Self-adjoint_operator","Hilbert-space bounded self-adjoint operator has T=T*; unbounded domain caveats do not apply."
+definitions/functional/seminorm.tex,corrected,"https://en.wikipedia.org/wiki/Seminorm","EoM Pre-norm unavailable; direct seminorm article verifies absolute homogeneity and triangle inequality without definiteness; commit 179de211."
+definitions/functional/separable-banach.tex,verified,"https://en.wikipedia.org/wiki/Separable_space","Topological separability defined by countable dense subset, specialized to norm topology of Banach X."
+definitions/functional/shilov-boundary.tex,needs_followup,"","EoM Boundary_(in_the_theory_of_uniform_algebras) unavailable; directly verified replacement https://en.wikipedia.org/wiki/Shilov_boundary#Uniform_algebras but GitHub file update blocked by safety checks; existing citation remains unrepaired."
+definitions/functional/spectral-measure.tex,verified,"https://en.wikipedia.org/wiki/Projection-valued_measure","Projection-valued measure article gives orthogonal projections, E(S)=identity, strong operator countable additivity and multiplicativity E(A∩B)=E(A)E(B)."
+definitions/functional/spectral-radius.tex,verified,"https://en.wikipedia.org/wiki/Spectral_radius","Definition r(T)=sup modulus spectrum for bounded Banach-space operator; equivalent Gelfand formula is a theorem, not needed here."
+definitions/functional/spectrum.tex,corrected,"https://en.wikipedia.org/wiki/Spectrum_(functional_analysis)","EoM Spectrum_of_an_operator unavailable; directly read invertibility/ bounded inverse criterion on complex Banach spaces and changed source commit 5c304d42."
+definitions/functional/topological-vector-space.tex,corrected,"https://en.wikipedia.org/wiki/Topological_vector_space","EoM Topological_vector_space failed; direct article defines continuous addition and scalar multiplication, source changed commit 21cbf331."
+definitions/functional/trace-class-operator.tex,verified,"https://en.wikipedia.org/wiki/Trace-class_operator","Trace-class article defines Tr|T| finite, summable singular values and trace basis independence, operators compact and Hilbert-Schmidt."
 definitions/functional/uniform-algebra.tex,pending,,
 definitions/functional/unitary-operator.tex,pending,,
 definitions/functional/weak-convergence.tex,pending,,
