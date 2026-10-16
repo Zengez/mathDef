@@ -609,16 +609,16 @@ definitions/numerical/least-squares.tex,verified,"https://en.wikipedia.org/wiki/
 definitions/numerical/lu-factorization.tex,verified,"https://en.wikipedia.org/wiki/LU_decomposition","A=LU with lower and upper triangular factors, may need row permutation PA=LU to make decomposition exist."
 definitions/numerical/machine-epsilon.tex,verified,"https://en.wikipedia.org/wiki/Machine_epsilon","Definition distinguishes gap above 1 beta^(1-p) from unit roundoff half gap for round-to-nearest and warns of naming convention variation."
 definitions/numerical/matrix-condition-number.tex,verified,"https://en.wikipedia.org/wiki/Condition_number","For nonsingular matrix induced norm kappa(A)=||A||||A^-1||, linear-system sensitivity interpretation."
-definitions/numerical/newton-root.tex,pending,,
-definitions/numerical/normal-equations.tex,pending,,
-definitions/numerical/qr-factorization.tex,pending,,
-definitions/numerical/quadrature-rule.tex,pending,,
-definitions/numerical/relative-error.tex,pending,,
-definitions/numerical/residual.tex,pending,,
-definitions/numerical/roundoff-error.tex,pending,,
-definitions/numerical/runge-kutta4.tex,pending,,
-definitions/numerical/simpson-rule.tex,pending,,
-definitions/numerical/singular-value-decomposition.tex,pending,,
+definitions/numerical/newton-root.tex,verified,"https://en.wikipedia.org/wiki/Newton%27s_method","Newton root iteration x_(k+1)=x_k-f(x_k)/f'(x_k) for nonzero derivative at current point; convergence hypotheses separate."
+definitions/numerical/normal-equations.tex,verified,"https://en.wikipedia.org/wiki/Linear_least_squares","Normal equations A^T A x=A^T b characterize Euclidean least-squares minimizers even with rank-deficient A; complex form conjugate transpose."
+definitions/numerical/qr-factorization.tex,verified,"https://en.wikipedia.org/wiki/QR_decomposition","Economy QR for m>=n with Q having n orthonormal columns and upper triangular R, including rank-deficient case with singular R."
+definitions/numerical/quadrature-rule.tex,verified,"https://en.wikipedia.org/wiki/Numerical_integration","Quadrature approximates definite integral by finite weighted sum of values at selected nodes."
+definitions/numerical/relative-error.tex,verified,"https://en.wikipedia.org/wiki/Approximation_error","Formal scalar relative approximation error absolute difference divided by absolute value of nonzero exact value."
+definitions/numerical/residual.tex,verified,"https://en.wikipedia.org/wiki/Residual_(numerical_analysis)","For approximate solution x~, residual r=b-Ax~ convention, with opposite sign sometimes used; error sensitivity depends conditioning."
+definitions/numerical/roundoff-error.tex,verified,"https://en.wikipedia.org/wiki/Round-off_error","Round-off error differs exact operation value from finite precision rounded result; distinguish truncation error."
+definitions/numerical/runge-kutta4.tex,verified,"https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods","Classical RK4 equations use four stage slopes evaluated at 0, half, half, full step with weights 1:2:2:1 over 6."
+definitions/numerical/simpson-rule.tex,verified,"https://en.wikipedia.org/wiki/Simpson%27s_rule","One-panel Simpson rule (b-a)/6[f(a)+4 f(mid)+f(b)] matched."
+definitions/numerical/singular-value-decomposition.tex,verified,"https://en.wikipedia.org/wiki/Singular_value_decomposition","Full complex SVD A=U Sigma V* with unitary U,V, rectangular real nonnegative diagonal Sigma, usually sorted decreasing."
 definitions/numerical/singular-value.tex,pending,,
 definitions/numerical/spectral-norm.tex,pending,,
 definitions/numerical/spline.tex,pending,,
