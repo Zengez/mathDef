@@ -1470,3 +1470,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All six existing sources are suitable; `Strictly_convex_function` redirects to `Convex_function` with a precise strict-convexity formula. No URL/body changes. Ledger commit `f55cbe90`.
 - Dedicated totals now **425 verified, 32 corrected, 550 pending, 0 needs_followup** = **457/1007 citation-reviewed**. All **36 optimization entries** have now been handled in CV40–CV43 (CV40 from prior chat, CV41–43 in this session). This does not promote peer-review status.
 - NEXT: continue with a new folder, preferably `alg-topology/` or `dynamics/`. Do not recheck earlier citations per the user's instruction. CI status still unverified in this continuation.
+
+## 2026-10-16 continuation — citation verification CV44: first ten algebraic-topology entries
+
+- Opened and compared cited mathematical sources for `alg-topology.based-space`, `boundary-operator`, `boundary`, `cell-complex`, `chain-complex`, `cochain-complex`, `contractible`, `covering-map`, `covering-space`, and `cup-product`. Checked singular face orientation, boundary image versus cycles, CW weak/closure finite conditions, homotopy definitions, evenly covered neighborhoods, and Alexander–Whitney cochain multiplication.
+- EoM `Singular_homology` returned an internal error this session, so for the two previously cited boundary items substituted actual source sections in `https://en.wikipedia.org/wiki/Singular_homology`: `#Singular_simplices` gives alternating-face ∂ formula and `#Singular_chain_complex` gives boundary groups and ∂²=0. Source commits `49c91d27` / `4c85c3f5` (operator), `c5663587` (boundary). The proof and notation are standard; no body changes.
+- Other eight citations verified without edits. Per-file ledger commit `4d92fa2a`; running tally **433 verified, 34 corrected, 540 pending, 0 needs_followup** of 1007, i.e., **467 source checks recorded**.
+- NEXT CV45: `alg-topology/` ten pending entries from `cycle` through `homotopy` (inspect live CSV order), then remaining items in subsequent batches. No earlier completed reviews rerun. Site build/CI not verified this continuation.
