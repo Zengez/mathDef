@@ -1,7 +1,11 @@
 % id: manifold.lie-bracket
 % term: Lie bracket of vector fields
 % related: manifold.vector-field, manifold.lie-algebra
-% source: https://ncatlab.org/nlab/show/smooth%2Bmanifold
+% source: https://en.wikipedia.org/wiki/Lie_bracket_of_vector_fields
 % status: draft
 
-For smooth vector fields $X,Y$, their \emph{Lie bracket} is the vector field $[X,Y]$ acting on smooth functions by $[X,Y]f=X(Yf)-Y(Xf)$.
+For smooth vector fields $X,Y$ on a smooth manifold $M$, their \emph{Lie bracket} is the unique smooth vector field $[X,Y]$ whose action as a derivation on smooth functions is
+\[
+[X,Y](f)=X(Y(f))-Y(X(f)).
+\]
+It is bilinear and antisymmetric, obeys the Jacobi identity, and in general is not $C^\infty(M)$-bilinear.

@@ -1,7 +1,11 @@
 % id: manifold.levi-civita-connection
 % term: Levi-Civita connection
 % related: manifold.affine-connection, manifold.riemannian-metric
-% source: https://ncatlab.org/nlab/show/smooth%2Bmanifold
+% source: https://en.wikipedia.org/wiki/Levi-Civita_connection
 % status: draft
 
-The \emph{Levi-Civita connection} of a Riemannian metric is its unique affine connection that is torsion-free and metric-compatible.
+For a Riemannian metric $g$ on a smooth manifold $M$, the \emph{Levi--Civita connection} is the unique affine connection $\nabla$ satisfying metric compatibility
+\[
+X(g(Y,Z))=g(\nabla_XY,Z)+g(Y,\nabla_XZ)
+\]
+and vanishing torsion $\nabla_XY-\nabla_YX=[X,Y]$. These two properties determine $\nabla$ through the Koszul formula.

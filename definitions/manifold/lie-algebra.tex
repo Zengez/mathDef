@@ -1,7 +1,11 @@
 % id: manifold.lie-algebra
 % term: Lie algebra
 % related: linear.vector-space, manifold.lie-bracket
-% source: https://ncatlab.org/nlab/show/smooth%2Bmanifold
+% source: https://en.wikipedia.org/wiki/Lie_algebra
 % status: draft
 
-A \emph{Lie algebra} over a field $F$ is a vector space $\mathfrak g$ with a bilinear bracket $[x,y]$ satisfying $[x,x]=0$ and $[x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0$.
+A \emph{Lie algebra} over a field $F$ is a vector space $\mathfrak g$ equipped with a bilinear operation $[\cdot,\cdot]:\mathfrak g\times\mathfrak g\to\mathfrak g$ that is alternating, $[x,x]=0$, and satisfies the Jacobi identity
+\[
+[x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0.
+\]
+In characteristic different from $2$, alternation is equivalent to skew-symmetry; in characteristic $2$ it is safer to state alternation explicitly.

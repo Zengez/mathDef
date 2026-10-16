@@ -1,7 +1,11 @@
 % id: manifold.exterior-derivative
 % term: Exterior derivative
 % related: manifold.differential-form, manifold.pullback-form
-% source: https://ncatlab.org/nlab/show/smooth%2Bmanifold
+% source: https://en.wikipedia.org/wiki/Exterior_derivative
 % status: draft
 
-The \emph{exterior derivative} is the unique degree-$1$ linear operator $d:\Omega^k(M)\to\Omega^{k+1}(M)$ extending the differential of smooth functions and satisfying $d^2=0$ and the graded Leibniz rule.
+The \emph{exterior derivative} on a smooth manifold $M$ is the unique family of real-linear operators $d:\Omega^k(M)\to\Omega^{k+1}(M)$ extending the usual differential $df$ of functions and satisfying
+\[
+d(\alpha\wedge\beta)=d\alpha\wedge\beta+(-1)^k\alpha\wedge d\beta\quad(\alpha\in\Omega^k(M)),\qquad d^2=0.
+\]
+In local coordinates $d(\sum_I f_I\,dx^I)=\sum_I df_I\wedge dx^I$.

@@ -1,7 +1,11 @@
 % id: manifold.geodesic
 % term: Geodesic
 % related: manifold.affine-connection, manifold.riemannian-manifold
-% source: https://ncatlab.org/nlab/show/smooth%2Bmanifold
+% source: https://en.wikipedia.org/wiki/Geodesic
 % status: draft
 
-For an affine connection $\nabla$, a smooth curve $\gamma:I\to M$ is an \emph{affinely parametrized geodesic} if $\nabla_{\dot\gamma}\dot\gamma=0$.
+Given an affine connection $\nabla$ on a smooth manifold $M$, a smooth curve $\gamma:I\to M$ is an \emph{affinely parametrized geodesic} if its tangent vector is parallel along the curve:
+\[
+\nabla_{\dot\gamma}\dot\gamma=0.
+\]
+For a Riemannian manifold the relevant connection is usually the Levi--Civita connection. Affine reparametrizations preserve the geodesic equation, while arbitrary reparametrizations generally do not.
