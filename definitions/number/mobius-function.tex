@@ -1,7 +1,7 @@
 % id: number.mobius-function
 % term: Möbius function
 % related: number.prime-number, number.multiplicative-function
-% source: https://en.wikipedia.org/wiki/List_of_number_theory_topics
+% source: https://encyclopediaofmath.org/wiki/M%C3%B6bius_function
 % status: draft
 
-The \emph{Möbius function} $\mu(n)$ is $0$ if a prime square divides $n$, and $(-1)^k$ if $n$ is the product of $k$ distinct primes; also $\mu(1)=1$.
+The number-theoretic \emph{Möbius function} $\mu:\mathbb Z_{>0}\to\{-1,0,1\}$ is defined by $\mu(1)=1$; for $n>1$, $\mu(n)=0$ when some prime square divides $n$, and otherwise $\mu(n)=(-1)^r$, where $r$ is the number of distinct prime divisors of $n$. Thus $\mu(n)$ is multiplicative, and $\sum_{d\mid n}\mu(d)=0$ when $n>1$.

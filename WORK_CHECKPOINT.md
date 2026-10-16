@@ -338,3 +338,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Checked first ten existing \`number/\` entries and replaced shared \`List_of_number_theory_topics\` references with individual EoM and Wikipedia articles (including EoM Arithmetic function, Euler function, Greatest common divisor). Defined the number-system domain explicitly.
 - Mathematical corrections clarify the two different **zero-divisor** conventions in integer divisibility ($0\mid0$ under the literal existential relation but some books restrict the divisor to be nonzero), integer sign and zero conventions for $\gcd$ and $\operatorname{lcm}$, $\varphi(1)=1$, and the restriction of irrationality to real numbers. Nothing promoted beyond \`draft\`.
 - NEXT: last nine \`number/\` terms: mobius-function, modular-arithmetic, multiplicative-function, perfect-number, prime-number, prime-power, quadratic-residue, rational-number, residue-class. Then verify GitHub workflows, and resume \`optimization/\` or systematic advanced-topic discovery.
+
+
+## October 15, 2026 continuation — elementary number theory T2 (folder complete)
+
+- Inspected final nine original \`number/\` entries: Möbius function, modular arithmetic, multiplicative arithmetic functions, perfect/prime numbers, prime powers, quadratic residues, rational numbers and residue classes. Replaced broad index sources with specific EoM or Wikipedia articles.
+- Conventions now explicit: $1$ prime-power exclusion ($k\ge1$); zero is a square and therefore a quadratic residue in the full ring $\mathbb Z/n\mathbb Z$, whereas some unit-group conventions exclude it; multiplicative versus completely multiplicative arithmetic functions. EoM Möbius and multiplicative articles were checked directly.
+- **All 19 original \`number/\` entries** examined in T1 10 + T2 9. They remain \`draft\`, and no definition IDs were added or removed. New 983-entry count unchanged.
+- NEXT: inspect publication and metadata workflows. Begin \`optimization/\` audit (36 preexisting entries), in 10–12 entry commits. Then further graduate concept discovery using individual Wikipedia/EoM pages. Bulk AWS/arXiv work remains on hold.
