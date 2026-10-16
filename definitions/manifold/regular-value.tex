@@ -1,7 +1,7 @@
 % id: manifold.regular-value
 % term: Regular value
 % related: manifold.differential, manifold.submersion
-% source: https://ncatlab.org/nlab/show/smooth%2Bmanifold
+% source: https://en.wikipedia.org/wiki/Preimage_theorem
 % status: draft
 
-A point $q\in N$ is a \emph{regular value} of a smooth map $F:M\to N$ if $dF_p$ is surjective for every $p\in F^{-1}(q)$.
+For a smooth map $F:M\to N$, a point $q\in N$ is a \emph{regular value} if $dF_p:T_pM\to T_qN$ is surjective for every $p\in F^{-1}(q)$. If $F^{-1}(q)=\varnothing$, this condition holds vacuously. The regular-value theorem shows that every nonempty inverse image of a regular value is an embedded submanifold of codimension $\dim N$.

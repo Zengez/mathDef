@@ -1,7 +1,7 @@
 % id: manifold.smooth-map
 % term: Smooth map between manifolds
 % related: manifold.smooth-manifold, manifold.diffeomorphism
-% source: https://ncatlab.org/nlab/show/smooth%2Bmanifold
+% source: https://en.wikipedia.org/wiki/Differentiable_manifold
 % status: draft
 
-A map $F:M\to N$ of smooth manifolds is \emph{smooth} if, in every pair of charts, its coordinate expression $\psi\circ F\circ\varphi^{-1}$ is $C^\infty$ wherever defined.
+A map $F:M\to N$ between smooth manifolds is \emph{smooth} if, for every pair of compatible charts $(U,\varphi)$ on $M$ and $(V,\psi)$ on $N$, the coordinate expression $\psi\circ F\circ\varphi^{-1}$ is $C^\infty$ on the open set $\varphi(U\cap F^{-1}(V))$. This condition is independent of the chosen smooth atlases; smoothness implies continuity.

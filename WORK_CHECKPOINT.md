@@ -709,3 +709,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reviewed ten original `manifold/` entries: exterior-derivative, geodesic, hermitian-manifold, hodge-star, holonomy-group, immersion, levi-civita-connection, lie-algebra, lie-bracket, lie-group-homomorphism. Replaced shared generic smooth-manifold links with directly relevant mathematical articles. Verified exterior derivative and Hodge-star definitions against detailed accessible references.
 - Mathematical details clarified: $d^2=0$ and graded Leibniz; affine geodesic parameter convention; Hermitian versus Kähler metrics; Hodge star orientation and square sign; Levi--Civita's precise torsion-free and metric-compatibility equations; alternation for Lie algebras including characteristic $2$.
 - **20/40 manifold entries** audited; **1007** total files. NEXT F3: lie-group, lie-subgroup, pullback-form, regular-value, riemannian-manifold, riemannian-metric, section, smooth-atlas, smooth-manifold, smooth-map. Then F4 last ten; keep all statuses `draft`, AWS/arXiv bulk on hold.
+
+
+## October 16, 2026 — manifold audit F3
+
+- Reviewed ten further original `manifold/` entries: lie-group, lie-subgroup, pullback-form, regular-value, riemannian-manifold, riemannian-metric, section, smooth-atlas, smooth-manifold, smooth-map. Replaced shared smooth-manifold overview URLs with direct topic references, and consulted the mathematical references for Lie subgroups, regular values, and smooth structures.
+- Detailed clarifications: immersed versus embedded Lie subgroups (and subspace topology caveat), the pullback differential-form type/sign convention, vacuous regular-value condition for empty inverse images, locally smooth coordinate expressions, and manifold-with-boundary exclusion under Euclidean chart model.
+- **30/40** manifold entries audited; total remains **1007 .tex definitions in 40 folders**. NEXT F4 final ten: submanifold, submersion, symplectic-form, symplectic-manifold, tangent-bundle, tangent-space, tangent-vector, topological-manifold, vector-bundle, vector-field. Check workflows, preserve IDs/statuses; AWS/arXiv harvesting remains on hold.
