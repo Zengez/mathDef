@@ -949,3 +949,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Fresh audit result remains **1007 definitions** (986 draft, 21 example). The previous **8 very-short flags are now zero**. The only structural/editorial flags emitted are the expected 1007 `not-reviewed` status flags and the two intentional duplicate display terms for Open set.
 - Source-host change from VS1: Wikipedia 787 → **785** and Encyclopedia of Mathematics 155 → **157**, reflecting the two algebraic-topology upgrades; all other host counts unchanged.
 - VS1 is closed. NEXT: cross-definition/source-quality consistency pass, beginning with broad/generic source pages and terminology collisions that static duplicate-term detection cannot see. Preserve the distinction between editorial audit and formal reviewed status. AWS/arXiv bulk remains paused.
+
+
+## October 16, 2026 — cross-subject collision audit CC1
+
+- Scanned all 1007 repository paths for exact definition basenames shared across subject folders. Found seven collision families: `boundary`, `cycle`, `orbit`, `isometry`, `spectrum`, `open-set`, and `distribution`. Inspected all fourteen files pairwise rather than relying on display-term duplicate detection.
+- The orbit, isometry, spectrum, open-set and distribution pairs are intentionally distinct and are adequately disambiguated by their displayed terms/ambient hypotheses. The two Open set entries remain the known intentional duplicate display term (metric-specific versus general topological definition).
+- Found a genuine consistency issue in algebraic topology: `alg-topology.boundary` had the display term **Singular boundary** but defined only a generic chain-complex boundary, mirroring the mismatch recently fixed in `alg-topology.cycle`. Commit `09f59a1b` now formulates both in the singular chain complex \(S_*(X;G)\) and uses the direct EoM singular-homology source.
+- The same pass caught and immediately repaired an indexing typo introduced in VS1: the boundary-is-cycle identity is \(\partial_n\partial_{n+1}=0\). The corrected cycle and boundary entries now use consistent indexing and notation \(Z_n=\ker\partial_n\), \(B_n=\operatorname{im}\partial_{n+1}\subseteq Z_n\).
+- NEXT: verify CC1 workflows, then scan semantic near-collisions not visible from identical basenames (e.g. Brownian/Wiener, projection variants, spectrum/resolvent terminology, continuity/convergence variants), followed by related-link and source-specificity checks. AWS/arXiv bulk remains paused.
