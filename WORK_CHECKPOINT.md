@@ -1319,3 +1319,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All eleven existing direct citation articles supported the entries without changes. In particular the more general alpha>1 metric Hölder inequality is mathematically meaningful although the named Hölder class commonly limits alpha<=1; the definition notes this.
 - Ledger commit `c8bd2d94` now **259 verified, 21 corrected, 727 pending, 0 needs_followup** (1007 corpus).
 - NEXT: finish eleven more `real/` entries: lipschitz-continuity, monotone-sequence, pointwise-convergence, power-series, riemann-integrability, riemann-sum, series, subsequence, supremum-norm, supremum, uniform-convergence. Record checks and checkpoint.
+
+
+## October 16, 2026 — citation verification CV25: real-analysis folder complete (11 entries)
+
+- Independently inspected all eleven remaining `real/` source articles: Lipschitz continuity, monotone sequences, pointwise convergence, power series, Riemann integrability and tagged sums, infinite series, subsequences, supremum norm, supremum, uniform convergence. Compared quantifier order for pointwise/uniform convergence, power-series radius behavior, Darboux criterion, and sup norm vs essential sup.
+- All eleven sources supported the displayed text as written. No new corrections required; current source URL for `real.supremum-norm` explicitly treats bounded maps on an arbitrary domain, and Wikipedia `Monotonic_function` covers monotone sequences.
+- Dedicated evidence ledger commit `7da741d6`: **270 verified, 21 corrected, 716 pending, 0 needs_followup** (1007 definitions, 291 checked). **All 22 `real/` entries completed** in CV24–CV25.
+- NEXT: choose a coherent pending topic with direct sources. `prob/` (31) or `linear/` (28) appropriate; continue bounded batches and checkpoint after each. Site workflow checks for latest commits remain unverified and should be explicitly inspected when possible. Do not begin deferred features, expansion or formal status promotion.
