@@ -1263,3 +1263,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - **Substantive convention clarification** in `topology.path-connected`: the entry defined path-connected using a universal quantifier over pairs, so empty space qualifies vacuously. Its source `Connected_space#Path_connectedness` instead characterizes path-connected spaces by *exactly one* path component, so empty space does not qualify. Added an explicit warning distinguishing the two conventions (commit `a5fc9d57`); left the chosen mathematical definition intact and linked to the same source with documented limitation.
 - Ledger commit `2767fcab`: **190 verified, 19 corrected, 798 pending, 0 needs_followup** of 1007; all 32 topology entries evidence-recorded. No unrelated definitions, website changes, or status promotions.
 - NEXT: begin `algebra/` or another subject in bounded source-specific batches. Publication workflows still not independently confirmed for latest commits.
+
+
+## October 16, 2026 — citation verification CV18: ten algebra foundations
+
+- Verified source statements for `algebra/` first ten in alphabetical order: abelian group, algebraic element, binary operation, commutative ring, coset, cyclic group, field extension, field, group action and group homomorphism. Specifically checked unital/nonzero field and commutative-ring conventions and definition of extension degree.
+- All ten original article citations directly supported the entries; no text/source correction needed. Evidence and URLs in ledger commit `a322f900`.
+- Current tally **200 verified, 19 corrected, 788 pending, 0 needs_followup** out of 1007 total; 19 `algebra/` entries still pending.
+- NEXT: algebra `group-isomorphism`, `group`, `homomorphism-kernel`, `ideal`, `integral-domain`, `maximal-ideal`, `module`, `monoid`, `normal-subgroup`, `orbit` and then remaining algebra terms. Commit checkpoint with every batch.
