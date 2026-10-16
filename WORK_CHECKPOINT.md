@@ -331,3 +331,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reconciled the current count to **983 definitions, 40 folders**, with `dynamics/` now **27 entries** (15 original, 12 added in discovery G1). Updated the top-level `README.md` and `CATALOG.md` current snapshots and replaced one newly stale explanatory claim. Other historic figures remain labeled historical checkpoints.
 - Removed a stray LaTeX spacing control sequence in prose from `prob.sample-variance`, which KaTeX's prose renderer does not interpret as a LaTeX document environment.
 - NEXT: audit other existing folders, priority `number/` (19 entries) and `optimization/` (36 entries), then continue vetted Wikipedia/EoM discovery and improve stale generic source citations. Preserve AWS/arXiv bulk hold.
+
+
+## October 15, 2026 continuation — elementary number theory T1
+
+- Checked first ten existing \`number/\` entries and replaced shared \`List_of_number_theory_topics\` references with individual EoM and Wikipedia articles (including EoM Arithmetic function, Euler function, Greatest common divisor). Defined the number-system domain explicitly.
+- Mathematical corrections clarify the two different **zero-divisor** conventions in integer divisibility ($0\mid0$ under the literal existential relation but some books restrict the divisor to be nonzero), integer sign and zero conventions for $\gcd$ and $\operatorname{lcm}$, $\varphi(1)=1$, and the restriction of irrationality to real numbers. Nothing promoted beyond \`draft\`.
+- NEXT: last nine \`number/\` terms: mobius-function, modular-arithmetic, multiplicative-function, perfect-number, prime-number, prime-power, quadratic-residue, rational-number, residue-class. Then verify GitHub workflows, and resume \`optimization/\` or systematic advanced-topic discovery.
