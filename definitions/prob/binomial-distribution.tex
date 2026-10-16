@@ -1,7 +1,11 @@
 % id: prob.binomial-distribution
 % term: Binomial distribution
 % related: prob.bernoulli-distribution, prob.pmf
-% source: https://en.wikipedia.org/wiki/List_of_probability_topics
+% source: https://en.wikipedia.org/wiki/Binomial_distribution
 % status: draft
 
-A random variable $X$ has distribution $\operatorname{Bin}(n,p)$ if $P(X=k)=\binom nk p^k(1-p)^{n-k}$ for integers $0\le k\le n$.
+For an integer $n\ge0$ and $p\in[0,1]$, a variable $X$ has the \emph{binomial distribution} $\operatorname{Bin}(n,p)$ if
+\[
+P(X=k)=\binom nk p^k(1-p)^{n-k},\qquad k=0,\ldots,n,
+\]
+and $P(X\in\{0,\ldots,n\})=1$, with the conventional endpoint interpretation when $p=0$ or $1$. It is the law of a sum of $n$ independent Bernoulli$(p)$ variables.

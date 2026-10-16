@@ -301,3 +301,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Key conventions: omega/alpha limits on compact metric systems, alpha requires invertibility; $\varepsilon$-chains for discrete maps versus $(\varepsilon,T)$ chains for flows; transitivity versus eventual mixing; fixed-point hyperbolicity uses unit-circle spectral condition for maps versus imaginary-axis condition for flows; stable/unstable manifolds stated for diffeomorphisms. Bowen--Dinaburg entropy has its metric and nonempty compactness hypotheses.
 - Expected new corpus total: **983 definitions across 40 subject folders**, assuming all files committed and accepted by build (verify GitHub Action separately). No preexisting IDs or source documents removed.
 - NEXT: confirm build and structural/corpus audit for G1; inspect metadata issue counts; advance another underaudited older subject, prioritizing \`prob/\` or \`optimization/\`. Continue candidate discovery, avoid duplicate terms, check EoM source conventions and keep every new entry marked draft. AWS/arXiv bulk harvest remains paused.
+
+
+## 2026-10-15 replacement-chat continuation — probability audit Q1
+
+- Continued old-definition audit after G1, examining the first ten \`prob/\` entries: almost-surely, bernoulli-distribution, binomial-distribution, cdf, conditional-expectation, conditional-probability, correlation, covariance, distribution, event. Replaced their broad \`List_of_probability_topics\` citations with independently checked term-level Wikipedia reference pages.
+- Important rigor fixes: conditioning on positive-probability events versus zero-probability events; conditional expectation uniquely determined **only almost surely**; probability distribution as a pushforward measure on a stated measurable target; real versus complex covariance; defined CDF sided-continuity and limiting values, and degenerate Bernoulli/binomial cases.
+- All remain draft. Expected corpus count stays **983 definitions** after G1 (Q1 adds no new IDs). Build and metadata audit for Q1 require separate verification.
+- NEXT: probability Q2 entries expectation through probability-space (about 10), then Q3 remaining random-variable through variance (11). Audit zero-variance/independence/normalization and measure-theoretic assumptions, and check latest Pages tests.

@@ -1,7 +1,11 @@
 % id: prob.correlation
 % term: Pearson correlation coefficient
 % related: prob.covariance, prob.standard-deviation
-% source: https://en.wikipedia.org/wiki/List_of_probability_topics
+% source: https://en.wikipedia.org/wiki/Pearson_correlation_coefficient
 % status: draft
 
-If $X,Y$ have finite positive variances, their \emph{correlation coefficient} is $\rho(X,Y)=\operatorname{Cov}(X,Y)/(\sigma_X\sigma_Y)$.
+For real square-integrable random variables $X,Y$ with strictly positive variances, the \emph{Pearson correlation coefficient} is
+\[
+\rho(X,Y)=\frac{\operatorname{Cov}(X,Y)}{\sqrt{\operatorname{Var}(X)}\,\sqrt{\operatorname{Var}(Y)}}.
+\]
+It lies in $[-1,1]$ and is undefined by this formula when either variance is zero.
