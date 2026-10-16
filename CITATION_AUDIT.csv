@@ -341,16 +341,16 @@ definitions/functions/bijection.tex,verified,https://en.wikipedia.org/wiki/Bijec
 definitions/functions/function.tex,verified,https://en.wikipedia.org/wiki/Function_(mathematics),Definition and formal definition; every input assigned exactly one codomain value
 definitions/functions/injective.tex,verified,https://en.wikipedia.org/wiki/Injective_function,Definition; equal outputs imply equal inputs
 definitions/functions/surjective.tex,verified,https://en.wikipedia.org/wiki/Surjective_function,Definition; every codomain element attained
-definitions/functionspaces/analytic-dirichlet-space.tex,pending,,
-definitions/functionspaces/berezin-transform.tex,pending,,
-definitions/functionspaces/bergman-distance.tex,pending,,
-definitions/functionspaces/bergman-extremal-function.tex,pending,,
-definitions/functionspaces/bergman-kernel-diagonal.tex,pending,,
-definitions/functionspaces/bergman-kernel.tex,pending,,
-definitions/functionspaces/bergman-metric.tex,pending,,
-definitions/functionspaces/bergman-projection.tex,pending,,
-definitions/functionspaces/bergman-space.tex,pending,,
-definitions/functionspaces/bergman-unit-disk-kernel.tex,pending,,
+definitions/functionspaces/analytic-dirichlet-space.tex,verified,"https://en.wikipedia.org/wiki/Dirichlet_space","Inspected analytic Dirichlet space on disk, Dirichlet derivative energy with 1/pi norm and value-at-zero term; alternative equivalent H2 inner product noted in source."
+definitions/functionspaces/berezin-transform.tex,corrected,"https://link.springer.com/article/10.1007/s00020-024-02770-x","EoM Berezin_transform returned 502 (indexed text does exist). Changed to accessible 2024 open-access Springer article §2 giving Berezin transform of bounded operator as <Ak_z,k_z> with normalized reproducing kernels, T_phi=P(phi·), which specializes to displayed Bergman integral. Source commit 2aca867b."
+definitions/functionspaces/bergman-distance.tex,verified,"https://en.wikipedia.org/wiki/Bergman_metric","Bergman metric article lines 110-123 explicitly defines path length sqrt g_jk dotgamma_j overline dotgamma_k, and infimum path distance on bounded domains."
+definitions/functionspaces/bergman-extremal-function.tex,verified,"https://encyclopediaofmath.org/wiki/Bergman_kernel_function","Opened individual EoM Bergman kernel function lines 64-69: minimizer f(a)=1 is K(z,a)/K(a,a), norm inverse sqrt diagonal."
+definitions/functionspaces/bergman-kernel-diagonal.tex,verified,"https://encyclopediaofmath.org/wiki/Bergman_kernel_function","Opened EoM Bergman kernel lines 64-79: diagonal K(z,z)=sup norm≤1 |f(z)|² and general nonnegative, positive for bounded domains."
+definitions/functionspaces/bergman-kernel.tex,verified,"https://encyclopediaofmath.org/wiki/Bergman_kernel_function","Opened EoM Bergman kernel equations lines 49-62: reproducing integral, holomorphic-antiholomorphic kernel, orthonormal expansion local uniform."
+definitions/functionspaces/bergman-metric.tex,verified,"https://en.wikipedia.org/wiki/Bergman_metric","Metric defined Hessian of log K(z,z), Hermitian tangent norm and biholomorphic invariance, positive definite for bounded domain."
+definitions/functionspaces/bergman-projection.tex,verified,"https://encyclopediaofmath.org/wiki/Bergman_kernel_function","EoM commentary lines 99-102 states P orthogonal L²→holomorphic L² and integral kernel representation. Operator norm≤1 follows projection."
+definitions/functionspaces/bergman-space.tex,verified,"https://en.wikipedia.org/wiki/Bergman_space","Bergman A^p holomorphic with volume integrable pth power, p≥1 norm and p<1 quasi-norm, A² RKHS."
+definitions/functionspaces/bergman-unit-disk-kernel.tex,verified,"https://en.wikipedia.org/wiki/Bergman_kernel","Bergman kernel article line 131 explicitly gives ordinary area disk kernel 1/[π(1−z conjugate w)²]; normalized-area kernel rescales by π."
 definitions/functionspaces/bloch-space.tex,pending,,
 definitions/functionspaces/composition-operator.tex,pending,,
 definitions/functionspaces/dirichlet-reproducing-kernel.tex,pending,,
