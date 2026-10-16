@@ -1,7 +1,11 @@
 % id: prob.markov-chain
 % term: Markov chain
 % related: prob.transition-matrix, prob.stationary-distribution
-% source: https://en.wikipedia.org/wiki/List_of_probability_topics
+% source: https://en.wikipedia.org/wiki/Markov_chain
 % status: draft
 
-A discrete-time stochastic process $(X_n)$ is a \emph{Markov chain} if the conditional law of $X_{n+1}$ given $X_0,\ldots,X_n$ depends only on $X_n$.
+A discrete-time stochastic process $(X_n)_{n\ge0}$ with a finite or countable state space $S$ is a \emph{Markov chain} if, whenever a history $X_0=i_0,\ldots,X_n=i_n$ has positive probability,
+\[
+P(X_{n+1}=j\mid X_0=i_0,\ldots,X_n=i_n)=P(X_{n+1}=j\mid X_n=i_n)
+\]
+for every $j\in S$. The transition probabilities may depend on $n$; a \emph{time-homogeneous} chain uses the same transition matrix at each step.

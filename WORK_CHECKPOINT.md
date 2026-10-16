@@ -309,3 +309,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Important rigor fixes: conditioning on positive-probability events versus zero-probability events; conditional expectation uniquely determined **only almost surely**; probability distribution as a pushforward measure on a stated measurable target; real versus complex covariance; defined CDF sided-continuity and limiting values, and degenerate Bernoulli/binomial cases.
 - All remain draft. Expected corpus count stays **983 definitions** after G1 (Q1 adds no new IDs). Build and metadata audit for Q1 require separate verification.
 - NEXT: probability Q2 entries expectation through probability-space (about 10), then Q3 remaining random-variable through variance (11). Audit zero-variance/independence/normalization and measure-theoretic assumptions, and check latest Pages tests.
+
+
+## 2026-10-15 replacement-chat continuation — probability audit Q2
+
+- Inspected and revised ten existing \`prob/\` definitions: expectation, exponential-distribution, iid, independence, markov-chain, normal-distribution, pdf, pmf, poisson-distribution, probability-space. Replaced broad probability-topic-list references with individually verified mathematical articles.
+- Clarified finite-integrability of expectation; countable support for mass functions; Lebesgue absolute continuity and almost-everywhere uniqueness of densities; finite-family **mutual** independence versus pairwise independence; and explicit positive-history conditional probability for countable-state Markov chains (time homogeneity optional). Specified degenerate and scale/rate conventions for standard named distributions.
+- All entries remain \`draft\` with unchanged stable IDs. Collection still expected **983 files**. Next Q3: eleven remaining \`prob/\` files (random-variable through variance), then recheck build, source metadata and convention cross-links with \`stochastic/\`.
