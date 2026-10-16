@@ -1386,3 +1386,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Nine other articles supported their central definitions and conventions. Full per-entry source/evidence recorded in ledger commit `65c2b6b2`.
 - Dedicated tally now **333 verified, 27 corrected, 647 pending, 0 needs_followup** of 1007 (**360 citation-reviewed**). No new entries, UI features or formal review-status promotions. Earlier citation checks deliberately unchanged at user request.
 - NEXT: `numerical/` next ten entries from finite-element-method to matrix-condition-number, then remaining 15 numerical entries. Save ledger+checkpoint after every bounded batch.
+
+
+## October 16, 2026 — citation verification CV33: finite elements and numerical linear algebra (10 entries)
+
+- Opened specific source pages and checked `numerical/` entries: conforming Galerkin finite elements, fixed-point iteration, forward error, Gaussian elimination, interpolation, Lagrange polynomial, linear least squares, LU factorization, machine epsilon and matrix condition number.
+- Checked special conventions: conforming vs nonconforming finite-element test spaces, Lagrange polynomial existence on fields with distinct nodes, pivoted PA=LU vs unpivoted A=LU, spacing versus unit-roundoff definitions of machine epsilon. All ten existing sources substantively supported their stated hypotheses and equations; no source or body changes.
+- Evidence in `CITATION_AUDIT.csv` commit `5cf765a0`: **343 verified, 27 corrected, 637 pending, 0 needs_followup** of 1007, or **370 citation-reviewed**.
+- NEXT: remaining 15 numerical files `newton-root`, `normal-equations`, `qr-factorization`, `quadrature-rule`, `relative-error`, `residual`, `roundoff-error`, `runge-kutta4`, `simpson-rule`, `singular-value-decomposition`, `singular-value`, `spectral-norm`, `spline`, `trapezoidal-rule`, `truncation-error`. Continue small batches and checkpoint; earlier checked citations left untouched. CI status not independently checked.
