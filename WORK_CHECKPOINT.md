@@ -186,3 +186,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Inspected PDE IDs pde.gradient-vector, pde.green-function, pde.h1-space, pde.h10-space, pde.heat-equation, pde.hyperbolic-equation, pde.initial-value-problem, pde.inverse-fourier-transform, pde.laplace-equation, pde.laplacian. Replaced generic Sobolev references by directly relevant EoM/Wikipedia articles for Green functions, equations, gradients and Laplacians; Sobolev-specific entries retain Sobolev references.
 - Substantive clarifications: Green functions depend on a *specified boundary-value problem* and need not exist uniquely; hyperbolicity is defined relative to a time covector with alternate strict-root conventions; inverse Fourier formula requires suitable inversion hypotheses; Laplacian specified Euclidean $C^2$ setting.
 - Next: P3 entries mollifier, multi-index, Neumann, parabolic, Poisson, principal symbol, Robin, Schwartz, Sobolev, tempered distributions.
+
+## October 15, 2026 — PDE batch P3
+
+- Examined 10 PDE entries mollifier, multi-index, neumann-boundary-condition, parabolic-equation, poisson-equation, principal-symbol, robin-boundary-condition, schwartz-space, sobolev-space, tempered-distribution and used direct reference pages instead of generic Sobolev sources (except the actual Sobolev-space definition).
+- Made regularity/normal assumptions explicit in Neumann conditions, distinguished positive definite from uniformly parabolic operators, specified principal-symbol derivative convention, and made distributional Sobolev derivatives/Schwartz seminorm topology explicit.
+- Next: P4 last 6 PDE definitions `test-function`, `viscosity-solution`, `wave-equation`, `weak-derivative`, `weak-solution`, `well-posed-problem`. Confirm full 36-entry PDE audit then final GitHub build.
