@@ -1,7 +1,11 @@
 % id: manifold.tangent-vector
 % term: Tangent vector as a derivation
 % related: manifold.smooth-manifold, manifold.tangent-space
-% source: https://ncatlab.org/nlab/show/smooth%2Bmanifold
+% source: https://en.wikipedia.org/wiki/Tangent_space
 % status: draft
 
-A \emph{tangent vector} at $p\in M$ can be defined as a linear map $v:C^\infty(M)\to\mathbb R$ satisfying $v(fg)=f(p)v(g)+g(p)v(f)$.
+A \emph{tangent vector} $v$ at $p\in M$ can be defined as an $\mathbb R$-linear derivation on germs of smooth real functions at $p$, satisfying the Leibniz identity
+\[
+v(fg)=f(p)v(g)+g(p)v(f).
+\]
+Under a coordinate chart $(x^1,\ldots,x^n)$ it is represented uniquely by $v=\sum_i v^i(\partial/\partial x^i)_p$.

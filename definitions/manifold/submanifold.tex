@@ -1,7 +1,11 @@
 % id: manifold.submanifold
 % term: Embedded submanifold
 % related: manifold.smooth-manifold, manifold.embedding
-% source: https://ncatlab.org/nlab/show/smooth%2Bmanifold
+% source: https://en.wikipedia.org/wiki/Submanifold
 % status: draft
 
-A subset $S\subseteq M$ is an \emph{embedded $k$-dimensional submanifold} if locally near each $p\in S$, a smooth chart sends $S$ onto the intersection of the chart image with $\mathbb R^k\times\{0\}$.
+A subset $S$ of a smooth $n$-manifold $M$ is an \emph{embedded $k$-dimensional submanifold} if for every $p\in S$ there is a smooth chart $(U,\varphi)$ centered near $p$ with
+\[
+\varphi(U\cap S)=\varphi(U)\cap(\mathbb R^k\times\{0\}).
+\]
+It receives the subspace topology and the induced smooth structure. The notion differs from an immersed submanifold, whose topology need not be the subspace topology.
