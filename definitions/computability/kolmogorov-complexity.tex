@@ -4,8 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Kolmogorov_complexity
 % status: draft
 
-Fix an optimal universal partial computable machine $U:\{0,1\}^*\rightharpoonup\{0,1\}^*$. The \emph{plain Kolmogorov complexity} of a finite binary string $x$ relative to $U$ is
+Fix an optimal universal partial computable machine $U:\{0,1\}^*\rightharpoonup\{0,1\}^*$. The \emph{plain Kolmogorov complexity} of a finite binary string $x$ is
 \[
-C_U(x)=\min\{|p|:U(p)=x\},
+C_U(x)=\min\{|p|:U(p)=x\}.
 \]
-the length of its shortest generating program. Different optimal machines change this quantity by at most an additive constant independent of $x$. Plain and prefix-free complexities use different program conventions.
+Any two optimal description machines yield complexities differing by at most an additive constant independent of $x$. The program domain need not be prefix-free; requiring prefix-free descriptions gives a related, generally different notion.

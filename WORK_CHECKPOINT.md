@@ -846,3 +846,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Identified precisely twelve new computability IDs by contrasting the 27-entry audit snapshot at `5b2dca64` with live 39-entry tree.
 - Audited first six additions: arithmetical-hierarchy, class-bpp, class-co-np, class-rp, class-zpp, computable-real. Checked directly Wikipedia probability-complexity and computable real references. Distinguish worst-case polynomial time versus ZPP expected time, RP one-sided versus BPP two-sided error, coNP negative certificates, and effective approximation for computable reals.
 - Cumulative individual-audit count **924/1007**, **83** remaining. NEXT AC2 last six: kolmogorov-complexity, oracle-machine, polynomial-hierarchy, prefix-free-kolmogorov-complexity, turing-degree, turing-reducibility. Leave drafts unchanged. AWS/arXiv bulk remains on hold.
+
+
+## October 16, 2026 — advanced computability AC2 (39-entry folder fully second-pass reviewed)
+
+- Reviewed final six advanced computability additions: kolmogorov-complexity, oracle-machine, polynomial-hierarchy, prefix-free-kolmogorov-complexity, turing-degree, turing-reducibility. Verified individual mathematical source articles and the quantified-versus-oracle description of the polynomial hierarchy. Refined exact conventions on prefix-free universality, Turing-degrees representatives, oracle decision totality and many-one versus Turing reducibility.
+- All twelve newly authored computability entries have received a separate audit (AC1 six, AC2 six), alongside the 27 previously audited originals; **39/39** complete at this editorial audit level. Corpus unchanged at **1007 .tex files**, with **930 individually audited** and **77 remaining**.
+- NEXT: audit exactly 12 newly added `sets/` entries from graduate discovery G2, then 12 new `dynamics/` entries from G1, and 12 `pde/` additions from microlocal M1. Confirm metadata + Pages workflows. Keep AWS/arXiv harvesting paused.

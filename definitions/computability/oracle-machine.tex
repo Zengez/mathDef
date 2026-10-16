@@ -4,4 +4,4 @@
 % source: https://en.wikipedia.org/wiki/Oracle_machine
 % status: draft
 
-An \emph{oracle Turing machine} is a Turing machine with an additional operation that asks membership queries of a fixed set $B\subseteq\mathbb N$ (the \emph{oracle}). A query about $n$ returns whether $n\in B$, treated as one primitive step in the standard oracle computation model. Computations may thus be described as being \emph{relative to $B$}, even when $B$ is not decidable by an ordinary Turing machine.
+An \emph{oracle Turing machine} is a Turing machine furnished with a primitive query operation for a fixed oracle set $B\subseteq\mathbb N$: it may ask whether $n\in B$ and receives the correct yes-or-no answer as one oracle step. The relative computation may decide sets not computable without the oracle. The oracle's answers are treated as given, rather than computed by the querying machine.
