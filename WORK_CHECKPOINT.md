@@ -1661,3 +1661,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Found that `category.model-category` began with finite limits and colimits while the cited Hovey-style definition requires all **small** limits/colimits. Corrected to name the complete/cocomplete convention and note that historical/weaker variations exist (source-body commit `f76e32e3`), evidence row `corrected`. Nine others `verified`.
 - Ledger CV71 commit `e4643289`: **608 verified, 80 corrected, 316 pending, 3 needs_followup** = **688/1007 completed**. Earlier checked citations untouched.
 - NEXT CV72: category `opposite-category`, `poset-category`, `preadditive-category`, `preorder-category`, `product`, `pullback`, `pushout`, `representable-functor`, `sieve`, `simplicial-set`. Verify variance and all commuting equations.
+
+## 2026-10-16 — CV72 category theory C4 (10 entries)
+
+- Compared `opposite-category`, `poset-category`, `preadditive-category`, `preorder-category`, `product`, `pullback`, `pushout`, `representable-functor`, `sieve`, `simplicial-set` to opened cited articles and relevant sections. Verified morphism variance (particularly Δ^op, Hom presheaves) and universal-property arrow orientation; no source/body edits required.
+- Ledger CV72 commit `373bbcdd`: **618 verified, 80 corrected, 306 pending, 3 needs_followup**, **698/1007 completed**. No old checked citations reaudited.
+- NEXT CV73: final 6 `category/` entries `small-category`, `subcat-full`, `terminal-object`, `triangulated-category`, `unit-of-adjunction`, `zero-object`. Then choose `computability/` or `measure/` folder. Keep batch commits and source evidence.
