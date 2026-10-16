@@ -1654,3 +1654,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Opened and inspected the cited individual pages for endomorphism, epimorphism, equalizer, equivalence-of-categories, faithful-functor, full-functor, functor-category, functor, grothendieck-topology and groupoid. Checked cancellation orientation, equalizer universal arrow, natural equivalence vs category isomorphism, hom-set injectivity/surjectivity, and the three covering-sieve axioms.
 - All ten verified without mathematics or URL repairs. Evidence ledger commit `6087aa3b`. Running totals **599 verified, 79 corrected, 326 pending, 3 needs_followup** = **678/1007 completed**. Previous checked rows and earlier followups unchanged.
 - NEXT CV71: next pending `category/` group starting hom-functor, initial-object, isomorphism, limit, model-category, monoidal-category, monomorphism, morphism, natural-isomorphism, natural-transformation. Check source URLs and variance explicitly.
+
+## 2026-10-16 — CV71 category theory C3 (10 entries; substantive model-category clarification)
+
+- Opened individual source pages for `hom-functor`, `initial-object`, `isomorphism`, `limit`, `model-category`, `monoidal-category`, `monomorphism`, `morphism`, `natural-isomorphism`, `natural-transformation`. Checked Hom functor pre-/postcomposition orientation, terminal cone property, triangle/pentagon coherence, and naturality square.
+- Found that `category.model-category` began with finite limits and colimits while the cited Hovey-style definition requires all **small** limits/colimits. Corrected to name the complete/cocomplete convention and note that historical/weaker variations exist (source-body commit `f76e32e3`), evidence row `corrected`. Nine others `verified`.
+- Ledger CV71 commit `e4643289`: **608 verified, 80 corrected, 316 pending, 3 needs_followup** = **688/1007 completed**. Earlier checked citations untouched.
+- NEXT CV72: category `opposite-category`, `poset-category`, `preadditive-category`, `preorder-category`, `product`, `pullback`, `pushout`, `representable-functor`, `sieve`, `simplicial-set`. Verify variance and all commuting equations.
