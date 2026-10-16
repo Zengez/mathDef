@@ -1,8 +1,8 @@
 # Definition catalog
 
-Snapshot: 2026-10-15. Counts below are generated from the repository tree; the deployed site is the source for the most current total.
+Snapshot: 2026-10-16. Counts below are generated from the repository tree; the deployed site is the source for the most current total.
 
-**995 definitions across 40 subject folders.**
+**1007 definitions across 40 subject folders.**
 
 | Subject | Folder | Entries |
 |---|---|---:|
@@ -15,7 +15,7 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Combinatorics | [`definitions/combin/`](definitions/combin/) | 18 |
 | Commutative algebra | [`definitions/commalg/`](definitions/commalg/) | 21 |
 | Complex analysis | [`definitions/complex/`](definitions/complex/) | 38 |
-| Computability and complexity theory | [`definitions/computability/`](definitions/computability/) | 27 |
+| Computability and complexity theory | [`definitions/computability/`](definitions/computability/) | 39 |
 | Convex analysis and optimization | [`definitions/optimization/`](definitions/optimization/) | 36 |
 | Distributions, Sobolev spaces and PDEs | [`definitions/pde/`](definitions/pde/) | 48 |
 | Dynamical systems and ODEs | [`definitions/dynamics/`](definitions/dynamics/) | 27 |

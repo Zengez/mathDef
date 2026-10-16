@@ -591,3 +591,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Important distinctions: BPP two-sided bounded error, RP zero false-acceptance error, ZPP always-correct expected polynomial time, co-NP as complements of NP languages, and arithmetic (unbounded natural-number quantifiers) versus polynomial (polynomially bounded witnesses and P-computable predicates) hierarchies.
 - Together with D1 (six), the last expansion adds **12 graduate-level entries**. Expected live total **1007 definitions in 40 folders**, pending workflow verification. All are independently formulated drafts, not automatically peer-reviewed.
 - NEXT: refresh `README.md` and `CATALOG.md` for 1007 definitions and `computability/` 39 entries; verify metadata audit and Pages build; identify any underaudited old entries and resume Wikipedia category-based graduate concept discovery. Do not resume paused AWS/arXiv bulk extraction.
+
+
+## October 16, 2026 — inventory reconciliation after discovery D2
+
+- Verified Git tree at `f3365470`: **1007 .tex definitions, 40 subject folders**, `computability/` now **39 entries**. Corpus metadata workflow passed for D2; Pages publication of D2 was still in progress at last check. D1 publication and metadata both passed.
+- Updated current-snapshot totals in `README.md` and `CATALOG.md` and the subject-specific computability count. Older numerical figures in historical review narratives are checkpoints rather than current-state assertions.
+- NEXT: continue with underaudited historical folders (`complex/`, `graph/`, `combin/`, `optimization/` already audited) and direct Wikipedia mathematics category candidate review for more genuinely missing graduate terms. Keep edits in bounded commits, mathematically check conventions and linked sources, and leave drafts unpromoted.
