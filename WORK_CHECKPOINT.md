@@ -1622,3 +1622,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Switched three inaccessible EoM references to directly read article sections: `continuous-dual` (`b6ed03ba`), `hilbert-space` (`5e0bc48e`), `locally-convex-space` (`c4925c4a`). Seven other original sources verified. No math-body edits.
 - Ledger commit `c32acf1e`: **569 verified, 65 corrected, 371 pending, 2 needs_followup** = **634 completed/1007**. The two followups are original `dynamics.invariant-set` and CV64 `functional.banach-space` whose attempted link replacement was blocked by safety checks. Do not claim source fixed.
 - NEXT CV66 functional files starting normal-operator, normed-space, operator-norm, orthogonal-projection, polar-decomposition, positive-operator, projection-operator, quotient-banach-space, reflexive-space, resolvent-operator (confirm live pending sorted order). No CI run claimed.
+
+## 2026-10-16 — CV66 functional/operator citations third batch (10 entries)
+
+- Checked next ten `functional/` rows from `normal-operator` through `resolvent-set`. Examined spectral, projection, nuclear-operator and uniform-algebra peak-point formulae; distinguished reflexivity under canonical dual embedding and the sign convention for resolvent inverse.
+- Seven original EoM citations were inaccessible or too broad and replaced by opened, specifically matching Wikipedia articles: normed-space `2cde48fd`, orthogonal-projection `ee193ba0`, peak-function `0314f2ec`, peak-point `a429956c`, projection `007164c8`, reflexive-space `f440d6ba`, resolvent-set `f9336079`. Three original sources verified. No definition-body changes.
+- Ledger CV66 commit `86204ef7`: **572 verified, 72 corrected, 361 pending, 2 needs_followup** = **644/1007 completed**. Next: 15 remaining `functional/` pending, beginning schauder-basis, self-adjoint-operator etc. Original two followups remain unresolved; no already-audited citation revisit.
