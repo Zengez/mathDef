@@ -246,16 +246,16 @@ definitions/computability/decision-problem.tex,verified,"https://en.wikipedia.or
 definitions/computability/decision-tree.tex,verified,"https://en.wikipedia.org/wiki/Decision_tree_model","Queries internal nodes, outcomes outgoing edges, decisions at leaves; depth bounds worst-case deterministic query complexity."
 definitions/computability/exponential-time.tex,verified,"https://en.wikipedia.org/wiki/EXPTIME","Deterministic class union DTIME(2^{n^k}) or 2^{poly(n)}, independent of fixed exponent k."
 definitions/computability/graph-algorithm.tex,corrected,"https://www.sciencedirect.com/topics/computer-science/graph-algorithms","Existing Graph_algorithm redirect landed on a list of algorithms, not a defining source. Switched to ScienceDirect Graph Algorithms overview (Electronic Design Automation 2009, section 4.3), explicitly treating algorithms operating on graph representations with applications and adjacency data (commit db020ef9)."
-definitions/computability/kolmogorov-complexity.tex,pending,,
-definitions/computability/language.tex,pending,,
-definitions/computability/las-vegas-algorithm.tex,pending,,
-definitions/computability/monte-carlo-algorithm.tex,pending,,
-definitions/computability/nondeterministic-machine.tex,pending,,
-definitions/computability/np-complete.tex,pending,,
-definitions/computability/np-hard.tex,pending,,
-definitions/computability/oracle-machine.tex,pending,,
-definitions/computability/polynomial-hierarchy.tex,pending,,
-definitions/computability/polynomial-reduction.tex,pending,,
+definitions/computability/kolmogorov-complexity.tex,verified,"https://en.wikipedia.org/wiki/Kolmogorov_complexity#Plain_Kolmogorov_complexity_C","Plain shortest binary program length on optimal universal machine, invariance up to additive constant and distinction from prefix-free version."
+definitions/computability/language.tex,verified,"https://en.wikipedia.org/wiki/Formal_language","Formal language arbitrary subset of Sigma-star, may include epsilon and need not be decidable or specified by grammar; finite alphabet explicit context."
+definitions/computability/las-vegas-algorithm.tex,verified,"https://en.wikipedia.org/wiki/Las_Vegas_algorithm","Zero-error randomized computation with correct outputs whenever returned and variable/expected running time; allowed failure-symbol alternative noted."
+definitions/computability/monte-carlo-algorithm.tex,verified,"https://en.wikipedia.org/wiki/Monte_Carlo_algorithm","Bounded execution with probabilistic errors, one- or two-sided and amplification distinctions."
+definitions/computability/nondeterministic-machine.tex,verified,"https://en.wikipedia.org/wiki/Nondeterministic_Turing_machine","Transitions may branch; existential accepting path; usual nondeterministic time bound applies to all branches."
+definitions/computability/np-complete.tex,verified,"https://en.wikipedia.org/wiki/NP-completeness","NP complete iff in NP and all NP languages Karp reduce polynomially; no need assume P distinct from NP."
+definitions/computability/np-hard.tex,verified,"https://en.wikipedia.org/wiki/NP-hardness","NP hard via reductions from every NP language; membership in NP not assumed; optimization variants require specified reduction."
+definitions/computability/oracle-machine.tex,verified,"https://en.wikipedia.org/wiki/Oracle_machine","Oracle query to fixed predicate/set answered as primitive operation, defining relative computation."
+definitions/computability/polynomial-hierarchy.tex,verified,"https://en.wikipedia.org/wiki/Polynomial_hierarchy","PH union of Sigma_k^P, alternation polynomial-length bounded strings, Sigma_1 NP and Pi_1 coNP; strictness open."
+definitions/computability/polynomial-reduction.tex,verified,"https://en.wikipedia.org/wiki/Polynomial-time_reduction","Karp reduction total polynomial computable f with membership iff membership, stricter than adaptive Turing reduction."
 definitions/computability/polynomial-time.tex,pending,,
 definitions/computability/prefix-free-kolmogorov-complexity.tex,pending,,
 definitions/computability/randomized-algorithm.tex,pending,,
