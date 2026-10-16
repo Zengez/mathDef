@@ -236,16 +236,16 @@ definitions/computability/class-bpp.tex,verified,"https://en.wikipedia.org/wiki/
 definitions/computability/class-co-np.tex,verified,"https://en.wikipedia.org/wiki/Co-NP","coNP class complements of NP languages, equivalent short certificates of nonmembership; NP vs coNP unknown."
 definitions/computability/class-np.tex,verified,"https://en.wikipedia.org/wiki/NP_(complexity)","NP equals polynomial-length certificates checked deterministically in polynomial time, equivalently NDTM polytime."
 definitions/computability/class-p.tex,verified,"https://en.wikipedia.org/wiki/P_(complexity)","P languages decided in deterministic polynomial time on all inputs; encoding convention polynomially interchangeable."
-definitions/computability/class-pspace.tex,pending,,
-definitions/computability/class-rp.tex,pending,,
-definitions/computability/class-zpp.tex,pending,,
-definitions/computability/computable-function.tex,pending,,
-definitions/computability/computable-real.tex,pending,,
-definitions/computability/decidable-language.tex,pending,,
-definitions/computability/decision-problem.tex,pending,,
-definitions/computability/decision-tree.tex,pending,,
-definitions/computability/exponential-time.tex,pending,,
-definitions/computability/graph-algorithm.tex,pending,,
+definitions/computability/class-pspace.tex,verified,"https://en.wikipedia.org/wiki/PSPACE","Formal definition polynomial deterministic workspace; read-only input excluded, time may be exponential."
+definitions/computability/class-rp.tex,verified,"https://en.wikipedia.org/wiki/RP_(complexity)","Randomized polytime one-sided error: reject no-instances with probability 1; accept yes-instances at least one-half."
+definitions/computability/class-zpp.tex,verified,"https://en.wikipedia.org/wiki/ZPP_(complexity)","Zero-error randomized expected polynomial time, RP intersect coRP, Las Vegas algorithm."
+definitions/computability/computable-function.tex,verified,"https://en.wikipedia.org/wiki/Computable_function","Total recursive computation halts on each natural input, partial case may diverge."
+definitions/computability/computable-real.tex,verified,"https://en.wikipedia.org/wiki/Computable_number","Computable reals admit effective rational approximations to prescribed precision; arbitrary convergent rational sequence without computable modulus insufficient."
+definitions/computability/decidable-language.tex,verified,"https://en.wikipedia.org/wiki/Recursive_language","Recursive/decidable language requires Turing machine halt on all inputs, unlike recognizability only."
+definitions/computability/decision-problem.tex,verified,"https://en.wikipedia.org/wiki/Decision_problem","Boolean-output problem equivalent to membership of formal-language encoding; complexity requires chosen model."
+definitions/computability/decision-tree.tex,verified,"https://en.wikipedia.org/wiki/Decision_tree_model","Queries internal nodes, outcomes outgoing edges, decisions at leaves; depth bounds worst-case deterministic query complexity."
+definitions/computability/exponential-time.tex,verified,"https://en.wikipedia.org/wiki/EXPTIME","Deterministic class union DTIME(2^{n^k}) or 2^{poly(n)}, independent of fixed exponent k."
+definitions/computability/graph-algorithm.tex,corrected,"https://www.sciencedirect.com/topics/computer-science/graph-algorithms","Existing Graph_algorithm redirect landed on a list of algorithms, not a defining source. Switched to ScienceDirect Graph Algorithms overview (Electronic Design Automation 2009, section 4.3), explicitly treating algorithms operating on graph representations with applications and adjacency data (commit db020ef9)."
 definitions/computability/kolmogorov-complexity.tex,pending,,
 definitions/computability/language.tex,pending,,
 definitions/computability/las-vegas-algorithm.tex,pending,,
