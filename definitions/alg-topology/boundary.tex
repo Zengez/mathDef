@@ -1,7 +1,11 @@
 % id: alg-topology.boundary
 % term: Singular boundary
 % related: alg-topology.cycle, alg-topology.singular-homology
-% source: https://en.wikipedia.org/wiki/Chain_complex
+% source: https://encyclopediaofmath.org/wiki/Singular_homology
 % status: draft
 
-An \emph{$n$-boundary} of a chain complex is an element of $\operatorname{im}\partial_{n+1}\subseteq C_n$.
+For a topological space $X$ and coefficient abelian group $G$, a \emph{singular $n$-boundary} is a singular $n$-chain lying in the image of
+\[
+\partial_{n+1}:S_{n+1}(X;G)\to S_n(X;G).
+\]
+Thus the group of singular $n$-boundaries is $B_n(X;G)=\operatorname{im}(\partial_{n+1})\subseteq Z_n(X;G)$.
