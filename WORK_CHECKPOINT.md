@@ -1394,3 +1394,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Checked special conventions: conforming vs nonconforming finite-element test spaces, Lagrange polynomial existence on fields with distinct nodes, pivoted PA=LU vs unpivoted A=LU, spacing versus unit-roundoff definitions of machine epsilon. All ten existing sources substantively supported their stated hypotheses and equations; no source or body changes.
 - Evidence in `CITATION_AUDIT.csv` commit `5cf765a0`: **343 verified, 27 corrected, 637 pending, 0 needs_followup** of 1007, or **370 citation-reviewed**.
 - NEXT: remaining 15 numerical files `newton-root`, `normal-equations`, `qr-factorization`, `quadrature-rule`, `relative-error`, `residual`, `roundoff-error`, `runge-kutta4`, `simpson-rule`, `singular-value-decomposition`, `singular-value`, `spectral-norm`, `spline`, `trapezoidal-rule`, `truncation-error`. Continue small batches and checkpoint; earlier checked citations left untouched. CI status not independently checked.
+
+
+## October 16, 2026 — citation verification CV34: root solvers and numerical linear algebra (10 entries)
+
+- Opened sources and compared `numerical/` definitions for Newton root iteration, normal equations, thin QR, quadrature rule, relative error, residual, rounding error, classical RK4, single-panel Simpson quadrature and full singular value decomposition.
+- Checked formulas against actual source statements including rank-deficient QR, normal equations under rank deficiency, residual sign conventions, and complex SVD adjoint. Existing sources supported all ten entries as written; no body or URL changes warranted.
+- Individual evidence in ledger commit `7e2004d5`; current tally **353 verified, 27 corrected, 627 pending, 0 needs_followup**, 380/1007 reviewed.
+- NEXT: final 5 numerical entries: singular-value, spectral-norm, spline, trapezoidal-rule, truncation-error. After committing, mark `numerical/` complete in checkpoint and move to next coherent remaining topic; no prior checks rerun. GitHub workflow publication still not independently established.
