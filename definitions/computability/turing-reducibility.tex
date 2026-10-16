@@ -4,4 +4,4 @@
 % source: https://en.wikipedia.org/wiki/Turing_reduction
 % status: draft
 
-For sets $A,B\subseteq\mathbb N$, one writes $A\le_T B$ and says that $A$ is \emph{Turing reducible to $B$} if a Turing machine with oracle access to membership in $B$ halts on every input $n$ and correctly decides whether $n\in A$. There is no time or query bound. The relation is reflexive and transitive, and it is no stronger than many-one reducibility: a many-one reduction yields a Turing reduction.
+For sets $A,B\subseteq\mathbb N$, one writes $A\le_T B$ and says that $A$ is \emph{Turing reducible to $B$} if a Turing machine with oracle access to membership in $B$ halts on every input $n$ and correctly decides whether $n\in A$. There is no time or query bound. The relation is reflexive and transitive. Every many-one reduction induces a Turing reduction, but the converse need not hold; thus Turing reducibility is a weaker reducibility notion.
