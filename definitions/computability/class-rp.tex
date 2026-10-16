@@ -4,9 +4,9 @@
 % source: https://en.wikipedia.org/wiki/RP_(complexity)
 % status: draft
 
-A language $L$ belongs to $\mathbf{RP}$ if a randomized Turing machine runs in polynomial time on every input and satisfies
+A language $L$ belongs to $\mathbf{RP}$ if a randomized machine runs in worst-case polynomial time on every input and satisfies
 \[
-x\notin L\implies P(\text{accept }x)=0,\qquad
-x\in L\implies P(\text{accept }x)\ge\tfrac12.
+x\notin L\Longrightarrow\Pr(M(x)\text{ accepts})=0,\qquad
+x\in L\Longrightarrow\Pr(M(x)\text{ accepts})\ge\tfrac12.
 \]
-Thus false acceptance is forbidden, while false rejection may occur with probability at most $1/2$. The class $\mathbf{coRP}$ is defined by complementing languages in RP.
+There are no false positive acceptances, but false negatives are permitted. Repeated independent runs can make the false-negative probability arbitrarily small without introducing false positives.

@@ -4,4 +4,4 @@
 % source: https://en.wikipedia.org/wiki/BPP_(complexity)
 % status: draft
 
-A decision language $L$ belongs to $\mathbf{BPP}$ (bounded-error probabilistic polynomial time) if a randomized Turing machine runs in polynomial time on every input $x$ and returns the correct membership decision with probability at least $2/3$ for every $x$. The error may occur on either yes- or no-instances. Any fixed success threshold strictly greater than $1/2$ gives the same class after amplification.
+A language $L\subseteq\{0,1\}^*$ lies in $\mathbf{BPP}$ if some probabilistic Turing machine halts within polynomially many steps for every input and every random-bit sequence, and outputs the correct answer with probability at least $2/3$ for each input. Both false acceptances and false rejections may occur. Replacing $2/3$ by any fixed constant greater than $1/2$ does not change the class, by error amplification.

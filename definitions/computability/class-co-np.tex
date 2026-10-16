@@ -4,4 +4,4 @@
 % source: https://en.wikipedia.org/wiki/Co-NP
 % status: draft
 
-The class $\mathbf{coNP}$ consists of all decision languages $L$ whose complement $\overline L=\{0,1\}^*\setminus L$ belongs to $\mathbf{NP}$. Equivalently, nonmembership in $L$ has polynomial-length certificates verifiable in polynomial time, with an if-and-only-if guarantee. Whether $\mathbf{NP}=\mathbf{coNP}$ is not known.
+A language $L\subseteq\{0,1\}^*$ belongs to $\mathbf{coNP}$ precisely when its complement $\overline L$ belongs to $\mathbf{NP}$. Equivalently, there exist a polynomial $p$ and a polynomial-time verifier $V$ such that $x\notin L$ if and only if there is a certificate $w$ of length at most $p(|x|)$ with $V(x,w)=1$. It remains open whether $\mathbf{NP}=\mathbf{coNP}$.
