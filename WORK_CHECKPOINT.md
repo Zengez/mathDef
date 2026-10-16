@@ -85,3 +85,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 - Caught and corrected a genuine formal wording error: `schemes.presheaf` and `category.simplicial-set` had each described a functor from an opposite category as `contravariant`. In the standard functorial convention these are **covariant functors from the opposite category**, equivalently contravariant functors from the original category. Both now say “a functor from the opposite category (equivalently contravariant from the original category).”
 - This highlights why mathematics-level consistency review is distinct from static syntax validation and why later audits should inspect category-theoretic variance, duals and universal-property orientations.
+
+## 2026-10-15 evening continuation, batch S1
+
+- Resumed from **934 definition files** and the checkpoint. Bulk arXiv remains on hold.
+- Examined first ten existing stochastic-process entries, IDs: stochastic.adapted-process, stochastic.almost-sure-convergence, stochastic.brownian-motion, stochastic.characteristic-function-prob, stochastic.conditional-independence, stochastic.convergence-distribution, stochastic.convergence-lp, stochastic.convergence-probability, stochastic.covariance-function, stochastic.discrete-stationary-process.
+- Replaced 9 generic Martingale references with more specifically relevant EoM or Wikipedia articles; one martingale-adjacent reference was retained. Improved $L^p$ convergence common-space assumptions, distinguished conditional independence given an **event** from conditional independence given a sigma-field, and clarified index-set conditions in strict stationarity.
+- Batch S1 is committed together with this checkpoint; source URLs are context references, not proof of peer review. Entries remain `draft`.
+- Next action: audit second group of stochastic entries starting at `ergodic-measure`, inspect for mathematically significant errors, and commit with next checkpoint.
