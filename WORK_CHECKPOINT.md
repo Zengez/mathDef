@@ -1247,3 +1247,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - The `topology.continuous-open-map` citation `Open_mapping` failed to resolve to a directly viewable article. Replaced with precise `Open_and_closed_maps` source (`52aafd22`) whose definitions and characterizations support every listed clause. Other nine citations supported their definitions without edit.
 - Ledger commit `949e49ac`; cumulative **169 verified, 18 corrected, 820 pending, 0 needs_followup** out of 1007. `topology/` has 22 still pending.
 - NEXT: topology dense/discrete/countability/Hausdorff/homeomorphism/interior/limit-point entries, then remaining completeness/neighborhood/topological constructions. GitHub publication pipeline results still not independently established for these commits.
+
+
+## October 16, 2026 — citation verification CV16: local topology, separation and completeness (10 entries)
+
+- Opened source articles and verified the complete statements and caveats for dense subsets, discrete topology, first countability, Hausdorff space, homeomorphism, indiscrete topology, interior, accumulation point, local compactness and completeness of a metric. Special attention to sequence criteria in first-countable spaces, Hausdorff hypothesis for local compactness, and metric vs topological completeness.
+- All ten original citation targets support the displayed definitions (including the `Limit_point` redirect to Accumulation point); no source or text modifications necessary.
+- Evidence ledger commit `9a3bb6df`; current totals **179 verified, 18 corrected, 810 pending, 0 needs_followup** (1007 total). `topology/` has 12 remaining pending entries.
+- NEXT: remaining topology starting `neighborhood`, `nowhere-dense`, `open-cover`, `open-set`, `path-connected`, `product-topology`, `quotient-topology`, `second-countable`, `separable-space`, `subspace-topology`, `topological-embedding`, `topological-space`. After this run CI and reconcile ledger counts.
