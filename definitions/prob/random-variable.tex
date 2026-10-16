@@ -1,7 +1,7 @@
 % id: prob.random-variable
 % term: Random variable
 % related: prob.probability-space, prob.expectation
-% source: https://en.wikipedia.org/wiki/List_of_probability_topics
+% source: https://en.wikipedia.org/wiki/Random_variable
 % status: draft
 
-A \emph{real random variable} is a measurable function $X:(\Omega,\mathcal F)\to(\mathbb R,\mathcal B(\mathbb R))$.
+A \emph{real-valued random variable} on $(\Omega,\mathcal F,P)$ is a measurable map $X:(\Omega,\mathcal F)\to(\mathbb R,\mathcal B(\mathbb R))$: for every Borel set $B\subseteq\mathbb R$, the inverse image $X^{-1}(B)$ belongs to $\mathcal F$. The associated probability law is the pushforward measure $P\circ X^{-1}$.

@@ -1,7 +1,11 @@
 % id: prob.sample-variance
 % term: Sample variance
 % related: prob.sample-mean, prob.variance
-% source: https://en.wikipedia.org/wiki/List_of_probability_topics
+% source: https://en.wikipedia.org/wiki/Variance
 % status: draft
 
-For $n\ge2$ observations $x_1,\ldots,x_n$, the \emph{sample variance} is $s^2=\frac1{n-1}\sum_{i=1}^n(x_i-\overline x)^2$.
+For $n\ge2$ real observations $x_1,\ldots,x_n$ with sample mean $\overline x$, the \emph{sample variance} using the usual unbiased-estimator normalization is
+\[
+s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline x)^2.
+\]
+For i.i.d.\ observations with finite variance, this is unbiased for the population variance. The alternative normalization $1/n$ is also used for descriptive variance.

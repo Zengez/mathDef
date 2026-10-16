@@ -1,7 +1,7 @@
 % id: prob.transition-matrix
 % term: Transition matrix
 % related: prob.markov-chain, prob.stationary-distribution
-% source: https://en.wikipedia.org/wiki/List_of_probability_topics
+% source: https://en.wikipedia.org/wiki/Stochastic_matrix
 % status: draft
 
-For a discrete Markov chain, the \emph{transition matrix} is $P=(p_{ij})$, where $p_{ij}=P(X_{n+1}=j\mid X_n=i)$ and each row sums to $1$.
+For a time-homogeneous Markov chain $(X_n)$ on a finite or countable state space $S$, its \emph{transition matrix} $P=(p_{ij})_{i,j\in S}$ consists of probabilities $p_{ij}=P(X_{n+1}=j\mid X_n=i)$ whenever the conditioning event has positive probability (or from a specified transition kernel otherwise). It satisfies $p_{ij}\ge0$ and $\sum_{j\in S}p_{ij}=1$ for each $i$. In a time-inhomogeneous chain, matrices may depend on $n$.
