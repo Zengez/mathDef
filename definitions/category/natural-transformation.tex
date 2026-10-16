@@ -1,7 +1,11 @@
 % id: category.natural-transformation
 % term: Natural transformation
 % related: category.functor, category.natural-isomorphism
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Natural_transformation
 % status: draft
 
-For $F,G:\mathcal C\to\mathcal D$, a \emph{natural transformation} $\eta:F\Rightarrow G$ consists of $\eta_X:F(X)\to G(X)$ such that $G(f)\eta_X=\eta_YF(f)$ for every $f:X\to Y$.
+For covariant functors $F,G:\mathcal C\to\mathcal D$, a \emph{natural transformation} $\eta:F\Rightarrow G$ assigns to every object $X$ a morphism $\eta_X:F(X)\to G(X)$ such that for every arrow $f:X\to Y$ the naturality square commutes:
+\[
+G(f)\circ\eta_X=\eta_Y\circ F(f).
+\]
+Natural transformations are the morphisms in the functor category $[\mathcal C,\mathcal D]$.

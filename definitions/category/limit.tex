@@ -1,7 +1,7 @@
 % id: category.limit
 % term: Limit of a diagram
 % related: category.functor, category.colimit, category.product
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Limit_(category_theory)
 % status: draft
 
-For a functor $F:J\to\mathcal C$, a \emph{limit} is a universal cone $\Delta L\Rightarrow F$: every cone $\Delta X\Rightarrow F$ factors uniquely through it.
+For a diagram $F:J\to\mathcal C$ with small index category $J$, a \emph{limit} is an object $L$ with a cone $\lambda:\Delta L\Rightarrow F$ such that for every cone $\mu:\Delta X\Rightarrow F$ there exists a unique morphism $u:X\to L$ satisfying $\mu=\lambda\circ(\Delta u)$. Thus a limit, when it exists, is the terminal object of the category of cones over $F$.

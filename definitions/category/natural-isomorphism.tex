@@ -1,7 +1,7 @@
 % id: category.natural-isomorphism
 % term: Natural isomorphism
 % related: category.natural-transformation, category.isomorphism
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Natural_transformation
 % status: draft
 
-A natural transformation $\eta:F\Rightarrow G$ is a \emph{natural isomorphism} if every component $\eta_X$ is an isomorphism in the target category.
+A natural transformation $\eta:F\Rightarrow G$ between functors $F,G:\mathcal C\to\mathcal D$ is a \emph{natural isomorphism} if each component $\eta_X:F(X)\to G(X)$ is an isomorphism in $\mathcal D$. In this case the inverses $(\eta_X)^{-1}$ themselves form a natural transformation $G\Rightarrow F$, which is inverse to $\eta$ in the functor category.

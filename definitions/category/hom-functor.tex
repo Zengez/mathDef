@@ -1,7 +1,7 @@
 % id: category.hom-functor
 % term: Hom functor
 % related: category.category, category.representable-functor
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Hom_functor
 % status: draft
 
-For an object $A$ of a locally small category $\mathcal C$, the \emph{covariant Hom functor} $\mathcal C(A,-):\mathcal C\to\mathbf{Set}$ sends $X$ to $\mathcal C(A,X)$ and $f:X\to Y$ to postcomposition by $f$.
+For a fixed object $A$ of a locally small category $\mathcal C$, the \emph{covariant Hom functor} $\operatorname{Hom}_{\mathcal C}(A,-):\mathcal C\to\mathbf{Set}$ sends $X$ to $\operatorname{Hom}_{\mathcal C}(A,X)$ and $f:X\to Y$ to postcomposition $g\mapsto f\circ g$. Dually, $\operatorname{Hom}_{\mathcal C}(-,A):\mathcal C^{\mathrm{op}}\to\mathbf{Set}$ sends $f:X\to Y$ to precomposition $\operatorname{Hom}(Y,A)\to\operatorname{Hom}(X,A)$.
