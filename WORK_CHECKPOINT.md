@@ -121,3 +121,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Corrected `scv.stein-manifold` to explicitly include locally defined holomorphic coordinate systems arising from global functions, following the Encyclopedia of Mathematics definition; its former 2-condition statement omitted that item. Replaced generic analytic-function/Levi references with individual EoM articles on domains of holomorphy and Stein manifolds.
 - Clarified that an exhaustion function's properness formulation needs a lower bound, and that the domain-of-holomorphy/pseudoconvexity equivalence is specifically a finite-dimensional statement.
 - All entries remain draft. Next audit SCV analytic/complex-manifold geometry and pluripotential groups in ~10-entry blocks.
+
+## 2026-10-15 evening continuation, batch C2
+
+- Inspected 10 more SCV/pluripotential entries: scv.pluriharmonic-function, scv.plurisubharmonic-function, scv.polynomial-hull, scv.polynomially-convex-set, scv.pseudoconvex-domain, scv.strictly-plurisubharmonic, scv.strongly-pseudoconvex-boundary, scv.subharmonic-function, scv.upper-semicontinuous, scv.complex-tangent-hyperplane; swapped four broad/less-specific sources for individually relevant Encyclopedia of Mathematics articles.
+- Clarified compact **closed sublevel** condition in the pseudoconvex exhaustion definition and its finite-dimensional Levi-problem equivalence, made the $C^2$ convention explicit for strict plurisubharmonicity, and labeled the complex tangent hyperplane precisely.
+- Next SCV audit: remaining geometry/Kähler/Kobayashi entries and analytic polyhedra, about 20; then new advanced terms. Follow up on any concept-level convention conflicts rather than promoting to reviewed.
