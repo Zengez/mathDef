@@ -1327,3 +1327,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All eleven sources supported the displayed text as written. No new corrections required; current source URL for `real.supremum-norm` explicitly treats bounded maps on an arbitrary domain, and Wikipedia `Monotonic_function` covers monotone sequences.
 - Dedicated evidence ledger commit `7da741d6`: **270 verified, 21 corrected, 716 pending, 0 needs_followup** (1007 definitions, 291 checked). **All 22 `real/` entries completed** in CV24–CV25.
 - NEXT: choose a coherent pending topic with direct sources. `prob/` (31) or `linear/` (28) appropriate; continue bounded batches and checkpoint after each. Site workflow checks for latest commits remain unverified and should be explicitly inspected when possible. Do not begin deferred features, expansion or formal status promotion.
+
+
+## October 16, 2026 — citation verification CV26: first ten linear algebra entries
+
+- Resumed from CV25 per user request; earlier source reviews deliberately **not rechecked**. Read ten existing `linear/` entries from `basis` through `image` and opened actual Wikipedia/EoM individual sources. Checked algebraic basis versus Schauder basis, characteristic polynomial sign and field conventions, determinant formula, eigenspace/kernel, eigenvectors and dual-space definition.
+- **Corrections:** `linear.dual-space` source changed from inaccessible EoM `Linear_functional` to the directly inspected `Dual_space#Algebraic_dual_space` (commit `44b338a4`). `linear.image` citation changed from too-general/unavailable EoM `Operator` to Wikipedia `Linear_map#Kernel,_image_and_the_rank%E2%80%93nullity_theorem`, with corrected fragment anchor (commits `aa285b03`, `8955822b`). No definition-body edits necessary.
+- Citation ledger: `80cd58fe`, **278 verified, 23 corrected, 706 pending, 0 needs_followup**, out of 1007 (301 citation-reviewed).
+- NEXT: finish 18 remaining `linear/` entries in two small batches: first inner-product through norm, then nullity through vector-space. After that `prob/` or another subject cluster. Update this checkpoint after every committed ledger batch, keeping earlier audits untouched.
+- GitHub Actions publication and corpus metadata workflow status is a separate check; do not claim passing without verifying. No new term discovery or UI changes.
