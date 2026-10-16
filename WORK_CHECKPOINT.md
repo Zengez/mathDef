@@ -493,3 +493,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Audited eight additional algebra entries: group-isomorphism, group, homomorphism-kernel, ideal, integral-domain, maximal-ideal, module, monoid. Switched generic algebra topic-list sources to concept-specific Wikipedia/EoM pages; independently checked the unital-module convention against EoM Module and maximal-ideal quotient criterion against the individual article.
 - Important qualifications: two-sided versus one-sided ideals; maximal two-sided ideals in noncommutative rings do not generally give field quotients; integral domains require nonzero unital commutative rings; left module requires the full four scalar-action axioms. All remain draft.
 - NEXT: audit the remaining 11 original algebra entries (`normal-subgroup`, `orbit`, `polynomial-ring`, `prime-ideal`, `quotient-group`, `quotient-ring`, `ring-homomorphism`, `ring`, `semigroup`, `stabilizer`, `subgroup`) in batches; verify Actions. Continue other underaudited folders after algebra.
+
+
+## October 16, 2026 — algebra B3 (29-entry folder complete)
+
+- Inspected final eleven original `algebra/` definitions: normal-subgroup, orbit, polynomial-ring, prime-ideal, quotient-group, quotient-ring, ring-homomorphism, ring, semigroup, stabilizer, subgroup. Replaced generic mathematics index citations with individual mathematical concept reference pages.
+- Formalized normality requirements for quotient groups and two-sided-ideal requirements for quotient rings, ring identity convention and unital homomorphisms, nonzero quotient necessary for prime ideals, and the zero ring allowance. Clarified semigroup nonemptiness convention and orbit-stabilizer cosets.
+- All **29 original `algebra/` entries** have now been inspected over B1 10, B2a 8, B3 11. Stable IDs and editorial draft statuses preserved; collection remains **995 definitions across 40 folders**. Audit is not mathematical peer review.
+- NEXT: check GitHub Actions build and corpus audit for B3, then audit 36 `arithmetic/` advanced number-theory entries or another unaudited category. Continue graduate-term discovery, with AWS/arXiv bulk hold unchanged.
