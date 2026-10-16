@@ -1,7 +1,7 @@
 % id: category.contravariant-functor
 % term: Contravariant functor
 % related: category.functor, category.opposite-category
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Functor
 % status: draft
 
-A \emph{contravariant functor} $\mathcal C\to\mathcal D$ is a covariant functor $\mathcal C^{\mathrm{op}}\to\mathcal D$, reversing the direction of morphisms.
+A \emph{contravariant functor} from $\mathcal C$ to $\mathcal D$ consists of a covariant functor $F:\mathcal C^{\mathrm{op}}\to\mathcal D$. Concretely it assigns $F(X)$ to each object and a morphism $F(f):F(Y)\to F(X)$ to each $f:X\to Y$, with $F(1_X)=1_{F(X)}$ and $F(g\circ f)=F(f)\circ F(g)$ for composable $f,g$. This is a functor \emph{from the opposite category}, not a contravariant functor from that opposite category.

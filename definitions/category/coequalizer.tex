@@ -1,7 +1,7 @@
 % id: category.coequalizer
 % term: Coequalizer
 % related: category.equalizer, category.coproduct
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Coequalizer
 % status: draft
 
-For parallel $f,g:A\to B$, a \emph{coequalizer} is $q:B\to Q$ satisfying $qf=qg$ and universal among morphisms out of $B$ with that property.
+For parallel morphisms $f,g:A\to B$ in a category, a \emph{coequalizer} is a morphism $q:B\to Q$ with $q\circ f=q\circ g$ such that for every morphism $h:B\to X$ satisfying $h\circ f=h\circ g$, there is a unique $u:Q\to X$ with $u\circ q=h$. If it exists, this pair $(Q,q)$ is unique up to a unique isomorphism respecting $q$.

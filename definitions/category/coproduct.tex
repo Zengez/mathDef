@@ -1,7 +1,7 @@
 % id: category.coproduct
 % term: Categorical coproduct
 % related: category.product, category.initial-object
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Coproduct
 % status: draft
 
-A \emph{coproduct} of $A,B$ is an object $Q$ with inclusions $i_A:A\to Q$, $i_B:B\to Q$ such that each pair $f:A\to X$, $g:B\to X$ extends uniquely to $Q\to X$.
+A \emph{binary coproduct} of objects $A,B$ in a category $\mathcal C$ is an object $A\amalg B$ with arrows $i_A:A\to A\amalg B$ and $i_B:B\to A\amalg B$, such that for any arrows $f:A\to X$ and $g:B\to X$ there is a unique $h:A\amalg B\to X$ with $h i_A=f$ and $h i_B=g$. This is dual to the categorical product and is unique up to a unique compatible isomorphism.

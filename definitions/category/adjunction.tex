@@ -1,7 +1,11 @@
 % id: category.adjunction
 % term: Adjunction
 % related: category.functor, category.unit-of-adjunction
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Adjoint_functors
 % status: draft
 
-An \emph{adjunction} $F:\mathcal C\rightleftarrows\mathcal D:G$ consists of natural bijections $\mathcal D(FX,Y)\cong\mathcal C(X,GY)$ for all $X,Y$.
+For functors $F:\mathcal C\to\mathcal D$ and $G:\mathcal D\to\mathcal C$, an \emph{adjunction} $F\dashv G$ is a family of bijections
+\[
+\Phi_{X,Y}:\operatorname{Hom}_{\mathcal D}(F X,Y)\longrightarrow\operatorname{Hom}_{\mathcal C}(X,G Y)
+\]
+natural in $X\in\mathcal C$ and $Y\in\mathcal D$. The functor $F$ is the left adjoint and $G$ the right adjoint. Equivalently, the adjunction consists of a unit and counit satisfying the triangle identities.

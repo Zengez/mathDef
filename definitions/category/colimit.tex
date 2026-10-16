@@ -1,7 +1,7 @@
 % id: category.colimit
 % term: Colimit of a diagram
 % related: category.limit, category.coproduct
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Limit_(category_theory)
 % status: draft
 
-For $F:J\to\mathcal C$, a \emph{colimit} is a universal cocone $F\Rightarrow\Delta L$: every cocone $F\Rightarrow\Delta X$ factors uniquely through it.
+For a diagram $F:J\to\mathcal C$ indexed by a small category $J$, a \emph{colimit} of $F$ is an object $L$ equipped with a cocone $\lambda:F\Rightarrow\Delta L$ such that for any other cocone $\mu:F\Rightarrow\Delta X$, there exists a unique morphism $u:L\to X$ with $\mu=(\Delta u)\circ\lambda$. Thus a colimit is an initial object of the category of cocones under $F$, when it exists.
