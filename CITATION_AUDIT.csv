@@ -123,16 +123,16 @@ definitions/category/functor-category.tex,verified,"https://en.wikipedia.org/wik
 definitions/category/functor.tex,verified,"https://en.wikipedia.org/wiki/Functor","Ordinary covariant functors preserve sources/targets, identities and composition."
 definitions/category/grothendieck-topology.tex,verified,"https://en.wikipedia.org/wiki/Grothendieck_topology","Covering sieves satisfy maximality, stability under pullback, and transitivity/local character; site conventions agree."
 definitions/category/groupoid.tex,verified,"https://en.wikipedia.org/wiki/Groupoid","Definition category with all morphisms invertible; groups arise as single-object instances."
-definitions/category/hom-functor.tex,pending,,
-definitions/category/initial-object.tex,pending,,
-definitions/category/isomorphism.tex,pending,,
-definitions/category/limit.tex,pending,,
-definitions/category/model-category.tex,pending,,
-definitions/category/monoidal-category.tex,pending,,
-definitions/category/monomorphism.tex,pending,,
-definitions/category/morphism.tex,pending,,
-definitions/category/natural-isomorphism.tex,pending,,
-definitions/category/natural-transformation.tex,pending,,
+definitions/category/hom-functor.tex,verified,"https://en.wikipedia.org/wiki/Hom_functor","Formal definition states postcomposition Hom(A,f), precomposition Hom(f,A) and reversed variance C^op→Set."
+definitions/category/initial-object.tex,verified,"https://en.wikipedia.org/wiki/Initial_and_terminal_objects","Initial I has unique I→X for any object; dual to terminal and empty-diagram colimit."
+definitions/category/isomorphism.tex,verified,"https://en.wikipedia.org/wiki/Isomorphism#Category_theory","Invertible categorical arrow requires two-sided inverse, and both epic and monic follow; converse not general."
+definitions/category/limit.tex,verified,"https://en.wikipedia.org/wiki/Limit_(category_theory)","Cone ΔL⇒F with unique X→L from any cone; terminal object in cone category."
+definitions/category/model-category.tex,corrected,"https://en.wikipedia.org/wiki/Model_category#Formal_definition","Formal definition (Hovey) requires all small limits and colimits, in addition to two-of-three, retracts, lifting and factorization; corrected original misleading finite-only sentence, retaining older weaker-convention caveat (source-body commit f76e32e3)."
+definitions/category/monoidal-category.tex,verified,"https://en.wikipedia.org/wiki/Monoidal_category#Formal_definition","Tensor bifunctor, associator, left/right unitors satisfying pentagon and triangle; braiding not assumed."
+definitions/category/monomorphism.tex,verified,"https://en.wikipedia.org/wiki/Monomorphism","Categorical monic f is left-cancellative: fg=fh implies g=h, not necessarily underlying injectivity."
+definitions/category/morphism.tex,verified,"https://en.wikipedia.org/wiki/Morphism","A morphism is typed abstract arrow in Hom(X,Y), not necessarily set function; identity and composition typing correct."
+definitions/category/natural-isomorphism.tex,verified,"https://en.wikipedia.org/wiki/Natural_transformation","Natural isomorphism is natural transformation with each component isomorphism; inverse components form natural inverse."
+definitions/category/natural-transformation.tex,verified,"https://en.wikipedia.org/wiki/Natural_transformation#Definition","Naturality equation G(f)η_X = η_Y F(f) for components F(X)→G(X directly matches."
 definitions/category/opposite-category.tex,pending,,
 definitions/category/poset-category.tex,pending,,
 definitions/category/preadditive-category.tex,pending,,
