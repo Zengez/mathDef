@@ -1,7 +1,7 @@
 % id: stochastic.renewal-process
 % term: Renewal process
 % related: prob.iid, stochastic.poisson-process
-% source: https://encyclopediaofmath.org/wiki/Martingale
+% source: https://encyclopediaofmath.org/wiki/Renewal_processes
 % status: draft
 
-For i.i.d. strictly positive waiting times $(W_n)$ with $S_n=\sum_{k=1}^nW_k$, the \emph{renewal counting process} is $N(t)=\max\{n:S_n\le t\}$, when this is finite almost surely.
+For independent identically distributed strictly positive waiting times $(W_n)_{n\ge1}$, let $S_0=0$ and $S_n=\sum_{k=1}^n W_k$. The \emph{renewal counting process} is $N(t)=\max\{n\ge0:S_n\le t\}$ for $t\ge0$. By positivity and independence, $S_n\to\infty$ almost surely, so $N(t)$ is finite almost surely.

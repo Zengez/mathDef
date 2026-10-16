@@ -100,3 +100,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Fixed a genuine **unbound domain** bug in `stochastic.markov-kernel`: now states both measurable spaces and both measurability conditions.
 - Strengthened `stochastic.ergodic-measure` by expressing invariance modulo null sets via symmetric difference, and `stochastic.essential-supremum` by identifying the ambient measure and extended-real convention.
 - Remaining stochastic entries for audit start with `median`, `moment-generating-function`, `poisson-process`, etc. S1 and S2 were each independently committed, with this checkpoint for session recovery.
+
+## 2026-10-15 evening continuation, batch S3
+
+- Audited ten additional stochastic entries: median, moment-generating-function, poisson-process, predictable-process, quadratic-variation, quantile, renewal-process, stationary-increment-process, stopped-process, stopping-time. Swapped generic `Martingale` source for individual process, stopping-time, renewal, quantile, and integral-reference articles.
+- Mathematically important correction: `stochastic.renewal-process` did not specify $S_0=0$ and had an undefined max for $t<S_1$. It now includes $S_0=0$, $n\ge0$, and almost-sure finiteness.
+- Refined quadratic-variation partition mesh and stopped-process time domain. These are editorially audited drafts; review status was not altered.
+- Next: audit final preexisting stochastic entries (`strong-markov-property`, `submartingale`, `supermartingale`, `tightness`, `uniform-integrability`, `weak-convergence-measures`, `wiener-process`) and newer `local-martingale`/`semimartingale`; then audit first block of SCV and add missing graduate terms.
