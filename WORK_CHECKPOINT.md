@@ -1133,3 +1133,13 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Others checked include localization; local, Noetherian and Artinian rings; Krull dimension; integral and projective/flat modules; tensor universal property; sheaves, presheaves, stalks, global sections, (affine/reduced/integral/locally ringed) schemes and standard opens. Source content supported key definition clauses at the indicated Stacks locations.
 - Per-definition citation ledger: 24 marked verified/corrected; 983 pending. Count is **only this dedicated evidence-backed phase**, not the completed first-pass or thematic consistency audits. No status promotion and no unrelated term discovery/rendering/features.
 - NEXT: run metadata/build workflows and proceed in additional bounded citation batches; check actual source content before changing a CSV status.
+
+
+## October 16, 2026 — citation verification CV2: remaining scheme-specific Stacks articles
+
+- Verified 5 additional definitions against actual Stacks sections: ringed spaces (`0090`); quasi-compact schemes using the open-cover condition (`0059`); Noetherian schemes (`01OU`); affine n-space; closed subschemes.
+- Improved **schemes.affine-n-space** from generic Affine-schemes section `01HR` to exact Definition 27.5.1 `01M0` (A_R^n=Spec R[x_1,...,x_n]).
+- Improved **schemes.closed-subscheme** from general closed immersions of locally ringed spaces `01HJ` to `01IM` (Schemes 26.10 Lemma 26.10.1), which explicitly covers closed-subscheme structure, quasi-coherent defining ideal sheaves and affine R/I local descriptions.
+- Status in ledger: 25 verified; 4 corrected; 978 pending; 0 followup. Counts reflect only individually checked sources in this dedicated phase.
+- GitHub metadata/index and Pages workflows passed CV1 commit `de98aefd`. Await CV2 checks. No other definition changes or deferred project work.
+- NEXT: continue per-entry citation checks with priority for vague links or paper-specific locators. Leave earlier thematic consistency complete status unchanged.
