@@ -268,3 +268,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Individually checked and revised eight pre-existing \`dynamics/\` files: attractor, autonomous-ode, discrete-dynamical-system, equilibrium, fixed-point, flow, invariant-set, lyapunov-stability. Switched their discovery-list sources to direct EoM/Wikipedia articles after checking article scope.
 - Important mathematical distinctions: forward invariance $f(A)\subseteq A$ versus full invariance $f(A)=A$; continuous real-time flow versus semiflow; the attractor convention (additional stability/trapping properties vary); explicit state/time/ODE domain assumptions. Remain drafts, not formal peer-review approvals.
 - NEXT: the other seven \`dynamics/\` definitions (orbit, ordinary-differential-equation, partial-differential-equation, periodic-point, phase-space, recurrent-point, topological-conjugacy). Pay particular attention to *positive* versus Birkhoff recurrence. Then audit \`real/\`.
+
+
+## 2026-10-15 continuation — dynamics audit Y1b (folder complete)
+
+- Completed the seven remaining \`dynamics/\` entries: orbit, ordinary-differential-equation, partial-differential-equation, periodic-point, phase-space, recurrent-point, topological-conjugacy. All sources now link to individual corresponding concept articles, rather than a list of unrelated dynamical terms.
+- Particularly important: \`dynamics.recurrent-point\` uses **positive/Poisson recurrence**, $x\in\omega(x)$, not the stronger Birkhoff/uniformly recurrent convention. This matches the earlier wording and is now disambiguated explicitly. Defined the omega-limit set by closures of forward tails. Distinguished state-space structure, period versus least period, and topological conjugacy for noninvertible maps.
+- **All 15 original \`dynamics/\` definitions** now individually read and editorially revised in Y1a (8) and Y1b (7). No ID changes or new files, so the corpus total remains 971. Every entry stays \`draft\`; mathematical source checking is distinct from formal peer review.
+- NEXT: audit \`real/\` (22 existing entries), first about 11 through \`limit-of-function\`, then remaining 11 through \`uniform-convergence\`. Retain source-resolution caution and run Pages/metadata workflows after commits.

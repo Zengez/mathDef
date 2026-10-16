@@ -1,7 +1,7 @@
 % id: dynamics.recurrent-point
 % term: Recurrent point
 % related: dynamics.orbit, topology.neighborhood
-% source: https://en.wikipedia.org/wiki/List_of_dynamical_systems_and_differential_equations_topics
+% source: https://en.wikipedia.org/wiki/Recurrent_point
 % status: draft
 
-In a topological dynamical system $(X,f)$, a point $x$ is \emph{recurrent} if every neighborhood of $x$ contains $f^n(x)$ for arbitrarily large positive integers $n$.
+Let $f:X\to X$ be a continuous self-map of a topological space. A point $x\in X$ is \emph{positively recurrent} if every neighborhood $U$ of $x$ contains $f^n(x)$ for arbitrarily large integers $n>0$, equivalently $x\in\omega(x)$ with $\omega(x)=\bigcap_{N\ge0}\overline{\{f^n(x):n\ge N\}}$. Here \emph{recurrent} means positive (Poisson) recurrence; the stronger Birkhoff/uniform-recurrence convention is distinguished in some references.
