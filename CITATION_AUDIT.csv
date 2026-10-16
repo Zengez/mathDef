@@ -955,15 +955,15 @@ definitions/stochastic/quantile.tex,verified,"https://en.wikipedia.org/wiki/Quan
 definitions/stochastic/renewal-process.tex,corrected,"https://en.wikipedia.org/wiki/Renewal_theory","EoM Renewal_processes 502; checked renewal theory article describing iid positive interarrival times and counting process N(t) from epochs. Commit d0cce01f."
 definitions/stochastic/semimartingale.tex,verified,"https://en.wikipedia.org/wiki/Semimartingale","Definition càdlàg adapted semimartingale as local martingale plus adapted locally finite-variation càdlàg process, no Markov or independent-increment assumption."
 definitions/stochastic/stationary-increment-process.tex,corrected,"https://en.wikipedia.org/wiki/Stationary_increments","EoM process stationary increments 502; inspected Stationary increments definition that law of X_(t+h)−X_t depends only on h. Commit 1d859932."
-definitions/stochastic/stopped-process.tex,pending,,
-definitions/stochastic/stopping-time.tex,pending,,
-definitions/stochastic/strong-markov-property.tex,pending,,
-definitions/stochastic/submartingale.tex,pending,,
-definitions/stochastic/supermartingale.tex,pending,,
-definitions/stochastic/tightness.tex,pending,,
-definitions/stochastic/uniform-integrability.tex,pending,,
-definitions/stochastic/weak-convergence-measures.tex,pending,,
-definitions/stochastic/wiener-process.tex,pending,,
+definitions/stochastic/stopped-process.tex,verified,"https://en.wikipedia.org/wiki/Stopped_process","Read definition X_t^τ=X_(min(t,τ)); poststop paths constant, τ∞ paths unchanged."
+definitions/stochastic/stopping-time.tex,verified,"https://en.wikipedia.org/wiki/Stopping_time","Stopping time τ has event {τ≤t} in F_t, permits infinity for natural/continuous time."
+definitions/stochastic/strong-markov-property.tex,corrected,"https://en.wikipedia.org/wiki/Markov_property#Strong_Markov_property","Original EoM Markov_process down; Markov property strong subsection gives conditional future at a stopping time dependent only on Xτ. Replaced source commit 94eecf3f."
+definitions/stochastic/submartingale.tex,corrected,"https://en.wikipedia.org/wiki/Martingale_(probability_theory)#Submartingales_supermartingales_and_relationship_to_harmonic_functions","EoM Martingale down; read Martingale submartingale section E[X_(n+1)|F_n]≥X_n (integrable adapted) and changed source commit 4926565a."
+definitions/stochastic/supermartingale.tex,corrected,"https://en.wikipedia.org/wiki/Martingale_(probability_theory)#Submartingales_supermartingales_and_relationship_to_harmonic_functions","EoM Martingale down; inspected supermartingale inequality E[X_(n+1)|F_n]≤X_n and updated source commit 3c4c1c63."
+definitions/stochastic/tightness.tex,corrected,"https://en.wikipedia.org/wiki/Tightness_of_measures","EoM Weak_convergence_of_probability_measures down; precise Tightness article gives uniform compact mass ≥1−epsilon across family. Commit c7176ea6."
+definitions/stochastic/uniform-integrability.tex,verified,"https://en.wikipedia.org/wiki/Uniform_integrability","Definition uniform tail condition lim_K sup_family E(|X|1_|X|>K)=0 for integrable random variables."
+definitions/stochastic/weak-convergence-measures.tex,corrected,"https://en.wikipedia.org/wiki/Convergence_of_measures#Weak_convergence","EoM Weak_convergence_of_probability_measures unreachable; Convergence of measures weak section describes bounded continuous test functions, μ_n integral tends to μ. Commit 61ae029e."
+definitions/stochastic/wiener-process.tex,corrected,"https://en.wikipedia.org/wiki/Wiener_process#Characterisations_of_the_Wiener_process","EoM Brownian_motion down; Wiener process article specifies B0=0, Gaussian independent stationary increments N(0,t−s), a.s. continuous sample paths. Commit a1da840f."
 definitions/tda/chromatic-metric-pair.tex,verified,"https://arxiv.org/abs/2507.17994","Definition 3.1 printed p5 of 2507.17994v1 exactly pairs metric space A and coloring chi:X→N of subset X; full coloring case X=A named chromatic metric space."
 definitions/tda/constrained-gh-distance.tex,verified,"https://arxiv.org/abs/2507.17994","Definition 4.1 printed p9 matches half infimum over pair of C-constrained maps f,g of max(dis f, dis g, codis(f,g)), C arbitrary subset of P(N)."
 definitions/tda/constrained-isomorphism.tex,corrected,"https://arxiv.org/abs/2507.17994","Definition 3.4 printed p6 explicitly requires constraint family C containing N; repaired entry to state N∈C while retaining surjective isometry and two-sided constraints (body commit 76588b1d)."
