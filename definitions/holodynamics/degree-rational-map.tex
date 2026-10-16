@@ -1,7 +1,11 @@
 % id: holodynamics.degree-rational-map
 % term: Degree of a rational map
 % related: holodynamics.rational-map, complex.polynomial
-% source: https://encyclopediaofmath.org/wiki/Julia_set
+% source: https://en.wikipedia.org/wiki/Rational_function
 % status: draft
 
-For a nonconstant rational map $R=P/Q$ with relatively prime polynomials $P,Q$, its \emph{degree} is $\deg R=\max\{\deg P,\deg Q\}$.
+For a nonconstant rational map $R:\widehat{\mathbb C}\to\widehat{\mathbb C}$ represented by relatively prime polynomials $P,Q\in\mathbb C[z]$ with $Q\ne0$, its \emph{degree} is
+\[
+\deg R=\max\{\deg P,\deg Q\}.
+\]
+It equals the number of preimages of a generic point of the Riemann sphere, counted with local multiplicities. Canceling all common polynomial factors is necessary before applying this formula.

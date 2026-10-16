@@ -1,7 +1,11 @@
 % id: holodynamics.basin-attraction
 % term: Basin of attraction
 % related: holodynamics.attracting-periodic-point, dynamics.orbit
-% source: https://encyclopediaofmath.org/wiki/Julia_set
+% source: https://en.wikipedia.org/wiki/Attractor
 % status: draft
 
-For an attracting fixed point $a$ of $f:X\to X$ on a metric space, its \emph{basin of attraction} is $B(a)=\{x\in X:f^n(x)\to a\}$. For attracting periodic cycles use convergence of the orbit to the cycle.
+For a continuous map $f:X\to X$ on a metric space and an attracting fixed point $a$, its \emph{basin of attraction} is
+\[
+B(a)=\{x\in X:d(f^n(x),a)\to0\text{ as }n\to\infty\}.
+\]
+For an attracting periodic orbit $\mathcal O$ of period $p$, its basin consists of points whose forward orbits approach that cycle in the metric: $d(f^n(x),\mathcal O)\to0$. The immediate basin is the component of the basin containing the attracting point or cycle component.

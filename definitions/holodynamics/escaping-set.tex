@@ -1,7 +1,11 @@
 % id: holodynamics.escaping-set
 % term: Escaping set of a polynomial
 % related: holodynamics.filled-julia-set, holodynamics.iterate
-% source: https://encyclopediaofmath.org/wiki/Julia_set
+% source: https://en.wikipedia.org/wiki/Filled_Julia_set
 % status: draft
 
-For a polynomial $p$ of degree at least $2$, its \emph{escaping set} is $I(p)=\{z\in\mathbb C:|p^n(z)|\to\infty\}$.
+For a complex polynomial $p$ of degree at least two, its \emph{escaping set} is
+\[
+I(p)=\{z\in\mathbb C:|p^n(z)|\to\infty\text{ as }n\to\infty\}.
+\]
+For such a polynomial every forward orbit that is not bounded escapes to infinity, so $I(p)=\mathbb C\setminus K(p)$, where $K(p)$ is the filled Julia set. Escape takes place in the affine complex plane, although infinity is a superattracting fixed point on the sphere.

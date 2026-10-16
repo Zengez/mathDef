@@ -1,7 +1,11 @@
 % id: holodynamics.bottcher-coordinate
 % term: Böttcher coordinate
 % related: holodynamics.superattracting-periodic-point, holodynamics.attracting-periodic-point
-% source: https://encyclopediaofmath.org/wiki/Julia_set
+% source: https://en.wikipedia.org/wiki/B%C3%B6ttcher%27s_equation
 % status: draft
 
-For holomorphic $f$ near a superattracting fixed point of local degree $d\ge2$, a \emph{Böttcher coordinate} is a local conformal coordinate $\phi$ conjugating $f$ to $w\mapsto w^d$.
+Suppose a holomorphic map $f$ fixes $a$ and has local degree $d\ge2$ there, so $f(z)-a=c(z-a)^d+O((z-a)^{d+1})$ with $c\ne0$. A \emph{Böttcher coordinate} is a local biholomorphic coordinate $\phi$ near $a$, with $\phi(a)=0$, satisfying
+\[
+\phi(f(z))=(\phi(z))^d
+\]
+where defined. Its derivative at $a$ obeys $\phi'(a)^{d-1}=c$, and the choice of derivative fixes the normalization up to a suitable root of unity.
