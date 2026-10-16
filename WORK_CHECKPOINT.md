@@ -156,3 +156,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Carefully distinguish the Bergman–Shilov boundary (function-algebra notion) from the Bergman kernel; complex-analytic divisors include integer multiplicities; Weierstrass polynomials have holomorphic coefficients vanishing at the origin.
 - D1 had 11 new SCV entries and D2 14 new entries; the whole session started with 934 definitions, so the current expected collection is **959** definitions (check live tree). All entries are drafts, and the source content was independently paraphrased rather than copied.
 - NEXT: verify latest GitHub Actions build for D2, rerun full-corpus metadata audit, update `CATALOG.md` and `README.md` counts. Then another audit of 20–30 previously unreviewed entries (priority `linear/` or `pde/`) and repair generic source links. Update this checkpoint after each batch.
+
+## 2026-10-15 evening continuation — linear algebra L1
+
+- Inspected 10 `linear/` IDs: basis, characteristic-polynomial, determinant, diagonalizable-operator, dimension, dual-space, eigenspace, eigenvalue, eigenvector, image; replaced their generic Wikipedia `List_of_linear_algebra_topics` citation with direct EoM/Wikipedia concept pages.
+- Clarified basis as a **Hamel basis**, separate from infinite Schauder expansions, fixed the field dependence of diagonalizability and the sign convention for characteristic polynomials, and added a commutative base-ring assumption for the determinant formula. Checked eigenvalue/eigenspace definitions against the EoM operator entries.
+- Next: inspect the 18 remaining `linear/` entries in 2 smaller batches, then move to the most important PDE problems and new sources. All definitions remain draft.
