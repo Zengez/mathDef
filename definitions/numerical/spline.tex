@@ -1,7 +1,7 @@
 % id: numerical.spline
 % term: Polynomial spline
 % related: numerical.interpolation, numerical.cubic-spline
-% source: https://encyclopediaofmath.org/wiki/Numerical_analysis
+% source: https://en.wikipedia.org/wiki/Spline_(mathematics)
 % status: draft
 
-A \emph{spline of degree $d$} on a partition is a function polynomial of degree at most $d$ on each subinterval and satisfying prescribed continuity conditions at interior knots.
+For a knot partition $a=x_0<\cdots<x_m=b$, a \emph{piecewise polynomial spline of degree at most $d$ and smoothness $C^k$} is $s\in C^k([a,b])$ such that each restriction $s|_{[x_{j-1},x_j]}$ is a polynomial of degree at most $d$. The smoothness $k$ and knot multiplicities are convention-dependent.

@@ -218,3 +218,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Inspected next 12 numerical entries: numerical.forward-error, numerical.gaussian-elimination, numerical.interpolation, numerical.lagrange-interpolation, numerical.least-squares, numerical.lu-factorization, numerical.machine-epsilon, numerical.matrix-condition-number, numerical.newton-root, numerical.normal-equations, numerical.qr-factorization, numerical.quadrature-rule. Generic EoM Numerical_analysis references replaced by concept-level numerical articles.
 - Corrected LU-without-pivoting existence assumptions, clarified normal equations in real versus complex spaces, allowed rank-deficient thin QR, and preserved the machine-epsilon/unit-roundoff convention distinction. The remaining mathematical content is basic numerical linear algebra, not a claim of peer review.
 - Next numerical N3: remaining 11 entries `relative-error`, `residual`, `roundoff-error`, `runge-kutta4`, `simpson-rule`, `singular-value-decomposition`, `singular-value`, `spectral-norm`, `spline`, `trapezoidal-rule`, `truncation-error`.
+
+## Numerical analysis audit, batch N3 (October 15, 2026)
+
+- Examined remaining 11 numerical definitions numerical.relative-error, numerical.residual, numerical.roundoff-error, numerical.runge-kutta4, numerical.simpson-rule, numerical.singular-value-decomposition, numerical.singular-value, numerical.spectral-norm, numerical.spline, numerical.trapezoidal-rule, numerical.truncation-error. All references made concept-specific.
+- Explained residual sign conventions, how the rectangular dimension affects the **count** of zero singular values, and that spline degree and required smoothness are distinct parameters. Clarified truncation-error versus floating-point roundoff and numerical ODE local-defect conventions.
+- Fixed a stray LaTeX spacing macro outside math introduced in N2's machine-epsilon text.
+- **All 35 preexisting `numerical/` definitions** have now been inspected over three commits N1 12, N2 12, N3 11. Each remains editorial draft. NEXT: audit metadata and new definition coverage; reconcile catalog snapshot and verify Actions.

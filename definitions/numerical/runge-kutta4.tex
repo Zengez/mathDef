@@ -1,7 +1,7 @@
 % id: numerical.runge-kutta4
 % term: Classical fourth-order Runge-Kutta method
 % related: numerical.euler-method, dynamics.ordinary-differential-equation
-% source: https://encyclopediaofmath.org/wiki/Numerical_analysis
+% source: https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods
 % status: draft
 
 For $y'=f(t,y)$ and step $h$, define $k_1=f(t,y)$, $k_2=f(t+h/2,y+hk_1/2)$, $k_3=f(t+h/2,y+hk_2/2)$, $k_4=f(t+h,y+hk_3)$; then $y_{\rm next}=y+h(k_1+2k_2+2k_3+k_4)/6$.

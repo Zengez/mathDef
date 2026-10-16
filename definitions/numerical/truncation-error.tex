@@ -1,7 +1,7 @@
 % id: numerical.truncation-error
 % term: Truncation error
 % related: numerical.discretization-error, numerical.roundoff-error
-% source: https://encyclopediaofmath.org/wiki/Numerical_analysis
+% source: https://en.wikipedia.org/wiki/Truncation_error_(numerical_analysis)
 % status: draft
 
-A \emph{truncation error} is the discrepancy introduced by replacing an infinite or exact mathematical expression with a finite approximation, before floating-point roundoff.
+A \emph{truncation error} is the discrepancy caused by replacing an exact or infinite mathematical operation with a truncated finite approximation, assuming exact arithmetic. In numerical ODE/PDE methods, \emph{local truncation error} is defined by inserting the exact solution into one discrete update and measuring the resulting defect; normalization by powers of the step size varies by convention.
