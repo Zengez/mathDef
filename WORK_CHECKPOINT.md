@@ -1409,4 +1409,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Read and compared individual sources for singular values, matrix spectral norm, piecewise polynomial splines, trapezoidal quadrature and truncation errors.
 - `numerical.truncation-error` source `Truncation_error_(numerical_analysis)` was not retrievable and did not provide an actual concept article. Retargeted to individual Wikipedia `Truncation_error` page, whose introductory definition agrees with the general finite-approximation clause (commit `0573c567`); compared the local-error/step-scaling clause against Wikipedia `Truncation_error_(numerical_integration)` and MIT differential equation lecture notes. No mathematical text change.
 - CV35 ledger commit `a4d3feda`: **357 verified, 28 corrected, 622 pending, 0 needs_followup** of 1007 definitions (385 citation-reviewed). Entire **35-entry `numerical/` folder now covered** across CV32–CV35.
-- NEXT: another subject, preferably `arithmetic/` or `optimization/`, in small evidence-backed batches. Continue honoring user's instruction not to revisit previous completed citation batches. Metadata / Pages Actions still pending separate verification, not claimed as succeeded. 
+- NEXT: another subject, preferably `arithmetic/` or `optimization/`, in small evidence-backed batches. Continue honoring user's instruction not to revisit previous completed citation batches. Metadata / Pages Actions still pending separate verification, not claimed as succeeded.
+
+
+## October 16, 2026 — citation verification CV36: first ten algebraic number theory citations
+
+- Independently opened and compared Wikipedia's specific articles for algebraic integer/number, Dirichlet convolution, class number, Dedekind domain, field degree, Dirichlet character/L-function, discrete valuation ring, and Euclidean domain. These sources supported the displayed definition and relevant conventions.
+- Note: `Class_number_(number_theory)` redirects to `Ideal_class_group`, whose text explicitly defines order of the class group as the field's finite class number, so citation remains suitable; Dirichlet characters include the q=1 convention; discrete valuation rings exclude fields under this chosen nontrivial value-group formulation.
+- Individual evidence committed `2df871e3`; current ledger **367 verified, 28 corrected, 612 pending, 0 needs_followup** out of 1007 (**395 citation-reviewed**). No definition/source changes needed in CV36; earlier reviews untouched.
+- NEXT: `arithmetic/` next ten files (field-discriminant, field-norm, field-trace, fractional-ideal, galois-extension, galois-group, ideal-class-group, local-field, minimal-polynomial, number-field), then later arithmetic entries in further small batches.
