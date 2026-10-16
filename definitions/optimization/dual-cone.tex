@@ -1,7 +1,7 @@
 % id: optimization.dual-cone
 % term: Dual cone
 % related: optimization.convex-cone, linear.inner-product
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Dual_cone_and_polar_cone
 % status: draft
 
-For a cone $K\subseteq\mathbb R^n$, its \emph{dual cone} is $K^*=\{y\in\mathbb R^n:\langle y,x\rangle\ge0\text{ for all }x\in K\}$.
+For a cone $K\subseteq\mathbb R^n$, its \emph{dual cone} (positive dual) is $K^*=\{y\in\mathbb R^n:\langle y,x\rangle\ge0\text{ for every }x\in K\}$. It is always a closed convex cone even if $K$ is not closed or convex. Some sources instead use the nonpositive polar cone, changing the inequality sign.

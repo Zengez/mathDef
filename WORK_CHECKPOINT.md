@@ -346,3 +346,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Conventions now explicit: $1$ prime-power exclusion ($k\ge1$); zero is a square and therefore a quadratic residue in the full ring $\mathbb Z/n\mathbb Z$, whereas some unit-group conventions exclude it; multiplicative versus completely multiplicative arithmetic functions. EoM Möbius and multiplicative articles were checked directly.
 - **All 19 original \`number/\` entries** examined in T1 10 + T2 9. They remain \`draft\`, and no definition IDs were added or removed. New 983-entry count unchanged.
 - NEXT: inspect publication and metadata workflows. Begin \`optimization/\` audit (36 preexisting entries), in 10–12 entry commits. Then further graduate concept discovery using individual Wikipedia/EoM pages. Bulk AWS/arXiv work remains on hold.
+
+
+## October 15, 2026 continuation — optimization audit O1
+
+- Inspected and revised first 12 \`optimization/\` definitions: affine-function, convex-cone, convex-conjugate, convex-optimization, dual-cone, dual-problem, duality-gap, epigraph, feasible-set, gradient-descent, gradient, hessian. Replaced common whole-textbook homepage references with direct EoM/Wikipedia conceptual articles, including EoM conjugate function.
+- Notable precision repairs: convex cone requires nonemptiness under the chosen definition and thus contains $0$; positive dual cone convention versus negative polar; dual function and primal constraints explicitly bound, equality multipliers unrestricted, finite-value gap definition with **no requirement that extrema be attained**; conjugates of nonconvex functions still defined; Hessian ambient domain and symmetry stated.
+- Site remains 983 definitions, no new IDs; all existing \`draft\`. NEXT O2 starts \`kkt-condition\` and goes through \`positive-definite\`, then O3/O4 remaining \`optimization/\` definitions, and Actions check.

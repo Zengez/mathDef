@@ -1,7 +1,11 @@
 % id: optimization.epigraph
 % term: Epigraph
 % related: real.convex-function, optimization.lower-semicontinuous
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Epigraph_(mathematics)
 % status: draft
 
-For $f:\mathbb R^n\to(-\infty,\infty]$, its \emph{epigraph} is $\operatorname{epi}f=\{(x,t):f(x)\le t\}$.
+For an extended-real-valued function $f:\mathbb R^n\to(-\infty,+\infty]$, its \emph{epigraph} is
+\[
+\operatorname{epi}f=\{(x,t)\in\mathbb R^n\times\mathbb R:f(x)\le t\}.
+\]
+It is convex precisely when $f$ is convex, and closed precisely when $f$ is lower semicontinuous (in the Euclidean setting).

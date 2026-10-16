@@ -1,7 +1,7 @@
 % id: optimization.affine-function
 % term: Affine function
 % related: linear.linear-map, real.convex-function
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Affine_transformation
 % status: draft
 
-A function $f:\mathbb R^n\to\mathbb R^m$ is \emph{affine} if $f(x)=Ax+b$ for a linear map $A$ and a fixed vector $b$.
+A map $f:\mathbb R^n\to\mathbb R^m$ is \emph{affine} if there is a linear map $A:\mathbb R^n\to\mathbb R^m$ and a vector $b\in\mathbb R^m$ such that $f(x)=Ax+b$ for all $x$. Equivalently, it preserves affine combinations: $f((1-t)x+ty)=(1-t)f(x)+tf(y)$ for all real $t$.

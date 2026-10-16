@@ -1,7 +1,7 @@
 % id: optimization.duality-gap
 % term: Duality gap
 % related: optimization.dual-problem, optimization.strong-duality
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Duality_gap
 % status: draft
 
-For a minimization problem with primal optimum $p^*$ and dual optimum $d^*$, the \emph{duality gap} is $p^*-d^*\ge0$ when both are finite.
+For a minimization problem and its Lagrange dual with finite optimal values $p^*=\inf_{x\text{ feasible}}f_0(x)$ and $d^*=\sup_{\lambda\ge0,\nu}g(\lambda,\nu)$, the \emph{duality gap} is $p^*-d^*\ge0$ by weak duality. A zero gap expresses equality of optimal values, whether or not either optimum is attained.

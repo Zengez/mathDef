@@ -1,7 +1,11 @@
 % id: optimization.gradient
 % term: Gradient
 % related: real.derivative, optimization.hessian
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Gradient
 % status: draft
 
-For differentiable $f:\mathbb R^n\to\mathbb R$, the \emph{gradient} $\nabla f(x)$ is the unique vector satisfying $Df(x)[v]=\langle\nabla f(x),v\rangle$ for every $v$.
+For a differentiable real-valued function $f$ on an open subset of Euclidean space, the \emph{gradient} $\nabla f(x)\in\mathbb R^n$ is the vector representing the differential under the Euclidean inner product:
+\[
+Df(x)[v]=\langle\nabla f(x),v\rangle\quad\text{for all }v\in\mathbb R^n.
+\]
+In Cartesian coordinates it has entries $\partial f/\partial x_i$.

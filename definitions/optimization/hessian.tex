@@ -1,7 +1,7 @@
 % id: optimization.hessian
 % term: Hessian matrix
 % related: optimization.gradient, linear.matrix
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Hessian_matrix
 % status: draft
 
-For a twice continuously differentiable $f:\mathbb R^n\to\mathbb R$, its \emph{Hessian} at $x$ is $\nabla^2f(x)=(\partial_i\partial_jf(x))_{i,j}$.
+If $f:U\to\mathbb R$ is twice continuously differentiable on an open set $U\subseteq\mathbb R^n$, its \emph{Hessian matrix} at $x\in U$ is $\nabla^2f(x)=(\partial^2 f/\partial x_i\partial x_j(x))_{i,j=1}^n$. By equality of mixed partial derivatives it is symmetric. It represents the second differential in Euclidean coordinates.

@@ -1,7 +1,7 @@
 % id: optimization.dual-problem
 % term: Lagrange dual problem
 % related: optimization.lagrange-dual-function, optimization.duality-gap
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Duality_(optimization)
 % status: draft
 
-The \emph{Lagrange dual problem} maximizes $g(\lambda,\nu)$ over multipliers $\lambda\ge0$ and unrestricted $\nu$.
+For a minimization problem with inequalities $f_i(x)\le0$ and equalities $h_j(x)=0$, write its Lagrangian $L(x,\lambda,\nu)=f_0(x)+\sum_i\lambda_i f_i(x)+\sum_j\nu_j h_j(x)$, and its dual function $g(\lambda,\nu)=\inf_x L(x,\lambda,\nu)$. The \emph{Lagrange dual problem} maximizes $g(\lambda,\nu)$ over $\lambda_i\ge0$ and unrestricted real $\nu_j$. Its value gives a lower bound on the primal infimum by weak duality.
