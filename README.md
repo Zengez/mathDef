@@ -1,6 +1,6 @@
 # mathDef
 
-Current collection snapshot: **971 definitions across 40 subject folders** (October 15, 2026). See [the definition catalog](CATALOG.md) for per-subject counts, provenance guidance, and the mathematical review checklist.
+Current collection snapshot: **983 definitions across 40 subject folders** (October 15, 2026). See [the definition catalog](CATALOG.md) for per-subject counts, provenance guidance, and the mathematical review checklist.
 
 An interactive, GitHub-hosted collection of mathematical definitions written in LaTeX.
 
@@ -109,8 +109,8 @@ An expanded 15 October 2026 category traversal covered 220 Wikipedia mathematics
 
 ## Continuing mathematical review
 
-The latest incremental work reviewed **41 older entries** in commutative algebra and scheme theory, updated their specific source citations, and added **26 new advanced measure-theory and stochastic-process definitions**. The collection has 934 total entries. The latest batch history, review caveats, and next steps are in [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md). The bibliography and structural checks do not mean every entry has received a mathematical peer review.
+The latest incremental work reviewed **41 older entries** in commutative algebra and scheme theory, updated their specific source citations, and added **26 new advanced measure-theory and stochastic-process definitions**. That intermediate checkpoint contained 934 entries. The latest batch history, review caveats, and next steps are in [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md). The bibliography and structural checks do not mean every entry has received a mathematical peer review.
 
 ## Latest review checkpoint
 
-The current repository contains 971 definitions. The most recent work audited all 36 original PDE definitions and all 35 numerical-analysis definitions, while adding 12 graduate-level microlocal-analysis and pseudodifferential-operator entries. Every edit and unresolved caveat is recorded in [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md), and all newly added entries are draft pending individual mathematical validation.
+The October 15, 2026 repository contains 983 definitions. The most recent work audited all 36 original PDE definitions and all 35 numerical-analysis definitions, while adding 12 graduate-level microlocal-analysis and pseudodifferential-operator entries. Every edit and unresolved caveat is recorded in [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md), and all newly added entries are draft pending individual mathematical validation.

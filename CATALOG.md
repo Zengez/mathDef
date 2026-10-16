@@ -2,7 +2,7 @@
 
 Snapshot: 2026-10-15. Counts below are generated from the repository tree; the deployed site is the source for the most current total.
 
-**971 definitions across 40 subject folders.**
+**983 definitions across 40 subject folders.**
 
 | Subject | Folder | Entries |
 |---|---|---:|
@@ -18,7 +18,7 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Computability and complexity theory | [`definitions/computability/`](definitions/computability/) | 27 |
 | Convex analysis and optimization | [`definitions/optimization/`](definitions/optimization/) | 36 |
 | Distributions, Sobolev spaces and PDEs | [`definitions/pde/`](definitions/pde/) | 48 |
-| Dynamical systems and ODEs | [`definitions/dynamics/`](definitions/dynamics/) | 15 |
+| Dynamical systems and ODEs | [`definitions/dynamics/`](definitions/dynamics/) | 27 |
 | Elementary number theory | [`definitions/number/`](definitions/number/) | 19 |
 | Foundational analysis | [`definitions/analysis/`](definitions/analysis/) | 3 |
 | Functional analysis and operator theory | [`definitions/functional/`](definitions/functional/) | 45 |
