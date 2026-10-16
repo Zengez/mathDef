@@ -549,3 +549,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 - Audited four more definitions: np-complete, np-hard, polynomial-reduction and polynomial-time. Differentiated NP membership from NP-hardness, Karp many-one reductions from Turing reductions, and explicit total polynomial-time reductions.
 - 22/27 original computability entries inspected. NEXT K3b: randomized-algorithm, recursively-enumerable, space-complexity, time-complexity, turing-machine. Existing IDs and draft status unchanged.
+
+
+## October 16, 2026 — computability K3b part 1
+
+- Audited randomized-algorithm and recursively-enumerable with individual concept sources. Clarified stochastic-output conventions and recognition versus total decidability. All remain drafts.
+- 24/27 original entries complete. NEXT: space-complexity, time-complexity, turing-machine.

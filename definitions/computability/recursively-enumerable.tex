@@ -1,7 +1,7 @@
 % id: computability.recursively-enumerable
 % term: Recursively enumerable language
 % related: computability.decidable-language, computability.turing-machine
-% source: https://encyclopediaofmath.org/wiki/Algorithm%2C_computational_complexity_of_an
+% source: https://en.wikipedia.org/wiki/Recursively_enumerable_language
 % status: draft
 
-A language $L$ is \emph{recursively enumerable} if some Turing machine accepts every $x\in L$ and does not accept any $x\notin L$, with nontermination allowed outside $L$.
+A formal language $L$ is \emph{recursively enumerable} if a Turing machine halts and accepts every input belonging to $L$, but does not accept inputs outside $L$. On nonmembers it is permitted to reject or run forever. Equivalently, the language has an effective enumeration; decidability additionally requires halting for every input.
