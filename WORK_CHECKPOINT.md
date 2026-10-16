@@ -418,3 +418,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Inspected first ten original \`graph/\` definitions: bipartite-graph, chromatic-number, clique, complete-bipartite-graph, complete-graph, connected-graph, cycle, degree, directed-graph, edge. Replaced generic \`List_of_graph_theory_topics\` references with individual graph-theory concept articles.
 - Explicitly fixed conventions: simple undirected graph vs digraph, loop and multigraph distinctions, empty graph chromatic number 0, connectedness of the empty graph (nonempty convention), and maximal vs maximum clique. These are definition conventions, not claims of theorem-level review.
 - NEXT H2: remaining nine original \`graph/\` files from \`graph-coloring\` through \`vertex\`. Check for consistency of \`graph.graph\` as underlying simple-graph model. Then confirm GitHub Actions for both batches and continue graduate discovery/audits.
+
+
+## October 15, 2026 continuation — graph theory H2 (folder complete)
+
+- Examined final nine original \`graph/\` entries: graph-coloring, graph-isomorphism, graph, independent-set, path, planar-graph, regular-graph, tree, vertex. Changed all broad topic-list sources to direct graph-theory concept articles and checked compatibility with H1.
+- Key conventions: \`graph.graph\` explicitly means **simple undirected**; graph isomorphisms preserve adjacency in both directions; a length-zero path is allowed and otherwise a simple path has distinct vertices; trees are nonempty, connected and acyclic; a regular graph is taken finite nonempty to avoid vacuous edge cases.
+- **All 19 original \`graph/\` definitions** have now been inspected in H1 10 + H2 9, kept as \`draft\`, stable IDs preserved. No new definitions added in H1–H2; collection remains **995 definition files in 40 folders**.
+- NEXT: verify workflow builds on H2; inspect category discovery for new graduate graph theory concepts or audit \`combin/\` and \`logic/\`; check generic source metadata as prioritization. AWS/arXiv bulk tasks remain paused.
