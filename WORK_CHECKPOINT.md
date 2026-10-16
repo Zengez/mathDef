@@ -808,3 +808,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reviewed final eight original entries: postcritical-set, preperiodic-component, rational-map, repelling-periodic-point, riemann-sphere, siegel-disk, superattracting-periodic-point, wandering-component. Checked Wikipedia Siegel disk / no-wandering theorem and EoM complex dynamics articles.
 - Significant improvements: distinguish closed postcritical set from unclosed forward orbit convention, periodic Siegel disk from invariant disk, repelling first-return multipliers and superattraction via critical points, and explicitly record Sullivan's no-wandering-domain theorem for rational maps (while retaining a general definition relevant for transcendental dynamics).
 - **All 28 original holodynamics definitions** separately audited across HD1 (10), HD2a (5), HD2b (5), HD3 (8). Cumulative original-audit count **888/1007**, **119 remaining**. No stable IDs changed and status remains draft. NEXT: verify metadata/publication runs for HD3. Then prioritize unreviewed newer `scv/` 21 additions, `functional/` 9 additions and other small unaudited folders; check source-page validity and KaTeX rendering. Do not resume AWS/arXiv bulk work.
+
+
+## October 16, 2026 — second-pass advanced SCV SVA1
+
+- Confirmed previous holodynamics final build and metadata audit success; repository remains **1007 files, 40 folders**.
+- Individually inspected seven new advanced SCV drafts not covered by the earlier original-folder review: runge-domain, runge-pair, envelope-of-holomorphy, pluripolar-set, complete-pluripolar-set, pluricomplex-green-function, hyperconvex-domain. Verified EoM Runge-domain article, Wikipedia pluripolar terminology, and mathematical sources on pluricomplex Green functions and hyperconvexity. Replaced two generic Green-function references with directly relevant research sources.
+- Clarified multisheeted envelopes, global versus local pluripolar conventions, complete negative-infinity loci, and negative compact sublevel condition. Total documented individual audits: **895/1007**, with **112 remaining**.
+- NEXT SVA2: complex-monge-ampere-operator, levi-flat-hypersurface, caratheodory-pseudodistance, caratheodory-hyperbolicity, bergman-shilov-boundary, cr-structure, cr-function. Leave all draft statuses unchanged. AWS/arXiv harvesting remains on hold.
