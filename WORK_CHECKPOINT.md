@@ -1418,3 +1418,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Note: `Class_number_(number_theory)` redirects to `Ideal_class_group`, whose text explicitly defines order of the class group as the field's finite class number, so citation remains suitable; Dirichlet characters include the q=1 convention; discrete valuation rings exclude fields under this chosen nontrivial value-group formulation.
 - Individual evidence committed `2df871e3`; current ledger **367 verified, 28 corrected, 612 pending, 0 needs_followup** out of 1007 (**395 citation-reviewed**). No definition/source changes needed in CV36; earlier reviews untouched.
 - NEXT: `arithmetic/` next ten files (field-discriminant, field-norm, field-trace, fractional-ideal, galois-extension, galois-group, ideal-class-group, local-field, minimal-polynomial, number-field), then later arithmetic entries in further small batches.
+
+
+## October 16, 2026 — citation verification CV37: number fields, Galois theory and trace (10 entries)
+
+- Opened individual source articles and checked formulas/conventions for field discriminants, field norms and traces, fractional ideals, Galois extensions/groups, ideal class groups, local fields, minimal polynomials, and number fields. Specific checks include discriminant trace-form determinant and integrality, finite separability not required for trace, and class groups' nonzero fractional ideal convention.
+- Sources matched stated mathematics; no body or URL changes. `fractional-ideal` entry explicitly chooses nonzero ideals (the general reference permits zero depending on convention), and `local-field` specifically chooses nondiscrete finite-residue-field nonarchimedean convention from article's variant definitions.
+- Ledger `5074686b`: **377 verified, 28 corrected, 602 pending, 0 needs_followup** of 1007 (**405 checked**). Previous checked citations deliberately left unchanged.
+- NEXT: continue `arithmetic/` from `p-adic-absolute-value` through `ring-of-integers`, then the remaining eight arithmetic entries. Keep ledger + checkpoint commits in small batches. No unrelated functionality or peer-review promotions. Pages/index CI separately unverified.
