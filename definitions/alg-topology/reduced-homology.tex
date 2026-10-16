@@ -1,7 +1,7 @@
 % id: alg-topology.reduced-homology
 % term: Reduced homology
 % related: alg-topology.singular-homology, alg-topology.chain-complex
-% source: https://ncatlab.org/nlab/show/singular%2Bhomology
+% source: https://en.wikipedia.org/wiki/Reduced_homology
 % status: draft
 
-The \emph{reduced homology} $\widetilde H_n(X)$ is the homology of the singular chain complex augmented by $\epsilon:C_0(X)\to\mathbb Z$ sending each point to $1$.
+For a nonempty topological space $X$, \emph{reduced singular homology} $\widetilde H_n(X;\mathbb Z)$ is the homology of the augmented singular chain complex $\cdots\to C_1(X)\to C_0(X)\xrightarrow{\epsilon}\mathbb Z\to0$, where the augmentation $\epsilon$ sends each singular $0$-simplex to $1$. It agrees with ordinary homology for $n>0$ and removes the canonical $\mathbb Z$ summand in degree zero.

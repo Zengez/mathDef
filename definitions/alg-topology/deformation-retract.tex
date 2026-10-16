@@ -1,7 +1,7 @@
 % id: alg-topology.deformation-retract
 % term: Deformation retract
 % related: alg-topology.retraction, alg-topology.homotopy
-% source: https://ncatlab.org/nlab/show/singular%2Bhomology
+% source: https://en.wikipedia.org/wiki/Retraction_(topology)
 % status: draft
 
-A subspace $A\subseteq X$ is a \emph{deformation retract} if a retraction $r:X\to A$ exists with a homotopy $H$ from $\operatorname{id}_X$ to the inclusion composed with $r$, fixing every point of $A$ throughout.
+A subspace $A\subseteq X$ is a \emph{strong deformation retract} if there is a continuous $H:X\times[0,1]\to X$ with $H(x,0)=x$, $H(x,1)\in A$ for all $x\in X$, and $H(a,t)=a$ for every $a\in A$ and $t\in[0,1]$. Some authors use ``deformation retract'' for the weaker condition that the homotopy need not fix $A$ at intermediate times.
