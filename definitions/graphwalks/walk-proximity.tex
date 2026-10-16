@@ -7,4 +7,8 @@
 % source_title: Metric spaces of walks and Lipschitz duality on graphs
 % status: draft
 
-For a walk space $W(G)$, a sub-$\sigma$-algebra $\Sigma_0$ of index sets, and its metric $d_\tau$, a \emph{walk proximity} $P:W(G)^2\times\Sigma_0\to\mathbb R$ depends on restricted walks over each index set $A$ and tends to $0$ as the restricted-walk distance tends to $0$.
+Let $\Sigma_0$ be a sub-$\sigma$-algebra of the index-set $\sigma$-algebra $\Sigma$. A \emph{proximity} on the walk space $W(G)$ is a map
+\[
+P:W(G)\times W(G)\times\Sigma_0\to\mathbb R
+\]
+such that, for each fixed $A\in\Sigma_0$, $P(w_1,w_2,A)$ depends only on the restricted walks $w_1(A)$ and $w_2(A)$, and is continuous with respect to the restricted-walk metric $d_\tau$. In particular, if $d_\tau(w_n(A),u(A))\to0$, then $P(w_n,u,A)\to0$.
