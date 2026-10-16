@@ -107,3 +107,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Mathematically important correction: `stochastic.renewal-process` did not specify $S_0=0$ and had an undefined max for $t<S_1$. It now includes $S_0=0$, $n\ge0$, and almost-sure finiteness.
 - Refined quadratic-variation partition mesh and stopped-process time domain. These are editorially audited drafts; review status was not altered.
 - Next: audit final preexisting stochastic entries (`strong-markov-property`, `submartingale`, `supermartingale`, `tightness`, `uniform-integrability`, `weak-convergence-measures`, `wiener-process`) and newer `local-martingale`/`semimartingale`; then audit first block of SCV and add missing graduate terms.
+
+## 2026-10-15 evening continuation, batch S4
+
+- Completed audit of all **39 existing `stochastic/` definition files** in four independently committed batches (S1 10, S2 10, S3 10, S4 9); archive revisions committed before moving on.
+- S4 reviewed: stochastic.strong-markov-property, stochastic.submartingale, stochastic.supermartingale, stochastic.tightness, stochastic.uniform-integrability, stochastic.weak-convergence-measures, stochastic.wiener-process, stochastic.local-martingale, stochastic.semimartingale. A crucial correction makes the strong Markov property *formal*, with bounded measurable test functions and a conditional-expectation equation at finite stopping times.
+- All stochastic definitions remain draft; no automated peer-review promotion. Duplicate terminology `brownian-motion` and `wiener-process` remains intentional cross-reference.
+- Next: several complex variables (`scv/`, 41 existing entries), then an independently sourced discovery batch. Inspect math exactness and sources in each batch.
