@@ -1368,3 +1368,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Checked finiteness/absolute-integrability convention for E[X], nonhomogeneous Markov chain versus homogeneous transition law, density Radon–Nikodym context, mutual versus pairwise independence and degenerate distribution endpoints. All source articles supported the key formulas and hypotheses; no edits necessary in this batch.
 - Per-entry ledger commit `f753a495`; tally **314 verified, 25 corrected, 668 pending, 0 needs_followup**, 339/1007 checked. Older already-reviewed entries left untouched.
 - NEXT: `prob/` last eleven entries starting random-variable and ending variance; then select another coherent pending subject. Continue actual citation checks, small commits and checkpoint. Build workflow status remains unverified.
+
+
+## October 16, 2026 — citation verification CV31: probability folder complete (11 entries)
+
+- Opened actual sources for the remaining probability files: random variable, sample mean and sample space, sample variance, sigma algebra, standard deviation, stationary distribution, stochastic process, transition matrix, uniform distribution and variance.
+- Found **specificity problem**: `prob.stationary-distribution` cited Wikipedia `Stationary_distribution` which is a set-index/disambiguation page, not an individual formal definition. Visited the linked `Discrete-time_Markov_chain#Stationary_distributions` section and confirmed it explicitly states `pi P=pi` with invariant marginal law. Retargeted definition source in commit `afcafa8a`.
+- Other ten sources supported the key formulas and scope as written, including sample variance with Bessel correction and the arbitrary-state Markov stochastic-matrix convention. Entries otherwise unchanged; no peer-review status promotions.
+- Ledger commit `47e4b5d2` records 11 per-file checks; **324 verified, 26 corrected, 657 pending, 0 needs_followup**, out of 1007 total (**350 citation-reviewed**). The entire 31-entry `prob/` folder is now complete in CV29–CV31.
+- NEXT: inspect `numerical/`, `optimization/`, `arithmetic/`, or a coherent more specialist folder. Continue small batches with individual article evidence, checkpoint after each commit. User explicitly asked not to redo earlier citation reviews; keep that boundary. CI publication workflow not yet independently verified.
