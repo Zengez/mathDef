@@ -1,7 +1,11 @@
 % id: functional.bounded-sequence
 % term: Bounded sequence in a normed space
 % related: functional.normed-space, analysis.sequence
-% source: https://en.wikipedia.org/wiki/Bounded_function
+% source: https://en.wikipedia.org/wiki/Bounded_set_(topological_vector_space)
 % status: draft
 
-A sequence $(x_n)$ in a normed space is \emph{bounded} if $\sup_n\|x_n\|<\infty$.
+A sequence $(x_n)$ in a normed space $X$ is \emph{bounded} if its range $\{x_n:n\in\mathbb N\}$ is norm-bounded; equivalently, there exists $M<\infty$ such that
+\[
+\|x_n\|\le M\qquad\text{for every }n,
+\]
+or, equivalently, $\sup_n\|x_n\|<\infty$.

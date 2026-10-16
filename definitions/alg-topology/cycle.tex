@@ -1,7 +1,11 @@
 % id: alg-topology.cycle
 % term: Singular cycle
 % related: alg-topology.boundary-operator, alg-topology.boundary
-% source: https://en.wikipedia.org/wiki/Chain_complex
+% source: https://encyclopediaofmath.org/wiki/Singular_homology
 % status: draft
 
-An \emph{$n$-cycle} of a chain complex is an element $c\in C_n$ with $\partial_nc=0$.
+For a topological space $X$ and coefficient abelian group $G$, a \emph{singular $n$-cycle} is a singular $n$-chain $c\in S_n(X;G)$ satisfying
+\[
+\partial_n c=0.
+\]
+Thus the group of singular $n$-cycles is $Z_n(X;G)=\ker(\partial_n)$; every singular boundary is a cycle because $\partial_{n-1}\partial_n=0$.
