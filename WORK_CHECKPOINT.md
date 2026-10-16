@@ -1714,3 +1714,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Two unavailable/misdirected sources corrected: `jordan-decomposition` now points at the actually opened Hahn decomposition theorem's Jordan section (source commit `8a6e6b85`), and `mutually-singular-measures` now cites readable `Singular_measure` (source commit `c527e656`). Eight others verified without changes, preserving existing hypotheses/definitions.
 - Evidence ledger CV79 `2c3b0064`: **678 verified, 85 corrected, 241 pending, 3 needs_followup** = **763/1007 completed**. No previously checked rows revisited.
 - NEXT CV80: 10 `measure/` pending from `negative-set-signed-measure`, `null-set`, `outer-measure`, `outer-regular`, `pettis-integrable`, `positive-set-signed-measure`, `probability-measure`, `product-measure`, `quasi-invariant-measure`, `radon-measure`. Save ledger and checkpoint; continue to last nine in CV81.
+
+## 2026-10-16 — CV80 signed measures, Pettis, product and Radon (10 entries)
+
+- Read 10 cited pages and compared `measure/` negative-set-signed-measure, null-set, outer-measure, outer-regular, Pettis-integrable, positive-set-signed-measure, probability-measure, product-measure, quasi-invariant-measure, radon-measure. Verified every-measurable-subset sign quantification, countable subadditivity of outer measure, Pettis scalar dual criterion, sigma-finite product uniqueness, group quasi-invariance, and explicit compact-finite Radon convention.
+- All ten source records fit the definitions; no mathematical or URL changes. Evidence ledger commit `bb520a52`: **688 verified, 85 corrected, 231 pending, 3 needs_followup = 773/1007 completed**.
+- NEXT CV81: final 9 pending `measure/`: radon-nikodym-derivative, sigma-finite, sigma-ideal, signed-measure, simple-function, standard-borel-space, strong-measurability, support-of-measure, total-variation. Save ledger and checkpoint; move on to `stochastic/` afterwards.
