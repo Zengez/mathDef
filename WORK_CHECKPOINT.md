@@ -410,3 +410,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Verified live Git tree after advanced set theory G2 has **995 .tex files**, **40 subjects**, with `sets/` increasing from 31 to **43**. The metadata-audit workflow passed for G2 (`42430bc0`, run 38842637880); Pages workflow was still running when first checked.
 - Updated README and CATALOG top-level current count and sets-folder count. Historical intermediate counts remain in their explicitly historical sections.
 - NEXT: audit `graph/` (19 original files), checking graph convention problems such as loop/multigraph, connectedness, path/walk conventions, and per-term sources. Commit batches under ~10. Refresh latest GitHub Actions status before considering the last deployment verified.
+
+
+## October 15, 2026 continuation — graph theory H1
+
+- Confirmed **995** definition files after G2 (43 set-theory entries). The advanced-set-theory metadata audit passed, with Pages publishing still in progress at the first check. Updated CATALOG and README snapshot in separate commit \`d20d9959\`.
+- Inspected first ten original \`graph/\` definitions: bipartite-graph, chromatic-number, clique, complete-bipartite-graph, complete-graph, connected-graph, cycle, degree, directed-graph, edge. Replaced generic \`List_of_graph_theory_topics\` references with individual graph-theory concept articles.
+- Explicitly fixed conventions: simple undirected graph vs digraph, loop and multigraph distinctions, empty graph chromatic number 0, connectedness of the empty graph (nonempty convention), and maximal vs maximum clique. These are definition conventions, not claims of theorem-level review.
+- NEXT H2: remaining nine original \`graph/\` files from \`graph-coloring\` through \`vertex\`. Check for consistency of \`graph.graph\` as underlying simple-graph model. Then confirm GitHub Actions for both batches and continue graduate discovery/audits.
