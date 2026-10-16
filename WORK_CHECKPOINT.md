@@ -478,3 +478,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Key points: quotient construction needs an equivalence relation, preorder antisymmetry is optional and its natural quotient is partially ordered, the empty subset is bounded above by every element of a poset, and well-order requires least elements of all nonempty subsets. Standard caveat about descending chains outside dependent-choice settings is stated.
 - **All 24 original \`relations/\` entries** individually examined in R1/R2/R3 (eight each), original IDs preserved, draft/example statuses left as-is. Collection remains **995 definitions in 40 subject folders**.
 - NEXT: verify R3 publishing and audit workflow results. Refresh coverage/audit backlog; prioritize uncited broad-index entries in \`algebra/\`, \`arithmetic/\`, \`geometry/\`, \`computability/\`, \`complex/\`, or discover additional graduate definitions by individual EoM/Wikipedia topic articles. Bulk arXiv/AWS harvesting remains paused.
+
+
+## October 15, 2026 continuation — algebra B1
+
+- After verifying GitHub Pages and metadata audits succeeded for the complete \`relations/\` R3 commit \`a64c7f78\`, began audit of the 29 original abstract-algebra entries. B1 individually inspected abelian-group, algebraic-element, binary-operation, commutative-ring, coset, cyclic-group, field-extension, field, group-action and group-homomorphism.
+- Replaced shared \`List_of_abstract_algebra_topics\` links with concept-specific references. Confirmed via \`algebra.ring\` that the **unital** ring convention governs the glossary, and carried that through to fields and commutative rings. Specified normality of subgroup as coset coincidence, field-extension embeddings, minimal polynomials, group-action homomorphism form, and automatic identity preservation of group homomorphisms.
+- Original stable IDs and draft status preserved. NEXT B2: group-isomorphism through monoid (10), B3 remaining nine entries normal-subgroup through subgroup. 995 definitions, 40 folders; source and mathematical auditing is not peer review.
