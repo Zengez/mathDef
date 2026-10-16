@@ -1,0 +1,11 @@
+% id: dynamics.lyapunov-exponent
+% term: Lyapunov exponent
+% related: dynamics.hyperbolic-fixed-point, dynamics.orbit
+% source: https://en.wikipedia.org/wiki/Lyapunov_exponent
+% status: draft
+
+Let $f:M\to M$ be a $C^1$ diffeomorphism of a Riemannian manifold, $x\in M$, and $0\ne v\in T_xM$. If it exists, the \emph{Lyapunov exponent} in direction $v$ is
+\[
+\lambda(x,v)=\lim_{n\to\infty}\frac1n\log\frac{\|D(f^n)_x v\|}{\|v\|}.
+\]
+This is the asymptotic exponential rate of change of the tangent vector; existence of the limit is an additional condition, not automatic for arbitrary orbits.

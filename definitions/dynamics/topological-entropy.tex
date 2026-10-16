@@ -1,0 +1,11 @@
+% id: dynamics.topological-entropy
+% term: Topological entropy
+% related: dynamics.topological-conjugacy, dynamics.discrete-dynamical-system
+% source: https://en.wikipedia.org/wiki/Topological_entropy
+% status: draft
+
+For a continuous self-map $f$ of a nonempty compact metric space $(X,d)$, put $d_n(x,y)=\max_{0\le j<n}d(f^j(x),f^j(y))$, and let $s(n,\varepsilon)$ be the maximum cardinality of a set with $d_n(x,y)>\varepsilon$ for every pair of distinct points. The \emph{topological entropy} (Bowen--Dinaburg formulation) is
+\[
+h_{\mathrm{top}}(f)=\lim_{\varepsilon\downarrow0}\limsup_{n\to\infty}\frac{\log s(n,\varepsilon)}{n}.
+\]
+The value may be infinite; on compact spaces it is independent of the compatible metric.
