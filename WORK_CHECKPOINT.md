@@ -404,3 +404,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Explicit conventions: proper set filters vs forcing-poset filters, \`p\le q\` as \`p\` stronger in forcing, ZFC for cardinal properties and continuum independence, club/stationary for uncountable regular $\kappa$, and strong vs weak inaccessible cardinals. No bulk arXiv/AWS extraction.
 - Expected inventory **995 definitions in 40 folders** once G2 commit is deployed; verify with GitHub Actions and the live tree.
 - NEXT: inspect full-corpus metadata audit issue counts, expand underreviewed \`graph/\` or \`combin/\` originals in bounded edits, review conventions in the new G2 entries, and select further graduate definitions from verified individual mathematics source pages.
+
+## October 15, 2026 — catalog 995 reconciliation
+
+- Verified live Git tree after advanced set theory G2 has **995 .tex files**, **40 subjects**, with `sets/` increasing from 31 to **43**. The metadata-audit workflow passed for G2 (`42430bc0`, run 38842637880); Pages workflow was still running when first checked.
+- Updated README and CATALOG top-level current count and sets-folder count. Historical intermediate counts remain in their explicitly historical sections.
+- NEXT: audit `graph/` (19 original files), checking graph convention problems such as loop/multigraph, connectedness, path/walk conventions, and per-term sources. Commit batches under ~10. Refresh latest GitHub Actions status before considering the last deployment verified.

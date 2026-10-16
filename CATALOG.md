@@ -2,7 +2,7 @@
 
 Snapshot: 2026-10-15. Counts below are generated from the repository tree; the deployed site is the source for the most current total.
 
-**983 definitions across 40 subject folders.**
+**995 definitions across 40 subject folders.**
 
 | Subject | Folder | Entries |
 |---|---|---:|
@@ -38,7 +38,7 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Real analysis | [`definitions/real/`](definitions/real/) | 22 |
 | Relations | [`definitions/relations/`](definitions/relations/) | 24 |
 | Schemes and sheaf theory | [`definitions/schemes/`](definitions/schemes/) | 20 |
-| Set theory | [`definitions/sets/`](definitions/sets/) | 31 |
+| Set theory | [`definitions/sets/`](definitions/sets/) | 43 |
 | Several complex variables and complex geometry | [`definitions/scv/`](definitions/scv/) | 62 |
 | Smooth manifolds and differential geometry | [`definitions/manifold/`](definitions/manifold/) | 40 |
 | Solenoidal manifolds and odometer groups | [`definitions/solenoids/`](definitions/solenoids/) | 6 |
