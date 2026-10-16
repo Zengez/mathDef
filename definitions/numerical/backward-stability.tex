@@ -1,7 +1,7 @@
 % id: numerical.backward-stability
 % term: Backward stable algorithm
 % related: numerical.backward-error, numerical.roundoff-error
-% source: https://encyclopediaofmath.org/wiki/Numerical_analysis
+% source: https://en.wikipedia.org/wiki/Numerical_stability
 % status: draft
 
-An algorithm is \emph{backward stable} under a specified finite-precision model if its computed output solves a nearby input problem exactly, with backward error bounded proportionally to machine precision under stated assumptions.
+An algorithm is \emph{backward stable} on a specified class of problems if its computed output is an exact solution of a nearby input problem with backward error controlled by a small multiple of the unit roundoff (and suitable problem-dependent scaling), subject to explicit arithmetic and input assumptions. It is an algorithmic property, not the same as good conditioning.

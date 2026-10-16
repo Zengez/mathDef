@@ -205,3 +205,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Checked weak-derivative citation with live sources: EoM `Weak_derivative` **redirects to Gâteaux derivative**, a different definition. Repaired `pde.weak-derivative` source to the genuine [Wikipedia weak derivative entry](https://en.wikipedia.org/wiki/Weak_derivative), which contains exactly the displayed distributional integration-by-parts formula.
 - Removed an incorrect caution newly inserted into `pde.weak-solution`: if $f\in L^2(\Omega)$, the functional $v\mapsto\int_\Omega fv$ **is continuous** on $H_0^1(\Omega)$ with the full $H^1$ norm even when $\Omega$ is unbounded; no Poincaré inequality is needed for that fact. A Poincaré inequality may instead matter for coercivity/existence under gradient-only bilinear forms.
 - This illustrates why individual URL *resolution* and hypotheses checks matter, even following a passed static build. Remaining definition entries stay draft.
+
+## Numerical analysis audit, batch N1 (October 15, 2026)
+
+- Examined 12 existing numerical definitions: numerical.absolute-error, numerical.backward-error, numerical.backward-stability, numerical.condition-number, numerical.convergence-order, numerical.cubic-spline, numerical.discretization-error, numerical.divided-difference, numerical.euler-method, numerical.finite-difference, numerical.finite-element-method, numerical.fixed-point-iteration.
+- Replaced generic `Numerical_analysis` citations with individual mathematical reference articles.
+- Important mathematical edits: specified infimum and norms for backward error (the minimizing perturbation might not exist); emphasized distinction between backward stability and problem conditioning; stated domain/norm assumptions for relative condition numbers; restricted “cubic spline” to piecewise polynomial on a specified knot sequence; clarified centered finite-difference $O(h^2)$ smoothness requirements and conforming Galerkin FEM scope.
+- Next: numerical N2, 12 files starting at `forward-error`. Keep numerical definitions draft. Build verification pending current commit.

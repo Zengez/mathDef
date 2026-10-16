@@ -1,7 +1,7 @@
 % id: numerical.condition-number
 % term: Relative condition number
 % related: numerical.relative-error, numerical.backward-error
-% source: https://encyclopediaofmath.org/wiki/Numerical_analysis
+% source: https://en.wikipedia.org/wiki/Condition_number
 % status: draft
 
-For a differentiable map $f$ at $x\ne0$ with $f(x)\ne0$, a local normwise \emph{relative condition number} is $\kappa_f(x)=\|Df(x)\|\,\|x\|/\|f(x)\|$.
+For a Fréchet-differentiable map $f:U\subseteq X\to Y$ of finite-dimensional normed spaces, with $x\in U$, $x\ne0$, and $f(x)\ne0$, the local normwise \emph{relative condition number} is $\kappa_f(x)=\|Df(x)\|_{X\to Y}\,\|x\|_X/\|f(x)\|_Y$. It describes first-order sensitivity and depends on the chosen norms.

@@ -1,7 +1,7 @@
 % id: numerical.finite-element-method
 % term: Galerkin finite-element method
 % related: pde.weak-solution, numerical.discretization-error
-% source: https://encyclopediaofmath.org/wiki/Numerical_analysis
+% source: https://en.wikipedia.org/wiki/Finite_element_method
 % status: draft
 
-A \emph{Galerkin finite-element method} chooses a finite-dimensional subspace $V_h$ of a variational solution space $V$ and seeks $u_h\in V_h$ with $a(u_h,v_h)=\ell(v_h)$ for every $v_h\in V_h$.
+A \emph{conforming Galerkin finite-element method} selects a finite-dimensional space $V_h\subseteq V$ of typically piecewise-polynomial functions associated with a mesh, and seeks $u_h\in V_h$ satisfying $a(u_h,v_h)=\ell(v_h)$ for every $v_h\in V_h$. Nonconforming, mixed, and Petrov--Galerkin finite-element variants employ different trial and test spaces.

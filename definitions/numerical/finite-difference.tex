@@ -1,7 +1,7 @@
 % id: numerical.finite-difference
 % term: Centered finite difference
 % related: numerical.discretization-error, numerical.convergence-order
-% source: https://encyclopediaofmath.org/wiki/Numerical_analysis
+% source: https://en.wikipedia.org/wiki/Finite_difference
 % status: draft
 
-The \emph{centered finite-difference approximation} of $f'(x)$ with step $h>0$ is $(f(x+h)-f(x-h))/(2h)$.
+For $h>0$ and a real function $f$ defined near $x$, the \emph{centered finite-difference quotient} is $(f(x+h)-f(x-h))/(2h)$, an approximation to $f'(x)$. If $f$ is $C^3$ near $x$ with bounded third derivative, the truncation error is $O(h^2)$.

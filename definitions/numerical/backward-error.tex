@@ -1,7 +1,7 @@
 % id: numerical.backward-error
 % term: Backward error
 % related: numerical.forward-error, numerical.condition-number
-% source: https://encyclopediaofmath.org/wiki/Numerical_analysis
+% source: https://en.wikipedia.org/wiki/Error_analysis_(mathematics)
 % status: draft
 
-For a computed approximation $\widetilde x$ to a problem with input $a$, the \emph{backward error} is the size of the smallest perturbation $\delta a$ for which $\widetilde x$ exactly solves the perturbed problem $a+\delta a$.
+For a numerical problem represented by $f:A\to X$, given input $a$ and computed output $\widetilde x$, the \emph{absolute backward error} (in a specified norm on the input space) is $\inf\{\|\delta a\|:a+\delta a\in A,\ f(a+\delta a)=\widetilde x\}$. The infimum may not be attained, and it is $+\infty$ if no such perturbation exists.
