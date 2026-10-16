@@ -1083,3 +1083,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Corrected `arithmetic.p-adic-valuation`: previously said a rational number has a “unique expression” `x=p^m(a/b)` with p-prime-to-numerator-and-denominator conditions. Only the integer m (and resulting rational a/b) is determined by that requirement; the integer pair (a,b) can be rescaled. The correction explicitly quantifies uniqueness of m and disclaims uniqueness of the integers a,b. This agrees with standard p-adic valuation formulations and with the existing normalized discrete valuation and absolute-value entries.
 - No other substantive incompatibilities identified in the reviewed arithmetic entries; left their source links unchanged rather than shifting citations without evidence. Number of definitions stays 1007.
 - NEXT: verify CC12 workflows and continue holomorphic dynamics and further remaining provenance/consistency batches; features, rendering and independent discovery stay deferred.
+
+
+## October 16, 2026 — CC13 holomorphic dynamics convention review
+
+- Compared the 28 holomorphic-dynamics entries: rational maps/degrees/critical points, multipliers and attracting/repelling/neutral/parabolic cycles; Fatou and Julia sets, filled Julia/escaping sets, basins and periodic/preperiodic/wandering components, Herman rings, Siegel disks, Böttcher coordinates and normal families.
+- Found no mathematical inconsistency warranting an edit in the reviewed formulas and convention notes. In particular, repelling periodic points and Fatou/Julia set distinctions, the no-wandering-domain qualification, and rational/parabolic multiplier naming were internally consistent. Source clusters legitimately share the Encyclopedia of Mathematics Julia_set article, as previously audited.
+- Verified CC12 `a37aebf7` metadata and Pages workflows both passed; CC11 `04b0a3f9` Pages also passed. CC10 `004909c2` metadata passed but its individual Pages workflow reported failure; later successful Pages builds at CC11 and CC12 established the current site builds, so do not treat the stale failed run as a current regression.
+- NEXT: remaining combinatorics/logic/computability/sets/relations semantic checks, plus further source review. No new definitions, no deferred rendering verification or UI changes.
