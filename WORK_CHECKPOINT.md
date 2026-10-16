@@ -1573,3 +1573,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All eight original individual citations are readable and suitable. No link or mathematical body edits needed. Dedicated ledger commit `19376834`.
 - Totals **529 verified, 59 corrected, 418 pending, 1 needs_followup**, hence **588 of 1007 (58.39%) completed**. All **38 `complex/` pending citations completed across CV55–CV58** (10+10+10+8); prior audited entries not revisited.
 - NEXT: choose another pending subject cluster (suggest `measured-actions/`, `quasimetric/` or `functional/`) and commit bounded per-concept checks. Leave previous `dynamics.invariant-set` unresolved until later, as requested. No CI claim.
+
+## 2026-10-16 — CV59 measured-actions paper citations (five entries, folder complete)
+
+- Independently opened Hoareau–Le Maître, `Spatial models for boolean actions in the infinite measure-preserving setup`, arXiv:2406.02401v2, and inspected actual PDF printed pp. 6–7 and 9 (viewer pages 5, 6, 8). Exact definitions cross-checked: spatial G action = Def 2.1 p6; boolean G action = Def 2.2 p7; spatial isomorphism = Def 2.4 p7; boolean isomorphism = Def 2.6 p7; finite measure algebra = Def 2.11 p9.
+- All five `measured-actions/` source locator records correctly cite their definitions, including distinction between g,h-dependent null sets and a common G-invariant conull set, and finite-measure null symmetric differences. The paper inherits hypotheses of Polish group, standard σ-finite (atomless) space in section context. No body or source changes needed, all remain editorial draft.
+- CV59 ledger commit `2b10a9a2`: **534 verified, 59 corrected, 413 pending, 1 needs_followup** = **593/1007 completed (58.89%)**. `measured-actions/` all five checked; earlier verified records untouched.
+- NEXT CV60: `quasimetric/` six pending research-specific references; use exact arXiv versions and PDF locators if applicable. Do not claim GitHub CI validated.
