@@ -371,3 +371,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Formal repairs/clarifications: prox on proper lower-semicontinuous convex functions is single-valued in Euclidean spaces; quasiconvexity has sublevel-set and maximum-inequality characterizations; **Slater qualification** states relative-interior domain and distinguishes affine inequalities; strong-duality equality does not imply primal or dual attainment; subgradients can fail to exist even at a point in the effective domain.
 - Thus **all 36 original \`optimization/\` entries** were individually inspected across O1/O2/O3 (12 each). O2 also corrected a Fenchel-conjugate edge case. None promoted to formal \`reviewed\`, and each remains \`draft\`. Total remains **983 definitions, 40 folders**, pending workflow confirmation.
 - NEXT: verify last GitHub Pages and corpus-audit workflows, run a fresh corpus/source summary, then select underreviewed source-list-heavy subjects such as \`sets/\`, \`graph/\`, \`combin/\`, \`category/\` and add genuinely missing advanced concepts from individually evaluated Wikipedia/EoM sources. No AWS/arXiv bulk extraction.
+
+
+## October 15, 2026 late timeout continuation — set theory S1
+
+- O1–O3 completed all 36 original optimization definitions, and both GitHub Pages and metadata workflows passed for O3 commit \`6503e46b\`.
+- Audited eleven preexisting \`sets/\` definitions: aleph-null, cardinality, cartesian-product, choice-function, cofinality, cofinite-set, complement, countably-infinite-set, difference, disjoint-family, disjoint-union. The prior citations all pointed indiscriminately to EoM \`Ordinal_number\`; now cite respective concept-level articles. Conventions for cardinal-as-initial-ordinal representation (ZFC), choice-function existence, cofinality of zero/successors, and tagged disjoint union are made explicit.
+- These 11 existing IDs remain draft, with no additions. Inventory remains 983.
+- NEXT S2: examine empty-set through ordered-pair, then S3: ordinal through union, in bounded commits with workflow checks. This session's first S1 commit attempt was interrupted by a GitHub transport disconnect; the branch head was checked and had not changed, then this S1 commit was retried.
