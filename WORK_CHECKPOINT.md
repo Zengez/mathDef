@@ -1818,3 +1818,8 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - **Mathematical body correction:** hyperbolicity entry was vague about which roots and lacked the noncharacteristic condition. Rewrote as p_2(x,tau)≠0 plus for all real eta every root of p_2(x,eta+lambda tau) real, strict distinctness for eta not proportional to tau. This agrees with specifically opened source and standard scalar definition. Other bodies unchanged.
 - Ledger CV97 commit 740f50fc; **785 verified, 139 corrected, 80 pending, 3 needs_followup = 924/1007 completed (91.76%)**. Earlier verified rows not touched.
 - **NEXT CV98**: next sorted pending pde/ entries start parametrix and subsequent items; read live ledger and work ten with source checks, then checkpoint. No independent build/CI status checked.
+
+## 2026-10-16 — CV98 parametrix and PDO citation verification (10 entries)
+- Continued from CV98 precommitted six source URL changes; independently inspected opened references including actual PDF screenshots Haller Atiyah–Singer notes III.1 p103 (smoothing), III.3 p114 (pseudolocal), III.3 p119 (parametrix). Checked remaining four source definitions and convention matches. Six prior citation replacements confirmed; four originals verified. No mathematical body edits.
+- Ledger CV98 commit 7acdcdc3: **789 verified, 145 corrected, 70 pending, 3 needs_followup = 934/1007 completed (92.75%)**. Previous rows untouched.
+- NEXT CV99: last eight pending PDE/ rows (confirm actual sorted IDs from ledger), then start SCV/; finish each bounded batch with ledger and checkpoint commits. Three deferred followups stay pending until explicitly reviewed. CI/build not independently checked.
