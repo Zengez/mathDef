@@ -1,14 +1,14 @@
 path,status,checked_source,review_note
-definitions/alg-topology/based-space.tex,pending,,
-definitions/alg-topology/boundary-operator.tex,pending,,
-definitions/alg-topology/boundary.tex,pending,,
-definitions/alg-topology/cell-complex.tex,pending,,
-definitions/alg-topology/chain-complex.tex,pending,,
-definitions/alg-topology/cochain-complex.tex,pending,,
-definitions/alg-topology/contractible.tex,pending,,
-definitions/alg-topology/covering-map.tex,pending,,
-definitions/alg-topology/covering-space.tex,pending,,
-definitions/alg-topology/cup-product.tex,pending,,
+definitions/alg-topology/based-space.tex,verified,"https://en.wikipedia.org/wiki/Pointed_space","Opening definition identifies pointed space as topological X with a distinguished basepoint x0 in X."
+definitions/alg-topology/boundary-operator.tex,corrected,"https://en.wikipedia.org/wiki/Singular_homology#Singular_simplices","Previous EoM Singular_homology returned error. Inspected Singular homology Singular simplices subsection: alternating signed face restrictions define ∂σ and ∂²=0 in following chain complex; retargeted precise source."
+definitions/alg-topology/boundary.tex,corrected,"https://en.wikipedia.org/wiki/Singular_homology#Singular_chain_complex","EoM singular homology inaccessible. Singular chain complex subsection explicitly defines B_n(X)=im ∂_(n+1) subset Z_n(X), and coefficient extension to abelian G follows by tensor coefficients; updated source."
+definitions/alg-topology/cell-complex.tex,verified,"https://en.wikipedia.org/wiki/CW_complex","Definition characterizes cell attachments, closure finite and weak topology, equivalent partition theorem and Hausdorff condition."
+definitions/alg-topology/chain-complex.tex,verified,"https://en.wikipedia.org/wiki/Chain_complex","Chain complex consists graded abelian groups with differentials lowering degree and compositional square zero."
+definitions/alg-topology/cochain-complex.tex,verified,"https://en.wikipedia.org/wiki/Chain_complex","Cochain complex section gives coboundaries degree increasing d^n:C^n→C^(n+1) with consecutive composition zero."
+definitions/alg-topology/contractible.tex,verified,"https://en.wikipedia.org/wiki/Contractible_space","Identity of X homotopic to a constant map is definition of contractibility."
+definitions/alg-topology/covering-map.tex,verified,"https://en.wikipedia.org/wiki/Covering_space","Covering map definition: continuous surjection with evenly covered neighborhoods, disjoint open sheets homeomorphic to base neighborhood."
+definitions/alg-topology/covering-space.tex,verified,"https://en.wikipedia.org/wiki/Covering_space","Covering space means E equipped with specified covering projection p:E→B."
+definitions/alg-topology/cup-product.tex,verified,"https://en.wikipedia.org/wiki/Cup_product","Definition section gives Alexander-Whitney front/back face singular cochain product descending to pairing H^p×H^q→H^(p+q), graded ring for commutative coefficients."
 definitions/alg-topology/cycle.tex,pending,,
 definitions/alg-topology/deck-transformation.tex,pending,,
 definitions/alg-topology/deformation-retract.tex,pending,,
