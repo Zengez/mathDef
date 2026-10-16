@@ -133,3 +133,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Examined 10 geometric/analytic SCV definitions: scv.analytic-polyhedron, scv.biholomorphic-map, scv.complex-analytic-subset, scv.complex-line, scv.complex-manifold, scv.complex-polydisc, scv.complex-projective-space, scv.complex-torus, scv.complex-unit-ball, scv.fatou-bieberbach-domain.
 - Clarified relative closedness of analytic subsets, the compactly-contained analytic-polyhedron convention, the natural quotient operation for complex projective space, and that complex tori need not be algebraic. Biholomorphic maps now explicitly refer to complex manifolds and a direct EoM article.
 - Entries were left in draft status and stable IDs preserved. Next final SCV batch: Fubini–Study, automorphism, holomorphic vector bundles, Kähler and Kobayashi geometry, tube domains, $(p,q)$-forms and Hartogs separate holomorphy.
+
+## 2026-10-15 evening continuation, batch C4 — SCV folder audit complete
+
+- Reviewed final 10 existing SCV IDs: scv.fubini-study-form, scv.holomorphic-automorphism, scv.holomorphic-mapping, scv.holomorphic-vector-bundle, scv.kahler-manifold, scv.kobayashi-hyperbolicity, scv.kobayashi-pseudodistance, scv.tube-domain, scv.type-pq-form, scv.several-variable-holomorphic-function.
+- Explicitly distinguished equipped Kähler manifolds from those merely admitting a Kähler metric, clarified Fubini–Study normalization, generalized holomorphic automorphisms to complex manifolds, and recorded Hartogs's separate-holomorphy equivalence only on open subsets of $\mathbb C^n$.
+- Thus all **41 existing SCV definitions** have now been inspected in four committed batches C1 11, C2 10, C3 10, C4 10. All **39 stochastic definitions** were inspected in S1–S4 earlier in this session.
+- Mathematically specialized definitions and citations remain `draft`; this was a focused line-by-line precision/source audit, not full third-party peer review or runtime rendering inspection.
+- Next: discover new graduate-level mathematics terms, cross-check existing stable IDs, add a bounded well-cited batch, test website and run corpus-wide metadata audit; update snapshot totals and checkpoint.
