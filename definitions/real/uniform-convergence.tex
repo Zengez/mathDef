@@ -1,11 +1,12 @@
 % id: real.uniform-convergence
 % term: Uniform convergence
 % related: real.pointwise-convergence, analysis.uniform-continuity
-% source: https://en.wikipedia.org/wiki/List_of_real_analysis_topics
+% source: https://en.wikipedia.org/wiki/Uniform_convergence
 % status: draft
 
-Functions $f_n:E\to\mathbb R$ \emph{converge uniformly} to $f$ if
+Functions $f_n:E\to\mathbb R$ \emph{converge uniformly} to $f:E\to\mathbb R$ if
 \[
-\forall\varepsilon>0\ \exists N\ 
+\forall\varepsilon>0\ \exists N\in\mathbb N\
 \forall n\ge N\ \forall x\in E:\ |f_n(x)-f(x)|<\varepsilon.
 \]
+Unlike pointwise convergence, $N$ is chosen independently of $x$. Equivalently $\sup_{x\in E}|f_n(x)-f(x)|\to0$ when $E$ is nonempty and the suprema are finite eventually.
