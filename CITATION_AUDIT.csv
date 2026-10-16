@@ -256,15 +256,15 @@ definitions/computability/np-hard.tex,verified,"https://en.wikipedia.org/wiki/NP
 definitions/computability/oracle-machine.tex,verified,"https://en.wikipedia.org/wiki/Oracle_machine","Oracle query to fixed predicate/set answered as primitive operation, defining relative computation."
 definitions/computability/polynomial-hierarchy.tex,verified,"https://en.wikipedia.org/wiki/Polynomial_hierarchy","PH union of Sigma_k^P, alternation polynomial-length bounded strings, Sigma_1 NP and Pi_1 coNP; strictness open."
 definitions/computability/polynomial-reduction.tex,verified,"https://en.wikipedia.org/wiki/Polynomial-time_reduction","Karp reduction total polynomial computable f with membership iff membership, stricter than adaptive Turing reduction."
-definitions/computability/polynomial-time.tex,pending,,
-definitions/computability/prefix-free-kolmogorov-complexity.tex,pending,,
-definitions/computability/randomized-algorithm.tex,pending,,
-definitions/computability/recursively-enumerable.tex,pending,,
-definitions/computability/space-complexity.tex,pending,,
-definitions/computability/time-complexity.tex,pending,,
-definitions/computability/turing-degree.tex,pending,,
-definitions/computability/turing-machine.tex,pending,,
-definitions/computability/turing-reducibility.tex,pending,,
+definitions/computability/polynomial-time.tex,verified,"https://en.wikipedia.org/wiki/Time_complexity#Polynomial_time","Polynomial worst-case time O(n^k) for fixed k, input encoding/machine model specified."
+definitions/computability/prefix-free-kolmogorov-complexity.tex,verified,"https://en.wikipedia.org/wiki/Kolmogorov_complexity","Prefix-free shortest halting program length K_U, prefix condition and optimal-machine additive invariance; differs from plain C_U."
+definitions/computability/randomized-algorithm.tex,verified,"https://en.wikipedia.org/wiki/Randomized_algorithm","Random bits induce probability distributions over possible execution paths and outputs; correctness guarantee may be zero- or bounded-error."
+definitions/computability/recursively-enumerable.tex,verified,"https://en.wikipedia.org/wiki/Recursively_enumerable_language","Turing recognizer halts and accepts members but may loop on nonmembers, contrasted with decider."
+definitions/computability/space-complexity.tex,verified,"https://en.wikipedia.org/wiki/Space_complexity","Space complexity counts distinct work cells while input is read-only, worst-case input and branches for nondeterminism."
+definitions/computability/time-complexity.tex,verified,"https://en.wikipedia.org/wiki/Time_complexity","Worst-case max running steps among inputs of same length on deterministic halting machine."
+definitions/computability/turing-degree.tex,verified,"https://en.wikipedia.org/wiki/Turing_degree","Degree is equivalence class under mutual Turing reducibility, partial order induced; 0 computable degree."
+definitions/computability/turing-machine.tex,verified,"https://en.wikipedia.org/wiki/Turing_machine","Finite control, finite tape alphabet, read-write head, transition rule, halting/nonhalting states; deterministic choices."
+definitions/computability/turing-reducibility.tex,corrected,"https://en.wikipedia.org/wiki/Turing_reduction","Oracle halting decider for A using membership B, no time bound; clarified weak relation to polynomial-independent many-one reductions and nonconverse in commit daa73f07."
 definitions/dynamics/alpha-limit-set.tex,verified,"https://encyclopediaofmath.org/wiki/Limit_point_of_a_trajectory","EoM explicitly defines alpha-limit points as subsequential limits in reversed time and same terminology for discrete dynamics. Compact homeomorphism assumptions justify closed tail intersection nonempty and invariant."
 definitions/dynamics/attractor.tex,corrected,"https://en.wikipedia.org/wiki/Attractor#Mathematical_definition","Previous Strange_attractor EoM page returned 502 and was too narrow. Attractor Mathematical definition states invariant attracting set with basin neighborhood, but discusses a somewhat stronger attractor convention; repo explicitly adopts one weaker pointwise-attraction convention and notes alternatives."
 definitions/dynamics/autonomous-ode.tex,verified,"https://en.wikipedia.org/wiki/Autonomous_system_(mathematics)","Definition section autonomous ODE x'=F(x) without explicit time variable; solutions are differentiable trajectories."
