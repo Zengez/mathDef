@@ -470,3 +470,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reviewed eight more existing \`relations/\` entries: greatest-lower-bound-poset, lattice, least-upper-bound-poset, maximal-element, maximum-element, order-embedding, order-isomorphism, partial-order. Replaced general EoM poset references with concept-specific Wikipedia articles (except partial order, which now uses a direct poset reference).
 - Made ambient poset and existence/uniqueness assumptions explicit for joins and meets; differentiated binary lattice operations from completeness for arbitrary subsets; distinguished maximal from greatest elements; and order embeddings from merely monotone/order-preserving maps.
 - Sixteen of 24 \`relations/\` entries have now been reviewed in R1 and R2. NEXT R3: remaining eight from \`preorder\` through \`well-order\`, then verify latest build/metadata Actions.
+
+
+## October 15, 2026 continuation — relations R3 (folder complete)
+
+- Reviewed final eight \`relations/\` terms: preorder, quotient-set, reflexive-relation, symmetric-relation, total-order, transitive-relation, upper-bound-poset, well-order. Sources now reference individual mathematical concepts rather than a shared generic EoM Partially ordered set link, with explicit assumptions.
+- Key points: quotient construction needs an equivalence relation, preorder antisymmetry is optional and its natural quotient is partially ordered, the empty subset is bounded above by every element of a poset, and well-order requires least elements of all nonempty subsets. Standard caveat about descending chains outside dependent-choice settings is stated.
+- **All 24 original \`relations/\` entries** individually examined in R1/R2/R3 (eight each), original IDs preserved, draft/example statuses left as-is. Collection remains **995 definitions in 40 subject folders**.
+- NEXT: verify R3 publishing and audit workflow results. Refresh coverage/audit backlog; prioritize uncited broad-index entries in \`algebra/\`, \`arithmetic/\`, \`geometry/\`, \`computability/\`, \`complex/\`, or discover additional graduate definitions by individual EoM/Wikipedia topic articles. Bulk arXiv/AWS harvesting remains paused.
