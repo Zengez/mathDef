@@ -1377,3 +1377,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Other ten sources supported the key formulas and scope as written, including sample variance with Bessel correction and the arbitrary-state Markov stochastic-matrix convention. Entries otherwise unchanged; no peer-review status promotions.
 - Ledger commit `47e4b5d2` records 11 per-file checks; **324 verified, 26 corrected, 657 pending, 0 needs_followup**, out of 1007 total (**350 citation-reviewed**). The entire 31-entry `prob/` folder is now complete in CV29–CV31.
 - NEXT: inspect `numerical/`, `optimization/`, `arithmetic/`, or a coherent more specialist folder. Continue small batches with individual article evidence, checkpoint after each commit. User explicitly asked not to redo earlier citation reviews; keep that boundary. CI publication workflow not yet independently verified.
+
+
+## October 16, 2026 — citation verification CV32: first ten numerical analysis references
+
+- Checked actual reference articles and math for numerical absolute/backward errors, backward stability, relative condition number, convergence order, cubic splines, discretization error, divided differences, explicit Euler and centered finite differences.
+- Identified a **misleading redirect** in `numerical.cubic-spline`: citation `Cubic_spline` currently points to a **Cubic Hermite spline** article, where generic interpolants may be only C1 rather than the glossary's C2 cubic spline. Replaced with `Spline_(mathematics)`, whose classical-spline discussion identifies piecewise cubic C2 and distinctions from C1 graphics splines (commit `14dc4895`).
+- Nine other articles supported their central definitions and conventions. Full per-entry source/evidence recorded in ledger commit `65c2b6b2`.
+- Dedicated tally now **333 verified, 27 corrected, 647 pending, 0 needs_followup** of 1007 (**360 citation-reviewed**). No new entries, UI features or formal review-status promotions. Earlier citation checks deliberately unchanged at user request.
+- NEXT: `numerical/` next ten entries from finite-element-method to matrix-condition-number, then remaining 15 numerical entries. Save ledger+checkpoint after every bounded batch.
