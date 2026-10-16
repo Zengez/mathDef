@@ -412,16 +412,16 @@ definitions/graph/regular-graph.tex,verified,https://en.wikipedia.org/wiki/Regul
 definitions/graph/tree.tex,verified,https://en.wikipedia.org/wiki/Tree_(graph_theory),Definition - connected acyclic graph; unique simple path equivalent
 definitions/graph/vertex.tex,verified,https://en.wikipedia.org/wiki/Vertex_(graph_theory),Graph vertex - member of vertex set
 definitions/graphwalks/walk-proximity.tex,pending,,
-definitions/holodynamics/attracting-periodic-point.tex,pending,,
-definitions/holodynamics/basin-attraction.tex,pending,,
-definitions/holodynamics/bottcher-coordinate.tex,pending,,
-definitions/holodynamics/critical-point.tex,pending,,
-definitions/holodynamics/critical-value.tex,pending,,
-definitions/holodynamics/degree-rational-map.tex,pending,,
-definitions/holodynamics/escaping-set.tex,pending,,
-definitions/holodynamics/fatou-component.tex,pending,,
-definitions/holodynamics/fatou-set.tex,pending,,
-definitions/holodynamics/filled-julia-set.tex,pending,,
+definitions/holodynamics/attracting-periodic-point.tex,corrected,"https://www.matem.unam.mx/~omar/no-wandering-domains.html","EoM Julia_set returned 502. Read UNAM Iteration of Rational Functions periodic points section; it explicitly defines lambda=(f^p)'(a), multiplier constant along orbit, attracting iff |lambda|<1 and superattracting iff lambda=0. Replaced source."
+definitions/holodynamics/basin-attraction.tex,verified,"https://en.wikipedia.org/wiki/Attractor","Basins of attraction section defines initial states whose orbits asymptotically approach the attractor and includes fixed and periodic examples; metric convergence and cycle notation are suitable."
+definitions/holodynamics/bottcher-coordinate.tex,verified,"https://en.wikipedia.org/wiki/B%C3%B6ttcher%27s_equation","Solution subsection explicitly calls the local holomorphic conjugating map a Bottcher coordinate, with phi(f(z))=phi(z)^d normal form; derivative normalization follows by comparing the leading coefficients."
+definitions/holodynamics/critical-point.tex,verified,"https://en.wikipedia.org/wiki/Critical_point_(mathematics)","Introduction defines complex-variable critical points by vanishing derivative and discusses rank-deficient differentiable maps. For holomorphic maps between Riemann surfaces the local-degree-ge-two equivalence follows from a local expansion."
+definitions/holodynamics/critical-value.tex,verified,"https://en.wikipedia.org/wiki/Critical_point_(mathematics)","Intro explicitly names the image of a critical point as a critical value, with complex analytic case included; sphere/infinity convention is mathematically compatible."
+definitions/holodynamics/degree-rational-map.tex,verified,"https://en.wikipedia.org/wiki/Rational_function","Degree subsection gives max(deg numerator,deg denominator) after reducing to lowest terms; generic preimage count and exceptional critical values discussed."
+definitions/holodynamics/escaping-set.tex,verified,"https://en.wikipedia.org/wiki/Filled_Julia_set","Filled Julia definition states bounded-orbit locus and identifies points outside it as those escaping to infinity; the polynomial degree-at-least-two convention matches."
+definitions/holodynamics/fatou-component.tex,verified,"https://en.wikipedia.org/wiki/Classification_of_Fatou_components","Article identifies connected Fatou components and classifies periodic, preperiodic, wandering cases; mapped-component property for rational dynamics corroborated in UNAM Julia and Fatou sets section."
+definitions/holodynamics/fatou-set.tex,corrected,"https://www.matem.unam.mx/~omar/no-wandering-domains.html","EoM Julia_set returned 502. Read UNAM Iteration of Rational Functions Julia and Fatou sets section: explicitly defines largest open normality domain for iterates and complete invariance, Julia complement. Replaced inaccessible source."
+definitions/holodynamics/filled-julia-set.tex,verified,"https://en.wikipedia.org/wiki/Filled_Julia_set","Article defines filled Julia set as bounded polynomial forward-orbit set and explains escaping complement and Julia set as boundary. Polynomial degree at least two matches."
 definitions/holodynamics/fixed-point-multiplier.tex,pending,,
 definitions/holodynamics/herman-ring.tex,pending,,
 definitions/holodynamics/immediate-basin.tex,pending,,
