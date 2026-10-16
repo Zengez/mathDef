@@ -276,3 +276,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Particularly important: \`dynamics.recurrent-point\` uses **positive/Poisson recurrence**, $x\in\omega(x)$, not the stronger Birkhoff/uniformly recurrent convention. This matches the earlier wording and is now disambiguated explicitly. Defined the omega-limit set by closures of forward tails. Distinguished state-space structure, period versus least period, and topological conjugacy for noninvertible maps.
 - **All 15 original \`dynamics/\` definitions** now individually read and editorially revised in Y1a (8) and Y1b (7). No ID changes or new files, so the corpus total remains 971. Every entry stays \`draft\`; mathematical source checking is distinct from formal peer review.
 - NEXT: audit \`real/\` (22 existing entries), first about 11 through \`limit-of-function\`, then remaining 11 through \`uniform-convergence\`. Retain source-resolution caution and run Pages/metadata workflows after commits.
+
+
+## 2026-10-15 replacement-chat continuation — real analysis R1
+
+- Reviewed 11 older definitions in \`real/\`: absolute-convergence, bounded-set, conditional-convergence, continuity-at-point, convex-function, convex-set, derivative, differentiability, holder-continuity, infimum, limit-of-function. Replaced generic \`List_of_real_analysis_topics\` citations with verified concept-level articles.
+- Improved mathematical scope: real/complex series and normed-space extension, relative-domain continuity (including isolated points), open-interval derivative, little-$o$ differentiability characterization, convexity in real vector spaces, $\alpha>0$ Hölder versus the often-used $0<\alpha\le1$ convention, and finite versus extended-real infimum.
+- Preserved all 11 IDs, valid related references and \`draft\` status; no formal approval claim. Corpus still 971 files.
+- NEXT R2: lipschitz-continuity, monotone-sequence, pointwise-convergence, power-series, riemann-integrability, riemann-sum, series, subsequence, supremum-norm, supremum, uniform-convergence. Explicitly distinguish pointwise/uniform quantifiers and the boundedness needed for the supremum norm.

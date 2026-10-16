@@ -1,7 +1,7 @@
 % id: real.differentiability
 % term: Differentiability
 % related: real.derivative, real.continuity-at-point
-% source: https://en.wikipedia.org/wiki/List_of_real_analysis_topics
+% source: https://en.wikipedia.org/wiki/Differentiable_function
 % status: draft
 
-A real-valued function is \emph{differentiable at} $a$ if the finite difference quotient limit defining $f'(a)$ exists.
+A function $f:I\to\mathbb R$ on an open interval is \emph{differentiable at} $a\in I$ if the finite limit $\lim_{h\to0}(f(a+h)-f(a))/h$ exists. Equivalently, there is a real number $L$ such that $f(a+h)=f(a)+Lh+o(|h|)$ as $h\to0$; then $L=f'(a)$.
