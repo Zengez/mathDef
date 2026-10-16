@@ -1,7 +1,7 @@
 % id: optimization.strong-duality
 % term: Strong duality
 % related: optimization.duality-gap, optimization.slater-condition
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Strong_duality
 % status: draft
 
-An optimization problem has \emph{strong Lagrange duality} if its primal and dual optimal values coincide, $p^*=d^*$.
+A minimization problem and its Lagrange dual satisfy \emph{strong duality} if the primal infimum $p^*$ equals the dual supremum $d^*$ (usually with a finite common value). Unlike \emph{weak duality}, which gives $d^*\le p^*$ under dual feasibility, strong duality need not hold for an arbitrary nonconvex or constrained problem. Equality of values alone does not imply attainment by either problem.

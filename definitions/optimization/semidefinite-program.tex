@@ -1,7 +1,11 @@
 % id: optimization.semidefinite-program
 % term: Semidefinite program
 % related: optimization.positive-semidefinite, optimization.linear-program
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Semidefinite_programming
 % status: draft
 
-A \emph{semidefinite program} minimizes a linear objective subject to affine equations and a linear matrix inequality $F_0+\sum_i x_iF_i\succeq0$ for symmetric matrices $F_i$.
+A \emph{semidefinite program} (SDP) is a convex optimization problem with a linear objective and a positive-semidefinite matrix constraint depending affinely on the decision variables. One standard form minimizes $c^{\mathsf T}x$ over $x\in\mathbb R^n$ subject to
+\[
+F_0+\sum_{i=1}^n x_iF_i\succeq0,
+\]
+where the $F_i$ are prescribed real symmetric matrices. Additional affine constraints may be included.

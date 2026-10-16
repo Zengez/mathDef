@@ -1,7 +1,7 @@
 % id: optimization.slater-condition
 % term: Slater condition
 % related: optimization.convex-optimization, optimization.strong-duality
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Slater%27s_condition
 % status: draft
 
-For a convex program with affine equalities and convex inequalities $f_i(x)\le0$, a \emph{strictly feasible point} satisfies the equalities and all nonaffine inequalities strictly; this is the usual Slater constraint qualification (with domain conditions).
+Consider a convex program minimizing a convex objective subject to convex inequalities $f_i(x)\le0$, affine equalities $Ax=b$, and a convex domain $D$. A standard \emph{Slater constraint qualification} requires a point $x\in\operatorname{relint}D$ with $Ax=b$ and $f_i(x)<0$ for every nonlinear inequality. Affine inequalities may instead be satisfied nonstrictly in the refined Slater condition. Under standard finite-dimensional regularity hypotheses, Slater's condition implies strong Lagrange duality; the precise relative-interior convention matters.

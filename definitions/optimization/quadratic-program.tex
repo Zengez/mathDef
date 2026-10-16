@@ -1,7 +1,7 @@
 % id: optimization.quadratic-program
 % term: Convex quadratic program
 % related: optimization.positive-semidefinite, optimization.linear-program
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Quadratic_programming
 % status: draft
 
-A \emph{convex quadratic program} minimizes $\frac12x^{\mathsf T}Px+q^{\mathsf T}x+r$ subject to affine constraints, with $P$ symmetric positive semidefinite.
+A \emph{quadratic program} minimizes or maximizes a quadratic objective subject to affine equality and inequality constraints. A \emph{convex quadratic program} in the minimization convention has objective $\frac12x^{\mathsf T}Px+q^{\mathsf T}x+r$, where $P$ is symmetric positive semidefinite, and affine constraints such as $Ax\le b$ and $Ex=h$. No positive-definiteness assumption is required for convexity.

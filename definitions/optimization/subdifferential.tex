@@ -1,7 +1,11 @@
 % id: optimization.subdifferential
 % term: Convex subdifferential
 % related: optimization.subgradient, optimization.proximal-operator
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Subderivative
 % status: draft
 
-The \emph{subdifferential} $\partial f(x)$ is the set of all subgradients of a convex function $f$ at $x$.
+For a proper convex function $f:\mathbb R^n\to(-\infty,+\infty]$ and a point $x$ in its effective domain, the \emph{convex subdifferential} is
+\[
+\partial f(x)=\{g\in\mathbb R^n:f(y)\ge f(x)+\langle g,y-x\rangle\text{ for every }y\in\mathbb R^n\}.
+\]
+Outside $\operatorname{dom}f$ it is defined to be empty. The set can be empty even at some points of the effective domain, especially at a boundary.

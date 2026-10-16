@@ -1,7 +1,11 @@
 % id: optimization.sublevel-set
 % term: Sublevel set
 % related: optimization.quasiconvex-function, real.convex-function
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Level_set
 % status: draft
 
-The \emph{$\alpha$-sublevel set} of a function $f:X\to[-\infty,\infty]$ is $\{x\in X:f(x)\le\alpha\}$.
+For a function $f:X\to[-\infty,+\infty]$ and threshold $a\in\mathbb R$, its \emph{$a$-sublevel set} is
+\[
+L_a(f)=\{x\in X:f(x)\le a\}.
+\]
+The strict sublevel set uses $f(x)<a$. When $X$ is a vector space and $f$ is convex, every (nonstrict) sublevel set is convex; the converse defines quasiconvexity.

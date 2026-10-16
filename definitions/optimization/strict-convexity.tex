@@ -1,7 +1,11 @@
 % id: optimization.strict-convexity
 % term: Strictly convex function
 % related: real.convex-function, optimization.strong-convexity
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Strictly_convex_function
 % status: draft
 
-A function $f$ on a convex set is \emph{strictly convex} if $f((1-t)x+ty)<(1-t)f(x)+tf(y)$ for all distinct $x,y$ and $0<t<1$.
+A real-valued function $f:C\to\mathbb R$ on a convex subset $C$ of a real vector space is \emph{strictly convex} if, whenever $x,y\in C$ are distinct and $0<t<1$,
+\[
+f((1-t)x+ty)<(1-t)f(x)+tf(y).
+\]
+Strict convexity implies at most one minimizer over a convex set, but does not guarantee existence of one.

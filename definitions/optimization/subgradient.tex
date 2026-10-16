@@ -1,7 +1,11 @@
 % id: optimization.subgradient
 % term: Subgradient
 % related: real.convex-function, optimization.subdifferential
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Subderivative
 % status: draft
 
-For convex $f:\mathbb R^n\to(-\infty,\infty]$ and $x$ with $f(x)<\infty$, a vector $g$ is a \emph{subgradient} at $x$ if $f(y)\ge f(x)+\langle g,y-x\rangle$ for every $y$.
+For a proper convex function $f:\mathbb R^n\to(-\infty,+\infty]$ and $x\in\operatorname{dom}f$, a vector $g\in\mathbb R^n$ is a \emph{subgradient} of $f$ at $x$ if
+\[
+f(y)\ge f(x)+\langle g,y-x\rangle\quad\text{for all }y\in\mathbb R^n.
+\]
+Thus $g$ defines a global affine minorant touching $f$ at $x$. At a differentiable interior point, $\partial f(x)=\{\nabla f(x)\}$.

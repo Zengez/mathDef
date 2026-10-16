@@ -1,7 +1,11 @@
 % id: optimization.proximal-operator
 % term: Proximal operator
 % related: optimization.subdifferential, optimization.proper-convex-function
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Proximal_operator
 % status: draft
 
-For a proper lower semicontinuous convex function $f:\mathbb R^n\to(-\infty,\infty]$ and $\lambda>0$, $\operatorname{prox}_{\lambda f}(x)$ is the unique minimizer of $f(y)+\|y-x\|^2/(2\lambda)$.
+For a proper, lower semicontinuous, convex function $f:\mathbb R^n\to(-\infty,+\infty]$ and a parameter $\lambda>0$, its \emph{proximal operator} is
+\[
+\operatorname{prox}_{\lambda f}(x)=\underset{y\in\mathbb R^n}{\operatorname{argmin}}\left\{f(y)+\frac{1}{2\lambda}\|y-x\|^2\right\}.
+\]
+In finite-dimensional Euclidean space the minimizer exists and is unique. The related optimality condition is $(x-\operatorname{prox}_{\lambda f}(x))/\lambda\in\partial f(\operatorname{prox}_{\lambda f}(x))$.

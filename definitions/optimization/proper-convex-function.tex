@@ -1,7 +1,7 @@
 % id: optimization.proper-convex-function
 % term: Proper convex function
 % related: real.convex-function, optimization.convex-conjugate
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Proper_convex_function
 % status: draft
 
-An extended-real-valued convex function $f:\mathbb R^n\to(-\infty,\infty]$ is \emph{proper} if its effective domain is nonempty and it never takes the value $-\infty$.
+An extended-real-valued convex function $f:\mathbb R^n\to[-\infty,+\infty]$ is \emph{proper} if $f(x)>-\infty$ for every $x$ and its effective domain $\operatorname{dom}f=\{x:f(x)<+\infty\}$ is nonempty. Equivalently, it is never $-\infty$ and is not identically $+\infty$. Properness does not by itself imply lower semicontinuity.

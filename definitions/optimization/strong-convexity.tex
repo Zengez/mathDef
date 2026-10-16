@@ -1,7 +1,11 @@
 % id: optimization.strong-convexity
 % term: Strong convexity
 % related: real.convex-function, optimization.strict-convexity
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Convex_function#Strongly_convex_functions
 % status: draft
 
-A function $f$ on a convex subset of $\mathbb R^n$ is \emph{$m$-strongly convex} for $m>0$ if $x\mapsto f(x)-\frac m2\|x\|^2$ is convex.
+For $m>0$, a real-valued function $f:C\to\mathbb R$ on a convex subset of Euclidean space is \emph{$m$-strongly convex} if $x\mapsto f(x)-\frac m2\|x\|^2$ is convex on $C$. Equivalently,
+\[
+f((1-t)x+ty)\le(1-t)f(x)+tf(y)-\frac m2t(1-t)\|x-y\|^2
+\]
+for all $x,y\in C$ and $t\in[0,1]$. The constant depends on the chosen norm/inner product.

@@ -1,7 +1,11 @@
 % id: optimization.quasiconvex-function
 % term: Quasiconvex function
 % related: optimization.sublevel-set, real.convex-function
-% source: https://web.stanford.edu/~boyd/cvxbook/
+% source: https://en.wikipedia.org/wiki/Quasiconvex_function
 % status: draft
 
-A function $f$ on a convex domain is \emph{quasiconvex} if each sublevel set $\{x:f(x)\le\alpha\}$ is convex.
+A real-valued function $f:C\to\mathbb R$ on a convex set $C$ is \emph{quasiconvex} if every sublevel set $\{x\in C:f(x)\le a\}$ is convex for $a\in\mathbb R$. Equivalently, for every $x,y\in C$ and $t\in[0,1]$,
+\[
+f((1-t)x+ty)\le\max\{f(x),f(y)\}.
+\]
+Every convex function is quasiconvex, but not conversely.
