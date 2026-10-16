@@ -174,3 +174,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reviewed last 8 existing `linear/` entries: nullity, orthogonal-complement, orthogonality, rank, span, subspace, transpose, vector-space. Replaced broad Wikipedia topic index citations with precise concept pages, corrected the domain of orthogonal complements to subsets, and stated vector-space axioms and zero-span convention explicitly.
 - All **28 original linear-algebra entries** have now been examined and committed in L1 10, L2 10, L3 8. Distinguish structural syntax validation from mathematical peer review: entries remain `draft`.
 - Current expected total still **959** definitions, with 40 folders (check repository tree). Next target: PDE/domain and numerical approximations or another methodical Wikipedia/EoM-driven batch of genuinely missing mathematical definitions; refresh CATALOG and README.
+
+## October 15, 2026 — PDE batch P1
+
+- Inspected 10 existing PDE entries: pde.characteristic-surface, pde.convolution, pde.dirac-delta, pde.dirichlet-boundary-condition, pde.distribution, pde.distributional-derivative, pde.divergence, pde.elliptic-equation, pde.fourier-transform, pde.fundamental-solution. Replaced generic Sobolev-space reference with concept-level EoM or Wikipedia sources where appropriate (the Fourier transform already had a direct EoM source).
+- Fixed substantive mathematical omissions: `characteristic-surface` now requires $d\phi\ne0$; `fundamental-solution` now distinguishes translation-invariant $LE=\delta_0$ from a variable-coefficient fundamental kernel $L_xE(x,y)=\delta_y$; `elliptic-equation` specifies the real nondivergence-form uniform-ellipticity convention.
+- Added ambient domains for distributions and Dirac delta, retained original stable IDs, left status draft. Next: PDE P2 (gradient, Green function, Sobolev, wave/heat etc) and continuation of source-specific citations.
