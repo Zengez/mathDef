@@ -673,3 +673,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reviewed the first 10 original `measure/` files: absolute-continuity-of-measures, almost-everywhere, atom, bochner-integrable, borel-sigma-algebra, completion-of-measure, convergence-in-measure, dynkin-system, finite-measure, hahn-decomposition. Replaced three generic integration/measure topic-list URLs with concept-level mathematical sources; verified atom, Hahn and convergence-in-measure conventions against accessible Wikipedia mathematical articles.
 - Mathematical clarifications: *almost everywhere* only requires the exceptional set to be **contained in** a measurable null set; global versus local convergence in infinite measure; Bochner integrability requires strong measurability and integrable Banach norm; Hahn sign conditions hold on all measurable subsets; completion adds subsets of null sets.
 - **10/39** preexisting `measure/` entries now individually audited; site corpus stays **1007 files across 40 folders**. Stable IDs and statuses intact. NEXT M2: inner-regular through mutually-singular-measures (10) and check Actions. Bulk AWS/arXiv harvesting remains paused.
+
+
+## October 16, 2026 — measure theory audit M2
+
+- Individually audited 10 existing `measure/` files, from inner-regular through mutually-singular-measures; corrected seven old generic Wikipedia integration index links to direct mathematical concept sources. Verified Lebesgue integration, $L^p$ including $L^\infty$, and Borel completion against direct articles.
+- Formal distinctions: inner regular on open sets versus all Borel sets; completion and finite versus infinite measure; finite signed Jordan decomposition with unique positive/negative parts; $L^p$ for finite $p$ and essential boundedness for $p=\infty$; separate `measurable space` from a measure space.
+- **20/39** original `measure/` entries audited. Total remains **1007 across 40 folders**. NEXT M3: negative-set-signed-measure through quasi-invariant-measure (9), then final M4: radon-measure through total-variation (10). Keep status fields unchanged and check metadata/publish workflows.

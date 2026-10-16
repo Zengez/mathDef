@@ -1,7 +1,11 @@
 % id: measure.lp-space
 % term: Lebesgue $L^p$ space
 % related: measure.integrable-function, measure.almost-everywhere
-% source: https://en.wikipedia.org/wiki/List_of_integration_and_measure_theory_topics
+% source: https://en.wikipedia.org/wiki/Lp_space
 % status: draft
 
-For $1\le p<\infty$, the space $L^p(X,\mu)$ comprises almost-everywhere equivalence classes of measurable $f$ satisfying $\int_X|f|^p\,d\mu<\infty$.
+For a measure space $(X,\Sigma,\mu)$ and $1\le p<\infty$, the \emph{Lebesgue space} $L^p(X,\mu)$ consists of almost-everywhere equivalence classes of measurable scalar-valued functions $f$ with
+\[
+\|f\|_p=\left(\int_X|f|^p\,d\mu\right)^{1/p}<\infty.
+\]
+The space $L^\infty(X,\mu)$ instead consists of equivalence classes of essentially bounded measurable functions with norm $\|f\|_\infty=\inf\{M\ge0:|f|\le M\text{ almost everywhere}\}$. Both are Banach spaces.

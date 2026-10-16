@@ -1,7 +1,11 @@
 % id: measure.measure
 % term: Measure
 % related: measure.measurable-space, measure.null-set
-% source: https://en.wikipedia.org/wiki/List_of_integration_and_measure_theory_topics
+% source: https://en.wikipedia.org/wiki/Measure_(mathematics)
 % status: draft
 
-A \emph{measure} on $(X,\mathcal F)$ is a function $\mu:\mathcal F\to[0,\infty]$ with $\mu(\varnothing)=0$ and countable additivity on disjoint measurable sets.
+A (nonnegative) \emph{measure} on a measurable space $(X,\Sigma)$ is a function $\mu:\Sigma\to[0,\infty]$ with $\mu(\varnothing)=0$ and \emph{countable additivity}: for every sequence $(E_j)$ of pairwise disjoint measurable sets,
+\[
+\mu\left(\bigcup_{j=1}^\infty E_j\right)=\sum_{j=1}^\infty\mu(E_j).
+\]
+It need not be finite, $\sigma$-finite, or complete unless further conditions are imposed.

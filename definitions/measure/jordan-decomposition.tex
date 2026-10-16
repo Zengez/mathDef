@@ -1,7 +1,11 @@
 % id: measure.jordan-decomposition
 % term: Jordan decomposition of a signed measure
 % related: measure.hahn-decomposition, measure.signed-measure
-% source: https://en.wikipedia.org/wiki/Signed_measure
+% source: https://en.wikipedia.org/wiki/Jordan_decomposition_(measure_theory)
 % status: draft
 
-The \emph{Jordan decomposition} of a finite signed measure $\nu$ is the unique representation $\nu=\nu^+-\nu^-$ by mutually singular finite positive measures. For a Hahn partition $(P,N)$, $\nu^+(E)=\nu(E\cap P)$ and $\nu^-(E)=-\nu(E\cap N)$.
+For a finite signed measure $\nu$, its \emph{Jordan decomposition} is the unique representation $\nu=\nu^+-\nu^-$ as the difference of mutually singular finite positive measures. If $X=P\sqcup N$ is a Hahn decomposition, then
+\[
+\nu^+(E)=\nu(E\cap P),\qquad \nu^-(E)=-\nu(E\cap N)
+\]
+for all measurable $E$. The positive measures $\nu^\pm$ do not depend on the chosen Hahn decomposition.
