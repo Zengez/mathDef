@@ -1231,3 +1231,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - `sets.inverse-image` source redirects to `Image_(mathematics)` and its Inverse image section does support the content; unchanged.
 - Ledger commit `bdd0e5ce`: now **151 verified, 15 corrected, 841 pending, 0 needs_followup** out of 1007.
 - NEXT: finish `sets/` remainder starting with `set`, `singular-cardinal`, `stationary-set`, `strongly-inaccessible-cardinal`, `subset`, `successor-ordinal`, `symmetric-difference`, `transitive-set`, `ultrafilter`, `uncountable-set`, `union`. Then move to next subject folder. Publication workflow verification still needed.
+
+
+## October 16, 2026 — citation verification CV14: sets folder complete (11 entries)
+
+- Compared the final 11 `sets/` definition files with actual cited concept pages and their formal definition sections: set, singular-cardinal, stationary-set, strongly-inaccessible-cardinal, subset, successor-ordinal, symmetric-difference, transitive-set, ultrafilter, uncountable-set and union. Checked cardinal conventions, ultrafilter equivalences, and ZFC's restricted comprehension.
+- Two references changed after direct inspection: `sets.successor-ordinal` EoM topic link to Wikipedia `Ordinal_number` (commit `a07846fe`), and `sets.ultrafilter` to the explicit `Ultrafilter_(set_theory)` article (`ba17653d`). Existing mathematical text and IDs retained; old EoM pages inaccessible to the browser, not shown to be mathematically wrong.
+- This completes all **43 `sets/` entries** under the dedicated citation phase (CV11–CV14). Ledger evidence commit `673aa5db`. Current tally **160 verified, 17 corrected, 830 pending, 0 needs_followup**, total 1007.
+- NEXT: choose `topology/` foundational direct-article definitions or `algebra/` in batches of ~10. Continue checking per-entry source content before status changes and record commits. Check GitHub workflows when possible; recent Pages/metadata CI checks not yet independently established.
