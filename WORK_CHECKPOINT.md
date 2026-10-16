@@ -192,3 +192,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Examined 10 PDE entries mollifier, multi-index, neumann-boundary-condition, parabolic-equation, poisson-equation, principal-symbol, robin-boundary-condition, schwartz-space, sobolev-space, tempered-distribution and used direct reference pages instead of generic Sobolev sources (except the actual Sobolev-space definition).
 - Made regularity/normal assumptions explicit in Neumann conditions, distinguished positive definite from uniformly parabolic operators, specified principal-symbol derivative convention, and made distributional Sobolev derivatives/Schwartz seminorm topology explicit.
 - Next: P4 last 6 PDE definitions `test-function`, `viscosity-solution`, `wave-equation`, `weak-derivative`, `weak-solution`, `well-posed-problem`. Confirm full 36-entry PDE audit then final GitHub build.
+
+## October 15, 2026 — PDE batch P4 (resumed after timeout)
+
+- Verified from the repository that P3 (10 PDE definitions) **had already committed** and GitHub Pages run 38828740232 succeeded; no P3 work was repeated.
+- Inspected and refined the last 6 preexisting PDE IDs: pde.test-function, pde.viscosity-solution, pde.wave-equation, pde.weak-derivative, pde.weak-solution, pde.well-posed-problem. Added paper-independent per-concept references; formalized test-function domains, viscosity touching condition, time/space domains in wave equations, weak Poisson solution domain, and Hadamard well-posedness relative to specified topological data and solution spaces.
+- All **36 existing PDE entries** have now been inspected in four bounded batches: P1 10, P2 10, P3 10, P4 6. Build verification of P4 is still a separate step. Every definition remains `draft` despite source review; individual mathematical peer review is not asserted.
+- NEXT: examine further uncited/short graduate-level mathematical concepts and audit older numerical analysis or advanced category/homological entries in separately committed batches. Refresh CATALOG/README snapshots and rerun metadata audit.
