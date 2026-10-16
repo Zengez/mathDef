@@ -1,7 +1,11 @@
 % id: scv.complex-monge-ampere-operator
 % term: Complex Monge--Ampère operator (smooth case)
 % related: scv.levi-form, scv.plurisubharmonic-function
-% source: https://encyclopediaofmath.org/wiki/Green_function
+% source: https://en.wikipedia.org/wiki/Monge%E2%80%93Amp%C3%A8re_equation
 % status: draft
 
-For a real $C^2$ function $u$ on a domain $\Omega\subseteq\mathbb C^n$, its \emph{complex Monge--Ampère operator} in determinant normalization is $\operatorname{MA}_{\mathbb C}(u)=\det\bigl(u_{z_j\bar z_k}\bigr)_{j,k=1}^n$. If $u$ is plurisubharmonic, the determinant is nonnegative; the associated measure $(dd^cu)^n$ differs by a convention-dependent constant factor.
+For a real-valued $C^2$ function $u$ on a domain $\Omega\subseteq\mathbb C^n$, the \emph{complex Monge--Ampère operator in determinant normalization} is
+\[
+\operatorname{MA}_{\mathbb C}(u)=\det\left(\frac{\partial^2u}{\partial z_j\partial\overline z_k}\right)_{j,k=1}^{n}.
+\]
+For plurisubharmonic $u$ the complex Hessian is positive semidefinite, so this determinant is nonnegative. The associated Monge--Ampère measure $(dd^c u)^n$ differs by a fixed constant depending on the normalization of $d^c$; extension to nonsmooth functions requires additional pluripotential theory.
