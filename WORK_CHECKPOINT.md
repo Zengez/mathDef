@@ -1123,3 +1123,13 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 - Resumed from cross-definition consistency completion commit `8826fe41`; its GitHub Pages workflow passed. Built `CITATION_AUDIT.csv` with 1007 exact definition paths all initially `pending` and `CITATION_AUDIT_PROCESS.md` defining status/evidence requirements. Earlier broad citation sweeps were not backfilled as verified without a comparable per-entry evidence record.
 - NEXT: check source articles/tags against individual mathematical statements in small clusters, write source and review notes into the ledger, correct references or mathematical wording only where needed, commit after each batch. No unrelated new definitions or deferred features.
+
+
+## October 16, 2026 — citation verification CV1: direct Stacks Project source checks
+
+- Opened and checked actual Stacks Project source content, compared definitions and hypotheses for 24 entries (22 already-suitable citations plus 2 citation corrections) across `commalg/` and `schemes/`. Detailed permanent tag and lemma/definition references are recorded **per file** in `CITATION_AUDIT.csv`.
+- **schemes.scheme-fiber:** replaced generic fibre-product section `01JO` with precise Definition 26.18.4 tag `01K0` proving the displayed scheme-theoretic fibre formula.
+- **schemes.spectrum:** replaced Definition 10.17.1 `00DZ` (spectrum as set) with section tag `00DY`, which includes both spectrum-as-prime-ideals and the Zariski topology Definition 10.17.3. This one source now supports both clauses of the repo entry.
+- Others checked include localization; local, Noetherian and Artinian rings; Krull dimension; integral and projective/flat modules; tensor universal property; sheaves, presheaves, stalks, global sections, (affine/reduced/integral/locally ringed) schemes and standard opens. Source content supported key definition clauses at the indicated Stacks locations.
+- Per-definition citation ledger: 24 marked verified/corrected; 983 pending. Count is **only this dedicated evidence-backed phase**, not the completed first-pass or thematic consistency audits. No status promotion and no unrelated term discovery/rendering/features.
+- NEXT: run metadata/build workflows and proceed in additional bounded citation batches; check actual source content before changing a CSV status.
