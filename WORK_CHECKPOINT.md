@@ -1026,3 +1026,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Examined 35 numerical-analysis entries across error/conditioning/stability, ODE methods, linear algebra factorizations and least squares, interpolation, splines and quadrature. Verified machine-epsilon terminology against the actual source and floating-point numerical-analysis references.
 - Corrected numerical.machine-epsilon: the previous description treated unit roundoff as a maximum relative rounding error for arbitrary real inputs, without excluding underflow/overflow. It now explicitly uses the spacing-above-one convention, states the radix-precision formula, and restricts the round-to-nearest relative error model to nonzero results in the normalized range without underflow/overflow. This preserves the distinction from unit roundoff and notes naming variation.
 - No unrelated terms, rendering checks or UI changes. NEXT: verify workflows; continue real/complex analysis and cross-definition consistency/source audits.
+
+
+## October 16, 2026 — CC6 real/complex/function-space convention review
+
+- Reviewed 3 general analysis, 22 real-analysis, 38 one-variable complex-analysis, and 31 function-space definitions in related concept clusters. Checked continuity/convergence versus compact convergence, complex-differentiability versus Cauchy–Riemann/Wirtinger formulations, removable/pole/essential singularity classifications, and branch/monodromy convention notes.
+- Cross-checked the reproducing-kernel Hilbert-space family, Hilbert Bergman/Szegő/Dirichlet/Fock kernels and their normalizations, first-variable-linear inner products, Bergman projection, Toeplitz/Hankel/Berezin operators, weighted spaces, Hardy/Bloch function spaces and complex-analytic area measures. The examined formulas used mutually compatible inner-product and measure normalizations.
+- No mathematical inconsistency requiring an edit was found in these batches; deliberately avoided no-op source changes. The source citation and cross-definition audit remain ongoing rather than being claimed complete.
+- Verified CC4/SR5 commit `135ab191` metadata and publishing workflows succeeded. CC5 numerical precision commit `82efed6b` was queued at the last check; verify its conclusions next.
+- No expansion beyond existing definitions and no UI or rendering work. NEXT: citation specificity and semantic consistency in PDE/distributions, further probability/measure and source clusters, then record objectively bounded remaining audit criteria.
