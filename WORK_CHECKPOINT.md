@@ -853,3 +853,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reviewed final six advanced computability additions: kolmogorov-complexity, oracle-machine, polynomial-hierarchy, prefix-free-kolmogorov-complexity, turing-degree, turing-reducibility. Verified individual mathematical source articles and the quantified-versus-oracle description of the polynomial hierarchy. Refined exact conventions on prefix-free universality, Turing-degrees representatives, oracle decision totality and many-one versus Turing reducibility.
 - All twelve newly authored computability entries have received a separate audit (AC1 six, AC2 six), alongside the 27 previously audited originals; **39/39** complete at this editorial audit level. Corpus unchanged at **1007 .tex files**, with **930 individually audited** and **77 remaining**.
 - NEXT: audit exactly 12 newly added `sets/` entries from graduate discovery G2, then 12 new `dynamics/` entries from G1, and 12 `pde/` additions from microlocal M1. Confirm metadata + Pages workflows. Keep AWS/arXiv harvesting paused.
+
+
+## October 16, 2026 — graduate set theory second-pass ST1
+
+- Reviewed six of twelve newer `sets/` definitions from G2 discovery: filter-on-set, ultrafilter, regular-cardinal, singular-cardinal, strongly-inaccessible-cardinal, measurable-cardinal. Consulted EoM Filter/Ultrafilter and direct Wikipedia large-cardinal references. Clarified ordinary subset filters versus forcing filters, principal/nonprincipal ultrafilters, cofinality of initial ordinals, and κ-completeness. Retained ZFC and choice assumptions.
+- Overall editorial individual-audit count **936/1007** with **71 remaining**. NEXT ST2 final six: club-set, stationary-set, forcing-poset, generic-filter, continuum-hypothesis, beth-number. Preserve IDs and draft status; check metadata/Pages and keep bulk arXiv/AWS paused.
