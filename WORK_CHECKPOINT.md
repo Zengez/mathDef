@@ -528,3 +528,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reviewed final eight `arithmetic/` definitions: separable-polynomial, splitting-field, transcendental-number, ultrametric, uniformizer, unique-factorization-domain, valuation-ring, valuation. Corrected separation/derivative criterion, non-Galois splitting-field assumptions, normalization of uniformizers, and value-group conventions.
 - All **36 original arithmetic entries** audited in N1 (10), N2 (10), N3a (8) and N3b (8). Stable IDs preserved, draft statuses unchanged, total remains **995 definitions, 40 folders**. Mathematical source review is not formal approval.
 - NEXT: verify Pages and corpus audit for N3b, then advance another underaudited folder (`computability/` or `geometry/`) and another specific-source Wikipedia category discovery batch. The arXiv/AWS bulk work remains on hold.
+
+
+## October 16, 2026 — computability audit K1 (new continuation)
+
+- Confirmed arithmetic N3b at `f0c90290` passed both site publication and metadata workflows, and live inventory remains **995 definitions in 40 folders**.
+- Inspected first nine `computability/` files: alphabet, approximation-ratio, big-o, big-omega, big-theta, class-np, class-p, class-pspace, computable-function. Replaced generic shared computational-complexity article with direct concept articles. Source context additionally checked against the Wikipedia Big O notation, Complexity class, P (complexity), and Approximation algorithm articles.
+- Mathematical clarifications: algorithms' big-O magnitude, Knuth's eventual big-Omega rather than the distinct analytic-number-theory usage, both minimization and maximization approximation guarantees (including zero-optimum cases), certificate soundness/completeness for NP, polynomial **work** space for PSPACE, and total versus partial computability.
+- All nine stable IDs retained and status stays `draft`. NEXT K2: `decidable-language` through `las-vegas-algorithm`, then further K3/K4 to finish remaining 18 definitions. Structural workflow verification is distinct from mathematical verification. AWS/arXiv bulk harvesting remains paused.

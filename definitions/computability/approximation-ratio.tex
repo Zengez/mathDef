@@ -1,7 +1,11 @@
 % id: computability.approximation-ratio
 % term: Approximation ratio
 % related: computability.polynomial-time, optimization.optimal-value
-% source: https://encyclopediaofmath.org/wiki/Algorithm%2C_computational_complexity_of_an
+% source: https://en.wikipedia.org/wiki/Approximation_algorithm
 % status: draft
 
-For a minimization problem with nonnegative optimal value $OPT(I)$ and feasible algorithm output $ALG(I)$, a \emph{$\rho$-approximation} satisfies $ALG(I)\le\rho\,OPT(I)$ for every instance, with $\rho\ge1$.
+For a minimization problem with nonnegative objective values and an attained optimum $\operatorname{OPT}(I)$, an algorithm returning feasible solutions is a \emph{$\rho$-approximation}, with $\rho\ge1$, if for every permitted instance $I$ its objective value satisfies
+\[
+\operatorname{OPT}(I)\le \operatorname{ALG}(I)\le \rho\,\operatorname{OPT}(I).
+\]
+For maximization problems with nonnegative values, a common factor-$\rho$ convention instead requires $\operatorname{OPT}(I)/\rho\le\operatorname{ALG}(I)\le\operatorname{OPT}(I)$. Zero-optimum cases should be handled via the inequalities rather than division by zero.

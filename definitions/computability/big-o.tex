@@ -1,7 +1,7 @@
 % id: computability.big-o
 % term: Big-O asymptotic notation
 % related: computability.big-theta, computability.time-complexity
-% source: https://encyclopediaofmath.org/wiki/Algorithm%2C_computational_complexity_of_an
+% source: https://en.wikipedia.org/wiki/Big_O_notation
 % status: draft
 
-For eventually nonnegative functions $f,g:\mathbb N\to\mathbb R$, $f(n)=O(g(n))$ if there exist constants $C>0$ and $n_0$ with $f(n)\le Cg(n)$ for all $n\ge n_0$.
+For functions $f,g:\mathbb N\to\mathbb R$ with $g(n)\ge0$ eventually, the assertion $f(n)=O(g(n))$ as $n\to\infty$ means that there are constants $C>0$ and $n_0$ such that $|f(n)|\le Cg(n)$ for all $n\ge n_0$. This is an eventual upper bound on magnitude, not necessarily a limit of $f(n)/g(n)$.

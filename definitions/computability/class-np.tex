@@ -1,7 +1,12 @@
 % id: computability.class-np
 % term: Complexity class NP
 % related: computability.class-p, computability.np-complete
-% source: https://encyclopediaofmath.org/wiki/Algorithm%2C_computational_complexity_of_an
+% source: https://en.wikipedia.org/wiki/NP_(complexity)
 % status: draft
 
-The class $\mathbf{NP}$ consists of decision languages whose yes-instances admit polynomial-length certificates verifiable by a deterministic polynomial-time algorithm.
+The complexity class $\mathbf{NP}$ comprises languages $L\subseteq\{0,1\}^*$ for which there exist a polynomial $p$ and a deterministic polynomial-time verifier $V$ satisfying
+\[
+x\in L\quad\Longleftrightarrow\quad
+\exists w,\ |w|\le p(|x|)\text{ and }V(x,w)=1.
+\]
+Equivalently, they are decidable by a nondeterministic Turing machine in polynomial time. The verifier must reject all proposed certificates for no-instances.
