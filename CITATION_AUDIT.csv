@@ -718,16 +718,16 @@ definitions/prob/correlation.tex,verified,"https://en.wikipedia.org/wiki/Pearson
 definitions/prob/covariance.tex,verified,"https://en.wikipedia.org/wiki/Covariance","Real-valued covariance E[(X-EX)(Y-EY)] and E[XY]-EX EY, assuming second moments; complex conventions conjugate."
 definitions/prob/distribution.tex,verified,"https://en.wikipedia.org/wiki/Probability_distribution","Distribution of random element is pushforward probability measure, not necessarily PDF; definition applies to measurable codomain."
 definitions/prob/event.tex,verified,"https://en.wikipedia.org/wiki/Event_(probability_theory)","Event is subset of sample space in chosen sigma-algebra; nonmeasurable subsets may exist, and P assigned only to events."
-definitions/prob/expectation.tex,pending,,
-definitions/prob/exponential-distribution.tex,pending,,
-definitions/prob/iid.tex,pending,,
-definitions/prob/independence.tex,pending,,
-definitions/prob/markov-chain.tex,pending,,
-definitions/prob/normal-distribution.tex,pending,,
-definitions/prob/pdf.tex,pending,,
-definitions/prob/pmf.tex,pending,,
-definitions/prob/poisson-distribution.tex,pending,,
-definitions/prob/probability-space.tex,pending,,
+definitions/prob/expectation.tex,verified,"https://en.wikipedia.org/wiki/Expected_value","Arbitrary real random variable expectation is Lebesgue integral under absolute integrability; discrete sum must converge absolutely."
+definitions/prob/exponential-distribution.tex,verified,"https://en.wikipedia.org/wiki/Exponential_distribution","Rate lambda>0 parameterization density lambda exp(-lambda x) on x>=0, CDF and mean reciprocal; scale convention contrasted."
+definitions/prob/iid.tex,verified,"https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables","Each variable has same distribution; every finite subfamily mutually independent, not simply pairwise independent."
+definitions/prob/independence.tex,verified,"https://en.wikipedia.org/wiki/Independence_(probability_theory)","Two events independent iff P(A intersect B)=P(A)P(B); mutual independence requires product over every finite subset."
+definitions/prob/markov-chain.tex,verified,"https://en.wikipedia.org/wiki/Markov_chain","Discrete-time conditional one-step distribution given history equals that given current state (positive history conditioning); homogeneous chain is extra time-invariance assumption."
+definitions/prob/normal-distribution.tex,verified,"https://en.wikipedia.org/wiki/Normal_distribution","Normal Gaussian density with sigma>0, mean mu and variance sigma squared; degenerate sigma=0 treated separately."
+definitions/prob/pdf.tex,verified,"https://en.wikipedia.org/wiki/Probability_density_function","Lebesgue density characterizes absolutely continuous real probability measures by P(X in B)=integral over B; unique up to Lebesgue null sets."
+definitions/prob/pmf.tex,verified,"https://en.wikipedia.org/wiki/Probability_mass_function","Probability of each discrete value, nonnegative normalized over countable support, determines law by sum."
+definitions/prob/poisson-distribution.tex,verified,"https://en.wikipedia.org/wiki/Poisson_distribution","Poisson PMF e^-lambda lambda^k/k!, k nonnegative integer; both mean and variance lambda, optional degenerate lambda=0."
+definitions/prob/probability-space.tex,verified,"https://en.wikipedia.org/wiki/Probability_space","Triple sample space sigma-algebra probability measure P(Omega)=1 with countable additivity; events are measurable subsets."
 definitions/prob/random-variable.tex,pending,,
 definitions/prob/sample-mean.tex,pending,,
 definitions/prob/sample-space.tex,pending,,
