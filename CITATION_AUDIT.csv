@@ -680,16 +680,16 @@ definitions/pde/h1-space.tex,corrected,https://en.wikipedia.org/wiki/Sobolev_spa
 definitions/pde/h10-space.tex,verified,https://en.wikipedia.org/wiki/Sobolev_space,"Opened cited Sobolev space > Functions vanishing at boundary: H_0^1 closure of compactly supported smooth functions in H¹ norm; no trace regularity assumption silently imposed."
 definitions/pde/heat-equation.tex,verified,https://en.wikipedia.org/wiki/Heat_equation,"Opened original Heat equation page: ∂_t u=κΔu with positive thermal diffusivity κ and spatial Euclidean variables."
 definitions/pde/heat-kernel.tex,verified,https://en.wikipedia.org/wiki/Heat_kernel,"Opened original Heat kernel Definition: Rn Gaussian (4πt)^(-n/2) exp(-|x|²/4t), heat PDE, distributional delta limit, convolution representation, normalization consistent."
-definitions/pde/hormander-symbol-class.tex,pending,,
-definitions/pde/hyperbolic-equation.tex,pending,,
-definitions/pde/initial-value-problem.tex,pending,,
-definitions/pde/inverse-fourier-transform.tex,pending,,
-definitions/pde/laplace-equation.tex,pending,,
-definitions/pde/laplacian.tex,pending,,
-definitions/pde/mollifier.tex,pending,,
-definitions/pde/multi-index.tex,pending,,
-definitions/pde/neumann-boundary-condition.tex,pending,,
-definitions/pde/parabolic-equation.tex,pending,,
+definitions/pde/hormander-symbol-class.tex,corrected,https://de.wikipedia.org/wiki/Symbolklasse#Definition,"Opened German Wikipedia Symbolklasse Definition: S^m_{rho,delta}, local compact K bounds with xi derivatives -rho|alpha| and x derivatives +delta|beta|; repo restricts to 0≤delta<rho≤1 subclass. Broken EoM pseudo operator replaced (a30e7033)."
+definitions/pde/hyperbolic-equation.tex,corrected,https://qft.org/mathematical-methods/differential-equations-green-operators/symbols-characteristics-pde-type/,"Opened exact scalar hyperbolic principal-polynomial criterion: p_m(x,tau)≠0 and for every real eta, all lambda-roots of p_m(x,eta+lambda tau) real; stronger distinct roots outside eta parallel tau. Corrected vague body with explicit quantifiers and time-covector noncharacteristic condition (266b6f25); original EoM 502, precise new source also agrees with EoM indexed excerpt."
+definitions/pde/initial-value-problem.tex,corrected,https://en.wikipedia.org/wiki/Cauchy_problem#Formal_statement,"Original Initial_value_problem defines primarily ODEs. Opened Cauchy problem formal statement with hypersurface t=t0 and required initial time derivatives for PDE, retargeted (298f5552)."
+definitions/pde/inverse-fourier-transform.tex,corrected,https://en.wikipedia.org/wiki/Fourier_transform#Definition,"Opened Wikipedia Fourier transform angular-frequency general Rn convention, inverse carries (2π)^−n factor while forward has none; original EoM 502 (a66bf2ac)."
+definitions/pde/laplace-equation.tex,verified,https://en.wikipedia.org/wiki/Laplace%27s_equation,"Opened cited Laplace's equation: Δu=0, C² solutions harmonic, matching text."
+definitions/pde/laplacian.tex,verified,https://en.wikipedia.org/wiki/Laplace_operator,"Opened original Laplace operator: sum of Euclidean second coordinate derivatives of C² function; matching domain and sign."
+definitions/pde/mollifier.tex,verified,https://en.wikipedia.org/wiki/Mollifier,"Opened Mollifier definition: normalized nonnegative Cc∞ bump and scaling eps^(−n) rho(x/eps), unit integral."
+definitions/pde/multi-index.tex,verified,https://en.wikipedia.org/wiki/Multi-index_notation,"Opened Multi-index notation: multi-index in N0^n, |alpha| sum and multi-partial derivative D^alpha exactly matching."
+definitions/pde/neumann-boundary-condition.tex,corrected,https://en.wikipedia.org/wiki/Neumann_boundary_condition#PDE,"Opened Neumann boundary condition PDE section: prescribed normal derivative ∂_nu u on regular domain boundary; fixed link from unavailable general EoM potential-theory entry (4f1e7354)."
+definitions/pde/parabolic-equation.tex,corrected,https://math.nyu.edu/~goodman/teaching/PDEfin/notes/Section3.pdf#page=6,"Viewed actual NYU Goodman PDE lecture notes Section 3 printed p6, PDF viewer p5 screenshot: time derivative equals positive definite spatial second-order operator plus lower terms, symmetrization and time-dependent coefficients allowed. Replaced 502 EoM source (275c2974)."
 definitions/pde/parametrix.tex,pending,,
 definitions/pde/poisson-equation.tex,pending,,
 definitions/pde/principal-symbol.tex,pending,,
