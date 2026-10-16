@@ -292,16 +292,16 @@ definitions/dynamics/topological-entropy.tex,verified,"https://en.wikipedia.org/
 definitions/dynamics/topological-mixing.tex,verified,"https://en.wikipedia.org/wiki/Mixing_(mathematics)","Topological mixing subsection requires eventual intersections of images of each pair of nonempty open sets, with no invariant measure; distinguishes measure-theoretic notions."
 definitions/dynamics/topological-transitivity.tex,verified,"https://en.wikipedia.org/wiki/Topological_transitivity","URL redirects to Mixing (mathematics), Topological mixing section, which states open-set intersection condition for transitivity and qualifies dense-orbit equivalence; source supports chosen positive-time convention."
 definitions/dynamics/unstable-manifold.tex,verified,"https://en.wikipedia.org/wiki/Stable_manifold","Stable manifold definition section explicitly defines inverse-iterate unstable set; theorem gives unstable immersed manifold with tangent unstable eigenspace at hyperbolic fixed point."
-definitions/functional/adjoint-hilbert.tex,pending,,
-definitions/functional/banach-algebra.tex,pending,,
-definitions/functional/banach-space.tex,pending,,
-definitions/functional/bidual.tex,pending,,
-definitions/functional/bounded-bilinear-form.tex,pending,,
-definitions/functional/bounded-linear-operator.tex,pending,,
-definitions/functional/bounded-operator-algebra.tex,pending,,
-definitions/functional/bounded-sequence.tex,pending,,
-definitions/functional/c-star-algebra.tex,pending,,
-definitions/functional/calkin-algebra.tex,pending,,
+definitions/functional/adjoint-hilbert.tex,corrected,"https://en.wikipedia.org/wiki/Hermitian_adjoint#Definition_for_bounded_operators_between_Hilbert_spaces","EoM Adjoint_operator yielded 502; inspected Hermitian adjoint section identifying bounded Hilbert-space adjoint via <Tx,y>=<x,T*y>; source updated in commit 1c87a773."
+definitions/functional/banach-algebra.tex,verified,"https://en.wikipedia.org/wiki/Banach_algebra","Opening definition states associative complete normed algebra satisfying norm(xy)<=norm(x)norm(y); unitality optional."
+definitions/functional/banach-space.tex,needs_followup,"","The linked EoM Banach_space returned HTTP 502; a suitable directly read alternative is https://en.wikipedia.org/wiki/Banach_space, but the attempted file update was blocked. Keep citation unverified until an actual update succeeds."
+definitions/functional/bidual.tex,corrected,"https://en.wikipedia.org/wiki/Dual_space#Double_dual","Prior general EoM Banach_space unavailable; directly checked continuous double dual of normed X in Dual space Double dual section and changed to that source (commit 3a70f2d7)."
+definitions/functional/bounded-bilinear-form.tex,verified,"https://en.wikipedia.org/wiki/Bilinear_form","Bounded and elliptic bilinear forms section states norm-product bound; source treats same-space case and entry correctly generalizes X times Y with absolute value."
+definitions/functional/bounded-linear-operator.tex,verified,"https://en.wikipedia.org/wiki/Bounded_operator","In normed spaces section explicitly gives ||Tx||<=C||x|| for bounded operators and equivalence with continuity."
+definitions/functional/bounded-operator-algebra.tex,verified,"https://en.wikipedia.org/wiki/Bounded_operator","Article Properties of space of bounded operators section B(X,Y); composition and norm of B(X) for Banach X make unital Banach algebra."
+definitions/functional/bounded-sequence.tex,verified,"https://en.wikipedia.org/wiki/Bounded_set_(topological_vector_space)","Normed-space bounded subset defined by uniform upper bound ||x||<=r; applying to sequence range yields exactly sup_n||x_n|| finite."
+definitions/functional/c-star-algebra.tex,verified,"https://en.wikipedia.org/wiki/C%2A-algebra","Definition gives complex complete involutive normed algebra with ||a*a||=||a||², equivalent C-star identity."
+definitions/functional/calkin-algebra.tex,verified,"https://en.wikipedia.org/wiki/Calkin_algebra","Opening definition and properties give B(H)/K(H) for infinite-dimensional Hilbert H, compact ideal quotient C-star structure; article assumes separability but construction extends."
 definitions/functional/compact-operator.tex,pending,,
 definitions/functional/continuous-dual.tex,pending,,
 definitions/functional/dense-linear-subspace.tex,pending,,
