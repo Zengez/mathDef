@@ -569,3 +569,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reviewed first ten existing `geometry/` definitions, from affine-combination to line, replacing broad Wikipedia geometry topic-list links with individual mathematical concept sources. Each stable ID and draft status preserved.
 - Explicit conventions: affine combinations require coefficients summing to 1; convex combinations also require nonnegative coefficients; empty-set convex hull; nondegenerate circles; inner-product geometry; isometric embeddings versus surjective isometries; degenerate segments and affine-line nonzero direction vectors.
 - NEXT geometry G2: parallel-lines, perpendicular-lines, point, polygon, polyhedron, polytope, radius, ray, sphere, triangle. Corpus stays 995 definitions across 40 subjects. Verify Pages and metadata workflows after G1 and G2.
+
+
+## October 16, 2026 — geometry G2 (20-entry folder complete)
+
+- Audited remaining ten `geometry/` definitions: parallel-lines, perpendicular-lines, point, polygon, polyhedron, polytope, radius, ray, sphere, triangle. Replaced broad subject-list citations with concept-specific mathematical articles.
+- Clarified geometry-dependent conventions: coincident parallel lines, orthogonal directions versus intersecting perpendicular lines, polygon boundary versus filled polygon, nonempty bounded convex polytope versus unbounded polyhedron, 0-dimensional sphere edge case, and filled versus boundary-only triangle.
+- **All 20 existing `geometry/` definitions** individually audited over G1 (10) and G2 (10), preserving IDs and draft statuses; corpus remains **995 entries across 40 folders**. Publication and metadata workflows should be checked for G2. NEXT: source-backed advanced-term discovery or audits of other underreviewed subjects, especially `complex/`, `combin/`, or `graph/`. The AWS/arXiv bulk-harvest pause remains.

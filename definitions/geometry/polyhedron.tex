@@ -1,7 +1,11 @@
 % id: geometry.polyhedron
 % term: Convex polyhedron
 % related: geometry.convex-hull, geometry.polytope
-% source: https://en.wikipedia.org/wiki/List_of_geometry_topics
+% source: https://en.wikipedia.org/wiki/Convex_polytope#Definitions
 % status: draft
 
-A \emph{convex polyhedron} in $\mathbb R^n$ is an intersection of finitely many closed affine half-spaces.
+A \emph{convex polyhedron} in $\mathbb R^n$ is an intersection of finitely many closed affine half-spaces,
+\[
+P=\{x\in\mathbb R^n:Ax\le b\},
+\]
+for a real matrix $A$ and vector $b$. The intersection need not be bounded; a bounded nonempty polyhedron is a convex polytope. Some conventions include the empty set.
