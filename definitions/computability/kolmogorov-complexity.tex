@@ -1,0 +1,11 @@
+% id: computability.kolmogorov-complexity
+% term: Plain Kolmogorov complexity
+% related: computability.turing-machine, computability.prefix-free-kolmogorov-complexity
+% source: https://en.wikipedia.org/wiki/Kolmogorov_complexity
+% status: draft
+
+Fix an optimal universal partial computable machine $U:\{0,1\}^*\rightharpoonup\{0,1\}^*$. The \emph{plain Kolmogorov complexity} of a finite binary string $x$ relative to $U$ is
+\[
+C_U(x)=\min\{|p|:U(p)=x\},
+\]
+the length of its shortest generating program. Different optimal machines change this quantity by at most an additive constant independent of $x$. Plain and prefix-free complexities use different program conventions.

@@ -1,0 +1,11 @@
+% id: computability.prefix-free-kolmogorov-complexity
+% term: Prefix-free Kolmogorov complexity
+% related: computability.kolmogorov-complexity, computability.turing-machine
+% source: https://en.wikipedia.org/wiki/Kolmogorov_complexity
+% status: draft
+
+Fix an optimal universal prefix-free partial computable machine $U$ whose domain of halting programs is a prefix-free set of binary strings. The \emph{prefix-free Kolmogorov complexity} of a binary string $x$ is
+\[
+K_U(x)=\min\{|p|:U(p)=x\}.
+\]
+No halting program is a proper prefix of another, and changing the optimal prefix-free machine changes $K_U(x)$ by at most a uniform additive constant.

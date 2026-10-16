@@ -576,3 +576,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Audited remaining ten `geometry/` definitions: parallel-lines, perpendicular-lines, point, polygon, polyhedron, polytope, radius, ray, sphere, triangle. Replaced broad subject-list citations with concept-specific mathematical articles.
 - Clarified geometry-dependent conventions: coincident parallel lines, orthogonal directions versus intersecting perpendicular lines, polygon boundary versus filled polygon, nonempty bounded convex polytope versus unbounded polyhedron, 0-dimensional sphere edge case, and filled versus boundary-only triangle.
 - **All 20 existing `geometry/` definitions** individually audited over G1 (10) and G2 (10), preserving IDs and draft statuses; corpus remains **995 entries across 40 folders**. Publication and metadata workflows should be checked for G2. NEXT: source-backed advanced-term discovery or audits of other underreviewed subjects, especially `complex/`, `combin/`, or `graph/`. The AWS/arXiv bulk-harvest pause remains.
+
+
+## October 16, 2026 — graduate computability discovery D1
+
+- From direct source articles and checked against 995 live definition filenames, added **six new graduate-level computability definitions**: oracle-machine, turing-reducibility, turing-degree, computable-real, kolmogorov-complexity (plain), prefix-free-kolmogorov-complexity. Sources are individually matched Wikipedia concept pages, and descriptions are independently written.
+- Specific conditions: Turing reduction requires a *total oracle decider*; degrees are equivalence classes; computable real numbers require effectively controlled rational approximation; plain versus prefix-free description complexity depend on different optimal machine models and are invariant only up to a constant.
+- Expected corpus now **1001 files across 40 folders**, subject to workflow verification. All new definitions remain draft and no old ID was changed. NEXT D2: complexity classes BPP, RP, ZPP, co-NP, and the arithmetic versus polynomial hierarchies (six entries). Check existing names and source pages. Keep AWS/arXiv bulk on hold.
