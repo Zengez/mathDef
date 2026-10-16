@@ -1287,3 +1287,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All nine source links supported the entries as written. No text/source changes needed; recorded detailed source evidence in ledger commit `379dd494`.
 - **All 29 algebra definitions have now been citation-reviewed in CV18–CV20**. Dedicated tally **218 verified, 20 corrected, 769 pending, 0 needs_followup** (1007 corpus, 238 evidence-checked total). No definitions were added and draft status remains unchanged.
 - NEXT: select next coherent group, preferably `commalg/` remaining 11 entries or `geometry/` 20, then continue in bounded batches. Verify GitHub Actions publication/index metadata when possible, rather than claiming successful checks without inspection. Keep source-specific evidence and batch commits. Deferred discovery/rendering/features remain out of scope.
+
+
+## October 16, 2026 — citation verification CV21: remaining commutative-algebra entries complete (11)
+
+- Retrieved and checked individual cited source sections for exact sequences, finitely generated ideals, free modules, nilpotents, nilradical, radical-ideal criterion, radicals, reduced rings, short exact sequences, ring units and zero divisors. Stacks `00FM` was inspected directly for finitely generated ideals in its Noetherian definition and generated-ideal notation; it is topical though not a dedicated definition tag.
+- Fixed a substantive missing ambient hypothesis: `commalg.radical-ideal-property` now explicitly specifies an ideal of a **commutative** ring (commit `ca07239e`), matching `commalg.radical-ideal` and its linked source. The zero-divisor source explicitly permits 0 as divisor in nonzero rings; no correction warranted there.
+- Detailed evidence in ledger commit `be0ef794`; dedicated counts **228 verified, 21 corrected, 758 pending, 0 needs_followup** of 1007 definitions (249 checked). **All 21 commalg entries** now individually citation-recorded, combining earlier CV1 Stacks checks with this final group.
+- NEXT: select manageable remaining subject, e.g. `geometry/` (20), `real/` (22), or `prob/` (31), check source texts one by one and preserve the ledger. Run/inspect publication pipelines before claiming success, as these recent checks remain unverified. No term discovery, bulk external harvesting, rendering, or UI features.
