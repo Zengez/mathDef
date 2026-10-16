@@ -1,11 +1,12 @@
 % id: functionspaces.dirichlet-reproducing-kernel
 % term: Reproducing kernel of the Dirichlet space
 % related: functionspaces.analytic-dirichlet-space, functionspaces.reproducing-kernel
-% source: https://en.wikipedia.org/wiki/Dirichlet_space
+% source: https://www.dm.unibo.it/~arcozzi/dirichlet_survey.pdf
 % status: draft
 
-For $\mathcal D(\mathbb D)$ with norm $|f(0)|^2+\pi^{-1}\int_{\mathbb D}|f'|^2\,dA$, its reproducing kernel is
+In the analytic Dirichlet space $\mathcal D(\mathbb D)$ with inner product induced by $\|f\|_{\mathcal D}^2=|f(0)|^2+\pi^{-1}\int_{\mathbb D}|f'(z)|^2\,dA(z)$, the \emph{reproducing kernel} is
 \[
-K_{\mathcal D}(z,w)=1+\log\frac{1}{1-z\bar w},
+K_{\mathcal D}(z,w)=1+\log\frac1{1-z\overline w}
+=1+\sum_{n=1}^\infty\frac{(z\overline w)^n}{n}.
 \]
-with the analytic logarithm given by its power series on the unit disk.
+The logarithm is specified by its convergent power series. Changing to a different equivalent Dirichlet-space norm changes the reproducing kernel; for instance, the norm with coefficient weights $n+1$ gives a different formula.

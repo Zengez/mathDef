@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space
 % status: draft
 
-For a reproducing kernel $K$ of a Hilbert function space on $X$, the \emph{kernel section} at $w\in X$ is $K_w=K(\cdot,w)\in\mathcal H$. It represents evaluation at $w$ by $f(w)=\langle f,K_w\rangle$.
+Let $\mathcal H$ be a reproducing-kernel Hilbert space of functions on $X$, with kernel $K$. Its \emph{kernel section at $w$} is $K_w=K(\cdot,w)\in\mathcal H$, characterized by the evaluation identity
+\[
+f(w)=\langle f,K_w\rangle_{\mathcal H},\qquad f\in\mathcal H,
+\]
+using the convention that the inner product is linear in its first variable. One has $\|K_w\|_{\mathcal H}^2=K(w,w)$.

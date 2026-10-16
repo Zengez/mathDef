@@ -4,4 +4,8 @@
 % source: https://encyclopediaofmath.org/wiki/Bergman_kernel_function
 % status: draft
 
-For a domain $\Omega\subseteq\mathbb C^n$, the \emph{Hilbert Bergman space} $A^2(\Omega)=\mathcal O(\Omega)\cap L^2(\Omega,dV)$ has inner product $\langle f,g\rangle=\int_\Omega f(z)\overline{g(z)}\,dV(z)$. It is a closed subspace of $L^2(\Omega)$.
+For a domain $\Omega\subseteq\mathbb C^n$, the \emph{Hilbert Bergman space}
+\[
+A^2(\Omega)=\{f\in\mathcal O(\Omega):\int_\Omega|f|^2\,dV<\infty\}
+\]
+has inner product $\langle f,g\rangle=\int_\Omega f\overline g\,dV$, linear in the first argument. It is a closed subspace of $L^2(\Omega,dV)$ because point evaluations of square-integrable holomorphic functions are locally bounded by their $L^2$ norms. It may equal $\{0\}$ on some unbounded domains.
