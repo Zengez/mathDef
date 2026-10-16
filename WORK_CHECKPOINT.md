@@ -1667,3 +1667,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Compared `opposite-category`, `poset-category`, `preadditive-category`, `preorder-category`, `product`, `pullback`, `pushout`, `representable-functor`, `sieve`, `simplicial-set` to opened cited articles and relevant sections. Verified morphism variance (particularly Δ^op, Hom presheaves) and universal-property arrow orientation; no source/body edits required.
 - Ledger CV72 commit `373bbcdd`: **618 verified, 80 corrected, 306 pending, 3 needs_followup**, **698/1007 completed**. No old checked citations reaudited.
 - NEXT CV73: final 6 `category/` entries `small-category`, `subcat-full`, `terminal-object`, `triangulated-category`, `unit-of-adjunction`, `zero-object`. Then choose `computability/` or `measure/` folder. Keep batch commits and source evidence.
+
+## 2026-10-16 — CV73 final six category theory citations (folder complete)
+
+- Checked individually cited pages for `small-category`, `subcat-full`, `terminal-object`, `triangulated-category`, `unit-of-adjunction`, `zero-object`; specifically verified set-sized vs locally small, Verdier triangle axioms, and adjunction unit arrow η:Id→GF.
+- All six source URLs resolve to articles supporting displayed definitions; no changes needed. Ledger CV73 commit `2af64c7b`: **624 verified, 80 corrected, 300 pending, 3 needs_followup = 704/1007 completed (69.91%)**.
+- All **46 `category/`** citations checked across CV69–CV73 (10+10+10+10+6), with **45 verified and one mathematical body corrected** (`model-category`, commit `f76e32e3`).
+- NEXT: a new pending folder `computability/` (39), `measure/` (39) or `scv/` (62). Prefer `computability/` next in ten-entry batches; read the actual live CSV sorted order. No earlier checks repeated. GitHub Pages/Actions success not yet inspected. Existing 3 followups untouched.
