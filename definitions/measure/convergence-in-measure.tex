@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Convergence_in_measure
 % status: draft
 
-Measurable real-valued functions $f_n$ \emph{converge globally in measure} to $f$ on $(X,\Sigma,\mu)$ if $\mu(\{|f_n-f|>\varepsilon\})\to0$ for each $\varepsilon>0$. On infinite-measure spaces, local convergence in measure is generally a weaker notion.
+Measurable real-valued functions $f_n,f$ on a measure space $(X,\Sigma,\mu)$ satisfy \emph{global convergence in measure}, written $f_n\to f$ in $\mu$-measure, if for every $\varepsilon>0$,
+\[
+\mu\bigl(\{x:|f_n(x)-f(x)|>\varepsilon\}\bigr)\longrightarrow0.
+\]
+On infinite-measure spaces this is generally stronger than \emph{local convergence in measure}, which requires the same limit after intersecting the set with every measurable set of finite measure.
