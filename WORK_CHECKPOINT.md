@@ -232,3 +232,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Principal reference: [EoM pseudodifferential operator](https://encyclopediaofmath.org/wiki/Pseudo-differential_operator), with Hörmander symbol estimates, principal symbol ellipticity, parametrix modulo smoothing, and oscillatory-integral operator normalization. Other direct references: [Wave front set](https://en.wikipedia.org/wiki/Wave_front_set), [EoM multiplier theory](https://encyclopediaofmath.org/wiki/Multiplier_theory), [EoM Bessel potential operator](https://encyclopediaofmath.org/wiki/Bessel_potential_operator).
 - Each item specifies ambient domain/space and, where needed, Fourier sign/normalization. No full article text was copied; all 12 entries are original concise draft definitions with checked related IDs.
 - **Expected total 971 definitions in 40 folders** after M1. Confirm live tree and deploy run before reporting final count. Remaining goals: update catalog/README counts, rerun metadata audit, and continue staged audits of other folders.
+
+## Status snapshot: 971 entries after numerical and microlocal continuation
+
+- Resumed directly from this checkpoint following a previous-session timeout: P3 was **already on GitHub and deployed**, so no duplicate work was performed.
+- P4 final six original PDE definitions committed, and a follow-up commit corrected an incorrect source redirect and mathematical claim concerning weak-form $L^2$ continuity. P1–P4 cover all 36 original PDE entries.
+- N1–N3 cover all 35 original numerical-analysis entries, with source and hypothesis repairs for FEM, conditioning, interpolation, factorization, and error measures.
+- Discovery batch M1 added 12 mathematically formulated graduate microlocal/PDE definitions and cross-reference links. Current inventory **971 definitions, 40 folders**; confirm through GitHub Actions before declaring final deployment.
+- Added broad-trigger-on-definition-changes to GitHub's structural/editorial corpus audit workflow, to make stale metadata visible automatically. The audit generates an issue CSV and JSON summary, not mathematical approval.
+- NEXT: inspect successful Actions run/artifact and update audit issue counts; continue with 20–30 older entries in `alg-topology/`, `real/`, or `dynamics/`. Many broad topic-index citations still remain. Only entries individually reviewed against appropriate references should eventually be promoted, and some may require convention decisions.

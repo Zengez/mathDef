@@ -2,7 +2,7 @@
 
 Snapshot: 2026-10-15. Counts below are generated from the repository tree; the deployed site is the source for the most current total.
 
-**934 definitions across 40 subject folders.**
+**971 definitions across 40 subject folders.**
 
 | Subject | Folder | Entries |
 |---|---|---:|
@@ -17,11 +17,11 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Complex analysis | [`definitions/complex/`](definitions/complex/) | 38 |
 | Computability and complexity theory | [`definitions/computability/`](definitions/computability/) | 27 |
 | Convex analysis and optimization | [`definitions/optimization/`](definitions/optimization/) | 36 |
-| Distributions, Sobolev spaces and PDEs | [`definitions/pde/`](definitions/pde/) | 36 |
+| Distributions, Sobolev spaces and PDEs | [`definitions/pde/`](definitions/pde/) | 48 |
 | Dynamical systems and ODEs | [`definitions/dynamics/`](definitions/dynamics/) | 15 |
 | Elementary number theory | [`definitions/number/`](definitions/number/) | 19 |
 | Foundational analysis | [`definitions/analysis/`](definitions/analysis/) | 3 |
-| Functional analysis and operator theory | [`definitions/functional/`](definitions/functional/) | 41 |
+| Functional analysis and operator theory | [`definitions/functional/`](definitions/functional/) | 45 |
 | Functions and mappings | [`definitions/functions/`](definitions/functions/) | 4 |
 | General topology | [`definitions/topology/`](definitions/topology/) | 32 |
 | Geometry | [`definitions/geometry/`](definitions/geometry/) | 20 |
@@ -39,7 +39,7 @@ Snapshot: 2026-10-15. Counts below are generated from the repository tree; the d
 | Relations | [`definitions/relations/`](definitions/relations/) | 24 |
 | Schemes and sheaf theory | [`definitions/schemes/`](definitions/schemes/) | 20 |
 | Set theory | [`definitions/sets/`](definitions/sets/) | 31 |
-| Several complex variables and complex geometry | [`definitions/scv/`](definitions/scv/) | 41 |
+| Several complex variables and complex geometry | [`definitions/scv/`](definitions/scv/) | 62 |
 | Smooth manifolds and differential geometry | [`definitions/manifold/`](definitions/manifold/) | 40 |
 | Solenoidal manifolds and odometer groups | [`definitions/solenoids/`](definitions/solenoids/) | 6 |
 | Stochastic processes | [`definitions/stochastic/`](definitions/stochastic/) | 39 |
@@ -111,3 +111,10 @@ The [broad discovery report](WIKIPEDIA_BROAD_SCAN_2026-10-15.md) summarizes four
 - All new definitions remain `status: draft`. Source URLs are direct concept references, but full mathematical peer review and per-definition renderer review remain to be completed.
 
 [Checkpoint with commit IDs and remaining work](WORK_CHECKPOINT.md).
+
+## PDE, numerical, and microlocal update — October 15, 2026
+
+- **971 definitions across 40 subjects** after the latest review and expansion.
+- All original **36 PDE** entries and **35 numerical analysis** entries received bounded per-definition citation and hypothesis reviews (P1–P4, N1–N3), with conceptual repairs to weak derivatives, ellipticity, boundary problems, numerical backward error, conditioning, and matrix factorizations.
+- **12 additional advanced PDE/microlocal definitions** from the [Encyclopedia of Mathematics treatment of pseudodifferential operators](https://encyclopediaofmath.org/wiki/Pseudo-differential_operator), [wave front sets](https://en.wikipedia.org/wiki/Wave_front_set), [multiplier theory](https://encyclopediaofmath.org/wiki/Multiplier_theory), and [Bessel-potential spaces](https://encyclopediaofmath.org/wiki/Bessel_potential_operator).
+- Editorial draft remains the default; the build validates stable IDs, metadata and related pointers, not independent correctness or existence of every cited page. The latest checkpoint tracks precise mathematical issues and the next unreviewed subjects.

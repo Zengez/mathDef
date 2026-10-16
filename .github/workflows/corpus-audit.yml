@@ -2,7 +2,11 @@ name: Audit mathDef corpus metadata
 on:
   push:
     branches: [main]
-    paths: ['.github/workflows/corpus-audit.yml']
+    paths:
+      - '.github/workflows/corpus-audit.yml'
+      - 'scripts/audit_corpus.py'
+      - 'scripts/build_index.py'
+      - 'definitions/**'
   workflow_dispatch:
 permissions:
   contents: read

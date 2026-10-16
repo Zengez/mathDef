@@ -145,3 +145,9 @@ an endorsement of the accuracy or specificity of an individual link.
 - New entries this pass: **26** (`measure`: 24, `stochastic`: 2), drafted from prior Wikipedia category scan candidates and direct concept pages, with nuanced hypotheses and measure conventions.
 - Current total: **934 definitions in 40 subject folders**. Continue comprehensive audit in separately committed batches rather than claiming all definitions were reviewed.
 - Prior source-only audit counts are historical snapshots and should be recomputed for the modified collection.
+
+## October 15 PDE and numerical continuation
+
+- Per-entry reviewed and edited: **36 PDE** and **35 numerical** older definitions. Several substantive corrections included weak-derivative references (previous EoM page redirected to unrelated Gâteaux derivatives) and $L^2$ weak-form functional boundedness on unbounded domains.
+- Added **12 advanced microlocal definitions** (symbol classes, pseudodifferential operators, wave front sets, parametrices, smoothing and Fourier-multiplier operators, Bessel-potential spaces, heat kernel). New total **971** across **40**.
+- No mass status promotion; all definitions require independent editor verification before marking `reviewed`.
