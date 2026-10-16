@@ -1222,3 +1222,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Nine existing citation destinations were suitable. EoM `Filter` was not retrievable for statement-level comparison here; replaced its source with the precise directly inspected `Filter_(set_theory)` page (`dd7c64ee`). Do not infer that the EoM reference is wrong, only that this newly recorded review used the retrievable source.
 - Ledger commit `48d8ca14`; **144 verified, 12 corrected, 851 pending, 0 needs_followup** of 1007. Reminder: `sets.disjoint-family` uses the strong strict-index version; its article discusses a weaker repeated-identical version too.
 - NEXT: `sets/` starting `intersection`, `inverse-image`, `limit-ordinal`, `measurable-cardinal`, `omega`, `ordered-pair`, `ordinal`, `power-set`, `regular-cardinal`, `relation-image`; verify source-specific set-theoretic conventions carefully.
+
+
+## October 16, 2026 — citation verification CV13: ordinals, set operations and cardinals (10 entries)
+
+- Opened direct articles and matched ten `sets/` definitions: intersection (including empty-family universe), inverse image, limit ordinal, measurable cardinal, omega, Kuratowski ordered pair, von Neumann ordinal, power set, regular cardinal and function image.
+- The former EoM Ordinal_number link was temporarily not inspectable here. Verified detailed `Ordinal_number` definitions and sections on Wikipedia instead, then changed sources for `sets.limit-ordinal` (`c504a5df`), `sets.omega` (`19d1d832`), and `sets.ordinal` (`745e5237`). All three retain mathematically correct stable text and explicit conventions. This source replacement reflects successful statement-level checking, not a claim EoM is inaccurate.
+- `sets.inverse-image` source redirects to `Image_(mathematics)` and its Inverse image section does support the content; unchanged.
+- Ledger commit `bdd0e5ce`: now **151 verified, 15 corrected, 841 pending, 0 needs_followup** out of 1007.
+- NEXT: finish `sets/` remainder starting with `set`, `singular-cardinal`, `stationary-set`, `strongly-inaccessible-cardinal`, `subset`, `successor-ordinal`, `symmetric-difference`, `transitive-set`, `ultrafilter`, `uncountable-set`, `union`. Then move to next subject folder. Publication workflow verification still needed.
