@@ -1546,3 +1546,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All three original specific sources support the definitions; no link or body edits. CV54 ledger commit `0daa87e3`.
 - Running totals **495 verified, 55 corrected, 456 pending, 1 needs_followup** = **550/1007 completed (54.62%)**. Entire `special/` folder is complete; no existing audits revisited.
 - NEXT: continue the first pending `complex/` entries in bounded batches, then other pending folders; preserve existing needs_followup and draft statuses.
+
+## 2026-10-16 — CV55 complex analysis citation checks C1 (ten entries)
+
+- Checked first ten pending `complex/` entries: analytic-continuation, antiholomorphic-function, argument, blaschke-condition, blaschke-product, cauchy-riemann-equations, cayley-transform, complex-conjugate, complex-differentiability, complex-number. Verified that NIST DLMF Section 1.10(ii) directly covers continuation chains; checked Cauchy–Riemann regularity and all-direction derivative conventions, Blaschke factors and summability, Cayley map orientation.
+- Two corrections: EoM `Blaschke_product` inaccessible; replaced both Blaschke citations with directly read individual `https://en.wikipedia.org/wiki/Blaschke_product#Definition` (source commits `fc92240a` and `2837ebc9`). Eight other sources appropriate; math bodies unchanged.
+- CV55 ledger commit `477ffeef`: **503 verified, 57 corrected, 446 pending, 1 needs_followup** = **560 / 1007 completed (55.61%)**. This session began at 512 completed and added **48** (CV50 through CV55); six checkpointed batches, 0 new formal status promotions or definition files.
+- NEXT CV56: remaining `complex/` terms beginning conformal-map, conformal-radius, entire-function, essential-singularity, hardy-carleson-measure, harmonic-conjugate, harmonic-function, holomorphic-function, holomorphic-logarithm, isolated-singularity. Another 28 complex files remain pending in this folder. Prior reviews remain untouched. The `dynamics.invariant-set` needs_followup persists; GitHub Actions CI not verified this session.
