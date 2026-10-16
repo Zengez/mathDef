@@ -1,7 +1,11 @@
 % id: holodynamics.mandelbrot-set
 % term: Mandelbrot set
 % related: holodynamics.filled-julia-set, holodynamics.critical-point
-% source: https://encyclopediaofmath.org/wiki/Julia_set
+% source: https://en.wikipedia.org/wiki/Mandelbrot_set
 % status: draft
 
-The \emph{Mandelbrot set} is $M=\{c\in\mathbb C:\{p_c^n(0)\}_{n\ge0}\text{ is bounded}\}$ for the quadratic family $p_c(z)=z^2+c$.
+For the quadratic family $p_c(z)=z^2+c$, the \emph{Mandelbrot set} is
+\[
+M=\{c\in\mathbb C:\sup_{n\ge0}|p_c^n(0)|<\infty\}.
+\]
+The point $0$ is the unique finite critical point of $p_c$; equivalently $c\in M$ precisely when the filled Julia set $K(p_c)$ is connected.

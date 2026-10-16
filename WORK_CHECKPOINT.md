@@ -795,3 +795,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 - Audited five original entries: fixed-point-multiplier, herman-ring, immediate-basin, iterate, julia-set. Specified holomorphic chart invariance, irrational annulus rotations, immediate basin versus full basin, iteration conventions and repelling periodic closure. Individual Herman ring page confirmed; EoM Julia source used where precisely relevant.
 - Cumulative individually audited **875/1007**, holodynamics **15/28**. NEXT HD2b five entries: mandelbrot-set, neutral-periodic-point, normal-family, parabolic-periodic-point, periodic-component. Previous interrupted batch was not committed, and resumed with checked parent. Keep draft statuses and AWS/arXiv hold.
+
+
+## October 16, 2026 — holomorphic dynamics HD2b
+
+- Reviewed five original definitions: mandelbrot-set, neutral-periodic-point, normal-family, parabolic-periodic-point, periodic-component. Checked EoM Julia set and Wikipedia classification pages. Distinctions: root-of-unity parabolic conventions, neutral cycles not necessarily linearizable, Montel normality uses spherical convergence, and Fatou component periodicity differs from periodicity of individual points.
+- **20/28 holodynamics entries** audited, cumulative **880/1007** documented separately audited. NEXT HD3 last eight: postcritical-set, preperiodic-component, rational-map, repelling-periodic-point, riemann-sphere, siegel-disk, superattracting-periodic-point, wandering-component. Keep stable IDs and draft flags; AWS/arXiv paused.
