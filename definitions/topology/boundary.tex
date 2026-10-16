@@ -1,7 +1,11 @@
 % id: topology.boundary
 % term: Boundary
 % related: topology.closure, topology.closed-set
-% source: https://en.wikipedia.org/wiki/List_of_general_topology_topics
+% source: https://en.wikipedia.org/wiki/Boundary_(topology)
 % status: draft
 
-The \emph{boundary} of $A$ is $\partial A=\overline A\cap\overline{X\setminus A}$, the points in the closures of both $A$ and its complement.
+For a subset $A$ of a topological space $X$, its \emph{boundary} is
+\[
+\partial A=\overline A\cap\overline{X\setminus A}=\overline A\setminus\operatorname{int}(A).
+\]
+It consists of points every open neighborhood of which meets both $A$ and $X\setminus A$. The boundary is closed and need not be contained in $A$.
