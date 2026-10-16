@@ -975,3 +975,14 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Two definitions had stronger direct EoM references and were retargeted in commit `7d0f28ec`: `pde.elliptic-classical-symbol` → `Elliptic_operator`; `pde.parametrix` → `Parametrix_method`. Their mathematical bodies were already consistent with those references, so no wording change was necessary.
 - Audited the three scheme entries sharing Stacks section tag `00DY`. The section is directly relevant to all three, but permanent definition-level tags are available, so commit `8b16b40c` now cites `00DZ` (Definition 10.17.1) for the prime spectrum and `00E1` (Definition 10.17.3) for the Zariski topology and distinguished/standard opens.
 - This is a source-specificity pass, not an attempt to eliminate legitimate source reuse. NEXT: verify workflows/fresh reuse report, then inspect the remaining five-entry EoM clusters (Bergman kernel, Martingale, Topological vector space) and upgrade only where concept-specific references materially improve provenance. AWS/arXiv bulk harvesting remains paused.
+
+
+## October 16, 2026 — source-review continuation SR3 (EoM five-entry clusters and restart reconciliation)
+
+- Resumed after interruption and verified repository HEAD and the completed but previously uncheckpointed work. The Bergman-specific source update is in commit `327c56c6`; three functional-analysis citations were indeed successfully updated in commit `2d9cb43d`. These edits were not lost.
+- Five-entry `Bergman_kernel_function` cluster: the Hilbert Bergman space entry now cites the directly relevant EoM `Bergman_spaces` article; the other four source uses are appropriate to the kernel subject and remain.
+- Five-entry `Martingale` cluster: the common EoM article substantively covers all five closely related definitions, so citations were retained.
+- Five-entry `Topological_vector_space` cluster: upgraded three entries to direct EoM articles in commit `2d9cb43d`: locally convex space → `Locally_convex_space`, seminorm → `Pre-norm`, continuous dual space → `Linear_functional`. Remaining generic uses retained.
+- Verified the `2d9cb43d` metadata and publishing workflows both succeeded. Repository still has 1,007 definition files in 40 folders and the original first-pass audit backlog remains zero.
+- Agreed scope: continue focused citation and cross-definition mathematical-consistency reviews; no independent term harvesting. New terms only when genuine gaps encountered inside existing definition text. Rendering verification and site features deferred; details in `futureConsiderations.md`.
+- NEXT: review other high-reuse sources where warranted and analyze semantic concept/convention mismatches not captured by exact-filename collisions; checkpoint each bounded batch.
