@@ -1,7 +1,7 @@
 % id: category.unit-of-adjunction
 % term: Unit of an adjunction
 % related: category.adjunction, category.natural-transformation
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Adjoint_functors
 % status: draft
 
-For $F\dashv G$, the \emph{unit} is the natural transformation $\eta:1_\mathcal C\Rightarrow GF$ corresponding under the adjunction bijection to each identity $1_{FX}$.
+Given an adjunction $F:\mathcal C\rightleftarrows\mathcal D:G$ with $F\dashv G$, its \emph{unit} is the natural transformation $\eta:1_{\mathcal C}\Rightarrow G F$ whose component $\eta_X:X\to G F X$ corresponds to $1_{F X}$ under the natural bijection $\operatorname{Hom}_{\mathcal D}(F X,Y)\cong\operatorname{Hom}_{\mathcal C}(X,GY)$ at $Y=F X$. With the counit $\varepsilon:FG\Rightarrow1_{\mathcal D}$ it obeys the triangle identities.
