@@ -1,7 +1,7 @@
 % id: computability.decidable-language
 % term: Decidable language
 % related: computability.turing-machine, computability.recursively-enumerable
-% source: https://encyclopediaofmath.org/wiki/Algorithm%2C_computational_complexity_of_an
+% source: https://en.wikipedia.org/wiki/Recursive_language
 % status: draft
 
-A language $L$ is \emph{decidable} if a Turing machine halts on every input and accepts exactly those strings belonging to $L$.
+A formal language $L\subseteq\Sigma^*$ is \emph{decidable} (recursive) if there is a Turing machine that halts on every input $w\in\Sigma^*$ and accepts exactly when $w\in L$. On inputs outside $L$ it must halt and reject; accepting members while possibly looping on nonmembers yields only recursive enumerability.

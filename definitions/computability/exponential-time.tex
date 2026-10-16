@@ -1,7 +1,7 @@
 % id: computability.exponential-time
 % term: Complexity class EXPTIME
 % related: computability.class-p, computability.time-complexity
-% source: https://encyclopediaofmath.org/wiki/Algorithm%2C_computational_complexity_of_an
+% source: https://en.wikipedia.org/wiki/EXPTIME
 % status: draft
 
-The class $\mathbf{EXPTIME}$ consists of decision languages decidable by a deterministic Turing machine in time $2^{p(n)}$ for some polynomial $p$.
+The complexity class $\mathbf{EXPTIME}$ is the union $\bigcup_{k\ge1}\operatorname{DTIME}(2^{n^k})$: a decision language belongs to it if a deterministic Turing machine decides membership in time at most $2^{p(n)}$ for some polynomial $p$, up to the usual asymptotic constant factors. Thus EXPTIME permits any fixed polynomial exponent in the running-time exponent.
