@@ -275,16 +275,16 @@ definitions/dynamics/fixed-point.tex,verified,"https://en.wikipedia.org/wiki/Fix
 definitions/dynamics/flow.tex,corrected,"https://en.wikipedia.org/wiki/Flow_(mathematics)#Formal_definition","EoM Flow page unavailable. Wikipedia formal definition real action φ_0=id and φ_(s+t)=φ_s φ_t, continuous for topological X; inverse time -t gives homeomorphisms, semiflow noted."
 definitions/dynamics/hyperbolic-fixed-point.tex,verified,"https://en.wikipedia.org/wiki/Hyperbolic_fixed_point","Redirect to Hyperbolic equilibrium point. Maps subsection excludes eigenvalues on unit circle for Df_p; flows subsection excludes zero-real-part eigenvalues for vector-field derivative; noninvertible convention valid."
 definitions/dynamics/invariant-set.tex,needs_followup,"https://encyclopediaofmath.org/wiki/Invariant_set","Original EoM citation returned internal error, and directly opened Attractor and Dynamical system articles only partially support forward invariant versus f(A)=A conventions; more targeted durable source is needed for both clauses. Leave definition unchanged."
-definitions/dynamics/lyapunov-exponent.tex,pending,,
-definitions/dynamics/lyapunov-stability.tex,pending,,
-definitions/dynamics/minimal-invariant-set.tex,pending,,
-definitions/dynamics/nonwandering-point.tex,pending,,
-definitions/dynamics/omega-limit-set.tex,pending,,
-definitions/dynamics/orbit.tex,pending,,
-definitions/dynamics/ordinary-differential-equation.tex,pending,,
-definitions/dynamics/partial-differential-equation.tex,pending,,
-definitions/dynamics/periodic-point.tex,pending,,
-definitions/dynamics/phase-space.tex,pending,,
+definitions/dynamics/lyapunov-exponent.tex,verified,"https://en.wikipedia.org/wiki/Lyapunov_exponent","Definition of Lyapunov spectrum and discrete derivatives supports asymptotic logarithmic expansion along tangent vectors; existence and Oseledets assumptions explicitly qualified."
+definitions/dynamics/lyapunov-stability.tex,verified,"https://en.wikipedia.org/wiki/Lyapunov_stability","Definition for discrete-time systems quantifies epsilon/delta over every forward iterate, reduces to distance from p for fixed point; stability does not imply asymptotic convergence."
+definitions/dynamics/minimal-invariant-set.tex,corrected,"https://link.springer.com/article/10.1007/s12346-015-0163-y","Original EoM Minimal_set returned internal error. Drwięga–Lampart–Oprocha 2015 §2 definitions and notation explicitly state minimal nonempty closed forward-invariant set with no smaller such set, equivalent dense forward orbits; for compact minimal set this forces f(M)=M."
+definitions/dynamics/nonwandering-point.tex,corrected,"https://planetmath.org/nonwanderingset","EoM Wandering_point unavailable; directly read PlanetMath nonwandering set formal definition via lack of a neighborhood eventually disjoint from all iterates, equivalently for each U,N some n>=N with f^n(U) intersect U nonempty. PlanetMath states metric surjective setting, formula itself extends to continuous topological self-maps."
+definitions/dynamics/omega-limit-set.tex,verified,"https://encyclopediaofmath.org/wiki/Limit_point_of_a_trajectory","EoM was read earlier this session for alpha and omega point; specifies subsequential limits as n→+∞, with discrete-time analogue. Tail-closure equality, nonempty compact and fully invariant follow under stated compact continuous-map hypotheses."
+definitions/dynamics/orbit.tex,verified,"https://en.wikipedia.org/wiki/Orbit_(dynamics)","Forward orbit O+(x) consists of all iterates f^n(x) n>=0, with f^0 identity. Noninvertible map may have no or multiple backward branches."
+definitions/dynamics/ordinary-differential-equation.tex,verified,"https://en.wikipedia.org/wiki/Ordinary_differential_equation","ODE definition differentiates an unknown function of one independent variable, implicit equation allowed and solution smooth enough over interval."
+definitions/dynamics/partial-differential-equation.tex,verified,"https://en.wikipedia.org/wiki/Partial_differential_equation","PDE relates unknown multivariable function and partial derivatives, Laplace example and distinct weak-solution interpretation."
+definitions/dynamics/periodic-point.tex,verified,"https://en.wikipedia.org/wiki/Periodic_point","Definition some n>0 with f^n(x)=x; least period minimum n, orbit contains exactly that many distinct states."
+definitions/dynamics/phase-space.tex,verified,"https://en.wikipedia.org/wiki/Phase_space","Phase/state space records possible states for evolution, not necessarily physical position, may be smooth manifold or general structured set."
 definitions/dynamics/recurrent-point.tex,pending,,
 definitions/dynamics/stable-manifold.tex,pending,,
 definitions/dynamics/topological-conjugacy.tex,pending,,
