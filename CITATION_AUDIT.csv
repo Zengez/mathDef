@@ -265,16 +265,16 @@ definitions/computability/time-complexity.tex,pending,,
 definitions/computability/turing-degree.tex,pending,,
 definitions/computability/turing-machine.tex,pending,,
 definitions/computability/turing-reducibility.tex,pending,,
-definitions/dynamics/alpha-limit-set.tex,pending,,
-definitions/dynamics/attractor.tex,pending,,
-definitions/dynamics/autonomous-ode.tex,pending,,
-definitions/dynamics/chain-recurrent-point.tex,pending,,
-definitions/dynamics/discrete-dynamical-system.tex,pending,,
-definitions/dynamics/equilibrium.tex,pending,,
-definitions/dynamics/fixed-point.tex,pending,,
-definitions/dynamics/flow.tex,pending,,
-definitions/dynamics/hyperbolic-fixed-point.tex,pending,,
-definitions/dynamics/invariant-set.tex,pending,,
+definitions/dynamics/alpha-limit-set.tex,verified,"https://encyclopediaofmath.org/wiki/Limit_point_of_a_trajectory","EoM explicitly defines alpha-limit points as subsequential limits in reversed time and same terminology for discrete dynamics. Compact homeomorphism assumptions justify closed tail intersection nonempty and invariant."
+definitions/dynamics/attractor.tex,corrected,"https://en.wikipedia.org/wiki/Attractor#Mathematical_definition","Previous Strange_attractor EoM page returned 502 and was too narrow. Attractor Mathematical definition states invariant attracting set with basin neighborhood, but discusses a somewhat stronger attractor convention; repo explicitly adopts one weaker pointwise-attraction convention and notes alternatives."
+definitions/dynamics/autonomous-ode.tex,verified,"https://en.wikipedia.org/wiki/Autonomous_system_(mathematics)","Definition section autonomous ODE x'=F(x) without explicit time variable; solutions are differentiable trajectories."
+definitions/dynamics/chain-recurrent-point.tex,corrected,"https://link.springer.com/article/10.1007/s40304-022-00314-6","EoM Chain_recurrence failed. Eidi–Jost 2022 Definition 2.1 explicitly gives finite epsilon chains of f returning x to itself for each epsilon; their diffeomorphism setting is narrower but formula is identical for continuous metric self-maps."
+definitions/dynamics/discrete-dynamical-system.tex,corrected,"https://en.wikipedia.org/wiki/Dynamical_system#Discrete_dynamical_system","EoM Dynamical_system unavailable. Wikipedia Dynamical system discusses iterates of self map in discrete time; continuous self-maps in topological dynamics need not be invertible."
+definitions/dynamics/equilibrium.tex,verified,"https://en.wikipedia.org/wiki/Equilibrium_point","For autonomous vector field F, equilibrium satisfies F(p)=0 and corresponding constant solution; uniqueness qualification matches."
+definitions/dynamics/fixed-point.tex,verified,"https://en.wikipedia.org/wiki/Fixed_point_(mathematics)","Definition f(p)=p independent of topology; forward orbit constant."
+definitions/dynamics/flow.tex,corrected,"https://en.wikipedia.org/wiki/Flow_(mathematics)#Formal_definition","EoM Flow page unavailable. Wikipedia formal definition real action φ_0=id and φ_(s+t)=φ_s φ_t, continuous for topological X; inverse time -t gives homeomorphisms, semiflow noted."
+definitions/dynamics/hyperbolic-fixed-point.tex,verified,"https://en.wikipedia.org/wiki/Hyperbolic_fixed_point","Redirect to Hyperbolic equilibrium point. Maps subsection excludes eigenvalues on unit circle for Df_p; flows subsection excludes zero-real-part eigenvalues for vector-field derivative; noninvertible convention valid."
+definitions/dynamics/invariant-set.tex,needs_followup,"https://encyclopediaofmath.org/wiki/Invariant_set","Original EoM citation returned internal error, and directly opened Attractor and Dynamical system articles only partially support forward invariant versus f(A)=A conventions; more targeted durable source is needed for both clauses. Leave definition unchanged."
 definitions/dynamics/lyapunov-exponent.tex,pending,,
 definitions/dynamics/lyapunov-stability.tex,pending,,
 definitions/dynamics/minimal-invariant-set.tex,pending,,
