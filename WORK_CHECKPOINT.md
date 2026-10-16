@@ -760,3 +760,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Audited first eight `topology/` entries: basis-topology, boundary, cauchy-sequence, clopen-set, closed-set, closure, compactness, connected-space. Replaced generic list-of-topology source links with individual concept reference articles; preserved specific existing sources.
 - Distinctions: topology bases require the two local intersection/covering axioms, compactness does not inherently assume Hausdorffness, closure is neighborhood-defined and generally not equal to sequential closure, the empty space is connected, and clopen/closed definitions are relative to the ambient topology. `closed-set` and `compactness` originally had no explicit status header and were left without one, preserving their preexisting editorial classification.
 - Starting from **828/1007** individually audited, now **836/1007**, with **171** remaining. NEXT TP2: continuity through indiscrete-topology (8), TP3 interior through open-set (8), TP4 path-connected through topological-space (8). Verify Pages and metadata audits; do not resume AWS/arXiv bulk harvesting.
+
+
+## October 16, 2026 — topology audit TP2
+
+- Audited next eight `topology/` definitions: continuity, continuous-open-map, dense-subset, discrete-topology, first-countable, hausdorff-space, homeomorphism, indiscrete-topology. Replaced all generic topology-index sources with subject-specific concept pages; retained the existing direct continuity source and its absent status flag, without changing classification.
+- Carefully distinguished continuity's inverse images from openness of image maps; first-countability supplies sequential tests; Hausdorffness has separated-neighborhood and compact-closed consequences; continuous bijections need not be homeomorphisms; indiscrete topology on the empty set has one, not two, distinct open sets.
+- **16/32 topology entries** now individually audited; cumulative baseline **844/1007**. NEXT TP3 interior through open-set (8), then TP4 last eight. Metadata and Pages checks need review; preserve IDs/status and AWS/arXiv harvesting pause.
