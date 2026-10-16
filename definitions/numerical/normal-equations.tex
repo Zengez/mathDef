@@ -1,7 +1,7 @@
 % id: numerical.normal-equations
 % term: Normal equations
 % related: numerical.least-squares, linear.transpose
-% source: https://encyclopediaofmath.org/wiki/Numerical_analysis
+% source: https://en.wikipedia.org/wiki/Linear_least_squares
 % status: draft
 
-The \emph{normal equations} associated with minimizing $\|Ax-b\|_2^2$ are $A^{\mathsf T}Ax=A^{\mathsf T}b$.
+For $A\in\mathbb R^{m\times n}$ and $b\in\mathbb R^m$, the \emph{normal equations} for least squares are $A^{\mathsf T}Ax=A^{\mathsf T}b$. Every least-squares minimizer solves these equations, and conversely. In complex vector spaces use the conjugate transpose $A^*$ instead.

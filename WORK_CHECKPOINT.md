@@ -212,3 +212,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Replaced generic `Numerical_analysis` citations with individual mathematical reference articles.
 - Important mathematical edits: specified infimum and norms for backward error (the minimizing perturbation might not exist); emphasized distinction between backward stability and problem conditioning; stated domain/norm assumptions for relative condition numbers; restricted “cubic spline” to piecewise polynomial on a specified knot sequence; clarified centered finite-difference $O(h^2)$ smoothness requirements and conforming Galerkin FEM scope.
 - Next: numerical N2, 12 files starting at `forward-error`. Keep numerical definitions draft. Build verification pending current commit.
+
+## Numerical analysis audit, batch N2 (October 15, 2026)
+
+- Inspected next 12 numerical entries: numerical.forward-error, numerical.gaussian-elimination, numerical.interpolation, numerical.lagrange-interpolation, numerical.least-squares, numerical.lu-factorization, numerical.machine-epsilon, numerical.matrix-condition-number, numerical.newton-root, numerical.normal-equations, numerical.qr-factorization, numerical.quadrature-rule. Generic EoM Numerical_analysis references replaced by concept-level numerical articles.
+- Corrected LU-without-pivoting existence assumptions, clarified normal equations in real versus complex spaces, allowed rank-deficient thin QR, and preserved the machine-epsilon/unit-roundoff convention distinction. The remaining mathematical content is basic numerical linear algebra, not a claim of peer review.
+- Next numerical N3: remaining 11 entries `relative-error`, `residual`, `roundoff-error`, `runge-kutta4`, `simpson-rule`, `singular-value-decomposition`, `singular-value`, `spectral-norm`, `spline`, `trapezoidal-rule`, `truncation-error`.
