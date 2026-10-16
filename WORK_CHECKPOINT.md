@@ -1674,3 +1674,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All six source URLs resolve to articles supporting displayed definitions; no changes needed. Ledger CV73 commit `2af64c7b`: **624 verified, 80 corrected, 300 pending, 3 needs_followup = 704/1007 completed (69.91%)**.
 - All **46 `category/`** citations checked across CV69–CV73 (10+10+10+10+6), with **45 verified and one mathematical body corrected** (`model-category`, commit `f76e32e3`).
 - NEXT: a new pending folder `computability/` (39), `measure/` (39) or `scv/` (62). Prefer `computability/` next in ten-entry batches; read the actual live CSV sorted order. No earlier checks repeated. GitHub Pages/Actions success not yet inspected. Existing 3 followups untouched.
+
+## 2026-10-16 — CV74 computability C1 (10 definitions)
+
+- Checked original sources on formal alphabets, approximation ratios, arithmetical hierarchy, Big-O/Omega/Theta, and complexity classes BPP, coNP, NP, P. Distinguished algorithmic Ω lower bounds from analytic number-theory usage; verified bounded-error BPP and certificate conventions.
+- The old `computability.alphabet` statement made all formal alphabets finite/nonempty, while the cited article explicitly permits infinite alphabets outside automata conventions. Clarified as **finite-alphabet convention common in automata/complexity**, with mention of more general infinite alphabets (definition commit `58b2f07e`). Other nine source citations verified unchanged.
+- Ledger CV74 commit `b8d14af7`: **633 verified, 81 corrected, 290 pending, 3 needs_followup** = **714/1007 completed (70.90%)**. No older citation rows touched.
+- NEXT CV75: 10 pending `computability/` beginning class-pspace, class-rp, class-zpp, computable-function, computable-real, decidable-language, deterministic-turing-machine, halting-problem, language, many-one-reduction (confirm actual sorted CSV list). Keep per-batch commits.
