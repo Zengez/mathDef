@@ -1,7 +1,11 @@
 % id: manifold.affine-connection
 % term: Affine connection
 % related: manifold.vector-field, manifold.riemannian-metric
-% source: https://ncatlab.org/nlab/show/smooth%2Bmanifold
+% source: https://en.wikipedia.org/wiki/Affine_connection
 % status: draft
 
-An \emph{affine connection} on $TM$ is an $\mathbb R$-bilinear operator $\nabla_XY$ satisfying $\nabla_{fX}Y=f\nabla_XY$ and $\nabla_X(fY)=X(f)Y+f\nabla_XY$.
+An \emph{affine connection} on the tangent bundle of a smooth manifold $M$ is an $\mathbb R$-bilinear map
+\[
+\nabla:\mathfrak X(M)\times\mathfrak X(M)\to\mathfrak X(M),\qquad(X,Y)\mapsto\nabla_XY,
+\]
+satisfying $\nabla_{fX}Y=f\nabla_XY$ and $\nabla_X(fY)=X(f)Y+f\nabla_XY$ for all $f\in C^\infty(M)$. It differentiates vector fields along vector fields, without requiring a metric or vanishing torsion.

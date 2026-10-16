@@ -1,7 +1,11 @@
 % id: manifold.differential
 % term: Differential of a smooth map
 % related: manifold.tangent-space, manifold.smooth-map
-% source: https://ncatlab.org/nlab/show/smooth%2Bmanifold
+% source: https://en.wikipedia.org/wiki/Pushforward_(differential)
 % status: draft
 
-For a smooth map $F:M\to N$ and $p\in M$, its \emph{differential} $dF_p:T_pM\to T_{F(p)}N$ is defined by $dF_p(v)(g)=v(g\circ F)$.
+For a smooth map $F:M\to N$ and $p\in M$, its \emph{differential} (pushforward) $dF_p:T_pM\to T_{F(p)}N$ is the linear map characterized, for tangent vectors viewed as derivations, by
+\[
+(dF_pv)(g)=v(g\circ F)
+\]
+for smooth functions $g$ defined near $F(p)$. In local coordinates it is represented by the Jacobian matrix of $F$, and its compositions satisfy the chain rule.
