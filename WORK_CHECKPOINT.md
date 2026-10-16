@@ -260,3 +260,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Inspected the final 12 original `alg-topology/` entries: retraction, simplex, simplicial-chain, simplicial-complex, simply-connected, singular-chain, singular-cohomology, singular-homology, singular-simplex, suspension, universal-cover, wedge-sum. All 36 original entries have now received the A1 (12), A2 (12), A3 (12) bounded review.
 - Corrected universal-cover existence qualifications; nonempty versus empty simplex conventions; reduced versus unreduced suspensions; degree-zero singular boundary; and explicit cochain coboundary convention. The retraction/based-space notation remains consistent with the companion entries.
 - All changes and references were committed without promoting to formally reviewed status. NEXT: audit `dynamics/`, `real/`, `alg-topology` neighbor subjects, and rerun metadata quality scan after new additions. The checkpoint and current Git tree are authoritative for progress, not previous chat claims.
+
+
+## 2026-10-15 continuation in replacement chat — dynamics audit Y1a
+
+- Verified \`main\` had 971 definitions in 40 folders, with all 36 \`alg-topology/\` files already audited in the prior session. Verified latest corpus metadata Action run 38831220446 was successful.
+- Individually checked and revised eight pre-existing \`dynamics/\` files: attractor, autonomous-ode, discrete-dynamical-system, equilibrium, fixed-point, flow, invariant-set, lyapunov-stability. Switched their discovery-list sources to direct EoM/Wikipedia articles after checking article scope.
+- Important mathematical distinctions: forward invariance $f(A)\subseteq A$ versus full invariance $f(A)=A$; continuous real-time flow versus semiflow; the attractor convention (additional stability/trapping properties vary); explicit state/time/ODE domain assumptions. Remain drafts, not formal peer-review approvals.
+- NEXT: the other seven \`dynamics/\` definitions (orbit, ordinary-differential-equation, partial-differential-equation, periodic-point, phase-space, recurrent-point, topological-conjugacy). Pay particular attention to *positive* versus Birkhoff recurrence. Then audit \`real/\`.

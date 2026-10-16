@@ -1,7 +1,7 @@
 % id: dynamics.flow
 % term: Flow
 % related: dynamics.autonomous-ode, dynamics.equilibrium
-% source: https://en.wikipedia.org/wiki/List_of_dynamical_systems_and_differential_equations_topics
+% source: https://encyclopediaofmath.org/wiki/Flow_(continuous-time_dynamical_system)
 % status: draft
 
-A \emph{flow} on $X$ is a family $\varphi_t:X\to X$, for $t\in\mathbb R$, satisfying $\varphi_0=\operatorname{id}$ and $\varphi_{s+t}=\varphi_s\circ\varphi_t$, with appropriate continuity or smoothness assumptions.
+A \emph{(continuous) flow} on a topological space $X$ is a jointly continuous map $\varphi:\mathbb R\times X\to X$, written $\varphi_t(x)$, such that $\varphi_0=\operatorname{id}_X$ and $\varphi_{s+t}=\varphi_s\circ\varphi_t$ for all $s,t\in\mathbb R$. Each $\varphi_t$ is a homeomorphism with inverse $\varphi_{-t}$. If only $t\ge0$ is allowed, the corresponding notion is a \emph{semiflow}.
