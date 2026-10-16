@@ -604,3 +604,8 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 - Began auditing original `complex/` entries; inspected 10 files from analytic-continuation through complex-number, using direct DLMF, EoM, or Wikipedia concept sources. Corrected analytic continuation to distinguish direct extensions from continuation along compatible germs and paths, which may have monodromy; noted Blaschke zero multiplicities and compact-local convergence, and real differentiability needed for pointwise Cauchy–Riemann equivalence. All existing draft statuses and stable IDs preserved.
 - Corpus remains **1007 definitions in 40 folders**, with 10/38 original complex-analysis definitions inspected in this series. NEXT C2 starts `conformal-map` and continues through `holomorphic-logarithm`, keeping batches small and maintaining the checkpoint. Build/metadata Action result for C1 must be checked separately.
+
+
+## October 16, 2026 — source-resolution follow-up C1a
+
+- Checked the source pages after complex C1. The proposed Wikipedia `Complex_differentiable_function` URL did not resolve reliably. Replaced it with the verified direct `Holomorphic_function` article, which explicitly defines complex differentiability at a point. For antiholomorphic functions switched to the verified concept article `Antiholomorphic_function` rather than relying on a temporarily inaccessible encyclopedia URL. No bodies, IDs, or statuses changed.
