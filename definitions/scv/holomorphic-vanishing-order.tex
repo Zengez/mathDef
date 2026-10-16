@@ -4,4 +4,8 @@
 % source: https://encyclopediaofmath.org/wiki/Weierstrass_theorem
 % status: draft
 
-For a holomorphic function $f$ near $p\in\mathbb C^n$ not identically zero near $p$, its \emph{order of vanishing at $p$} is the minimum $|\alpha|$ over nonzero Taylor coefficients $c_\alpha$ in $f(p+z)=\sum_\alpha c_\alpha z^\alpha$. The order of the zero germ is conventionally $+\infty$.
+For a holomorphic germ $f$ at $p\in\mathbb C^n$, with convergent Taylor expansion $f(p+z)=\sum_{\alpha\in\mathbb N_0^n}c_\alpha z^\alpha$, the \emph{order of vanishing} is
+\[
+\operatorname{ord}_p(f)=\min\{|\alpha|:c_\alpha\ne0\}
+\]
+when $f$ is not the zero germ. It is $0$ if $f(p)\ne0$, and by convention $\operatorname{ord}_p(0)=+\infty$. This is the order in the maximal ideal of the regular local ring $\mathcal O_{\mathbb C^n,p}$.
