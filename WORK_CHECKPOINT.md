@@ -1152,3 +1152,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - `relations.quotient-set` source URL redirects to Wikipedia's `Equivalence_class` article, which describes the quotient construction; the target remains semantically relevant (future specificity improvements optional, not an error).
 - Post-batch ledger: 48 verified, 4 corrected, 955 pending. Individual statuses reflect this citation-specific audit only. No separate definition discovery or UI/rendering work.
 - CV2 `f18a7ee` Pages and metadata workflows passed. NEXT: continue other direct-source clusters with the same entry-by-entry verification standard.
+
+
+## October 16, 2026 — citation verification CV4: 19 graph-theory terms
+
+- Opened source pages and compared 19 core graph entries against direct definition/article sections: undirected and directed graphs; vertex/edge; simple path and cycle; connected graph and tree; bipartite/complete/regular graphs; degree, graph isomorphism, cliques, independent sets, proper coloring, chromatic number and planarity.
+- Graph conventions were explicitly matched to their cited discussion of simple graphs, loop-allowing directed relation models, nonempty connected graphs, and basic empty-graph conventions. The `graph.edge` URL redirects to the Glossary of graph theory and has an explicit `edge` definition; it remains suitable despite the redirect.
+- All 19 found suitable; no source URL or mathematical body changed. Recorded per-entry URL and specific checked concept in the CSV; no automated promotion of status metadata.
+- Counts: 67 verified, 4 corrected, 936 pending. Next: additional direct-source entry clusters; keep evidence quality ahead of raw throughput.
