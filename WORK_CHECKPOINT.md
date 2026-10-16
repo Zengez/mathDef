@@ -441,3 +441,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Explicitly distinguished maximal from maximum matchings; finite matroid hereditary/exchange axioms; unique empty permutation and set partition; implicit recurrences need not determine a unique sequence; and the rank-based Tutte polynomial convention. Stirling entry continues to use smallmatrix within math mode, which is KaTeX-supported.
 - **All 18 existing \`combin/\` entries** now examined across K1 9 and K2 9, with draft statuses retained and original IDs preserved. No new definitions in K1/K2; repository remains **995 files in 40 folders**.
 - NEXT: verify K2 GitHub Pages and metadata audit, then audit \`logic/\` and more underreviewed originals or return to systematic Wikipedia category discovery. Record exact new definitions and source direct URLs for any additions.
+
+
+## October 15, 2026 continuation — logic J1
+
+- After combinatorics K2, inspected eight existing \`logic/\` definitions: conjunction, consistency, contradiction, countable-set, disjunction, equivalence, existential-quantifier, implication. Replaced broad \`List_of_mathematical_logic_topics\` sources with individual concept links.
+- Mathematically substantive distinctions: classical syntactic consistency versus existence of a model and the soundness/completeness bridge; logical equivalence under all interpretations vs equivalence relative to a theory; material implication vs semantic entailment; and countable including finite sets under the stated convention.
+- All eight IDs unchanged and \`draft\`. NEXT J2 final seven \`logic/\` entries: model, negation, predicate, proof, proposition, tautology, universal-quantifier. Then verify Actions; no new definitions, expected 995 total.
