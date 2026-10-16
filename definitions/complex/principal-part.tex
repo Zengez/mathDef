@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Principal_part
 % status: draft
 
-For a function with Laurent expansion $f(z)=\sum_{k=-\infty}^{\infty}a_k(z-z_0)^k$ on a punctured annulus about $z_0$, its \emph{principal part at $z_0$} is $\sum_{k<0}a_k(z-z_0)^k$.
+If $f$ is holomorphic on an annulus $r<|z-a|<R$ with Laurent expansion $\sum_{n=-\infty}^{\infty}c_n(z-a)^n$, its \emph{principal part} about $a$ on that annulus is
+\[
+\sum_{n=-\infty}^{-1}c_n(z-a)^n.
+\]
+When $r=0$, a zero principal part corresponds to a removable singularity, a finite nonzero principal part to a pole, and infinitely many nonzero negative-power coefficients to an essential singularity. This classification need not hold when $r>0$.

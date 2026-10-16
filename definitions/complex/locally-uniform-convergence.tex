@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Compact_convergence
 % status: draft
 
-A sequence of functions $f_n:U\to\mathbb C$ \emph{converges locally uniformly} to $f$ if for every compact $K\subset U$ and every $\varepsilon>0$, eventually $\sup_{z\in K}|f_n(z)-f(z)|<\varepsilon$.
+Let $f_n,f:U\to\mathbb C$, where $U$ is an open subset of $\mathbb C$. We say that $f_n$ \emph{converges locally uniformly} to $f$ if for every compact set $K\subset U$ and every $\varepsilon>0$ there is $N$ such that
+\[
+\sup_{z\in K}|f_n(z)-f(z)|<\varepsilon\qquad(n\ge N).
+\]
+Equivalently, the convergence is uniform on a neighborhood of every point of $U$; this is also called uniform convergence on compact subsets.
