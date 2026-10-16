@@ -1,7 +1,11 @@
 % id: complex.zero-of-function
 % term: Zero of a holomorphic function
 % related: complex.holomorphic-function, complex.polynomial
-% source: https://en.wikipedia.org/wiki/List_of_complex_analysis_topics
+% source: https://en.wikipedia.org/wiki/Zeros_and_poles
 % status: draft
 
-A \emph{zero} of $f$ is a point $a$ satisfying $f(a)=0$. For a holomorphic $f$ not identically zero near $a$, its multiplicity is the least $m\ge1$ with $f^{(m)}(a)\ne0$.
+A \emph{zero} of a holomorphic function $f$ is a point $a$ with $f(a)=0$. If $f$ is not identically zero on a connected neighborhood of $a$, its \emph{order} or \emph{multiplicity} at $a$ is the unique integer $m\ge1$ such that
+\[
+f(z)=(z-a)^m g(z),\qquad g\text{ holomorphic near }a,\quad g(a)\ne0.
+\]
+Equivalently $f^{(k)}(a)=0$ for $0\le k<m$, while $f^{(m)}(a)\ne0$. The identically zero function has no finite zero order.

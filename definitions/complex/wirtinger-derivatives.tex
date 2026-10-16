@@ -4,8 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Wirtinger_derivatives
 % status: draft
 
-For a differentiable function $f(x+iy)$ of two real variables, the \emph{Wirtinger differential operators} are
+For a continuously real-differentiable function $f:U\subseteq\mathbb C\to\mathbb C$, write $z=x+iy$ and define the \emph{Wirtinger derivatives} by
 \[
-\frac{\partial}{\partial z}=\frac12(\partial_x-i\partial_y),\qquad
-\frac{\partial}{\partial\bar z}=\frac12(\partial_x+i\partial_y).
+f_z=\frac12(f_x-if_y),\qquad f_{\overline z}=\frac12(f_x+if_y).
 \]
+These are the coefficients of the complex-linear and conjugate-linear parts of the real differential $df=f_z\,dz+f_{\overline z}\,d\overline z$. Such $f$ is holomorphic exactly when $f_{\overline z}=0$ throughout $U$.

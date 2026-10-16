@@ -4,8 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Winding_number
 % status: draft
 
-For a piecewise $C^1$ closed curve $\gamma$ in $\mathbb C\setminus\{a\}$, its \emph{winding number} about $a$ is
+For a piecewise $C^1$ closed curve $\gamma:[0,1]\to\mathbb C\setminus\{a\}$ with $\gamma(0)=\gamma(1)$, the \emph{winding number} about $a$ is the integer
 \[
-\operatorname{Ind}(\gamma,a)=\frac{1}{2\pi i}\int_\gamma\frac{dz}{z-a},
+\operatorname{Ind}(\gamma,a)=\frac{1}{2\pi i}\int_\gamma\frac{dz}{z-a}.
 \]
-an integer measuring signed revolutions around $a$.
+It counts the total signed change of argument of $\gamma(t)-a$ divided by $2\pi$, and is invariant under homotopies of the loop that avoid $a$.

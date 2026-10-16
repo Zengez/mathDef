@@ -1,7 +1,11 @@
 % id: complex.residue
 % term: Residue
 % related: complex.laurent-series, complex.pole
-% source: https://en.wikipedia.org/wiki/List_of_complex_analysis_topics
+% source: https://en.wikipedia.org/wiki/Residue_(complex_analysis)
 % status: draft
 
-The \emph{residue} of a function at an isolated singularity $a$ is the coefficient $c_{-1}$ of $(z-a)^{-1}$ in its Laurent expansion.
+If $f$ is holomorphic on a punctured neighborhood of $a$ and has Laurent expansion $f(z)=\sum_{n=-\infty}^{\infty}c_n(z-a)^n$, its \emph{residue at $a$} is $\operatorname{Res}_{z=a}f=c_{-1}$. For any sufficiently small positively oriented circle $\gamma$ about $a$ in this punctured neighborhood,
+\[
+\operatorname{Res}_{z=a}f=\frac1{2\pi i}\int_\gamma f(z)\,dz.
+\]
+The residue is defined even at a removable or essential isolated singularity.
