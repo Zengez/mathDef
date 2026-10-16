@@ -1239,3 +1239,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Two references changed after direct inspection: `sets.successor-ordinal` EoM topic link to Wikipedia `Ordinal_number` (commit `a07846fe`), and `sets.ultrafilter` to the explicit `Ultrafilter_(set_theory)` article (`ba17653d`). Existing mathematical text and IDs retained; old EoM pages inaccessible to the browser, not shown to be mathematically wrong.
 - This completes all **43 `sets/` entries** under the dedicated citation phase (CV11–CV14). Ledger evidence commit `673aa5db`. Current tally **160 verified, 17 corrected, 830 pending, 0 needs_followup**, total 1007.
 - NEXT: choose `topology/` foundational direct-article definitions or `algebra/` in batches of ~10. Continue checking per-entry source content before status changes and record commits. Check GitHub workflows when possible; recent Pages/metadata CI checks not yet independently established.
+
+
+## October 16, 2026 — citation verification CV15: first topology cluster (10 entries)
+
+- Opened ten relevant topology source pages, matched formal statements for basis, boundary, Cauchy sequence, clopen set, closed set, closure, compactness, connectedness, continuity and open map. Verified important distinctions: compactness does not require Hausdorff; closure need not be characterized by sequences absent countability; open mappings use direct images whereas continuity uses preimages.
+- The `topology.continuous-open-map` citation `Open_mapping` failed to resolve to a directly viewable article. Replaced with precise `Open_and_closed_maps` source (`52aafd22`) whose definitions and characterizations support every listed clause. Other nine citations supported their definitions without edit.
+- Ledger commit `949e49ac`; cumulative **169 verified, 18 corrected, 820 pending, 0 needs_followup** out of 1007. `topology/` has 22 still pending.
+- NEXT: topology dense/discrete/countability/Hausdorff/homeomorphism/interior/limit-point entries, then remaining completeness/neighborhood/topological constructions. GitHub publication pipeline results still not independently established for these commits.
