@@ -1580,3 +1580,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All five `measured-actions/` source locator records correctly cite their definitions, including distinction between g,h-dependent null sets and a common G-invariant conull set, and finite-measure null symmetric differences. The paper inherits hypotheses of Polish group, standard σ-finite (atomless) space in section context. No body or source changes needed, all remain editorial draft.
 - CV59 ledger commit `2b10a9a2`: **534 verified, 59 corrected, 413 pending, 1 needs_followup** = **593/1007 completed (58.89%)**. `measured-actions/` all five checked; earlier verified records untouched.
 - NEXT CV60: `quasimetric/` six pending research-specific references; use exact arXiv versions and PDF locators if applicable. Do not claim GitHub CI validated.
+
+## 2026-10-16 — CV60 quasi-metric paper citations (six entries, folder complete)
+
+- Opened and inspected Singh–Jindal, *Quasi-metric spaces on which real-valued continuous functions are uniformly continuous*, arXiv:2511.16503v1 PDF printed pp. 3–4 (viewer pages 2–3). Verified exact source definitions 2.1, 2.2(1–2), 2.5, 2.7 and 2.9 for quasi-metric, forward/backward balls, forward convergence, left K-Cauchy and left K-completeness.
+- Checked orientation $d(x,x_n)$ vs $d(x_n,x)$, left K condition $k\le n$, symmetry-free separation. All six provided source locators and mathematical statements match paper; no source URL or body changes needed. Ledger commit `1ee828ec`.
+- Totals **540 verified, 59 corrected, 407 pending, 1 needs_followup**, hence **599/1007 (59.48%)** completed. All six `quasimetric/` citations complete. Previous source reviews untouched. No claim of CI validation.
+- NEXT: `tda/` five pending entries, then `weighted-analysis/` five pending entries or another subject folder; use exact paper pages/definitions when available. Persist per batch.
