@@ -1002,3 +1002,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Refined stochastic.convergence-lp to explicitly require that X_n and X belong to L^p(P), making the usual definition genuinely a norm-convergence statement and bringing it into line with the existing measure.lp-space definition and its cited convergence-in-mean reference.
 - Replaced the broad real Monge–Ampere Wikipedia source for scv.complex-monge-ampere-operator with the Encyclopedia of Mathematics Pluripotential_theory article, which explicitly displays the complex Hessian determinant operator and discusses extension beyond smooth plurisubharmonic functions. The mathematical body was already precise and needed no change.
 - Neither review changed the first-pass count or added new catalog entries. NEXT: verify workflows, then review other reused-source and cross-domain clusters; log only verified issues and refrain from gratuitous wording/source churn.
+
+
+## October 16, 2026 — CC3 dynamical-system convention review
+
+- Compared 17 definitions in the dynamics folder: forward orbit/invariant sets, positive recurrence, nonwandering and chain recurrence, alpha/omega limit sets, minimality, attracting sets, transitivity versus mixing, Lyapunov stability and hyperbolicity.
+- No contradictory uses of recurrence, invariance, or open-set transitivity were found. The corpus explicitly distinguishes forward invariance f(A) subseteq A from strong invariance f(A)=A.
+- Strengthened the alpha- and omega-limit-set entries to state their actual equality invariance under the existing hypotheses (compact metric state space, continuous map for omega; homeomorphism for alpha). The old statements were correct but weaker; these now match the terminology used in dynamics.invariant-set. Confirmed the strong-invariance property independently from mathematical sources before editing.
+- No new definitions or site features. NEXT: continue targeted mathematical dependency review and citation specificity; metadata and publication workflow success was confirmed for preceding CC2 and SR4 commits.
