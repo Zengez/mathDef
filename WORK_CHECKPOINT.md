@@ -426,3 +426,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Key conventions: \`graph.graph\` explicitly means **simple undirected**; graph isomorphisms preserve adjacency in both directions; a length-zero path is allowed and otherwise a simple path has distinct vertices; trees are nonempty, connected and acyclic; a regular graph is taken finite nonempty to avoid vacuous edge cases.
 - **All 19 original \`graph/\` definitions** have now been inspected in H1 10 + H2 9, kept as \`draft\`, stable IDs preserved. No new definitions added in H1–H2; collection remains **995 definition files in 40 folders**.
 - NEXT: verify workflow builds on H2; inspect category discovery for new graduate graph theory concepts or audit \`combin/\` and \`logic/\`; check generic source metadata as prioritization. AWS/arXiv bulk tasks remain paused.
+
+
+## October 15, 2026 continuation — combinatorics K1
+
+- Audited first nine preexisting \`combin/\` definitions: Bell number, binomial coefficient, combination, integer composition, derangement, factorial, ordinary generating function, graphic matroid, integer partition. Replaced generic \`Outline_of_combinatorics\` sources with direct individual mathematical reference articles.
+- Clarified $n=0$ cases (Bell number, empty composition/partition, factorial and empty derangement), order sensitivity of integer compositions versus partitions, the formal-power-series setting for generating functions and cycle structure for graphic matroids. All entries kept draft.
+- NEXT K2: remaining nine \`combin/\` definitions from \`matching\` to \`tutte-polynomial\`, then inspect the latest build and metadata audit. Corpus still **995 definitions**, 40 folders.

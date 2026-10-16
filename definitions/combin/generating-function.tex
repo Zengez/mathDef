@@ -1,7 +1,11 @@
 % id: combin.generating-function
 % term: Ordinary generating function
 % related: real.power-series, combin.binomial-coefficient
-% source: https://en.wikipedia.org/wiki/Outline_of_combinatorics
+% source: https://en.wikipedia.org/wiki/Generating_function
 % status: draft
 
-The \emph{ordinary generating function} of a sequence $(a_n)_{n\ge0}$ is the formal power series $A(x)=\sum_{n=0}^{\infty}a_nx^n$.
+For a sequence $(a_n)_{n\ge0}$ over a commutative ring $R$, its \emph{ordinary generating function} is the formal power series
+\[
+A(x)=\sum_{n=0}^\infty a_nx^n\in R[[x]].
+\]
+No analytic convergence is needed when the series is treated formally. Exponential generating functions instead divide the coefficient of $x^n$ by $n!$ (over a suitable coefficient ring).
