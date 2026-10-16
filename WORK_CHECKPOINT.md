@@ -1198,3 +1198,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Checked the final six `number/` entries against their specific source text: perfect-number, prime-number, prime-power, quadratic-residue, rational-number and residue-class. Five matched unchanged. For `number.residue-class` found an incorrect/nonexistent `Equivalence_class#Congruence_classes` fragment. Replaced it with `Modular_arithmetic#Congruence_classes` after reading that section (commit `20f5b8a9`).
 - Dedicated ledger commit `5f580096` includes per-entry notes; tally now **112 verified, 11 corrected, 884 pending, 0 needs_followup**, 1007 total. All 19 number entries have citation evidence.
 - NEXT: audit a coherent pending subject cluster e.g. 5 `relations/` plus the 3 `analysis/` and 3 `metric/` entries, or foundational `sets/`; avoid blind status promotions. Confirm GitHub metadata and Pages workflow success after the latest commits. Preserve site status and deferred-scope rules.
+
+
+## October 16, 2026 — citation verification CV10: analysis, metric topology and order theory (11 entries)
+
+- Opened actual source article sections, compared definitions, quantifiers, domains, topology and poset conventions for all 3 `analysis/`, all 3 `metric/`, and the final 5 previously pending `relations/` definitions: convergence, sequence, uniform continuity, metric space, open ball, metric open set, antichain, chain, meet of subset, join of subset, upper bound.
+- Verified all 11 existing concept-specific sources; **no citation or definition changes** were justified. The `Total_order` source explicitly discusses chains as totally ordered subsets; `Open_set` has a separate metric-space definition; `Infimum_and_supremum` covers arbitrary posets and may distinguish finite meet/join language.
+- Evidence and checked URLs recorded per entry in `CITATION_AUDIT.csv` commit `c8008895`. Counts now **123 verified, 11 corrected, 873 pending, 0 needs_followup** (1007 total).
+- All `number/`, `logic/`, `analysis/`, `metric/`, `relations/` entries are now evidence-recorded under the citation-specific ledger. Mathematical status metadata unchanged.
+- NEXT: choose bounded blocks of `sets/` or `topology/` entries with direct articles. Carefully inspect individual clauses before marking verified; do not backfill from first-pass checks. Pages/metadata workflow outcome for recent commits not yet verified via GitHub Actions.
