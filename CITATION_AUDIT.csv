@@ -634,16 +634,16 @@ definitions/optimization/duality-gap.tex,verified,"https://en.wikipedia.org/wiki
 definitions/optimization/epigraph.tex,verified,"https://en.wikipedia.org/wiki/Epigraph_(mathematics)","Epigraph {(x,t): f(x)<=t}; convex iff f convex; closed iff lower semicontinuous in Euclidean setting."
 definitions/optimization/feasible-set.tex,verified,"https://en.wikipedia.org/wiki/Feasible_region","Set of points satisfying constraints, possibly empty/nonconvex; optimal points minimize objective over feasible set."
 definitions/optimization/gradient-descent.tex,verified,"https://en.wikipedia.org/wiki/Gradient_descent","Explicit update x_(k+1)=x_k-alpha_k grad f(x_k); Euclidean steepest descent direction; convergence conditions additional."
-definitions/optimization/gradient.tex,pending,,
-definitions/optimization/hessian.tex,pending,,
-definitions/optimization/kkt-condition.tex,pending,,
-definitions/optimization/lagrange-dual-function.tex,pending,,
-definitions/optimization/lagrangian.tex,pending,,
-definitions/optimization/linear-program.tex,pending,,
-definitions/optimization/lower-semicontinuous.tex,pending,,
-definitions/optimization/newton-method.tex,pending,,
-definitions/optimization/normal-cone.tex,pending,,
-definitions/optimization/optimal-solution.tex,pending,,
+definitions/optimization/gradient.tex,verified,"https://en.wikipedia.org/wiki/Gradient","Definition and relationship with total derivative: Euclidean gradient represents differential via inner product, coordinates are partial derivatives."
+definitions/optimization/hessian.tex,verified,"https://en.wikipedia.org/wiki/Hessian_matrix","Definition second-partial matrix, C2 gives symmetric mixed partials, matrix represents Euclidean second differential."
+definitions/optimization/kkt-condition.tex,verified,"https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions","Nonlinear optimization, necessary conditions and sufficient conditions: stationarity, primal/dual feasibility and complementary slackness; convex sufficiency conditional on convex objective/constraints, affine equalities."
+definitions/optimization/lagrange-dual-function.tex,verified,"https://en.wikipedia.org/wiki/Duality_(optimization)","The strong Lagrange principle defines g as infimum over domain of L; dual concave as infimum of affine functions, with inequality multipliers nonnegative."
+definitions/optimization/lagrangian.tex,verified,"https://en.wikipedia.org/wiki/Duality_(optimization)#The_strong_Lagrange_principle","Live definition now cites the strong Lagrange principle (changed from old Lagrange_multiplier source prior to this ledger update); section supplies inequality and equality multiplier sums and sign convention."
+definitions/optimization/linear-program.tex,verified,"https://en.wikipedia.org/wiki/Linear_programming","Linear objective and affine linear constraints define polyhedral feasible region; feasibility/unboundedness not assumed."
+definitions/optimization/lower-semicontinuous.tex,verified,"https://en.wikipedia.org/wiki/Semi-continuity","Lower semicontinuity section defines open strict superlevel sets, sequential liminf in metric setting and closed epigraph."
+definitions/optimization/newton-method.tex,verified,"https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization","Derives Hessian times Newton direction = negative gradient; full/damped step and positive-definite Hessian needed for descent, mere invertibility insufficient."
+definitions/optimization/normal-cone.tex,verified,"https://en.wikipedia.org/wiki/Normal_cone_(convex_analysis)","Definition uses outward normals making nonpositive inner product with y-x for all y in convex set; outside point often assigned empty cone."
+definitions/optimization/optimal-solution.tex,verified,"https://en.wikipedia.org/wiki/Mathematical_optimization","Optimizing feasible point attains minimum over feasible set; nonattainment possible despite finite infimum."
 definitions/optimization/optimal-value.tex,pending,,
 definitions/optimization/positive-definite.tex,pending,,
 definitions/optimization/positive-semidefinite.tex,pending,,
