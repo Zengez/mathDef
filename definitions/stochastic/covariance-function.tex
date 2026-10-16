@@ -1,7 +1,11 @@
 % id: stochastic.covariance-function
 % term: Covariance function of a process
 % related: prob.covariance, stochastic.gaussian-process
-% source: https://encyclopediaofmath.org/wiki/Gaussian_process
+% source: https://encyclopediaofmath.org/wiki/Correlation_function
 % status: draft
 
-For a square-integrable process $(X_t)$, its \emph{covariance function} is $K(s,t)=E[(X_s-E[X_s])(X_t-E[X_t])]$.
+For a real-valued stochastic process $(X_t)_{t\in T}$ with $E[X_t^2]<\infty$ for every $t$, its \emph{covariance function} is
+\[
+K(s,t)=E\!\left[(X_s-E[X_s])(X_t-E[X_t])\right],\qquad s,t\in T.
+\]
+This kernel is symmetric and positive semidefinite. For complex-valued processes the standard Hermitian covariance convention instead conjugates the second centered factor.

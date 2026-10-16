@@ -1043,3 +1043,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - The Fourier-normalization constants, sign conventions for distributional derivatives and Poisson's equation, Sobolev requirements, and boundary-value assumptions in these reviewed definitions were mutually compatible. No mathematical changes were warranted in this batch. The prior source precision edits to elliptic symbol and parametrix remained appropriate.
 - Verified CC5 machine-epsilon commit `82efed6b` publishing and metadata checks both succeeded, and CC6 checkpoint `efc8f164` published successfully.
 - NEXT: finish a targeted probability/statistics and measure consistency review, then re-examine remaining source provenance clusters with demonstrably broad or mismatched citations. General term harvesting, rendering audit and feature implementation remain deferred.
+
+
+## October 16, 2026 — CC8 probability/stochastic alignment and covariance-source correction
+
+- Resumed after timeout at head `4670f041`; the preceding CC7 checkpoint commit had published successfully. Inspected the probability/statistics terminology set and the remaining stochastic concepts, including covariance, Gaussian processes, martingales/transforms, stopping times, Markov kernels, stationary processes, characteristic/moment-generating functions, quantiles and tightness.
+- Identified a real-vs-complex convention ambiguity in `stochastic.covariance-function`: its un-conjugated product is correct for real-valued processes, but not the Hermitian covariance of a complex-valued process. Explicitly restricted the displayed formula to square-integrable real-valued processes, recorded Hermitian conjugation in the complex case, and added symmetry/positive semidefiniteness.
+- Upgraded this source from the relevant but broader EoM `Gaussian_process` to the directly targeted EoM `Correlation_function` article, which explicitly defines the second-order function for a real process and its moment hypothesis. Cross-checked complex-valued convention against EoM `Gaussian_process` (complex-process discussion).
+- No unrelated candidate harvesting or new website features. Continue citation specificity for source clusters and semantic convention review. The initial 1,007/1,007 audit remains finished; formal peer-review statuses remain draft/example.
