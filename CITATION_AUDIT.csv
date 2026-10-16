@@ -302,16 +302,16 @@ definitions/functional/bounded-operator-algebra.tex,verified,"https://en.wikiped
 definitions/functional/bounded-sequence.tex,verified,"https://en.wikipedia.org/wiki/Bounded_set_(topological_vector_space)","Normed-space bounded subset defined by uniform upper bound ||x||<=r; applying to sequence range yields exactly sup_n||x_n|| finite."
 definitions/functional/c-star-algebra.tex,verified,"https://en.wikipedia.org/wiki/C%2A-algebra","Definition gives complex complete involutive normed algebra with ||a*a||=||a||², equivalent C-star identity."
 definitions/functional/calkin-algebra.tex,verified,"https://en.wikipedia.org/wiki/Calkin_algebra","Opening definition and properties give B(H)/K(H) for infinite-dimensional Hilbert H, compact ideal quotient C-star structure; article assumes separability but construction extends."
-definitions/functional/compact-operator.tex,pending,,
-definitions/functional/continuous-dual.tex,pending,,
-definitions/functional/dense-linear-subspace.tex,pending,,
-definitions/functional/finite-rank-operator.tex,pending,,
-definitions/functional/fredholm-index.tex,pending,,
-definitions/functional/fredholm-operator.tex,pending,,
-definitions/functional/hilbert-schmidt-operator.tex,pending,,
-definitions/functional/hilbert-space.tex,pending,,
-definitions/functional/isometry.tex,pending,,
-definitions/functional/locally-convex-space.tex,pending,,
+definitions/functional/compact-operator.tex,verified,"https://encyclopediaofmath.org/wiki/Compact_operator","Read individual EoM compact operator page: bounded sets map to precompact sets; repository restricts to bounded linear map of normed spaces and equivalent unit-ball criterion."
+definitions/functional/continuous-dual.tex,corrected,"https://en.wikipedia.org/wiki/Dual_space#Continuous_dual_space","EoM Linear_functional returned 502. Read Dual space Continuous dual space section defining all continuous scalar linear functionals from TVS and switched source, commit b6ed03ba."
+definitions/functional/dense-linear-subspace.tex,verified,"https://en.wikipedia.org/wiki/Dense_set","Dense set article defines closure of D all X; adding linear-subspace requirement of normed X yields present definition."
+definitions/functional/finite-rank-operator.tex,verified,"https://en.wikipedia.org/wiki/Finite-rank_operator","Definition of finite-rank linear map as finite-dimensional image/range, regardless of boundedness."
+definitions/functional/fredholm-index.tex,verified,"https://en.wikipedia.org/wiki/Fredholm_operator","Definition of Fredholm index = dimension kernel minus codimension of closed image; coker Y/range matches."
+definitions/functional/fredholm-operator.tex,verified,"https://en.wikipedia.org/wiki/Fredholm_operator","Bounded Banach-space Fredholm criterion: finite-dimensional kernel/cokernel and closed image."
+definitions/functional/hilbert-schmidt-operator.tex,verified,"https://en.wikipedia.org/wiki/Hilbert%E2%80%93Schmidt_operator","Article explicitly permits uncountable orthonormal basis and shows sum ||Te_j||² finite basis-independent, with compactness."
+definitions/functional/hilbert-space.tex,corrected,"https://en.wikipedia.org/wiki/Hilbert_space","EoM Hilbert_space returned 502; directly read Hilbert space opening definition of complete inner-product space under induced norm; source switched, commit 5e0bc48e."
+definitions/functional/isometry.tex,verified,"https://en.wikipedia.org/wiki/Linear_isometry","Isometry article includes normed-space linear isometries with norm preservation ||Tx||=||x||, distinguishes not necessarily surjective."
+definitions/functional/locally-convex-space.tex,corrected,"https://en.wikipedia.org/wiki/Locally_convex_space#Definition_via_convex_sets","EoM Locally_convex_space unavailable; read locally convex TVS definition via convex neighborhood basis; non-Hausdorff convention noted; source updated commit c4925c4a."
 definitions/functional/normal-operator.tex,pending,,
 definitions/functional/normed-space.tex,pending,,
 definitions/functional/nuclear-operator.tex,pending,,
