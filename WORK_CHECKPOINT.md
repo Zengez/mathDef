@@ -1143,3 +1143,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Status in ledger: 25 verified; 4 corrected; 978 pending; 0 followup. Counts reflect only individually checked sources in this dedicated phase.
 - GitHub metadata/index and Pages workflows passed CV1 commit `de98aefd`. Await CV2 checks. No other definition changes or deferred project work.
 - NEXT: continue per-entry citation checks with priority for vague links or paper-specific locators. Leave earlier thematic consistency complete status unchanged.
+
+
+## October 16, 2026 — citation verification CV3: functions and relation/order theory (23 entries)
+
+- Matched 23 existing definitions to the actual directly relevant articles and their definition/formal-definition sections: function; injective/surjective/bijective maps; equivalence and quotient classes; partial/pre/total/well orders; reflexive/symmetric/antisymmetric/transitive relations; binary relations; embeddings/isomorphisms; directed sets; lattices and maxima.
+- Read source content at the cited URLs and compared meaning, basic hypotheses and stated caveats with the current repository entries. No source replacements or mathematical edits were necessary for this batch.
+- `relations.quotient-set` source URL redirects to Wikipedia's `Equivalence_class` article, which describes the quotient construction; the target remains semantically relevant (future specificity improvements optional, not an error).
+- Post-batch ledger: 48 verified, 4 corrected, 955 pending. Individual statuses reflect this citation-specific audit only. No separate definition discovery or UI/rendering work.
+- CV2 `f18a7ee` Pages and metadata workflows passed. NEXT: continue other direct-source clusters with the same entry-by-entry verification standard.
