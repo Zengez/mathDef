@@ -543,3 +543,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Checked and revised nine `computability/` IDs: decidable-language, decision-problem, decision-tree, exponential-time, graph-algorithm, language, las-vegas-algorithm, monte-carlo-algorithm, nondeterministic-machine. Updated nine broad EoM computational-complexity sources to concept-level references, with the mathematical content checked against individual Wikipedia article scope.
 - Clarified decidability's total halting versus semidecidability, all-branch nondeterministic time constraints, standard EXPTIME union, worst-case decision-tree depth, and Las Vegas *almost-sure halting/finite expectation* versus bounded-time Monte Carlo errors. Standard definitions remain editor-reviewed `draft` rather than formally peer reviewed.
 - 18 of 27 original computability entries now inspected. NEXT K3 remaining nine: np-complete, np-hard, polynomial-reduction, polynomial-time, randomized-algorithm, recursively-enumerable, space-complexity, time-complexity, turing-machine. Confirm Actions before closing folder.
+
+
+## October 16, 2026 — computability K3a
+
+- Audited four more definitions: np-complete, np-hard, polynomial-reduction and polynomial-time. Differentiated NP membership from NP-hardness, Karp many-one reductions from Turing reductions, and explicit total polynomial-time reductions.
+- 22/27 original computability entries inspected. NEXT K3b: randomized-algorithm, recursively-enumerable, space-complexity, time-complexity, turing-machine. Existing IDs and draft status unchanged.

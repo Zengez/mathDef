@@ -1,7 +1,7 @@
 % id: computability.np-hard
 % term: NP-hard problem
 % related: computability.class-np, computability.polynomial-reduction
-% source: https://encyclopediaofmath.org/wiki/Algorithm%2C_computational_complexity_of_an
+% source: https://en.wikipedia.org/wiki/NP-hardness
 % status: draft
 
-A decision language $H$ is \emph{NP-hard} under polynomial-time many-one reductions if every language $L\in\mathbf{NP}$ satisfies $L\le_m^pH$.
+A decision language $H$ is \emph{NP-hard} under polynomial-time many-one reductions if every language $L\in\mathbf{NP}$ has a polynomial-time computable map $f$ with $x\in L\iff f(x)\in H$. Membership of $H$ in NP is not required. NP-hardness for search or optimization problems needs an explicitly specified appropriate reduction.

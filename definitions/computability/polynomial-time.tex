@@ -1,7 +1,7 @@
 % id: computability.polynomial-time
 % term: Polynomial-time algorithm
 % related: computability.time-complexity, computability.class-p
-% source: https://encyclopediaofmath.org/wiki/Algorithm%2C_computational_complexity_of_an
+% source: https://en.wikipedia.org/wiki/Time_complexity#Polynomial_time
 % status: draft
 
-An algorithm is \emph{polynomial-time} under a specified model and input encoding if its worst-case time is bounded by $Cn^k$ for some constants $C,k$ in the input length $n$.
+An algorithm is \emph{polynomial-time} relative to a specified input encoding and machine model if there are constants $C>0$, $k\in\mathbb N$ and $n_0$ such that its worst-case number of computation steps on inputs of length $n\ge n_0$ is at most $Cn^k$. A decision algorithm must also be correct and halt on every permitted input.

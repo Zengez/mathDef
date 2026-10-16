@@ -1,7 +1,7 @@
 % id: computability.polynomial-reduction
 % term: Polynomial-time many-one reduction
 % related: computability.class-p, computability.np-hard
-% source: https://encyclopediaofmath.org/wiki/Algorithm%2C_computational_complexity_of_an
+% source: https://en.wikipedia.org/wiki/Polynomial-time_reduction
 % status: draft
 
-A language $A$ is \emph{polynomial-time many-one reducible} to $B$, written $A\le_m^pB$, if a polynomial-time computable map $f$ exists with $x\in A\iff f(x)\in B$.
+For decision languages $A,B\subseteq\{0,1\}^*$, a \emph{polynomial-time many-one reduction}, written $A\le_m^pB$, is a total polynomial-time computable map $f:\{0,1\}^*\to\{0,1\}^*$ such that $x\in A$ if and only if $f(x)\in B$ for every input $x$. This Karp reduction is more restrictive than a polynomial-time Turing reduction.
