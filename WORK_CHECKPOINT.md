@@ -1271,3 +1271,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All ten original article citations directly supported the entries; no text/source correction needed. Evidence and URLs in ledger commit `a322f900`.
 - Current tally **200 verified, 19 corrected, 788 pending, 0 needs_followup** out of 1007 total; 19 `algebra/` entries still pending.
 - NEXT: algebra `group-isomorphism`, `group`, `homomorphism-kernel`, `ideal`, `integral-domain`, `maximal-ideal`, `module`, `monoid`, `normal-subgroup`, `orbit` and then remaining algebra terms. Commit checkpoint with every batch.
+
+
+## October 16, 2026 — citation verification CV19: group/ring/module (10 entries)
+
+- Examined and compared individually cited source definitions for group-isomorphism, group, group-homomorphism kernel, ideal, integral domain, maximal ideal, left module, monoid, normal subgroup and group-action orbit. Sources supported key hypotheses including two-sidedness for ideals, commutative quotient-field characterization for maximal ideals and unital left-module axioms.
+- `algebra.module` previously pointed to an Encyclopedia of Mathematics page unavailable for direct statement comparison in this session. Inspected and substituted concept-specific `Module_(mathematics)` with its explicit module axioms instead (commit `d6b1bc05`). No other source or body edits needed.
+- Ledger commit `8710acad` with per-entry URLs and notes. Citation-specific counts now **209 verified, 20 corrected, 778 pending, 0 needs_followup**, corpus unchanged at 1007.
+- NEXT: finish final nine `algebra/` citations (polynomial-ring, prime-ideal, quotient-group, quotient-ring, ring-homomorphism, ring, semigroup, stabilizer, subgroup), update ledger/checkpoint CV20, then move to another subject folder in bounded batches. GitHub Actions metadata/Pages checks for these recent commits remain separately unverified; do not claim build success without inspecting runs.
