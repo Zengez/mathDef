@@ -23,3 +23,17 @@ Use a shared dependency/branch filtering engine in both recursive modes, differi
 The user has additional features to describe; do not invent details. Term-matching/disambiguation may intersect with their next idea.
 
 Read alongside `WORK_CHECKPOINT.md`. Feature design discussion is **not** authorization to start coding.
+
+## Community suggestions / review queue (deferred)
+
+Provide an obvious website GUI action such as “Suggest an improvement” so visitors can propose mathematical corrections, report mistakes or bad term/dependency links, request missing definitions, or offer other suggestions. Exact placement and form design are deferred.
+
+**Suggestions are proposals only.** No visitor submission directly edits definitions or other published mathematical content. Store submitted text in a persistent review queue accessible for discussion and auditing by the project maintainers and ChatGPT. A Markdown document or collection of plain-text/Markdown records in the GitHub repository is the desired long-term review artifact. Capture, where available: an identifier, relevant definition ID, category, submitted explanation, proposed replacement, timestamp, optional contributor information, and later review disposition/rationale.
+
+**Contributor identity:** Prefer using a visitor's GitHub identity **with their permission** when available, because this can support future recognition and contribution tracking. Ideally also accept suggestions without a GitHub account, using an optional supplied name or anonymous submission. However, unauthenticated submission is a **nice-to-have, not a hard requirement**: if supporting it adds substantial infrastructure, security, spam-prevention, or maintenance complexity, a GitHub-authenticated initial version is acceptable. Investigate the actual costs and constraints before deciding. Do not silently infer or publish someone’s identity; ask for consent to associate it with their suggestion.
+
+**Architecture:** GitHub Pages cannot itself receive and append arbitrary submissions to the repository. Explore GitHub Issues as a simpler authenticated intake path versus a small secured submission endpoint for account-free input. Whichever is chosen, preserve a durable reviewable queue and keep suggestions isolated from accepted edits. Review actions may mark accepted, revised, deferred, or rejected, with reasons.
+
+User reports of wrongly linked/recognized mathematical terms should feed future refinements to automatic dependency detection; they do not automatically change linking rules.
+
+**Status:** design and feasibility investigation only, after the current citation and cross-definition consistency audits. Do not implement yet.
