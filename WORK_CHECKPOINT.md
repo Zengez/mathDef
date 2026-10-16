@@ -93,3 +93,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Replaced 9 generic Martingale references with more specifically relevant EoM or Wikipedia articles; one martingale-adjacent reference was retained. Improved $L^p$ convergence common-space assumptions, distinguished conditional independence given an **event** from conditional independence given a sigma-field, and clarified index-set conditions in strict stationarity.
 - Batch S1 is committed together with this checkpoint; source URLs are context references, not proof of peer review. Entries remain `draft`.
 - Next action: audit second group of stochastic entries starting at `ergodic-measure`, inspect for mathematically significant errors, and commit with next checkpoint.
+
+## 2026-10-15 evening continuation, batch S2
+
+- Examined stochastic IDs: stochastic.ergodic-measure, stochastic.essential-supremum, stochastic.feller-process, stochastic.filtration, stochastic.gaussian-process, stochastic.invariant-measure, stochastic.levy-process, stochastic.markov-kernel, stochastic.martingale-transform, stochastic.martingale; checked against EoM articles on martingales, invariant measure, Gaussian processes, transition functions, and direct subject references.
+- Fixed a genuine **unbound domain** bug in `stochastic.markov-kernel`: now states both measurable spaces and both measurability conditions.
+- Strengthened `stochastic.ergodic-measure` by expressing invariance modulo null sets via symmetric difference, and `stochastic.essential-supremum` by identifying the ambient measure and extended-real convention.
+- Remaining stochastic entries for audit start with `median`, `moment-generating-function`, `poisson-process`, etc. S1 and S2 were each independently committed, with this checkpoint for session recovery.
