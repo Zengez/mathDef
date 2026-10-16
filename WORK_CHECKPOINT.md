@@ -1587,3 +1587,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Checked orientation $d(x,x_n)$ vs $d(x_n,x)$, left K condition $k\le n$, symmetry-free separation. All six provided source locators and mathematical statements match paper; no source URL or body changes needed. Ledger commit `1ee828ec`.
 - Totals **540 verified, 59 corrected, 407 pending, 1 needs_followup**, hence **599/1007 (59.48%)** completed. All six `quasimetric/` citations complete. Previous source reviews untouched. No claim of CI validation.
 - NEXT: `tda/` five pending entries, then `weighted-analysis/` five pending entries or another subject folder; use exact paper pages/definitions when available. Persist per batch.
+
+## 2026-10-16 — CV61 chromatic metric pairs/TDA (five entries, folder complete)
+
+- Opened Draganov–Rosenmeier–Zava, *Gromov-Hausdorff distance between chromatic metric pairs and stability of the six-pack*, arXiv:2507.17994v1. Read PDF printed p.5 Defs 3.1–3.2, p.6 Def 3.4, p.9 Def 4.1 (viewer indices 4, 5, 8). Verified chromatic pair (A,χ:X→N), σ/C-constrained maps, constrained isometry in both directions, and 1/2 infimum of distortion/codistortion.
+- Found a specific omitted hypothesis: paper Def 3.4 requires **N∈C** for `tda.constrained-isomorphism`. Updated that draft's body to explicitly include it in commit `76588b1d`. Other four bodies and citations intact. Separate C-constrained GH distance definition permits arbitrary C, so it was not restricted.
+- Dedicated citation ledger CV61 commit `80ea3723`: **544 verified, 60 corrected, 402 pending, 1 needs_followup** = **604/1007 completed (59.98%)**. All five `tda/` entries now handled. Prior audited citations remain untouched.
+- NEXT: `weighted-analysis/` (5) or `solenoids/` (6), then large residual subject folders. Keep small commits. No CI status claim.
