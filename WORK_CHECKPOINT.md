@@ -254,3 +254,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Important distinction: previous `deformation-retract` definition *fixed the retracted subspace at every intermediate time* (the **strong** deformation-retract convention); entry now explicitly identifies this convention and acknowledges a weaker alternative.
 - Fundamental class now specifies its local-orientation characterization; reduced homology adds the augmented complex and nonempty-space scope, relative homology specifies the induced quotient differential.
 - Next A3 final 12 entries starting `retraction`, `simplex`, `simplicial-chain`, `simplicial-complex`, `simply-connected`, `singular-chain`, `singular-cohomology`, `singular-homology`, `singular-simplex`, `suspension`, `universal-cover`, `wedge-sum`.
+
+## Algebraic topology audit, batch A3 (October 15, 2026)
+
+- Inspected the final 12 original `alg-topology/` entries: retraction, simplex, simplicial-chain, simplicial-complex, simply-connected, singular-chain, singular-cohomology, singular-homology, singular-simplex, suspension, universal-cover, wedge-sum. All 36 original entries have now received the A1 (12), A2 (12), A3 (12) bounded review.
+- Corrected universal-cover existence qualifications; nonempty versus empty simplex conventions; reduced versus unreduced suspensions; degree-zero singular boundary; and explicit cochain coboundary convention. The retraction/based-space notation remains consistent with the companion entries.
+- All changes and references were committed without promoting to formally reviewed status. NEXT: audit `dynamics/`, `real/`, `alg-topology` neighbor subjects, and rerun metadata quality scan after new additions. The checkpoint and current Git tree are authoritative for progress, not previous chat claims.
