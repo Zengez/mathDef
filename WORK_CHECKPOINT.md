@@ -1681,3 +1681,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - The old `computability.alphabet` statement made all formal alphabets finite/nonempty, while the cited article explicitly permits infinite alphabets outside automata conventions. Clarified as **finite-alphabet convention common in automata/complexity**, with mention of more general infinite alphabets (definition commit `58b2f07e`). Other nine source citations verified unchanged.
 - Ledger CV74 commit `b8d14af7`: **633 verified, 81 corrected, 290 pending, 3 needs_followup** = **714/1007 completed (70.90%)**. No older citation rows touched.
 - NEXT CV75: 10 pending `computability/` beginning class-pspace, class-rp, class-zpp, computable-function, computable-real, decidable-language, deterministic-turing-machine, halting-problem, language, many-one-reduction (confirm actual sorted CSV list). Keep per-batch commits.
+
+## 2026-10-16 — CV75 computability C2 (10 entries)
+
+- Checked individual articles defining PSPACE, RP, ZPP, total computable functions, computable numbers, decidable languages, decision problems/trees and EXPTIME. Verified deterministic vs randomized time/space bounds, one-sided RP error and zero-error ZPP, effective approximation of reals, decision-tree query depth.
+- Existing `computability.graph-algorithm` source `https://en.wikipedia.org/wiki/Graph_algorithm` redirected to *List of algorithms*, not a definition. Replaced with an opened ScienceDirect Graph Algorithms subject overview citing *Electronic Design Automation* (2009), graph input representations and graph-specific computational procedures (commit `db020ef9`). Nine other source references verified.
+- CV75 ledger `15cdfaed`: **642 verified, 82 corrected, 280 pending, 3 needs_followup = 724/1007 completed (71.90%)**. Prior audits unchanged.
+- NEXT CV76: remaining `computability/` pending sorted 10 starting `kolmogorov-complexity`, `language`, `las-vegas-algorithm`, `monte-carlo-algorithm`, `nondeterministic-machine`, etc. Continue per batch and update checkpoint.
