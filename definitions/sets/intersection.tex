@@ -1,7 +1,11 @@
 % id: sets.intersection
 % term: Intersection of a family of sets
 % related: sets.union, sets.set
-% source: https://encyclopediaofmath.org/wiki/Ordinal_number
+% source: https://en.wikipedia.org/wiki/Intersection_(set_theory)
 % status: draft
 
-For a nonempty index set $I$ and family $(A_i)_{i\in I}$, the \emph{intersection} is $\bigcap_{i\in I}A_i=\{x:\forall i\in I,\ x\in A_i\}$.
+For a nonempty index set $I$ and family $(A_i)_{i\in I}$, the \emph{intersection} is
+\[
+\bigcap_{i\in I}A_i=\{x\in A_{i_0}:x\in A_i\ \text{for every }i\in I\},
+\]
+where any fixed $i_0\in I$ can be used. For an empty family, the intersection requires a separately specified ambient universe and is usually taken to be that universe.

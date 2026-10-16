@@ -379,3 +379,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Audited eleven preexisting \`sets/\` definitions: aleph-null, cardinality, cartesian-product, choice-function, cofinality, cofinite-set, complement, countably-infinite-set, difference, disjoint-family, disjoint-union. The prior citations all pointed indiscriminately to EoM \`Ordinal_number\`; now cite respective concept-level articles. Conventions for cardinal-as-initial-ordinal representation (ZFC), choice-function existence, cofinality of zero/successors, and tagged disjoint union are made explicit.
 - These 11 existing IDs remain draft, with no additions. Inventory remains 983.
 - NEXT S2: examine empty-set through ordered-pair, then S3: ordinal through union, in bounded commits with workflow checks. This session's first S1 commit attempt was interrupted by a GitHub transport disconnect; the branch head was checked and had not changed, then this S1 commit was retried.
+
+
+## October 15, 2026 continuation — set theory S2
+
+- Inspected 10 additional original \`sets/\` entries: empty-set, equinumerous, finite-set, indexed-family, infinite-set, intersection, inverse-image, limit-ordinal, omega, ordered-pair. Updated citation links individually, retaining EoM Ordinal number **only** for two genuinely ordinal-specific entries.
+- Clarifications include set-theoretic infinitude vs existence of countable subset without choice; nonempty indexed intersection vs need for ambient universe for the empty intersection; ordered pair uniqueness and ordinal vs cardinal distinctions for $\omega$. Nothing promoted to reviewed.
+- S1 and S2 have now audited 21 of 31 existing \`sets/\` files. NEXT S3: final ten from \`ordinal\` through \`union\`; verify GitHub build afterward. 983 definitions, 40 folders, assuming no concurrent changes.
