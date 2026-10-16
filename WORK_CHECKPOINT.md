@@ -724,3 +724,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Explicitly separated embedded versus immersed submanifolds, surjectivity of a submersion's *differential* versus surjectivity of its underlying map, symplectic closedness/nondegeneracy, tangent-vector derivations on germs, and smooth local trivializations for bundles.
 - **All 40 preexisting manifold definitions audited** across F1 (10), F2 (10), F3 (10), F4 (10). Inventory stays **1007 definitions, 40 folders**. Combined with 113 other originals audited this turn and the previous checkpoint figure **644**, the count of original individual audits is now approximately **797/1007** (79.1%), but recently created drafts may still lack a separate second-pass audit. Status remains draft and full peer-review/rendering validation is incomplete.
 - NEXT: verify F4 publication and metadata workflows; audit previously unaudited `functionspaces/` (31 entries) or `topology/` (32), and explicitly inspect source URL resolution and KaTeX rendering. Preserve the AWS/arXiv bulk pause.
+
+
+## October 16, 2026 — function spaces audit FS1
+
+- Confirmed latest manifold F4 at `1a972e72` passed both GitHub Pages and metadata workflows. Live inventory is **1007 definitions in 40 subject folders**.
+- Inspected and revised **10 original** `functionspaces/` files: analytic-dirichlet-space, berezin-transform, bergman-distance, bergman-extremal-function, bergman-kernel-diagonal, bergman-kernel, bergman-metric, bergman-projection, bergman-space, bergman-unit-disk-kernel. Relevant mathematical sources: specific EoM Bergman kernel/Berezin transform pages and Wikipedia Bergman space/metric/kernel articles; source article scope corroborated through online search.
+- Precision: kept ordinary versus normalized disk area distinct; clarified kernel zero-space degeneracy, Berezin transform and Toeplitz-kernel normalization, extremal $L^2$ norm, $A^p$ quasi-norm below one, and metric normalization caveats. Stable IDs, aliases, related pointers, and existing draft statuses retained; no additions.
+- Following the preceding checkpoint **797 audited of 1007**, this batch raises the documented individual audits to **807/1007**. NEXT FS2: bloch-space through kernel-section (10); FS3/FS4 finish the remaining eleven. Actions for FS1 must be verified. Keep AWS/arXiv bulk extraction paused.

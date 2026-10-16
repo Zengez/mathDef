@@ -4,8 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Bergman_metric
 % status: draft
 
-For a bounded domain $\Omega\subseteq\mathbb C^n$ with Bergman kernel $K_\Omega$, the \emph{Bergman metric} is the Hermitian metric with coefficient matrix
+For a bounded domain $\Omega\subseteq\mathbb C^n$ with Bergman kernel $K_\Omega$, the \emph{Bergman metric} is the Hermitian metric with coefficients
 \[
-g_{j\bar k}(z)=\frac{\partial^2}{\partial z_j\,\partial\bar z_k}\log K_\Omega(z,z).
+g_{j\bar k}(z)=\frac{\partial^2\log K_\Omega(z,z)}{\partial z_j\,\partial\bar z_k}.
 \]
-For tangent $\xi$, its squared norm is $\sum_{j,k}g_{j\bar k}(z)\xi_j\overline{\xi_k}$.
+It is positive definite on a bounded domain and is invariant under biholomorphic coordinate changes. The Hermitian squared length of a tangent vector $\xi$ is $\sum_{j,k}g_{j\bar k}\xi_j\overline{\xi_k}$. Some authors use a constant multiple of this metric.

@@ -4,8 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Bergman_metric
 % status: draft
 
-For a bounded connected domain $\Omega\subseteq\mathbb C^n$ with Bergman metric $g$, the \emph{Bergman distance} between $p,q\in\Omega$ is
+Let $\Omega\subseteq\mathbb C^n$ be a bounded connected domain carrying its positive-definite Bergman metric $g$. The \emph{Bergman distance} is the intrinsic path distance
 \[
-d_B(p,q)=\inf_\gamma\int_0^1\sqrt{g_{\gamma(t)}(\dot\gamma(t),\dot\gamma(t))}\,dt,
+d_B(p,q)=\inf_\gamma\int_0^1\sqrt{\sum_{j,k}g_{j\bar k}(\gamma(t))\dot\gamma_j(t)\overline{\dot\gamma_k(t)}}\,dt,
 \]
-where the infimum ranges over piecewise $C^1$ curves $\gamma$ joining $p$ to $q$.
+where $\gamma$ ranges over piecewise $C^1$ paths in $\Omega$ joining $p$ to $q$. A convention multiplying the Bergman metric by a constant also rescales this distance.

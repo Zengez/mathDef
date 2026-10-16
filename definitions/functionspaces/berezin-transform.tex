@@ -1,11 +1,11 @@
 % id: functionspaces.berezin-transform
 % term: Berezin transform
 % related: functionspaces.bergman-kernel, functionspaces.normalized-kernel-section, functionspaces.toeplitz-operator
-% source: https://en.wikipedia.org/wiki/Berezin_transform
+% source: https://encyclopediaofmath.org/wiki/Berezin_transform
 % status: draft
 
-Let $\mathcal H=A^2(\Omega)$ have Bergman kernel $K$ and $K(z,z)>0$. For a bounded measurable symbol $\varphi$, its \emph{Berezin transform} is
+Let $A^2(\Omega)$ be a nontrivial Bergman Hilbert space with reproducing kernel $K$, and assume $K(z,z)>0$. For a bounded measurable symbol $\varphi$ the \emph{Berezin transform} is
 \[
-\widetilde\varphi(z)=\frac{1}{K(z,z)}\int_\Omega\varphi(w)|K(w,z)|^2\,dV(w).
+\widetilde{\varphi}(z)=\int_\Omega\varphi(w)\frac{|K(w,z)|^2}{K(z,z)}\,dV(w).
 \]
-Equivalently, $\widetilde\varphi(z)=\langle T_\varphi k_z,k_z\rangle$ for the normalized kernel $k_z$.
+For the normalized kernel function $k_z(w)=K(w,z)/\sqrt{K(z,z)}$, this equals $\langle T_\varphi k_z,k_z\rangle$ when the Hilbert-space inner product is linear in its first argument and $T_\varphi=P(\varphi\cdot)$.
