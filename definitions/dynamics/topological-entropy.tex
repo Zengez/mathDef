@@ -4,8 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Topological_entropy
 % status: draft
 
-For a continuous self-map $f$ of a nonempty compact metric space $(X,d)$, put $d_n(x,y)=\max_{0\le j<n}d(f^j(x),f^j(y))$, and let $s(n,\varepsilon)$ be the maximum cardinality of a set with $d_n(x,y)>\varepsilon$ for every pair of distinct points. The \emph{topological entropy} (Bowen--Dinaburg formulation) is
+For a continuous map $f$ on a nonempty compact metric space $(X,d)$, set $d_n(x,y)=\max_{0\le j<n}d(f^j(x),f^j(y))$. Let $s(n,\varepsilon)$ be the maximum cardinality of a set with $d_n(x,y)>\varepsilon$ for all distinct members. The \emph{topological entropy} is
 \[
-h_{\mathrm{top}}(f)=\lim_{\varepsilon\downarrow0}\limsup_{n\to\infty}\frac{\log s(n,\varepsilon)}{n}.
+h_{\mathrm{top}}(f)=\lim_{\varepsilon\downarrow0}\limsup_{n\to\infty}\frac1n\log s(n,\varepsilon).
 \]
-The value may be infinite; on compact spaces it is independent of the compatible metric.
+This Bowen--Dinaburg definition is independent of the choice of compatible metric on compact $X$, and can take the value $+\infty$.

@@ -872,3 +872,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 - Began second-pass audit of the twelve new `dynamics/` G1 definitions, reviewing omega-limit-set, alpha-limit-set, nonwandering-point, topological-transitivity, topological-mixing, chain-recurrent-point. Checked EoM Chain recurrence/Wandering point and direct topological dynamics pages. Clarified compactness and invertibility needed for nonempty two-sided limit sets, returning-neighborhood criterion, positive-time transitivity convention, and ε-chain definitions versus flow versions.
 - Cumulative individual-audit count **948/1007**, **59** remaining. NEXT DY2 six: minimal-invariant-set, hyperbolic-fixed-point, lyapunov-exponent, topological-entropy, stable-manifold, unstable-manifold. Keep stable IDs and draft statuses; verify Actions and maintain AWS/arXiv bulk pause.
+
+
+## October 16, 2026 — advanced dynamics DY2 (27-entry folder complete)
+
+- Reviewed last six newly added dynamics definitions: minimal-invariant-set, hyperbolic-fixed-point, lyapunov-exponent, topological-entropy, stable-manifold, unstable-manifold. Checked EoM Minimal set and Wikipedia Bowen--Dinaburg entropy/Stable manifold references. Clarified dense-orbit equivalent characterization, map-versus-flow hyperbolicity spectrum, Lyapunov limit existence, nonempty compact metric and strict separation conventions, and injectively immersed versus embedded stable/unstable manifolds.
+- The twelve advanced dynamics entries are now separately reviewed after G1, in addition to the 15 originals; **27/27 audited**. Cumulative individual-audit tally **954/1007**, **53 remain**. NEXT: revisit 12 newly added `pde/` microlocal entries from batch M1, then reconcile remaining small specialist folders against historical audit commits. Preserve draft status and AWS/arXiv bulk pause.
