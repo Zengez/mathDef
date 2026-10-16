@@ -1295,3 +1295,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Fixed a substantive missing ambient hypothesis: `commalg.radical-ideal-property` now explicitly specifies an ideal of a **commutative** ring (commit `ca07239e`), matching `commalg.radical-ideal` and its linked source. The zero-divisor source explicitly permits 0 as divisor in nonzero rings; no correction warranted there.
 - Detailed evidence in ledger commit `be0ef794`; dedicated counts **228 verified, 21 corrected, 758 pending, 0 needs_followup** of 1007 definitions (249 checked). **All 21 commalg entries** now individually citation-recorded, combining earlier CV1 Stacks checks with this final group.
 - NEXT: select manageable remaining subject, e.g. `geometry/` (20), `real/` (22), or `prob/` (31), check source texts one by one and preserve the ledger. Run/inspect publication pipelines before claiming success, as these recent checks remain unverified. No term discovery, bulk external harvesting, rendering, or UI features.
+
+
+## October 16, 2026 — citation verification CV22: first ten Euclidean/affine geometry articles
+
+- Opened and compared direct source articles for affine combinations, affine hull, unoriented angles, circles, convex hull, disks, Euclidean planes, isometries, line segments and affine lines.
+- Checked conventions on degenerate points and radii, arccos inner-product domain, orientation, nonnegative convex vs unrestricted affine coefficients, surjectivity of isometries and empty affine hull. All ten existing articles supported the actual displayed definition; no revisions warranted.
+- Ledger evidence commit `4a2fb8b1`: **238 verified, 21 corrected, 748 pending, 0 needs_followup** (1007 total). Ten `geometry/` entries remain.
+- NEXT: remaining `geometry/` terms from parallel-lines through triangle; then check ledger and choose further smaller math domain.
