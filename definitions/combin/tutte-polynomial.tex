@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Tutte_polynomial
 % status: draft
 
-For a finite matroid $M$ on ground set $E$, with rank function $r$, its \emph{Tutte polynomial} is $T_M(x,y)=\sum_{A\subseteq E}(x-1)^{r(E)-r(A)}(y-1)^{|A|-r(A)}$.
+For a finite matroid $M$ on ground set $E$, with rank function $r$, its \emph{Tutte polynomial} is
+\[
+T_M(x,y)=\sum_{A\subseteq E}(x-1)^{r(E)-r(A)}(y-1)^{|A|-r(A)}.
+\]
+Both exponents are nonnegative integers. For a graph, its Tutte polynomial is that of its cycle matroid, so the definition applies to graphs with disconnected components as well.

@@ -1,7 +1,11 @@
 % id: combin.matroid-rank
 % term: Matroid rank function
 % related: combin.matroid, combin.tutte-polynomial
-% source: https://en.wikipedia.org/wiki/Matroid
+% source: https://en.wikipedia.org/wiki/Matroid#Rank_and_closure
 % status: draft
 
-For a finite matroid $M=(E,\mathcal I)$, the \emph{rank} of $A\subseteq E$ is $r_M(A)=\max\{|I|:I\subseteq A,\ I\in\mathcal I\}$.
+For a finite matroid $M=(E,\mathcal I)$, its \emph{rank function} is
+\[
+r_M(A)=\max\{|I|:I\subseteq A,\ I\in\mathcal I\},\qquad A\subseteq E.
+\]
+In particular, $r_M(\varnothing)=0$, $0\le r_M(A)\le|A|$, and the rank function is monotone and submodular. Rank is defined on every subset of the ground set.

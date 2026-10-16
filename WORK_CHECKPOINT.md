@@ -433,3 +433,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Audited first nine preexisting \`combin/\` definitions: Bell number, binomial coefficient, combination, integer composition, derangement, factorial, ordinary generating function, graphic matroid, integer partition. Replaced generic \`Outline_of_combinatorics\` sources with direct individual mathematical reference articles.
 - Clarified $n=0$ cases (Bell number, empty composition/partition, factorial and empty derangement), order sensitivity of integer compositions versus partitions, the formal-power-series setting for generating functions and cycle structure for graphic matroids. All entries kept draft.
 - NEXT K2: remaining nine \`combin/\` definitions from \`matching\` to \`tutte-polynomial\`, then inspect the latest build and metadata audit. Corpus still **995 definitions**, 40 folders.
+
+
+## October 15, 2026 continuation — combinatorics K2 (folder complete)
+
+- Reviewed last nine original \`combin/\` entries: matching, matroid rank, finite matroid, perfect matching, permutation, recurrence relation, set partition, Stirling number of the second kind, Tutte polynomial. Replaced the generic combinatorics outline sources with exact article links; retained specific Matroid/Stirling/Tutte references, sharpening their mathematical wording.
+- Explicitly distinguished maximal from maximum matchings; finite matroid hereditary/exchange axioms; unique empty permutation and set partition; implicit recurrences need not determine a unique sequence; and the rank-based Tutte polynomial convention. Stirling entry continues to use smallmatrix within math mode, which is KaTeX-supported.
+- **All 18 existing \`combin/\` entries** now examined across K1 9 and K2 9, with draft statuses retained and original IDs preserved. No new definitions in K1/K2; repository remains **995 files in 40 folders**.
+- NEXT: verify K2 GitHub Pages and metadata audit, then audit \`logic/\` and more underreviewed originals or return to systematic Wikipedia category discovery. Record exact new definitions and source direct URLs for any additions.
