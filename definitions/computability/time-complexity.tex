@@ -1,7 +1,7 @@
 % id: computability.time-complexity
 % term: Worst-case time complexity
 % related: computability.turing-machine, computability.space-complexity
-% source: https://encyclopediaofmath.org/wiki/Algorithm%2C_computational_complexity_of_an
+% source: https://en.wikipedia.org/wiki/Time_complexity
 % status: draft
 
-For a machine $M$ halting on every input, its \emph{worst-case time complexity} is $T_M(n)=\max\{\text{number of steps of }M(x):|x|=n\}$.
+For a deterministic Turing machine $M$ halting on every input, its \emph{worst-case time complexity} is $T_M(n)=\max_{\lvert x\rvert=n}\{\text{number of steps of }M\text{ on }x\}$. The computational model and input encoding must be specified when interpreting this complexity function.

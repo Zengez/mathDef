@@ -555,3 +555,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 - Audited randomized-algorithm and recursively-enumerable with individual concept sources. Clarified stochastic-output conventions and recognition versus total decidability. All remain drafts.
 - 24/27 original entries complete. NEXT: space-complexity, time-complexity, turing-machine.
+
+
+## October 16, 2026 — computability K3b part 2 (folder complete)
+
+- Reviewed last three files: space-complexity, time-complexity, turing-machine. Explicit machine-model assumptions and full concept-level source articles replace the old shared overview links.
+- **All 27 original `computability/` entries** individually read and refined in K1 (9), K2 (9), K3a (4), K3b part 1 (2), K3b part 2 (3). No IDs or draft statuses changed; expected corpus remains **995 definitions across 40 folders**. Editorial review does not equal formal mathematical peer review.
+- NEXT: verify Pages and metadata audits, begin `geometry/` (20 entries) and further graduate-level term discovery. Keep AWS/arXiv bulk work paused.
