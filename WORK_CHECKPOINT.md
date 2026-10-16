@@ -801,3 +801,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 - Reviewed five original definitions: mandelbrot-set, neutral-periodic-point, normal-family, parabolic-periodic-point, periodic-component. Checked EoM Julia set and Wikipedia classification pages. Distinctions: root-of-unity parabolic conventions, neutral cycles not necessarily linearizable, Montel normality uses spherical convergence, and Fatou component periodicity differs from periodicity of individual points.
 - **20/28 holodynamics entries** audited, cumulative **880/1007** documented separately audited. NEXT HD3 last eight: postcritical-set, preperiodic-component, rational-map, repelling-periodic-point, riemann-sphere, siegel-disk, superattracting-periodic-point, wandering-component. Keep stable IDs and draft flags; AWS/arXiv paused.
+
+
+## October 16, 2026 — holomorphic dynamics audit HD3 (folder complete)
+
+- Reviewed final eight original entries: postcritical-set, preperiodic-component, rational-map, repelling-periodic-point, riemann-sphere, siegel-disk, superattracting-periodic-point, wandering-component. Checked Wikipedia Siegel disk / no-wandering theorem and EoM complex dynamics articles.
+- Significant improvements: distinguish closed postcritical set from unclosed forward orbit convention, periodic Siegel disk from invariant disk, repelling first-return multipliers and superattraction via critical points, and explicitly record Sullivan's no-wandering-domain theorem for rational maps (while retaining a general definition relevant for transcendental dynamics).
+- **All 28 original holodynamics definitions** separately audited across HD1 (10), HD2a (5), HD2b (5), HD3 (8). Cumulative original-audit count **888/1007**, **119 remaining**. No stable IDs changed and status remains draft. NEXT: verify metadata/publication runs for HD3. Then prioritize unreviewed newer `scv/` 21 additions, `functional/` 9 additions and other small unaudited folders; check source-page validity and KaTeX rendering. Do not resume AWS/arXiv bulk work.
