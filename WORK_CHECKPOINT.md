@@ -1402,3 +1402,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Checked formulas against actual source statements including rank-deficient QR, normal equations under rank deficiency, residual sign conventions, and complex SVD adjoint. Existing sources supported all ten entries as written; no body or URL changes warranted.
 - Individual evidence in ledger commit `7e2004d5`; current tally **353 verified, 27 corrected, 627 pending, 0 needs_followup**, 380/1007 reviewed.
 - NEXT: final 5 numerical entries: singular-value, spectral-norm, spline, trapezoidal-rule, truncation-error. After committing, mark `numerical/` complete in checkpoint and move to next coherent remaining topic; no prior checks rerun. GitHub workflow publication still not independently established.
+
+
+## October 16, 2026 — citation verification CV35: numerical folder complete (final five)
+
+- Read and compared individual sources for singular values, matrix spectral norm, piecewise polynomial splines, trapezoidal quadrature and truncation errors.
+- `numerical.truncation-error` source `Truncation_error_(numerical_analysis)` was not retrievable and did not provide an actual concept article. Retargeted to individual Wikipedia `Truncation_error` page, whose introductory definition agrees with the general finite-approximation clause (commit `0573c567`); compared the local-error/step-scaling clause against Wikipedia `Truncation_error_(numerical_integration)` and MIT differential equation lecture notes. No mathematical text change.
+- CV35 ledger commit `a4d3feda`: **357 verified, 28 corrected, 622 pending, 0 needs_followup** of 1007 definitions (385 citation-reviewed). Entire **35-entry `numerical/` folder now covered** across CV32–CV35.
+- NEXT: another subject, preferably `arithmetic/` or `optimization/`, in small evidence-backed batches. Continue honoring user's instruction not to revisit previous completed citation batches. Metadata / Pages Actions still pending separate verification, not claimed as succeeded. 
