@@ -4,4 +4,8 @@
 % source: https://encyclopediaofmath.org/wiki/Pseudo-differential_operator
 % status: draft
 
-For a symbol $a\in S^m_{1,0}(\mathbb R^n\times\mathbb R^n)$, the \emph{pseudodifferential operator} $a(x,D)$ on Schwartz test functions is $a(x,D)u(x)=(2\pi)^{-n}\int_{\mathbb R^n}e^{ix\cdot\xi}a(x,\xi)\widehat u(\xi)\,d\xi$, where $\widehat u(\xi)=\int_{\mathbb R^n}e^{-ix\cdot\xi}u(x)\,dx$.
+For a symbol $a\in S^m_{1,0}(\mathbb R^n\times\mathbb R^n)$ satisfying the standard global bounds in $x$, the \emph{Kohn--Nirenberg pseudodifferential operator} is
+\[
+a(x,D)u(x)=(2\pi)^{-n}\int_{\mathbb R^n}e^{ix\cdot\xi}a(x,\xi)\widehat u(\xi)\,d\xi
+\]
+for Schwartz functions $u$, with Fourier transform $\widehat u(\xi)=\int_{\mathbb R^n}e^{-ix\cdot\xi}u(x)\,dx$. Other Fourier and quantization conventions change the displayed constants or symbol expression.

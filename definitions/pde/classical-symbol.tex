@@ -4,4 +4,8 @@
 % source: https://encyclopediaofmath.org/wiki/Pseudo-differential_operator
 % status: draft
 
-A symbol $a\in S^m_{1,0}$ is \emph{classical of order $m$} if it has an asymptotic expansion $a(x,\xi)\sim\sum_{j\ge0}a_{m-j}(x,\xi)$ as $|\xi|\to\infty$, where each $a_{m-j}$ is positively homogeneous of degree $m-j$ in $\xi$ for large $|\xi|$, and subtracting the first $N$ terms leaves a symbol of order $m-N$.
+A symbol $a\in S^m_{1,0}(\Omega\times\mathbb R^n)$ is \emph{classical} or \emph{polyhomogeneous of order $m$} if, as $|\xi|\to\infty$,
+\[
+a(x,\xi)\sim\sum_{j=0}^\infty a_{m-j}(x,\xi),
+\]
+where each $a_{m-j}$ is smooth and positively homogeneous of degree $m-j$ in $\xi$ for sufficiently large $|\xi|$, and subtracting the first $N$ homogeneous terms (with a cutoff near $\xi=0$) leaves an element of $S^{m-N}_{1,0}$.

@@ -878,3 +878,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 
 - Reviewed last six newly added dynamics definitions: minimal-invariant-set, hyperbolic-fixed-point, lyapunov-exponent, topological-entropy, stable-manifold, unstable-manifold. Checked EoM Minimal set and Wikipedia Bowen--Dinaburg entropy/Stable manifold references. Clarified dense-orbit equivalent characterization, map-versus-flow hyperbolicity spectrum, Lyapunov limit existence, nonempty compact metric and strict separation conventions, and injectively immersed versus embedded stable/unstable manifolds.
 - The twelve advanced dynamics entries are now separately reviewed after G1, in addition to the 15 originals; **27/27 audited**. Cumulative individual-audit tally **954/1007**, **53 remain**. NEXT: revisit 12 newly added `pde/` microlocal entries from batch M1, then reconcile remaining small specialist folders against historical audit commits. Preserve draft status and AWS/arXiv bulk pause.
+
+
+## October 16, 2026 — microlocal PDE second-pass ML1
+
+- Reviewed six advanced PDE entries previously added in M1: hormander-symbol-class, pseudodifferential-operator, classical-symbol, elliptic-classical-symbol, parametrix, smoothing-operator. Checked detailed EoM Pseudo-differential operator estimates and microlocal calculus conventions. Distinguishes local-in-x Hörmander symbol bounds from globally controlled symbol classes, polyhomogeneous asymptotics with cutoff, scalar ellipticity, remainder sign convention and properly supported smooth kernels.
+- Cumulative distinct individual-audit count **960/1007**, **47 remain**. NEXT ML2 final six: singular-support, wave-front-set, pseudolocal-operator, fourier-multiplier, bessel-potential-space, heat-kernel. All remain draft; AWS/arXiv bulk harvesting still paused.
