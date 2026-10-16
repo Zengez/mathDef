@@ -456,3 +456,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Corrected unspoken semantic assumptions: an $L$-model interprets symbols and satisfies every sentence, a formal proof may use assumptions from $T$ rather than only logical axioms, predicates depend on variable assignments and binding, and first-order sentences have no free variables. Distinguished classical negation from other systems, and restricted quantification over empty sets from a nonempty structure universe.
 - **All 15 original \`logic/\` entries** have now been inspected in J1 8 + J2 7. They remain draft. No IDs added; expected collection **995 definitions in 40 folders**.
 - NEXT: verify GitHub Actions build and metadata audit; inspect source lists in further under-audited folders such as \`relations/\`, \`arithmetic/\`, \`algebra/\`, \`complex/\`, and \`geometry/\`. Continue graduate-level discovery using direct individual math sources, not bulk prose import.
+
+
+## October 15, 2026 continuation — relations R1
+
+- Began audit of 24 original \`relations/\` entries. Reviewed antichain, antisymmetric relation, binary relation, chain, complete lattice, directed set, equivalence class and equivalence relation. Switched shared EoM Partially ordered set link to concept-level articles for the first seven, retained direct equivalence-relation source for the eighth.
+- Mathematical notes: antisymmetric does not mean nonsymmetric, directed sets may be preorders rather than antisymmetric orders, a complete lattice has empty-family meets/joins, and equivalence classes form partitions. The eighth file lacked explicit status and its default example status was preserved.
+- NEXT R2: next eight original \`relations/\` terms from greatest-lower-bound-poset through preorder, then R3 remaining eight quotient-set through well-order. Build verification after commit. Inventory still 995 across 40 folders.
