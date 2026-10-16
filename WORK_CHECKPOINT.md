@@ -448,3 +448,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - After combinatorics K2, inspected eight existing \`logic/\` definitions: conjunction, consistency, contradiction, countable-set, disjunction, equivalence, existential-quantifier, implication. Replaced broad \`List_of_mathematical_logic_topics\` sources with individual concept links.
 - Mathematically substantive distinctions: classical syntactic consistency versus existence of a model and the soundness/completeness bridge; logical equivalence under all interpretations vs equivalence relative to a theory; material implication vs semantic entailment; and countable including finite sets under the stated convention.
 - All eight IDs unchanged and \`draft\`. NEXT J2 final seven \`logic/\` entries: model, negation, predicate, proof, proposition, tautology, universal-quantifier. Then verify Actions; no new definitions, expected 995 total.
+
+
+## October 15, 2026 continuation — logic J2 (folder complete)
+
+- Audited final seven old \`logic/\` files: model, negation, predicate, proof, proposition, tautology, universal-quantifier. Replaced general math-logic topic-list references with individually pertinent first-order and propositional logic articles.
+- Corrected unspoken semantic assumptions: an $L$-model interprets symbols and satisfies every sentence, a formal proof may use assumptions from $T$ rather than only logical axioms, predicates depend on variable assignments and binding, and first-order sentences have no free variables. Distinguished classical negation from other systems, and restricted quantification over empty sets from a nonempty structure universe.
+- **All 15 original \`logic/\` entries** have now been inspected in J1 8 + J2 7. They remain draft. No IDs added; expected collection **995 definitions in 40 folders**.
+- NEXT: verify GitHub Actions build and metadata audit; inspect source lists in further under-audited folders such as \`relations/\`, \`arithmetic/\`, \`algebra/\`, \`complex/\`, and \`geometry/\`. Continue graduate-level discovery using direct individual math sources, not bulk prose import.
