@@ -141,3 +141,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Thus all **41 existing SCV definitions** have now been inspected in four committed batches C1 11, C2 10, C3 10, C4 10. All **39 stochastic definitions** were inspected in S1–S4 earlier in this session.
 - Mathematically specialized definitions and citations remain `draft`; this was a focused line-by-line precision/source audit, not full third-party peer review or runtime rendering inspection.
 - Next: discover new graduate-level mathematics terms, cross-check existing stable IDs, add a bounded well-cited batch, test website and run corpus-wide metadata audit; update snapshot totals and checkpoint.
+
+## 2026-10-15 evening continuation, discovery D1
+
+- After all 39 stochastic and 41 previous SCV entries were audited, identified **11 new advanced SCV concepts** and independently drafted linked LaTeX definitions with direct subject-specific sources (EoM, PlanetMath, Wikipedia): scv.runge-domain, scv.runge-pair, scv.envelope-of-holomorphy, scv.pluripolar-set, scv.complete-pluripolar-set, scv.pluricomplex-green-function, scv.hyperconvex-domain, scv.complex-monge-ampere-operator, scv.levi-flat-hypersurface, scv.caratheodory-pseudodistance, scv.caratheodory-hyperbolicity.
+- Special care: the bounded hyperconvex-domain definition uses **negative level compactness** rather than the contradictory compact-sublevel-for-every-real-threshold formula. The pluripolar concept names its global convention; the complex Monge–Ampère determinant uses an explicit normalization; the holomorphic envelope can be multi-sheeted.
+- All IDs and `related` pointers checked against current GitHub tree before committing; new entries remain draft.
+- Next: discovery D2 focused on CR structures, Shilov boundaries, analytic discs and function algebra terminology, followed by build validation and updated catalog/checkpoint.
