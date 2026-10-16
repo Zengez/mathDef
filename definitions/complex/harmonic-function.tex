@@ -1,7 +1,11 @@
 % id: complex.harmonic-function
 % term: Harmonic function
 % related: complex.holomorphic-function
-% source: https://en.wikipedia.org/wiki/List_of_complex_analysis_topics
+% source: https://en.wikipedia.org/wiki/Harmonic_function
 % status: draft
 
-A twice continuously differentiable real-valued function $u$ on an open subset of $\mathbb R^n$ is \emph{harmonic} if $\Delta u=\sum_{j=1}^n \frac{\partial^2u}{\partial x_j^2}=0$.
+A real-valued function $u\in C^2(U)$ on an open set $U\subseteq\mathbb R^n$ is \emph{harmonic} if its Laplacian vanishes at every point:
+\[
+\Delta u=\sum_{j=1}^n\frac{\partial^2u}{\partial x_j^2}=0.
+\]
+For the classical definition $C^2$ regularity is assumed. Distributional or weak harmonicity can instead be defined without initially assuming classical second derivatives, and then implies smoothness under standard hypotheses.

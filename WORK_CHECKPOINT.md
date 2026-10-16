@@ -609,3 +609,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 ## October 16, 2026 — source-resolution follow-up C1a
 
 - Checked the source pages after complex C1. The proposed Wikipedia `Complex_differentiable_function` URL did not resolve reliably. Replaced it with the verified direct `Holomorphic_function` article, which explicitly defines complex differentiability at a point. For antiholomorphic functions switched to the verified concept article `Antiholomorphic_function` rather than relying on a temporarily inaccessible encyclopedia URL. No bodies, IDs, or statuses changed.
+
+
+## October 16, 2026 — complex analysis audit C2
+
+- Confirmed GitHub Pages and metadata audit succeeded at previous C1a head `8d399ac3` and tree still contained **1007 definitions in 40 folders**.
+- Individually inspected and revised next **10 original** `complex/` entries: conformal-map, conformal-radius, entire-function, essential-singularity, hardy-carleson-measure, harmonic-conjugate, harmonic-function, holomorphic-function, holomorphic-logarithm, isolated-singularity. Replaced generic subject index citations with direct relevant EoM/Wikipedia concept pages; checked conformal mapping, conformal radius, Hardy/Carleson and singularity terminology against current retrieved references.
+- Mathematical refinements: conformality at a point requires invertible real differential (orientation convention), not merely informal angle preservation; global harmonic conjugates require vanishing periods; isolated singularities include *removable* punctures in classification; Carleson measures give a Hardy embedding; and logs on connected domains differ by multiples of $2\pi i$. Stable IDs/status fields unchanged.
+- Original `complex/` review progress now **20/38**. NEXT C3: laurent-series through polynomial (10), then C4 final eight through zero-of-function. Keep individual editorial status `draft`, not peer reviewed. AWS/arXiv bulk harvesting remains paused.
