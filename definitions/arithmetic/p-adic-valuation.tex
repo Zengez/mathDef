@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/P-adic_order
 % status: draft
 
-Let $p$ be prime. Every nonzero rational $x$ has a unique expression $x=p^m(a/b)$ with $m\in\mathbb Z$ and integers $a,b$ not divisible by $p$. The \emph{$p$-adic valuation} is $v_p(x)=m$, extended by $v_p(0)=+\infty$. It satisfies $v_p(xy)=v_p(x)+v_p(y)$.
+Let $p$ be prime. For each nonzero rational number $x$, there is a \emph{unique integer} $m$ such that
+\[
+x=p^m\frac ab,
+\]
+where $a,b$ are integers not divisible by $p$ and $b\ne0$. The \emph{$p$-adic valuation} is $v_p(x)=m$, extended by $v_p(0)=+\infty$. The integer $m$ is unique, even though the particular numerator and denominator $a,b$ need not be. It satisfies $v_p(xy)=v_p(x)+v_p(y)$ for nonzero $x,y$.

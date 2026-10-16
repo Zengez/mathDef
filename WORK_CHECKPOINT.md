@@ -1075,3 +1075,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Their defining structures were compatible under the repository's explicit Hausdorff/second-countable and no-boundary assumptions. In particular, the tensor/derivation and first-order differential conventions were consistent, and torsion-free plus metric compatibility was distinguished from a general affine connection.
 - No corrections or source changes were warranted solely from this comparison; leave the mathematically precise formulations in place. This is a targeted cross-entry audit, not certification by an independent expert.
 - NEXT: verify the preceding CC10 `004909c2` metadata/publication workflows, then inspect remaining arithmetic/holomorphic dynamics and foundational source clusters. No new independent term discovery, rendering audit or site features.
+
+
+## October 16, 2026 — CC12 algebraic number theory and valuation conventions
+
+- Inspected the 36 arithmetic entries by related families: number fields/algebraic integers, trace/norm/discriminant and Galois theory; PIDs/UFDs/Dedekind domains and fractional ideals/class groups; DVRs/local fields, p-adic fields/integers/absolute values and Dirichlet functions.
+- Corrected `arithmetic.p-adic-valuation`: previously said a rational number has a “unique expression” `x=p^m(a/b)` with p-prime-to-numerator-and-denominator conditions. Only the integer m (and resulting rational a/b) is determined by that requirement; the integer pair (a,b) can be rescaled. The correction explicitly quantifies uniqueness of m and disclaims uniqueness of the integers a,b. This agrees with standard p-adic valuation formulations and with the existing normalized discrete valuation and absolute-value entries.
+- No other substantive incompatibilities identified in the reviewed arithmetic entries; left their source links unchanged rather than shifting citations without evidence. Number of definitions stays 1007.
+- NEXT: verify CC12 workflows and continue holomorphic dynamics and further remaining provenance/consistency batches; features, rendering and independent discovery stay deferred.
