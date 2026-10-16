@@ -515,3 +515,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Audited 10 original `arithmetic/` entries from field-discriminant through number-field, replacing a shared and mostly irrelevant `P-adic_number` source with concept-specific source articles. No new IDs and all statuses remain draft.
 - Explicitly distinguished finite extension trace/norm from separable or Galois assumptions, described integral-basis invariance of the number-field discriminant, specified nonzero fractional ideals and their Dedekind multiplication, and distinguished a nonarchimedean local field (complete, nontrivially discretely valued, finite residue field) from a generic complete valued field.
 - 20/36 arithmetic entries now inspected. NEXT: `p-adic-absolute-value` through `residue-field` (10), then remaining 6 to finish. Check latest build and source metadata audit and preserve arXiv/AWS hold.
+
+
+## October 16, 2026 — arithmetic N3a
+
+- Reviewed eight more `arithmetic/` entries: p-adic-absolute-value, p-adic-field, p-adic-integers, p-adic-valuation, principal-ideal-domain, residue-field, riemann-zeta, ring-of-integers. Corrected mathematical conventions and linked specific concept sources.
+- 28 of 36 original arithmetic definitions now audited. NEXT N3b: final 8 files separable-polynomial, splitting-field, transcendental-number, ultrametric, uniformizer, unique-factorization-domain, valuation-ring, valuation. Preserve IDs and draft status. Expected count remains 995.
