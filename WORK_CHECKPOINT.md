@@ -767,3 +767,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Audited next eight `topology/` definitions: continuity, continuous-open-map, dense-subset, discrete-topology, first-countable, hausdorff-space, homeomorphism, indiscrete-topology. Replaced all generic topology-index sources with subject-specific concept pages; retained the existing direct continuity source and its absent status flag, without changing classification.
 - Carefully distinguished continuity's inverse images from openness of image maps; first-countability supplies sequential tests; Hausdorffness has separated-neighborhood and compact-closed consequences; continuous bijections need not be homeomorphisms; indiscrete topology on the empty set has one, not two, distinct open sets.
 - **16/32 topology entries** now individually audited; cumulative baseline **844/1007**. NEXT TP3 interior through open-set (8), then TP4 last eight. Metadata and Pages checks need review; preserve IDs/status and AWS/arXiv harvesting pause.
+
+
+## October 16, 2026 — topology audit TP3
+
+- Reviewed eight more preexisting `topology/` entries: interior, limit-point, locally-compact, metric-completeness, neighborhood, nowhere-dense, open-cover, open-set. All generic list-of-topology sources replaced with individually relevant Wikipedia articles; original direct sources retained, including entries with no explicit status. Checked current references for nowhere-dense and open-cover definitions.
+- Precision: limit point differs from closure point; a neighborhood need not be open; local compactness is stated for Hausdorff spaces with a compact-neighborhood convention; completeness depends on the metric, not just topology; nowhere density differs from having zero measure.
+- Progress: **24/32 topology originals**, and **852/1007** documented individual audits. NEXT TP4 last eight files: path-connected, product-topology, quotient-topology, second-countable, separable-space, subspace-topology, topological-embedding, topological-space. Verify workflow audits and publishing. Do not resume AWS/arXiv bulk work.
