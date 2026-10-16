@@ -1,7 +1,11 @@
 % id: measure.simple-function
 % term: Simple function
 % related: measure.measurable-function, measure.lebesgue-integral
-% source: https://en.wikipedia.org/wiki/List_of_integration_and_measure_theory_topics
+% source: https://en.wikipedia.org/wiki/Simple_function
 % status: draft
 
-A \emph{simple measurable function} is a measurable function with finite range; for real values it can be written as $\sum_{j=1}^{n}a_j\mathbf1_{A_j}$ with measurable $A_j$.
+A \emph{simple measurable function} $s:X\to\mathbb R$ is a measurable function with finite image. Equivalently, it has a representation
+\[
+s=\sum_{j=1}^{m}a_j\mathbf1_{A_j}
+\]
+for real coefficients $a_j$ and measurable sets $A_j$, which may be chosen pairwise disjoint. For nonnegative $s$, its Lebesgue integral is $\sum_j a_j\mu(A_j)$ in the nonnegative representation, using $0\cdot\infty=0$.

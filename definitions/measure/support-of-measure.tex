@@ -1,7 +1,11 @@
 % id: measure.support-of-measure
 % term: Support of a positive Borel measure
 % related: measure.borel-sigma-algebra, measure.radon-measure
-% source: https://en.wikipedia.org/wiki/Support_%28measure_theory%29
+% source: https://en.wikipedia.org/wiki/Support_(measure_theory)
 % status: draft
 
-For a positive Borel measure $\mu$ on $X$, $\operatorname{supp}\mu=\{x\in X:\mu(U)>0\text{ for every open neighborhood }U\ni x\}$. This \emph{support} is closed.
+For a positive Borel measure $\mu$ on a topological space $X$, its \emph{topological support} is
+\[
+\operatorname{supp}\mu=\{x\in X:\mu(U)>0\text{ for every open neighborhood }U\ni x\}.
+\]
+Its complement is the union of all open $\mu$-null subsets and is therefore open, so the support is closed. Additional countability or regularity hypotheses may be needed to identify its complement with a single null set.

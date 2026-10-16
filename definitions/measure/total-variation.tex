@@ -1,7 +1,11 @@
 % id: measure.total-variation
 % term: Total variation measure of a signed measure
 % related: measure.jordan-decomposition, measure.signed-measure
-% source: https://en.wikipedia.org/wiki/Signed_measure
+% source: https://en.wikipedia.org/wiki/Total_variation
 % status: draft
 
-For a finite signed measure $\nu$, its \emph{total variation measure} is $|\nu|=\nu^++\nu^-$, using its Jordan components. Equivalently, $|\nu|(E)=\sup\sum_{j=1}^m|\nu(E_j)|$ over finite measurable partitions $E=\bigsqcup_{j=1}^mE_j$.
+For a finite signed measure $\nu$ with Jordan decomposition $\nu=\nu^+-\nu^-$, its \emph{total variation measure} is $|\nu|=\nu^++\nu^-$. Equivalently, for measurable $E$,
+\[
+|\nu|(E)=\sup_{\pi}\sum_{A\in\pi}|\nu(A)|,
+\]
+where $\pi$ ranges over all finite measurable partitions of $E$. The \emph{total variation norm} of $\nu$ is the number $\|\nu\|_{\mathrm{TV}}=|\nu|(X)$, distinguished from the measure $|\nu|$ itself.
