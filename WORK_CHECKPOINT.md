@@ -1352,3 +1352,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Retargeted the `linear.vector-space` source from EoM `Vector_space` (not directly retrievable) to `Vector_space#Definition_and_basic_properties` where the additive group and four scalar action axioms are explicit (commit `33638b90`). Other seven sources adequate without edit. Definition bodies unchanged in this batch.
 - Per-definition citation ledger commit `af7f548d`: **294 verified, 25 corrected, 688 pending, 0 needs_followup**, of 1007 total; **319 citation-reviewed**. All **28 `linear/`** definitions finished in CV26–CV28. Previous completed audits deliberately left untouched, as instructed.
 - NEXT: begin `prob/` original pending definitions (31) in 10-entry evidence-backed batches. Keep checkpoint current and preserve stable IDs and metadata statuses; GitHub Actions results not verified yet.
+
+
+## October 16, 2026 — citation verification CV29: probability first ten entries
+
+- Opened and compared individual direct source articles for probability concepts `almost-surely`, Bernoulli/binomial distributions, CDF, conditional expectation/probability, Pearson correlation, covariance, probability distribution (pushforward law) and measurable event. Checked endpoint distribution conventions, P-almost-surely versus surely, positive-conditioning event, conditional-expectation existence/uniqueness modulo null sets and complex covariance caveat.
+- All ten existing direct sources covered their core definition and qualifications. No changes to definition files or URL necessary in this batch. Actual pages visited, evidence recorded in `CITATION_AUDIT.csv` commit `197eeffe`.
+- Dedicated ledger tally **304 verified, 25 corrected, 678 pending, 0 needs_followup**, 329/1007 entries checked. Remaining probability terms start `expectation`, `exponential-distribution`, `iid`, `independence`, `markov-chain`, etc. No earlier reviewed citations rechecked.
+- NEXT: CV30 check ten pending `prob/` entries from expectation through probability-space. Keep direct source/hypothesis matching and subsequent checkpoint. Independent CI workflow success remains unconfirmed.
