@@ -1311,3 +1311,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - All ten current sources supported the stated definitions with their qualifications; no source/body revisions warranted. `geometry.ray` URL redirects to `Line_(geometry)` which does have an explicit Ray subsection.
 - Ledger evidence commit `20c9e3da`; **all 20 geometry definitions now individually citation-verified**, combined CV22 and CV23. Cumulative **248 verified, 21 corrected, 738 pending, 0 needs_followup**, total 1007 definitions (269 checked).
 - NEXT: continue `real/` (22), `prob/` (31), or another manageable subject. Keep small commits and checkpoint after each. No new terms or peer-review promotions; validate workflows when possible before claiming success.
+
+
+## October 16, 2026 — citation verification CV24: real-analysis/convexity first eleven
+
+- Opened and compared the formal source material for absolute convergence, bounded real subsets, conditional convergence, point continuity, convex functions/sets, derivatives, differentiability, Hölder continuity, infimum and function limits. Examined explicit epsilon-delta domain restrictions, summability distinctions, empty-set boundedness and extended-real conventions.
+- All eleven existing direct citation articles supported the entries without changes. In particular the more general alpha>1 metric Hölder inequality is mathematically meaningful although the named Hölder class commonly limits alpha<=1; the definition notes this.
+- Ledger commit `c8bd2d94` now **259 verified, 21 corrected, 727 pending, 0 needs_followup** (1007 corpus).
+- NEXT: finish eleven more `real/` entries: lipschitz-continuity, monotone-sequence, pointwise-convergence, power-series, riemann-integrability, riemann-sum, series, subsequence, supremum-norm, supremum, uniform-convergence. Record checks and checkpoint.
