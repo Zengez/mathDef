@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Radon_measure
 % status: draft
 
-A Borel measure $\mu$ on $X$ is \emph{outer regular} if $\mu(A)=\inf\{\mu(U):A\subseteq U,\ U\text{ open}\}$ for every Borel set $A$.
+A Borel measure $\mu$ on a topological space $X$ is \emph{outer regular} if for every Borel set $A$,
+\[
+\mu(A)=\inf\{\mu(U):A\subseteq U,\ U\subseteq X\text{ open}\}.
+\]
+This definition includes sets of infinite measure. Outer regularity on all Borel sets is stronger than only having outer approximation for a restricted class of sets.

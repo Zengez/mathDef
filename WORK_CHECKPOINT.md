@@ -680,3 +680,10 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Individually audited 10 existing `measure/` files, from inner-regular through mutually-singular-measures; corrected seven old generic Wikipedia integration index links to direct mathematical concept sources. Verified Lebesgue integration, $L^p$ including $L^\infty$, and Borel completion against direct articles.
 - Formal distinctions: inner regular on open sets versus all Borel sets; completion and finite versus infinite measure; finite signed Jordan decomposition with unique positive/negative parts; $L^p$ for finite $p$ and essential boundedness for $p=\infty$; separate `measurable space` from a measure space.
 - **20/39** original `measure/` entries audited. Total remains **1007 across 40 folders**. NEXT M3: negative-set-signed-measure through quasi-invariant-measure (9), then final M4: radon-measure through total-variation (10). Keep status fields unchanged and check metadata/publish workflows.
+
+
+## October 16, 2026 — measure theory audit M3
+
+- Audited 9 original `measure/` entries: negative-set-signed-measure, null-set, outer-measure, outer-regular, pettis-integrable, positive-set-signed-measure, probability-measure, product-measure, quasi-invariant-measure. Replaced measure topic-list citations for null, outer, probability and more specific signed-measure sources; retained direct specialized article links.
+- Formal distinctions: null measurable sets versus nonmeasurable subsets of measurable null sets; outer measure is subadditive on all subsets; Pettis weak scalar integrability plus representing elements *for all measurable A*; Hahn positivity/negativity on every measurable subset; product measure uniqueness assumes sigma-finiteness and its completion is separate.
+- **29/39** measure theory entries individually audited. Corpus remains **1007 across 40 folders**. NEXT M4 last 10: radon-measure through total-variation, with sign/regularity/convergence assumptions checked. Leave statuses intact; verify GitHub Actions.

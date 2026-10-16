@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Pettis_integral
 % status: draft
 
-A function $f:X\to B$ to a Banach space is \emph{Pettis integrable} if every $\varphi\circ f$, $\varphi\in B'$, is integrable and, for each measurable $A\subseteq X$, some $I_A\in B$ satisfies $\varphi(I_A)=\int_A\varphi(f)\,d\mu$ for every $\varphi\in B'$.
+Let $(X,\Sigma,\mu)$ be a measure space and $B$ a Banach space. A function $f:X\to B$ is \emph{Pettis integrable} if each scalar function $\varphi\circ f$ for $\varphi\in B^*$ is Lebesgue integrable and, for every $A\in\Sigma$, there exists $I_A\in B$ such that
+\[
+\varphi(I_A)=\int_A\varphi(f)\,d\mu\quad\text{for every }\varphi\in B^*.
+\]
+Such $I_A$ is unique. Bochner integrability implies Pettis integrability, but the converse can fail.
