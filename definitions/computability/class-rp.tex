@@ -1,0 +1,12 @@
+% id: computability.class-rp
+% term: Complexity class RP
+% related: computability.randomized-algorithm, computability.class-bpp, computability.class-zpp
+% source: https://en.wikipedia.org/wiki/RP_(complexity)
+% status: draft
+
+A language $L$ belongs to $\mathbf{RP}$ if a randomized Turing machine runs in polynomial time on every input and satisfies
+\[
+x\notin L\implies P(\text{accept }x)=0,\qquad
+x\in L\implies P(\text{accept }x)\ge\tfrac12.
+\]
+Thus false acceptance is forbidden, while false rejection may occur with probability at most $1/2$. The class $\mathbf{coRP}$ is defined by complementing languages in RP.

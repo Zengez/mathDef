@@ -583,3 +583,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - From direct source articles and checked against 995 live definition filenames, added **six new graduate-level computability definitions**: oracle-machine, turing-reducibility, turing-degree, computable-real, kolmogorov-complexity (plain), prefix-free-kolmogorov-complexity. Sources are individually matched Wikipedia concept pages, and descriptions are independently written.
 - Specific conditions: Turing reduction requires a *total oracle decider*; degrees are equivalence classes; computable real numbers require effectively controlled rational approximation; plain versus prefix-free description complexity depend on different optimal machine models and are invariant only up to a constant.
 - Expected corpus now **1001 files across 40 folders**, subject to workflow verification. All new definitions remain draft and no old ID was changed. NEXT D2: complexity classes BPP, RP, ZPP, co-NP, and the arithmetic versus polynomial hierarchies (six entries). Check existing names and source pages. Keep AWS/arXiv bulk on hold.
+
+
+## October 16, 2026 — graduate computability discovery D2
+
+- Added **six** source-informed concepts: BPP, RP, ZPP, co-NP, arithmetical hierarchy, polynomial hierarchy. Each cites its direct Wikipedia mathematical concept article; checked source scope and cross-reference IDs before committing.
+- Important distinctions: BPP two-sided bounded error, RP zero false-acceptance error, ZPP always-correct expected polynomial time, co-NP as complements of NP languages, and arithmetic (unbounded natural-number quantifiers) versus polynomial (polynomially bounded witnesses and P-computable predicates) hierarchies.
+- Together with D1 (six), the last expansion adds **12 graduate-level entries**. Expected live total **1007 definitions in 40 folders**, pending workflow verification. All are independently formulated drafts, not automatically peer-reviewed.
+- NEXT: refresh `README.md` and `CATALOG.md` for 1007 definitions and `computability/` 39 entries; verify metadata audit and Pages build; identify any underaudited old entries and resume Wikipedia category-based graduate concept discovery. Do not resume paused AWS/arXiv bulk extraction.
