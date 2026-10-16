@@ -739,12 +739,12 @@ definitions/prob/stochastic-process.tex,verified,"https://en.wikipedia.org/wiki/
 definitions/prob/transition-matrix.tex,verified,"https://en.wikipedia.org/wiki/Stochastic_matrix","Row stochastic nonnegative transition coefficients sum to 1; probability p_ij for current state i to next j; kernel needed for zero-prob conditioning states."
 definitions/prob/uniform-distribution.tex,verified,"https://en.wikipedia.org/wiki/Continuous_uniform_distribution","Uniform interval [a,b] density 1/(b-a) with a<b, measure equal to normalized length of intersection; endpoints immaterial."
 definitions/prob/variance.tex,verified,"https://en.wikipedia.org/wiki/Variance","Population variance E[(X-EX)^2]=E[X^2]-(EX)^2 with finite second moment, zero iff a.s. constant, distinct sample estimator."
-definitions/quasimetric/backward-ball.tex,pending,,
-definitions/quasimetric/forward-ball.tex,pending,,
-definitions/quasimetric/forward-convergence.tex,pending,,
-definitions/quasimetric/left-k-cauchy.tex,pending,,
-definitions/quasimetric/left-k-complete.tex,pending,,
-definitions/quasimetric/quasi-metric.tex,pending,,
+definitions/quasimetric/backward-ball.tex,verified,"https://arxiv.org/abs/2511.16503","Exact arXiv 2511.16503v1 Definition 2.2(2) p3: B−(x,epsilon)={y:d(y,x)<epsilon}, distinguishing orientation from forward B+."
+definitions/quasimetric/forward-ball.tex,verified,"https://arxiv.org/abs/2511.16503","Exact arXiv 2511.16503v1 Definition 2.2(1) p3: B+(x,epsilon)={y:d(x,y)<epsilon}."
+definitions/quasimetric/forward-convergence.tex,verified,"https://arxiv.org/abs/2511.16503","Exact paper Definition 2.5 p4: forward convergence to x means d(x,x_n)->0, not reverse d(x_n,x)->0."
+definitions/quasimetric/left-k-cauchy.tex,verified,"https://arxiv.org/abs/2511.16503","Exact paper Definition 2.7 p4: for every epsilon exists n0 with d(x_k,x_n)<epsilon whenever n0<=k<=n."
+definitions/quasimetric/left-k-complete.tex,verified,"https://arxiv.org/abs/2511.16503","Exact paper Definition 2.9 p4: every left K-Cauchy sequence forward converges in space; locators agree."
+definitions/quasimetric/quasi-metric.tex,verified,"https://arxiv.org/abs/2511.16503","Exact paper Definition 2.1 p3: nonnegative, zero diagonal, simultaneous zero in both directions only when equal, oriented triangle, no symmetry."
 definitions/real/absolute-convergence.tex,verified,"https://en.wikipedia.org/wiki/Absolute_convergence","Definition real/complex sum |a_n| finite; norms replace absolute values for vector-valued series, without assuming Banach completeness."
 definitions/real/bounded-set.tex,verified,"https://en.wikipedia.org/wiki/Bounded_set","Real subset bounded above and below iff contained in finite symmetric interval, empty set vacuously bounded."
 definitions/real/conditional-convergence.tex,verified,"https://en.wikipedia.org/wiki/Conditional_convergence","Convergence of scalar series with divergence of absolute-value series, distinct from absolute convergence."
