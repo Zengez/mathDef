@@ -1,7 +1,11 @@
 % id: functional.shilov-boundary
 % term: Shilov boundary of a uniform algebra
 % related: functional.uniform-algebra, functional.peak-point
-% source: https://encyclopediaofmath.org/wiki/Bergman-Shilov_boundary
+% source: https://encyclopediaofmath.org/wiki/Boundary_(in_the_theory_of_uniform_algebras)
 % status: draft
 
-For a uniform algebra $A\subseteq C(X)$, its \emph{Shilov boundary} $\partial_S A$ is the unique smallest closed subset $F\subseteq X$ such that $\max_{x\in X}|f(x)|=\max_{x\in F}|f(x)|$ for every $f\in A$. Equivalently, it is the intersection of all closed $A$-boundaries.
+For a uniform algebra $A\subseteq C(X)$ on a compact Hausdorff space $X$, its \emph{Shilov boundary} $\partial_S A$ is the unique smallest closed set $F\subseteq X$ such that
+\[
+\max_{x\in X}|f(x)|=\max_{x\in F}|f(x)|\qquad(f\in A).
+\]
+Equivalently, it is contained in every closed $A$-boundary and itself is such a boundary. It is a function-algebra boundary, not the Bergman reproducing kernel or a metric boundary.

@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Trace-class_operator
 % status: draft
 
-A bounded operator $T$ on a Hilbert space is \emph{trace class} if $\operatorname{Tr}(|T|)<\infty$, where $|T|=(T^*T)^{1/2}$. Equivalently, the sum of its singular values, counted with multiplicities, is finite.
+A bounded operator $T:H\to H$ on a Hilbert space is \emph{trace class} if the positive operator $|T|=(T^*T)^{1/2}$ has finite trace:
+\[
+\|T\|_1=\operatorname{Tr}|T|<\infty.
+\]
+Equivalently, its singular values are summable, counting multiplicity. Trace-class operators are compact and Hilbert--Schmidt, and $\operatorname{Tr}(T)$ is well-defined and independent of the orthonormal basis.

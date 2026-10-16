@@ -1,7 +1,12 @@
 % id: functional.nuclear-operator
 % term: Nuclear operator between Banach spaces
 % related: functional.banach-space, functional.continuous-dual
-% source: https://en.wikipedia.org/wiki/Nuclear_operator
+% source: https://en.wikipedia.org/wiki/Nuclear_operators_between_Banach_spaces
 % status: draft
 
-A bounded linear map $T:X\to Y$ of Banach spaces is \emph{nuclear} if there are $f_n\in X'$ and $y_n\in Y$ with $Tx=\sum_{n=1}^\infty f_n(x)y_n$ for all $x\in X$ and $\sum_{n=1}^\infty\|f_n\|\|y_n\|<\infty$.
+A bounded linear operator $T:X\to Y$ between Banach spaces is \emph{nuclear} if there are continuous linear functionals $\phi_n\in X^*$ and vectors $y_n\in Y$ such that
+\[
+Tx=\sum_{n=1}^\infty\phi_n(x)y_n,\qquad
+\sum_{n=1}^\infty\|\phi_n\|\,\|y_n\|<\infty.
+\]
+The series converges in operator norm. Equivalently, $T$ lies in the image of the canonical map $X^*\widehat\otimes_\pi Y\to\mathcal B(X,Y)$; this map need not be injective.

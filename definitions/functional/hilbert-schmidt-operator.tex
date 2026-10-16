@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Hilbert%E2%80%93Schmidt_operator
 % status: draft
 
-For Hilbert spaces $H,K$, a bounded operator $T:H\to K$ is \emph{Hilbert--Schmidt} if $\sum_{j\in J}\|Te_j\|_K^2<\infty$ for an orthonormal basis $(e_j)_{j\in J}$ of $H$. The sum is basis-independent and defines $\|T\|_{\mathrm{HS}}^2$.
+For Hilbert spaces $H,K$, a bounded linear map $T:H\to K$ is \emph{Hilbert--Schmidt} if
+\[
+\|T\|_{\mathrm{HS}}^2=\sum_{j\in J}\|Te_j\|_K^2<\infty
+\]
+for an orthonormal basis $(e_j)_{j\in J}$ of $H$. This value is independent of the orthonormal basis, even for nonseparable $H$, with the sum of nonnegative terms defined as the supremum of finite partial sums. Every Hilbert--Schmidt operator is compact.

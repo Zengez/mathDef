@@ -4,4 +4,8 @@
 % source: https://en.wikipedia.org/wiki/Projection-valued_measure
 % status: draft
 
-On a measurable space $(S,\Sigma)$ and a Hilbert space $H$, a \emph{projection-valued measure} is a map $E:\Sigma\to\mathcal B(H)$ such that each $E(A)$ is an orthogonal projection, $E(S)=I$, and for pairwise disjoint $A_n$, $E(\bigcup_nA_n)x=\sum_nE(A_n)x$ for every $x\in H$, with convergence in Hilbert-space norm.
+A \emph{projection-valued spectral measure} on a measurable space $(S,\Sigma)$ with values on a Hilbert space $H$ is a map $E:\Sigma\to\mathcal B(H)$ such that $E(A)$ is an orthogonal projection for each $A$, $E(S)=I$, and for pairwise disjoint $A_n$,
+\[
+E\!\left(\bigcup_{n=1}^\infty A_n\right)x=\sum_{n=1}^\infty E(A_n)x\quad(x\in H),
+\]
+with convergence in Hilbert-space norm. These axioms imply $E(\varnothing)=0$ and $E(A\cap B)=E(A)E(B)$. Countable additivity is in the strong operator topology.
