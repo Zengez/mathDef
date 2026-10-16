@@ -1,7 +1,7 @@
 % id: category.equalizer
 % term: Equalizer
 % related: category.morphism, category.coequalizer
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Equalizer_(mathematics)
 % status: draft
 
-For parallel morphisms $f,g:A\to B$, an \emph{equalizer} is $e:E\to A$ with $fe=ge$ and a unique factorization from every $h:X\to A$ satisfying $fh=gh$.
+Given parallel morphisms $f,g:A\to B$, an \emph{equalizer} is a morphism $e:E\to A$ satisfying $f\circ e=g\circ e$ such that for any $h:X\to A$ with $f\circ h=g\circ h$, there is a unique $u:X\to E$ such that $e\circ u=h$. If it exists, the equalizer is unique up to a unique isomorphism compatible with its structure map.

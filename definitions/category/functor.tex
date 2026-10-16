@@ -1,7 +1,11 @@
 % id: category.functor
 % term: Covariant functor
 % related: category.category, category.natural-transformation
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Functor
 % status: draft
 
-A \emph{functor} $F:\mathcal C\to\mathcal D$ assigns objects and morphisms, preserving domains, codomains, identities $F(1_X)=1_{F(X)}$, and composition $F(gf)=F(g)F(f)$.
+A \emph{covariant functor} $F:\mathcal C\to\mathcal D$ sends each object $X$ to an object $F(X)$ and each arrow $f:X\to Y$ to an arrow $F(f):F(X)\to F(Y)$, preserving identity arrows and composition:
+\[
+F(1_X)=1_{F(X)},\qquad F(g\circ f)=F(g)\circ F(f).
+\]
+A contravariant functor is instead a covariant functor on the opposite category.

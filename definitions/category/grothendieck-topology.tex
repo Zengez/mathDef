@@ -4,4 +4,4 @@
 % source: https://en.wikipedia.org/wiki/Grothendieck_topology
 % status: draft
 
-A \emph{Grothendieck topology} assigns to each object $U$ a set $J(U)$ of covering sieves such that the maximal sieve covers $U$, pullbacks of covering sieves are covering, and any sieve whose pullbacks along every arrow of a covering sieve are covering is itself covering.
+A \emph{Grothendieck topology} on a small category $\mathcal C$ specifies for each object $U$ a collection $J(U)$ of sieves on $U$, called \emph{covering sieves}, such that: (i) the maximal sieve covers $U$; (ii) if $S\in J(U)$ and $f:V\to U$, then $f^*S\in J(V)$; and (iii) if $S\in J(U)$ and a sieve $R$ on $U$ has $f^*R\in J(V)$ for every arrow $f:V\to U$ in $S$, then $R\in J(U)$. The latter two are base-change stability and local character.

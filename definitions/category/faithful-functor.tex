@@ -1,7 +1,11 @@
 % id: category.faithful-functor
 % term: Faithful functor
 % related: category.functor, category.full-functor
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Full_and_faithful_functors
 % status: draft
 
-A functor $F:\mathcal C\to\mathcal D$ is \emph{faithful} if each map $\mathcal C(X,Y)\to\mathcal D(FX,FY)$ is injective.
+A functor $F:\mathcal C\to\mathcal D$ is \emph{faithful} if, for all objects $X,Y$, the induced function
+\[
+\operatorname{Hom}_{\mathcal C}(X,Y)\to\operatorname{Hom}_{\mathcal D}(F X,F Y),\quad f\mapsto F(f)
+\]
+is injective. Faithfulness detects equality of parallel morphisms; it does not by itself imply that $F$ is injective on objects.

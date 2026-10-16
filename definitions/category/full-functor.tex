@@ -1,7 +1,7 @@
 % id: category.full-functor
 % term: Full functor
 % related: category.functor, category.faithful-functor
-% source: https://ncatlab.org/nlab/show/category%2Btheory
+% source: https://en.wikipedia.org/wiki/Full_and_faithful_functors
 % status: draft
 
-A functor $F:\mathcal C\to\mathcal D$ is \emph{full} if each map $\mathcal C(X,Y)\to\mathcal D(FX,FY)$ is surjective.
+A functor $F:\mathcal C\to\mathcal D$ is \emph{full} if, for each pair $X,Y\in\mathcal C$, every morphism $F X\to F Y$ in $\mathcal D$ is $F(f)$ for some morphism $f:X\to Y$. Thus every induced hom-set map is surjective. Fullness alone does not imply faithfulness or essential surjectivity on objects.
