@@ -728,17 +728,17 @@ definitions/prob/pdf.tex,verified,"https://en.wikipedia.org/wiki/Probability_den
 definitions/prob/pmf.tex,verified,"https://en.wikipedia.org/wiki/Probability_mass_function","Probability of each discrete value, nonnegative normalized over countable support, determines law by sum."
 definitions/prob/poisson-distribution.tex,verified,"https://en.wikipedia.org/wiki/Poisson_distribution","Poisson PMF e^-lambda lambda^k/k!, k nonnegative integer; both mean and variance lambda, optional degenerate lambda=0."
 definitions/prob/probability-space.tex,verified,"https://en.wikipedia.org/wiki/Probability_space","Triple sample space sigma-algebra probability measure P(Omega)=1 with countable additivity; events are measurable subsets."
-definitions/prob/random-variable.tex,pending,,
-definitions/prob/sample-mean.tex,pending,,
-definitions/prob/sample-space.tex,pending,,
-definitions/prob/sample-variance.tex,pending,,
-definitions/prob/sigma-algebra.tex,pending,,
-definitions/prob/standard-deviation.tex,pending,,
-definitions/prob/stationary-distribution.tex,pending,,
-definitions/prob/stochastic-process.tex,pending,,
-definitions/prob/transition-matrix.tex,pending,,
-definitions/prob/uniform-distribution.tex,pending,,
-definitions/prob/variance.tex,pending,,
+definitions/prob/random-variable.tex,verified,"https://en.wikipedia.org/wiki/Random_variable","Measure-theoretic definition real random variable is measurable Omega->R with inverse Borel sets in F; induced law is pushforward."
+definitions/prob/sample-mean.tex,verified,"https://en.wikipedia.org/wiki/Sample_mean","Redirect to Sample mean and covariance; sample mean section sum over n observations divided by n; sample mean from random observations remains a random variable."
+definitions/prob/sample-space.tex,verified,"https://en.wikipedia.org/wiki/Sample_space","Set of possible elementary outcomes; measurable-event sigma algebra may omit individual singleton outcomes; equiprobability not presumed."
+definitions/prob/sample-variance.tex,verified,"https://en.wikipedia.org/wiki/Variance","Sample variance section describes sample mean centered squares and Bessel correction denominator n-1, unbiasedness for i.i.d. finite variance; alternate divisor n exists."
+definitions/prob/sigma-algebra.tex,verified,"https://en.wikipedia.org/wiki/%CE%A3-algebra","Sigma-algebra axioms universal set, relative complements, countable unions; derive empty and countable intersections."
+definitions/prob/standard-deviation.tex,verified,"https://en.wikipedia.org/wiki/Standard_deviation","Standard deviation is square root of variance, finite second-moment real X, zero iff a.s. constant, same physical units."
+definitions/prob/stationary-distribution.tex,corrected,"https://en.wikipedia.org/wiki/Discrete-time_Markov_chain#Stationary_distributions","Former Stationary_distribution page is set index/disambiguation. Discrete-time Markov chain Stationary distributions explicitly states distribution pi with pi P=pi and invariant marginal law; corrected citation."
+definitions/prob/stochastic-process.tex,verified,"https://en.wikipedia.org/wiki/Stochastic_process","Indexed family of random variables on common probability space; time index and sample path as t->X_t(omega)."
+definitions/prob/transition-matrix.tex,verified,"https://en.wikipedia.org/wiki/Stochastic_matrix","Row stochastic nonnegative transition coefficients sum to 1; probability p_ij for current state i to next j; kernel needed for zero-prob conditioning states."
+definitions/prob/uniform-distribution.tex,verified,"https://en.wikipedia.org/wiki/Continuous_uniform_distribution","Uniform interval [a,b] density 1/(b-a) with a<b, measure equal to normalized length of intersection; endpoints immaterial."
+definitions/prob/variance.tex,verified,"https://en.wikipedia.org/wiki/Variance","Population variance E[(X-EX)^2]=E[X^2]-(EX)^2 with finite second moment, zero iff a.s. constant, distinct sample estimator."
 definitions/quasimetric/backward-ball.tex,pending,,
 definitions/quasimetric/forward-ball.tex,pending,,
 definitions/quasimetric/forward-convergence.tex,pending,,
