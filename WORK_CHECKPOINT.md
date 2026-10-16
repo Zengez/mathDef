@@ -1426,3 +1426,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Sources matched stated mathematics; no body or URL changes. `fractional-ideal` entry explicitly chooses nonzero ideals (the general reference permits zero depending on convention), and `local-field` specifically chooses nondiscrete finite-residue-field nonarchimedean convention from article's variant definitions.
 - Ledger `5074686b`: **377 verified, 28 corrected, 602 pending, 0 needs_followup** of 1007 (**405 checked**). Previous checked citations deliberately left unchanged.
 - NEXT: continue `arithmetic/` from `p-adic-absolute-value` through `ring-of-integers`, then the remaining eight arithmetic entries. Keep ledger + checkpoint commits in small batches. No unrelated functionality or peer-review promotions. Pages/index CI separately unverified.
+
+
+## October 16, 2026 — citation verification CV38: p-adic and algebraic integer sources (10 entries)
+
+- Checked p-adic absolute value, p-adic field, p-adic integer ring, p-adic valuation, PID, residue field, Riemann zeta, number-field ring of integers, separable polynomial and splitting field against their cited source article texts.
+- `arithmetic.p-adic-absolute-value` had EoM `P-adic_number`, which returned 502 and could not be inspected. Replaced with directly verified Wikipedia `P-adic_number#Topological_properties` which explicitly lists norm formula and strong triangle law (commit `114ef7c1`). Other source articles matched their definitions (one `P-adic_integer` redirect does resolve to explicit section and is retained).
+- Dedicated citation evidence ledger commit `17f21802`: **386 verified, 29 corrected, 592 pending, 0 needs_followup** out of 1007 (**415 reviewed**).
+- NEXT: the last **six** `arithmetic/` definitions: transcendental-number, ultrametric, uniformizer, unique-factorization-domain, valuation-ring and valuation. Check those and mark folder complete. Prior citation checks remain untouched per user instruction.
