@@ -935,16 +935,16 @@ definitions/stochastic/convergence-lp.tex,verified,"https://en.wikipedia.org/wik
 definitions/stochastic/convergence-probability.tex,verified,"https://en.wikipedia.org/wiki/Convergence_of_random_variables","CV82: Convergence in probability subsection P(|X_n−X|>epsilon)→0 for all epsilon>0."
 definitions/stochastic/covariance-function.tex,corrected,"https://en.wikipedia.org/wiki/Covariance_function","CV82: EoM Correlation_function inaccessible; Covariance function article directly gives K(s,t)=E((Xs−EXs)(Xt−EXt)) and PSD covariance matrix, source changed commit 7774dbfa."
 definitions/stochastic/discrete-stationary-process.tex,corrected,"https://en.wikipedia.org/wiki/Stationary_process#Strict-sense_stationarity","CV82: EoM Stationary_stochastic_process unavailable; strict-sense stationarity section defines shift invariance of finite-dimensional joint laws, source commit 49b8757a."
-definitions/stochastic/ergodic-measure.tex,pending,,
-definitions/stochastic/essential-supremum.tex,pending,,
-definitions/stochastic/feller-process.tex,pending,,
-definitions/stochastic/filtration.tex,pending,,
-definitions/stochastic/gaussian-process.tex,pending,,
-definitions/stochastic/invariant-measure.tex,pending,,
-definitions/stochastic/levy-process.tex,pending,,
-definitions/stochastic/local-martingale.tex,pending,,
-definitions/stochastic/markov-kernel.tex,pending,,
-definitions/stochastic/martingale-transform.tex,pending,,
+definitions/stochastic/ergodic-measure.tex,corrected,"https://en.wikipedia.org/wiki/Ergodicity#Definition_for_discrete-time_systems","Replaced unreachable EoM Invariant_measure by inspected Ergodicity entry: invariant probability and 0/1 invariant events, equivalent modulo-null symmetric difference condition for measure-preserving T; source commit 4a1b4d43."
+definitions/stochastic/essential-supremum.tex,verified,"https://en.wikipedia.org/wiki/Essential_infimum_and_essential_supremum","Definition is infimum of real almost-everywhere upper bounds with extended-real convention for unbounded measurable f."
+definitions/stochastic/feller-process.tex,verified,"https://en.wikipedia.org/wiki/Feller_process","Explicit transition semigroup P_t acts on C0 and strongly converges to identity in supremum norm at t down to zero, given Markov process and locally compact state."
+definitions/stochastic/filtration.tex,corrected,"https://en.wikipedia.org/wiki/Filtration_(probability_theory)","Old EoM Martingale 502; Filtration probability article defines increasing sigma algebra F_s subset F_t, changed source 09544b60."
+definitions/stochastic/gaussian-process.tex,corrected,"https://en.wikipedia.org/wiki/Gaussian_process#Definition","EoM Gaussian_process unreachable; inspected Gaussian process definition all finite-dimensional laws Gaussian, including degenerate distributions; source fa86fa6b."
+definitions/stochastic/invariant-measure.tex,corrected,"https://en.wikipedia.org/wiki/Invariant_measure","EoM Invariant_measure 502; inspected Invariant measure definition mu(T^-1A)=mu(A) all measurable A, source commit 9bf40bd2."
+definitions/stochastic/levy-process.tex,verified,"https://en.wikipedia.org/wiki/L%C3%A9vy_process","Definition stationary independent increments, continuity in probability, a.s. zero start; cadlag version distinguished as modification."
+definitions/stochastic/local-martingale.tex,verified,"https://en.wikipedia.org/wiki/Local_martingale","Definition stopped martingale sequence under stopping times tending infinity; actual boundedness/integrability of each stopped process acknowledged."
+definitions/stochastic/markov-kernel.tex,corrected,"https://en.wikipedia.org/wiki/Markov_kernel","EoM Transition_function 502; inspected Markov kernel definition in arbitrary measurable spaces, K(x,.) probability measure and x→K(x,B) measurable; source e9a6f0f5."
+definitions/stochastic/martingale-transform.tex,corrected,"https://stats.libretexts.org/Bookshelves/Probability_Theory/Probability_Mathematical_Statistics_and_Stochastic_Processes_(Siegrist)/17%3A_Martingales/17.02%3A_Properties_and_Constructions","Old Martingale Wikipedia page did not define predictable martingale transforms. Statistics LibreTexts Martingale Transform section explicitly has predictable increments sum H_k(M_k−M_{k−1}), with an alternate initial M0 convention; source commit 8226f9eb."
 definitions/stochastic/martingale.tex,pending,,
 definitions/stochastic/median.tex,pending,,
 definitions/stochastic/moment-generating-function.tex,pending,,
