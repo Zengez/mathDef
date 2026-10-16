@@ -1344,3 +1344,11 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - `linear.linear-map` had EoM `Linear_operator` source that could not be opened here; replaced it with the directly read Wikipedia `Linear_map#Definition_and_first_consequences` (commit `0e36e16d`). The standard m,n>=0 matrix shapes in `linear.matrix` are a permitted mathematical convention not explicitly documented in the basic source article; no formula discrepancy noted.
 - Updated per-entry ledger in commit `bb24b1fb`: **287 verified, 24 corrected, 696 pending, 0 needs_followup**, 311 reviewed of 1007.
 - NEXT: remaining eight `linear/`: nullity, orthogonal-complement, orthogonality, rank, span, subspace, transpose, vector-space; then move to `prob/`. Keep previously reviewed entries untouched, as user requested. No term discovery or unrelated changes.
+
+
+## October 16, 2026 — citation verification CV28: linear algebra folder complete (8 entries)
+
+- Inspected final eight `linear/` entries and their actual source pages: nullity, orthogonal complement, orthogonality, rank, span, subspace, transpose, vector space. Checked rank-nullity finite-domain qualification, inner-product orthogonality of arbitrary subsets, empty span, and conjugate-transpose caveat.
+- Retargeted the `linear.vector-space` source from EoM `Vector_space` (not directly retrievable) to `Vector_space#Definition_and_basic_properties` where the additive group and four scalar action axioms are explicit (commit `33638b90`). Other seven sources adequate without edit. Definition bodies unchanged in this batch.
+- Per-definition citation ledger commit `af7f548d`: **294 verified, 25 corrected, 688 pending, 0 needs_followup**, of 1007 total; **319 citation-reviewed**. All **28 `linear/`** definitions finished in CV26–CV28. Previous completed audits deliberately left untouched, as instructed.
+- NEXT: begin `prob/` original pending definitions (31) in 10-entry evidence-backed batches. Keep checkpoint current and preserve stable IDs and metadata statuses; GitHub Actions results not verified yet.
