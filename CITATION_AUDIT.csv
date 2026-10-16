@@ -660,16 +660,16 @@ definitions/optimization/strong-duality.tex,verified,"https://en.wikipedia.org/w
 definitions/optimization/subdifferential.tex,verified,"https://en.wikipedia.org/wiki/Subderivative","The subgradient and relation to convex conjugacy sections give set of global affine supporting minorants; discusses possibility of empty subdifferential for boundary/extended-domain cases."
 definitions/optimization/subgradient.tex,verified,"https://en.wikipedia.org/wiki/Subderivative","The subgradient section states f(y)-f(x)>=<g,y-x> for all y; at differentiable interior points subdifferential singleton gradient."
 definitions/optimization/sublevel-set.tex,verified,"https://en.wikipedia.org/wiki/Level_set","Sublevel and superlevel sets section defines {x:f(x)<=a}, strict variant, and identifies convexity of all sublevel sets with quasiconvexity."
-definitions/pde/bessel-potential-space.tex,pending,,
-definitions/pde/characteristic-surface.tex,pending,,
-definitions/pde/classical-symbol.tex,pending,,
-definitions/pde/convolution.tex,pending,,
-definitions/pde/dirac-delta.tex,pending,,
-definitions/pde/dirichlet-boundary-condition.tex,pending,,
-definitions/pde/distribution.tex,pending,,
-definitions/pde/distributional-derivative.tex,pending,,
-definitions/pde/divergence.tex,pending,,
-definitions/pde/elliptic-classical-symbol.tex,pending,,
+definitions/pde/bessel-potential-space.tex,corrected,https://link.springer.com/article/10.1007/s00041-024-10116-9,"Opened Railo 2024 Springer open-access Section 2.1: unitary Fourier transform, H^s tempered distributions and norm ||<xi>^s uhat||_2 exactly equivalent to displayed weighted integral. Replaced flaky older EoM Bessel potential operator source (e9c61866)."
+definitions/pde/characteristic-surface.tex,corrected,https://home.iitk.ac.in/~tmk/courses/mth424/main.pdf#page=75,"Read IIT Kanpur lecture notes Ch.3 Defs 3.1–3.2 by opening actual PDF and screenshot of viewer p74 (printed p67): characteristic iff principal symbol vanishes at hypersurface normal; equivalent to p_m(x,dphi_x)=0. Retargeted inaccessible EoM (e9cfabc1)."
+definitions/pde/classical-symbol.tex,corrected,https://de.wikipedia.org/wiki/Symbolklasse#Klassisches_Symbol,"Opened German Wikipedia Symbolklasse §§ Asymptotische Entwicklung/Klassisches Symbol: classical S^m_{1,0} with positive homogeneous degrees m−j and cutoff asymptotic remainder S^{m−N}. Original EoM pseudo-differential operator unavailable; corrected citation (36d3556c)."
+definitions/pde/convolution.tex,corrected,https://en.wikipedia.org/wiki/Convolution,"Opened Convolution Wikipedia definition: (f*g)(x)=integral f(x−y)g(y) dy in Rn for integrable/existing convolution. EoM original unavailable; corrected citation (bcc33c64)."
+definitions/pde/dirac-delta.tex,corrected,https://en.wikipedia.org/wiki/Dirac_delta_function#As_a_distribution,"Opened Dirac delta function > As a distribution: delta evaluates test function at origin; n-dimensional and translated point-a cases described in Generalizations and Translation. EoM original unavailable; corrected citation (62ba0acc)."
+definitions/pde/dirichlet-boundary-condition.tex,verified,https://en.wikipedia.org/wiki/Dirichlet_boundary_condition,"Opened actual original article: prescribes unknown function boundary value u=g (trace interpretation in PDE setting) without additional derivative condition."
+definitions/pde/distribution.tex,corrected,https://en.wikipedia.org/wiki/Distribution_(mathematical_analysis)#Distributions,"Opened Distribution mathematical analysis > test functions/distributions: continuous linear functional on compactly supported C∞ with fixed-compact uniform derivatives test-function topology; original EoM unavailable, retargeted (dce0b23e)."
+definitions/pde/distributional-derivative.tex,verified,https://encyclopediaofmath.org/wiki/Generalized_function,_derivative_of_a,"Previously opened EoM generalized function derivative source in this batch; integration-by-parts sign (-1)^|alpha| for multi-index derivative is defining distribution transpose."
+definitions/pde/divergence.tex,verified,https://en.wikipedia.org/wiki/Divergence,"Opened original Divergence article: Euclidean vector-field divergence as sum of coordinate partial derivatives; differentiability and coordinate setting match."
+definitions/pde/elliptic-classical-symbol.tex,corrected,https://en.wikipedia.org/wiki/Microlocal_analysis#Pseudodifferential_operators,"Opened Microlocal analysis Pseudodifferential operators: homogeneous principal symbol and pointwise ellipticity exactly nonvanishing on nonzero cotangent directions. Compact-uniform lower bound follows from homogeneity and compactness of K×sphere; original EoM elliptic operator unavailable. Source commit 09716bbe."
 definitions/pde/elliptic-equation.tex,pending,,
 definitions/pde/fourier-multiplier.tex,pending,,
 definitions/pde/fourier-transform.tex,pending,,
