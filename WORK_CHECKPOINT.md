@@ -168,3 +168,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Reviewed `linear/`: inner-product, invertible-matrix, kernel, linear-combination, linear-functional, linear-independence, linear-map, matrix-multiplication, matrix, norm. Fixed ambiguous scalar-field, ring, and inner-product linearity conventions and explicitly distinguished algebraic from continuous linear functionals.
 - Replaced generic topic-list links with term-specific references. Zero-dimensional matrix shapes remain allowable under the explicit $m,n\ge0$ convention.
 - Next linear L3: remaining 8 entries `nullity`, `orthogonal-complement`, `orthogonality`, `rank`, `span`, `subspace`, `transpose`, `vector-space`. Then compile/metadata check and further audits.
+
+## 2026-10-15 evening continuation — linear algebra L3 completed
+
+- Reviewed last 8 existing `linear/` entries: nullity, orthogonal-complement, orthogonality, rank, span, subspace, transpose, vector-space. Replaced broad Wikipedia topic index citations with precise concept pages, corrected the domain of orthogonal complements to subsets, and stated vector-space axioms and zero-span convention explicitly.
+- All **28 original linear-algebra entries** have now been examined and committed in L1 10, L2 10, L3 8. Distinguish structural syntax validation from mathematical peer review: entries remain `draft`.
+- Current expected total still **959** definitions, with 40 folders (check repository tree). Next target: PDE/domain and numerical approximations or another methodical Wikipedia/EoM-driven batch of genuinely missing mathematical definitions; refresh CATALOG and README.
