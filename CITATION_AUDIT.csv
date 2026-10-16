@@ -64,9 +64,9 @@ definitions/algebra/ring.tex,pending,,
 definitions/algebra/semigroup.tex,pending,,
 definitions/algebra/stabilizer.tex,pending,,
 definitions/algebra/subgroup.tex,pending,,
-definitions/analysis/convergence.tex,pending,,
-definitions/analysis/sequence.tex,pending,,
-definitions/analysis/uniform-continuity.tex,pending,,
+definitions/analysis/convergence.tex,verified,"https://en.wikipedia.org/wiki/Limit_of_a_sequence","Metric spaces/Definition gives epsilon-N convergence; topological spaces/Definition supports eventual containment in neighborhoods."
+definitions/analysis/sequence.tex,verified,"https://en.wikipedia.org/wiki/Sequence","Formal definition treats sequence as function indexed by natural numbers, writing terms a_n; index-origin convention immaterial."
+definitions/analysis/uniform-continuity.tex,verified,"https://en.wikipedia.org/wiki/Uniform_continuity","Metric-space definition uses a single delta for all pairs x and x' at given epsilon; no point dependence."
 definitions/arithmetic/algebraic-integer.tex,pending,,
 definitions/arithmetic/algebraic-number.tex,pending,,
 definitions/arithmetic/arithmetic-convolution.tex,pending,,
@@ -567,9 +567,9 @@ definitions/measured-actions/boolean-mp-action.tex,pending,,
 definitions/measured-actions/finite-measure-algebra.tex,pending,,
 definitions/measured-actions/spatial-isomorphism.tex,pending,,
 definitions/measured-actions/spatial-mp-action.tex,pending,,
-definitions/metric/metric-space.tex,pending,,
-definitions/metric/open-ball.tex,pending,,
-definitions/metric/open-set.tex,pending,,
+definitions/metric/metric-space.tex,verified,"https://en.wikipedia.org/wiki/Metric_space","Definition lists nonnegativity identity of indiscernibles symmetry and triangle inequality, agreeing with stated metric axioms."
+definitions/metric/open-ball.tex,verified,"https://en.wikipedia.org/wiki/Ball_(mathematics)","Metric-space definition uses points whose distance from center is strictly smaller than positive radius; distinguishes closed balls."
+definitions/metric/open-set.tex,verified,"https://en.wikipedia.org/wiki/Open_set","Metric-space section states open iff every contained point has positive-radius ball lying inside set; induced topology matches."
 definitions/number/arithmetic-function.tex,corrected,"https://en.wikipedia.org/wiki/Arithmetic_function","Opening definition specifies function from positive integers to complex numbers; old EoM page could not be reopened for direct verification; switched to directly inspected concept page."
 definitions/number/composite-number.tex,verified,"https://en.wikipedia.org/wiki/Composite_number","Opening definition: positive integer with proper nonunit factors; 1 excluded and 0 not positive."
 definitions/number/congruence.tex,verified,"https://en.wikipedia.org/wiki/Modular_arithmetic","Congruence definition by equal remainders and a-b divisible by modulus; positive modulus is the repository convention."
@@ -767,17 +767,17 @@ definitions/real/subsequence.tex,pending,,
 definitions/real/supremum-norm.tex,pending,,
 definitions/real/supremum.tex,pending,,
 definitions/real/uniform-convergence.tex,pending,,
-definitions/relations/antichain.tex,pending,,
+definitions/relations/antichain.tex,verified,"https://en.wikipedia.org/wiki/Antichain","Definition: subset of poset with distinct pairwise incomparable elements; distinguishes maximal by inclusion from maximum cardinality."
 definitions/relations/antisymmetric-relation.tex,verified,https://en.wikipedia.org/wiki/Antisymmetric_relation,Opening definition; xRy and yRx imply x equals y
 definitions/relations/binary-relation.tex,verified,https://en.wikipedia.org/wiki/Binary_relation,Definition; binary relation as subset of Cartesian product
-definitions/relations/chain.tex,pending,,
+definitions/relations/chain.tex,verified,"https://en.wikipedia.org/wiki/Total_order","Chains in partially ordered sets section: subset with inherited total comparability; alternative finite-chain convention acknowledged."
 definitions/relations/complete-lattice.tex,verified,https://en.wikipedia.org/wiki/Complete_lattice,Definition; all subsets including empty have joins and meets
 definitions/relations/directed-set.tex,verified,https://en.wikipedia.org/wiki/Directed_set,Definition; nonempty preorder with common upper bounds
 definitions/relations/equivalence-class.tex,verified,https://en.wikipedia.org/wiki/Equivalence_class,Definition and notation; equivalence class and partition properties
 definitions/relations/equivalence-relation.tex,verified,https://en.wikipedia.org/wiki/Equivalence_relation,Definition; reflexive symmetric transitive and equivalence partition
-definitions/relations/greatest-lower-bound-poset.tex,pending,,
+definitions/relations/greatest-lower-bound-poset.tex,verified,"https://en.wikipedia.org/wiki/Infimum_and_supremum","Formal definition on arbitrary poset: lower bound dominated by all other lower bounds, unique if it exists."
 definitions/relations/lattice.tex,verified,https://en.wikipedia.org/wiki/Lattice_(order),Definition; pairwise joins and meets
-definitions/relations/least-upper-bound-poset.tex,pending,,
+definitions/relations/least-upper-bound-poset.tex,verified,"https://en.wikipedia.org/wiki/Infimum_and_supremum","Formal definition on arbitrary poset: upper bound below all other upper bounds, unique if it exists."
 definitions/relations/maximal-element.tex,verified,https://en.wikipedia.org/wiki/Maximal_and_minimal_elements,Definition; no strictly greater comparable element
 definitions/relations/maximum-element.tex,verified,https://en.wikipedia.org/wiki/Greatest_element_and_least_element,Definition; greatest element bounds whole poset
 definitions/relations/order-embedding.tex,verified,https://en.wikipedia.org/wiki/Order_embedding,Definition; preserve and reflect order and injectivity
@@ -789,7 +789,7 @@ definitions/relations/reflexive-relation.tex,verified,https://en.wikipedia.org/w
 definitions/relations/symmetric-relation.tex,verified,https://en.wikipedia.org/wiki/Symmetric_relation,Opening definition; xRy entails yRx
 definitions/relations/total-order.tex,verified,https://en.wikipedia.org/wiki/Total_order,Definition; partial order plus total comparability
 definitions/relations/transitive-relation.tex,verified,https://en.wikipedia.org/wiki/Transitive_relation,Opening definition; xRy and yRz imply xRz
-definitions/relations/upper-bound-poset.tex,pending,,
+definitions/relations/upper-bound-poset.tex,verified,"https://en.wikipedia.org/wiki/Upper_and_lower_bounds","Definition upper bound u in ambient poset above every member of subset, with vacuous empty-set condition."
 definitions/relations/well-order.tex,verified,https://en.wikipedia.org/wiki/Well-order,Opening definition; every nonempty subset has least element
 definitions/schemes/affine-n-space.tex,corrected,https://stacks.math.columbia.edu/tag/01M0,Definition 27.5.1; A^n_R is Spec of polynomial ring
 definitions/schemes/affine-scheme.tex,verified,https://stacks.math.columbia.edu/tag/01HR,Definition 26.5.5; locally ringed space isomorphic to Spec R
