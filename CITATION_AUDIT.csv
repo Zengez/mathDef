@@ -589,16 +589,16 @@ definitions/number/prime-power.tex,verified,"https://en.wikipedia.org/wiki/Prime
 definitions/number/quadratic-residue.tex,verified,"https://en.wikipedia.org/wiki/Quadratic_residue","Definition by solvability of x² congruent a modulo n; composite modulus section explicitly permits zero and notes coprime-only alternate convention."
 definitions/number/rational-number.tex,verified,"https://en.wikipedia.org/wiki/Rational_number","Opening defines ratio of integers with nonzero denominator; formal construction identifies fractions via ad=bc and describes Q as field."
 definitions/number/residue-class.tex,corrected,"https://en.wikipedia.org/wiki/Modular_arithmetic#Congruence_classes","The prior Equivalence_class#Congruence_classes anchor did not point to an actual section; retargeted to Modular_arithmetic Congruence classes with canonical sets [a]_n and n residues."
-definitions/numerical/absolute-error.tex,pending,,
-definitions/numerical/backward-error.tex,pending,,
-definitions/numerical/backward-stability.tex,pending,,
-definitions/numerical/condition-number.tex,pending,,
-definitions/numerical/convergence-order.tex,pending,,
-definitions/numerical/cubic-spline.tex,pending,,
-definitions/numerical/discretization-error.tex,pending,,
-definitions/numerical/divided-difference.tex,pending,,
-definitions/numerical/euler-method.tex,pending,,
-definitions/numerical/finite-difference.tex,pending,,
+definitions/numerical/absolute-error.tex,verified,"https://en.wikipedia.org/wiki/Approximation_error","Formal definition section states absolute error is magnitude |v-v_approx|, exactly the displayed scalar formula."
+definitions/numerical/backward-error.tex,verified,"https://en.wikipedia.org/wiki/Error_analysis_(mathematics)","Backward-error-analysis section computes perturbation of input for which returned approximate output is exact; entry supplies precise minimal norm perturbation/infimum convention."
+definitions/numerical/backward-stability.tex,verified,"https://en.wikipedia.org/wiki/Numerical_stability","Backward stability means algorithm returns exact solution for nearby perturbed input; distinguished from problem conditioning and machine roundoff hypotheses."
+definitions/numerical/condition-number.tex,verified,"https://en.wikipedia.org/wiki/Condition_number","Local relative normwise condition number derivative operator norm multiplied by input norm and divided output norm; norms and nonzero quantities specified."
+definitions/numerical/convergence-order.tex,verified,"https://en.wikipedia.org/wiki/Order_of_accuracy","Error bound ||u-u_h||<=Ch^p with C independent of discretization parameter h; explicit dependence on selected norm."
+definitions/numerical/cubic-spline.tex,corrected,"https://en.wikipedia.org/wiki/Spline_(mathematics)","Previous Cubic_spline URL redirected to Cubic_Hermite_spline, whose generic interpolants need be only C1. Spline mathematics classical definition explicitly discusses piecewise degree-three C2 cubic splines and natural/clamped endpoint extensions; URL corrected."
+definitions/numerical/discretization-error.tex,verified,"https://en.wikipedia.org/wiki/Discretization_error","Difference between continuous solution and discretized approximation; norm and representation/reconstruction must be fixed."
+definitions/numerical/divided-difference.tex,verified,"https://en.wikipedia.org/wiki/Divided_differences","Recursive divided differences over distinct nodes use quotient of order-(j-i-1) differences over endpoint separation."
+definitions/numerical/euler-method.tex,verified,"https://en.wikipedia.org/wiki/Euler_method","Forward explicit Euler step y_(n+1)=y_n+h f(t_n,y_n) for first order initial value ODE."
+definitions/numerical/finite-difference.tex,verified,"https://en.wikipedia.org/wiki/Finite_difference","Centered difference (f(x+h)-f(x-h))/(2h) approximates first derivative with O(h²) smoothness requirement."
 definitions/numerical/finite-element-method.tex,pending,,
 definitions/numerical/fixed-point-iteration.tex,pending,,
 definitions/numerical/forward-error.tex,pending,,
