@@ -37,3 +37,22 @@ Provide an obvious website GUI action such as “Suggest an improvement” so vi
 User reports of wrongly linked/recognized mathematical terms should feed future refinements to automatic dependency detection; they do not automatically change linking rules.
 
 **Status:** design and feasibility investigation only, after the current citation and cross-definition consistency audits. Do not implement yet.
+
+
+## Post-audit process retrospective and reusable corpus-building workflow (deferred)
+
+**When:** After completing mathDef's current citation/source-quality and cross-definition mathematical-consistency audits; do not launch this new workflow effort yet.
+
+**Why:** The initial mathDef population, source attribution, audits, fixes, and checkpoint/resumption process evolved somewhat experimentally. The user wants to examine what worked, what failed, where repeated corrective passes could have been avoided, and how to make future related projects much faster, more systematic, more reliable, and reproducible **from the first population and attribution pass**.
+
+**Future exemplar projects:** (1) a catalog of mathematical-education theory/model concepts and terminology, and (2) a catalog of mathematical theorems instead of definitions. They are examples of future applications, not authorization to start gathering their contents.
+
+**Review goals:**
+- Reconstruct the actual mathDef workflow and its recurring failure modes using repository history, scripts, checkpoints, validation results, and firsthand experience.
+- Define a staged intake pipeline: scope/taxonomy and candidate acquisition; source discovery and precise citation attribution; content drafting/extraction and provenance; normalization and mathematical/domain-specific rigor checks; intra-corpus relationship resolution; duplicate/ambiguity checks; automated validation; bounded editorial review; release and maintenance.
+- Distinguish reusable infrastructure (ingestion manifests, stable IDs, review-state tracking, source metadata, citation-validation checks, checkpointing, commit-sized batches, regression tests) from domain-specific requirements (definitions versus theorems versus math-education theories/models).
+- Capture clear acceptance criteria and auditable progress metrics so an initial corpus is internally consistent and source-grounded before expansion, minimizing remedial rework.
+- Consider how to record uncertainty, disagreements, and provenance without presenting machine-audited material as independently peer reviewed.
+- Produce a durable playbook/checklist and, if useful, reusable scripts or project template **after discussing design**. Do not presume that the existing mathDef code or schema transfers unchanged to other corpora.
+
+This retrospective and workflow redesign is a **future initiative**, not part of the current definition audit. Continue the current audit first; defer related new-project population and implementation.
