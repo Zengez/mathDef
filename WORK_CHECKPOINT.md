@@ -162,3 +162,9 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - Inspected 10 `linear/` IDs: basis, characteristic-polynomial, determinant, diagonalizable-operator, dimension, dual-space, eigenspace, eigenvalue, eigenvector, image; replaced their generic Wikipedia `List_of_linear_algebra_topics` citation with direct EoM/Wikipedia concept pages.
 - Clarified basis as a **Hamel basis**, separate from infinite Schauder expansions, fixed the field dependence of diagonalizability and the sign convention for characteristic polynomials, and added a commutative base-ring assumption for the determinant formula. Checked eigenvalue/eigenspace definitions against the EoM operator entries.
 - Next: inspect the 18 remaining `linear/` entries in 2 smaller batches, then move to the most important PDE problems and new sources. All definitions remain draft.
+
+## 2026-10-15 evening continuation — linear algebra L2
+
+- Reviewed `linear/`: inner-product, invertible-matrix, kernel, linear-combination, linear-functional, linear-independence, linear-map, matrix-multiplication, matrix, norm. Fixed ambiguous scalar-field, ring, and inner-product linearity conventions and explicitly distinguished algebraic from continuous linear functionals.
+- Replaced generic topic-list links with term-specific references. Zero-dimensional matrix shapes remain allowable under the explicit $m,n\ge0$ convention.
+- Next linear L3: remaining 8 entries `nullity`, `orthogonal-complement`, `orthogonality`, `rank`, `span`, `subspace`, `transpose`, `vector-space`. Then compile/metadata check and further audits.
