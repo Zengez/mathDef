@@ -21,7 +21,12 @@
     <div class="intro"><div><h2>Find a definition</h2><p>Results narrow as you type. Select any match to read its complete definition.</p></div><span class="badge" id="total">Loading…</span></div>
     <div class="searches">
       <div class="search-box"><label for="term-query">⌕ &nbsp; Search terms</label><p>Searches the term itself and its aliases.</p>
-        <input type="search" id="term-query" placeholder="e.g. open, function, metric" autocomplete="off" spellcheck="false"></div>
+        <input type="search" id="term-query" placeholder="e.g. open, function, metric" autocomplete="off" spellcheck="false">
+        <div class="definition-modes" role="group" aria-label="Definition exploration mode">
+          <button type="button" data-explore-mode="standard" aria-pressed="false">Standard</button>
+          <button type="button" data-explore-mode="nested" aria-pressed="true" class="active">Nested</button>
+          <button type="button" data-explore-mode="inline" aria-pressed="false">In-Line</button>
+        </div></div>
       <div class="search-box"><label for="definition-query">⌕ &nbsp; Search definitions</label><p>Searches the actual text of definitions, not their names.</p>
         <input type="search" id="definition-query" placeholder="e.g. neighborhood, epsilon, inverse" autocomplete="off" spellcheck="false"></div>
     </div>
