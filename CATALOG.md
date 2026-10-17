@@ -4,6 +4,8 @@ Snapshot: 2026-10-16. Counts below are generated from the repository tree; the d
 
 **1007 definitions across 40 subject folders.**
 
+**Editorial status (October 16, 2026):** The per-entry citation-suitability review is complete: **824 citations verified**, **183 entries corrected**, **0 pending or deferred**, recorded in [CITATION_AUDIT.csv](CITATION_AUDIT.csv). This does **not** constitute formal mathematical peer review or a full rendered-LaTeX audit. Older inventory counts farther down this document are historical checkpoints, not the current corpus size.
+
 | Subject | Folder | Entries |
 |---|---|---:|
 | Abstract algebra | [`definitions/algebra/`](definitions/algebra/) | 29 |
@@ -56,10 +58,10 @@ Each LaTeX definition file may contain:
 - `term`: displayed term, which may include LaTeX math
 - `aliases`: optional pipe-separated synonyms
 - `related`: optional comma-separated existing definition IDs
-- `source`: optional HTTPS academic reference or topic-index link
+- `source`: HTTPS mathematical reference, reviewed for citation suitability (not a peer-review certification)
 - `status`: `draft`, `reviewed`, or `example`
 
-The source URL gives **reference context**, often a broad subject page, and is **not necessarily a direct citation for each specific formulation**. Entries were independently written in concise mathematical language. The presence of a URL does not establish that the referenced article supports every clause of an entry. The new corpus is tagged `draft` and is not mathematically peer-reviewed.
+Each existing `source` URL was included in the completed October 16 citation-suitability audit and is intended to support the associated concept. The ledger records the evidence and any correction; this does **not** guarantee every mathematical assertion in an entry or replace formal peer review. Definitions were independently written in concise mathematical language and remain draft/example until separately approved.
 
 ## Editorial review checklist
 
@@ -96,25 +98,25 @@ A rate-limited GitHub Actions trial of 12 current math.DS papers identified **30
 
 The [coverage and source-review report](COVERAGE_REVIEW.md) records the audits, prioritized reference sources, and the Wikipedia category workflow. In the current expansion, **91 additional draft definitions** were written from individual mathematical sources, notably Bergman kernels and spaces, analytic function spaces, standard complex analysis, and several complex variables. The initial coverage audit revealed several hundred nonmatching Wikipedia titles, not hundreds of confirmed mathematical omissions; biographies and theorems require triage. 
 
-## Expanded systematic mathematics audit — 15 October 2026
+## Historical systematic mathematics audit — 15 October 2026
 
-The database now contains **908 draft/example definitions** across **40 folders**. A targeted inspection and repair covered all 36 original functional-analysis entries, followed by 29 independently formulated advanced definitions chosen from a completed depth-two Wikipedia mathematics category scan. None of these entries was indiscriminately reclassified as peer-reviewed.
+At that intermediate stage the database contained **908 draft/example definitions** across **40 folders**. A targeted inspection and repair covered all 36 original functional-analysis entries, followed by 29 independently formulated advanced definitions chosen from a completed depth-two Wikipedia mathematics category scan. None of these entries was indiscriminately reclassified as peer-reviewed.
 
-The [broad discovery report](WIKIPEDIA_BROAD_SCAN_2026-10-15.md) summarizes four independent scans totaling 220 visited Wikipedia categories and 10,233 distinct candidate article titles; a large fraction of unmatched titles are not appropriate mathematical definitions. See also [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md) for the remaining per-entry mathematical QA backlog.
+The [broad discovery report](WIKIPEDIA_BROAD_SCAN_2026-10-15.md) summarizes four independent scans totaling 220 visited Wikipedia categories and 10,233 distinct candidate article titles; a large fraction of unmatched titles are not appropriate mathematical definitions. See [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md) for the subsequent completed citation audit and remaining separate editorial work.
 
-## Measure theory and algebra audit, continued (October 15, 2026)
+## Historical measure theory and algebra audit (October 15, 2026)
 
-- **934 definitions** are present as individual LaTeX files; structural and mathematical review status are separate.
+- **934 definitions** were present as individual LaTeX files at this intermediate checkpoint; structural and mathematical review status are separate.
 - Repaired **21 existing commutative algebra entries**, replacing a shared general Stacks tag with direct Stacks sections or individual mathematical topic pages and tightening definitions of tensor products, integrality, local rings, and zero divisors.
 - Repaired **20 existing scheme/sheaf entries**, replacing a shared affine-scheme Stacks tag with relevant permanent references to the spectrum, presheaves, sheaves, stalks, locally ringed spaces and properties of schemes. Qualified the closed-subscheme and scheme-fiber formulations.
 - Added **26 new advanced measure and stochastic definitions**, using the prior multi-category Wikipedia title inventory and individual concept pages. New topics include Radon regularity, signed measures, Hahn/Jordan decompositions, Radon–Nikodym derivatives, product and completed measures, Pettis/Bochner integration, standard Borel spaces, local martingales and semimartingales.
 - All new definitions remain `status: draft`. Source URLs are direct concept references, but full mathematical peer review and per-definition renderer review remain to be completed.
 
-[Checkpoint with commit IDs and remaining work](WORK_CHECKPOINT.md).
+[Checkpoint with commit IDs and later work](WORK_CHECKPOINT.md).
 
-## PDE, numerical, and microlocal update — October 15, 2026
+## Historical PDE, numerical, and microlocal update — October 15, 2026
 
-- **971 definitions across 40 subjects** after the latest review and expansion.
+- **971 definitions across 40 subjects** at this intermediate checkpoint, following that phase of review and expansion.
 - All original **36 PDE** entries and **35 numerical analysis** entries received bounded per-definition citation and hypothesis reviews (P1–P4, N1–N3), with conceptual repairs to weak derivatives, ellipticity, boundary problems, numerical backward error, conditioning, and matrix factorizations.
 - **12 additional advanced PDE/microlocal definitions** from the [Encyclopedia of Mathematics treatment of pseudodifferential operators](https://encyclopediaofmath.org/wiki/Pseudo-differential_operator), [wave front sets](https://en.wikipedia.org/wiki/Wave_front_set), [multiplier theory](https://encyclopediaofmath.org/wiki/Multiplier_theory), and [Bessel-potential spaces](https://encyclopediaofmath.org/wiki/Bessel_potential_operator).
-- Editorial draft remains the default; the build validates stable IDs, metadata and related pointers, not independent correctness or existence of every cited page. The latest checkpoint tracks precise mathematical issues and the next unreviewed subjects.
+- Editorial draft remains the default; the build validates stable IDs, metadata and related pointers, not independent correctness or existence of every cited page. Later checkpoints record completion of the citation-suitability audit, while mathematical peer review and systematic rendering verification remain separate.
