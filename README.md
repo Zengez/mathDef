@@ -13,6 +13,7 @@ The repository contains **1,007 definitions in 40 subjects**. The citation-suita
 - Two separate live searches: **Search terms** (term name and aliases only) and **Search definitions** (definition body only).
 - Independent result selections and optional side-by-side split view.
 - Click matches to read the definition in place; click related definitions to follow links.
+- Three recursive definition exploration modes: **Standard**, **Nested** (default), and **In-Line**. During the site build, matching terms/aliases in definition bodies generate candidate links, with ambiguity checks and branch-local cycle prevention. Curated link corrections live in [data/link_overrides.json](data/link_overrides.json). See [DEPENDENCY_LINKING.md](DEPENDENCY_LINKING.md) for precise behavior and limitations.
 - Definitions are individual `.tex` files, grouped by subject.
 
 ## Add a definition
