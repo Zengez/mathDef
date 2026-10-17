@@ -26,7 +26,7 @@ jobs:
       - name: Check feedback JavaScript syntax
         run: node --check web/feedback.js
       - name: Test feedback issue drafts
-        run: node --test tests/test_feedback.cjs
+        run: node --test tests/test_feedback.cjs tests/test_feedback_ui.cjs
       - name: Test arXiv candidate scanner
         run: python -m unittest discover -s tests
       - name: Generate definition index
