@@ -82,6 +82,7 @@
       get("feedback-correction-fields").hidden=adding;
       get("feedback-message-label").textContent=adding?"Suggested definition (optional)":"Explain the correction (required)";
       fields.message.required=!adding;
+      fields.term.required=adding;
       fields.category.value=link?"wrongLink":"math";
       get("feedback-context").textContent=adding
         ?"Request a mathematical term that is not yet in the collection; a definition is optional."
