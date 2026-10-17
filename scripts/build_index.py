@@ -5,6 +5,8 @@ import re
 import shutil
 from pathlib import Path
 
+from scripts.dependency_links import load_overrides, populate_dependencies
+
 ROOT = Path(__file__).resolve().parent.parent
 DEFS = ROOT / "definitions"
 OUT = ROOT / "_site"
@@ -68,13 +70,22 @@ def main():
         for linked in entry["related"]:
             if linked not in ids:
                 raise ValueError(f"{entry['id']}: unknown related ID {linked}")
+    overrides = load_overrides(ROOT / "data" / "link_overrides.json")
+    dependencies, link_report = populate_dependencies(entries, overrides)
+    for entry in entries:
+        entry["dependencies"] = dependencies[entry["id"]]
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "web", OUT)
     entries.sort(key=lambda d: (d["term"].casefold(), d["id"]))
     (OUT / "definitions-index.json").write_text(json.dumps(entries,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    (OUT / "dependency-review.json").write_text(
+        json.dumps(link_report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
     (OUT / ".nojekyll").touch()
-    print(f"Built {len(entries)} definitions in {OUT}")
+    print(f"Built {len(entries)} definitions and {link_report['links']} proposed links "
+          f"across {link_report['definitions_with_links']} entries; "
+          f"{link_report['unresolved_ambiguous_occurrences']} ambiguous occurrences omitted.")
 
 if __name__ == "__main__":
     main()
