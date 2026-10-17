@@ -4,7 +4,7 @@ Snapshot: 2026-10-16. Counts below are generated from the repository tree; the d
 
 **1007 definitions across 40 subject folders.**
 
-**Editorial status (October 16, 2026):** The per-entry citation-suitability review is complete: **824 citations verified**, **183 entries corrected**, **0 pending or deferred**, recorded in [CITATION_AUDIT.csv](CITATION_AUDIT.csv). This does **not** constitute formal mathematical peer review or a full rendered-LaTeX audit. Older inventory counts farther down this document are historical checkpoints, not the current corpus size.
+**Editorial status (October 16, 2026):** The per-entry citation-suitability review is complete: **822 citations verified**, **185 entries corrected**, **0 pending or deferred**, recorded in [CITATION_AUDIT.csv](CITATION_AUDIT.csv). This does **not** constitute formal mathematical peer review or a full rendered-LaTeX audit. Older inventory counts farther down this document are historical checkpoints, not the current corpus size.
 
 | Subject | Folder | Entries |
 |---|---|---:|
