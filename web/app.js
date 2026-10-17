@@ -73,14 +73,33 @@
     // even while collapsed, as do every ancestor and its accessible siblings.
     return new Set([...blocked, ...deps.map((dep) => dep.id)]);
   }
+  function correctionButton(id, compact = false) {
+    return '<button type="button" class="suggest-correction' + (compact ? ' compact' : '') +
+      '" data-feedback-action="correct" data-feedback-id="' + escape(id) +
+      '" aria-label="Suggest a correction to ' + escape(lookup.get(id).term) +
+      '">✎ ' + (compact ? 'Correct' : 'Suggest correction') + '</button>';
+  }
+  function linkReport(sourceId, dep, compact = false) {
+    const source = lookup.get(sourceId), target = lookup.get(dep.id);
+    return '<button type="button" class="suggest-link' + (compact ? ' compact' : '') +
+      '" data-feedback-action="link" data-feedback-source-id="' + escape(sourceId) +
+      '" data-feedback-target-id="' + escape(dep.id) +
+      '" data-feedback-phrase="' + escape(dep.label || '') +
+      '" aria-label="Report link from ' + escape(source.term) + ' to ' + escape(target.term) +
+      '" title="Report an incorrect definition link">⚑' +
+      (compact ? '' : ' Report link') + '</button>';
+  }
   function nodeButton(side, dep, path, inline) {
     const target = lookup.get(dep.id);
     const open = expanded(side, path);
-    return '<button type="button" class="' + (inline ? 'inline-cue' : 'dependency-toggle') +
+    const button = '<button type="button" class="' + (inline ? 'inline-cue' : 'dependency-toggle') +
       '" data-expand="' + escape(key(path)) + '" aria-expanded="' + String(open) + '">' +
       (inline ? '(definition: ' + escape(target.term) + ')' :
        '<span class="dependency-arrow" aria-hidden="true">' + (open ? '▾' : '▸') +
        '</span> Definition: ' + escape(target.term)) + '</button>';
+    if (!inline) return button;
+    return '<span class="inline-cue-actions">' + button +
+      linkReport(path[path.length - 2], dep, true) + '</span>';
   }
   function renderNestedChildren(side, d, path, blocked) {
     const deps = visibleDependencies(d, blocked);
@@ -90,7 +109,10 @@
       deps.map((dep) => {
         const target = lookup.get(dep.id), childPath = [...path, dep.id];
         const open = expanded(side, childPath);
-        return '<section class="dependency-box">' + nodeButton(side, dep, childPath, false) +
+        return '<section class="dependency-box"><div class="dependency-head">' +
+          nodeButton(side, dep, childPath, false) +
+          '<div class="dependency-feedback">' + correctionButton(dep.id, true) +
+          linkReport(d.id, dep, true) + '</div></div>' +
           (open ? '<div class="dependency-content"><div class="definition">' + latexBody(target.body) +
             '</div>' + renderNestedChildren(side, target, childPath, childBlocked) + '</div>' : '') +
           '</section>';
@@ -135,8 +157,10 @@
       const children = situated.filter((dep) => expanded(side, [...path, dep.id]));
       return item + children.map((dep) => {
         const childPath = [...path, dep.id], target = lookup.get(dep.id);
-        return '<div class="inline-insert"><div class="inline-insert-title">Definition: ' +
-          escape(target.term) + '</div><div class="definition">' +
+        return '<div class="inline-insert"><div class="inline-insert-heading">' +
+          '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +
+          '<div class="dependency-feedback">' + correctionButton(dep.id, true) +
+          linkReport(d.id, dep, true) + '</div></div><div class="definition">' +
           renderInlineBody(side, target, childPath, childBlocked) + '</div></div>';
       }).join("");
     }).join("");
@@ -146,8 +170,10 @@
     return html + (extra.length ? '<div class="inline-extras">' + extra.map((dep) => {
       const childPath = [...path, dep.id], target = lookup.get(dep.id);
       return '<div>' + nodeButton(side, dep, childPath, true) +
-        (expanded(side, childPath) ? '<div class="inline-insert"><div class="inline-insert-title">Definition: ' +
-          escape(target.term) + '</div><div class="definition">' +
+        (expanded(side, childPath) ? '<div class="inline-insert"><div class="inline-insert-heading">' +
+          '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +
+          '<div class="dependency-feedback">' + correctionButton(dep.id, true) +
+          linkReport(d.id, dep, true) + '</div></div><div class="definition">' +
           renderInlineBody(side, target, childPath, childBlocked) + '</div></div>' : '') + '</div>';
     }).join("") + '</div>' : "");
   }
@@ -174,8 +200,9 @@
     const reviewLabel = d.status === "draft" ? '<span class="draft-label">Draft · not individually reviewed</span>' :
       (d.status === "reviewed" ? '<span class="reviewed-label">Reviewed entry</span>' :
        '<span class="draft-label">Prototype entry</span>');
-    root.innerHTML = '<article><div class="subject">' + escape(d.category) + '</div><h4>' +
-      escape(d.term) + '</h4>' + reviewLabel +
+    root.innerHTML = '<article><div class="subject">' + escape(d.category) + '</div>' +
+      '<div class="definition-title-row"><h4>' + escape(d.term) + '</h4>' +
+      correctionButton(d.id) + '</div>' + reviewLabel +
       (d.aliases.length ? '<p class="aliases">Also called: ' + d.aliases.map(escape).join(", ") + '</p>' : "") +
       exploration(side, d) +
       '<div class="related"><h5>Related definitions</h5><div class="related-list">' +
@@ -259,6 +286,7 @@
     button.addEventListener("click", () => explorationMode(button.dataset.exploreMode)));
   el("split").addEventListener("click", () => mode(true));
   el("focus").addEventListener("click", () => mode(false));
+  window.mathDefFeedback.init((id) => lookup.get(id));
   fetch("./definitions-index.json", {cache:"no-cache"}).then((response) => {
     if (!response.ok) throw new Error("HTTP " + response.status);
     return response.json();
