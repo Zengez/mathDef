@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./styles.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script defer src="./feedback.js"></script>
   <script defer src="./app.js"></script>
 </head>
 <body>
@@ -22,6 +23,7 @@
     <div class="searches">
       <div class="search-box"><label for="term-query">⌕ &nbsp; Search terms</label><p>Searches the term itself and its aliases.</p>
         <input type="search" id="term-query" placeholder="e.g. open, function, metric" autocomplete="off" spellcheck="false">
+        <button type="button" class="suggest-new" data-feedback-action="new">＋ Suggest a definition</button>
         <div class="definition-modes" role="group" aria-label="Definition exploration mode">
           <button type="button" data-explore-mode="standard" aria-pressed="false">Standard</button>
           <button type="button" data-explore-mode="nested" aria-pressed="true" class="active">Nested</button>
@@ -48,5 +50,54 @@
   </main>
   <footer>mathDef · Prototype · <a href="https://github.com/Zengez/mathDef/tree/main/definitions" target="_blank" rel="noopener noreferrer">Browse LaTeX source ↗</a></footer>
 </div>
+
+<dialog id="feedback-dialog" class="feedback-dialog" aria-labelledby="feedback-title" aria-describedby="feedback-context">
+  <form id="feedback-form">
+    <div class="feedback-header">
+      <div><p class="feedback-eyebrow">MATHDEF COMMUNITY FEEDBACK</p><h2 id="feedback-title">Suggest an improvement</h2></div>
+      <button type="button" class="feedback-close" id="feedback-close" aria-label="Close suggestion form">×</button>
+    </div>
+    <p id="feedback-context" class="feedback-context"></p>
+    <section id="feedback-new-fields">
+      <label for="feedback-term">Mathematical term <span aria-hidden="true">*</span></label>
+      <input id="feedback-term" type="text" maxlength="150" placeholder="e.g. Bergman metric" autocomplete="off" required>
+      <label for="feedback-subject">Subject area (optional)</label>
+      <input id="feedback-subject" type="text" maxlength="100" placeholder="e.g. several complex variables">
+    </section>
+    <section id="feedback-correction-fields" hidden>
+      <label for="feedback-category">What should be corrected?</label>
+      <select id="feedback-category">
+        <option value="math">Mathematical or wording error</option>
+        <option value="citation">Incorrect or missing citation</option>
+        <option value="wrongLink">Incorrect or unnecessary definition link</option>
+        <option value="missingLink">Missing definition link</option>
+        <option value="other">Other improvement</option>
+      </select>
+    </section>
+    <label for="feedback-message" id="feedback-message-label">Description</label>
+    <textarea id="feedback-message" rows="4" maxlength="3800" placeholder="Write your proposed definition or describe the issue. LaTeX is welcome."></textarea>
+    <label for="feedback-replacement">Suggested replacement or additional context (optional)</label>
+    <textarea id="feedback-replacement" rows="3" maxlength="3000" placeholder="Specific replacement text, further explanation, or relevant details."></textarea>
+    <label for="feedback-reference">Reference URL (optional)</label>
+    <input id="feedback-reference" type="url" maxlength="450" placeholder="https://…">
+    <div class="feedback-attribution">
+      <label for="feedback-attribution">Attribution name or ID (optional)</label>
+      <input id="feedback-attribution" type="text" maxlength="100" autocomplete="nickname" placeholder="Name or preferred public identifier">
+      <label class="feedback-consent-label"><input id="feedback-consent" type="checkbox">
+        Include this name publicly in the suggestion</label>
+      <p>Leave this unchecked to omit the optional name. GitHub will still show the submitting account publicly.</p>
+    </div>
+    <p class="feedback-disclosure">Suggestions are public GitHub Issues, not immediate changes to definitions. A GitHub account is required to finish submitting this first version; account-free submissions may be added later. Do not include private information.</p>
+    <p id="feedback-error" role="alert" class="feedback-error" hidden></p>
+    <p id="feedback-ready" class="feedback-ready" role="status" hidden>
+      Your draft is ready. Open it on GitHub, review the text, and click <strong>Submit new issue</strong> there.
+    </p>
+    <div class="feedback-actions">
+      <button type="button" class="feedback-cancel" id="feedback-cancel">Cancel</button>
+      <button type="submit" class="feedback-prepare">Prepare suggestion</button>
+      <a id="feedback-github-link" class="feedback-github-link" target="_blank" rel="noopener noreferrer" hidden>Review &amp; submit on GitHub ↗</a>
+    </div>
+  </form>
+</dialog>
 </body>
 </html>
