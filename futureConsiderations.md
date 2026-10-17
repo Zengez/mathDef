@@ -1,6 +1,6 @@
 # Future considerations and feature history
 
-Recorded 2026-10-16. This file preserves the user's future website feature requirements and design decisions. **The recursive definition explorer was authorized and its initial implementation completed later on 2026-10-16.** See [DEPENDENCY_LINKING.md](DEPENDENCY_LINKING.md) for its current behavior and correction process. Community suggestions and process-retrospective features below remain deferred. Existing mathematical citations and definitions should not be modified solely to implement recursive links.
+Recorded 2026-10-16. This file preserves the user's future website feature requirements and design decisions. **The recursive definition explorer was authorized and its initial implementation completed later on 2026-10-16.** See [DEPENDENCY_LINKING.md](DEPENDENCY_LINKING.md) for its current behavior and correction process. The first GitHub-authenticated community suggestion interface has since been implemented; account-free intake and the process retrospective remain deferred. Existing mathematical citations and definitions should not be modified solely to implement recursive links.
 
 ## Recursive definition exploration (first version implemented)
 
@@ -26,7 +26,7 @@ The user has additional features to describe; do not invent details. Term-matchi
 
 Read alongside `WORK_CHECKPOINT.md`. The user explicitly authorized the first implementation and automatic linking population after the original discussion; the separate community-feedback feature remains unimplemented.
 
-## Community suggestions / review queue (deferred)
+## Community suggestions / review queue (initial GitHub Issues version implemented)
 
 Provide an obvious website GUI action such as “Suggest an improvement” so visitors can propose mathematical corrections, report mistakes or bad term/dependency links, request missing definitions, or offer other suggestions. Exact placement and form design are deferred.
 
@@ -38,7 +38,7 @@ Provide an obvious website GUI action such as “Suggest an improvement” so vi
 
 User reports of wrongly linked/recognized mathematical terms should feed future refinements to automatic dependency detection; they do not automatically change linking rules.
 
-**Status:** design and feasibility investigation only, after the current citation and cross-definition consistency audits. Do not implement yet.
+**Status update (October 16, 2026):** The user authorized the first GitHub-Issues-based intake implementation. A public site form now requests new definitions and captures corrections on main and recursive definitions, including incorrect dependency pairs. The visitor must still sign in and submit the GitHub Issue; no automatic edits are performed. The optional public attribution name requires opt-in. Anonymous/account-free intake, moderation infrastructure beyond GitHub Issues, and future Markdown exports remain deferred. See [FEEDBACK_WORKFLOW.md](FEEDBACK_WORKFLOW.md).
 
 
 ## Post-audit process retrospective and reusable corpus-building workflow (deferred)
