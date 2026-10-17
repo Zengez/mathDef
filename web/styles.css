@@ -76,3 +76,48 @@ footer{color:#8797aa;font-size:12px;margin:32px 0 8px}
 .inline-insert .inline-insert{margin-left:2.5ch}
 .inline-extras{display:flex;flex-direction:column;align-items:flex-start;gap:6px;font:12px ui-sans-serif,system-ui,sans-serif;margin:4px 0 12px}
 @media(max-width:600px){.definition-modes{width:100%;justify-content:space-between}.definition-modes button{flex:1;padding:8px 5px}.inline-insert{margin-left:1.5ch;padding-left:1.5ch}}
+
+
+/* Community suggestions: definition-level and dependency-edge feedback. */
+.suggest-new{display:inline-flex;align-items:center;gap:6px;margin:12px 0 1px;padding:8px 12px;border:1px solid #b9d6ef;border-radius:9px;color:#1c5f95;background:#edf6ff;font-size:12px;font-weight:750}
+.suggest-new:hover{background:#dfeffd}
+.definition-title-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.definition-title-row h4{margin-bottom:12px}
+.suggest-correction,.suggest-link{border:1px solid transparent;background:transparent;border-radius:7px;padding:5px 7px;color:#537da4;font:650 11px ui-sans-serif,system-ui,sans-serif;white-space:nowrap}
+.suggest-correction:hover,.suggest-link:hover{color:#1d5b94;background:#e4f0fc;border-color:#cbddef}
+.suggest-correction.compact,.suggest-link.compact{font-size:10px;padding:5px}
+.dependency-head{display:flex;align-items:stretch;gap:2px;background:#f1f6fe}
+.dependency-head .dependency-toggle{width:auto;flex:1;min-width:0}
+.dependency-feedback{display:flex;align-items:center;gap:2px;padding:2px 5px;flex-shrink:0}
+.inline-insert-heading{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px;margin-bottom:7px}
+.inline-insert-heading .inline-insert-title{margin:0}
+.inline-cue-actions{display:inline;white-space:normal}
+.inline-cue-actions .suggest-link{vertical-align:baseline;font-size:10px;padding:0 3px}
+.feedback-dialog{width:min(630px,calc(100vw - 24px));max-height:min(92vh,900px);padding:0;border:1px solid #cbd9e9;border-radius:16px;background:white;color:#243953;box-shadow:0 30px 90px #182b4859}
+.feedback-dialog:not([open]){display:none}
+.feedback-dialog::backdrop{background:#10243d99}
+.feedback-dialog form{padding:24px clamp(15px,3vw,26px);max-height:92vh;overflow-y:auto}
+.feedback-header{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.feedback-header h2{font-size:21px;line-height:1.25;margin:4px 0 0;color:#1d3553}
+.feedback-eyebrow{margin:0;color:#5d80a9;letter-spacing:.13em;font-size:10px;font-weight:800}
+.feedback-close{border:0;background:#eef3f9;border-radius:8px;font-size:24px;line-height:1;padding:3px 9px;color:#56708c}
+.feedback-context{padding:10px 12px;margin:17px 0;background:#f1f6fb;border-radius:8px;font-size:12px;color:#46607b;overflow-wrap:anywhere}
+.feedback-dialog section{margin:0}
+.feedback-dialog section[hidden],.feedback-dialog [hidden]{display:none!important}
+.feedback-dialog label:not(.feedback-consent-label){display:block;font-size:12px;font-weight:750;margin:14px 0 6px;color:#334c68}
+.feedback-dialog input[type=text],.feedback-dialog input[type=url],.feedback-dialog select,.feedback-dialog textarea{width:100%;border:1px solid #c9d7e7;border-radius:9px;padding:10px 12px;font:13px/1.5 ui-sans-serif,system-ui,sans-serif;color:#243953;background:#fcfdff}
+.feedback-dialog textarea{resize:vertical;min-height:66px}
+.feedback-dialog :is(input,textarea,select):focus-visible{outline:2px solid #4f87be;outline-offset:1px}
+.feedback-attribution{background:#f7fafd;border:1px solid #e5edf5;border-radius:10px;padding:2px 12px 10px;margin-top:17px}
+.feedback-consent-label{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:650;margin-top:10px}
+.feedback-consent-label input{accent-color:#28619c}
+.feedback-attribution p{font-size:11px;line-height:1.5;color:#72859c;margin:7px 0 0}
+.feedback-disclosure{font-size:11px;color:#72859c;line-height:1.65;margin:14px 0}
+.feedback-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:18px}
+.feedback-actions button,.feedback-github-link{border:1px solid #d2dfed;border-radius:9px;padding:10px 12px;font:700 12px ui-sans-serif,system-ui,sans-serif;text-decoration:none}
+.feedback-cancel{background:white;color:#60748e}
+.feedback-prepare{background:#28619c;color:white;border-color:#28619c!important}
+.feedback-github-link{background:#e5f2fd;color:#225b94}
+.feedback-error{padding:9px 11px;background:#fff1f1;border-radius:8px;color:#9c3140;font-size:12px}
+.feedback-ready{padding:9px 11px;background:#f2f8fe;border-radius:8px;color:#365e86;font-size:12px}
+@media(max-width:600px){.dependency-head{flex-wrap:wrap}.dependency-head .dependency-feedback{margin-left:auto}.feedback-dialog form{padding:18px}}
