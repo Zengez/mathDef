@@ -1873,3 +1873,21 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - `scv.hartogs-figure`: replaced AI-adapted exposition with Jiří Lebl, *Tasty Bits of Several Complex Variables* (2026), Theorem 2.1.4, printed p49/PDF page49. Verified against the source PDF page visually: the repository's two-dimensional Hartogs union is the coordinate-swapped form of Lebl's figure with a=s and b=r; extension to full bidisc follows directly. Commit `c50d0a9c`.
 - `README.md` / `CATALOG.md`: clarified current audit status versus outdated intermediate snapshots, made README sample citation concept-specific, retained older 908/934/971/995 counts only as explicitly historical; see current doc commits. Metadata citation ledger updated in commit `d3ecffd5` with current links, source and edit notes. Two previously `verified` entries are now `corrected` due to post-audit citation/definition edits: **822 verified, 185 corrected, 0 pending, 0 needs_followup = 1007/1007**. No review statuses promoted.
 - A systematic scholarly-source replacement across Wikipedia-based entries remains optional future editorial work; individual mathematical peer review and full browser KaTeX rendering review remain separate. No new definitions added.
+
+
+## 2026-10-16 — Recursive definition exploration: first implemented release
+
+**User authorization:** Following prior deferred-design discussion, user explicitly requested a first implementation with term/context matching and automated initial link population. Future community feedback is intended to catch mistaken, missing, or extraneous links but is **not implemented in this phase**.
+
+**Implemented and committed:**
+- Build-time matcher scripts/dependency_links.py (commit 7842a721), wired through scripts/build_index.py (2767d0b7; import fix b22268c3); source-body-only matching with term/alias and limited plural recognition, optional literal TeX matching, longest-phrase priority, contextual category/related signals, and omitted unresolved ambiguities. Math parsing short-label fix 85ae46fd.
+- Empty curated correction manifest data/link_overrides.json (32dc6c9b): supports per-source include, exclude, resolve with stable IDs and strict validation; no per-entry LaTeX changes.
+- Web client modes Standard, Nested default, In-Line (app.js a2d59d4b; index.html 02ba1cc6; styles.css dc99f5a4). Browser storage keeps mode preference. Nested expansion allows concurrent siblings and preserves descendant open states. In-Line inserts definition after the paragraph containing each recognized term; both use branch-local ancestor-level visibility/cycle filters and lazy descendant rendering. Existing search, layout, metadata and related navigation preserved.
+- Unit tests tests/test_dependency_links.py (ee53b4f1): term boundaries, longer matches, TeX math masking and literal math label, ambiguous duplicate terms, contextual resolution, manual include/exclude/resolve, body offsets.
+- Editorial guide DEPENDENCY_LINKING.md (41086d4d), README feature documentation and futureConsiderations.md updated to reflect authorization and implementation.
+
+**Actual full-corpus result (GitHub Pages run 38986425576, success):** 1,007 definition files processed, **2,270 proposed direct dependency edges covering 908 definitions**, **17 ambiguous source occurrences excluded**, 14 unit tests passed, JavaScript syntax, index generation and deployment succeeded. All 1,007 original definition IDs and content retained.
+
+**Important safeguards:** Source list, existing related metadata, and paper provenance do not create links without body occurrence, except deliberately curated manual inclusions. Matching is heuristic; it is neither peer review nor semantic proof. The deployed dependency-review.json exposes counts and a sample of ambiguity cases. A future feedback/review workflow should queue suggested corrections rather than edit this manifest automatically. Visual-browser interaction QA remains desirable; the static build alone cannot establish all UI behavior.
+
+**Resumption:** See DEPENDENCY_LINKING.md and futureConsiderations.md; edits to link_overrides.json are the near-term remediation path. Rebuild/index and inspect deployment after any changes. Do not re-run the full citation audit as part of recursive UI work.
