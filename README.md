@@ -6,7 +6,7 @@ An interactive, GitHub-hosted collection of mathematical definitions written in 
 
 ## Current editorial status (October 16, 2026)
 
-The repository contains **1,007 definitions in 40 subjects**. The citation-suitability audit is complete for the existing corpus: **824 sources verified as suitable without changes, 183 entries whose citations or wording were corrected, and 0 citation entries pending**. See [CITATION_AUDIT.csv](CITATION_AUDIT.csv), [CITATION_AUDIT_PROCESS.md](CITATION_AUDIT_PROCESS.md), and [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md). These counts describe citation review, **not** formal mathematical peer review or individual approval of every KaTeX rendering. Entries retain their draft/example statuses until those separate checks occur.
+The repository contains **1,007 definitions in 40 subjects**. The citation-suitability audit is complete for the existing corpus: **822 sources verified as suitable without changes, 185 entries whose citations or wording were corrected, and 0 citation entries pending**. See [CITATION_AUDIT.csv](CITATION_AUDIT.csv), [CITATION_AUDIT_PROCESS.md](CITATION_AUDIT_PROCESS.md), and [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md). These counts describe citation review, **not** formal mathematical peer review or individual approval of every KaTeX rendering. Entries retain their draft/example statuses until those separate checks occur.
 
 ## Features
 
