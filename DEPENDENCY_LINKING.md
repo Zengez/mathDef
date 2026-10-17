@@ -1,6 +1,6 @@
 # Recursive definition explorer and automatic links
 
-**Status:** First implementation on 2026-10-16. The community suggestion/review queue described in [futureConsiderations.md](futureConsiderations.md) is a separate, deferred feature.
+**Status:** First implementation on 2026-10-16. A first community suggestion/review queue using GitHub Issues is now implemented; see [FEEDBACK_WORKFLOW.md](FEEDBACK_WORKFLOW.md). Anonymous intake remains a deferred enhancement.
 
 ## User interaction
 
@@ -47,7 +47,7 @@ Example shape (illustrative only; the current manifest starts empty):
       }
     }
 
-The builder checks IDs and override structure. In-Line mode places a forced inclusion at the end of the definition if no literal source-text match exists. Visitor feedback, once enabled, should create proposals for maintainers to review; it must not automatically alter this manifest or mathematical content.
+The builder checks IDs and override structure. In-Line mode places a forced inclusion at the end of the definition if no literal source-text match exists. Visitor feedback now creates GitHub Issue proposals for maintainers to review; it must not automatically alter this manifest or mathematical content. Incorrect link reports include the source definition ID, target definition ID, and matched phrase.
 
 ## Limitations and future work
 
