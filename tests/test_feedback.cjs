@@ -59,5 +59,5 @@ test("issue URL uses GitHub create-issue draft and encodes special characters", 
   assert.equal(parsed.searchParams.get("title"),"[Definition request] L^2 & B^2");
   assert.match(parsed.searchParams.get("body"),/\$f\(x\) \\in H\^2\$/);
   assert.throws(()=>buildIssue({kind:"correction",category:"math",
-    definitionId:"algebra.group",message:""}),/explain/i);
+    definitionId:"algebra.group",message:""}),/describe/i);
 });
