@@ -23,6 +23,10 @@ jobs:
           python-version: '3.12'
       - name: Check frontend JavaScript syntax
         run: node --check web/app.js
+      - name: Check feedback JavaScript syntax
+        run: node --check web/feedback.js
+      - name: Test feedback issue drafts
+        run: node --test tests/test_feedback.cjs
       - name: Test arXiv candidate scanner
         run: python -m unittest discover -s tests
       - name: Generate definition index
