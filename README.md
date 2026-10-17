@@ -14,6 +14,7 @@ The repository contains **1,007 definitions in 40 subjects**. The citation-suita
 - Independent result selections and optional side-by-side split view.
 - Click matches to read the definition in place; click related definitions to follow links.
 - Three recursive definition exploration modes: **Standard**, **Nested** (default), and **In-Line**. During the site build, matching terms/aliases in definition bodies generate candidate links, with ambiguity checks and branch-local cycle prevention. Curated link corrections live in [data/link_overrides.json](data/link_overrides.json). See [DEPENDENCY_LINKING.md](DEPENDENCY_LINKING.md) for precise behavior and limitations.
+- Visitors can **suggest a missing definition**, **suggest a correction** to any displayed or recursively expanded definition, or **report an erroneous automatic link**. Suggestions become public GitHub Issues for editorial review; no changes are applied automatically. The first version requires a GitHub account to finish submitting. An optional attribution name is published only with explicit consent. See [FEEDBACK_WORKFLOW.md](FEEDBACK_WORKFLOW.md).
 - Definitions are individual `.tex` files, grouped by subject.
 
 ## Add a definition
