@@ -37,7 +37,11 @@ def _masked_prose(body):
 def _forms(label):
     """Only simple morphological variation; no unsafe stemming."""
     label = label.strip()
-    if not label or len(normalize_label(label).replace(" ", "")) < 3:
+    if not label:
+        return []
+    short = len(normalize_label(label).replace(" ", "")) < 3
+    mathematical_notation = ("$" in label or "\\" in label) and any(mark in label for mark in ("^", "_", "\\"))
+    if short and not mathematical_notation:
         return []
     forms = [(label, "exact")]
     if "$" in label or "\\" in label:
