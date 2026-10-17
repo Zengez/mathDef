@@ -1891,3 +1891,20 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 **Important safeguards:** Source list, existing related metadata, and paper provenance do not create links without body occurrence, except deliberately curated manual inclusions. Matching is heuristic; it is neither peer review nor semantic proof. The deployed dependency-review.json exposes counts and a sample of ambiguity cases. A future feedback/review workflow should queue suggested corrections rather than edit this manifest automatically. Visual-browser interaction QA remains desirable; the static build alone cannot establish all UI behavior.
 
 **Resumption:** See DEPENDENCY_LINKING.md and futureConsiderations.md; edits to link_overrides.json are the near-term remediation path. Rebuild/index and inspect deployment after any changes. Do not re-run the full citation audit as part of recursive UI work.
+
+
+## 2026-10-16 — GitHub-backed community feedback: initial release
+
+**Authorization:** User approved implementing community suggestions and explicitly accepted a staged approach: first requiring a GitHub account; add account-free submissions later if feasible. Preserve an optional public name/ID field with explicit opt-in for attribution.
+
+**Delivered:**
+- web/feedback.js (commit 90894413; form-mode validation fix 820a1d4): visitor-facing feedback controller and pure issue Markdown/URL builder. There are two workflows: missing mathematical term (definition optional) and definition correction with issue type, description, replacement/context, reference URL, optional consented public attribution.
+- web/index.html (eb49df7; later b1d0524) and web/styles.css (4052c5c; later 41a6ac0): an accessible browser dialog, a "Suggest a definition" action beside term search, and a "View suggestions" link to public GitHub Issues.
+- web/app.js (d4c13bc): main definition "Suggest correction"; per nested/inline dependency target "Correct" and per generated source-to-target dependency "Report link" control, even on collapsed nested headers and inline cues. Reports include both stable IDs and the matched phrase.
+- GitHub Issues is the durable initial review queue. The form does **not** call repository write APIs, auto-open an issue, or edit mathematical content. A visitor first prepares a draft; then visits GitHub, signs in, reviews the prefilled issue, and manually submits it. GitHub displays the submitting account. Additional contributor name is included only when checked for public attribution.
+- Tests tests/test_feedback.cjs and tests/test_feedback_ui.cjs check new-term requests, corrections, URL encoding, conditional public attribution, exact source/target IDs, form validation switching, and nested link-report targeting; .github/workflows/pages.yml now runs frontend JS syntax and both Node test files along with existing Python tests and site build.
+- FEEDBACK_WORKFLOW.md documents visitor and maintainer procedure; README.md, futureConsiderations.md and DEPENDENCY_LINKING.md track completed initial version versus deferred account-free support.
+
+**Deferred:** truly unauthenticated visitors would require a safe trusted backend/form service with rate limits, spam mitigation, moderation and a way to queue reports without exposing repository write credentials. Markdown export/mirroring of GitHub Issue review history may be added later. No issue reports have been auto-approved or applied.
+
+**Next QA:** Verify latest GitHub Pages deployment is green; manually exercise dialog in browser for new term, main correction, nested correction and erroneous link report, confirm a draft is prefilled on GitHub, and avoid submitting a fake test Issue as real community feedback. No definition contents or counts changed.
