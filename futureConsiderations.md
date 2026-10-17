@@ -1,8 +1,10 @@
-# Future considerations (deferred)
+# Future considerations and feature history
 
-Recorded 2026-10-16. This file preserves agreed website feature requirements for later chats. **Do not implement yet.** Current priority: source-citation audit and cross-definition mathematical consistency. Defer systematic rendering verification and unrelated term discovery. Only add a missing definition when its term is found inside an existing definition.
+Recorded 2026-10-16. This file preserves the user's future website feature requirements and design decisions. **The recursive definition explorer was authorized and its initial implementation completed later on 2026-10-16.** See [DEPENDENCY_LINKING.md](DEPENDENCY_LINKING.md) for its current behavior and correction process. Community suggestions and process-retrospective features below remain deferred. Existing mathematical citations and definitions should not be modified solely to implement recursive links.
 
-## Recursive definition exploration
+## Recursive definition exploration (first version implemented)
+
+The following is the original design specification. The first iteration derives dependencies automatically from definition text during the site build and implements all three modes. Its In-Line expansion appears after the containing paragraph rather than between text words, and some ambiguous expressions are intentionally skipped for later review. For the implementation and override format, read [DEPENDENCY_LINKING.md](DEPENDENCY_LINKING.md).
 
 Three compact settings near the term search bar: **Standard**, **Nested**, **In-Line**. Default **Nested**; retain the user's selection across navigation. No explanatory labels necessary.
 
@@ -22,7 +24,7 @@ Use a shared dependency/branch filtering engine in both recursive modes, differi
 
 The user has additional features to describe; do not invent details. Term-matching/disambiguation may intersect with their next idea.
 
-Read alongside `WORK_CHECKPOINT.md`. Feature design discussion is **not** authorization to start coding.
+Read alongside `WORK_CHECKPOINT.md`. The user explicitly authorized the first implementation and automatic linking population after the original discussion; the separate community-feedback feature remains unimplemented.
 
 ## Community suggestions / review queue (deferred)
 
