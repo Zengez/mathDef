@@ -5,7 +5,10 @@ import re
 import shutil
 from pathlib import Path
 
-from scripts.dependency_links import load_overrides, populate_dependencies
+if __package__:
+    from scripts.dependency_links import load_overrides, populate_dependencies
+else:
+    from dependency_links import load_overrides, populate_dependencies
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFS = ROOT / "definitions"
