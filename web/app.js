@@ -23,7 +23,8 @@
 
   function matches(d, side, query) {
     if (!query) return true;
-    const text = side === "term" ? [d.term, ...d.aliases].join(" ") : d.body;
+    const text = side === "term" ? [d.term, ...d.aliases].join(" ") :
+      [d.body, ...(d.formulations || []).filter(f => f.key !== "primary").map(f => f.body)].join("\n\n");
     return normalized(text).includes(normalized(query)) || text.toLowerCase().includes(query.toLowerCase());
   }
   function score(d,q) {
@@ -60,6 +61,12 @@
   function key(path) {
     return path.join(">");
   }
+  function formulations(d) {
+    return d.formulations || [{
+      key: "primary", label: "Original formulation", body: d.body,
+      source: d.source, path: d.path, dependencies: d.dependencies || []
+    }];
+  }
   function visibleDependencies(d, blocked) {
     const dedup = new Set();
     return (d.dependencies || []).filter((dep) => {
@@ -79,12 +86,20 @@
       '" aria-label="Suggest a correction to ' + escape(lookup.get(id).term) +
       '">✎ ' + (compact ? 'Correct' : 'Suggest correction') + '</button>';
   }
+  function formulationCorrection(d, f) {
+    return '<button type="button" class="suggest-correction compact"' +
+      ' data-feedback-action="correct" data-feedback-id="' + escape(d.id) +
+      '" data-feedback-formulation="' + escape(f.key) +
+      '" title="Suggest a correction to this formulation">' +
+      '✎ Correct formulation</button>';
+  }
   function linkReport(sourceId, dep, compact = false) {
     const source = lookup.get(sourceId), target = lookup.get(dep.id);
     return '<button type="button" class="suggest-link' + (compact ? ' compact' : '') +
       '" data-feedback-action="link" data-feedback-source-id="' + escape(sourceId) +
       '" data-feedback-target-id="' + escape(dep.id) +
       '" data-feedback-phrase="' + escape(dep.label || '') +
+      '" data-feedback-formulation="' + escape(dep.formulation || 'primary') +
       '" aria-label="Report link from ' + escape(source.term) + ' to ' + escape(target.term) +
       '" title="Report an incorrect definition link">⚑' +
       (compact ? '' : ' Report link') + '</button>';
@@ -113,8 +128,9 @@
           nodeButton(side, dep, childPath, false) +
           '<div class="dependency-feedback">' + correctionButton(dep.id, true) +
           linkReport(d.id, dep, true) + '</div></div>' +
-          (open ? '<div class="dependency-content"><div class="definition">' + latexBody(target.body) +
-            '</div>' + renderNestedChildren(side, target, childPath, childBlocked) + '</div>' : '') +
+          (open ? '<div class="dependency-content">' +
+            renderFormulations(side, target, childPath, childBlocked, false) +
+            renderNestedChildren(side, target, childPath, childBlocked) + '</div>' : '') +
           '</section>';
       }).join("") + '</div>';
   }
@@ -130,10 +146,12 @@
     if (body.slice(start).trim()) result.push({start, end: body.length, source: body.slice(start)});
     return result;
   }
-  function renderInlineBody(side, d, path, blocked) {
-    const deps = visibleDependencies(d, blocked);
-    const childBlocked = nextBlocked(blocked, deps);
-    const body = paragraphsWithPositions(d.body);
+  function renderInlineBody(side, d, path, blocked, formulation) {
+    const available = visibleDependencies(d, blocked);
+    const ids = new Set((formulation.dependencies || []).map(dep => dep.id));
+    const deps = available.filter(dep => ids.has(dep.id));
+    const childBlocked = nextBlocked(blocked, available);
+    const body = paragraphsWithPositions(formulation.body);
     const marked = new Set();
     const html = body.map((paragraph) => {
       // Mark the occurrence immediately after the matched term. The marker
@@ -161,7 +179,7 @@
           '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +
           '<div class="dependency-feedback">' + correctionButton(dep.id, true) +
           linkReport(d.id, dep, true) + '</div></div><div class="definition">' +
-          renderInlineBody(side, target, childPath, childBlocked) + '</div></div>';
+          renderFormulations(side, target, childPath, childBlocked, true) + '</div></div>';
       }).join("");
     }).join("");
     // Manually included dependencies may have no textual match. Place their
@@ -174,17 +192,32 @@
           '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +
           '<div class="dependency-feedback">' + correctionButton(dep.id, true) +
           linkReport(d.id, dep, true) + '</div></div><div class="definition">' +
-          renderInlineBody(side, target, childPath, childBlocked) + '</div></div>' : '') + '</div>';
+          renderFormulations(side, target, childPath, childBlocked, true) + '</div></div>' : '') + '</div>';
     }).join("") + '</div>' : "");
+  }
+  function renderFormulations(side, d, path, blocked, inline) {
+    const forms = formulations(d), multiple = forms.length > 1;
+    return forms.map((form, index) => {
+      const body = inline ? renderInlineBody(side, d, path, blocked, form) : latexBody(form.body);
+      if (!multiple) return '<div class="definition">' + body + '</div>';
+      const label = 'Definition ' + (index + 1) + ' — ' + form.label;
+      const source = form.source ? '<a href="' + escape(form.source) +
+        '" target="_blank" rel="noopener noreferrer">Reference ↗</a>' : '';
+      const location = form.path ? '<a href="https://github.com/Zengez/mathDef/blob/main/' +
+        form.path.split('/').map(encodeURIComponent).join('/') +
+        '" target="_blank" rel="noopener noreferrer">LaTeX source ↗</a>' : '';
+      return '<section class="definition-formulation" aria-label="' + escape(label) + '">' +
+        '<div class="formulation-header"><h5>' + escape(label) + '</h5>' +
+        formulationCorrection(d, form) + '</div><div class="definition">' + body + '</div>' +
+        '<div class="formulation-provenance">' + source + location + '</div></section>';
+    }).join('');
   }
   function exploration(side, d) {
     const path = [d.id], blocked = new Set(path);
-    if (state.exploreMode === "standard") return '<div class="definition">' + latexBody(d.body) + '</div>';
-    if (state.exploreMode === "inline") {
-      return '<div class="definition inline-definition">' + renderInlineBody(side, d, path, blocked) + '</div>';
-    }
-    return '<div class="definition">' + latexBody(d.body) + '</div>' +
-      renderNestedChildren(side, d, path, blocked);
+    const inline = state.exploreMode === "inline";
+    const content = renderFormulations(side, d, path, blocked, inline);
+    return state.exploreMode === "nested" ?
+      content + renderNestedChildren(side, d, path, blocked) : content;
   }
   function detail(side) {
     const root = el(side + "-detail"), d = lookup.get(state.selected[side]);
