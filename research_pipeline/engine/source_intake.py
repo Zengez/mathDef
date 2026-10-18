@@ -191,40 +191,50 @@ class IndexReader(HTMLParser):
 
 
 class StacksSectionsReader(HTMLParser):
-    """Collect section-title/locator pairs from Stacks Project chapter TOCs.
+    """Read section index entries even with omitted HTML </li> closing tags.
 
-    Nested lemmas and theorem links are intentionally not included as raw
-    mathematical names; the title after the 'Section N.N:' prefix is used.
+    The Stacks site's chapter tree uses HTML's optional list-item end tags.
+    Python's HTMLParser does not implicitly end those items; flush when a
+    new <li> begins rather than relying on balanced nested list elements.
     """
     def __init__(self, base_url):
         super().__init__(convert_charrefs=True)
         self.base_url = base_url
-        self.stack = []
+        self.current = None
         self.entries = []
+
+    def _flush(self):
+        if self.current is None:
+            return
+        row, self.current = self.current, None
+        label = re.sub(r"\s+", " ", "".join(row["parts"])).strip()
+        match = re.match(r"^Section\s+\d+(?:\.\d+)*\s*:\s*(.+)$", label)
+        if match and row["href"]:
+            title = match.group(1).strip()
+            if 2 <= len(title) <= TITLE_LIMIT:
+                self.entries.append({
+                    "label": title,
+                    "url": urllib.parse.urljoin(self.base_url, row["href"]),
+                    "excerpt": "",
+                })
 
     def handle_starttag(self, tag, attrs):
         if tag == "li":
-            self.stack.append({"parts": [], "href": None})
-        elif tag == "a" and self.stack and self.stack[-1]["href"] is None:
-            self.stack[-1]["href"] = dict(attrs).get("href")
+            self._flush()
+            self.current = {"parts": [], "href": None}
+        elif tag == "a" and self.current and self.current["href"] is None:
+            self.current["href"] = dict(attrs).get("href")
 
     def handle_data(self, data):
-        if self.stack:
-            self.stack[-1]["parts"].append(data)
+        if self.current is not None:
+            self.current["parts"].append(data)
 
     def handle_endtag(self, tag):
-        if tag == "li" and self.stack:
-            row = self.stack.pop()
-            label = re.sub(r"\s+", " ", "".join(row["parts"])).strip()
-            m = re.match(r"^Section\s+[0-9]+(?:\.[0-9]+)*\s*:\s*(.+)$", label)
-            if m and row["href"]:
-                title = m.group(1).strip()
-                if 2 <= len(title) <= TITLE_LIMIT:
-                    self.entries.append({"label": title,
-                        "url": urllib.parse.urljoin(self.base_url, row["href"]),
-                        "excerpt": ""})
+        if tag == "li":
+            self._flush()
 
     def candidates(self, limit=MAX_ENTRIES):
+        self._flush()
         found = {}
         for item in self.entries:
             found.setdefault((item["label"].casefold(), item["url"]), item)
