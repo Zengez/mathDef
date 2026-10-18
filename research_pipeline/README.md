@@ -62,3 +62,11 @@ The engine and mathDef adapter only read their supplied experiment workspace. Th
 Use public authoritative sources only where permitted, respect website access policies and rate limits, and preserve source locators. A citation alone cannot establish mathematical correctness. The current preview is a prototype and deliberately lacks full KaTeX and production-site recursive navigation.
 
 See [the overarching design](../RESEARCH_PIPELINE_ENGINE_DESIGN.md). The next implementation unit is a safe source index reader and a more complete wave-2 acquisition runner, followed by the comparison harness.
+
+## Freezing the prototype and starting the second wave
+
+After `publish` and `wave2-plan`, the first wave is sealed. Use:
+
+    python -m research_pipeline.engine.cli --workspace research_pipeline/experiments/reconstruction-v1 fork-wave2 --destination research_pipeline/experiments/reconstruction-v2
+
+This copies only the **isolated** first-wave source, term, observation, meaning, and relationship records into a new unsealed workspace. The first-wave output remains untouched for evaluation. Existing IDs cannot be silently rewritten; second-wave new discoveries may be appended, while revisions to accepted old records require an explicit, audited revision mechanism that is **not yet implemented**.
