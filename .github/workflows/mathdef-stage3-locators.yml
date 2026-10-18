@@ -1,0 +1,45 @@
+name: Independent mathDef Stage 3 locator ingestion
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-stage3-locators.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-stage3-locators
+  cancel-in-progress: false
+
+jobs:
+  locators:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run isolated regression tests
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Build and ingest existing reviewed-source locators
+        run: |
+          python -m research_pipeline.engine.stage3_locators \
+            --workspace research_pipeline/experiments/reconstruction-v1 \
+            --output research_pipeline/experiments/reconstruction-v1/state/locator_ingest_input.jsonl \
+            --ingest
+      - name: Commit only Stage 3 experimental evidence and progress
+        run: |
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            research_pipeline/experiments/reconstruction-v1/records/observations.jsonl \
+            research_pipeline/experiments/reconstruction-v1/state/observations.json \
+            research_pipeline/experiments/reconstruction-v1/state/checkpoint.json \
+            research_pipeline/experiments/reconstruction-v1/state/locator_ingest_input.jsonl
+          if ! git diff --cached --quiet; then
+            git commit -m "Ingest isolated Stage 3 source-index locators (unsealed)"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi
