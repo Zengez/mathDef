@@ -96,7 +96,7 @@ def run(workspace, manifest, output_dir, *, max_pages=MAX_PAGES,
                 "permitted", "locator_only") or source["access"] != "free":
             raise PipelineError("Source is not approved for automatic index intake")
         safe_source_url(task["url"], source)
-        if task.get("profile", "headings") not in ("headings", "glossary", "linked-list"):
+        if task.get("profile", "headings") not in ("headings", "glossary", "linked-list", "stacks-sections"):
             raise PipelineError("Unknown parser profile")
         eligible.append((task, source))
 
