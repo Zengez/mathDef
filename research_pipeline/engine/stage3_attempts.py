@@ -296,9 +296,14 @@ def main(argv=None):
     p.add_argument("--report", type=Path, required=True)
     p.add_argument("--batch-size", type=int, default=40)
     p.add_argument("--delay", type=float, default=1.5)
+    p.add_argument("--verify-only", action="store_true",
+                   help="Require a documented terminal attempt for every sealed Stage 2 term")
     args = p.parse_args(argv)
-    print(json.dumps(run(args.workspace, args.ledger, args.report,
-                         batch_size=args.batch_size, delay=args.delay), indent=2))
+    if args.verify_only:
+        print(json.dumps(require_full_attempt_coverage(args.workspace, args.ledger), indent=2))
+    else:
+        print(json.dumps(run(args.workspace, args.ledger, args.report,
+                             batch_size=args.batch_size, delay=args.delay), indent=2))
 
 
 if __name__ == "__main__":
