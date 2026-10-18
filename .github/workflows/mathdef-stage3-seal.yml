@@ -3,6 +3,9 @@ name: Seal corrected independent Stage 3 (review gate)
 # Deliberately MANUAL: the source-attempt and per-term editorial gates
 # must be satisfied first. The old reconstruction-v1 seal is historical.
 on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-stage3-seal.yml'
   workflow_dispatch:
 
 permissions:
