@@ -14,6 +14,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from research_pipeline.engine.core import PipelineError, Workspace, atomic_json, digest
+from research_pipeline.engine.effort import summarize as effort_summary
 
 
 def normalize(text):
@@ -180,6 +181,9 @@ def compare(baseline_root, first_workspace, second_workspace, output):
     baseline = original_mathdef(baseline_root)
     first_result = wave_score(baseline, first)
     second_result = wave_score(baseline, second)
+    for result, workspace in ((first_result, first_workspace), (second_result, second_workspace)):
+        tally = effort_summary(workspace)
+        result["recorded_effort"] = tally if tally["events"] else None
     report = {
         "schema_version": 1, "design": "post-freeze-independent-reconstruction",
         "wave1": first_result, "wave2": second_result,
@@ -197,7 +201,7 @@ def compare(baseline_root, first_workspace, second_workspace, output):
             "Baseline may have its own missing or erroneous entries.",
             "Match counts are lexical heuristics, not claims that definitions are equivalent.",
             "Original related links and reconstructed relations may represent different link types.",
-            "Recorded execution time/API usage must be imported separately from stage manifests.",
+            "Effort metrics appear only when batches were actually logged, and missing logs do not mean zero work.",
         ],
     }
     atomic_json(output, report)
