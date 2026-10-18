@@ -35,6 +35,8 @@ jobs:
         run: python -m unittest discover -s research_pipeline/tests -v
 
       - name: Collect approved term-title candidates
+        env:
+          STAGE2_DEBUG_STRUCTURE: '1'
         run: |
           python -m research_pipeline.engine.stage2_actions \
             --workspace research_pipeline/experiments/reconstruction-v1 \
