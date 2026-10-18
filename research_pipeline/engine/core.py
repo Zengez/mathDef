@@ -257,9 +257,28 @@ class Workspace:
     def status(self):
         self.config()
         result = {}
+        next_stage = None
         for stage in STAGES:
             data = self.state(stage)
-            result[stage] = {"count": len(self.records(stage)), "sealed": bool(data.get("sealed"))}
+            sealed = bool(data.get("sealed"))
+            result[stage] = {"count": len(self.records(stage)), "sealed": sealed}
+            if not sealed and next_stage is None:
+                next_stage = stage
+        if next_stage is None:
+            published = (self.root / "state" / "publication.json").is_file()
+            next_stage = "wave2" if published else "publish"
+        result["handoff"] = {
+            "next_stage": next_stage,
+            "recommended_thinking": EFFORT.get(next_stage, "Medium"),
+            "next_action": (
+                "Generate the stage's research queue, review candidates, ingest batches and seal"
+                if next_stage in STAGES else
+                "Publish and inspect the separate experimental prototype"
+                if next_stage == "publish" else
+                "Inspect first-wave prototype, then generate and fork second-wave tasks"
+            ),
+            "checkpoint_file": str(self.root / "state" / "checkpoint.json"),
+        }
         return result
 
     def publication(self):
