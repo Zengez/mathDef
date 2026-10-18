@@ -55,8 +55,8 @@ class Stage3AttemptTests(unittest.TestCase):
             path.write_text("".join(json.dumps(row) + "\n" for row in rows))
             self.w.ingest(stage, path)
             self.w.seal(stage)
-        self.ledger = self.root / "attempts.jsonl"
-        self.report = self.root / "report.json"
+        self.ledger = self.w.root / "state/stage3_acquisition_attempts.jsonl"
+        self.report = self.w.root / "state/stage3_acquisition_report.json"
 
     def fetch(self, url, source, *, delay, robots_cache):
         if source["id"] == "src.planetmath":
