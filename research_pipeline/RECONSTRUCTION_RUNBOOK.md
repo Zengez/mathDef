@@ -1,6 +1,6 @@
 # Independent mathDef Reconstruction — Execution Runbook
 
-**Status:** Software preparation for both waves is implemented and covered by isolated tests. **No real reconstruction has been initiated**. This document is an execution protocol, not evidence of recovered definitions.
+**Status (2026-10-18):** Independent Wave 1 is underway. Stage 1 source registry and Stage 2 term registry are sealed. Stage 2 contains **318 raw source-linked term candidates** (not verified definitions), with six reviewed Stacks chapter indexes, 15 generic headings held, and PlanetMath automatic index acquisition deferred due to unavailable robots policy. Stage 3 has not started. See `experiments/reconstruction-v1/state/stage2_review.json` and `state/checkpoint.json`. This document is an execution protocol, not evidence of recovered definitions.
 
 ## Non-negotiable experiment boundary
 
