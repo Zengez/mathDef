@@ -301,7 +301,8 @@ class Workspace:
                  and r["from_formulation"] in eligible_forms]
         return {"schema_version": 1, "project": self.config()["project"],
                 "meanings": eligible, "relations": links, "held": held,
-                "sources": list(sources.values()), "observations": list(observations.values())}
+                "sources": list(sources.values()), "terms": list(self.records("terms").values()),
+                "observations": list(observations.values())}
 
     def publish(self):
         artifact = self.publication()
