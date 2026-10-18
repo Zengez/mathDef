@@ -79,11 +79,26 @@ class PipelineTests(unittest.TestCase):
         self.assertIn("View sources", page)
         self.assertIn("Not yet manually verified", page)
         self.assertTrue((self.workspace.root / "preview/catalog.json").exists())
+        forked_root = Path(self.tmp.name) / "wave2"
+        lineage = self.workspace.fork_second_wave(forked_root)
+        forked = Workspace(forked_root)
+        self.assertEqual(lineage["mode"], "second_wave")
+        self.assertEqual(len(forked.records("meanings")), 2)
+        self.assertFalse(forked.state("sources").get("sealed"))
+        self.assertTrue(self.workspace.state("sources").get("sealed"))
+        with self.assertRaisesRegex(PipelineError, "collision"):
+            self.push_conflict(forked)
         tasks = self.workspace.wave2_plan()
         self.assertEqual(tasks["tasks"], 2 * (1 + 1) + 2)
         kinds = {x["kind"] for x in jsonl(self.workspace.root / "wave2/tasks.jsonl")}
         self.assertEqual(kinds, {"discover_sources_from_term", "search_variants_in_source",
                                   "audit_relationships"})
+
+    def push_conflict(self, forked):
+        source = dict(self.source(), title="Tampered text")
+        path = self.inputs / "fork_conflict.jsonl"
+        path.write_text(json.dumps(source) + "\\n", encoding="utf-8")
+        forked.ingest("sources", path)
 
     def test_restart_idempotency_and_collision(self):
         source = self.source()
