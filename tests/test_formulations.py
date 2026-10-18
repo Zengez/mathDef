@@ -47,7 +47,8 @@ class FormulationTests(unittest.TestCase):
 
     def test_single_formulation_entries_preserve_old_shape(self):
         other = parse(ROOT / "definitions/sets/cartesian-product.tex")
-        attach_formulations([other])
+        function = parse(ROOT / "definitions/functions/function.tex")
+        attach_formulations([other, function])
         self.assertNotIn("formulations", other)
         self.assertIn("body", other)
 
