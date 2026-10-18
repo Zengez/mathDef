@@ -1,0 +1,48 @@
+name: Independent mathDef Stage 3 evidence ingestion
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-stage3-evidence.yml'
+      - 'research_pipeline/experiments/reconstruction-v1/state/stage3_paraphrase_batch*.jsonl'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-stage3-evidence
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Execute isolated unit tests
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Ingest source-checked independent paraphrases in small batches
+        run: |
+          for evidence in research_pipeline/experiments/reconstruction-v1/state/stage3_paraphrase_batch*.jsonl; do
+            python -m research_pipeline.engine.cli \
+              --workspace research_pipeline/experiments/reconstruction-v1 \
+              ingest observations --input "$evidence" --batch-size 10
+          done
+          python -m research_pipeline.engine.cli \
+            --workspace research_pipeline/experiments/reconstruction-v1 status
+      - name: Commit only independent Stage 3 evidence and state
+        run: |
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            research_pipeline/experiments/reconstruction-v1/records/observations.jsonl \
+            research_pipeline/experiments/reconstruction-v1/state/observations.json \
+            research_pipeline/experiments/reconstruction-v1/state/checkpoint.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Checkpoint Stage 3 source-grounded independent paraphrase evidence"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi
