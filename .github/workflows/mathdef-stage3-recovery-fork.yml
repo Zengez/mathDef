@@ -1,0 +1,68 @@
+name: Prepare corrected Wave 1 Stage 3 workspace
+
+on:
+  workflow_run:
+    workflows:
+      - Recover Stage 3 definition attempts for every term
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-stage3-recovery-fork
+  cancel-in-progress: false
+
+jobs:
+  fork:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify isolated pipeline tests
+        run: python -m unittest discover -s research_pipeline/tests -v
+
+      - name: Gate all 318 acquisitions then prepare a separate Stage 3 continuation
+        run: |
+          set -euo pipefail
+          SOURCE=research_pipeline/experiments/reconstruction-v1
+          REPAIRED=research_pipeline/experiments/reconstruction-v1-recovery
+          python -m research_pipeline.engine.stage3_attempts \
+            --workspace "$SOURCE" \
+            --ledger "$SOURCE/state/stage3_acquisition_attempts.jsonl" \
+            --report "$SOURCE/state/stage3_acquisition_report.json" --verify-only
+          if [ -e "$REPAIRED/project.json" ]; then
+            echo "Corrected workspace already exists; not overwriting it."
+          else
+            python -m research_pipeline.engine.stage3_recovery_fork \
+              --original "$SOURCE" --destination "$REPAIRED"
+          fi
+
+      - name: Commit corrected workspace, never overwrite earlier seals
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v1-recovery/
+          if ! git diff --cached --quiet; then
+            git commit -m "Open audited Wave 1 Stage 3 correction; all term attempts recorded"
+            for retry in 1 2 3 4; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+            done
+            echo "Could not safely commit corrected workspace" >&2
+            exit 1
+          fi
