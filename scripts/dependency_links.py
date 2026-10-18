@@ -164,19 +164,19 @@ def populate_dependencies(entries, overrides=None):
             selected.sort(key=lambda c: (c["start"] < 0, c["start"], c["id"]))
             if len(selected) > MAX_MATCHES:
                 selected = selected[:MAX_MATCHES]
-        own_links = [
-            {"id": c["id"], "start": c["start"], "end": c["end"], "label": c["label"],
-             "reason": "manual" if c["kind"] == "manual" else "text-match",
-             "formulation": formulation["key"]}
-            for c in selected
-        ]
-        formulation["dependencies"] = own_links
-        for dependency in own_links:
-            if dependency["id"] not in aggregated_ids:
-                aggregated_ids.add(dependency["id"])
-                aggregated.append(dependency)
-    result[src] = aggregated
-    matched += len(aggregated)
+            own_links = [
+                {"id": c["id"], "start": c["start"], "end": c["end"], "label": c["label"],
+                 "reason": "manual" if c["kind"] == "manual" else "text-match",
+                 "formulation": formulation["key"]}
+                for c in selected
+            ]
+            formulation["dependencies"] = own_links
+            for dependency in own_links:
+                if dependency["id"] not in aggregated_ids:
+                    aggregated_ids.add(dependency["id"])
+                    aggregated.append(dependency)
+        result[src] = aggregated
+        matched += len(aggregated)
     summary = {
         "definitions": len(entries), "links": matched,
         "definitions_with_links": sum(bool(v) for v in result.values()),
