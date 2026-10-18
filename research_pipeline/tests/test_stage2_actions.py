@@ -77,9 +77,9 @@ class Stage2ActionsTests(unittest.TestCase):
 
     def test_stacks_nested_section_labels_not_lemmas(self):
         html = ('<ul><li>Section <a href="/tag/004O">5.5</a>: Bases'
-                '<ul><li>Definition <a href="/tag/004P">5.5.1</a></li></ul>'
-                '</li><li>Section <a href="/tag/09GP">9.10</a>: Algebraic closure'
-                '</li></ul>')
+                '<ul><li>Definition <a href="/tag/004P">5.5.1</a>'
+                '<li>Section <a href="/tag/09GP">9.10</a>: Algebraic closure'
+                '</ul>')
         found = extract(self.w.root, "src.stacks",
                         "https://stacks.math.columbia.edu/tag/004C",
                         html, stage="terms", profile="stacks-sections")
