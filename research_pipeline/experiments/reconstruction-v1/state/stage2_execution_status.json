@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "stage": "terms",
-  "sealed": false,
+  "sealed": true,
   "last_reviewed_execution": {
     "workflow_run_id": 39169887545,
     "workflow_url": "https://github.com/Zengez/mathDef/actions/runs/39169887545",
@@ -34,6 +34,12 @@
   },
   "workspace_existing_candidate_count": 30,
   "automated_candidates_imported_into_workspace": false,
-  "next_action": "Review source title quality and generic section labels; remove or hold non-term headings. Reconcile three existing Stacks rows by ID without violating immutable-ID content checks. Import valid raw candidate records using CLI and commit persistent Stage 2 registry/checkpoint. Plan additional permitted source indexes before sealing.",
-  "notes": "This file is a progress pointer, not an engine ingest checkpoint; Stage 1 remains sealed and Stage 2 remains open. PlanetMath automated discovery is blocked by unavailable robots policy. No production content accessed."
+  "next_action": "Stage 2 complete. Begin Stage 3 observations (Medium) only after reviewing the runbook and the source/term registry; prioritize accurate definition locators, source rights and independently authored paraphrases.",
+  "notes": "Stage 2 sealed in state/terms.json. Previous execution run remains an archival pointer; authoritative review in state/stage2_review.json. Limited first-wave source coverage and PlanetMath robots restriction documented. No production corpus consulted.",
+  "seal_digest": "a7cfa838e191f792e4ab0748f9c6b5de87f45c06b3b067dc704b20f06179f46d",
+  "sealed_total": 318,
+  "newly_ingested": 288,
+  "generic_headings_held": 15,
+  "unchanged_collisions": 3,
+  "stage3_started": false
 }
