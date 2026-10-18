@@ -189,6 +189,50 @@ class IndexReader(HTMLParser):
         return list(unique.values())
 
 
+
+class StacksSectionsReader(HTMLParser):
+    """Collect section-title/locator pairs from Stacks Project chapter TOCs.
+
+    Nested lemmas and theorem links are intentionally not included as raw
+    mathematical names; the title after the 'Section N.N:' prefix is used.
+    """
+    def __init__(self, base_url):
+        super().__init__(convert_charrefs=True)
+        self.base_url = base_url
+        self.stack = []
+        self.entries = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "li":
+            self.stack.append({"parts": [], "href": None})
+        elif tag == "a" and self.stack and self.stack[-1]["href"] is None:
+            self.stack[-1]["href"] = dict(attrs).get("href")
+
+    def handle_data(self, data):
+        if self.stack:
+            self.stack[-1]["parts"].append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "li" and self.stack:
+            row = self.stack.pop()
+            label = re.sub(r"\\s+", " ", "".join(row["parts"])).strip()
+            m = re.match(r"^Section\\s+[0-9]+(?:\\.[0-9]+)*\\s*:\\s*(.+)$", label)
+            if m and row["href"]:
+                title = m.group(1).strip()
+                if 2 <= len(title) <= TITLE_LIMIT:
+                    self.entries.append({"label": title,
+                        "url": urllib.parse.urljoin(self.base_url, row["href"]),
+                        "excerpt": ""})
+
+    def candidates(self, limit=MAX_ENTRIES):
+        found = {}
+        for item in self.entries:
+            found.setdefault((item["label"].casefold(), item["url"]), item)
+            if len(found) >= limit:
+                break
+        return list(found.values())
+
+
 def extract(workspace, source_id, url, content, *, stage, profile="headings",
             allow_excerpts=False, limit=MAX_ENTRIES):
     w = Workspace(workspace)
@@ -205,7 +249,7 @@ def extract(workspace, source_id, url, content, *, stage, profile="headings",
         not str(source.get("license_url", "")).startswith("https://")
     ):
         raise PipelineError("Licensed excerpts require affirmative permitted rights and an HTTPS license URL")
-    parser = IndexReader(url, profile)
+    parser = StacksSectionsReader(url) if profile == "stacks-sections" else IndexReader(url, profile)
     parser.feed(content)
     entries = []
     for candidate in parser.candidates(limit):
@@ -253,7 +297,7 @@ def main(argv=None):
     g.add_argument("--html", type=Path, help="Local saved HTML; preferred deterministic mode")
     g.add_argument("--allow-network", action="store_true", help="Explicitly fetch one approved URL")
     p.add_argument("--stage", choices=("terms", "observations"), required=True)
-    p.add_argument("--profile", choices=("headings", "glossary", "linked-list"), default="headings")
+    p.add_argument("--profile", choices=("headings", "glossary", "linked-list", "stacks-sections"), default="headings")
     p.add_argument("--allow-licensed-excerpts", action="store_true")
     p.add_argument("--limit", type=int, default=MAX_ENTRIES)
     p.add_argument("--output", type=Path, required=True)
