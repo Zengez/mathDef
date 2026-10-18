@@ -43,7 +43,9 @@ class Stage3LocatorTests(unittest.TestCase):
             rows = list(w.records("observations").values())
             self.assertEqual(len(rows), 2)
             self.assertTrue(all(row["record_kind"] == "locator" for row in rows))
-            self.assertTrue(all("text" not in row for row in rows))\n            self.assertEqual({r["verification_state"] for r in rows},\n                             {"index_locator_only", "unverified_source_locator"})
+            self.assertTrue(all("text" not in row for row in rows))
+            self.assertEqual({r["verification_state"] for r in rows},
+                             {"index_locator_only", "unverified_source_locator"})
             self.assertFalse(w.state("observations")["sealed"])
             again = collect(w.root, output, ingest=True)
             self.assertEqual(again["new_locator_candidates"], 0)
