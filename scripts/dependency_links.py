@@ -105,65 +105,78 @@ def populate_dependencies(entries, overrides=None):
     matched = 0
     for source in entries:
         src = source["id"]
-        rule = overrides.get(src, {})
-        blocked = set(rule.get("exclude", [])) | {src}
-        resolves = {normalize_label(k): v for k, v in rule.get("resolve", {}).items()}
-        prose = _masked_prose(source["body"])
-        candidates = defaultdict(list)
-        for target_id, form, kind, variant, pattern in patterns:
-            if target_id in blocked:
-                continue
-            text = source["body"] if ("$" in form or "\\" in form) else prose
-            for m in pattern.finditer(text):
-                score = 100 if variant == "exact" else 75
-                score += 10 if kind == "term" else 0
-                if target_id in source["related"]:
-                    score += 55
-                if src in reverse_related[target_id]:
-                    score += 20
-                if byid[target_id]["path"].split("/")[1] == source["path"].split("/")[1]:
-                    score += 25
-                forced = resolves.get(normalize_label(m.group()), "")
-                if forced and forced != target_id:
+        aggregated, aggregated_ids = [], set()
+        formulations = source.get("formulations") or [
+            {"key": "primary", "body": source["body"]}
+        ]
+        for formulation in formulations:
+            src = source["id"]
+            rule = overrides.get(src, {})
+            blocked = set(rule.get("exclude", [])) | {src}
+            resolves = {normalize_label(k): v for k, v in rule.get("resolve", {}).items()}
+            prose = _masked_prose(formulation["body"])
+            candidates = defaultdict(list)
+            for target_id, form, kind, variant, pattern in patterns:
+                if target_id in blocked:
                     continue
-                if forced == target_id:
-                    score += 1000
-                candidates[(m.start(), m.end())].append({
-                    "id": target_id, "start": m.start(), "end": m.end(),
-                    "label": m.group(), "kind": kind, "score": score,
-                })
-        options = []
-        for (start, end), group in candidates.items():
-            best_by_id = {}
-            for candidate in group:
-                if candidate["id"] not in best_by_id or candidate["score"] > best_by_id[candidate["id"]]["score"]:
-                    best_by_id[candidate["id"]] = candidate
-            ranked = sorted(best_by_id.values(), key=lambda c: (-c["score"], c["id"]))
-            if len(ranked) > 1 and ranked[0]["score"] - ranked[1]["score"] < 15:
-                ambiguous.append({"source": src, "phrase": ranked[0]["label"],
-                                  "candidates": [c["id"] for c in ranked[:6]]})
-                continue
-            options.append(ranked[0])
-        selected, occupied, seen_targets = [], [], set()
-        for option in sorted(options, key=lambda c: (-(c["end"] - c["start"]), -c["score"], c["start"], c["id"])):
-            if option["id"] in seen_targets or any(option["start"] < b and option["end"] > a for a, b in occupied):
-                continue
-            seen_targets.add(option["id"])
-            occupied.append((option["start"], option["end"]))
-            selected.append(option)
-        for target in rule.get("include", []):
-            if target not in seen_targets and target not in blocked:
-                selected.append({"id": target, "start": -1, "end": -1,
-                                 "label": byid[target]["term"], "kind": "manual", "score": 2000})
-        selected.sort(key=lambda c: (c["start"] < 0, c["start"], c["id"]))
-        if len(selected) > MAX_MATCHES:
-            selected = selected[:MAX_MATCHES]
-        result[src] = [
+                text = formulation["body"] if ("$" in form or "\\" in form) else prose
+                for m in pattern.finditer(text):
+                    score = 100 if variant == "exact" else 75
+                    score += 10 if kind == "term" else 0
+                    if target_id in source["related"]:
+                        score += 55
+                    if src in reverse_related[target_id]:
+                        score += 20
+                    if byid[target_id]["path"].split("/")[1] == source["path"].split("/")[1]:
+                        score += 25
+                    forced = resolves.get(normalize_label(m.group()), "")
+                    if forced and forced != target_id:
+                        continue
+                    if forced == target_id:
+                        score += 1000
+                    candidates[(m.start(), m.end())].append({
+                        "id": target_id, "start": m.start(), "end": m.end(),
+                        "label": m.group(), "kind": kind, "score": score,
+                    })
+            options = []
+            for (start, end), group in candidates.items():
+                best_by_id = {}
+                for candidate in group:
+                    if candidate["id"] not in best_by_id or candidate["score"] > best_by_id[candidate["id"]]["score"]:
+                        best_by_id[candidate["id"]] = candidate
+                ranked = sorted(best_by_id.values(), key=lambda c: (-c["score"], c["id"]))
+                if len(ranked) > 1 and ranked[0]["score"] - ranked[1]["score"] < 15:
+                    ambiguous.append({"source": src, "phrase": ranked[0]["label"],
+                                      "candidates": [c["id"] for c in ranked[:6]]})
+                    continue
+                options.append(ranked[0])
+            selected, occupied, seen_targets = [], [], set()
+            for option in sorted(options, key=lambda c: (-(c["end"] - c["start"]), -c["score"], c["start"], c["id"])):
+                if option["id"] in seen_targets or any(option["start"] < b and option["end"] > a for a, b in occupied):
+                    continue
+                seen_targets.add(option["id"])
+                occupied.append((option["start"], option["end"]))
+                selected.append(option)
+            for target in (rule.get("include", []) if formulation["key"] == "primary" else []):
+                if target not in seen_targets and target not in blocked:
+                    selected.append({"id": target, "start": -1, "end": -1,
+                                     "label": byid[target]["term"], "kind": "manual", "score": 2000})
+            selected.sort(key=lambda c: (c["start"] < 0, c["start"], c["id"]))
+            if len(selected) > MAX_MATCHES:
+                selected = selected[:MAX_MATCHES]
+        own_links = [
             {"id": c["id"], "start": c["start"], "end": c["end"], "label": c["label"],
-             "reason": "manual" if c["kind"] == "manual" else "text-match"}
+             "reason": "manual" if c["kind"] == "manual" else "text-match",
+             "formulation": formulation["key"]}
             for c in selected
         ]
-        matched += len(selected)
+        formulation["dependencies"] = own_links
+        for dependency in own_links:
+            if dependency["id"] not in aggregated_ids:
+                aggregated_ids.add(dependency["id"])
+                aggregated.append(dependency)
+    result[src] = aggregated
+    matched += len(aggregated)
     summary = {
         "definitions": len(entries), "links": matched,
         "definitions_with_links": sum(bool(v) for v in result.values()),
