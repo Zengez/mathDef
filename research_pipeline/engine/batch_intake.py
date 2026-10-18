@@ -41,6 +41,9 @@ def run(workspace, manifest, output, checkpoint, stage, *, network=False,
     output.parent.mkdir(parents=True, exist_ok=True)
     existing = {r["id"]: r for r in jsonl(output)}
     completed_this_run, written = 0, 0
+    stop_after = limit_pages if limit_pages is not None else batch_pages
+    if stop_after < 1:
+        raise PipelineError("limit_pages must be positive")
     for task in rows:
         if task["id"] in processed_ids:
             continue
@@ -85,7 +88,7 @@ def run(workspace, manifest, output, checkpoint, stage, *, network=False,
             "recommended_thinking": "Instant" if stage == "terms" else "Medium",
             "next_action": "Continue this manifest, then inspect and ingest the result JSONL."
         })
-        if limit_pages is not None and completed_this_run >= limit_pages:
+        if completed_this_run >= stop_after:
             break
     return {"stage": stage, "pages_this_run": completed_this_run,
             "completed_pages": len(processed_ids), "total_pages": len(rows),
