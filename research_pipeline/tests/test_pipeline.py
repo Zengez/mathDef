@@ -97,7 +97,7 @@ class PipelineTests(unittest.TestCase):
     def push_conflict(self, forked):
         source = dict(self.source(), title="Tampered text")
         path = self.inputs / "fork_conflict.jsonl"
-        path.write_text(json.dumps(source) + "\\n", encoding="utf-8")
+        path.write_text(json.dumps(source) + "\n", encoding="utf-8")
         forked.ingest("sources", path)
 
     def test_restart_idempotency_and_collision(self):
