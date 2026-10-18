@@ -46,7 +46,7 @@ def generate(workspace, *, source_ids=None, sitemap_xml=None, sitemap_source_id=
                 raise PipelineError("Invalid index_pages entry")
             safe_url(page["url"], host)
             profile = page.get("profile", source.get("index_profile", "headings"))
-            if profile not in ("headings", "glossary", "linked-list"):
+            if profile not in ("headings", "glossary", "linked-list", "stacks-sections"):
                 raise PipelineError("Unknown index parser profile")
             row = {"source_id": source_id, "url": page["url"], "profile": profile}
             if page.get("html_path"):
