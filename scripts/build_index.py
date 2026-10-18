@@ -105,13 +105,21 @@ def parse_variant(path):
                 path=path.relative_to(ROOT).as_posix())
 
 
-def attach_formulations(entries):
+def attach_formulations(entries, *, require_all_parents=False):
+    """Attach variants to entries.
+
+    Unit tests and scoped research may pass a subset of definitions. Their
+    unrelated variants are ignored; the full site build uses strict mode to
+    reject a variant referencing a missing definition.
+    """
     by_id = {d["id"]: d for d in entries}
     for path in sorted(VARIANTS.rglob("*.tex")):
         variant = parse_variant(path)
         parent = by_id.get(variant.pop("parent"))
         if parent is None:
-            raise ValueError(f"{path}: formulation parent does not exist")
+            if require_all_parents:
+                raise ValueError(f"{path}: formulation parent does not exist")
+            continue
         if "formulations" not in parent:
             parent["formulations"] = [{
                 "key": "primary", "label": parent["form_label"],
@@ -131,7 +139,7 @@ def main():
     entries = [parse(path) for path in sorted(DEFS.rglob("*.tex"))]
     if not entries:
         raise ValueError("No LaTeX definition files found")
-    attach_formulations(entries)
+    attach_formulations(entries, require_all_parents=True)
     ids = set()
     for entry in entries:
         if entry["id"] in ids:
