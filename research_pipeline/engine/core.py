@@ -328,3 +328,32 @@ class Workspace:
         info = {"tasks": len(tasks), "path": str(output), "next_recommended_thinking": "Medium"}
         self.checkpoint("wave2", info)
         return info
+
+    def fork_second_wave(self, new_root):
+        """Copy only isolated wave-one data to a versioned, editable wave-two workspace.
+
+        The first-wave workspace stays sealed, allowing independent comparisons.
+        Existing IDs remain immutable until an explicit revision mechanism exists.
+        """
+        import shutil
+
+        self.publication()  # proves all five stages are sealed and unchanged
+        dest = Workspace(new_root)
+        if dest.root == self.root or dest.root.exists():
+            raise PipelineError("Second-wave destination must be a new, absent directory")
+        dest.init(self.config())
+        for stage in STAGES:
+            source_file = self.root / "records" / (stage + ".jsonl")
+            target = dest.root / "records" / (stage + ".jsonl")
+            shutil.copy2(source_file, target)
+        frozen = {
+            "origin": str(self.root),
+            "first_wave_digest": digest(self.publication()),
+            "mode": "second_wave",
+            "note": "The original workspace remains untouched. Existing IDs cannot be revised silently."
+        }
+        atomic_json(dest.root / "state" / "baseline.json", frozen)
+        dest.checkpoint("initialized", {"mode": "second_wave", "inherited": {
+            stage: len(dest.records(stage)) for stage in STAGES
+        }})
+        return frozen
