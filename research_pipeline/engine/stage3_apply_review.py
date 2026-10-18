@@ -79,10 +79,20 @@ def apply(workspace, batch_path, *, check_only=False):
                 raise PipelineError("No-definition decision contains candidate definitions")
             newrow.pop("evidence_ids",None)
         else:
-            defs = item.get("definitions")
-            if not isinstance(defs,list) or not defs:
-                raise PipelineError("Supported term must have >=1 independently authored definition")
+            defs = item.get("definitions", [])
+            reuse = item.get("reuse_evidence_ids", [])
+            if not isinstance(defs,list) or not isinstance(reuse,list) or not (defs or reuse):
+                raise PipelineError("Supported term must have source-backed new or previously authored evidence")
             ids=[]
+            for prior_id in reuse:
+                prior = existing.get(prior_id)
+                if (not prior or prior["record_kind"] != "paraphrase" or
+                        prior["term_id"] != tid or prior["source_id"] != term["source_id"] or
+                        prior["locator"] != term["locator"] or
+                        not prior.get("source_section") or
+                        prior.get("confidence") != "source_checked"):
+                    raise PipelineError("Reused evidence is missing, unverified or refers to different term: "+str(prior_id))
+                ids.append(prior_id)
             for d in defs:
                 key=d.get("key","")
                 if not isinstance(key,str) or not re.fullmatch(r"[a-z][a-z0-9_-]{2,64}",key):
