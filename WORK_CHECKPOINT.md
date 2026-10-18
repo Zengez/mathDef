@@ -1908,3 +1908,22 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 **Deferred:** truly unauthenticated visitors would require a safe trusted backend/form service with rate limits, spam mitigation, moderation and a way to queue reports without exposing repository write credentials. Markdown export/mirroring of GitHub Issue review history may be added later. No issue reports have been auto-approved or applied.
 
 **Next QA:** Verify latest GitHub Pages deployment is green; manually exercise dialog in browser for new term, main correction, nested correction and erroneous link report, confirm a draft is prefilled on GitHub, and avoid submitting a fake test Issue as real community feedback. No definition contents or counts changed.
+
+
+## 2026-10-18 — Multiple valid formulations under one term heading
+
+**User specification:** When an existing mathematical term has several genuinely equivalent, correct formulations, show all under one heading and one search result. Prefer the likely educational order where known; otherwise append without suggesting differing validity. Example: for Function, the original assignment formulation should precede the Cartesian-product/subset formulation.
+
+**Implemented:**
+- scripts/build_index.py: optional form_label/form_order for the original and validator for new separate variants/ LaTeX files (parent ID, unique formulation key, label, HTTPS source, optional rank/status). Publishes an optional formulations array with existing canonical body/source preserved.
+- variants/functions/function-graph.tex (629c6d45; clarified 538e6082): set-theoretic definition of a function f as a subset of X×Y with exactly one y for every x, specifying X and Y. Source: UCL MATH0007, Functions, https://www.homepages.ucl.ac.uk/~ucahmto/0007/_book/1-3-functions.html . Original definitions/functions/function.tex labeled Assignment formulation (74565ae3) without altering original content. Order 0 then 20.
+- scripts/dependency_links.py (05461605; correction ddee0c47) matches all formulation texts, preserves each one's offsets and formulation key, and returns a union of concept-level targets for Nested mode.
+- web/app.js (b05a31d4; corrected per-formulation offsets 59e985fa): labeled ordered formulations, citation and LaTeX source links, extended search, main and recursively expanded Standard/Nested/In-Line views.
+- web/styles.css 404902ab: formulation card formatting.
+- web/feedback.js (f1f7e13f; path fix dd0a8a97) and tests/test_feedback.cjs: proposal Issues can identify the individual formulation and the source variant of a dependency edge. Published content cannot be directly edited through user reports.
+- tests/test_formulations.py plus current GitHub CI exercise metadata validity, stable ID/count, pedagogical order, and variant-specific link offsets.
+- Authoring and policy guidance is documented in FORMULATIONS.md, README.md, FEEDBACK_WORKFLOW.md, DEPENDENCY_LINKING.md.
+
+**Important invariants:** There remain 1007 definition concepts; functions.function remains a single ID/search result; original canonical body is unchanged. The additional formulation has its own citation and draft status; prior 1007-row primary citation ledger does not claim to have reviewed all possible variants. This is an extensible system and initial Function example, not a corpus-wide discovery pass for alternatives.
+
+**Final QA:** Confirm latest GitHub Actions CI and Pages deployment pass, and optionally manually examine Function in all three modes. Static CI does not replace browser-level visual QA.
