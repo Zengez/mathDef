@@ -1947,3 +1947,13 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 - First prototype scale: **implementer discretion**, judged by breadth of representative meanings, contexts, variants, sources, link behavior, and a functioning end-to-end automated publication path; no arbitrary minimum number of entries. Stop to inspect the prototype before second-wave deep/iterative acquisition.
 - The engine is **not built yet**, as the discussion remains in architecture/design. Next: finalize schema/stage contracts and test a very small fixture-based vertical slice when authorized. Do not confuse old CI failures from Closure-related files with new engine changes.
 - Note from GitHub check: latest completed Pages workflows as of this checkpoint had failed; verify and repair the existing baseline before judging new pipeline test results. The earlier failure appeared in existing `tests/test_formulations.py` when `attach_formulations` was run with a subset of entries but `variants/` contained a new topological closure variant whose parent was absent.
+
+
+## 2026-10-18 — Reusable pipeline engine implementation begun
+
+- Read **[research_pipeline/IMPLEMENTATION_CHECKPOINT.md](research_pipeline/IMPLEMENTATION_CHECKPOINT.md)** for the current coded functionality, test results, exact resume instructions and next task.
+- Core and CLI implemented under `research_pipeline/engine/`, isolated mathDef preview adapter under `research_pipeline/adapters/mathdef/`, synthetic unit tests and dedicated pipeline CI in GitHub Actions. Handles imported sources/terms/observations/meanings/relations, stable IDs, copyright/access policy checks, batching/checkpoints, seals, eligible draft publication, chat work queues, and first-wave vs second-wave isolated workspaces.
+- Stage-specific requested thinking levels are Instant, Medium and High; scripts only recommend levels. Neither the full independent reconstruction nor a real source crawl has been run; source research and semantic decisions are still human/assistant-guided.
+- Existing production mathDef Pages regression from earlier Closure variants was repaired while retaining strict validation in full builds; Pages and audit CI succeeded after repair.
+- **Do not use previous "engine not implemented" design checkpoint notes as current status.** The design remains the requirements record; the implementation checkpoint is authoritative for delivered scope.
+- **Next task (Medium):** build safe Stage 2/3 source ingestion readers and audit-tracked second-wave revisions, with isolated fixtures/tests; then comparison harness. No source-list borrowing from existing mathDef for reconstruction.
