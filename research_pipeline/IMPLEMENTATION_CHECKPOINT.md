@@ -1,39 +1,41 @@
 # Research Pipeline — Implementation Checkpoint
 
-**Updated:** 2026-10-18. **Current phase:** Implementing the reusable engine and mathDef adapter (not running the independent reconstruction). **Keep production definitions, variants and website intact.** Use RESEARCH_PIPELINE_ENGINE_DESIGN.md for the accepted architecture and research_pipeline/README.md for existing commands.
+**Updated:** 2026-10-18.  
+**Phase:** Pre-reconstruction engine build COMPLETE for a supervised two-wave trial; **the actual reconstruction has NOT been started**.  
+**Guide:** [RECONSTRUCTION_RUNBOOK.md](RECONSTRUCTION_RUNBOOK.md).  
+**Design:** [../RESEARCH_PIPELINE_ENGINE_DESIGN.md](../RESEARCH_PIPELINE_ENGINE_DESIGN.md).
 
-## What is implemented and committed
+## Implemented functionality (GitHub-tracked)
 
-1. **Portable engine** in `research_pipeline/engine/core.py` with JSONL registries for sources, discovered terms, observations, meanings/formulations, and proposed relations. Uses stable IDs, cross-record validation, source access/rights checks, atomic checkpoint metadata, record-level idempotency, batch fsync, stage seals/content digests, and automated eligibility screening before experimental publication.
-2. **CLI** at `python -m research_pipeline.engine.cli` with `init`, `queue`, `ingest`, `seal`, `status`, `publish`, `wave2-plan`, and `fork-wave2`. The command-line entrypoint does not mutate ChatGPT thinking level; work queues recommend only **Instant, Medium or High**, matching available user controls.
-3. **Chat work queue generator** in `engine/queues.py`: one source discovery request from the project profile, term index tasks per permitted source, content tasks per observed term/source, clustering batches and meaning-level linking tasks. Saves stage tasks and status summaries.
-4. **Isolated mathDef adapter** in `adapters/mathdef/preview.py` creating a separate `preview/index.html` and preview catalog. Displays multiple contextual meanings and formulations grouped under one term, a source-evidence dialog and an unverified disclaimer. This is a minimal preview, **not** the production site: full mathematical rendering, nested/inline interactions and GitHub verification submissions remain future development.
-5. **Wave split:** stage seals and publication preserve the initial prototype; `wave2-plan` constructs source/variant/link research queues; `fork-wave2` creates a separate unsealed workspace using only prior experiment records, without touching the first-wave workspace or the original mathDef corpus.
-6. **Independent tests** `research_pipeline/tests/test_pipeline.py` and `test_queues.py` exercise the Stage 0–6 flow with synthetic Closure/field examples, term-group variants, sources, browser preview generation, paid-source restrictions, duplicate replay, conflict rejection, integrity tampering, stage ordering and wave2 fork/queue. A dedicated workflow `.github/workflows/research-pipeline-ci.yml` runs tests without depending on production mathDef tests.
-7. **Existing repository CI regression fixed:** `scripts/build_index.py` now permits scoped tests to omit unrelated variant parents, but **full-site builds still require every variant parent** via strict validation. The standard Pages and corpus audit workflows subsequently completed successfully (commit `7ce27691`; later changes require their own CI checks).
+- Reusable model and CLI: \`engine/core.py\`, \`engine/cli.py\`. Project profile, stage-specific records (sources, raw terms, observations, meanings/formulations, relationships), strict cross-record validations, stable IDs, idempotent batch ingestion, atomic checkpoint manifests, stage sealing and digests, eligible-draft screening and isolated publication.
+- Stage work and thinking effort: \`engine/queues.py\`, CLI \`queue\` and \`status\`. Separately prepares source discovery, title collection, content gathering, semantic classification and linking research. Handoffs recommend **Instant, Medium or High**; software does not set the ChatGPT model/effort.
+- Approved-source intake: \`engine/source_manifest.py\`, \`engine/source_intake.py\`, \`engine/batch_intake.py\`. Build approved index-page manifests (optionally using downloaded/saved sitemaps), extract conservative candidates from glossary/headings/list links, record source-specific locators and rights-permitted excerpts, process bounded page batches with resumable durable checkpoints. Offline HTML default; opt-in network is same-host HTTPS only with robots policy checks. No paid retrieval by default.
+- Separate bulk waves: \`wave2-plan\` queues additional source/variant/relationship research, \`fork-wave2\` creates a new workspace without altering frozen Wave 1, and \`engine/revisions.py\` + \`revision_cli.py\` implement explicit predecessor-hash corrections/retirements with an append-only audit log and recovery. Substantive changes to formulations must return to candidate review.
+- Independent mathDef prototype: \`adapters/mathdef/preview.py\`, \`preview.js\` and \`preview.css\`. Separate term and definition searches, grouped mathematical meanings, multiple formulations, source evidence dialog (supporting plus other encountered), basic KaTeX rendering with online asset fallback, three exploration modes, context-prioritized target meaning, branch-limited recursive links, proposed link-context correction, and multi-formulation GitHub verification issue drafts. None of these reports auto-approve content.
+- Evaluation: \`evaluation/compare.py\`. Only **post-freeze**, read-only comparison against production mathDef. Outputs source URL/domain overlap, term identity candidates, link candidates, ambiguous semantic-review queue and changes from Wave 1 to Wave 2. \`engine/effort.py\` accepts explicit user-recorded effort metrics, never invents cost/time.
+- Tests/workflow: \`research_pipeline/tests/\` covers full artificial acquisition→publication→preview→wave2→evaluation, source rights, batch restart, source index manifests, staged revisions, link/term group behavior and work-effort records. \`.github/workflows/research-pipeline-ci.yml\` checks all independent Python tests, the CLI, and viewer JavaScript syntax. Existing mathDef production Pages workflow remains separate and previously passed after the Closure test regression fix.
 
-## Known limitations / not yet implemented
+## Strict research isolation and publication policy
 
-- Stage 1 research is chat-driven; currently no automatic discovery/scoring of authoritative source websites. That is intentional: source reliability requires researched editorial judgment.
-- Stage 2/3 are not yet connected to a robust, rights-aware source-index reader/crawler and content-locator extractor. The engine accepts independently gathered JSONL candidate records and generates research work queues.
-- Stage 4/5 **do not perform semantic or mathematical reasoning autonomously**; the assistant/user must research, classify and formulate reviewed intake records in chat. Automatic context-based link ranking is not implemented.
-- Stage 6 produces an eligible-draft `published/catalog.json` **inside the experiment**, not a publicly deployed second site. No true reconstruction or comparison has yet been conducted.
-- The second-wave fork can append new records, but edits to prior IDs require an **explicit audit-tracked revision mechanism** before it is safe to refine previous forms/meanings. Do not work around this by silently rewriting sealed records.
-- Raw observations are kept; the source modal currently shows citations used by screened published formulations, not a complete reviewed/rejected/consolidated source-history browser. UI and provenance linkage must be expanded later.
-- Workspaces checkpoint to local files after configured batches; if executing in ephemeral chat environments, explicitly commit the workspace/checkpoint to GitHub at regular intervals (the engine does not have GitHub credentials).
-- The full independent baseline vs reconstructed Wave 1 vs reconstructed Wave 2 comparison harness is not yet implemented. The existing mathDef corpus must be used only by that **post-freeze evaluator**, never as seed material.
-- Tests verify structural, source-policy and replay constraints, not mathematical rigor or provenance truth. Human verification remains distinct.
+- **No real source search or independent mathDef reconstruction has yet been performed.** Stage 1 authoritative-source selection and Stage 4/5 mathematical semantic analysis are performed with source-grounded reasoning in ordinary ChatGPT conversations; these scripts manage batches, provenance, validation and checklists, rather than calling an AI model autonomously.
+- Start from a generic subject contract in \`project_profiles/mathdef_reconstruction.json\`. That profile must NOT contain production citations or seed definitions. During both acquisition waves, do not read existing production \`definitions/\`, \`variants/\`, citation ledger or related reference files to seed results.
+- Publication is screened-draft only, with **"Not yet manually verified"** notice. GitHub verification proposals remain queued for explicit editorial approval. Neither tests nor source links prove mathematical correctness.
+- Both waves publish into their **separate experiment** folders, never replace the live mathDef website. Only \`evaluation/compare.py\` can subsequently inspect production data, and only when Wave 1 and Wave 2 have both been frozen and published.
+- No source-text capture unless specific reuse rights are recorded; ordinary indexes yield term names and locators. Advanced index formats may need subject/source-specific readers during the trial.
+- GitHub Actions CI is not a browser UI test. Exact word-offset In-Line linking and automatic semantic relevance ranking are not yet at full production feature parity; the experimental viewer uses after-formulation expansion and explicit screened relation targets. These are acceptable known limitations for this first reconstruction benchmark, not claims of finished general website software.
+- Workspace checkpoints are durable on disk, but must also be **committed to GitHub after practical batch boundaries** when running in ephemeral chat runtimes. Never claim a local checkpoint is already pushed.
 
-## Immediate safe next development task — recommended thinking: Medium
+## Exact next action: START RECONSTRUCTION WAVE 1 — Stage 1 (Medium thinking)
 
-**Implement the Stage 2/3 source intake bridge**: a robust, bounded, rights-aware source-index/locator reader that converts permitted external catalog/index material into term observations. Use offline HTML/API fixtures to prove parser reliability and avoid downloading unlicensed source prose. Also complete explicit, versioned second-wave revision handling so previous meaning/formulation records can be corrected with a revision ledger rather than being frozen forever. Test these changes in the isolated CI workflow. Do not yet launch the real corpus reconstruction.
+1. Confirm latest [Research pipeline CI](https://github.com/Zengez/mathDef/actions/workflows/research-pipeline-ci.yml) and normal Pages checks pass.
+2. Open \`RECONSTRUCTION_RUNBOOK.md\`; initialize a fresh \`reconstruction-v1\` workspace with the generic project profile.
+3. Generate the Stage 1 source-discovery queue; independently research authoritative source collections without consulting the existing mathDef source/definition inventory.
+4. Record reviewed, permitted source collection URLs and access/rights evidence in batches; checkpoint source registry to GitHub frequently.
+5. Complete and seal Stage 1. **Next stage after that: Stage 2 term-title inventory, recommended effort Instant** (or Medium for difficult index sites).
+6. Do not begin Wave 2 until Wave 1 has produced an inspected, functional prototype. Do not compare either wave to production content until both waves are frozen.
 
-After that, develop a separate post-freeze evaluation harness (source/term/meaning/relationship recovery, ambiguous semantic-match review queue, efficiency tracking), and only then consider running the two reconstruction waves with independently discovered source inputs.
+**No further feature coding is a prerequisite to BEGINNING the controlled reconstruction trial.** The experiment can reveal opportunities for refining parsers, context scoring and preview semantics without postponing the first wave indefinitely. Record discoveries in this checkpoint if modifications are needed.
 
-## Resume instructions
+## Resume after timeouts
 
-1. Read this file and `research_pipeline/README.md` and then the accepted design file.
-2. Check HEAD and the dedicated GitHub Actions workflow before continuing. Earlier rapid commits may have caused older runs to be canceled; use the newest successful run.
-3. Preserve `research_pipeline/engine/` independence from `research_pipeline/adapters/mathdef/`. Never read production `definitions/`, `variants/`, `CITATION_AUDIT.csv`, `DEPENDENCY_LINKING.md` or other production content while populating reconstruction records.
-4. Add tests and small commits. Checkpoint after manageable batches; update this file at each completed development task.
-5. Recommended user ChatGPT thinking setting for the **next** task: **Medium** (source intake). High will be recommended when semantic/relationship reasoning begins.
+Read this file, the runbook, the current project profile and the active experiment's \`state/checkpoint.json\`. Check \`git log -1\` and latest CI. Run \`python -m research_pipeline.engine.cli --workspace WORKSPACE status\`. Continue the next incomplete task at the recorded Instant/Medium/High effort; never restart previously sealed stages or import production citation seeds. Update the checkpoint after each completed stage.
