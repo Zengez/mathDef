@@ -249,6 +249,11 @@ class Workspace:
             from .stage3_attempts import require_full_attempt_coverage
             attempt_file = self.root / "state" / "stage3_acquisition_attempts.jsonl"
             require_full_attempt_coverage(self.root, attempt_file)
+        if stage in ("observations", "meanings", "relations") and config.get(
+                "require_reviewed_term_dispositions") is True:
+            from .stage3_review_gate import require_reviewed_term_dispositions
+            require_reviewed_term_dispositions(
+                self.root, self.root / "state" / "stage3_term_reviews.jsonl")
         index = STAGES.index(stage)
         if index and not self.state(STAGES[index - 1]).get("sealed"):
             raise PipelineError("Seal prior stages first, in order")
