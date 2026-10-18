@@ -9,7 +9,7 @@
   };
   const oneLine=(value,max=180)=>String(value||"").replace(/[\r\n\t]+/g," ").replace(/\s+/g," ").trim().slice(0,max);
   const idValid=(v)=>/^[a-z0-9]+(?:[.-][a-z0-9]+)*$/.test(v||"");
-  const pathValid=(v)=>/^definitions\/[a-z0-9/-]+\.tex$/.test(v||"");
+  const pathValid=(v)=>/^(?:definitions|variants)\/[a-z0-9/-]+\.tex$/.test(v||"");
   function buildIssue(d){
     if(!["new","correction"].includes(d.kind))throw Error("Unrecognized suggestion type.");
     let title, parts=[];
