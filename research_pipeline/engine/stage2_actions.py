@@ -79,6 +79,8 @@ def run(workspace, manifest, output_dir, *, max_pages=MAX_PAGES,
             "candidate_count": len(candidates),
             "page_results": results,
             "errors": [r for r in results if r["status"] == "error"],
+            "blocked_pages": [r for r in results if r["status"] == "blocked"],
+            "partial": len(finished) < len(eligible),
             "review_required": True,
             "note": "Raw title candidates only. No ingestion, human verification, or seal.",
         })
@@ -127,8 +129,9 @@ def run(workspace, manifest, output_dir, *, max_pages=MAX_PAGES,
         except (OSError, ValueError, UnicodeError) as exc:
             # A failing page is NOT completed; subsequent runs can retry it.
             results = [r for r in results if r["id"] != task["id"]]
+            blocked = "Robots policy unavailable" in str(exc)
             results.append({"id": task["id"], "source_id": task["source_id"],
-                            "url": task["url"], "status": "error",
+                            "url": task["url"], "status": "blocked" if blocked else "error",
                             "error": str(exc)[:500]})
         persist()
     persist()
