@@ -247,6 +247,8 @@ class Workspace:
         values = self.records(stage)
         if not values:
             raise PipelineError(f"No {stage} records; nothing to seal")
+        for record in values.values():
+            self.validate(stage, record)
         info = {"sealed": True, "total": len(values), "record_digest": digest(list(values.values()))}
         atomic_json(self.root / "state" / (stage + ".json"), info)
         self.checkpoint(stage, info)
@@ -275,6 +277,8 @@ class Workspace:
             raise PipelineError("Formulation IDs must be globally unique")
         for meaning in meanings.values():
             problem = []
+            if meaning.get("_retired"):
+                problem.append("meaning retired after editorial consolidation")
             for form in meaning["formulations"]:
                 if form["review_state"] != "screened":
                     problem.append("formulation not screened")
