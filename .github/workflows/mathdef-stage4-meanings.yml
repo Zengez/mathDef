@@ -1,0 +1,53 @@
+name: Independent mathDef Stage 4 semantic meaning seal
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-stage4-meanings.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-stage4-meanings
+  cancel-in-progress: false
+
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout isolated project
+        uses: actions/checkout@v4
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run isolated research regression tests
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Ingest semantic classification in four checkpointed batches
+        run: |
+          for batch in research_pipeline/experiments/reconstruction-v1/state/stage4_meanings_batch*.jsonl; do
+            python -m research_pipeline.engine.cli \
+              --workspace research_pipeline/experiments/reconstruction-v1 \
+              ingest meanings --input "$batch" --batch-size 8
+          done
+      - name: Review evidence coverage and seal supported meanings only
+        run: |
+          python -m research_pipeline.engine.stage4_finalize \
+            --workspace research_pipeline/experiments/reconstruction-v1 \
+            --seal
+      - name: Commit only separate reconstruction meaning records and audits
+        run: |
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            research_pipeline/experiments/reconstruction-v1/records/meanings.jsonl \
+            research_pipeline/experiments/reconstruction-v1/state/meanings.json \
+            research_pipeline/experiments/reconstruction-v1/state/checkpoint.json \
+            research_pipeline/experiments/reconstruction-v1/state/stage4_review.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Seal Stage 4 independent source-backed mathematical meanings"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi
