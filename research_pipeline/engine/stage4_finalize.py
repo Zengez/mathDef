@@ -93,7 +93,7 @@ def audit(workspace, *, seal=False):
     if not any(len(x["formulations"]) > 1 for x in meanings.values()):
         raise PipelineError("Equivalent formulation alternatives were lost")
     unclassified = sorted(set(terms) - supported)
-    if len(unclassified) != 293:
+    if len(unclassified) != EXPECTED_TERMS - EXPECTED_SUPPORTED_TERMS:
         raise PipelineError("Unsupported term coverage discrepancy")
     audit_record = {
         "schema_version": 1, "stage": "meanings",
