@@ -116,6 +116,28 @@ class Stage3AttemptTests(unittest.TestCase):
                         ["every_term_attempt_accounted_for"])
         self.assertEqual(second["source_documents_fetched"], 0)
 
+    def test_repaired_workspace_cannot_seal_stage3_without_all_attempts(self):
+        # Exercise the actual engine gate, not merely the standalone checker.
+        config = json.loads(self.w.config_path.read_text(encoding="utf-8"))
+        config["require_full_definition_attempts"] = True
+        self.w.config_path.write_text(json.dumps(config), encoding="utf-8")
+        obs = {"id": "obs.fake", "term_id": "term.alpha",
+               "source_id": "src.stacks",
+               "locator": self.terms[0]["locator"],
+               "record_kind": "locator"}
+        obs_path = self.root / "obs.jsonl"
+        obs_path.write_text(json.dumps(obs) + "\n", encoding="utf-8")
+        self.w.ingest("observations", obs_path)
+        with self.assertRaisesRegex(PipelineError, "only 0/2"):
+            self.w.seal("observations")
+        run(self.w.root, self.ledger, self.report, batch_size=1, fetcher=self.fetch)
+        with self.assertRaisesRegex(PipelineError, "only 1/2"):
+            self.w.seal("observations")
+        run(self.w.root, self.ledger, self.report, batch_size=1, fetcher=self.fetch)
+        sealed = self.w.seal("observations")
+        self.assertEqual(sealed["total"], 1)
+        self.assertTrue(sealed["sealed"])
+
     def test_forged_success_missing_page_digest_is_rejected(self):
         run(self.w.root, self.ledger, self.report, batch_size=2,
             fetcher=self.fetch)
