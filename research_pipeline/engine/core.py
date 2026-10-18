@@ -177,6 +177,8 @@ class Workspace:
                 ids = form.get("evidence_ids")
                 if not isinstance(ids, list) or not ids or any(i not in observations for i in ids):
                     raise PipelineError("Formulations require real observation evidence")
+                if any(observations[i]["term_id"] not in row["term_ids"] for i in ids):
+                    raise PipelineError("Evidence term must belong to the proposed meaning")
         elif stage == "relations":
             required(row, "from_formulation", "target_meaning", "relation_type", "review_state")
             meanings = self.records("meanings")
@@ -268,6 +270,9 @@ class Workspace:
         observations = self.records("observations")
         meanings = self.records("meanings")
         eligible, held = [], []
+        all_formulation_ids = [f["id"] for m in meanings.values() for f in m["formulations"]]
+        if len(all_formulation_ids) != len(set(all_formulation_ids)):
+            raise PipelineError("Formulation IDs must be globally unique")
         for meaning in meanings.values():
             problem = []
             for form in meaning["formulations"]:
@@ -284,8 +289,12 @@ class Workspace:
             item["verification_notice"] = "Not yet manually verified"
             item["human_verified"] = False
             (held if problem else eligible).append({**item, **({"hold_reasons": sorted(set(problem))} if problem else {})})
+        eligible_meanings = {e["id"] for e in eligible}
+        eligible_forms = {f["id"] for e in eligible for f in e["formulations"]}
         links = [r for r in self.records("relations").values()
-                 if r["review_state"] == "screened" and r["target_meaning"] in {e["id"] for e in eligible}]
+                 if r["review_state"] == "screened"
+                 and r["target_meaning"] in eligible_meanings
+                 and r["from_formulation"] in eligible_forms]
         return {"schema_version": 1, "project": self.config()["project"],
                 "meanings": eligible, "relations": links, "held": held,
                 "sources": list(sources.values()), "observations": list(observations.values())}
