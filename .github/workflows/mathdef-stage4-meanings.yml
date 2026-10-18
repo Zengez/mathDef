@@ -1,53 +1,39 @@
-name: Independent mathDef Stage 4 semantic meaning seal
+name: Seal corrected independent Stage 4 meanings
 
+# No automatic reinsertion of the old 25-term Stage 4 batches.
+# The corrected source-review gates must pass before sealing new meanings.
 on:
-  push:
-    paths:
-      - '.github/workflows/mathdef-stage4-meanings.yml'
   workflow_dispatch:
 
 permissions:
   contents: write
-
-concurrency:
-  group: mathdef-stage4-meanings
-  cancel-in-progress: false
 
 jobs:
   classify:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout isolated project
-        uses: actions/checkout@v4
-      - name: Configure Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run isolated research regression tests
-        run: python -m unittest discover -s research_pipeline/tests -v
-      - name: Ingest semantic classification in four checkpointed batches
-        run: |
-          for batch in research_pipeline/experiments/reconstruction-v1/state/stage4_meanings_batch*.jsonl; do
-            python -m research_pipeline.engine.cli \
-              --workspace research_pipeline/experiments/reconstruction-v1 \
-              ingest meanings --input "$batch" --batch-size 8
-          done
-      - name: Review evidence coverage and seal supported meanings only
+      - run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Refuse to seal meanings with unsupported or omitted terms
         run: |
           python -m research_pipeline.engine.stage4_finalize \
-            --workspace research_pipeline/experiments/reconstruction-v1 \
+            --workspace research_pipeline/experiments/reconstruction-v1-recovery \
             --seal
-      - name: Commit only separate reconstruction meaning records and audits
+      - name: Commit only corrected Stage 4 meanings/audit
         run: |
           git config user.name "mathDef Research Workflow"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- \
-            research_pipeline/experiments/reconstruction-v1/records/meanings.jsonl \
-            research_pipeline/experiments/reconstruction-v1/state/meanings.json \
-            research_pipeline/experiments/reconstruction-v1/state/checkpoint.json \
-            research_pipeline/experiments/reconstruction-v1/state/stage4_review.json
+            research_pipeline/experiments/reconstruction-v1-recovery/records/meanings.jsonl \
+            research_pipeline/experiments/reconstruction-v1-recovery/state/meanings.json \
+            research_pipeline/experiments/reconstruction-v1-recovery/state/checkpoint.json \
+            research_pipeline/experiments/reconstruction-v1-recovery/state/stage4_review.json
           if ! git diff --cached --quiet; then
-            git commit -m "Seal Stage 4 independent source-backed mathematical meanings"
-            git push origin "HEAD:${{ github.ref_name }}"
+            git commit -m "Seal corrected Stage 4 after dynamic full-coverage review"
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
