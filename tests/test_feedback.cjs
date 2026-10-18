@@ -61,3 +61,28 @@ test("issue URL uses GitHub create-issue draft and encodes special characters", 
   assert.throws(()=>buildIssue({kind:"correction",category:"math",
     definitionId:"algebra.group",message:""}),/describe/i);
 });
+
+
+test("specific alternative formulation is preserved in editorial reports", () => {
+  const issue = buildIssue({
+    kind:"correction",category:"math",definitionId:"functions.function",
+    definitionTerm:"Function",definitionPath:"definitions/functions/function.tex",
+    definitionVariantKey:"graph",
+    definitionVariantLabel:"Set-theoretic (relation) formulation",
+    definitionVariantPath:"variants/functions/function-graph.tex",
+    message:"Please clarify the codomain convention."
+  });
+  assert.match(issue.body,/Formulation being reviewed/);
+  assert.match(issue.body,/Set-theoretic \(relation\) formulation/);
+  assert.match(issue.body,/variants\/functions\/function-graph\.tex/);
+  assert.match(issue.body,/Please clarify the codomain convention/);
+  const edge = buildIssue({
+    kind:"correction",category:"wrongLink",definitionId:"functions.function",
+    message:"Incorrect dependency",
+    linkSourceId:"functions.function",linkTargetId:"sets.cartesian-product",
+    linkFormulationKey:"graph",
+    linkFormulationLabel:"Set-theoretic (relation) formulation"
+  });
+  assert.match(edge.body,/Formulation containing the reported link/);
+  assert.match(edge.body,/graph/);
+});
