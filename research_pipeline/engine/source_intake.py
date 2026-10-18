@@ -48,18 +48,30 @@ def safe_url(url, host=None):
     return p
 
 
+def reviewed_hosts(source):
+    """Explicit reviewed aliases; never infer same registrable domain."""
+    canonical_host = safe_url(source["url"]).hostname.lower()
+    if source.get("id") == "src.planetmath" and canonical_host == "www.planetmath.org":
+        return frozenset({"www.planetmath.org", "planetmath.org"})
+    return frozenset({canonical_host})
+
+
+def safe_source_url(url, source):
+    parsed = safe_url(url)
+    if parsed.hostname.lower() not in reviewed_hosts(source):
+        raise PipelineError("URL host is not an explicitly reviewed source host")
+    return parsed
+
+
 def fetch_index(url, source, *, delay=1.25, max_bytes=MAX_BYTES):
     """One opt-in request; domain-restricted redirects; robots checked."""
-    target = safe_url(url)
-    approved = safe_url(source["url"])
-    if target.hostname != approved.hostname:
-        raise PipelineError("Cannot fetch an unapproved source host")
+    target = safe_source_url(url, source)
     if source["access"] != "free" or source["rights"] not in ("permitted", "locator_only") or not source["authority_reviewed"]:
         raise PipelineError("Not an approved, freely accessible source")
     robots_url = "https://" + target.hostname + "/robots.txt"
     class RestrictedRedirect(urllib.request.HTTPRedirectHandler):
         def redirect_request(self, req, fp, code, msg, headers, newurl):
-            safe_url(newurl, target.hostname)
+            safe_source_url(newurl, source)
             return super().redirect_request(req, fp, code, msg, headers, newurl)
     opener = urllib.request.build_opener(RestrictedRedirect)
     robots = urllib.robotparser.RobotFileParser()
@@ -83,7 +95,7 @@ def fetch_index(url, source, *, delay=1.25, max_bytes=MAX_BYTES):
         if "text/html" not in response.headers.get("Content-Type", "").lower():
             raise PipelineError("Only HTML index pages are supported")
         final = response.geturl()
-        safe_url(final, target.hostname)
+        safe_source_url(final, source)
         raw = response.read(max_bytes + 1)
         if len(raw) > max_bytes:
             raise PipelineError("Index HTML exceeds size cap")
@@ -119,7 +131,8 @@ class IndexReader(HTMLParser):
         if self.collect is None and (
             (self.profile == "headings" and tag in ("h1", "h2", "h3", "h4")) or
             (self.profile == "glossary" and tag == "dt") or
-            (self.profile == "linked-list" and tag == "a" and self.depth > 0)
+            (self.profile == "linked-list" and tag == "a" and (self.depth > 0 or
+             urllib.parse.urlparse(self.base_url).path == "/alphabetical.html"))
         ):
             self.collect = tag
             self.parts = []
@@ -182,7 +195,7 @@ def extract(workspace, source_id, url, content, *, stage, profile="headings",
     source = w.records("sources").get(source_id)
     if not source:
         raise PipelineError("Unknown source ID")
-    safe_url(url, safe_url(source["url"]).hostname)
+    safe_source_url(url, source)
     if source["access"] != "free" or source["rights"] not in ("permitted", "locator_only") or not source["authority_reviewed"]:
         raise PipelineError("Source is not eligible for index acquisition")
     if stage not in ("terms", "observations"):
@@ -195,11 +208,15 @@ def extract(workspace, source_id, url, content, *, stage, profile="headings",
     parser = IndexReader(url, profile)
     parser.feed(content)
     entries = []
-    approved_host = safe_url(source["url"]).hostname
     for candidate in parser.candidates(limit):
         try:
-            safe_url(candidate["url"], approved_host)
+            safe_source_url(candidate["url"], source)
         except PipelineError:
+            continue
+        # Alphabetical navigation links are not term candidates.
+        if (urllib.parse.urlparse(url).path == "/alphabetical.html" and
+                urllib.parse.urldefrag(candidate["url"])[0] ==
+                urllib.parse.urldefrag(url)[0]):
             continue
         entries.append(candidate)
     results = []
