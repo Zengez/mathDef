@@ -57,20 +57,24 @@ def fetch_index(url, source, *, delay=1.25, max_bytes=MAX_BYTES):
     if source["access"] != "free" or source["rights"] not in ("permitted", "locator_only") or not source["authority_reviewed"]:
         raise PipelineError("Not an approved, freely accessible source")
     robots_url = "https://" + target.hostname + "/robots.txt"
-    robots = urllib.robotparser.RobotFileParser()
-    robots.set_url(robots_url)
-    # A denied/unreachable robots check is treated conservatively.
-    try:
-        robots.read()
-    except Exception as exc:
-        raise PipelineError("Robots policy could not be retrieved; use permitted offline input") from exc
-    if not robots.can_fetch(AGENT, url):
-        raise PipelineError("Robots policy does not allow this fetch")
     class RestrictedRedirect(urllib.request.HTTPRedirectHandler):
         def redirect_request(self, req, fp, code, msg, headers, newurl):
             safe_url(newurl, target.hostname)
             return super().redirect_request(req, fp, code, msg, headers, newurl)
     opener = urllib.request.build_opener(RestrictedRedirect)
+    robots = urllib.robotparser.RobotFileParser()
+    robots.set_url(robots_url)
+    try:
+        with opener.open(urllib.request.Request(robots_url, headers={"User-Agent": AGENT}),
+                         timeout=15) as response:
+            raw_robots = response.read(300_001)
+            if len(raw_robots) > 300_000:
+                raise PipelineError("robots.txt exceeds safe size")
+        robots.parse(raw_robots.decode("utf-8", errors="replace").splitlines())
+    except (OSError, ValueError) as exc:
+        raise PipelineError("Robots policy unavailable; use permitted offline input") from exc
+    if not robots.can_fetch(AGENT, url):
+        raise PipelineError("Robots policy does not allow this fetch")
     time.sleep(max(0.0, delay))
     req = urllib.request.Request(url, headers={
         "User-Agent": AGENT, "Accept": "text/html",
@@ -190,7 +194,14 @@ def extract(workspace, source_id, url, content, *, stage, profile="headings",
         raise PipelineError("Licensed excerpts require affirmative permitted rights and an HTTPS license URL")
     parser = IndexReader(url, profile)
     parser.feed(content)
-    entries = parser.candidates(limit)
+    entries = []
+    approved_host = safe_url(source["url"]).hostname
+    for candidate in parser.candidates(limit):
+        try:
+            safe_url(candidate["url"], approved_host)
+        except PipelineError:
+            continue
+        entries.append(candidate)
     results = []
     if stage == "terms":
         for item in entries:
