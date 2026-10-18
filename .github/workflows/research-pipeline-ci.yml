@@ -19,3 +19,5 @@ jobs:
         run: python -m unittest discover -s research_pipeline/tests -v
       - name: Check command-line invocation
         run: python -m research_pipeline.engine.cli --help
+      - name: Check reconstruction viewer JavaScript syntax
+        run: node --check research_pipeline/adapters/mathdef/preview.js
