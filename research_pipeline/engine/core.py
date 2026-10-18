@@ -238,9 +238,17 @@ class Workspace:
         self.checkpoint(stage, state)
 
     def seal(self, stage):
-        self.config()
+        config = self.config()
         if stage not in STAGES:
             raise PipelineError("Invalid stage")
+        # The repaired reconstruction explicitly opts into this fail-closed
+        # coverage gate. Earlier immutable Stage 3/4 snapshots remain historical
+        # artifacts and are NOT retroactively described as comprehensive.
+        if stage in ("observations", "meanings", "relations") and config.get(
+                "require_full_definition_attempts") is True:
+            from .stage3_attempts import require_full_attempt_coverage
+            attempt_file = self.root / "state" / "stage3_acquisition_attempts.jsonl"
+            require_full_attempt_coverage(self.root, attempt_file)
         index = STAGES.index(stage)
         if index and not self.state(STAGES[index - 1]).get("sealed"):
             raise PipelineError("Seal prior stages first, in order")
