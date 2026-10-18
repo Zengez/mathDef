@@ -83,6 +83,43 @@ class Stage3ReviewTests(unittest.TestCase):
         self.assertEqual(result["decisions"], {"supported":1, "access_blocked":1})
         self.assertTrue(self.w.seal("observations")["sealed"])
 
+    def test_repaired_stage4_audit_is_not_hardcoded_to_25_terms(self):
+        from research_pipeline.engine.stage4_finalize import audit as meaning_audit
+        build_review_queue(self.w.root, self.reviews)
+        rows = jsonl(self.reviews)
+        target = next(x for x in rows if x["term_id"] == "term.a")
+        target["decision"] = "supported"
+        target["reviewed_by"] = "source_reviewer"
+        target["editorial_reason"] = (
+            "Inspected the referenced field-theory section and authored an "
+            "independent mathematical candidate definition.")
+        target["evidence_ids"] = ["obs.form"]
+        self.reviews.write_text("".join(json.dumps(x)+"\n" for x in rows))
+        self.w.seal("observations")
+        sample = {
+            "id": "meaning.term.a", "term_group_id": "group.a",
+            "display_term": "Algebraic closure",
+            "context": "Field theory: closure of a field under algebraic roots",
+            "term_ids": ["term.a"],
+            "formulations": [{
+                "id":"form.a", "text": (
+                    "An algebraic closure of a field is an algebraic extension "
+                    "of that field which is itself algebraically closed."),
+                "evidence_ids": ["obs.form"], "review_state":"screened",
+                "editorial_note":"Mathematical source inspected in independent Stage 3."}],
+            "source_citation": {"source_id":"src.stacks",
+                                "url":"https://stacks.math.columbia.edu/tag/09GP",
+                                "section":"9.10.3"},
+            "human_verified":False, "review_stage":"source_cross_checked",
+        }
+        file = self.root / "meaning.jsonl"
+        file.write_text(json.dumps(sample)+"\n")
+        self.w.ingest("meanings", file)
+        outcome = meaning_audit(self.w.root, seal=True)
+        self.assertTrue(outcome["sealed"])
+        self.assertEqual(outcome["review"]["supported_term_count"], 1)
+        self.assertEqual(outcome["review"]["held_term_count"], 1)
+
     def test_fabricated_evidence_does_not_pass(self):
         build_review_queue(self.w.root, self.reviews)
         rows = jsonl(self.reviews)
