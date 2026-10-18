@@ -125,7 +125,7 @@ class IndexReader(HTMLParser):
             self.href = attrs["href"]
         if tag in ("ul", "ol") and self.profile == "linked-list":
             self.depth += 1
-        if self.pending and tag in ("p", "dd") and not self.capture_paragraph:
+        if self.pending is not None and tag in ("p", "dd") and not self.capture_paragraph:
             self.capture_paragraph = True
             self.excerpt_parts = []
 
