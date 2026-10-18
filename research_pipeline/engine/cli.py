@@ -20,6 +20,9 @@ def main(argv=None):
     ingest.add_argument("--limit", type=int)
     seal = sub.add_parser("seal", help="Freeze a completed stage before the next")
     seal.add_argument("stage", choices=("sources", "terms", "observations", "meanings", "relations"))
+    queue = sub.add_parser("queue", help="Write deterministic chat-research work queue and effort handoff")
+    queue.add_argument("stage", choices=("sources", "terms", "observations", "meanings", "relations"))
+    queue.add_argument("--batch-size", type=int, default=10)
     sub.add_parser("status", help="Report current stage counts and handoff")
     sub.add_parser("publish", help="Stage 6 automated gate and private reconstruction catalog")
     sub.add_parser("wave2-plan", help="Generate second-wave source/variant/link queues")
@@ -37,6 +40,9 @@ def main(argv=None):
             result = w.seal(args.stage)
         elif args.action == "status":
             result = w.status()
+        elif args.action == "queue":
+            from .queues import make_queue
+            result = make_queue(args.workspace, args.stage, args.batch_size)
         elif args.action == "publish":
             result = w.publish()
         elif args.action == "fork-wave2":
