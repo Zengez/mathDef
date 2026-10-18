@@ -16,9 +16,10 @@ from collections import Counter
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urljoin
 
 from .core import PipelineError, Workspace, atomic_json, canonical, digest, jsonl
-from .source_intake import fetch_index, safe_source_url
+from .source_intake import fetch_index, safe_source_url, safe_url
 
 TERMINAL = frozenset({
     "definition_markers_found", "page_read_no_definition_marker",
@@ -107,7 +108,16 @@ def inspect_stacks_page(html_text, term):
             continue
         match_id = re.fullmatch(r"Definition\s+(\d+\.\d+\.\d+)", label)
         if match_id:
-            found[match_id.group(1)] = {"marker": label, "section_number": match_id.group(1)}
+            absolute = urljoin(term["locator"], href)
+            try:
+                parsed = safe_url(absolute, "stacks.math.columbia.edu")
+            except PipelineError:
+                continue
+            if not parsed.path.startswith("/tag/"):
+                continue
+            found[match_id.group(1)] = {
+                "marker": label, "section_number": match_id.group(1),
+                "definition_locator": absolute}
     markers = [found[x] for x in sorted(found, key=lambda s: tuple(map(int,s.split("."))))]
     return {
         "status": "definition_markers_found" if markers else "page_read_no_definition_marker",
