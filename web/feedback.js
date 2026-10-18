@@ -37,6 +37,19 @@
         "## Explanation",note,
         "## Suggested replacement (optional)",extra||"_None_"
       ];
+      if(d.definitionVariantKey){
+        parts.push("## Formulation being reviewed",
+          "- Key: "+oneLine(d.definitionVariantKey,80)+
+          "\n- Label: "+oneLine(d.definitionVariantLabel,180));
+        if(pathValid(d.definitionVariantPath)){
+          parts.push("## Formulation source file",
+            "https://github.com/Zengez/mathDef/blob/main/"+d.definitionVariantPath);
+        }
+      }
+      if(d.linkFormulationKey){
+        parts.push("## Formulation containing the reported link",
+          oneLine(d.linkFormulationLabel,180)+" ["+oneLine(d.linkFormulationKey,80)+"]");
+      }
       if(d.linkSourceId||d.linkTargetId){
         if(!idValid(d.linkSourceId)||!idValid(d.linkTargetId))throw Error("Invalid link context.");
         parts.push("## Definition link being reported",
@@ -69,11 +82,17 @@
     };
     let context=null;
     const clearReady=()=>{get("feedback-github-link").hidden=true;get("feedback-ready").hidden=true;};
-    function start(kind,id,link){
+    function start(kind,id,link,formulationKey){
       const d=kind==="correction"?lookup(id):null;
       if(kind==="correction"&&!d)return;
       context={kind};
       if(d)Object.assign(context,{definitionId:d.id,definitionTerm:d.term,definitionPath:d.path});
+      const formulation=d&&formulationKey&&
+        (d.formulations||[]).find(f=>f.key===formulationKey);
+      if(formulation)Object.assign(context,{
+        definitionVariantKey:formulation.key,definitionVariantLabel:formulation.label,
+        definitionVariantPath:formulation.path
+      });
       if(link)Object.assign(context,link);
       form.reset();clearReady();get("feedback-error").hidden=true;
       const adding=kind==="new";
@@ -86,7 +105,9 @@
       fields.category.value=link?"wrongLink":"math";
       get("feedback-context").textContent=adding
         ?"Request a mathematical term that is not yet in the collection; a definition is optional."
-        :"Target: "+d.term+" ["+d.id+"]"+(link?" | Link: "+link.linkSourceTerm+" → "+link.linkTargetTerm:"");
+        :"Target: "+d.term+" ["+d.id+"]"+
+          (formulation?" | Formulation: "+formulation.label:"")+
+          (link?" | Link: "+link.linkSourceTerm+" → "+link.linkTargetTerm:"");
       if(!dlg.open)dlg.showModal();
       (adding?fields.term:fields.category).focus();
     }
@@ -95,14 +116,18 @@
       if(!trigger)return;
       const action=trigger.dataset.feedbackAction;
       if(action==="new")return start("new");
-      if(action==="correct")return start("correction",trigger.dataset.feedbackId);
+      if(action==="correct")return start("correction",trigger.dataset.feedbackId,
+        null,trigger.dataset.feedbackFormulation);
       if(action==="link"){
         const source=lookup(trigger.dataset.feedbackSourceId);
         const target=lookup(trigger.dataset.feedbackTargetId);
         if(source&&target)start("correction",source.id,{
           linkSourceId:source.id,linkSourceTerm:source.term,
           linkTargetId:target.id,linkTargetTerm:target.term,
-          linkPhrase:trigger.dataset.feedbackPhrase||""
+          linkPhrase:trigger.dataset.feedbackPhrase||"",
+          linkFormulationKey:trigger.dataset.feedbackFormulation||"",
+          linkFormulationLabel:(source.formulations||[]).find(
+            f=>f.key===trigger.dataset.feedbackFormulation)?.label||""
         });
       }
     });
