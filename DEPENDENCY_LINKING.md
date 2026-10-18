@@ -60,3 +60,8 @@ The builder checks IDs and override structure. In-Line mode places a forced incl
 ## Validation
 
 The GitHub Pages workflow checks JavaScript syntax, runs Python tests, regenerates the link population for the complete corpus, and publishes the site. [tests/test_dependency_links.py](tests/test_dependency_links.py) covers term boundaries, notation masking, target ambiguity, manual overrides, and stable matching offsets.
+
+
+## Equivalently defined concepts with multiple formulations
+
+See [FORMULATIONS.md](FORMULATIONS.md). The matcher analyzes each formulation body separately and saves its own source offsets and formulation key, so In-Line links attach to the correct mathematical text. Nested view uses the union of the concept's dependency targets, avoiding duplicate child boxes. Source/target IDs in link overrides still refer to the underlying **concept**, not to a separately indexed formulation. A suggested correction or bad-link report may specify the originating formulation for editorial investigation.
