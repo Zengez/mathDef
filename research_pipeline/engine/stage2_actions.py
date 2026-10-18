@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
 
@@ -113,14 +112,6 @@ def run(workspace, manifest, output_dir, *, max_pages=MAX_PAGES,
             html = fetch_index(task["url"], source, delay=delay)
             discovered = extract(w.root, task["source_id"], task["url"], html,
                                  stage="terms", profile=task.get("profile", "headings"))
-            if (task.get("profile") == "stacks-sections" and
-                    not discovered and os.environ.get("STAGE2_DEBUG_STRUCTURE") == "1"):
-                # Temporary structural probe: no article text or definitions.
-                import re
-                marker = html.find("Section")
-                fragment = html[max(0, marker - 80):marker + 320] if marker >= 0 else ""
-                print("Stacks section HTML layout probe:",
-                      repr(fragment.replace("\\n", " ")[:400]))
             added = 0
             for item in discovered:
                 old = candidates.get(item["id"])
