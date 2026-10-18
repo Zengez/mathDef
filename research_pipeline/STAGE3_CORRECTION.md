@@ -1,3 +1,5 @@
+> **Update (2026-10-18): CORRECTED FIRST-WAVE STAGE 3 AND STAGE 4 COMPLETE.** The historical narrative below explains the earlier incomplete state. Since then all 291 fetched Stacks section headings have received substantive mathematical decisions (**232 supported, 59 no suitable standalone definition**), 431 independently authored formulation candidates were recorded, and corrected Stage 3 sealed with 749 observations. Corrected Stage 4 also sealed with **419 context-labelled meanings / 431 formulations**, including 12 explicitly checked equivalent-definition groupings. The 27 PlanetMath entries remain blocked by robots-policy verification. See `experiments/reconstruction-v1-recovery/state/stage3_review.json`, `state/stage4_review.json`, and `IMPLEMENTATION_CHECKPOINT.md`. Stage 5 has not started; neither wave has been compared against production mathDef.
+
 # Corrected Stage 3: per-term source acquisition and editorial evidence
 
 **2026-10-18 — acquisition complete; mathematical review remains open.**
