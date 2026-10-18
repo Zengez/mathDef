@@ -1,6 +1,6 @@
 # Independent mathDef Reconstruction — Execution Runbook
 
-**Status (2026-10-18):** Independent Wave 1 is underway. Stage 1 source registry and Stage 2 term registry are sealed. Stage 2 contains **318 raw source-linked term candidates** (not verified definitions), with six reviewed Stacks chapter indexes, 15 generic headings held, and PlanetMath automatic index acquisition deferred due to unavailable robots policy. Stage 3 has not started. See `experiments/reconstruction-v1/state/stage2_review.json` and `state/checkpoint.json`. This document is an execution protocol, not evidence of recovered definitions.
+**Status (2026-10-18):** Independent Wave 1 is underway. Stages 1 (sources), 2 (terms), and 3 (observations) are sealed in `research_pipeline/experiments/reconstruction-v1`. Stage 2 holds 318 raw source-linked term candidates; Stage 3 holds **349 observations** (291 Stacks index-only locators, 27 unverified PlanetMath locators, 31 independently authored candidate paraphrases covering 25 terms). The remaining **293 terms lack authored mathematical formulations**. See `state/stage2_review.json`, `state/stage3_review.json`, and `state/checkpoint.json`. Stage 4 semantic classification has not started. This document is an execution protocol, not evidence of verified definitions.
 
 ## Non-negotiable experiment boundary
 
