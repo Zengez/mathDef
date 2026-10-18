@@ -124,3 +124,17 @@ footer{color:#8797aa;font-size:12px;margin:32px 0 8px}
 .feedback-error{padding:9px 11px;background:#fff1f1;border-radius:8px;color:#9c3140;font-size:12px}
 .feedback-ready{padding:9px 11px;background:#f2f8fe;border-radius:8px;color:#365e86;font-size:12px}
 @media(max-width:600px){.dependency-head{flex-wrap:wrap}.dependency-head .dependency-feedback{margin-left:auto}.feedback-dialog form{padding:18px}}
+
+
+/* Multiple equivalent formulations share one concept heading/search result. */
+.definition-formulation{padding:14px 16px 10px;margin:0 0 13px;border:1px solid #dce6f0;background:#fbfcff;border-radius:11px;min-width:0}
+.formulation-header{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:9px}
+.formulation-header h5{font-family:ui-sans-serif,system-ui,sans-serif;color:#365e85;font-size:12px;font-weight:800;line-height:1.6;letter-spacing:.01em;margin:0}
+.formulation-header .suggest-correction{white-space:normal}
+.definition-formulation .definition p:last-child{margin-bottom:8px}
+.formulation-provenance{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:9px 0 1px;font:650 11px ui-sans-serif,system-ui,sans-serif}
+.formulation-provenance a{text-decoration:none;color:#5b80aa}
+.formulation-provenance a:hover{text-decoration:underline}
+.dependency-content .definition-formulation{padding:11px 12px;background:white}
+.inline-insert .definition-formulation{padding:9px 11px;margin-top:6px}
+@media(max-width:600px){.definition-formulation{padding:12px 11px}.formulation-header{align-items:start}}
