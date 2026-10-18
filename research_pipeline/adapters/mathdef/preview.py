@@ -1,133 +1,111 @@
-"""Build an isolated, read-only mathematical definition preview from engine output.
+"""Build an isolated mathematical reference preview from an experiment catalog.
 
-Never reads the production definitions/, variants/, or web/ directories.
-Usage: python -m research_pipeline.adapters.mathdef.preview --workspace PATH
+Acquisition remains independent of production mathDef. Only experiment files
+and the adapter's own static JS/CSS are read. Does not deploy to GitHub Pages.
 """
 import argparse
-import html
 import json
+import shutil
 from collections import defaultdict
 from pathlib import Path
 
-from research_pipeline.engine.core import PipelineError, atomic_json
+from research_pipeline.engine.core import PipelineError, atomic_json, digest
 
 
 def build(workspace):
     root = Path(workspace).resolve()
-    source = root / "published" / "catalog.json"
+    source = root / "published/catalog.json"
     if not source.is_file():
-        raise PipelineError("Publish the isolated reconstruction catalog first")
+        raise PipelineError("Publish the reconstruction catalog first")
     catalog = json.loads(source.read_text(encoding="utf-8"))
-    groups = defaultdict(list)
+    grouped = defaultdict(list)
     for meaning in catalog["meanings"]:
-        groups[meaning["term_group_id"]].append(meaning)
+        grouped[meaning["term_group_id"]].append(meaning)
     observations = {x["id"]: x for x in catalog["observations"]}
-    sources = {x["id"]: x for x in catalog["sources"]}
-    group_records = []
-    for gid, meanings in sorted(groups.items()):
-        entries = []
+    references = {x["id"]: x for x in catalog["sources"]}
+    terms = {x["id"]: x for x in catalog.get("terms", [])}
+    out_groups = []
+    for gid, meanings in sorted(grouped.items()):
+        result_meanings = []
+        aliases = set()
         for meaning in meanings:
-            formulations = []
+            form_rows = []
+            supporting_ids = set()
             for form in meaning["formulations"]:
                 citations = []
                 for evidence_id in form["evidence_ids"]:
                     observation = observations[evidence_id]
-                    citation = sources[observation["source_id"]]
+                    source = references[observation["source_id"]]
+                    supporting_ids.add(evidence_id)
                     citations.append({
-                        "title": citation["title"], "url": citation["url"],
-                        "locator": observation["locator"], "source_id": citation["id"],
-                        "evidence_id": evidence_id,
-                        "role": "Source evidence (editorially screened, not human-verified)"
+                        "title": source["title"], "url": source["url"],
+                        "locator": observation["locator"], "source_id": source["id"],
+                        "evidence_id": evidence_id, "role": "Supporting evidence (screened draft)",
                     })
-                formulations.append({
-                    "id": form["id"], "text": form["text"],
-                    "sources": citations, "review_state": form["review_state"]
+                form_rows.append({
+                    "id": form["id"], "text": form["text"], "sha256": digest(form),
+                    "sources": citations, "review_state": form["review_state"],
                 })
-            entries.append({
+            other_sources = []
+            for obs in observations.values():
+                if obs["term_id"] in meaning["term_ids"] and obs["id"] not in supporting_ids:
+                    source = references[obs["source_id"]]
+                    other_sources.append({
+                        "title": source["title"], "url": source["url"], "locator": obs["locator"],
+                        "role": "Encountered during research, not approved as supporting evidence",
+                    })
+            for term_id in meaning["term_ids"]:
+                if term_id in terms:
+                    aliases.add(terms[term_id]["label"])
+            result_meanings.append({
                 "id": meaning["id"], "label": meaning["context"],
-                "display_term": meaning["display_term"],
-                "formulations": formulations,
+                "display_term": meaning["display_term"], "term_group_id": gid,
+                "formulations": form_rows, "other_sources": other_sources,
             })
-        group_records.append({
-            "id": gid, "title": meanings[0]["display_term"], "meanings": entries
+        out_groups.append({
+            "id": gid, "title": meanings[0]["display_term"], "aliases": sorted(aliases),
+            "meanings": result_meanings,
         })
     output = root / "preview"
     output.mkdir(parents=True, exist_ok=True)
-    atomic_json(output / "catalog.json", {
-        "groups": group_records,
-        "relations": catalog["relations"],
+    project = json.loads((root / "project.json").read_text(encoding="utf-8"))
+    payload = {
+        "groups": out_groups, "relations": catalog["relations"],
         "verification_notice": "Not yet manually verified",
-    })
-    # Raw JSON is encoded for safe insertion into an inline script (avoid HTML end-tags).
-    dataset = json.dumps(group_records, ensure_ascii=False).replace("<", "\\u003c").replace(">", "\\u003e")
-    doc = r"""<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Independent reconstruction — prototype</title>
-<style>
-body{font:16px/1.5 system-ui,sans-serif;max-width:1000px;margin:2rem auto;padding:0 1rem;color:#202329}
-header{border-bottom:1px solid #ddd;padding-bottom:1rem} .disclaimer{color:#684800;background:#fff7dc;padding:.65rem;border-radius:.4rem}
-input{padding:.5rem;width:min(100%,27rem);font:inherit}label{display:block;margin:.7rem 0}
-article{border:1px solid #ccc;border-radius:8px;padding:1rem;margin:1rem 0}
-section{border-left:3px solid #777;padding-left:1rem;margin:.8rem 0}
-pre{font:inherit;white-space:pre-wrap;overflow-wrap:anywhere}
-button{cursor:pointer;padding:.4rem .7rem}dialog{max-width:min(700px,90vw);border:1px solid #777;border-radius:10px}
-dialog::backdrop{background:#0008} .muted{color:#666;font-size:.9em}
-</style></head><body><header>
-<h1>Mathematical definitions — reconstruction prototype</h1>
-<p>This experimental site is generated exclusively from an isolated research workspace. It is not the production mathDef website.</p>
-<p class="disclaimer">Not yet manually verified. Screened research drafts are not certified mathematical facts.</p>
-<label>Search term <input id="term" placeholder="Search names only" aria-label="Search term"></label>
-<label>Search definition <input id="definition" placeholder="Search content only" aria-label="Search definition"></label>
-</header><main id="results"></main>
-<dialog id="sources"><form method="dialog"><button style="float:right">Close</button></form><h2>Source evidence</h2><div id="sources-content"></div></dialog>
-<script>const DATA=___DATA___;
-const main=document.getElementById("results");
-const modal=document.getElementById("sources");
-const sourcesView=document.getElementById("sources-content");
-function el(tag,text,parent){const x=document.createElement(tag);if(text!==null)x.textContent=text; if(parent)parent.append(x);return x}
-function showSources(group){
- sourcesView.replaceChildren();
- group.meanings.forEach(m=>{
-  el("h3",m.label,sourcesView);
-  m.formulations.forEach(f=>{
-   el("h4",f.id,sourcesView);
-   const list=el("ul",null,sourcesView);
-   f.sources.forEach(s=>{
-    const li=el("li",null,list),a=el("a",s.title+" — "+s.locator,li);
-    a.href=s.url;a.target="_blank";a.rel="noopener noreferrer";
-    el("span"," ("+s.role+")",li);
-   });
-  });
- });
- modal.showModal();
-}
-function render(){
- const q=document.getElementById("term").value.toLowerCase().trim();
- const d=document.getElementById("definition").value.toLowerCase().trim();
- main.replaceChildren();
- const hits=DATA.filter(g=>(!q||g.title.toLowerCase().includes(q)) &&
-  (!d||g.meanings.some(m=>m.formulations.some(f=>f.text.toLowerCase().includes(d)))));
- hits.forEach(g=>{
-  const card=el("article",null,main);el("h2",g.title,card);
-  g.meanings.forEach(m=>{
-   const section=el("section",null,card);el("h3",m.label,section);
-   m.formulations.forEach(f=>{
-    el("p","Not yet manually verified",section).className="muted";
-    el("pre",f.text,section);
-   });
-  });
-  const btn=el("button","View sources",card);btn.type="button";
-  btn.addEventListener("click",()=>showSources(g));
- });
- if(!hits.length)el("p","No matching terms",main);
-}
-document.getElementById("term").addEventListener("input",render);
-document.getElementById("definition").addEventListener("input",render);
-render();
-</script></body></html>""".replace("___DATA___", dataset)
+        "github_issues": project.get("github_issues_url", "https://github.com/Zengez/mathDef/issues/new"),
+    }
+    atomic_json(output / "catalog.json", payload)
+    payload_string = json.dumps(payload, ensure_ascii=False).replace("<", "\\u003c").replace(">", "\\u003e")
+    doc = """<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Independent reconstruction prototype</title>
+<link rel="stylesheet" href="preview.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="preview.js"></script>
+</head><body><header><h1>Mathematical definitions — reconstruction prototype</h1>
+<p>This independent research reconstruction is not the production mathDef website.</p>
+<p class="disclaimer">Not yet manually verified. These are screened research drafts, not certified mathematical facts.</p>
+<div class="controls">
+<label>Search term <input id="term" type="search" placeholder="Names and aliases" aria-label="Search term"></label>
+<label>Search definition <input id="definition" type="search" placeholder="Formulation text only" aria-label="Search definition"></label>
+<label>Explore definitions <select id="mode" aria-label="Definition exploration mode">
+<option value="nested">Nested</option><option value="inline">In-Line</option>
+<option value="standard">Standard</option></select></label>
+</div></header><p class="muted">Each result has View sources and Propose verification actions.</p>
+<main id="results"></main>
+<dialog id="sources" aria-label="Source evidence"><form method="dialog"><button>Close</button></form>
+<h2>Source evidence</h2><div id="sources-content"></div></dialog>
+<dialog id="verify" aria-label="Propose a verification"><form method="dialog"><button>Close</button></form>
+<h2>Propose verification</h2><div id="verify-content"></div></dialog>
+<script id="reconstruction-data" type="application/json">___PAYLOAD___</script>
+<footer>Independent experiment • Source references do not imply human verification.</footer>
+</body></html>""".replace("___PAYLOAD___", payload_string)
     (output / "index.html").write_text(doc, encoding="utf-8")
-    return {"groups": len(group_records), "meanings": len(catalog["meanings"]),
+    assets = Path(__file__).resolve().parent
+    for asset in ("preview.js", "preview.css"):
+        shutil.copy2(assets / asset, output / asset)
+    return {"groups": len(out_groups), "meanings": len(catalog["meanings"]),
             "path": str(output / "index.html")}
 
 
