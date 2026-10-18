@@ -1,6 +1,6 @@
 # Independent mathDef Reconstruction — Execution Runbook
 
-**Status (2026-10-18):** Independent Wave 1 Stage 1 (sources), Stage 2 (318 source-linked term candidates), Stage 3 (349 observations), and Stage 4 (**31 context-specific meanings, 32 screened candidate formulations covering 25 source terms**) are sealed in `research_pipeline/experiments/reconstruction-v1`. The other **293 terms remain without authored mathematical definitions**, including unverified PlanetMath source leads; zero source passages were copied. Consult `state/stage4_review.json`, `state/stage4_semantic_notes.md`, and `state/checkpoint.json`. Stage 5 relationships have not started. Screened does not mean independently human-verified; this is a bounded independent prototype.
+**Status (corrected 2026-10-18):** The historical independent Wave 1 Stage 3 and 4 were prematurely sealed with only 25 of 318 Stage 2 terms substantively researched. They are preserved as archival checkpoints, **not** representative completion. A revised workflow acquired source-page outcomes for **all 318 terms** (291 Stacks pages fetched, 27 PlanetMath policy-blocked), and forked a versioned `experiments/reconstruction-v1-recovery/` workspace with Stage 3 **open**. Its **291 fetched-page term entries require mathematical editorial review**. Both acquisition and per-term disposition gates must pass before corrected Stage 3/4/5 can seal. See `research_pipeline/STAGE3_CORRECTION.md`.
 
 ## Non-negotiable experiment boundary
 
@@ -58,7 +58,17 @@ Indexes are not guaranteed to expose all terms. Keep uncertain candidates, and d
     python -m research_pipeline.engine.cli --workspace WORKSPACE ingest terms --input raw_terms.jsonl --batch-size 25
     python -m research_pipeline.engine.cli --workspace WORKSPACE seal terms
 
-### Stage 3: acquire content candidates and precise locators (Medium)
+### Stage 3: acquire content candidates and precise locators (Medium to High)
+
+**Required correction to the original runbook:** A list of URLs is not
+evidence that term-specific source pages were inspected. For a Stage 2
+inventory containing N terms, record one real acquisition attempt/outcome per
+term, then conduct substantive editorial mathematical review or retain an
+explicit access blockage. Do not seal until all N terms have terminal
+attempts **and** reviewed dispositions. Use `stage3_attempts.py`,
+`stage3_review_gate.py`, and the corrected `reconstruction-v1-recovery`
+workspace described in `STAGE3_CORRECTION.md`. The older `batch_intake`
+index-locator method below alone is **insufficient** for Stage 3 completion.
 
     python -m research_pipeline.engine.batch_intake --workspace WORKSPACE --manifest source_pages.jsonl --stage observations --output raw_observations.jsonl --checkpoint state/observations_intake.json
 
