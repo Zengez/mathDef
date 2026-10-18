@@ -1927,3 +1927,12 @@ Durable handoff/checkpoint for interrupted or timed-out mathDef research session
 **Important invariants:** There remain 1007 definition concepts; functions.function remains a single ID/search result; original canonical body is unchanged. The additional formulation has its own citation and draft status; prior 1007-row primary citation ledger does not claim to have reviewed all possible variants. This is an extensible system and initial Function example, not a corpus-wide discovery pass for alternatives.
 
 **Final QA:** Confirm latest GitHub Actions CI and Pages deployment pass, and optionally manually examine Function in all three modes. Static CI does not replace browser-level visual QA.
+
+
+## 2026-10-18 — Reusable research pipeline: requirements/design checkpoint (NOT implementation)
+
+- Created [RESEARCH_PIPELINE_ENGINE_DESIGN.md](RESEARCH_PIPELINE_ENGINE_DESIGN.md) (commit `59455145`) to preserve the collaboratively agreed plan for a reusable staged acquisition/verification/publication engine and subject-specific repository adapters.
+- Seven stages 0–6; initial mostly linear bulk initialization to build a meaningful prototype, then a separate second-wave iterative source/variant expansion after inspecting repo-specific quirks; scoped targeted acquisition for community suggestions.
+- Requirements include durable per-stage resumable batches, provenance-preserving source/evidence registry, independent term/meaning/formulation records, source modal, context-sensitive links and user reports, zero default paid-source spending, publication after automated gates with explicit lack-of-manual-verification notice, GitHub-authenticated multi-formulation review submissions, and version-aware editorial approval.
+- **No engine scripts implemented in this phase.** Pause for user feedback on the two unresolved item-9 questions: (1) how broad variant discovery should be for an individual new-term request; (2) whether a single authorized editor approval is sufficient for an initial community verification. Additional minor architecture decisions are listed in Section 11 of the design.
+- Revisit the Closure case study and existing implementation/testing after design agreement; do not conflate prior in-progress Closure edits with the proposed general engine.
