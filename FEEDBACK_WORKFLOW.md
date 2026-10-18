@@ -45,3 +45,8 @@ The form and eventual review process are separated from GitHub login. **At prese
 - [DEPENDENCY_LINKING.md](DEPENDENCY_LINKING.md): current automatic-linking and link-override process.
 
 The static build validates JavaScript syntax and tests, but visual browser QA and a real end-to-end issue submission by a consenting GitHub user are separate checks. Do not create test issues that would be mistaken for genuine community suggestions.
+
+
+## Multiple equivalent formulations (October 18, 2026)
+
+For a concept with multiple formulations, each displayed formulation has an individual **Correct formulation** control. Its proposed GitHub Issue records the stable concept ID, formulation key, label and individual source file. Reporting a dependency link can also identify the source formulation. Corrections to a concept as a whole continue to use the normal **Suggest correction** control. See [FORMULATIONS.md](FORMULATIONS.md); no proposed change is applied without editorial review.
