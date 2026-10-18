@@ -22,6 +22,12 @@ EXPECTED_FORMULATIONS = 32
 
 def audit(workspace, *, seal=False):
     w = Workspace(workspace)
+    # The corrected first-wave continuation has dynamic evidence coverage;
+    # the old 25-term constants remain solely for its immutable historical test.
+    if (w.config().get("require_full_definition_attempts") and
+            w.config().get("require_reviewed_term_dispositions")):
+        from .stage4_recovery_finalize import audit_corrected
+        return audit_corrected(w.root, seal=seal)
     if w.config().get("external_reference_mode") is not True:
         raise PipelineError("Stage 4 requires an isolated reconstruction workspace")
     for stage in ("sources", "terms", "observations"):
