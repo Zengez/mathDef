@@ -148,8 +148,8 @@
   }
   function renderInlineBody(side, d, path, blocked, formulation) {
     const available = visibleDependencies(d, blocked);
-    const ids = new Set((formulation.dependencies || []).map(dep => dep.id));
-    const deps = available.filter(dep => ids.has(dep.id));
+    const deps = (formulation.dependencies || available).filter(dep =>
+      lookup.has(dep.id) && !blocked.has(dep.id));
     const childBlocked = nextBlocked(blocked, available);
     const body = paragraphsWithPositions(formulation.body);
     const marked = new Set();
