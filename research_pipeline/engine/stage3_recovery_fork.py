@@ -52,6 +52,11 @@ def fork(original, destination):
     old_obs = original.root / "records/observations.jsonl"
     if old_obs.exists():
         dest.ingest("observations", old_obs, batch_size=25)
+        # CI runners have ephemeral absolute directories; keep lineage portable.
+        state = dest.state("observations")
+        state["last_input"] = "research_pipeline/experiments/" + original.root.name + "/records/observations.jsonl"
+        atomic_json(dest.root / "state/observations.json", state)
+        dest.checkpoint("observations", state)
     shutil.copy2(ledger, dest.root / "state/stage3_acquisition_attempts.jsonl")
     summary = original.root / "state/stage3_acquisition_report.json"
     if summary.exists():
@@ -60,7 +65,7 @@ def fork(original, destination):
     prepared = build_review_queue(dest.root, reviews)
     lineage = {
         "schema_version": 1, "mode": "corrected_wave1_stage3",
-        "original_workspace": str(original.root),
+        "original_workspace": "research_pipeline/experiments/" + original.root.name,
         "source_registry_digest": original.state("sources")["record_digest"],
         "term_registry_digest": original.state("terms")["record_digest"],
         "original_observation_digest": original.state("observations").get("record_digest"),
