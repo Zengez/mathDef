@@ -1,11 +1,8 @@
-name: Independent mathDef Stage 3 locator ingestion
+name: Corrected Stage 3 locator reconciliation (optional)
 # Safe retry after regression test correction.
 # Locator-only intake: Stacks index-verified, PlanetMath explicitly unverified.
 
 on:
-  push:
-    paths:
-      - '.github/workflows/mathdef-stage3-locators.yml'
   workflow_dispatch:
 
 permissions:
@@ -30,17 +27,17 @@ jobs:
         run: |
           python -m research_pipeline.engine.stage3_locators \
             --workspace research_pipeline/experiments/reconstruction-v1 \
-            --output research_pipeline/experiments/reconstruction-v1/state/locator_ingest_input.jsonl \
+            --output research_pipeline/experiments/reconstruction-v1-recovery/state/locator_ingest_input.jsonl \
             --ingest
       - name: Commit only Stage 3 experimental evidence and progress
         run: |
           git config user.name "mathDef Research Workflow"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- \
-            research_pipeline/experiments/reconstruction-v1/records/observations.jsonl \
-            research_pipeline/experiments/reconstruction-v1/state/observations.json \
-            research_pipeline/experiments/reconstruction-v1/state/checkpoint.json \
-            research_pipeline/experiments/reconstruction-v1/state/locator_ingest_input.jsonl
+            research_pipeline/experiments/reconstruction-v1-recovery/records/observations.jsonl \
+            research_pipeline/experiments/reconstruction-v1-recovery/state/observations.json \
+            research_pipeline/experiments/reconstruction-v1-recovery/state/checkpoint.json \
+            research_pipeline/experiments/reconstruction-v1-recovery/state/locator_ingest_input.jsonl
           if ! git diff --cached --quiet; then
             git commit -m "Ingest isolated Stage 3 source-index locators (unsealed)"
             git push origin "HEAD:${{ github.ref_name }}"
