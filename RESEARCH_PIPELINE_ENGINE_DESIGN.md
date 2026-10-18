@@ -149,7 +149,7 @@ Proposed eventual directory layout, **illustrative only**:
 - research_pipeline/tests/ — deterministic fixture-based tests
 - docs/ — usage guide, source permissions, review policy, acquisition case studies
 
-Exact paths, serialization and any package structure must be agreed BEFORE implementation. An engine may eventually be extracted into its own reusable repo, but the current request is to document its design, not decide that deployment structure now.
+**Decision (2026-10-18):** develop the portable engine *inside mathDef* initially, but isolate engine logic from the mathDef adapter with strict interfaces, separate namespaces/directories, engine-only fixtures and tests, and no assumptions about mathematical definitions. Future extraction to a standalone repository is optional. Exact directory and serialization choices are still implementation details to settle before coding.
 
 ## 10. Verification and testing plan for the eventual implementation
 
@@ -162,22 +162,34 @@ Exact paths, serialization and any package structure must be agreed BEFORE imple
 - mathDef adapter tests for canonical ID stability, contextual relevance, nested/inline modes, source modal and site build. Browser-level interaction QA is separate from CI.
 - Publication tests that reject raw/untraceable/blocked candidate material and display the human-verification disclaimer correctly.
 
-## 11. Settled decisions versus unresolved discussion
+## 11. Decisions resolved on 2026-10-18 and remaining design discretion
 
-**Agreed in conversation:** seven stages (0–6); first linear prototype wave; separate deeper second wave; targeted suggestion mode; source registry with evidence retained after consolidation; no irreversible pruning; stage checkpoints and idempotency; zero-default paid-source budget; independent engine plus adapters; modal "View sources"; grouped context-aware meanings under a search term; link relevance corrections; automated publication before mandatory human verification; multi-select community verification through authenticated GitHub Issue submissions; editor approval; version-aware review.
+**Resolved by user after reviewing the first design:**
 
-**Questions explicitly deferred by user (previous item 9):**
+1. **Targeted suggestions need detailed variant/context research.** Before classifying a proposal as genuinely missing, actively check whether it belongs under an existing search term or is a variant/meaning of an existing concept. If genuinely new, investigate related neighboring terms, alternative meanings/formulations and links as part of addressing the gap. This is more thorough than a narrow synonym lookup. Scope research by evidence and domain relevance rather than pretending an open-ended web search can prove completeness. Record all additional valid candidates even if some require later editorial work. These targeted searches are a distinct mode from the deliberately lightweight first bulk initialization.
+2. **Community verification approval:** initially one explicit acceptance by the project owner/authorized editor is sufficient to approve a scoped, version-specific verification. A contributor's GitHub-authenticated assertion alone is NOT enough. Future reviewer qualifications, quorum, trust policies and higher evidentiary thresholds can be designed per repository if the need arises. Never call editorial acceptance formal peer review without supporting process.
+3. **Development home:** implement the reusable engine inside the mathDef repository for now, as a logically separate project/module. The mathDef adapter is strictly separated from the portable core. Standalone engine-repository extraction remains an option, not an immediate task.
+4. **Prototype size:** no universal number of terms or pages is required, because target corpus sizes may be unknowable. The implementer has discretion to choose a sufficiently varied sample for demonstrating the site's actual behaviors, with the following proposed qualitative completion rubric.
 
-1. **Breadth of automatic variant discovery for a targeted suggestion.** Search all mathematically legitimate meanings of an ambiguous term immediately, or begin with requested context and expand to near neighbors? Proposed compromise: search broadly for candidates, but bound the initial editorial work, record additional senses for later. The user has not yet answered this.
-2. **Acceptance threshold for community verification.** Is one authorized editor approval initially sufficient, with potential specialist/multiple review later? Suggested default: yes, but the user has not yet answered this.
+**Suggested adaptive prototype stopping rubric (recommended implementation heuristic, not fixed numeric quota):**
 
-**Additional small decisions to discuss before coding:**
-- Whether the engine should initially reside inside mathDef or its own separate reusable repository, and how adapters get versioned.
-- What initial prototype scale/crawl limits are acceptable, since "significant enough to expose quirks" is a subjective goal; Stage 0 should explicitly choose the range.
-- Final names/ID policies for term-group, meaning and formulation, and migration from existing mathDef canonical IDs.
-- Required minimum source-evidence/reuse criteria for automatically published drafts, and whether all discovered but weakly sourced materials are held privately.
-- Frequency and git/storage approach for durable checkpoint writes in chat-driven executions.
+- Cover several representative subject areas or source categories, rather than filling only one easy topical cluster.
+- Include enough contrasting examples to exercise the project's core types: multiple meanings under one term, multiple formulations under a meaning, synonyms/aliases, ordinary definitions, atypical data, ambiguous and ordinary links, and sources with differing permissions or certainty.
+- Generate a visible, functioning search and link graph that the user can inspect for repository-specific quirks; include at least some recursive/link display paths if the adapter supports them.
+- Run the entire Stage 0–6 automated publication path on the representative corpus, expose any unresolved data-model and UI failures, and produce a concise report showing subject spread, evidence coverage, links, and remaining gaps.
+- Stop after the prototype is *representative and testable*, then let the user inspect and request adapter/schema refinements **before** embarking on the large, nonlinear second wave. Do not imply coverage is complete or that unreviewed mathematics has been human-verified.
+
+**Additional design recommendations to validate when implementation begins:**
+
+- Define explicit **stage entry/exit contracts**: inputs, outputs, status fields, provenance checks, acceptance/hold conditions and resumable batch handling. Make the outputs from Stage 4/5 provisional until the Stage 6 publishing gate.
+- Assign every source observation, meaning, formulation, and relation a stable identity; use lineage records for split/merge/alias decisions so future corrections can reverse mistakes without losing source evidence.
+- Distinguish **discovery breadth** from **publication obligation**: for a targeted suggestion, search thoroughly enough to find plausible senses, variants and neighboring concepts; record those requiring further research rather than blocking indefinitely on completion of an unlimited universe of related terms.
+- Resolve technical adapter/schema questions with tiny deterministic fixtures before large live crawling. Start with the engine data contracts, a mathDef adapter test, and interrupted-run/restart tests; only then attach live source readers and publish candidates.
+- Set initial source-quality and reuse-rights gates so weakly sourced or disallowed material is held rather than displayed as an automatically checked draft.
+- Use a project-specific sample **coverage scorecard** in Stage 0; avoid a magic number of entries as the sole indicator of prototype readiness.
 
 ## 12. Current stopping point and next safe action
 
-**No pipeline engine or new scripts have been created as part of this design discussion.** This file is solely the requirements/design checkpoint and may be revised freely. Before implementing scripts, resume the discussion at Section 11 (especially the user's outstanding answers to item 9), finalize the Stage 0 template and the minimum viable prototype, then implement a small vertical slice using fixtures and the mathDef adapter. Do not start a second-wave expansion or resume the Closure case study until the design is confirmed by the user.
+**Design recorded, but no new general-purpose engine scripts have been implemented.** Section 11's four user answers are settled. The next step is to convert this specification into minimal schemas/stage contracts and a tiny fixture-driven vertical slice *within mathDef* (engine distinct from adapter), after any final project-configuration discussion. Preserve the current corpus/website and existing source and citation review records. Ensure the existing mathDef CI baseline is understood before interpreting pipeline-test failures; fix current unrelated failures separately rather than masking them.
+
+The first bulk wave should remain intentionally linear and produce an inspectable draft prototype before the second wave. The targeted Closure case study can later demonstrate deep variant acquisition and integration, but should not be confused with the first-wave acquisition policy.
