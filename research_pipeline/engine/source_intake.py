@@ -63,8 +63,13 @@ def safe_source_url(url, source):
     return parsed
 
 
-def fetch_index(url, source, *, delay=1.25, max_bytes=MAX_BYTES):
-    """One opt-in request; domain-restricted redirects; robots checked."""
+def fetch_index(url, source, *, delay=1.25, max_bytes=MAX_BYTES, robots_cache=None):
+    """One opt-in request; domain-restricted redirects; robots checked.
+
+    Optional per-invocation robots cache avoids fetching robots.txt separately
+    for every definition section. It never grants permission when policy is
+    missing or unavailable. Cache is intentionally not persisted across runs.
+    """
     target = safe_source_url(url, source)
     if source["access"] != "free" or source["rights"] not in ("permitted", "locator_only") or not source["authority_reviewed"]:
         raise PipelineError("Not an approved, freely accessible source")
@@ -74,18 +79,27 @@ def fetch_index(url, source, *, delay=1.25, max_bytes=MAX_BYTES):
             safe_source_url(newurl, source)
             return super().redirect_request(req, fp, code, msg, headers, newurl)
     opener = urllib.request.build_opener(RestrictedRedirect)
-    robots = urllib.robotparser.RobotFileParser()
-    robots.set_url(robots_url)
-    try:
-        with opener.open(urllib.request.Request(robots_url, headers={"User-Agent": AGENT}),
-                         timeout=15) as response:
-            raw_robots = response.read(300_001)
-            if len(raw_robots) > 300_000:
-                raise PipelineError("robots.txt exceeds safe size")
-        robots.parse(raw_robots.decode("utf-8", errors="replace").splitlines())
-    except (OSError, ValueError) as exc:
-        raise PipelineError("Robots policy unavailable; use permitted offline input") from exc
-    if not robots.can_fetch(AGENT, url):
+    policy = robots_cache.get(robots_url) if robots_cache is not None else None
+    if policy == "unavailable":
+        raise PipelineError("Robots policy unavailable; use permitted offline input")
+    if policy is None:
+        robots = urllib.robotparser.RobotFileParser()
+        robots.set_url(robots_url)
+        try:
+            with opener.open(urllib.request.Request(robots_url, headers={"User-Agent": AGENT}),
+                             timeout=15) as response:
+                raw_robots = response.read(300_001)
+                if len(raw_robots) > 300_000:
+                    raise PipelineError("robots.txt exceeds safe size")
+            robots.parse(raw_robots.decode("utf-8", errors="replace").splitlines())
+        except (OSError, ValueError) as exc:
+            if robots_cache is not None:
+                robots_cache[robots_url] = "unavailable"
+            raise PipelineError("Robots policy unavailable; use permitted offline input") from exc
+        if robots_cache is not None:
+            robots_cache[robots_url] = robots
+        policy = robots
+    if not policy.can_fetch(AGENT, url):
         raise PipelineError("Robots policy does not allow this fetch")
     time.sleep(max(0.0, delay))
     req = urllib.request.Request(url, headers={
