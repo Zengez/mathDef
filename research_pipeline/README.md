@@ -1,6 +1,6 @@
-# Reusable scholarly acquisition engine — initial implementation
+# Reusable scholarly acquisition engine — pre-reconstruction implementation
 
-**Status:** Engine core, local batch importer, stage seals, automated publication gate, and an isolated mathDef prototype adapter are implemented. **Live source crawlers, intelligent semantic classification, contextual automatic link ranking, community verification UI, and the full independent reconstruction have NOT been implemented or run.** Do not claim the experiment has been completed.
+**Status:** The pre-reconstruction software now includes portable record storage, stage queues/seals, rights-aware offline/opt-in online source-index readers, resumable bulk source intake, audited second-wave revisions, independent preview website, provenance/evaluation harness, and synthetic CI tests. The actual mathematical research, semantic classifications and independent two-wave reconstruction have NOT been run. The scripts do not autonomously call ChatGPT or certify mathematical accuracy. Start with [RECONSTRUCTION_RUNBOOK.md](RECONSTRUCTION_RUNBOOK.md).
 
 ## Two bulk waves and targeted work
 
@@ -59,9 +59,9 @@ Stage handoff should state a concrete next command and recommended effort, and l
 
 The engine and mathDef adapter only read their supplied experiment workspace. They do NOT import production definition files, source catalogs, citation ledgers or link overrides. **Do not give the new source-discovery phase the original mathDef URLs as seeds.** Once a first-wave and second-wave snapshot is frozen, a separate evaluation process may compare recovery with the production corpus using source, term, meaning, variant, link and efficiency metrics. The production corpus is not unquestionable ground truth.
 
-Use public authoritative sources only where permitted, respect website access policies and rate limits, and preserve source locators. A citation alone cannot establish mathematical correctness. The current preview is a prototype and deliberately lacks full KaTeX and production-site recursive navigation.
+Use public authoritative sources only where permitted, respect website access policies and rate limits, and preserve source locators. A citation alone cannot establish mathematical correctness. The experimental preview supports KaTeX through an optional CDN and contextual, branch-limited nested/inline expansion, but is not identical to the production client's paragraph-offset inline linking and needs separate browser-level visual review.
 
-See [the overarching design](../RESEARCH_PIPELINE_ENGINE_DESIGN.md). The next implementation unit is a safe source index reader and a more complete wave-2 acquisition runner, followed by the comparison harness.
+See [the overarching design](../RESEARCH_PIPELINE_ENGINE_DESIGN.md), the [full runbook](RECONSTRUCTION_RUNBOOK.md), and [implementation checkpoint](IMPLEMENTATION_CHECKPOINT.md). The next operation is independent source research for the reconstruction, not importing the existing mathDef source files.
 
 ## Freezing the prototype and starting the second wave
 
@@ -69,4 +69,17 @@ After `publish` and `wave2-plan`, the first wave is sealed. Use:
 
     python -m research_pipeline.engine.cli --workspace research_pipeline/experiments/reconstruction-v1 fork-wave2 --destination research_pipeline/experiments/reconstruction-v2
 
-This copies only the **isolated** first-wave source, term, observation, meaning, and relationship records into a new unsealed workspace. The first-wave output remains untouched for evaluation. Existing IDs cannot be silently rewritten; second-wave new discoveries may be appended, while revisions to accepted old records require an explicit, audited revision mechanism that is **not yet implemented**.
+This copies only the **isolated** first-wave source, term, observation, meaning, and relationship records into a new unsealed workspace. The first-wave output remains untouched for evaluation. Existing IDs cannot be silently rewritten; second-wave new discoveries may be appended, and accepted revisions to old records must use `python -m research_pipeline.engine.revision_cli` with an auditable predecessor-hash proposal.
+
+
+## Additional implemented command-line tools
+
+- `python -m research_pipeline.engine.source_manifest`: prepare a bounded index-page manifest from reviewed source records and optionally a saved sitemap.
+- `python -m research_pipeline.engine.source_intake`: extract Stage 2 titles or Stage 3 precise locators from one reviewed HTML page (offline by default).
+- `python -m research_pipeline.engine.batch_intake`: extract many vetted pages in resumable batches with a separate checkpoint (offline by default, `--network` opt-in).
+- `python -m research_pipeline.engine.revision_cli`: update or retire a second-wave record through an auditable, recoverable predecessor-hash event.
+- `python -m research_pipeline.engine.effort`: record measured batch effort or summarize recorded work without estimating unknown costs.
+- `python -m research_pipeline.evaluation.compare`: post-freeze lexical/source/link benchmark. This is the **only module** authorized to read production mathDef content.
+- `python -m research_pipeline.adapters.mathdef.preview`: produce isolated HTML/CSS/JS viewer with separate searches, context distinctions, sources modal, three exploration modes and prefilled GitHub verification/correction drafts.
+
+**Important limitations:** Automatic index/title discovery is source-dependent, not an exhaustive crawl; mathematical classification and equivalence review require High-effort chat research. Unlicensed content is not copied into the candidate corpus. The preview's "In-Line" expansion is currently anchored after a formulation rather than at exact matched-word offsets. GitHub Issue submission requires an account and is editorially reviewed. CI tests do not substitute for real-source and browser-level QA. No source or definition comparison has been performed yet.
