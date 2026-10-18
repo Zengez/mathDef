@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 from collections import Counter
 from datetime import datetime, timezone
@@ -190,6 +191,38 @@ def summarize(w, ledger):
     }
 
 
+def require_full_attempt_coverage(workspace, ledger_path):
+    """Gate: every sealed term received a real attempt or explicit access failure.
+
+    Access failure is accounted for, NEVER called successful mathematical research.
+    A resumed 'retryable_fetch_error' or missing row prevents advancement.
+    """
+    w = Workspace(workspace)
+    rows = jsonl(ledger_path)
+    checked = validate_ledger(w, rows)
+    audit = summarize(w, rows)
+    if len(checked) != len(w.records("terms")) or not audit["every_term_attempt_accounted_for"]:
+        raise PipelineError(
+            "Stage 3 cannot advance: only %s/%s terms have terminal attempts" %
+            (audit["attempts_accounted_for"], audit["source_terms_total"]))
+    if audit["retryable_fetch_errors"]:
+        raise PipelineError("Stage 3 has retriable fetch failures")
+    return audit
+
+
+def atomic_jsonl(path, records):
+    """Crash-safe replacement after each per-term acquisition event."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    with tmp.open("w", encoding="utf-8") as out:
+        for key in sorted(records):
+            out.write(canonical(records[key]) + "\n")
+        out.flush()
+        os.fsync(out.fileno())
+    os.replace(tmp, path)
+
+
 def run(workspace, ledger_path, report_path, *, batch_size=40, delay=1.5,
         fetcher=fetch_index):
     if not (1 <= batch_size <= MAX_BATCH):
@@ -248,8 +281,7 @@ def run(workspace, ledger_path, report_path, *, batch_size=40, delay=1.5,
         existing[tid] = record
         processed += 1
         # Each completed source check persists before progressing to the next term.
-        ledger_path.write_text("".join(canonical(existing[k]) + "\n" for k in sorted(existing)),
-                               encoding="utf-8")
+        atomic_jsonl(ledger_path, existing)
         audit = summarize(w, list(existing.values()))
         atomic_json(report_path, audit)
     audit = summarize(w, list(existing.values()))
