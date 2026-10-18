@@ -22,31 +22,44 @@ def collect(workspace, output, *, ingest=False):
     if w.state("observations").get("sealed"):
         raise PipelineError("Observation stage is already sealed")
 
-    source = w.records("sources")["src.stacks"]
+    sources = w.records("sources")
     existing = w.records("observations")
     records = []
     for term in w.records("terms").values():
-        if term["source_id"] != "src.stacks":
+        if term["source_id"] not in ("src.stacks", "src.planetmath"):
             continue
+        source = sources[term["source_id"]]
         parsed = safe_source_url(term["locator"], source)
-        if not parsed.path.startswith("/tag/"):
-            raise PipelineError("Unexpected Stacks locator for " + term["id"])
+        if term["source_id"] == "src.stacks":
+            if not parsed.path.startswith("/tag/"):
+                raise PipelineError("Unexpected Stacks locator for " + term["id"])
+            verification = "index_locator_only"
+            note = ("A Stacks section listed in a reviewed Stage 2 index. "
+                    "No definition was read or verified for this observation.")
+        else:
+            verification = "unverified_source_locator"
+            note = ("PlanetMath candidate URL inherited from the sealed Stage 2 "
+                    "record. Automated robots policy was unavailable; this "
+                    "locator is NOT evidence that the article was opened "
+                    "or a mathematical definition was confirmed.")
         row = {
             "id": "obs.locator." + term["id"].removeprefix("term."),
             "term_id": term["id"],
-            "source_id": "src.stacks",
+            "source_id": term["source_id"],
             "locator": term["locator"],
             "record_kind": "locator",
             "discovery_method": "stage2.sealed-index",
-            "verification_state": "index_locator_only",
-            "evidence_note": (
-                "A reference to a Stacks section that appeared in the "
-                "reviewed Stage 2 index. No definition text was fetched, "
-                "and no mathematical claim is verified by this record."),
+            "verification_state": verification,
+            "evidence_note": note,
         }
         w.validate("observations", row)
         if row["id"] in existing:
             if canonical(row) != canonical(existing[row["id"]]):
+                # Preserve previously committed index-only evidence exactly.
+                if (term["source_id"] == "src.stacks" and
+                        existing[row["id"]]["term_id"] == term["id"] and
+                        existing[row["id"]]["locator"] == term["locator"]):
+                    continue
                 raise PipelineError("Existing observation changed: " + row["id"])
             continue
         records.append(row)
@@ -55,7 +68,7 @@ def collect(workspace, output, *, ingest=False):
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text("".join(canonical(x) + "\n" for x in records),
                       encoding="utf-8")
-    result = {"source": "src.stacks", "new_locator_candidates": len(records),
+    result = {"sources": ["src.stacks", "src.planetmath"], "new_locator_candidates": len(records),
               "previous_observations": len(existing),
               "ingested": False, "stage3_sealed": False,
               "note": "Index locators only; independent author paraphrases still required."}
