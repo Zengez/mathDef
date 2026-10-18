@@ -52,7 +52,22 @@ jobs:
             git add -- "$LEDGER" "$REPORT"
             if ! git diff --cached --quiet; then
               git commit -m "Checkpoint definition-source attempt batch $batch"
-              git push origin "HEAD:${{ github.ref_name }}"
+              # Other documentation/CI commits may land while a batch is
+              # fetching source pages. Rebase rather than overwrite main.
+              pushed=false
+              for retry in 1 2 3 4; do
+                git fetch origin "${{ github.ref_name }}"
+                git rebase "origin/${{ github.ref_name }}"
+                if git push origin "HEAD:${{ github.ref_name }}"; then
+                  pushed=true
+                  break
+                fi
+                echo "Concurrent update; retrying fast-forward push ($retry / 4)"
+              done
+              if [ "$pushed" != true ]; then
+                echo "Failed to publish this batch safely after 4 attempts" >&2
+                exit 1
+              fi
             fi
           done
           # This fails if even one term was never attempted, or a transient
