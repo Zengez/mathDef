@@ -23,6 +23,8 @@ def main(argv=None):
     sub.add_parser("status", help="Report current stage counts and handoff")
     sub.add_parser("publish", help="Stage 6 automated gate and private reconstruction catalog")
     sub.add_parser("wave2-plan", help="Generate second-wave source/variant/link queues")
+    fork = sub.add_parser("fork-wave2", help="Create a new, separately versioned second-wave workspace")
+    fork.add_argument("--destination", type=Path, required=True)
     args = parser.parse_args(argv)
     w = Workspace(args.workspace)
     try:
@@ -37,6 +39,8 @@ def main(argv=None):
             result = w.status()
         elif args.action == "publish":
             result = w.publish()
+        elif args.action == "fork-wave2":
+            result = w.fork_second_wave(args.destination)
         else:
             result = w.wave2_plan()
     except (PipelineError, OSError, json.JSONDecodeError) as exc:
