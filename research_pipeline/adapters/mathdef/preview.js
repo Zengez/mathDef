@@ -121,10 +121,20 @@
       const card = child(section, "div", null, "formulation");
       child(card, "div", "Not yet manually verified · " + form.id, "muted");
       mathText(form.text, child(card, "p", null, "math-text"));
-      if (mode.value === "standard") continue;
       for (const rel of edges.get(form.id) || []) {
         const target = meanings.get(rel.target_meaning);
         if (!target) continue;
+        if (mode.value === "standard") {
+          const nav = child(card, "button", "View related: " + target.display_term);
+          nav.type = "button";
+          nav.onclick = () => {
+            termInput.value = target.display_term;
+            definitionInput.value = "";
+            render();
+            window.scrollTo({top: 0, behavior: "smooth"});
+          };
+          continue;
+        }
         const button = child(card, "button", "Expand " + target.display_term + " — " + target.label);
         button.type = "button";
         const expansion = child(card, "div", null, "expansion " + mode.value);
