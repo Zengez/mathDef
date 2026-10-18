@@ -215,8 +215,8 @@ class StacksSectionsReader(HTMLParser):
     def handle_endtag(self, tag):
         if tag == "li" and self.stack:
             row = self.stack.pop()
-            label = re.sub(r"\\s+", " ", "".join(row["parts"])).strip()
-            m = re.match(r"^Section\\s+[0-9]+(?:\\.[0-9]+)*\\s*:\\s*(.+)$", label)
+            label = re.sub(r"\s+", " ", "".join(row["parts"])).strip()
+            m = re.match(r"^Section\s+[0-9]+(?:\.[0-9]+)*\s*:\s*(.+)$", label)
             if m and row["href"]:
                 title = m.group(1).strip()
                 if 2 <= len(title) <= TITLE_LIMIT:
