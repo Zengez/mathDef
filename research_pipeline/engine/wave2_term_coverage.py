@@ -82,11 +82,12 @@ def build(wave1, wave2):
 
     leads1 = jsonl(second.root / "wave2/foundation_source_discovery_batch_01.jsonl")
     leads2 = jsonl(second.root / "wave2/foundation_source_discovery_batch_02.jsonl")
+    leads3 = jsonl(second.root / "wave2/foundation_source_discovery_batch_03.jsonl")
     added={t:record for t,record in expanded_terms.items() if t not in original_terms}
-    if len(added)!=15 or len(leads1)!=9 or len(leads2)!=6:
+    if len(added)!=18 or len(leads1)!=9 or len(leads2)!=6 or len(leads3)!=3:
         raise PipelineError("New term/source discovery coverage mismatch")
     in_leads={}
-    for lead in leads1+leads2:
+    for lead in leads1+leads2+leads3:
         tid=lead["term_id"]
         if tid in in_leads or tid not in added:
             raise PipelineError("Source lead duplicates/does not name a new term: "+tid)
@@ -113,9 +114,10 @@ def build(wave1, wave2):
             "locator":term["locator"],
             "disposition":"source_read_candidate" if direct else "unverified_source_locator",
             "source_access_outcome":lead["source_access_outcome"],
-            "provenance":"wave2/foundation_source_discovery_batch_01.jsonl" if tid.startswith(
-                "term.wave2.") and not tid.startswith("term.wave2.proofwiki.") else
-                "wave2/foundation_source_discovery_batch_02.jsonl",
+            "provenance":(
+                "wave2/foundation_source_discovery_batch_03.jsonl" if lead in leads3 else
+                "wave2/foundation_source_discovery_batch_02.jsonl" if lead in leads2 else
+                "wave2/foundation_source_discovery_batch_01.jsonl"),
             "source_research_complete":direct,
             "mathematical_observation_ids":candidates,
             "mathematically_screened_in_wave2":False,
@@ -124,9 +126,9 @@ def build(wave1, wave2):
     output.sort(key=lambda x:x["term_id"])
     counter=Counter(x["disposition"] for x in output)
     expected={"inherited_supported":232,"inherited_no_suitable_definition":59,
-              "inherited_access_blocked":27,"source_read_candidate":7,
+              "inherited_access_blocked":27,"source_read_candidate":10,
               "unverified_source_locator":8}
-    if dict(counter)!=expected or len(output)!=len(expanded_terms) or len(output)!=333:
+    if dict(counter)!=expected or len(output)!=len(expanded_terms) or len(output)!=336:
         raise PipelineError("Unexpected source coverage; do not seal: "+str(counter))
     existing=second.root/"state/wave2_term_coverage.jsonl"
     content="".join(canonical(row)+"\n" for row in output)
@@ -137,9 +139,9 @@ def build(wave1, wave2):
       "phase":"Wave 2 expanded per-term source review coverage",
       "term_count":len(output),
       "inherited_frozen_reviews_checked":318,
-      "source_read_new_candidates":7,
+      "source_read_new_candidates":10,
       "new_source_locators_unverified":8,
-      "new_term_review_coverage":15,
+      "new_term_review_coverage":18,
       "dispositions":dict(counter),
       "pending_new_direct_source_reviews":8,
       "mathematical_candidate_meanings_screened":0,
