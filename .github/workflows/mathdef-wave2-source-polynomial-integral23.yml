@@ -1,0 +1,103 @@
+name: Register source-scoped polynomial Riemann integral and orthogonality-moment observations
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-source-polynomial-integral23.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh authoritative unsealed independent Wave 2 research
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile Python engine and run complete isolated regression suite
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Add three individually reviewed source paraphrases, not screened meanings
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_batch23_polynomial_integral \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Archive all previous 368 individual source decisions before extending to 371
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify full frozen Wave 1 research, source permission and mathematical review lineage
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,digest,jsonl
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          frozen=json.loads((one.root/"state/wave1_freeze.json").read_text())
+          assert digest(one.publication())==frozen["published_catalog_digest"]
+          expect={"sources":9,"terms":371,"observations":794,"meanings":471,"relations":626}
+          for stage,n in expect.items():
+              assert len(w.records(stage))==n,stage
+              if stage in ("sources","terms","observations","relations"):
+                  assert all(w.records(stage).get(k)==v for k,v in one.records(stage).items()),stage
+              assert not w.state(stage).get("sealed"),stage
+          old=jsonl(w.root/"state/wave2_term_coverage_snapshot_368.jsonl")
+          now=jsonl(w.root/"state/wave2_term_coverage.jsonl")
+          assert len(old)==368 and len(now)==371
+          current={r["term_id"]:r for r in now}
+          assert len(current)==371
+          assert all(current.get(r["term_id"])==r for r in old)
+          c=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert c["term_count"]==371
+          assert c["source_read_new_candidates"]==45
+          assert c["new_term_review_coverage"]==53
+          assert c["new_source_locators_unverified"]==8
+          assert c["mathematical_candidate_meanings_screened"]==52
+          assert c["complete_for_wave2_sealing"] is False
+          leads=jsonl(w.root/"wave2/foundation_source_discovery_batch_23.jsonl")
+          assert len(leads)==3
+          assert all(x["source_access_outcome"]=="direct_page_read" and
+                     x["meaning_screened"] is False and x["human_verified"] is False for x in leads)
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==483
+          assert {i for r in reviews for i in r["relation_ids"]}==set(w.records("relations"))
+          report=json.loads((w.root/"state/wave2_foundations_batch_23.json").read_text())
+          assert report["source_meanings_screened"]==0
+          assert report["new_relationships_screened"]==0
+          assert report["tagged_partition_vs_equal_grid_source_scope_preserved"]
+          assert report["measure_finite_moment_hypothesis_not_dropped"]
+          assert report["zero_polynomial_degree_not_unjustifiably_assigned"]
+          assert report["human_peer_verified"] is False
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only source research and its versioned independent term audit
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Register three rigorous polynomial integration and measure moment source observations without auto-screening"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
