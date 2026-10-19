@@ -1,9 +1,9 @@
 {
   "state": "first_source_recovery_batch_completed_unsealed",
   "catalog_sources_reused": 2,
-  "new_term_locators": 0,
+  "new_term_locators": 9,
   "term_count_after_intake": 327,
-  "new_authored_mathematical_observations": 0,
+  "new_authored_mathematical_observations": 1,
   "observation_count_after_intake": 750,
   "directly_read_and_source_checked": 1,
   "discovered_via_search_only_not_verified": 8,
@@ -12,5 +12,10 @@
   "all_wave2_stages_still_unsealed": true,
   "published_as_screened_definition": false,
   "original_mathdef_corpus_read": false,
-  "next": "Individually verify eight remaining source pages or seek alternate accessible references; acquire reviewed evidence before grouping new meanings."
+  "next": "Individually verify eight remaining source pages or seek alternate accessible references; acquire reviewed evidence before grouping new meanings.",
+  "idempotent_replay_skips": {
+    "term_records_already_present": 9,
+    "observation_records_already_present": 1
+  },
+  "counts_note": "Batch-wide contribution counts, not increments on the final idempotent workflow replay. Verified 9 unique added term identities and 1 independently authored observation."
 }
