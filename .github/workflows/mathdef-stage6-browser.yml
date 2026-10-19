@@ -42,7 +42,7 @@ jobs:
       - name: Record successful automated browser smoke evidence
         run: |
           python - <<'PY'
-          import json,os,subprocess
+          import json,os,subprocess,hashlib
           from pathlib import Path
           from research_pipeline.engine.core import atomic_json
           root=Path("research_pipeline/experiments/reconstruction-v1-recovery")
@@ -60,6 +60,9 @@ jobs:
             "checked_cross_source_variant_grouping":True,
             "checked_mobile_viewport_width":375,
             "checked_pagination":True,
+            "preview_index_sha256":hashlib.sha256((root/"preview/index.html").read_bytes()).hexdigest(),
+            "preview_script_sha256":hashlib.sha256((root/"preview/preview.js").read_bytes()).hexdigest(),
+            "preview_styles_sha256":hashlib.sha256((root/"preview/preview.css").read_bytes()).hexdigest(),
             "screenshot_uploaded_to_workflow_artifact":True,
             "workflow_run_id":os.environ.get("GITHUB_RUN_ID",""),
             "origin_commit":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip(),
