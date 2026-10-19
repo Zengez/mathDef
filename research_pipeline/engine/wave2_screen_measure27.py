@@ -44,8 +44,8 @@ def run(root):
   tid="term.wave2.foundation26."+key
   oid="obs.wave2.foundation26."+key
   t,o=terms.get(tid),obs.get(oid)
-  if not t or not o or o["term_id"]!=tid or o["locator"]!=t["locator"] or
-     o["record_kind"]!="paraphrase" or o.get("human_verified") is not False:
+  if (not t or not o or o["term_id"]!=tid or o["locator"]!=t["locator"] or
+     o["record_kind"]!="paraphrase" or o.get("human_verified") is not False):
    raise PipelineError("Missing individually attributed source evidence: "+key)
   if len(item["reason"])<165 or len(item["text"])<115:
    raise PipelineError("Mathematical rationale incomplete: "+key)
