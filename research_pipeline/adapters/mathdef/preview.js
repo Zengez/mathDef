@@ -54,11 +54,12 @@
     window.open(data.github_issues + "?" + params.toString(), "_blank", "noopener,noreferrer");
   }
 
-  function showSources(group) {
+  function showSources(group, selectedFormId = null) {
     sourcesContent.replaceChildren();
     for (const m of group.meanings) {
       child(sourcesContent, "h3", m.label);
       for (const form of m.formulations) {
+        if (selectedFormId && form.id !== selectedFormId) continue;
         child(sourcesContent, "h4", form.id);
         const ul = child(sourcesContent, "ul");
         for (const source of form.sources) {
@@ -69,7 +70,7 @@
           child(li, "span", " (" + source.role + ")", "muted");
         }
       }
-      if (m.other_sources && m.other_sources.length) {
+      if (!selectedFormId && m.other_sources && m.other_sources.length) {
         child(sourcesContent, "h4", "Other encountered sources (not automatically supporting)");
         const ul = child(sourcesContent, "ul");
         for (const item of m.other_sources) {
@@ -125,6 +126,9 @@
       const card = child(section, "div", null, "formulation");
       child(card, "div", "Not yet manually verified · " + form.id, "muted");
       mathText(form.text, child(card, "p", null, "math-text"));
+      const singleSource = child(card, "button", "Sources for this formulation", "subtle-button");
+      singleSource.type = "button";
+      singleSource.onclick = () => showSources({ meanings: [m] }, form.id);
       const correction = child(card, "button", "Suggest correction to this formulation", "subtle-button");
       correction.type = "button";
       correction.onclick = () => openIssue(
