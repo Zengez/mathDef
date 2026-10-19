@@ -41,10 +41,10 @@ def check_cycles(meanings,rels):
         if color.get(u)==2:
             return
         color[u]=1
-        for v in graph[u]:
+        for v in graph.get(u,set()):
             visit(v)
         color[u]=2
-    for node in graph:
+    for node in list(graph):
         visit(node)
 
 def run(root,batch):
@@ -62,7 +62,7 @@ def run(root,batch):
     ledger_path=w.root/"state/wave2_formulation_reviews.jsonl"
     reviews=jsonl(ledger_path)
     review_map={r["formulation_id"]:r for r in reviews}
-    if len(reviews)!=len(review_map)==440 or set(review_map)!=set(forms):
+    if len(reviews)!=440 or len(review_map)!=440 or set(review_map)!=set(forms):
         raise PipelineError("Missing or repeated formulation review identity")
     if any(r.get("meaning_catalog_digest")!=catalog_digest for r in reviews):
         raise PipelineError("Wave 2 relation review is stale against meanings")
