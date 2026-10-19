@@ -152,8 +152,8 @@ def run(root):
   raise PipelineError("Screened relationship lost its reviewed source formulation")
  cat=meanings[CASES[0]["mid"]]["formulations"][0]
  for x in relations.values():
-  if x["from_formulation"]==cat["id"] and
-     x["source_phrase"].casefold() not in cat["text"].casefold():
+  if (x["from_formulation"]==cat["id"] and
+      x["source_phrase"].casefold() not in cat["text"].casefold()):
    raise PipelineError("Prior category-valued source link lost its exact source anchor")
  check_cycles(meanings,relations)
  if current_reviews!=updated:
