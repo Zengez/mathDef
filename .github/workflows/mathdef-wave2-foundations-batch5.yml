@@ -1,0 +1,95 @@
+name: Acquire four Stacks foundational definition observations in independent Wave 2
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-foundations-batch5.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Reload latest committed independent data
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run isolated regression tests
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Ingest four independently researched Stacks paraphrases as candidates only
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_batch5 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Add versioned 343-term per-source review ledger without rewriting 339 prior decisions
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Audit evidence rights, counts, no screening, and frozen Wave 1
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(old.publication())==json.loads((old.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          assert len(w.records("sources"))==9
+          assert len(w.records("terms"))==343
+          assert len(w.records("observations"))==766
+          assert len(w.records("meanings"))==431
+          assert len(w.records("relations"))==545
+          assert all(w.records(s).get(k)==v for s in ("sources","terms","observations","meanings","relations") for k,v in old.records(s).items())
+          assert not any(w.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
+          current=jsonl(w.root/"state/wave2_term_coverage.jsonl")
+          archived=jsonl(w.root/"state/wave2_term_coverage_snapshot_339.jsonl")
+          assert len(current)==343 and len(archived)==339
+          lookup={x["term_id"]:x for x in current}
+          assert all(lookup.get(x["term_id"])==x for x in archived)
+          report=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert report["term_count"]==343 and report["new_term_review_coverage"]==25
+          assert report["source_read_new_candidates"]==17 and report["new_source_locators_unverified"]==8
+          assert report["complete_for_wave2_sealing"] is False
+          source=jsonl(w.root/"wave2/foundation_source_discovery_batch_05.jsonl")
+          assert len(source)==4
+          assert all(x["source_access_outcome"]=="direct_page_read" and
+                     x["meaning_screened"] is False and x["human_verified"] is False for x in source)
+          assert all(x["source_id"]=="src.stacks" for x in source)
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==443
+          assert len(set(r["formulation_id"] for r in reviews))==443
+          assert {rid for row in reviews for rid in row["relation_ids"]}==set(w.records("relations"))
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent Wave 2 source observations and coverage evidence
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then
+            echo "Refusing out-of-scope changes" >&2
+            exit 1
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Document four more independently read Stacks foundations and 343-term source coverage"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
