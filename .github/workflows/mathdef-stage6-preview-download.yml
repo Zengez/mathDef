@@ -94,3 +94,39 @@ jobs:
             echo "Unable to record preview package link" >&2
             exit 1
           fi
+
+      - name: Publish exact GitHub Actions inspection-package pointer
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          root=Path("research_pipeline/experiments/reconstruction-v1-recovery")
+          freeze=json.loads((root/"state/wave1_freeze.json").read_text())
+          report={
+            "status":"available",
+            "format":"GitHub Actions ZIP artifact",
+            "workflow_name":"Package independent Wave 1 prototype for editorial inspection",
+            "artifact_name":"mathdef-independent-wave1-preview-open-locally",
+            "run_id":os.environ["GITHUB_RUN_ID"],
+            "url":"https://github.com/Zengez/mathDef/actions/runs/"+os.environ["GITHUB_RUN_ID"],
+            "frozen_catalog_digest":freeze["published_catalog_digest"],
+            "frozen_asset_digests":freeze["preview_sha256"],
+            "instructions":"From this Actions run, download artifact and unzip, then open index.html.",
+            "live_production_site_unchanged":True
+          }
+          (root/"state/stage6_download_package.json").write_text(
+              json.dumps(report,indent=2)+"\n",encoding="utf-8")
+          print(json.dumps(report,indent=2))
+          PY
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v1-recovery/state/stage6_download_package.json
+          git commit -m "Record downloadable digest-frozen Wave 1 prototype inspection package"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          echo "Could not commit prototype inspection link" >&2
+          exit 1
