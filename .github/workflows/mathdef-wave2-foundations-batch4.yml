@@ -1,0 +1,93 @@
+name: Intake three independently sourced Wave 2 algebra foundations
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-foundations-batch4.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh authoritative independent checkpoint
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Full isolated regression tests
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Ingest individual unsealed unit domain maximal-ideal source paraphrases
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_batch4 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Reconcile new term review coverage with archived 336-term decisions
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify all 339 source terms and immutability of frozen Wave 1
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          new=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(old.publication())==json.loads((old.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          for stage,expected in [("sources",9),("terms",339),("observations",762),("meanings",428),("relations",529)]:
+              a=old.records(stage)
+              b=new.records(stage)
+              assert len(b)==expected,stage
+              assert all(b.get(k)==v for k,v in a.items()),stage
+              assert not new.state(stage).get("sealed"),stage
+          report=json.loads((new.root/"state/wave2_term_coverage.json").read_text())
+          assert report["term_count"]==339 and report["new_term_review_coverage"]==21
+          assert report["source_read_new_candidates"]==13
+          assert report["new_source_locators_unverified"]==8
+          assert report["mathematical_candidate_meanings_screened"]==9
+          assert report["complete_for_wave2_sealing"] is False
+          assert report["previous_336_term_review_ledger_archived"] is True
+          reviewed=jsonl(new.root/"state/wave2_term_coverage.jsonl")
+          prior=jsonl(new.root/"state/wave2_term_coverage_snapshot_336.jsonl")
+          assert len(reviewed)==339 and len(prior)==336
+          a={r["term_id"]:r for r in reviewed}
+          assert all(a.get(r["term_id"])==r for r in prior)
+          source=jsonl(new.root/"wave2/foundation_source_discovery_batch_04.jsonl")
+          assert len(source)==3 and all(x["source_access_outcome"]=="direct_page_read" for x in source)
+          assert all(x["meaning_screened"] is False and x["human_verified"] is False for x in source)
+          PY
+      - name: Commit source evidence and archived coverage in Wave 2 alone
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then
+             echo "Unexpected out-of-scope file" >&2
+             exit 1
+          fi
+          if git diff --cached --quiet; then
+             echo "Evidence already persisted"
+             exit 0
+          fi
+          git commit -m "Intake three foundation source paraphrases and version 339-term Wave 2 coverage"
+          for retry in 1 2 3 4; do
+             git fetch origin main
+             git rebase origin/main
+             if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
