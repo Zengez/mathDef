@@ -1,0 +1,93 @@
+name: Screen three Stacks category axioms with all historical reviews preserved
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-screen-category-axioms-batch16.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh latest committed independent Wave 2
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all math pipeline code and run regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Independently review and screen three context-specific category definitions
+        run: |
+          python -m research_pipeline.engine.wave2_screen_category_axioms_batch16 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Refresh per-term source coverage while preserving earlier term decisions
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify 474 reviewed formulations and frozen independent Wave 1
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(old.publication())==json.loads((old.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          for stage,n in (("sources",9),("terms",363),("observations",786),("meanings",462),("relations",606)):
+              assert len(w.records(stage))==n and not w.state(stage).get("sealed")
+          historical=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_471_before_category16.jsonl")
+          current=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          index={r["formulation_id"]:r for r in current}
+          assert len(historical)==471 and len(current)==len(index)==474
+          for row in historical:
+              after=index[row["formulation_id"]]
+              assert {k:v for k,v in after.items() if k!="meaning_catalog_digest"}=={
+                k:v for k,v in row.items() if k!="meaning_catalog_digest"}
+          assert {rid for row in current for rid in row["relation_ids"]}==set(w.records("relations"))
+          assert sum(r["decision"]=="needs_review" for r in current)==7
+          check_cycles(w.records("meanings"),w.records("relations"))
+          new=[m for m in w.records("meanings").values() if m["id"].startswith("meaning.wave2.foundation15.")]
+          assert len(new)==3
+          assert all(m["formulations"][0]["review_state"]=="screened" for m in new)
+          coverage=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert coverage["term_count"]==363
+          assert coverage["mathematical_candidate_meanings_screened"]==43
+          r=json.loads((w.root/"state/wave2_foundations_batch_16_screened.json").read_text())
+          assert r["previous_review_rows_preserved"]==471 and r["screened_links_preserved"]==606
+          assert r["preadditive_additive_abelian_hierarchy_not_conflated"]
+          assert r["coimage_image_comparison_axiom_preserved"]
+          assert r["human_peer_verified"] is False
+          print(json.dumps(r,indent=2))
+          PY
+      - name: Commit only independently screened Wave 2 category axioms and review ledgers
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Individually screen preadditive additive abelian category axioms and preserve 471 historical reviews"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
