@@ -67,11 +67,18 @@ def run(root,batch):
     if any(r.get("meaning_catalog_digest")!=catalog_digest for r in reviews):
         raise PipelineError("Wave 2 relation review is stale against meanings")
     previous=w.records("relations")
-    if len(previous) not in (445,469):
+    if len(previous) not in (445,469,481):
         raise PipelineError("Unexpected relationship ledger size, check earlier batches")
     incoming=jsonl(batch)
-    if len(incoming)!=24 or len({r.get("id") for r in incoming})!=24:
-        raise PipelineError("Expected 24 distinct curated research relationships")
+    batch_number = "02" if batch.name.endswith("batch_02.jsonl") else "01" if batch.name.endswith("batch_01.jsonl") else None
+    if batch_number is None:
+        raise PipelineError("Unknown curated relationship batch; explicit scope required")
+    expected_count=12 if batch_number=="02" else 24
+    if len(incoming)!=expected_count or len({r.get("id") for r in incoming})!=expected_count:
+        raise PipelineError(f"Expected {expected_count} distinct curated research relationships")
+    before_count=469 if batch_number=="02" else 445
+    if len(previous) not in (before_count,before_count+expected_count):
+        raise PipelineError(f"Incorrect previous link count for batch {batch_number}: {len(previous)}")
     fromlinks=defaultdict(list)
     for row in incoming:
         fid,mid=row.get("from_formulation"),row.get("target_meaning")
@@ -129,7 +136,7 @@ def run(root,batch):
                 "reviewed_by":"assistant_wave2_individual_mathematical_source_comparison_2026_10_19",
                 "human_verified":False
             })
-    override_path=w.root/"events/wave2_link_disposition_overrides_batch01.jsonl"
+    override_path=w.root/f"events/wave2_link_disposition_overrides_batch{batch_number}.jsonl"
     override_path.parent.mkdir(parents=True,exist_ok=True)
     override_payload="".join(canonical(x)+"\n" for x in override)
     if override_path.exists() and override_path.read_text(encoding="utf-8")!=override_payload:
@@ -138,7 +145,7 @@ def run(root,batch):
 
     # Workspace ingest is idempotent for identical link IDs. All mathematical
     # consistency checks above happen before it writes any data.
-    result=w.ingest("relations",batch,batch_size=24)
+    result=w.ingest("relations",batch,batch_size=expected_count)
     for fid,links in fromlinks.items():
         review=review_map[fid]
         was=review["decision"]
@@ -152,7 +159,7 @@ def run(root,batch):
         review["source"]="wave2_explicit_link_review"
     atomic_jsonl(ledger_path,[review_map[k] for k in sorted(review_map)])
     actual=w.records("relations")
-    if len(actual)!=469 or len(ledger_path.read_text(encoding="utf-8").splitlines())!=440:
+    if len(actual)!=before_count+expected_count or len(ledger_path.read_text(encoding="utf-8").splitlines())!=440:
         raise PipelineError("Unexpected post-intake review counts")
     referred={rid for x in review_map.values() for rid in x["relation_ids"]}
     if set(actual)!=referred:
@@ -161,11 +168,11 @@ def run(root,batch):
     counts=dict(Counter(x["decision"] for x in review_map.values()))
     still_pending=sum(r["decision"]=="needs_review" for r in review_map.values())
     report={
-      "phase":"first_wave2_source_grounded_relationship_batch_screened",
+      "phase":f"wave2_source_grounded_relationship_batch_{batch_number}_screened",
       "meaning_count":len(meanings),"formulation_count":len(forms),
       "total_screened_links":len(actual),
       "inherited_wave1_links_preserved":445,
-      "added_source_grounded_links":24,
+      "added_source_grounded_links":expected_count,
       "link_batch_unique_source_formulations":len(fromlinks),
       "review_decisions_after_batch":counts,
       "inherited_missing_or_held_dispositions_revisited":len(override),
@@ -176,9 +183,9 @@ def run(root,batch):
       "wave2_link_stage_sealed":False,
       "original_production_baseline_consulted":False,
       "human_peer_verified":False,
-      "next":"Review remaining new formulations and unresolved old no-target/held cases, then continue source research before stage sealing."
+      "next":"Continue source verification, review the remaining new formulations and all unresolved missing-target/ambiguity cases before stage sealing."
     }
-    atomic_json(w.root/"state/wave2_link_review_batch_01.json",report)
+    atomic_json(w.root/f"state/wave2_link_review_batch_{batch_number}.json",report)
     return report
 
 def main():
