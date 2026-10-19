@@ -1,0 +1,97 @@
+name: Screen polynomial degree moments and proper Riemann prerequisites
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-links-polynomial-integral25.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh latest independently screened mathematical corpus
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Full Python syntax and independent research regression checks
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Screen eight independently justified exact-source-phrase prerequisites
+        run: |
+          python -m research_pipeline.engine.wave2_apply_links \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --batch research_pipeline/experiments/reconstruction-v2-independent/intake/wave2_curated_relations_batch_25.jsonl
+      - name: Verify frozen Wave 1 individual review history and valid source-scope dependencies
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          frozen=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((frozen.root/"state/wave1_freeze.json").read_text())
+          assert digest(frozen.publication())==freeze["published_catalog_digest"]
+          assert len(frozen.records("relations"))==445
+          for stage,n in (("sources",9),("terms",371),("observations",794),("meanings",474),("relations",634)):
+              assert len(w.records(stage))==n,stage
+              assert not w.state(stage).get("sealed"),stage
+          assert all(w.records("relations").get(k)==v for k,v in frozen.records("relations").items())
+          new=jsonl(w.root/"intake/wave2_curated_relations_batch_25.jsonl")
+          assert len(new)==8
+          rel=w.records("relations")
+          assert all(rel[r["id"]]==r for r in new)
+          assert not any("riemann" in r["id"].lower() and "measure" in r["target_meaning"].lower() for r in new)
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==486 and len({r["formulation_id"] for r in reviews})==486
+          assert {l for r in reviews for l in r["relation_ids"]}==set(rel)
+          counts=Counter(r["decision"] for r in reviews)
+          assert counts["linked"]==480
+          assert counts["no_supported_target"]==5
+          assert counts["needs_review"]==1
+          snap=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_483_before_foundations24.jsonl")
+          assert len(snap)==483
+          byid={r["formulation_id"]:r for r in reviews}
+          assert all(byid[r["formulation_id"]]["original_wave1_disposition"]==r["original_wave1_disposition"] for r in snap)
+          check_cycles(w.records("meanings"),rel)
+          report=json.loads((w.root/"state/wave2_link_review_batch_25.json").read_text())
+          assert report["added_source_grounded_links"]==8
+          assert report["total_screened_links"]==634
+          assert report["dependency_graph_has_cycles"] is False
+          assert report["wave2_link_stage_sealed"] is False
+          assert report["human_peer_verified"] is False
+          assert report["original_production_baseline_consulted"] is False
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independently sourced Wave 2 mathematical links and audit ledger
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen eight source-specific DLMF polynomial degree and real Riemann prerequisites"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
