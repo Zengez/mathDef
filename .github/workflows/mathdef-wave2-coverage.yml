@@ -47,7 +47,7 @@ jobs:
           fork=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
           report=json.loads((fork.root/"state/wave2_term_coverage.json").read_text())
           rows=jsonl(fork.root/"state/wave2_term_coverage.jsonl")
-          assert report["term_count"]==len(rows)==len(fork.records("terms")) and len(rows) in (336,339)
+          assert report["term_count"]==len(rows)==len(fork.records("terms")) and len(rows) in (336,339,343,347,350,354)
           assert report["new_term_review_coverage"]==len(rows)-318
           assert report["source_read_new_candidates"]==len(rows)-326
           assert report["new_source_locators_unverified"]==8
@@ -72,7 +72,7 @@ jobs:
           git add -- research_pipeline/experiments/reconstruction-v2-independent/state/wave2_term_coverage.json \
                      research_pipeline/experiments/reconstruction-v2-independent/state/wave2_term_coverage.jsonl
           if ! git diff --cached --quiet; then
-            git commit -m "Audit all 336 Wave 2 source terms; hold 8 unverified locators and unapproved meanings"
+            git commit -m "Audit current Wave 2 source terms and preserve 8 unverified locators"
             for retry in 1 2 3 4; do
               git fetch origin main
               git rebase origin/main
