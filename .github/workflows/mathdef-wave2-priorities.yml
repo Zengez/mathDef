@@ -1,0 +1,70 @@
+name: Build complete independent Wave 2 priority queue
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-priorities.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  prioritize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh exact GitHub baseline
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run independent test suite
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Generate priority backlogs without reading original mathDef corpus
+        run: |
+          python -m research_pipeline.engine.wave2_priorities \
+            --first-wave research_pipeline/experiments/reconstruction-v1-recovery \
+            --second-wave research_pipeline/experiments/reconstruction-v2-independent
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+          from research_pipeline.engine.core import Workspace,jsonl
+          path=Path("research_pipeline/experiments/reconstruction-v2-independent")
+          tasks=jsonl(path/"wave2/prioritized_research.jsonl")
+          counts=Counter(t["kind"] for t in tasks)
+          assert len(tasks)==192
+          assert counts=={"held_link_research":4,"missing_foundation":89,
+                 "blocked_source_recovery":27,"unproductive_section_retry":59,
+                 "cross_source_variant_review":4,"source_collection_resurvey":9}
+          assert all(t["status"]=="unresearched" for t in tasks)
+          assert all(not Workspace(path).state(s).get("sealed") for s in
+                 ("sources","terms","observations","meanings","relations"))
+          print(json.dumps({"priority_tasks":len(tasks),"categories":counts},indent=2))
+          PY
+      - name: Commit individually grounded priority backlog in Wave 2 only
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent/wave2/prioritized_research.jsonl \
+                     research_pipeline/experiments/reconstruction-v2-independent/state/wave2_priorities.json
+          git commit -m "Prioritize 192 independently justified Wave 2 research leads"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          echo "Unable to persist Wave 2 priorities" >&2
+          exit 1
