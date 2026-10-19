@@ -1,0 +1,82 @@
+name: Wave 2 verified ProofWiki foundational evidence batch
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-foundations-proofwiki.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen-foundations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh GitHub main before writing independent research
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run all independent Python regression tests
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Ingest six directly inspected ProofWiki foundational paraphrases
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_proofwiki \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Prove inherited frozen meanings and relations untouched
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from research_pipeline.engine.core import Workspace,digest,jsonl
+          a=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          b=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((a.root/"state/wave1_freeze.json").read_text())
+          assert freeze["state"]=="FROZEN"
+          assert freeze["published_catalog_digest"]==digest(a.publication())
+          for stage,one,two in (("sources",9,9),("terms",318,333),
+                   ("observations",749,756),("meanings",419,419),("relations",445,445)):
+              d1=a.records(stage)
+              d2=b.records(stage)
+              assert len(d1)==one and len(d2)==two
+              assert all(d2.get(k)==v for k,v in d1.items()),stage
+              assert not b.state(stage).get("sealed"),stage
+          obs=b.records("observations")
+          for x in jsonl(b.root/"wave2/foundation_source_discovery_batch_02.jsonl"):
+              v=obs[x["candidate_observation_id"]]
+              assert v["source_id"]=="src.proofwiki"
+              assert v["record_kind"]=="paraphrase"
+              assert v["human_verified"] is False
+          assert all(m["id"].startswith("meaning.") for m in b.records("meanings").values())
+          print("Six foundation observations added, inherited 419 meanings and 445 relationships unchanged.")
+          PY
+      - name: Checkpoint Wave 2 research results, not Wave 1
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then
+            echo "Refusing to change original frozen corpus" >&2
+            exit 1
+          fi
+          git commit -m "Add six independently source-read Wave 2 foundational evidence candidates"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          echo "Could not commit proofwiki foundation intake" >&2
+          exit 1
