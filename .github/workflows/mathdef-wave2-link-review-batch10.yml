@@ -1,0 +1,104 @@
+name: Screen eighteen Wave 2 algebra order and topology prerequisite relationships
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-link-review-batch10.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Read authoritative latest independent Wave 2 checkpoint
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all research modules and run isolated regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Individually source screen eighteen mathematical prerequisite relationships
+        run: |
+          python -m research_pipeline.engine.wave2_apply_links \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --batch research_pipeline/experiments/reconstruction-v2-independent/intake/wave2_curated_relations_batch_10.jsonl
+      - name: Verify frozen Wave 1, original mathematical decisions, and precise source-linked review counts
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          w1=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((w1.root/"state/wave1_freeze.json").read_text())
+          assert digest(w1.publication())==freeze["published_catalog_digest"]
+          assert len(w1.records("relations"))==445
+          assert len(w.records("sources"))==9
+          assert len(w.records("terms"))==354
+          assert len(w.records("observations"))==777
+          assert len(w.records("meanings"))==453
+          assert len(w.records("relations"))==600
+          assert all(w.records("relations").get(k)==v for k,v in w1.records("relations").items())
+          assert not any(w.state(stage).get("sealed") for stage in ("sources","terms","observations","meanings","relations"))
+          source=jsonl(w.root/"intake/wave2_curated_relations_batch_10.jsonl")
+          assert len(source)==18 and len(set(r["id"] for r in source))==18
+          assert all(w.records("relations")[r["id"]]==r for r in source)
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          old=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_459_before_foundations10.jsonl")
+          assert len(reviews)==465 and len(old)==459
+          by={r["formulation_id"]:r for r in reviews}
+          assert len(by)==465
+          forms={f["id"]:m["id"] for m in w.records("meanings").values() for f in m["formulations"]}
+          assert len(forms)==465
+          assert all(forms[r["formulation_id"]]==r["meaning_id"] for r in reviews)
+          assert all(by[r["formulation_id"]]["original_wave1_disposition"]==r["original_wave1_disposition"] for r in old)
+          assert {id for r in reviews for id in r["relation_ids"]}==set(w.records("relations"))
+          counts=dict(Counter(r["decision"] for r in reviews))
+          assert counts=={"linked":457,"no_supported_target":7,"held_ambiguity":1}
+          assert sum(r["decision"]=="needs_review" for r in reviews)==0
+          check_cycles(w.records("meanings"),w.records("relations"))
+          events=jsonl(w.root/"events/wave2_link_disposition_overrides_batch10.jsonl")
+          assert len(events)==7
+          report=json.loads((w.root/"state/wave2_link_review_batch_10.json").read_text())
+          assert report["added_source_grounded_links"]==18
+          assert report["total_screened_links"]==600
+          assert report["pending_wave2_link_reviews"]==0
+          assert report["inherited_missing_or_held_dispositions_revisited"]==7
+          assert report["dependency_graph_has_cycles"] is False
+          assert report["human_peer_verified"] is False
+          assert report["wave2_link_stage_sealed"] is False
+          assert report["original_production_baseline_consulted"] is False
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent screened link evidence and historical overrides
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen eighteen source-anchored algebra order and topology dependencies with seven historical overrides"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
