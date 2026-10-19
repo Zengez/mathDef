@@ -122,6 +122,46 @@ class Stage5ReviewGateTests(unittest.TestCase):
             apply_dispositions(self.w.root, self.batch)
 
 
+
+    def test_conflicting_existing_disposition_preflight_never_mutates_edges(self):
+        prepare(self.w.root)
+        text = self.w.records("meanings")["meaning.topgroup"]["formulations"][0]["text"]
+        self.batch.write_text(canonical({
+            "formulation_id": "form.topgroup", "decision": "held_ambiguity",
+            "editorial_reason": ("A manual conceptual question remains unresolved in this synthetic fixture, "
+                                 "and must be held instead of automatically treated as a link."),
+            "reviewed_by": "editorial_source_comparison",
+            "human_verified": False, "source_text_digest": digest(text),
+        }) + "\n", encoding="utf-8")
+        apply_dispositions(self.w.root, self.batch)
+        self.batch.write_text(canonical(self.edge) + "\n", encoding="utf-8")
+        prior = self.w.state("relations")
+        with self.assertRaisesRegex(PipelineError, "Cannot overwrite"):
+            apply_batch(self.w.root, self.batch)
+        self.assertEqual(self.w.records("relations"), {})
+        self.assertEqual(self.w.state("relations"), prior)
+        self.assertEqual(audit(self.w.root)["screened_relations"], 0)
+
+    def test_audit_rechecks_existing_edges_not_just_review_pointers(self):
+        prepare(self.w.root)
+        self.batch.write_text(canonical(self.edge) + "\n", encoding="utf-8")
+        apply_batch(self.w.root, self.batch)
+        edges = self.w.root / "records/relations.jsonl"
+        tampered = dict(self.edge, source_locator="https://example.org/incorrect")
+        edges.write_text(canonical(tampered) + "\n", encoding="utf-8")
+        with self.assertRaisesRegex(PipelineError, "Source provenance mismatch"):
+            audit(self.w.root)
+
+    def test_invalid_second_edge_preflight_keeps_first_unwritten(self):
+        prepare(self.w.root)
+        bad = dict(self.edge, id="rel.invalid", source_phrase="phrase not in text")
+        self.batch.write_text(canonical(self.edge) + "\n" + canonical(bad) + "\n",
+                              encoding="utf-8")
+        with self.assertRaisesRegex(PipelineError, "anchor"):
+            apply_batch(self.w.root, self.batch)
+        self.assertEqual(self.w.records("relations"), {})
+        self.assertEqual(audit(self.w.root)["reviewed"], 0)
+
     def test_anchor_and_target_guard(self):
         prepare(self.w.root)
         bad = dict(self.edge, source_phrase="unmentioned phrase")
