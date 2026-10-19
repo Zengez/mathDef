@@ -94,6 +94,31 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(kinds, {"discover_sources_from_term", "search_variants_in_source",
                                   "audit_relationships"})
 
+    def test_wave2_planner_writes_only_fork_after_freeze(self):
+        self.load_all()
+        self.workspace.publish()
+        original_checkpoint = (self.workspace.root / "state/checkpoint.json").read_bytes()
+        original_catalog = (self.workspace.root / "published/catalog.json").read_bytes()
+        original_meanings = (self.workspace.root / "records/meanings.jsonl").read_bytes()
+        (self.workspace.root / "state/wave1_freeze.json").write_text(
+            json.dumps({"state": "FROZEN"}), encoding="utf-8")
+        with self.assertRaisesRegex(PipelineError, "Frozen first-wave"):
+            self.workspace.wave2_plan()
+        fork = Workspace(Path(self.tmp.name) / "independent-wave2")
+        self.workspace.fork_second_wave(fork.root)
+        result = fork.wave2_plan()
+        self.assertEqual(result["tasks"], 2 * (1 + 1) + 2)
+        self.assertTrue((fork.root / "wave2/tasks.jsonl").exists())
+        self.assertFalse((self.workspace.root / "wave2/tasks.jsonl").exists())
+        self.assertEqual((self.workspace.root / "state/checkpoint.json").read_bytes(),
+                         original_checkpoint)
+        self.assertEqual((self.workspace.root / "published/catalog.json").read_bytes(),
+                         original_catalog)
+        self.assertEqual((self.workspace.root / "records/meanings.jsonl").read_bytes(),
+                         original_meanings)
+        self.assertEqual(len(fork.records("meanings")), 2)
+        self.assertFalse(fork.state("sources").get("sealed"))
+
     def test_preview_does_not_group_unrelated_concepts_from_same_source_section(self):
         self.load_all()
         self.workspace.publish()
