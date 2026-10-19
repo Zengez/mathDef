@@ -56,27 +56,28 @@ def run(root,batch):
     meanings=w.records("meanings")
     observations=w.records("observations")
     forms={f["id"]:(m,f) for m in meanings.values() for f in m["formulations"]}
-    if len(meanings)!=428 or len(forms)!=440:
+    expected_catalog=(431,443) if batch.name.endswith("batch_05.jsonl") else (428,440)
+    if (len(meanings),len(forms))!=expected_catalog:
         raise PipelineError("Outdated or altered meaning catalog for curated relationship batch")
     catalog_digest=digest(list(meanings.values()))
     ledger_path=w.root/"state/wave2_formulation_reviews.jsonl"
     reviews=jsonl(ledger_path)
     review_map={r["formulation_id"]:r for r in reviews}
-    if len(reviews)!=440 or len(review_map)!=440 or set(review_map)!=set(forms):
+    if len(reviews)!=len(forms) or len(review_map)!=len(forms) or set(review_map)!=set(forms):
         raise PipelineError("Missing or repeated formulation review identity")
     if any(r.get("meaning_catalog_digest")!=catalog_digest for r in reviews):
         raise PipelineError("Wave 2 relation review is stale against meanings")
     previous=w.records("relations")
-    if len(previous) not in (445,469,481,505,529):
+    if len(previous) not in (445,469,481,505,529,545):
         raise PipelineError("Unexpected relationship ledger size, check earlier batches")
     incoming=jsonl(batch)
-    batch_number = next((n for n in ("01","02","03","04") if batch.name.endswith(f"batch_{n}.jsonl")),None)
+    batch_number = next((n for n in ("01","02","03","04","05") if batch.name.endswith(f"batch_{n}.jsonl")),None)
     if batch_number is None:
         raise PipelineError("Unknown curated relationship batch; explicit scope required")
-    expected_count={"01":24,"02":12,"03":24,"04":24}[batch_number]
+    expected_count={"01":24,"02":12,"03":24,"04":24,"05":16}[batch_number]
     if len(incoming)!=expected_count or len({r.get("id") for r in incoming})!=expected_count:
         raise PipelineError(f"Expected {expected_count} distinct curated research relationships")
-    before_count={"01":445,"02":469,"03":481,"04":505}[batch_number]
+    before_count={"01":445,"02":469,"03":481,"04":505,"05":529}[batch_number]
     if len(previous) not in (before_count,before_count+expected_count):
         raise PipelineError(f"Incorrect previous link count for batch {batch_number}: {len(previous)}")
     fromlinks=defaultdict(list)
@@ -159,7 +160,7 @@ def run(root,batch):
         review["source"]="wave2_explicit_link_review"
     atomic_jsonl(ledger_path,[review_map[k] for k in sorted(review_map)])
     actual=w.records("relations")
-    if len(actual)!=before_count+expected_count or len(ledger_path.read_text(encoding="utf-8").splitlines())!=440:
+    if len(actual)!=before_count+expected_count or len(ledger_path.read_text(encoding="utf-8").splitlines())!=len(forms):
         raise PipelineError("Unexpected post-intake review counts")
     referred={rid for x in review_map.values() for rid in x["relation_ids"]}
     if set(actual)!=referred:
