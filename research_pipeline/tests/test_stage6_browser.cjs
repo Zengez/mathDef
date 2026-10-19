@@ -34,6 +34,13 @@ const { chromium } = require("playwright");
     assert.ok(await expand.isVisible(), "Expected source-defined monoidal dependency");
     await expand.click();
     assert.ok((await page.locator(".recursive-meaning").count()) >= 1, "Recursive explanation did not render");
+    await page.locator(".recursive-meaning").first()
+      .getByRole("button", { name: "Sources for this formulation" }).first().click();
+    assert.ok(await page.locator("#sources").evaluate(dialog => dialog.open),
+      "Nested mathematical formulation must expose variant-specific sources");
+    assert.equal(await page.locator("#sources-content h4").count(), 1,
+      "Nested source modal should show only the selected formulation's references");
+    await page.locator("#sources form button").click();
     await page.getByRole("button", { name: /^Collapse monoidal category/ }).first().click();
     assert.equal(await page.locator(".recursive-meaning").count(), 0, "Collapse left descendants visible");
 
@@ -81,7 +88,7 @@ const { chromium } = require("playwright");
     console.log(JSON.stringify({
       status: "passed",
       checks: ["term-only search", "distinct source-section meanings", "source modal",
-        "nested recursive expansion", "collapse", "implication treatment",
+        "nested recursive expansion", "nested per-formulation source inspection", "collapse", "implication treatment",
         "definition-text search", "verification dialog", "precise source URL", "cross-source duplicate heading variants", "result pagination", "mobile layout width", "suggestion and correction controls", "no JavaScript exceptions"],
       screenshot
     }, null, 2));
