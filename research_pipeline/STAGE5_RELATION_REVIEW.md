@@ -1,3 +1,5 @@
+> **Execution-integrity audit completed (2026-10-18):** [STAGE5_EXECUTION_AUDIT_2026-10-18.md](STAGE5_EXECUTION_AUDIT_2026-10-18.md) documents three workflow and data-safety repairs, corrected mathematical relationship types (44 dependencies, 2 implications, 1 equivalent characterization), and the **successful 48-test GitHub Actions healthcheck run 39192623624**. Machine evidence: [stage5_healthcheck.json](experiments/reconstruction-v1-recovery/state/stage5_healthcheck.json). Current status remains **55/431 reviewed, 376 pending, 47 relationships, NOT SEALED**. This integrity test does not certify mathematical truth or browser rendering.
+
 # Corrected Wave 1 — Stage 5 independent formulation relationship audit
 
 **Live handoff (2026-10-18, America/New_York):** Stage 5 is **in progress, NOT sealed**. The authoritative machine checkpoint is `experiments/reconstruction-v1-recovery/state/checkpoint.json`. Stage 5 always works exclusively within the corrected independent reconstruction workspace; the original production mathDef corpus, variants and citations must NOT be consulted until both Wave 1 and Wave 2 have been frozen and published.
