@@ -144,9 +144,11 @@
           // prerequisites to recursively unfold under the definition.
           const label = rel.relation_type === "logical_implication"
             ? "Implies: " : rel.relation_type === "equivalent_characterization"
-            ? "Equivalent characterization: " : "Related: ";
+            ? "Equivalent criterion (subject to hypotheses): " : "Related: ";
           const nav = child(card, "button", label + target.display_term);
           nav.type = "button";
+          const justification = child(card, "p", rel.editorial_reason ||
+            "Research-screened connection; verify the domain of validity.", "relation-explanation");
           nav.onclick = () => {
             termInput.value = target.display_term;
             definitionInput.value = "";
