@@ -91,11 +91,13 @@ def build(wave1, wave2):
     leads6=jsonl(sixth_path) if sixth_path.exists() else []
     eighth_path=second.root / "wave2/foundation_source_discovery_batch_08.jsonl"
     leads8=jsonl(eighth_path) if eighth_path.exists() else []
+    ninth_path=second.root / "wave2/foundation_source_discovery_batch_09.jsonl"
+    leads9=jsonl(ninth_path) if ninth_path.exists() else []
     added={t:record for t,record in expanded_terms.items() if t not in original_terms}
-    if (len(added)!=18+len(leads4)+len(leads5)+len(leads6)+len(leads8) or len(leads1)!=9 or len(leads2)!=6 or len(leads3)!=3 or len(leads4) not in (0,3) or len(leads5) not in (0,4) or len(leads6) not in (0,4) or len(leads8) not in (0,3)):
+    if (len(added)!=18+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9) or len(leads1)!=9 or len(leads2)!=6 or len(leads3)!=3 or len(leads4) not in (0,3) or len(leads5) not in (0,4) or len(leads6) not in (0,4) or len(leads8) not in (0,3) or len(leads9) not in (0,4)):
         raise PipelineError("New term/source discovery coverage mismatch")
     in_leads={}
-    for lead in leads1+leads2+leads3+leads4+leads5+leads6+leads8:
+    for lead in leads1+leads2+leads3+leads4+leads5+leads6+leads8+leads9:
         tid=lead["term_id"]
         if tid in in_leads or tid not in added:
             raise PipelineError("Source lead duplicates/does not name a new term: "+tid)
@@ -123,6 +125,7 @@ def build(wave1, wave2):
             "disposition":"source_read_candidate" if direct else "unverified_source_locator",
             "source_access_outcome":lead["source_access_outcome"],
             "provenance":(
+                "wave2/foundation_source_discovery_batch_09.jsonl" if lead in leads9 else
                 "wave2/foundation_source_discovery_batch_08.jsonl" if lead in leads8 else
                 "wave2/foundation_source_discovery_batch_06.jsonl" if lead in leads6 else
                 "wave2/foundation_source_discovery_batch_05.jsonl" if lead in leads5 else
@@ -138,9 +141,9 @@ def build(wave1, wave2):
     output.sort(key=lambda x:x["term_id"])
     counter=Counter(x["disposition"] for x in output)
     expected={"inherited_supported":232,"inherited_no_suitable_definition":59,
-              "inherited_access_blocked":27,"source_read_candidate":10+len(leads4)+len(leads5)+len(leads6)+len(leads8),
+              "inherited_access_blocked":27,"source_read_candidate":10+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9),
               "unverified_source_locator":8}
-    if dict(counter)!=expected or len(output)!=len(expanded_terms) or len(output)!=336+len(leads4)+len(leads5)+len(leads6)+len(leads8):
+    if dict(counter)!=expected or len(output)!=len(expanded_terms) or len(output)!=336+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9):
         raise PipelineError("Unexpected source coverage; do not seal: "+str(counter))
     existing=second.root/"state/wave2_term_coverage.jsonl"
     content="".join(canonical(row)+"\n" for row in output)
@@ -165,7 +168,7 @@ def build(wave1, wave2):
             raise PipelineError("Stale existing Wave 2 source review digest")
         history_file=second.root/f"state/wave2_term_coverage_snapshot_{len(old_rows)}.jsonl"
         history_report=second.root/f"state/wave2_term_coverage_snapshot_{len(old_rows)}.json"
-        if len(old_rows) not in (333,336,339,343,347):
+        if len(old_rows) not in (333,336,339,343,347,350):
             raise PipelineError("Unexpected review history revision; require explicit versioning")
         if history_file.exists() and history_file.read_text(encoding="utf-8")!=old_content:
             raise PipelineError("Conflicting historical source coverage snapshot")
@@ -179,9 +182,9 @@ def build(wave1, wave2):
       "phase":"Wave 2 expanded per-term source review coverage",
       "term_count":len(output),
       "inherited_frozen_reviews_checked":318,
-      "source_read_new_candidates":10+len(leads4)+len(leads5)+len(leads6)+len(leads8),
+      "source_read_new_candidates":10+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9),
       "new_source_locators_unverified":8,
-      "new_term_review_coverage":18+len(leads4)+len(leads5)+len(leads6)+len(leads8),
+      "new_term_review_coverage":18+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9),
       "dispositions":dict(counter),
       "pending_new_direct_source_reviews":8,
       "mathematical_candidate_meanings_screened":second.state("meanings").get("screened_new_formulations",0),
@@ -193,6 +196,7 @@ def build(wave1, wave2):
       "previous_339_term_review_ledger_archived":(second.root/"state/wave2_term_coverage_snapshot_339.jsonl").exists(),
       "previous_343_term_review_ledger_archived":(second.root/"state/wave2_term_coverage_snapshot_343.jsonl").exists(),
       "previous_347_term_review_ledger_archived":(second.root/"state/wave2_term_coverage_snapshot_347.jsonl").exists(),
+      "previous_350_term_review_ledger_archived":(second.root/"state/wave2_term_coverage_snapshot_350.jsonl").exists(),
       "source_review_ledger_sha256":hashlib.sha256(content.encode("utf-8")).hexdigest(),
       "frozen_wave1_catalog_digest":freeze["published_catalog_digest"],
       "original_production_mathdef_consulted":False,
