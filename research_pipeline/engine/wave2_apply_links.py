@@ -67,16 +67,16 @@ def run(root,batch):
     if any(r.get("meaning_catalog_digest")!=catalog_digest for r in reviews):
         raise PipelineError("Wave 2 relation review is stale against meanings")
     previous=w.records("relations")
-    if len(previous) not in (445,469,481,505):
+    if len(previous) not in (445,469,481,505,529):
         raise PipelineError("Unexpected relationship ledger size, check earlier batches")
     incoming=jsonl(batch)
-    batch_number = next((n for n in ("01","02","03") if batch.name.endswith(f"batch_{n}.jsonl")),None)
+    batch_number = next((n for n in ("01","02","03","04") if batch.name.endswith(f"batch_{n}.jsonl")),None)
     if batch_number is None:
         raise PipelineError("Unknown curated relationship batch; explicit scope required")
-    expected_count={"01":24,"02":12,"03":24}[batch_number]
+    expected_count={"01":24,"02":12,"03":24,"04":24}[batch_number]
     if len(incoming)!=expected_count or len({r.get("id") for r in incoming})!=expected_count:
         raise PipelineError(f"Expected {expected_count} distinct curated research relationships")
-    before_count={"01":445,"02":469,"03":481}[batch_number]
+    before_count={"01":445,"02":469,"03":481,"04":505}[batch_number]
     if len(previous) not in (before_count,before_count+expected_count):
         raise PipelineError(f"Incorrect previous link count for batch {batch_number}: {len(previous)}")
     fromlinks=defaultdict(list)
