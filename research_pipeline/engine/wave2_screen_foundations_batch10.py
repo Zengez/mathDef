@@ -120,7 +120,7 @@ def run(root):
       "stage":"meanings","record_id":mid,"before_digest":digest(m),
       "editor":"assistant_independent_source_scope_review_2026_10_19",
       "reason":item["reason"],"operation":"replace","replacement":updated})
- store(w.root/"wave2/foundation_meaning_review_batch_05.jsonl",reviews)
+ store(w.root/"wave2/foundation_meaning_review_batch_10.jsonl",reviews)
  meanings=w.records("meanings")
  forms={f["id"]:m["id"] for m in meanings.values() for f in m["formulations"]}
  if len(meanings)!=453 or len(forms)!=465 or any(f["review_state"]!="screened" for m in meanings.values() for f in m["formulations"]):
