@@ -164,7 +164,7 @@ def build(wave1, wave2):
     expected={"inherited_supported":232,"inherited_no_suitable_definition":59,
               "inherited_access_blocked":27,"source_read_candidate":10+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26),
               "unverified_source_locator":8}
-    if dict(counter)!=expected or len(output)!=len(expanded_terms) or len(output)!=336+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23):
+    if dict(counter)!=expected or len(output)!=len(expanded_terms) or len(output)!=336+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26):
         raise PipelineError("Unexpected source coverage; do not seal: "+str(counter))
     existing=second.root/"state/wave2_term_coverage.jsonl"
     content="".join(canonical(row)+"\n" for row in output)
