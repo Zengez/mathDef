@@ -1,6 +1,9 @@
 name: Reconcile 192 original independent Wave 2 priority tasks after screened links
 
 on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-priority-reconcile-after-links.yml'
   workflow_run:
     workflows:
       - Screen Wave 2 links after four new Stacks meaning reviews pass
@@ -18,7 +21,7 @@ concurrency:
 
 jobs:
   audit:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
