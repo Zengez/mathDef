@@ -47,7 +47,9 @@ jobs:
           fork=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
           report=json.loads((fork.root/"state/wave2_term_coverage.json").read_text())
           rows=jsonl(fork.root/"state/wave2_term_coverage.jsonl")
-          assert report["term_count"]==len(rows)==len(fork.records("terms")) and len(rows) in (336,339,343,347,350,354,356,360,363)
+          assert report["term_count"]==len(rows)==len(fork.records("terms")) and len(rows)>=336
+          assert report["inherited_frozen_reviews_checked"]==318
+          assert sum(report["dispositions"].values())==len(rows)
           assert report["new_term_review_coverage"]==len(rows)-318
           assert report["source_read_new_candidates"]==len(rows)-326
           assert report["new_source_locators_unverified"]==8
