@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - '.github/workflows/mathdef-stage6-prototype.yml'
+      - 'research_pipeline/adapters/mathdef/**'
+      - 'research_pipeline/tests/test_pipeline.py'
   workflow_dispatch:
 
 permissions:
@@ -93,6 +95,9 @@ jobs:
           assert (root/"preview/index.html").is_file()
           assert (root/"preview/preview.css").is_file()
           assert (root/"preview/preview.js").is_file()
+          assert "Sources for this formulation" in (root/"preview/preview.js").read_text()
+          assert "Equivalent criterion (subject to hypotheses)" in (root/"preview/preview.js").read_text()
+          assert "Suggest a new definition" in (root/"preview/index.html").read_text()
           report={
             "status":"Stage 6 isolated draft generated and structurally checked",
             "published_meanings":len(meaning_ids),
