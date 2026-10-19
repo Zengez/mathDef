@@ -1,0 +1,13 @@
+{
+  "formulation_id": "form.ec5e3a0d13f85f3a.equivalence-objects-two-category",
+  "source_url": "https://stacks.math.columbia.edu/tag/003G",
+  "source_definition": "Stacks 4.29.4 in explicitly strict 2-category Section 4.29",
+  "previous_text": "Two objects X,Y in a 2-category are equivalent if there are 1-morphisms F:X→Y and G:Y→X with invertible 2-morphisms FG⇒id_Y and GF⇒id_X.",
+  "new_text": "Two objects X,Y in a strict 2-category C are equivalent if there are 1-morphisms F:X→Y and G:Y→X together with invertible 2-morphisms F∘G⇒id_Y and G∘F⇒id_X. This is the Stacks Project strict 2-category convention; weak bicategory equivalences require a separate context/source review.",
+  "mathematical_reason": "Stacks Section 4.29 explicitly declares it is defining strict 2-categories at the outset, and Definition 4.29.4 defines equivalent objects within that framework by 1-morphisms F,G and invertible 2-isomorphisms FG≈id and GF≈id. The inherited wording was mathematically plausible but lacked this source-specific qualification, making an unrestricted link to a strict 2-category over-general. The revised definition is deliberately restricted to the documented Stacks context; general bicategory/weak 2-category equivalence remains a separate unscreened variant research need.",
+  "prior_disposition": "held_ambiguity",
+  "current_disposition": "held_ambiguity",
+  "weak_bicategory_context_still_unscreened": true,
+  "link_accepted_in_this_phase": false,
+  "human_verified": false
+}
