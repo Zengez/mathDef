@@ -1,0 +1,104 @@
+name: Intake DLMF/OpenStax source evidence without premature Wave 2 meanings
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-intake-dlmf-openstax.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh latest independently committed research state
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile the entire research engine and run tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Intake three direct source paraphrases with exact collection rights checks
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_batch19_dlmf_openstax \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Rebuild per-term source coverage and preserve full 363-term history
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Independently verify archived source review, screened meaning invariance and Wave 1 freeze
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          frozen=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(frozen.publication())==json.loads((frozen.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":9,"terms":366,"observations":789,"meanings":462,"relations":622}
+          for stage,n in expected.items():
+              older=frozen.records(stage);new=w.records(stage)
+              assert len(new)==n,stage
+              assert all(new.get(k)==v for k,v in older.items() if stage!="meanings" or k not in {
+                 "meaning.f7206eb9332b9389.category-valued-presheaf",
+                 "meaning.f0d993a60533fc99.groupoid-valued-presheaf",
+                 "meaning.ec5e3a0d13f85f3a.equivalence-objects-two-category",
+                 "meaning.12e554f8d49d5361.purely-inseparable-extension"}),stage
+              assert not w.state(stage).get("sealed"),stage
+          old=jsonl(w.root/"state/wave2_term_coverage_snapshot_363.jsonl")
+          now=jsonl(w.root/"state/wave2_term_coverage.jsonl")
+          assert len(old)==363 and len(now)==366
+          index={r["term_id"]:r for r in now}
+          assert len(index)==366 and all(index[r["term_id"]]==r for r in old)
+          report=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert report["term_count"]==366
+          assert report["source_read_new_candidates"]==40
+          assert report["new_term_review_coverage"]==48
+          assert report["new_source_locators_unverified"]==8
+          assert report["mathematical_candidate_meanings_screened"]==43
+          assert report["complete_for_wave2_sealing"] is False
+          reviewed=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviewed)==474
+          assert {r for v in reviewed for r in v["relation_ids"]}==set(w.records("relations"))
+          src=jsonl(w.root/"wave2/foundation_source_discovery_batch_19.jsonl")
+          assert len(src)==3
+          assert all(s["source_access_outcome"]=="direct_page_read" and
+                     s["meaning_screened"] is False and s["human_verified"] is False for s in src)
+          result=json.loads((w.root/"state/wave2_foundations_batch_19.json").read_text())
+          assert result["new_meanings_screened"]==0 and result["new_relations_screened"]==0
+          assert result["human_peer_verified"] is False
+          print(json.dumps(result,indent=2))
+          PY
+      - name: Commit only independent source evidence with versioned audit
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then
+            echo "Refusing out-of-scope changes" >&2
+            exit 1
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Independently register three DLMF and OpenStax source observations with 366-term audit history"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
