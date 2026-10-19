@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/mathdef-wave2-coverage.yml'
+      - 'research_pipeline/engine/wave2_term_coverage.py'
   workflow_dispatch:
 
 permissions:
@@ -46,9 +47,9 @@ jobs:
           fork=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
           report=json.loads((fork.root/"state/wave2_term_coverage.json").read_text())
           rows=jsonl(fork.root/"state/wave2_term_coverage.jsonl")
-          assert report["term_count"]==len(rows)==len(fork.records("terms"))==333
-          assert report["new_term_review_coverage"]==15
-          assert report["source_read_new_candidates"]==7
+          assert report["term_count"]==len(rows)==len(fork.records("terms"))==336
+          assert report["new_term_review_coverage"]==18
+          assert report["source_read_new_candidates"]==10
           assert report["new_source_locators_unverified"]==8
           assert report["complete_for_wave2_sealing"] is False
           assert {x["term_id"] for x in rows}==set(fork.records("terms"))
@@ -71,7 +72,7 @@ jobs:
           git add -- research_pipeline/experiments/reconstruction-v2-independent/state/wave2_term_coverage.json \
                      research_pipeline/experiments/reconstruction-v2-independent/state/wave2_term_coverage.jsonl
           if ! git diff --cached --quiet; then
-            git commit -m "Audit all 333 Wave 2 source terms; hold 8 unverified locators and all unapproved meanings"
+            git commit -m "Audit all 336 Wave 2 source terms; hold 8 unverified locators and unapproved meanings"
             for retry in 1 2 3 4; do
               git fetch origin main
               git rebase origin/main
