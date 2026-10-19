@@ -38,9 +38,9 @@ def run(root):
   t=terms.get(p["source_term_id"]);o=obs.get(p["source_observation_id"])
   if not t or not o or t["locator"]!=p["source_url"] or o["locator"]!=p["source_url"]:
    raise PipelineError("Missing direct approved source evidence "+p["proposal_id"])
-  if o["term_id"]!=t["id"] or o["record_kind"]!="paraphrase" or
+  if (o["term_id"]!=t["id"] or o["record_kind"]!="paraphrase" or
       p["source_reference_verified_directly"] is not True or
-      p["formulation_screened"] is not False or p["editorial_peer_verified"] is not False:
+      p["formulation_screened"] is not False or p["editorial_peer_verified"] is not False):
    raise PipelineError("Unscreened source convention falsely promoted")
   if len(p["mathematical_review_note"])<85 or len(p["text"])<120:
    raise PipelineError("Insufficient mathematical rationale or definition")
