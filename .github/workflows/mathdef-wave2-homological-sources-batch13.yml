@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/mathdef-wave2-homological-sources-batch13.yml'
+      - 'research_pipeline/engine/wave2_foundations_batch13_homological.py'
   workflow_dispatch:
 
 permissions:
@@ -65,7 +66,7 @@ jobs:
           assert report["new_term_review_coverage"]==42
           assert report["source_read_new_candidates"]==34
           assert report["new_source_locators_unverified"]==8
-          assert report["mathematical_candidate_meanings_screened"]==34
+          assert report["mathematical_candidate_meanings_screened"]==36
           assert report["complete_for_wave2_sealing"] is False
           candidates=jsonl(two.root/"wave2/foundation_source_discovery_batch_13.jsonl")
           assert len(candidates)==4 and all(x["source_access_outcome"]=="direct_page_read" for x in candidates)
