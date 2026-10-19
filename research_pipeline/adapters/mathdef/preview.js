@@ -124,6 +124,22 @@
       for (const rel of edges.get(form.id) || []) {
         const target = meanings.get(rel.target_meaning);
         if (!target) continue;
+        if (rel.relation_type !== "definition_uses") {
+          // Implication and equivalence are mathematical relations, not
+          // prerequisites to recursively unfold under the definition.
+          const label = rel.relation_type === "logical_implication"
+            ? "Implies: " : rel.relation_type === "equivalent_characterization"
+            ? "Equivalent characterization: " : "Related: ";
+          const nav = child(card, "button", label + target.display_term);
+          nav.type = "button";
+          nav.onclick = () => {
+            termInput.value = target.display_term;
+            definitionInput.value = "";
+            render();
+            window.scrollTo({top: 0, behavior: "smooth"});
+          };
+          continue;
+        }
         if (mode.value === "standard") {
           const nav = child(card, "button", "View related: " + target.display_term);
           nav.type = "button";
