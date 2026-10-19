@@ -21,6 +21,7 @@
   const definitionInput = document.getElementById("definition");
   const mode = document.getElementById("mode");
   const suggestTerm = document.getElementById("suggest-term");
+  let visibleLimit = 40;
 
   function child(parent, tag, contents, className) {
     const x = document.createElement(tag);
@@ -208,7 +209,7 @@
       (!q || [g.title, ...(g.aliases || [])].some(x => x.toLowerCase().includes(q))) &&
       (!d || g.meanings.some(m => m.formulations.some(f => f.text.toLowerCase().includes(d))))
     );
-    for (const group of hits) {
+    for (const group of hits.slice(0, visibleLimit)) {
       const article = child(results, "article");
       child(article, "h2", group.title);
       const actions = child(article, "div", null, "actions");
@@ -221,7 +222,16 @@
       }
     }
     if (!hits.length) child(results, "p", "No matching terms");
-    child(results, "p", hits.length + " term groups displayed", "muted");
+    if (hits.length > visibleLimit) {
+      const load = child(results, "button", "Show 40 more terms");
+      load.type = "button";
+      load.onclick = () => {
+        visibleLimit += 40;
+        render();
+      };
+    }
+    child(results, "p", Math.min(hits.length, visibleLimit) +
+      " of " + hits.length + " term groups displayed", "muted");
   }
 
   suggestTerm.addEventListener("click", () => openIssue(
@@ -232,8 +242,9 @@
     "\n\n### References\n[Authoritative source URLs or citation details]" +
     "\n\nSubmissions require maintainer review and do not update definitions automatically."
   ));
-  termInput.addEventListener("input", render);
-  definitionInput.addEventListener("input", render);
+  function filterChanged() { visibleLimit = 40; render(); }
+  termInput.addEventListener("input", filterChanged);
+  definitionInput.addEventListener("input", filterChanged);
   mode.addEventListener("change", render);
   for (const dialog of [sources, verification]) {
     dialog.addEventListener("click", e => {if (e.target === dialog) dialog.close();});
