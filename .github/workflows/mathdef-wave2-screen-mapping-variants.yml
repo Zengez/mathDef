@@ -1,0 +1,99 @@
+name: Screen independent mapping graph subset and ordered-pair variants
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-screen-mapping-variants.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  meaning:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Restore current independently sourced research
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile every research engine and run all isolated tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Screen six mathematical variants with individually justified source and context
+        run: |
+          python -m research_pipeline.engine.wave2_screen_mapping_variants \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Refresh source-reviewed contextual definition count without altering 350-term coverage
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Confirm all prior reviews, source evidence, frozen Wave 1 and variant order
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          first=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(first.publication())==json.loads((first.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          for stage,n in (("sources",9),("terms",350),("observations",773),("meanings",447),("relations",574)):
+             assert len(w.records(stage))==n,stage
+             assert not w.state(stage).get("sealed"),stage
+          meanings=w.records("meanings")
+          assert all(f["review_state"]=="screened" for m in meanings.values() for f in m["formulations"])
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          snapshot=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_453_before_foundations09.jsonl")
+          assert len(reviews)==459 and len(snapshot)==453
+          index={x["formulation_id"]:x for x in reviews}
+          assert len(index)==459
+          for old in snapshot:
+             new=index[old["formulation_id"]]
+             assert {k:v for k,v in old.items() if k!="meaning_catalog_digest"}=={
+                  k:v for k,v in new.items() if k!="meaning_catalog_digest"}
+          assert {id for x in reviews for id in x["relation_ids"]}==set(w.records("relations"))
+          assert sum(x["decision"]=="needs_review" for x in reviews)==7
+          for name in ("mapping-element-assignment","mapping-typed-graph","mapping-bare-graph"):
+             assert meanings["meaning.wave2.foundation."+name]["term_group_id"]=="wave2.foundation.mapping"
+          check_cycles(meanings,w.records("relations"))
+          report=json.loads((w.root/"state/wave2_foundations_batch_09_screened.json").read_text())
+          assert report["mapping_assigned_first_educational_order"]
+          assert report["typed_graph_and_bare_graph_separate_conventions"]
+          assert report["no_automatic_dependency_links_created"]
+          assert report["screened_relations_preserved"]==574
+          assert report["human_peer_verified"] is False
+          coverage=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert coverage["term_count"]==350
+          assert coverage["mathematical_candidate_meanings_screened"]==28
+          assert coverage["complete_for_wave2_sealing"] is False
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit independently reviewed definition variants and historical decision snapshots only
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen six independent mapping and set-theoretic variant meanings with preserved 453 reviews"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
