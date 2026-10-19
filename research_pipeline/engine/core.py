@@ -354,8 +354,16 @@ class Workspace:
     def wave2_plan(self):
         """Produce discovery tasks only; never call search engines automatically."""
         self.config()
-        if not (self.root / "state" / "publication.json").exists():
-            raise PipelineError("Complete first-wave publication before planning wave 2")
+        baseline = self.root / "state" / "baseline.json"
+        publication = self.root / "state" / "publication.json"
+        # A research workspace with a Wave 1 freeze marker must never have
+        # its queue, checkpoint or published state rewritten by the planner.
+        if (self.root / "state" / "wave1_freeze.json").exists():
+            raise PipelineError("Frozen first-wave workspace: plan Wave 2 on the fork")
+        if not publication.exists():
+            if not baseline.exists() or json.loads(baseline.read_text(
+                    encoding="utf-8")).get("mode") != "second_wave":
+                raise PipelineError("Complete first-wave publication or fork second wave before planning")
         sources = [s for s in self.records("sources").values() if s["authority_reviewed"]]
         terms = list(self.records("terms").values())
         meanings = list(self.records("meanings").values())
