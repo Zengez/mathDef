@@ -105,6 +105,7 @@ def build(workspace):
 <div class="controls">
 <label>Search term <input id="term" type="search" placeholder="Names and aliases" aria-label="Search term"></label>
 <label>Search definition <input id="definition" type="search" placeholder="Formulation text only" aria-label="Search definition"></label>
+<button id="suggest-term" type="button">Suggest a new definition</button>
 <label>Explore definitions <select id="mode" aria-label="Definition exploration mode">
 <option value="nested">Nested</option><option value="inline">In-Line</option>
 <option value="standard">Standard</option></select></label>
