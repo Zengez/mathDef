@@ -1,0 +1,82 @@
+name: Apply twenty-four source-reviewed Wave 2 topology and ideal links
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-apply-links-batch3.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh authoritative Wave 2 state
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run isolated research regression tests
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Apply second individually source-reviewed mathematical link batch
+        run: |
+          python -m research_pipeline.engine.wave2_apply_links \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --batch research_pipeline/experiments/reconstruction-v2-independent/intake/wave2_curated_relations_batch_03.jsonl
+      - name: Independently verify new links and old Wave 1 invariants
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          two=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((one.root/"state/wave1_freeze.json").read_text())
+          assert digest(one.publication())==freeze["published_catalog_digest"]
+          assert len(one.records("relations"))==445
+          assert len(two.records("relations"))==505
+          src=jsonl(two.root/"intake/wave2_curated_relations_batch_03.jsonl")
+          assert len(src)==24
+          allrels=two.records("relations")
+          assert all(allrels[r["id"]]==r for r in src)
+          reviews=jsonl(two.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==440
+          assert len(set(r["formulation_id"] for r in reviews))==440
+          assert set(allrels)=={x for r in reviews for x in r["relation_ids"]}
+          report=json.loads((two.root/"state/wave2_link_review_batch_03.json").read_text())
+          assert report["added_source_grounded_links"]==24
+          assert report["dependency_graph_has_cycles"] is False
+          assert report["wave2_link_stage_sealed"] is False
+          assert report["human_peer_verified"] is False
+          assert not any(two.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent Wave 2 append-only relationship decisions
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then
+            echo "Second relation batch already persisted"
+            exit 0
+          fi
+          git commit -m "Screen twenty-four additional Wave 2 topology and ideal dependencies with historical overrides"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
