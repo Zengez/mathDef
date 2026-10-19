@@ -254,6 +254,11 @@ class Workspace:
             from .stage3_review_gate import require_reviewed_term_dispositions
             require_reviewed_term_dispositions(
                 self.root, self.root / "state" / "stage3_term_reviews.jsonl")
+        if stage == "relations" and config.get("require_full_definition_attempts") is True:
+            # Corrected reconstruction: source coverage alone cannot seal a link graph.
+            # Every upstream formulation needs a substantive Stage 5 disposition.
+            from .stage5_review_gate import audit
+            audit(self.root, require_complete=True)
         index = STAGES.index(stage)
         if index and not self.state(STAGES[index - 1]).get("sealed"):
             raise PipelineError("Seal prior stages first, in order")
