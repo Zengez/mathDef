@@ -82,6 +82,7 @@ def build(workspace):
             "id": gid, "title": meanings[0]["display_term"], "aliases": sorted(aliases),
             "meanings": result_meanings,
         })
+    out_groups.sort(key=lambda group: (group["title"].casefold(), group["id"]))
     output = root / "preview"
     output.mkdir(parents=True, exist_ok=True)
     project = json.loads((root / "project.json").read_text(encoding="utf-8"))
