@@ -75,7 +75,7 @@ def build(wave1, wave2):
             "original_attempt_digest":digest(attempt),
             "mathematical_observation_ids":review.get("evidence_ids",[]),
             "source_access_verified":attempt["page_fetched"] is True,
-            "source_research_complete":True,
+            "source_research_complete":review["decision"] != "access_blocked",
             "mathematically_screened_in_wave2":False,
             "human_verified":False
         })
@@ -126,7 +126,7 @@ def build(wave1, wave2):
     expected={"inherited_supported":232,"inherited_no_suitable_definition":59,
               "inherited_access_blocked":27,"source_read_candidate":7,
               "unverified_source_locator":8}
-    if dict(counter)!=expected or len(output)!=len(expanded_terms)==333:
+    if dict(counter)!=expected or len(output)!=len(expanded_terms) or len(output)!=333:
         raise PipelineError("Unexpected source coverage; do not seal: "+str(counter))
     existing=second.root/"state/wave2_term_coverage.jsonl"
     content="".join(canonical(row)+"\n" for row in output)
