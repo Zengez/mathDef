@@ -241,20 +241,31 @@ class Workspace:
         config = self.config()
         if stage not in STAGES:
             raise PipelineError("Invalid stage")
+        # Wave 2 inherits Wave 1 research but has additional, unreviewed
+        # sources/terms; the original 318-term Stage 3 ledger cannot falsely
+        # certify the expanded inventory. Wave 2 must use a lineage-aware
+        # per-term disposition gate instead of stale Wave 1 catalog digests.
+        if config.get("independent_second_wave") is True and stage in (
+                "observations", "meanings", "relations"):
+            from .wave2_term_coverage import require_wave2_review_complete
+            require_wave2_review_complete(self.root)
         # The repaired reconstruction explicitly opts into this fail-closed
         # coverage gate. Earlier immutable Stage 3/4 snapshots remain historical
         # artifacts and are NOT retroactively described as comprehensive.
-        if stage in ("observations", "meanings", "relations") and config.get(
+        if stage in ("observations", "meanings", "relations") and not config.get(
+                "independent_second_wave") and config.get(
                 "require_full_definition_attempts") is True:
             from .stage3_attempts import require_full_attempt_coverage
             attempt_file = self.root / "state" / "stage3_acquisition_attempts.jsonl"
             require_full_attempt_coverage(self.root, attempt_file)
-        if stage in ("observations", "meanings", "relations") and config.get(
+        if stage in ("observations", "meanings", "relations") and not config.get(
+                "independent_second_wave") and config.get(
                 "require_reviewed_term_dispositions") is True:
             from .stage3_review_gate import require_reviewed_term_dispositions
             require_reviewed_term_dispositions(
                 self.root, self.root / "state" / "stage3_term_reviews.jsonl")
-        if stage == "relations" and config.get("require_full_definition_attempts") is True:
+        if stage == "relations" and not config.get("independent_second_wave") and config.get(
+                "require_full_definition_attempts") is True:
             # Corrected reconstruction: source coverage alone cannot seal a link graph.
             # Every upstream formulation needs a substantive Stage 5 disposition.
             from .stage5_review_gate import audit
