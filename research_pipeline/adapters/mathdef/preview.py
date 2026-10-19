@@ -18,9 +18,26 @@ def build(workspace):
     if not source.is_file():
         raise PipelineError("Publish the reconstruction catalog first")
     catalog = json.loads(source.read_text(encoding="utf-8"))
+    # Stage 2 source sections are locators, NOT necessarily mathematical
+    # concept identities. A single Stacks section can define dozens of
+    # unrelated concepts. Split such sources into separate preview groups by
+    # actual meaning name; retain a shared group only for matching names.
+    source_labels = defaultdict(set)
+    for meaning in catalog["meanings"]:
+        source_labels[meaning["term_group_id"]].add(
+            " ".join(meaning["display_term"].casefold().split()))
     grouped = defaultdict(list)
     for meaning in catalog["meanings"]:
-        grouped[meaning["term_group_id"]].append(meaning)
+        original_group = meaning["term_group_id"]
+        if len(source_labels[original_group]) == 1:
+            group_id = original_group
+        else:
+            # Stable presentation-only grouping; the sealed Stage 4/5 IDs,
+            # evidence, and relationships are never changed.
+            group_id = "preview." + digest([
+                original_group, " ".join(meaning["display_term"].casefold().split())
+            ])[:24]
+        grouped[group_id].append(meaning)
     observations = {x["id"]: x for x in catalog["observations"]}
     references = {x["id"]: x for x in catalog["sources"]}
     terms = {x["id"]: x for x in catalog.get("terms", [])}
@@ -55,7 +72,12 @@ def build(workspace):
                         "role": "Encountered during research, not approved as supporting evidence",
                     })
             for term_id in meaning["term_ids"]:
-                if term_id in terms:
+                if term_id in terms and (
+                    " ".join(terms[term_id]["label"].casefold().split())
+                    == " ".join(meaning["display_term"].casefold().split())
+                ):
+                    # Original Stage 2 page headings must never masquerade as
+                    # synonyms for every term defined on that source page.
                     aliases.add(terms[term_id]["label"])
             result_meanings.append({
                 "id": meaning["id"], "label": meaning["context"],
