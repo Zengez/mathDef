@@ -7,7 +7,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: mathdef-stage6-download-package
+  cancel-in-progress: false
 
 jobs:
   package-separate-preview:
@@ -48,3 +52,35 @@ jobs:
           if-no-files-found: error
           retention-days: 90
           compression-level: 6
+      - name: Record verified artifact location for the next session
+        run: |
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          root=Path("research_pipeline/experiments/reconstruction-v1-recovery/state")
+          run=os.environ["GITHUB_RUN_ID"]
+          report={
+             "status":"Artifact uploaded for local independent Wave 1 prototype review",
+             "workflow_run_id":run,
+             "workflow_url":"https://github.com/Zengez/mathDef/actions/runs/"+run,
+             "artifact_name":"mathdef-independent-wave1-preview-open-locally",
+             "download_instructions":"Open workflow_url, download the named Artifacts ZIP, extract, open index.html.",
+             "manual_review_complete":False,
+             "ready_for_second_wave":False,
+          }
+          (root/"stage6_preview_package.json").write_text(json.dumps(report,indent=2)+"\n")
+          print(json.dumps(report,indent=2))
+          PY
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v1-recovery/state/stage6_preview_package.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Checkpoint downloadable isolated Stage 6 prototype artifact"
+            for retry in 1 2 3 4; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then exit 0; fi
+            done
+            echo "Unable to record preview package link" >&2
+            exit 1
+          fi
