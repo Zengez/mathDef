@@ -72,7 +72,7 @@ jobs:
           assert {rid for r in reviews for rid in r["relation_ids"]}==set(w.records("relations"))
           assert len(w.records("relations"))==626
           mm=w.records("meanings")
-          for k in ("nonzero-polynomial-degree","tagged-riemann-integral","orthogonality-measure-moment"):
+          for k in ("nonzero-polynomial-degree","tagged-riemann-integral","orthogonality-measure-raw-moment"):
               assert mm["meaning.wave2.foundation."+k]["formulations"][0]["review_state"]=="screened"
           check_cycles(mm,w.records("relations"))
           report=json.loads((w.root/"state/wave2_foundations_batch_24_screened.json").read_text())
