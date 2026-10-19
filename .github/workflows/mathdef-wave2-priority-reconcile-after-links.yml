@@ -10,6 +10,7 @@ on:
       - Screen eighteen Wave 2 algebra order and topology prerequisite relationships
       - Screen six Stacks covering-family and site prerequisite links
       - Screen fifteen independent homological and category prerequisites
+      - Resolve strict-source equivalence relationship while preserving weak-case ambiguity
     types:
       - completed
   workflow_dispatch:
@@ -60,7 +61,7 @@ jobs:
           untouched=jsonl(w.root/"state/wave2_priority_reconciliation_2026-10-19.jsonl")
           assert len(base)==len(untouched)==192
           assert all(x["status"]=="unresearched" for x in base)
-          assert len(w.records("relations"))==621
+          assert len(w.records("relations"))==622
           assert len(w.records("meanings"))==462
           assert not any(w.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
           updated=jsonl(w.root/"state/wave2_priority_progress_current.jsonl")
@@ -68,7 +69,7 @@ jobs:
           assert len(updated)==192
           assert result["original_relationship_gap_tasks"]==93
           assert result["other_source_variant_collection_tasks_not_proven_complete_by_this_metric"]==99
-          assert result["original_relationship_gaps_with_at_least_one_screened_link"]>=91
+          assert result["original_relationship_gaps_with_at_least_one_screened_link"]==93
           assert result["a_link_is_not_proof_of_exhaustive_prerequisites"] is True
           assert result["source_task_research_not_automatically_closed"] is True
           assert result["original_production_mathdef_consulted"] is False
