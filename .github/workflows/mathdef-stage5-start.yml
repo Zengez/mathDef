@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: mathdef-stage5-start
+  group: mathdef-stage5-reconstruction-writes
   cancel-in-progress: false
 
 jobs:
@@ -21,16 +21,24 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
+      - name: Check out freshest committed Stage 5 state
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Verify isolated research pipeline including Stage 5 gates
         run: python -m unittest discover -s research_pipeline/tests -v
-      - name: Generate complete independent Stage 5 per-formulation ledger
+      - name: Initialize ledger only once (safe to replay)
         run: |
-          python -m research_pipeline.engine.stage5_review_gate \
-            --workspace research_pipeline/experiments/reconstruction-v1-recovery \
-            --prepare
+          set -euo pipefail
+          if [ ! -f research_pipeline/experiments/reconstruction-v1-recovery/state/stage5_formulation_reviews.jsonl ]; then
+            python -m research_pipeline.engine.stage5_review_gate \
+              --workspace research_pipeline/experiments/reconstruction-v1-recovery \
+              --prepare
+          fi
       - name: Ingest source-screened Stage 5 batch without sealing prematurely
         run: |
           python -m research_pipeline.engine.stage5_review_gate \
