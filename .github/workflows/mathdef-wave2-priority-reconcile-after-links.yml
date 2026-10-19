@@ -9,6 +9,7 @@ on:
       - Screen Wave 2 links after four new Stacks meaning reviews pass
       - Screen eighteen Wave 2 algebra order and topology prerequisite relationships
       - Screen six Stacks covering-family and site prerequisite links
+      - Screen fifteen independent homological and category prerequisites
     types:
       - completed
   workflow_dispatch:
@@ -59,8 +60,8 @@ jobs:
           untouched=jsonl(w.root/"state/wave2_priority_reconciliation_2026-10-19.jsonl")
           assert len(base)==len(untouched)==192
           assert all(x["status"]=="unresearched" for x in base)
-          assert len(w.records("relations"))==606
-          assert len(w.records("meanings"))==455
+          assert len(w.records("relations"))==621
+          assert len(w.records("meanings"))==462
           assert not any(w.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
           updated=jsonl(w.root/"state/wave2_priority_progress_current.jsonl")
           result=json.loads((w.root/"state/wave2_priority_progress_current.json").read_text())
