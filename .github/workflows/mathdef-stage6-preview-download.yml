@@ -29,6 +29,16 @@ jobs:
           test -s "$folder/catalog.json"
           test -s research_pipeline/experiments/reconstruction-v1-recovery/state/stage5_seal_evidence.json
           test -s research_pipeline/experiments/reconstruction-v1-recovery/state/stage6_review.json
+          test -s research_pipeline/experiments/reconstruction-v1-recovery/state/wave1_freeze.json
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          w=Path("research_pipeline/experiments/reconstruction-v1-recovery")
+          freeze=json.loads((w/"state/wave1_freeze.json").read_text())
+          assert freeze["state"]=="FROZEN"
+          for name,sha in freeze["preview_sha256"].items():
+              assert hashlib.sha256((w/"preview"/name).read_bytes()).hexdigest()==sha
+          PY
       - name: Include instructions for using downloaded prototype locally
         run: |
           cat > research_pipeline/experiments/reconstruction-v1-recovery/preview/OPEN_PREVIEW.txt <<'EOF'
@@ -42,7 +52,7 @@ jobs:
              not independently peer-reviewed mathematics, and feedback requires maintainer approval.
           6. The equations use Unicode/plain text for many first-wave formulations. KaTeX assets
              require an internet connection where TeX delimiters are present.
-          7. Inspect headings, citations, definition quality and contextual links before
+          7. The prototype is independently frozen with a SHA-256 content fingerprint in\n             ../state/wave1_freeze.json in the repository. Do not use as production content.\n          8. Inspect headings, citations, definition quality and contextual links before
              approving any Wave 2 research or comparison with the original mathDef corpus.
           EOF
       - uses: actions/upload-artifact@v4
