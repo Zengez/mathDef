@@ -19,7 +19,7 @@ dict(key="tagged-riemann-integral",title="proper Riemann integral on a compact i
  context="Classical real analysis: universal sufficiently fine tagged partition integral",
  text="Let f:[a,b]→R be bounded with a<b. For a finite partition a=x_0<⋯<x_n=b and arbitrary tags ξ_i∈[x_{i−1},x_i], let S=Σ_{i=1}^n f(ξ_i)(x_i−x_{i−1}) and mesh=max_i(x_i−x_{i−1}). The function f is Riemann integrable on [a,b] with integral L∈R if for every ε>0 there exists δ>0 such that |S−L|<ε for every tagged partition with mesh<δ.",
  reason="ProofWiki Integral (Calculus) gives a universal epsilon–delta criterion over all tagged subdivisions. Explicitly require compact bounded [a,b] and bounded f, rather than OpenStax's pedagogical sequence of equally spaced sums; no improper, infinite interval or Lebesgue–Stieltjes integration is inferred."),
-dict(key="orthogonality-measure-raw-moment",title="nth raw moment of an orthogonality measure",
+dict(key="orthogonality-measure-raw-moment",source_key="orthogonality-measure-moment",title="nth raw moment of an orthogonality measure",
  context="DLMF orthogonal-polynomial analysis: raw power moment with respect to a positive measure",
  text="Let μ be a nonnegative Borel or Lebesgue–Stieltjes measure on a real interval (a,b) and let n be a nonnegative integer such that x↦x^n is μ-integrable. The nth raw moment of μ is μ_n=∫_a^b x^n dμ(x). It is finite only when the integral is finite.",
  reason="DLMF 18.2(ix), Equation 18.2.26 defines the power moment of an orthogonality measure. The existence of the integral and positive-measure context are hypotheses; a raw moment differs from a centered moment, and no probability normalization is assumed.")
@@ -40,7 +40,8 @@ def run(root):
  terms,obs=w.records("terms"),w.records("observations")
  candidates=[]
  for s in SPECS:
-  tid="term.wave2.foundation23."+s["key"];oid="obs.wave2.foundation23."+s["key"]
+  evidence_key=s.get("source_key",s["key"])
+  tid="term.wave2.foundation23."+evidence_key;oid="obs.wave2.foundation23."+evidence_key
   t,o=terms.get(tid),obs.get(oid)
   if not t or not o or o["term_id"]!=tid or o["locator"]!=t["locator"] or o["record_kind"]!="paraphrase":
    raise PipelineError("Source evidence missing "+s["key"])
@@ -75,7 +76,7 @@ def run(root):
   m=w.records("meanings")[mid]
   f=m["formulations"][0]
   audits.append({"meaning_id":mid,"formulation_id":f["id"],
-    "source_observation_id":"obs.wave2.foundation23."+s["key"],
+    "source_observation_id":"obs.wave2.foundation23."+s.get("source_key",s["key"]),
     "source_specific_context":s["context"],"mathematical_reason":s["reason"],
     "reviewed_by":"assistant_independent_polynomial_integral_moment_review_2026_10_19",
     "decision":"screen_mathematically_source_scoped_formulation",
