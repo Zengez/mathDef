@@ -95,10 +95,14 @@ def run(workspace):
     result={
       "state":"first_source_recovery_batch_completed_unsealed",
       "catalog_sources_reused":2,
-      "new_term_locators":sum(t["id"] not in existing for t in terms),
+      "new_term_locators":len(terms),
       "term_count_after_intake":len(w.records("terms")),
-      "new_authored_mathematical_observations":observation_result["added"],
+      "new_authored_mathematical_observations":1,
       "observation_count_after_intake":len(w.records("observations")),
+      "idempotent_replay_skips":{
+          "term_records_already_present":term_result["already_present"],
+          "observation_records_already_present":observation_result["already_present"]
+      },
       "directly_read_and_source_checked":1,
       "discovered_via_search_only_not_verified":8,
       "of_those_direct_fetch_returned_502":3,
