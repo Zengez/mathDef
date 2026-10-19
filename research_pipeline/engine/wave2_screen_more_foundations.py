@@ -35,7 +35,7 @@ SPECS=[
       scope="Objects need not coincide; a single-object groupoid is a group, but general groupoids need not have one object.",
       crosscheck=["https://stacks.math.columbia.edu/tag/0013"],
       reason="Stacks Definition 4.2.5 defines groupoids by requiring every morphism to be an isomorphism, and Definition 4.2.4 gives both inverse identities. General groupoids are not collapsed to one-object groups or discrete categories."),
- dict(key="pseudofunctor-to-strict-2category",term="pseudofunctor from category to strict 2-category",
+ dict(key="pseudofunctor-to-strict-2category",source_key="pseudo-functor-strict-2category",term="pseudofunctor from category to strict 2-category",
       source="https://stacks.math.columbia.edu/tag/003N",
       context="Stacks Definition 4.29.5: ordinary source category and strict 2-category target, with invertible comparison 2-cells",
       text="A pseudofunctor P:A→C from an ordinary category A to a strict 2-category C assigns objects P(x) and 1-morphisms P(f), invertible comparison 2-cells η_x:id_{P(x)}⇒P(id_x) and κ_{g,f}:P(g∘f)⇒P(g)∘P(f), and satisfies the unit identities κ_{id_y,f}=η_y⋆id_{P(f)}, κ_{f,id_x}=id_{P(f)}⋆η_x and the associativity coherence (id_{P(h)}⋆κ_{g,f})∘κ_{h,g∘f}=(κ_{h,g}⋆id_{P(f)})∘κ_{h∘g,f} for composable f,g,h.",
@@ -61,8 +61,9 @@ def run(root):
   raise PipelineError("Unexpected historical meaning catalog length")
  candidates=[]
  for item in SPECS:
-  term_id="term.wave2.stacks."+item["key"]
-  obs_id="obs.wave2.stacks."+item["key"]
+  source_key=item.get("source_key",item["key"])
+  term_id="term.wave2.stacks."+source_key
+  obs_id="obs.wave2.stacks."+source_key
   term=w.records("terms").get(term_id)
   obs=w.records("observations").get(obs_id)
   if not term or not obs or term["locator"]!=item["source"] or obs["locator"]!=item["source"] or obs["term_id"]!=term_id:
@@ -121,7 +122,7 @@ def run(root):
   "meaning_id":"meaning.wave2.foundation."+i["key"],
   "formulation_id":"form.wave2.foundation."+i["key"],
   "source_urls":[i["source"]]+i["crosscheck"],
-  "source_evidence_ids":["obs.wave2.stacks."+i["key"]],
+  "source_evidence_ids":["obs.wave2.stacks."+i.get("source_key",i["key"])],
   "mathematical_reason":i["reason"],"reviewed_by":"assistant_independent_mathematical_stacks_review_2026_10_19",
   "decision":"screen_source_specific_formulation","human_verified":False
  } for i in SPECS]
