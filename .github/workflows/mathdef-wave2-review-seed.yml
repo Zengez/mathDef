@@ -1,0 +1,72 @@
+name: Initialize Wave 2 formulation reviews without resetting inherited Stage 5
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-review-seed.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh main
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regression suite
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Preserve 431 old reviews and queue 9 new formulations
+        run: |
+          python -m research_pipeline.engine.wave2_relation_review_seed \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Confirm no lost inherited link reviews or changes to Wave 1
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          w1=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w2=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          old=jsonl(w1.root/"state/stage5_formulation_reviews.jsonl")
+          new=jsonl(w2.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(old)==431 and len(new)==440
+          before={r["formulation_id"]:r for r in old}
+          after={r["formulation_id"]:r for r in new}
+          assert all(after[k]["relation_ids"]==v["relation_ids"] and
+                     after[k]["decision"]==v["decision"] for k,v in before.items())
+          assert len([r for r in new if r["decision"]=="needs_review"])==9
+          assert len(w2.records("relations"))==445
+          assert not w2.state("relations").get("sealed")
+          freeze=json.loads((w1.root/"state/wave1_freeze.json").read_text())
+          assert digest(w1.publication())==freeze["published_catalog_digest"]
+          PY
+      - name: Commit only Wave 2 ledger and scope report
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          git commit -m "Seed 440-formulation Wave 2 link review ledger with unmodified inherited decisions"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
