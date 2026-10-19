@@ -1,0 +1,72 @@
+name: Wave 2 independent ring and category foundation intake
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-foundations-batch3.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  source-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh main, never the production definition directory
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run complete independent regression suite
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Import three independently reviewed source paraphrases
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_batch3 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify inherited records and source-reviewed statuses
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,digest,jsonl
+          original=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(original.publication())==json.loads(
+            (original.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          for stage,expected in [("sources",9),("terms",336),("observations",759),
+                                 ("meanings",426),("relations",445)]:
+              before=original.records(stage)
+              after=w.records(stage)
+              assert len(after)==expected
+              assert all(after.get(k)==v for k,v in before.items()),stage
+              assert not w.state(stage).get("sealed"),stage
+          reviewed=jsonl(w.root/"wave2/foundation_source_discovery_batch_03.jsonl")
+          assert len(reviewed)==3
+          assert all(item["source_access_outcome"]=="direct_page_read" for item in reviewed)
+          assert all(item["meaning_screened"] is False for item in reviewed)
+          PY
+      - name: Commit only new Wave 2 source research
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          git commit -m "Record three independently source-checked ring and category Wave 2 foundation observations"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
