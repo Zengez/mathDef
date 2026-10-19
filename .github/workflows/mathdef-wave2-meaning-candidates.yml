@@ -1,0 +1,79 @@
+name: Record seven independently sourced Wave 2 mathematical meaning candidates
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-meaning-candidates.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  candidate-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh Wave 2 main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run independent regression tests
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Import seven mathematically scoped but unapproved meanings
+        run: |
+          python -m research_pipeline.engine.wave2_meaning_candidates \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify source-backed candidate state and frozen lineage
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,digest
+          a=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          b=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((a.root/"state/wave1_freeze.json").read_text())
+          assert freeze["state"]=="FROZEN"
+          assert digest(a.publication())==freeze["published_catalog_digest"]
+          am=a.records("meanings")
+          bm=b.records("meanings")
+          assert len(am)==419 and len(bm)==426
+          assert all(bm[k]==v for k,v in am.items())
+          assert len(a.records("relations"))==len(b.records("relations"))==445
+          assert all(b.records("relations")[k]==v for k,v in a.records("relations").items())
+          extra=[x for k,x in bm.items() if k not in am]
+          assert len(extra)==7
+          assert all(x["formulations"][0]["review_state"]=="candidate" for x in extra)
+          assert sum(len(x["formulations"]) for x in bm.values())==438
+          assert not any(b.state(s).get("sealed") for s in (
+                "sources","terms","observations","meanings","relations"))
+          print("7 candidate only / 0 newly screened; frozen Wave 1 untouched.")
+          PY
+      - name: Commit Wave 2 only and preserve frozen Wave 1
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then
+            echo "Changes outside Wave 2 prohibited" >&2
+            exit 1
+          fi
+          git commit -m "Add 7 individually cited Wave 2 meanings as unapproved research candidates"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          echo "Unable to checkpoint seven candidate meanings" >&2
+          exit 1
