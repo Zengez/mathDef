@@ -1,0 +1,243 @@
+name: Execute remaining independent Wave 2 foundation stages with recoverable checkpoints
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-sequential-foundation-reviews.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  staged:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Restore main branch and configure checkpoint commits
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile everything, run research tests and prove frozen Wave 1
+        run: |
+          set -euo pipefail
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,digest
+          first=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          second=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((first.root/"state/wave1_freeze.json").read_text())
+          assert freeze["state"]=="FROZEN"
+          assert digest(first.publication())==freeze["published_catalog_digest"]
+          assert len(first.records("relations"))==445
+          assert len(second.records("meanings"))==435
+          assert len(second.records("relations"))==545
+          assert not any(second.state(s).get("sealed") for s in
+             ("sources","terms","observations","meanings","relations"))
+          assert (second.root/"state/wave2_new_foundations_batch_06_screened.json").exists()
+          PY
+      - name: Stage A — source-review and commit 18 context-specific Stacks links
+        run: |
+          set -euo pipefail
+          python -m research_pipeline.engine.wave2_apply_links \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --batch research_pipeline/experiments/reconstruction-v2-independent/intake/wave2_curated_relations_batch_06.jsonl
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert len(w.records("relations"))==563 and len(w.records("meanings"))==435
+          r=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(r)==447 and not any(x["decision"]=="needs_review" for x in r)
+          assert {id for x in r for id in x["relation_ids"]}==set(w.records("relations"))
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_link_review_batch_06.json").read_text())
+          assert report["added_source_grounded_links"]==18
+          assert report["inherited_wave1_links_preserved"]==445
+          assert report["human_peer_verified"] is False
+          PY
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if ! git diff --cached --quiet; then
+            git commit -m "Checkpoint independently screened 18 new Wave 2 category and field dependencies"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - name: Stage B — acquire four independent elementary source observations and archive 343-term reviews
+        run: |
+          set -euo pipefail
+          python -m research_pipeline.engine.wave2_foundations_batch6_settheory \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert len(w.records("terms"))==347 and len(w.records("observations"))==770
+          assert len(w.records("meanings"))==435 and len(w.records("relations"))==563
+          assert len(jsonl(w.root/"state/wave2_term_coverage_snapshot_343.jsonl"))==343
+          coverage=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert coverage["term_count"]==347
+          assert coverage["source_read_new_candidates"]==21
+          assert coverage["new_source_locators_unverified"]==8
+          assert coverage["mathematical_candidate_meanings_screened"]==16
+          assert coverage["complete_for_wave2_sealing"] is False
+          PY
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if ! git diff --cached --quiet; then
+            git commit -m "Checkpoint four independent elementary source observations and 347 term reviews"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - name: Stage C — review six separate mathematical contexts, preserve 447 prior formulation decisions
+        run: |
+          set -euo pipefail
+          python -m research_pipeline.engine.wave2_screen_elementary_foundations \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert len(w.records("meanings"))==441 and len(w.records("relations"))==563
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          prior=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_447_before_foundations07.jsonl")
+          assert len(reviews)==453 and len(prior)==447
+          now={x["formulation_id"]:x for x in reviews}
+          for old in prior:
+            new=now[old["formulation_id"]]
+            assert {k:v for k,v in old.items() if k!="meaning_catalog_digest"}=={
+                   k:v for k,v in new.items() if k!="meaning_catalog_digest"}
+          assert {id for r in reviews for id in r["relation_ids"]}==set(w.records("relations"))
+          assert sum(r["decision"]=="needs_review" for r in reviews)==6
+          report=json.loads((w.root/"state/wave2_foundations_batch_07_screened.json").read_text())
+          assert report["binary_operation_and_relation_variants_kept_separate"] is True
+          assert report["human_peer_verified"] is False
+          PY
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if ! git diff --cached --quiet; then
+            git commit -m "Checkpoint six independently screened algebra and relation meanings with 447 historical reviews"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - name: Stage D — individually review eleven set-theoretic and algebraic prerequisites
+        run: |
+          set -euo pipefail
+          python -m research_pipeline.engine.wave2_apply_links \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --batch research_pipeline/experiments/reconstruction-v2-independent/intake/wave2_curated_relations_batch_07.jsonl
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert len(w.records("meanings"))==441 and len(w.records("relations"))==574
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==453
+          assert {id for r in reviews for id in r["relation_ids"]}==set(w.records("relations"))
+          assert sum(r["decision"]=="needs_review" for r in reviews)==1
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_link_review_batch_07.json").read_text())
+          assert report["added_source_grounded_links"]==11
+          assert report["dependency_graph_has_cycles"] is False
+          assert report["human_peer_verified"] is False
+          PY
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if ! git diff --cached --quiet; then
+            git commit -m "Checkpoint eleven source-anchored elementary definitions and prerequisite links"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - name: Stage E — acquire ordered-pair subset mapping sources with 350-term coverage
+        run: |
+          set -euo pipefail
+          python -m research_pipeline.engine.wave2_foundations_batch8_mapping \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          assert digest(freeze.publication())==json.loads((freeze.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          for stage,n in (("sources",9),("terms",350),("observations",773),("meanings",441),("relations",574)):
+            assert len(w.records(stage))==n,stage
+            assert not w.state(stage).get("sealed"),stage
+          assert len(jsonl(w.root/"state/wave2_term_coverage_snapshot_347.jsonl"))==347
+          coverage=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert coverage["term_count"]==350 and coverage["source_read_new_candidates"]==24
+          assert coverage["mathematical_candidate_meanings_screened"]==22
+          assert coverage["new_source_locators_unverified"]==8
+          assert coverage["complete_for_wave2_sealing"] is False
+          report=json.loads((w.root/"state/wave2_foundations_batch_08.json").read_text())
+          assert report["typed_graph_and_bare_graph_equivalence_conventions_kept_distinct"]
+          assert report["meaning_reviews_automatically_approved"]==0
+          assert report["human_peer_verified"] is False
+          PY
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if ! git diff --cached --quiet; then
+            git commit -m "Checkpoint 350 independent source headings and reviewed ordered-pair mapping variants"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+      - name: Stage F — reconcile fixed original 192-task backlog and final independent integrity checks
+        run: |
+          set -euo pipefail
+          python -m research_pipeline.engine.wave2_priority_progress \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+          python -m unittest discover -s research_pipeline/tests -v
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          first=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          assert digest(first.publication())==json.loads((first.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          assert len(w.records("meanings"))==441 and len(w.records("relations"))==574
+          assert len(w.records("terms"))==350 and len(w.records("observations"))==773
+          assert len(w.records("sources"))==9
+          assert not any(w.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
+          result=json.loads((w.root/"state/wave2_priority_progress_current.json").read_text())
+          assert result["original_priority_tasks"]==192
+          assert result["original_relationship_gap_tasks"]==93
+          assert result["original_relationship_gaps_with_at_least_one_screened_link"]>=72
+          assert result["source_task_research_not_automatically_closed"] is True
+          assert result["wave2_stages_unsealed"] is True
+          assert result["original_production_mathdef_consulted"] is False
+          assert result["human_peer_verified"] is False
+          assert len(jsonl(w.root/"state/wave2_priority_progress_current.jsonl"))==192
+          print(json.dumps(result,indent=2))
+          PY
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if ! git diff --cached --quiet; then
+            git commit -m "Checkpoint independent Wave 2 192-priority original backlog progress after 574 mathematical links"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
