@@ -1,0 +1,50 @@
+name: Package independent Wave 1 prototype for editorial inspection
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-stage6-preview-download.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package-separate-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the independent preview files and their published provenance
+        run: |
+          set -euo pipefail
+          folder=research_pipeline/experiments/reconstruction-v1-recovery/preview
+          test -s "$folder/index.html"
+          test -s "$folder/preview.js"
+          test -s "$folder/preview.css"
+          test -s "$folder/catalog.json"
+          test -s research_pipeline/experiments/reconstruction-v1-recovery/state/stage5_seal_evidence.json
+          test -s research_pipeline/experiments/reconstruction-v1-recovery/state/stage6_review.json
+      - name: Include instructions for using downloaded prototype locally
+        run: |
+          cat > research_pipeline/experiments/reconstruction-v1-recovery/preview/OPEN_PREVIEW.txt <<'EOF'
+          INDEPENDENT MATHDEF WAVE 1 — EXPERIMENTAL WEBSITE
+
+          1. Download and extract this GitHub Actions artifact.
+          2. Keep index.html, preview.js, preview.css and catalog.json together.
+          3. Double-click or open index.html in a modern desktop browser.
+          4. Try Search term, Search definition, View sources and Nested/In-Line/Standard modes.
+          5. The site is not the live mathDef website. Formulations are screened research drafts,
+             not independently peer-reviewed mathematics, and feedback requires maintainer approval.
+          6. The equations use Unicode/plain text for many first-wave formulations. KaTeX assets
+             require an internet connection where TeX delimiters are present.
+          7. Inspect headings, citations, definition quality and contextual links before
+             approving any Wave 2 research or comparison with the original mathDef corpus.
+          EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mathdef-independent-wave1-preview-open-locally
+          path: research_pipeline/experiments/reconstruction-v1-recovery/preview/
+          if-no-files-found: error
+          retention-days: 90
+          compression-level: 6
