@@ -43,8 +43,8 @@ def validate_screened_edge(row, meanings, forms, w):
     parent, form = forms[fid]
     if parent["id"] == target:
         raise PipelineError("Self-link is not a definitional dependency")
-    if (row.get("relation_type"), row.get("review_state")) != ("definition_uses", "screened"):
-        raise PipelineError("Stage 5 currently screens definitional dependencies only")
+    if row.get("relation_type") not in ("definition_uses", "logical_implication", "equivalent_characterization") or row.get("review_state") != "screened":
+        raise PipelineError("Unknown or unscreened mathematical relationship type")
     if row.get("human_verified") is not False:
         raise PipelineError("Assistant editorial research cannot claim formal human verification")
     phrase = row.get("source_phrase", "")
