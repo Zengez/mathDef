@@ -58,6 +58,17 @@ jobs:
           assert len(published["meanings"])==419 and len(published["relations"])==445
           assert not published["held"], f"Unexpected held meanings: {len(published['held'])}"
           assert len(preview["relations"])==445
+          assert len(preview["groups"])==415, (
+              "Four repeated mathematical titles must consolidate across Stacks sections",
+              len(preview["groups"]))
+          assert all(preview["groups"][i]["title"].casefold() <=
+                     preview["groups"][i+1]["title"].casefold()
+                     for i in range(len(preview["groups"])-1)), "Term headings should be sorted"
+          duplicate_titles = {"purely inseparable extension", "normal algebraic extension",
+                              "Galois field extension", "separable algebraic extension"}
+          for title in duplicate_titles:
+              matching=[g for g in preview["groups"] if g["title"].casefold()==title.casefold()]
+              assert len(matching)==1 and len(matching[0]["meanings"])==2, title
           assert sum(len(group["meanings"]) for group in preview["groups"])==419
           assert len({group["id"] for group in preview["groups"]})==len(preview["groups"])
           meaning_ids={m["id"] for m in published["meanings"]}
@@ -75,7 +86,7 @@ jobs:
                   assert form["sources"], "Screened formulation lacks any source citation"
                   citations+=len(form["sources"])
                   for source in form["sources"]:
-                      assert source["locator"].startswith("https://"), source
+                      assert source["locator"].startswith("https://stacks.math.columbia.edu/tag/"), source
           for link in preview["relations"]:
               assert link["from_formulation"] in form_ids
               assert link["target_meaning"] in meaning_ids
@@ -90,13 +101,15 @@ jobs:
             "source_citations_on_formulations":citations,
             "preview_term_search_groups":len(preview["groups"]),
             "misgrouped_distinct_terms":0,
+            "consolidated_duplicate_title_groups":4,
+            "precise_source_tag_links_checked":citations,
             "held_source_meanings":len(published["held"]),
             "publication_sha256":state["sha256"],
             "source_isolation":"No reads of original production definition/variant/citation inventory",
             "manual_browser_qa_complete":False,
             "human_verified":False,
             "ready_for_second_wave":False,
-            "qa_remaining":"Browser-based interaction/KaTeX visual testing and prototype inspection before freezing Wave 1.",
+            "qa_remaining":"Repeat automated browser/mobile inspection, sample mathematical editorial review, and freeze independent Wave 1 before Wave 2.",
             "workflow_run_id":os.environ.get("GITHUB_RUN_ID",""),
             "origin_commit":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
           }
