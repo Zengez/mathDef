@@ -1,0 +1,104 @@
+name: Screen six independent elementary foundation formulations after source verification
+
+on:
+  workflow_run:
+    workflows:
+      - Acquire new ProofWiki algebra and relation foundation evidence after screened links
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh authoritative independent Wave 2 source history
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile source screening modules and run isolated regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Screen six mathematical contexts from four ProofWiki source observations
+        run: |
+          python -m research_pipeline.engine.wave2_screen_elementary_foundations \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Update coverage count and preserve prior 347-term individual source decisions
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Check all inherited reviews, exact meaning-context distinctions, and frozen Wave 1
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((old.root/"state/wave1_freeze.json").read_text())
+          assert digest(old.publication())==freeze["published_catalog_digest"]
+          for stage,number in (("sources",9),("terms",347),("observations",770),("meanings",441),("relations",563)):
+              assert len(w.records(stage))==number,stage
+              assert not w.state(stage).get("sealed"),stage
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          historical=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_447_before_foundations07.jsonl")
+          assert len(reviews)==453 and len(historical)==447
+          now={r["formulation_id"]:r for r in reviews}
+          assert len(now)==453
+          for original in historical:
+              actual=now[original["formulation_id"]]
+              assert {k:v for k,v in original.items() if k!="meaning_catalog_digest"}=={
+                     k:v for k,v in actual.items() if k!="meaning_catalog_digest"}
+          assert {rid for r in reviews for rid in r["relation_ids"]}==set(w.records("relations"))
+          assert sum(r["decision"]=="needs_review" for r in reviews)==6
+          meanings=w.records("meanings")
+          for key in ("binary-relation-typed","binary-relation-subset","binary-operation-general",
+                      "binary-operation-internal","monoid","cartesian-product-binary"):
+              assert meanings["meaning.wave2.foundation."+key]["formulations"][0]["review_state"]=="screened"
+          assert meanings["meaning.wave2.foundation.binary-relation-typed"]["term_group_id"]==meanings["meaning.wave2.foundation.binary-relation-subset"]["term_group_id"]
+          assert meanings["meaning.wave2.foundation.binary-operation-general"]["term_group_id"]==meanings["meaning.wave2.foundation.binary-operation-internal"]["term_group_id"]
+          check_cycles(meanings,w.records("relations"))
+          result=json.loads((w.root/"state/wave2_foundations_batch_07_screened.json").read_text())
+          assert result["new_contextual_meanings"]==6
+          assert result["historical_review_rows_preserved"]==447
+          assert result["screened_links_unchanged"]==563
+          assert result["binary_operation_and_relation_variants_kept_separate"]
+          assert result["human_peer_verified"] is False
+          coverage=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert coverage["term_count"]==347
+          assert coverage["mathematical_candidate_meanings_screened"]==22
+          print(json.dumps(result,indent=2))
+          PY
+      - name: Commit only independent individually screened formulation and review lineage
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen six contextual algebra and relation meanings preserving 447 reviewed formulation histories"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
