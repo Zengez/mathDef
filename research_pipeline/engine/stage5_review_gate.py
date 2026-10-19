@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -16,6 +17,49 @@ from .queues import make_queue
 
 DECISIONS = {"needs_review", "linked", "no_supported_target", "held_ambiguity"}
 REVIEW_PATH = Path("state/stage5_formulation_reviews.jsonl")
+
+
+def atomic_jsonl(path, rows):
+    """Write a review ledger atomically so an interruption cannot truncate it."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temp = path.with_name(path.name + ".tmp")
+    try:
+        with temp.open("w", encoding="utf-8") as out:
+            out.write("".join(canonical(row) + "\n" for row in rows))
+            out.flush()
+            os.fsync(out.fileno())
+        os.replace(temp, path)
+    finally:
+        if temp.exists():
+            temp.unlink()
+
+
+def validate_screened_edge(row, meanings, forms, w):
+    """Validate independently screened edge against both sealed endpoints."""
+    fid, target = row.get("from_formulation"), row.get("target_meaning")
+    if fid not in forms or target not in meanings:
+        raise PipelineError("Unresolved relation endpoint: " + str(row.get("id")))
+    parent, form = forms[fid]
+    if parent["id"] == target:
+        raise PipelineError("Self-link is not a definitional dependency")
+    if (row.get("relation_type"), row.get("review_state")) != ("definition_uses", "screened"):
+        raise PipelineError("Stage 5 currently screens definitional dependencies only")
+    if row.get("human_verified") is not False:
+        raise PipelineError("Assistant editorial research cannot claim formal human verification")
+    phrase = row.get("source_phrase", "")
+    if not isinstance(phrase, str) or not phrase.strip() or phrase.casefold() not in form["text"].casefold():
+        raise PipelineError("Dependency anchor missing from source formulation: " + str(row.get("id")))
+    if row.get("source_locator") != parent["source_citation"]["url"]:
+        raise PipelineError("Source provenance mismatch: " + str(row.get("id")))
+    if row.get("target_locator") != meanings[target]["source_citation"]["url"]:
+        raise PipelineError("Target provenance mismatch: " + str(row.get("id")))
+    reason = row.get("editorial_reason")
+    if not isinstance(reason, str) or len(reason.strip()) < 50:
+        raise PipelineError("Every screened edge needs individual mathematical rationale")
+    if not isinstance(row.get("reviewed_by"), str) or not row["reviewed_by"].strip():
+        raise PipelineError("Screened edges need editorial attribution")
+    w.validate("relations", row)
 
 
 def inventory(w):
@@ -52,7 +96,7 @@ def prepare(workspace):
             "reviewed_by": None, "human_verified": False,
         })
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text("".join(canonical(x) + "\n" for x in lines), encoding="utf-8")
+    atomic_jsonl(out, lines)
     w.checkpoint("relations", {"sealed": False, "reviewed_formulations": 0,
                                "formulations": len(forms), "meanings": len(meanings),
                                "next": "Apply source-checked relation batches, review each remaining formulation"})
@@ -76,34 +120,22 @@ def apply_batch(workspace, batch):
         raise PipelineError("No reviewed relations in batch")
     by_form = defaultdict(list)
     seen = set()
+    existing_edges = w.records("relations")
     for row in batch_rows:
-        rid, fid, target = row.get("id"), row.get("from_formulation"), row.get("target_meaning")
+        rid, fid = row.get("id"), row.get("from_formulation")
         if rid in seen:
             raise PipelineError("Duplicate reviewed link in batch")
         seen.add(rid)
-        if fid not in forms or target not in meanings:
-            raise PipelineError("Unresolved relation endpoint")
-        parent, form = forms[fid]
-        if parent["id"] == target:
-            raise PipelineError("Self-link is not a definitional dependency")
-        if (row.get("relation_type"), row.get("review_state")) != ("definition_uses", "screened"):
-            raise PipelineError("Batch must contain screened definition_uses links only")
-        if row.get("human_verified") is not False:
-            raise PipelineError("Assistant editorial research cannot claim formal human verification")
-        phrase = row.get("source_phrase", "")
-        if not phrase or phrase.casefold() not in form["text"].casefold():
-            raise PipelineError("Dependency anchor missing from source formulation: " + str(rid))
-        if row.get("source_locator") != parent["source_citation"]["url"]:
-            raise PipelineError("Source provenance mismatch: " + str(rid))
-        if row.get("target_locator") != meanings[target]["source_citation"]["url"]:
-            raise PipelineError("Target provenance mismatch: " + str(rid))
-        if not isinstance(row.get("editorial_reason"), str) or len(row["editorial_reason"].strip()) < 50:
-            raise PipelineError("Every screened edge needs individual mathematical rationale")
-        if not isinstance(row.get("reviewed_by"), str) or not row["reviewed_by"].strip():
-            raise PipelineError("Screened edges need editorial attribution")
-        w.validate("relations", row)
+        validate_screened_edge(row, meanings, forms, w)
+        prior = reviews[fid]
+        # Important: check review conflicts and record collisions BEFORE any writes.
+        if prior["decision"] not in ("needs_review", "linked"):
+            raise PipelineError("Cannot overwrite a no-link/ambiguity disposition: " + fid)
+        if rid in existing_edges and canonical(existing_edges[rid]) != canonical(row):
+            raise PipelineError("Record ID collision with changed content: " + rid)
         by_form[fid].append(row)
-    # Preserve idempotent intake and validate complete batch before mutation.
+    # A replay of a partially interrupted batch is safe: record and ledger updates
+    # are individually restartable, and both must be valid before committing.
     ingest_result = w.ingest("relations", batch, batch_size=10)
     for fid, links in by_form.items():
         review = reviews[fid]
@@ -117,8 +149,7 @@ def apply_batch(workspace, batch):
         review["editorial_reason"] = (
             "Manually screened source formulation against exact reconstructed target meanings; "
             "individual mathematical reasons and both source locators are attached to each relation.")
-    ledger.write_text("".join(canonical(reviews[k]) + "\n" for k in sorted(reviews)),
-                      encoding="utf-8")
+    atomic_jsonl(ledger, [reviews[k] for k in sorted(reviews)])
     result = audit(workspace)
     w.checkpoint("relations", {"sealed": False,
                                "reviewed_formulations": result["reviewed"],
@@ -173,8 +204,7 @@ def apply_dispositions(workspace, batch):
         prior["decision"] = item["decision"]
         prior["editorial_reason"] = item["editorial_reason"]
         prior["reviewed_by"] = item["reviewed_by"]
-    ledger.write_text("".join(canonical(existing[k]) + "\n" for k in sorted(existing)),
-                      encoding="utf-8")
+    atomic_jsonl(ledger, [existing[k] for k in sorted(existing)])
     report = audit(workspace)
     w.checkpoint("relations", {"sealed": False,
                                "reviewed_formulations": report["reviewed"],
@@ -231,6 +261,7 @@ def audit(workspace, require_complete=False):
             rel = relations.get(rid)
             if not rel or rel["from_formulation"] != fid or rel["review_state"] != "screened":
                 raise PipelineError("Stage 5 review points at missing/unscreened relation")
+            validate_screened_edge(rel, meanings, forms, w)
             if rel["target_meaning"] == meaning["id"]:
                 raise PipelineError("Unwanted recursive self dependency")
             accounted_relations.add(rid)
