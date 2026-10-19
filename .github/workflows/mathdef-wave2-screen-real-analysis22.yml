@@ -1,0 +1,98 @@
+name: Screen OpenStax real derivative and absolute-value mathematical foundations
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-screen-real-analysis22.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Use latest independent Wave 2 research main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all research engine Python and run isolated tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Individually screen two exact-source calculus meanings with historical review preservation
+        run: |
+          python -m research_pipeline.engine.wave2_screen_real_analysis_foundations22 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Refresh independent per-source coverage without upgrading source-access status
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify frozen Wave 1 and all 481 original formulation decisions
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,digest,jsonl
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((one.root/"state/wave1_freeze.json").read_text())
+          assert digest(one.publication())==freeze["published_catalog_digest"]
+          expected={"sources":9,"terms":368,"observations":791,"meanings":471,"relations":623}
+          for stage,n in expected.items():
+              assert len(w.records(stage))==n,stage
+              assert not w.state(stage).get("sealed"),stage
+          old=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_481_before_analysis22.jsonl")
+          current=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(old)==481 and len(current)==483
+          by={r["formulation_id"]:r for r in current}
+          assert len(by)==483
+          for r in old:
+              assert {k:v for k,v in by[r["formulation_id"]].items() if k!="meaning_catalog_digest"}=={
+                     k:v for k,v in r.items() if k!="meaning_catalog_digest"}
+          assert sum(r["decision"]=="needs_review" for r in current)==2
+          assert {rid for r in current for rid in r["relation_ids"]}==set(w.records("relations"))
+          for key in ("real-derivative-point","real-absolute-value"):
+              m=w.records("meanings")["meaning.wave2.analysis."+key]
+              assert m["formulations"][0]["review_state"]=="screened"
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_foundations_batch_22_screened.json").read_text())
+          assert report["screened_meanings"]==471
+          assert report["formulation_reviews"]==483
+          assert report["prior_481_individual_reviews_preserved"]
+          assert report["screened_links_preserved"]==623
+          assert report["original_planetmath_access_block_unmodified"]
+          assert report["human_peer_verified"] is False
+          coverage=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert coverage["term_count"]==368 and coverage["mathematical_candidate_meanings_screened"]==52
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent screened mathematical meanings and versioned review history
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Individually screen derivative and real absolute-value meanings preserving 481 historical reviews"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
