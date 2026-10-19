@@ -1,0 +1,88 @@
+name: Correct source-scoped purely inseparable field extension definition
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-correct-inseparable-source-scope.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  mathematical-source-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Checkout latest independently screened Wave 2
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile and test independent research pipeline
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Candidate-to-screened correction with exact two-source mathematical review
+        run: |
+          python -m research_pipeline.engine.wave2_correct_purely_inseparable_scope \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Preserve frozen Wave 1, original 474 reviews and 622 link identities
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,digest,jsonl
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(old.publication())==json.loads((old.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          assert len(w.records("meanings"))==462
+          assert len(w.records("relations"))==622
+          assert not any(w.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
+          original=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_474_before_inseparable_scope.jsonl")
+          actual=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          index={r["formulation_id"]:r for r in actual}
+          assert len(original)==len(actual)==len(index)==474
+          for prior in original:
+              now=index[prior["formulation_id"]]
+              assert prior["decision"]==now["decision"]
+              assert prior["relation_ids"]==now["relation_ids"]
+              assert prior["original_wave1_disposition"]==now["original_wave1_disposition"]
+          assert {rel for r in actual for rel in r["relation_ids"]}==set(w.records("relations"))
+          meaning=w.records("meanings")["meaning.12e554f8d49d5361.purely-inseparable-extension"]
+          assert meaning["formulations"][0]["review_state"]=="screened"
+          assert "characteristic p greater than zero" in meaning["formulations"][0]["text"]
+          assert "trivial extension is also purely inseparable in any characteristic" not in meaning["formulations"][0]["text"]
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_pure_inseparable_scope_correction.json").read_text())
+          assert report["reviews_preserved"]==474 and report["screened_links_preserved"]==622
+          assert report["unsupported_characteristic_zero_statement_not_silently_claimed"]
+          assert report["char_zero_alternative_requires_independent_source"]
+          assert report["source_anchors_and_original_dispositions_preserved"]
+          assert report["human_peer_verified"] is False
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent Wave 2 correction and historical mathematical audits
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Correct unsupported characteristic-zero addendum with independently audited positive-characteristic Stacks evidence"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
