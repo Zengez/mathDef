@@ -1,0 +1,99 @@
+name: Resolve four individually researched Wave 2 foundational dependency reviews
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-review-four-foundation-no-targets.yml'
+      - 'research_pipeline/engine/wave2_review_foundation_no_targets.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Use latest committed independent checkpoint
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate code and existing independent research tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Apply four individual mathematical no-supported-target decisions
+        run: |
+          python -m research_pipeline.engine.wave2_review_foundation_no_targets \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Enforce strict immutability of frozen Wave 1 and 459 earlier reviewed formulations
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest,canonical
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          wave1=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          frozen=json.loads((wave1.root/"state/wave1_freeze.json").read_text())
+          assert digest(wave1.publication())==frozen["published_catalog_digest"]
+          assert len(w.records("terms"))==350 and len(w.records("observations"))==773
+          assert len(w.records("meanings"))==447 and len(w.records("relations"))==582
+          assert all(w.records("relations").get(k)==v for k,v in wave1.records("relations").items())
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          historical=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_459_before_no_target_batch02.jsonl")
+          before={x["formulation_id"]:x for x in historical}
+          after={x["formulation_id"]:x for x in reviews}
+          assert len(before)==len(after)==459 and set(before)==set(after)
+          changed={k for k in before if canonical(before[k])!=canonical(after[k])}
+          expected={
+            "form.wave2.foundation.cartesian-product-binary",
+            "form.wave2.foundation.ordered-pair-kuratowski",
+            "form.wave2.foundation.subset-nonstrict",
+            "form.wave2.foundation.mapping-element-assignment"}
+          assert changed==expected
+          assert all(before[k]["decision"]=="needs_review" and
+                     after[k]["decision"]=="no_supported_target" and
+                     before[k]["relation_ids"]==after[k]["relation_ids"]==[] for k in expected)
+          assert all(before[k]["original_wave1_disposition"]==after[k]["original_wave1_disposition"] for k in before)
+          assert sum(x["decision"]=="needs_review" for x in reviews)==0
+          assert {rid for r in reviews for rid in r["relation_ids"]}==set(w.records("relations"))
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_foundation_dependency_no_target_batch_02.json").read_text())
+          assert report["individual_new_no_target_reviews"]==4
+          assert report["screened_relations_retained"]==582
+          assert report["formulation_reviews_without_initial_decision"]==0
+          assert report["original_wave1_dispositions_preserved"] is True
+          assert report["human_peer_verified"] is False
+          assert not any(w.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit immutable mathematical evidence and review decisions only
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then
+            echo "Refusing unrelated or frozen research modifications" >&2
+            exit 1
+          fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Resolve four primitive set and mapping dependency reviews without inventing prerequisites"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
