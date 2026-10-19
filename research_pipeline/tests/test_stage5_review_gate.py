@@ -2,6 +2,7 @@
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 from research_pipeline.engine.core import PipelineError, Workspace, canonical, digest, jsonl
@@ -161,6 +162,32 @@ class Stage5ReviewGateTests(unittest.TestCase):
             apply_batch(self.w.root, self.batch)
         self.assertEqual(self.w.records("relations"), {})
         self.assertEqual(audit(self.w.root)["reviewed"], 0)
+
+
+    def test_direct_core_seal_blocks_unreviewed_formulations(self):
+        prepare(self.w.root)
+        self.batch.write_text(canonical(self.edge) + "\n", encoding="utf-8")
+        apply_batch(self.w.root, self.batch)
+        config_file = self.w.root / "project.json"
+        config = json.loads(config_file.read_text(encoding="utf-8"))
+        config["require_full_definition_attempts"] = True
+        config["require_reviewed_term_dispositions"] = True
+        config_file.write_text(json.dumps(config), encoding="utf-8")
+        with patch("research_pipeline.engine.stage3_attempts.require_full_attempt_coverage"), \
+             patch("research_pipeline.engine.stage3_review_gate.require_reviewed_term_dispositions"):
+            with self.assertRaisesRegex(PipelineError, "Stage 5 cannot seal"):
+                self.w.seal("relations")
+        self.assertFalse(self.w.state("relations").get("sealed", False))
+
+    def test_non_dependency_relation_types_remain_distinct(self):
+        prepare(self.w.root)
+        for kind in ("logical_implication", "equivalent_characterization"):
+            fresh = dict(self.edge, id="rel." + kind, relation_type=kind)
+            self.batch.write_text(canonical(fresh) + "\n", encoding="utf-8")
+            result = apply_batch(self.w.root, self.batch)
+            self.assertEqual(result["review"]["screened_relations"],
+                             1 if kind == "logical_implication" else 2)
+        self.assertEqual(audit(self.w.root)["decisions"].get("linked"), 1)
 
     def test_anchor_and_target_guard(self):
         prepare(self.w.root)
