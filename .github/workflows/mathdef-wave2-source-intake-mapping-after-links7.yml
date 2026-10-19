@@ -1,0 +1,99 @@
+name: Acquire rigorous set and mapping foundation evidence after elementary links
+
+on:
+  workflow_run:
+    workflows:
+      - Review 11 elementary math dependencies after separate source meaning screens
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  sources:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh latest committed independent Wave 2 data
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all Python scripts and run isolated research suite
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Ingest three already directly researched ProofWiki source paraphrases only
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_batch8_mapping \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Refresh 350-term source coverage with immutable 347-term snapshot
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify frozen Wave 1 and source licensing, coverage and context metadata
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((old.root/"state/wave1_freeze.json").read_text())
+          assert digest(old.publication())==freeze["published_catalog_digest"]
+          for stage,expected in (("sources",9),("terms",350),("observations",773),("meanings",441),("relations",574)):
+              assert len(w.records(stage))==expected,stage
+              assert not w.state(stage).get("sealed"),stage
+          for stage in ("sources","terms","observations","relations"):
+              assert all(w.records(stage).get(k)==v for k,v in old.records(stage).items()),stage
+          previous=jsonl(w.root/"state/wave2_term_coverage_snapshot_347.jsonl")
+          current=jsonl(w.root/"state/wave2_term_coverage.jsonl")
+          assert len(previous)==347 and len(current)==350
+          now={x["term_id"]:x for x in current}
+          assert len(now)==350
+          assert all(now.get(x["term_id"])==x for x in previous)
+          report=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert report["term_count"]==350
+          assert report["source_read_new_candidates"]==24
+          assert report["new_term_review_coverage"]==32
+          assert report["new_source_locators_unverified"]==8
+          assert report["mathematical_candidate_meanings_screened"]==22
+          assert report["complete_for_wave2_sealing"] is False
+          new=jsonl(w.root/"wave2/foundation_source_discovery_batch_08.jsonl")
+          assert len(new)==3
+          assert all(x["source_access_outcome"]=="direct_page_read" and x["meaning_screened"] is False for x in new)
+          scoped=json.loads((w.root/"state/wave2_foundations_batch_08.json").read_text())
+          assert scoped["typed_graph_and_bare_graph_equivalence_conventions_kept_distinct"]
+          assert scoped["alternate_pair_encodings_not_declared_identical_sets"]
+          assert scoped["screened_relations_still"]==574
+          assert scoped["human_peer_verified"] is False
+          print(json.dumps(scoped,indent=2))
+          PY
+      - name: Commit only source-verified independent Wave 2 terms and audit history
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Document independently sourced mapping ordered-pair and subset research with 350-term coverage"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
