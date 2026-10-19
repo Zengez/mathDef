@@ -94,6 +94,29 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(kinds, {"discover_sources_from_term", "search_variants_in_source",
                                   "audit_relationships"})
 
+    def test_preview_does_not_group_unrelated_concepts_from_same_source_section(self):
+        self.load_all()
+        self.workspace.publish()
+        published = self.workspace.root / "published/catalog.json"
+        catalog = json.loads(published.read_text(encoding="utf-8"))
+        second = next(m for m in catalog["meanings"] if m["id"] == "field.closure")
+        # Both entries retain the same source-section term_group_id, but they
+        # are distinct mathematics headings and must get separate search cards.
+        second["display_term"] = "Algebraic closure"
+        published.write_text(json.dumps(catalog), encoding="utf-8")
+        result = build(self.workspace.root)
+        self.assertEqual((result["groups"], result["meanings"]), (2, 2))
+        view = json.loads((self.workspace.root / "preview/catalog.json").read_text())
+        by_name = {g["title"]: g for g in view["groups"]}
+        self.assertEqual(set(by_name), {"Closure", "Algebraic closure"})
+        self.assertEqual(len(by_name["Closure"]["meanings"]), 1)
+        self.assertEqual(len(by_name["Algebraic closure"]["meanings"]), 1)
+        # Do not silently expose a source-section title as an alias for an
+        # otherwise unrelated mathematical concept.
+        self.assertNotIn("Algebraic closure", by_name["Closure"]["aliases"])
+        self.assertNotIn("Closure", by_name["Algebraic closure"]["aliases"])
+        self.assertEqual(len(view["relations"]), 1)
+
     def push_conflict(self, forked):
         source = dict(self.source(), title="Tampered text")
         path = self.inputs / "fork_conflict.jsonl"
