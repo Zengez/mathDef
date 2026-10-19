@@ -4,8 +4,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from research_pipeline.engine.core import PipelineError, Workspace, canonical, jsonl
-from research_pipeline.engine.stage5_review_gate import prepare, apply_batch, audit, REVIEW_PATH
+from research_pipeline.engine.core import PipelineError, Workspace, canonical, digest, jsonl
+from research_pipeline.engine.stage5_review_gate import prepare, apply_batch, apply_dispositions, audit, REVIEW_PATH
 
 
 class Stage5ReviewGateTests(unittest.TestCase):
@@ -97,6 +97,30 @@ class Stage5ReviewGateTests(unittest.TestCase):
         (self.w.root / REVIEW_PATH).write_text(
             "".join(canonical(x) + "\n" for x in reviews), encoding="utf-8")
         self.assertTrue(audit(self.w.root, require_complete=True)["complete"])
+
+
+    def test_no_link_needs_specific_source_review_and_current_digest(self):
+        prepare(self.w.root)
+        form_text = self.w.records("meanings")["meaning.group"]["formulations"][0]["text"]
+        disposition = {
+            "formulation_id": "form.group", "decision": "no_supported_target",
+            "editorial_reason": ("Compared this basic group formulation with the other reconstructed "
+                                 "group meanings and found no distinct available prerequisite target."),
+            "reviewed_by": "assistant_mathematical_review", "human_verified": False,
+            "source_text_digest": digest(form_text),
+        }
+        self.batch.write_text(canonical(disposition) + "\n", encoding="utf-8")
+        result = apply_dispositions(self.w.root, self.batch)
+        self.assertEqual(result["reviewed"], 1)
+        self.assertEqual(result["needs_review"], 1)
+        self.assertEqual(result["screened_relations"], 0)
+        # A later identical replay is safe, while a fabricated stale review is not.
+        self.assertEqual(apply_dispositions(self.w.root, self.batch)["reviewed"], 1)
+        stale = dict(disposition, source_text_digest="0" * 64)
+        self.batch.write_text(canonical(stale) + "\n", encoding="utf-8")
+        with self.assertRaisesRegex(PipelineError, "stale"):
+            apply_dispositions(self.w.root, self.batch)
+
 
     def test_anchor_and_target_guard(self):
         prepare(self.w.root)
