@@ -23,6 +23,9 @@ const { chromium } = require("playwright");
     await page.getByRole("button", { name: "View sources" }).first().click();
     assert.ok(await page.locator("#sources").evaluate(dialog => dialog.open), "Source modal failed to open");
     assert.ok((await page.locator("#sources-content a").count()) >= 1, "Missing source reference in modal");
+    const citationUrl = await page.locator("#sources-content a").first().getAttribute("href");
+    assert.match(citationUrl, /^https:\/\/stacks\.math\.columbia\.edu\/tag\/[A-Z0-9]+$/i,
+      "Source dialog should open the precise cited Stacks tag, not the Stacks homepage");
     await page.locator("#sources form button").click();
 
     await page.locator("#term").fill("symmetric monoidal category");
@@ -39,6 +42,11 @@ const { chromium } = require("playwright");
     assert.ok((await page.getByRole("button", { name: /^Implies: / }).count()) >= 2,
       "Implications must be navigational rather than recursively expanded as prerequisites");
 
+    await page.locator("#term").fill("Galois field extension");
+    assert.deepEqual(await page.locator("article h2").allTextContents(), ["Galois field extension"],
+      "Multiple independently sourced variants of the same title must have one search result");
+    assert.equal(await page.locator("article section.meaning").count(), 2,
+      "Both independently reconstructed meanings must appear under their shared term heading");
     await page.locator("#term").fill("");
     await page.locator("#definition").fill("transcendence basis");
     assert.ok((await page.locator("article").count()) > 0, "Definition-only search returned nothing");
@@ -51,7 +59,22 @@ const { chromium } = require("playwright");
     assert.ok(await page.locator("#verify").evaluate(dialog => dialog.open), "Verification dialog did not open");
     await page.locator("#verify form button").click();
 
+    await page.locator("#term").fill("");
+    assert.equal(await page.locator("article").count(), 40,
+      "The initial result list should be paginated to avoid hundreds of large DOM cards");
+    await page.getByRole("button", { name: "Show 40 more terms" }).click();
+    assert.equal(await page.locator("article").count(), 80, "Pagination should append a second term page");
     await page.locator("#term").fill("affine scheme");
+    assert.ok((await page.locator("article").count()) <= 40, "Filtering should reset term pagination");
+    assert.ok(await page.getByRole("button", { name: "Suggest a new definition" }).isVisible());
+    assert.ok(await page.getByRole("button", { name: "Suggest correction to this formulation" }).first().isVisible());
+    await page.setViewportSize({ width: 375, height: 812 });
+    const overflow = await page.evaluate(() => ({
+      viewport: window.innerWidth, document: document.documentElement.scrollWidth
+    }));
+    assert.ok(overflow.document <= overflow.viewport + 4,
+      "Prototype creates excessive horizontal overflow on 375px mobile: " + JSON.stringify(overflow));
+    await page.setViewportSize({ width: 1260, height: 830 });
     const screenshot = process.env.STAGE6_SCREENSHOT || "/tmp/mathdef-stage6-browser-smoke.png";
     await page.screenshot({ path: screenshot, fullPage: false });
     assert.deepEqual(errors, [], "Browser JavaScript errors during smoke tests");
@@ -59,7 +82,7 @@ const { chromium } = require("playwright");
       status: "passed",
       checks: ["term-only search", "distinct source-section meanings", "source modal",
         "nested recursive expansion", "collapse", "implication treatment",
-        "definition-text search", "verification dialog", "no JavaScript exceptions"],
+        "definition-text search", "verification dialog", "precise source URL", "cross-source duplicate heading variants", "result pagination", "mobile layout width", "suggestion and correction controls", "no JavaScript exceptions"],
       screenshot
     }, null, 2));
   } finally {
