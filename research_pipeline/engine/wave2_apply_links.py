@@ -56,7 +56,7 @@ def run(root,batch):
     meanings=w.records("meanings")
     observations=w.records("observations")
     forms={f["id"]:(m,f) for m in meanings.values() for f in m["formulations"]}
-    expected_catalog=(435,447) if batch.name.endswith("batch_06.jsonl") else (431,443) if batch.name.endswith("batch_05.jsonl") else (428,440)
+    expected_catalog=(441,453) if batch.name.endswith("batch_07.jsonl") else (435,447) if batch.name.endswith("batch_06.jsonl") else (431,443) if batch.name.endswith("batch_05.jsonl") else (428,440)
     if (len(meanings),len(forms))!=expected_catalog:
         raise PipelineError("Outdated or altered meaning catalog for curated relationship batch")
     catalog_digest=digest(list(meanings.values()))
@@ -76,6 +76,18 @@ def run(root,batch):
         historical=jsonl(snapshot)
         if len(historical)!=443:
             raise PipelineError("Missing historical 443-formulation review snapshot")
+    if batch.name.endswith("batch_07.jsonl"):
+        approved=w.root/"state/wave2_foundations_batch_07_screened.json"
+        if not approved.exists():
+            raise PipelineError("Batch 07 requires committed individual source and meaning screening for elementary definitions")
+        proof=json.loads(approved.read_text(encoding="utf-8"))
+        history=w.root/"state/wave2_formulation_reviews_snapshot_447_before_foundations07.jsonl"
+        if (proof.get("independently_screened_meanings")!=441 or
+            proof.get("total_formulations")!=453 or
+            proof.get("screened_links_unchanged")!=563 or
+            not proof.get("binary_operation_and_relation_variants_kept_separate") or
+            len(jsonl(history))!=447):
+            raise PipelineError("Batch 07 lacks exact source-scoped mathematical screening history")
     ledger_path=w.root/"state/wave2_formulation_reviews.jsonl"
     reviews=jsonl(ledger_path)
     review_map={r["formulation_id"]:r for r in reviews}
@@ -84,16 +96,16 @@ def run(root,batch):
     if any(r.get("meaning_catalog_digest")!=catalog_digest for r in reviews):
         raise PipelineError("Wave 2 relation review is stale against meanings")
     previous=w.records("relations")
-    if len(previous) not in (445,469,481,505,529,545,563):
+    if len(previous) not in (445,469,481,505,529,545,563,574):
         raise PipelineError("Unexpected relationship ledger size, check earlier batches")
     incoming=jsonl(batch)
-    batch_number = next((n for n in ("01","02","03","04","05","06") if batch.name.endswith(f"batch_{n}.jsonl")),None)
+    batch_number = next((n for n in ("01","02","03","04","05","06","07") if batch.name.endswith(f"batch_{n}.jsonl")),None)
     if batch_number is None:
         raise PipelineError("Unknown curated relationship batch; explicit scope required")
-    expected_count={"01":24,"02":12,"03":24,"04":24,"05":16,"06":18}[batch_number]
+    expected_count={"01":24,"02":12,"03":24,"04":24,"05":16,"06":18,"07":11}[batch_number]
     if len(incoming)!=expected_count or len({r.get("id") for r in incoming})!=expected_count:
         raise PipelineError(f"Expected {expected_count} distinct curated research relationships")
-    before_count={"01":445,"02":469,"03":481,"04":505,"05":529,"06":545}[batch_number]
+    before_count={"01":445,"02":469,"03":481,"04":505,"05":529,"06":545,"07":563}[batch_number]
     if len(previous) not in (before_count,before_count+expected_count):
         raise PipelineError(f"Incorrect previous link count for batch {batch_number}: {len(previous)}")
     fromlinks=defaultdict(list)
