@@ -86,6 +86,17 @@ def build(workspace):
     output = root / "preview"
     output.mkdir(parents=True, exist_ok=True)
     project = json.loads((root / "project.json").read_text(encoding="utf-8"))
+    review_file = root / "state/stage5_review.json"
+    reviewed = json.loads(review_file.read_text(encoding="utf-8")) if review_file.exists() else None
+    status_notice = (
+        "Source-screened research draft: %d of %d formulations reviewed; "
+        "%d without a supported target and %d held link ambiguities. "
+        "Neither complete prerequisite coverage nor human verification is claimed."
+        % (reviewed["reviewed"], reviewed["formulations"],
+           reviewed["decisions"].get("no_supported_target", 0),
+           reviewed["decisions"].get("held_ambiguity", 0))
+        if reviewed else "Source-screened research draft; completeness not verified."
+    )
     payload = {
         "groups": out_groups, "relations": catalog["relations"],
         "verification_notice": "Not yet manually verified",
@@ -103,6 +114,7 @@ def build(workspace):
 </head><body><header><h1>Mathematical definitions — reconstruction prototype</h1>
 <p>This independent research reconstruction is not the production mathDef website.</p>
 <p class="disclaimer">Not yet manually verified. These are screened research drafts, not certified mathematical facts.</p>
+<p class="muted">___REVIEW_NOTICE___</p>
 <div class="controls">
 <label>Search term <input id="term" type="search" placeholder="Names and aliases" aria-label="Search term"></label>
 <label>Search definition <input id="definition" type="search" placeholder="Formulation text only" aria-label="Search definition"></label>
@@ -118,7 +130,8 @@ def build(workspace):
 <h2>Propose verification</h2><div id="verify-content"></div></dialog>
 <script id="reconstruction-data" type="application/json">___PAYLOAD___</script>
 <footer>Independent experiment • Source references do not imply human verification.</footer>
-</body></html>""".replace("___PAYLOAD___", payload_string)
+</body></html>""".replace("___PAYLOAD___", payload_string).replace(
+        "___REVIEW_NOTICE___", status_notice)
     (output / "index.html").write_text(doc, encoding="utf-8")
     assets = Path(__file__).resolve().parent
     for asset in ("preview.js", "preview.css"):
