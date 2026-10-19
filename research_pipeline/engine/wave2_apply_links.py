@@ -142,10 +142,15 @@ def run(root,batch):
         if review["decision"] not in (
              "needs_review","linked","no_supported_target","held_ambiguity"):
             raise PipelineError("Unknown old link disposition")
-        if review["decision"] in ("no_supported_target","held_ambiguity") and (
-               review["relation_ids"] or review.get("original_wave1_disposition") not in
-                    ("no_supported_target","held_ambiguity")):
-            raise PipelineError("Invalid attempted override of a historical disposition")
+        if review["decision"] in ("no_supported_target","held_ambiguity"):
+            historical=review.get("original_wave1_disposition")
+            wave2_audited=(historical is None and
+                 review.get("source")=="wave2_individual_mathematical_no_supported_target_review" and
+                 bool(review.get("original_wave2_pending_reason")) and
+                 bool(review.get("reviewed_by")))
+            if review["relation_ids"] or (historical not in
+                 ("no_supported_target","held_ambiguity") and not wave2_audited):
+                raise PipelineError("Invalid or undocumented attempted override of a reviewed no-target/ambiguity decision")
         for rel in items:
             if rel["id"] in review["relation_ids"] and rel["id"] not in previous:
                 raise PipelineError("Review claims a non-existing relationship")
