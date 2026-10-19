@@ -1,0 +1,82 @@
+name: Screen first 24 individually justified Wave 2 prerequisite links
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-apply-links-batch1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh authoritative main checkpoint
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Full research pipeline regression tests
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Source-screen first 24 mathematical prerequisite relationships
+        run: |
+          python -m research_pipeline.engine.wave2_apply_links \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --batch research_pipeline/experiments/reconstruction-v2-independent/intake/wave2_curated_relations_batch_01.jsonl
+      - name: Verify independent frozen Wave 1 and math relationship screening counts
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          two=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          frozen=json.loads((one.root/"state/wave1_freeze.json").read_text())
+          assert digest(one.publication())==frozen["published_catalog_digest"]
+          assert len(one.records("relations"))==445
+          assert len(two.records("relations"))==469
+          reviews=jsonl(two.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==440 and len(set(x["formulation_id"] for x in reviews))==440
+          ids={x["id"] for x in two.records("relations").values()}
+          assert ids=={i for x in reviews for i in x["relation_ids"]}
+          report=json.loads((two.root/"state/wave2_link_review_batch_01.json").read_text())
+          assert report["added_source_grounded_links"]==24
+          assert report["dependency_graph_has_cycles"] is False
+          assert not any(two.state(stage).get("sealed") for stage in
+              ("sources","terms","observations","meanings","relations"))
+          assert report["original_production_baseline_consulted"] is False
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent Wave 2 screened links and audit ledger
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then
+            echo "Refusing to commit out-of-scope files" >&2
+            exit 1
+          fi
+          if git diff --cached --quiet; then
+            echo "No changes required (idempotent run)"
+            exit 0
+          fi
+          git commit -m "Apply 24 source-screened Wave 2 dependency links and audit historical dispositions"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
