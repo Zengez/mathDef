@@ -20,6 +20,7 @@
   const termInput = document.getElementById("term");
   const definitionInput = document.getElementById("definition");
   const mode = document.getElementById("mode");
+  const suggestTerm = document.getElementById("suggest-term");
 
   function child(parent, tag, contents, className) {
     const x = document.createElement(tag);
@@ -62,7 +63,8 @@
         for (const source of form.sources) {
           const li = child(ul, "li");
           const a = child(li, "a", source.title + " — " + source.locator);
-          a.href = source.url; a.target = "_blank"; a.rel = "noopener noreferrer";
+          a.href = /^https:\/\//i.test(source.locator || "") ? source.locator : source.url;
+          a.target = "_blank"; a.rel = "noopener noreferrer";
           child(li, "span", " (" + source.role + ")", "muted");
         }
       }
@@ -72,7 +74,8 @@
         for (const item of m.other_sources) {
           const li = child(ul, "li");
           const a = child(li, "a", item.title + " — " + item.locator);
-          a.href = item.url; a.target = "_blank"; a.rel = "noopener noreferrer";
+          a.href = /^https:\/\//i.test(item.locator || "") ? item.locator : item.url;
+          a.target = "_blank"; a.rel = "noopener noreferrer";
         }
       }
     }
@@ -121,6 +124,17 @@
       const card = child(section, "div", null, "formulation");
       child(card, "div", "Not yet manually verified · " + form.id, "muted");
       mathText(form.text, child(card, "p", null, "math-text"));
+      const correction = child(card, "button", "Suggest correction to this formulation", "subtle-button");
+      correction.type = "button";
+      correction.onclick = () => openIssue(
+        "Definition correction proposal: " + m.display_term,
+        "### Meaning and formulation\n" +
+        "Term: " + m.display_term + "\nMeaning ID: " + m.id +
+        "\nFormulation ID: " + form.id + "\nSHA256: " + form.sha256 +
+        "\n\n### Suggested corrected definition\n[Add proposal here]" +
+        "\n\n### Evidence and reason\n[Explain and provide authoritative citations]" +
+        "\n\nAll corrections require human maintainer review."
+      );
       for (const rel of edges.get(form.id) || []) {
         const target = meanings.get(rel.target_meaning);
         if (!target) continue;
@@ -176,9 +190,9 @@
             active = true;
           };
         }
-        const correction = child(card, "button", "Report wrong link/priority", "subtle-button");
-        correction.type = "button";
-        correction.onclick = () => openIssue("Link context correction",
+        const linkCorrection = child(card, "button", "Report wrong link/priority", "subtle-button");
+        linkCorrection.type = "button";
+        linkCorrection.onclick = () => openIssue("Link context correction",
           "Source formulation: " + form.id + "\nCurrently prioritized meaning: " +
           target.id + "\nSuggested meaning/formulation:\n[Provide the better ID or context]\n\nReason:\n");
       }
@@ -210,6 +224,14 @@
     child(results, "p", hits.length + " term groups displayed", "muted");
   }
 
+  suggestTerm.addEventListener("click", () => openIssue(
+    "Suggest a mathematical definition to add",
+    "### Proposed mathematical term\n" + (termInput.value.trim() || "[Enter a term]") +
+    "\n\n### Mathematical context\n[Context or domain]" +
+    "\n\n### Suggested definition (optional)\n[Your suggested formulation]" +
+    "\n\n### References\n[Authoritative source URLs or citation details]" +
+    "\n\nSubmissions require maintainer review and do not update definitions automatically."
+  ));
   termInput.addEventListener("input", render);
   definitionInput.addEventListener("input", render);
   mode.addEventListener("change", render);
