@@ -1,0 +1,129 @@
+name: Build isolated corrected Wave 1 Stage 6 research prototype
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-stage6-prototype.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-stage6-prototype
+  cancel-in-progress: false
+
+jobs:
+  publish-independent-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Use latest approved independent reconstruction
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run complete independent Python regression suite
+        run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Check prototype JavaScript syntax
+        run: node --check research_pipeline/adapters/mathdef/preview.js
+      - name: Require completed sealed stages and run separate prototype publication
+        run: |
+          python -m research_pipeline.engine.cli \
+            --workspace research_pipeline/experiments/reconstruction-v1-recovery publish
+          python -m research_pipeline.adapters.mathdef.preview \
+            --workspace research_pipeline/experiments/reconstruction-v1-recovery
+          node --check research_pipeline/experiments/reconstruction-v1-recovery/preview/preview.js
+      - name: Check mathematical heading grouping and cited record provenance
+        run: |
+          python - <<'PY'
+          import json,os,subprocess
+          from collections import Counter
+          from pathlib import Path
+          from research_pipeline.engine.core import Workspace, atomic_json, digest
+          root=Path("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace(root)
+          for st in ("sources","terms","observations","meanings","relations"):
+              assert w.state(st)["sealed"], f"Stage not sealed: {st}"
+              assert w.state(st)["record_digest"]==digest(list(w.records(st).values()))
+          published=json.loads((root/"published/catalog.json").read_text())
+          preview=json.loads((root/"preview/catalog.json").read_text())
+          state=json.loads((root/"state/publication.json").read_text())
+          assert len(published["meanings"])==419 and len(published["relations"])==445
+          assert not published["held"], f"Unexpected held meanings: {len(published['held'])}"
+          assert len(preview["relations"])==445
+          assert sum(len(group["meanings"]) for group in preview["groups"])==419
+          assert len({group["id"] for group in preview["groups"]})==len(preview["groups"])
+          meaning_ids={m["id"] for m in published["meanings"]}
+          form_ids={f["id"] for m in published["meanings"] for f in m["formulations"]}
+          assert len(form_ids)==431 and len(meaning_ids)==419
+          for group in preview["groups"]:
+              labels={" ".join(m["display_term"].casefold().split()) for m in group["meanings"]}
+              assert len(labels)==1, f"Different mathematical terms grouped under {group['id']}: {labels}"
+              assert group["title"].casefold().strip() in labels
+          all_preview_meanings={m["id"]:m for g in preview["groups"] for m in g["meanings"]}
+          assert set(all_preview_meanings)==meaning_ids
+          citations=0
+          for meaning in all_preview_meanings.values():
+              for form in meaning["formulations"]:
+                  assert form["sources"], "Screened formulation lacks any source citation"
+                  citations+=len(form["sources"])
+                  for source in form["sources"]:
+                      assert source["locator"].startswith("https://"), source
+          for link in preview["relations"]:
+              assert link["from_formulation"] in form_ids
+              assert link["target_meaning"] in meaning_ids
+          assert (root/"preview/index.html").is_file()
+          assert (root/"preview/preview.css").is_file()
+          assert (root/"preview/preview.js").is_file()
+          report={
+            "status":"Stage 6 isolated draft generated and structurally checked",
+            "published_meanings":len(meaning_ids),
+            "published_formulations":len(form_ids),
+            "published_relations":len(preview["relations"]),
+            "source_citations_on_formulations":citations,
+            "preview_term_search_groups":len(preview["groups"]),
+            "misgrouped_distinct_terms":0,
+            "held_source_meanings":len(published["held"]),
+            "publication_sha256":state["sha256"],
+            "source_isolation":"No reads of original production definition/variant/citation inventory",
+            "manual_browser_qa_complete":False,
+            "human_verified":False,
+            "ready_for_second_wave":False,
+            "qa_remaining":"Browser-based interaction/KaTeX visual testing and prototype inspection before freezing Wave 1.",
+            "workflow_run_id":os.environ.get("GITHUB_RUN_ID",""),
+            "origin_commit":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
+          }
+          atomic_json(root/"state/stage6_review.json",report)
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit standalone prototype without altering production Pages
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            research_pipeline/experiments/reconstruction-v1-recovery/state/checkpoint.json \
+            research_pipeline/experiments/reconstruction-v1-recovery/state/publication.json \
+            research_pipeline/experiments/reconstruction-v1-recovery/state/stage6_review.json \
+            research_pipeline/experiments/reconstruction-v1-recovery/published/catalog.json \
+            research_pipeline/experiments/reconstruction-v1-recovery/preview/index.html \
+            research_pipeline/experiments/reconstruction-v1-recovery/preview/catalog.json \
+            research_pipeline/experiments/reconstruction-v1-recovery/preview/preview.js \
+            research_pipeline/experiments/reconstruction-v1-recovery/preview/preview.css
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish isolated corrected Wave 1 Stage 6 prototype with distinct meaning headings"
+            for retry in 1 2 3 4; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then exit 0; fi
+            done
+            echo "Stage 6 prototype was not safely committed" >&2
+            exit 1
+          fi
