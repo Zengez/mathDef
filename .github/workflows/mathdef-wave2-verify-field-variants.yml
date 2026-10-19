@@ -1,0 +1,77 @@
+name: Verify four original cross-source field theory variant reviews
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-verify-field-variants.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  cross-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh latest independent field theory reviews
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all research modules and run regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Validate all four independently sourced context-equivalence comparisons
+        run: |
+          python -m research_pipeline.engine.wave2_cross_source_variant_review \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify independently frozen Wave 1 and nonmerging of source variants
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          a=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          b=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(a.publication())==json.loads((a.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          assert len(b.records("meanings"))==462 and len(b.records("relations"))==622
+          assert not any(b.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
+          reports=jsonl(b.root/"wave2/cross_source_field_theory_variant_reviews_2026-10-19.jsonl")
+          assert len(reports)==4 and len(set(x["task_id"] for x in reports))==4
+          assert sum(x.get("source_scope_correction_needed") is True for x in reports)==1
+          review=json.loads((b.root/"state/wave2_cross_source_field_theory_audit.json").read_text())
+          assert review["original_cross_source_tasks"]==4
+          assert review["cross_source_tasks_with_individual_source_and_mathematics_comparison"]==4
+          assert review["equivalent_core_or_matching_context_cases"]==3
+          assert review["equivalent_positive_characteristic_with_separate_scope_correction"]==1
+          assert review["automatic_synonym_merges"]==0
+          assert review["other_original_source_priority_tasks_not_classified_as_reviewed"]==95
+          assert review["human_peer_verified"] is False
+          assert review["production_corpus_used"] is False
+          print(json.dumps(review,indent=2))
+          PY
+      - name: Commit only independent four-source variant audit evidence
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent/state/wave2_cross_source_field_theory_audit.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Validate four original field-theory variant research cases without conflating source contexts"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
