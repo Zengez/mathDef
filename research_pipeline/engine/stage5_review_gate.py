@@ -1,0 +1,225 @@
+"""Audited formulation-level Stage 5 links for independent reconstruction.
+
+No production mathDef data is read. The Stage 5 seal MUST account for every
+Stage 4 formulation, including explicit no-link and held-ambiguity outcomes.
+Text-matching alone never changes a review's pending state.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+from collections import Counter, defaultdict
+from pathlib import Path
+
+from .core import PipelineError, Workspace, atomic_json, canonical, digest, jsonl
+from .queues import make_queue
+
+DECISIONS = {"needs_review", "linked", "no_supported_target", "held_ambiguity"}
+REVIEW_PATH = Path("state/stage5_formulation_reviews.jsonl")
+
+
+def inventory(w):
+    if not w.state("meanings").get("sealed"):
+        raise PipelineError("Seal Stage 4 before preparing Stage 5")
+    meanings = w.records("meanings")
+    if w.state("meanings").get("record_digest") != digest(list(meanings.values())):
+        raise PipelineError("Stage 4 meanings changed after sealing")
+    forms = {}
+    for meaning in meanings.values():
+        for form in meaning["formulations"]:
+            if form["id"] in forms:
+                raise PipelineError("Stage 5: repeated formulation identity")
+            if form["review_state"] != "screened":
+                raise PipelineError("Stage 5: unscreened upstream formulation")
+            forms[form["id"]] = (meaning, form)
+    return meanings, forms
+
+
+def prepare(workspace):
+    w = Workspace(workspace)
+    meanings, forms = inventory(w)
+    out = w.root / REVIEW_PATH
+    if out.exists():
+        raise PipelineError("Existing Stage 5 ledger: preserve reviews; do not reset")
+    make_queue(w.root, "relations", batch_size=10)
+    lines = []
+    for form_id, (meaning, form) in sorted(forms.items()):
+        lines.append({
+            "formulation_id": form_id, "meaning_id": meaning["id"],
+            "meaning_catalog_digest": w.state("meanings")["record_digest"],
+            "decision": "needs_review", "relation_ids": [],
+            "editorial_reason": "Pending individual cross-definition research; no link or no-link judgment has been made.",
+            "reviewed_by": None, "human_verified": False,
+        })
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("".join(canonical(x) + "\n" for x in lines), encoding="utf-8")
+    w.checkpoint("relations", {"sealed": False, "reviewed_formulations": 0,
+                               "formulations": len(forms), "meanings": len(meanings),
+                               "next": "Apply source-checked relation batches, review each remaining formulation"})
+    return {"meaning_tasks": len(meanings), "formulation_reviews_prepared": len(lines),
+            "reviewed": 0, "pending": len(lines)}
+
+
+def apply_batch(workspace, batch):
+    w = Workspace(workspace)
+    meanings, forms = inventory(w)
+    if w.state("relations").get("sealed"):
+        raise PipelineError("Cannot update sealed Stage 5")
+    ledger = w.root / REVIEW_PATH
+    if not ledger.is_file():
+        raise PipelineError("Run --prepare before applying relation batches")
+    reviews = {x["formulation_id"]: x for x in jsonl(ledger)}
+    if set(reviews) != set(forms):
+        raise PipelineError("Review ledger must cover the exact sealed Stage 4 formulations")
+    batch_rows = jsonl(batch)
+    if not batch_rows:
+        raise PipelineError("No reviewed relations in batch")
+    by_form = defaultdict(list)
+    seen = set()
+    for row in batch_rows:
+        rid, fid, target = row.get("id"), row.get("from_formulation"), row.get("target_meaning")
+        if rid in seen:
+            raise PipelineError("Duplicate reviewed link in batch")
+        seen.add(rid)
+        if fid not in forms or target not in meanings:
+            raise PipelineError("Unresolved relation endpoint")
+        parent, form = forms[fid]
+        if parent["id"] == target:
+            raise PipelineError("Self-link is not a definitional dependency")
+        if (row.get("relation_type"), row.get("review_state")) != ("definition_uses", "screened"):
+            raise PipelineError("Batch must contain screened definition_uses links only")
+        if row.get("human_verified") is not False:
+            raise PipelineError("Assistant editorial research cannot claim formal human verification")
+        phrase = row.get("source_phrase", "")
+        if not phrase or phrase.casefold() not in form["text"].casefold():
+            raise PipelineError("Dependency anchor missing from source formulation: " + str(rid))
+        if row.get("source_locator") != parent["source_citation"]["url"]:
+            raise PipelineError("Source provenance mismatch: " + str(rid))
+        if row.get("target_locator") != meanings[target]["source_citation"]["url"]:
+            raise PipelineError("Target provenance mismatch: " + str(rid))
+        if not isinstance(row.get("editorial_reason"), str) or len(row["editorial_reason"].strip()) < 50:
+            raise PipelineError("Every screened edge needs individual mathematical rationale")
+        if not isinstance(row.get("reviewed_by"), str) or not row["reviewed_by"].strip():
+            raise PipelineError("Screened edges need editorial attribution")
+        w.validate("relations", row)
+        by_form[fid].append(row)
+    # Preserve idempotent intake and validate complete batch before mutation.
+    ingest_result = w.ingest("relations", batch, batch_size=10)
+    for fid, links in by_form.items():
+        review = reviews[fid]
+        if review["decision"] not in ("needs_review", "linked"):
+            raise PipelineError("Cannot overwrite a no-link/ambiguity disposition: " + fid)
+        previous = set(review.get("relation_ids", []))
+        previous.update(r["id"] for r in links)
+        review["decision"] = "linked"
+        review["relation_ids"] = sorted(previous)
+        review["reviewed_by"] = "assistant_source_comparison_2026-10-18"
+        review["editorial_reason"] = (
+            "Manually screened source formulation against exact reconstructed target meanings; "
+            "individual mathematical reasons and both source locators are attached to each relation.")
+    ledger.write_text("".join(canonical(reviews[k]) + "\n" for k in sorted(reviews)),
+                      encoding="utf-8")
+    result = audit(workspace)
+    w.checkpoint("relations", {"sealed": False,
+                               "reviewed_formulations": result["reviewed"],
+                               "formulations": result["formulations"],
+                               "links": result["screened_relations"],
+                               "next": "Continue all remaining formulation reviews; do not seal early"})
+    return {"ingestion": ingest_result, "review": result}
+
+
+def audit(workspace, require_complete=False):
+    w = Workspace(workspace)
+    meanings, forms = inventory(w)
+    path = w.root / REVIEW_PATH
+    if not path.exists():
+        raise PipelineError("No Stage 5 formulation-level ledger")
+    entries = jsonl(path)
+    if len(entries) != len(forms):
+        raise PipelineError("Stage 5 missing formulation reviews: %s of %s" %
+                            (len(entries), len(forms)))
+    relations = w.records("relations")
+    by_id = {}
+    tally = Counter()
+    accounted_relations = set()
+    for row in entries:
+        fid = row.get("formulation_id")
+        if fid not in forms or fid in by_id:
+            raise PipelineError("Unknown or duplicate Stage 5 formulation review")
+        by_id[fid] = row
+        meaning = forms[fid][0]
+        if row.get("meaning_id") != meaning["id"]:
+            raise PipelineError("Stage 5 review attached to wrong meaning")
+        if row.get("meaning_catalog_digest") != w.state("meanings")["record_digest"]:
+            raise PipelineError("Stale Stage 5 review against meaning registry")
+        if row.get("human_verified") is not False:
+            raise PipelineError("No automatic human verification claims")
+        decision = row.get("decision")
+        if decision not in DECISIONS:
+            raise PipelineError("Unsupported Stage 5 decision")
+        ids = row.get("relation_ids")
+        if not isinstance(ids, list) or len(ids) != len(set(ids)):
+            raise PipelineError("Relation IDs must be a unique list")
+        if decision == "needs_review":
+            if ids or row.get("reviewed_by"):
+                raise PipelineError("Pending item contains editorial claims")
+        else:
+            if not isinstance(row.get("reviewed_by"), str) or not row["reviewed_by"]:
+                raise PipelineError("Terminal Stage 5 disposition needs an editor")
+            if len(row.get("editorial_reason", "").strip()) < 50:
+                raise PipelineError("Terminal Stage 5 disposition lacks substantive explanation")
+            if decision == "linked" and not ids:
+                raise PipelineError("Linked decision has no supported relation")
+            if decision != "linked" and ids:
+                raise PipelineError("Held/no-link decision cannot cite published relations")
+        for rid in ids:
+            rel = relations.get(rid)
+            if not rel or rel["from_formulation"] != fid or rel["review_state"] != "screened":
+                raise PipelineError("Stage 5 review points at missing/unscreened relation")
+            if rel["target_meaning"] == meaning["id"]:
+                raise PipelineError("Unwanted recursive self dependency")
+            accounted_relations.add(rid)
+        tally[decision] += 1
+    if set(by_id) != set(forms):
+        raise PipelineError("Stage 5 did not account for every formulation")
+    unreviewed_relations = set(relations) - accounted_relations
+    if unreviewed_relations:
+        raise PipelineError("Relations have no matching editorial review: " +
+                            str(sorted(unreviewed_relations)[:5]))
+    if require_complete and tally["needs_review"]:
+        raise PipelineError("Stage 5 cannot seal: %s of %s formulations not reviewed" %
+                            (tally["needs_review"], len(forms)))
+    return {"formulations": len(forms), "meanings": len(meanings),
+            "reviewed": len(forms) - tally["needs_review"],
+            "needs_review": tally["needs_review"],
+            "decisions": dict(tally),
+            "screened_relations": len(relations),
+            "complete": tally["needs_review"] == 0,
+            "human_verified": False}
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--workspace", required=True, type=Path)
+    operation = parser.add_mutually_exclusive_group(required=True)
+    operation.add_argument("--prepare", action="store_true")
+    operation.add_argument("--apply-batch", type=Path)
+    operation.add_argument("--audit", action="store_true")
+    operation.add_argument("--seal", action="store_true")
+    args = parser.parse_args(argv)
+    if args.prepare:
+        result = prepare(args.workspace)
+    elif args.apply_batch:
+        result = apply_batch(args.workspace, args.apply_batch)
+    elif args.seal:
+        result = audit(args.workspace, require_complete=True)
+        Workspace(args.workspace).seal("relations")
+        result["sealed"] = True
+        atomic_json(args.workspace / "state/stage5_review.json", result)
+    else:
+        result = audit(args.workspace)
+    print(json.dumps(result, indent=2, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()
