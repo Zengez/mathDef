@@ -81,7 +81,7 @@ def run(root):
         })
     def store(path, rows):
         path.parent.mkdir(parents=True,exist_ok=True)
-        content="".join(canonical(row)+"\\n" for row in rows)
+        content="".join(canonical(row)+"\n" for row in rows)
         if path.exists() and path.read_text(encoding="utf-8")!=content:
             raise PipelineError("Prior source-specific intake differs: "+str(path))
         path.write_text(content,encoding="utf-8")
