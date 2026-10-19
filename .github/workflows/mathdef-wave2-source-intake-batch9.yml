@@ -1,0 +1,99 @@
+name: Intake four independent algebra order and topology foundations
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-source-intake-batch9.yml'
+      - 'research_pipeline/engine/wave2_foundations_batch9_more.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Use latest committed independent source corpus
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all research engine files and run isolated tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Source-intake four individually reviewed ProofWiki foundation pages without screening meanings
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_batch9_more \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify 354-term source coverage with immutable 350-term snapshot
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify original frozen lineage, source access and exact candidate counts
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          frozen=json.loads((old.root/"state/wave1_freeze.json").read_text())
+          assert digest(old.publication())==frozen["published_catalog_digest"]
+          expect={"sources":9,"terms":354,"observations":777,"meanings":447,"relations":582}
+          for stage,count in expect.items():
+              assert len(w.records(stage))==count,stage
+              assert not w.state(stage).get("sealed"),stage
+          for stage in ("sources","terms","observations","relations"):
+              assert all(w.records(stage).get(k)==v for k,v in old.records(stage).items())
+          prior=jsonl(w.root/"state/wave2_term_coverage_snapshot_350.jsonl")
+          current=jsonl(w.root/"state/wave2_term_coverage.jsonl")
+          assert len(prior)==350 and len(current)==354
+          by={x["term_id"]:x for x in current}
+          assert len(by)==354
+          assert all(by[x["term_id"]]==x for x in prior)
+          source=jsonl(w.root/"wave2/foundation_source_discovery_batch_09.jsonl")
+          assert len(source)==4
+          assert all(x["source_access_outcome"]=="direct_page_read" and x["meaning_screened"] is False for x in source)
+          report=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert report["term_count"]==354
+          assert report["source_read_new_candidates"]==28
+          assert report["new_term_review_coverage"]==36
+          assert report["new_source_locators_unverified"]==8
+          assert report["mathematical_candidate_meanings_screened"]==28
+          assert report["complete_for_wave2_sealing"] is False
+          new=json.loads((w.root/"state/wave2_foundations_batch_09.json").read_text())
+          assert new["no_new_meanings_screened"] and new["no_new_links_screened"]
+          assert new["human_peer_verified"] is False
+          review=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(review)==459 and not any(x["decision"]=="needs_review" for x in review)
+          assert {rid for x in review for rid in x["relation_ids"]}==set(w.records("relations"))
+          print(json.dumps(new,indent=2))
+          PY
+      - name: Commit only independent Wave 2 individually attributed source records
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Acquire four reviewed elementary sources with preserved 350-term audit ledger"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
