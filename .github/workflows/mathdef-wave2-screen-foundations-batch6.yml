@@ -70,7 +70,15 @@ jobs:
               previous=old.records(stage)
               new=w.records(stage)
               assert len(new)==n,stage
-              assert all(new.get(k)==v for k,v in previous.items()),stage
+              if stage=="meanings":
+                  intentionally_corrected={
+                     "meaning.f7206eb9332b9389.category-valued-presheaf",
+                     "meaning.f0d993a60533fc99.groupoid-valued-presheaf"}
+                  assert all(new.get(k)==v for k,v in previous.items()
+                             if k not in intentionally_corrected),stage
+                  assert all(k in new for k in intentionally_corrected)
+              else:
+                  assert all(new.get(k)==v for k,v in previous.items()),stage
               assert not w.state(stage).get("sealed"),stage
           meanings=w.records("meanings")
           added=[m for m in meanings.values() if m["id"].startswith("meaning.wave2.foundation.")]
