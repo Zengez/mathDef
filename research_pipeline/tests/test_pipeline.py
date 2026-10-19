@@ -117,6 +117,35 @@ class PipelineTests(unittest.TestCase):
         self.assertNotIn("Closure", by_name["Algebraic closure"]["aliases"])
         self.assertEqual(len(view["relations"]), 1)
 
+    def test_preview_consolidates_identical_name_from_independent_sections(self):
+        self.load_all()
+        self.workspace.publish()
+        path = self.workspace.root / "published/catalog.json"
+        catalog = json.loads(path.read_text(encoding="utf-8"))
+        second = next(m for m in catalog["meanings"] if m["id"] == "field.closure")
+        # Identical names across unrelated term_group_id locators should
+        # surface as multiple source-context versions under one search term.
+        second["term_group_id"] = "another-source-section"
+        path.write_text(json.dumps(catalog), encoding="utf-8")
+        output = build(self.workspace.root)
+        self.assertEqual((output["groups"], output["meanings"]), (1, 2))
+        view = json.loads((self.workspace.root / "preview/catalog.json").read_text())
+        self.assertEqual(len(view["groups"][0]["meanings"]), 2)
+        self.assertEqual({m["id"] for m in view["groups"][0]["meanings"]},
+                         {"top.closure", "field.closure"})
+        self.assertEqual(len(view["relations"]), 1)
+
+    def test_preview_provides_new_term_intake_and_individual_correction(self):
+        self.load_all()
+        self.workspace.publish()
+        build(self.workspace.root)
+        html = (self.workspace.root / "preview/index.html").read_text()
+        js = (self.workspace.root / "preview/preview.js").read_text()
+        self.assertIn('id="suggest-term"', html)
+        self.assertIn("Suggest correction to this formulation", js)
+        self.assertIn("source.locator", js)
+        self.assertIn("source.url", js)
+
     def push_conflict(self, forked):
         source = dict(self.source(), title="Tampered text")
         path = self.inputs / "fork_conflict.jsonl"
