@@ -18,25 +18,16 @@ def build(workspace):
     if not source.is_file():
         raise PipelineError("Publish the reconstruction catalog first")
     catalog = json.loads(source.read_text(encoding="utf-8"))
-    # Stage 2 source sections are locators, NOT necessarily mathematical
-    # concept identities. A single Stacks section can define dozens of
-    # unrelated concepts. Split such sources into separate preview groups by
-    # actual meaning name; retain a shared group only for matching names.
-    source_labels = defaultdict(set)
-    for meaning in catalog["meanings"]:
-        source_labels[meaning["term_group_id"]].add(
-            " ".join(meaning["display_term"].casefold().split()))
+    # Page-section IDs are provenance locators, not mathematical term IDs.
+    # One section may define unrelated concepts, and one concept can appear
+    # in multiple source sections. Group by the complete, normalized title,
+    # retaining distinct contextual meanings and all source/formulation IDs.
+    # This is a presentation-only identity: sealed Stage 4/5 records remain
+    # untouched, and context-sensitive synonym consolidation belongs to Wave 2.
     grouped = defaultdict(list)
     for meaning in catalog["meanings"]:
-        original_group = meaning["term_group_id"]
-        if len(source_labels[original_group]) == 1:
-            group_id = original_group
-        else:
-            # Stable presentation-only grouping; the sealed Stage 4/5 IDs,
-            # evidence, and relationships are never changed.
-            group_id = "preview." + digest([
-                original_group, " ".join(meaning["display_term"].casefold().split())
-            ])[:24]
+        normalized_title = " ".join(meaning["display_term"].casefold().split())
+        group_id = "preview.term." + digest(normalized_title)[:24]
         grouped[group_id].append(meaning)
     observations = {x["id"]: x for x in catalog["observations"]}
     references = {x["id"]: x for x in catalog["sources"]}
@@ -84,6 +75,9 @@ def build(workspace):
                 "display_term": meaning["display_term"], "term_group_id": gid,
                 "formulations": form_rows, "other_sources": other_sources,
             })
+        result_meanings.sort(key=lambda item: (
+            item["display_term"].casefold(), item["label"].casefold(), item["id"]
+        ))
         out_groups.append({
             "id": gid, "title": meanings[0]["display_term"], "aliases": sorted(aliases),
             "meanings": result_meanings,
