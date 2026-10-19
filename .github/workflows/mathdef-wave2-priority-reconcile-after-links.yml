@@ -4,6 +4,7 @@ on:
   workflow_run:
     workflows:
       - Screen Wave 2 links after four new Stacks meaning reviews pass
+      - Screen eighteen Wave 2 algebra order and topology prerequisite relationships
     types:
       - completed
   workflow_dispatch:
@@ -54,15 +55,15 @@ jobs:
           untouched=jsonl(w.root/"state/wave2_priority_reconciliation_2026-10-19.jsonl")
           assert len(base)==len(untouched)==192
           assert all(x["status"]=="unresearched" for x in base)
-          assert len(w.records("relations"))==563
-          assert len(w.records("meanings"))==435
+          assert len(w.records("relations"))==600
+          assert len(w.records("meanings"))==453
           assert not any(w.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
           updated=jsonl(w.root/"state/wave2_priority_progress_current.jsonl")
           result=json.loads((w.root/"state/wave2_priority_progress_current.json").read_text())
           assert len(updated)==192
           assert result["original_relationship_gap_tasks"]==93
           assert result["other_source_variant_collection_tasks_not_proven_complete_by_this_metric"]==99
-          assert result["original_relationship_gaps_with_at_least_one_screened_link"]>=72
+          assert result["original_relationship_gaps_with_at_least_one_screened_link"]>=82
           assert result["a_link_is_not_proof_of_exhaustive_prerequisites"] is True
           assert result["source_task_research_not_automatically_closed"] is True
           assert result["original_production_mathdef_consulted"] is False
