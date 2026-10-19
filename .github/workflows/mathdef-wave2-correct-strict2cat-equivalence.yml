@@ -1,0 +1,88 @@
+name: Audit strict 2-category equivalence context without altering frozen Wave 1
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-correct-strict2cat-equivalence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  strict-source-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Reload latest independent mathematical research state
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile and test every research pipeline module
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Apply audited Stacks strict 2-category wording through candidate and screen revision
+        run: |
+          python -m research_pipeline.engine.wave2_correct_strict2category_equivalence \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify immutable Wave 1, 474 reviews and 621 source-screened links
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,digest,jsonl
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(old.publication())==json.loads((old.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          assert len(w.records("meanings"))==462 and len(w.records("relations"))==621
+          assert not any(w.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
+          before=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_474_before_strict2cat.jsonl")
+          after=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(before)==len(after)==474
+          prev={r["formulation_id"]:r for r in before}
+          curr={r["formulation_id"]:r for r in after}
+          assert set(prev)==set(curr)
+          for fid in prev:
+              assert curr[fid]["decision"]==prev[fid]["decision"]
+              assert curr[fid]["relation_ids"]==prev[fid]["relation_ids"]
+              assert curr[fid]["original_wave1_disposition"]==prev[fid]["original_wave1_disposition"]
+          assert {rid for r in after for rid in r["relation_ids"]}==set(w.records("relations"))
+          meaning=w.records("meanings")["meaning.ec5e3a0d13f85f3a.equivalence-objects-two-category"]
+          assert meaning["formulations"][0]["review_state"]=="screened"
+          assert "strict 2-category" in meaning["formulations"][0]["text"]
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_strict2cat_equivalence_context_correction.json").read_text())
+          assert report["formulation_reviews_preserved"]==474
+          assert report["screened_links_preserved"]==621
+          assert report["weak_bicategory_variant_remains_future_research"]
+          assert report["held_ambiguity_original_disposition_preserved"]
+          assert report["link_to_strict_two_category_not_yet_applied"]
+          assert report["human_peer_verified"] is False
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independently audited Wave 2 strict-context corrections and snapshots
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Correct Stacks strict 2-category equivalence context preserving held Wave 1 decision"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
