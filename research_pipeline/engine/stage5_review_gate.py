@@ -128,6 +128,60 @@ def apply_batch(workspace, batch):
     return {"ingestion": ingest_result, "review": result}
 
 
+
+def apply_dispositions(workspace, batch):
+    """Save individually reasoned no-link or held-ambiguity reviews; never infer them."""
+    w = Workspace(workspace)
+    _, forms = inventory(w)
+    if w.state("relations").get("sealed"):
+        raise PipelineError("Cannot change sealed Stage 5 dispositions")
+    ledger = w.root / REVIEW_PATH
+    if not ledger.is_file():
+        raise PipelineError("Prepare Stage 5 reviews first")
+    existing = {r["formulation_id"]: r for r in jsonl(ledger)}
+    if set(existing) != set(forms):
+        raise PipelineError("Stale or incomplete Stage 5 ledger")
+    rows = jsonl(batch)
+    if not rows:
+        raise PipelineError("No individually reviewed dispositions")
+    seen = set()
+    for item in rows:
+        fid = item.get("formulation_id")
+        if fid not in forms or fid in seen:
+            raise PipelineError("Unknown or repeated disposition formulation")
+        seen.add(fid)
+        if item.get("decision") not in ("no_supported_target", "held_ambiguity"):
+            raise PipelineError("A disposition batch may not fabricate links or clear pending reviews")
+        if item.get("human_verified") is not False:
+            raise PipelineError("Human verification cannot be implied")
+        if not item.get("reviewed_by") or not isinstance(item["reviewed_by"], str):
+            raise PipelineError("No-link/ambiguity decisions need editorial attribution")
+        if len(str(item.get("editorial_reason", "")).strip()) < 50:
+            raise PipelineError("No-link/ambiguity decisions need detailed mathematical rationale")
+        if item.get("source_text_digest") != digest(forms[fid][1]["text"]):
+            raise PipelineError("Disposition based on stale or wrong formulation")
+        prior = existing[fid]
+        if prior["decision"] not in ("needs_review", item["decision"]):
+            raise PipelineError("Cannot silently replace a prior screened disposition")
+        if prior["relation_ids"]:
+            raise PipelineError("Cannot discard existing links via no-link disposition")
+        if prior["decision"] != "needs_review" and (
+                prior["editorial_reason"] != item["editorial_reason"] or
+                prior["reviewed_by"] != item["reviewed_by"]):
+            raise PipelineError("Conflicting disposition revision requires audited next wave")
+        prior["decision"] = item["decision"]
+        prior["editorial_reason"] = item["editorial_reason"]
+        prior["reviewed_by"] = item["reviewed_by"]
+    ledger.write_text("".join(canonical(existing[k]) + "\n" for k in sorted(existing)),
+                      encoding="utf-8")
+    report = audit(workspace)
+    w.checkpoint("relations", {"sealed": False,
+                               "reviewed_formulations": report["reviewed"],
+                               "formulations": report["formulations"],
+                               "links": report["screened_relations"],
+                               "next": "Review all pending formulations before sealing"})
+    return report
+
 def audit(workspace, require_complete=False):
     w = Workspace(workspace)
     meanings, forms = inventory(w)
@@ -204,6 +258,7 @@ def main(argv=None):
     operation = parser.add_mutually_exclusive_group(required=True)
     operation.add_argument("--prepare", action="store_true")
     operation.add_argument("--apply-batch", type=Path)
+    operation.add_argument("--apply-dispositions", type=Path)
     operation.add_argument("--audit", action="store_true")
     operation.add_argument("--seal", action="store_true")
     args = parser.parse_args(argv)
@@ -211,6 +266,8 @@ def main(argv=None):
         result = prepare(args.workspace)
     elif args.apply_batch:
         result = apply_batch(args.workspace, args.apply_batch)
+    elif args.apply_dispositions:
+        result = apply_dispositions(args.workspace, args.apply_dispositions)
     elif args.seal:
         result = audit(args.workspace, require_complete=True)
         Workspace(args.workspace).seal("relations")
