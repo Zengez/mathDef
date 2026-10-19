@@ -1,0 +1,105 @@
+name: Ingest four independent kernel cokernel exactness sources
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-homological-sources-batch13.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh latest verified main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile Python pipeline and run full isolated tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Ingest individually justified source observations, NOT screened meanings
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_batch13_homological \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Archive 356-term source-review ledger and calculate 360-term coverage
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify mathematical source identity and immutable Wave 1
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          two=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(one.publication())==json.loads((one.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          for name,size in (("sources",9),("terms",360),("observations",783),("meanings",455),("relations",606)):
+              assert len(two.records(name))==size,name
+              assert not two.state(name).get("sealed"),name
+          for name in ("sources","terms","observations","relations"):
+              assert all(two.records(name).get(k)==v for k,v in one.records(name).items()),name
+          old=jsonl(two.root/"state/wave2_term_coverage_snapshot_356.jsonl")
+          curr=jsonl(two.root/"state/wave2_term_coverage.jsonl")
+          assert len(old)==356 and len(curr)==360
+          indexed={r["term_id"]:r for r in curr}
+          assert len(indexed)==360 and all(indexed.get(x["term_id"])==x for x in old)
+          report=json.loads((two.root/"state/wave2_term_coverage.json").read_text())
+          assert report["term_count"]==360
+          assert report["new_term_review_coverage"]==42
+          assert report["source_read_new_candidates"]==34
+          assert report["new_source_locators_unverified"]==8
+          assert report["mathematical_candidate_meanings_screened"]==34
+          assert report["complete_for_wave2_sealing"] is False
+          candidates=jsonl(two.root/"wave2/foundation_source_discovery_batch_13.jsonl")
+          assert len(candidates)==4 and all(x["source_access_outcome"]=="direct_page_read" for x in candidates)
+          assert all(x["meaning_screened"] is False and x["human_verified"] is False for x in candidates)
+          assert sum(x["source_id"]=="src.proofwiki" for x in candidates)==1
+          assert sum(x["source_id"]=="src.stacks" for x in candidates)==3
+          reviews=jsonl(two.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==467
+          assert {id for x in reviews for id in x["relation_ids"]}==set(two.records("relations"))
+          summary=json.loads((two.root/"state/wave2_foundations_batch_13.json").read_text())
+          assert summary["concrete_vs_categorical_kernel_contexts_distinct"]
+          assert summary["cokernels_not_automatically_assumed_to_exist"]
+          assert summary["abelian_vs_preadditive_exactness_contexts_distinct"]
+          assert summary["human_peer_verified"] is False
+          print(json.dumps(summary,indent=2))
+          PY
+      - name: Commit ONLY independent Wave 2 source observations, evidence, and archived coverage
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then
+            echo "Out-of-scope modification refused" >&2
+            exit 1
+          fi
+          if git diff --cached --quiet; then
+            echo "Source evidence already committed"
+            exit 0
+          fi
+          git commit -m "Independently acquire kernel cokernel and exactness source candidates preserving 356-term audit history"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
