@@ -34,7 +34,7 @@ These are legitimate Wave 2 research tasks, **not** completed links. Likewise, 8
 - `preview/index.html` contains an embedded catalog; its companion `preview.js` and `preview.css` are in the same directory. Download that directory from the repository and open `index.html` locally to inspect the prototype.
 - Prototype has **419 distinct search-term headings**, **431 formulations**, **445 reviewed relationships**, and **431 directly mapped formulation source references**. The former preview bug grouping unrelated concepts simply because they came from the same Stacks section was repaired; test case added to the isolated Python suite.
 - Stage 6 publication SHA-256: `7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801`.
-- Stage 6 technical review and digest: `state/stage6_review.json`. Browser smoke-testing is recorded separately if it passes; manual scholarly review, responsive layout/LaTeX rendering inspection, source-modal QA, and editorial assessment remain distinct. No original corpus comparison has run.
+- Stage 6 technical review and digest: `state/stage6_review.json`. **Automated Chromium smoke-testing passed** in [GitHub Actions run 39196195069](https://github.com/Zengez/mathDef/actions/runs/39196195069); a screenshot artifact is available in that run's Artifacts area. Tested independent term/definition search, distinct headings, source modal, nested link expansion/collapse, implication labels, verification dialog and absence of page JavaScript errors. Machine report: `state/stage6_browser_smoke.json`. Manual scholarly review, responsive/KaTeX visual inspection and editorial approval remain distinct and **not complete**. No original corpus comparison has run.
 
 ## Continuation
 
