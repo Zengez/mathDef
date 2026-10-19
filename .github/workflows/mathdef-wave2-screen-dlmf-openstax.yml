@@ -1,0 +1,103 @@
+name: Mathematically screen seven independent DLMF and OpenStax contexts
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-screen-dlmf-openstax.yml'
+      - 'research_pipeline/engine/wave2_screen_dlmf_openstax.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh authoritative independent Wave 2 data
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all research scripts and run isolated tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Individually screen seven exact-source mathematical meaning contexts
+        run: |
+          python -m research_pipeline.engine.wave2_screen_dlmf_openstax \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Recalculate the immutable per-source coverage ledger
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Check frozen Wave 1, immutable historical reviews and source specificity
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,digest,jsonl
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(old.publication())==json.loads((old.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":9,"terms":366,"observations":789,"meanings":469,"relations":622}
+          for stage,n in expected.items():
+              assert len(w.records(stage))==n,stage
+              assert not w.state(stage).get("sealed"),stage
+          assert all(w.records("terms").get(k)==v for k,v in old.records("terms").items())
+          assert all(w.records("observations").get(k)==v for k,v in old.records("observations").items())
+          current=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          historical=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_474_before_analysis20.jsonl")
+          assert len(current)==481 and len(historical)==474
+          index={r["formulation_id"]:r for r in current}
+          assert len(index)==481
+          for original in historical:
+              now=index[original["formulation_id"]]
+              assert {k:v for k,v in now.items() if k!="meaning_catalog_digest"}=={
+                     k:v for k,v in original.items() if k!="meaning_catalog_digest"}
+          assert sum(r["decision"]=="needs_review" for r in current)==7
+          assert {rid for r in current for rid in r["relation_ids"]}==set(w.records("relations"))
+          mm=w.records("meanings")
+          assert all(f["review_state"]=="screened" for m in mm.values() for f in m["formulations"])
+          ids=["orthogonal-polynomials-interval","orthogonal-polynomials-countable","orthogonal-polynomials-finite","orthogonal-polynomials-measure"]
+          assert len({mm["meaning.wave2.analysis."+x]["context"] for x in ids})==4
+          assert len({mm["meaning.wave2.analysis."+x]["term_group_id"] for x in ids})==1
+          check_cycles(mm,w.records("relations"))
+          report=json.loads((w.root/"state/wave2_analysis20_meaning_screen.json").read_text())
+          assert report["new_meanings_screened"]==7
+          assert report["prior_screened_links_preserved"]==622
+          assert report["historical_474_formulation_reviews_preserved"]
+          assert report["all_stages_unsealed"] is True
+          assert report["human_peer_verified"] is False
+          cover=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert cover["term_count"]==366
+          assert cover["mathematical_candidate_meanings_screened"]==50
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit independent source-reviewed meanings and append-only historical review migration
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen seven contextual calculus and orthogonal-polynomial meanings preserving 474 historical reviews"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
