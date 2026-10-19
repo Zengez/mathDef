@@ -158,7 +158,8 @@ def apply_dispositions(workspace, batch):
             raise PipelineError("No-link/ambiguity decisions need editorial attribution")
         if len(str(item.get("editorial_reason", "")).strip()) < 50:
             raise PipelineError("No-link/ambiguity decisions need detailed mathematical rationale")
-        if item.get("source_text_digest") != digest(forms[fid][1]["text"]):
+        if (item.get("source_text_digest") != digest(forms[fid][1]["text"]) and
+                item.get("source_text") != forms[fid][1]["text"]):
             raise PipelineError("Disposition based on stale or wrong formulation")
         prior = existing[fid]
         if prior["decision"] not in ("needs_review", item["decision"]):
