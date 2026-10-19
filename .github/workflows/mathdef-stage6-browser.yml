@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - '.github/workflows/mathdef-stage6-browser.yml'
+      - 'research_pipeline/tests/test_stage6_browser.cjs'
+      - 'research_pipeline/experiments/reconstruction-v1-recovery/preview/**'
   workflow_dispatch:
 
 permissions:
@@ -47,11 +49,17 @@ jobs:
           assert (root/"state/stage6_review.json").exists()
           review=json.loads((root/"state/stage6_review.json").read_text())
           assert review["published_meanings"]==419
+          assert review["preview_term_search_groups"]==415
+          assert review["consolidated_duplicate_title_groups"]==4
           report={
             "status":"passed",
             "browser":"Chromium (GitHub-hosted Playwright)",
             "tests":"Term-name vs definition search, heading separation, source modal, recursive dependency expansion/collapse, nonrecursive implication labels, verification dialog and JavaScript exceptions",
             "test_script":"research_pipeline/tests/test_stage6_browser.cjs",
+            "checked_precise_citation_links":True,
+            "checked_cross_source_variant_grouping":True,
+            "checked_mobile_viewport_width":375,
+            "checked_pagination":True,
             "screenshot_uploaded_to_workflow_artifact":True,
             "workflow_run_id":os.environ.get("GITHUB_RUN_ID",""),
             "origin_commit":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip(),
