@@ -132,8 +132,36 @@ def build(wave1, wave2):
         raise PipelineError("Unexpected source coverage; do not seal: "+str(counter))
     existing=second.root/"state/wave2_term_coverage.jsonl"
     content="".join(canonical(row)+"\n" for row in output)
+    archival=False
     if existing.exists() and existing.read_text(encoding="utf-8")!=content:
-        raise PipelineError("Source review ledger changed: create explicit versioned revision instead")
+        old_content=existing.read_text(encoding="utf-8")
+        old_rows=jsonl(existing)
+        old_by_id={r["term_id"]:r for r in old_rows}
+        new_by_id={r["term_id"]:r for r in output}
+        if len(old_by_id)!=len(old_rows) or not set(old_by_id).issubset(new_by_id):
+            raise PipelineError("Previous source review ledger has duplicated/deleted term identity")
+        for tid,prior in old_by_id.items():
+            if new_by_id[tid]!=prior:
+                raise PipelineError("Existing individual source decision changed without revision: "+tid)
+        prior_json=second.root/"state/wave2_term_coverage.json"
+        if not prior_json.exists():
+            raise PipelineError("Previous source ledger has no proof/metadata to archive")
+        prior_report=json.loads(prior_json.read_text(encoding="utf-8"))
+        if (prior_report.get("term_count")!=len(old_rows) or
+                prior_report.get("source_review_ledger_sha256")!=
+                   hashlib.sha256(old_content.encode("utf-8")).hexdigest()):
+            raise PipelineError("Stale existing Wave 2 source review digest")
+        history_file=second.root/"state/wave2_term_coverage_snapshot_333.jsonl"
+        history_report=second.root/"state/wave2_term_coverage_snapshot_333.json"
+        if len(old_rows)!=333:
+            raise PipelineError("Unexpected review history revision; require explicit versioning")
+        if history_file.exists() and history_file.read_text(encoding="utf-8")!=old_content:
+            raise PipelineError("Conflicting historical source coverage snapshot")
+        if history_report.exists() and json.loads(history_report.read_text())!=prior_report:
+            raise PipelineError("Conflicting historical source coverage report")
+        history_file.write_text(old_content,encoding="utf-8")
+        atomic_json(history_report,prior_report)
+        archival=True
     existing.write_text(content,encoding="utf-8")
     summary={
       "phase":"Wave 2 expanded per-term source review coverage",
@@ -148,6 +176,8 @@ def build(wave1, wave2):
       "complete_for_wave2_sealing":False,
       "must_research_all_unverified_source_locators":True,
       "inherited_blocked_sources_remain_unresolved":27,
+      "previous_333_term_review_ledger_archived":(archival or
+             (second.root/"state/wave2_term_coverage_snapshot_333.jsonl").exists()),
       "source_review_ledger_sha256":hashlib.sha256(content.encode("utf-8")).hexdigest(),
       "frozen_wave1_catalog_digest":freeze["published_catalog_digest"],
       "original_production_mathdef_consulted":False,
