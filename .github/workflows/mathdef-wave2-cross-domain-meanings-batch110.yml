@@ -1,0 +1,89 @@
+name: Screen independent linearity, rank, image and accumulation meanings — Batch 110
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-cross-domain-meanings-batch110.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+jobs:
+  mathematical-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Sync newest independent main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run reusable engine and mathDef adapter tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Individually source-screen six contextual meanings and seven formulations
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_cross_domain_meanings_batch110 --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Reconcile independent source-term coverage
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage --wave1 research_pipeline/experiments/reconstruction-v1-recovery --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify historical 580 reviews, seven new forms and unchanged graph
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(one.publication())==json.loads((one.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":14,"terms":449,"observations":898,"meanings":558,"relations":774}
+          assert {k:len(w.records(k)) for k in expected}==expected
+          assert not any(w.state(k).get("sealed") for k in expected)
+          for k in ("sources","terms","observations","relations"):
+            assert all(w.records(k).get(i)==v for i,v in one.records(k).items())
+          ms=w.records("meanings")
+          new=[m for m in ms.values() if m["id"].startswith("meaning.wave2.cross110.")]
+          assert len(new)==6 and sum(len(m["formulations"]) for m in new)==7
+          assert len(ms["meaning.wave2.cross110.image-of-mapping"]["formulations"])==2
+          assert ms["meaning.wave2.cross110.sequence-accumulation"]["context"]!=ms["meaning.wave2.cross110.set-accumulation"]["context"]
+          old=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_580_before_cross110.jsonl")
+          current=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          index={r["formulation_id"]:r for r in current}
+          assert len(old)==580 and len(current)==len(index)==587
+          for r in old:
+            after=index[r["formulation_id"]]
+            assert all(after.get(k)==v for k,v in r.items() if k!="meaning_catalog_digest")
+          assert all(r["meaning_catalog_digest"]==digest(list(ms.values())) for r in current)
+          assert {i for r in current for i in r["relation_ids"]}==set(w.records("relations"))
+          assert dict(Counter(r["decision"] for r in current))=={"linked":574,"no_supported_target":6,"needs_review":7}
+          check_cycles(ms,w.records("relations"))
+          report=json.loads((w.root/"state/wave2_cross110_meaning_screen.json").read_text())
+          assert report["historical_580_dispositions_preserved"] and report["historical_774_links_preserved"]
+          assert report["rank_finite_dimensional_image_preserved"] and report["accumulation_sequence_vs_set_separated"]
+          assert not report["human_peer_verified"] and not report["production_corpus_used"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit sourced mathematical meanings with immutable historic decisions
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen six linear image rank and accumulation contexts with seven source formulations"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
