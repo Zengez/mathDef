@@ -61,6 +61,13 @@ jobs:
           current={x["term_id"]:x for x in new_ledger}
           assert len(old_ledger)==399 and len(new_ledger)==402 and len(current)==402
           assert all(current[x["term_id"]]==x for x in old_ledger)
+          fraction_term="term.wave2.integer58.fraction-field-integral-domain"
+          reviewed_fraction=next(row for row in new_ledger if row["term_id"]==fraction_term)
+          assert len(reviewed_fraction["mathematical_observation_ids"])==2
+          assert set(reviewed_fraction["mathematical_observation_ids"])=={
+            "obs.wave2.integer58.fraction-field-integral-domain",
+            "obs.wave2.integer58.fraction-field-universal"
+          }
           prior_reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
           assert len(prior_reviews)==512
           assert len(w.records("relations"))==676
