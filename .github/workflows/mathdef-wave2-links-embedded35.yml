@@ -1,0 +1,99 @@
+name: Review five Stacks ideal integrality and fibre local ring dependencies
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-links-embedded35.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Reload latest independently screened source and meaning data
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all pipeline Python modules and run isolated mathematical regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Review five exact-source anchored Stacks mathematical dependencies
+        run: |
+          python -m research_pipeline.engine.wave2_apply_links \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --batch research_pipeline/experiments/reconstruction-v2-independent/intake/wave2_curated_relations_batch_35.jsonl
+      - name: Verify source context all 491 formulation review identities frozen Wave 1 and acyclic relations
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,digest,jsonl
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          original=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((original.root/"state/wave1_freeze.json").read_text())
+          assert digest(original.publication())==freeze["published_catalog_digest"]
+          for s,n in (("sources",9),("terms",376),("observations",799),("meanings",479),("relations",648)):
+              assert len(w.records(s))==n,s
+              assert not w.state(s).get("sealed"),s
+          assert len(original.records("relations"))==445
+          assert all(w.records("relations").get(k)==v for k,v in original.records("relations").items())
+          items=jsonl(w.root/"intake/wave2_curated_relations_batch_35.jsonl")
+          assert len(items)==5 and len({x["id"] for x in items})==5
+          assert all(w.records("relations")[r["id"]]==r for r in items)
+          assert {r["from_formulation"] for r in items}=={
+            "form.wave2.foundation.integral-over-ideal",
+            "form.wave2.foundation.local-ring-fibre-at-prime"}
+          reviewed=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviewed)==491 and len({r["formulation_id"] for r in reviewed})==491
+          assert {id for r in reviewed for id in r["relation_ids"]}==set(w.records("relations"))
+          assert sum(r["decision"]=="needs_review" for r in reviewed)==0
+          for fid,number in (("form.wave2.foundation.integral-over-ideal",2),
+                             ("form.wave2.foundation.local-ring-fibre-at-prime",3)):
+              r=next(x for x in reviewed if x["formulation_id"]==fid)
+              assert r["decision"]=="linked" and len(r["relation_ids"])==number
+          history=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_489_before_embedded34.jsonl")
+          prior={r["formulation_id"]:r for r in history}
+          assert len(history)==489
+          assert all(r["original_wave1_disposition"]==prior[r["formulation_id"]]["original_wave1_disposition"]
+                     for r in reviewed if r["formulation_id"] in prior)
+          check_cycles(w.records("meanings"),w.records("relations"))
+          result=json.loads((w.root/"state/wave2_link_review_batch_35.json").read_text())
+          assert result["added_source_grounded_links"]==5
+          assert result["total_screened_links"]==648
+          assert result["dependency_graph_has_cycles"] is False
+          assert result["pending_wave2_link_reviews"]==0
+          assert result["human_peer_verified"] is False
+          assert result["wave2_link_stage_sealed"] is False
+          print(json.dumps(result,indent=2))
+          PY
+      - name: Commit only individually screened independent Stacks relations and historic review events
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen five independent Stacks integral-over-ideal and fibre-local-ring relations"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
