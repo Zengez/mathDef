@@ -1,0 +1,95 @@
+name: Screen Stacks DVR uniformizer meaning and preserve historical reviews
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-screen-uniformizer31.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh newest independent Wave 2 source registry
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile Python engine and execute research regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Source-screen DVR-specific uniformizer formulation with immutable 488-review snapshot
+        run: |
+          python -m research_pipeline.engine.wave2_screen_uniformizer31 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify all historical links, precise Stacks source, and frozen Wave 1
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((old.root/"state/wave1_freeze.json").read_text())
+          assert digest(old.publication())==freeze["published_catalog_digest"]
+          for s,n in (("sources",9),("terms",374),("observations",797),("meanings",477),("relations",640)):
+              assert len(w.records(s))==n,s
+              assert not w.state(s).get("sealed"),s
+          meanings=w.records("meanings")
+          m=meanings["meaning.wave2.foundation.uniformizer-dvr"]
+          assert m["formulations"][0]["review_state"]=="screened"
+          assert "discrete valuation ring" in m["formulations"][0]["text"]
+          assert "maximal ideal" in m["formulations"][0]["text"]
+          assert m["human_verified"] is False
+          historical=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_488_before_uniformizer31.jsonl")
+          current=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(historical)==488 and len(current)==489
+          now={r["formulation_id"]:r for r in current}
+          assert len(now)==489
+          assert all({k:v for k,v in row.items() if k!="meaning_catalog_digest"}==
+                     {k:v for k,v in now[row["formulation_id"]].items() if k!="meaning_catalog_digest"} for row in historical)
+          assert {rid for r in current for rid in r["relation_ids"]}==set(w.records("relations"))
+          assert sum(x["decision"]=="needs_review" for x in current)==1
+          assert now["form.wave2.foundation.uniformizer-dvr"]["decision"]=="needs_review"
+          assert all(w.records(s).get(k)==v for s in ("sources","terms","observations","relations") for k,v in old.records(s).items())
+          check_cycles(meanings,w.records("relations"))
+          coverage=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert coverage["term_count"]==374
+          assert coverage["mathematical_candidate_meanings_screened"]==58
+          proof=json.loads((w.root/"state/wave2_uniformizer31_meaning_screen.json").read_text())
+          assert proof["meaning_count"]==477 and proof["screened_links_preserved"]==640
+          assert proof["historical_formulations_preserved"]==488
+          assert proof["uniformizer_specific_to_DVR"]
+          assert proof["human_peer_verified"] is False
+          print(json.dumps(proof,indent=2))
+          PY
+      - name: Commit only audited independent Wave 2 meaning and review snapshot
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Source-screen DVR-specific uniformizer preserving 488 historical mathematical reviews"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
