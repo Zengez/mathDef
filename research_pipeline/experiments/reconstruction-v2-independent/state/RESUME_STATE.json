@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "1a44ca03771a40bf0a10be6aef406240e33ed4dad9d437490933f9f63f77004e"
+    "resume_plan_sha256": "9ec83899c3ceec32dbc70fdf8a36db1c8daffe11e0e177b3593ebf9c6d73fcc2"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -30,10 +30,12 @@
     "All five independent Wave 2 stages remain unsealed, and original production mathDef comparisons are forbidden until after the independent freeze.",
     "Arithmetic on Cauchy quotient classes and their ordered-field laws still require theorem-level well-definedness and completeness proofs; definition screening does not claim those proofs completed.",
     "The union-of-cuts supremum result and complete ordered-field uniqueness are theorem statements, not new mathematical definitions, and remain excluded from meaning counts.",
-    "The integer-construction formulation still lacks individually screened natural-number, equivalence-class and quotient-set foundations. The explicit no-supported-target decision is valid until these are separately sourced; do not use rational/real-number constructions as backward dependencies.",
-    "The coverage validator was generalized to allow more than one independently sourced observation per term; variant-specific source locator checks must use the specific formulation, not the first sibling form."
+    "The coverage validator was generalized to allow more than one independently sourced observation per term; variant-specific source locator checks must use the specific formulation, not the first sibling form.",
+    "The 0-inclusive natural-number convention still has an explicitly justified no-supported-target decision pending independently sourced Peano axioms/finite-ordinal characterization; do not create reverse links to integers.",
+    "Batch 65 broad discovery candidate σ-algebra has source-labeled complement/union and difference/disjoint-union variants; compact topological space has open-cover and finite-intersection variants. Both are source-review-only and have NOT been ingested or screened.",
+    "The compactness terminology may differ depending on whether 'compact' implies Hausdorff separation; maintain topology-general and Hausdorff-convention contexts rather than merging them indiscriminately."
   ],
-  "next_action": "Verified Wave 2 Batches 58–60: 14 sources, 402 independent source terms, 826 observations, 503 contextual meanings, 516 screened formulations with complete individual dispositions, and 681 source-screened, cycle-free prerequisites. 59 introduced the concrete fraction-pairs construction and an independently cited equivalent universal-property fraction-field formulation under ONE meaning. 60 preserved 676 old links and explicitly revised the rational-number former no-supported-target decision by recording links to the integer ring and general fraction field. NEXT: independently research and admit separately sourced natural numbers, equivalence relations and quotient sets as foundational meanings, while keeping the new integer construction no-supported-target decision until valid independent foundations exist. Then broaden mathematical variant/source discovery beyond the current rational real-number construction focus; original mathDef content remains strictly excluded until freeze and comparison.",
+  "next_action": "Independent Wave 2 Batches 61–64 verified (sources 14, terms 406, observations 830, meanings 508, reviewed formulations 521, screened noncircular links 691). Batch 61 researched and 62 admitted natural numbers, equivalence relations, equivalence classes, quotient sets from approved ProofWiki; 63 screened five contextual meanings (two natural-number conventions grouped under one term); 64 screened ten exact prerequisite links and archived/amended the old integer-construction no-supported-target review. Batch 65 now contains two newly sourced but NOT INGESTED broader research candidates, σ-algebra and compact topological space, each with TWO independent alternative formulations. Next: check existing independent Wave 2 meaning collisions for these two, then ingest term/source observations using adapter-driven manifest, individually screen source-backed variants and only afterwards review contextual relations. Continue breadth of independent source discovery across mathematical subfields rather than endlessly cascading into foundations. Original mathDef mathematical content remains strictly excluded until frozen reconstruction/comparison.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
@@ -87,7 +89,8 @@
     "If the data moved beyond the snapshot, refresh the adapter-driven snapshot and verify only changed records/workflows.",
     "Stop around 12-14 minutes of active work with a concise handoff; do not wait for a timeout.",
     "Do not rerun Batches 58–60 absent new contradictory evidence. The initial failures were resolved before any stage commits; successful final workflow runs are the authoritative state.",
-    "The next research should break out of recursive rational foundations once sufficient basic targets are sourced; substantive coverage and alternate variants across the whole subject remain incomplete."
+    "The rational/integer dependency chain has sufficient foundations for now; next prioritize nonlinear, cross-subfield discovery using independently sourced variant families, and resolve candidate collisions against the independent Wave 2 meaning inventory only.",
+    "Do not rerun completed and passed Batches 61–64 without specific contradictory evidence; the required source, mathematical and link review histories are already committed."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -111,18 +114,18 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 60 five source-specific integer/fraction-field prerequisites and explicit rational-number amendment; all 516 formulation reviews retained",
-      "run_id": 39483352424
+      "purpose": "Batch 64 ten independently screened set-theoretic links, exact source evidence, audited integer decision amendment",
+      "run_id": 39485391276
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 59 independently reviewed integer and two fraction-field definition variants",
-      "run_id": 39482748461
+      "purpose": "Batch 63 five source-scoped contextual meanings, preserving 516 old formulation reviews",
+      "run_id": 39484928376
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 58 3 source-term and 4 source-observation intake; multiple sources for one term without changing historical ledgers",
-      "run_id": 39482412057
+      "purpose": "Batch 62 admission of four independent foundational source terms and exact source observations",
+      "run_id": 39484604540
     }
   ]
 }
