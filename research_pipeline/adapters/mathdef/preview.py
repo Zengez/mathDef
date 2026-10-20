@@ -9,15 +9,56 @@ import shutil
 from collections import defaultdict
 from pathlib import Path
 
-from research_pipeline.engine.core import PipelineError, atomic_json, digest
+from research_pipeline.engine.core import PipelineError, Workspace, STAGES, atomic_json, digest
 
 
-def build(workspace):
+
+def read_working_draft(root):
+    """Render unsealed independent Wave 2 screened records, never publication."""
+    workspace = Workspace(root)
+    if workspace.config().get("independent_second_wave") is not True:
+        raise PipelineError("Working draft preview requires the independent Wave 2 workspace")
+    if any(workspace.state(stage).get("sealed") for stage in STAGES):
+        raise PipelineError("The Wave 2 working-draft preview requires all stages unsealed")
+    records = {stage: workspace.records(stage) for stage in STAGES}
+    source_ids = set(records["sources"])
+    term_ids = set(records["terms"])
+    observation_ids = set(records["observations"])
+    meaning_ids = set(records["meanings"])
+    forms = set()
+    for term in records["terms"].values():
+        if term["source_id"] not in source_ids:
+            raise PipelineError("Working draft term references an unknown source")
+    for obs in records["observations"].values():
+        if obs["term_id"] not in term_ids or obs["source_id"] not in source_ids:
+            raise PipelineError("Working draft observation references an unknown source or term")
+    for meaning in records["meanings"].values():
+        if any(term not in term_ids for term in meaning["term_ids"]):
+            raise PipelineError("Working draft meaning references an unknown term")
+        for form in meaning["formulations"]:
+            if form["review_state"] != "screened":
+                raise PipelineError("Unscreened formulation cannot appear in public draft")
+            if not form["evidence_ids"] or any(e not in observation_ids for e in form["evidence_ids"]):
+                raise PipelineError("Working draft formulation lacks source evidence")
+            if form["id"] in forms:
+                raise PipelineError("Working draft has repeated formulation ID")
+            forms.add(form["id"])
+    for rel in records["relations"].values():
+        if (rel["review_state"] != "screened" or rel["from_formulation"] not in forms
+                or rel["target_meaning"] not in meaning_ids):
+            raise PipelineError("Unscreened or broken relation cannot appear in public draft")
+    return {stage: list(records[stage].values()) for stage in STAGES}
+
+
+def build(workspace, *, draft=False, output=None):
     root = Path(workspace).resolve()
-    source = root / "published/catalog.json"
-    if not source.is_file():
-        raise PipelineError("Publish the reconstruction catalog first")
-    catalog = json.loads(source.read_text(encoding="utf-8"))
+    if draft:
+        catalog = read_working_draft(root)
+    else:
+        source = root / "published/catalog.json"
+        if not source.is_file():
+            raise PipelineError("Publish the reconstruction catalog first")
+        catalog = json.loads(source.read_text(encoding="utf-8"))
     # Page-section IDs are provenance locators, not mathematical term IDs.
     # One section may define unrelated concepts, and one concept can appear
     # in multiple source sections. Group by the complete, normalized title,
@@ -83,7 +124,7 @@ def build(workspace):
             "meanings": result_meanings,
         })
     out_groups.sort(key=lambda group: (group["title"].casefold(), group["id"]))
-    output = root / "preview"
+    output = Path(output).resolve() if output is not None else root / "preview"
     output.mkdir(parents=True, exist_ok=True)
     project = json.loads((root / "project.json").read_text(encoding="utf-8"))
     review_file = root / "state/stage5_review.json"
@@ -95,8 +136,14 @@ def build(workspace):
         % (reviewed["reviewed"], reviewed["formulations"],
            reviewed["decisions"].get("no_supported_target", 0),
            reviewed["decisions"].get("held_ambiguity", 0))
-        if reviewed else "Source-screened research draft; completeness not verified."
+        if reviewed and not draft else "Source-screened research draft; completeness not verified."
     )
+    if draft:
+        status_notice = (
+            "Unsealed Wave 2 working snapshot: %d contextual meanings, %d screened "
+            "relationships. Research remains incomplete, and completeness is not established."
+            % (len(catalog["meanings"]), len(catalog["relations"]))
+        )
     payload = {
         "groups": out_groups, "relations": catalog["relations"],
         "verification_notice": "Not yet manually verified",
@@ -106,13 +153,15 @@ def build(workspace):
     payload_string = json.dumps(payload, ensure_ascii=False).replace("<", "\\u003c").replace(">", "\\u003e")
     doc = """<!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Independent reconstruction prototype</title>
+<title>___STAGE_TITLE___ — independent mathDef reconstruction</title>
 <link rel="stylesheet" href="preview.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="preview.js"></script>
-</head><body><header><h1>Mathematical definitions — reconstruction prototype</h1>
+</head><body><header><p><a href="../">← Reconstruction stages</a></p>
+<h1>___STAGE_TITLE___</h1>
 <p>This independent research reconstruction is not the production mathDef website.</p>
+<p><strong>___STAGE_DESC___</strong></p>
 <p class="disclaimer">Not yet manually verified. These are screened research drafts, not certified mathematical facts.</p>
 <p class="muted">___REVIEW_NOTICE___</p>
 <div class="controls">
@@ -131,7 +180,11 @@ def build(workspace):
 <script id="reconstruction-data" type="application/json">___PAYLOAD___</script>
 <footer>Independent experiment • Source references do not imply human verification.</footer>
 </body></html>""".replace("___PAYLOAD___", payload_string).replace(
-        "___REVIEW_NOTICE___", status_notice)
+        "___REVIEW_NOTICE___", status_notice).replace(
+        "___STAGE_TITLE___", "Wave 2 — evolving research draft" if draft
+        else "Wave 1 — frozen baseline").replace(
+        "___STAGE_DESC___", "Unsealed and incomplete; regenerated from screened independent records."
+        if draft else "Frozen independent first-wave prototype, retained for comparison.")
     (output / "index.html").write_text(doc, encoding="utf-8")
     assets = Path(__file__).resolve().parent
     for asset in ("preview.js", "preview.css"):
@@ -143,8 +196,12 @@ def build(workspace):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--workspace", type=Path, required=True)
+    parser.add_argument("--draft", action="store_true",
+                        help="Render unsealed independent Wave 2 records without publication")
+    parser.add_argument("--output", type=Path,
+                        help="Write to an external directory instead of the experiment")
     args = parser.parse_args()
-    print(json.dumps(build(args.workspace), indent=2))
+    print(json.dumps(build(args.workspace, draft=args.draft, output=args.output), indent=2))
 
 
 if __name__ == "__main__":
