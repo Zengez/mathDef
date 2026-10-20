@@ -111,11 +111,13 @@ def build(wave1, wave2):
     leads30=jsonl(thirtieth_path) if thirtieth_path.exists() else []
     thirtythird_path=second.root / "wave2/foundation_source_discovery_batch_33.jsonl"
     leads33=jsonl(thirtythird_path) if thirtythird_path.exists() else []
+    thirtysixth_path=second.root / "wave2/foundation_source_discovery_batch_36.jsonl"
+    leads36=jsonl(thirtysixth_path) if thirtysixth_path.exists() else []
     added={t:record for t,record in expanded_terms.items() if t not in original_terms}
-    if (len(added)!=18+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33) or len(leads1)!=9 or len(leads2)!=6 or len(leads3)!=3 or len(leads4) not in (0,3) or len(leads5) not in (0,4) or len(leads6) not in (0,4) or len(leads8) not in (0,3) or len(leads9) not in (0,4) or len(leads11) not in (0,2) or len(leads13) not in (0,4) or len(leads15) not in (0,3) or len(leads19) not in (0,3) or len(leads21) not in (0,2) or len(leads23) not in (0,3) or len(leads26) not in (0,2) or len(leads30) not in (0,1) or len(leads33) not in (0,2)):
+    if (len(added)!=18+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33)+len(leads36) or len(leads1)!=9 or len(leads2)!=6 or len(leads3)!=3 or len(leads4) not in (0,3) or len(leads5) not in (0,4) or len(leads6) not in (0,4) or len(leads8) not in (0,3) or len(leads9) not in (0,4) or len(leads11) not in (0,2) or len(leads13) not in (0,4) or len(leads15) not in (0,3) or len(leads19) not in (0,3) or len(leads21) not in (0,2) or len(leads23) not in (0,3) or len(leads26) not in (0,2) or len(leads30) not in (0,1) or len(leads33) not in (0,2) or len(leads36) not in (0,1)):
         raise PipelineError("New term/source discovery coverage mismatch")
     in_leads={}
-    for lead in leads1+leads2+leads3+leads4+leads5+leads6+leads8+leads9+leads11+leads13+leads15+leads19+leads21+leads23+leads26+leads30+leads33:
+    for lead in leads1+leads2+leads3+leads4+leads5+leads6+leads8+leads9+leads11+leads13+leads15+leads19+leads21+leads23+leads26+leads30+leads33+leads36:
         tid=lead["term_id"]
         if tid in in_leads or tid not in added:
             raise PipelineError("Source lead duplicates/does not name a new term: "+tid)
@@ -143,6 +145,7 @@ def build(wave1, wave2):
             "disposition":"source_read_candidate" if direct else "unverified_source_locator",
             "source_access_outcome":lead["source_access_outcome"],
             "provenance":(
+                "wave2/foundation_source_discovery_batch_36.jsonl" if lead in leads36 else
                 "wave2/foundation_source_discovery_batch_33.jsonl" if lead in leads33 else
                 "wave2/foundation_source_discovery_batch_30.jsonl" if lead in leads30 else
                 "wave2/foundation_source_discovery_batch_26.jsonl" if lead in leads26 else
@@ -195,7 +198,7 @@ def build(wave1, wave2):
             raise PipelineError("Stale existing Wave 2 source review digest")
         history_file=second.root/f"state/wave2_term_coverage_snapshot_{len(old_rows)}.jsonl"
         history_report=second.root/f"state/wave2_term_coverage_snapshot_{len(old_rows)}.json"
-        if len(old_rows) not in (333,336,339,343,347,350,354,356,360,363,366,368,371,373,374):
+        if len(old_rows) not in (333,336,339,343,347,350,354,356,360,363,366,368,371,373,374,376):
             raise PipelineError("Unexpected review history revision; require explicit versioning")
         if history_file.exists() and history_file.read_text(encoding="utf-8")!=old_content:
             raise PipelineError("Conflicting historical source coverage snapshot")
@@ -229,6 +232,7 @@ def build(wave1, wave2):
       "previous_360_term_review_ledger_archived":(second.root/"state/wave2_term_coverage_snapshot_360.jsonl").exists(),
       "previous_373_term_review_ledger_archived":(second.root/"state/wave2_term_coverage_snapshot_373.jsonl").exists(),
       "previous_374_term_review_ledger_archived":(second.root/"state/wave2_term_coverage_snapshot_374.jsonl").exists(),
+      "previous_376_term_review_ledger_archived":(second.root/"state/wave2_term_coverage_snapshot_376.jsonl").exists(),
       "source_review_ledger_sha256":hashlib.sha256(content.encode("utf-8")).hexdigest(),
       "frozen_wave1_catalog_digest":freeze["published_catalog_digest"],
       "original_production_mathdef_consulted":False,
