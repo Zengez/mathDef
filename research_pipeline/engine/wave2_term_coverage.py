@@ -114,7 +114,7 @@ def build(wave1, wave2):
     thirtysixth_path=second.root / "wave2/foundation_source_discovery_batch_36.jsonl"
     leads36=jsonl(thirtysixth_path) if thirtysixth_path.exists() else []
     added={t:record for t,record in expanded_terms.items() if t not in original_terms}
-    if (len(added)!=18+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33)+len(leads36) or len(leads1)!=9 or len(leads2)!=6 or len(leads3)!=3 or len(leads4) not in (0,3) or len(leads5) not in (0,4) or len(leads6) not in (0,4) or len(leads8) not in (0,3) or len(leads9) not in (0,4) or len(leads11) not in (0,2) or len(leads13) not in (0,4) or len(leads15) not in (0,3) or len(leads19) not in (0,3) or len(leads21) not in (0,2) or len(leads23) not in (0,3) or len(leads26) not in (0,2) or len(leads30) not in (0,1) or len(leads33) not in (0,2) or len(leads36) not in (0,1)):
+    if (len(added)!=18+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33)+len(leads36)+len(leads36) or len(leads1)!=9 or len(leads2)!=6 or len(leads3)!=3 or len(leads4) not in (0,3) or len(leads5) not in (0,4) or len(leads6) not in (0,4) or len(leads8) not in (0,3) or len(leads9) not in (0,4) or len(leads11) not in (0,2) or len(leads13) not in (0,4) or len(leads15) not in (0,3) or len(leads19) not in (0,3) or len(leads21) not in (0,2) or len(leads23) not in (0,3) or len(leads26) not in (0,2) or len(leads30) not in (0,1) or len(leads33) not in (0,2) or len(leads36) not in (0,1)):
         raise PipelineError("New term/source discovery coverage mismatch")
     in_leads={}
     for lead in leads1+leads2+leads3+leads4+leads5+leads6+leads8+leads9+leads11+leads13+leads15+leads19+leads21+leads23+leads26+leads30+leads33+leads36:
@@ -171,9 +171,9 @@ def build(wave1, wave2):
     output.sort(key=lambda x:x["term_id"])
     counter=Counter(x["disposition"] for x in output)
     expected={"inherited_supported":232,"inherited_no_suitable_definition":59,
-              "inherited_access_blocked":27,"source_read_candidate":10+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33),
+              "inherited_access_blocked":27,"source_read_candidate":10+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33)+len(leads36),
               "unverified_source_locator":8}
-    if dict(counter)!=expected or len(output)!=len(expanded_terms) or len(output)!=336+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33):
+    if dict(counter)!=expected or len(output)!=len(expanded_terms) or len(output)!=336+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33)+len(leads36):
         raise PipelineError("Unexpected source coverage; do not seal: "+str(counter))
     existing=second.root/"state/wave2_term_coverage.jsonl"
     content="".join(canonical(row)+"\n" for row in output)
@@ -212,9 +212,9 @@ def build(wave1, wave2):
       "phase":"Wave 2 expanded per-term source review coverage",
       "term_count":len(output),
       "inherited_frozen_reviews_checked":318,
-      "source_read_new_candidates":10+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33),
+      "source_read_new_candidates":10+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33)+len(leads36),
       "new_source_locators_unverified":8,
-      "new_term_review_coverage":18+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33),
+      "new_term_review_coverage":18+len(leads4)+len(leads5)+len(leads6)+len(leads8)+len(leads9)+len(leads11)+len(leads13)+len(leads15)+len(leads19)+len(leads21)+len(leads23)+len(leads26)+len(leads30)+len(leads33)+len(leads36),
       "dispositions":dict(counter),
       "pending_new_direct_source_reviews":8,
       "mathematical_candidate_meanings_screened":second.state("meanings").get("screened_new_formulations",0),
