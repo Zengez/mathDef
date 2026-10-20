@@ -1,0 +1,90 @@
+name: Review connectedness and Noetherian alternative dependencies — Batch 72
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-variant-links-batch72.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Load current independent Wave 2 from main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run portable pipeline regression suite
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Screen exact mathematical prerequisites for every new variant
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_connected_noetherian_links_batch72 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Assert complete historical 524 reviews and independent frozen lineage
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(old.publication())==json.loads((old.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":14,"terms":410,"observations":841,"meanings":510,"relations":698}
+          assert {s:len(w.records(s)) for s in expected}==expected
+          assert not any(w.state(s).get("sealed") for s in expected)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(k)==v for k,v in old.records(s).items())
+          history=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_530_before_variant72.jsonl")
+          latest=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          byid={r["formulation_id"]:r for r in latest}
+          assert len(history)==len(latest)==len(byid)==530
+          new={r["formulation_id"] for r in latest if r["formulation_id"].startswith("form.wave2.variant71.")}
+          assert len(new)==6
+          for row in history:
+            if row["formulation_id"] not in new:
+              assert byid[row["formulation_id"]]==row
+          assert all(r["meaning_catalog_digest"]==digest(list(w.records("meanings").values())) for r in latest)
+          assert {id for r in latest for id in r["relation_ids"]}==set(w.records("relations"))
+          assert dict(Counter(r["decision"] for r in latest))=={"linked":523,"no_supported_target":7}
+          assert len([k for k in w.records("relations") if k.startswith("rel.wave2.variant72.")])==5
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_variant72_links.json").read_text())
+          assert report["old_693_links_preserved"] and report["old_524_formulation_reviews_preserved"]
+          assert report["separate_connected_conventions_retained"]
+          assert report["noetherian_module_formulation_requires_new_source_target"]
+          assert not report["original_production_mathdef_used"] and not report["human_peer_verified"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independently reviewed relationships and preserved audit snapshots
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen five source-backed connections and missing Noetherian module without circularity"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
