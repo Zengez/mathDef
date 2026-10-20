@@ -35,7 +35,7 @@ def run(root):
     previous_meanings=w.records("meanings")
     left=previous_meanings.get(LEFT)
     if (not left or left["id"]!=LEFT or
-        "unitality" not in left["editorial_screening_reason"].lower()):
+        "unital action" not in left["editorial_screening_reason"].lower()):
         raise PipelineError("Original general-left source convention cannot be checked")
     dossier={r["key"]:r for r in jsonl(w.root/DOSSIER)}
     if set(dossier)!=set(KEYS):
