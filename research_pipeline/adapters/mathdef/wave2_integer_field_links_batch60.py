@@ -53,6 +53,13 @@ def store(path,rows):
     path.write_text(payload,encoding="utf-8")
     return path
 
+def formulation_locator(form, observations):
+    """Use the *particular* variant's provenance, never a sibling's source."""
+    evidence=form.get("evidence_ids",[])
+    if len(evidence)!=1 or evidence[0] not in observations:
+        raise PipelineError("Formulation has ambiguous or unsupported source evidence")
+    return observations[evidence[0]]["locator"]
+
 def run(root):
     w=Workspace(root)
     if not w.config().get("independent_second_wave") or any(w.state(s).get("sealed") for s in (*BASE,"relations")):
@@ -81,7 +88,7 @@ def run(root):
             raise PipelineError("Source/target identity unknown: "+num)
         m,form=byform[fid]
         if (form["review_state"]!="screened"
-            or locator(m,obs)!=fromurl or locator(meanings[target],obs)!=targeturl
+            or formulation_locator(form,obs)!=fromurl or locator(meanings[target],obs)!=targeturl
             or phrase not in form["text"] or len(reason)<170):
             raise PipelineError("Missing exact source-backed mathematical context: "+num)
         additions.append({
