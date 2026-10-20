@@ -166,8 +166,26 @@ def build(wave1, wave2):
             raise PipelineError("New source access state not recognized")
         candidates=[x["id"] for x in new_observations.values()
                     if x["term_id"]==tid and x["record_kind"]=="paraphrase"]
-        if direct and len(candidates)!=1:
-            raise PipelineError("Directly reviewed source missing exactly one candidate: "+tid)
+        if direct and not candidates:
+            raise PipelineError("Directly reviewed term has no sourced candidate: "+tid)
+        if direct and len(candidates)>1:
+            # A mathematical term can have several independently supported
+            # variants. Only the primary term/lead needs to be unique;
+            # every additional observation must have its own approved source,
+            # explicit locator and individual review provenance.
+            primary=lead.get("candidate_observation_id")
+            if primary not in candidates:
+                raise PipelineError("Multi-source term has no named primary candidate: "+tid)
+            admitted=second.records("sources")
+            for oid in candidates:
+                observation=new_observations[oid]
+                record=admitted.get(observation["source_id"])
+                if (not record or record.get("access")!="free"
+                    or record.get("rights") not in ("permitted","locator_only")
+                    or not observation.get("locator","").startswith("https://")
+                    or not observation.get("reviewed_by")
+                    or not observation.get("editorial_note")):
+                    raise PipelineError("Additional source observation lacks independently reviewed provenance: "+oid)
         if not direct and candidates:
             raise PipelineError("Unverified source page gained unsupported evidence: "+tid)
         output.append({
