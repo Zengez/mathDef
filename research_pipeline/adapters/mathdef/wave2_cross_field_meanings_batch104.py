@@ -148,7 +148,7 @@ def run(root):
     else:
         atomic_jsonl(path,sorted(updated,key=lambda x:x["formulation_id"]))
     current=jsonl(path);index={r["formulation_id"]:r for r in current}
-    if len(current)!=len(index)!=573:
+    if len(current)!=573 or len(index)!=573:
         raise PipelineError("573 individual reviews required")
     for oldr in old:
         nowr=index[oldr["formulation_id"]]
