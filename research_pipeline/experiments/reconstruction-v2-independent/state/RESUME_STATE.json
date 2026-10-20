@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "d0abfb4ade1826dbdd4251d97f2146d93370646d08d02044e8b432edf47fb996"
+    "resume_plan_sha256": "52d6a400ab0386a1b17498811711ee37a1469c41c1cb50f75c0a5e33046cbd86"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -13,15 +13,15 @@
     "original_priority_firstpass_records": 192,
     "production_corpus_used": false,
     "review_dispositions": {
-      "linked": 574,
+      "linked": 581,
       "no_supported_target": 6
     },
-    "reviewed_formulations": 580,
-    "screened_contextual_meanings": 552,
-    "screened_relationships": 774,
-    "source_observations": 891,
+    "reviewed_formulations": 587,
+    "screened_contextual_meanings": 558,
+    "screened_relationships": 784,
+    "source_observations": 898,
     "sources": 14,
-    "terms": 445
+    "terms": 449
   },
   "known_blockers": [
     "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
@@ -44,24 +44,27 @@
     "The two tree formulations, no circuits/no cycles, are equivalent only in the stated simple connected undirected graph context; no root or finite-cardinality convention inferred.",
     "Independent sigma-algebra countable-family property imposes all finite distinct-index products; pairwise independence alone does not imply mutual independence for three or more.",
     "ProofWiki Definition:Boundary (Topology) 'Definition from Closure and Exterior' appears false as written: it takes subset of A and omits closure boundary points outside A. Excluded from Batch106/107/108; separate source-audit should note this.",
-    "The general closure source also has closure=A union boundary; it was not ingested because allowing boundary to depend on closure and closure to depend on boundary would form a definition expansion cycle. Source-preserved noncircular closed-superset formulations were admitted instead."
+    "The general closure source also has closure=A union boundary; it was not ingested because allowing boundary to depend on closure and closure to depend on boundary would form a definition expansion cycle. Source-preserved noncircular closed-superset formulations were admitted instead.",
+    "Potential source issue for later independent investigation: ProofWiki's Definition:Directional Derivative gives ∇f·u assuming 'gradient exists', while partial derivatives may exist without total differentiability; do not treat as automatically equivalent to line-direction limit on that assumption.",
+    "ProofWiki source-specific finite-image rank requires the image of a field-vector-space linear transformation to be finite-dimensional; no automatic cardinal-valued or arbitrary-module rank extension.",
+    "Accumulation point of a sequence (infinitely many indices in each neighborhood) differs from accumulation point of its value SET (closure of A minus the tested point); do not collapse variants."
   ],
-  "next_action": "Independent Wave 2 Batches106–108 VERIFIED with Actions 39507831430, 39508076150 and 39508374483 successful: 14 approved sources; 445 attributed source headings; 891 observations; 552 mathematically source-screened contextual meanings; 580 individually dispositioned formulations (574 linked, 6 justified no-target, 0 pending); 774 noncircular, individually reviewed definition-prerequisite links. Batch106 4 new topics and 7 source observations; Batch107 5 mathematical contexts and 7 formulations; Batch108 nine source-specific links, preserving all 765 older links and 573 unrelated review decisions. Source bug found in ProofWiki Boundary(Topology) 'closure and exterior' formula (incorrectly restricts boundary to A); excluded from approved variants and logged. Topological closure not linked to boundary, so no artificial cycles; module and field-vector kernels distinct; derivative function on open interval distinct from pointwise derivative. Independent frozen Wave 1 unchanged, all five Wave 2 stages unsealed, no production mathDef corpus comparisons. NEXT Batch109 bounded cross-subfield independent source discovery plus optional targeted source inconsistency audit and provenance; maintain subject-neutral engine. Read research_pipeline/WAVE2_PROGRESS_2026-10-20_S.md.",
+  "next_action": "Independent Wave2 Batches109–111 VERIFIED: 14 approved sources, 449 independent term headings, 898 source observations, 558 mathematically screened contextual meanings, 587 individually reviewed formulations (581 linked, 6 independently justified no-target, 0 pending), 784 cycle-free source-screened prerequisite relationships. B109 corrected source workflow 39509485027 PASSED (earlier too-strict source paraphrase length check 39509247466 failed without commit); B110 mathematical screen 39509556909 PASSED; B111 ten individual prerequisite links 39509815336 PASSED. 774 previous relations and all 580 unrelated formulation-review decisions preserved. Distinct module and field-vector linear maps; equivalent mapping image descriptions; finite-dimensional-image rank scope; distinct sequence (infinitely many indices) and set (closure of A-minus-x) accumulation. Frozen independent Wave1 unchanged; all five Wave2 stages unsealed and no production mathDef corpus consulted. NEXT Batch112: source-rich bounded cross-subfield variant discovery; consider auditing ProofWiki directional derivative gradient expression which may need differentiability, not only partial derivatives. Read research_pipeline/WAVE2_PROGRESS_2026-10-20_T.md.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
-      "rows": 552,
-      "sha256": "f274c1ac286b39536ede060e8a5eb8e6b28758c563b598831c36dff930b00137"
+      "rows": 558,
+      "sha256": "b20e22d18f0063c469b962ee8ea6aa4097e5d354b816a51573291f7510261334"
     },
     "current_link_stage": {
-      "record_digest": "234d3008a36ea2b182866cba48d6e6aa69633a5e65c7417a3833f6374c9a881b",
+      "record_digest": "3a560636a4d282133f5b6790524bb9e7815fe4383845b69e01d058a20b572d9c",
       "sealed": false,
-      "sha256": "04900d062e55c6f3efc3ba10cfa47cc2529f27147a377d72fa27d085d8bcd75f",
-      "total": 774
+      "sha256": "2846a15118194e2934f242eaacb76f3398ec44f02836edba2cb890d50f37c2c4",
+      "total": 784
     },
     "definition_links": {
-      "rows": 774,
-      "sha256": "0b936483797fdc0054d35f118971457228aad14cb46b53235d32ab01b255da66"
+      "rows": 784,
+      "sha256": "c64e1cbc7ddadbd84eeda61eb11a717013ea219629750a0e70fd928312b947eb"
     },
     "firstpass_priorities": {
       "rows": 192,
@@ -69,23 +72,23 @@
     },
     "individual_link_reviews": {
       "decisions": {
-        "linked": 574,
+        "linked": 581,
         "no_supported_target": 6
       },
-      "rows": 580,
-      "sha256": "14398818f686f7d131b9651519ac67251e02944c3b121c1068e05800eb2f6559"
+      "rows": 587,
+      "sha256": "55ed95278efeb588df1eb41b9b53bb3a16861fa418237073baf04e76674a3b31"
     },
     "source_observations": {
-      "rows": 891,
-      "sha256": "dfd2e8dc126dda2be6b0c653280369f5842a8934ad6273ec339c55987bc6d599"
+      "rows": 898,
+      "sha256": "080af1fe3ea5c3d545bfb8e059721580d7224b7a0411b69b6c8b7f7865b98171"
     },
     "sources": {
       "rows": 14,
       "sha256": "b122833748dff90cb025f4dd82393fdf428f2bf339531675280eb49312c0a38b"
     },
     "term_headings": {
-      "rows": 445,
-      "sha256": "c15b21a9681673a4a9bda70330482df8d59ce9541a402d9a4f58a8247da65822"
+      "rows": 449,
+      "sha256": "48e6cbe1a6a5303f91eeaa098b6b9843dfc5aa32dc5a02aa24924042077ceed3"
     },
     "wave2_lineage": {
       "first_wave_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
@@ -94,14 +97,16 @@
     }
   },
   "resume_steps": [
-    "Read this short resume plan and newly generated RESUME_STATE.json first. No reread of entire chronological checkpoint archive.",
-    "Check latest GitHub main and exact successful Batch106–108 workflow runs or newer workflow changes.",
-    "Trust the 580 reviewed formulations and 774 screened noncircular links when checksum snapshots match; do not repeat Batches94–108.",
-    "Continue bounded source-rich, independently verified mathematical contexts in branches not just researched, and check for existing meanings before admitting new titles.",
-    "Preserve the explicit ProofWiki Boundary (Topology) source error exclusion (closure+exterior formula) and the closure↔boundary acyclicity safeguard.",
-    "Keep subject-neutral generic engine code and site-independent provenance; math-specific scope conventions belong to adapter.",
-    "Do not access production mathDef mathematical content, do not modify frozen Wave1, and leave all five independent Wave2 stages unsealed until independent freeze.",
-    "Use approximately 12–14 minute sessions; commit a coherent stage, update the compact plan, and verify generated checkpoint before returning."
+    "Read this short resume plan and generated RESUME_STATE.json only before beginning; do not reread the historical chronological archive.",
+    "Check GitHub main SHA and exact Batches109–111 successful workflow conclusions plus any newer mathDef research-impacting runs.",
+    "Trust unchanged 587 individually reviewed mathematical formulations and 784 links when portable checksum/validation matches; do not repeat prior Batches94–111.",
+    "Carry out bounded independent source-specific mathematical research outside recently researched branches; check exact existing display titles/contexts and individual source locators first.",
+    "Preserve finite-dimensional rank restriction; distinguish sequence index accumulation from set derived-point; group equivalent image forms without creating duplicate meanings.",
+    "Retain previously documented apparent ProofWiki Boundary (Topology) source error and the warning on unsourced normed-division-ring pair terminology.",
+    "Consider a targeted ProofWiki directional-derivative source audit for differentiability assumptions; do not admit questionable gradient equivalences without stronger proof.",
+    "Keep reusable generic engine topic-neutral, mathematics-specific source/scope rules inside mathDef adapters.",
+    "Frozen independent Wave1 unchanged; all five Wave2 stages UNSEALED; do not consult or compare production mathDef corpus until independent freeze.",
+    "Work in 12–14-minute practical units, commit coherent source/math/link changes and verify generated checkpoint before stopping."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -111,8 +116,8 @@
       "sha256": "aeebc436b42634812ad521a742d530cf44e2f342616b0f46e6c1b3da10d7c6ec"
     },
     "wave2_research_support": {
-      "files": 657,
-      "sha256": "bf990f1f70353f36f7e09cf236f8f1d824dc9e3b125e437c96c1600a0e74d558"
+      "files": 673,
+      "sha256": "a2978adb40cb6262f8a4e844a3fafc9c8923ffbce867900aa8f7338f8307357d"
     }
   },
   "verification_limitations": [
@@ -125,18 +130,18 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch108 nine individual topology, kernel and derivative links; 765 previous links preserved; 580 review dispositions",
-      "run_id": 39508374483
+      "purpose": "Batch111 ten independently screened algebra/topology relationships, older 774 links and 580 reviews preserved",
+      "run_id": 39509815336
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch107 five screened contextual meanings, seven forms and preservation of 573 historical formulation decisions",
-      "run_id": 39508076150
+      "purpose": "Batch110 six mathematically screened meanings with seven formulations, source-specific finite-rank and accumulation contexts",
+      "run_id": 39509556909
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch106 four direct source headings with seven individual observations, prior meaning/relation registry untouched",
-      "run_id": 39507831430
+      "purpose": "Batch109 corrected source-only four term headings and seven observations, earlier stage inventories unchanged",
+      "run_id": 39509485027
     }
   ]
 }
