@@ -198,10 +198,18 @@ def run(config: Path, repo: Path, write: bool = False) -> dict:
     # input commit; there is no wall-clock date and no unverified success claim.
     if write:
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        tmp = output_path.with_name(output_path.name + ".tmp")
-        tmp.write_text(json.dumps(state, indent=2, ensure_ascii=False,
-                                  sort_keys=True) + "\n", encoding="utf-8")
-        os.replace(tmp, output_path)
+        # A delta is informational to this run, not persisted. Otherwise
+        # an unchanged second run would rewrite the checkpoint merely to
+        # replace the previous delta with [], breaking true idempotence.
+        persistent = {k: v for k, v in state.items()
+                      if k != "changed_record_sets_since_previous_checkpoint"}
+        body = json.dumps(persistent, indent=2, ensure_ascii=False,
+                          sort_keys=True) + "\n"
+        if not output_path.exists() or output_path.read_text(
+                encoding="utf-8") != body:
+            tmp = output_path.with_name(output_path.name + ".tmp")
+            tmp.write_text(body, encoding="utf-8")
+            os.replace(tmp, output_path)
     return state
 
 
