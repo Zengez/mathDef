@@ -8,7 +8,7 @@ This infrastructure is intended for **math definitions, theorems, mathematics-ed
 - **Project adapter config:** e.g. `research_pipeline/adapters/mathdef/resume.json`. Defines record locations, ID fields, review-decision fields, domain-validation plugin, and output path.
 - **Optional policy plugin:** e.g. `research_pipeline/adapters/mathdef/resume_validation.py`. Only the adapter understands frozen independent Wave 1, Wave 2, link-cycle logic, and source-specific review integrity. A theorem project can supply its own proof/dependency adapter; an education terminology project can implement its own vocabulary/context rules.
 - **Human-maintained plan:** e.g. `research_pipeline/adapters/mathdef/resume_plan.json`. Contains *only* next work, small work budget, known blockers, and workflow IDs requiring live checks. Keep this file short and update it at a completed research boundary.
-- **Generated checkpoint:** `.../state/RESUME_STATE.json`. The computer-generated summary carries current inventory counts, hashes, review distributions, adapter validations and human-plan instructions. It never claims a queued workflow has completed.
+- **Generated checkpoint:** `.../state/RESUME_STATE.json`. The computer-generated summary carries current inventory counts, hashes, supporting-input-group attestation, review distributions, adapter validations and human-plan instructions. It never claims a queued workflow has completed. Its saved bytes do not depend on the Git commit which subsequently commits the checkpoint itself.
 
 To use this in another repository, copy the generic engine and tests, supply a new `resume.json` and `resume_plan.json`, optionally implement a domain-validation plugin, and install a scoped CI workflow. **Do not copy mathDef-specific validation rules into the generic engine.** If a project uses CSV or database records, implement a new generic-format parser without adding domain vocabulary.
 
@@ -21,12 +21,14 @@ python -m research_pipeline.engine.resume_checkpoint \
   --config research_pipeline/adapters/mathdef/resume.json --check
 python -m research_pipeline.engine.resume_checkpoint \
   --config research_pipeline/adapters/mathdef/resume.json --write
+python -m research_pipeline.engine.resume_checkpoint \
+  --config research_pipeline/adapters/mathdef/resume.json --verify
 python -m unittest research_pipeline.tests.test_resume_checkpoint -v
 ```
 
-`--check` is read-only. Both modes validate records. `--write` updates **only** the configured short checkpoint, atomically, without modifying the research corpus. Unchanged input files produce identical persisted checkpoint contents (apart from a new Git head when a new external commit is actually present). No stopwatch, recurring process, server access or network connection is needed for the CLI.
+`--check` is read-only and reports whether the saved checkpoint matches the current inputs; it does not fail solely because the saved file is stale. `--verify` is also read-only but fails closed if the saved checkpoint is stale or missing. All modes validate records. `--write` updates **only** the configured short checkpoint, atomically, without modifying the research corpus. Unchanged inputs produce identical persisted bytes even after the checkpoint's own Git commit. Live Git HEAD is displayed at runtime but excluded from the saved snapshot. No stopwatch, recurring process, server access or network connection is needed for the CLI.
 
-For mathDef, `.github/workflows/mathdef-resume-checkpoint.yml` refreshes the checkpoint after *relevant research-data changes*. It explicitly excludes the generated checkpoint from its push filters to avoid an infinite commit loop. On a push collision it **fetches and recomputes** from newest main rather than rebasing a stale snapshot. It never seals Wave 2, publishes definitions, or changes frozen Wave 1.
+For mathDef, `.github/workflows/mathdef-resume-checkpoint.yml` refreshes the checkpoint after *relevant research-data changes on main*. The mathDef adapter also hashes frozen lineage records, research queues, revision events and other supporting-input groups without embedding the entire historical files in the short checkpoint. It explicitly excludes the generated checkpoint from its push filters to avoid an infinite commit loop. On a push collision it **fetches and recomputes** from newest main rather than rebasing a stale snapshot. It never seals Wave 2, publishes definitions, or changes frozen Wave 1.
 
 ## Short-session operating procedure
 

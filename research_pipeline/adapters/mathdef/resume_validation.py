@@ -74,8 +74,14 @@ def inspect(repo: Path, config: dict) -> dict:
     firstpass_path = current.root / "state" / domain["firstpass_relative_path"]
     firstpass = jsonl(firstpass_path)
     initial = jsonl(current.root / "wave2" / "prioritized_research.jsonl")
-    if len(initial) != domain["original_priority_items"] or len(firstpass) != len(initial):
-        raise ResumeError("Original fixed priority review evidence is incomplete")
+    original_ids = [task.get("id") for task in initial]
+    firstpass_ids = [record.get("task_id") for record in firstpass]
+    if (len(initial) != domain["original_priority_items"] or
+            len(firstpass) != len(initial) or
+            len(set(original_ids)) != len(original_ids) or
+            len(set(firstpass_ids)) != len(firstpass_ids) or
+            set(original_ids) != set(firstpass_ids)):
+        raise ResumeError("Original priority IDs and first-pass review evidence differ")
     return {
         "independent_frozen_wave1_digest": expected,
         "frozen_wave1_digest_recomputed_and_matched": True,

@@ -19,6 +19,19 @@ jobs:
         run: python -m compileall -q research_pipeline/engine research_pipeline/tests
       - name: Test portable engine and isolated mathDef preview
         run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Validate live independent research checkpoint against protected lineage
+        run: |
+          python -m research_pipeline.engine.resume_checkpoint \
+            --config research_pipeline/adapters/mathdef/resume.json --check > /tmp/live-resume-check.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path("/tmp/live-resume-check.json").read_text())
+          assert report["domain_validation"]["frozen_wave1_digest_recomputed_and_matched"]
+          assert report["domain_validation"]["editable_wave2_unsealed"]
+          assert report["domain_validation"]["original_priority_firstpass_records"] == 192
+          assert report["supporting_input_evidence"]["wave2_research_support"]["files"] > 0
+          PY
       - name: Check command-line invocation
         run: python -m research_pipeline.engine.cli --help
       - name: Check reconstruction viewer JavaScript syntax

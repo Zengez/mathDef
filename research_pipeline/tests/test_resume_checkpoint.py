@@ -67,6 +67,59 @@ class ResumeCheckpointTests(unittest.TestCase):
                          ["items"])
         self.assertEqual(later["record_evidence"]["items"]["rows"], 2)
 
+    def test_saved_checkpoint_freshness_requires_exact_inputs(self):
+        run(self.config, self.root, write=True)
+        checkpoint = self.root / "state" / "RESUME_STATE.json"
+        self.assertNotIn("observed_commit", json.loads(checkpoint.read_text()))
+        self.assertTrue(run(self.config, self.root, verify=True)["checkpoint_is_current"])
+        self.records.write_text('{"id":"item.changed","decision":"candidate"}\n',
+                                encoding="utf-8")
+        self.assertFalse(run(self.config, self.root)["checkpoint_is_current"])
+        with self.assertRaises(ResumeError):
+            run(self.config, self.root, verify=True)
+        run(self.config, self.root, write=True)
+        self.assertTrue(run(self.config, self.root, verify=True)["checkpoint_is_current"])
+
+    def test_config_and_plan_changes_invalidate_saved_snapshot(self):
+        run(self.config, self.root, write=True)
+        self.spec["scope"] = "Changed astronomy scope"
+        self.config.write_text(json.dumps(self.spec), encoding="utf-8")
+        with self.assertRaises(ResumeError):
+            run(self.config, self.root, verify=True)
+        run(self.config, self.root, write=True)
+        plan = self.root / "config" / "plan.json"
+        data = json.loads(plan.read_text(encoding="utf-8"))
+        data["next_action"] = "Investigate a different catalog source"
+        plan.write_text(json.dumps(data), encoding="utf-8")
+        with self.assertRaises(ResumeError):
+            run(self.config, self.root, verify=True)
+
+    def test_supporting_group_change_invalidates_snapshot(self):
+        supporting = self.root / "records" / "observations.jsonl"
+        supporting.write_text('{"id":"observation.one"}\n', encoding="utf-8")
+        self.spec["supporting_groups"] = {
+            "supplementary_sources": ["records/observations*.jsonl"]
+        }
+        self.config.write_text(json.dumps(self.spec), encoding="utf-8")
+        initial = run(self.config, self.root, write=True)
+        self.assertEqual(initial["supporting_input_evidence"]["supplementary_sources"]["files"], 1)
+        supporting.write_text('{"id":"observation.two"}\n', encoding="utf-8")
+        later = run(self.config, self.root)
+        self.assertEqual(later["changed_supporting_groups_since_previous_checkpoint"],
+                         ["supplementary_sources"])
+        with self.assertRaises(ResumeError):
+            run(self.config, self.root, verify=True)
+
+    def test_unsafe_or_empty_supporting_groups_fail_closed(self):
+        self.spec["supporting_groups"] = {"bad": ["../private/*.jsonl"]}
+        self.config.write_text(json.dumps(self.spec), encoding="utf-8")
+        with self.assertRaises(ResumeError):
+            run(self.config, self.root)
+        self.spec["supporting_groups"] = {"bad": ["records/no-match*.jsonl"]}
+        self.config.write_text(json.dumps(self.spec), encoding="utf-8")
+        with self.assertRaises(ResumeError):
+            run(self.config, self.root)
+
     def test_duplicate_ids_fail_closed(self):
         self.records.write_text('{"id":"x"}\n{"id":"x"}\n', encoding="utf-8")
         with self.assertRaises(ResumeError):

@@ -2,16 +2,25 @@ name: Refresh portable research resume checkpoint
 
 on:
   push:
+    branches:
+      - main
     paths:
       - '.github/workflows/mathdef-resume-checkpoint.yml'
       - 'research_pipeline/adapters/mathdef/resume.json'
       - 'research_pipeline/adapters/mathdef/resume_plan.json'
       - 'research_pipeline/adapters/mathdef/resume_validation.py'
       - 'research_pipeline/engine/resume_checkpoint.py'
+      - 'research_pipeline/engine/core.py'
+      - 'research_pipeline/engine/wave2_apply_links.py'
       - 'research_pipeline/experiments/reconstruction-v2-independent/records/**'
-      - 'research_pipeline/experiments/reconstruction-v2-independent/state/wave2_*.json'
-      - 'research_pipeline/experiments/reconstruction-v2-independent/state/wave2_*.jsonl'
-      # Deliberately excludes state/RESUME_STATE.json: no feedback loop.
+      - 'research_pipeline/experiments/reconstruction-v2-independent/state/**'
+      - '!research_pipeline/experiments/reconstruction-v2-independent/state/RESUME_STATE.json'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/wave2/**'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/events/**'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/intake/**'
+      - 'research_pipeline/experiments/reconstruction-v1-recovery/state/wave1_freeze.json'
+      - 'research_pipeline/experiments/reconstruction-v1-recovery/published/catalog.json'
+      # Exclude only the generated checkpoint; never treat its commit as new research.
   workflow_dispatch:
 
 permissions:
@@ -23,6 +32,7 @@ concurrency:
 
 jobs:
   resume:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -50,6 +60,8 @@ jobs:
               --config research_pipeline/adapters/mathdef/resume.json --check >/tmp/resume-check.json
             python -m research_pipeline.engine.resume_checkpoint \
               --config research_pipeline/adapters/mathdef/resume.json --write >/tmp/resume-result.json
+            python -m research_pipeline.engine.resume_checkpoint \
+              --config research_pipeline/adapters/mathdef/resume.json --verify >/tmp/resume-verify.json
             git add -- research_pipeline/experiments/reconstruction-v2-independent/state/RESUME_STATE.json
             if git diff --cached --quiet; then
               echo "Checkpoint already matches current reviewed records"
