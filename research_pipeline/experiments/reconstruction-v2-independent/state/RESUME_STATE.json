@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "bf95d8c541213290c0e0f9849149d6ccc862f60469aeebf5277591ac63697b38"
+    "resume_plan_sha256": "1048e8a52527273e8e4597cba9dea4c73ea77dbc06db11fa2cce53b91a0b27ef"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -36,9 +36,11 @@
     "Connectedness is CONVENTIONAL rather than an error: Stacks explicitly excludes the empty space, ProofWiki does not. Both source-backed contextual meanings are now preserved under one displayed term.",
     "Noetherian ring module formulation now has a valid independent Noetherian-module target, but the primitive submodule definition still has a justified no-supported-target disposition pending a general module definition.",
     "Continuity source locator resolved in Batch 74; the original guessed Definition:Continuous_Map URL remains invalid, and all screened continuity variants use checked Definition:Continuous_Mapping_(Topology).",
-    "Batch 78 martingale and chromatic-number candidates are research-only; before promoting chromatic numbers, register and rights-screen Wolfram MathWorld as a distinct source with locator-only evidence and check empty-graph/looped-graph conventions."
+    "The three martingale formulation dependency reviews remain no_supported_target until independently sourced filtered probability space/filtration, adapted process and conditional expectation targets have been screened. Batch 84 source intake covers only some foundations, not mathematical meaning promotion.",
+    "Continuous-time filtration direct ProofWiki source page was inaccessible during Batch 83; do not present that exact URL as verified. The independently inspected general martingale continuous-time definition itself remains valid.",
+    "MathWorld chromatic-polynomial variant is independently researched but is NOT source-ingested or meaning-screened; separate new source registration and locator-only rights review must precede using that variant."
   ],
-  "next_action": "Batches 74–77 finished and workflow-verified. Independent Wave 2 now has 14 sources, 414 source terms, 848 source observations, 514 source-screened contextual meanings, 537 individually reviewed formulations and 705 cycle-free independently screened prerequisite relationships. Batch 74 independently verified precise ProofWiki sources, including a correct accessible Definition:Continuous_Mapping_(Topology) locator (former guessed URL was inaccessible), Noetherian module, submodule and nonempty-source-scope discrete topology. Batch 75 ingested 4 source terms and 7 individual observations preserving prior 410 reviews; Batch 76 screened 4 meanings with 7 formulations preserving 530 prior mathematical review dispositions. Batch 77 added seven individually reviewed links and explicitly archived/superseded the Noetherian-ring-as-module formerly no-supported-target decision; previous 698 links and all unrelated dispositions preserved. Submodule still awaits a general module meaning; DO NOT reverse link to Noetherian module. NEXT research-only Batch 78: discrete- and continuous-time martingales (2 contextual meanings, 3 formulations) and finite nonempty simple-graph chromatic number (1 meaning, 2 formulations). Verify no independent meaning collision, and source-registration/rights for Wolfram MathWorld, then prepare source observations, source-scoped mathematics and links in separate batches. Use adapter config for topic-specific scope. Preserve independence embargo on original production corpus until Wave 2 freeze.",
+  "next_action": "Independent Wave 2 Batches 79–84 completed through guarded source screening and workflow verification: 14 approved sources, 422 source terms, 858 observations, 517 screened contextual meanings, 541 individually reviewed formulations and 706 acyclic source-screened relations. Batch 79 individually source-reviewed two martingale time contexts and graph chromatic number, only ProofWiki direct proper-coloring form; MathWorld chromatic-polynomial alternative held pending explicit new-source rights/registration. Batch 80 admitted 3 source headings and 4 source observations; Batch 81 screened 3 meanings/4 formulations with distinct discrete vs continuous-time indexing (not sample-path continuity), preserving 537 prior reviews. Batch 82 screened one chromatic-number-to-simple-graph link and explicitly recorded three no-supported-target martingale formulation dispositions rather than circular or invented filtration/conditional-expectation links; all 705 older links preserved. Batch 83 independently source-reviewed five missing foundational term headings with 6 observations: discrete-time filtration, adapted stochastic process (2 contexts), conditional expectation conditioned on sub-σ-algebra, proper vertex k-coloring, and stochastic process. Batch 84 successfully ingested 5 source terms and 6 observations, preserving all prior 417 term decisions, without promoting these new mathematical meanings/relations. NEXT: screen these five source terms with six source-observation-level mathematical formulations in a guarded Batch 85; retain discrete vs continuous adapted contexts, and maintain that continuous-time filtration exact page was not source-read. Then individually screen links in Batch 86, preserving previous 541 formulation reviews and 706 relations, explicitly reevaluate previously missing martingale/adapted/graph-coloring targets when genuinely supported. Only after guarded verification consider registering MathWorld with locator-only rights for chromatic polynomial variant; original production mathDef corpus strictly excluded until independent Wave 2 freeze and explicit comparison.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
@@ -95,7 +97,8 @@
     "The rational/integer dependency chain has sufficient foundations for now; next prioritize nonlinear, cross-subfield discovery using independently sourced variant families, and resolve candidate collisions against the independent Wave 2 meaning inventory only.",
     "Trust passed Batches 70–72 as complete and do not rerun without contradictory evidence; every historical formulation and source/link revision event is preserved.",
     "Do not redo completed Batches 74–77; use the successful workflow runs and historical review/event snapshots.",
-    "Resume from Batch 78 independent cross-subfield discovery while checking existing independent meanings and rights-scoped external sources, and avoid converting the martingale theorem/equivalence into a false same-meaning duplicate."
+    "Do not redo complete Batches 79–84. New source observations from Batch 84 are ready for the next separately reviewed meaning-screen stage; first verify source-vetted exact URLs and identify existing context collisions in independent data.",
+    "Next aim for Batch 85 meanings, Batch 86 links, then cross-field discovery; do not expand recursively into unbounded foundational subtasks or change generic engine unless a real coverage-model limitation appears."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -119,18 +122,23 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 77 seven source-backed module/topology links and audited ring-as-module decision amendment",
-      "run_id": 39492069143
+      "purpose": "Batch 84 five missing martingale/graph prerequisites source intake preserving all 417 prior source decisions",
+      "run_id": 39494297918
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 76 four mathematical meanings and seven complete source-scoped screened formulations",
-      "run_id": 39491643440
+      "purpose": "Batch 82 one graph link, three individually reviewed martingale missing-target decisions and entire historical dependency ledger",
+      "run_id": 39493861954
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 75 source evidence intake with 410 historic term reviews preserved",
-      "run_id": 39491379243
+      "purpose": "Batch 81 two independent martingale time contexts and graph coloring meaning screens",
+      "run_id": 39493537806
+    },
+    {
+      "previously_reported_conclusion": "success",
+      "purpose": "Batch 80 independent source evidence intake for martingale and chromatic number",
+      "run_id": 39493256635
     }
   ]
 }
