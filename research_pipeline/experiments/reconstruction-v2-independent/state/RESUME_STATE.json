@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "4d5adb371c6766e527878089b3e7d341640fe6b09909f43baf10dd0262a150ce"
+    "resume_plan_sha256": "1c3816cf54f1eab0d4ca2862796704ed3d376d9239d89821053a29793385d5b6"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -13,15 +13,15 @@
     "original_priority_firstpass_records": 192,
     "production_corpus_used": false,
     "review_dispositions": {
-      "linked": 594,
+      "linked": 600,
       "no_supported_target": 6
     },
-    "reviewed_formulations": 600,
-    "screened_contextual_meanings": 568,
-    "screened_relationships": 803,
-    "source_observations": 912,
+    "reviewed_formulations": 606,
+    "screened_contextual_meanings": 572,
+    "screened_relationships": 811,
+    "source_observations": 919,
     "sources": 14,
-    "terms": 457
+    "terms": 461
   },
   "known_blockers": [
     "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
@@ -48,24 +48,26 @@
     "ProofWiki source-specific finite-image rank requires the image of a field-vector-space linear transformation to be finite-dimensional; no automatic cardinal-valued or arbitrary-module rank extension.",
     "Accumulation point of a sequence (infinitely many indices in each neighborhood) differs from accumulation point of its value SET (closure of A minus the tested point); do not collapse variants.",
     "Source audit Batch112: ProofWiki Definition:Directional Derivative says gradient-dot-unit-vector under merely 'gradient exists', mathematically insufficient if gradient denotes existing coordinate partials; counterexample xy/(x²+y²), f(0,0)=0. Source observation .02 deliberately quarantined, not approved mathematical form. Total differentiability is sufficient for equivalent line restriction formula.",
-    "Closed metric ball at radius r can strictly contain closure of corresponding open ball in a general metric space (e.g. discrete metric radius 1). Do not infer equality from an overbar notational convention."
+    "Closed metric ball at radius r can strictly contain closure of corresponding open ball in a general metric space (e.g. discrete metric radius 1). Do not infer equality from an overbar notational convention.",
+    "ProofWiki Definition:Graph Isomorphism source wording includes only one-way edge preservation, falsely conflated with f and inverse both being graph homomorphisms. Batch118 held deficient clause; counterexample graph G one edge vs H two edges under identity vertex map.",
+    "Three directly missing screened prerequisite meanings from Batch120: subgroup of a group, left coset/coset product, and convergence of real power series; no links fabricated pending independent source-backed target definitions."
   ],
-  "next_action": "Wave2 Batches115–117 VERIFIED PASS: source intake workflow 39512532131, mathematical screen 39512766067, source-specific dependency review 39513052095; 14 approved independent sources, 457 term headings, 912 individual observations (one earlier source-held unsafe directional-gradient claim remains quarantined), 568 mathematically screened contextual meanings, 600 individually reviewed formulations (594 linked, 6 justified no-supported-target, none pending) and 803 noncircular source-screened definition relationships. Four new topics: orbit of point under specified LEFT group action (two equivalent source forms), point stabilizer, pushforward nonnegative measure under MEASURABLE map, partition of a set (two equivalent source forms; empty S admits empty partition). Batch117 added 9 individual link reviews, all previous 794 links and 594 unrelated review decisions preserved. Frozen independent Wave1 unchanged, all five Wave2 stages UNSEALED, production mathDef definitions not consulted. NEXT Batch118: bounded independent cross-field discovery with collision audit, perhaps quotient groups/sets, generating functions or graph isomorphism, keeping engine subject-neutral. Read WAVE2_PROGRESS_2026-10-20_V.md.",
+  "next_action": "Independent Wave2 Batches118–120 VERIFIED with GitHub Actions 39513931720 (source only), 39514135617 (mathematical meaning), 39514370092 (source-specific links), all SUCCESS. Totals: 14 approved source collections, 461 attributed headings, 919 source observations (2 historically held unsound source statements), 572 screened contextual meanings, 606 individually reviewed formulations (600 linked, 6 justified no-supported-target, 0 pending), 811 source-screened noncircular definition links. Batch118: normal subgroup, quotient group, graph isomorphism, real convergent ordinary generating function; four headings and seven observations, one HELD ProofWiki forward-only graph-isomorphism clause. Batch119: four precise contextual meanings and six formulations; three equivalent normal-subgroup criteria under one meaning. Batch120: eight exact links, 803 historical links and 600 unrelated old formulation decisions unchanged, three missing subgroup/coset/power-series-convergence prerequisite targets explicitly logged. Independent frozen Wave1 unchanged, five Wave2 stages unsealed, original production corpus not consulted. NEXT Batch121 bounded independent cross-field breadth with collision/source audits; do not fabricate missing prerequisites. Read research_pipeline/WAVE2_PROGRESS_2026-10-20_W.md.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
-      "rows": 568,
-      "sha256": "42574891beacf653cdaaf5d1002f2305cf5ecb0f48a6f7c9e32e65796bbc14f1"
+      "rows": 572,
+      "sha256": "f4fb1527f6e4c702133b38789830f8ec51658790746a26eedabbe6e127c2e337"
     },
     "current_link_stage": {
-      "record_digest": "06a7366219b541c4a22d18b6a472e97f4cf51321a33a9a9e4e7b285e4beb11cb",
+      "record_digest": "932e0f869f3e2b0a9480271151b6b92cf6c6ea6035ecaacca8f7b6712dd5b896",
       "sealed": false,
-      "sha256": "d099f67924d4e430166cf2e5048808324148eefbd3b5398f4e65c23e0d535f68",
-      "total": 803
+      "sha256": "006bc68015cd520ac39a4ca976980acfaeada48fa1dfd19a9040d77ef0522134",
+      "total": 811
     },
     "definition_links": {
-      "rows": 803,
-      "sha256": "a7edacb69d7dae6b46c6042de3e23861e5d110f8fd2b0a31168ade800da38f03"
+      "rows": 811,
+      "sha256": "29bd3829e70e72ec358913abc8b2e9a0eaaa8c6d9e0378f1e05b974ce2f42ec3"
     },
     "firstpass_priorities": {
       "rows": 192,
@@ -73,23 +75,23 @@
     },
     "individual_link_reviews": {
       "decisions": {
-        "linked": 594,
+        "linked": 600,
         "no_supported_target": 6
       },
-      "rows": 600,
-      "sha256": "380096949ee0120279029ae80583fce28a1bc299e8670e24d898b55fad930684"
+      "rows": 606,
+      "sha256": "9550911fcb155479ef22fd80ee827fc08cdf61f1fa4869c13ab6d60bba3d9778"
     },
     "source_observations": {
-      "rows": 912,
-      "sha256": "5b167ba86ead40bb811e4d6f7450e4d42d485a6107b8b7908fcf132ef290a2c5"
+      "rows": 919,
+      "sha256": "2f821a1c58341f253db2909030e4350373d168dead3bc09b2cf903f956f3b6a2"
     },
     "sources": {
       "rows": 14,
       "sha256": "b122833748dff90cb025f4dd82393fdf428f2bf339531675280eb49312c0a38b"
     },
     "term_headings": {
-      "rows": 457,
-      "sha256": "d56503c7b18342d713e494074fe15c6c9f3188d71e5918900c66e273b60fd863"
+      "rows": 461,
+      "sha256": "8aa8cb53a818467da66f556b215c989872aed18ef227e57558ac9dcfb765c3b2"
     },
     "wave2_lineage": {
       "first_wave_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
@@ -98,15 +100,16 @@
     }
   },
   "resume_steps": [
-    "Read this adapter resume plan and generated state/RESUME_STATE.json; do not reread the entire historical archive.",
-    "Check current main SHA and exact successful Batch115–117 workflow runs; trust prior completed reviews when expected digest and counts match.",
-    "Maintain 600 individually reviewed source formulations (594 linked, 6 justified no-target) and 803 noncircular relationships; don't rerun previously completed Batches94–117.",
-    "Collision-audit existing independent contextual meanings before discovering 3–5 directly source-supported new cross-field topics, avoid repetitive recursive foundational expansion.",
-    "Keep orbit reached-set and equivalence-class sources grouped as one meaning, stabilizer action-dependent, measure pushforward requiring measurable inverse image, partition empty-base convention and indexed-data distinctions.",
-    "Preserve earlier explicitly held ProofWiki gradient-existence-only directional derivative observation unpromoted, and all other documented source mathematical quality warnings.",
-    "Keep generic engine subject-neutral; specialized mathDef context policy and adapters in research_pipeline/adapters/mathdef.",
-    "Frozen independent Wave1 untouched, all five Wave2 stages UNSEALED and original production mathDef corpus unread/uncompared until independent freeze.",
-    "Work ~12–14 active minutes, commit coherent stage, write concise checkpoint, verify portable checkpoint workflow."
+    "Read this short adapter resume_plan and generated RESUME_STATE.json first; avoid historical checkpoint rereading.",
+    "Verify current main SHA and Batch118–120 workflow successes; check whether any newer research workflow has changed the saved state.",
+    "Trust 606 individually screened source-specific formulation decisions and 811 cycle-free screened links when hashes agree; never redo Batches94–120.",
+    "Preserve BOTH mathematically questionable observations in held-only source registries: previously gradient-existence-only directional derivative, newly one-way graph isomorphism. Neither may enter screened meanings/relations.",
+    "Preserve normal-subgroup subgroup hypothesis and all-g inclusion-to-equality equivalence, quotient-group normality, graph adjacency preservation AND reflection, and convergence-domain-limited real ordinary generating function.",
+    "Three missing independently screened prerequisite targets logged in wave2/quot120_missing_prerequisite_target_candidates.jsonl: group subgroup, coset product, and real power-series convergence. Source them if appropriate, no fabricated edges.",
+    "Continue bounded cross-field mathematical source discovery, collision-check source titles/meaning contexts, separate source intake, mathematical screening, individual prerequisite review.",
+    "Keep generic engine neutral across mathDef, math education and theorem topics; subject-dependent conventions in mathDef adapter.",
+    "Preserve frozen independent Wave1 and all five Wave2 stages UNSEALED. Never read/compare production original mathDef mathematics before reconstruction Wave2 freeze.",
+    "Work ~12–14 active minutes, save concise progress and verified portable checkpoint well before timeout."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -116,8 +119,8 @@
       "sha256": "aeebc436b42634812ad521a742d530cf44e2f342616b0f46e6c1b3da10d7c6ec"
     },
     "wave2_research_support": {
-      "files": 709,
-      "sha256": "a6b940d7156a037e87277d0b938ad1d515dd6123e79d81b9c5f9e5b8caee7366"
+      "files": 727,
+      "sha256": "7dd7c1feef9f885676b0225ac39f32646944b06994efe5b697e7d5c577cfd143"
     }
   },
   "verification_limitations": [
@@ -130,18 +133,18 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch117 nine direct group/measure/partition links and all 794 old links preserved",
-      "run_id": 39513052095
+      "purpose": "Batch120 eight exact independently screened prerequisites and three missing source-coverage targets, earlier 803 links preserved",
+      "run_id": 39514370092
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch116 four mathematical contextual meanings with six formulations preserving 594 previous decisions",
-      "run_id": 39512766067
+      "purpose": "Batch119 four screened contextual mathematical meanings and six forms; held one-way graph clause excluded",
+      "run_id": 39514135617
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch115 four independent source headings, six source observations",
-      "run_id": 39512532131
+      "purpose": "Batch118 four new independent source headings and seven source observations, one graph source claim held",
+      "run_id": 39513931720
     }
   ]
 }
