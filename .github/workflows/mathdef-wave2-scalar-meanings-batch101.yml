@@ -1,0 +1,97 @@
+name: Screen scalar division-ring and left-right vector meanings — Batch 101
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-scalar-meanings-batch101.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  mathematical-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Start from newest independent main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Portable and adapter regression checks
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Individually source-screen five division-ring mathematics contexts
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_scalar_division_ring_meanings_batch101 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Maintain source-term review ledger
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify source scopes, historical 561 reviews and acyclicity
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          frozen=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(frozen.publication())==json.loads((frozen.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":14,"terms":437,"observations":877,"meanings":541,"relations":742}
+          assert {s:len(w.records(s)) for s in expected}==expected
+          assert not any(w.state(s).get("sealed") for s in expected)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(k)==v for k,v in frozen.records(s).items())
+          ms=w.records("meanings")
+          new=[m for m in ms.values() if m["id"].startswith("meaning.wave2.scalar101.")]
+          assert len(new)==5 and all(len(m["formulations"])==1 for m in new)
+          assert ms["meaning.wave2.scalar101.left-vector-over-division-ring"]["term_group_id"]==ms["meaning.wave2.scalar101.right-vector-over-division-ring"]["term_group_id"]
+          assert ms["meaning.wave2.scalar101.normed-division-ring"]["source_bibliography_warning"]
+          old=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_561_before_scalar101.jsonl")
+          now=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          index={r["formulation_id"]:r for r in now}
+          assert len(old)==561 and len(now)==len(index)==566
+          for prior in old:
+            current=index[prior["formulation_id"]]
+            assert all(current.get(k)==v for k,v in prior.items() if k!="meaning_catalog_digest")
+          assert all(r["meaning_catalog_digest"]==digest(list(ms.values())) for r in now)
+          assert {id for r in now for id in r["relation_ids"]}==set(w.records("relations"))
+          assert dict(Counter(r["decision"] for r in now))=={"linked":555,"no_supported_target":6,"needs_review":5}
+          check_cycles(ms,w.records("relations"))
+          report=json.loads((w.root/"state/wave2_scalar101_meaning_screen.json").read_text())
+          assert report["historical_561_formulation_dispositions_preserved"] and report["historical_742_links_preserved"]
+          assert report["noncommutative_left_and_right_actions_distinct"]
+          assert report["uncited_derived_pair_page_caveat_preserved"]
+          assert not report["production_corpus_used"] and not report["human_peer_verified"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independently sourced mathematical meaning reviews
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen five scalar-division-ring mathematical meanings preserving historical decisions"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
