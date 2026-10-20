@@ -150,7 +150,7 @@ def run(root):
        "old_first_formulation":old_saved["formulations"][0]["text"],
        "new_first_formulation":NOETH_FIRST,
        "new_source_formulation_ids":[form["id"] for form in supplemental],
-       "original_St acks_evidence_preserved":True,
+       "original_stacks_evidence_preserved":True,
        "individual_mathematical_reason":noeth_research["mathematical_review"],
        "production_corpus_used":False,"human_verified":False
     }
