@@ -18,7 +18,7 @@ const { chromium } = require("playwright");
       const base = process.env.UI_SMOKE_BASE;
       const url = base ? base.replace(/\/$/, "") + "/" + stage + "/" : "file://" + file;
       await page.goto(url, {waitUntil:"domcontentloaded"});
-      await page.waitForFunction(() => document.querySelector("#total")?.textContent.includes("definitions"));
+      await page.waitForFunction(() => document.querySelector("#total")?.textContent.includes("terms"));
       assert.ok(await page.locator(".masthead .logo").isVisible(), "Original-style logo missing");
       assert.equal(await page.locator(".masthead h1").innerText(), "∈ mathDef");
       assert.match(await page.locator(".subtitle").innerText(), /Explore mathematical language/);
