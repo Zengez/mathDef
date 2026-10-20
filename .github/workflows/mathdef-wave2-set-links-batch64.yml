@@ -1,0 +1,95 @@
+name: Screen ten independent equivalence, quotient and integer prerequisites — Batch 64
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-set-links-batch64.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Use latest independent research on main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run independent pipeline tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Individually review ten exact-source dependencies and amend the old integer no-target decision
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_set_links_batch64 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify frozen lineage and 521 independent mathematical reviews
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(old.publication())==json.loads((old.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expect={"sources":14,"terms":406,"observations":830,"meanings":508,"relations":691}
+          assert {s:len(w.records(s)) for s in expect}==expect
+          assert not any(w.state(s).get("sealed") for s in expect)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(k)==v for k,v in old.records(s).items())
+          history=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_521_before_set64.jsonl")
+          present=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          idx={r["formulation_id"]:r for r in present}
+          assert len(history)==len(present)==len(idx)==521
+          changed={r["formulation_id"] for r in present if r["formulation_id"].startswith("form.wave2.set63.")}
+          changed.add("form.wave2.integer59.integer-equivalence-class")
+          assert len(changed)==6
+          for oldrow in history:
+            if oldrow["formulation_id"] not in changed:
+              assert idx[oldrow["formulation_id"]]==oldrow
+          assert all(r["meaning_catalog_digest"]==digest(list(w.records("meanings").values())) for r in present)
+          assert {rid for r in present for rid in r["relation_ids"]}==set(w.records("relations"))
+          assert dict(Counter(r["decision"] for r in present))=={"linked":516,"no_supported_target":5}
+          assert len([id for id in w.records("relations") if id.startswith("rel.wave2.set64.")])==10
+          check_cycles(w.records("meanings"),w.records("relations"))
+          events=jsonl(w.root/"events/integer_no_target_amendment_batch64.jsonl")
+          assert len(events)==1
+          assert events[0]["prior_decision"]=="no_supported_target"
+          assert idx["form.wave2.integer59.integer-equivalence-class"]["override_event_id"]==events[0]["event_id"]
+          report=json.loads((w.root/"state/wave2_set_dependency_review_batch64.json").read_text())
+          assert report["old_681_screened_links_preserved"]
+          assert report["all_521_formulations_individually_reviewed"]
+          assert report["zero_including_natural_no_supported_target_preserved"]
+          assert not report["production_corpus_used"] and not report["human_peer_verified"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent reviewed relations and their history
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen ten quotient and integer dependencies with explicit historical review amendment"
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
