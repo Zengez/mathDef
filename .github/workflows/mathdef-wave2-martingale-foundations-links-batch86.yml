@@ -63,13 +63,18 @@ jobs:
             "form.wave2.research81.martingale-continuous-index.01"
           }
           assert len(newer)==6
+          additive_chrom="form.wave2.research81.chromatic-proper-coloring.01"
           for row in history:
-            if row["formulation_id"] not in newer|older:
+            if row["formulation_id"] not in newer|older|{additive_chrom}:
               assert idx[row["formulation_id"]]==row
           assert all(r["meaning_catalog_digest"]==digest(list(w.records("meanings").values())) for r in current)
           assert {rid for r in current for rid in r["relation_ids"]}==set(w.records("relations"))
           assert dict(Counter(r["decision"] for r in current))=={"linked":539,"no_supported_target":8}
           assert len([id for id in w.records("relations") if id.startswith("rel.wave2.found86.")])==13
+          assert idx[additive_chrom]["relation_ids"]==["rel.wave2.research82.01","rel.wave2.found86.13"]
+          chromatic_events=jsonl(w.root/"events/chromatic_link_extension_batch86.jsonl")
+          assert len(chromatic_events)==1 and chromatic_events[0]["preserved_existing_link_ids"]==["rel.wave2.research82.01"]
+          assert idx[additive_chrom]["link_extension_event_id"]==chromatic_events[0]["event_id"]
           assert w.records("relations")["rel.wave2.found86.11"]["target_meaning"]=="meaning.wave2.found85.adapted-continuous"
           check_cycles(w.records("meanings"),w.records("relations"))
           amendments=jsonl(w.root/"events/martingale_review_amendments_batch86.jsonl")
@@ -78,6 +83,7 @@ jobs:
           assert all(idx[x["formulation_id"]]["override_event_id"]==x["event_id"] for x in amendments)
           report=json.loads((w.root/"state/wave2_found86_links.json").read_text())
           assert report["historical_706_links_preserved"]
+          assert report["chromatic_existing_graph_link_retained_and_extended_with_event"]
           assert report["three_martingale_no_target_decisions_explicitly_amended"]
           assert report["new_stochastic_process_missing_prerequisite_explicit"]
           assert not report["production_corpus_used"] and not report["human_peer_verified"]
