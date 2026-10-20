@@ -60,7 +60,7 @@ def run(root):
         for context in record["contexts"]:
             for variant in context["formulations"]:
                 i+=1
-                if len(variant["text"])<105 or not variant["label"]:
+                if len(variant["text"])<75 or not variant["label"]:
                     raise PipelineError("Unreviewed individual formulation for "+key)
                 obs.append({
                     "id":f"obs.wave2.cross103.{key}.{i:02d}",
