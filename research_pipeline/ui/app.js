@@ -72,6 +72,17 @@
       source: d.source, path: d.path, dependencies: d.dependencies || []
     }];
   }
+  function preferredTarget(dep) {
+    const target = lookup.get(dep.id);
+    if (!target || !dep.target_meaning || !(target.formulations || []).length) return target;
+    // Keep the complete set of independently researched contexts, but
+    // show the specific linked meaning first in nested/inline expansion.
+    const forms = [...target.formulations].sort((a, b) =>
+      Number(b.meaning_id === dep.target_meaning) -
+      Number(a.meaning_id === dep.target_meaning));
+    return {...target, formulations: forms};
+  }
+
   function visibleDependencies(d, blocked) {
     const dedup = new Set();
     return (d.dependencies || []).filter((dep) => {
@@ -127,7 +138,7 @@
     const childBlocked = nextBlocked(blocked, deps);
     return '<div class="dependency-children" aria-label="Definitions used">' +
       deps.map((dep) => {
-        const target = lookup.get(dep.id), childPath = [...path, dep.id];
+        const target = preferredTarget(dep), childPath = [...path, dep.id];
         const open = expanded(side, childPath);
         return '<section class="dependency-box"><div class="dependency-head">' +
           nodeButton(side, dep, childPath, false) +
@@ -179,7 +190,7 @@
       });
       const children = situated.filter((dep) => expanded(side, [...path, dep.id]));
       return item + children.map((dep) => {
-        const childPath = [...path, dep.id], target = lookup.get(dep.id);
+        const childPath = [...path, dep.id], target = preferredTarget(dep);
         return '<div class="inline-insert"><div class="inline-insert-heading">' +
           '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +
           '<div class="dependency-feedback">' + correctionButton(dep.id, true) +
@@ -191,7 +202,7 @@
     // controls below the text instead of silently dropping them in inline mode.
     const extra = deps.filter((dep) => !marked.has(dep.id));
     return html + (extra.length ? '<div class="inline-extras">' + extra.map((dep) => {
-      const childPath = [...path, dep.id], target = lookup.get(dep.id);
+      const childPath = [...path, dep.id], target = preferredTarget(dep);
       return '<div>' + nodeButton(side, dep, childPath, true) +
         (expanded(side, childPath) ? '<div class="inline-insert"><div class="inline-insert-heading">' +
           '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +
