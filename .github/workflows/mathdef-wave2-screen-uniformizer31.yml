@@ -37,6 +37,11 @@ jobs:
         run: |
           python -m research_pipeline.engine.wave2_screen_uniformizer31 \
             --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Refresh mathematically screened meaning count in the independent per-term coverage summary
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
       - name: Verify all historical links, precise Stacks source, and frozen Wave 1
         run: |
           python - <<'PY'
