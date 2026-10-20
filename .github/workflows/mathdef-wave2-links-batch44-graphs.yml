@@ -1,0 +1,96 @@
+name: Screen four graph-theory prerequisites for adjacency and bipartite graphs
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-links-batch44-graphs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  graph-relations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh authoritative independent Wave 2 screened graph meanings
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all scripts and run isolated research tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Apply four individually checked graph foundation relations
+        run: |
+          python -m research_pipeline.engine.wave2_apply_links \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --batch research_pipeline/experiments/reconstruction-v2-independent/intake/wave2_curated_relations_batch_44.jsonl
+      - name: Verify rigorous graph contexts, source provenance and 499 formulation decisions
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          frozen=json.loads((old.root/"state/wave1_freeze.json").read_text())
+          assert digest(old.publication())==frozen["published_catalog_digest"]
+          assert len(w.records("sources"))==9 and len(w.records("terms"))==384
+          assert len(w.records("observations"))==807 and len(w.records("meanings"))==487
+          assert len(w.records("relations"))==659
+          assert len(old.records("relations"))==445
+          assert set(old.records("relations")).issubset(w.records("relations"))
+          assert not any(w.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==499 and len({r["formulation_id"] for r in reviews})==499
+          assert Counter(r["decision"] for r in reviews)=={"linked":494,"no_supported_target":5}
+          assert {rid for r in reviews for rid in r["relation_ids"]}==set(w.records("relations"))
+          snapshot=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_497_before_graph43.jsonl")
+          now={r["formulation_id"]:r for r in reviews}
+          assert len(snapshot)==497
+          assert all(now[r["formulation_id"]]["original_wave1_disposition"]==r["original_wave1_disposition"] for r in snapshot)
+          for fid in ("form.wave2.alternative39.adjacency-matrix-simple-undirected",
+                      "form.wave2.alternative39.bipartite-undirected",
+                      "form.wave2.graph42.simple-undirected",
+                      "form.wave2.graph42.loopless-undirected-multigraph"):
+              assert now[fid]["decision"]=="linked"
+          new=jsonl(w.root/"intake/wave2_curated_relations_batch_44.jsonl")
+          assert len(new)==4 and len({r["id"] for r in new})==4
+          assert all(w.records("relations")[r["id"]]==r for r in new)
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_link_review_batch_44.json").read_text())
+          assert report["added_source_grounded_links"]==4 and report["total_screened_links"]==659
+          assert report["pending_wave2_link_reviews"]==0
+          assert report["dependency_graph_has_cycles"] is False and report["human_peer_verified"] is False
+          assert report["original_production_baseline_consulted"] is False
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent graph mathematical links and review evidence
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen four graph theory dependencies and resolve all 499 current formulation reviews"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
