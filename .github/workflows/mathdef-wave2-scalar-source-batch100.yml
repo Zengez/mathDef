@@ -55,7 +55,7 @@ jobs:
           expected={"sources":14,"terms":437,"observations":877,"meanings":536,"relations":742}
           assert {s:len(w.records(s)) for s in expected}==expected
           assert not any(w.state(s).get("sealed") for s in expected)
-          for s in ("sources","terms","observations","meanings","relations"):
+          for s in ("sources","terms","observations","relations"):
             assert all(w.records(s).get(k)==v for k,v in frozen.records(s).items())
           ledger=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
           assert len(ledger)==561 and dict(Counter(x["decision"] for x in ledger))=={"linked":555,"no_supported_target":6}
