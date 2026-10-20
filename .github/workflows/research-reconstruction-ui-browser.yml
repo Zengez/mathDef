@@ -1,0 +1,48 @@
+name: Verify extracted reconstruction GUI in Chromium
+
+on:
+  push:
+    branches:
+      - 'feature/reusable-math-reference-interface-20261020'
+    paths:
+      - 'research_pipeline/ui/**'
+      - 'research_pipeline/adapters/mathdef/preview_site.py'
+      - 'research_pipeline/adapters/mathdef/ui_branding.json'
+      - 'research_pipeline/tests/test_shared_ui_browser.cjs'
+      - '.github/workflows/research-reconstruction-ui-browser.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate only independent reconstruction display data
+        run: |
+          python -m research_pipeline.adapters.mathdef.preview_site --site-root /tmp/mathdef-independent-preview
+      - name: Install headless Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Smoke both reusable reconstruction previews
+        env:
+          UI_SMOKE_SITE: /tmp/mathdef-independent-preview
+          UI_SMOKE_SCREENSHOTS: /tmp
+        run: node research_pipeline/tests/test_shared_ui_browser.cjs
+      - name: Preserve screenshots for manual visual comparison
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: independent-reconstruction-shared-gui-screenshots
+          path: /tmp/reconstruction-*.png
+          if-no-files-found: ignore
