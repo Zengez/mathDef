@@ -1,0 +1,85 @@
+name: Review subgroup coset and real-series source prerequisites — Batch 123
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-prereq-links-batch123.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Sync independent research main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test generic engine and mathDef topic adapter
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Individually screen eight mathematical source prerequisites
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_prereq_links_batch123 --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify frozen Wave1, old decisions, no cycles and held source claims
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(one.publication())==json.loads((one.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          counts={"sources":14,"terms":465,"observations":924,"meanings":577,"relations":819}
+          assert {s:len(w.records(s)) for s in counts}==counts
+          assert not any(w.state(s).get("sealed") for s in counts)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(i)==row for i,row in one.records(s).items())
+          before=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_611_before_prereq123.jsonl")
+          after=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          ix={r["formulation_id"]:r for r in after}
+          assert len(before)==len(after)==len(ix)==611
+          for p in before:
+            if not p["formulation_id"].startswith("form.wave2.prereq122."):
+              assert ix[p["formulation_id"]]==p
+          assert len([k for k in w.records("relations") if k.startswith("rel.wave2.prereq123.")])==8
+          assert dict(Counter(r["decision"] for r in after))=={"linked":605,"no_supported_target":6}
+          assert {i for r in after for i in r["relation_ids"]}==set(w.records("relations"))
+          assert all(r["meaning_catalog_digest"]==digest(list(w.records("meanings").values())) for r in after)
+          for p in ("wave2/quot118_quarantined_source_claims.jsonl","wave2/directional112_quarantined_source_claims.jsonl"):
+            held=jsonl(w.root/p)
+            assert len(held)==1 and held[0]["observation_id"] not in {i for m in w.records("meanings").values() for fm in m["formulations"] for i in fm["evidence_ids"]}
+          check_cycles(w.records("meanings"),w.records("relations"))
+          r=json.loads((w.root/"state/wave2_prereq123_link_review.json").read_text())
+          assert r["all_prior_811_links_preserved"] and r["all_606_unrelated_reviews_preserved"]
+          assert r["backfill_of_earlier_dependency_targets_explicitly_deferred"]
+          assert not r["human_peer_verified"] and not r["production_corpus_used"]
+          print(json.dumps(r,indent=2))
+          PY
+      - name: Commit only independent mathematical links and review snapshots
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen eight independent subgroup coset and real-series dependencies"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
