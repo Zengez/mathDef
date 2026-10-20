@@ -38,7 +38,11 @@ jobs:
         env:
           UI_SMOKE_SITE: /tmp/mathdef-independent-preview
           UI_SMOKE_SCREENSHOTS: /tmp
-        run: node research_pipeline/tests/test_shared_ui_browser.cjs
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 --directory /tmp/mathdef-independent-preview > /tmp/reconstruction-http.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          UI_SMOKE_BASE=http://127.0.0.1:8765 node research_pipeline/tests/test_shared_ui_browser.cjs
       - name: Preserve screenshots for manual visual comparison
         if: always()
         uses: actions/upload-artifact@v4
