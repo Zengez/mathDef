@@ -23,7 +23,7 @@ SPECS=[
  dict(key="dedekind-supremum",slug="dedekind-supremum-property",
       term="Dedekind completeness property",
       context="Order theory: supremum for all nonempty upper-bounded subsets of a partially ordered set",
-      text="An ordered set (S,≤) has the Dedekind completeness property if every nonempty subset A⊆S that has an upper bound in S possesses a least upper bound sup(A)∈S.",
+      text="An ordered set (S,≤) has the Dedekind completeness property if every nonempty subset A⊆S that has an upper bound in S possesses a least upper bound sup(A)∈S. The requirement excludes the empty subset and does not demand a supremum for sets lacking upper bounds.",
       reason="ProofWiki explicitly requires nonempty subsets bounded above, and a supremum in the ambient ordered set. This is an order-theoretic least-upper-bound property, not unrestricted metric/Cauchy completeness and not existence of suprema for unbounded subsets.",
       locator="https://proofwiki.org/wiki/Definition%3ADedekind_Complete"),
  dict(key="complete-ordered-real-field",slug="axiomatic-complete-ordered-reals",
