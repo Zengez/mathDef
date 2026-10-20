@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "4712a75fe381ef909b34ba896a854fbc46f08f71c11efe75deda058116381500"
+    "resume_plan_sha256": "b9e7820c32a1b4c118afa034a58c8ed421a32b05d77dacac0db1e322ee6b781f"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -32,11 +32,12 @@
     "The union-of-cuts supremum result and complete ordered-field uniqueness are theorem statements, not new mathematical definitions, and remain excluded from meaning counts.",
     "The coverage validator was generalized to allow more than one independently sourced observation per term; variant-specific source locator checks must use the specific formulation, not the first sibling form.",
     "The 0-inclusive natural-number convention still has an explicitly justified no-supported-target decision pending independently sourced Peano axioms/finite-ordinal characterization; do not create reverse links to integers.",
-    "Batch 69 independent connected-space entry currently contains an extra nonemptiness assumption. Under the no-separation and clopen characterizations the empty space is connected; review and correct this EXISTING independent meaning with audit snapshots and explicit source attribution.",
-    "Batch 69 Noetherian-ring entry bundles two equivalent axiomatic formulations into a single screened formulation; new independently verified sources provide four variants. Preserve one meaning, split variants with source and historical review events.",
-    "The broad Batch 66–68 σ-algebra and compactness source/variant/link reviews completed. A σ-algebra variant has an explicit no-supported-target disposition rather than invalid recursion; compact and quasicompact are equivalent under non-Hausdorff general topology convention but may differ by Hausdorff requirements in some texts."
+    "The broad Batch 66–68 σ-algebra and compactness source/variant/link reviews completed. A σ-algebra variant has an explicit no-supported-target disposition rather than invalid recursion; compact and quasicompact are equivalent under non-Hausdorff general topology convention but may differ by Hausdorff requirements in some texts.",
+    "Connectedness is CONVENTIONAL rather than an error: Stacks explicitly excludes the empty space, ProofWiki does not. Both source-backed contextual meanings are now preserved under one displayed term.",
+    "The Noetherian ring as a module characterization awaits a separately screened Noetherian-module definition; three equivalent source-reviewed formulations are ready in Batch 73 but not yet ingested.",
+    "The initial proposed continuous-map source URL was inaccessible in Batch 73 source check; do not treat the continuity definition as source-read until its exact locator is resolved."
   ],
-  "next_action": "Batches 66–68 successfully verified from independent sources, with 14 approved source collections, 408 source terms, 834 source observations, 509 screened contextual meanings and 524 formulation-level individual reviews; 693 noncircular screened relationships. Batch 67 correctly amended the EXISTING sigma-algebra meaning by adding one new equivalent variant (with original record and all 521 older reviews preserved) and added one distinct named compact topological space meaning with two equivalent formulations (finite open subcover / closed finite intersection property). Batch 68 completed all three new relation decisions (2 exact topological prerequisites, one explicit no-supported-target for sigma variant, no self-link). NEXT: Batch 69 independently sourced consistency audit: connected topological space independent meaning erroneously requires nonemptiness despite empty space being connected under standard no-separation convention. Correct this via a historically snapshotted, audited in-place amendment; split equivalent no-separation/clopen/two-point formulations under SAME meaning with separate source observations. Likewise investigate separate equivalent Noetherian ring formulations (finite generation, ascending chain, maximal ideals, as Noetherian module) without creating duplicate meaning. Check existing independently acquired meanings only, original production corpus strictly excluded. Then resume broad subfield-rotating research.",
+  "next_action": "Verified independently sourced Wave 2 Batches 70–72: 14 source collections, 410 independently sourced terms, 841 source observations, 510 screened contextual meanings, 530 individually reviewed formulations and 698 cycle-free source-scoped prerequisite links. IMPORTANT mathematically legitimate source-convention split: the Stacks Project defines a connected space as NONEMPTY (tag 004R); ProofWiki's no-separation/clopen/two-point formulations permit EMPTY X. DO NOT overwrite either; Batch 71 groups the distinct contexts under the same displayed term while preserving Stacks original and all 524 prior reviews. Noetherian ring has four independently supported formulations under its original meaning, with its historic combined Stacks formulation and amendment event archived. Batch 72 screened five noncircular links, preserved the preceding 693, and left the Noetherian-as-module variant with an explicit no-supported-target decision. NEXT: Batch 73 source-reviewed-only Noetherian module (three equivalent conditions) and discrete topology; continuity candidate held because direct locator inaccessible. Check existing independent meaning collisions and accessible source locators; admit source terms and observations separately, screen variants, then review their exact dependencies. Continue breadth-first discovery and preserve original-production-mathematical-corpus embargo until Wave 2 is frozen.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
@@ -91,7 +92,8 @@
     "Stop around 12-14 minutes of active work with a concise handoff; do not wait for a timeout.",
     "Do not rerun Batches 58–60 absent new contradictory evidence. The initial failures were resolved before any stage commits; successful final workflow runs are the authoritative state.",
     "The rational/integer dependency chain has sufficient foundations for now; next prioritize nonlinear, cross-subfield discovery using independently sourced variant families, and resolve candidate collisions against the independent Wave 2 meaning inventory only.",
-    "Batches 66–68 are complete; do not re-run from scratch. Preserve source/formulation variation and the existing σ-algebra historical in-place amendment event. Batch 69 is a research-only next task, not yet screened/ingested."
+    "Trust passed Batches 70–72 as complete and do not rerun without contradictory evidence; every historical formulation and source/link revision event is preserved.",
+    "Resume from the Batch 73 research-only candidates; require proper mathematical source-vetting and source-by-variant review before any stage promotion."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -115,18 +117,18 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 68 compact-topology links and sigma no-self-link screened dispositions, all previous review decisions preserved",
-      "run_id": 39487512300
+      "purpose": "Batch 72 5 verified links, no link cycles and one no-target Noetherian-module prerequisite",
+      "run_id": 39489823140
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 67 same-meaning σ-algebra audited amendment and compactness two variants",
-      "run_id": 39487075336
+      "purpose": "Batch 71 two distinct connectedness conventions and four Noetherian formulations with archived original meaning",
+      "run_id": 39489354392
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 66 2 source terms and 4 independent observations",
-      "run_id": 39486591125
+      "purpose": "Batch 70 seven source observations and entire 408-term ledger preservation",
+      "run_id": 39488866795
     }
   ]
 }
