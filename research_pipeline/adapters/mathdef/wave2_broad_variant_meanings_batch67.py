@@ -68,7 +68,8 @@ def run(root):
     if len(original_forms) not in (1,2):
         raise PipelineError("Unexpected additional sigma-algebra variants require comparison")
     old_sigma={
-        **prev_sigma,"term_ids":["term.wave2.foundation26.sigma-algebra"],
+        **{k:v for k,v in prev_sigma.items() if k!="variant_refinement_note"},
+        "term_ids":["term.wave2.foundation26.sigma-algebra"],
         "formulations":[original_forms[0]]
     }
     if len(sigma["mathematical_review"])<275 or len(compact["mathematical_review"])<275:
