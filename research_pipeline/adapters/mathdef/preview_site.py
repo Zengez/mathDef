@@ -66,7 +66,7 @@ border-radius:13px;background:white;padding:24px}
 .stage h2{margin-top:0}.stage span{color:#304e86;font-weight:600}
 .notice{margin-top:26px;padding:14px 18px;border-left:4px solid #576e96;background:#eaf0f8}
 </style></head><body>
-<p class="small"><a href="../../">Original mathDef site</a> · Independent research experiment</p>
+<p class="small"><a href="../">Original mathDef site</a> · Independent research experiment</p>
 <h1>Independent mathematical definitions reconstruction</h1>
 <p>Explore the second, independently researched version of mathDef at two stages.
 The original mathDef content is <strong>not</strong> used to construct these previews.</p>
