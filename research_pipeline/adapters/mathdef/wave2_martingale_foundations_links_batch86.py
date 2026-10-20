@@ -53,6 +53,7 @@ E=(
  ("13","form.wave2.research81.chromatic-proper-coloring.01","meaning.wave2.found85.proper-coloring","c:V(G)→{1,…,k}",CHROM,COL,
   "The chromatic number minimizes the palette size k over all proper vertex k-colorings of a fixed graph. The independently sourced proper-coloring meaning supplies the exact vertex-map and adjacent-endpoint inequality, and the existing graph prerequisite remains preserved.")
 )
+EXTRA_CHROM="form.wave2.research81.chromatic-proper-coloring.01"
 OLD=(
  "form.wave2.research81.martingale-discrete.01",
  "form.wave2.research81.martingale-discrete.02",
@@ -127,6 +128,10 @@ def run(root):
         raise PipelineError("Unexpected new foundation formulation count")
     if MISSING["formulation_id"] not in changed:
         raise PipelineError("Missing primitive no-target review subject")
+    if (EXTRA_CHROM not in byform or
+        before[EXTRA_CHROM]["decision"]!="linked" or
+        before[EXTRA_CHROM]["relation_ids"]!=["rel.wave2.research82.01"]):
+        raise PipelineError("Existing chromatic graph prerequisite not preserved for additive review")
     archive=w.root/"state/wave2_formulation_reviews_snapshot_547_before_found86.jsonl"
     if len(original_current)==706:
         if any(before[f]["decision"]!="needs_review" or before[f]["relation_ids"] for f in changed):
@@ -159,6 +164,20 @@ def run(root):
         })
     if any(len(e["screened_supporting_link_ids"])!=2 for e in amendments):
         raise PipelineError("Each historical martingale formulation needs two newly verified sources")
+    chromatic_addition={
+      "event_id":"found86.chromatic-append-proper-coloring-prerequisite",
+      "formulation_id":EXTRA_CHROM,
+      "previous_review_digest":digest(history[EXTRA_CHROM]),
+      "previous_decision":"linked","new_decision":"linked",
+      "preserved_existing_link_ids":history[EXTRA_CHROM]["relation_ids"],
+      "new_screened_link_ids":[r["id"] for r in screened if r["from_formulation"]==EXTRA_CHROM],
+      "reason":"Proper vertex coloring is an independently defined additional prerequisite. Preserve the earlier source-reviewed simple-graph dependency and explicitly append the new coloring meaning without superseding the previous review.",
+      "human_verified":False,"production_corpus_used":False
+    }
+    if (chromatic_addition["preserved_existing_link_ids"]!=["rel.wave2.research82.01"]
+        or chromatic_addition["new_screened_link_ids"]!=["rel.wave2.found86.13"]):
+        raise PipelineError("Chromatic original/new graph prerequisites not distinguished")
+    store(w.root/"events/chromatic_link_extension_batch86.jsonl",[chromatic_addition])
     store(w.root/"events/martingale_review_amendments_batch86.jsonl",amendments)
     store(w.root/"wave2/individual_martingale_graph_links_batch86.jsonl",screened)
     store(w.root/"wave2/stochastic_process_no_target_batch86.jsonl",[MISSING])
@@ -172,8 +191,12 @@ def run(root):
     future=[]
     for row in historic:
         r=dict(row);fid=r["formulation_id"]
-        if fid in changed|set(OLD):
+        if fid in changed|set(OLD)|{EXTRA_CHROM}:
             attached=[item["id"] for item in screened if item["from_formulation"]==fid]
+            if fid==EXTRA_CHROM:
+                attached=history[EXTRA_CHROM]["relation_ids"]+attached
+                r["link_extension_event_id"]=chromatic_addition["event_id"]
+                r["previous_review_digest"]=digest(history[EXTRA_CHROM])
             r["relation_ids"]=attached
             r["reviewed_by"]="assistant_independent_martingale_graph_foundation_links_2026_10_20"
             if attached:
@@ -200,7 +223,7 @@ def run(root):
     if len(actual)!=547 or len(index)!=547:
         raise PipelineError("Incomplete individual mathematical review")
     for fid,old in history.items():
-        if fid not in changed|set(OLD) and index[fid]!=old:
+        if fid not in changed|set(OLD)|{EXTRA_CHROM} and index[fid]!=old:
             raise PipelineError("Historical unrelated formulation review changed")
     if {i for r in actual for i in r["relation_ids"]}!=set(current):
         raise PipelineError("Every screened link must have an individual review")
@@ -211,7 +234,8 @@ def run(root):
       "batch":86,"screened_meanings":523,"reviewed_formulations":547,
       "screened_relationships":719,"new_screened_relationships":13,
       "historical_706_links_preserved":True,
-      "unrelated_538_formulation_reviews_preserved":True,
+      "unrelated_537_formulation_reviews_preserved":True,
+      "chromatic_existing_graph_link_retained_and_extended_with_event":True,
       "three_martingale_no_target_decisions_explicitly_amended":True,
       "new_stochastic_process_missing_prerequisite_explicit":True,
       "discrete_vs_continuous_adaptedness_respected":True,
