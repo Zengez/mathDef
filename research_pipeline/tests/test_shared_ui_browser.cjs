@@ -20,6 +20,26 @@ const { chromium } = require("playwright");
       await page.goto(url, {waitUntil:"domcontentloaded"});
       await page.waitForFunction(() => document.querySelector("#total")?.textContent.includes("definitions"));
       assert.ok(await page.locator(".masthead .logo").isVisible(), "Original-style logo missing");
+      assert.equal(await page.locator(".masthead h1").innerText(), "∈ mathDef");
+      assert.match(await page.locator(".subtitle").innerText(), /Explore mathematical language/);
+      assert.match(await page.locator(".research-stage-notice").innerText(),
+        stage === "wave1" ? /Wave 1/ : /Wave 2/);
+      const output = process.env.UI_SMOKE_SCREENSHOTS || "/tmp";
+      await page.screenshot({path:path.join(output,"reconstruction-"+stage+"-masthead.png"),fullPage:false});
+
+      // The original-looking suggestion dialog must route reports about
+      // independent research to a stage-specific draft, not production data.
+      await page.getByRole("button",{name:/Suggest a definition/}).first().click();
+      assert.ok(await page.locator("#feedback-dialog").evaluate(el=>el.open));
+      await page.locator("#feedback-term").fill("Independent test term");
+      await page.locator(".feedback-prepare").click();
+      const draft = await page.locator("#feedback-github-link").getAttribute("href");
+      assert.ok(draft && draft.startsWith("https://github.com/Zengez/mathDef/issues/new?"));
+      const draftUrl = new URL(draft);
+      assert.match(draftUrl.searchParams.get("title"), stage==="wave1" ? /Wave 1/ : /Wave 2/);
+      assert.match(draftUrl.searchParams.get("body"), /independently reconstructed content, NOT/);
+      await page.locator("#feedback-close").click();
+
       assert.equal(await page.locator(".search-box").count(), 2);
       assert.ok((await page.locator(".pane").count()) === 2);
       await page.locator("#term-query").fill("Galois field extension");
@@ -55,7 +75,6 @@ const { chromium } = require("playwright");
       assert.ok(overflow.doc <= overflow.width + 4,
         "Horizontal mobile overflow: " + JSON.stringify(overflow));
       await page.setViewportSize({width:1320,height:860});
-      const output = process.env.UI_SMOKE_SCREENSHOTS || "/tmp";
       await page.screenshot({path:path.join(output, "reconstruction-"+stage+".png"),fullPage:false});
       assert.deepEqual(errors,[], "UI runtime console errors");
       await page.close();
