@@ -54,4 +54,7 @@ jobs:
       - name: Check command-line invocation
         run: python -m research_pipeline.engine.cli --help
       - name: Check reconstruction viewer JavaScript syntax
-        run: node --check research_pipeline/adapters/mathdef/preview.js
+        run: |
+          node --check research_pipeline/adapters/mathdef/preview.js
+          node --check research_pipeline/ui/app.js
+          node --check research_pipeline/ui/feedback.js
