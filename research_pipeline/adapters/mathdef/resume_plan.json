@@ -1,31 +1,33 @@
 {
   "schema_version": 1,
   "work_budget_minutes_target": 12,
-  "next_action": "Independent Wave 2 Batches106–108 VERIFIED with Actions 39507831430, 39508076150 and 39508374483 successful: 14 approved sources; 445 attributed source headings; 891 observations; 552 mathematically source-screened contextual meanings; 580 individually dispositioned formulations (574 linked, 6 justified no-target, 0 pending); 774 noncircular, individually reviewed definition-prerequisite links. Batch106 4 new topics and 7 source observations; Batch107 5 mathematical contexts and 7 formulations; Batch108 nine source-specific links, preserving all 765 older links and 573 unrelated review decisions. Source bug found in ProofWiki Boundary(Topology) 'closure and exterior' formula (incorrectly restricts boundary to A); excluded from approved variants and logged. Topological closure not linked to boundary, so no artificial cycles; module and field-vector kernels distinct; derivative function on open interval distinct from pointwise derivative. Independent frozen Wave 1 unchanged, all five Wave 2 stages unsealed, no production mathDef corpus comparisons. NEXT Batch109 bounded cross-subfield independent source discovery plus optional targeted source inconsistency audit and provenance; maintain subject-neutral engine. Read research_pipeline/WAVE2_PROGRESS_2026-10-20_S.md.",
+  "next_action": "Independent Wave2 Batches109–111 VERIFIED: 14 approved sources, 449 independent term headings, 898 source observations, 558 mathematically screened contextual meanings, 587 individually reviewed formulations (581 linked, 6 independently justified no-target, 0 pending), 784 cycle-free source-screened prerequisite relationships. B109 corrected source workflow 39509485027 PASSED (earlier too-strict source paraphrase length check 39509247466 failed without commit); B110 mathematical screen 39509556909 PASSED; B111 ten individual prerequisite links 39509815336 PASSED. 774 previous relations and all 580 unrelated formulation-review decisions preserved. Distinct module and field-vector linear maps; equivalent mapping image descriptions; finite-dimensional-image rank scope; distinct sequence (infinitely many indices) and set (closure of A-minus-x) accumulation. Frozen independent Wave1 unchanged; all five Wave2 stages unsealed and no production mathDef corpus consulted. NEXT Batch112: source-rich bounded cross-subfield variant discovery; consider auditing ProofWiki directional derivative gradient expression which may need differentiability, not only partial derivatives. Read research_pipeline/WAVE2_PROGRESS_2026-10-20_T.md.",
   "resume_steps": [
-    "Read this short resume plan and newly generated RESUME_STATE.json first. No reread of entire chronological checkpoint archive.",
-    "Check latest GitHub main and exact successful Batch106–108 workflow runs or newer workflow changes.",
-    "Trust the 580 reviewed formulations and 774 screened noncircular links when checksum snapshots match; do not repeat Batches94–108.",
-    "Continue bounded source-rich, independently verified mathematical contexts in branches not just researched, and check for existing meanings before admitting new titles.",
-    "Preserve the explicit ProofWiki Boundary (Topology) source error exclusion (closure+exterior formula) and the closure↔boundary acyclicity safeguard.",
-    "Keep subject-neutral generic engine code and site-independent provenance; math-specific scope conventions belong to adapter.",
-    "Do not access production mathDef mathematical content, do not modify frozen Wave1, and leave all five independent Wave2 stages unsealed until independent freeze.",
-    "Use approximately 12–14 minute sessions; commit a coherent stage, update the compact plan, and verify generated checkpoint before returning."
+    "Read this short resume plan and generated RESUME_STATE.json only before beginning; do not reread the historical chronological archive.",
+    "Check GitHub main SHA and exact Batches109–111 successful workflow conclusions plus any newer mathDef research-impacting runs.",
+    "Trust unchanged 587 individually reviewed mathematical formulations and 784 links when portable checksum/validation matches; do not repeat prior Batches94–111.",
+    "Carry out bounded independent source-specific mathematical research outside recently researched branches; check exact existing display titles/contexts and individual source locators first.",
+    "Preserve finite-dimensional rank restriction; distinguish sequence index accumulation from set derived-point; group equivalent image forms without creating duplicate meanings.",
+    "Retain previously documented apparent ProofWiki Boundary (Topology) source error and the warning on unsourced normed-division-ring pair terminology.",
+    "Consider a targeted ProofWiki directional-derivative source audit for differentiability assumptions; do not admit questionable gradient equivalences without stronger proof.",
+    "Keep reusable generic engine topic-neutral, mathematics-specific source/scope rules inside mathDef adapters.",
+    "Frozen independent Wave1 unchanged; all five Wave2 stages UNSEALED; do not consult or compare production mathDef corpus until independent freeze.",
+    "Work in 12–14-minute practical units, commit coherent source/math/link changes and verify generated checkpoint before stopping."
   ],
   "workflow_runs_to_check_live": [
     {
-      "run_id": 39508374483,
-      "purpose": "Batch108 nine individual topology, kernel and derivative links; 765 previous links preserved; 580 review dispositions",
+      "run_id": 39509815336,
+      "purpose": "Batch111 ten independently screened algebra/topology relationships, older 774 links and 580 reviews preserved",
       "previously_reported_conclusion": "success"
     },
     {
-      "run_id": 39508076150,
-      "purpose": "Batch107 five screened contextual meanings, seven forms and preservation of 573 historical formulation decisions",
+      "run_id": 39509556909,
+      "purpose": "Batch110 six mathematically screened meanings with seven formulations, source-specific finite-rank and accumulation contexts",
       "previously_reported_conclusion": "success"
     },
     {
-      "run_id": 39507831430,
-      "purpose": "Batch106 four direct source headings with seven individual observations, prior meaning/relation registry untouched",
+      "run_id": 39509485027,
+      "purpose": "Batch109 corrected source-only four term headings and seven observations, earlier stage inventories unchanged",
       "previously_reported_conclusion": "success"
     }
   ],
@@ -50,47 +52,50 @@
     "The two tree formulations, no circuits/no cycles, are equivalent only in the stated simple connected undirected graph context; no root or finite-cardinality convention inferred.",
     "Independent sigma-algebra countable-family property imposes all finite distinct-index products; pairwise independence alone does not imply mutual independence for three or more.",
     "ProofWiki Definition:Boundary (Topology) 'Definition from Closure and Exterior' appears false as written: it takes subset of A and omits closure boundary points outside A. Excluded from Batch106/107/108; separate source-audit should note this.",
-    "The general closure source also has closure=A union boundary; it was not ingested because allowing boundary to depend on closure and closure to depend on boundary would form a definition expansion cycle. Source-preserved noncircular closed-superset formulations were admitted instead."
+    "The general closure source also has closure=A union boundary; it was not ingested because allowing boundary to depend on closure and closure to depend on boundary would form a definition expansion cycle. Source-preserved noncircular closed-superset formulations were admitted instead.",
+    "Potential source issue for later independent investigation: ProofWiki's Definition:Directional Derivative gives ∇f·u assuming 'gradient exists', while partial derivatives may exist without total differentiability; do not treat as automatically equivalent to line-direction limit on that assumption.",
+    "ProofWiki source-specific finite-image rank requires the image of a field-vector-space linear transformation to be finite-dimensional; no automatic cardinal-valued or arbitrary-module rank extension.",
+    "Accumulation point of a sequence (infinitely many indices in each neighborhood) differs from accumulation point of its value SET (closure of A minus the tested point); do not collapse variants."
   ],
   "recent_completed_batch": {
-    "label": "Batches106–108: four topology kernel calculus topics, five contextual meanings, seven forms and nine individually screened direct links",
-    "workflow_run_id": 39508374483,
+    "label": "Batches109–111: source-screened linear transformations, mapping image, finite rank and set/sequence accumulation, 10 mathematical links",
+    "workflow_run_id": 39509815336,
     "sources": 14,
-    "source_terms": 445,
-    "observations": 891,
-    "screened_contextual_meanings": 552,
-    "reviewed_formulations": 580,
-    "screened_relations": 774,
+    "source_terms": 449,
+    "observations": 898,
+    "screened_contextual_meanings": 558,
+    "reviewed_formulations": 587,
+    "screened_relations": 784,
     "review_dispositions": {
-      "linked": 574,
+      "linked": 581,
       "no_supported_target": 6
     },
     "original_production_mathdef_content_consulted": false,
     "frozen_independent_wave1_verified": true,
     "all_five_wave2_stages_unsealed": true,
-    "next_scope": "Batch109 broader directly sourced cross-field variant discovery and optional boundary source inconsistency audit"
+    "next_scope": "Batch112 bounded independent breadth and optional directional-derivative source hypothesis audit"
   },
   "last_completed_batches": [
     {
-      "batch": 106,
-      "status": "PASSED: four independently sourced headings and seven observations; excluded invalid boundary alternative",
-      "workflow_run_id": 39507831430,
-      "source_terms": 445,
-      "source_observations": 891
+      "batch": 109,
+      "status": "PASSED corrected source-only four term headings and seven source observations, no math promotion",
+      "workflow_run_id": 39509485027,
+      "source_terms": 449,
+      "source_observations": 898
     },
     {
-      "batch": 107,
-      "status": "PASSED: five scoped mathematical meanings and seven individually reviewed formulations, 573 older decisions preserved",
-      "workflow_run_id": 39508076150,
-      "meanings": 552,
-      "formulations": 580
+      "batch": 110,
+      "status": "PASSED six mathematically distinct contexts and seven individually sourced formulations",
+      "workflow_run_id": 39509556909,
+      "meanings": 558,
+      "formulations": 587
     },
     {
-      "batch": 108,
-      "status": "PASSED: nine source-grounded noncircular links, 765 historic relations and 573 unrelated reviews preserved",
-      "workflow_run_id": 39508374483,
-      "links": 774,
-      "formulation_reviews": 580
+      "batch": 111,
+      "status": "PASSED ten individual source-specific links, preserving 774 historical links and unrelated 580 formulation decisions",
+      "workflow_run_id": 39509815336,
+      "links": 784,
+      "formulation_reviews": 587
     }
   ]
 }
