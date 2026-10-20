@@ -1,0 +1,79 @@
+name: Admit independently audited directional derivative and metric topology sources — Batch 112
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-directional-source-batch112.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+jobs:
+  source-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Sync current independent research main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generic engine and mathDef adapter regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Admit eight source observations with one gradient-only claim held
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_directional_metric_source_batch112 --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Maintain independent source term coverage
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage --wave1 research_pipeline/experiments/reconstruction-v1-recovery --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Check source-only invariants, frozen lineage, and complete historical reviews
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(one.publication())==json.loads((one.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          counts={"sources":14,"terms":453,"observations":906,"meanings":558,"relations":784}
+          assert {k:len(w.records(k)) for k in counts}==counts
+          assert not any(w.state(k).get("sealed") for k in counts)
+          for k in ("sources","terms","observations","relations"):
+            assert all(w.records(k).get(i)==v for i,v in one.records(k).items())
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==587 and dict(Counter(r["decision"] for r in reviews))=={"linked":581,"no_supported_target":6}
+          assert {i for r in reviews for i in r["relation_ids"]}==set(w.records("relations"))
+          held=jsonl(w.root/"wave2/directional112_quarantined_source_claims.jsonl")
+          assert len(held)==1 and held[0]["observation_id"]=="obs.wave2.directional112.directional-derivative.02"
+          check_cycles(w.records("meanings"),w.records("relations"))
+          result=json.loads((w.root/"state/wave2_directional112_source_intake.json").read_text())
+          assert result["new_mathematical_meanings"]==result["new_links"]==0
+          assert result["gradient_exists_not_sufficient_for_directional_formula"]
+          assert not result["production_corpus_used"] and not result["human_peer_verified"]
+          print(json.dumps(result,indent=2))
+          PY
+      - name: Commit only independent source reviews and explicitly quarantined variant
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Admit eight contextual source observations with unsafe gradient shortcut held"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
