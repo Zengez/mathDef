@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "52d6a400ab0386a1b17498811711ee37a1469c41c1cb50f75c0a5e33046cbd86"
+    "resume_plan_sha256": "11b7d2150dbdf76c33b986152a28e90d173fab318d3d50c12db6ec791bfe771d"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -13,15 +13,15 @@
     "original_priority_firstpass_records": 192,
     "production_corpus_used": false,
     "review_dispositions": {
-      "linked": 581,
+      "linked": 588,
       "no_supported_target": 6
     },
-    "reviewed_formulations": 587,
-    "screened_contextual_meanings": 558,
-    "screened_relationships": 784,
-    "source_observations": 898,
+    "reviewed_formulations": 594,
+    "screened_contextual_meanings": 564,
+    "screened_relationships": 794,
+    "source_observations": 906,
     "sources": 14,
-    "terms": 449
+    "terms": 453
   },
   "known_blockers": [
     "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
@@ -45,26 +45,27 @@
     "Independent sigma-algebra countable-family property imposes all finite distinct-index products; pairwise independence alone does not imply mutual independence for three or more.",
     "ProofWiki Definition:Boundary (Topology) 'Definition from Closure and Exterior' appears false as written: it takes subset of A and omits closure boundary points outside A. Excluded from Batch106/107/108; separate source-audit should note this.",
     "The general closure source also has closure=A union boundary; it was not ingested because allowing boundary to depend on closure and closure to depend on boundary would form a definition expansion cycle. Source-preserved noncircular closed-superset formulations were admitted instead.",
-    "Potential source issue for later independent investigation: ProofWiki's Definition:Directional Derivative gives ∇f·u assuming 'gradient exists', while partial derivatives may exist without total differentiability; do not treat as automatically equivalent to line-direction limit on that assumption.",
     "ProofWiki source-specific finite-image rank requires the image of a field-vector-space linear transformation to be finite-dimensional; no automatic cardinal-valued or arbitrary-module rank extension.",
-    "Accumulation point of a sequence (infinitely many indices in each neighborhood) differs from accumulation point of its value SET (closure of A minus the tested point); do not collapse variants."
+    "Accumulation point of a sequence (infinitely many indices in each neighborhood) differs from accumulation point of its value SET (closure of A minus the tested point); do not collapse variants.",
+    "Source audit Batch112: ProofWiki Definition:Directional Derivative says gradient-dot-unit-vector under merely 'gradient exists', mathematically insufficient if gradient denotes existing coordinate partials; counterexample xy/(x²+y²), f(0,0)=0. Source observation .02 deliberately quarantined, not approved mathematical form. Total differentiability is sufficient for equivalent line restriction formula.",
+    "Closed metric ball at radius r can strictly contain closure of corresponding open ball in a general metric space (e.g. discrete metric radius 1). Do not infer equality from an overbar notational convention."
   ],
-  "next_action": "Independent Wave2 Batches109–111 VERIFIED: 14 approved sources, 449 independent term headings, 898 source observations, 558 mathematically screened contextual meanings, 587 individually reviewed formulations (581 linked, 6 independently justified no-target, 0 pending), 784 cycle-free source-screened prerequisite relationships. B109 corrected source workflow 39509485027 PASSED (earlier too-strict source paraphrase length check 39509247466 failed without commit); B110 mathematical screen 39509556909 PASSED; B111 ten individual prerequisite links 39509815336 PASSED. 774 previous relations and all 580 unrelated formulation-review decisions preserved. Distinct module and field-vector linear maps; equivalent mapping image descriptions; finite-dimensional-image rank scope; distinct sequence (infinitely many indices) and set (closure of A-minus-x) accumulation. Frozen independent Wave1 unchanged; all five Wave2 stages unsealed and no production mathDef corpus consulted. NEXT Batch112: source-rich bounded cross-subfield variant discovery; consider auditing ProofWiki directional derivative gradient expression which may need differentiability, not only partial derivatives. Read research_pipeline/WAVE2_PROGRESS_2026-10-20_T.md.",
+  "next_action": "Independent Wave2 Batches112–114 VERIFIED SUCCESS on GitHub Actions 39511138013 (source-only), 39511346184 (mathematical meaning screen) and 39511602204 (source-specific links). Counts: 14 vetted sources; 453 independent source headings; 906 individual source observations (1 explicit held/quarantined claim); 564 mathematically screened meanings; 594 individually reviewed mathematical formulations (588 linked, 6 justified no-supported-target, 0 pending); 794 cycle-free directly screened prerequisite relationships. Batch112 four new headings and eight observations; source gradient-dot-direction given only 'gradient exists' was HELD: coordinate partials may exist without total/directional differentiability, explicit counterexample in dossier. Batch113 six contexts/seven safe mathematical forms (open/closed metric and norm balls, homeomorphism two equivalent forms, directional derivative of totally differentiable function). Batch114 ten links, all former 784 links/587 unrelated individual reviews preserved. Closed metric ball need not be the topological closure of same-radius open ball. Frozen independent Wave1 unchanged, all five Wave2 stages UNSEALED, production mathDef mathematical data not consulted/compared. NEXT Batch115: bounded mathematically rigorous source discovery outside same metric/topology/directional subfields, e.g. group action orbit/stabilizer, measure pushforwards, combinatorics. Read WAVE2_PROGRESS_2026-10-20_U.md.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
-      "rows": 558,
-      "sha256": "b20e22d18f0063c469b962ee8ea6aa4097e5d354b816a51573291f7510261334"
+      "rows": 564,
+      "sha256": "5676cb61a6ccd738c4dcf87049c3835a40eacadb153f187a6c9e5fe2293de91c"
     },
     "current_link_stage": {
-      "record_digest": "3a560636a4d282133f5b6790524bb9e7815fe4383845b69e01d058a20b572d9c",
+      "record_digest": "65daa88909ea4424c8c83479776d783dab3d57c2586afe6fc8e2fe61370a3079",
       "sealed": false,
-      "sha256": "2846a15118194e2934f242eaacb76f3398ec44f02836edba2cb890d50f37c2c4",
-      "total": 784
+      "sha256": "d117e953b0c663ebb79516898ac9abe653183856d4f418a7b2022a3f8e3289cc",
+      "total": 794
     },
     "definition_links": {
-      "rows": 784,
-      "sha256": "c64e1cbc7ddadbd84eeda61eb11a717013ea219629750a0e70fd928312b947eb"
+      "rows": 794,
+      "sha256": "2c51515aed59c62b6d80b7ee68b763165319eaca2588f8ed1d040ba169f4da8e"
     },
     "firstpass_priorities": {
       "rows": 192,
@@ -72,23 +73,23 @@
     },
     "individual_link_reviews": {
       "decisions": {
-        "linked": 581,
+        "linked": 588,
         "no_supported_target": 6
       },
-      "rows": 587,
-      "sha256": "55ed95278efeb588df1eb41b9b53bb3a16861fa418237073baf04e76674a3b31"
+      "rows": 594,
+      "sha256": "8fb306c6cf64fe617d35992bfaa6d9f87d6489815655e038cfb09299fbe2490c"
     },
     "source_observations": {
-      "rows": 898,
-      "sha256": "080af1fe3ea5c3d545bfb8e059721580d7224b7a0411b69b6c8b7f7865b98171"
+      "rows": 906,
+      "sha256": "24669dc9258cc1292b5882906aa0dc51b835ea20cd0fc4fbdc79b281d7d4c516"
     },
     "sources": {
       "rows": 14,
       "sha256": "b122833748dff90cb025f4dd82393fdf428f2bf339531675280eb49312c0a38b"
     },
     "term_headings": {
-      "rows": 449,
-      "sha256": "48e6cbe1a6a5303f91eeaa098b6b9843dfc5aa32dc5a02aa24924042077ceed3"
+      "rows": 453,
+      "sha256": "91b1cce752d14785770c2c996ff61604da79212b54e2068674ed4d29f1fc995b"
     },
     "wave2_lineage": {
       "first_wave_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
@@ -97,16 +98,15 @@
     }
   },
   "resume_steps": [
-    "Read this short resume plan and generated RESUME_STATE.json only before beginning; do not reread the historical chronological archive.",
-    "Check GitHub main SHA and exact Batches109–111 successful workflow conclusions plus any newer mathDef research-impacting runs.",
-    "Trust unchanged 587 individually reviewed mathematical formulations and 784 links when portable checksum/validation matches; do not repeat prior Batches94–111.",
-    "Carry out bounded independent source-specific mathematical research outside recently researched branches; check exact existing display titles/contexts and individual source locators first.",
-    "Preserve finite-dimensional rank restriction; distinguish sequence index accumulation from set derived-point; group equivalent image forms without creating duplicate meanings.",
-    "Retain previously documented apparent ProofWiki Boundary (Topology) source error and the warning on unsourced normed-division-ring pair terminology.",
-    "Consider a targeted ProofWiki directional-derivative source audit for differentiability assumptions; do not admit questionable gradient equivalences without stronger proof.",
-    "Keep reusable generic engine topic-neutral, mathematics-specific source/scope rules inside mathDef adapters.",
-    "Frozen independent Wave1 unchanged; all five Wave2 stages UNSEALED; do not consult or compare production mathDef corpus until independent freeze.",
-    "Work in 12–14-minute practical units, commit coherent source/math/link changes and verify generated checkpoint before stopping."
+    "Read generated compact RESUME_STATE.json and this adapter resume_plan.json; avoid the chronological archive.",
+    "Check newest main SHA and exact successful Batches112–114 workflow conclusions or newer research-affecting workflows.",
+    "Trust 594 reviewed formulations and 794 individual links if hashes and invariants match; do not repeat Batches94–114.",
+    "Preserve one source-held directional gradient-only observation, explicitly not a mathematically approved meaning or relation. Verify counterexample and conditional equivalence before any future release.",
+    "Preserve two accepted equivalent topological homeomorphism presentations under one meaning; ball strict vs non-strict inequalities and contexts must stay distinct.",
+    "Broaden independent source research to new subfields and check for exact existing mathematical meanings before admission. Use source-only intake, math screening and individual link screening separately.",
+    "Reusable research engine subject-neutral, mathematics policy in mathDef adapters; preserve source attribution and rights.",
+    "Do not read production mathDef definitions/citations/variants, alter frozen independent Wave1, or seal any of five Wave2 stages before the appropriate independent freeze.",
+    "Commit work and refresh portable checkpoint around 12–14 minutes practical active session budget; do not risk timeout."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -116,8 +116,8 @@
       "sha256": "aeebc436b42634812ad521a742d530cf44e2f342616b0f46e6c1b3da10d7c6ec"
     },
     "wave2_research_support": {
-      "files": 674,
-      "sha256": "5e666408a7f9a2b7bd94b3b38f37dcb84fe9a79ce39c79852c951014c0eef862"
+      "files": 691,
+      "sha256": "22896d4c063b14409258992311604638a2d72d1fa05f1aa08e7f95b6a610b94d"
     }
   },
   "verification_limitations": [
@@ -130,18 +130,18 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch111 ten independently screened algebra/topology relationships, older 774 links and 580 reviews preserved",
-      "run_id": 39509815336
+      "purpose": "Batch114 ten directly source-checked ball/homeomorphism/directional links and unchanged 784 historic links",
+      "run_id": 39511602204
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch110 six mathematically screened meanings with seven formulations, source-specific finite-rank and accumulation contexts",
-      "run_id": 39509556909
+      "purpose": "Batch113 six mathematically screened contexts/seven source forms with one held gradient-only observation excluded",
+      "run_id": 39511346184
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch109 corrected source-only four term headings and seven observations, earlier stage inventories unchanged",
-      "run_id": 39509485027
+      "purpose": "Batch112 four source headings and eight individual observations, exactly one unsafe directional gradient source claim held",
+      "run_id": 39511138013
     }
   ]
 }
