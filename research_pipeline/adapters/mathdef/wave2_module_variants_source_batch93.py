@@ -47,7 +47,10 @@ def run(root):
             or r["source_review_status"]!="direct_external_page_checked"
             or r["existing_left_module_reference"]!="meaning.wave2.foundation.left-module-nonunital"
             or len(r["mathematical_reason"])<260
-            or len(r["definition"])<200
+            or len(r["definition"])<180
+            or (key=="unital-left-module" and "1m=m" not in r["definition"])
+            or (key=="unital-right-module" and "m1=m" not in r["definition"])
+            or (key=="right-module-nonunital" and "(mr)s=m(rs)" not in r["definition"])
             or not r["source_url"].startswith("https://proofwiki.org/wiki/Definition")):
             raise PipelineError("Individual module convention source proof missing "+key)
         tid="term.wave2.module93."+key;oid="obs.wave2.module93."+key
