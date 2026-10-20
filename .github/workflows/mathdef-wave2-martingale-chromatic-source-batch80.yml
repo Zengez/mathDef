@@ -1,0 +1,84 @@
+name: Admit independently vetted martingale and chromatic sources — Batch 80
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-martingale-chromatic-source-batch80.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  source-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Checkout independent current Wave 2
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run portable research pipeline tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Append independent cross-field source-only evidence
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_martingale_chromatic_source_batch80 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Audit all earlier term-review dispositions
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify independent source intake and frozen original Wave 1
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          first=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(first.publication())==json.loads((first.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":14,"terms":417,"observations":852,"meanings":514,"relations":705}
+          assert {s:len(w.records(s)) for s in expected}==expected
+          assert not any(w.state(s).get("sealed") for s in expected)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(i)==v for i,v in first.records(s).items())
+          earlier=jsonl(w.root/"state/wave2_term_coverage_snapshot_414.jsonl")
+          later=jsonl(w.root/"state/wave2_term_coverage.jsonl")
+          index={x["term_id"]:x for x in later}
+          assert len(earlier)==414 and len(later)==len(index)==417
+          assert all(index[r["term_id"]]==r for r in earlier)
+          assert len(jsonl(w.root/"state/wave2_formulation_reviews.jsonl"))==537
+          info=json.loads((w.root/"state/wave2_martingale_chromatic_source_batch80.json").read_text())
+          assert info["chromatic_polynomial_alt_held_for_source_registration"]
+          assert info["martingale_discrete_vs_continuous_time_distinct_source_contexts"]
+          assert not info["production_corpus_used"]
+          print(json.dumps(info,indent=2))
+          PY
+      - name: Commit only independently sourced research corpus and historical audit records
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Intake four source observations for two martingale contexts and graph coloring"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
