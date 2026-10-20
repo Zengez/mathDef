@@ -62,3 +62,14 @@ The remaining **four current no-target formulations** are primarily primitive se
 4. Evaluate mathematical sufficiency and license/source review coverage before attempting any stage seal. **Do not seal prematurely**. Only freeze fully independent Wave 2 and then compare against production mathDef.
 
 **Frozen Wave 1 location**: `research_pipeline/experiments/reconstruction-v1-recovery`, publication digest `7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801`. **Editable unsealed Wave 2**: `research_pipeline/experiments/reconstruction-v2-independent`. Do not alter the former or inspect original production content.
+
+## Subsequent independent research note — alternative representations of real numbers
+
+An additional three-source-scope research ledger was committed at
+`research_pipeline/experiments/reconstruction-v2-independent/wave2/direct_source_research_real_construction_variants_cauchy_cuts_digits_2026-10-20.jsonl`.
+
+- **Dedekind lower cuts of rationals:** nonempty proper downward-closed rational sets with no greatest element. The alternate two-part partition formulation requires extra care about degenerate empty/full parts before asserting literal equivalence.
+- **Cauchy completion of the rationals:** the real-number carrier is a quotient of *rational Cauchy sequences* under differences tending to zero; componentwise addition is well defined only with the appropriate equivalence argument. The source's cross-index condition is equivalent on actual Cauchy sequences, not on arbitrary sequences.
+- **Positional numeral sequences:** cannot be accepted as a literal one-to-one encoding of the real numbers without sign conventions and identification of nonunique expansions (such as terminating and repeating 9s).
+
+All three are **research candidates only**, not additional screened contextual meanings or automatically accepted links. The latest validated 490/502/664 meaning/review/link counts and all unsealed/frozen constraints therefore remain unchanged. Future mathematical screening should preserve multiple correct equivalent definitions and representation distinctions, recording educational order where justified.
