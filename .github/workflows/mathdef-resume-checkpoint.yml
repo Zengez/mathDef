@@ -1,0 +1,69 @@
+name: Refresh portable research resume checkpoint
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-resume-checkpoint.yml'
+      - 'research_pipeline/adapters/mathdef/resume.json'
+      - 'research_pipeline/adapters/mathdef/resume_plan.json'
+      - 'research_pipeline/adapters/mathdef/resume_validation.py'
+      - 'research_pipeline/engine/resume_checkpoint.py'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/records/**'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/state/wave2_*.json'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/state/wave2_*.jsonl'
+      # Deliberately excludes state/RESUME_STATE.json: no feedback loop.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  resume:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test portable checkpoint without loading production mathDef data
+        run: |
+          python -m compileall -q research_pipeline/engine/resume_checkpoint.py research_pipeline/adapters/mathdef/resume_validation.py research_pipeline/tests/test_resume_checkpoint.py
+          python -m unittest research_pipeline.tests.test_resume_checkpoint -v
+      - name: Refresh and commit after verifying current independent lineage
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for retry in 1 2 3 4; do
+            # Recompute from the newest committed data on *each* retry.
+            # Never rebase a checkpoint produced from stale mathematical records.
+            git fetch origin main
+            git checkout -B main origin/main
+            python -m research_pipeline.engine.resume_checkpoint \
+              --config research_pipeline/adapters/mathdef/resume.json --check >/tmp/resume-check.json
+            python -m research_pipeline.engine.resume_checkpoint \
+              --config research_pipeline/adapters/mathdef/resume.json --write >/tmp/resume-result.json
+            git add -- research_pipeline/experiments/reconstruction-v2-independent/state/RESUME_STATE.json
+            if git diff --cached --quiet; then
+              echo "Checkpoint already matches current reviewed records"
+              exit 0
+            fi
+            if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/state/RESUME_STATE.json$'; then
+              echo "Unexpected staged output outside the dedicated resume checkpoint" >&2
+              exit 1
+            fi
+            git commit -m "Refresh short independent Wave 2 resume checkpoint from verified records"
+            if git push origin HEAD:main; then
+              echo "Committed validated, adapter-specific incremental handoff"
+              exit 0
+            fi
+          done
+          echo "Could not commit checkpoint after retrying against new main" >&2
+          exit 1
