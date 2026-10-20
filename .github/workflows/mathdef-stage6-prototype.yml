@@ -2,6 +2,8 @@ name: Build isolated corrected Wave 1 Stage 6 research prototype
 
 on:
   push:
+    branches:
+      - main
     paths:
       - '.github/workflows/mathdef-stage6-prototype.yml'
       - 'research_pipeline/adapters/mathdef/**'
@@ -17,6 +19,7 @@ concurrency:
 
 jobs:
   publish-independent-draft:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
