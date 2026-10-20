@@ -98,6 +98,39 @@ def scan_jsonl(path: Path, id_field: str | None = None,
     return result
 
 
+def supporting_inputs(repo: Path, groups: dict) -> dict:
+    """Hash whole configurable input groups without bloating the short snapshot.
+
+    Each group includes matching file paths and content hashes in a stable
+    digest. Patterns may not escape the repository, including via symlinks.
+    An empty or unmatched configured group fails closed.
+    """
+    if not isinstance(groups, dict):
+        raise ResumeError("supporting_groups must be a mapping")
+    result = {}
+    for name, patterns in sorted(groups.items()):
+        if not isinstance(name, str) or not name or not isinstance(patterns, list) or not patterns:
+            raise ResumeError("Supporting input groups need names and nonempty pattern lists")
+        files = set()
+        for pattern in patterns:
+            if (not isinstance(pattern, str) or not pattern or
+                    Path(pattern).is_absolute() or ".." in Path(pattern).parts):
+                raise ResumeError("Unsafe supporting input pattern: " + repr(pattern))
+            for candidate in repo.glob(pattern):
+                safe = inside(repo, str(candidate.relative_to(repo)))
+                if safe.is_file():
+                    files.add(safe)
+        if not files:
+            raise ResumeError("No files in supporting input group: " + name)
+        manifests = [(str(file.relative_to(repo)), digest_file(file))
+                     for file in sorted(files)]
+        result[name] = {
+            "files": len(manifests),
+            "sha256": hashlib.sha256(canonical(manifests).encode("utf-8")).hexdigest(),
+        }
+    return result
+
+
 def active_commit(repo: Path) -> str | None:
     """Git provides provenance only; it does not prove a CI run succeeded."""
     try:
@@ -144,6 +177,7 @@ def snapshot(config_path: Path, repo_root: Path) -> dict:
                 stats[name][key] = obj[key]
         else:
             raise ResumeError("Only json and jsonl record formats are supported")
+    inputs = supporting_inputs(repo, config.get("supporting_groups", {}))
     extra = {}
     adapter_module = config.get("validation_adapter")
     if adapter_module:
@@ -160,6 +194,11 @@ def snapshot(config_path: Path, repo_root: Path) -> dict:
         "scope": config.get("scope", "project research"),
         "observed_commit": active_commit(repo),
         "record_evidence": stats,
+        "configuration_evidence": {
+            "adapter_config_sha256": digest_file(config_path.resolve()),
+            "resume_plan_sha256": digest_file(plan_path),
+        },
+        "supporting_input_evidence": inputs,
         "domain_validation": extra,
         "next_action": plan["next_action"],
         "work_budget_minutes_target": plan.get("work_budget_minutes_target", 12),
@@ -179,37 +218,47 @@ def snapshot(config_path: Path, repo_root: Path) -> dict:
     return output
 
 
-def run(config: Path, repo: Path, write: bool = False) -> dict:
+def run(config: Path, repo: Path, write: bool = False,
+        verify: bool = False) -> dict:
+    if write and verify:
+        raise ResumeError("Choose write or verify, not both")
     config_path = config if config.is_absolute() else (repo / config)
     spec = read_json(config_path)
     output_path = inside(repo.resolve(), spec["output_path"])
     state = snapshot(config_path, repo)
-    if output_path.exists():
-        previous = read_json(output_path)
-        prior = previous.get("record_evidence", {})
-        state["changed_record_sets_since_previous_checkpoint"] = sorted(
-            k for k, v in state["record_evidence"].items() if prior.get(k) != v
-        )
-    else:
-        state["changed_record_sets_since_previous_checkpoint"] = sorted(
-            state["record_evidence"]
-        )
-    # Keep the output deterministic across repeated executions at the same
-    # input commit; there is no wall-clock date and no unverified success claim.
-    if write:
+    previous = read_json(output_path) if output_path.exists() else None
+    prior_records = previous.get("record_evidence", {}) if previous else {}
+    state["changed_record_sets_since_previous_checkpoint"] = sorted(
+        k for k, v in state["record_evidence"].items()
+        if prior_records.get(k) != v
+    )
+    prior_groups = previous.get("supporting_input_evidence", {}) if previous else {}
+    state["changed_supporting_groups_since_previous_checkpoint"] = sorted(
+        k for k, v in state["supporting_input_evidence"].items()
+        if prior_groups.get(k) != v
+    )
+
+    # Runtime Git HEAD is useful to the caller but is deliberately NOT stored.
+    # The checkpoint's own commit changes HEAD without changing research inputs.
+    # Including HEAD would make every otherwise-idempotent saved snapshot stale.
+    volatile = {
+        "observed_commit",
+        "changed_record_sets_since_previous_checkpoint",
+        "changed_supporting_groups_since_previous_checkpoint",
+        "checkpoint_is_current",
+    }
+    persistent = {k: v for k, v in state.items() if k not in volatile}
+    current = previous == persistent
+    if verify and not current:
+        raise ResumeError("Saved checkpoint is stale or missing; refresh with --write")
+    if write and not current:
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        # A delta is informational to this run, not persisted. Otherwise
-        # an unchanged second run would rewrite the checkpoint merely to
-        # replace the previous delta with [], breaking true idempotence.
-        persistent = {k: v for k, v in state.items()
-                      if k != "changed_record_sets_since_previous_checkpoint"}
         body = json.dumps(persistent, indent=2, ensure_ascii=False,
                           sort_keys=True) + "\n"
-        if not output_path.exists() or output_path.read_text(
-                encoding="utf-8") != body:
-            tmp = output_path.with_name(output_path.name + ".tmp")
-            tmp.write_text(body, encoding="utf-8")
-            os.replace(tmp, output_path)
+        tmp = output_path.with_name(output_path.name + ".tmp")
+        tmp.write_text(body, encoding="utf-8")
+        os.replace(tmp, output_path)
+    state["checkpoint_is_current"] = current or write
     return state
 
 
@@ -222,9 +271,12 @@ def main() -> None:
                       help="Read, validate and display state without changing files")
     mode.add_argument("--write", action="store_true",
                       help="Validate and atomically refresh the checkpoint")
+    mode.add_argument("--verify", action="store_true",
+                      help="Fail if the saved checkpoint is missing or stale")
     args = parser.parse_args()
     try:
-        state = run(args.config, args.repo_root, args.write)
+        state = run(args.config, args.repo_root, write=args.write,
+                    verify=args.verify)
     except (ResumeError, KeyError, ImportError) as exc:
         parser.exit(2, "Checkpoint refused: " + str(exc) + "\n")
     print(json.dumps(state, indent=2, ensure_ascii=False, sort_keys=True))

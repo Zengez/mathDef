@@ -1,6 +1,6 @@
 # Reusable scholarly acquisition engine — pre-reconstruction implementation
 
-**Status:** The pre-reconstruction software now includes portable record storage, stage queues/seals, rights-aware offline/opt-in online source-index readers, resumable bulk source intake, audited second-wave revisions, independent preview website, provenance/evaluation harness, and synthetic CI tests. The actual mathematical research, semantic classifications and independent two-wave reconstruction have NOT been run. The scripts do not autonomously call ChatGPT or certify mathematical accuracy. Start with [RECONSTRUCTION_RUNBOOK.md](RECONSTRUCTION_RUNBOOK.md).
+**Status (October 20, 2026):** The initial pre-reconstruction implementation is complete and independent reconstruction work is underway: the recovery first wave is frozen, while a separate independent second-wave workspace contains source-attributed research and mathematical review records but **remains unsealed**. Earlier sections of this document describe the original setup and historical plan. For current next steps use the [short resume protocol](RESUME_PROTOCOL.md), its generated `RESUME_STATE.json`, and the human-maintained adapter plan. The scripts do not autonomously call ChatGPT, determine exhaustive coverage, or certify mathematical accuracy.
 
 ## Two bulk waves and targeted work
 
