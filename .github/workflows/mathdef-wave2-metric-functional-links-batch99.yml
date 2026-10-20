@@ -1,0 +1,91 @@
+name: Screen source-specific metric and functional dependency links — Batch 99
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-metric-functional-links-batch99.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  source-screen-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Synchronize newest independent Stage 2 research records
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run reusable research and mathDef adapter regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Screen seven source-specific mathematical dependencies
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_metric_functional_links_batch99 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify frozen Wave 1, untouched historical reviews and cycle-free dependencies
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          frozen=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(frozen.publication())==json.loads((frozen.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":14,"terms":432,"observations":872,"meanings":536,"relations":742}
+          assert {s:len(w.records(s)) for s in expected}==expected
+          assert not any(w.state(s).get("sealed") for s in expected)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(i)==record for i,record in frozen.records(s).items())
+          ms=w.records("meanings")
+          original=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_561_before_analysis99.jsonl")
+          reviewed=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          ix={r["formulation_id"]:r for r in reviewed}
+          assert len(original)==len(reviewed)==len(ix)==561
+          assert len([x for x in w.records("relations") if x.startswith("rel.wave2.analysis99.")])==7
+          for p in original:
+            if not p["formulation_id"].startswith("form.wave2.analysis98."):
+              assert ix[p["formulation_id"]]==p
+          assert {j for x in reviewed for j in x["relation_ids"]}==set(w.records("relations"))
+          assert dict(Counter(x["decision"] for x in reviewed))=={"linked":555,"no_supported_target":6}
+          assert all(x["meaning_catalog_digest"]==digest(list(ms.values())) for x in reviewed)
+          check_cycles(ms,w.records("relations"))
+          report=json.loads((w.root/"state/wave2_analysis99_link_review.json").read_text())
+          assert report["prior_735_individual_links_preserved"]
+          assert report["prior_554_unrelated_formulation_reviews_preserved"]
+          assert report["all_seven_new_formulations_individually_link_reviewed"]
+          assert report["division_ring_general_case_not_equated_to_field"]
+          assert report["unresolved_scalar_normed_division_ring_foundation"]
+          assert not report["production_corpus_used"] and not report["human_peer_verified"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit independently vetted noncircular relationships with immutable history
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen seven metric and functional-analysis dependencies without conflating division rings and fields"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
