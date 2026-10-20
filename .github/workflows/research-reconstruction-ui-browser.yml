@@ -3,6 +3,7 @@ name: Verify extracted reconstruction GUI in Chromium
 on:
   push:
     branches:
+      - main
       - 'feature/reusable-math-reference-interface-20261020'
     paths:
       - 'research_pipeline/ui/**'
