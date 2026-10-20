@@ -94,6 +94,43 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(kinds, {"discover_sources_from_term", "search_variants_in_source",
                                   "audit_relationships"})
 
+
+    def test_unsealed_second_wave_has_read_only_public_preview(self):
+        self.load_all()
+        self.workspace.publish()
+        fork = Workspace(Path(self.tmp.name) / "independent-wave2")
+        self.workspace.fork_second_wave(fork.root)
+        original = {
+            stage: (fork.root / "records" / (stage + ".jsonl")).read_bytes()
+            for stage in ("sources", "terms", "observations", "meanings", "relations")
+        }
+        output = Path(self.tmp.name) / "public" / "wave2"
+        report = build(fork.root, draft=True, output=output)
+        self.assertEqual(report["meanings"], 2)
+        markup = (output / "index.html").read_text()
+        self.assertIn("Wave 2 — evolving research draft", markup)
+        self.assertIn("Unsealed Wave 2 working snapshot", markup)
+        self.assertTrue((output / "preview.js").is_file())
+        self.assertFalse((fork.root / "published" / "catalog.json").exists())
+        self.assertFalse((fork.root / "preview" / "index.html").exists())
+        for stage, data in original.items():
+            self.assertEqual((fork.root / "records" / (stage + ".jsonl")).read_bytes(), data)
+            self.assertFalse(fork.state(stage).get("sealed"))
+
+    def test_public_draft_rejects_unscreened_formulation(self):
+        self.load_all()
+        self.workspace.publish()
+        fork = Workspace(Path(self.tmp.name) / "independent-wave2")
+        self.workspace.fork_second_wave(fork.root)
+        path = fork.root / "records" / "meanings.jsonl"
+        original = path.read_text(encoding="utf-8")
+        self.assertIn('"review_state":"screened"', original)
+        path.write_text(original.replace('"review_state":"screened"',
+                                         '"review_state":"candidate"', 1), encoding="utf-8")
+        with self.assertRaisesRegex(PipelineError, "Unscreened formulation"):
+            build(fork.root, draft=True,
+                  output=Path(self.tmp.name) / "public" / "wave2")
+
     def test_wave2_planner_writes_only_fork_after_freeze(self):
         self.load_all()
         self.workspace.publish()
