@@ -1,0 +1,96 @@
+name: Screen independent natural-number, equivalence and quotient-set meanings — Batch 63
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-set-meanings-batch63.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  source-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Read latest independent Wave 2 research state
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test portable and mathematical research pipeline
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Individually screen five meanings preserving two natural conventions
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_set_meanings_batch63 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Reconcile previous source records
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify 516 old reviews, both natural contexts and all frozen lineage
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          first=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(first.publication())==json.loads((first.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          want={"sources":14,"terms":406,"observations":830,"meanings":508,"relations":681}
+          assert {s:len(w.records(s)) for s in want}==want
+          assert not any(w.state(s).get("sealed") for s in want)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(k)==v for k,v in first.records(s).items())
+          old=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_516_before_set63.jsonl")
+          now=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          current={r["formulation_id"]:r for r in now}
+          assert len(old)==516 and len(now)==len(current)==521
+          for before in old:
+            newer=current[before["formulation_id"]]
+            assert all(newer.get(k)==v for k,v in before.items() if k!="meaning_catalog_digest")
+          ms=w.records("meanings")
+          nat=[m for m in ms.values() if m["term_group_id"]=="wave2.set63.natural-numbers"]
+          assert len(nat)==2 and {m["context"] for m in nat}=={
+            "Natural numbers containing zero","Natural numbers starting at one"
+          }
+          assert all(r["meaning_catalog_digest"]==digest(list(ms.values())) for r in now)
+          assert {rid for r in now for rid in r["relation_ids"]}==set(w.records("relations"))
+          assert dict(Counter(r["decision"] for r in now))=={"linked":511,"no_supported_target":5,"needs_review":5}
+          check_cycles(ms,w.records("relations"))
+          report=json.loads((w.root/"state/wave2_set_meanings_batch63.json").read_text())
+          assert report["all_516_historical_formulation_decisions_preserved"]
+          assert report["two_natural_number_contexts_same_term_group"]
+          assert not report["production_corpus_used"] and not report["human_peer_verified"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit independent source-screened definitions and review history
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen four set-theoretic foundations with both natural number conventions"
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
