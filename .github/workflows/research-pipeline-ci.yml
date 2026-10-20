@@ -32,6 +32,25 @@ jobs:
           assert report["domain_validation"]["original_priority_firstpass_records"] == 192
           assert report["supporting_input_evidence"]["wave2_research_support"]["files"] > 0
           PY
+      - name: Build the two independent reconstruction browser previews
+        run: |
+          python -m research_pipeline.adapters.mathdef.preview_site \
+            --site-root /tmp/mathdef-independent-preview
+          node --check /tmp/mathdef-independent-preview/wave2/preview.js
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("/tmp/mathdef-independent-preview")
+          assert (root / "wave1/index.html").is_file()
+          assert (root / "wave2/index.html").is_file()
+          a = json.loads((root / "wave1/catalog.json").read_text())
+          b = json.loads((root / "wave2/catalog.json").read_text())
+          assert sum(len(g["meanings"]) for g in a["groups"]) == 419
+          assert sum(len(g["meanings"]) for g in b["groups"]) >= 490
+          assert len(b["relations"]) >= 664
+          assert "Unsealed Wave 2" in (root / "wave2/index.html").read_text()
+          assert "Frozen baseline" in (root / "wave1/index.html").read_text()
+          PY
       - name: Check command-line invocation
         run: python -m research_pipeline.engine.cli --help
       - name: Check reconstruction viewer JavaScript syntax
