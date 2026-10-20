@@ -1,0 +1,82 @@
+name: Screen independent algebra and topological accumulation prerequisites — Batch 111
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-cross-domain-links-batch111.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+jobs:
+  dependency-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Sync current independent main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regress generic engine and mathematical adapters
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Screen ten individual mathematically sourced dependencies
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_cross_domain_links_batch111 --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify immutable Wave1, 774 prior edges and all 587 formulation reviews
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(one.publication())==json.loads((one.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          counts={"sources":14,"terms":449,"observations":898,"meanings":558,"relations":784}
+          assert {k:len(w.records(k)) for k in counts}==counts
+          assert not any(w.state(k).get("sealed") for k in counts)
+          for k in ("sources","terms","observations","relations"):
+            assert all(w.records(k).get(i)==v for i,v in one.records(k).items())
+          old=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_587_before_cross111.jsonl")
+          current=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          index={r["formulation_id"]:r for r in current}
+          assert len(old)==len(current)==len(index)==587
+          for p in old:
+            if not p["formulation_id"].startswith("form.wave2.cross110."):
+              assert index[p["formulation_id"]]==p
+          assert len([r for r in w.records("relations") if r.startswith("rel.wave2.cross111.")])==10
+          assert dict(Counter(r["decision"] for r in current))=={"linked":581,"no_supported_target":6}
+          assert {i for r in current for i in r["relation_ids"]}==set(w.records("relations"))
+          assert all(r["meaning_catalog_digest"]==digest(list(w.records("meanings").values())) for r in current)
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_cross111_link_review.json").read_text())
+          assert report["all_774_historic_screened_links_preserved"] and report["all_580_unrelated_formulation_reviews_preserved"]
+          assert report["finite_image_rank_constraint_preserved"] and report["topological_set_vs_sequence_accumulation_separate"]
+          assert not report["human_peer_verified"] and not report["production_corpus_used"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit source-scoped screened dependencies and historical review provenance
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen ten algebra and topological source prerequisites preserving 774 prior links"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
