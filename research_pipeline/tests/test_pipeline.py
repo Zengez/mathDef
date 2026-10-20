@@ -100,6 +100,10 @@ class PipelineTests(unittest.TestCase):
         self.workspace.publish()
         fork = Workspace(Path(self.tmp.name) / "independent-wave2")
         self.workspace.fork_second_wave(fork.root)
+        profile = fork.root / "project.json"
+        project = json.loads(profile.read_text(encoding="utf-8"))
+        project["independent_second_wave"] = True
+        profile.write_text(json.dumps(project), encoding="utf-8")
         original = {
             stage: (fork.root / "records" / (stage + ".jsonl")).read_bytes()
             for stage in ("sources", "terms", "observations", "meanings", "relations")
@@ -122,6 +126,10 @@ class PipelineTests(unittest.TestCase):
         self.workspace.publish()
         fork = Workspace(Path(self.tmp.name) / "independent-wave2")
         self.workspace.fork_second_wave(fork.root)
+        profile = fork.root / "project.json"
+        project = json.loads(profile.read_text(encoding="utf-8"))
+        project["independent_second_wave"] = True
+        profile.write_text(json.dumps(project), encoding="utf-8")
         path = fork.root / "records" / "meanings.jsonl"
         original = path.read_text(encoding="utf-8")
         self.assertIn('"review_state":"screened"', original)
