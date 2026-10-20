@@ -105,7 +105,7 @@ def to_index(catalog: dict) -> list[dict]:
             "category": "Independent research · " + str(len(group["meanings"])) + " context(s)",
             "source": forms[0]["source"],
             "source_title": "",
-            "status": "draft",
+            "status": "screened_draft",
             "path": "",
             "formulations": forms,
             "dependencies": dependencies,
