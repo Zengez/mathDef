@@ -1,0 +1,99 @@
+name: Screen independent metric norm and inner-product meanings — Batch 98
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-metric-functional-meanings-batch98.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  mathematical-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh current independent research state
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run reusable research and mathDef-adapter regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Independently review six contexts and seven formulations
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_metric_functional_meanings_batch98 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Reconcile source term research review ledger
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Confirm source convention, history, frozen lineage and absence of dependency cycles
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          frozen=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(frozen.publication())==json.loads((frozen.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expect={"sources":14,"terms":432,"observations":872,"meanings":536,"relations":735}
+          assert {s:len(w.records(s)) for s in expect}==expect
+          assert not any(w.state(s).get("sealed") for s in expect)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(k)==v for k,v in frozen.records(s).items())
+          ms=w.records("meanings")
+          new=[v for v in ms.values() if v["id"].startswith("meaning.wave2.analysis98.")]
+          assert len(new)==6 and sum(len(v["formulations"]) for v in new)==7
+          metric=ms["meaning.wave2.analysis98.metric-space"]
+          assert len(metric["formulations"])==2
+          assert "τ=τ_d" in metric["formulations"][1]["text"]
+          assert "nonempty" in metric["formulations"][0]["text"]
+          assert len(set(x["id"] for m in new for x in m["formulations"]))==7
+          old=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_554_before_analysis98.jsonl")
+          now=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          by={r["formulation_id"]:r for r in now}
+          assert len(old)==554 and len(now)==len(by)==561
+          for prior in old:
+            latest=by[prior["formulation_id"]]
+            assert all(latest.get(k)==v for k,v in prior.items() if k!="meaning_catalog_digest")
+          assert all(r["meaning_catalog_digest"]==digest(list(ms.values())) for r in now)
+          assert {i for r in now for i in r["relation_ids"]}==set(w.records("relations"))
+          assert dict(Counter(r["decision"] for r in now))=={"linked":548,"no_supported_target":6,"needs_review":7}
+          check_cycles(ms,w.records("relations"))
+          report=json.loads((w.root/"state/wave2_analysis98_meaning_screen.json").read_text())
+          assert report["metric_induced_topology_condition_explicit"]
+          assert report["prior_554_reviews_preserved"] and report["prior_735_links_preserved"]
+          assert not report["production_corpus_used"] and not report["human_peer_verified"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent review records and exact historical snapshots
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen six functional analysis meanings and seven source-attributed formulations"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
