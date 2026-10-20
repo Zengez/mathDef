@@ -1,0 +1,86 @@
+name: Independently source right and unitary module conventions — Batch 93
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-module-source-batch93.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  source-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Read latest independent Wave 2 from main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify independent research pipeline regressions
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Source three precise module convention contexts without meanings
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_module_variants_source_batch93 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Audit all older independent source headings and term dispositions
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify existing left module, frozen Wave 1, and all 425 previous decisions
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(old.publication())==json.loads((old.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expect={"sources":14,"terms":428,"observations":865,"meanings":527,"relations":730}
+          assert {s:len(w.records(s)) for s in expect}==expect
+          assert not any(w.state(s).get("sealed") for s in expect)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(k)==v for k,v in old.records(s).items())
+          previous=jsonl(w.root/"state/wave2_term_coverage_snapshot_425.jsonl")
+          latest=jsonl(w.root/"state/wave2_term_coverage.jsonl")
+          by={r["term_id"]:r for r in latest}
+          assert len(previous)==425 and len(latest)==len(by)==428
+          assert all(by[r["term_id"]]==r for r in previous)
+          assert "meaning.wave2.foundation.left-module-nonunital" in w.records("meanings")
+          assert len(jsonl(w.root/"state/wave2_formulation_reviews.jsonl"))==551
+          info=json.loads((w.root/"state/wave2_module93_source_intake.json").read_text())
+          assert info["existing_general_left_module_preserved"]
+          assert info["right_module_and_unital_conventions_separated"]
+          assert info["mathematical_meanings_added"]==0 and info["links_added"]==0
+          assert not info["production_corpus_used"]
+          print(json.dumps(info,indent=2))
+          PY
+      - name: Commit only independently researched source evidence and review history
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Source three distinct right/unitary module variants preserving existing left-module definition"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
