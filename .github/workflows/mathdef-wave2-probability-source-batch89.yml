@@ -1,0 +1,84 @@
+name: Intake independent probability-space and random-variable sources — Batch 89
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-probability-source-batch89.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  source-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Use current independent Wave 2 state
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run independent portable research regressions
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Admit three new source terms and four source-specific observations
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_probability_measurable_source_batch89 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Reconcile 422 prior individual source review decisions
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify frozen Wave 1, historic ledger, and module duplicate avoidance
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          first=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(first.publication())==json.loads((first.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expect={"sources":14,"terms":425,"observations":862,"meanings":523,"relations":719}
+          assert {s:len(w.records(s)) for s in expect}==expect
+          assert not any(w.state(s).get("sealed") for s in expect)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(k)==v for k,v in first.records(s).items())
+          old=jsonl(w.root/"state/wave2_term_coverage_snapshot_422.jsonl")
+          updated=jsonl(w.root/"state/wave2_term_coverage.jsonl")
+          ref={r["term_id"]:r for r in updated}
+          assert len(old)==422 and len(updated)==len(ref)==425
+          assert all(ref[r["term_id"]]==r for r in old)
+          assert len(jsonl(w.root/"state/wave2_formulation_reviews.jsonl"))==547
+          report=json.loads((w.root/"state/wave2_prob89_source_intake.json").read_text())
+          assert report["existing_left_module_not_duplicated"]
+          assert report["three_concepts_have_no_existing_exact_meaning"]
+          assert not report["production_corpus_used"] and not report["human_peer_verified"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independently source-screened research evidence
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Intake three probability/measure sources with four vetted observations and 422 historic decisions"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
