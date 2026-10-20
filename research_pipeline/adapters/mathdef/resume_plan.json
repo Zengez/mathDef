@@ -1,24 +1,19 @@
 {
   "schema_version": 1,
   "work_budget_minutes_target": 12,
-  "next_action": "Batch 48 contains eight independently source-checked candidate real-construction reviews (not yet stage-ingested). Next: source-rights and approved-source-manifest review for new Cornell/CSUSM/LibreTexts/Harvey Mudd/CMU locators; then idempotently ingest the already approved PlanetMath Dedekind-cut candidates into Wave 2 terms→observations→meanings after checking for collisions and individual review gates. Cauchy candidates must remain research-only until external sources are admitted. Do not add links or declare models identical without separate screened evidence and cycle checks.",
+  "next_action": "Resume after successful Wave 2 Batch 49 source/term/observation intake (14 sources, 395 terms, 818 observations, 490 screened contextual meanings, 664 links). Next bounded batch: individually screen a small set (prefer 3 PlanetMath-backed Dedekind-cut constructions) into new contextual meanings only after confirming source identities and prior meaning collisions. Regenerate the entire 502-formulation review ledger with exact meaning catalog digest and full preservation checks, then review potential links separately. Cauchy constructions have source-scoped candidate observations but should not be considered screened until their formulations undergo individual mathematical review. Do not infer that the two real-number models are literally identical.",
   "resume_steps": [
     "Read the compact RESUME_STATE.json and this plan, not the historical checkpoint archive.",
     "Check current GitHub main SHA and only the workflow runs listed in the plan, plus newer runs affecting research state.",
     "If repository state and the snapshot digests match, trust already committed mathematical/source review decisions. Do not redo completed research.",
     "If the data moved beyond the snapshot, refresh the adapter-driven snapshot and verify only changed records/workflows.",
     "Stop around 12-14 minutes of active work with a concise handoff; do not wait for a timeout.",
-    "For the current real-constructions topic, trust batch 48 source-scoped reviews; do not repeat them from scratch. Validate source admissions and stage schema, ingest bounded verified rows, and update checkpoint after each independently checked batch."
+    "Trust Batch 48 candidate source reviews and the successfully ingested Batch 49 seven source observations. Next screen meaning candidates individually; the full formulation review ledger/catalog digest must be regenerated and checked in the same guarded transaction before updating public meaning counts."
   ],
   "workflow_runs_to_check_live": [
     {
-      "run_id": 39442831420,
-      "purpose": "Last documented ordered-reals relationship screening",
-      "previously_reported_conclusion": "success"
-    },
-    {
-      "run_id": 39443331249,
-      "purpose": "Recent research pipeline isolated tests",
+      "run_id": 39463704879,
+      "purpose": "Batch 49 source/term/observation intake, archived 388-term review state and preserved frozen Wave 1",
       "previously_reported_conclusion": "success"
     }
   ],
@@ -27,7 +22,8 @@
     "Twenty-seven original PlanetMath source pages remain access-restricted/unread.",
     "Original 192 priority tasks have initial evidence only; broader definition and variant discovery is not complete.",
     "All five independent Wave 2 stages remain unsealed, and original production mathDef comparisons are forbidden until after the independent freeze.",
-    "Batch 48 new external teaching-note source locators need source-manifest, rights and attribution decisions before stage ingestion; all eight reviews are candidate research records, not yet published definitions."
+    "The five Batch 49 external mathematical references are locator-only; no permission to reproduce source prose is claimed. Their definition candidates have not yet been promoted to screened meanings.",
+    "The source-coverage extension is manifest-based; old source-ledger decisions were preserved, but historical hardcoded source batch lists remain in the implementation for previous batches. Future refactoring is optional."
   ],
   "recent_completed_batch": {
     "label": "Wave 2 batch 48: independent classical real-number constructions",
@@ -36,5 +32,26 @@
     "stage_ingested": 0,
     "commit": "a5dc8540949dee6df6e00f9cdd57b6ed14eb1334",
     "independence_note": "External math sources and independent Wave 2 state only; no production definition, variant, citation or production site mathematical data examined."
-  }
+  },
+  "last_completed_batches": [
+    {
+      "batch": 48,
+      "status": "eight independently sourced candidate reviews preserved",
+      "path": "research_pipeline/experiments/reconstruction-v2-independent/wave2/real_constructions_independent_source_reviews_batch_48_2026-10-20.jsonl",
+      "meaning_promotions": 0
+    },
+    {
+      "batch": 49,
+      "status": "successfully ingested source and observation records with coverage reconciliation and archived 388-term ledger",
+      "path": "research_pipeline/experiments/reconstruction-v2-independent/state/wave2_real_source_intake_batch49.json",
+      "counts": {
+        "sources": 14,
+        "terms": 395,
+        "observations": 818,
+        "meanings": 490,
+        "relations": 664
+      },
+      "meaning_promotions": 0
+    }
+  ]
 }
