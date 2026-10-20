@@ -31,6 +31,14 @@ jobs:
         run: python -m unittest discover -s tests
       - name: Generate definition index
         run: python scripts/build_index.py
+      - name: Render separate independent reconstruction previews
+        run: |
+          python -m research_pipeline.adapters.mathdef.preview_site \
+            --site-root _site/reconstruction
+          node --check _site/reconstruction/wave1/preview.js
+          node --check _site/reconstruction/wave2/preview.js
+          test -f _site/reconstruction/wave1/index.html
+          test -f _site/reconstruction/wave2/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
