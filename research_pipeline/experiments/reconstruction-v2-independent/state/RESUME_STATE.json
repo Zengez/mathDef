@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "a70f3086d3fb39f345fa1a418e0e5581d8926cc9a7b2021d07d8844e1f65550b"
+    "resume_plan_sha256": "d0abfb4ade1826dbdd4251d97f2146d93370646d08d02044e8b432edf47fb996"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -13,15 +13,15 @@
     "original_priority_firstpass_records": 192,
     "production_corpus_used": false,
     "review_dispositions": {
-      "linked": 567,
+      "linked": 574,
       "no_supported_target": 6
     },
-    "reviewed_formulations": 573,
-    "screened_contextual_meanings": 547,
-    "screened_relationships": 765,
-    "source_observations": 884,
+    "reviewed_formulations": 580,
+    "screened_contextual_meanings": 552,
+    "screened_relationships": 774,
+    "source_observations": 891,
     "sources": 14,
-    "terms": 441
+    "terms": 445
   },
   "known_blockers": [
     "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
@@ -42,24 +42,26 @@
     "Current scalar normed vector source is left-oriented; no right-normed-vector formulation should be automatically generated without specifically sourced right-action homogeneity axioms.",
     "ProofWiki calls its selected-point global-domain bound 'Lipschitz at a point', which is NOT equivalent to neighborhood-local two-point Lipschitz continuity; preserve this distinction in later variant comparisons.",
     "The two tree formulations, no circuits/no cycles, are equivalent only in the stated simple connected undirected graph context; no root or finite-cardinality convention inferred.",
-    "Independent sigma-algebra countable-family property imposes all finite distinct-index products; pairwise independence alone does not imply mutual independence for three or more."
+    "Independent sigma-algebra countable-family property imposes all finite distinct-index products; pairwise independence alone does not imply mutual independence for three or more.",
+    "ProofWiki Definition:Boundary (Topology) 'Definition from Closure and Exterior' appears false as written: it takes subset of A and omits closure boundary points outside A. Excluded from Batch106/107/108; separate source-audit should note this.",
+    "The general closure source also has closure=A union boundary; it was not ingested because allowing boundary to depend on closure and closure to depend on boundary would form a definition expansion cycle. Source-preserved noncircular closed-superset formulations were admitted instead."
   ],
-  "next_action": "Independent Wave 2 Batches103–105 VERIFIED: 14 approved source registries, 441 source term headings, 884 individually attributed observations, 547 mathematically screened contextual meanings, 573 individual formulation-review decisions (567 linked, 6 independently justified no-supported-target), 765 individually screened cycle-free prerequisite relationships. Source-only corrected Batch103 workflow 39506306934 PASSED (first attempt 39506190045 only failed concise tree length gate; NO research stage commit); Batch104 mathematical source/variant screening 39506596036 PASSED; Batch105 11 source-grounded definition dependencies 39506973525 PASSED. 754 previous relations and all 566 unrelated formation reviews preserved. Tree circuit/cycle equivalences combined, global vs anchored Lipschitz and binary vs mutual sigma-algebra independence separated; random-variable independence uses mutually independent generated sigma-algebras. Independent Wave1 frozen, all five Wave2 stages unsealed, production mathDef corpus not consulted. NEXT Batch106: bounded cross-subfield independent sourcing outside recent metric/graph/probability branches, e.g. carefully scoped topology, linear algebra, or differential/integral calculus variants; then separated source and mathematical and link screening. See WAVE2_PROGRESS_2026-10-20_R.md.",
+  "next_action": "Independent Wave 2 Batches106–108 VERIFIED with Actions 39507831430, 39508076150 and 39508374483 successful: 14 approved sources; 445 attributed source headings; 891 observations; 552 mathematically source-screened contextual meanings; 580 individually dispositioned formulations (574 linked, 6 justified no-target, 0 pending); 774 noncircular, individually reviewed definition-prerequisite links. Batch106 4 new topics and 7 source observations; Batch107 5 mathematical contexts and 7 formulations; Batch108 nine source-specific links, preserving all 765 older links and 573 unrelated review decisions. Source bug found in ProofWiki Boundary(Topology) 'closure and exterior' formula (incorrectly restricts boundary to A); excluded from approved variants and logged. Topological closure not linked to boundary, so no artificial cycles; module and field-vector kernels distinct; derivative function on open interval distinct from pointwise derivative. Independent frozen Wave 1 unchanged, all five Wave 2 stages unsealed, no production mathDef corpus comparisons. NEXT Batch109 bounded cross-subfield independent source discovery plus optional targeted source inconsistency audit and provenance; maintain subject-neutral engine. Read research_pipeline/WAVE2_PROGRESS_2026-10-20_S.md.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
-      "rows": 547,
-      "sha256": "37616a07134d0dea53786c9e6420335bd5d8f0c803744a57adc28e938fc5aa72"
+      "rows": 552,
+      "sha256": "f274c1ac286b39536ede060e8a5eb8e6b28758c563b598831c36dff930b00137"
     },
     "current_link_stage": {
-      "record_digest": "dea60c55e6762bb5785555a7a012204712dceb86293b5265750bcb0572df615b",
+      "record_digest": "234d3008a36ea2b182866cba48d6e6aa69633a5e65c7417a3833f6374c9a881b",
       "sealed": false,
-      "sha256": "08c0d7d62f51643a74a275d537a9477316a9523b50238bb8b613e64bf960cb9a",
-      "total": 765
+      "sha256": "04900d062e55c6f3efc3ba10cfa47cc2529f27147a377d72fa27d085d8bcd75f",
+      "total": 774
     },
     "definition_links": {
-      "rows": 765,
-      "sha256": "38030d1cbe27b06e0007d4a303a4acd4fb26d611327cff5a0fb5198e7b7d62f9"
+      "rows": 774,
+      "sha256": "0b936483797fdc0054d35f118971457228aad14cb46b53235d32ab01b255da66"
     },
     "firstpass_priorities": {
       "rows": 192,
@@ -67,23 +69,23 @@
     },
     "individual_link_reviews": {
       "decisions": {
-        "linked": 567,
+        "linked": 574,
         "no_supported_target": 6
       },
-      "rows": 573,
-      "sha256": "f2cf463cd30ed5cc140ed9dd38c5d9b7b18660bef40491fa7ac3cd50af097ac0"
+      "rows": 580,
+      "sha256": "14398818f686f7d131b9651519ac67251e02944c3b121c1068e05800eb2f6559"
     },
     "source_observations": {
-      "rows": 884,
-      "sha256": "741180887818515d29883eb8605a00f8073d988a4f1fbf64beba10ee8c796538"
+      "rows": 891,
+      "sha256": "dfd2e8dc126dda2be6b0c653280369f5842a8934ad6273ec339c55987bc6d599"
     },
     "sources": {
       "rows": 14,
       "sha256": "b122833748dff90cb025f4dd82393fdf428f2bf339531675280eb49312c0a38b"
     },
     "term_headings": {
-      "rows": 441,
-      "sha256": "37cc670a0f560a04a5a421b5a26149097f6658a0adf5b5ad418b1ce393cb47b4"
+      "rows": 445,
+      "sha256": "c15b21a9681673a4a9bda70330482df8d59ce9541a402d9a4f58a8247da65822"
     },
     "wave2_lineage": {
       "first_wave_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
@@ -92,14 +94,14 @@
     }
   },
   "resume_steps": [
-    "Read this short plan and generated RESUME_STATE.json, not the historical chronological archive.",
-    "Check current GitHub main SHA and the exact completed 103–105 workflows, plus newer research-affecting ones.",
-    "Trust previously reviewed 573 individual mathematical formulations and 765 individual links when checkpoint digests match; do not repeat completed Batches94–105.",
-    "Perform bounded independent source-specific discovery outside the same recently reviewed branches; rigorously distinguish genuinely different contextual variants from equivalent presentations.",
-    "Maintain source rights and provenance, plus exact cited source/target locators and historic review snapshots. No weak automatically accepted keyword matches.",
-    "Keep generic reusable engine subject-neutral; math context and editorial conventions only in adapter.",
-    "Leave frozen independent Wave1 unchanged and all five Wave2 stages UNSEALED; no production mathDef mathematical corpus comparisons until independent freeze.",
-    "Stop after approximately 12–14 active minutes, commit coherent work and verify the short checkpoint before stopping."
+    "Read this short resume plan and newly generated RESUME_STATE.json first. No reread of entire chronological checkpoint archive.",
+    "Check latest GitHub main and exact successful Batch106–108 workflow runs or newer workflow changes.",
+    "Trust the 580 reviewed formulations and 774 screened noncircular links when checksum snapshots match; do not repeat Batches94–108.",
+    "Continue bounded source-rich, independently verified mathematical contexts in branches not just researched, and check for existing meanings before admitting new titles.",
+    "Preserve the explicit ProofWiki Boundary (Topology) source error exclusion (closure+exterior formula) and the closure↔boundary acyclicity safeguard.",
+    "Keep subject-neutral generic engine code and site-independent provenance; math-specific scope conventions belong to adapter.",
+    "Do not access production mathDef mathematical content, do not modify frozen Wave1, and leave all five independent Wave2 stages unsealed until independent freeze.",
+    "Use approximately 12–14 minute sessions; commit a coherent stage, update the compact plan, and verify generated checkpoint before returning."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -109,8 +111,8 @@
       "sha256": "aeebc436b42634812ad521a742d530cf44e2f342616b0f46e6c1b3da10d7c6ec"
     },
     "wave2_research_support": {
-      "files": 640,
-      "sha256": "f9d3d8e36f4bba5e0307fafdaa9878c00c5729bd74ac7445eecd5d7dbf01fc92"
+      "files": 656,
+      "sha256": "e1f50705deeb6b4fc84014881988e85293d6e2c113c928f684338b260d90e1ae"
     }
   },
   "verification_limitations": [
@@ -123,18 +125,18 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch105 eleven noncircular source/target links for all seven cross-field formulations, older 754 relationships preserved",
-      "run_id": 39506973525
+      "purpose": "Batch108 nine individual topology, kernel and derivative links; 765 previous links preserved; 580 review dispositions",
+      "run_id": 39508374483
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch104 six mathematically screened meanings / seven formulations, earlier 566 mathematical dispositions preserved",
-      "run_id": 39506596036
+      "purpose": "Batch107 five screened contextual meanings, seven forms and preservation of 573 historical formulation decisions",
+      "run_id": 39508076150
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch103 corrected source-only four term headings and seven observations",
-      "run_id": 39506306934
+      "purpose": "Batch106 four direct source headings with seven individual observations, prior meaning/relation registry untouched",
+      "run_id": 39507831430
     }
   ]
 }
