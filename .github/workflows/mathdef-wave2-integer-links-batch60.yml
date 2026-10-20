@@ -70,6 +70,10 @@ jobs:
           assert {id for row in final for id in row["relation_ids"]}==set(w.records("relations"))
           assert dict(Counter(row["decision"] for row in final))=={"linked":511,"no_supported_target":5}
           assert len([id for id in w.records("relations") if id.startswith("rel.wave2.integer60.")])==5
+          # Both definition variants must retain their own source locator.
+          edges=w.records("relations")
+          assert edges["rel.wave2.integer60.02"]["source_locator"]=="https://stacks.math.columbia.edu/tag/09FJ"
+          assert edges["rel.wave2.integer60.03"]["source_locator"]=="https://proofwiki.org/wiki/Definition%3AField_of_Quotients"
           check_cycles(w.records("meanings"),w.records("relations"))
           event=jsonl(w.root/"events/rational_number_review_amendment_batch60.jsonl")
           assert len(event)==1
