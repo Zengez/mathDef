@@ -33,7 +33,7 @@ jobs:
         run: |
           python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
           python -m unittest discover -s research_pipeline/tests -q
-      - name: Source three precise module convention contexts without meanings
+      - name: Source three verified module action/unitality conventions without meanings
         run: |
           python -m research_pipeline.adapters.mathdef.wave2_module_variants_source_batch93 \
             --workspace research_pipeline/experiments/reconstruction-v2-independent
