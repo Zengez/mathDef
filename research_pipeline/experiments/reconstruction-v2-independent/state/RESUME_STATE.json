@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "1ad3e98e8702e3c415551baa940f3fc113d4498aa3977aa07af96b52da764603"
+    "resume_plan_sha256": "6baebf6ccae607208e4feee27575593702ca4e444e5fae75d01aec22f0b369ca"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -19,9 +19,9 @@
     "reviewed_formulations": 551,
     "screened_contextual_meanings": 527,
     "screened_relationships": 730,
-    "source_observations": 862,
+    "source_observations": 865,
     "sources": 14,
-    "terms": 425
+    "terms": 428
   },
   "known_blockers": [
     "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
@@ -39,9 +39,10 @@
     "All 3 martingale formulation no-supported-target reviews have now been explicitly amended by independently sourced adaptedness and conditional expectation definitions. The primitive stochastic-process formulation now has a justified no-supported-target decision until probability space and general measurable-space/r.v. foundations are separately screened.",
     "Continuous-index adapted process is independently sourced, but only discrete-time filtration has a checked direct source in the corpus; do not link it to real-index adaptedness as if equivalent.",
     "Chromatic polynomial equivalence is still research-only; MathWorld is not in vetted source registry. A new source registration, rights review and exact citation are required before ingesting it.",
-    "Batch87 module source distinguishes left and right actions; the precise role of ring identity and the axiom 1_R m=m must be reviewed before it is admitted to the screened mathematical corpus."
+    "Distinct nonunitary right and unital left/right module source formulations were admitted ONLY as source evidence in Batch93; do not count them as screened meanings yet, and do not clone the existing nonunital left-module meaning.",
+    "The initial Batch93 workflow failed closed due arbitrary minimum-length validation for two correct sourced definitions; corrected source-specific action/unity-axiom checks passed. No independent stage committed until corrected success."
   ],
-  "next_action": "Wave 2 Batches 85–86 completed and workflow-verified: 14 independent source registries, 422 source terms, 858 source observations, 523 mathematically screened contextual meanings, 547 individually reviewed formulations, 719 source-scoped screened links; graph acyclic and all stages unsealed. Batch85 promoted five source headings to SIX mathematical contexts: discrete filtration, discrete-time adapted process, continuous-index adapted process, sigma-algebra-conditioned conditional expectation, proper vertex coloring, and stochastic process; 541 historic decisions preserved; conditional-expectation essential uniqueness correctly kept out of definition as theorem. Batch86 added 13 independent exact-phrase/source-target links, archived the prior no-supported-target decisions of all 3 martingale formulations and explicitly revised them; additive chromatic-coloring link amendment retained earlier simple-graph link and its separate historical event. All 706 earlier links and 537 unrelated formulation decisions preserved, with one explicit stochastic-process no-target for missing probability/measurable-space/r.v. definitions. Initial Batch86 job failed closed before any stage commit because the existing chromatic link needed additive review coverage; corrected rerun 39496416509 succeeded. NEXT: Batch87 is FOUR research-only external source dossiers (not ingested) for measurable space, probability space, random variable (general and real-valued), and left/right modules; exact mathematical source scope documented, module unit-axiom convention held for further verification. Check existing independently acquired meaning collisions, then admit only fully verified sources and screen the mathematical contexts/links in separate bounded batches, preserving all 547 reviews. Continue wider-subfield discovery, and keep the original production mathDef mathematical corpus embargo strictly in place until independent freeze.",
+  "next_action": "Independent Wave 2 Batches 88–93 verified with 14 registered approved sources, 428 source terms, 865 source observations, 527 mathematically screened meanings, 551 individual formulation reviews and 730 cycle-free screened definition-use relationships. Batch88 performed real independent meaning collisions: existing meaning.wave2.foundation.left-module-nonunital ALREADY covers general left module, so avoid duplicate. ProofWiki Definition:Module is a disambiguation, whereas Definition:Module_over_Ring has M1–M3 nonunitary left/right axioms, and Definition:Unitary_Module_over_Ring adds UM4/URM4 unity (1m=m or m1=m); do NOT conflate these four mathematical contexts. Batch89 admitted measurable space/probability space/random variable as 3 source terms +4 separate observations, protecting prior 422 dispositions. Batch90 screened four contextual meanings: measurable space, probability space, general target-measurable random variable, and real-valued random variable; 547 earlier formulation decisions retained. Batch91 screened 11 exact source-target links, explicitly archived/revised stochastic-process no-supported-target, retained existing conditional-expectation-to-sigma link and added its probability-space and real-random-variable prerequisites, preserved original 719 links. Batch92 researched only 3 distinct module variants: nonunital right, unital left and unital right; left ordinary meaning already exists. Batch93 admitted those 3 source headings/observations source-only (NO new screened module meanings/links), protected prior 425 term review dispositions; first attempt failed closed due arbitrary length 200 cutoff; rerun succeeded after source-specific equation checks and 180-character reasonable minimum. NEXT: Batch94 separately mathematically screen three contextual module meanings with explicit left/right and unity-action conventions (consider grouping under a module family while retaining existing general-left meaning untouched). Batch95 separately screen their source-backed noncircular links and consider explicit review amendment of old left submodule no-supported-target ONLY if correct source-matched general/left module target exists. Continue cross-subfield breadth research; original production mathematical corpus and algorithms remain embargoed until Wave 2 freeze.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
@@ -71,16 +72,16 @@
       "sha256": "69280f43a427e1274d2b9be406f61f37bd0b3dc7b7109faaa1da288f34c0e8f3"
     },
     "source_observations": {
-      "rows": 862,
-      "sha256": "672f5511e5f5c152608ca1a43f718abcfa6a3e14834bb46ac0e509f73c05fb46"
+      "rows": 865,
+      "sha256": "b0de167305f82eed39d69c0321e630380f05bdd65559a96a2e2cc1b09a5a0c36"
     },
     "sources": {
       "rows": 14,
       "sha256": "b122833748dff90cb025f4dd82393fdf428f2bf339531675280eb49312c0a38b"
     },
     "term_headings": {
-      "rows": 425,
-      "sha256": "4be26593749c4628507f188392481db8a15564e5f1ff80f5a9be39b8f447aa5d"
+      "rows": 428,
+      "sha256": "4c85ec9e9d0148295277943bda2bba442457ac6d8ee30961118a477cf415ab25"
     },
     "wave2_lineage": {
       "first_wave_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
@@ -100,7 +101,7 @@
     "Do not redo completed Batches 74–77; use the successful workflow runs and historical review/event snapshots.",
     "Next aim for Batch 85 meanings, Batch 86 links, then cross-field discovery; do not expand recursively into unbounded foundational subtasks or change generic engine unless a real coverage-model limitation appears.",
     "Batches 85–86 are fully verified; do not repeat these mathematical/link reviews absent contradictory evidence. The first failed 86 run committed no independent-stage changes; the later successful run is authoritative.",
-    "Begin Batch87 collision and source-scope checks before admitting any of the 4 source-reviewed topics; keep source intake, individual mathematical meanings, and independent link reviews separate."
+    "Batches 89–93 are committed and source/review verified; do not redo. Next Batch94 must be mathematical meanings only, Batch95 relational screen only, using existing corpus and explicitly preserving old formulation dispositions."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -110,8 +111,8 @@
       "sha256": "aeebc436b42634812ad521a742d530cf44e2f342616b0f46e6c1b3da10d7c6ec"
     },
     "wave2_research_support": {
-      "files": 570,
-      "sha256": "df2afc15f6c48f78e04aa1942f701ae979cd4a90add6d31a3fd6a4e6918d7fd1"
+      "files": 576,
+      "sha256": "422f11784a24a16e189159d8a0a3824dd1cbfc4e9d1cb87a18171929d9a6c106"
     }
   },
   "verification_limitations": [
@@ -124,18 +125,23 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Corrected Batch86 13 probability/graph prerequisites and additive chromatic review event, no cycles",
-      "run_id": 39496416509
+      "purpose": "Corrected Batch93 right/unital module source-only admission with equation validation, all 425 historical term decisions preserved",
+      "run_id": 39498733359
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch85 six independently sourced mathematical contexts with 541 review-lineage preservation",
-      "run_id": 39495588081
+      "purpose": "Batch91 11 exact probability/source links and archived stochastic/conditional expectation review events",
+      "run_id": 39498172010
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch84 five foundation terms/six source observations previous 417 term reviews preserved",
-      "run_id": 39494297918
+      "purpose": "Batch90 four probability mathematical contextual meanings with 547 historical reviews",
+      "run_id": 39497721758
+    },
+    {
+      "previously_reported_conclusion": "success",
+      "purpose": "Batch89 probability/measure source intake preserving all 422 prior term reviews",
+      "run_id": 39497456827
     }
   ]
 }
