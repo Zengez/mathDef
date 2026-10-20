@@ -1,0 +1,97 @@
+name: Screen six independent martingale/graph foundational contexts — Batch 85
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-martingale-foundations-meanings-batch85.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen-meanings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Use current independent source research state
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run portable pipeline regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Screen six exact mathematical meanings with source/variant evidence
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_martingale_foundations_meanings_batch85 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Audit historical source/term review coverage
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Validate 541 prior decisions and distinct adapted-time contexts
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(old.publication())==json.loads((old.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":14,"terms":422,"observations":858,"meanings":523,"relations":706}
+          assert {s:len(w.records(s)) for s in expected}==expected
+          assert not any(w.state(s).get("sealed") for s in expected)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(k)==v for k,v in old.records(s).items())
+          ms=w.records("meanings")
+          d=ms["meaning.wave2.found85.adapted-discrete"]
+          c=ms["meaning.wave2.found85.adapted-continuous"]
+          assert d["term_group_id"]==c["term_group_id"] and d["context"]!=c["context"]
+          assert "uniqu" not in ms["meaning.wave2.found85.conditional-expectation"]["formulations"][0]["text"]
+          older=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_541_before_found85.jsonl")
+          latest=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          index={r["formulation_id"]:r for r in latest}
+          assert len(older)==541 and len(latest)==len(index)==547
+          for r in older:
+            newer=index[r["formulation_id"]]
+            assert all(newer.get(k)==v for k,v in r.items() if k!="meaning_catalog_digest")
+          assert all(r["meaning_catalog_digest"]==digest(list(ms.values())) for r in latest)
+          assert {id for r in latest for id in r["relation_ids"]}==set(w.records("relations"))
+          assert dict(Counter(r["decision"] for r in latest))=={"linked":531,"no_supported_target":10,"needs_review":6}
+          check_cycles(ms,w.records("relations"))
+          report=json.loads((w.root/"state/wave2_found85_meaning_screen.json").read_text())
+          assert report["adapted_discrete_and_continuous_separate_contexts"]
+          assert report["conditional_expectation_uniqueness_separated_as_theorem"]
+          assert report["prior_541_formulation_decisions_preserved"]
+          assert not report["original_production_mathdef_content_used"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only the independently screened mathematical records
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen six adapted, filtration, expectation and graph contexts with 541-review preservation"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
