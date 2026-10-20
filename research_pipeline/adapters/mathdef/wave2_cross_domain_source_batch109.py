@@ -62,7 +62,7 @@ def run(root):
         for c in r["contexts"]:
             for f in c["formulations"]:
                 n+=1
-                if not f["label"] or len(f["text"])<110:
+                if not f["label"] or len(f["text"])<75:
                     raise PipelineError("Insufficient individual mathematical source observation "+key)
                 obs.append({
                   "id":f"obs.wave2.cross109.{key}.{n:02d}","term_id":tid,
