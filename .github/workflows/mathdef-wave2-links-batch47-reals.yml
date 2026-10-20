@@ -1,0 +1,92 @@
+name: Screen complete ordered-real and absolute value mathematical prerequisites
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-links-batch47-reals.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh authoritative independent source and meaning screens
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all research modules and run isolated unit tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Apply five source-exact mathematical prerequisite relationships
+        run: |
+          python -m research_pipeline.engine.wave2_apply_links \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --batch research_pipeline/experiments/reconstruction-v2-independent/intake/wave2_curated_relations_batch_47.jsonl
+      - name: Verify all source scopes and historical mathematics-review decisions
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          original=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((original.root/"state/wave1_freeze.json").read_text())
+          assert digest(original.publication())==freeze["published_catalog_digest"]
+          assert len(original.records("relations"))==445
+          assert len(w.records("terms"))==388 and len(w.records("observations"))==811
+          assert len(w.records("meanings"))==490 and len(w.records("relations"))==664
+          assert set(original.records("relations")).issubset(w.records("relations"))
+          assert not any(w.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
+          ledger=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(ledger)==502 and len({r["formulation_id"] for r in ledger})==502
+          assert {rid for r in ledger for rid in r["relation_ids"]}==set(w.records("relations"))
+          assert Counter(r["decision"] for r in ledger)=={"linked":498,"no_supported_target":4}
+          historic=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_499_before_real46.jsonl")
+          now={r["formulation_id"]:r for r in ledger}
+          assert len(historic)==499
+          assert all(now[r["formulation_id"]]["original_wave1_disposition"]==r["original_wave1_disposition"] for r in historic)
+          assert now["form.wave2.analysis.real-absolute-value"]["decision"]=="linked"
+          assert now["form.wave2.analysis.real-absolute-value"]["original_editorial_reason"]
+          links=jsonl(w.root/"intake/wave2_curated_relations_batch_47.jsonl")
+          assert len(links)==5 and all(w.records("relations")[r["id"]]==r for r in links)
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_link_review_batch_47.json").read_text())
+          assert report["added_source_grounded_links"]==5 and report["total_screened_links"]==664
+          assert report["dependency_graph_has_cycles"] is False
+          assert report["pending_wave2_link_reviews"]==0
+          assert report["human_peer_verified"] is False
+          assert report["original_production_baseline_consulted"] is False
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent mathematical link-review evidence
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen five real ordered-field and absolute value dependency links with source-scoped hypotheses"
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
