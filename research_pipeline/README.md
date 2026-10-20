@@ -2,6 +2,23 @@
 
 **Status (October 20, 2026):** The initial pre-reconstruction implementation is complete and independent reconstruction work is underway: the recovery first wave is frozen, while a separate independent second-wave workspace contains source-attributed research and mathematical review records but **remains unsealed**. Earlier sections of this document describe the original setup and historical plan. For current next steps use the [short resume protocol](RESUME_PROTOCOL.md), its generated `RESUME_STATE.json`, and the human-maintained adapter plan. The scripts do not autonomously call ChatGPT, determine exhaustive coverage, or certify mathematical accuracy.
 
+## Public previews of the independent reconstruction
+
+The [reconstruction preview landing page](https://zengez.github.io/mathDef/reconstruction/)
+shows two separate, browser-accessible views: **frozen independent Wave 1**
+and an **unsealed, evolving Wave 2 draft**. Both are served under a separate
+path of the same GitHub Pages host as production mathDef. This is not a second
+GitHub repository, and no content from the original definitions, variants,
+or citations is imported into either preview.
+
+The adapter-only command
+`python -m research_pipeline.adapters.mathdef.preview_site --site-root _site/reconstruction`
+validates the independent lineage, renders Wave 1 from its frozen published
+catalog, and renders Wave 2 directly from its own screened records. It does
+not call the stage publication API, seal research stages, or rewrite either
+experiment workspace. GitHub Pages updates these previews when changes are
+committed to the default branch, after automated tests and validation.
+
 ## Two bulk waves and targeted work
 
 1. A deliberately linear **first wave**, performing Stages 0–6 to get a coherent, inspectable prototype.
