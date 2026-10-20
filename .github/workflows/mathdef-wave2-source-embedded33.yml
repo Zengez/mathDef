@@ -1,0 +1,103 @@
+name: Recover two source-defined Stacks integrality and fibre local ring notions
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-source-embedded33.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh newest independent Wave 2 source checkpoint
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile pipeline Python and execute regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Ingest two direct-source candidate observations only
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_batch33_embedded \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Version original 374 source reviews and audit all 376
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify exact source conventions and all unchanged mathematical reviews
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,digest,jsonl
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          two=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((one.root/"state/wave1_freeze.json").read_text())
+          assert digest(one.publication())==freeze["published_catalog_digest"]
+          for s,n in (("sources",9),("terms",376),("observations",799),("meanings",477),("relations",643)):
+              assert len(two.records(s))==n,s
+              assert not two.state(s).get("sealed"),s
+          for s in ("sources","terms","observations","relations"):
+              assert all(two.records(s).get(k)==v for k,v in one.records(s).items())
+          past=jsonl(two.root/"state/wave2_term_coverage_snapshot_374.jsonl")
+          now=jsonl(two.root/"state/wave2_term_coverage.jsonl")
+          assert len(past)==374 and len(now)==376
+          by={r["term_id"]:r for r in now}
+          assert len(by)==376
+          assert all(by.get(r["term_id"])==r for r in past)
+          obs=two.records("observations")
+          assert obs["obs.wave2.foundation33.integral-over-ideal"]["locator"]=="https://stacks.math.columbia.edu/tag/037E"
+          assert obs["obs.wave2.foundation33.local-ring-fibre-at-prime"]["locator"]=="https://stacks.math.columbia.edu/tag/00OG"
+          assert all(obs[k]["record_kind"]=="paraphrase" and obs[k]["human_verified"] is False for k in
+             ("obs.wave2.foundation33.integral-over-ideal","obs.wave2.foundation33.local-ring-fibre-at-prime"))
+          report=json.loads((two.root/"state/wave2_term_coverage.json").read_text())
+          assert report["term_count"]==376
+          assert report["source_read_new_candidates"]==50
+          assert report["new_term_review_coverage"]==58
+          assert report["new_source_locators_unverified"]==8
+          assert report["previous_374_term_review_ledger_archived"] is True
+          assert report["mathematical_candidate_meanings_screened"]==58
+          assert report["complete_for_wave2_sealing"] is False
+          screen=jsonl(two.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(screen)==489
+          assert {rid for x in screen for rid in x["relation_ids"]}==set(two.records("relations"))
+          result=json.loads((two.root/"state/wave2_foundations_batch_33.json").read_text())
+          assert result["coefficient_powers_I_d_minus_j_preserved"]
+          assert result["fibre_prime_and_contraction_hypotheses_preserved"]
+          assert result["original_heading_source_review_not_overridden"]
+          assert result["new_mathematical_meanings_screened"]==0
+          assert result["human_peer_verified"] is False
+          print(json.dumps(result,indent=2))
+          PY
+      - name: Commit only independent Wave 2 sources and source-history snapshots
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Source-recover two exact Stacks definitions while retaining 374-term review ledger"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
