@@ -1,0 +1,95 @@
+name: Screen five module dependencies and historic submodule correction — Batch 95
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-module-links-batch95.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  review-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Read authoritative independent research main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run portable pipeline and adapter tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Screen five precise module prerequisite links and old submodule review amendment
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_module_variants_links_batch95 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Assert original Wave 1 frozen, history and graph integrity
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          frozen=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(frozen.publication())==json.loads((frozen.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":14,"terms":428,"observations":865,"meanings":530,"relations":735}
+          assert {s:len(w.records(s)) for s in expected}==expected
+          assert not any(w.state(s).get("sealed") for s in expected)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(i)==v for i,v in frozen.records(s).items())
+          previous=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_554_before_module95.jsonl")
+          now=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          idx={r["formulation_id"]:r for r in now}
+          assert len(previous)==len(now)==len(idx)==554
+          new={id for id in idx if id.startswith("form.wave2.module94.")}
+          sub="form.wave2.foundation76.submodule.01"
+          assert len(new)==3
+          for r in previous:
+            if r["formulation_id"] not in new|{sub}:
+              assert idx[r["formulation_id"]]==r
+          assert all(r["meaning_catalog_digest"]==digest(list(w.records("meanings").values())) for r in now)
+          assert {id for r in now for id in r["relation_ids"]}==set(w.records("relations"))
+          assert dict(Counter(r["decision"] for r in now))=={"linked":548,"no_supported_target":6}
+          assert len([id for id in w.records("relations") if id.startswith("rel.wave2.module95.")])==5
+          assert w.records("relations")["rel.wave2.module95.05"]["target_meaning"]=="meaning.wave2.foundation.left-module-nonunital"
+          check_cycles(w.records("meanings"),w.records("relations"))
+          ev=jsonl(w.root/"events/submodule_missing_target_correction_batch95.jsonl")
+          assert len(ev)==1 and ev[0]["previous_decision"]=="no_supported_target"
+          assert idx[sub]["override_event_id"]==ev[0]["event_id"]
+          report=json.loads((w.root/"state/wave2_module95_link_review.json").read_text())
+          assert report["historic_730_links_preserved"]
+          assert report["historic_550_unrelated_formulation_reviews_preserved"]
+          assert report["old_submodule_no_target_explicitly_amended"]
+          assert not report["production_corpus_used"] and not report["human_peer_verified"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independently vetted module relations and immutable review history
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen five module relationships with explicit historical submodule review correction"
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
