@@ -1,0 +1,105 @@
+{
+  "domain_validation": {
+    "dependency_graph_has_cycles": false,
+    "editable_wave2_unsealed": true,
+    "frozen_wave1_digest_recomputed_and_matched": true,
+    "human_peer_verified": false,
+    "independent_frozen_wave1_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
+    "original_priorities_are_not_exhaustive_coverage": true,
+    "original_priority_firstpass_records": 192,
+    "production_corpus_used": false,
+    "review_dispositions": {
+      "linked": 498,
+      "no_supported_target": 4
+    },
+    "reviewed_formulations": 502,
+    "screened_contextual_meanings": 490,
+    "screened_relationships": 664,
+    "source_observations": 811,
+    "sources": 9,
+    "terms": 388
+  },
+  "known_blockers": [
+    "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
+    "Twenty-seven original PlanetMath source pages remain access-restricted/unread.",
+    "Original 192 priority tasks have initial evidence only; broader definition and variant discovery is not complete.",
+    "All five independent Wave 2 stages remain unsealed, and original production mathDef comparisons are forbidden until after the independent freeze."
+  ],
+  "next_action": "Continue independent, source-attributed Wave 2 research on Dedekind-cut and rational-Cauchy real constructions and alternative formulations; do not screen or link until individual mathematical and source reviews are complete.",
+  "observed_commit": "f9c9f304b4480e5774abd17b2eb38228a52367b5",
+  "project_id": "mathdef-independent-reconstruction-wave2",
+  "record_evidence": {
+    "contextual_meanings": {
+      "rows": 490,
+      "sha256": "d7588170a19fedeb12b7278102849cd805fbc87b51e84599ea5d2264456ff67a"
+    },
+    "current_link_stage": {
+      "record_digest": "386a8bd454e21a8145beebb35e8a28cae95c66bee74f31da949e1a3fb129697b",
+      "sealed": false,
+      "sha256": "3f0eca12ef04b24a0b40652029abd54a136c6d3eb1f015a07ae340dbbbf45839",
+      "total": 664
+    },
+    "definition_links": {
+      "rows": 664,
+      "sha256": "fa1fbda7f2b74b7d9868fde41be4102d61d5320d68dfb353b757fbce70f25170"
+    },
+    "firstpass_priorities": {
+      "rows": 192,
+      "sha256": "4c172d64ad7c28763979c5e71c5d1aec3d48aefe2db72ec59b94ac049d1fde4d"
+    },
+    "individual_link_reviews": {
+      "decisions": {
+        "linked": 498,
+        "no_supported_target": 4
+      },
+      "rows": 502,
+      "sha256": "6843ba29009f9c0ec1d3623e2e173e7e9911e2b9cecfa2fe22b463b7d10bba22"
+    },
+    "source_observations": {
+      "rows": 811,
+      "sha256": "7c6cac35768ec8c5f633261aa482c15654ca1b26b18f4cd454e229cdb9804261"
+    },
+    "sources": {
+      "rows": 9,
+      "sha256": "ef812107a75d4b73c0b6627528d3aacd76be37588a8d3ba3b676f7bfc6636b96"
+    },
+    "term_headings": {
+      "rows": 388,
+      "sha256": "d8a3fc92f1b0e85c89621e45718db86c92df2f2a85071e7bf5aec04b18e1c4cd"
+    },
+    "wave2_lineage": {
+      "first_wave_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
+      "mode": "second_wave",
+      "sha256": "10fbabdfda78ae20425a8f9a0cfadca2101a4ede96b3c7a9075f4dd44a474527"
+    }
+  },
+  "resume_steps": [
+    "Read the compact RESUME_STATE.json and this plan, not the historical checkpoint archive.",
+    "Check current GitHub main SHA and only the workflow runs listed in the plan, plus newer runs affecting research state.",
+    "If repository state and the snapshot digests match, trust already committed mathematical/source review decisions. Do not redo completed research.",
+    "If the data moved beyond the snapshot, refresh the adapter-driven snapshot and verify only changed records/workflows.",
+    "Run source and mathematical review as bounded batches, commit verified results and update this plan at a clean boundary.",
+    "Stop around 12-14 minutes of active work with a concise handoff; do not wait for a timeout."
+  ],
+  "schema_version": 1,
+  "scope": "Independent research reconstruction; no use of original production definitions",
+  "verification_limitations": [
+    "Local records, hashes, and adapter invariants were checked.",
+    "Remote GitHub Actions status must be checked live after a restart.",
+    "A source-screened record is not human mathematical peer review.",
+    "This snapshot does not authorize sealing or publication."
+  ],
+  "work_budget_minutes_target": 12,
+  "workflow_runs_to_check_live": [
+    {
+      "previously_reported_conclusion": "success",
+      "purpose": "Last documented ordered-reals relationship screening",
+      "run_id": 39442831420
+    },
+    {
+      "previously_reported_conclusion": "success",
+      "purpose": "Recent research pipeline isolated tests",
+      "run_id": 39443331249
+    }
+  ]
+}
