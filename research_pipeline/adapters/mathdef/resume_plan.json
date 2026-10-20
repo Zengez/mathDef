@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "work_budget_minutes_target": 12,
-  "next_action": "Continue independent, source-attributed Wave 2 research on Dedekind-cut and rational-Cauchy real constructions and alternative formulations; do not screen or link until individual mathematical and source reviews are complete.",
+  "next_action": "Batch 48 contains eight independently source-checked candidate real-construction reviews (not yet stage-ingested). Next: source-rights and approved-source-manifest review for new Cornell/CSUSM/LibreTexts/Harvey Mudd/CMU locators; then idempotently ingest the already approved PlanetMath Dedekind-cut candidates into Wave 2 terms→observations→meanings after checking for collisions and individual review gates. Cauchy candidates must remain research-only until external sources are admitted. Do not add links or declare models identical without separate screened evidence and cycle checks.",
   "resume_steps": [
     "Read the compact RESUME_STATE.json and this plan, not the historical checkpoint archive.",
     "Check current GitHub main SHA and only the workflow runs listed in the plan, plus newer runs affecting research state.",
     "If repository state and the snapshot digests match, trust already committed mathematical/source review decisions. Do not redo completed research.",
     "If the data moved beyond the snapshot, refresh the adapter-driven snapshot and verify only changed records/workflows.",
-    "Run source and mathematical review as bounded batches, commit verified results and update this plan at a clean boundary.",
-    "Stop around 12-14 minutes of active work with a concise handoff; do not wait for a timeout."
+    "Stop around 12-14 minutes of active work with a concise handoff; do not wait for a timeout.",
+    "For the current real-constructions topic, trust batch 48 source-scoped reviews; do not repeat them from scratch. Validate source admissions and stage schema, ingest bounded verified rows, and update checkpoint after each independently checked batch."
   ],
   "workflow_runs_to_check_live": [
     {
@@ -26,6 +26,15 @@
     "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
     "Twenty-seven original PlanetMath source pages remain access-restricted/unread.",
     "Original 192 priority tasks have initial evidence only; broader definition and variant discovery is not complete.",
-    "All five independent Wave 2 stages remain unsealed, and original production mathDef comparisons are forbidden until after the independent freeze."
-  ]
+    "All five independent Wave 2 stages remain unsealed, and original production mathDef comparisons are forbidden until after the independent freeze.",
+    "Batch 48 new external teaching-note source locators need source-manifest, rights and attribution decisions before stage ingestion; all eight reviews are candidate research records, not yet published definitions."
+  ],
+  "recent_completed_batch": {
+    "label": "Wave 2 batch 48: independent classical real-number constructions",
+    "path": "research_pipeline/experiments/reconstruction-v2-independent/wave2/real_constructions_independent_source_reviews_batch_48_2026-10-20.jsonl",
+    "source_and_math_candidates": 8,
+    "stage_ingested": 0,
+    "commit": "a5dc8540949dee6df6e00f9cdd57b6ed14eb1334",
+    "independence_note": "External math sources and independent Wave 2 state only; no production definition, variant, citation or production site mathematical data examined."
+  }
 }
