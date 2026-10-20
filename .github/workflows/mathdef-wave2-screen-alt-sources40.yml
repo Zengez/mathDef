@@ -1,0 +1,113 @@
+name: Screen five independent ProofWiki alternative-source mathematical meanings
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-screen-alt-sources40.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screening:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Checkout latest committed independent Wave 2 state
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile all research Python modules and run isolated regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Require independent source evidence and status preservation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("research_pipeline/experiments/reconstruction-v2-independent/state/wave2_foundations_batch_39.json")
+          assert p.exists()
+          x=json.loads(p.read_text())
+          assert x["source_terms_total"]==381
+          assert x["source_observations_total"]==804
+          assert x["original_planetmath_pages_remain_unverified"]==27
+          assert x["new_meanings_screened"]==0
+          PY
+      - name: Individually screen five mathematical context-specific definitions with historical snapshots
+        run: |
+          python -m research_pipeline.engine.wave2_screen_alt_sources40 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Update source coverage meaning-screen count without changing source dispositions
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify four sources, five distinct meanings and all 492 historical review decisions
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          a=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((a.root/"state/wave1_freeze.json").read_text())
+          assert digest(a.publication())==freeze["published_catalog_digest"]
+          for stage,n in (("sources",9),("terms",381),("observations",804),("meanings",485),("relations",650)):
+              assert len(w.records(stage))==n,stage
+              assert not w.state(stage).get("sealed"),stage
+          previous=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_492_before_alt40.jsonl")
+          review=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(previous)==492 and len(review)==497 and len(set(r["formulation_id"] for r in review))==497
+          now={x["formulation_id"]:x for x in review}
+          for r in previous:
+              z=now[r["formulation_id"]]
+              assert {k:v for k,v in z.items() if k!="meaning_catalog_digest"}=={
+                     k:v for k,v in r.items() if k!="meaning_catalog_digest"}
+          assert {rid for r in review for rid in r["relation_ids"]}==set(w.records("relations"))
+          assert sum(r["decision"]=="needs_review" for r in review)==5
+          meanings=w.records("meanings")
+          b1=meanings["meaning.wave2.alternative39.boolean-ring-unital"]
+          b2=meanings["meaning.wave2.alternative39.boolean-ring-nonunital"]
+          assert b1["term_group_id"]==b2["term_group_id"]
+          assert b1["formulations"][0]["text"]!=b2["formulations"][0]["text"]
+          assert all(f["review_state"]=="screened" for m in meanings.values() for f in m["formulations"])
+          check_cycles(meanings,w.records("relations"))
+          report=json.loads((w.root/"state/wave2_alt_sources40_meanings_screened.json").read_text())
+          assert report["historical_492_formulation_reviews_preserved"]
+          assert report["previous_650_screened_links_preserved"]
+          assert report["original_PlanetMath_pages_unread"]==27
+          assert report["unital_and_nonunital_boolean_ring_conventions_distinct"]
+          assert report["human_peer_verified"] is False
+          coverage=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert coverage["term_count"]==381
+          assert coverage["mathematical_candidate_meanings_screened"]==66
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only new independent screened meanings, revisions and review history
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen Borel, adjacency, bipartite, and two Boolean ring contexts preserving 492 review decisions"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
