@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "84d2692b1020c19452d78d64f1d22129327fb2510fca6ff0920f587aa32a194a"
+    "resume_plan_sha256": "67cdf041ebb3c5df62835c7fc7a4a482e6552713479dd85319f989cd786a8a11"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -19,18 +19,19 @@
     "reviewed_formulations": 502,
     "screened_contextual_meanings": 490,
     "screened_relationships": 664,
-    "source_observations": 811,
-    "sources": 9,
-    "terms": 388
+    "source_observations": 818,
+    "sources": 14,
+    "terms": 395
   },
   "known_blockers": [
     "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
     "Twenty-seven original PlanetMath source pages remain access-restricted/unread.",
     "Original 192 priority tasks have initial evidence only; broader definition and variant discovery is not complete.",
     "All five independent Wave 2 stages remain unsealed, and original production mathDef comparisons are forbidden until after the independent freeze.",
-    "Batch 48 new external teaching-note source locators need source-manifest, rights and attribution decisions before stage ingestion; all eight reviews are candidate research records, not yet published definitions."
+    "The five Batch 49 external mathematical references are locator-only; no permission to reproduce source prose is claimed. Their definition candidates have not yet been promoted to screened meanings.",
+    "The source-coverage extension is manifest-based; old source-ledger decisions were preserved, but historical hardcoded source batch lists remain in the implementation for previous batches. Future refactoring is optional."
   ],
-  "next_action": "Batch 48 contains eight independently source-checked candidate real-construction reviews (not yet stage-ingested). Next: source-rights and approved-source-manifest review for new Cornell/CSUSM/LibreTexts/Harvey Mudd/CMU locators; then idempotently ingest the already approved PlanetMath Dedekind-cut candidates into Wave 2 terms→observations→meanings after checking for collisions and individual review gates. Cauchy candidates must remain research-only until external sources are admitted. Do not add links or declare models identical without separate screened evidence and cycle checks.",
+  "next_action": "Resume after successful Wave 2 Batch 49 source/term/observation intake (14 sources, 395 terms, 818 observations, 490 screened contextual meanings, 664 links). Next bounded batch: individually screen a small set (prefer 3 PlanetMath-backed Dedekind-cut constructions) into new contextual meanings only after confirming source identities and prior meaning collisions. Regenerate the entire 502-formulation review ledger with exact meaning catalog digest and full preservation checks, then review potential links separately. Cauchy constructions have source-scoped candidate observations but should not be considered screened until their formulations undergo individual mathematical review. Do not infer that the two real-number models are literally identical.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
@@ -60,16 +61,16 @@
       "sha256": "6843ba29009f9c0ec1d3623e2e173e7e9911e2b9cecfa2fe22b463b7d10bba22"
     },
     "source_observations": {
-      "rows": 811,
-      "sha256": "7c6cac35768ec8c5f633261aa482c15654ca1b26b18f4cd454e229cdb9804261"
+      "rows": 818,
+      "sha256": "f478b9ee1793402ebedb2ae6daff54a6b1177e816d92b1bcfdb812f4f35b7ccf"
     },
     "sources": {
-      "rows": 9,
-      "sha256": "ef812107a75d4b73c0b6627528d3aacd76be37588a8d3ba3b676f7bfc6636b96"
+      "rows": 14,
+      "sha256": "b122833748dff90cb025f4dd82393fdf428f2bf339531675280eb49312c0a38b"
     },
     "term_headings": {
-      "rows": 388,
-      "sha256": "d8a3fc92f1b0e85c89621e45718db86c92df2f2a85071e7bf5aec04b18e1c4cd"
+      "rows": 395,
+      "sha256": "d59f85fa4e81066f66ae84200e0372fabf4f4db654dab65408efa8d21b4928e6"
     },
     "wave2_lineage": {
       "first_wave_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
@@ -83,7 +84,7 @@
     "If repository state and the snapshot digests match, trust already committed mathematical/source review decisions. Do not redo completed research.",
     "If the data moved beyond the snapshot, refresh the adapter-driven snapshot and verify only changed records/workflows.",
     "Stop around 12-14 minutes of active work with a concise handoff; do not wait for a timeout.",
-    "For the current real-constructions topic, trust batch 48 source-scoped reviews; do not repeat them from scratch. Validate source admissions and stage schema, ingest bounded verified rows, and update checkpoint after each independently checked batch."
+    "Trust Batch 48 candidate source reviews and the successfully ingested Batch 49 seven source observations. Next screen meaning candidates individually; the full formulation review ledger/catalog digest must be regenerated and checked in the same guarded transaction before updating public meaning counts."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -93,8 +94,8 @@
       "sha256": "aeebc436b42634812ad521a742d530cf44e2f342616b0f46e6c1b3da10d7c6ec"
     },
     "wave2_research_support": {
-      "files": 365,
-      "sha256": "a3f3ebfc7141e7248da652af661761e873ec9e1242df436e093f62fb17b71803"
+      "files": 372,
+      "sha256": "3c7c920f8e9cb93bd1198ca2fcf060667641e58c454847ae173f2465a12de040"
     }
   },
   "verification_limitations": [
@@ -107,13 +108,8 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Last documented ordered-reals relationship screening",
-      "run_id": 39442831420
-    },
-    {
-      "previously_reported_conclusion": "success",
-      "purpose": "Recent research pipeline isolated tests",
-      "run_id": 39443331249
+      "purpose": "Batch 49 source/term/observation intake, archived 388-term review state and preserved frozen Wave 1",
+      "run_id": 39463704879
     }
   ]
 }
