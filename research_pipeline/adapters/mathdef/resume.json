@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "project_id": "mathdef-independent-reconstruction-wave2",
+  "scope": "Independent research reconstruction; no use of original production definitions",
+  "plan_path": "research_pipeline/adapters/mathdef/resume_plan.json",
+  "output_path": "research_pipeline/experiments/reconstruction-v2-independent/state/RESUME_STATE.json",
+  "validation_adapter": "research_pipeline.adapters.mathdef.resume_validation",
+  "records": {
+    "sources": {
+      "path": "research_pipeline/experiments/reconstruction-v2-independent/records/sources.jsonl",
+      "format": "jsonl",
+      "id_field": "id"
+    },
+    "term_headings": {
+      "path": "research_pipeline/experiments/reconstruction-v2-independent/records/terms.jsonl",
+      "format": "jsonl",
+      "id_field": "id"
+    },
+    "source_observations": {
+      "path": "research_pipeline/experiments/reconstruction-v2-independent/records/observations.jsonl",
+      "format": "jsonl",
+      "id_field": "id"
+    },
+    "contextual_meanings": {
+      "path": "research_pipeline/experiments/reconstruction-v2-independent/records/meanings.jsonl",
+      "format": "jsonl",
+      "id_field": "id"
+    },
+    "definition_links": {
+      "path": "research_pipeline/experiments/reconstruction-v2-independent/records/relations.jsonl",
+      "format": "jsonl",
+      "id_field": "id"
+    },
+    "individual_link_reviews": {
+      "path": "research_pipeline/experiments/reconstruction-v2-independent/state/wave2_formulation_reviews.jsonl",
+      "format": "jsonl",
+      "id_field": "formulation_id",
+      "decision_field": "decision"
+    },
+    "firstpass_priorities": {
+      "path": "research_pipeline/experiments/reconstruction-v2-independent/state/wave2_original_192_firstpass_research_evidence_2026-10-20.jsonl",
+      "format": "jsonl"
+    },
+    "current_link_stage": {
+      "path": "research_pipeline/experiments/reconstruction-v2-independent/state/relations.json",
+      "format": "json",
+      "capture": [
+        "sealed",
+        "total",
+        "record_digest"
+      ]
+    },
+    "wave2_lineage": {
+      "path": "research_pipeline/experiments/reconstruction-v2-independent/state/baseline.json",
+      "format": "json",
+      "capture": [
+        "mode",
+        "first_wave_digest"
+      ]
+    }
+  },
+  "domain": {
+    "editable_workspace": "research_pipeline/experiments/reconstruction-v2-independent",
+    "frozen_workspace": "research_pipeline/experiments/reconstruction-v1-recovery",
+    "expected_frozen_publication_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
+    "original_priority_items": 192,
+    "firstpass_relative_path": "wave2_original_192_firstpass_research_evidence_2026-10-20.jsonl"
+  }
+}
