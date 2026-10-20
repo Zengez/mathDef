@@ -48,7 +48,7 @@ jobs:
           assert sum(len(g["meanings"]) for g in a["groups"]) == 419
           assert sum(len(g["meanings"]) for g in b["groups"]) >= 490
           assert len(b["relations"]) >= 664
-          assert "Unsealed Wave 2" in (root / "wave2/index.html").read_text()
+          assert "evolving research draft" in (root / "wave2/index.html").read_text()
           assert "frozen baseline" in (root / "wave1/index.html").read_text()
           PY
       - name: Check command-line invocation
