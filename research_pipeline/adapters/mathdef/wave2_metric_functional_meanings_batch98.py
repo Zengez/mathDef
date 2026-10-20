@@ -17,6 +17,7 @@ BEFORE={"sources":14,"terms":432,"observations":872,"meanings":530,"relations":7
 AFTER=dict(BEFORE,meanings=536)
 SPECS=(
  ("metric-space",0,"metric-space","Nonempty metric space, canonical metric topology","metric-space"),
+ ("metric-space",1,"metric-space","Nonempty metric space, canonical metric topology","metric-space"),
  ("norm-on-vector-space",0,"norm-over-normed-division-ring","Vector norm over a normed division ring","norm-on-vector-space"),
  ("norm-on-vector-space",1,"norm-over-real-or-complex","Vector norm over the real or complex field","norm-on-vector-space"),
  ("normed-vector-space",0,"normed-vector-space","Vector space over a normed division ring equipped with a norm","normed-vector-space"),
