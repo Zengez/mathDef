@@ -4,6 +4,7 @@
   const config = JSON.parse(el("research-ui-config").textContent);
   window.RESEARCH_UI = config;
   const nounPlural = config.noun_plural || "definitions";
+  const countLabel = config.count_label || nounPlural;
   const SIDES = ["term", "definition"];
   const VIEW_MODES = ["standard", "nested", "inline"];
   const LIMIT = 100;
@@ -258,7 +259,9 @@
         s.locator : s.url) + '" target="_blank" rel="noopener noreferrer">' +
         escape(s.title) + ' ↗</a>').join("") + '</div></div>' : "";
     const originalPath = sourceUrl(d);
-    const reviewLabel = d.status === "draft" ? '<span class="draft-label">Draft · not individually reviewed</span>' :
+    const reviewLabel = d.status === "screened_draft" ?
+      '<span class="draft-label">Source-screened research draft · not peer verified</span>' :
+      d.status === "draft" ? '<span class="draft-label">Draft · not individually reviewed</span>' :
       (d.status === "reviewed" ? '<span class="reviewed-label">Reviewed entry</span>' :
        '<span class="draft-label">Prototype entry</span>');
     root.innerHTML = '<article><div class="subject">' + escape(d.category) + '</div>' +
@@ -356,7 +359,7 @@
     if (!Array.isArray(data)) throw new Error("Invalid index");
     entries = data;
     lookup = new Map(data.map((d) => [d.id, d]));
-    el("total").textContent = entries.length + " " + nounPlural;
+    el("total").textContent = entries.length + " " + countLabel;
     render("term"); render("definition"); mode(true);
     explorationMode(state.exploreMode);
   }).catch((error) => {
