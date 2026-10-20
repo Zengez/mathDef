@@ -1,0 +1,85 @@
+name: Admit independent scalar division-ring source definitions — Batch 100
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-scalar-source-batch100.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  source-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Read newest committed independent state
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run portable research and adapter regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Admit five source-only division-ring scalar observations
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_scalar_division_ring_source_batch100 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Reconcile individual source term reviews
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Check exact source-only changes and freeze conditions
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          frozen=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(frozen.publication())==json.loads((frozen.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":14,"terms":437,"observations":877,"meanings":536,"relations":742}
+          assert {s:len(w.records(s)) for s in expected}==expected
+          assert not any(w.state(s).get("sealed") for s in expected)
+          for s in ("sources","terms","observations","meanings","relations"):
+            assert all(w.records(s).get(k)==v for k,v in frozen.records(s).items())
+          ledger=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(ledger)==561 and dict(Counter(x["decision"] for x in ledger))=={"linked":555,"no_supported_target":6}
+          assert {i for r in ledger for i in r["relation_ids"]}==set(w.records("relations"))
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_scalar100_source_intake.json").read_text())
+          assert report["new_screened_meanings"]==report["new_screened_links"]==0
+          assert report["uncited_derived_normed_division_ring_source_marked"]
+          assert report["left_and_right_actions_not_equated"]
+          assert not report["production_corpus_used"] and not report["human_peer_verified"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent sourced observations and review provenance
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Admit five independent ProofWiki division-ring sources without premature mathematical promotion"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
