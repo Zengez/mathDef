@@ -1,8 +1,13 @@
 "use strict";
 /* GitHub Issue draft adapter. No public submission can modify published data. */
 (function(root){
-  const BASE=(typeof window !== "undefined" && window.RESEARCH_UI?.feedback_issue_url) ||
-    "https://github.com/Zengez/mathDef/issues/new";
+  function uiConfig(){return root.RESEARCH_UI || {};}
+  function targetRepository(){
+    const value = String(uiConfig().repository_url || "");
+    if (!/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/?$/.test(value))
+      throw Error("A project GitHub repository must be configured for suggestion drafts.");
+    return value.replace(/\/$/, "");
+  }
   const CATEGORIES={
     math:"Mathematical or wording error",citation:"Incorrect or missing citation",
     wrongLink:"Incorrect or unnecessary definition link",
@@ -44,7 +49,7 @@
           "\n- Label: "+oneLine(d.definitionVariantLabel,180));
         if(pathValid(d.definitionVariantPath)){
           parts.push("## Formulation source file",
-            "https://github.com/Zengez/mathDef/blob/main/"+d.definitionVariantPath);
+            targetRepository()+"/blob/main/"+d.definitionVariantPath);
         }
       }
       if(d.linkFormulationKey){
@@ -59,18 +64,30 @@
           "\n- Matched phrase: "+(oneLine(d.linkPhrase,140)||"_Not available_"));
       }
       if(pathValid(d.definitionPath)){
-        parts.push("## Definition source file","https://github.com/Zengez/mathDef/blob/main/"+d.definitionPath);
+        parts.push("## Definition source file",targetRepository()+"/blob/main/"+d.definitionPath);
       }
+    }
+    if(d.stage){
+      title = "["+oneLine(d.stage,70)+"] "+title;
+      const preview=String(d.previewUrl||"");
+      parts.push("## Independent research preview",
+        "- Project: "+oneLine(d.projectName,120)+
+        "\n- Stage: "+oneLine(d.stage,120)+
+        (preview.startsWith("https://") ? "\n- Preview URL: "+oneLine(preview,500) : "")+
+        "\n- This refers to the independently reconstructed content, NOT to the original production database.");
     }
     parts.push("## Reference (optional)",ref||"_Not provided_");
     parts.push("## Additional public attribution",
       (d.consent&&oneLine(d.attribution,100))||"_No additional public name requested; GitHub automatically identifies the issue author._");
-    parts.push("---","_Proposed via mathDef. This report does not automatically change published definitions or links._");
+    parts.push("---","_Draft suggestion only. No original or reconstructed content is changed by submission._");
     return {title,body:parts.join("\n\n")};
   }
   function issueUrl(d){
     const issue=buildIssue(d);
-    return BASE+"?title="+encodeURIComponent(issue.title)+"&body="+encodeURIComponent(issue.body);
+    const base=String(uiConfig().feedback_issue_url || targetRepository()+"/issues/new");
+    if(!/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/issues\/new$/.test(base))
+      throw Error("Invalid configured suggestion destination.");
+    return base+"?title="+encodeURIComponent(issue.title)+"&body="+encodeURIComponent(issue.body);
   }
   function init(lookup){
     const get=(id)=>document.getElementById(id), dlg=get("feedback-dialog"), form=get("feedback-form");
@@ -86,7 +103,10 @@
     function start(kind,id,link,formulationKey){
       const d=kind==="correction"?lookup(id):null;
       if(kind==="correction"&&!d)return;
-      context={kind};
+      const config=uiConfig();
+      context={kind, stage:config.stage || "", projectName:config.project_name || "",
+        previewUrl: (typeof window!=="undefined" && /^https:\/\//.test(window.location.href))
+          ? window.location.href : ""};
       if(d)Object.assign(context,{definitionId:d.id,definitionTerm:d.term,definitionPath:d.path});
       const formulation=d&&formulationKey&&
         (d.formulations||[]).find(f=>f.key===formulationKey);
@@ -104,11 +124,12 @@
       fields.message.required=!adding;
       fields.term.required=adding;
       fields.category.value=link?"wrongLink":"math";
-      get("feedback-context").textContent=adding
-        ?"Request a mathematical term that is not yet in the collection; a definition is optional."
-        :"Target: "+d.term+" ["+d.id+"]"+
-          (formulation?" | Formulation: "+formulation.label:"")+
-          (link?" | Link: "+link.linkSourceTerm+" → "+link.linkTargetTerm:"");
+      get("feedback-context").textContent=(context.stage?context.stage+" · ":"")+
+        (adding
+          ? "Request a term that is not yet in this independent collection; a definition is optional."
+          : "Target: "+d.term+" ["+d.id+"]"+
+            (formulation?" | Formulation: "+formulation.label:"")+
+            (link?" | Link: "+link.linkSourceTerm+" → "+link.linkTargetTerm:""));
       if(!dlg.open)dlg.showModal();
       (adding?fields.term:fields.category).focus();
     }
