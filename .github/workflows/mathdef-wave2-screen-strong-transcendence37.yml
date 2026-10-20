@@ -1,0 +1,113 @@
+name: Screen source-scoped Stacks 10.123.7 strong transcendence
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-screen-strong-transcendence37.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh committed independent research state
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile and run full isolated research tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Require independently verified Stacks 00PZ observation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("research_pipeline/experiments/reconstruction-v2-independent/state/wave2_foundations_batch_36.json")
+          assert p.is_file(), "Direct Stacks 10.123.7 source intake not committed"
+          j=json.loads(p.read_text())
+          assert j["source_term_records"]==377
+          assert j["source_observations"]==800
+          assert j["zero_divisor_sensitive_coefficient_condition_preserved"]
+          assert j["new_mathematical_meanings_screened"]==0
+          PY
+      - name: Screen one direct-source mathematical definition and version the old 491-review ledger
+        run: |
+          python -m research_pipeline.engine.wave2_screen_strong_transcendence37 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Rebuild the 377-term coverage summary with updated meaning screen count
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify all historical mathematical decisions, frozen lineage, and direct source text
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          frozen=json.loads((old.root/"state/wave1_freeze.json").read_text())
+          assert digest(old.publication())==frozen["published_catalog_digest"]
+          assert len(old.records("relations"))==445
+          for stage,n in (("sources",9),("terms",377),("observations",800),("meanings",480),("relations",648)):
+              assert len(w.records(stage))==n,stage
+              assert not w.state(stage).get("sealed"),stage
+          previous=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_491_before_strong_transcendence37.jsonl")
+          after=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(previous)==491 and len(after)==492
+          current={r["formulation_id"]:r for r in after}
+          assert len(current)==492
+          for r in previous:
+              a=current[r["formulation_id"]]
+              assert {k:v for k,v in r.items() if k!="meaning_catalog_digest"}=={
+                     k:v for k,v in a.items() if k!="meaning_catalog_digest"}
+          assert sum(r["decision"]=="needs_review" for r in after)==1
+          assert {rid for r in after for rid in r["relation_ids"]}==set(w.records("relations"))
+          m=w.records("meanings")["meaning.wave2.foundation.strongly-transcendental-subring-element"]
+          assert m["formulations"][0]["review_state"]=="screened"
+          assert "ua_i=0" in m["formulations"][0]["text"]
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_strong_transcendence37_meaning_screen.json").read_text())
+          assert report["previous_491_formulation_reviews_preserved"]
+          assert report["previous_648_links_preserved"]
+          assert report["new_relationship_reviews_pending"]==1
+          assert report["source_scoped_zero_divisor_condition_unchanged"]
+          assert report["human_peer_verified"] is False
+          assert report["production_corpus_consulted"] is False
+          coverage=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert coverage["term_count"]==377
+          assert coverage["mathematical_candidate_meanings_screened"]==61
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent source-reviewed mathematical records and revision snapshots
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen strongly transcendental subring element and preserve 491 formulation reviews"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
