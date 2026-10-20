@@ -1,0 +1,91 @@
+name: Review independent martingale and chromatic prerequisites — Batch 82
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-martingale-chromatic-links-batch82.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  audit-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Use latest independent Wave 2 corpus
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run portable and mathDef research tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Individually review all four new formulation dependencies
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_martingale_chromatic_links_batch82 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Check frozen Wave 1, 537 historic decisions and all source-reviewed graph links
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(old.publication())==json.loads((old.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          required={"sources":14,"terms":417,"observations":852,"meanings":517,"relations":706}
+          assert {s:len(w.records(s)) for s in required}==required
+          assert not any(w.state(s).get("sealed") for s in required)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(id)==val for id,val in old.records(s).items())
+          past=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_541_before_research82.jsonl")
+          new=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          by={r["formulation_id"]:r for r in new}
+          assert len(past)==len(new)==len(by)==541
+          scoped={r["formulation_id"] for r in new if r["formulation_id"].startswith("form.wave2.research81.")}
+          assert len(scoped)==4
+          for r in past:
+            if r["formulation_id"] not in scoped:
+              assert by[r["formulation_id"]]==r
+          assert all(r["meaning_catalog_digest"]==digest(list(w.records("meanings").values())) for r in new)
+          assert {id for r in new for id in r["relation_ids"]}==set(w.records("relations"))
+          assert dict(Counter(r["decision"] for r in new))=={"linked":531,"no_supported_target":10}
+          assert len([id for id in w.records("relations") if id.startswith("rel.wave2.research82.")])==1
+          check_cycles(w.records("meanings"),w.records("relations"))
+          no=jsonl(w.root/"wave2/research82_individual_no_supported_targets.jsonl")
+          assert len(no)==3
+          info=json.loads((w.root/"state/wave2_research82_links.json").read_text())
+          assert info["old_705_relationships_preserved"]
+          assert info["three_martingale_missing_foundation_decisions"]
+          assert not info["production_corpus_used"] and not info["human_peer_verified"]
+          print(json.dumps(info,indent=2))
+          PY
+      - name: Commit only independent screened mathematical links and reviews
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Review martingale missing foundations and exact graph chromatic dependency"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
