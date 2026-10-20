@@ -1,0 +1,90 @@
+name: Intake independently researched integers and fraction fields — Batch 58
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-integer-source-batch58.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  source-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Read latest independent Wave 2 state
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test reusable research pipeline before intake
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Ingest three reviewed term sources and four independently attributed observations
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_integer_fields_source_batch58 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Preserve historical 399 source review dispositions and extend lead manifest
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Validate full source identity and frozen-wave lineage
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          frozen=json.loads((old.root/"state/wave1_freeze.json").read_text())
+          assert digest(old.publication())==frozen["published_catalog_digest"]
+          expected={"sources":14,"terms":402,"observations":826,"meanings":500,"relations":676}
+          assert {s:len(w.records(s)) for s in expected}==expected
+          assert not any(w.state(s).get("sealed") for s in expected)
+          for stage in ("sources","terms","observations","relations"):
+            assert all(w.records(stage).get(k)==v for k,v in old.records(stage).items())
+          old_ledger=jsonl(w.root/"state/wave2_term_coverage_snapshot_399.jsonl")
+          new_ledger=jsonl(w.root/"state/wave2_term_coverage.jsonl")
+          current={x["term_id"]:x for x in new_ledger}
+          assert len(old_ledger)==399 and len(new_ledger)==402 and len(current)==402
+          assert all(current[x["term_id"]]==x for x in old_ledger)
+          prior_reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(prior_reviews)==512
+          assert len(w.records("relations"))==676
+          for record in ("obs.wave2.integer58.fraction-field-integral-domain",
+                         "obs.wave2.integer58.fraction-field-universal"):
+            assert w.records("observations")[record]["term_id"]=="term.wave2.integer58.fraction-field-integral-domain"
+          report=json.loads((w.root/"state/wave2_integer_source_batch58.json").read_text())
+          assert report["two_distinct_fraction_field_formulations_sourced"]
+          assert report["meaning_formulations_screened"]==0 and report["links_screened"]==0
+          assert not report["production_corpus_used"] and not report["human_peer_verified"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent research records and audit snapshots
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Intake independent integer, integer-ring and dual fraction-field source evidence"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
