@@ -220,8 +220,7 @@ def run(root):
     return report
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--workspace",type=Path(ROOT))
-    p.add_argument("--workspace-path",type=Path,default=None)
+    p.add_argument("--workspace",type=Path,default=Path(ROOT))
     a=p.parse_args()
-    print(json.dumps(run(a.workspace_path or a.workspace),indent=2))
+    print(json.dumps(run(a.workspace),indent=2))
 if __name__=="__main__":main()
