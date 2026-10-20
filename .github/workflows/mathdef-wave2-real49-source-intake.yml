@@ -1,0 +1,89 @@
+name: Register independently reviewed rational real-number construction sources and evidence
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-real49-source-intake.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  review-and-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Read latest independent research state only
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run portable and mathDef isolated tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Ingest five locator-only sources and seven individual mathematical source observations
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_real_constructions_batch49             --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Reconcile added source-lead identities without rewriting earlier decisions
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage             --wave1 research_pipeline/experiments/reconstruction-v1-recovery             --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify untouched frozen first wave, review lineage, source limitations, and zero premature meaning promotions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from research_pipeline.engine.core import Workspace, digest, jsonl
+          old=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((old.root/"state/wave1_freeze.json").read_text())
+          assert digest(old.publication()) == freeze["published_catalog_digest"]
+          expect={"sources":14,"terms":395,"observations":818,"meanings":490,"relations":664}
+          assert {stage:len(w.records(stage)) for stage in expect}==expect
+          for stage in ("sources","terms","observations","relations"):
+            assert all(w.records(stage).get(k)==v for k,v in old.records(stage).items()),stage
+          assert not any(w.state(stage).get("sealed") for stage in expect)
+          oldledger=jsonl(w.root/"state/wave2_term_coverage_snapshot_388.jsonl")
+          newledger=jsonl(w.root/"state/wave2_term_coverage.jsonl")
+          assert len(oldledger)==388 and len(newledger)==395
+          indexed={r["term_id"]:r for r in newledger}
+          assert all(indexed[r["term_id"]]==r for r in oldledger)
+          assert {r["source_id"] for r in newledger if r["term_id"].startswith("term.wave2.real49.")}<=set(w.records("sources"))
+          old_reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(old_reviews)==502
+          assert len(w.records("meanings"))==490 and len(w.records("relations"))==664
+          assert all(s["rights"]=="locator_only" and s["access"]=="free" for k,s in w.records("sources").items() if k in (
+              "src.cornell_math304","src.csusm_aitken378","src.libretexts_sloughter",
+              "src.hmc_math_fun_facts","src.cmu_gautam_269"))
+          report=json.loads((w.root/"state/wave2_real_source_intake_batch49.json").read_text())
+          assert report["meaning_formulations_screened"]==0 and report["new_links_screened"]==0
+          assert report["deferred_theorem"]=="review.wave2.real48.models-isomorphic"
+          assert report["independent_research_only"] and not report["human_peer_verified"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit exclusively independent research evidence and checkpointed ledgers
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Admit independently vetted classical real constructions as source evidence, not definitions"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
