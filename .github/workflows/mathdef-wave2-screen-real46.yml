@@ -1,0 +1,100 @@
+name: Screen three axiomatic real ordered-field mathematical foundations
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-screen-real46.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  meanings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Check out newest independent source evidence
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile every pipeline module and run research regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Screen three source-scoped ordered real field and Dedekind meanings
+        run: |
+          python -m research_pipeline.engine.wave2_screen_real_meanings46 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Refresh 388-term coverage summary without mutating source access records
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify all 499 earlier mathematical reviews source scopes and frozen Wave 1
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          frozen=json.loads((one.root/"state/wave1_freeze.json").read_text())
+          assert digest(one.publication())==frozen["published_catalog_digest"]
+          assert len(w.records("sources"))==9 and len(w.records("terms"))==388
+          assert len(w.records("observations"))==811 and len(w.records("meanings"))==490
+          assert len(w.records("relations"))==659
+          assert not any(w.state(s).get("sealed") for s in ("sources","terms","observations","meanings","relations"))
+          for stage in ("sources","terms","observations","relations"):
+              assert all(w.records(stage).get(k)==v for k,v in one.records(stage).items())
+          prior=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_499_before_real46.jsonl")
+          current=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(prior)==499 and len(current)==502
+          by={r["formulation_id"]:r for r in current}
+          assert len(by)==502
+          for row in prior:
+              r=by[row["formulation_id"]]
+              assert {k:v for k,v in r.items() if k!="meaning_catalog_digest"}=={
+                k:v for k,v in row.items() if k!="meaning_catalog_digest"}
+          assert Counter(x["decision"] for x in current)=={"linked":494,"no_supported_target":5,"needs_review":3}
+          assert {rid for row in current for rid in row["relation_ids"]}==set(w.records("relations"))
+          check_cycles(w.records("meanings"),w.records("relations"))
+          for slug in ("totally-ordered-field","dedekind-supremum","complete-ordered-real-field"):
+              assert w.records("meanings")["meaning.wave2.real45."+slug]["formulations"][0]["review_state"]=="screened"
+          report=json.loads((w.root/"state/wave2_real_meaning_screen_batch_46.json").read_text())
+          assert report["screened_meanings"]==490 and report["reviewed_formulations"]==502
+          assert report["ordered_field_not_assumed_complete"]
+          assert report["circular_real_number_paraphrase_excluded"]
+          assert report["dedekind_completeness_not_equated_to_metric_completeness"]
+          assert report["human_peer_verified"] is False and report["production_corpus_consulted"] is False
+          coverage=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert coverage["term_count"]==388 and coverage["mathematical_candidate_meanings_screened"]==71
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent meaning reviews with 499 preserved historical decisions
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen three complete ordered real-field meanings with preservation of 499 prior reviews"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
