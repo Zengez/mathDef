@@ -1,0 +1,103 @@
+name: Recover source-only Stacks uniformizer from previously unproductive theorem section
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-source-uniformizer30.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Load latest committed independent Wave 2 checkpoint
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile modules and run independent regression suite
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Recover only directly read Stacks uniformizer evidence
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_batch30_uniformizer \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Recompute 374-term per-source coverage and snapshot prior 373 decisions
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Check exact history, independent source provenance and frozen Wave 1
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,digest,jsonl
+          frozen=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          work=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          freeze=json.loads((frozen.root/"state/wave1_freeze.json").read_text())
+          assert digest(frozen.publication())==freeze["published_catalog_digest"]
+          for stage,n in (("sources",9),("terms",374),("observations",797),("meanings",476),("relations",640)):
+              assert len(work.records(stage))==n,stage
+              assert not work.state(stage).get("sealed"),stage
+          for stage in ("sources","terms","observations","relations"):
+              assert all(work.records(stage).get(k)==v for k,v in frozen.records(stage).items()),stage
+          now=jsonl(work.root/"state/wave2_term_coverage.jsonl")
+          old=jsonl(work.root/"state/wave2_term_coverage_snapshot_373.jsonl")
+          assert len(now)==374 and len(old)==373
+          index={x["term_id"]:x for x in now}
+          assert len(index)==374
+          assert all(index.get(x["term_id"])==x for x in old)
+          uniformizer=work.records("observations")["obs.wave2.foundation30.uniformizer-dvr"]
+          assert uniformizer["term_id"]=="term.wave2.foundation30.uniformizer-dvr"
+          assert uniformizer["source_id"]=="src.stacks"
+          assert uniformizer["locator"]=="https://stacks.math.columbia.edu/tag/00P7"
+          assert uniformizer["record_kind"]=="paraphrase" and uniformizer["human_verified"] is False
+          new=jsonl(work.root/"wave2/foundation_source_discovery_batch_30.jsonl")
+          assert len(new)==1 and new[0]["meaning_screened"] is False
+          coverage=json.loads((work.root/"state/wave2_term_coverage.json").read_text())
+          assert coverage["term_count"]==374
+          assert coverage["source_read_new_candidates"]==48
+          assert coverage["new_term_review_coverage"]==56
+          assert coverage["new_source_locators_unverified"]==8
+          assert coverage["previous_373_term_review_ledger_archived"] is True
+          assert coverage["complete_for_wave2_sealing"] is False
+          reviews=jsonl(work.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==488
+          assert {rid for r in reviews for rid in r["relation_ids"]}==set(work.records("relations"))
+          report=json.loads((work.root/"state/wave2_foundations_batch_30.json").read_text())
+          assert report["source_headline_not_falsely_defined"]
+          assert report["original_unproductive_source_review_preserved"]
+          assert report["new_meanings_screened"]==0 and report["new_links_screened"]==0
+          assert report["human_peer_verified"] is False
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit exclusively independent Wave 2 source evidence and historical source ledger
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then echo "Idempotent source intake"; exit 0; fi
+          git commit -m "Recover uniformizer source meaning candidate and preserve 373 original term reviews"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
