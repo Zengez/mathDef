@@ -13,6 +13,7 @@ from pathlib import Path
 
 from research_pipeline.adapters.mathdef.preview import build
 from research_pipeline.engine.resume_checkpoint import snapshot
+from research_pipeline.ui.renderer import render as render_reference_ui
 
 WAVE1 = Path("research_pipeline/experiments/reconstruction-v1-recovery")
 WAVE2 = Path("research_pipeline/experiments/reconstruction-v2-independent")
@@ -34,6 +35,21 @@ def render(repo: Path, site: Path) -> dict:
 
     wave1 = build(repo / WAVE1, output=site / "wave1")
     wave2 = build(repo / WAVE2, draft=True, output=site / "wave2")
+
+    # The legacy experiment viewer remains available in its own workspace.
+    # Here, only the generated *independent preview catalogs* are converted
+    # to the shared reference UI. No production site index is consulted.
+    brand = repo / "research_pipeline/adapters/mathdef/ui_branding.json"
+    ui1 = render_reference_ui(
+        site / "wave1/catalog.json", brand, site / "wave1",
+        "Wave 1 — frozen baseline",
+        "An independently reconstructed, frozen first wave. Research-screened, not human verified."
+    )
+    ui2 = render_reference_ui(
+        site / "wave2/catalog.json", brand, site / "wave2",
+        "Wave 2 — evolving research draft",
+        "Independently sourced work in progress. Unsealed, incomplete, and not human verified."
+    )
 
     def card(href, title, description, count):
         return ('<a class="stage" href="' + href + '/"><h2>' +
@@ -81,6 +97,7 @@ Both are presented separately from the original mathDef content.</p>
     site.mkdir(parents=True, exist_ok=True)
     (site / "index.html").write_text(page, encoding="utf-8")
     return {"wave1": wave1, "wave2": wave2,
+            "reference_ui": {"wave1": ui1, "wave2": ui2},
             "validation": {"frozen_wave1": True, "wave2_unsealed": True},
             "site": str(site)}
 
