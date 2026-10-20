@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "da7d40a3d4b412d4b387368521c819a92748d2f72590bd0e62b360f1ee4f0dbf"
+    "resume_plan_sha256": "1a44ca03771a40bf0a10be6aef406240e33ed4dad9d437490933f9f63f77004e"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -13,41 +13,42 @@
     "original_priority_firstpass_records": 192,
     "production_corpus_used": false,
     "review_dispositions": {
-      "linked": 507,
+      "linked": 511,
       "no_supported_target": 5
     },
-    "reviewed_formulations": 512,
-    "screened_contextual_meanings": 500,
-    "screened_relationships": 676,
-    "source_observations": 822,
+    "reviewed_formulations": 516,
+    "screened_contextual_meanings": 503,
+    "screened_relationships": 681,
+    "source_observations": 826,
     "sources": 14,
-    "terms": 399
+    "terms": 402
   },
   "known_blockers": [
     "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
     "Twenty-seven original PlanetMath source pages remain access-restricted/unread.",
     "Original 192 priority tasks have initial evidence only; broader definition and variant discovery is not complete.",
     "All five independent Wave 2 stages remain unsealed, and original production mathDef comparisons are forbidden until after the independent freeze.",
-    "Integer ring Z and its general fraction-field construction are researched in Batch 57 but not yet screened. Rational-number formulation retains a justified no-supported-target status pending separate source/meaning review of these foundations.",
     "Arithmetic on Cauchy quotient classes and their ordered-field laws still require theorem-level well-definedness and completeness proofs; definition screening does not claim those proofs completed.",
-    "The union-of-cuts supremum result and complete ordered-field uniqueness are theorem statements, not new mathematical definitions, and remain excluded from meaning counts."
+    "The union-of-cuts supremum result and complete ordered-field uniqueness are theorem statements, not new mathematical definitions, and remain excluded from meaning counts.",
+    "The integer-construction formulation still lacks individually screened natural-number, equivalence-class and quotient-set foundations. The explicit no-supported-target decision is valid until these are separately sourced; do not use rational/real-number constructions as backward dependencies.",
+    "The coverage validator was generalized to allow more than one independently sourced observation per term; variant-specific source locator checks must use the specific formulation, not the first sibling form."
   ],
-  "next_action": "Batches 54–56 source/screen/link work completed: 14 sources, 399 source terms, 822 observations, 500 individually screened meanings, 512 reviewed formulations and 676 noncircular screened prerequisite links. Next begin with the three independently researched but NOT stage-ingested Batch 57 candidates (integer construction, ring of integers, fraction field) in wave2/integer_fraction_field_source_review_batch57_2026-10-20.jsonl. Check source assumptions and rights (ProofWiki permitted; Stacks locator-only), then use bounded source ingestion, formulation screening with 512-review lineage preservation, and explicit source-linked prerequisites. Do not duplicate completed 54–56 or merge field-of-fractions with total quotient rings for rings with zero divisors. Continue broader independent source-variant research after that.",
+  "next_action": "Verified Wave 2 Batches 58–60: 14 sources, 402 independent source terms, 826 observations, 503 contextual meanings, 516 screened formulations with complete individual dispositions, and 681 source-screened, cycle-free prerequisites. 59 introduced the concrete fraction-pairs construction and an independently cited equivalent universal-property fraction-field formulation under ONE meaning. 60 preserved 676 old links and explicitly revised the rational-number former no-supported-target decision by recording links to the integer ring and general fraction field. NEXT: independently research and admit separately sourced natural numbers, equivalence relations and quotient sets as foundational meanings, while keeping the new integer construction no-supported-target decision until valid independent foundations exist. Then broaden mathematical variant/source discovery beyond the current rational real-number construction focus; original mathDef content remains strictly excluded until freeze and comparison.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
-      "rows": 500,
-      "sha256": "9ab5e7a53cc590b4407c5363c2b1cd5b7fb84b4ad11a1d71a8c35868dae1ff8e"
+      "rows": 503,
+      "sha256": "1f7f9052bb6bd0b1cc495a9adb9f875d1cd18d38c0aefef0ec81b20d0b80c54a"
     },
     "current_link_stage": {
-      "record_digest": "7d55a735391887156ca1811ad692a2dbd4cd52086aef304c9d10ef43119382ba",
+      "record_digest": "cc54be11f0b9ea5191f33740252ded0397cbb2e33221af41d3c7e3736ed058b0",
       "sealed": false,
-      "sha256": "9e18d189e4a58608cb89f29c9c6d30e73921a3009d4c30304bed536cb2d72294",
-      "total": 676
+      "sha256": "4d4b13b508112c20e75c71f774f79a4084bc8d2e447e56171d185ace0351b00d",
+      "total": 681
     },
     "definition_links": {
-      "rows": 676,
-      "sha256": "f6bca23b71fe4d17b15d1adc02a168e27d64de5d2058c40320c729cf49f0ca66"
+      "rows": 681,
+      "sha256": "ff2324a6287282ab79b6a64ff11dc32788c1ef4d9ab46925d249cc58c218b559"
     },
     "firstpass_priorities": {
       "rows": 192,
@@ -55,23 +56,23 @@
     },
     "individual_link_reviews": {
       "decisions": {
-        "linked": 507,
+        "linked": 511,
         "no_supported_target": 5
       },
-      "rows": 512,
-      "sha256": "0cb28e398c900c17f4114f2438cfba0cc4c5540dbeb2876355868f781e31fb3c"
+      "rows": 516,
+      "sha256": "65e3e55b7d5bc509aee2a747a987ecbcf66e18865b1fd835dbf393e05e13e972"
     },
     "source_observations": {
-      "rows": 822,
-      "sha256": "a683f58e0ee4ced626c6fd4fc1ba70e2448cf8a6004aeaba74bbef5032b18e24"
+      "rows": 826,
+      "sha256": "241273a1533c0048c0441777ecf8918a6d55ac1202ee3d51c0aaaf68cc0b74e2"
     },
     "sources": {
       "rows": 14,
       "sha256": "b122833748dff90cb025f4dd82393fdf428f2bf339531675280eb49312c0a38b"
     },
     "term_headings": {
-      "rows": 399,
-      "sha256": "b500c4ed2e9d66e8c6a0d2114ff07bb0220ebe9dbaf70d6009e02e911ab47f43"
+      "rows": 402,
+      "sha256": "47dea7b907ade03e02825d9bd0258d02b3f847556afb8b7c634944797709fa71"
     },
     "wave2_lineage": {
       "first_wave_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
@@ -85,7 +86,8 @@
     "If repository state and the snapshot digests match, trust already committed mathematical/source review decisions. Do not redo completed research.",
     "If the data moved beyond the snapshot, refresh the adapter-driven snapshot and verify only changed records/workflows.",
     "Stop around 12-14 minutes of active work with a concise handoff; do not wait for a timeout.",
-    "Do not revisit completed Batches 54–56 absent new contradictory evidence. Only rational-number no-supported-target remains in this foundation family, and its supporting Batch 57 candidate research is committed."
+    "Do not rerun Batches 58–60 absent new contradictory evidence. The initial failures were resolved before any stage commits; successful final workflow runs are the authoritative state.",
+    "The next research should break out of recursive rational foundations once sufficient basic targets are sourced; substantive coverage and alternate variants across the whole subject remain incomplete."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -95,8 +97,8 @@
       "sha256": "aeebc436b42634812ad521a742d530cf44e2f342616b0f46e6c1b3da10d7c6ec"
     },
     "wave2_research_support": {
-      "files": 413,
-      "sha256": "578e9000840cecb3769952d011b0814f93ee8fec66d1080e1a8d6445a313af3c"
+      "files": 431,
+      "sha256": "765b2a3a06abd43b760e20cea766affe27bd7579394dc56efa11c35edc9b08ef"
     }
   },
   "verification_limitations": [
@@ -109,18 +111,18 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 56 source-linked rational prerequisites and explicit revision to former Cauchy no-supported-target decision",
-      "run_id": 39470487275
+      "purpose": "Batch 60 five source-specific integer/fraction-field prerequisites and explicit rational-number amendment; all 516 formulation reviews retained",
+      "run_id": 39483352424
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 55 rational foundations screen preserving 508 historical review decisions",
-      "run_id": 39469958009
+      "purpose": "Batch 59 independently reviewed integer and two fraction-field definition variants",
+      "run_id": 39482748461
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch 54 source terms/observations and archived 395-term source evidence",
-      "run_id": 39469612496
+      "purpose": "Batch 58 3 source-term and 4 source-observation intake; multiple sources for one term without changing historical ledgers",
+      "run_id": 39482412057
     }
   ]
 }
