@@ -1,0 +1,96 @@
+name: Screen independent martingale and chromatic-number meanings — Batch 81
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-martingale-chromatic-meanings-batch81.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  screen-meanings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Use latest independent Wave 2 research main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run isolated reusable pipeline regression
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Individually screen four sourced formulations and three independent contextual meanings
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_martingale_chromatic_meanings_batch81 \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Reconcile all historic source/term review rows
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Validate frozen Wave 1 and complete formulation review lineage
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          frozen=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(frozen.publication())==json.loads((frozen.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":14,"terms":417,"observations":852,"meanings":517,"relations":705}
+          assert {s:len(w.records(s)) for s in expected}==expected
+          assert not any(w.state(s).get("sealed") for s in expected)
+          for s in ("sources","terms","observations","relations"):
+            assert all(w.records(s).get(k)==v for k,v in frozen.records(s).items())
+          prior=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_537_before_research81.jsonl")
+          current=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          index={r["formulation_id"]:r for r in current}
+          assert len(prior)==537 and len(current)==len(index)==541
+          for r in prior:
+            new=index[r["formulation_id"]]
+            assert all(new.get(k)==v for k,v in r.items() if k!="meaning_catalog_digest")
+          ms=w.records("meanings")
+          m1=ms["meaning.wave2.research81.martingale-discrete"]
+          m2=ms["meaning.wave2.research81.martingale-continuous-index"]
+          assert m1["term_group_id"]==m2["term_group_id"]
+          assert len(m1["formulations"])==2 and len(m2["formulations"])==1
+          assert len(ms["meaning.wave2.research81.chromatic-proper-coloring"]["formulations"])==1
+          assert all(r["meaning_catalog_digest"]==digest(list(ms.values())) for r in current)
+          assert {id for row in current for id in row["relation_ids"]}==set(w.records("relations"))
+          assert dict(Counter(r["decision"] for r in current))=={"linked":530,"no_supported_target":7,"needs_review":4}
+          check_cycles(ms,w.records("relations"))
+          report=json.loads((w.root/"state/wave2_research81_meanings.json").read_text())
+          assert report["old_537_review_decisions_preserved"]
+          assert report["chromatic_polynomial_formulation_held_for_new_source"]
+          assert not report["production_corpus_used"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent mathematical meanings and historical audit
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen martingale time-index contexts and graph proper-coloring meaning with 537 old decisions"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
