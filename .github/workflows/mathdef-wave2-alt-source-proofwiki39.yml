@@ -1,0 +1,96 @@
+name: Independently source four restricted-origin mathematical concepts
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-alt-source-proofwiki39.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Refresh latest committed independent research
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile research scripts and pass isolated regression suite
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -v
+      - name: Ingest only four approved independent ProofWiki source paraphrases
+        run: |
+          python -m research_pipeline.engine.wave2_foundations_batch39_alt_sources \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Extend exact source coverage to 381 without rewriting 377 previous reviews
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage \
+            --wave1 research_pipeline/experiments/reconstruction-v1-recovery \
+            --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify source provenance, mathematical scope, all previous data and frozen Wave 1
+        run: |
+          python - <<'PY'
+          import json
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          frozen=json.loads((one.root/"state/wave1_freeze.json").read_text())
+          assert digest(one.publication())==frozen["published_catalog_digest"]
+          for stage,n in (("sources",9),("terms",381),("observations",804),("meanings",480),("relations",650)):
+              assert len(w.records(stage))==n,stage
+              assert not w.state(stage).get("sealed"),stage
+          for stage in ("sources","terms","observations","relations"):
+              assert all(w.records(stage).get(k)==v for k,v in one.records(stage).items()),stage
+          original=jsonl(w.root/"state/wave2_term_coverage_snapshot_377.jsonl")
+          new=jsonl(w.root/"state/wave2_term_coverage.jsonl")
+          assert len(original)==377 and len(new)==381
+          idx={r["term_id"]:r for r in new}
+          assert all(idx.get(r["term_id"])==r for r in original)
+          summary=json.loads((w.root/"state/wave2_term_coverage.json").read_text())
+          assert summary["term_count"]==381
+          assert summary["source_read_new_candidates"]==55
+          assert summary["new_term_review_coverage"]==63
+          assert summary["new_source_locators_unverified"]==8
+          assert summary["mathematical_candidate_meanings_screened"]==61
+          assert summary["complete_for_wave2_sealing"] is False
+          source=jsonl(w.root/"wave2/foundation_source_discovery_batch_39.jsonl")
+          assert len(source)==4
+          assert all(r["source_id"]=="src.proofwiki" and r["blocked_original_source_not_verified"] and r["meaning_screened"] is False for r in source)
+          report=json.loads((w.root/"state/wave2_foundations_batch_39.json").read_text())
+          assert report["original_planetmath_pages_remain_unverified"]==27
+          assert report["new_meanings_screened"]==0
+          assert report["new_links_screened"]==0
+          assert report["human_peer_verified"] is False
+          assert report["original_production_mathdef_consulted"] is False
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independently sourced observation and audit files
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record independent ProofWiki alternatives without claiming PlanetMath verification"
+          for retry in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
