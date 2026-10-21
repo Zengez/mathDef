@@ -38,12 +38,26 @@ def plan(workspace, profile):
     targets.sort(key=lambda x: (-x["number_of_affected_relations"],
                                 x["target_query_normalized"]))
     visited = set()
+    completed = set(config.get("completed_topic_ids", []))
+    # Future package metadata can supply covered topic IDs without
+    # repeatedly editing the project adapter. Only APPLIED packages count.
+    applied = root / "population" / "applied"
+    inbox = root / "population" / "inbox"
+    if applied.is_dir():
+        for receipt in applied.glob("*.json"):
+            record = read_json(receipt)
+            pkg = inbox / (record.get("id", "") + ".json")
+            if pkg.is_file():
+                committed = read_json(pkg)
+                completed.update(committed.get("research_topic_ids", []))
     breadth = []
     for item in config["breadth_topics"]:
         key = item.get("id")
         if not isinstance(key, str) or not key or key in visited or not item.get("research_prompt"):
             raise PipelineError("Each breadth topic needs a unique id and research_prompt")
         visited.add(key)
+        if key in completed:
+            continue
         breadth.append({"id": key, "research_prompt": item["research_prompt"],
                         "priority": item.get("priority", "normal"),
                         "source_review_required": True})
@@ -51,6 +65,7 @@ def plan(workspace, profile):
         "schema_version": 1,
         "strategy": "balanced independent breadth with bounded prerequisite lookahead",
         "breadth_candidates": breadth,
+        "completed_breadth_topics": sorted(completed),
         "deferred_target_clusters": targets,
         "suggested_next_package": {
             "breadth_topic_candidates": [r["id"] for r in breadth[:max(
