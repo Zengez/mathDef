@@ -1,5 +1,46 @@
 # Wave 2 — source-free semantic reference scanning pilot (2026-10-21)
 
+## Most recent verified continuation — batch 016
+
+This section supersedes the older 160-completed handoff below.
+The live graph following GitHub Action 39689345544 reports **168 / 659**
+complete source-free semantic scans, with **491** remaining preliminary
+lexical-only forms. All 659 are still structurally Open.
+
+The successfully committed and applied
+`dependency_graph/inbox/semantic-existing-initial-016.json` contains
+eight full source-free scans, covering topological modules and rings,
+scheme gluing, closed subschemes of affine schemes, and the five
+generalization/specialization relation and map formulations through
+`specialization-topological` (the next entry is
+`specializing-continuous-map`). The graph Action
+[39689345544](https://github.com/Zengez/mathDef/actions/runs/39689345544)
+finished SUCCESS; matching `applied/semantic-existing-initial-016.json`
+receipt is committed and verified. Isolated pipeline tests also passed.
+
+Verified graph summary: 611 contextual meanings, 659 total formulations,
+168 complete, 491 incomplete, 0 unscanned; 258 unassigned occurrence
+records, 323 ambiguous preliminary lexical occurrences, 13 previously
+identified candidate records with 12 unresolved, 10 append-only
+correction events; phase `scan_and_link_existing` and research gate
+closed. No external source research, additional definitions, promotion,
+human mathematical certification, original production-corpus comparison,
+or unrelated breadth work occurred.
+
+A **follow-up batch 017 is not applied or committed**. Attempts to create
+its new inbox file were rejected by the GitHub write integration before
+any data changed. Those attempted scans do not count toward the total.
+The next worklist item remains
+`form.672a4a502273760f.specializing-continuous-map`,
+followed by the Grothendieck fibration, strongly-cartesian arrow, and
+universal exact sequence formulations. Resume through the ordinary
+`inbox` contract and verify the receipt before claiming their completion.
+If new-file GitHub writes remain blocked, inspect the active connection
+rather than bypassing access controls or modifying immutable scan nodes.
+
+---
+
+
 ## Newest verified continuation — Batches 012–015 (160/659 complete)
 
 **This section supersedes older 78- and 126-scan counts below.** Direct
