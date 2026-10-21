@@ -7,16 +7,16 @@
     "screened_formulations": 639,
     "provisional_formulations": 20,
     "scan_complete": 0,
-    "scan_incomplete": 120,
-    "unscanned": 539,
+    "scan_incomplete": 160,
+    "unscanned": 499,
     "open": 659,
     "closed": 0,
     "missing_candidates": 5,
     "unresolved_missing_candidates": 5,
     "missing_occurrences": 5,
-    "ambiguous_occurrences": 6,
+    "ambiguous_occurrences": 32,
     "seed_relations": 891,
-    "scan_occurrences": 79,
+    "scan_occurrences": 121,
     "scan_amendment_event_count": 0,
     "automatic_completion_is_not_certification": true,
     "breadth_expansion": "on_hold"
@@ -1229,38 +1229,42 @@
       "version_sha256": "703d86e9211c2742ea41b0ba0bd784f9b95c506839d5248d6fcb3298b9e84fd7"
     },
     "form.448c7ba2c12aceac.monomorphism-of-schemes": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.9f70b47b3dc2daa73cc6",
+        "ambiguous:occ.39dcc5235ee909bfebea",
         "scan_incomplete"
       ],
       "version_sha256": "ebd3332bcbbc1a4becbaf83cc3a54bdcaa2904906973faac2d7d60242ce1926f"
     },
     "form.44fae2299dfd2f0a.formally-unramified-map": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.4d2e8b47a8dc81f0da25",
         "scan_incomplete"
       ],
       "version_sha256": "872bcc2ff2dcc8a0940dd95e7f3aef1d2c7d4f9dbe25bacce29b62b8afd594a6"
     },
     "form.44fae2299dfd2f0a.formally-unramified-differential-test": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.c06527e1920bc26bcf8c",
         "scan_incomplete"
       ],
       "version_sha256": "5ec3132ca10b99b93a155d4a60250bc83dd19bae79e910ffb132575ada6d1e64"
     },
     "form.471f985f2fbe7b49.splitting-field": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1269,18 +1273,19 @@
       "version_sha256": "f9c3cc2c2c2c5c9afc7596f431f9af9eba3eadf807b7d08a463bd53a96681cee"
     },
     "form.4777518984e96a98.finite-field-extension": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.02ba07907f5b9df69945",
         "scan_incomplete"
       ],
       "version_sha256": "98d0a8a3bf208cd720866bbb68e244e428f16760bde74df9173947e9b99caa04"
     },
     "form.4b6af5c19e4a290c.smooth-ring-map": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1289,8 +1294,8 @@
       "version_sha256": "9858695e8beed77f60af4ee282a04b997a8f797ca7103202fb46ace0d45bbde8"
     },
     "form.4b9834a2990971e9.finite-colimit": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1299,8 +1304,8 @@
       "version_sha256": "128c412237252437aa0311c11243289df891d3b8b39860c8df5497f144dc5669"
     },
     "form.4b9834a2990971e9.finite-limit": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1309,18 +1314,19 @@
       "version_sha256": "62c503d9b3eb3b9ca650209fc2c11fe37cb8871c3ffda58b11e23c4b91bda25e"
     },
     "form.4bf98f05c3f5ea58.primitive-element": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.c85cfc3af13361a3b0c0",
         "scan_incomplete"
       ],
       "version_sha256": "219d7b739ebcc18ba0592e514653fd68b6a8cb9c53094c298deea74d0f93fd9c"
     },
     "form.4c373b6c62943620.associated-prime": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1329,18 +1335,20 @@
       "version_sha256": "fa746ce9e3fd4554395be8ff38c822c5b431b5e6f9282ed8958c9f61fb2bb20c"
     },
     "form.4c7d59ba7058613b.affine-scheme": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.737af52c6a0c225d51b1",
+        "ambiguous:occ.2b3f9b088d157124159b",
         "scan_incomplete"
       ],
       "version_sha256": "72c7183cbf94bebd830e8d379f7816fe387480fef050e0b517d50ff40377796c"
     },
     "form.4f7edb6d32334f67.local-ring-unique-maximal": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1349,8 +1357,8 @@
       "version_sha256": "5d0331628a7d0eaeb1ccd61f659b5d67c4820babc4782765fc29fb7e9c4214e9"
     },
     "form.4f7edb6d32334f67.local-ring-nonunit-ideal": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1359,38 +1367,42 @@
       "version_sha256": "45b36e5b1ba206cfee2396dd0ffa6c4bf525638989140908e61dccc15cf2461c"
     },
     "form.504ceffbd86d9488.coherent-ring": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.c5a183c05915d24b7f2f",
         "scan_incomplete"
       ],
       "version_sha256": "29f99769958cd6c3f817ef3078eb6a8bd4ee08baa0d29e964f191c55100270a0"
     },
     "form.50710e767dabd981.colimit-diagram-sets": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.c5a3ce33407729ad2a13",
         "scan_incomplete"
       ],
       "version_sha256": "1f36eaafca82b962a53a53439089bdcd8ff4c84d9e80df8fe7eadbbcf56bb429"
     },
     "form.50710e767dabd981.limit-diagram-sets": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.434e96baafe51b5a669a",
+        "ambiguous:occ.10f0f2d66e7e8e6427dc",
         "scan_incomplete"
       ],
       "version_sha256": "64997d2ac5a0adde3a52788a66d27a7c0a00a8626da40c75bd7a45f95cf0368d"
     },
     "form.50d335de00e5f11d.algebraic-extension": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1399,8 +1411,8 @@
       "version_sha256": "aed6b1eb292cb2676102d7fa12ab83fb7e9f0ef30307234b07d742e4b3fe01ce"
     },
     "form.50d335de00e5f11d.galois-extension-review": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1409,8 +1421,8 @@
       "version_sha256": "604ba90f6ca5e1c829eb9e157356a93dfce56848ce704f714ff567ea6504fd22"
     },
     "form.50d335de00e5f11d.normal-algebraic-extension": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1419,28 +1431,31 @@
       "version_sha256": "254320894f454eff5be8a09e05df72c0918f9c35602cf3db26d4cb4d0474b2bf"
     },
     "form.50d335de00e5f11d.purely-inseparable-extension-review": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.1b67217d2867631994bc",
         "scan_incomplete"
       ],
       "version_sha256": "46360fd32d4c2d8179a1a36a731005e56ff4ae639e5b642f1fd2659a3174e7de"
     },
     "form.50d335de00e5f11d.separable-algebraic-extension": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.5a79be7f46df1bdf1ca8",
+        "ambiguous:occ.431c7bb37930bfad421e",
         "scan_incomplete"
       ],
       "version_sha256": "67a83c400051043fbab019bed1d1302f7a70e9cc710a085ed82bcf3218c75049"
     },
     "form.521431d12a6a6ea2.representable-fibred-groupoid": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1449,28 +1464,32 @@
       "version_sha256": "0bc1d22d7b0a7e9f87b03404148378159955af93869081c87e3c2fa91d710922"
     },
     "form.52683cac2ccf3bad.locally-ringed-space": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.226fc29718d6952a6c92",
+        "ambiguous:occ.b88f19cb5b40f57979d4",
         "scan_incomplete"
       ],
       "version_sha256": "81d8daeded237e2303558aa3c29f7845890e8f0cea4c10fcf5fd1d169ff4d5e4"
     },
     "form.52683cac2ccf3bad.locally-ringed-space-morphism": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.97f080252828f79ce3c5",
+        "ambiguous:occ.ff1aada2ef966a6acc93",
         "scan_incomplete"
       ],
       "version_sha256": "fd600a75e5822dade61623fc0ee6651b78c6f16457bdfa61742d3b1b4ecb3cef"
     },
     "form.559efcb6f15ddc96.total-quotient-ring": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1479,8 +1498,8 @@
       "version_sha256": "f58d6cf4dc581b2bbf7a9c72e6a2b2b59d5c165a00ef0c035451d4c2b6e99be3"
     },
     "form.559efcb6f15ddc96.zerodivisor-of-ring": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1489,8 +1508,8 @@
       "version_sha256": "671d45ee06c014f7c888574813095886b2293f1be2c78b7cd8511a061aff9927"
     },
     "form.56119d315cf02fdf.two-category-over-base": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1499,18 +1518,19 @@
       "version_sha256": "b014b292cabcd7009b7551ee8e15e715156636b8b14390d05ab07c4f08fa9642"
     },
     "form.56d9781f393fa7d7.representable-functor-on-schemes": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.98a2ce93b759c13498f8",
         "scan_incomplete"
       ],
       "version_sha256": "25d9943ff609b2ffdaf47d16553d44e92bfb40c1069ca0db51fddc342ba972d1"
     },
     "form.57385eed4f89f154.exact-functor": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1519,8 +1539,8 @@
       "version_sha256": "ebdccecda32d98e2af1b8974372f618807047add436d406282f3402fe772b4db"
     },
     "form.5a7f5216e916198b.separable-arbitrary-field-extension": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1529,18 +1549,19 @@
       "version_sha256": "a8f1252d57ded2203403b951f2c9935e22a2a2647116f045633ad65f8913d1e5"
     },
     "form.5a7f5216e916198b.separably-generated-extension": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.e95caa5648787556b5a1",
         "scan_incomplete"
       ],
       "version_sha256": "0d16ca5bf92c50d07ef6675419ff7061dfa37401cd4b45aafb3d2c9f5a12a565"
     },
     "form.5b29c5555567bd3d.cohen-macaulay-locus": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1549,8 +1570,8 @@
       "version_sha256": "6480d0c86963c9861b36567623119e4f23403e011eae6812a55eeb235358444f"
     },
     "form.5b6d4a7f88629b12.left-adjoint": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1559,18 +1580,19 @@
       "version_sha256": "6fc095cf637677eab8191015c530ca925c199731423231f3df7b4aa59617cc8c"
     },
     "form.5d1733b1dcffde12.universal-square-zero-thickening": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.161eb6c2909b6791a731",
         "scan_incomplete"
       ],
       "version_sha256": "5b5215f8600ac69742a885a59a053e9fe43c2093c884151ac6bd19066f47acb1"
     },
     "form.5e4b8f6efeda6522.category-fibred-in-groupoids": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1579,8 +1601,8 @@
       "version_sha256": "bc3935c534a078e3071134e855a3b80051326ebbd59dee260b5cd6712a7f3300"
     },
     "form.60f5f43d4514a466.universally-closed-scheme-morphism": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1589,8 +1611,8 @@
       "version_sha256": "38a9c6b9660073c069b2c7ed0bf76d59f530ae424a5179514e4091dc35815054"
     },
     "form.62a7307a49a4bcdd.filtered-colimit-etale-algebras": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -1599,31 +1621,35 @@
       "version_sha256": "87a74793c536b7fa9d2aaf3976960687719b7896c5164bde2ca6cfaa3e1d3470"
     },
     "form.62b07936747a7a38.closed-union-connected-components": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.ac1279e92d9ce9e366b3",
         "scan_incomplete"
       ],
       "version_sha256": "b99b40a2ce4e67978838d35f12bd92982d59ae9ddbfc44001fa522bbfe1e82bf"
     },
     "form.646e4dcbd9b6f1e1.profinite-topological-group": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.7ddc5dd438beb0f92ebb",
         "scan_incomplete"
       ],
       "version_sha256": "d5fc847f8828eb43ca8652b15418dd5f4bf6134ca0a4c3fffb9c744e15ccd4a5"
     },
     "form.646e4dcbd9b6f1e1.topological-group": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.3384212f54274149402c",
+        "ambiguous:occ.440a22afc6502b8bb7f0",
         "scan_incomplete"
       ],
       "version_sha256": "4c4bb631c75a1b245582a0c0acf1eb326ea63de27d50b841b440c7b6e0cd868d"
