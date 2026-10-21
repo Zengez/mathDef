@@ -2,23 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.93aaac46cdf41116.strictly-henselian-local-ring",
   "version_sha256": "4c20886f358c73fdd0e67aaf23b4837c6498ddc482297bdfbfc64576b5b2b4fb",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "local ring",
-      "span": [
-        2,
-        12
-      ],
+      "phrase": "Henselian local ring",
       "state": "existing",
-      "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.589cf7aeba9615e530d6"
+      "target_meaning_id": "meaning.93aaac46cdf41116.henselian-local-ring",
+      "occurrence_id": "occ.666c6f98bf1017a36c01"
+    },
+    {
+      "phrase": "separable algebraic field extension",
+      "state": "existing",
+      "target_meaning_id": "meaning.720eaae9156f6f4e.separable-algebraic-field-extension",
+      "occurrence_id": "occ.a6687344929fc4e1d0b5"
+    },
+    {
+      "phrase": "residue field of local ring",
+      "state": "unassigned",
+      "context": "Commutative algebra: quotient κ=R/m by the maximal ideal of a local ring",
+      "occurrence_id": "occ.11956be106f6f307583a"
+    },
+    {
+      "phrase": "separably closed field κ",
+      "state": "unassigned",
+      "context": "Field theory: field with no nontrivial separable algebraic extensions, distinct from algebraically closed in positive characteristic",
+      "occurrence_id": "occ.b8be6699c08d6c93d8b0"
+    },
+    {
+      "phrase": "no nontrivial separable algebraic extension",
+      "state": "external",
+      "disposition": "This does not require absence of nontrivial purely inseparable algebraic extensions.",
+      "occurrence_id": "occ.edeea57136e3ec39d3d6"
     }
   ],
-  "snapshot_sha256": "c9a9c6040878da23d98a296a84a2d88f41274914b935da39a95335cdbe2eae9c",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "878445769dcfc5db9e289a1e820a1ba897b4537f39433248d005231e47571039",
+  "review_rationale": "Read the strict Henselian criterion as Henselianity plus a separably closed residue field, not an algebraically closed residue field: purely inseparable extensions may remain."
 }

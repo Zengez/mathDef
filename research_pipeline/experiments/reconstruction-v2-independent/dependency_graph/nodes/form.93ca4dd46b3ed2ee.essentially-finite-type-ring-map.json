@@ -2,26 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.93ca4dd46b3ed2ee.essentially-finite-type-ring-map",
   "version_sha256": "a1d66c1a911a1d71b598cb8de0c2a8e6a5bbaa39b47329d072f69e02fc2d6ebe",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "ring homomorphism",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.ring-map-general",
-        "meaning.wave2.foundation.ring-map-unital"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.c5c534b2a8d2b5e92ff0"
+      "phrase": "ring homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.79b42a268e28459b8fad"
+    },
+    {
+      "phrase": "finitely generated R-algebra A",
+      "state": "existing",
+      "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map",
+      "occurrence_id": "occ.4de733e1d7d9d9744ff9"
+    },
+    {
+      "phrase": "localization T^{-1}A",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+      "occurrence_id": "occ.0511ab0627086707e7eb"
+    },
+    {
+      "phrase": "R-algebra isomorphism S≅T^{-1}A",
+      "state": "unassigned",
+      "context": "Commutative algebra: bijective R-algebra map compatible with structural ring homomorphism",
+      "occurrence_id": "occ.031cf1780293ead73075"
+    },
+    {
+      "phrase": "some finitely generated A",
+      "state": "external",
+      "disposition": "A is finite type over R, whereas S is only required to be isomorphic to its localization.",
+      "occurrence_id": "occ.a6ddb1490a1f516266e9"
     }
   ],
-  "snapshot_sha256": "7a6e82e3f6ceb35f108c2b29e0c9e1a5d6d3d5ae2e82a62826199df321e9fc0d",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "8f637b5366d69545eaf16e2ba8d2fbffada3392518220d8915fff2f169c56b8e",
+  "review_rationale": "Read the existence of a finitely generated R-algebra A with a localization T^{-1}A isomorphic to S. Finite type refers to generators of A and does not assert a finite relation presentation."
 }

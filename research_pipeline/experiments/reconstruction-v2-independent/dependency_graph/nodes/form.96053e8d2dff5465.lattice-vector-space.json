@@ -2,25 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.96053e8d2dff5465.lattice-vector-space",
   "version_sha256": "f69a6f88cc39aab03a98000079dc13ae83b6023485fb5d3b66b47886c321fa69",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "submodule",
-      "span": [
-        143,
-        152
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation76.submodule"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.59388312abb2bead5450"
+      "phrase": "Noetherian local domain R",
+      "state": "existing",
+      "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
+      "occurrence_id": "occ.40870439a2cb44c9749d"
+    },
+    {
+      "phrase": "local ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
+      "occurrence_id": "occ.79b1a558e1d8554d0786"
+    },
+    {
+      "phrase": "integral domain R and fraction field K",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain",
+      "occurrence_id": "occ.5ec521e831fcca01e46e"
+    },
+    {
+      "phrase": "Krull dimension one",
+      "state": "existing",
+      "target_meaning_id": "meaning.22c049b8eee93897.krull-dimension-ring",
+      "occurrence_id": "occ.796afaa20fed85eef60a"
+    },
+    {
+      "phrase": "finite R-submodule M⊆V",
+      "state": "existing",
+      "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module",
+      "occurrence_id": "occ.1b47d3563b5e948aba59"
+    },
+    {
+      "phrase": "finite-dimensional K-vector space V",
+      "state": "existing",
+      "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "occurrence_id": "occ.47cfdf9c33d7be11080b"
+    },
+    {
+      "phrase": "K-span of R-submodule M equals V",
+      "state": "unassigned",
+      "context": "Linear algebra: linear span of M in a vector space over fraction field K",
+      "occurrence_id": "occ.18b27ce46b90aa1fe596"
+    },
+    {
+      "phrase": "one-dimensional local domain",
+      "state": "external",
+      "disposition": "Dimension refers to Krull dimension of R, not to vector space dimension of V, which may be any finite value.",
+      "occurrence_id": "occ.cfd3964186567124a441"
     }
   ],
-  "snapshot_sha256": "6f20d77e4b4da02ea7fe1d7e859c8f90d2463acc7009751de9d4991328ac9964",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "2e4b9c2bd03b92d76007fbacb800419b17b17154c3909eba8c2dfad5ec63f1f1",
+  "review_rationale": "Read the R-lattice condition in a finite-dimensional K-vector space over the fraction field of a one-dimensional Noetherian local domain. The finite R-submodule must span V after scalar extension, not merely be any discrete lattice in a Euclidean space."
 }

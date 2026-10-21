@@ -2,40 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.93ca4dd46b3ed2ee.essentially-finite-presentation-ring-map",
   "version_sha256": "c0602edf0422c92629e68697ba621a515a5f0b73dd063e25f2bca720f1b59678",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "ring homomorphism",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.ring-map-general",
-        "meaning.wave2.foundation.ring-map-unital"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.fbc7d85ebf156a571d7c"
+      "phrase": "ring homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.fce2f217775dcd2d2820"
     },
     {
-      "phrase": "finite presentation",
-      "span": [
-        42,
-        61
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.db846ebeca42b9ee.finitely-presented-module-stacks"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.4351593ef62cb519fec0"
+      "phrase": "localization of a ring",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+      "occurrence_id": "occ.9d79ef05549a26d7a5e3"
+    },
+    {
+      "phrase": "finite-presentation R-algebra A",
+      "state": "existing",
+      "target_meaning_id": "meaning.415a1503ae7ed97d.finitely-presented-algebra",
+      "occurrence_id": "occ.efa7f479e5c9c95034c3"
+    },
+    {
+      "phrase": "polynomial generators and finite relations",
+      "state": "unassigned",
+      "context": "Commutative algebra: presentation A=R[T_1,…,T_n]/(f_1,…,f_m) with finite n and m",
+      "occurrence_id": "occ.922338d013a69d666d11"
+    },
+    {
+      "phrase": "some finitely presented R-algebra A",
+      "state": "external",
+      "disposition": "A may be chosen; S itself need not be finitely presented over R after arbitrary localization.",
+      "occurrence_id": "occ.e55ec378f084ce490ced"
     }
   ],
-  "snapshot_sha256": "cc06574015113a22ecee9e8de7163f16c7752f16a64cd8c8d6018850d6074e93",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "7c183d027fb83f6c85b70ea5213e531a68b3490181648074bf508373d3d92685",
+  "review_rationale": "Read the condition that S be a localization of some finitely presented R-algebra A, with finitely many polynomial generators and defining relations. It is stronger than essentially finite type but permits localization after presentation."
 }
