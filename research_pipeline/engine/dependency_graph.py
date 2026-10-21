@@ -131,6 +131,15 @@ def node_file(graph, fid):
     return graph / "nodes" / (fid + ".json")
 
 
+def amendment_events(graph):
+    """Append-only snapshots; the node file remains immutable after correction."""
+    file = graph / "amendments.jsonl"
+    if not file.exists():
+        return []
+    return [json.loads(line) for line in file.read_text(encoding="utf-8").splitlines()
+            if line.strip()]
+
+
 def live_nodes(graph, inv):
     nodes = {}
     for fid, entry in inv["formulations"].items():
@@ -145,6 +154,32 @@ def live_nodes(graph, inv):
         if not isinstance(refs, list) or node.get("snapshot_sha256") != digest(refs):
             continue  # Part-written or corrupt node is never considered scanned.
         nodes[fid] = node
+    # Apply only events for the active formulation version, strictly in
+    # append order. A broken link in the correction chain invalidates the
+    # entire formulation; it can NEVER be treated as safely completed.
+    invalid = set()
+    seen_ids = set()
+    for event in amendment_events(graph):
+        event_id = event.get("amendment_id")
+        if not isinstance(event_id, str) or event_id in seen_ids:
+            raise PipelineError("Missing or repeated graph amendment ID")
+        seen_ids.add(event_id)
+        fid = event.get("formulation_id")
+        entry = inv["formulations"].get(fid)
+        if not entry or event.get("version_sha256") != entry["version_sha256"]:
+            continue  # Historical version; retained for audit, not applied.
+        current = nodes.get(fid)
+        replacement = event.get("replacement")
+        if (fid in invalid or current is None or
+                event.get("expected_node_sha256") != digest(current) or
+                not isinstance(replacement, dict) or
+                replacement.get("formulation_id") != fid or
+                replacement.get("version_sha256") != entry["version_sha256"] or
+                replacement.get("snapshot_sha256") != digest(replacement.get("references"))):
+            invalid.add(fid)
+            nodes.pop(fid, None)
+            continue
+        nodes[fid] = replacement
     return nodes
 
 
@@ -316,6 +351,7 @@ def rebuild(workspace, inventory=None):
         "ambiguous_occurrences": sum(r["state"] == "ambiguous" for r in occurrences),
         "seed_relations": len(inv["seed_relations"]),
         "scan_occurrences": sum(r.get("origin") != "preexisting_relation" for r in occurrences),
+        "scan_amendment_event_count": len(amendment_events(graph)),
         "automatic_completion_is_not_certification": True,
         "breadth_expansion": "on_hold",
     }
@@ -325,6 +361,7 @@ def rebuild(workspace, inventory=None):
         "inventory_sha256": inv["source_inventory_sha256"],
         "state_sha256": digest(state_rows),
         "valid_node_snapshot_count": len(nodes),
+        "scan_amendment_event_count": len(amendment_events(graph)),
         "next_work": "Resume unscanned/incomplete/version-invalid forms; research deduplicated missing candidates only after semantic scan review.",
         "transaction": "Derived indexes written from authoritative atomic per-node snapshots; commit this directory in one Git transaction.",
     })
@@ -381,6 +418,10 @@ def store(workspace, items):
     if not inv:
         raise PipelineError("Generate inventory first")
     staged = {}
+    current = live_nodes(graph, inv)
+    amended_ids = {e["formulation_id"] for e in amendment_events(graph)
+                   if e.get("version_sha256") ==
+                       inv["formulations"].get(e.get("formulation_id"), {}).get("version_sha256")}
     for entry in items:
         fid = entry["formulation_id"]
         if entry.get("version_sha256") != inv["formulations"].get(fid, {}).get("version_sha256"):
@@ -388,7 +429,9 @@ def store(workspace, items):
         status = "complete" if entry.get("complete") is True else "scan_incomplete"
         node = make_snapshot(inv, fid, entry.get("references", []),
                              status, entry.get("review_rationale", ""))
-        existing = live_nodes(graph, inv).get(fid)
+        existing = current.get(fid)
+        if fid in amended_ids and existing != node:
+            raise PipelineError("Correct amended snapshots by append-only amendment, not store")
         if existing and existing.get("version_sha256") == node["version_sha256"]:
             if existing.get("scan_status") == "complete" and existing != node:
                 raise PipelineError("Cannot overwrite completed scan without a versioned correction")
@@ -397,8 +440,68 @@ def store(workspace, items):
         staged[fid] = node
     for fid, node in staged.items():
         # The exact full adjacency + complete marker are one atomic node file.
-        if read_node(node_file(graph, fid)) != node:
+        if fid not in amended_ids and read_node(node_file(graph, fid)) != node:
             atomic_json(node_file(graph, fid), node)
+    return rebuild(workspace, inv)
+
+
+def amend(workspace, items):
+    """Atomically append reviewed same-version scan corrections.
+
+    An amended original node is never overwritten. A crash after the
+    event-ledger write but before derived-index refresh safely replays.
+    """
+    graph = graph_path(workspace)
+    inv = read(graph / "INVENTORY.json")
+    if not inv:
+        raise PipelineError("Inventory required before scan amendments")
+    current = live_nodes(graph, inv)
+    history = amendment_events(graph)
+    seen = {e["amendment_id"]: e for e in history}
+    if len(seen) != len(history):
+        raise PipelineError("Duplicate historical amendment")
+    new_events = []
+    batch_seen = set()
+    for item in items:
+        eid, fid = item.get("amendment_id"), item.get("formulation_id")
+        if not isinstance(eid, str) or not KEY_RE.fullmatch(eid):
+            raise PipelineError("Unsafe or missing amendment ID")
+        if eid in batch_seen:
+            raise PipelineError("Duplicate amendment in current batch")
+        batch_seen.add(eid)
+        if fid not in inv["formulations"]:
+            raise PipelineError("Amendment references unknown formulation")
+        version = inv["formulations"][fid]["version_sha256"]
+        if item.get("version_sha256") != version:
+            raise PipelineError("Stale formulation-version amendment")
+        reason = item.get("reason", "")
+        reviewer = item.get("reviewed_by", "")
+        if len(reason.strip()) < 40 or not str(reviewer).strip():
+            raise PipelineError("Amendment needs a substantive reason and reviewer")
+        node = make_snapshot(inv, fid, item.get("references", []),
+                             "complete" if item.get("complete") is True else "scan_incomplete",
+                             item.get("review_rationale", ""))
+        event = {
+            "amendment_id": eid, "formulation_id": fid,
+            "version_sha256": version,
+            "expected_node_sha256": item.get("expected_node_sha256"),
+            "replacement": node, "reason": reason, "reviewed_by": reviewer,
+        }
+        if eid in seen:
+            if seen[eid] != event:
+                raise PipelineError("Amendment ID reused with different contents")
+            continue  # Exact replay must not append or duplicate the event.
+        prior = current.get(fid)
+        if prior is None or digest(prior) != item.get("expected_node_sha256"):
+            raise PipelineError("Stale or missing base snapshot for amendment " + eid)
+        current[fid] = node
+        seen[eid] = event
+        new_events.append(event)
+    if new_events:
+        history.extend(new_events)
+        write_atomic(graph / "amendments.jsonl",
+                     "".join(json.dumps(e, sort_keys=True, ensure_ascii=False) + "\n"
+                             for e in history))
     return rebuild(workspace, inv)
 
 
@@ -516,7 +619,7 @@ def resolve(workspace, resolutions):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--workspace", type=Path, required=True)
-    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "resolve", "status", "tree", "queue"),
+    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "amend", "resolve", "status", "tree", "queue"),
                    required=True)
     p.add_argument("--adapter", default="research_pipeline.adapters.mathdef.dependency_scan")
     p.add_argument("--limit", type=int, default=30)
@@ -536,6 +639,14 @@ def main():
         if batch.get("schema_version") != 1:
             raise PipelineError("Unsupported scan batch")
         result = store(args.workspace, batch["items"])
+    elif args.mode == "amend":
+        inbox = (graph / "inbox").resolve()
+        if not args.batch or not args.batch.resolve().is_relative_to(inbox):
+            raise PipelineError("Amendments must be committed within dependency_graph/inbox")
+        batch = read(args.batch)
+        if batch.get("schema_version") != 1:
+            raise PipelineError("Unsupported graph amendment batch")
+        result = amend(args.workspace, batch["amendments"])
     elif args.mode == "resolve":
         inbox = (graph / "inbox").resolve()
         if not args.batch or not args.batch.resolve().is_relative_to(inbox):
