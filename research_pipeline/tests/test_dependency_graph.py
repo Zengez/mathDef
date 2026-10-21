@@ -4,9 +4,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from research_pipeline.engine.core import Workspace, PipelineError
+from research_pipeline.engine.core import Workspace, PipelineError, digest
 from research_pipeline.engine.dependency_graph import (
-    inventory_sync, store, read, graph_path, tree, propose, research_queue, missing_key)
+    inventory_sync, store, read, graph_path, tree, propose, research_queue, missing_key, resolve)
 from research_pipeline.adapters.mathdef.dependency_scan import propose as lexical
 
 
@@ -80,6 +80,37 @@ class DependencyGraphTests(unittest.TestCase):
         queue = research_queue(self.root)
         self.assertEqual(queue["candidates"][0]["upstream_formulation_count"], 2)
         self.assertEqual(queue["phase"], "research_missing_dependencies")
+
+    def test_missing_resolution_propagates_and_new_missing_reopens(self):
+        self.add("A", "a missing prerequisite")
+        self.add("B", "another missing prerequisite")
+        self.write_fixture()
+        ref = {"phrase": "Missing C", "context": "Algebra", "state": "missing"}
+        store(self.root, [self.entry("form.a", [ref]), self.entry("form.b", [ref])])
+        self.add("C", "depends on D")
+        self.assertEqual(inventory_sync(self.root)["unscanned"], 1)
+        inv = read(graph_path(self.root) / "INVENTORY.json")
+        cid = missing_key("Missing C", "Algebra")
+        row = {"missing_candidate_id": cid, "target_meaning_id": "meaning.c",
+               "target_version_sha256": digest(inv["meanings"]["meaning.c"]),
+               "review_rationale": "Source-backed contextual comparison in the test establishes "
+                                   "that the missing prerequisite denotes exactly meaning C."}
+        self.assertEqual(resolve(self.root, [row])["open"], 3)
+        self.assertEqual(resolve(self.root, [row])["unresolved_missing_candidates"], 0)
+        new_ref = {"phrase": "D", "context": "Algebra", "state": "missing"}
+        result = store(self.root, [self.entry("form.c", [new_ref])])
+        self.assertEqual(result["unresolved_missing_candidates"], 1)
+        self.assertEqual(result["open"], 3)
+        self.add("D", "a primitive")
+        inventory_sync(self.root)
+        inv = read(graph_path(self.root) / "INVENTORY.json")
+        row_d = {"missing_candidate_id": missing_key("D", "Algebra"),
+                 "target_meaning_id": "meaning.d",
+                 "target_version_sha256": digest(inv["meanings"]["meaning.d"]),
+                 "review_rationale": "The same narrow algebraic context makes D precisely "
+                                     "the newly represented definition in this fixture."}
+        resolve(self.root, [row_d])
+        self.assertEqual(store(self.root, [self.entry("form.d", [])])["closed"], 4)
 
     def test_uncommitted_partial_and_marker_recovery(self):
         self.add("A", "B")
