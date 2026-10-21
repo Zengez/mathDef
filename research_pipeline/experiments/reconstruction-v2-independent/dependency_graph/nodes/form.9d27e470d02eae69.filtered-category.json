@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.9d27e470d02eae69.filtered-category",
   "version_sha256": "c76575141609755d07170796fa16f1752020d92b7e7ce42762c095bcbeb82be1",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category I and its objects/arrows",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.dcdbcce6eec450dbaf79"
+    },
+    {
+      "phrase": "pair of parallel arrows u,v:i⇉j",
+      "state": "unassigned",
+      "context": "Category theory: two morphisms in the same category with equal source and target",
+      "occurrence_id": "occ.d2f1af305df64bab7685"
+    },
+    {
+      "phrase": "arrows to common object",
+      "state": "unassigned",
+      "context": "Category theory: existence of a cocone over two indexing objects",
+      "occurrence_id": "occ.bd6c8d80345c2a7a3691"
+    },
+    {
+      "phrase": "after an arrow j→k, u and v become equal",
+      "state": "external",
+      "disposition": "The specified equalization of parallel arrows is a separate requirement from a common upper object; all three axioms are present.",
+      "occurrence_id": "occ.9a3ae89bc03e2442d03e"
+    }
+  ],
+  "snapshot_sha256": "a172e123c1d5b3b381c55dd662f38d709f23224e7c5d90aadc1b2710ce95671c",
+  "review_rationale": "Read the three defining conditions of a filtered category: nonemptiness, common targets of pairs of objects, and eventual equalization of parallel arrows. This is not just a directed preorder, although directed preorders are special cases."
 }

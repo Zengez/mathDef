@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.a12da9dfe3ad7ff8.geometrically-connected-algebra",
   "version_sha256": "9e5b75c3fabceebc719ec4bc5be8a455aa6722d77c166118cfa21e4317c73419",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        78,
-        95
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.bb19044f6d971d34d120"
+      "phrase": "field extension K/k",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "occurrence_id": "occ.2e1bf5487698c33fa0e4"
+    },
+    {
+      "phrase": "tensor product A⊗_k K",
+      "state": "existing",
+      "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+      "occurrence_id": "occ.25e20816824a6ebab160"
+    },
+    {
+      "phrase": "prime spectrum Spec(A⊗_k K)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.a734ee5b8d2cf5ba63c3"
+    },
+    {
+      "phrase": "connected topological space",
+      "state": "existing",
+      "target_meaning_id": "meaning.ab260940ea9c523d.connected-topological-space",
+      "occurrence_id": "occ.894dfcf39ab6b6cdfc66"
+    },
+    {
+      "phrase": "k-algebra A and its scalar-extension K-algebra",
+      "state": "unassigned",
+      "context": "Commutative algebra: algebra over field k and scalar extension with induced K-algebra multiplication",
+      "occurrence_id": "occ.463384e9a1c835e66cf0"
+    },
+    {
+      "phrase": "for every field extension K/k",
+      "state": "external",
+      "disposition": "All extensions are allowed, including transcendental ones; no Noetherian or finite type hypothesis is supplied.",
+      "occurrence_id": "occ.b1fd2637603688b2b545"
     }
   ],
-  "snapshot_sha256": "f58f4b238a1db0bd602229b2a0825c967df3e19f3f01dd103493c20a1f3ef0f5",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "a7a693657620953d70e5829548d26274a280a91036a98d8e355df2c3a227e8ec",
+  "review_rationale": "Read geometric connectedness as connectedness of Spec(A⊗_k K) after every field extension K/k, not merely connectedness of Spec(A) or geometric irreducibility."
 }

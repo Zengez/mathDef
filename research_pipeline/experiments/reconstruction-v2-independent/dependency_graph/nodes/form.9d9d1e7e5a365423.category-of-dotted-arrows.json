@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.9d9d1e7e5a365423.category-of-dotted-arrows",
   "version_sha256": "eb212972a4d4a076a213ecc1563b373b869fce42e78b781bf8ac336b6efde4d4",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "(2,1)-category",
+      "state": "existing",
+      "target_meaning_id": "meaning.0bf601085c1029d4.two-one-category",
+      "occurrence_id": "occ.954933367bcf630d7652"
+    },
+    {
+      "phrase": "1-morphisms, invertible 2-morphisms",
+      "state": "existing",
+      "target_meaning_id": "meaning.ec5e3a0d13f85f3a.strict-two-category",
+      "occurrence_id": "occ.dfb081ed19a87016ef29"
+    },
+    {
+      "phrase": "2-commutative solid square",
+      "state": "unassigned",
+      "context": "Higher category theory: square of 1-morphisms equipped with specified invertible comparison 2-cell",
+      "occurrence_id": "occ.2e00bf2b3567b973beeb"
+    },
+    {
+      "phrase": "diagonal 1-morphism with compatible 2-cells",
+      "state": "unassigned",
+      "context": "Higher category theory: filler of a given 2-commutative square satisfying compatibility equations",
+      "occurrence_id": "occ.03c9ce20ab6a2b06df53"
+    },
+    {
+      "phrase": "2-isomorphisms respecting filler data",
+      "state": "external",
+      "disposition": "Arrows in this filler category must commute with the specified 2-cell data, not arbitrary isomorphisms of its ambient objects.",
+      "occurrence_id": "occ.dd991ef9a630a3ae3753"
+    }
+  ],
+  "snapshot_sha256": "ee20de4732cc095f01e57b4697788c8c70e1c15757298652cfbf158ad3cfd755",
+  "review_rationale": "Read the specified 2-commutative square, invertible 2-morphisms, diagonal fillers, and compatible modifications between fillers; retained the (2,1)-category setting rather than replacing it with ordinary commuting squares."
 }

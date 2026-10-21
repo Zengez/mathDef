@@ -2,54 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.a1d0959fa7703e41.inverse-limit-topological-spaces",
   "version_sha256": "905d85bf148c3e8869b82f20ce8e2067c7f23bf9d965fb9b364a66b9f4af2e18",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "limit of a diagram",
-      "span": [
-        4,
-        22
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.8f7683667fac9d28.category-limit"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.2ee768db24ee6f95da5d"
+      "phrase": "diagram of topological spaces",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "occurrence_id": "occ.d5261a7d17ef1179178d"
     },
     {
-      "phrase": "subset",
-      "span": [
-        65,
-        71
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.03ce19bdefb08d75ca50"
+      "phrase": "product ∏_i X_i of spaces",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology",
+      "occurrence_id": "occ.ada66c56fc664685c54b"
     },
     {
-      "phrase": "subspace topology",
-      "span": [
-        180,
-        197
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subspace-topology-general",
-        "meaning.wave2.foundation.subspace-topology-nonempty"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.01e9192846fe395d5ea3"
+      "phrase": "subspace topology on compatible families",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subspace-topology-general",
+      "occurrence_id": "occ.defd625ad3c884477e1c"
+    },
+    {
+      "phrase": "compatible families (x_i) under f_ij",
+      "state": "unassigned",
+      "context": "Category theory and topology: element tuples satisfying all transition-map compatibility equations in inverse system",
+      "occurrence_id": "occ.bc8aa523332998223891"
+    },
+    {
+      "phrase": "limit subset of product",
+      "state": "external",
+      "disposition": "The subset is restricted by the diagram equations and is not the entire topological product in general.",
+      "occurrence_id": "occ.2e5c7ba106d79ce71c76"
     }
   ],
-  "snapshot_sha256": "2a45875f74418ed7b5a0216c999594e5adc0426fe38cb82f5a8c0f1043ac26e0",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "7aca25ef472204b3e7648107c255463e4dd7e768c55324588727c6029d4a67af",
+  "review_rationale": "Reviewed inverse limit of a diagram of topological spaces as compatible point families inside its product, with the inherited subspace topology; did not confuse an inverse limit with an unrestricted product."
 }
