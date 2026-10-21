@@ -1,13 +1,89 @@
 {
   "schema_version": 1,
   "strategy": "balanced independent breadth with bounded prerequisite lookahead",
-  "breadth_candidates": [],
+  "breadth_candidates": [
+    {
+      "id": "smooth-manifold",
+      "research_prompt": "Differential geometry: source smooth manifolds, smooth charts/atlases and tangent vectors with specified regularity and topological hypotheses.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "algebraic-topology",
+      "research_prompt": "Algebraic topology: source paths, homotopy of paths and the fundamental group, carefully differentiating based versus unbased homotopies.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "number-theory-arithmetic",
+      "research_prompt": "Elementary number theory: source gcd, Euler totient, multiplicative function, preserving empty-set and positive-number conventions.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "first-order-logic",
+      "research_prompt": "Model theory/logic: source first-order signature, structure, interpretation and satisfaction; separate variables, assignments and sentences.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "numerical-analysis",
+      "research_prompt": "Numerical analysis: source matrix condition number, spectral radius and convergence of iterative methods without assuming unjustified norms or diagonalisability.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "stochastic-processes",
+      "research_prompt": "Probability: source stochastic processes, discrete-time Markov chains and transition matrices with explicit state-space, time-homogeneity and row/column conventions.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "convex-optimization",
+      "research_prompt": "Convex optimization: source convex functions, convex conjugates, subgradients and strong duality only with exact domain and assumptions; avoid mistaking theorem statements for definitions.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "cardinals-and-ordinals",
+      "research_prompt": "Foundational set theory: source cardinal and ordinal numbers, ordinals as transitive well-ordered sets, successor ordinals and equivalence by bijection.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "topological-separation",
+      "research_prompt": "General topology: source Hausdorff/T1/T0 separation conditions, regularity and normality with explicit space-level T1 conventions.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "combinatorics-generating-functions",
+      "research_prompt": "Enumerative combinatorics: source ordinary and exponential generating functions and formal power series without assuming analytic convergence.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "measure-measurability",
+      "research_prompt": "Measure theory: source Carathéodory measurability, measurable maps, almost everywhere and null sets; differentiate completed versus noncompleted measure spaces.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "dynamical-systems",
+      "research_prompt": "Dynamics: source topological dynamical system, invariant subset, orbit, periodic point and recurrence in discrete time.",
+      "priority": "normal",
+      "source_review_required": true
+    }
+  ],
   "completed_breadth_topics": [
     "affine-geometry",
     "algebra-and-logic",
+    "functional-analysis",
+    "graph-coloring",
     "graph-cycles",
     "matrix-trace",
     "measure-and-analysis",
+    "metric-fixed-points",
     "number-theory-congruence",
     "probability-independence",
     "topology-and-geometry"
@@ -38,6 +114,14 @@
       "priority": "normal"
     },
     {
+      "target_query_normalized": "linear transformation between two vector spaces over the same scalar field",
+      "awaiting_relation_ids": [
+        "rel.wave2.pop142.bounded-linear-map"
+      ],
+      "number_of_affected_relations": 1,
+      "priority": "normal"
+    },
+    {
       "target_query_normalized": "square matrix of finite order over a field",
       "awaiting_relation_ids": [
         "rel.wave2.pop139.trace-square-matrix"
@@ -47,15 +131,19 @@
     }
   ],
   "suggested_next_package": {
-    "breadth_topic_candidates": [],
+    "breadth_topic_candidates": [
+      "smooth-manifold",
+      "algebraic-topology",
+      "number-theory-arithmetic"
+    ],
     "maximum_deferred_target_inclusions": 2,
     "rule": "Independently inspect sources and collisions; never mechanically certify candidate labels."
   },
   "reconciliation_findings": {
-    "pending_review": 15,
-    "unresolved_target": 4,
-    "pending_link_review": 15,
-    "open_issue": 2
+    "pending_review": 20,
+    "unresolved_target": 5,
+    "pending_link_review": 21,
+    "open_issue": 4
   },
   "coverage_and_stop_policy": {
     "state": "proposed_not_approved",
