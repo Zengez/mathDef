@@ -32,6 +32,8 @@ From repository root, where WORKSPACE means research_pipeline/experiments/recons
     python -m research_pipeline.engine.dependency_graph --workspace "$WORKSPACE" --mode tree --root-formulation FORMULATION_ID
     python -m research_pipeline.engine.dependency_graph --workspace "$WORKSPACE" --mode ingest --batch "$WORKSPACE/dependency_graph/inbox/SCAN.json"
     python -m research_pipeline.engine.dependency_graph --workspace "$WORKSPACE" --mode resolve --batch "$WORKSPACE/dependency_graph/inbox/RESOLUTIONS.json"
+    python -m research_pipeline.engine.dependency_graph --workspace "$WORKSPACE" --mode amend --batch "$WORKSPACE/dependency_graph/inbox/AMENDMENTS.json"
+    python -m research_pipeline.engine.dependency_graph --workspace "$WORKSPACE" --mode apply_inbox --limit 20
     python -m unittest research_pipeline.tests.test_dependency_graph -v
 
 The independent dependency graph GitHub Action performs bounded pilot proposals on push to its own code/tests or workflow_dispatch, sharing the existing population write concurrency group. It retries branch push collisions by recomputing from fresh main. A GitHub commit of the full graph folder is the only durable checkpoint across Chats or runners.
@@ -50,8 +52,56 @@ A rooted tree is expanded from stored immediate edges with a current-path visite
 
 Research queue prioritizes shared missing dependencies after contextual scans are reviewed. New dependency-driven provisional research may enlarge the graph and create more missing dependencies. Unrelated broad topic Batch 143 remains suspended until structural stabilization. Do not silently reinterpret old population/QUEUE.json recommendations as current priorities.
 
+## Reviewed scan batches and append-only corrections (implemented)
+
+Committed graph inbox files must have schema_version=1, id matching the filename
+stem, and mode set to ingest, amend, or resolve. The graph GitHub Action first
+syncs inventory, invokes apply_inbox (maximum 20 batches), then creates at most
+40 additional provisional lexical proposals. Each successfully processed batch
+gets a versioned digest receipt under graph/applied/; the receipt and graph
+changes are pushed together in one Git commit. Replay with changed input is
+rejected. No batch confers mathematical certification or promotion.
+
+For same-formulation-version semantic corrections use an amend batch, **never**
+overwrite a completed scan node. Each amendments[] entry supplies:
+
+- amendment_id, formulation_id, version_sha256;
+- expected_node_sha256 = digest of the current effective entire node;
+- full replacement references, complete boolean, review_rationale;
+- reason of 40 or more characters, reviewed_by.
+
+The original node remains unchanged; amendments.jsonl keeps complete,
+version-bound replacement snapshots and review rationales. Replay walks these
+events in order; a stale/broken chain marks the node unscanned, never Closed.
+The full effective graph, reverse index and rooted tree views incorporate
+corrected scans and reviewed missing-candidate resolutions. The tree
+renderer follows the saved occurrences index, preserving cycle-closing edges.
+
+The adapter's own source-code SHA-256 is the proposal_fingerprint. When mathDef
+reference-matching changes, unchanged proposals awaiting semantic review can
+be refreshed without touching complete semantic scans or the historically
+screened independent mathematical registry. A unique literal match from a
+different mathematical domain is now marked ambiguous instead of a
+confident cross-domain link.
+
+The existing population GitHub Action now resynchronizes the graph inventory
+after admitting new provisional meanings. The generic population queue
+consults the dependency graph and disables unrelated breadth recommendations
+while the graph explicitly retains breadth_expansion=on_hold.
+
 ## Explicit limitations (follow-up implementation)
 
-Automatic exact-display-name proposals are not mathematically exhaustive and do not close scans. Exact normalized phrase+context deduplication is deliberately cautious; aliases, homonyms, and source-specific synonym equivalence require mathematical review. Current append-only resolution snapshots and complete scans cannot be editorially changed in place without a new formulation version; a dedicated correction-event ledger for same-version semantic corrections is a next engineering task. No automatic independent mathematical source investigation, review certification, promotion, public-site change, or Wave 2 freeze occurs.
+Automatic lexical proposals remain non-exhaustive, and all proposal-only nodes
+stay Open. Existing 891 screened/candidate relation seeds are historical
+prerequisite evidence, never a complete enumeration of mathematical vocabulary.
+Exact normalized phrase+context missing-candidate deduplication is deliberately
+conservative; aliases, synonymous queries, contextual homonyms and different
+object-type conventions still require explicit mathematical comparison and
+potentially an append-only alias-identity ledger. Reviewed missing-candidate
+resolutions themselves are currently immutable; correction requires a separate
+append-only supersession mechanism rather than editing the resolution ledger
+in place. Automatic source investigation and semantic reference review are not
+implemented, and no mathematical certification, production publication or
+Wave2 freeze occurs.
 
 Retain the temporary design note until outstanding requirements and pilot reviews are incorporated into durable machinery.
