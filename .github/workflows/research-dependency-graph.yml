@@ -14,7 +14,7 @@ on:
       proposal_limit:
         description: "Additional unscanned formulation proposal snapshots (zero for inventory only)"
         required: false
-        default: '40'
+        default: '75'
         type: string
 
 permissions:
@@ -43,7 +43,7 @@ jobs:
           python -m unittest research_pipeline.tests.test_dependency_graph -v
       - name: Generate and commit isolated inventory and bounded, nonauthoritative graph proposals
         env:
-          PROPOSAL_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.proposal_limit || '40' }}
+          PROPOSAL_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.proposal_limit || '75' }}
         run: |
           set -euo pipefail
           git config user.name "mathDef Research Workflow"
