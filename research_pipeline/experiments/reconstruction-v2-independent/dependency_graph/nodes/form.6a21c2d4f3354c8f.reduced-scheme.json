@@ -2,51 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.6a21c2d4f3354c8f.reduced-scheme",
   "version_sha256": "fdadc3d2f143911fdb1f60d8c7903714adc0286b719a711cb6d112e653aacaab",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "scheme",
-      "span": [
-        2,
-        8
-      ],
+      "phrase": "scheme X",
       "state": "existing",
       "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.75123239321f615d5c24"
+      "occurrence_id": "occ.53358afb6187db0becb9"
     },
     {
-      "phrase": "local ring",
-      "span": [
-        30,
-        40
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.cdc4a30b6eafcdca5638"
+      "phrase": "local ring O_{X,x}",
+      "state": "existing",
+      "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
+      "occurrence_id": "occ.3f86934c4f8254b1f0db"
     },
     {
       "phrase": "reduced ring",
-      "span": [
-        54,
-        66
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.reduced-ring"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.3e48c0464037f7d95f64"
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.reduced-ring",
+      "occurrence_id": "occ.5cce233ad2fb436b48c7"
+    },
+    {
+      "phrase": "stalk O_{X,x}",
+      "state": "unassigned",
+      "context": "Sheaf theory: stalk of the scheme structure sheaf at a point x",
+      "occurrence_id": "occ.079b1a24191ffa4e0366"
+    },
+    {
+      "phrase": "for each point x",
+      "state": "external",
+      "disposition": "The definition requires every local ring to be reduced; a single reduced stalk is insufficient.",
+      "occurrence_id": "occ.889c21947b2703748cf2"
     }
   ],
-  "snapshot_sha256": "8107ea0c4e9ca18a083fe852a6379d1457f2cf620d6d6e06a0bb7a9885001032",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "f51afdab5154bc20d8a244ee809b0e483fe45fa9fe637f7bb3752d4bb2b72529",
+  "review_rationale": "Read every clause of pointwise reducedness of the local rings of a scheme, distinguishing the structure-sheaf stalk from section rings and the reduced-ring condition from weaker absence of zero divisors."
 }

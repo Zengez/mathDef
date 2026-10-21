@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.6a3376e5ecb82bfb.topology-basis",
   "version_sha256": "a7bc3b5148e132fc44f8010f0d456f24c3e014249c120b46f28f283e449647a8",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        6,
-        23
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.fc80893eea8790c4b67b"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.24d06e1c7eac34f7e4d2"
+    },
+    {
+      "phrase": "open sets",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.f76f9a45ec303cd97a70"
+    },
+    {
+      "phrase": "family B of open sets",
+      "state": "unassigned",
+      "context": "Set theory: family of subsets, here all open in X",
+      "occurrence_id": "occ.f1a6a2189da8c0037c66"
+    },
+    {
+      "phrase": "some basis member contains x and lies in U",
+      "state": "external",
+      "disposition": "The defining basis condition is local refinement for every x in every open U.",
+      "occurrence_id": "occ.e09fcf431d1548de6432"
     }
   ],
-  "snapshot_sha256": "bece777214aafbdf7e467817f635598b81540bf74647f34474377622e32982b7",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "7399824f69200c8ae187095fa2d5300cd418eed6e2b25fc7331f4f8ebe7e7988",
+  "review_rationale": "Reviewed the full pointwise neighborhood-refinement characterization of a basis and its containment quantifiers without countability or metrizability assumptions."
 }
