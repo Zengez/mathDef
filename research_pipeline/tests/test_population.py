@@ -100,7 +100,7 @@ class PopulationTests(unittest.TestCase):
         path = self.write(self.package)
         partial = self.root / "population" / "records" / "sources.jsonl"
         partial.parent.mkdir(parents=True, exist_ok=True)
-        partial.write_text(canonical(self.package["sources"][0]) + "\\n".replace("\\\\n", "\\n"), encoding="utf-8")
+        partial.write_text(canonical(self.package["sources"][0]) + "\n", encoding="utf-8")
         result = apply(self.root, path)
         self.assertEqual(result["status"], "committed")
         self.assertEqual(len(snapshot(self.root)[0]["sources"]), 1)
