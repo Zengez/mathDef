@@ -1,0 +1,495 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-004",
+  "mode": "ingest",
+  "research_scope": "Third source-free review group: twelve existing independent formulations, exclusively linking existing meanings and saving unclassified mathematical-reference occurrences. No new definitions.",
+  "source_population_modified": false,
+  "external_research_performed": false,
+  "items": [
+    {
+      "formulation_id": "form.12e554f8d49d5361.purely-inseparable-extension",
+      "version_sha256": "2c96e77d380e36967eddb2d2ddd1c7d77d0ad074fe98bf27eeaf9fced0a14659",
+      "complete": true,
+      "review_rationale": "Examined the full prime-characteristic p-power condition and correctly linked the general field-extension and characteristic notions, while treating exponentiation and subfield membership as already available structure.",
+      "references": [
+        {
+          "phrase": "field F of characteristic p greater than zero",
+          "state": "existing",
+          "target_meaning_id": "meaning.dbce785fa0c96b0a.field-characteristic",
+          "matching_note": "The positive prime characteristic p is the existing field characteristic concept."
+        },
+        {
+          "phrase": "extension K/F",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+          "matching_note": "The ambient extension is an arbitrary field inclusion K/F; the existing extension-field meaning supports it."
+        },
+        {
+          "phrase": "p-power alpha^(p^n)",
+          "state": "external",
+          "disposition": "Exponentiation of a field element uses the existing field multiplication and positive-integer indexing convention, without requiring a separate standalone definition."
+        },
+        {
+          "phrase": "alpha^(p^n) lies in F",
+          "state": "external",
+          "disposition": "Ordinary membership of the element power in the base subfield is the defining condition, not a new contextual object."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.138b13bf27c037c1.naive-cotangent-complex",
+      "version_sha256": "7a85f3a62252157891b9b8a569b33d58dddd5cefd29bdbcef36c588954addf5e",
+      "complete": true,
+      "review_rationale": "Read the full two-term naive cotangent complex description including polynomial presentation, kernel, ideal square, Kähler differentials, module tensor and universal derivation; unknown constructions are occurrence-only.",
+      "references": [
+        {
+          "phrase": "ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "The polynomial presentation takes place in the commutative unital ring-map convention."
+        },
+        {
+          "phrase": "P=R[X_s:s∈S]",
+          "state": "unassigned",
+          "context": "Commutative algebra: polynomial ring over R in an arbitrary S-indexed family of indeterminates",
+          "reason": "A many-indeterminate polynomial ring is a specific algebraic construction not yet confidently indexed."
+        },
+        {
+          "phrase": "map canonically onto S",
+          "state": "unassigned",
+          "context": "Commutative algebra: surjective evaluation map from the polynomial R-algebra R[X_s] to S",
+          "reason": "The canonical polynomial evaluation/surjection requires contextual identity; preserve this occurrence."
+        },
+        {
+          "phrase": "I=ker(P→S)",
+          "state": "unassigned",
+          "context": "Algebra: kernel ideal of a unital commutative ring homomorphism P→S",
+          "reason": "The kernel is a ring ideal with a specific universal definition, not merely an arbitrary ideal."
+        },
+        {
+          "phrase": "Ω_{P/R}",
+          "state": "existing",
+          "target_meaning_id": "meaning.7ca4fb934b2f076c.kahler-differentials",
+          "matching_note": "This is the relative Kähler differential module associated with the ring map R→P."
+        },
+        {
+          "phrase": "Ω_{P/R}⊗_P S",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+          "matching_note": "The term includes the tensor product of P-modules along the ring homomorphism P→S."
+        },
+        {
+          "phrase": "two-term complex I/I²→Ω_{P/R}⊗_P S",
+          "state": "unassigned",
+          "context": "Homological algebra: chain complex concentrated in two homological degrees with a differential",
+          "reason": "The chain complex and grading notion need contextual interpretation; it is not simply a module."
+        },
+        {
+          "phrase": "I/I²",
+          "state": "unassigned",
+          "context": "Commutative algebra: quotient of the ideal I by the ideal-square I² as a module",
+          "reason": "This quotient uses ideal multiplication and module quotient; postpone any new named definition."
+        },
+        {
+          "phrase": "induced differential from universal derivation",
+          "state": "unassigned",
+          "context": "Commutative algebra: universal derivation d:P→Ω_{P/R} and its induced boundary map on I/I²",
+          "reason": "The Kähler-differentials meaning provides the universal derivation context but not necessarily the induced map as a named term."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.141c0f3fd90dc7b4.final-object",
+      "version_sha256": "8a00984d0f12393e6fa6f0710d4a51c679c6b7a131354186a50434a99491ff63",
+      "complete": true,
+      "review_rationale": "Reviewed terminality as unique incoming arrows in an arbitrary category, preserving the restriction against silently replacing general categories by small categories.",
+      "references": [
+        {
+          "phrase": "category C",
+          "state": "unassigned",
+          "context": "Category theory: arbitrary category, not necessarily small",
+          "reason": "The existing category definition requires smallness; do not assume C is small."
+        },
+        {
+          "phrase": "morphism from Y to T",
+          "state": "unassigned",
+          "context": "Category theory: morphism between two objects in a category C",
+          "reason": "The arrow is ordinary categorical structure but the only indexed general category requires smallness; save for consolidation."
+        },
+        {
+          "phrase": "exactly one morphism",
+          "state": "external",
+          "disposition": "Unique-existence quantification over arrows from Y to T is the defining condition, not a new mathematical object."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.141c0f3fd90dc7b4.initial-object",
+      "version_sha256": "1699f2a019f6a05f21f3e950cafb09bd505406f28e44247b5c923cfe22a53524",
+      "complete": true,
+      "review_rationale": "Reviewed initiality as unique outgoing arrows in an arbitrary category and used the same unassigned category and arrow concepts as the companion terminal-object formulation.",
+      "references": [
+        {
+          "phrase": "category C",
+          "state": "unassigned",
+          "context": "Category theory: arbitrary category, not necessarily small",
+          "reason": "The ambient category is not specified small and should be matched consistently with the companion terminal object."
+        },
+        {
+          "phrase": "morphism originating at I",
+          "state": "unassigned",
+          "context": "Category theory: morphism between two objects in an arbitrary category",
+          "reason": "Uses the same general categorical-arrow concept as the terminal-object statement."
+        },
+        {
+          "phrase": "exactly one morphism",
+          "state": "external",
+          "disposition": "Uniqueness of each arrow from I to Y is a quantifier condition, not a separate mathematical term."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.143bfc18b9ce9385.universal-homeomorphism-spectra",
+      "version_sha256": "1b3ed213f6a5fd65be246868d7075a3d2aceb5ac96f4ac782e7ed2dff4361474",
+      "complete": true,
+      "review_rationale": "Read the entire base-change homeomorphism criterion for prime spectra and distinguished unital ring maps, induced spectra, topological homeomorphisms and tensor-product algebra construction.",
+      "references": [
+        {
+          "phrase": "homomorphism of commutative rings R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "The base change uses unital commutative algebra maps."
+        },
+        {
+          "phrase": "R-algebra R′",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "An R-algebra structure is expressed by a unital structure map R→R′; precise R-algebra object remains a potential separate context."
+        },
+        {
+          "phrase": "Spec(S⊗_R R′)→Spec(R′)",
+          "state": "existing",
+          "target_meaning_id": "meaning.3f6a26f1786a8223.base-change-ring-map",
+          "matching_note": "The induced map after extension of scalars is the spectrum-level base change of a commutative ring map."
+        },
+        {
+          "phrase": "Spec(R′)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+          "matching_note": "Both source and target are prime spectra of commutative rings."
+        },
+        {
+          "phrase": "homeomorphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.directional113.homeomorphism-topological",
+          "matching_note": "The induced spectral map must be a homeomorphism of the underlying topological spaces."
+        },
+        {
+          "phrase": "S⊗_R R′",
+          "state": "unassigned",
+          "context": "Commutative algebra: tensor product of commutative R-algebras as the base-change ring",
+          "reason": "The tensor product here has a ring structure; a general module tensor-product definition does not itself supply the R-algebra construction."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.14c44fee62bf6075.regular-local-ring",
+      "version_sha256": "c7725923555d9c4c364363a9b11de33c89fcf89456f4939e47abe56d581e035e",
+      "complete": true,
+      "review_rationale": "Inspected both characterizations of a regular Noetherian local ring: ring/local/prime ideal meanings and the separate ideal-generation, residue field and cotangent-space constructions.",
+      "references": [
+        {
+          "phrase": "Noetherian local ring (R,m)",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
+          "matching_note": "The ring has a unique maximal ideal m."
+        },
+        {
+          "phrase": "Noetherian",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d4887892f85b16",
+          "matching_note": "Noetherianity of the commutative ring is a separate finite-ideal-generation property."
+        },
+        {
+          "phrase": "Krull dimension d",
+          "state": "existing",
+          "target_meaning_id": "meaning.22c049b8eee93897.krull-dimension-ring",
+          "matching_note": "The dimension d is Krull dimension, not vector-space dimension."
+        },
+        {
+          "phrase": "maximal ideal m",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-maximal-ideal",
+          "matching_note": "The ideal m is the unique maximal ideal of the local ring."
+        },
+        {
+          "phrase": "m can be generated by d elements",
+          "state": "unassigned",
+          "context": "Commutative algebra: ideal generated by a finite tuple of elements",
+          "reason": "Generation of m as an ideal is a construction not provided just by the ideal axioms."
+        },
+        {
+          "phrase": "m/m²",
+          "state": "unassigned",
+          "context": "Commutative algebra: quotient of maximal ideal m by its square m²",
+          "reason": "This uses ideal product/powers and quotient module, to be globally classified."
+        },
+        {
+          "phrase": "dim_{R/m}(m/m²)",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+          "matching_note": "The quotient has an R/m-vector-space structure; its dimension is distinct from Krull dimension."
+        },
+        {
+          "phrase": "R/m",
+          "state": "unassigned",
+          "context": "Commutative algebra: residue field of a local ring R at its maximal ideal m",
+          "reason": "The local ring's residue field is a quotient ring/field that may deserve a contextual definition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.14c44fee62bf6075.regular-system-of-parameters",
+      "version_sha256": "4803648271c26df3dacda30ffc78d328f710ab1c903629f5b76d84ef37bd9805",
+      "complete": true,
+      "review_rationale": "Examined the full regular-system-of-parameters definition; linked the regular local ring and maximal ideal, while retaining the already observed finite ideal-generation occurrence.",
+      "references": [
+        {
+          "phrase": "regular Noetherian local ring (R,m)",
+          "state": "existing",
+          "target_meaning_id": "meaning.14c44fee62bf6075.regular-local-ring",
+          "matching_note": "Uses the existing regular local ring meaning as its ambient object."
+        },
+        {
+          "phrase": "maximal ideal m",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-maximal-ideal",
+          "matching_note": "The sequence lies in the unique maximal ideal m."
+        },
+        {
+          "phrase": "d-element sequence in m that generates the maximal ideal",
+          "state": "unassigned",
+          "context": "Commutative algebra: ideal generated by a finite list of elements of a commutative ring",
+          "reason": "The same finite-ideal-generation construction appears in the regular-local-ring formulation; preserve independent occurrence."
+        },
+        {
+          "phrase": "dimension d",
+          "state": "external",
+          "disposition": "The integer d is part of the already linked regular local ring's dimension, not an additional unexplained meaning."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.15af666c5e2af983.linearly-disjoint-extensions",
+      "version_sha256": "39e7f3a3e3a40f76c8a08a9fdf71f8f02c339009d42d8428b1dd0dc4cdbdae9c",
+      "complete": true,
+      "review_rationale": "Reviewed the linear-disjointness criterion in a common field extension, linking extension fields and tensor products but retaining compositum, canonical multiplication map and injectivity as unassigned uses.",
+      "references": [
+        {
+          "phrase": "fields K and L extend k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+          "matching_note": "Both K/k and L/k are extensions of the same base field k inside a common overfield."
+        },
+        {
+          "phrase": "tensor product over k",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+          "matching_note": "The tensor product K⊗_k L is defined using their natural k-vector-space/module structures."
+        },
+        {
+          "phrase": "compositum KL",
+          "state": "unassigned",
+          "context": "Field theory: smallest subfield of a common overfield containing both subfields K and L",
+          "reason": "The field compositum is a specific generated-field construction."
+        },
+        {
+          "phrase": "multiplication map from their tensor product over k to their compositum KL",
+          "state": "unassigned",
+          "context": "Field theory: canonical k-bilinear multiplication map K⊗_k L→KL",
+          "reason": "The tensor-product universal map into the compositum has contextual source and target, to consolidate later."
+        },
+        {
+          "phrase": "injective",
+          "state": "unassigned",
+          "context": "Set theory and algebra: injective map of the underlying k-vector spaces",
+          "reason": "Same possible injectivity concept as the polynomial-evaluation occurrence in the prior batch; preserve evidence."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.162eb0d0411cd217.flat-module-lazard",
+      "version_sha256": "2a732cf96f009db882cd8a0d65aa9d733d91d5e71953010b982429bd6bcf1df3",
+      "complete": true,
+      "review_rationale": "Reviewed the Lazard flatness characterization, linking the existing flat-module and filtered-colimit meanings and keeping finite-rank free modules for later contextual classification.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "Lazard's theorem concerns ordinary unital modules over the ring R."
+        },
+        {
+          "phrase": "flat",
+          "state": "existing",
+          "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-module",
+          "matching_note": "The same flat-module notion is characterized equivalently by filtered colimits."
+        },
+        {
+          "phrase": "filtered colimit",
+          "state": "existing",
+          "target_meaning_id": "meaning.9d27e470d02eae69.filtered-colimit",
+          "matching_note": "The indexing diagram is filtered in the categorical sense."
+        },
+        {
+          "phrase": "finite-rank free R-modules",
+          "state": "unassigned",
+          "context": "Module theory: finite rank free module over a unital ring R",
+          "reason": "Free module with finite basis requires more than arbitrary module axioms."
+        },
+        {
+          "phrase": "exactness-preservation",
+          "state": "external",
+          "disposition": "The phrase describes the other equivalent characterization of flatness already linked; the passage does not require defining a new standalone exactness predicate now."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.16790121c4453020.weakly-associated-prime",
+      "version_sha256": "eba5e7bffab10bccc776708a3c00700580d6a3bfa19d3e1f591187dcfaf1c603",
+      "complete": true,
+      "review_rationale": "Read the weak-association criterion using an element annihilator and a prime minimal above it; linked exact ideal/module meanings and recorded the minimal-over relation.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "The module is over a commutative unital ring R in this associated-prime context."
+        },
+        {
+          "phrase": "prime ideal p of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+          "matching_note": "p is prime in the ambient commutative unital ring."
+        },
+        {
+          "phrase": "annihilator Ann_R(m)",
+          "state": "existing",
+          "target_meaning_id": "meaning.a9ca2e716ceffd36.annihilator-module-element",
+          "matching_note": "This is the annihilator ideal of the chosen module element m."
+        },
+        {
+          "phrase": "prime ideals minimal over its annihilator Ann_R(m)",
+          "state": "unassigned",
+          "context": "Commutative algebra: prime ideal minimal with respect to containing a specified ring ideal",
+          "reason": "The minimal-over-ideal relation is not the same as being an arbitrary prime ideal; record for global classification."
+        },
+        {
+          "phrase": "some element m∈M",
+          "state": "external",
+          "disposition": "Existential quantification over a module's elements is ordinary module language."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.16ce0f7c4ee1fdca.quasicoherent-sheaf-affine",
+      "version_sha256": "90de7f76b55399d1dc2eeb136da3ee6513023292d30b13474d4b14e5d3ac4564",
+      "complete": true,
+      "review_rationale": "Read the complete affine-spectrum sheaf characterization, linking prime spectrum, module and localization; saved standard open, tilde sheaf and sheaf-section occurrences for global consolidation.",
+      "references": [
+        {
+          "phrase": "X=Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+          "matching_note": "The ambient affine spectrum is already represented by the prime spectrum definition."
+        },
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "M is a unital module over the commutative ring R."
+        },
+        {
+          "phrase": "localization M_f",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set",
+          "matching_note": "Localization of M at powers of f is a special case of the existing module localization construction."
+        },
+        {
+          "phrase": "quasi-coherent O_X-module",
+          "state": "unassigned",
+          "context": "Algebraic geometry: quasi-coherent sheaf of modules over a scheme's structure sheaf",
+          "reason": "Quasi-coherence is the contextual property being defined; it refers to a sheaf of O_X-modules."
+        },
+        {
+          "phrase": "O_X-module",
+          "state": "unassigned",
+          "context": "Algebraic geometry: sheaf of modules over the structure sheaf O_X",
+          "reason": "A sheaf of modules is not literally just a module over an ordinary ring."
+        },
+        {
+          "phrase": "sheaf ~M associated with some R-module M",
+          "state": "unassigned",
+          "context": "Algebraic geometry: tilde construction associating an O_X-module sheaf to an R-module on Spec(R)",
+          "reason": "The module-to-sheaf construction must retain its base scheme and local sections."
+        },
+        {
+          "phrase": "standard open D(f)",
+          "state": "unassigned",
+          "context": "Commutative algebra and algebraic geometry: distinguished basic open subset D(f) of Spec(R)",
+          "reason": "This shares notation with the prior clopen-spectrum scan, but contextual review must decide the precise candidate."
+        },
+        {
+          "phrase": "sections of ~M on D(f)",
+          "state": "unassigned",
+          "context": "Sheaf theory: sections of an O_X-module sheaf over an open subset of Spec(R)",
+          "reason": "The notion of sections and restriction needs later identity checking."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.1be2fa074ef447b0.i-adic-completeness",
+      "version_sha256": "a374648a4acf14117a98135079658cf2a521bdbb5abd3c37b954b406e92cc73f",
+      "complete": true,
+      "review_rationale": "Reviewed I-adic completeness via the canonical inverse-limit map, linking the module, inverse limit and completion, retaining quotient and ideal-power operation occurrences for consolidation.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "An ordinary unital module is used for the I-adic construction."
+        },
+        {
+          "phrase": "lim_n M/I^n M",
+          "state": "existing",
+          "target_meaning_id": "meaning.8d61300dcabf30c0.inverse-limit-sequence-modules",
+          "matching_note": "The inverse limit is of the quotient module tower for n increasing."
+        },
+        {
+          "phrase": "I-adically complete",
+          "state": "existing",
+          "target_meaning_id": "meaning.1be2fa074ef447b0.i-adic-module-completion",
+          "matching_note": "The completion object is defined by the inverse limit; a complete module maps isomorphically to it."
+        },
+        {
+          "phrase": "M/I^n M",
+          "state": "unassigned",
+          "context": "Commutative algebra: quotient of a module by its I^n-multiple submodule",
+          "reason": "The quotient construction uses ideal powers acting on a module; keep distinct from the module completion itself."
+        },
+        {
+          "phrase": "I^n M",
+          "state": "unassigned",
+          "context": "Commutative algebra: ideal powers acting on a module to form a submodule I^n M",
+          "reason": "The multiplication of ideals and action on modules is a specific prerequisite construction."
+        },
+        {
+          "phrase": "canonical map M→lim_n M/I^n M",
+          "state": "unassigned",
+          "context": "Commutative algebra: canonical comparison homomorphism from module M to its inverse system completion",
+          "reason": "The comparison map is a natural morphism of modules associated with each quotient; no separate source research yet."
+        }
+      ]
+    }
+  ]
+}
