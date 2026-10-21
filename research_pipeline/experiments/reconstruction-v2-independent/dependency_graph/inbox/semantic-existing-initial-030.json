@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-030",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.8ca03a051e6b318a.n-one-domain",
+      "version_sha256": "18b0df1d477f77625c0ec45a7e5e275f174c8490e6048be9ddaeece956ec306c",
+      "complete": true,
+      "review_rationale": "Read the N-1 criterion and distinguished integral closure inside the fraction field K from N-2 closure inside all finite extensions L/K. Here the normalization inside K must be finite as an R-module.",
+      "references": [
+        {
+          "phrase": "integral domain R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.integral-domain"
+        },
+        {
+          "phrase": "fraction field K",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain"
+        },
+        {
+          "phrase": "integral closure of R inside K",
+          "state": "existing",
+          "target_meaning_id": "meaning.8594a432b165bcda.integral-closure-relative"
+        },
+        {
+          "phrase": "finitely generated R-module",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        },
+        {
+          "phrase": "integral closure inside K",
+          "state": "external",
+          "disposition": "The ambient ring is specifically the field of fractions, not an arbitrary extension and not algebraic closure."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.8d020efdba1941aa.noetherian-graded-ring",
+      "version_sha256": "fece5e065588de6d9b6e8f7fa8a006b6cc623afc2b1816222851079a7604fa04",
+      "complete": true,
+      "review_rationale": "Read the graded-ring and forgotten-grading Noetherian condition, plus both chain and finite-generation descriptions. Homogeneous ideal chains and arbitrary ideal finite generation are not interchangeable without the stated equivalence.",
+      "references": [
+        {
+          "phrase": "nonnegative grading A=⊕A_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.fa3b484c09596cfd.nonnegatively-graded-ring"
+        },
+        {
+          "phrase": "Noetherian ring after forgetting grading",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "homogeneous ideals",
+          "state": "existing",
+          "target_meaning_id": "meaning.29b2c34cc33d4b62.homogeneous-ideal"
+        },
+        {
+          "phrase": "finitely generated ideals",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        },
+        {
+          "phrase": "ascending homogeneous chains stabilize",
+          "state": "external",
+          "disposition": "This is a graded chain property; the definition also explicitly requires finite generation of each ungraded ideal."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.8d61300dcabf30c0.inverse-limit-sequence-modules",
+      "version_sha256": "1ee045a3e8123494a730c9cce8b97cc562c9fc4d0e2289b802859df57b35471a",
+      "complete": true,
+      "review_rationale": "Read the inverse limit as a submodule of an infinite direct product with compatibility φ_n(m_n)=m_{n−1} at each step. The definition is not a direct limit or a product without compatibility.",
+      "references": [
+        {
+          "phrase": "inverse sequence of modules",
+          "state": "existing",
+          "target_meaning_id": "meaning.8d61300dcabf30c0.inverse-sequence-of-modules"
+        },
+        {
+          "phrase": "R-module and submodule",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.submodule"
+        },
+        {
+          "phrase": "direct product ∏_{n≥1} M_n of R-modules",
+          "state": "unassigned",
+          "context": "Module theory: infinite product of R-modules, coordinatewise addition and R-action"
+        },
+        {
+          "phrase": "compatible tuples φ_n(m_n)=m_{n−1}",
+          "state": "external",
+          "disposition": "Compatibility is required for every n≥2 and defines the inverse-limit submodule."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.8d61300dcabf30c0.inverse-sequence-of-modules",
+      "version_sha256": "cf9a59a741285666fd5c5aaa680bf74dbe2ead6e494b13192cca6ee36cda84fe",
+      "complete": true,
+      "review_rationale": "Inspected the arrows M_n→M_{n−1} for all n≥2, the positive-integer index and composites to earlier terms; this is the contravariant/inverse direction and not a module direct system.",
+      "references": [
+        {
+          "phrase": "R-modules M_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "R-linear transition maps φ_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "inverse system over an ordered index",
+          "state": "existing",
+          "target_meaning_id": "meaning.709d3d2f82950c5b.inverse-system"
+        },
+        {
+          "phrase": "composites coherent for n≥m",
+          "state": "external",
+          "disposition": "The transition maps compose according to the inverse index direction and satisfy coherence; they need not be isomorphisms."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.8dbafc093b30c2a3.global-complete-intersection-algebra",
+      "version_sha256": "e743c0df61c00c23a33cd142493d5267b6a5e8b26c13bab09b89d9e74fa62f34",
+      "complete": true,
+      "review_rationale": "Read the finite-type algebra presentation k[x_1,…,x_n]/(f_1,…,f_c) and the dimension equality dim(S)=n−c. This is the stated global criterion, not an assertion that any finite presentation is a complete intersection.",
+      "references": [
+        {
+          "phrase": "field k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "finite-type algebra S over k",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map"
+        },
+        {
+          "phrase": "Krull dimension dim(S)",
+          "state": "existing",
+          "target_meaning_id": "meaning.22c049b8eee93897.krull-dimension-ring"
+        },
+        {
+          "phrase": "polynomial ring k[x_1,…,x_n]",
+          "state": "unassigned",
+          "context": "Commutative algebra: polynomial k-algebra in finitely many indeterminates"
+        },
+        {
+          "phrase": "quotient ring by ideal (f_1,…,f_c)",
+          "state": "unassigned",
+          "context": "Commutative algebra: quotient of polynomial ring by finitely generated ideal of relations"
+        },
+        {
+          "phrase": "dim(S)=n−c",
+          "state": "external",
+          "disposition": "This is an equality about the presentation and Krull dimension; no unspecified regular-sequence criterion is being substituted."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.8dbafc093b30c2a3.local-complete-intersection-algebra",
+      "version_sha256": "a6d7953dc007edf3168d07060d0698a3abd79801df4b003cb194bdbf7278be5d",
+      "complete": true,
+      "review_rationale": "Read local complete-intersection algebra via a covering of Spec(S) by standard principal open affines D(g_i), with S_{g_i} globally complete-intersection over k. No equality of local complete intersection and global complete intersection is assumed.",
+      "references": [
+        {
+          "phrase": "finite-type k-algebra S",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map"
+        },
+        {
+          "phrase": "prime spectrum Spec(S)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "ring localization S_g",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "global complete intersection over k",
+          "state": "existing",
+          "target_meaning_id": "meaning.8dbafc093b30c2a3.global-complete-intersection-algebra"
+        },
+        {
+          "phrase": "standard principal open D(g)⊆Spec(S)",
+          "state": "unassigned",
+          "context": "Algebraic geometry: basic Zariski open subset defined by nonvanishing of a ring element"
+        },
+        {
+          "phrase": "cover by standard opens D(g_i)",
+          "state": "external",
+          "disposition": "Every point of Spec(S) belongs to at least one specified open, and each corresponding localization must be globally complete-intersection."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.8f376cdea16a26da.closed-immersion-locally-ringed-space",
+      "version_sha256": "19aa0d6f42cdac6e14b88dfa2347a5ee6b248cbe325e8fba9784427dafaa95a3",
+      "complete": true,
+      "review_rationale": "Read all three closed immersion criteria: homeomorphism onto a closed subset, surjectivity O_X→i_*O_Z and locally generated kernel. The topological closed embedding alone is insufficient.",
+      "references": [
+        {
+          "phrase": "morphism of locally ringed spaces i:Z→X",
+          "state": "existing",
+          "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space-morphism"
+        },
+        {
+          "phrase": "closed subset of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "homeomorphism onto closed subset",
+          "state": "unassigned",
+          "context": "Topology: homeomorphism from Z to subspace topology on a closed subset of X"
+        },
+        {
+          "phrase": "pushforward sheaf i_*O_Z and surjective sheaf map",
+          "state": "unassigned",
+          "context": "Sheaf theory: direct image of sheaf along i and epimorphism or locally surjective map of sheaves of rings"
+        },
+        {
+          "phrase": "locally section-generated kernel ideal sheaf",
+          "state": "unassigned",
+          "context": "Algebraic geometry: kernel sheaf of ideals locally generated by sections"
+        },
+        {
+          "phrase": "kernel locally generated by sections",
+          "state": "external",
+          "disposition": "This is a substantive local condition additional to closed topological image and map surjectivity."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.8f376cdea16a26da.closed-subspace-from-ideal-sheaf",
+      "version_sha256": "a7cecfc7a065d60c5d2f177a766e986e958845e51ea6224e22dfc88ed8e3e0a9",
+      "complete": true,
+      "review_rationale": "Read the closed locally ringed subspace determined by a locally section-generated ideal sheaf I⊆O_X, with support Z of the quotient and quotient structure sheaf whose direct image equals O_X/I. Preserve both sheaf and topology conditions.",
+      "references": [
+        {
+          "phrase": "locally ringed space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space"
+        },
+        {
+          "phrase": "closed subspace inclusion Z↪X",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f376cdea16a26da.closed-immersion-locally-ringed-space"
+        },
+        {
+          "phrase": "locally section-generated sheaf of ideals I⊆O_X",
+          "state": "unassigned",
+          "context": "Sheaf theory and algebraic geometry: ideal subsheaf with local section generators"
+        },
+        {
+          "phrase": "support Z of quotient sheaf O_X/I",
+          "state": "unassigned",
+          "context": "Sheaf theory: support of a sheaf or module sheaf, with stalk-based nonvanishing"
+        },
+        {
+          "phrase": "quotient sheaf O_X/I and direct image under inclusion",
+          "state": "unassigned",
+          "context": "Sheaf theory: quotient of a sheaf of rings by ideal sheaf and direct image i_* of a sheaf"
+        },
+        {
+          "phrase": "i_*O_Z equals O_X/I",
+          "state": "external",
+          "disposition": "This is an equality of sheaves of rings on X, not just their stalks as abstract rings or a set-level quotient."
+        }
+      ]
+    }
+  ]
+}
