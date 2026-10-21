@@ -1,6 +1,10 @@
 name: Independent research population or reconciliation
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'research_pipeline/experiments/reconstruction-v2-independent/population/inbox/*.json'
   workflow_dispatch:
     inputs:
       mode:
@@ -42,7 +46,7 @@ jobs:
           python -m unittest research_pipeline.tests.test_population -v
       - name: Process independent package, recomputing on push collision
         env:
-          MODE: ${{ inputs.mode }}
+          MODE: ${{ github.event_name == 'push' && 'populate' || inputs.mode }}
           BATCH: ${{ inputs.batch_path }}
         run: |
           set -euo pipefail
@@ -53,10 +57,23 @@ jobs:
             git fetch origin main
             git checkout -B main origin/main
             if [ "$MODE" = "populate" ]; then
-              if [ -z "$BATCH" ]; then echo "batch_path is required" >&2; exit 1; fi
-              python -m research_pipeline.engine.population \
-                --workspace "$WORKSPACE" --mode populate --batch "$BATCH" \
-                --policy research_pipeline.adapters.mathdef.population_policy
+              if [ -n "$BATCH" ]; then
+                case "$BATCH" in
+                  "$WORKSPACE"/population/inbox/*.json) ;;
+                  *) echo "Batch path is outside the approved inbox" >&2; exit 1 ;;
+                esac
+                PACKAGES=("$BATCH")
+              else
+                # Push-triggered runs process all yet-unapplied committed packages.
+                # Package IDs are immutable, so the operation is safe to replay.
+                PACKAGES=("$WORKSPACE"/population/inbox/*.json)
+              fi
+              for PACKAGE in "${PACKAGES[@]}"; do
+                [ -f "$PACKAGE" ] || continue
+                python -m research_pipeline.engine.population \
+                  --workspace "$WORKSPACE" --mode populate --batch "$PACKAGE" \
+                  --policy research_pipeline.adapters.mathdef.population_policy
+              done
             elif [ "$MODE" = "reconcile" ]; then
               python -m research_pipeline.engine.population \
                 --workspace "$WORKSPACE" --mode reconcile
