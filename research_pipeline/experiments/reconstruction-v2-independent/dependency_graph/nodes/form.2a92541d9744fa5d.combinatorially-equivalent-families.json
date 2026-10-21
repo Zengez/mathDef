@@ -2,10 +2,36 @@
   "schema_version": 1,
   "formulation_id": "form.2a92541d9744fa5d.combinatorially-equivalent-families",
   "version_sha256": "70a86ee258171d8566f9b0daec8a9ec40dc47d55d391b3c57dce5fc46f46d951",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "families of arrows to U",
+      "state": "unassigned",
+      "context": "Category theory: indexed family of arrows in a category with common target U",
+      "reason": "Potentially matches the existing fixed-target family meaning subject to categorical size context.",
+      "occurrence_id": "occ.bb1f57b27c3ff879e557"
+    },
+    {
+      "phrase": "indexing sets",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "matching_note": "The families are indexed by underlying sets; exact indexing-map structure recorded separately.",
+      "occurrence_id": "occ.ed36a506391c93a633a1"
+    },
+    {
+      "phrase": "each family admits an indexing map into the other identifying the arrows",
+      "state": "unassigned",
+      "context": "Category theory: reindexing of parallel arrow families by functions of index sets",
+      "reason": "Combinatorial equivalence here ignores multiplicity and preserves the arrows.",
+      "occurrence_id": "occ.0a9da922c95076a99310"
+    },
+    {
+      "phrase": "ignoring multiplicities",
+      "state": "external",
+      "disposition": "Equality of the sets of occurrences of arrows, ignoring repeat indices, is specified directly by the formulation.",
+      "occurrence_id": "occ.9d888a32f32a2d1097ae"
+    }
+  ],
+  "snapshot_sha256": "517e331dcbb6d7272ddfc027c138e50173e06e37d68206236588af63ce4af135",
+  "review_rationale": "Reviewed combinatorial equivalence of arrow families by their indexed targets and arrow occurrences, preserving reindexing without presuming an arbitrary category is small."
 }

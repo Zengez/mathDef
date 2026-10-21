@@ -2,40 +2,58 @@
   "schema_version": 1,
   "formulation_id": "form.29b2c34cc33d4b62.proj-graded-ring",
   "version_sha256": "e5f17a4e9551cc417032ef88e18d98b5bb37a80c0cdade695019ebea59419fd3",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
       "phrase": "topological space",
-      "span": [
-        62,
-        79
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.e93b853f66003560b781"
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "matching_note": "Proj(S) is equipped with a topology.",
+      "occurrence_id": "occ.f3233e84dac4af3befac"
+    },
+    {
+      "phrase": "prime ideals",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "matching_note": "The homogeneous prime ideals are primes of a commutative ring.",
+      "occurrence_id": "occ.0cf4bf80dcf4bc0c7320"
     },
     {
       "phrase": "subspace topology",
-      "span": [
-        183,
-        200
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subspace-topology-general",
-        "meaning.wave2.foundation.subspace-topology-nonempty"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.db4730db92778a50a529"
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subspace-topology-general",
+      "matching_note": "Proj(S) may be empty; use the general arbitrary-subspace version.",
+      "occurrence_id": "occ.805c546e1bfedc6d1225"
+    },
+    {
+      "phrase": "Spec(S)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "matching_note": "The underlying spectrum is the prime spectrum of the graded commutative ring.",
+      "occurrence_id": "occ.685001dac006e6558093"
+    },
+    {
+      "phrase": "homogeneous ideals",
+      "state": "existing",
+      "target_meaning_id": "meaning.29b2c34cc33d4b62.homogeneous-ideal",
+      "matching_note": "This supplies the homogeneous condition for prime ideals.",
+      "occurrence_id": "occ.66a90ab944b3785866f6"
+    },
+    {
+      "phrase": "nonnegatively graded commutative ring",
+      "state": "unassigned",
+      "context": "Graded algebra: nonnegatively graded commutative ring S=⊕_{n≥0}S_n",
+      "reason": "Ordinary Noetherian graded-ring context should not be assumed.",
+      "occurrence_id": "occ.01eef1d13b53842f4942"
+    },
+    {
+      "phrase": "irrelevant ideal S_+",
+      "state": "unassigned",
+      "context": "Graded algebra: ideal of positive-degree elements ⊕_{n>0} S_n",
+      "reason": "The special ideal excluded from Proj is a contextual ring construction.",
+      "occurrence_id": "occ.901d63f664576932700d"
     }
   ],
-  "snapshot_sha256": "fcb906ae69e207269c4d966924d1d24002b7c04eb377cc728d5893570fd4c532",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "e7687d99b7fb5fd3598a7f7898ace649bce90d92cf6036326feb54f20c4a6bf4",
+  "review_rationale": "Reviewed Proj(S) via spectrum, homogeneous ideals and arbitrary subspace topology, recording the graded ring and irrelevant ideal without presuming they already exist."
 }

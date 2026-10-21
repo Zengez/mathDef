@@ -2,10 +2,43 @@
   "schema_version": 1,
   "formulation_id": "form.29b2c34cc33d4b62.degree-zero-localization",
   "version_sha256": "3c98bb07fd891dd8d982c0ac11d2910ec16fa8b564f6b13fdfeaac59a49c5f4d",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "localization S_f",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+      "matching_note": "S_f is localization at powers of f.",
+      "occurrence_id": "occ.b8637ef02cdd3bd3e370"
+    },
+    {
+      "phrase": "positively graded ring S",
+      "state": "unassigned",
+      "context": "Graded commutative algebra: positively graded ring with decomposition S=⊕ S_n",
+      "reason": "Grading structure should not be conflated with a Noetherian graded-ring meaning.",
+      "occurrence_id": "occ.736a5a1bc318f7404051"
+    },
+    {
+      "phrase": "homogeneous element f",
+      "state": "unassigned",
+      "context": "Graded algebra: element belonging to one graded component S_d",
+      "reason": "Homogeneity of ring elements is a specific graded context.",
+      "occurrence_id": "occ.850e348d11d36ae26fe9"
+    },
+    {
+      "phrase": "degree-zero subring",
+      "state": "unassigned",
+      "context": "Graded algebra: homogeneous degree-zero component of a graded localization",
+      "reason": "The S_(f) component is a ring construction and cannot be reduced to mere ordinary localization.",
+      "occurrence_id": "occ.4649ce3edeb762e043a9"
+    },
+    {
+      "phrase": "fractions a/f^n with deg(a)=n deg(f)",
+      "state": "external",
+      "disposition": "The displayed fraction-degree condition explicitly describes what belongs to the constructed subring.",
+      "occurrence_id": "occ.2b0ab31bb57f31d7d63e"
+    }
+  ],
+  "snapshot_sha256": "15a209cfcffa0e97809b44cd1dfa45c538fd5cc6234f98465addafdd1c24d720",
+  "review_rationale": "Reviewed degree-zero graded localization as a degree-graded subring of ordinary ring localization and stored graded-ring and homogeneous-element references for later classification."
 }

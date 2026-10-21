@@ -2,25 +2,35 @@
   "schema_version": 1,
   "formulation_id": "form.27eb121021fd989d.quasicompact-space",
   "version_sha256": "96af072a4a96833c301aa8e63a5d2b60a98217abafe6967b9f5e52c7a4181c13",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.92a37373a6fee53ccf50"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "matching_note": "X has an ordinary open-set topology.",
+      "occurrence_id": "occ.d4e56e2793b976c20ecd"
+    },
+    {
+      "phrase": "open cover",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.broad67.compact-topological-space",
+      "matching_note": "The no-Hausdorff compactness definition uses finite open subcovers.",
+      "occurrence_id": "occ.a61add7a44e1f5057c40"
+    },
+    {
+      "phrase": "finite subcollection that still covers X",
+      "state": "external",
+      "disposition": "This is the defining finite-subcover condition, rather than an independent missing contextual meaning.",
+      "occurrence_id": "occ.374e029771feab125b1f"
+    },
+    {
+      "phrase": "no Hausdorff condition",
+      "state": "external",
+      "disposition": "The clause explicitly denies a separation assumption and should not be construed as a separate dependency on Hausdorff spaces.",
+      "occurrence_id": "occ.c187a3e73d27597a5424"
     }
   ],
-  "snapshot_sha256": "846296dab0cbefa0cb57902621d794079599900ac4e8ee666838aabcc74928b9",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "fbddf155223a0ac7ad1385de97c73f7145971173e59c107117d3d14a6321b46e",
+  "review_rationale": "Read quasi-compact topological space without a Hausdorff restriction and matched the no-Hausdorff finite-open-subcover formulation of compactness."
 }

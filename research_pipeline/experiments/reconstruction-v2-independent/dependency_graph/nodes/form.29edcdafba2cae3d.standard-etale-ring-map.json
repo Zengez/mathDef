@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.29edcdafba2cae3d.standard-etale-ring-map",
   "version_sha256": "7f2c40f829d83a5b399678bb5be3ad2c807d9b985bd4b1529056a8fe09372afc",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ring map R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "matching_note": "The étale ring-map definition uses the commutative unital algebra convention.",
+      "occurrence_id": "occ.aa51d4dcb32416e888e0"
+    },
+    {
+      "phrase": "étale",
+      "state": "existing",
+      "target_meaning_id": "meaning.6f35dab884da6c30.etale-ring-map",
+      "matching_note": "Standard étale is a particular presentation guaranteeing the existing étale property.",
+      "occurrence_id": "occ.af1fc35e099658c35a58"
+    },
+    {
+      "phrase": "localization R[x]_g",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+      "matching_note": "The quotient is taken after ring localization at polynomial g.",
+      "occurrence_id": "occ.a4a877926b174067ad60"
+    },
+    {
+      "phrase": "R-algebra isomorphic to R[x]_g/(f)",
+      "state": "unassigned",
+      "context": "Commutative algebra: a standard étale algebra presentation by polynomial localization and quotient",
+      "reason": "The compound quotient construction is not equivalent to any one existing ring-localization meaning.",
+      "occurrence_id": "occ.8f1845be96a3c2c4f56a"
+    },
+    {
+      "phrase": "monic polynomial f",
+      "state": "unassigned",
+      "context": "Polynomial algebra: monic polynomial with leading coefficient 1 in R[x]",
+      "reason": "This may be a separate indexed polynomial property; leave the occurrence unassigned.",
+      "occurrence_id": "occ.72f0100e7bb95e244573"
+    },
+    {
+      "phrase": "f′ invertible",
+      "state": "unassigned",
+      "context": "Polynomial algebra: formal derivative of f and invertibility of its image after localization",
+      "reason": "Differentiation of a formal polynomial differs from analysis derivative and must be context-matched.",
+      "occurrence_id": "occ.f234365dcdae01279ce4"
+    }
+  ],
+  "snapshot_sha256": "851894b73994c38415bb141bfe3e02bf6eb449371ef3d3584a4311c3c09ae944",
+  "review_rationale": "Read the standard étale polynomial quotient/localization criterion, distinguishing source ring homomorphism and étaleness from monic polynomial and formal derivative concepts."
 }

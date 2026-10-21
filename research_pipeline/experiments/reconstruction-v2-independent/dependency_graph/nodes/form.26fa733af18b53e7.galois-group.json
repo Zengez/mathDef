@@ -2,53 +2,36 @@
   "schema_version": 1,
   "formulation_id": "form.26fa733af18b53e7.galois-group",
   "version_sha256": "9305c87479f2e3b838a948954b8250b76cd80f2ad42c89d8018bcab106dd7868",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "group",
-      "span": [
-        39,
-        44
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.1a3b5acacf5de9befad9"
+      "phrase": "Galois extension E/F",
+      "state": "existing",
+      "target_meaning_id": "meaning.26fa733af18b53e7.galois-field-extension",
+      "matching_note": "The group is formed from an existing Galois field extension.",
+      "occurrence_id": "occ.9b1e14fbd105a34b2da8"
     },
     {
       "phrase": "group",
-      "span": [
-        61,
-        66
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.480c5aafab83cd071f3e"
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.group",
+      "matching_note": "Composition of automorphisms yields an abstract group.",
+      "occurrence_id": "occ.44b74af171ece39361bb"
     },
     {
-      "phrase": "group",
-      "span": [
-        132,
-        137
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.d3c501fd01d1d26be1cf"
+      "phrase": "field automorphisms of E that fix F",
+      "state": "existing",
+      "target_meaning_id": "meaning.ac17dab9530c0b80.automorphisms-of-field-extension",
+      "matching_note": "This is the precise base-preserving automorphism group of the extension.",
+      "occurrence_id": "occ.772e1296c3c36e85f424"
+    },
+    {
+      "phrase": "group law given by composition",
+      "state": "external",
+      "disposition": "Composition is the standard operation on maps, already implicit in the group of automorphisms.",
+      "occurrence_id": "occ.2dc5331c69ba9b6ae434"
     }
   ],
-  "snapshot_sha256": "0895b906361a691dbec483f74fb039a0d29ea60ee48142d6408181b4b707424d",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "b178d3137bc0fe2df9792a8c15ae170b5f4e703822c0ccd8363edcceb82d3a4b",
+  "review_rationale": "Reviewed base-fixed automorphisms and the group law for the Galois group, linking the existing Galois extension, automorphism and abstract group contexts."
 }

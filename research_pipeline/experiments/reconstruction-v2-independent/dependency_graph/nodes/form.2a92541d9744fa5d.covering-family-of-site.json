@@ -2,10 +2,37 @@
   "schema_version": 1,
   "formulation_id": "form.2a92541d9744fa5d.covering-family-of-site",
   "version_sha256": "713db21eb140dde4662fbd9a5c256ffdde796c56c26fb6157fe555dabb11e720",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "site (C,Cov)",
+      "state": "unassigned",
+      "context": "Category theory: category with a Grothendieck topology / specified covering families",
+      "reason": "The Grothendieck site notion is not established by a generic category definition.",
+      "occurrence_id": "occ.070f15a67489ee41d174"
+    },
+    {
+      "phrase": "collection of arrows U_i→U",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.fixed-target-morphism-family",
+      "matching_note": "An indexed family of morphisms has common target U.",
+      "occurrence_id": "occ.c0dc133af39ea917582e"
+    },
+    {
+      "phrase": "isomorphism covers",
+      "state": "unassigned",
+      "context": "Grothendieck sites: covering family containing an isomorphism to the target",
+      "reason": "This is a covering-family closure axiom specialized to site structure.",
+      "occurrence_id": "occ.9efe19902cfa3010e910"
+    },
+    {
+      "phrase": "compositional refinement and pullback",
+      "state": "unassigned",
+      "context": "Grothendieck sites: pullback/refinement of covering families along arbitrary arrows",
+      "reason": "The site axioms invoke categorical pullback and compositional refinement, not generic set intersection.",
+      "occurrence_id": "occ.77eb1bd9b666c0dcde0b"
+    }
+  ],
+  "snapshot_sha256": "1fd3eddfcb349135b9bdb458a1f8d57b25120795f78f9a7ba93c35e442fa7473",
+  "review_rationale": "Examined covering-family axioms of a Grothendieck site and linked fixed-target arrow families, while leaving site, refinement and pullback context for later global comparison."
 }

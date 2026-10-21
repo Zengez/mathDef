@@ -2,10 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.26fa733af18b53e7.galois-field-extension",
   "version_sha256": "ddae9963fe51ffa21d016880e3bb77649c529e097e0a1380eb2527351f276c78",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "field extension E/F",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "matching_note": "The ambient extension is a general inclusion of fields.",
+      "occurrence_id": "occ.2f6b78e6a744ba080833"
+    },
+    {
+      "phrase": "algebraic",
+      "state": "existing",
+      "target_meaning_id": "meaning.50d335de00e5f11d.algebraic-extension",
+      "matching_note": "Algebraicity is the corresponding extension-field property.",
+      "occurrence_id": "occ.7548a8db08857b818fee"
+    },
+    {
+      "phrase": "separable",
+      "state": "existing",
+      "target_meaning_id": "meaning.720eaae9156f6f4e.separable-algebraic-field-extension",
+      "matching_note": "The Galois extension must be separable in the field-theoretic sense.",
+      "occurrence_id": "occ.fd2406c82f14e95a9df4"
+    },
+    {
+      "phrase": "normal",
+      "state": "existing",
+      "target_meaning_id": "meaning.50d335de00e5f11d.normal-algebraic-extension",
+      "matching_note": "Normality is the existing normal algebraic extension property.",
+      "occurrence_id": "occ.3572f5658a5701e19ad2"
+    },
+    {
+      "phrase": "F-automorphisms",
+      "state": "existing",
+      "target_meaning_id": "meaning.ac17dab9530c0b80.automorphisms-of-field-extension",
+      "matching_note": "Automorphisms fixing the base field are independently indexed.",
+      "occurrence_id": "occ.3bd552ca995beef2da2a"
+    },
+    {
+      "phrase": "[E:F]",
+      "state": "unassigned",
+      "context": "Field theory: degree of a finite field extension as vector space dimension over the base field",
+      "reason": "The degree of an extension should be compared with the corpus's finite-extension/field-degree meanings.",
+      "occurrence_id": "occ.ea115f427df8078e1882"
+    },
+    {
+      "phrase": "precisely [E:F] automorphisms",
+      "state": "external",
+      "disposition": "Equality of two finite cardinal counts is a property, not a separate prerequisite.",
+      "occurrence_id": "occ.589deeeab33039e48416"
+    }
+  ],
+  "snapshot_sha256": "f3e9fa40a21d6efaae0f3e6dc8400d166b8446cfc6a6c2616d73b800ec594c86",
+  "review_rationale": "Read Galois extension through algebraic, separable and normal extension meanings and base-preserving automorphisms, leaving finite degree [E:F] for global classification."
 }
