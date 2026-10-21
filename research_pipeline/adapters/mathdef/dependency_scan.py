@@ -9,6 +9,10 @@ from __future__ import annotations
 import re
 from collections import defaultdict
 
+# Deliberately pessimistic: this adapter suggests candidates, never certifies
+# that the full definition has been scanned.
+PROPOSAL_VERSION = "context-conservative-2"
+
 
 def _domain(context):
     return " ".join(re.findall(r"[a-z]+", context.casefold().split(":")[0]))
@@ -50,7 +54,12 @@ def propose(formulation, meanings):
                            if _domain(m["context"]) == origin_domain and origin_domain]
             if len(same_domain) == 1:
                 targets = same_domain
-        if len(targets) == 1:
+        # An unqualified word such as "integer", "group", or "closure"
+        # must not become a confident cross-domain dependency merely
+        # because there is one indexed meaning with that display term.
+        unique = len(targets) == 1
+        domain_agrees = unique and _domain(meanings[targets[0]]["context"]) == origin_domain
+        if unique and domain_agrees:
             selected.append({
                 "phrase": phrase, "span": [start, stop], "state": "existing",
                 "target_meaning_id": targets[0], "origin": "unreviewed_lexical_proposal",
@@ -60,7 +69,9 @@ def propose(formulation, meanings):
             selected.append({
                 "phrase": phrase, "span": [start, stop], "state": "ambiguous",
                 "candidate_meaning_ids": targets,
-                "reason": "Multiple contextual meanings share this display term; requires semantic disambiguation",
+                "reason": ("Multiple contextual meanings share this term" if len(targets) > 1
+                           else "Only indexed sense belongs to a different contextual domain")
+                          + "; source-specific semantic disambiguation required",
                 "origin": "unreviewed_lexical_proposal",
             })
     return selected
