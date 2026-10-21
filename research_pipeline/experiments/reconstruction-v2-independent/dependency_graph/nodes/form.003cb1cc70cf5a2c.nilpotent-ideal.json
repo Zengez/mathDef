@@ -2,21 +2,47 @@
   "schema_version": 1,
   "formulation_id": "form.003cb1cc70cf5a2c.nilpotent-ideal",
   "version_sha256": "522b853e8897f06f6e63b3d0a51885674f8b5332ce8aa65c1cf41744b37343ac",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        68,
-        75
-      ],
+      "phrase": "ideal I",
       "state": "existing",
-      "target_meaning_id": "meaning.wave2.integer59.integer-equivalence-class",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.68914934f622ba8520c1"
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "context": "Ring theory",
+      "matching_note": "The underlying two-sided ideal structure is represented; it should not be confused with the multiplication of ideals.",
+      "occurrence_id": "occ.f197d05784dc2c86621a"
+    },
+    {
+      "phrase": "ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "context": "Ring theory",
+      "matching_note": "The generic associative ring target covers the stated ambient ring without inferring an optional multiplicative identity.",
+      "occurrence_id": "occ.7e58d0e5bc89fd903150"
+    },
+    {
+      "phrase": "product ideal I^n",
+      "state": "missing",
+      "context": "Ring theory: ideal multiplication and positive integral powers",
+      "matching_note": "Power of an ideal is constructed by ideal multiplication and is not defined by the ring or ideal axioms alone.",
+      "missing_candidate_id": "missing.28c2bfd6be87e9099167",
+      "occurrence_id": "occ.6382ae14011d622d9352"
+    },
+    {
+      "phrase": "zero ideal",
+      "state": "missing",
+      "context": "Ring theory: zero ideal of a ring",
+      "matching_note": "The target is the additive-zero ideal of R, not the zero element alone.",
+      "missing_candidate_id": "missing.598915c4e9e889d2218b",
+      "occurrence_id": "occ.de32b376c5e1804a1997"
+    },
+    {
+      "phrase": "positive integer n",
+      "state": "external",
+      "disposition": "Ordinary positive-integer quantification specifies a finite exponent; no source-supported dependency on a particular construction of integers is asserted.",
+      "occurrence_id": "occ.c05071cae5e7ae171269"
     }
   ],
-  "snapshot_sha256": "86eb397c4ddc76e4479455a39bc0d82bddc7e2c7a728d34611a257f386093e60",
-  "review_rationale": ""
+  "snapshot_sha256": "137c0c8d14eccea15e6c2a2c561db72a737f2ed8633f9958920a9729d98935a2",
+  "review_rationale": "Inspected the entire ideal-nilpotency statement, including its integer exponent and ideal-power notation. Existing meanings support the ambient associative ring and two-sided ideal. Ideal multiplication/powers and the zero ideal are independently needed; a positive integer is an ordinary quantifier, not an assertion that the specific integer-as-equivalence-class construction is required."
 }

@@ -6,59 +6,62 @@
     "total_formulations": 659,
     "screened_formulations": 639,
     "provisional_formulations": 20,
-    "scan_complete": 0,
-    "scan_incomplete": 440,
-    "unscanned": 219,
+    "scan_complete": 6,
+    "scan_incomplete": 474,
+    "unscanned": 179,
     "open": 659,
     "closed": 0,
-    "missing_candidates": 5,
-    "unresolved_missing_candidates": 5,
-    "missing_occurrences": 5,
-    "ambiguous_occurrences": 192,
+    "missing_candidates": 13,
+    "unresolved_missing_candidates": 13,
+    "missing_occurrences": 17,
+    "ambiguous_occurrences": 204,
     "seed_relations": 891,
-    "scan_occurrences": 356,
+    "scan_occurrences": 395,
     "scan_amendment_event_count": 0,
     "automatic_completion_is_not_certification": true,
     "breadth_expansion": "on_hold"
   },
   "formulations": {
     "form.003cb1cc70cf5a2c.locally-nilpotent-ideal": {
-      "scan_status": "scan_incomplete",
+      "scan_status": "complete",
       "encountered": true,
-      "completed": false,
+      "completed": true,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "missing:missing.466fc74fa077cb173f05",
+        "missing:missing.39e4d92e2f3e4374dd27"
       ],
       "version_sha256": "21e828b82c6abe31bdf7dda486d67c727f64a45452575f002394d138fb78940d"
     },
     "form.003cb1cc70cf5a2c.nilpotent-ideal": {
-      "scan_status": "scan_incomplete",
+      "scan_status": "complete",
       "encountered": true,
-      "completed": false,
+      "completed": true,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "missing:missing.28c2bfd6be87e9099167",
+        "missing:missing.598915c4e9e889d2218b"
       ],
       "version_sha256": "522b853e8897f06f6e63b3d0a51885674f8b5332ce8aa65c1cf41744b37343ac"
     },
     "form.03b55b8ca41abb20.jacobson-ring": {
-      "scan_status": "scan_incomplete",
+      "scan_status": "complete",
       "encountered": true,
-      "completed": false,
+      "completed": true,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "missing:missing.466fc74fa077cb173f05",
+        "missing:missing.2592ffd1f6be0b4d46bf"
       ],
       "version_sha256": "90e138aae28af3fc7c315aeca295fca98171910760333032c4fabdbbf34878c2"
     },
     "form.03b55b8ca41abb20.jacobson-ring-prime-characterization": {
-      "scan_status": "scan_incomplete",
+      "scan_status": "complete",
       "encountered": true,
-      "completed": false,
+      "completed": true,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "missing:missing.466fc74fa077cb173f05"
       ],
       "version_sha256": "6cf77b965e1d7c9f65fc75b446e7c66d361a421b79c887abab7090b801b6cb9a"
     },
@@ -113,22 +116,25 @@
       "version_sha256": "4aa5df1407efbe8d14743ce4e11d012cb4ad666117d02e4895350128fb49863a"
     },
     "form.05531f966e3a206f.prime-element": {
-      "scan_status": "scan_incomplete",
+      "scan_status": "complete",
       "encountered": true,
-      "completed": false,
+      "completed": true,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "missing:missing.45359d317b7e3aba73da",
+        "missing:missing.908934f4b8323f2ba8a0",
+        "missing:missing.908934f4b8323f2ba8a0",
+        "missing:missing.908934f4b8323f2ba8a0"
       ],
       "version_sha256": "968fbfd444d304b60ed91851f6fb521bb5b32e02622b156dd743a51aab6c8290"
     },
     "form.05531f966e3a206f.principal-ideal-domain": {
-      "scan_status": "scan_incomplete",
+      "scan_status": "complete",
       "encountered": true,
-      "completed": false,
+      "completed": true,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "missing:missing.6d8a70c23c4b7120411b"
       ],
       "version_sha256": "c1a2ed587e7a17cef338ad236e7557f00da7292455c9d631f323a0418c27cd89"
     },
@@ -4645,18 +4651,19 @@
       "version_sha256": "6f78b0a7016fe09740e15a46d76d10d16bed15b1a7142b47581d574be0e7aa35"
     },
     "form.wave2.analysis.orthogonal-polynomials-interval": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.1ca087e2b8a0be4fd615",
         "scan_incomplete"
       ],
       "version_sha256": "03c2cb75270a18e0376f942c6b156e8e6214e50dfe65121818d33c7fceb5e5ca"
     },
     "form.wave2.analysis.orthogonal-polynomials-measure": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4665,8 +4672,8 @@
       "version_sha256": "a2de5c140e9390ea8e1c6edc9100fe4d971460704b4e2390b5e7052415a58abc"
     },
     "form.wave2.analysis.real-absolute-value": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4675,18 +4682,19 @@
       "version_sha256": "0c2b18fa8b161aed7b7fff4995db14480872aae928bee9941d5354beed3c20ab"
     },
     "form.wave2.analysis.real-derivative-point": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.81d79b6f2d38fa221ac4",
         "scan_incomplete"
       ],
       "version_sha256": "b6dd549ce46ea3875f9b7a86147e743f585a764e48037ddeba392ef49bc4086c"
     },
     "form.wave2.analysis.real-limit-punctured-epsilon-delta": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4695,8 +4703,8 @@
       "version_sha256": "1ee8ffe568044c4a45103765f86ca35187c35de810c92214750196cb64a3503c"
     },
     "form.wave2.analysis98.complex-inner-product-space": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4705,8 +4713,8 @@
       "version_sha256": "2adec135c98817db6d6a3e3460cad93f2405a5a296872d6bcfb505d94d502650"
     },
     "form.wave2.analysis98.metric-space": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4715,8 +4723,8 @@
       "version_sha256": "b6785dc6c9d5fc607ae342116640dfbea21079c7e743f27165fe889ff1753286"
     },
     "form.wave2.analysis98.metric-space.compatible": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4725,18 +4733,19 @@
       "version_sha256": "7f901b77c85d325244eca5692e45b3b11fa1025ec709e6f3aa93b7e98737ec36"
     },
     "form.wave2.analysis98.norm-over-normed-division-ring": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.30f0ea50c0c858c9dc42",
         "scan_incomplete"
       ],
       "version_sha256": "03695737ad36404b3cb48ae04571a5075b6f4fec85f13d2a315f8115298267dd"
     },
     "form.wave2.analysis98.norm-over-real-or-complex": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4745,18 +4754,19 @@
       "version_sha256": "efac406b9b0192ffdc043de917a09d55e100b9d2a7865c711666eb0f65bc4a46"
     },
     "form.wave2.analysis98.normed-vector-space": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.b06ecd69010168ef2956",
         "scan_incomplete"
       ],
       "version_sha256": "e51db16e329959148fef3dcedb9b0b4d4550baf8b5ee3304b841873b5d6cbbf6"
     },
     "form.wave2.analysis98.real-inner-product-space": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4765,8 +4775,8 @@
       "version_sha256": "0ceceb7693047e97f215ae624339c8afcdf2df70c307db3583a259fb5aeb709f"
     },
     "form.wave2.branch129.indexed-product-topology.1": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4775,8 +4785,8 @@
       "version_sha256": "b5b1e838dfcad7c04a76c5e2443c0bc5644d4f6a70582718572aba52bc0499f5"
     },
     "form.wave2.branch129.indexed-product-topology.2": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4785,8 +4795,8 @@
       "version_sha256": "fbfc0e54d7ddde839e030c30cbfbfb30902a89457844e2f8b0f829099f071366"
     },
     "form.wave2.branch129.nonempty-connected-graph": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4795,8 +4805,8 @@
       "version_sha256": "8acedb465db621ed354e05aa47b20b752c47d159268db5030cbf6dc67a8471ef"
     },
     "form.wave2.branch129.operator-eigenvalue.1": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4805,8 +4815,8 @@
       "version_sha256": "04281481cf32bd7c04d7d549dde0a1e9d14b64b23dded54a1a0be8f47df6aa13"
     },
     "form.wave2.branch129.operator-eigenvalue.2": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4815,8 +4825,8 @@
       "version_sha256": "722ad504ad3e46cad9ee3242bd9a1d6d28fc337b4a14c85cecced95a7345184f"
     },
     "form.wave2.branch129.real-convergent-egf": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4825,18 +4835,19 @@
       "version_sha256": "6d3078c2492f86b6e3cbfb6d081eb062436ef3a044173eaa6c16021f06fef5b2"
     },
     "form.wave2.bridge136.convex-real.1": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.9dc030513320ebb2f854",
         "scan_incomplete"
       ],
       "version_sha256": "dd0525d49799e8db08d9baf5826dd2111431127929fa9cb55a372cd8e25eba25"
     },
     "form.wave2.bridge136.convex-real.2": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4845,8 +4856,8 @@
       "version_sha256": "c5c7a4f0d64f543bc26fe37ce9554c463f70e77f0434c81b8f27bcbb2a9ea04b"
     },
     "form.wave2.bridge136.falling-real-nonnegative": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4855,8 +4866,8 @@
       "version_sha256": "aacc39004ab78dc6bf3cdd0b6e8ca4714612f5077f303386da5b3842b1145985"
     },
     "form.wave2.bridge136.numeric-delta.1": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4865,8 +4876,8 @@
       "version_sha256": "2a65997454ea5f1469de99e5695818c6d7905a40fd1fbdacd97dfbbe06380b91"
     },
     "form.wave2.bridge136.numeric-delta.2": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4875,8 +4886,8 @@
       "version_sha256": "930f5ca84a2604bd73d71907dd3f369f033bb81fe9f548ec666da466fe502393"
     },
     "form.wave2.bridge136.simple-bipartite.1": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4885,8 +4896,8 @@
       "version_sha256": "56a4ceaa3adbac4cd228a33bd0d0360bbbe5b343c627fbd073e5b6b91631d2ab"
     },
     "form.wave2.bridge136.simple-bipartite.2": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4895,18 +4906,19 @@
       "version_sha256": "af414f708f8494261ef8783942c50f5fb74dca272657db81ac9ca04772c1869c"
     },
     "form.wave2.broad67.compact-open-cover": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.4c906331d76a4878599f",
         "scan_incomplete"
       ],
       "version_sha256": "d8b7bc2a6ca9bc37117e5a9905922aeec869bd30597af0160d7b96c9a27e812a"
     },
     "form.wave2.broad67.compact-closed-fip": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4915,8 +4927,8 @@
       "version_sha256": "e6a0aa44634543ff92c50272643e6d7a42152bc50827bbbd925d745849f036bb"
     },
     "form.wave2.conv126.eigenvector-linear-operator.1": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4925,8 +4937,8 @@
       "version_sha256": "eab75c3d81e5368f4e931f1f553795541076a8de80d7ffcbd169fffb2815d1b9"
     },
     "form.wave2.conv126.eigenvector-linear-operator.2": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4935,18 +4947,20 @@
       "version_sha256": "d2697f187ac2cb167c8c2f7f715e27908957e9cce56fd8eabe06911c0d0d0ff9"
     },
     "form.wave2.conv126.locally-uniform-metric": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.3550e7263e9504598987",
+        "ambiguous:occ.7b3af649b422b16a0c30",
         "scan_incomplete"
       ],
       "version_sha256": "e40bb14d4277d20ec40e29375c047156207b069664ddb6ae0442dc29f064b6fb"
     },
     "form.wave2.conv126.pointwise-real": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4955,28 +4969,30 @@
       "version_sha256": "22819fab035f402fb3283bfe8b7b6a552276e5f3340514b11f65af8a0579acdb"
     },
     "form.wave2.conv126.pointwise-topological": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.cd44d64da1a7dca4033d",
         "scan_incomplete"
       ],
       "version_sha256": "2a67544a0d303da57261be8768a64a4de92ea066464bff5e0a7f44f451f5ec10"
     },
     "form.wave2.conv126.uniform-metric": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.7e79e0b7000bb2b74418",
         "scan_incomplete"
       ],
       "version_sha256": "aaf554ac18011e04f0d0b5a8d0fb960433a1e4a741bee96fe557ff41b32b225f"
     },
     "form.wave2.conv126.uniform-real": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -4985,18 +5001,19 @@
       "version_sha256": "8600718099538b2a66f4f8522a15e1df70ffbdc6c254bf9364a9e86494b0e6c4"
     },
     "form.wave2.cross104.independent-rv-countable": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.7954858a0a1a3d1639ad",
         "scan_incomplete"
       ],
       "version_sha256": "084c11af6d826ece19c0fa38c72139abef08e677fdf4d3042270482923da8a7b"
     },
     "form.wave2.cross104.independent-sigma-countable": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -5005,18 +5022,19 @@
       "version_sha256": "2b617eedda4bd9cd5bcb394ab5cf8c61438d672805f232a8f90824db49d86076"
     },
     "form.wave2.cross104.independent-sigma-pair": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.5c5562574e7b60ef337f",
         "scan_incomplete"
       ],
       "version_sha256": "59a2bd27a7b99787611ddad73e649b87bac5f724f2b8a8189ceb4799f29ae32c"
     },
     "form.wave2.cross104.lipschitz-at-point-anchored": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -5025,8 +5043,8 @@
       "version_sha256": "7df4b756b1a33743bc81a58f63a2fe06dd69a1f3ef73c83aa3fa2cfea4592539"
     },
     "form.wave2.cross104.lipschitz-global": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -5725,8 +5743,8 @@
       "version_sha256": "0df8540e25987eba8bcc9924def4ff4cdb1701dce69e8067e9777b979000f34b"
     },
     "form.wave2.broad67.sigma-difference-disjoint-countable": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [

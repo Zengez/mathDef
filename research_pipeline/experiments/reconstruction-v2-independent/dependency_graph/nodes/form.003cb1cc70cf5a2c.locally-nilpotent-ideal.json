@@ -2,8 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.003cb1cc70cf5a2c.locally-nilpotent-ideal",
   "version_sha256": "21e828b82c6abe31bdf7dda486d67c727f64a45452575f002394d138fb78940d",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": ""
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ideal I",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "context": "Commutative algebra",
+      "matching_note": "A commutative-ring ideal is in particular a two-sided ring ideal; the existing generic two-sided-ideal meaning covers this structure.",
+      "occurrence_id": "occ.8173cc244985587787cc"
+    },
+    {
+      "phrase": "commutative ring R",
+      "state": "missing",
+      "context": "Commutative algebra: commutative ring with multiplicative identity",
+      "matching_note": "No independently indexed exact contextual meaning for a commutative unital ring; do not invent a screened definition.",
+      "missing_candidate_id": "missing.466fc74fa077cb173f05",
+      "occurrence_id": "occ.7f61ca79f1d97c770d8e"
+    },
+    {
+      "phrase": "nilpotent",
+      "state": "missing",
+      "context": "Commutative algebra: nilpotent element of a commutative ring",
+      "matching_note": "The predicate applies to each element x, not to I as an ideal; distinguish from the existing nilpotent-ideal meaning.",
+      "missing_candidate_id": "missing.39e4d92e2f3e4374dd27",
+      "occurrence_id": "occ.2954844c24784affa193"
+    },
+    {
+      "phrase": "exponent allowed to depend on x",
+      "state": "external",
+      "disposition": "The quantification over a positive integer exponent for each x is treated as ordinary elementary integer quantification, not as a new named mathematical structure.",
+      "occurrence_id": "occ.84fd54378fe3f4ef0011"
+    }
+  ],
+  "snapshot_sha256": "0359c30b6f05474c695f32d7446984cb39abf8eec2eb385cf68a053ab4cfe2ff",
+  "review_rationale": "Read the entire independent Stacks-attributed formulation. Its mathematical dependencies are the ambient commutative ring, the ring ideal and the nilpotency of each of its elements; the varying exponent uses the ordinary positive-integer convention. These are not equivalent to nilpotence of the ideal as a whole."
 }
