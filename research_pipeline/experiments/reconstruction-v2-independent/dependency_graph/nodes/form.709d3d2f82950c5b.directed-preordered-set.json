@@ -2,10 +2,27 @@
   "schema_version": 1,
   "formulation_id": "form.709d3d2f82950c5b.directed-preordered-set",
   "version_sha256": "26d98622cc46385d368850103dc6486913cccdc1d8a9e72d78ec130f185448b7",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "preordered set I",
+      "state": "existing",
+      "target_meaning_id": "meaning.709d3d2f82950c5b.preordered-set",
+      "occurrence_id": "occ.43668088e7cc22a2294e"
+    },
+    {
+      "phrase": "nonempty",
+      "state": "external",
+      "disposition": "This is an explicit nonemptiness requirement rather than an assumption that an empty preorder is directed.",
+      "occurrence_id": "occ.841c87e809888f901b54"
+    },
+    {
+      "phrase": "for any i,j there is k with i≤k and j≤k",
+      "state": "external",
+      "disposition": "The common upper bound is the defining directedness condition and does not add antisymmetry.",
+      "occurrence_id": "occ.4d0244bc50d0b3a54154"
+    }
+  ],
+  "snapshot_sha256": "72ac30423e6a7ff70f79ee5027cce79441b486d4fd4169120b6f4e9f9a9ba261",
+  "review_rationale": "Examined the entire directed-set definition, retaining reflexivity and transitivity of the underlying preorder, nonemptiness and the common upper bound quantifier; antisymmetry is not required."
 }

@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.6f35dab884da6c30.etale-ring-map",
   "version_sha256": "cefcba21d7caa84fbcb6bfac9abee3947aa88d1d3bc2f23126df9c0959082cbb",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ring map R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.0aa12eef03ef8888f080"
+    },
+    {
+      "phrase": "finitely presented over R",
+      "state": "existing",
+      "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-presentation-ring-map",
+      "occurrence_id": "occ.0c9ab0e38924822fdda9"
+    },
+    {
+      "phrase": "naive cotangent complex NL_{S/R}",
+      "state": "existing",
+      "target_meaning_id": "meaning.138b13bf27c037c1.naive-cotangent-complex",
+      "occurrence_id": "occ.f49827c05f073575eec2"
+    },
+    {
+      "phrase": "Kähler differentials Ω_{S/R}",
+      "state": "existing",
+      "target_meaning_id": "meaning.7ca4fb934b2f076c.kahler-differentials",
+      "occurrence_id": "occ.306735725b93761a390b"
+    },
+    {
+      "phrase": "H_1(NL_{S/R})=0",
+      "state": "unassigned",
+      "context": "Homological algebra: first homology module of a two-term cotangent complex",
+      "occurrence_id": "occ.65fca98ebcd1d40db2a4"
+    },
+    {
+      "phrase": "zero homology in degrees 1 and 0",
+      "state": "external",
+      "disposition": "Both vanishing conditions are explicitly required; no additional étaleness-at-prime condition is inferred.",
+      "occurrence_id": "occ.1035bef40a0bc1774b6e"
+    }
+  ],
+  "snapshot_sha256": "efec07c54539e7ecaea49f69285600a382711e984218cd4fd01975e500f2fb4b",
+  "review_rationale": "Read the entire étale ring-map characterization, including the requirement of finite presentation and vanishing of both homology degrees of the naive cotangent complex, not merely formal unramifiedness."
 }
