@@ -1,0 +1,471 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-007",
+  "mode": "ingest",
+  "research_scope": "Third bounded source-free first-pass mathematical reference batch this session; links to existing contexts, preserves unassigned occurrences, no external research or new definitions.",
+  "items": [
+    {
+      "formulation_id": "form.2a93c6a662a51d67.geometrically-normal-perfect-closure-test",
+      "version_sha256": "cc46546e3bbe29636cddb3895177f1f87106af1791dea524f036dc7c5b495e1d",
+      "complete": true,
+      "review_rationale": "Read the geometric-normality perfect-closure alternative, linking ring normality, pure inseparability and scalar extension while keeping perfect closure and k-algebra structure unassigned for global matching.",
+      "references": [
+        {
+          "phrase": "geometrically normal",
+          "state": "existing",
+          "target_meaning_id": "meaning.2a93c6a662a51d67.geometrically-normal-algebra",
+          "matching_note": "The formulation is an equivalent scalar-extension test for the previously indexed geometric normality property."
+        },
+        {
+          "phrase": "normal ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.363d711d668364b7.normal-ring",
+          "matching_note": "Normality here is the previously indexed commutative ring condition."
+        },
+        {
+          "phrase": "finite purely inseparable field extensions",
+          "state": "existing",
+          "target_meaning_id": "meaning.12e554f8d49d5361.purely-inseparable-extension",
+          "matching_note": "The finite field extensions in the test satisfy the characteristic-p inseparability condition."
+        },
+        {
+          "phrase": "k^perf⊗_k A",
+          "state": "existing",
+          "target_meaning_id": "meaning.3f6a26f1786a8223.base-change-ring-map",
+          "matching_note": "Tensoring the algebra with an extension of the base field is a base-change operation."
+        },
+        {
+          "phrase": "perfect closure of k",
+          "state": "unassigned",
+          "context": "Field theory: perfect closure of a field k in positive characteristic",
+          "reason": "The perfect closure is a field extension distinct from ordinary algebraic closure and should be globally matched later."
+        },
+        {
+          "phrase": "k-algebra A",
+          "state": "unassigned",
+          "context": "Commutative algebra: unital algebra over a field k",
+          "reason": "The base-field algebra structure should be matched with the same occurrence in the companion geometric-normality formulation."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.2ab2c62d4a9bd0a6.direct-sum-devissage",
+      "version_sha256": "ea93e69ac452365a46346bebe03a316952304e64f3d0dcf212bb7a74ce282604",
+      "complete": true,
+      "review_rationale": "Reviewed the entire transfinite direct-sum dévissage using modules, submodules and ordinals, preserving splitting and transfinite-continuity constructions.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "The ambient M is an ordinary unital module over R."
+        },
+        {
+          "phrase": "ordinal-indexed",
+          "state": "existing",
+          "target_meaning_id": "meaning.f810d472f5a4d367.von-neumann-ordinal",
+          "matching_note": "The filtration is indexed by ordinals."
+        },
+        {
+          "phrase": "submodules M_α",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.submodule",
+          "matching_note": "Each member of the increasing chain is a submodule of M."
+        },
+        {
+          "phrase": "limit ordinals",
+          "state": "existing",
+          "target_meaning_id": "meaning.f810d472f5a4d367.limit-ordinal",
+          "matching_note": "Continuity of the filtration is imposed at limit ordinal stages."
+        },
+        {
+          "phrase": "successor inclusion splits as a direct summand",
+          "state": "unassigned",
+          "context": "Module theory: split injection of submodules and direct summand decomposition",
+          "reason": "Splitting is an extra categorical/module-theoretic structure not supplied by submodule alone."
+        },
+        {
+          "phrase": "continuous at limit ordinals",
+          "state": "unassigned",
+          "context": "Ordinal-indexed module filtration: union of earlier submodules at each limit stage",
+          "reason": "This is a continuity convention for transfinite chains of modules."
+        },
+        {
+          "phrase": "starting at zero and with union M",
+          "state": "external",
+          "disposition": "The zero-submodule and full-union conditions are explicitly part of this filtration's axioms."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.2ab2c62d4a9bd0a6.kaplansky-devissage",
+      "version_sha256": "0fe84531cdedda798825aceb49a9e958568dc1b3f6e3ff79170395615cce0232",
+      "complete": true,
+      "review_rationale": "Reviewed Kaplansky dévissage as a specialized direct-sum filtration with countably generated successive quotient modules, not finite generation.",
+      "references": [
+        {
+          "phrase": "direct sum dévissage",
+          "state": "existing",
+          "target_meaning_id": "meaning.2ab2c62d4a9bd0a6.direct-sum-devissage",
+          "matching_note": "The Kaplansky variant is a special case of the independently indexed direct-sum dévissage."
+        },
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "All modules and quotients are modules over the common ring R."
+        },
+        {
+          "phrase": "successive quotient M_{α+1}/M_α",
+          "state": "unassigned",
+          "context": "Module theory: quotient module of consecutive stages of an ordinal-indexed filtration",
+          "reason": "The quotient construction and its induced R-action should be compared to quotient-module occurrences."
+        },
+        {
+          "phrase": "countably generated R-module",
+          "state": "unassigned",
+          "context": "Module theory: module generated by at most countably many elements",
+          "reason": "This is not the same as a finitely generated module; do not substitute the existing finite-generation definition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.2c5739452921ea24.geometrically-irreducible-algebra",
+      "version_sha256": "5c6670e740f685c5f4a7d1f06875dfbdfac5a4d393ec5768f1286a437ec92e93",
+      "complete": true,
+      "review_rationale": "Examined geometric irreducibility using arbitrary field extension, scalar extension, minimal prime and irreducibility of the prime spectrum, leaving specialized contextual notions unassigned.",
+      "references": [
+        {
+          "phrase": "field extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+          "matching_note": "The base-change test ranges over arbitrary field extensions."
+        },
+        {
+          "phrase": "prime spectrum",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+          "matching_note": "The ring's spectrum is the topological space of prime ideals."
+        },
+        {
+          "phrase": "prime ideal",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+          "matching_note": "The unique minimal prime in the test is a prime ideal."
+        },
+        {
+          "phrase": "k-algebra A",
+          "state": "unassigned",
+          "context": "Commutative algebra: algebra over a specified base field k",
+          "reason": "The algebraic structure must be compared with companion geometrically normal definitions."
+        },
+        {
+          "phrase": "A⊗_k K",
+          "state": "unassigned",
+          "context": "Commutative algebra: scalar extension of a k-algebra to the field K",
+          "reason": "A tensor product of k-algebras carries a ring structure beyond tensor products of modules."
+        },
+        {
+          "phrase": "minimal prime ideal",
+          "state": "unassigned",
+          "context": "Commutative algebra: minimal prime ideal in a commutative ring",
+          "reason": "Minimality of prime ideals by inclusion is a contextual construction."
+        },
+        {
+          "phrase": "irreducible prime spectrum",
+          "state": "unassigned",
+          "context": "Point-set topology and algebraic geometry: irreducible topological space Spec(A⊗_k K)",
+          "reason": "The prime spectrum has topological irreducibility, not necessarily algebraic integral-domain assumptions."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.2cde0248ffe81c00.tor-flatness-criterion",
+      "version_sha256": "f70d3d8bbb2c929076b88961ff08e7ed9dd02ccb1c749d72b89245dc56f54060",
+      "complete": true,
+      "review_rationale": "Read the Tor-flatness vanishing criterion and distinguished ordinary modules, Tor, ideal generation and quotient rings without external research.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "The condition concerns a unital module."
+        },
+        {
+          "phrase": "flat",
+          "state": "existing",
+          "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-module",
+          "matching_note": "Flatness of M is the existing module-theoretic property."
+        },
+        {
+          "phrase": "Tor_i^R(M,N)",
+          "state": "existing",
+          "target_meaning_id": "meaning.2cde0248ffe81c00.tor-functor-modules",
+          "matching_note": "Tor has its own previously indexed homological construction."
+        },
+        {
+          "phrase": "ideal I⊆R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+          "matching_note": "I is an ordinary ring ideal in the commutative ring."
+        },
+        {
+          "phrase": "finitely generated ideal I",
+          "state": "unassigned",
+          "context": "Commutative algebra: ideal generated by a finite set of ring elements",
+          "reason": "The finite-ideal-generation prerequisite recurs in Noetherian/regular-local definitions."
+        },
+        {
+          "phrase": "quotient R/I",
+          "state": "unassigned",
+          "context": "Commutative algebra: quotient ring by ideal I, regarded as a module",
+          "reason": "The quotient object is separate from Tor and the ideal itself."
+        },
+        {
+          "phrase": "Tor_i^R(M,N)=0 for all i>0",
+          "state": "external",
+          "disposition": "Vanishing in positive degrees is a zero-module equality in the already defined Tor family."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.2cde0248ffe81c00.tor-functor-modules",
+      "version_sha256": "70dfbc99f7481e4dea13d4bb5a343d73ff11171205c27b56011c16b8a9cfb157",
+      "complete": true,
+      "review_rationale": "Reviewed definition of Tor from a free resolution and tensor product, retaining the homology module and chain complex as related homological constructions.",
+      "references": [
+        {
+          "phrase": "modules M and N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "Both arguments of Tor are unital modules over the commutative ring."
+        },
+        {
+          "phrase": "integer i≥0",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.integer-equivalence-class",
+          "matching_note": "The grading index is a nonnegative integer."
+        },
+        {
+          "phrase": "free resolution of M",
+          "state": "existing",
+          "target_meaning_id": "meaning.788671763be693df.free-module-resolution",
+          "matching_note": "This is the explicitly indexed free resolution of the module."
+        },
+        {
+          "phrase": "F_•⊗_R N",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+          "matching_note": "The complex is tensored termwise over the ring R."
+        },
+        {
+          "phrase": "ith homology module",
+          "state": "unassigned",
+          "context": "Homological algebra: homology of a chain complex in degree i",
+          "reason": "This is defined using kernels and images of differentials and is distinct from Tor itself."
+        },
+        {
+          "phrase": "free resolution F_•",
+          "state": "unassigned",
+          "context": "Homological algebra: chain complex of free modules resolving M",
+          "reason": "The existing resolution meaning supplies the concept, but the chain-complex structure is an additional possible dependency."
+        },
+        {
+          "phrase": "independent of that resolution",
+          "state": "external",
+          "disposition": "The isomorphism type's independence from the chosen free resolution is a well-definedness statement."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.2d96a50b600ecbfc.noetherian-topological-space",
+      "version_sha256": "50f5a081ae754a4eb6a4be042931841693bd04bc8664bc25c02967ff0b236fa2",
+      "complete": true,
+      "review_rationale": "Read the Noetherian-space descending-closed-set chain condition, linking topology without misidentifying it with Noetherian ring conditions.",
+      "references": [
+        {
+          "phrase": "topological space",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space",
+          "matching_note": "Noetherian topological space uses ordinary open and closed subsets."
+        },
+        {
+          "phrase": "descending sequence of closed subsets",
+          "state": "unassigned",
+          "context": "Topology: descending chain of closed subsets X⊇F_1⊇F_2⊇…",
+          "reason": "Descending-chain condition is a topological analogue of a Noetherian condition, but not the ring Noetherianity meaning."
+        },
+        {
+          "phrase": "eventually becomes constant",
+          "state": "external",
+          "disposition": "The stabilization condition is explicitly described and does not require a separate named definition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.2ec41283717d02b0.left-dual-object",
+      "version_sha256": "6912db9247bf3c30347d0b9b515c9bb21157bfabc9a5b70e01516bbfb43496a6",
+      "complete": true,
+      "review_rationale": "Reviewed left duality in a monoidal category, including evaluation, coevaluation and snake identities, retaining these possible categorical notions for later consolidation.",
+      "references": [
+        {
+          "phrase": "monoidal category",
+          "state": "existing",
+          "target_meaning_id": "meaning.2ec41283717d02b0.monoidal-category",
+          "matching_note": "The left-dual object lives in a monoidal category."
+        },
+        {
+          "phrase": "η:1→X⊗Y and ε:Y⊗X→1",
+          "state": "unassigned",
+          "context": "Category theory: unit/coevaluation and counit/evaluation morphisms for a dual pair",
+          "reason": "Duality requires these maps subject to snake identities; they may be new contextual meanings."
+        },
+        {
+          "phrase": "triangle or snake composites",
+          "state": "unassigned",
+          "context": "Category theory: zigzag triangle identities of a left dual in a monoidal category",
+          "reason": "The composites of coevaluation/evaluation and associator/unit maps are an explicit coherence construction."
+        },
+        {
+          "phrase": "identity maps on X and Y",
+          "state": "external",
+          "disposition": "Identities are part of the ambient category's structure and are not independent new terms here."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.2ec41283717d02b0.monoidal-category",
+      "version_sha256": "5ed82660b797dcaded2b7e38c624f0d6b8535c5e3b3b4fec4b46ca5d37b6cfbd",
+      "complete": true,
+      "review_rationale": "Reviewed the monoidal category's tensor bifunctor, associator, unitors, pentagon and triangle coherence without imposing a small-category assumption.",
+      "references": [
+        {
+          "phrase": "category C",
+          "state": "unassigned",
+          "context": "Category theory: general possibly large category",
+          "reason": "The existing generic category definition is scoped to small categories; do not assume smallness."
+        },
+        {
+          "phrase": "bifunctor ⊗:C×C→C",
+          "state": "unassigned",
+          "context": "Category theory: functor of two category arguments, tensor product bifunctor",
+          "reason": "Bifunctoriality and categorical product of categories require contextual interpretation."
+        },
+        {
+          "phrase": "natural associativity isomorphism",
+          "state": "unassigned",
+          "context": "Category theory: natural associator (X⊗Y)⊗Z≅X⊗(Y⊗Z)",
+          "reason": "The associator is a natural isomorphism, not an arbitrary ordinary object-level isomorphism."
+        },
+        {
+          "phrase": "pentagon",
+          "state": "unassigned",
+          "context": "Category theory: pentagon coherence axiom for associator of monoidal category",
+          "reason": "Record this named coherence axiom for later classification across monoidal contexts."
+        },
+        {
+          "phrase": "unit object 1 with natural unit isomorphisms",
+          "state": "unassigned",
+          "context": "Category theory: left/right unitors in a monoidal category",
+          "reason": "Unitors are additional coherent natural isomorphisms."
+        },
+        {
+          "phrase": "triangle coherence identity",
+          "state": "unassigned",
+          "context": "Category theory: triangle coherence diagram relating unitors and associator",
+          "reason": "Separate from triangle identities of dual objects."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.2ec41283717d02b0.strong-monoidal-functor",
+      "version_sha256": "51bf6c2f5f8e90f9b40f90dba6e90ac61411aafb0f24d62e66bc0ae8b795904e",
+      "complete": true,
+      "review_rationale": "Reviewed a strong monoidal functor's tensor and unit comparison natural isomorphisms, preserving arbitrary category versus small category scope.",
+      "references": [
+        {
+          "phrase": "monoidal categories",
+          "state": "existing",
+          "target_meaning_id": "meaning.2ec41283717d02b0.monoidal-category",
+          "matching_note": "Both source and target categories have monoidal structure."
+        },
+        {
+          "phrase": "functor F:C→D",
+          "state": "unassigned",
+          "context": "Category theory: general functor between possibly large categories",
+          "reason": "The existing general strict functor is scoped to small categories; do not impose that hypothesis."
+        },
+        {
+          "phrase": "coherent natural isomorphisms F(X)⊗F(Y)≅F(X⊗Y)",
+          "state": "unassigned",
+          "context": "Category theory: tensor comparison natural isomorphisms of strong monoidal functor",
+          "reason": "Compatibility with associators is a structural coherence condition."
+        },
+        {
+          "phrase": "compatible identification of F(1_C) with the unit in D",
+          "state": "unassigned",
+          "context": "Category theory: unit comparison isomorphism for a strong monoidal functor",
+          "reason": "The unit constraint must satisfy its own compatibility axioms."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.2ec41283717d02b0.symmetric-monoidal-category",
+      "version_sha256": "e4adff46061885313001acfb7b6b51d12ed87f540dcb64bdfc7ffe7dfda174b5",
+      "complete": true,
+      "review_rationale": "Reviewed symmetric monoidal categories through natural exchange isomorphism and associator compatibility, retaining braiding and coherence occurrences.",
+      "references": [
+        {
+          "phrase": "monoidal category",
+          "state": "existing",
+          "target_meaning_id": "meaning.2ec41283717d02b0.monoidal-category",
+          "matching_note": "A symmetric monoidal category first has the monoidal category data."
+        },
+        {
+          "phrase": "natural exchange isomorphism X⊗Y→Y⊗X",
+          "state": "unassigned",
+          "context": "Category theory: braiding/symmetry natural isomorphism between tensor permutations",
+          "reason": "This is the symmetry datum, not the basic associator alone."
+        },
+        {
+          "phrase": "involutive",
+          "state": "unassigned",
+          "context": "Category theory: symmetry squared equals identity natural transformation",
+          "reason": "Involutivity of the exchange isomorphisms is an additional symmetric condition."
+        },
+        {
+          "phrase": "coherence diagrams",
+          "state": "unassigned",
+          "context": "Category theory: hexagon and associator coherence for symmetric braidings",
+          "reason": "Compatibility of symmetry with the associator is a specialized categorical axiom."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.2ec41283717d02b0.symmetric-monoidal-functor",
+      "version_sha256": "fc8b1cbb58a028ac2f6771a77b02c6bffb68f709c7e9ed749d4c3eea3e9d0420",
+      "complete": true,
+      "review_rationale": "Reviewed the symmetric monoidal functor as a symmetry-compatible strong monoidal functor between symmetric categories, retaining the additional compatibility equation.",
+      "references": [
+        {
+          "phrase": "strong monoidal functor",
+          "state": "existing",
+          "target_meaning_id": "meaning.2ec41283717d02b0.strong-monoidal-functor",
+          "matching_note": "The underlying functor includes coherent tensor and unit isomorphisms."
+        },
+        {
+          "phrase": "symmetric monoidal categories",
+          "state": "existing",
+          "target_meaning_id": "meaning.2ec41283717d02b0.symmetric-monoidal-category",
+          "matching_note": "Both source and target have symmetric monoidal structures."
+        },
+        {
+          "phrase": "structural tensor isomorphisms commute with symmetry/exchange isomorphisms",
+          "state": "unassigned",
+          "context": "Category theory: symmetry preservation equation for a strong monoidal functor",
+          "reason": "This is the additional symmetry-compatible condition distinguishing the symmetric functor."
+        }
+      ]
+    }
+  ]
+}
