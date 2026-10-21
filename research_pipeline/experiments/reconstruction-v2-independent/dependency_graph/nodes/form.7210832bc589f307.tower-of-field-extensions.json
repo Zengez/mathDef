@@ -2,10 +2,27 @@
   "schema_version": 1,
   "formulation_id": "form.7210832bc589f307.tower-of-field-extensions",
   "version_sha256": "b703d07904b135f487b325a522762ed47dbe0d74a705601a9b5f166be7fad008",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "field extension E_i/E_{i−1}",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "occurrence_id": "occ.9ca0f3913ec5094cf0fb"
+    },
+    {
+      "phrase": "inclusions E_0⊆E_1⊆⋯⊆E_n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.b24e5dd53307340c21ff"
+    },
+    {
+      "phrase": "finite sequence of inclusions",
+      "state": "external",
+      "disposition": "The number of nested fields is finite, but each field extension may have infinite degree and need not be algebraic.",
+      "occurrence_id": "occ.c02f93d488ca5b83915e"
+    }
+  ],
+  "snapshot_sha256": "87c801aba314647d6153e83c38f65b8e90543499ba271529c00f961099e7d422",
+  "review_rationale": "Read the finite chain of nested fields and checked that the extension E_i/E_{i−1} is taken in the displayed ascending direction; finite tower length does not mean finite degree of its steps."
 }

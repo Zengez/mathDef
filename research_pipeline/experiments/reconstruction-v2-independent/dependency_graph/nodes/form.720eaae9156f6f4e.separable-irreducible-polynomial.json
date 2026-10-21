@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.720eaae9156f6f4e.separable-irreducible-polynomial",
   "version_sha256": "7edcd86cff14f9380fd7e56c25d306645711e3dd3f6994dd2d4064eb5a88c67b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "algebraic closure",
-      "span": [
-        145,
-        162
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.39488f3e396a1c77.algebraic-closure"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.025173348de82cb9bcf1"
+      "phrase": "relatively prime polynomials f and f′",
+      "state": "existing",
+      "target_meaning_id": "meaning.e606496d592fe305.relatively-prime-polynomials",
+      "occurrence_id": "occ.8a58678af9aec8148b6a"
+    },
+    {
+      "phrase": "algebraic closure of F",
+      "state": "existing",
+      "target_meaning_id": "meaning.39488f3e396a1c77.algebraic-closure",
+      "occurrence_id": "occ.065d738ac139bbc28a47"
+    },
+    {
+      "phrase": "irreducible f∈F[x]",
+      "state": "unassigned",
+      "context": "Field theory: irreducible polynomial over a field",
+      "occurrence_id": "occ.006dd6a07c8bd381a8d8"
+    },
+    {
+      "phrase": "formal derivative f′",
+      "state": "unassigned",
+      "context": "Polynomial algebra: formal derivative of a univariate polynomial, including positive characteristic",
+      "occurrence_id": "occ.67021259a3d299bc5e03"
+    },
+    {
+      "phrase": "repeated root in algebraic closure",
+      "state": "unassigned",
+      "context": "Field theory: multiple root or multiplicity of polynomial root over an algebraic closure",
+      "occurrence_id": "occ.7505a5804bf2998c9f79"
+    },
+    {
+      "phrase": "equivalently",
+      "state": "external",
+      "disposition": "The coprimality criterion and no-repeated-root property concern the same polynomial; no irreducibility condition on f′ is required.",
+      "occurrence_id": "occ.0d501b2e999f3b7ff868"
     }
   ],
-  "snapshot_sha256": "e278ce7a566caaf5a0197b14208dbeec354f50eb1eef783a8152290d8d124ee8",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "bc4c7cd2cac2de3001ec5896711e0056e736acce991d9b5eedc271ab6fc40386",
+  "review_rationale": "Read the two equivalent characterizations in their field-coefficient context: the formal derivative is coprime to f, equivalently no repeated roots in an algebraic closure. Do not conflate a zero derivative with separability."
 }
