@@ -360,12 +360,23 @@ def rebuild(workspace, inventory=None):
             if parent not in blocked:
                 blocked.add(parent)
                 todo.append(parent)
+    # Traversal completion and structural closure are different:
+    # A may finish exploring every existing descendant while remaining
+    # Open because a terminal missing meaning has not been researched.
+    # Lexical proposals are NOT a completed semantic encounter.
+    traversal_pending = set(unscanned)
+    walk = list(traversal_pending)
+    while walk:
+        for parent in dependents[walk.pop()]:
+            if parent not in traversal_pending:
+                traversal_pending.add(parent)
+                walk.append(parent)
     state_rows = {}
     for fid in inv["formulations"]:
         scan = nodes.get(fid, {}).get("scan_status", "unscanned")
         state_rows[fid] = {
-            "scan_status": scan, "encountered": scan != "unscanned",
-            "completed": scan == "complete",
+            "scan_status": scan, "encountered": scan == "complete",
+            "completed": fid not in traversal_pending,
             "structural_status": "open" if fid in blocked else "closed",
             "direct_blockers": blockers.get(fid, []) +
                 (["scan_incomplete"] if scan != "complete" else []),
