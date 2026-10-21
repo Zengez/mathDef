@@ -1,49 +1,30 @@
 {
   "schema_version": 1,
   "work_budget_minutes_target": 12,
-  "next_action": "Infrastructure improvement 2026-10-21 complete: independent Wave2 generic research population engine and deferred-reconciliation audit added on main, without modifying frozen Wave1 or screened Wave2 counts (14 sources, 481 headings, 953 observations, 595 meanings, 639 screened formulation decisions, 887 screened links). NEXT research Batch139 should be a source-reviewed breadth-focused JSON research package under research_pipeline/experiments/reconstruction-v2-independent/population/inbox, followed by consolidated research-population-batch.yml with mode=populate; mathDef adapter validates new mathematics scope, legacy reviewed data is not rechecked every batch. Newly admitted drafts remain separate from screened main corpus; use population/STATUS.json, QUEUE.json and later reconciliation audit to track unresolved matters. See research_pipeline/POPULATION_WORKFLOW.md. Final certification, formal promotion, full independent freeze and original mathDef comparison have NOT occurred. Work 12-14 active minutes per chat response.",
+  "next_action": "2026-10-21 improved Wave2 workflow verified end-to-end. Automatic consolidated population workflow SUCCESS GitHub run 39640683758, commit e85a791d7: Batch139 independently sourced modular congruence (two forms) and finite square-matrix trace (one form); 2 draft meanings, 3 draft observations, 3 provisional formulation reviews, 2 unresolved target links recorded in isolated population ledger. Existing screened independent corpus 595 meanings/639 reviews/887 links UNCHANGED, frozen Wave1 unchanged; production mathDef original never read for research. Explicit reconciled approval/promotion module and tests implemented; it has NOT been applied to provisional content. Generic queue now skips pilot topics. NEXT: Batch140 breadth via source-backed package(s), or strengthen/rehearse deferred audit before reconciliation. Use population/STATUS.json, QUEUE.json, research_pipeline/POPULATION_WORKFLOW.md and research_pipeline/adapters/mathdef/population_topics.json. Do not add per-batch Python workflows. Work ~12-14 active minutes and checkpoint.",
   "resume_steps": [
-    "FIRST: Read research_pipeline/POPULATION_WORKFLOW.md and inspect population/STATUS.json or QUEUE.json if present. New research goes to the independent provisional population ledger, not new per-batch Python and workflow files.",
-    "Select bounded mathematical breadth for Batch139 or later from adapters/mathdef/population_topics.json; source-check new claims, explicitly scope definitions, record source-specific rationales, and mark unresolved prerequisites instead of recursively chasing them.",
-    "Commit each immutable package JSON under population/inbox and execute research-population-batch.yml mode=populate; confirm successful Actions and committed population records. Distinguish provisional counts from original 639 screened forms and 887 links.",
-    "After an agreed breadth-based first-pass stop, run population reconciliation, resolve candidate reviews and target gaps, carry out formal promotion and full mathematical/source/link/rendering audit, then freeze independently before any production comparison.",
-    "Confirm latest GitHub main SHA and successful runs for Batches135–138, or any newer state-affecting workflows.",
-    "Trust 639 individual formulation decisions (633 linked, six justified no-supported-target, none pending) and 887 acyclic screened prerequisite links if counts/digest agree. Do not redo completed Batches94–138.",
-    "Preserve precise differences: convex set over a REAL vector space (empty allowed); falling factorial n=0 explicitly corroborated by a separate source because principal ProofWiki definition covers only positive n; numeric equality delta is not ring-valued delta; two-coloring need not use both colors.",
-    "Previous Stirling and convex hull formulations gained four independently source-screened retroactive links to falling factorial, Kronecker delta and convex subset while original review conclusions, rationales and links remained immutable.",
-    "Retain three historically held mathematically defective ProofWiki source claims unpromoted: gradient-only directional derivative, forward-only graph isomorphism and incorrectly summed f_n instead of f_k in uniform series.",
-    "Keep research engine subject-neutral for subsequent mathematical theorem/math-education terminology adapters, put all mathematics policy in research_pipeline/adapters/mathdef.",
-    "All five independent Wave2 stages UNSEALED, independent Wave1 frozen and original production mathDef mathematical corpus unopened/uncompared until independent Wave2 freeze."
+    "Fast resume: read this resume plan, research_pipeline/POPULATION_WORKFLOW.md, and population/STATUS.json plus population/QUEUE.json; do not reread historical Batches1–139 or recertify previous work.",
+    "Next source-based independent breadth task: Batch140 choose unprocessed affine geometry, probability independence, graph cycles, or other topic from population queue; verify source URL, meaning collisions and contextual hypotheses; store new provisional package under population/inbox on GitHub main.",
+    "On inbox commit GitHub Actions research-population-batch.yml runs automatically. Verify run conclusion and the resulting commit/STATUS/QUEUE. If Actions fails, inspect affected run only, correct and retry; do not report queued work completed.",
+    "Defer cross-batch mathematical reconciliation until agreed Wave2 first-pass milestone. Keep source-linked mathematical rationale for each new form and unresolved target_query for missing prerequisites; don't invent links.",
+    "Reconciliation-to-promotion gate exists in research_pipeline/adapters/mathdef/population_promotion.py and tests, but requires explicit version-bound approval after all provisional issues are mathematically reconciled. Never auto-promote, seal, freeze, publish or compare original production before readiness.",
+    "Historical screened independent Wave2 checkpoint AB remains 14 approved source collections, 481 terms, 953 observations, 595 meanings, 639 forms (633 linked/6 justified no-target), 887 acyclic prerequisite links; two new meanings are separate provisional work.",
+    "Maintain generic engine topic-neutral for reuse in theorem or educational terminology repositories; mathematics-specific judgments stay in mathDef adapter."
   ],
   "workflow_runs_to_check_live": [
     {
-      "run_id": 39637646750,
-      "purpose": "Research pipeline CI passing for merged generic population and reconciliation implementation",
+      "run_id": 39640683758,
+      "purpose": "First live Batch139 auto-triggered population workflow, successfully committed provisional records and priority queue",
       "previously_reported_conclusion": "success"
     },
     {
-      "run_id": 39637646723,
-      "purpose": "Wave1 independent preview smoke/build on upgraded pipeline commit",
+      "run_id": 39640683754,
+      "purpose": "Research pipeline test on end-to-end pilot merge",
       "previously_reported_conclusion": "success"
     },
     {
-      "run_id": 39529729911,
-      "purpose": "Batch138 four retroactive Stirling/convex-hull source-specific links, 883 older links and all prior individual decisions preserved",
-      "previously_reported_conclusion": "success"
-    },
-    {
-      "run_id": 39529548233,
-      "purpose": "Batch137 14 direct source-verified convex/falling/delta/bipartite prerequisite links",
-      "previously_reported_conclusion": "success"
-    },
-    {
-      "run_id": 39529315377,
-      "purpose": "Batch136 four contextual meanings with seven mathematically screened source formulations",
-      "previously_reported_conclusion": "success"
-    },
-    {
-      "run_id": 39529138225,
-      "purpose": "Batch135 four independently sourced headings/seven observations, falling factorial zero-case corroborated separately",
+      "run_id": 39640996372,
+      "purpose": "Reconciliation propagation review patch regression tests",
       "previously_reported_conclusion": "success"
     }
   ],
