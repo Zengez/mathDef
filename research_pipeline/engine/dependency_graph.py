@@ -387,7 +387,14 @@ def make_snapshot(inv, fid, references, status, rationale=""):
         if ref.get("state") == "existing" and ref.get("target_meaning_id") not in inv["meanings"]:
             raise PipelineError("Unknown existing meaning")
         if ref.get("state") == "missing":
-            ref["missing_candidate_id"] = missing_key(ref["phrase"], ref.get("context", ""))
+            # Default to owning mathematical context; a missing object without
+            # context must not be globally deduplicated across homonyms.
+            ref.setdefault("context", inv["formulations"][fid]["context"])
+            ref["missing_candidate_id"] = missing_key(ref["phrase"], ref["context"])
+        if ref.get("state") == "ambiguous":
+            ids = ref.get("candidate_meaning_ids", [])
+            if not isinstance(ids, list) or any(mid not in inv["meanings"] for mid in ids):
+                raise PipelineError("Ambiguity contains an unknown contextual target")
         if ref.get("state") in ("ambiguous", "deferred") and not ref.get("reason"):
             raise PipelineError("Ambiguity requires reason")
         if ref.get("state") == "external" and not ref.get("disposition"):
@@ -548,15 +555,20 @@ def propose(workspace, adapter, limit=30):
 
 
 def tree(workspace, root, max_depth=30):
+    """Render the effective stored graph, including resolved missing candidates."""
     graph = graph_path(workspace)
     inv = read(graph / "INVENTORY.json")
     if root not in inv["formulations"]:
         raise PipelineError("Unknown root formulation")
+    state = read(graph / "STATE.json", {})
+    if state.get("summary", {}).get("inventory_sha256") != inv["source_inventory_sha256"]:
+        raise PipelineError("Rebuild stale graph indexes before tree rendering")
     nodes = live_nodes(graph, inv)
-    seeds = defaultdict(list)
-    for rel in inv["seed_relations"]:
-        if rel.get("target_meaning_id"):
-            seeds[rel["from_formulation"]].append(rel["target_meaning_id"])
+    occurrences = defaultdict(list)
+    for line in (graph / "occurrences.jsonl").read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            ref = json.loads(line)
+            occurrences[ref["from_formulation"]].append(ref)
     def visit(fid, path, depth):
         node = nodes.get(fid)
         out = {"formulation_id": fid, "status": node["scan_status"] if node else "unscanned",
@@ -567,21 +579,20 @@ def tree(workspace, root, max_depth=30):
         if depth >= max_depth:
             out["depth_limit"] = True
             return out
-        targets = [(mid, "preexisting_relation") for mid in seeds.get(fid, [])]
-        if node:
-            for ref in node["references"]:
-                if ref["state"] == "existing":
-                    targets.append((ref["target_meaning_id"], "scan"))
-                elif ref["state"] == "missing":
-                    out["children"].append({"missing_candidate_id": ref["missing_candidate_id"],
-                                            "phrase": ref["phrase"], "terminal": True})
-                else:
-                    out["children"].append({"state": ref["state"],
-                                            "phrase": ref["phrase"], "terminal": True})
-        for mid, provenance in targets:
-            out["children"].append({"target_meaning_id": mid, "provenance": provenance,
-                "formulations": [visit(child, path | {fid}, depth + 1)
-                   for child in inv["meanings"][mid]["formulation_ids"]]})
+        for ref in occurrences[fid]:
+            if ref["state"] == "existing":
+                mid = ref["target_meaning_id"]
+                out["children"].append({
+                    "target_meaning_id": mid, "occurrence_id": ref["occurrence_id"],
+                    "phrase": ref["phrase"],
+                    "provenance": ref.get("origin", "scan"),
+                    "formulations": [visit(child, path | {fid}, depth + 1)
+                        for child in inv["meanings"][mid]["formulation_ids"]]})
+            else:
+                out["children"].append({
+                    "state": ref["state"], "phrase": ref["phrase"],
+                    "missing_candidate_id": ref.get("missing_candidate_id"),
+                    "terminal": True})
         return out
     return visit(root, set(), 0)
 
