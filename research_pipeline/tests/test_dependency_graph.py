@@ -6,7 +6,8 @@ from pathlib import Path
 
 from research_pipeline.engine.core import Workspace, PipelineError, digest
 from research_pipeline.engine.dependency_graph import (
-    inventory_sync, store, read, graph_path, tree, propose, research_queue, missing_key, resolve)
+    inventory_sync, store, read, graph_path, tree, propose, research_queue, missing_key,
+    resolve, amend, live_nodes)
 from research_pipeline.adapters.mathdef.dependency_scan import propose as lexical
 
 
@@ -112,6 +113,78 @@ class DependencyGraphTests(unittest.TestCase):
                                      "the newly represented definition in this fixture."}
         resolve(self.root, [row_d])
         self.assertEqual(store(self.root, [self.entry("form.d", [])])["closed"], 4)
+
+    def test_append_only_scan_amendment_restart_replay_and_stale_guard(self):
+        self.add("A", "B and C")
+        self.add("B", "a primitive")
+        self.write_fixture()
+        graph = graph_path(self.root)
+        store(self.root, [self.entry("form.a", [self.ref("B")]),
+                          self.entry("form.b", [])])
+        self.assertEqual(read(graph / "STATE.json")["summary"]["closed"], 2)
+        original = read(graph / "nodes/form.a.json")
+        item = {
+            **self.entry("form.a", [{"phrase": "C", "state": "missing",
+                                     "context": "Algebra"}]),
+            "amendment_id": "amend.form-a.c-found",
+            "expected_node_sha256": digest(original),
+            "reason": "On second exhaustive source-specific semantic review, C was "
+                      "identified as a prerequisite omitted from the original pass.",
+            "reviewed_by": "unit-fixture-reviewer",
+        }
+        first = amend(self.root, [item])
+        self.assertEqual(first["missing_candidates"], 1)
+        self.assertEqual(first["open"], 1)
+        self.assertEqual(read(graph / "nodes/form.a.json"), original)
+        self.assertEqual(len((graph / "amendments.jsonl").read_text().splitlines()), 1)
+        self.assertEqual(amend(self.root, [item])["open"], 1)
+        self.assertEqual(len((graph / "amendments.jsonl").read_text().splitlines()), 1)
+        # Lost derived indexes do not force rescanning or erase corrections.
+        (graph / "reverse_index.json").unlink()
+        (graph / "STATE.json").unlink()
+        self.assertEqual(inventory_sync(self.root)["missing_candidates"], 1)
+        self.assertEqual(live_nodes(graph, read(graph / "INVENTORY.json"))["form.a"]
+                         ["references"][0]["state"], "missing")
+        rejected = dict(item, amendment_id="amend.invalid-review",
+                        expected_node_sha256=digest(original))
+        with self.assertRaises(PipelineError):
+            amend(self.root, [rejected])
+        rejected2 = dict(item, reason="Conflicting amended rationale!")
+        with self.assertRaises(PipelineError):
+            amend(self.root, [rejected2])
+        # A second valid, chained amendment can restore a resolved dependency.
+        current = live_nodes(graph, read(graph / "INVENTORY.json"))["form.a"]
+        second = {
+            **self.entry("form.a", [self.ref("B")]),
+            "amendment_id": "amend.form-a.restore-b",
+            "expected_node_sha256": digest(current),
+            "reason": "Second detailed review showed the C reference was a "
+                      "transcription mistake; original B dependency is appropriate.",
+            "reviewed_by": "unit-fixture-reviewer",
+        }
+        self.assertEqual(amend(self.root, [second])["closed"], 2)
+        self.assertEqual(len((graph / "amendments.jsonl").read_text().splitlines()), 2)
+        self.assertEqual(read(graph / "nodes/form.a.json"), original)
+
+    def test_corrupt_amendment_chain_reopens_not_closes(self):
+        self.add("A", "B")
+        self.write_fixture()
+        graph = graph_path(self.root)
+        store(self.root, [self.entry("form.a", [])])
+        original = read(graph / "nodes/form.a.json")
+        item = {**self.entry("form.a", []),
+                "amendment_id": "amend.corrupt", "expected_node_sha256": digest(original),
+                "reason": "Test the immutable amendment chain without trusting "
+                          "a stale or corrupted reference set to certify closure.",
+                "reviewed_by": "unit-fixture-reviewer"}
+        amend(self.root, [item])
+        file = graph / "amendments.jsonl"
+        event = json.loads(file.read_text())
+        event["expected_node_sha256"] = "corrupt"
+        file.write_text(json.dumps(event) + "\n", encoding="utf-8")
+        result = inventory_sync(self.root)
+        self.assertEqual(result["unscanned"], 1)
+        self.assertEqual(result["closed"], 0)
 
     def test_uncommitted_partial_and_marker_recovery(self):
         self.add("A", "B")
