@@ -87,6 +87,14 @@ def validate_package(package, current, parent):
     if package.get("schema_version") != 1 or not isinstance(package.get("id"), str):
         raise PipelineError("Batch needs schema_version=1 and id")
     batch_id = package["id"]
+    # Mechanical hash stamping avoids hand-calculating digests for every new draft.
+    new_forms = {f["id"]: (m, f) for m in package.get("meanings", [])
+                 for f in m.get("formulations", [])}
+    for review in package.get("reviews", []):
+        fid = review.get("formulation_id")
+        if fid in new_forms and not review.get("formulation_sha256"):
+            m, form = new_forms[fid]
+            review["formulation_sha256"] = digest({"formulation": form, "context": m["context"]})
     if not batch_id or not all(c.isascii() and (c.isalnum() or c in "-_.") for c in batch_id):
         raise PipelineError("Unsafe batch ID")
     if not any(package.get(k) for k in (*KINDS, "revisions")):
@@ -342,6 +350,8 @@ def main():
         result = apply(args.workspace, args.batch, dry_run=args.dry_run, policy=args.policy)
     else:
         result = audit(args.workspace, write=args.mode == "reconcile", certify=args.mode == "certify")
+        if args.mode == "status":
+            result.pop("findings", None)  # Keep short restart/status output compact.
     print(json.dumps(result, indent=2, ensure_ascii=False))
 
 
