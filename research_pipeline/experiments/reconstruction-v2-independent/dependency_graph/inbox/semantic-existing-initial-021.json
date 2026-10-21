@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-021",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.6c51aeb904a0fe74.geometric-reducedness-perfect-test",
+      "version_sha256": "cd57cb4cc434771d2c5d005e0220fd1bc2a7bd8800ba426019fdb7e2a12a95b9",
+      "complete": true,
+      "review_rationale": "Read the alternate geometric-reducedness criterion using extension to the perfect closure. Linked the existing perfect-closure and reduced-ring meanings while retaining that scalar extension is a tensor product, not a field product.",
+      "references": [
+        {
+          "phrase": "perfect closure of k",
+          "state": "existing",
+          "target_meaning_id": "meaning.f77b42c1adb38c56.perfect-closure"
+        },
+        {
+          "phrase": "reduced ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.reduced-ring"
+        },
+        {
+          "phrase": "tensor product A⊗_k k^perf",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "geometrically reduced over k",
+          "state": "existing",
+          "target_meaning_id": "meaning.6c51aeb904a0fe74.geometrically-reduced-algebra"
+        },
+        {
+          "phrase": "k-algebra scalar extension",
+          "state": "unassigned",
+          "context": "Commutative algebra: algebra tensor extension of scalars from k to its perfect closure"
+        },
+        {
+          "phrase": "equivalently",
+          "state": "external",
+          "disposition": "The displayed perfect-closure criterion is a second characterization of the same geometric property, not a separate meaning."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.6cf5ec77f1eb9581.projective-module-mittag-leffler-criterion",
+      "version_sha256": "999e77c0cfb78a80806d8c00bff3efd46fda6ea9fab6e3fff926da8506aabb38",
+      "complete": true,
+      "review_rationale": "Examined the full projectivity equivalence, separating projective modules, flat modules, Mittag-Leffler modules and the direct-sum condition, without confusing countable generation with finite generation.",
+      "references": [
+        {
+          "phrase": "projective R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.fc44c63c239e5c20.projective-module-hom"
+        },
+        {
+          "phrase": "flat",
+          "state": "existing",
+          "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-module"
+        },
+        {
+          "phrase": "Mittag-Leffler",
+          "state": "existing",
+          "target_meaning_id": "meaning.cae7ec9ae5b49736.mittag-leffler-module"
+        },
+        {
+          "phrase": "direct sum of countably generated R-modules",
+          "state": "unassigned",
+          "context": "Module theory: direct sums of countably generated modules over a ring"
+        },
+        {
+          "phrase": "if and only if",
+          "state": "external",
+          "disposition": "Both implications are part of the stated criterion; no replacement by countably presented or finitely generated modules is justified."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.6d6a6ac3c1bd1c00.finite-ring-homomorphism",
+      "version_sha256": "b57f2af0896349a558378271cebcdf5ae3c23992b3108fd907ff045ea2bf9908",
+      "complete": true,
+      "review_rationale": "Reviewed finite ring homomorphism as a module-finiteness condition on S via the given scalar ring map, not as a finite-cardinality ring or a ring map of finite presentation.",
+      "references": [
+        {
+          "phrase": "ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "R-module S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "finitely generated R-module",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        },
+        {
+          "phrase": "through the given homomorphism",
+          "state": "external",
+          "disposition": "Scalar multiplication by R on S uses the specified ring map rather than an arbitrary external action."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.6f35dab884da6c30.etale-at-prime",
+      "version_sha256": "dbb79698efbb2b68fc59c3f5d45905737bafad7a266cb63cfa99ed0eb00cb61b",
+      "complete": true,
+      "review_rationale": "Read the entire local étaleness criterion at a target prime q, keeping g outside q, the localization S_g, and the étale condition on R to S_g, not on a general source-prime localization.",
+      "references": [
+        {
+          "phrase": "ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "prime q∈Spec(S)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "Spec(S)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "localized ring map R→S_g",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "étale",
+          "state": "existing",
+          "target_meaning_id": "meaning.6f35dab884da6c30.etale-ring-map"
+        },
+        {
+          "phrase": "principal localization S_g",
+          "state": "unassigned",
+          "context": "Commutative algebra: localization at multiplicative powers of a single element g"
+        },
+        {
+          "phrase": "g∈S\\q",
+          "state": "external",
+          "disposition": "The localization element must avoid the target prime q; it is a local existence condition, not an assertion that q is maximal."
+        }
+      ]
+    }
+  ]
+}
