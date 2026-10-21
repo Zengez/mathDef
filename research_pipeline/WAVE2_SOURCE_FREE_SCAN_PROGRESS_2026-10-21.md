@@ -1,5 +1,76 @@
 # Wave 2 — source-free semantic reference scanning pilot (2026-10-21)
 
+## Newest verified checkpoint — Batches 005–007 and corrective amendments
+
+This section supersedes the earlier 42/659 status and the earlier
+instruction to correct six field-extension aliases. Those corrections
+were **completed** with append-only amendments.
+
+| Committed package | New complete scans | Reference decisions | Existing links | Unassigned | Elementary/external | Verified run |
+|---|---:|---:|---:|---:|---:|---|
+| `semantic-existing-initial-005.json` | 12 | 62 | 35 | 19 | 8 | [39676180583](https://github.com/Zengez/mathDef/actions/runs/39676180583), success |
+| `semantic-existing-initial-006.json` | 12 | 60 | 31 | 22 | 7 | [39676750624](https://github.com/Zengez/mathDef/actions/runs/39676750624), success |
+| `semantic-existing-initial-007.json` | 12 | 62 | 27 | 30 | 5 | [39677495139](https://github.com/Zengez/mathDef/actions/runs/39677495139), success |
+| **New scan work** | **36** | **184** | **93** | **71** | **20** | |
+
+The source-free corrective package
+`semantic-existing-correction-field-extension-001.json` amended **six**
+existing completed scans: it replaced a single `unassigned` reference per
+formulation with the correct preexisting contextual target
+`meaning.7210832bc589f307.field-extension`, indexed under the title
+`extension field`. Its full adjacency replacements and expected-node
+hashes are saved in the append-only amendment ledger; all original
+complete-scan files are preserved. Successful independent graph Action:
+[39677088365](https://github.com/Zengez/mathDef/actions/runs/39677088365).
+
+**Latest checked `dependency_graph/STATE.json`:**
+
+- 611 contextual meanings and 659 independent definition formulations.
+- **78 fully semantically scanned** (42 previously + 36 new), **581
+  preliminary lexical scans** pending semantic review. All 659 Open
+  (none structurally closed while downstream scans remain incomplete).
+- **128 `unassigned` occurrences** presently in the effective graph. This
+  count reflects the six append-only corrections, not six new missing
+  meanings. **377 ambiguous lexical occurrences** still exist across
+  incomplete proposals; all pending classification.
+- Existing missing registry remains 13 candidate rows with 12 unresolved
+  candidate meanings; no new terms, meanings, variants or external-source
+  evidence researched or added.
+- **6 graph amendment events**, phase `scan_and_link_existing`,
+  `consolidation_gate_valid=false`, unrelated breadth on hold, missing
+  definition research **not permitted**.
+
+**Operational observations:**
+
+1. The definition population remains unchanged; initial processing of
+   references can proceed without switching to outside source lookup.
+2. Version anchoring prevented a Batch 006 ingestion with a SHA value
+   missing its final hexadecimal character. Corrected the exact same
+   inbox file and reran; only the successful run and its receipt count.
+3. Target-ID checks were performed before Batches 005–007, and a SHA
+   check should also be made against `dependency_graph/nodes/` before
+   each first commit to avoid the extra Action cycle.
+4. The existing spelling `extension field` illustrates why confident
+   synonym/context lookup matters. Six unassigned occurrences were
+   recovered with only internal contextual review. No need to recreate
+   the definition or repeat source research.
+
+**Next fresh-Chat action:** Read
+`research_pipeline/DEPENDENCY_FIRST_WORKFLOW.md`,
+`research_pipeline/adapters/mathdef/resume_plan.json`,
+the *live* `dependency_graph/STATE.json` and `CHECKPOINT.json`.
+Run the source-free deterministic `--mode worklist --limit 8`.
+Examine entire mathematical formulations, check existing contextual
+meanings before recording `unassigned` occurrences, validate all meaning
+IDs and version hashes against the saved inventory, and submit bounded
+`mode=ingest` packages. Confirm success + graph applied receipt + counts
+before claiming additional completion. Do not start missing-definition
+research, global missing-occurrence consolidation, or unrelated breadth
+until the whole initial collection has full semantic scans.
+
+---
+
+
 ## Governing procedure
 
 The current operating guide is [DEPENDENCY_FIRST_WORKFLOW.md](DEPENDENCY_FIRST_WORKFLOW.md).
