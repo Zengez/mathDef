@@ -43,7 +43,7 @@ jobs:
       - name: Validate reusable engine and adapter
         run: |
           python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef
-          python -m unittest research_pipeline.tests.test_population -v
+          python -m unittest research_pipeline.tests.test_population research_pipeline.tests.test_population_promotion -v
       - name: Process independent package, recomputing on push collision
         env:
           MODE: ${{ github.event_name == 'push' && 'populate' || inputs.mode }}
