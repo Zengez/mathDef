@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.8d61300dcabf30c0.inverse-sequence-of-modules",
   "version_sha256": "cf9a59a741285666fd5c5aaa680bf74dbe2ead6e494b13192cca6ee36cda84fe",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-modules M_n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.13ba5ee3e074dce3aba5"
+    },
+    {
+      "phrase": "R-linear transition maps φ_n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.de8e53a3a1c92fd89284"
+    },
+    {
+      "phrase": "inverse system over an ordered index",
+      "state": "existing",
+      "target_meaning_id": "meaning.709d3d2f82950c5b.inverse-system",
+      "occurrence_id": "occ.d6c1d6a9a973c9c7aa3d"
+    },
+    {
+      "phrase": "composites coherent for n≥m",
+      "state": "external",
+      "disposition": "The transition maps compose according to the inverse index direction and satisfy coherence; they need not be isomorphisms.",
+      "occurrence_id": "occ.822ab5437072fba81124"
+    }
+  ],
+  "snapshot_sha256": "6c0c8ef0230cd0e699b4b9c227c679bef4f92b2ca80f59c9598ad08edccc9b44",
+  "review_rationale": "Inspected the arrows M_n→M_{n−1} for all n≥2, the positive-integer index and composites to earlier terms; this is the contravariant/inverse direction and not a module direct system."
 }

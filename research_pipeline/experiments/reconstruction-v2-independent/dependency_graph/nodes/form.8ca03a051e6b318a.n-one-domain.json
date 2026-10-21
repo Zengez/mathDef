@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.8ca03a051e6b318a.n-one-domain",
   "version_sha256": "18b0df1d477f77625c0ec45a7e5e275f174c8490e6048be9ddaeece956ec306c",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "integral domain R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.integral-domain",
+      "occurrence_id": "occ.fe69d9102c502a3302e4"
+    },
+    {
+      "phrase": "fraction field K",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain",
+      "occurrence_id": "occ.8e03bd0306185e2fbb86"
+    },
+    {
+      "phrase": "integral closure of R inside K",
+      "state": "existing",
+      "target_meaning_id": "meaning.8594a432b165bcda.integral-closure-relative",
+      "occurrence_id": "occ.89d7d0c80c1b375c3d47"
+    },
+    {
+      "phrase": "finitely generated R-module",
+      "state": "existing",
+      "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module",
+      "occurrence_id": "occ.a2ff97c5bf731b33aea5"
+    },
+    {
+      "phrase": "integral closure inside K",
+      "state": "external",
+      "disposition": "The ambient ring is specifically the field of fractions, not an arbitrary extension and not algebraic closure.",
+      "occurrence_id": "occ.46b19b4d731c210b2897"
+    }
+  ],
+  "snapshot_sha256": "7050442be4827980d4c34b6d31e6b705333e377a44feb6f838aa910f30b0187e",
+  "review_rationale": "Read the N-1 criterion and distinguished integral closure inside the fraction field K from N-2 closure inside all finite extensions L/K. Here the normalization inside K must be finite as an R-module."
 }

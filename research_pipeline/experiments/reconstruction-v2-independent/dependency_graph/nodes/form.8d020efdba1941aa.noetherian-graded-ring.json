@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.8d020efdba1941aa.noetherian-graded-ring",
   "version_sha256": "fece5e065588de6d9b6e8f7fa8a006b6cc623afc2b1816222851079a7604fa04",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "Noetherian ring",
-      "span": [
-        52,
-        67
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.86b5d488b98c612f.noetherian-commutative-ring"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.f6ae49786afcbb1ffc17"
+      "phrase": "nonnegative grading A=⊕A_n",
+      "state": "existing",
+      "target_meaning_id": "meaning.fa3b484c09596cfd.nonnegatively-graded-ring",
+      "occurrence_id": "occ.0c80346352276c8bc46b"
+    },
+    {
+      "phrase": "Noetherian ring after forgetting grading",
+      "state": "existing",
+      "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
+      "occurrence_id": "occ.32404c94c3dd01c8de08"
+    },
+    {
+      "phrase": "homogeneous ideals",
+      "state": "existing",
+      "target_meaning_id": "meaning.29b2c34cc33d4b62.homogeneous-ideal",
+      "occurrence_id": "occ.4506cc9a315dc037a50d"
+    },
+    {
+      "phrase": "finitely generated ideals",
+      "state": "existing",
+      "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module",
+      "occurrence_id": "occ.87883d6e79c95b3c85ab"
+    },
+    {
+      "phrase": "ascending homogeneous chains stabilize",
+      "state": "external",
+      "disposition": "This is a graded chain property; the definition also explicitly requires finite generation of each ungraded ideal.",
+      "occurrence_id": "occ.ee3ff4674828c8f5bfa3"
     }
   ],
-  "snapshot_sha256": "31d74f6020127b071c3729bf6d4d9ef07107988c885827dfaee76888cc41cfe2",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "6f4f7909eb7c94d50512b22dcc1b801aa7b4ade55012335c05755b0c8697e167",
+  "review_rationale": "Read the graded-ring and forgotten-grading Noetherian condition, plus both chain and finite-generation descriptions. Homogeneous ideal chains and arbitrary ideal finite generation are not interchangeable without the stated equivalence."
 }

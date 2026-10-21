@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.8f376cdea16a26da.closed-subspace-from-ideal-sheaf",
   "version_sha256": "a7cecfc7a065d60c5d2f177a766e986e958845e51ea6224e22dfc88ed8e3e0a9",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "locally ringed space",
-      "span": [
-        8,
-        28
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.52683cac2ccf3bad.locally-ringed-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.9fad07715edfb4bb4dd0"
+      "phrase": "locally ringed space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space",
+      "occurrence_id": "occ.f308e289607efee55603"
+    },
+    {
+      "phrase": "closed subspace inclusion Z↪X",
+      "state": "existing",
+      "target_meaning_id": "meaning.8f376cdea16a26da.closed-immersion-locally-ringed-space",
+      "occurrence_id": "occ.d176cfd01847b64db057"
+    },
+    {
+      "phrase": "locally section-generated sheaf of ideals I⊆O_X",
+      "state": "unassigned",
+      "context": "Sheaf theory and algebraic geometry: ideal subsheaf with local section generators",
+      "occurrence_id": "occ.fc7db21f19dcbbf62b0b"
+    },
+    {
+      "phrase": "support Z of quotient sheaf O_X/I",
+      "state": "unassigned",
+      "context": "Sheaf theory: support of a sheaf or module sheaf, with stalk-based nonvanishing",
+      "occurrence_id": "occ.5c49c1a188af8397909a"
+    },
+    {
+      "phrase": "quotient sheaf O_X/I and direct image under inclusion",
+      "state": "unassigned",
+      "context": "Sheaf theory: quotient of a sheaf of rings by ideal sheaf and direct image i_* of a sheaf",
+      "occurrence_id": "occ.3ac692de4ae5410afec3"
+    },
+    {
+      "phrase": "i_*O_Z equals O_X/I",
+      "state": "external",
+      "disposition": "This is an equality of sheaves of rings on X, not just their stalks as abstract rings or a set-level quotient.",
+      "occurrence_id": "occ.7913da581e967e5d572d"
     }
   ],
-  "snapshot_sha256": "25c7113daff1a22e689db3e4c717c6c6f988fd6f057d1d67976577c983b48e08",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "fe2017113e63281cd6e7414e4d4cd8b00d72c17eeded2fd972782836e9751193",
+  "review_rationale": "Read the closed locally ringed subspace determined by a locally section-generated ideal sheaf I⊆O_X, with support Z of the quotient and quotient structure sheaf whose direct image equals O_X/I. Preserve both sheaf and topology conditions."
 }

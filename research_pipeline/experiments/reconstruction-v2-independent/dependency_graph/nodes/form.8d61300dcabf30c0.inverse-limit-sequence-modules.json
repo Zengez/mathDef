@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.8d61300dcabf30c0.inverse-limit-sequence-modules",
   "version_sha256": "1ee045a3e8123494a730c9cce8b97cc562c9fc4d0e2289b802859df57b35471a",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "submodule",
-      "span": [
-        60,
-        69
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation76.submodule"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.faac5be388b6cb7e4c46"
+      "phrase": "inverse sequence of modules",
+      "state": "existing",
+      "target_meaning_id": "meaning.8d61300dcabf30c0.inverse-sequence-of-modules",
+      "occurrence_id": "occ.cd62bfb163a136a35226"
+    },
+    {
+      "phrase": "R-module and submodule",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.submodule",
+      "occurrence_id": "occ.170e8ff84b336a8f7144"
+    },
+    {
+      "phrase": "direct product ∏_{n≥1} M_n of R-modules",
+      "state": "unassigned",
+      "context": "Module theory: infinite product of R-modules, coordinatewise addition and R-action",
+      "occurrence_id": "occ.790c21d8398823d426dd"
+    },
+    {
+      "phrase": "compatible tuples φ_n(m_n)=m_{n−1}",
+      "state": "external",
+      "disposition": "Compatibility is required for every n≥2 and defines the inverse-limit submodule.",
+      "occurrence_id": "occ.5e2716c89c458acdf2ce"
     }
   ],
-  "snapshot_sha256": "229f120474cd6af44b0d887aa02ea2a300864a83f5b51361ea2b1f29e5c8b86b",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "6251356c32d229f11af5b167c619c2edf4e88a559a2208474f8b16118ea4c692",
+  "review_rationale": "Read the inverse limit as a submodule of an infinite direct product with compatibility φ_n(m_n)=m_{n−1} at each step. The definition is not a direct limit or a product without compatibility."
 }
