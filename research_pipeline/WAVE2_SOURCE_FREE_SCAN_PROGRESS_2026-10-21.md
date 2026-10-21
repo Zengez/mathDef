@@ -1,5 +1,64 @@
 # Wave 2 — source-free semantic reference scanning pilot (2026-10-21)
 
+## Newest verified continuation — Batches 012–015 (160/659 complete)
+
+**This section supersedes older 78- and 126-scan counts below.** Direct
+GitHub graph STATE.json, node snapshots, and applied inbox receipts remain
+authoritative if any newer batch has been applied.
+
+| Independent, source-free scan package | Complete scans added | Reference decisions | Successful graph Action |
+|---|---:|---:|---|
+| `semantic-existing-initial-012.json` | 8 | 34 | [39687479871](https://github.com/Zengez/mathDef/actions/runs/39687479871) |
+| `semantic-existing-initial-013.json` | 10 | 48 | [39687813998](https://github.com/Zengez/mathDef/actions/runs/39687813998) |
+| `semantic-existing-initial-014.json` | 8 | 41 | [39688077352](https://github.com/Zengez/mathDef/actions/runs/39688077352) |
+| `semantic-existing-initial-015.json` | 8 | 45 | [39688373726](https://github.com/Zengez/mathDef/actions/runs/39688373726) |
+| **This continuation** | **34** | **168** | **All four applied, receipts verified** |
+
+This continuation scanned the existing independent meanings and formulations
+in deterministic order, including finite limits/colimits, primitive elements,
+associated primes, affine schemes, local rings, coherent rings, diagrammatic
+set limits/colimits, field extensions, fibred groupoids, locally ringed
+spaces, quotient rings, exact functors, separable extensions, scheme morphisms,
+filtered colimits, and topological/profinite groups. Cross-context concepts
+were linked to real IDs only after checking the existing independent registry.
+Uncertain mathematical references were kept as `unassigned`; simple
+quantifiers or elementary scope conditions were given explicit `external`
+dispositions. A total of **168 full-scan occurrence decisions** were saved.
+
+**Verified current graph, following Action 39688373726:**
+
+- **611** contextual meanings, **659** formulations: **160 complete semantic
+  scans**, **499 preliminary lexical-only**, **0 unscanned**.
+- **254 unassigned** mathematical-reference occurrences (up from 218 at
+  restart), and **328 preliminary ambiguous** occurrences (down from 349).
+- **13** historical missing-candidate records, **12** unresolved candidates;
+  **10** existing append-only correction events, none new in this continuation.
+- **659 Open**, **0 Closed**, phase `scan_and_link_existing`,
+  `consolidation_gate_valid=false`. Mathematical-research gate remains OFF;
+  this is neither independent mathematical certification nor approval.
+- All four receipts are stored at
+  `experiments/reconstruction-v2-independent/dependency_graph/applied/`.
+  All four submitted packages were version-checked against current
+  `dependency_graph/nodes` and each existing meaning target against the
+  original independent meaning registry before being committed.
+- No external mathematical-source lookup, production-mathDef comparison,
+  definition research/admission, frozen Wave1 modification, screened Wave2
+  content change, provisional promotion, global consolidation, or Batch143
+  breadth expansion occurred.
+
+**Next saved deterministic worklist:** the first pending formulation is
+`form.646e4dcbd9b6f1e1.topological-module`, followed by
+`form.646e4dcbd9b6f1e1.topological-ring`,
+`form.65fea875f9a5aa40.gluing-data-schemes`, and
+`form.6676171d9e5698af.affine-closed-subscheme`.
+Resume by checking live STATE/CHECKPOINT; use
+`--mode worklist --limit 8` to obtain full content and exact version
+anchors. Do not repeat batches 012–015 or earlier verified 011a/011b.
+Complete the remaining 499 source-free semantic scans before starting Pass 2.
+
+---
+
+
 ## Newest verified checkpoint — Batches 005–007 and corrective amendments
 
 This section supersedes the earlier 42/659 status and the earlier
