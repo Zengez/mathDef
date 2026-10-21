@@ -186,7 +186,8 @@ class DependencyGraphTests(unittest.TestCase):
         self.assertEqual(prior, read(graph_path(self.root) / "nodes/form.a.json"))
         queue = research_queue(self.root)
         self.assertEqual(queue["candidates"][0]["upstream_formulation_count"], 2)
-        self.assertEqual(queue["phase"], "research_missing_dependencies")
+        self.assertEqual(queue["phase"], "consolidate_occurrences")
+        self.assertFalse(queue["missing_research_permitted"])
 
     def test_reviewed_missing_alias_deduplicates_without_erasing_occurrences(self):
         self.add("A", "the first principal construction")
