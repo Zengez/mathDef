@@ -15,9 +15,9 @@
         "meaning.wave2.foundation.ring-map-general",
         "meaning.wave2.foundation.ring-map-unital"
       ],
-      "reason": "Multiple contextual meanings share this display term; requires semantic disambiguation",
+      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
       "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.42b92b808bd00400b7df"
+      "occurrence_id": "occ.e993c72141e927f73d16"
     },
     {
       "phrase": "subset",
@@ -25,13 +25,17 @@
         85,
         91
       ],
-      "state": "existing",
-      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "state": "ambiguous",
+      "candidate_meaning_ids": [
+        "meaning.wave2.foundation.subset-nonstrict"
+      ],
+      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
       "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.3842b53c64732f5eca78"
+      "occurrence_id": "occ.e0ba0a111c21bcdb3600"
     }
   ],
-  "snapshot_sha256": "d42e7d9b0e35270ccd4878003fe77d13646f35c261b6cbfe660d82c669708c3f",
-  "review_rationale": ""
+  "snapshot_sha256": "14e989356b5d50e3b43f63cc5ccdb378ff6ed9e00c0998438b54d3c7c7dc27ff",
+  "review_rationale": "",
+  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
+  "scan_origin": "unreviewed_adapter_proposal"
 }
