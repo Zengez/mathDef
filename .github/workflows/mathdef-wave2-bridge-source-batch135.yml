@@ -1,0 +1,81 @@
+name: Admit independently sourced convexity falling factorial delta bipartiteness — Batch 135
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-bridge-source-batch135.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+jobs:
+  source-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Sync current independent research main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regress generic research engine and mathDef adapter
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Admit four directly source-screened terms and seven observations
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_bridge_source_batch135 --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Independently reconcile source coverage
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage --wave1 research_pipeline/experiments/reconstruction-v1-recovery --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Validate frozen Wave1, all old links, evidence contexts and source holds
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          f=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(f.publication())==json.loads((f.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          counts={"sources":14,"terms":481,"observations":953,"meanings":591,"relations":869}
+          assert {k:len(w.records(k)) for k in counts}==counts
+          assert not any(w.state(k).get("sealed") for k in counts)
+          for k in ("sources","terms","observations","relations"):
+            assert all(w.records(k).get(i)==v for i,v in f.records(k).items())
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==632 and dict(Counter(r["decision"] for r in reviews))=={"linked":626,"no_supported_target":6}
+          assert {id for r in reviews for id in r["relation_ids"]}==set(w.records("relations"))
+          for p in ("wave2/conv125_quarantined_source_claims.jsonl","wave2/quot118_quarantined_source_claims.jsonl","wave2/directional112_quarantined_source_claims.jsonl"):
+            hold=jsonl(w.root/p)
+            assert len(hold)==1 and hold[0]["observation_id"] not in {i for m in w.records("meanings").values() for form in m["formulations"] for i in form["evidence_ids"]}
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_bridge135_source_intake.json").read_text())
+          assert report["falling_factorial_zero_case_independently_corroborated"]
+          assert report["bipartite_two_color_classes_may_be_empty"]
+          assert report["new_meanings"]==report["new_links"]==0
+          assert not report["human_peer_verified"] and not report["production_corpus_used"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent experiment source records
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Admit independent source evidence for convex subsets falling factorial numeric delta bipartite graphs"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
