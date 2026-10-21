@@ -1,0 +1,85 @@
+name: Review convexity falling factorial delta and bipartite prerequisites — Batch 137
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-bridge-links-batch137.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+jobs:
+  direct-link-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Synchronize independent Wave2 main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generic research engine and mathDef adapter tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Screen fourteen exact source-to-mathematical-definition links
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_bridge_links_batch137 --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Audit Wave1 freeze, old decisions, new source conventions and acyclicity
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(one.publication())==json.loads((one.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          expected={"sources":14,"terms":481,"observations":953,"meanings":595,"relations":883}
+          assert {k:len(w.records(k)) for k in expected}==expected
+          assert not any(w.state(k).get("sealed") for k in expected)
+          for k in ("sources","terms","observations","relations"):
+            assert all(w.records(k).get(i)==r for i,r in one.records(k).items())
+          old=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_639_before_bridge137.jsonl")
+          now=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          idx={r["formulation_id"]:r for r in now}
+          assert len(old)==len(now)==len(idx)==639
+          for p in old:
+            if not p["formulation_id"].startswith("form.wave2.bridge136."):
+              assert idx[p["formulation_id"]]==p
+          assert len([i for i in w.records("relations") if i.startswith("rel.wave2.bridge137.")])==14
+          assert dict(Counter(r["decision"] for r in now))=={"linked":633,"no_supported_target":6}
+          assert {i for r in now for i in r["relation_ids"]}==set(w.records("relations"))
+          for p in ("wave2/conv125_quarantined_source_claims.jsonl","wave2/quot118_quarantined_source_claims.jsonl","wave2/directional112_quarantined_source_claims.jsonl"):
+            hold=jsonl(w.root/p)
+            assert len(hold)==1 and hold[0]["observation_id"] not in {i for m in w.records("meanings").values() for form in m["formulations"] for i in form["evidence_ids"]}
+          check_cycles(w.records("meanings"),w.records("relations"))
+          r=json.loads((w.root/"state/wave2_bridge137_link_review.json").read_text())
+          assert r["all_869_prior_links_preserved"] and r["all_632_unrelated_formulation_reviews_preserved"]
+          assert r["falling_factorial_n0_external_corroboration_retained"]
+          assert r["bipartite_empty_color_class_retained"] and r["convex_empty_set_and_real_scalar_conventions_retained"]
+          assert not r["human_peer_verified"] and not r["production_corpus_used"]
+          print(json.dumps(r,indent=2))
+          PY
+      - name: Commit only independent source-reviewed mathematical relations
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Review fourteen direct convex falling factorial numeric delta and bipartite mathematical links"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
