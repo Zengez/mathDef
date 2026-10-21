@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.6a3d6fae0a1573e0.equivariant-map-g-sets",
   "version_sha256": "ca6aeb3001632484087a74f0bab6322829775416d1fef43eb0f74247b76db49d",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "G-sets X and Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.6a3d6fae0a1573e0.group-left-action",
+      "occurrence_id": "occ.9584eadc75f3c4c78081"
+    },
+    {
+      "phrase": "function f:X→Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.6255bae362c3c5aa9205"
+    },
+    {
+      "phrase": "group G",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.group",
+      "occurrence_id": "occ.d1fbb7cc258cf3ab05ac"
+    },
+    {
+      "phrase": "f(g·x)=g·f(x) for all g and x",
+      "state": "external",
+      "disposition": "This displayed equation is the action-intertwining property and does not imply freeness, transitivity or bijectivity.",
+      "occurrence_id": "occ.ffa6487e198488491dba"
+    }
+  ],
+  "snapshot_sha256": "bfa54f759fdfd8bbedb85709d2555706a30cae605d33aa69487387c8e4a5eef7",
+  "review_rationale": "Read the full equivariance identity, checked that the same group acts on both domain and codomain, and distinguished a G-equivariant map from a homomorphism of groups."
 }

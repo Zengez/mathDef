@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.6c51aeb904a0fe74.geometrically-reduced-algebra",
   "version_sha256": "0ff735e7dd78ff7b173a86cc92272a14bf9e0775efaab3e93c89f2b6b3492d5a",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
+      "phrase": "field extension K/k",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "occurrence_id": "occ.b5b207c98cf2bcf3733f"
+    },
+    {
+      "phrase": "tensor product A⊗_k K",
+      "state": "existing",
+      "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+      "occurrence_id": "occ.4f06915138a2fffb95ca"
+    },
+    {
       "phrase": "reduced ring",
-      "span": [
-        113,
-        125
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.reduced-ring"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.3995ec0e06d75b2a13a1"
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.reduced-ring",
+      "occurrence_id": "occ.c5549436f8987b213529"
+    },
+    {
+      "phrase": "k-algebra A",
+      "state": "unassigned",
+      "context": "Commutative algebra: algebra over a field k with structural unital homomorphism k→A",
+      "occurrence_id": "occ.597fb678d905b0640017"
+    },
+    {
+      "phrase": "K-algebra A⊗_k K",
+      "state": "unassigned",
+      "context": "Commutative algebra: extension of scalar algebras by tensor product and its induced multiplication",
+      "occurrence_id": "occ.097bbd040c3b29b5bd5d"
+    },
+    {
+      "phrase": "for every field extension K/k",
+      "state": "external",
+      "disposition": "Reducedness is required after arbitrary field extensions, not just algebraic or finite ones.",
+      "occurrence_id": "occ.23ad5ff87f4f98bed548"
     }
   ],
-  "snapshot_sha256": "14b29cef53c48d2d74bf2336a97a07460a3eebac8cff3b6e04863cdb48352174",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "d14fe64663f97a406be29a6cdf43790e443448972ec46cf10b0417c7270efa14",
+  "review_rationale": "Read the full geometrically reduced k-algebra condition, retaining the quantifier over every extension field K and reducedness after scalar extension; ordinary reducedness of A alone is insufficient."
 }
