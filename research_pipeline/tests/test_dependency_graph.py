@@ -7,7 +7,8 @@ from pathlib import Path
 from research_pipeline.engine.core import Workspace, PipelineError, digest
 from research_pipeline.engine.dependency_graph import (
     inventory_sync, store, read, graph_path, tree, propose, research_queue, missing_key,
-    resolve, amend, live_nodes, apply_inbox, alias_candidates)
+    resolve, amend, live_nodes, apply_inbox, alias_candidates,
+     meaning_version, scan_worklist, seal_consolidation)
 from research_pipeline.adapters.mathdef.dependency_scan import propose as lexical
 
 
@@ -49,6 +50,111 @@ class DependencyGraphTests(unittest.TestCase):
     def ref(self, name):
         return {"state": "existing", "phrase": name,
                 "target_meaning_id": "meaning." + name.casefold()}
+
+
+    def test_occurrence_first_scanning_never_assigns_premature_missing_meaning(self):
+        self.add("A", "an unusual notion related to B")
+        self.add("B", "a basic example")
+        self.write_fixture()
+        fid = "form.a"
+        todo = scan_worklist(self.root, limit=1)
+        self.assertFalse(todo["external_research"])
+        self.assertEqual(todo["total_remaining"], 2)
+        self.assertIn("unusual notion", todo["items"][0]["text"])
+        self.assertEqual(read(graph_path(self.root) / "STATE.json")
+                         ["summary"]["phase"], "scan_and_link_existing")
+        ref = {"phrase": "an unusual notion", "state": "unassigned",
+               "context": "Abstract algebra: unspecified unusual notion"}
+        store(self.root, [self.entry(fid, [ref]),
+                          self.entry("form.b", [])])
+        graph = graph_path(self.root)
+        summary = read(graph / "STATE.json")["summary"]
+        self.assertEqual(summary["scan_complete"], 2)
+        self.assertEqual(summary["unassigned_occurrences"], 1)
+        self.assertEqual(summary["unresolved_missing_candidates"], 0)
+        self.assertEqual(summary["phase"], "consolidate_occurrences")
+        row = json.loads((graph / "unresolved_occurrences.jsonl").read_text().strip())
+        self.assertEqual(row["state"], "unassigned")
+        self.assertEqual(research_queue(self.root)["missing_research_permitted"], False)
+        self.assertEqual(research_queue(self.root)["candidates"], [])
+        with self.assertRaises(PipelineError):
+            seal_consolidation(self.root, {"schema_version": 1})
+
+    def test_consolidation_gate_requires_full_scan_and_stale_gate_reopens(self):
+        self.add("A", "A notion D to define later")
+        self.add("B", "another notion")
+        self.write_fixture()
+        graph = graph_path(self.root)
+        store(self.root, [self.entry("form.a", [
+            {"phrase": "notion D", "state": "missing", "context": "Algebra: notion D"}]),
+            self.entry("form.b", [])])
+        before = read(graph / "STATE.json")["summary"]
+        self.assertEqual(before["phase"], "consolidate_occurrences")
+        gate = {"schema_version": 1, "inventory_sha256": before["inventory_sha256"],
+                "unresolved_fingerprint": before["unresolved_fingerprint"],
+                "reviewed_by": "fixture-contextual-review",
+                "rationale": "All prior occurrence candidates were inspected as a complete "
+                             "fixed input; the exact mathematical missing notion is D."}
+        self.assertEqual(seal_consolidation(self.root, gate)["phase"],
+                         "research_missing_dependencies")
+        self.assertTrue(research_queue(self.root)["missing_research_permitted"])
+        self.assertEqual(seal_consolidation(self.root, gate)["phase"],
+                         "research_missing_dependencies")
+        # A revised existing formulation makes the gate stale; do not research
+        # definitions based on an old graph inventory or omitted occurrences.
+        self.meanings[1]["formulations"][0]["text"] = "updated mathematical context"
+        self.write_fixture()
+        after = read(graph / "STATE.json")["summary"]
+        self.assertEqual(after["phase"], "scan_and_link_existing")
+        self.assertFalse(after["consolidation_gate_valid"])
+        with self.assertRaises(PipelineError):
+            seal_consolidation(self.root, gate)
+
+    def test_inbox_limit_ignores_applied_batches_and_validates_all_receipts(self):
+        self.add("A", "a mathematical example")
+        self.write_fixture()
+        graph = graph_path(self.root)
+        inbox = graph / "inbox"
+        inbox.mkdir(parents=True, exist_ok=True)
+        # Many previously processed batches should not starve the first new one.
+        for i in range(25):
+            batch = {"schema_version": 1, "id": "batch-%02d" % i,
+                     "mode": "ingest", "items": []}
+            (inbox / (batch["id"] + ".json")).write_text(json.dumps(batch))
+        result = apply_inbox(self.root, limit=20)
+        self.assertEqual(len(result["applied"]), 20)
+        result = apply_inbox(self.root, limit=20)
+        self.assertEqual(result["applied"], ["batch-%02d" % i for i in range(20, 25)])
+        self.assertEqual(len(result["already_applied"]), 20)
+        self.assertEqual(apply_inbox(self.root, limit=20)["applied"], [])
+        first = inbox / "batch-00.json"
+        bad = json.loads(first.read_text())
+        bad["mutated"] = True
+        first.write_text(json.dumps(bad))
+        with self.assertRaises(PipelineError):
+            apply_inbox(self.root, limit=20)
+
+    def test_missing_resolution_is_pinned_to_target_content(self):
+        self.add("A", "missing important concept C")
+        self.add("C", "initial statement")
+        self.write_fixture()
+        ref = {"phrase": "concept C", "context": "Algebra", "state": "missing"}
+        store(self.root, [self.entry("form.a", [ref]),
+                          self.entry("form.c", [])])
+        graph = graph_path(self.root)
+        inv = read(graph / "INVENTORY.json")
+        row = {"missing_candidate_id": missing_key("concept C", "Algebra"),
+               "target_meaning_id": "meaning.c",
+               "target_version_sha256": meaning_version(inv, "meaning.c"),
+               "review_rationale": "Explicit mathematical equivalence of missing concept C "
+                                   "and the existing contextual meaning C in this fixture."}
+        resolve(self.root, [row])
+        self.assertEqual(read(graph / "STATE.json")["summary"]["unresolved_missing_candidates"], 0)
+        self.meanings[1]["formulations"][0]["text"] = "mathematically different replacement"
+        self.write_fixture()
+        summary = read(graph / "STATE.json")["summary"]
+        self.assertEqual(summary["unresolved_missing_candidates"], 1)
+        self.assertEqual(summary["open"], 2)
 
     def test_cycle_closes_and_rooted_view_is_finite(self):
         for name, target in (("A", "B"), ("B", "C"), ("C", "A")):
@@ -140,7 +246,7 @@ class DependencyGraphTests(unittest.TestCase):
         inv = read(graph_path(self.root) / "INVENTORY.json")
         cid = missing_key("Missing C", "Algebra")
         row = {"missing_candidate_id": cid, "target_meaning_id": "meaning.c",
-               "target_version_sha256": digest(inv["meanings"]["meaning.c"]),
+               "target_version_sha256": meaning_version(inv, "meaning.c"),
                "review_rationale": "Source-backed contextual comparison in the test establishes "
                                    "that the missing prerequisite denotes exactly meaning C."}
         self.assertEqual(resolve(self.root, [row])["open"], 3)
@@ -159,7 +265,7 @@ class DependencyGraphTests(unittest.TestCase):
         inv = read(graph_path(self.root) / "INVENTORY.json")
         row_d = {"missing_candidate_id": missing_key("D", "Algebra"),
                  "target_meaning_id": "meaning.d",
-                 "target_version_sha256": digest(inv["meanings"]["meaning.d"]),
+                 "target_version_sha256": meaning_version(inv, "meaning.d"),
                  "review_rationale": "The same narrow algebraic context makes D precisely "
                                      "the newly represented definition in this fixture."}
         resolve(self.root, [row_d])
