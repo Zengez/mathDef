@@ -2,10 +2,36 @@
   "schema_version": 1,
   "formulation_id": "form.34c38bc0b482f182.binary-coproduct-category",
   "version_sha256": "70c17c183bdef4acd9344aa7c2a9845232bd51293058aee20aba639f70c5ac0a",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category C",
+      "state": "unassigned",
+      "context": "Category theory: potentially large category with objects and arrows",
+      "reason": "The existing generic category meaning explicitly assumes smallness, not warranted here.",
+      "occurrence_id": "occ.75dcc04e1e5efae4d4cb"
+    },
+    {
+      "phrase": "morphisms X→P and Y→P",
+      "state": "unassigned",
+      "context": "Category theory: pair of arrows into the coproduct object from two objects",
+      "reason": "These are canonical coproduct injections with source objects X,Y.",
+      "occurrence_id": "occ.3d0bf49838f81b8fb7ec"
+    },
+    {
+      "phrase": "unique h:P→Z",
+      "state": "unassigned",
+      "context": "Category theory: universal mediating morphism out of a binary coproduct",
+      "reason": "The unique factorization is the universal property of the coproduct cocone.",
+      "occurrence_id": "occ.598139c2263970f78d6a"
+    },
+    {
+      "phrase": "h∘i=f and h∘j=g",
+      "state": "external",
+      "disposition": "Composition equations are already ordinary operations in the ambient category.",
+      "occurrence_id": "occ.1af34bfff2a9b4aeec11"
+    }
+  ],
+  "snapshot_sha256": "41ef3f9aebb57f517001b431ece0d889c1e25c9baad3bd26fdac27689fc682f6",
+  "review_rationale": "Reviewed the binary coproduct universal property, preserving arbitrary-category size convention and saving canonical injections and unique mediating arrows."
 }

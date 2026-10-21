@@ -2,35 +2,37 @@
   "schema_version": 1,
   "formulation_id": "form.3653fa0ad844d187.category-fibred-in-sets",
   "version_sha256": "c841d7cb0c7d9b494993aebc56fb95af711b5303a3ce289f93772ea832cc988e",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
       "phrase": "category fibred in groupoids",
-      "span": [
-        54,
-        82
-      ],
       "state": "existing",
       "target_meaning_id": "meaning.5e4b8f6efeda6522.category-fibred-in-groupoids",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.24fb90b763549fb89673"
+      "matching_note": "A fibred category with groupoid fibres is the immediate parent meaning.",
+      "occurrence_id": "occ.c00c47d132ecd4a63a1b"
     },
     {
       "phrase": "discrete category",
-      "span": [
-        129,
-        146
-      ],
       "state": "existing",
       "target_meaning_id": "meaning.3653fa0ad844d187.discrete-category",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.f870f9a93d018be46b21"
+      "matching_note": "Every fibre E_U is discrete, with only identity arrows.",
+      "occurrence_id": "occ.39caad6679ea19248387"
+    },
+    {
+      "phrase": "category p:E→C",
+      "state": "unassigned",
+      "context": "Category theory: functor p from a category E to a base category C",
+      "reason": "Unqualified category/functor need not be small; preserve the contextual source wording.",
+      "occurrence_id": "occ.9696958f2e1e2999cfc7"
+    },
+    {
+      "phrase": "fibre E_U over U",
+      "state": "unassigned",
+      "context": "Category theory: fibre of a functor p:E→C over an object U",
+      "reason": "The fibre is the subcategory of objects and arrows lying over the identity of U.",
+      "occurrence_id": "occ.72d1c2abee85b16b20c8"
     }
   ],
-  "snapshot_sha256": "4bff3e7624304fd9e9a5bcb801bb1ef6101d13a9f30fdb5819b9262011472df2",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "35bdeec24072e6d9fb62f0fbf11720b2d7d92ed68247b2825f96ca85394b2b01",
+  "review_rationale": "Read fibred-in-sets condition as a fibred-in-groupoids category with discrete fibres, preserving fibre-of-functor terminology and avoiding an unsupported small-category requirement."
 }

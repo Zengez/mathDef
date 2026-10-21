@@ -2,10 +2,44 @@
   "schema_version": 1,
   "formulation_id": "form.363d711d668364b7.normal-ring",
   "version_sha256": "efef93dbd20983e796ac4354f616c7141ce2f109976e1710ff91976f55b3e7e1",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "commutative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "matching_note": "The commutative-unital ring convention is implicit; the ring-map meaning is a contextual proxy, not a complete commutative ring definition.",
+      "occurrence_id": "occ.b750ec1f54e2350a604f"
+    },
+    {
+      "phrase": "localization R_p",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+      "matching_note": "Localize at the multiplicative complement of prime p.",
+      "occurrence_id": "occ.0b383239841a7c4e06c2"
+    },
+    {
+      "phrase": "prime ideal p",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "matching_note": "The localization is indexed by prime ideals of R.",
+      "occurrence_id": "occ.43abd84671905d2cb46c"
+    },
+    {
+      "phrase": "integrally closed domain",
+      "state": "existing",
+      "target_meaning_id": "meaning.363d711d668364b7.normal-integral-domain",
+      "matching_note": "The localized ring is required to satisfy the indexed normal/integrally-closed domain property.",
+      "occurrence_id": "occ.21cc50edc66c2fa0fabd"
+    },
+    {
+      "phrase": "fraction field",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain",
+      "matching_note": "Integrally closed domain refers to its fraction field.",
+      "occurrence_id": "occ.0a3937c278ca84f767c8"
+    }
+  ],
+  "snapshot_sha256": "77161e41fe865d82347db1daa2c2093184389712a8a299b7fccdd5be2be16702",
+  "review_rationale": "Reviewed normal commutative ring by localization at primes, recognizing integral-domain normality on each local ring and preserving the distinct scope of normal rings and normal domains."
 }

@@ -2,23 +2,29 @@
   "schema_version": 1,
   "formulation_id": "form.2ec41283717d02b0.tensor-invertible-object",
   "version_sha256": "ee0c3230e3142ded4dc2ab4f4cf370cb1f6e20982ee52aa1948b668e945e9dc6",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
       "phrase": "monoidal category",
-      "span": [
-        17,
-        34
-      ],
       "state": "existing",
       "target_meaning_id": "meaning.2ec41283717d02b0.monoidal-category",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.fc46c5ae9d7f30f52b90"
+      "matching_note": "X and Y are objects of the existing monoidal-category context.",
+      "occurrence_id": "occ.331a98474f1467d152e6"
+    },
+    {
+      "phrase": "X⊗Y≅1 and Y⊗X≅1",
+      "state": "unassigned",
+      "context": "Category theory: two-sided tensor inverse of an object up to monoidal isomorphism",
+      "reason": "Tensoring and isomorphism are supplied by the monoidal structure, but the inverse-witness construction is a candidate for global comparison.",
+      "occurrence_id": "occ.a399ff80e4f39c0598b7"
+    },
+    {
+      "phrase": "unit object 1",
+      "state": "external",
+      "disposition": "Unit object is inherent in the linked monoidal category rather than an independent new definition in this formulation.",
+      "occurrence_id": "occ.d0390140d282d9926bf4"
     }
   ],
-  "snapshot_sha256": "47d99f4c952eefbc601d8792f9c76c38a00eae7227941f511318ed5a8e1d3b83",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "795496b98e98a58c93e1a31075aed2499312e80ba81c1ef84c6bdab975bb594e",
+  "review_rationale": "Read invertibility of a monoidal object, distinguished the linked monoidal-category unit from a potentially separate tensor-inverse witness, without researching external terminology."
 }
