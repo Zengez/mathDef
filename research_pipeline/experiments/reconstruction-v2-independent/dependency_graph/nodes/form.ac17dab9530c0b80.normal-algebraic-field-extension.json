@@ -2,37 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.ac17dab9530c0b80.normal-algebraic-field-extension",
   "version_sha256": "70d45200feb60974736f7eaa0de9ee0d73f82bcaf73239875f619a2d0cd51859",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "algebraic field extension",
-      "span": [
-        3,
-        28
-      ],
+      "phrase": "algebraic field extension E/F",
       "state": "existing",
       "target_meaning_id": "meaning.50d335de00e5f11d.algebraic-extension",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.2d93359f9b6bb6cfa1eb"
+      "occurrence_id": "occ.b43b88945eb01625eea0"
     },
     {
-      "phrase": "minimal polynomial",
-      "span": [
-        50,
-        68
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.3aaa8d6f2195bb8e.minimal-polynomial"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.763ac129bff577550b5e"
+      "phrase": "minimal polynomial of α over F",
+      "state": "existing",
+      "target_meaning_id": "meaning.3aaa8d6f2195bb8e.minimal-polynomial",
+      "occurrence_id": "occ.69a35e678be2b10eab2c"
+    },
+    {
+      "phrase": "factors completely into linear factors over E",
+      "state": "unassigned",
+      "context": "Field theory: polynomial splitting as a product of degree-one factors in E[x]",
+      "occurrence_id": "occ.7352e589c6d905abd0fe"
+    },
+    {
+      "phrase": "each α∈E",
+      "state": "external",
+      "disposition": "Only the minimal polynomials of extension elements are quantified, not every polynomial in F[x].",
+      "occurrence_id": "occ.629b04839a8016f645cf"
     }
   ],
-  "snapshot_sha256": "dcebb0f02b2ac90bcd2de0f8b81af387c9b822a17929aa38fd6f9680fcea2c8e",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "5b5af9f2cb1ae3dab757ca4c6457bf00e4912381672501252f04e9efddf581c1",
+  "review_rationale": "Read normality via splitting over E of every element's minimal polynomial over F, preserving that the extension is algebraic and the roots are required to lie in E; not equivalent to every polynomial over F splitting."
 }

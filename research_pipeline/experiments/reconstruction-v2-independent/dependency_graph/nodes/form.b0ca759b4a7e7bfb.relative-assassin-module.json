@@ -2,25 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.b0ca759b4a7e7bfb.relative-assassin-module",
   "version_sha256": "e50a585e3bcee53477e115386e230d538d666d4323bc7b4f5c474fbe7de3238b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "associated prime",
-      "span": [
-        190,
-        206
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.4c373b6c62943620.associated-prime"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.1bd53a18e9617a470e59"
+      "phrase": "ring map R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.d4ceb643fc748ba4537b"
+    },
+    {
+      "phrase": "S-module N",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.63f333645db6897a366e"
+    },
+    {
+      "phrase": "prime q∈Spec(S)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "occurrence_id": "occ.341816264cbc09502b17"
+    },
+    {
+      "phrase": "associated prime of a module",
+      "state": "existing",
+      "target_meaning_id": "meaning.4c373b6c62943620.associated-prime",
+      "occurrence_id": "occ.994db16f5fbbe10adea2"
+    },
+    {
+      "phrase": "tensor-product module N⊗_R κ(p)",
+      "state": "existing",
+      "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+      "occurrence_id": "occ.3c85abcbdb6b22a88d14"
+    },
+    {
+      "phrase": "residue field κ(p) of R at p",
+      "state": "unassigned",
+      "context": "Commutative algebra: fraction field of residue ring R_p/pR_p at prime p",
+      "occurrence_id": "occ.ef7b30f54366349d14a2"
+    },
+    {
+      "phrase": "contracted prime p=q∩R",
+      "state": "unassigned",
+      "context": "Commutative algebra: inverse-image prime of q along ring homomorphism R→S",
+      "occurrence_id": "occ.2ce5bcb1bc2a32de04b8"
+    },
+    {
+      "phrase": "equivalently q is an associated prime of fibre module",
+      "state": "external",
+      "disposition": "The associated-prime test is carried out on the fibre module with correct scalar ring action; it does not simply require q∈Ass_S(N) before base change.",
+      "occurrence_id": "occ.9f22fd0081e7239398ba"
     }
   ],
-  "snapshot_sha256": "a43e11e52e7f83a81a9fd759710f0b179d0c7ba34e26894acca68a56407a9ed3",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "06b6837c0c9c2ec60fa52a87423f3e691238dd22f6b4f811bb1e502d9f3b2617",
+  "review_rationale": "Read the relative-assassin construction at prime q over p=q∩R, including the fibre module N⊗_R κ(p) and associated-prime condition; do not confuse p in Spec(R) with q in Spec(S)."
 }

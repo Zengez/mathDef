@@ -2,53 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.b040ab223731507a.extremally-disconnected-space",
   "version_sha256": "8c81c31698799d1e196435f1d2624d0f494deb2498dea4897a1e8e1b006ba28b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.056b89f0ac26616d5e7f"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.c997de1d4cd9a835aee4"
     },
     {
-      "phrase": "subset",
-      "span": [
-        78,
-        84
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.0dfb8bb45f0e2821e5c3"
+      "phrase": "closure of U in X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross107.topological-closure",
+      "occurrence_id": "occ.fbd269ff8fe1aee5a233"
     },
     {
-      "phrase": "subset",
-      "span": [
-        110,
-        116
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.9c83fce6126a4f48fd31"
+      "phrase": "open subset U of topological space",
+      "state": "unassigned",
+      "context": "Topology: membership in the topology on X",
+      "occurrence_id": "occ.df68577e45d1f1d7c9de"
+    },
+    {
+      "phrase": "closure(U) is open for every open U",
+      "state": "external",
+      "disposition": "The universal quantifier is over all open subsets; it does not say every subset has open closure.",
+      "occurrence_id": "occ.9b26d3fac3db98d47b64"
     }
   ],
-  "snapshot_sha256": "438f881c0ae90aca7f12f300f4e83ed0db598b42da80ab576bf747b276eb6769",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "2dad984640d3edfca80b2cc0d584bf57408d647f199665e7f3020f772beb540f",
+  "review_rationale": "Reviewed requirement that closure of every open U of X is open in X; do not mistake this for total disconnectedness or the weaker property that closures of closed sets remain closed."
 }
