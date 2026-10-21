@@ -3,36 +3,6 @@
   "strategy": "balanced independent breadth with bounded prerequisite lookahead",
   "breadth_candidates": [
     {
-      "id": "affine-geometry",
-      "research_prompt": "Independently source affine spaces, affine combinations, affine hull; distinguish convex from affine hull and avoid unstated finite-dimensional assumptions.",
-      "priority": "normal",
-      "source_review_required": true
-    },
-    {
-      "id": "probability-independence",
-      "research_prompt": "Independently source independence of events and of sigma-algebras or random variables, preserving pairwise versus mutual independence.",
-      "priority": "normal",
-      "source_review_required": true
-    },
-    {
-      "id": "matrix-trace",
-      "research_prompt": "Independently source trace of finite square matrices over specified rings/fields; distinguish operator trace in finite-dimensional contexts.",
-      "priority": "normal",
-      "source_review_required": true
-    },
-    {
-      "id": "graph-cycles",
-      "research_prompt": "Independently source simple-graph cycles/circuits and distinguish paths, walks, directed cycles and graph-theoretic conventions.",
-      "priority": "normal",
-      "source_review_required": true
-    },
-    {
-      "id": "number-theory-congruence",
-      "research_prompt": "Independently source congruence modulo positive integers and modular equivalence; distinguish residue class and representative.",
-      "priority": "normal",
-      "source_review_required": true
-    },
-    {
       "id": "measure-and-analysis",
       "research_prompt": "Independently research a separate measure/analysis branch outside recently reviewed concepts; retain source-specific hypotheses.",
       "priority": "normal",
@@ -51,7 +21,22 @@
       "source_review_required": true
     }
   ],
+  "completed_breadth_topics": [
+    "affine-geometry",
+    "graph-cycles",
+    "matrix-trace",
+    "number-theory-congruence",
+    "probability-independence"
+  ],
   "deferred_target_clusters": [
+    {
+      "target_query_normalized": "affine combination of finitely many vectors in a real vector space",
+      "awaiting_relation_ids": [
+        "rel.wave2.pop140.affine-hull-affine-combination"
+      ],
+      "number_of_affected_relations": 1,
+      "priority": "normal"
+    },
     {
       "target_query_normalized": "integer divisibility by positive modulus and integer multiple",
       "awaiting_relation_ids": [
@@ -71,17 +56,18 @@
   ],
   "suggested_next_package": {
     "breadth_topic_candidates": [
-      "affine-geometry",
-      "probability-independence",
-      "matrix-trace"
+      "measure-and-analysis",
+      "topology-and-geometry",
+      "algebra-and-logic"
     ],
     "maximum_deferred_target_inclusions": 2,
     "rule": "Independently inspect sources and collisions; never mechanically certify candidate labels."
   },
   "reconciliation_findings": {
-    "pending_review": 3,
-    "unresolved_target": 2,
-    "pending_link_review": 2
+    "pending_review": 9,
+    "unresolved_target": 3,
+    "pending_link_review": 8,
+    "open_issue": 1
   },
   "coverage_and_stop_policy": {
     "state": "proposed_not_approved",
