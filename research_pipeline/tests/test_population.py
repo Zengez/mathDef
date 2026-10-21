@@ -105,6 +105,29 @@ class PopulationTests(unittest.TestCase):
         self.assertEqual(len(changes), 1)
         self.assertEqual(data["meanings"]["meaning.sample"]["formulations"][0]["id"], "form.sample")
 
+    def test_revision_interruption_replay_and_conflicting_event_rejected(self):
+        apply(self.root, self.write(self.package))
+        old = snapshot(self.root)[0]["meanings"]["meaning.sample"]
+        fixed = dict(old, context="More precise independently checked context")
+        patch = {"schema_version": 1, "id": "revision-recovery",
+                 "revisions": [{"id": "rev.recovery", "kind": "meanings",
+                                "target_id": "meaning.sample",
+                                "expected_sha256": digest(old),
+                                "replacement": fixed,
+                                "reason": "Reviewed isolated context correction"}]}
+        path = self.write(patch, "revision-recovery.json")
+        self.assertEqual(apply(self.root, path)["status"], "committed")
+        (self.root / "population" / "applied" / "revision-recovery.json").unlink()
+        # Simulate an interruption after the versioned event write but before
+        # its package receipt. An exact replay must not duplicate that event.
+        self.assertEqual(apply(self.root, path)["status"], "committed")
+        self.assertEqual(len(snapshot(self.root)[1]), 1)
+        (self.root / "population" / "applied" / "revision-recovery.json").unlink()
+        tampered = dict(patch, revisions=[dict(patch["revisions"][0],
+                       reason="Unexpected rewritten review rationale")])
+        with self.assertRaises(PipelineError):
+            apply(self.root, self.write(tampered, "revision-recovery.json"))
+
     def test_partial_interruption_replays_exact_prior_rows(self):
         path = self.write(self.package)
         partial = self.root / "population" / "records" / "sources.jsonl"
