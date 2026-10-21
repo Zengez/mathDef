@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-correction-scope-004a",
+  "mode": "amend",
+  "amendments": [
+    {
+      "amendment_id": "amend.scope-neighborhood-20261021-01",
+      "formulation_id": "form.aa975a3ff4883909.locally-quasicompact-space",
+      "version_sha256": "687fc676c7bc8b037cab22e2b20677839ee4dd3d5e0d70b9403627fc73fc3631",
+      "expected_node_sha256": "cf912e09ad014f3b4fb987230bf0ea959989936c03b8535bfeded9a0851825f5",
+      "reviewed_by": "assistant-contextual-semantics-pass1",
+      "reason": "A topology basis typically comprises open sets, but the source only requires a basis of quasi-compact neighborhoods, possibly not open. Reclassify the imprecise link as unassigned.",
+      "complete": true,
+      "review_rationale": "Reviewed complete formulation and corrected overly broad open-topology-basis link to an unassigned neighborhood-basis construction while retaining quasi-compactness and the explicit quantifiers.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "quasi-compact neighborhood K",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space"
+        },
+        {
+          "phrase": "neighborhood basis at x",
+          "state": "unassigned",
+          "context": "Topology: a local neighborhood basis consisting of quasi-compact neighborhoods, not necessarily open subsets"
+        },
+        {
+          "phrase": "neighborhood of a point in a topological space",
+          "state": "unassigned",
+          "context": "Topology: subset containing an open set around the point, not necessarily open itself"
+        },
+        {
+          "phrase": "for every neighborhood U of x",
+          "state": "external",
+          "disposition": "The quasi-compact neighborhood K can depend on both x and U, and no ambient Hausdorff condition is asserted."
+        }
+      ]
+    }
+  ]
+}
