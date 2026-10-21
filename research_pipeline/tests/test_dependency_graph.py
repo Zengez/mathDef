@@ -99,6 +99,11 @@ class DependencyGraphTests(unittest.TestCase):
                                    "that the missing prerequisite denotes exactly meaning C."}
         self.assertEqual(resolve(self.root, [row])["open"], 3)
         self.assertEqual(resolve(self.root, [row])["unresolved_missing_candidates"], 0)
+        after_resolution = tree(self.root, "form.a")
+        target = after_resolution["children"][0]
+        self.assertEqual(target["target_meaning_id"], "meaning.c")
+        self.assertEqual(target["formulations"][0]["formulation_id"], "form.c")
+        self.assertEqual(target["provenance"], "scan:candidate_resolution")
         new_ref = {"phrase": "D", "context": "Algebra", "state": "missing"}
         result = store(self.root, [self.entry("form.c", [new_ref])])
         self.assertEqual(result["unresolved_missing_candidates"], 1)
