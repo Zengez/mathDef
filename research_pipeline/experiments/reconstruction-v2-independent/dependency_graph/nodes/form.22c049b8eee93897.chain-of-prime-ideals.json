@@ -2,10 +2,29 @@
   "schema_version": 1,
   "formulation_id": "form.22c049b8eee93897.chain-of-prime-ideals",
   "version_sha256": "6d36ffcd8a1ec84ecaebdc70485ac9cb43563769fdfb86221816bf988478c40d",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "prime ideals",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "matching_note": "The terms of the chain are prime ideals.",
+      "occurrence_id": "occ.e709298ea466da2dbb69"
+    },
+    {
+      "phrase": "strictly increasing finite sequence",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-proper",
+      "matching_note": "Each inclusion is proper inclusion of ideal subsets.",
+      "occurrence_id": "occ.3d8ab177765fc6241aff"
+    },
+    {
+      "phrase": "length n",
+      "state": "external",
+      "disposition": "Length is the number of strict chain steps as defined here, not another prerequisite.",
+      "occurrence_id": "occ.f1178aa0f6c0d7b88cf9"
+    }
+  ],
+  "snapshot_sha256": "97e2a6ddfdc05bb965edfb77e617fea2ed3c73f7db6c595037a25ad990766d96",
+  "review_rationale": "Read the prime-chain definition completely, recognizing ordinary proper inclusion and finite length counting as distinct from newly needed specialized mathematical concepts."
 }

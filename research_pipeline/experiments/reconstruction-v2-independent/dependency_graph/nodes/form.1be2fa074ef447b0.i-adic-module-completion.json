@@ -2,10 +2,50 @@
   "schema_version": 1,
   "formulation_id": "form.1be2fa074ef447b0.i-adic-module-completion",
   "version_sha256": "cf142f241d435a08e73b14f10a477c9854e0d11b6de2b298f14d1b26c4558791",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "matching_note": "The input M has its ordinary unital R-module structure.",
+      "occurrence_id": "occ.d14818b565773c90e337"
+    },
+    {
+      "phrase": "ideal I",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "matching_note": "The ideal filters the module by successive powers.",
+      "occurrence_id": "occ.1630758035eec8554df4"
+    },
+    {
+      "phrase": "lim_n M/I^n M",
+      "state": "existing",
+      "target_meaning_id": "meaning.8d61300dcabf30c0.inverse-limit-sequence-modules",
+      "matching_note": "This inverse limit is a countable system of R-modules.",
+      "occurrence_id": "occ.efe1f8b2835f8d3e2986"
+    },
+    {
+      "phrase": "M/I^n M",
+      "state": "unassigned",
+      "context": "Module theory: quotient module of M by its I^n-multiple submodule",
+      "reason": "The ideal-power quotient should be compared with all other similar occurrences before declaring a missing meaning.",
+      "occurrence_id": "occ.d9564d7c5fa6c6274607"
+    },
+    {
+      "phrase": "I^n M",
+      "state": "unassigned",
+      "context": "Commutative algebra: power of an ideal applied to an R-module",
+      "reason": "The operation is used in multiple adic definitions and is not yet resolved independently.",
+      "occurrence_id": "occ.4898e48b9d3f611af3b4"
+    },
+    {
+      "phrase": "mutually compatible residue classes",
+      "state": "external",
+      "disposition": "The compatibility condition is already determined by the transition maps in the inverse-system limit.",
+      "occurrence_id": "occ.d6ee4576f2df491c4fa0"
+    }
+  ],
+  "snapshot_sha256": "5cdf2d6c6600582e1ed613c7362661c5007d24e6dd09e19bba74b0dd1966e191",
+  "review_rationale": "Reviewed the module I-adic completion as a countable inverse limit, linking ordinary module/ideal/limit concepts while leaving quotient-module and ideal-power constructions for global occurrence consolidation."
 }

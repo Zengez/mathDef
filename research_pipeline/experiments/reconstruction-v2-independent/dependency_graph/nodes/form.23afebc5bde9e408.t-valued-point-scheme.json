@@ -2,35 +2,43 @@
   "schema_version": 1,
   "formulation_id": "form.23afebc5bde9e408.t-valued-point-scheme",
   "version_sha256": "cd72fa51d6d446dc77c8629222b52bf196a561696487ab0a50749166ae1ec49c",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "scheme",
-      "span": [
-        22,
-        28
-      ],
+      "phrase": "scheme X",
       "state": "existing",
       "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.393a2b409afda01c9e96"
+      "matching_note": "X is a scheme.",
+      "occurrence_id": "occ.a5070e2ae3988d7d36fe"
     },
     {
-      "phrase": "scheme",
-      "span": [
-        36,
-        42
-      ],
+      "phrase": "scheme morphism T→X",
       "state": "existing",
-      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.6a25600271dd5c59d694"
+      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "matching_note": "The T-valued point is an ordinary morphism of schemes.",
+      "occurrence_id": "occ.a8b2e79f2c3eba52cead"
+    },
+    {
+      "phrase": "Spec(k)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "matching_note": "Spec(k) denotes the spectrum of a field.",
+      "occurrence_id": "occ.2c124b328e27c020d79f"
+    },
+    {
+      "phrase": "field k",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "matching_note": "The base k is a field.",
+      "occurrence_id": "occ.c3c9f206f0c067d32d27"
+    },
+    {
+      "phrase": "map from the spectrum of k into X",
+      "state": "external",
+      "disposition": "This is a restatement of the scheme-morphism condition in this special case.",
+      "occurrence_id": "occ.4d37a5091ff1c096a740"
     }
   ],
-  "snapshot_sha256": "56983047fc3e347b49593f765cf86146db1eb68c641cb8f1e3c8fa46cfb35fd1",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "473f5aa12f7c0d4cfba1e2d1df7ef245b3471bfb73258711a5852007ec48af36",
+  "review_rationale": "Reviewed T-valued points and the special field-valued case, linking schemes, morphisms, the spectrum of a field and the ambient field."
 }

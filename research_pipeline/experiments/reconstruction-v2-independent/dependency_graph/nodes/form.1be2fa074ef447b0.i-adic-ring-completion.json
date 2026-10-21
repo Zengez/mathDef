@@ -2,10 +2,43 @@
   "schema_version": 1,
   "formulation_id": "form.1be2fa074ef447b0.i-adic-ring-completion",
   "version_sha256": "eacff749a736bec13dc4f4906ff8532b7fff4dd094822e982937c570d4fd2fa6",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ideal I",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "matching_note": "I is an ideal of the commutative ring R.",
+      "occurrence_id": "occ.46c0371ee6c90ea7ba30"
+    },
+    {
+      "phrase": "inverse limit of the quotient rings",
+      "state": "unassigned",
+      "context": "Commutative algebra: inverse limit of a countable inverse system of quotient rings",
+      "reason": "A module inverse limit exists but using it as a ring definition would ignore the ring-structure context.",
+      "occurrence_id": "occ.1836ee61f37e8d921829"
+    },
+    {
+      "phrase": "quotient rings R/I^n",
+      "state": "unassigned",
+      "context": "Commutative algebra: quotient ring by a power of a ring ideal",
+      "reason": "Preserve quotient-ring and ideal-power construction for global consolidation.",
+      "occurrence_id": "occ.5514015fb48a30a257b3"
+    },
+    {
+      "phrase": "transition maps given by reduction modulo smaller powers",
+      "state": "unassigned",
+      "context": "Commutative algebra: natural quotient homomorphism R/I^{n+1}→R/I^n",
+      "reason": "These maps arise from nested powers of I; do not conduct new research in the first scan.",
+      "occurrence_id": "occ.93bec1c1b2610cf6bd9a"
+    },
+    {
+      "phrase": "over positive integers n",
+      "state": "external",
+      "disposition": "The indexing set of positive natural numbers is standard ambient notation.",
+      "occurrence_id": "occ.418ea074ca561589b87b"
+    }
+  ],
+  "snapshot_sha256": "624f645e586b5f1dd98d90fb24fa4b1b16c60d71a7bb95eea33f2d572c071fa7",
+  "review_rationale": "Reviewed the ring I-adic completion and its quotient-ring bonding maps, separating it from the indexed module inverse limit because preserving ring structure is a contextual distinction."
 }

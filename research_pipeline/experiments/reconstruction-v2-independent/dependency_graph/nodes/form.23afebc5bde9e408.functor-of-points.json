@@ -2,49 +2,44 @@
   "schema_version": 1,
   "formulation_id": "form.23afebc5bde9e408.functor-of-points",
   "version_sha256": "68fd870154ca8421ceb60f33865efc46e3cbe8399eab24d451d9bc5879e2273b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "scheme",
-      "span": [
-        6,
-        12
-      ],
+      "phrase": "scheme X",
       "state": "existing",
       "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.f7289baa988934f788da"
+      "matching_note": "X is a scheme.",
+      "occurrence_id": "occ.6d644db8a4c8cb3d0c53"
     },
     {
       "phrase": "contravariant functor",
-      "span": [
-        45,
-        66
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.fef4e69e96c25bfa.contravariant-functor"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.aba11a90f2754968a13d"
+      "state": "existing",
+      "target_meaning_id": "meaning.fef4e69e96c25bfa.contravariant-functor",
+      "matching_note": "The functor changes direction by precomposition.",
+      "occurrence_id": "occ.8df666c1afe408cfafca"
     },
     {
-      "phrase": "scheme",
-      "span": [
-        110,
-        116
-      ],
+      "phrase": "scheme morphisms",
       "state": "existing",
-      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.537849e6b15658a3e39e"
+      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "matching_note": "Its Hom set consists of scheme morphisms.",
+      "occurrence_id": "occ.44ad2647d4c53d5adaa3"
+    },
+    {
+      "phrase": "precomposition",
+      "state": "unassigned",
+      "context": "Category theory: composition on Hom sets induced by a test scheme map",
+      "reason": "The Hom precomposition action is contextual, not assumed an independent missing definition.",
+      "occurrence_id": "occ.0e5fe42ff80abdba79c3"
+    },
+    {
+      "phrase": "Hom_Sch(T,X)",
+      "state": "unassigned",
+      "context": "Category theory: set of scheme morphisms from T to X",
+      "reason": "The Hom-set construction is not identical to scheme morphism itself; preserve its occurrence.",
+      "occurrence_id": "occ.1cf37fd0a496dd287ed3"
     }
   ],
-  "snapshot_sha256": "64c825fafd30d645b81d8858e2cc3d2d165f23849c9259c0c3ad7addfce95ea6",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "5a66e8e4450c283c0c258868b686b63587f2ff847508e495b3d12d3f6233e953",
+  "review_rationale": "Read the functor-of-points definition, linked contravariant functors, schemes and scheme morphisms while preserving Hom-set and precomposition constructions."
 }
