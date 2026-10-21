@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-034",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.a38f1da0bc017afe.noetherian-i-adic-completion",
+      "version_sha256": "2f6bcc7fea8b92e4af2dc9e4ffd866ceb7b22df32a3de357c769c57755ce705c",
+      "complete": true,
+      "review_rationale": "Reviewed the I-adic inverse-limit construction for a Noetherian commutative ring, including ideal powers, quotient rings, transition maps, and its canonical structural map. The inverse-limit ring and completeness property are not interchangeable.",
+      "references": [
+        {
+          "phrase": "Noetherian commutative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "ideal I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "I-adic completion of ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.1be2fa074ef447b0.i-adic-ring-completion"
+        },
+        {
+          "phrase": "inverse limit of system",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f7683667fac9d28.category-limit"
+        },
+        {
+          "phrase": "quotient ring R/I^n and ideal powers",
+          "state": "unassigned",
+          "context": "Commutative algebra: successive ideal powers and ring quotient by the nth ideal power"
+        },
+        {
+          "phrase": "structure homomorphism R→lim_n R/I^n",
+          "state": "unassigned",
+          "context": "Commutative algebra: compatible quotient maps induce universal ring homomorphism into inverse-limit ring"
+        },
+        {
+          "phrase": "n ranges through nonnegative integers",
+          "state": "external",
+          "disposition": "The inverse system uses the natural transition maps between ideal-power quotients and not arbitrary unrelated quotient rings."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.a4bbabe606a10067.affine-blowup-algebra",
+      "version_sha256": "104184f06cfe480b9aceb327dff9d9a7d7478404be809adec6b12c18c0f9c5f7",
+      "complete": true,
+      "review_rationale": "Inspected the affine blowup chart as the degree-zero homogeneous localization of the Rees algebra at a chosen degree-one element represented by a∈I. Its fractions x/a^n have x∈I^n, not arbitrary numerator in R.",
+      "references": [
+        {
+          "phrase": "Rees algebra ⊕I^n",
+          "state": "existing",
+          "target_meaning_id": "meaning.a4bbabe606a10067.rees-blowup-algebra"
+        },
+        {
+          "phrase": "degree-zero homogeneous localization",
+          "state": "existing",
+          "target_meaning_id": "meaning.29b2c34cc33d4b62.degree-zero-localization"
+        },
+        {
+          "phrase": "ideal I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "fraction x/a^n with x∈I^n",
+          "state": "unassigned",
+          "context": "Commutative algebra: degree-zero fractions in homogeneous localization of graded Rees algebra"
+        },
+        {
+          "phrase": "a chosen element of I in degree one",
+          "state": "external",
+          "disposition": "The element is represented in degree one; it is not assumed to be a unit or a nonzero divisor in R."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.a4bbabe606a10067.rees-blowup-algebra",
+      "version_sha256": "d064002ca8bbc84dd3d5cb66b01391e3b983f09ea0689f0ade528550010e377f",
+      "complete": true,
+      "review_rationale": "Read the full nonnegative grading with I⁰=R and pieces I^n and multiplication I^m I^n⊆I^{m+n}. Preserved the induced ring-algebra structure instead of identifying the Rees algebra with a simple quotient ring.",
+      "references": [
+        {
+          "phrase": "ideal I of commutative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "nonnegative ring grading",
+          "state": "existing",
+          "target_meaning_id": "meaning.fa3b484c09596cfd.nonnegatively-graded-ring"
+        },
+        {
+          "phrase": "powers I^n and ideal products",
+          "state": "unassigned",
+          "context": "Commutative algebra: nth power of an ideal and multiplication of ideal powers"
+        },
+        {
+          "phrase": "direct sum ⊕_{n≥0}I^n",
+          "state": "unassigned",
+          "context": "Algebra: external direct sum of an indexed family of modules with graded multiplication"
+        },
+        {
+          "phrase": "I⁰=R",
+          "state": "external",
+          "disposition": "The degree-zero component is the ambient ring; multiplication on homogeneous pieces comes from ideal multiplication."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.a54f6089c72fdd84.small-extension-artinian-local",
+      "version_sha256": "87b4037ece8b670b0368c06c371b691715358211f7a86c5d3bab6e5170b312a9",
+      "complete": true,
+      "review_rationale": "Reviewed surjective local homomorphism B′→B, its kernel I of module length one, the square-zero consequence, and annihilation by the maximal ideal. A small extension is stronger than an arbitrary square-zero extension.",
+      "references": [
+        {
+          "phrase": "local Artinian rings B′ and B",
+          "state": "existing",
+          "target_meaning_id": "meaning.9442fc10b22be057.artinian-commutative-ring"
+        },
+        {
+          "phrase": "local ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "ring homomorphism B′→B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "module length one",
+          "state": "existing",
+          "target_meaning_id": "meaning.a95feee56dc057ee.module-composition-length"
+        },
+        {
+          "phrase": "surjective local homomorphism",
+          "state": "unassigned",
+          "context": "Commutative algebra: surjective map of local rings respecting their unique maximal ideals"
+        },
+        {
+          "phrase": "kernel ideal I",
+          "state": "unassigned",
+          "context": "Ring theory: kernel of homomorphism as ideal of B′"
+        },
+        {
+          "phrase": "I²=0 and maximal ideal annihilates I",
+          "state": "external",
+          "disposition": "These are mathematical consequences asserted of length-one kernel, not separate requirements equivalent for arbitrary extension."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.a54f6089c72fdd84.smooth-at-prime-noetherian-lifting",
+      "version_sha256": "634811fa04712ab2611350ee43ae1c24aba5abbf35bd2d1d1d4811105f1b36ac",
+      "complete": true,
+      "review_rationale": "Read the local lifting criterion over R Noetherian for finite-type R→S and prime q of S: lifts of compatible maps across all local R-algebra square-zero surjections. Preserve compatibility and location of q rather than generalizing to arbitrary extensions without the stated hypotheses.",
+      "references": [
+        {
+          "phrase": "finite-type ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map"
+        },
+        {
+          "phrase": "Noetherian base R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "prime ideal q of S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "formal smoothness lifting of ring map",
+          "state": "existing",
+          "target_meaning_id": "meaning.aacbc297769cc94a.formally-smooth-ring-map"
+        },
+        {
+          "phrase": "square-zero kernel of local R-algebra surjection",
+          "state": "unassigned",
+          "context": "Deformation theory: square-zero ideal kernel of surjective homomorphism of local R-algebras"
+        },
+        {
+          "phrase": "compatibility of local lifting maps S→B′",
+          "state": "unassigned",
+          "context": "Commutative algebra: commutative diagrams and lifts of R-algebra morphisms along a quotient map"
+        },
+        {
+          "phrase": "maximal ideal of B lies over q",
+          "state": "external",
+          "disposition": "The displayed localization condition on target local algebra is part of the at-q test; it is not an arbitrary global lifting problem."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.a570f5bed277bd8b.presheaf-fibre-product",
+      "version_sha256": "864d270f198ed1cf45e72dc6622120e8b199eec651f5d7aed07be8d23ef22c0f",
+      "complete": true,
+      "review_rationale": "Reviewed pointwise construction F(X)×_{G(X)}H(X) of the fibre product presheaf with restriction maps inherited componentwise. This is a presheaf limit, not a scheme fibre product or a topological fibre product.",
+      "references": [
+        {
+          "phrase": "set-valued presheaves on C",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.contravariant-functor"
+        },
+        {
+          "phrase": "fibre product of sets",
+          "state": "existing",
+          "target_meaning_id": "meaning.be14669c52f30e79.categorical-fibre-product"
+        },
+        {
+          "phrase": "category C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "natural transformations F→G and H→G",
+          "state": "unassigned",
+          "context": "Category theory: natural transformations between contravariant set-valued functors"
+        },
+        {
+          "phrase": "restriction maps componentwise",
+          "state": "external",
+          "disposition": "Functoriality of restrictions follows from the transformations' naturality and is not a distinct sheaf axiom."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.a570f5bed277bd8b.representable-presheaf-morphism",
+      "version_sha256": "77cee97b6220ad260370f8bcbcde82b2245a3ab086d63f82c5395c4a86771ca4",
+      "complete": true,
+      "review_rationale": "Inspected the quantification over every U∈C and every element ξ∈G(U), the Yoneda map h_U→G, and the representability of its fibre product with F; a representable morphism need not make F or G representable itself.",
+      "references": [
+        {
+          "phrase": "presheaves F,G:C^op→Sets",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.contravariant-functor"
+        },
+        {
+          "phrase": "representable presheaf h_U",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.representable-presheaf"
+        },
+        {
+          "phrase": "fibre product presheaf h_U×_G F",
+          "state": "existing",
+          "target_meaning_id": "meaning.a570f5bed277bd8b.presheaf-fibre-product"
+        },
+        {
+          "phrase": "representability",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.representable-presheaf"
+        },
+        {
+          "phrase": "natural transformation a:F→G",
+          "state": "unassigned",
+          "context": "Category theory: natural transformation of contravariant set-valued functors"
+        },
+        {
+          "phrase": "ξ∈G(U) as Yoneda natural transformation h_U→G",
+          "state": "unassigned",
+          "context": "Category theory: Yoneda correspondence between elements of presheaf G(U) and natural transformations from h_U"
+        },
+        {
+          "phrase": "for every U and ξ",
+          "state": "external",
+          "disposition": "Representability is tested on every such pullback, not only on a fixed single object or one chosen element."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.a757d94fc61ac37f.jacobson-topological-space",
+      "version_sha256": "8dd52e075e8fbc8de1ca1552106b2313a5d46d368c4bab42399d7c1ee22d074d",
+      "complete": true,
+      "review_rationale": "Read the Jacobson-space condition as the density in each closed subset Z of those points that are closed in the entire ambient space X; this is not the weaker statement that points closed only relatively in Z are dense.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "topological closure and density",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross107.topological-closure"
+        },
+        {
+          "phrase": "closed subset Z⊆X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "points closed in ambient X",
+          "state": "unassigned",
+          "context": "Topology: singleton {x} closed in the original space X, distinguished from closure relative to Z"
+        },
+        {
+          "phrase": "for each closed Z the ambient closed points in Z are dense",
+          "state": "external",
+          "disposition": "The quantifier ranges over every closed subset including X; the closure is taken within Z."
+        }
+      ]
+    }
+  ]
+}
