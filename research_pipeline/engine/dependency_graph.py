@@ -186,7 +186,7 @@ def live_nodes(graph, inv):
 
 def _reference_state(ref, meanings, missing):
     state = ref.get("state")
-    if state not in ("existing", "missing", "ambiguous", "external", "deferred"):
+    if state not in ("existing", "missing", "ambiguous", "external", "deferred", "unassigned"):
         raise PipelineError("Unknown reference state")
     if state == "existing" and ref.get("target_meaning_id") not in meanings:
         raise PipelineError("Existing dependency must target an inventory meaning")
@@ -194,8 +194,26 @@ def _reference_state(ref, meanings, missing):
         raise PipelineError("Missing reference must target a registered candidate")
     if state in ("ambiguous", "deferred") and not ref.get("reason"):
         raise PipelineError("Ambiguous/deferred references need an explicit reason")
+    if state == "unassigned" and not str(ref.get("context", "")).strip():
+        raise PipelineError("Unassigned occurrence needs its local context, not a premature meaning")
     if state == "external" and not ref.get("disposition"):
         raise PipelineError("External/primitve reference requires a justified disposition")
+
+
+def meaning_version(inv, mid):
+    """Version-pin a meaning AND every associated formulation's full contents."""
+    desc = inv["meanings"][mid]
+    return digest({"meaning": desc, "formulation_versions": {
+        fid: inv["formulations"][fid]["version_sha256"]
+        for fid in sorted(desc["formulation_ids"])
+    }})
+
+
+def unresolved_fingerprint(inv, references, missing_candidates):
+    """Stable phase-gate fingerprint, including evidence for all unresolved uses."""
+    return digest({"inventory": inv["source_inventory_sha256"],
+                   "occurrences": references,
+                   "missing_candidates": missing_candidates})
 
 
 def missing_key(phrase, context):
@@ -283,7 +301,7 @@ def rebuild(workspace, inventory=None):
             continue  # A stale or no-longer-applicable review cannot close anything.
         if key in aliases:
             raise PipelineError("An aliased missing candidate cannot own a resolution")
-        if resolution.get("target_version_sha256") != digest(meanings[mid]):
+        if resolution.get("target_version_sha256") != meaning_version(inv, mid):
             continue
         resolutions[key] = resolution
     reverse = defaultdict(set)
@@ -325,7 +343,7 @@ def rebuild(workspace, inventory=None):
             elif state == "missing":
                 reverse["missing:" + ref["missing_candidate_id"]].add(fid)
                 blockers[fid].append("missing:" + ref["missing_candidate_id"])
-            elif state in ("ambiguous", "deferred"):
+            elif state in ("ambiguous", "deferred", "unassigned"):
                 blockers[fid].append(state + ":" + oid)
     # A scanned node can be structurally closed only if no reachable node is
     # unscanned/ambiguous/missing. Propagate blockers backwards to a fixed point.
@@ -355,6 +373,10 @@ def rebuild(workspace, inventory=None):
         }
     occurrences.sort(key=lambda x: (x["from_formulation"], x["occurrence_id"]))
     edges.sort(key=lambda x: (x["from_formulation"], x["occurrence_id"]))
+    # Every occurrence survives even if it is not yet an identified missing
+    # meaning. The first pass records evidence; the consolidation pass groups it.
+    unresolved = [row for row in occurrences if row["state"] in
+                  ("unassigned", "ambiguous", "missing", "deferred")]
     candidates = []
     for k, c in sorted(candidate_map.items()):
         incoming = sorted(reverse.get("missing:" + k, ()))
@@ -375,8 +397,23 @@ def rebuild(workspace, inventory=None):
     jsonl_output("occurrences.jsonl", occurrences)
     jsonl_output("edges.jsonl", edges)
     jsonl_output("missing_candidates.jsonl", candidates)
+    jsonl_output("unresolved_occurrences.jsonl", unresolved)
     atomic_json(graph / "reverse_index.json", {k: sorted(v) for k, v in sorted(reverse.items())})
     counts = Counter(x["scan_status"] for x in state_rows.values())
+    incomplete = counts["unscanned"] + counts["scan_incomplete"]
+    raw_unresolved = sum(row["state"] == "unassigned" for row in unresolved)
+    raw_ambiguous = sum(row["state"] == "ambiguous" for row in unresolved)
+    fingerprint = unresolved_fingerprint(inv, unresolved, candidates)
+    gate = read(graph / "CONSOLIDATION.json", {})
+    gated = (incomplete == 0 and raw_unresolved == 0 and raw_ambiguous == 0
+             and gate.get("inventory_sha256") == inv["source_inventory_sha256"]
+             and gate.get("unresolved_fingerprint") == fingerprint
+             and isinstance(gate.get("reviewed_by"), str)
+             and bool(gate["reviewed_by"].strip())
+             and len(gate.get("rationale", "").strip()) >= 40)
+    phase = ("scan_and_link_existing" if incomplete else
+             "consolidate_occurrences" if not gated else
+             "research_missing_dependencies")
     summary = {
         "schema_version": SCHEMA, "inventory_sha256": inv["source_inventory_sha256"],
         "total_meanings": len(meanings), "total_formulations": len(state_rows),
@@ -389,6 +426,10 @@ def rebuild(workspace, inventory=None):
         "alias_candidate_records": len(aliases),
         "missing_occurrences": sum(r["state"] == "missing" for r in occurrences),
         "ambiguous_occurrences": sum(r["state"] == "ambiguous" for r in occurrences),
+        "unassigned_occurrences": raw_unresolved,
+        "unresolved_fingerprint": fingerprint,
+        "phase": phase,
+        "consolidation_gate_valid": gated,
         "seed_relations": len(inv["seed_relations"]),
         "scan_occurrences": sum(r.get("origin") != "preexisting_relation" for r in occurrences),
         "scan_amendment_event_count": len(amendment_events(graph)),
@@ -402,7 +443,11 @@ def rebuild(workspace, inventory=None):
         "state_sha256": digest(state_rows),
         "valid_node_snapshot_count": len(nodes),
         "scan_amendment_event_count": len(amendment_events(graph)),
-        "next_work": "Resume unscanned/incomplete/version-invalid forms; research deduplicated missing candidates only after semantic scan review.",
+        "next_work": ("Complete content-only semantic scans and existing-meaning links without external research"
+                      if phase == "scan_and_link_existing" else
+                      "Consolidate all stored unresolved occurrences before missing-definition research"
+                      if phase == "consolidate_occurrences" else
+                      "Research the consolidated missing-meaning candidates, then integrate new formulations"),
         "transaction": "Derived indexes written from authoritative atomic per-node snapshots; commit this directory in one Git transaction.",
     })
     return summary
@@ -421,7 +466,7 @@ def make_snapshot(inv, fid, references, status, rationale=""):
         ref = dict(item)
         if not str(ref.get("phrase", "")).strip():
             raise PipelineError("Every reference needs a phrase")
-        if ref.get("state") not in ("existing", "missing", "ambiguous", "external", "deferred"):
+        if ref.get("state") not in ("existing", "missing", "ambiguous", "external", "deferred", "unassigned"):
             raise PipelineError("Reference needs a supported state")
         if ref.get("state") == "existing" and ref.get("target_meaning_id") not in inv["meanings"]:
             raise PipelineError("Unknown existing meaning")
@@ -430,6 +475,10 @@ def make_snapshot(inv, fid, references, status, rationale=""):
             # context must not be globally deduplicated across homonyms.
             ref.setdefault("context", inv["formulations"][fid]["context"])
             ref["missing_candidate_id"] = missing_key(ref["phrase"], ref["context"])
+        if ref.get("state") == "unassigned":
+            ref.setdefault("context", inv["formulations"][fid]["context"])
+            if not str(ref.get("context", "")).strip():
+                raise PipelineError("Unassigned reference requires mathematical context")
         if ref.get("state") == "ambiguous":
             ids = ref.get("candidate_meaning_ids", [])
             if not isinstance(ids, list) or any(mid not in inv["meanings"] for mid in ids):
@@ -678,14 +727,14 @@ def research_queue(workspace, limit=20):
     candidates = [json.loads(x) for x in
         (graph / "missing_candidates.jsonl").read_text(encoding="utf-8").splitlines() if x.strip()]
     state = read(graph / "STATE.json")["summary"]
-    if state["unscanned"] or state["scan_incomplete"]:
-        phase = "scan_and_disambiguate_first"
-    else:
-        phase = "research_missing_dependencies"
+    phase = state["phase"]
     candidates = [x for x in candidates if x["status"] == "unresearched"]
     candidates.sort(key=lambda x: (-x["upstream_formulation_count"],
                          -x["occurrence_count"], x["id"]))
     return {"phase": phase, "breadth_batch_143": "on_hold",
+        "missing_research_permitted": phase == "research_missing_dependencies",
+        "unassigned_occurrences": state["unassigned_occurrences"],
+        "ambiguous_occurrences": state["ambiguous_occurrences"],
         "requires_source_research_and_explicit_review": True,
         "candidates": candidates[:limit],
         "remaining": max(0, len(candidates) - limit)}
@@ -707,7 +756,7 @@ def resolve(workspace, resolutions):
         cid, mid = row.get("missing_candidate_id"), row.get("target_meaning_id")
         if cid not in candidate_ids or mid not in inv["meanings"]:
             raise PipelineError("Resolution candidate/meaning not in inventory")
-        if row.get("target_version_sha256") != digest(inv["meanings"][mid]):
+        if row.get("target_version_sha256") != meaning_version(inv, mid):
             raise PipelineError("Stale target meaning version")
         if len(row.get("review_rationale", "").strip()) < 40:
             raise PipelineError("Resolution requires substantive contextual review")
@@ -737,9 +786,11 @@ def apply_inbox(workspace, limit=20):
         "amend": lambda pkg: amend(workspace, pkg["amendments"]),
         "resolve": lambda pkg: resolve(workspace, pkg["resolutions"]),
         "alias": lambda pkg: alias_candidates(workspace, pkg["aliases"]),
+        "consolidate": lambda pkg: seal_consolidation(workspace, pkg["gate"]),
     }
     result = {"applied": [], "already_applied": [], "max_packages": limit}
-    for file in sorted(inbox.glob("*.json"))[:max(0, limit)] if inbox.is_dir() else ():
+    remaining = max(0, limit)
+    for file in sorted(inbox.glob("*.json")) if inbox.is_dir() else ():
         pkg = read(file)
         if (pkg.get("schema_version") != SCHEMA or
                 pkg.get("id") != file.stem or
@@ -754,7 +805,10 @@ def apply_inbox(workspace, limit=20):
                 raise PipelineError("Mutated already-applied graph batch " + file.name)
             result["already_applied"].append(file.stem)
             continue
+        if remaining == 0:
+            continue  # Old receipts never starve later unprocessed inbox items.
         valid_modes[pkg["mode"]](pkg)
+        remaining -= 1
         atomic_json(receipt_file, {"id": file.stem, "sha256": receipt_sha,
                                    "mode": pkg["mode"],
                                    "status": "applied_in_independent_graph_only",
@@ -763,10 +817,62 @@ def apply_inbox(workspace, limit=20):
     return result
 
 
+def scan_worklist(workspace, limit=10):
+    """Deterministic, no-network first-pass input for a future Chat reviewer."""
+    graph = graph_path(workspace)
+    inv = read(graph / "INVENTORY.json")
+    if not inv:
+        raise PipelineError("Build the independent graph inventory first")
+    nodes = live_nodes(graph, inv)
+    seed_by_form = defaultdict(list)
+    for seed in inv["seed_relations"]:
+        seed_by_form[seed["from_formulation"]].append(seed)
+    todo = [fid for fid in sorted(inv["formulations"])
+            if nodes.get(fid, {}).get("scan_status") != "complete"]
+    items = []
+    for fid in todo[:max(0, limit)]:
+        item = inv["formulations"][fid]
+        node = nodes.get(fid, {})
+        items.append({"formulation_id": fid, "version_sha256": item["version_sha256"],
+                      "meaning_id": item["meaning_id"], "display_term": item["display_term"],
+                      "context": item["context"], "text": item["text"],
+                      "scan_status": node.get("scan_status", "unscanned"),
+                      "local_lexical_proposals": node.get("references", []),
+                      "historical_link_seeds": seed_by_form.get(fid, []),
+                      "instruction": "Read entire formulation; link clear existing contextual meanings; "
+                          "record other possible mathematical references as unassigned occurrences "
+                          "with precise local context. No external source investigation or new definitions."})
+    return {"phase": "scan_and_link_existing", "external_research": False,
+            "total_remaining": len(todo), "items": items}
+
+
+def seal_consolidation(workspace, event):
+    """Explicit reviewed phase barrier; stale/new occurrences invalidate it."""
+    graph = graph_path(workspace)
+    summary = rebuild(workspace)
+    inv = read(graph / "INVENTORY.json")
+    if summary["scan_complete"] != summary["total_formulations"]:
+        raise PipelineError("Cannot consolidate before full first-pass semantic scans")
+    if summary["unassigned_occurrences"] or summary["ambiguous_occurrences"]:
+        raise PipelineError("Classify every unassigned/ambiguous occurrence or explicitly defer it")
+    if event.get("inventory_sha256") != inv["source_inventory_sha256"] or (
+            event.get("unresolved_fingerprint") != summary["unresolved_fingerprint"]):
+        raise PipelineError("Stale consolidation scope / occurrence registry")
+    if not str(event.get("reviewed_by", "")).strip() or len(str(event.get("rationale", "")).strip()) < 40:
+        raise PipelineError("Global missing-occurrence consolidation needs a substantive reviewed rationale")
+    if event.get("schema_version") != SCHEMA:
+        raise PipelineError("Unsupported consolidation gate")
+    previous = read(graph / "CONSOLIDATION.json")
+    if previous and previous != event and previous.get("unresolved_fingerprint") == event["unresolved_fingerprint"]:
+        raise PipelineError("Do not rewrite an existing reviewed consolidation gate")
+    atomic_json(graph / "CONSOLIDATION.json", event)
+    return rebuild(workspace)
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--workspace", type=Path, required=True)
-    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "amend", "resolve", "alias", "apply_inbox", "status", "tree", "queue"),
+    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "amend", "resolve", "alias", "consolidate", "apply_inbox", "worklist", "status", "tree", "queue"),
                    required=True)
     p.add_argument("--adapter", default="research_pipeline.adapters.mathdef.dependency_scan")
     p.add_argument("--limit", type=int, default=30)
@@ -810,6 +916,14 @@ def main():
         if batch.get("schema_version") != SCHEMA:
             raise PipelineError("Unsupported alias batch")
         result = alias_candidates(args.workspace, batch["aliases"])
+    elif args.mode == "consolidate":
+        inbox = (graph / "inbox").resolve()
+        if not args.batch or not args.batch.resolve().is_relative_to(inbox):
+            raise PipelineError("Consolidation batch must be committed under graph inbox")
+        batch = read(args.batch)
+        result = seal_consolidation(args.workspace, batch["gate"])
+    elif args.mode == "worklist":
+        result = scan_worklist(args.workspace, max(0, args.limit))
     elif args.mode == "apply_inbox":
         result = apply_inbox(args.workspace, max(0, args.limit))
     elif args.mode == "tree":
