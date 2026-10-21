@@ -2,10 +2,27 @@
   "schema_version": 1,
   "formulation_id": "form.a95feee56dc057ee.simple-module",
   "version_sha256": "fad21109abfb5ea66a1e726ca6a9d9b24c639ed5d3ac766bb1117846013e4987",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.60680af4bd5b36bce5b7"
+    },
+    {
+      "phrase": "submodule of M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.submodule",
+      "occurrence_id": "occ.7d8cca4785d922d55b19"
+    },
+    {
+      "phrase": "nonzero and only submodules are 0 and M",
+      "state": "external",
+      "disposition": "Nonzero condition is essential, and no assumption that the ring R is a field or the module is finitely generated is made.",
+      "occurrence_id": "occ.b830588c246971801ba6"
+    }
+  ],
+  "snapshot_sha256": "3422403b4b71c116e5796c9071337b8de45fe0beb7e95079732545a3bc861ea4",
+  "review_rationale": "Reviewed both nonzero and absence of nontrivial submodules. A zero module meets the only-submodules condition vacuously but is explicitly excluded from simplicity."
 }

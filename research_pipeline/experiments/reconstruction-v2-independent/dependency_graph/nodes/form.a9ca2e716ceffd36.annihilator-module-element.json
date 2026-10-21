@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.a9ca2e716ceffd36.annihilator-module-element",
   "version_sha256": "127105fa7a08c523309073ab92609c64d1b9b5985e39a5d4799047a2c14cdaaf",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module M and element m",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.b3929d7672266fdb733f"
+    },
+    {
+      "phrase": "annihilator ideal in R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.b66cd43acd93d85dc43b"
+    },
+    {
+      "phrase": "scalar action r·m=0",
+      "state": "unassigned",
+      "context": "Module theory: annihilation of one fixed module element by scalars in R",
+      "occurrence_id": "occ.cfd2cf63ee2a741664c7"
+    },
+    {
+      "phrase": "m fixed",
+      "state": "external",
+      "disposition": "Only scalars annihilating this one m qualify; no quantification over every element of the module is asserted.",
+      "occurrence_id": "occ.161964fe292669e7b3a5"
+    }
+  ],
+  "snapshot_sha256": "12e44c24dd0b2da15b57a9013e7857026526ce21b1fda58159ab57e33df28524",
+  "review_rationale": "Read the one-element version Ann_R(m) with m fixed, retaining the difference from Ann_R(M) which quantifies over all elements; linked the ambient R-module and ideal notions."
 }

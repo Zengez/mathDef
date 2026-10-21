@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.a9ca2e716ceffd36.annihilator-module",
   "version_sha256": "184188a161e5cd675e3d697cfd8efe2d0a32244fa26cf33bf2e648345c441010",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.0981932eff23bc1c6dd0"
+    },
+    {
+      "phrase": "ideal of R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.b02dc08ab5eb26629373"
+    },
+    {
+      "phrase": "scalar product r·m and zero module element",
+      "state": "unassigned",
+      "context": "Module theory: scalar action R×M→M and additive zero",
+      "occurrence_id": "occ.d817e04452afe9d1a19a"
+    },
+    {
+      "phrase": "for every m∈M",
+      "state": "external",
+      "disposition": "The ideal contains exactly scalars killing every element of M, not just some element.",
+      "occurrence_id": "occ.2b053d71eb73e0b42779"
+    }
+  ],
+  "snapshot_sha256": "bb68a4b0aaa145f59c14512c5e39795bd40a1e04f26ef14bd4a1e9c1a9997692",
+  "review_rationale": "Read the all-elements quantification in Ann_R(M), distinguishing common annihilators of an entire module from the possibly larger annihilator of an individual element."
 }

@@ -2,23 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.a87b0cc83bb541e4.henselization-local-ring",
   "version_sha256": "0a1fb254176841757e7686157776e848d34b5447755f98f753cbb5a02c1aafdb",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "local ring",
-      "span": [
-        6,
-        16
-      ],
+      "phrase": "local ring (R,m)",
       "state": "existing",
       "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.817bff2202e2a73e7896"
+      "occurrence_id": "occ.bc551ecaa1a9aef2d4d4"
+    },
+    {
+      "phrase": "Henselian local R-algebra",
+      "state": "existing",
+      "target_meaning_id": "meaning.93aaac46cdf41116.henselian-local-ring",
+      "occurrence_id": "occ.6fd374b8e979c7fa8795"
+    },
+    {
+      "phrase": "filtered colimit",
+      "state": "existing",
+      "target_meaning_id": "meaning.9d27e470d02eae69.filtered-colimit",
+      "occurrence_id": "occ.e002f5f20f6a57f8a1d1"
+    },
+    {
+      "phrase": "étale R-algebras",
+      "state": "existing",
+      "target_meaning_id": "meaning.6f35dab884da6c30.etale-ring-map",
+      "occurrence_id": "occ.a9000455ebf31852301e"
+    },
+    {
+      "phrase": "initial among local R-homomorphisms",
+      "state": "unassigned",
+      "context": "Category and local algebra: universal initial object among suitable Henselian local R-algebras and local maps",
+      "occurrence_id": "occ.15f7d765f3ba3b78a4f4"
+    },
+    {
+      "phrase": "maximal ideal mR^h and residue field R/m",
+      "state": "unassigned",
+      "context": "Commutative algebra: extension of maximal ideal and quotient residue field compatible with the local homomorphism",
+      "occurrence_id": "occ.f19f160670f1d0c64478"
+    },
+    {
+      "phrase": "may be constructed as a filtered colimit",
+      "state": "external",
+      "disposition": "The construction is an alternative presentation using suitable étale neighborhoods, not a claim that any filtered diagram of étale algebras suffices.",
+      "occurrence_id": "occ.f3e6a334c2aed659c7c2"
     }
   ],
-  "snapshot_sha256": "d0e877103bea85347ac109852a037e70f180de908674f9e20e5fc5bda8dea3d8",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "348540667caded3a5bf499d1972d5c819b1cfcff44724e22d2e398572815486b",
+  "review_rationale": "Reviewed initiality of the local R-algebra R^h among local maps to Henselian local rings, the specified maximal ideal and residue-field condition, and the possible filtered colimit of étale algebras without conflating henselization with completion."
 }
