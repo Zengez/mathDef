@@ -2,38 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.a54f6089c72fdd84.small-extension-artinian-local",
   "version_sha256": "87b4037ece8b670b0368c06c371b691715358211f7a86c5d3bab6e5170b312a9",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "local ring",
-      "span": [
-        58,
-        68
-      ],
+      "phrase": "local Artinian rings B′ and B",
       "state": "existing",
-      "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.920fa021925da97f6696"
+      "target_meaning_id": "meaning.9442fc10b22be057.artinian-commutative-ring",
+      "occurrence_id": "occ.893993cad0b7e5ed76d4"
     },
     {
-      "phrase": "kernel",
-      "span": [
-        93,
-        99
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation13.abelian-group-homomorphism-kernel",
-        "meaning.wave2.foundation13.preadditive-category-kernel"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.74a595eb9f6c22ebf363"
+      "phrase": "local ring",
+      "state": "existing",
+      "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
+      "occurrence_id": "occ.93cb686931db32c9a7c2"
+    },
+    {
+      "phrase": "ring homomorphism B′→B",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.6b273c90c31349dec322"
+    },
+    {
+      "phrase": "module length one",
+      "state": "existing",
+      "target_meaning_id": "meaning.a95feee56dc057ee.module-composition-length",
+      "occurrence_id": "occ.e688f3361878d0caa056"
+    },
+    {
+      "phrase": "surjective local homomorphism",
+      "state": "unassigned",
+      "context": "Commutative algebra: surjective map of local rings respecting their unique maximal ideals",
+      "occurrence_id": "occ.99c2235fc12294953447"
+    },
+    {
+      "phrase": "kernel ideal I",
+      "state": "unassigned",
+      "context": "Ring theory: kernel of homomorphism as ideal of B′",
+      "occurrence_id": "occ.77ff21f8ef036fb61eca"
+    },
+    {
+      "phrase": "I²=0 and maximal ideal annihilates I",
+      "state": "external",
+      "disposition": "These are mathematical consequences asserted of length-one kernel, not separate requirements equivalent for arbitrary extension.",
+      "occurrence_id": "occ.e2f39751091906fc0ab1"
     }
   ],
-  "snapshot_sha256": "fafaf2b1207935a6d564af846acadc99c4c9a74a105335ef376cdac848d6c198",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "23ac0a026720e93f9b28995f57f10b731520d2a56ce558373f290a3bd3b71c19",
+  "review_rationale": "Reviewed surjective local homomorphism B′→B, its kernel I of module length one, the square-zero consequence, and annihilation by the maximal ideal. A small extension is stronger than an arbitrary square-zero extension."
 }

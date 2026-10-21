@@ -2,39 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.a757d94fc61ac37f.jacobson-topological-space",
   "version_sha256": "8dd52e075e8fbc8de1ca1552106b2313a5d46d368c4bab42399d7c1ee22d074d",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.38eca51b01ccba2a59d0"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.8b2b20092ef6a50e7e5b"
     },
     {
-      "phrase": "subset",
-      "span": [
-        53,
-        59
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.b0da66a1d774625c7ffb"
+      "phrase": "topological closure and density",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross107.topological-closure",
+      "occurrence_id": "occ.c021121107a37c856989"
+    },
+    {
+      "phrase": "closed subset Z⊆X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.9c9901d1f5e9e0a91491"
+    },
+    {
+      "phrase": "points closed in ambient X",
+      "state": "unassigned",
+      "context": "Topology: singleton {x} closed in the original space X, distinguished from closure relative to Z",
+      "occurrence_id": "occ.41f170542ae76306cf87"
+    },
+    {
+      "phrase": "for each closed Z the ambient closed points in Z are dense",
+      "state": "external",
+      "disposition": "The quantifier ranges over every closed subset including X; the closure is taken within Z.",
+      "occurrence_id": "occ.3e91b67f52fee33f4c46"
     }
   ],
-  "snapshot_sha256": "b42b0b8ad8394cb5677f4916ea03846b3751677f676751a99b8f32a5bad69bd4",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "a5ab45fcd575544ca85f9775b415b98c76b87572d5da895443bcf48c10805f9c",
+  "review_rationale": "Read the Jacobson-space condition as the density in each closed subset Z of those points that are closed in the entire ambient space X; this is not the weaker statement that points closed only relatively in Z are dense."
 }

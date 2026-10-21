@@ -2,26 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.a54f6089c72fdd84.smooth-at-prime-noetherian-lifting",
   "version_sha256": "634811fa04712ab2611350ee43ae1c24aba5abbf35bd2d1d1d4811105f1b36ac",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "kernel",
-      "span": [
-        211,
-        217
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation13.abelian-group-homomorphism-kernel",
-        "meaning.wave2.foundation13.preadditive-category-kernel"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.ddcd8da048947feda0d2"
+      "phrase": "finite-type ring map R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map",
+      "occurrence_id": "occ.22af59c972f8e88e6eee"
+    },
+    {
+      "phrase": "Noetherian base R",
+      "state": "existing",
+      "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
+      "occurrence_id": "occ.11624fe34864005528a8"
+    },
+    {
+      "phrase": "prime ideal q of S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "occurrence_id": "occ.c3af518781f4ddf8b9a1"
+    },
+    {
+      "phrase": "formal smoothness lifting of ring map",
+      "state": "existing",
+      "target_meaning_id": "meaning.aacbc297769cc94a.formally-smooth-ring-map",
+      "occurrence_id": "occ.173b9e3dc1e44ac585cc"
+    },
+    {
+      "phrase": "square-zero kernel of local R-algebra surjection",
+      "state": "unassigned",
+      "context": "Deformation theory: square-zero ideal kernel of surjective homomorphism of local R-algebras",
+      "occurrence_id": "occ.80486eaa36b8009b93c3"
+    },
+    {
+      "phrase": "compatibility of local lifting maps S→B′",
+      "state": "unassigned",
+      "context": "Commutative algebra: commutative diagrams and lifts of R-algebra morphisms along a quotient map",
+      "occurrence_id": "occ.163b48d9d37c8b2b1468"
+    },
+    {
+      "phrase": "maximal ideal of B lies over q",
+      "state": "external",
+      "disposition": "The displayed localization condition on target local algebra is part of the at-q test; it is not an arbitrary global lifting problem.",
+      "occurrence_id": "occ.1b5df9e9e9e830897785"
     }
   ],
-  "snapshot_sha256": "9ea5e31073877dab268c239d29d4873bf54d9b1e23256c87a136bb45db70d211",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "84a1b908b19a1a37565bdea1467f93f94b9be15d86653a436dafbd18aa12cc7d",
+  "review_rationale": "Read the local lifting criterion over R Noetherian for finite-type R→S and prime q of S: lifts of compatible maps across all local R-algebra square-zero surjections. Preserve compatibility and location of q rather than generalizing to arbitrary extensions without the stated hypotheses."
 }

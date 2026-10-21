@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.a38f1da0bc017afe.noetherian-i-adic-completion",
   "version_sha256": "2f6bcc7fea8b92e4af2dc9e4ffd866ceb7b22df32a3de357c769c57755ce705c",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "Noetherian commutative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
+      "occurrence_id": "occ.4c3b5cb5814904f7e08d"
+    },
+    {
+      "phrase": "ideal I",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.3abdf5f736bdf10b11aa"
+    },
+    {
+      "phrase": "I-adic completion of ring",
+      "state": "existing",
+      "target_meaning_id": "meaning.1be2fa074ef447b0.i-adic-ring-completion",
+      "occurrence_id": "occ.0ac266dba7d02a1689cf"
+    },
+    {
+      "phrase": "inverse limit of system",
+      "state": "existing",
+      "target_meaning_id": "meaning.8f7683667fac9d28.category-limit",
+      "occurrence_id": "occ.6da6d36f3c729c1fcbf5"
+    },
+    {
+      "phrase": "quotient ring R/I^n and ideal powers",
+      "state": "unassigned",
+      "context": "Commutative algebra: successive ideal powers and ring quotient by the nth ideal power",
+      "occurrence_id": "occ.a7bea36436f268a30625"
+    },
+    {
+      "phrase": "structure homomorphism R→lim_n R/I^n",
+      "state": "unassigned",
+      "context": "Commutative algebra: compatible quotient maps induce universal ring homomorphism into inverse-limit ring",
+      "occurrence_id": "occ.474805e97792c5d09ea6"
+    },
+    {
+      "phrase": "n ranges through nonnegative integers",
+      "state": "external",
+      "disposition": "The inverse system uses the natural transition maps between ideal-power quotients and not arbitrary unrelated quotient rings.",
+      "occurrence_id": "occ.ea3e866bfa66f67ce648"
+    }
+  ],
+  "snapshot_sha256": "2e04d1fc2779a2381047d01838b833e458cd1992d014dd499760e88990274db1",
+  "review_rationale": "Reviewed the I-adic inverse-limit construction for a Noetherian commutative ring, including ideal powers, quotient rings, transition maps, and its canonical structural map. The inverse-limit ring and completeness property are not interchangeable."
 }

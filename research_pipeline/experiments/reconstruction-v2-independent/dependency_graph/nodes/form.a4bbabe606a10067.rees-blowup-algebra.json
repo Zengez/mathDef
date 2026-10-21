@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.a4bbabe606a10067.rees-blowup-algebra",
   "version_sha256": "d064002ca8bbc84dd3d5cb66b01391e3b983f09ea0689f0ade528550010e377f",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ideal I of commutative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.c0eb8e0fd90bb7f1bb9b"
+    },
+    {
+      "phrase": "nonnegative ring grading",
+      "state": "existing",
+      "target_meaning_id": "meaning.fa3b484c09596cfd.nonnegatively-graded-ring",
+      "occurrence_id": "occ.89ea5b67f7e5721f92ff"
+    },
+    {
+      "phrase": "powers I^n and ideal products",
+      "state": "unassigned",
+      "context": "Commutative algebra: nth power of an ideal and multiplication of ideal powers",
+      "occurrence_id": "occ.c36361af481b464cabd6"
+    },
+    {
+      "phrase": "direct sum ⊕_{n≥0}I^n",
+      "state": "unassigned",
+      "context": "Algebra: external direct sum of an indexed family of modules with graded multiplication",
+      "occurrence_id": "occ.a65af8e836a71da146d8"
+    },
+    {
+      "phrase": "I⁰=R",
+      "state": "external",
+      "disposition": "The degree-zero component is the ambient ring; multiplication on homogeneous pieces comes from ideal multiplication.",
+      "occurrence_id": "occ.9a28d91b1db3b27e1bf3"
+    }
+  ],
+  "snapshot_sha256": "bbe1f4d0c4fdc0731d75c7693b89c10ffabef436b50d957485cfdcd88e6f4c7b",
+  "review_rationale": "Read the full nonnegative grading with I⁰=R and pieces I^n and multiplication I^m I^n⊆I^{m+n}. Preserved the induced ring-algebra structure instead of identifying the Rees algebra with a simple quotient ring."
 }
