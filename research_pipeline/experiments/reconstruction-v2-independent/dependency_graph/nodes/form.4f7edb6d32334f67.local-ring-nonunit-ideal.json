@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.4f7edb6d32334f67.local-ring-nonunit-ideal",
   "version_sha256": "45b36e5b1ba206cfee2396dd0ffa6c4bf525638989140908e61dccc15cf2461c",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "state": "existing",
+      "phrase": "commutative ring R",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.6cc044b04c54dad97cda"
+    },
+    {
+      "state": "existing",
+      "phrase": "nonunits",
+      "target_meaning_id": "meaning.wave2.foundation.unit-of-ring",
+      "occurrence_id": "occ.3acbcd096087f226771e"
+    },
+    {
+      "state": "existing",
+      "phrase": "ideal",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.b6f286cef9d38c63fd52"
+    },
+    {
+      "state": "existing",
+      "phrase": "unique maximal ideal",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-maximal-ideal",
+      "occurrence_id": "occ.0793d14c5ffbba3c9e2f"
+    },
+    {
+      "state": "external",
+      "phrase": "nonzero",
+      "disposition": "The nonzero assumption restricts the ambient commutative ring; nonunit means not invertible, not a new distinct ring structure.",
+      "occurrence_id": "occ.5ccd2b9c86e7382fdb88"
+    }
+  ],
+  "snapshot_sha256": "c95dac3b7090f168b5d8797aca8778fec462de696efde5b8793ac00d4f8a5dbd",
+  "review_rationale": "Reviewed the equivalent nonunit-ideal characterization separately, mapped nonunit to the negation of unit, treated the collection of nonunits as an ideal, and linked its claimed unique maximality to the existing commutative maximal-ideal definition."
 }

@@ -2,39 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.4c7d59ba7058613b.affine-scheme",
   "version_sha256": "72c7183cbf94bebd830e8d379f7816fe387480fef050e0b517d50ff40377796c",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "scheme",
-      "span": [
-        10,
-        16
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.bdc3e54fd4523fad.scheme-local-affine"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.737af52c6a0c225d51b1"
+      "state": "existing",
+      "phrase": "locally ringed space",
+      "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space",
+      "occurrence_id": "occ.b55691d71872f544d251"
     },
     {
-      "phrase": "locally ringed space",
-      "span": [
-        22,
-        42
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.52683cac2ccf3bad.locally-ringed-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.2b3f9b088d157124159b"
+      "state": "existing",
+      "phrase": "prime spectrum of a commutative ring",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.0cef02836844a3b27e8b"
+    },
+    {
+      "state": "unassigned",
+      "phrase": "structure sheaf",
+      "context": "Algebraic geometry: structure sheaf of rings on the prime spectrum Spec(R)",
+      "occurrence_id": "occ.18ca6a8d6270f7d76e4c"
+    },
+    {
+      "state": "unassigned",
+      "phrase": "isomorphic to",
+      "context": "Algebraic geometry: isomorphism of locally ringed spaces, preserving compatible sheaf and local stalk morphisms",
+      "occurrence_id": "occ.30ea39adfbe982b80063"
     }
   ],
-  "snapshot_sha256": "5da51b7e689040856dbd489571691e6284b388068b3444eaf8b015e6b79398bc",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "dfff868d090f85be05c10a722b8ed34ea0b186b4457a50ffed3ea9e4117b630f",
+  "review_rationale": "Reviewed the entire affine-scheme formulation, linked the prime spectrum and locally ringed space to appropriate independent meanings, and preserved the structure sheaf and isomorphism as separate algebraic-geometric constructions without circularly linking affine scheme to scheme."
 }

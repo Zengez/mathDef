@@ -2,23 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.4b9834a2990971e9.finite-limit",
   "version_sha256": "62c503d9b3eb3b9ca650209fc2c11fe37cb8871c3ffda58b11e23c4b91bda25e",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "limit of a diagram",
-      "span": [
-        2,
-        20
-      ],
       "state": "existing",
+      "phrase": "limit of a diagram",
       "target_meaning_id": "meaning.8f7683667fac9d28.category-limit",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.e3f8dfcbc0442b7626c6"
+      "occurrence_id": "occ.27648b02d317f04a2f72"
+    },
+    {
+      "state": "unassigned",
+      "phrase": "diagram F:I→C",
+      "context": "Category theory: diagram as a functor indexed by a category I",
+      "occurrence_id": "occ.8f65d7d6288d17f2060d"
+    },
+    {
+      "state": "unassigned",
+      "phrase": "indexing category I",
+      "context": "Category theory: category supplying the objects, morphisms and identities used by the diagram",
+      "occurrence_id": "occ.e92e367bf4b6b26ea9b7"
+    },
+    {
+      "state": "external",
+      "phrase": "finitely many objects and finitely many morphisms, including identities",
+      "disposition": "The explicit restriction requires finite collections of objects and morphisms; identities are arrows in a category, not a new specialized meaning.",
+      "occurrence_id": "occ.b2b5bc7f81b1ecbf042f"
     }
   ],
-  "snapshot_sha256": "9d877dba09258a80d9226f82cbc298d1e9c9db99c924c5870b32738e43a3d93b",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "4dc89c2ec72943e85ecc2809739cd20906cdbcef35ff5396084bf036dc2a1656",
+  "review_rationale": "Inspected the entire finite-limit definition, used the universal categorical limit rather than any set-specific inverse limit, retained the underlying diagram and index-category notions for later internal matching, and accounted for the identities and finitude conditions."
 }
