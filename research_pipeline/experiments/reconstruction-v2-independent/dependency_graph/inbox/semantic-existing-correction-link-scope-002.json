@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-correction-link-scope-002",
+  "mode": "amend",
+  "reason": "Three link-scope corrections found during subsequent independent source-free scans.",
+  "amendments": [
+    {
+      "amendment_id": "amend.source_free_link_correction.20261021.01",
+      "formulation_id": "form.2ed79f667742de34.essentially-constant-ind-diagram",
+      "version_sha256": "feeaafc785d22b29434ec989a3f221cee4002e801f7c67b7f111001090f77f86",
+      "expected_node_sha256": "780adfa33fa856c72907db6a5bb7da2b736c1708b834389f1257ec3f251c11b1",
+      "complete": true,
+      "review_rationale": "Reviewed the full ind-object filtered-diagram splitting and eventual stabilization clauses, linked filtered indexing and cocones, and saved split arrows, ind-object and eventual equality as occurrence-only.",
+      "reviewed_by": "assistant_source_free_mathematical_link_review",
+      "reason": "Correct a demonstrably overbroad existing link: Cocones do not imply their vertex is a colimit; the earlier link used the colimit definition incorrectly. The original semantic scan is retained in immutable history.",
+      "references": [
+        {
+          "phrase": "filtered diagram",
+          "state": "existing",
+          "target_meaning_id": "meaning.9d27e470d02eae69.filtered-category",
+          "matching_note": "The indexing category is filtered.",
+          "occurrence_id": "occ.5d5f596c047f8ccc463c"
+        },
+        {
+          "phrase": "cocone M_i→X",
+          "state": "unassigned",
+          "context": "Category theory: cocone over a filtered diagram with maps M_i→X, no universal property assumed",
+          "reason": "Cocones do not imply their vertex is a colimit; the earlier link used the colimit definition incorrectly."
+        },
+        {
+          "phrase": "map X→M_i splitting M_i→X",
+          "state": "unassigned",
+          "context": "Category theory: section/retraction pair of arrows for a filtered diagram stage and cocone",
+          "reason": "The stage map exhibits a splitting and should be compared with other split-arrow occurrences.",
+          "occurrence_id": "occ.690d2b14ebbbe16badee"
+        },
+        {
+          "phrase": "maps into a later common stage eventually agree",
+          "state": "unassigned",
+          "context": "Category theory: eventual equality of arrows in filtered diagrams",
+          "reason": "Eventual identification of maps after transition functors is characteristic of ind-object constructions.",
+          "occurrence_id": "occ.14fbb3b041e219a64e9f"
+        },
+        {
+          "phrase": "ind-object",
+          "state": "unassigned",
+          "context": "Category theory: formal filtered-colimit object of a category",
+          "reason": "The term is named in the definition heading and may need a separate contextual meaning; do not source-research it now.",
+          "occurrence_id": "occ.3380a53bb59ac6861978"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.source_free_link_correction.20261021.02",
+      "formulation_id": "form.2ed79f667742de34.essentially-constant-pro-diagram",
+      "version_sha256": "2206b5e86305cdd52f7353bea11baf14cc1f0ad303ca5cf02f7bda176efa16f7",
+      "expected_node_sha256": "47b91be8b0672b6108ec54a5c2e7fd70d783372a7f8b38bb18f84fe6cde15e6e",
+      "complete": true,
+      "review_rationale": "Reviewed the dual pro-object cofiltered-diagram criterion, preserving arrow direction, cone and stage maps and the difference from ind-objects.",
+      "reviewed_by": "assistant_source_free_mathematical_link_review",
+      "reason": "Correct a demonstrably overbroad existing link: Cones do not imply their vertex is a limit; the earlier link used the categorical limit definition incorrectly. The original semantic scan is retained in immutable history.",
+      "references": [
+        {
+          "phrase": "cofiltered diagram",
+          "state": "existing",
+          "target_meaning_id": "meaning.9f75052b1742ab3f.cofiltered-category",
+          "matching_note": "The indexing shape is a cofiltered category.",
+          "occurrence_id": "occ.79ad73cd635482d9fceb"
+        },
+        {
+          "phrase": "inverse diagram M_i",
+          "state": "unassigned",
+          "context": "Category theory: cone over a cofiltered inverse diagram with maps X→M_i, no universal limit property assumed",
+          "reason": "Cones do not imply their vertex is a limit; the earlier link used the categorical limit definition incorrectly."
+        },
+        {
+          "phrase": "map M_i→X splitting X→M_i",
+          "state": "unassigned",
+          "context": "Category theory: retraction/section pair of arrows for a cofiltered pro-object diagram",
+          "reason": "The chosen stage retracts through X in a specified direction, distinct from the ind case.",
+          "occurrence_id": "occ.910cf519ceb9128ef0d4"
+        },
+        {
+          "phrase": "transition maps factor through X",
+          "state": "unassigned",
+          "context": "Category theory: eventual factorization of inverse diagram transition arrows through a chosen object",
+          "reason": "This pro-object condition uses a common earlier stage and should be pooled with other pro-diagram occurrences.",
+          "occurrence_id": "occ.7acccefc7fa3342e884a"
+        },
+        {
+          "phrase": "pro-object",
+          "state": "unassigned",
+          "context": "Category theory: formal cofiltered inverse diagram regarded as an object of a pro-category",
+          "reason": "The meaning is not automatically the same as an ordinary inverse limit object.",
+          "occurrence_id": "occ.d650df65015be1c248ea"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.source_free_link_correction.20261021.03",
+      "formulation_id": "form.363d711d668364b7.normal-ring",
+      "version_sha256": "efef93dbd20983e796ac4354f616c7141ce2f109976e1710ff91976f55b3e7e1",
+      "expected_node_sha256": "26f297d5e9d2a9a80cf8a38c35036b1fd291096cbdc7932d638273125d855bc9",
+      "complete": true,
+      "review_rationale": "Reviewed normal commutative ring by localization at primes, recognizing integral-domain normality on each local ring and preserving the distinct scope of normal rings and normal domains.",
+      "reviewed_by": "assistant_source_free_mathematical_link_review",
+      "reason": "Correct a demonstrably overbroad existing link: A ring is not a ring homomorphism. The earlier link was only a structural proxy and should not be a mathematical definition dependency. The original semantic scan is retained in immutable history.",
+      "references": [
+        {
+          "phrase": "commutative ring R",
+          "state": "unassigned",
+          "context": "Commutative algebra: underlying commutative unital ring R, not an arbitrary unital ring homomorphism",
+          "reason": "A ring is not a ring homomorphism. The earlier link was only a structural proxy and should not be a mathematical definition dependency."
+        },
+        {
+          "phrase": "localization R_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+          "matching_note": "Localize at the multiplicative complement of prime p.",
+          "occurrence_id": "occ.0b383239841a7c4e06c2"
+        },
+        {
+          "phrase": "prime ideal p",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+          "matching_note": "The localization is indexed by prime ideals of R.",
+          "occurrence_id": "occ.43abd84671905d2cb46c"
+        },
+        {
+          "phrase": "integrally closed domain",
+          "state": "existing",
+          "target_meaning_id": "meaning.363d711d668364b7.normal-integral-domain",
+          "matching_note": "The localized ring is required to satisfy the indexed normal/integrally-closed domain property.",
+          "occurrence_id": "occ.21cc50edc66c2fa0fabd"
+        },
+        {
+          "phrase": "fraction field",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain",
+          "matching_note": "Integrally closed domain refers to its fraction field.",
+          "occurrence_id": "occ.0a3937c278ca84f767c8"
+        }
+      ]
+    }
+  ]
+}
