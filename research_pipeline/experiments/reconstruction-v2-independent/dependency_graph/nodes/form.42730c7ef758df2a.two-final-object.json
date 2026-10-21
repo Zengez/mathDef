@@ -2,25 +2,36 @@
   "schema_version": 1,
   "formulation_id": "form.42730c7ef758df2a.two-final-object",
   "version_sha256": "8d245a0d546cefe2343c7439ce331b4f0607faca48d92a8409e6958cf53d03d7",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
+      "phrase": "(2,1)-category",
+      "state": "existing",
+      "target_meaning_id": "meaning.0bf601085c1029d4.two-one-category",
+      "matching_note": "The ambient category has invertible 2-morphisms.",
+      "occurrence_id": "occ.968a937ffa4cdae31618"
+    },
+    {
+      "phrase": "1-morphism Y→T",
+      "state": "unassigned",
+      "context": "Higher category theory: 1-cell from any object to a final object",
+      "reason": "Existence of 1-cells is part of the higher-categorical finality condition.",
+      "occurrence_id": "occ.38bb16d5f974eaa83b57"
+    },
+    {
+      "phrase": "exactly one 2-morphism connecting any two",
+      "state": "unassigned",
+      "context": "Higher category theory: contractible Hom-groupoid in a (2,1)-category",
+      "reason": "Unique comparison 2-cells characterize finality, not ordinary terminality.",
+      "occurrence_id": "occ.0a25f7688076d0aa4303"
+    },
+    {
       "phrase": "final object",
-      "span": [
-        2,
-        14
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.141c0f3fd90dc7b4.final-object"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.e8399f8c1dffee014a83"
+      "state": "external",
+      "disposition": "The special (2,1)-categorical final-object property is the meaning being defined; ordinary 1-category finality is not its dependency.",
+      "occurrence_id": "occ.1ea1e16b951c2c588ed9"
     }
   ],
-  "snapshot_sha256": "30cf2d37718f4aca39b0c72ed83ee8772ffc2c0eca34ab64a717642613912eca",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "243a658093d30e00dce9f5eba08d73d0a1251891b3cd1dd90345aca421488b66",
+  "review_rationale": "Reviewed the final-object condition of a (2,1)-category without collapsing it into ordinary 1-category terminality."
 }

@@ -2,10 +2,37 @@
   "schema_version": 1,
   "formulation_id": "form.4406a87f2ff9b7d8.field-trace",
   "version_sha256": "d25e2ff89e7977a80db39deb7e25a38e2d18050e1da3366c40630dce323cd428",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "finite extension L/K",
+      "state": "existing",
+      "target_meaning_id": "meaning.4777518984e96a98.finite-field-extension",
+      "matching_note": "Field trace is defined for finite field extensions.",
+      "occurrence_id": "occ.07ef1868b3b4cf38687a"
+    },
+    {
+      "phrase": "K-linear endomorphism",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.field-vector-linear",
+      "matching_note": "Multiplication by α is linear over K.",
+      "occurrence_id": "occ.c6a807957ec286a468a5"
+    },
+    {
+      "phrase": "trace over K",
+      "state": "unassigned",
+      "context": "Linear algebra: trace of a K-linear endomorphism of finite-dimensional vector space",
+      "reason": "The matrix trace is used to define the field trace.",
+      "occurrence_id": "occ.6c3bfd035f58ee5728e8"
+    },
+    {
+      "phrase": "multiplication x↦αx",
+      "state": "unassigned",
+      "context": "Field theory: multiplication endomorphism of extension L considered as K-vector space",
+      "reason": "This shares the field-norm multiplication construction.",
+      "occurrence_id": "occ.16f2001c99efd09b10bc"
+    }
+  ],
+  "snapshot_sha256": "cff90ff857501f9a31a120598bbb68f02910eb2935022bea81f69930db1a4af2",
+  "review_rationale": "Reviewed field trace through the trace of multiplication as a K-linear endomorphism, distinct from field norm."
 }
