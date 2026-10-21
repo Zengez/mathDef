@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.6775f8b2e6e1cceb.strongly-cartesian-morphism",
   "version_sha256": "a8d4ac2d91f249443dec3f937b977b411ea2ebcc60c76ac29bce805e389e73f6",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "functor p:E→C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "occurrence_id": "occ.008804271e07abf3cfba"
+    },
+    {
+      "phrase": "arrows of E",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.817807857bb2fafa26b3"
+    },
+    {
+      "phrase": "base arrow of C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.9e5bb962a2cbd0371407"
+    },
+    {
+      "phrase": "factors uniquely through φ",
+      "state": "external",
+      "disposition": "The commuting-base constraint and unique factorization are part of the cartesian-arrow definition.",
+      "occurrence_id": "occ.dc7c6e74dd9f450143cf"
+    }
+  ],
+  "snapshot_sha256": "74eee7f4d88971232a2cb3c5e435cabbc7f7405ba9ec6b554a00cc9a35c3b32c",
+  "review_rationale": "Read all quantified object and arrow roles, including the base-arrow commuting condition, and distinguished the cartesian factorization from ordinary categorical products or limits."
 }

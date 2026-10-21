@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.6775f8b2e6e1cceb.grothendieck-fibred-category",
   "version_sha256": "630254c775ae11a0436c6b08b238bb1c30b08be6cec1121cdc2b58d8726e1403",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "functor p:E→C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "occurrence_id": "occ.ecabd391b29c682af64b"
+    },
+    {
+      "phrase": "objects and arrows of E and C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.a46aa3653add6428ec3c"
+    },
+    {
+      "phrase": "p-cartesian arrow",
+      "state": "existing",
+      "target_meaning_id": "meaning.6775f8b2e6e1cceb.strongly-cartesian-morphism",
+      "occurrence_id": "occ.6521720f930f96cb06d4"
+    },
+    {
+      "phrase": "for each object and base morphism, a lift exists",
+      "state": "external",
+      "disposition": "The lifting requirement defines the fibration itself; no splitting or groupoid-fibre condition follows.",
+      "occurrence_id": "occ.297aba38bffc5a90571c"
+    }
+  ],
+  "snapshot_sha256": "b767ec8c97c390a650f22ec5a512088dc256e1efc0e54465a61490a353cb5abc",
+  "review_rationale": "Reviewed the full fibration axiom, preserving its quantification over base arrows into the image of an object, and using precisely the existing cartesian arrow notion without introducing a cleavage."
 }
