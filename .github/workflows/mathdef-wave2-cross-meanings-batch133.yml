@@ -1,0 +1,90 @@
+name: Screen Bell Stirling convex hull and vertex degree mathematical meanings — Batch 133
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-cross-meanings-batch133.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+jobs:
+  mathematical-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Sync latest independent main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Portable engine and mathDef adapter regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Screen four mathematical contexts with eight attributed forms
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_cross_meanings_batch133 --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Check independent source coverage
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage --wave1 research_pipeline/experiments/reconstruction-v1-recovery --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify frozen first wave, historic dispositions and equivalent variants
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          one=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(one.publication())==json.loads((one.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          counts={"sources":14,"terms":477,"observations":946,"meanings":591,"relations":855}
+          assert {k:len(w.records(k)) for k in counts}==counts
+          assert not any(w.state(k).get("sealed") for k in counts)
+          for k in ("sources","terms","observations","relations"):
+            assert all(w.records(k).get(i)==r for i,r in one.records(k).items())
+          ms=w.records("meanings")
+          assert len([i for i in ms if i.startswith("meaning.wave2.cross133.")])==4
+          assert len(ms["meaning.wave2.cross133.convex-hull-real"]["formulations"])==3
+          assert len(ms["meaning.wave2.cross133.stirling-second-kind"]["formulations"])==2
+          old=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_624_before_cross133.jsonl")
+          current=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          ix={r["formulation_id"]:r for r in current}
+          assert len(old)==624 and len(current)==len(ix)==632
+          for p in old:
+            n=ix[p["formulation_id"]]
+            assert all(n.get(k)==v for k,v in p.items() if k!="meaning_catalog_digest")
+          assert dict(Counter(r["decision"] for r in current))=={"linked":618,"no_supported_target":6,"needs_review":8}
+          assert {i for r in current for i in r["relation_ids"]}==set(w.records("relations"))
+          assert all(r["meaning_catalog_digest"]==digest(list(ms.values())) for r in current)
+          for path in ("wave2/conv125_quarantined_source_claims.jsonl","wave2/quot118_quarantined_source_claims.jsonl","wave2/directional112_quarantined_source_claims.jsonl"):
+            h=jsonl(w.root/path)
+            assert len(h)==1 and h[0]["observation_id"] not in {i for m in ms.values() for f in m["formulations"] for i in f["evidence_ids"]}
+          check_cycles(ms,w.records("relations"))
+          result=json.loads((w.root/"state/wave2_cross133_meaning_screen.json").read_text())
+          assert result["stirling_equivalent_forms_one_meaning"] and result["degree_equivalent_only_for_simple_graphs"]
+          assert not result["human_peer_verified"] and not result["production_corpus_used"]
+          print(json.dumps(result,indent=2))
+          PY
+      - name: Commit only independently screened mathematical variants and historical snapshots
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen independent Bell Stirling convex hull and simple vertex degree mathematical variants"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
