@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.7ca4fb934b2f076c.r-derivation",
   "version_sha256": "2dbf3b841e56c8eb839114478d1bd4a3cdeaf0fd39103a3eadc9acc82449812b",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ring map R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.528716d7ac44f733f57d"
+    },
+    {
+      "phrase": "S-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.6a34f7aadb3cde3da64c"
+    },
+    {
+      "phrase": "additive map D:S→M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "occurrence_id": "occ.30df37c559b5311d4cd7"
+    },
+    {
+      "phrase": "D vanishes on image of R",
+      "state": "external",
+      "disposition": "The derivation is R-relative; this restriction is stronger than additivity alone.",
+      "occurrence_id": "occ.59b4343eded4c5a0969e"
+    },
+    {
+      "phrase": "D(ab)=aD(b)+bD(a)",
+      "state": "external",
+      "disposition": "This Leibniz identity is the defining multiplicative compatibility, not multiplicativity of D.",
+      "occurrence_id": "occ.89fa38ca661bda6ab2c9"
+    }
+  ],
+  "snapshot_sha256": "415da28bf8f93f4aa90fe5399b4f1af0c552b49240f6a2f2092e483709c4d53a",
+  "review_rationale": "Reviewed additive, vanishing-on-base, and Leibniz axioms of a derivation D:S→M, relative to R→S. Unlike an arbitrary ring homomorphism, a derivation satisfies the product rule."
 }

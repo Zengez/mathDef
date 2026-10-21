@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.7ca4fb934b2f076c.kahler-differentials",
   "version_sha256": "253c634aa01075e2245adfa502aa9c73054ad8ce685711e20f1bbb6b1eb4edab",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ring homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.0f4e5bd590762d6667dd"
+    },
+    {
+      "phrase": "R-derivation d:S→Ω",
+      "state": "existing",
+      "target_meaning_id": "meaning.7ca4fb934b2f076c.r-derivation",
+      "occurrence_id": "occ.7c063d99f59eb18eaaf9"
+    },
+    {
+      "phrase": "Hom_S(Ω,M)",
+      "state": "existing",
+      "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module",
+      "occurrence_id": "occ.e1663ca820196a922133"
+    },
+    {
+      "phrase": "S-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.69866365de582558933e"
+    },
+    {
+      "phrase": "module of universal Kähler differentials Ω_{S/R}",
+      "state": "unassigned",
+      "context": "Commutative algebra: universal S-module representing R-derivations",
+      "occurrence_id": "occ.5626c8c4e6bbf1fb9fdf"
+    },
+    {
+      "phrase": "for every S-module M",
+      "state": "external",
+      "disposition": "A natural universal Hom-versus-derivations bijection is required; checking a single target module is insufficient.",
+      "occurrence_id": "occ.bab91ea1f58566daf5e0"
+    }
+  ],
+  "snapshot_sha256": "a4cfe678f3624ca855416e1cf7afae5b35260404381d92baa6bdeaae63fda2af",
+  "review_rationale": "Read the representability/universal derivation property with d:S→Ω and the bijection Hom_S(Ω,M)≅Der_R(S,M) for every S-module. This is about module-valued derivations, not classical analytic differentials."
 }

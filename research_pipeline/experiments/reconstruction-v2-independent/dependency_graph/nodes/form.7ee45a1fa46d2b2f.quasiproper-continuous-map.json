@@ -2,39 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.7ee45a1fa46d2b2f.quasiproper-continuous-map",
   "version_sha256": "63daabab62d587ac7dc6e143bf01ff66f4d7db11286cf9d67bc48d9c11818766",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "continuous map",
-      "span": [
-        2,
-        16
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation76.continuous-topological-map"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.55517122c3d2469027ed"
+      "phrase": "continuous map f:X→Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+      "occurrence_id": "occ.d46d0d724fee3b073058"
     },
     {
-      "phrase": "subset",
-      "span": [
-        93,
-        99
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.3dd679f28101a98075b2"
+      "phrase": "quasi-compact subset of Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space",
+      "occurrence_id": "occ.e4c0a25c9f98ccf23aab"
+    },
+    {
+      "phrase": "inverse image f^{-1}(K)",
+      "state": "unassigned",
+      "context": "Set theory/topology: preimage of a subset under a continuous map",
+      "occurrence_id": "occ.f356da987e7299f83772"
+    },
+    {
+      "phrase": "every quasi-compact subset",
+      "state": "external",
+      "disposition": "The subset can be non-open, and the requirement is not the same as inverse images of closed sets being closed.",
+      "occurrence_id": "occ.8650d36f3f074835bbb0"
     }
   ],
-  "snapshot_sha256": "62cebf307b3b73da9905600ea88c5159bdefe848cc1c4d9e39d47226f671cdb2",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "1786c04eed659a5ac2f4dc687a139cba16e2c5f5e32d9f2c7e32f51ac9267d48",
+  "review_rationale": "Read this quasi-proper convention as inverse images of quasi-compact subsets remaining quasi-compact; does not assert universal closedness or separatedness under other conventions."
 }

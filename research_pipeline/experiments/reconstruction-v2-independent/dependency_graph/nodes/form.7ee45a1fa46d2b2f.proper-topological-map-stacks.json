@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.7ee45a1fa46d2b2f.proper-topological-map-stacks",
   "version_sha256": "a5e08c9ba947a4a220b995f178631d7751df60adba1fe1bfab85a2ddea8a8046",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "continuous map",
-      "span": [
-        2,
-        16
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation76.continuous-topological-map"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.06375309da1706f5ae66"
+      "phrase": "continuous map f:X→Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+      "occurrence_id": "occ.b266d2d2c2fe34c1b046"
+    },
+    {
+      "phrase": "separated diagonal",
+      "state": "existing",
+      "target_meaning_id": "meaning.dc7429305b3e37b7.separated-continuous-map",
+      "occurrence_id": "occ.6fcf893d41434f1fdd28"
+    },
+    {
+      "phrase": "universally closed",
+      "state": "existing",
+      "target_meaning_id": "meaning.7ee45a1fa46d2b2f.universally-closed-continuous-map",
+      "occurrence_id": "occ.4b61a509084db144dfb2"
+    },
+    {
+      "phrase": "separated and universally closed",
+      "state": "external",
+      "disposition": "Both conjuncts are required; separatedness is about the diagonal in X×_Y X, not ordinary Hausdorffness of X.",
+      "occurrence_id": "occ.e035f4c3c97b7370b429"
     }
   ],
-  "snapshot_sha256": "a06063bb1f3e83d90918db42a462ca4961af6a99018387a4792ad2cf3aa58dee",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "a697736aae329eed937fe645343b156f5714c387a200be1ceefb98eb0d0f65f3",
+  "review_rationale": "Read this Stacks-convention definition of proper topological map as requiring both separatedness of its diagonal and universal closedness. No equivalence to only compact inverse images is inferred."
 }
