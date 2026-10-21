@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.91ebb3796458d5bb.finitely-presented-module-colimit-test",
   "version_sha256": "6a30f6c08c693c6a2af6faaf73abfa4a58a87d8349db24da307e7297b1a50762",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module M and modules N_i",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.b4f3961500583e167810"
+    },
+    {
+      "phrase": "filtered diagram of modules N_i",
+      "state": "existing",
+      "target_meaning_id": "meaning.9d27e470d02eae69.filtered-category",
+      "occurrence_id": "occ.ff789e1653fd33213b71"
+    },
+    {
+      "phrase": "filtered colimit colim_i N_i",
+      "state": "existing",
+      "target_meaning_id": "meaning.cbe7158b0742af88.colimit-modules",
+      "occurrence_id": "occ.78aa7dcb0b605f81d840"
+    },
+    {
+      "phrase": "Hom_R(M,N_i)",
+      "state": "existing",
+      "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module",
+      "occurrence_id": "occ.db352f1fd2e63231097a"
+    },
+    {
+      "phrase": "canonical map colim Hom_R(M,N_i)→Hom_R(M,colim N_i)",
+      "state": "unassigned",
+      "context": "Module and category theory: map comparing filtered colimit of Hom modules to Hom into filtered colimit",
+      "occurrence_id": "occ.d177bf92a7d36100cd90"
+    },
+    {
+      "phrase": "bijective for every filtered diagram",
+      "state": "external",
+      "disposition": "The comparison must be a bijection for all filtered diagrams; this does not follow merely from choosing a single finite generation set.",
+      "occurrence_id": "occ.f91f98863cd2cd2929ca"
+    }
+  ],
+  "snapshot_sha256": "c168775800daa75bfd9322a0ff99c651e5f92dbcb3ce7ee09d07e64670467dbd",
+  "review_rationale": "Read the filtered-colimit Hom characterization for every filtered diagram of modules, retaining the direction and bijectivity of the canonical comparison. A colimit commuting with internal Hom in this sense captures finite presentation, not mere finite generation."
 }

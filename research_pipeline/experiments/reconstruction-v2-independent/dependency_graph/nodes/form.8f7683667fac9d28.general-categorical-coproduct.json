@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.8f7683667fac9d28.general-categorical-coproduct",
   "version_sha256": "3f6f9aeda93c7ec5bbf831789085f35649d0ee0c59a27e0c4fe6788df2405cac",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "colimit of a diagram",
+      "state": "existing",
+      "target_meaning_id": "meaning.8f7683667fac9d28.category-colimit",
+      "occurrence_id": "occ.cef7231576ea005858aa"
+    },
+    {
+      "phrase": "discrete indexing category",
+      "state": "existing",
+      "target_meaning_id": "meaning.3653fa0ad844d187.discrete-category",
+      "occurrence_id": "occ.a10bf4c0d84657cbe61a"
+    },
+    {
+      "phrase": "family of objects X_i in category C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.15e01484e66f40046d5d"
+    },
+    {
+      "phrase": "universal coproduct injections",
+      "state": "unassigned",
+      "context": "Category theory: injections from each family object to a coproduct object with unique induced map out",
+      "occurrence_id": "occ.eaded7dc45f0b038d319"
+    },
+    {
+      "phrase": "dual universal property",
+      "state": "external",
+      "disposition": "A universal map out of the coproduct is specified; do not reverse it to product projections.",
+      "occurrence_id": "occ.d2cd46909696f8a60575"
+    }
+  ],
+  "snapshot_sha256": "3f33a7c4da53c48d66e354d0c87583b2e2b913acbe600570d9a44d2639532307",
+  "review_rationale": "Reviewed coproduct as colimit of discrete indexed diagram, with injections X_i→Q and the universal outgoing maps property, not as categorical product or mere set disjoint union in all categories."
 }

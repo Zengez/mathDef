@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.8f7683667fac9d28.category-limit",
   "version_sha256": "56395e0c4f7f93d321a6be152fe7e8a1fcae59867ade38ca422dacb0a45dbb3a",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "diagram F:I→C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "occurrence_id": "occ.801d36628c04ce801394"
+    },
+    {
+      "phrase": "categories I and C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.325b28c2e8c20ca50819"
+    },
+    {
+      "phrase": "cone arrows L→F(i) compatible with all arrows of I",
+      "state": "unassigned",
+      "context": "Category theory: compatible cone from an object L to all members of diagram F",
+      "occurrence_id": "occ.b115379d80936cbbd206"
+    },
+    {
+      "phrase": "unique factorization of every compatible cone through L",
+      "state": "unassigned",
+      "context": "Category theory: terminal universal property in the cone category of a diagram",
+      "occurrence_id": "occ.edc2d56cb407354f141a"
+    },
+    {
+      "phrase": "compatible with every arrow of I",
+      "state": "external",
+      "disposition": "Compatibility of cone legs is part of the object definition and does not require all transition arrows invertible.",
+      "occurrence_id": "occ.cca43ff9c00defa225f4"
+    }
+  ],
+  "snapshot_sha256": "82c25c73f463d8b944b8a7df3d249215672c973d424bdb442d6a096d177fe4c6",
+  "review_rationale": "Read the whole universal cone description, including arrows L→F(i) and unique factorization of every other compatible cone through L. Distinguished direction of cone legs from the colimit cocone."
 }

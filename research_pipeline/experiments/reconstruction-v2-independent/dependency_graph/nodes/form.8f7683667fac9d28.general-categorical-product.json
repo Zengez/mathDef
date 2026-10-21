@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.8f7683667fac9d28.general-categorical-product",
   "version_sha256": "d39af974f135ba94dca5096b24a041ef006869f4ed4eb6fa7ce2fecba5c2c4d8",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "limit of a diagram",
+      "state": "existing",
+      "target_meaning_id": "meaning.8f7683667fac9d28.category-limit",
+      "occurrence_id": "occ.64e9fe7a1460580e3f22"
+    },
+    {
+      "phrase": "discrete indexing category",
+      "state": "existing",
+      "target_meaning_id": "meaning.3653fa0ad844d187.discrete-category",
+      "occurrence_id": "occ.3307a8cbe644c5921f26"
+    },
+    {
+      "phrase": "objects X_i in a category C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.30bffb0729706eb87bbd"
+    },
+    {
+      "phrase": "universal product projections",
+      "state": "unassigned",
+      "context": "Category theory: maps from product object to all family objects with unique induced map into product",
+      "occurrence_id": "occ.884ea85461c5584b5cd0"
+    },
+    {
+      "phrase": "usual universal property",
+      "state": "external",
+      "disposition": "Universal maps into the product follow projections, not coproduct injections.",
+      "occurrence_id": "occ.b522a082ada8f26c1eda"
+    }
+  ],
+  "snapshot_sha256": "a688a5a22d9d913fa9b37d1ef44bdc6dd552e6100169d11534850afa407cf081",
+  "review_rationale": "Reviewed product as a limit of a discrete indexed diagram, with projections Q→X_i and universal maps into Q. Not necessarily a set Cartesian product or coproduct injections."
 }

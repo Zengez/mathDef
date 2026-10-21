@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.90b0d1ecfa394230.jacobson-radical-ring",
   "version_sha256": "b981170a4c32a8676a3efc4d4967e668e1dda45a749f12c23fa26e67b6d3ce9a",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "commutative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.b3a50714a8d66ba81682"
+    },
+    {
+      "phrase": "maximal ideals of R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-maximal-ideal",
+      "occurrence_id": "occ.bc158c586425f2f6670f"
+    },
+    {
+      "phrase": "intersection of all maximal ideals",
+      "state": "unassigned",
+      "context": "Set theory and ring theory: intersection of a family of ideal subsets in a ring",
+      "occurrence_id": "occ.c6d9c3e1261f4cf50b42"
+    },
+    {
+      "phrase": "all maximal ideals",
+      "state": "external",
+      "disposition": "The intersection is over all maximal proper ideals, not all prime ideals and not a single chosen ideal.",
+      "occurrence_id": "occ.a49d2d8e0f600bec7729"
+    }
+  ],
+  "snapshot_sha256": "811f8a9d95f2a672adeafb9ad716c2592a76dc06aaafceaa447764723504c401",
+  "review_rationale": "Read the commutative-ring Jacobson radical as intersection of every maximal ideal of R. Kept maximal ideals distinct from the nilradical or radical ideals, and interpreted intersection set-theoretically."
 }
