@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-026",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.7781214e9120a52e.projective-dimension-module",
+      "version_sha256": "f5e89eb9e1592f3431d9b5281ed67d414912df219e2a202f95ba446ad1808c84",
+      "complete": true,
+      "review_rationale": "Reviewed the least finite projective resolution length, with infinity allowed if no finite such resolution exists. Distinguished a projective module from a projective resolution and checked the exactness conditions at each stage.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "projective modules P_i",
+          "state": "existing",
+          "target_meaning_id": "meaning.fc44c63c239e5c20.projective-module-hom"
+        },
+        {
+          "phrase": "exact sequence 0→P_n→⋯→P_0→M→0",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category"
+        },
+        {
+          "phrase": "projective resolution of an R-module",
+          "state": "unassigned",
+          "context": "Homological algebra: exact augmented chain complex of projective R-modules resolving M"
+        },
+        {
+          "phrase": "least integer n≥0 or infinity",
+          "state": "external",
+          "disposition": "The projective dimension is minimized over finite resolutions and defined to be infinite if none exists, not the length of an arbitrary resolution."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.788671763be693df.ext-group",
+      "version_sha256": "fa8adfb0f893348f71089e3e7327faa0ae57fc2e627f3e52e7be3e1218fbbd27",
+      "complete": true,
+      "review_rationale": "Examined Ext_R^i(M,N) as ith cohomology of the Hom cochain complex induced by a free resolution of M. Hom here is R-linear and contravariant in the resolved module, with cohomology indexed by i.",
+      "references": [
+        {
+          "phrase": "R-modules M and N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "free resolution F_•→M",
+          "state": "existing",
+          "target_meaning_id": "meaning.788671763be693df.free-module-resolution"
+        },
+        {
+          "phrase": "Hom_R(F_i,N)",
+          "state": "existing",
+          "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module"
+        },
+        {
+          "phrase": "cochain complex Hom_R(F_•,N)",
+          "state": "unassigned",
+          "context": "Homological algebra: applying contravariant Hom to chain complex produces cochain complex"
+        },
+        {
+          "phrase": "ith cohomology of a cochain complex",
+          "state": "unassigned",
+          "context": "Homological algebra: kernel modulo image for an ith differential in a cochain complex"
+        },
+        {
+          "phrase": "Ext_R^i",
+          "state": "external",
+          "disposition": "The superscript indexes cohomology, not ordinary ring exponentiation, and no particular free resolution is preferred."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.788671763be693df.free-module-resolution",
+      "version_sha256": "88a708c984d789bedcc946d7acbcd0a03e0006ca5257c33843a19c4507b44e59",
+      "complete": true,
+      "review_rationale": "Read the augmented unbounded chain complex with exactness at all displayed degrees and free modules at every F_i, not a finite projective resolution or the definition of Ext itself.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "exact augmented chain complex",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category"
+        },
+        {
+          "phrase": "free R-module F_i",
+          "state": "unassigned",
+          "context": "Module theory: free module over a ring with a basis and universal property"
+        },
+        {
+          "phrase": "augmented chain complex ⋯→F_1→F_0→M→0",
+          "state": "unassigned",
+          "context": "Homological algebra: chain complex with augmentation to target module and differential composites zero"
+        },
+        {
+          "phrase": "every F_i free",
+          "state": "external",
+          "disposition": "Free implies projective under standard unital module conventions, but the definition explicitly chooses free rather than arbitrary projectives."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.7ca4fb934b2f076c.kahler-differentials",
+      "version_sha256": "253c634aa01075e2245adfa502aa9c73054ad8ce685711e20f1bbb6b1eb4edab",
+      "complete": true,
+      "review_rationale": "Read the representability/universal derivation property with d:S→Ω and the bijection Hom_S(Ω,M)≅Der_R(S,M) for every S-module. This is about module-valued derivations, not classical analytic differentials.",
+      "references": [
+        {
+          "phrase": "ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "R-derivation d:S→Ω",
+          "state": "existing",
+          "target_meaning_id": "meaning.7ca4fb934b2f076c.r-derivation"
+        },
+        {
+          "phrase": "Hom_S(Ω,M)",
+          "state": "existing",
+          "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module"
+        },
+        {
+          "phrase": "S-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "module of universal Kähler differentials Ω_{S/R}",
+          "state": "unassigned",
+          "context": "Commutative algebra: universal S-module representing R-derivations"
+        },
+        {
+          "phrase": "for every S-module M",
+          "state": "external",
+          "disposition": "A natural universal Hom-versus-derivations bijection is required; checking a single target module is insufficient."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.7ca4fb934b2f076c.r-derivation",
+      "version_sha256": "2dbf3b841e56c8eb839114478d1bd4a3cdeaf0fd39103a3eadc9acc82449812b",
+      "complete": true,
+      "review_rationale": "Reviewed additive, vanishing-on-base, and Leibniz axioms of a derivation D:S→M, relative to R→S. Unlike an arbitrary ring homomorphism, a derivation satisfies the product rule.",
+      "references": [
+        {
+          "phrase": "ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "S-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "additive map D:S→M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "D vanishes on image of R",
+          "state": "external",
+          "disposition": "The derivation is R-relative; this restriction is stronger than additivity alone."
+        },
+        {
+          "phrase": "D(ab)=aD(b)+bD(a)",
+          "state": "external",
+          "disposition": "This Leibniz identity is the defining multiplicative compatibility, not multiplicativity of D."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.7ee45a1fa46d2b2f.bourbaki-proper-map",
+      "version_sha256": "ff7176174a0d5b32a4c98608e3ee0b3029597613ab17a3732bbc02cfb505c393",
+      "complete": true,
+      "review_rationale": "Inspected the external-product test for Bourbaki properness: id_Z×f must be closed for every auxiliary topological space Z. This differs in setup from the relative-base-change definition of universally closed maps.",
+      "references": [
+        {
+          "phrase": "continuous map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "product topologies Z×X and Z×Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology"
+        },
+        {
+          "phrase": "closed map id_Z×f",
+          "state": "unassigned",
+          "context": "Topology: closed continuous map sending closed subsets of domain to closed subsets of codomain"
+        },
+        {
+          "phrase": "every topological space Z",
+          "state": "external",
+          "disposition": "The quantifier runs over all Z, not just discrete, compact, or base-change-over-Y spaces."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.7ee45a1fa46d2b2f.proper-topological-map-stacks",
+      "version_sha256": "a5e08c9ba947a4a220b995f178631d7751df60adba1fe1bfab85a2ddea8a8046",
+      "complete": true,
+      "review_rationale": "Read this Stacks-convention definition of proper topological map as requiring both separatedness of its diagonal and universal closedness. No equivalence to only compact inverse images is inferred.",
+      "references": [
+        {
+          "phrase": "continuous map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "separated diagonal",
+          "state": "existing",
+          "target_meaning_id": "meaning.dc7429305b3e37b7.separated-continuous-map"
+        },
+        {
+          "phrase": "universally closed",
+          "state": "existing",
+          "target_meaning_id": "meaning.7ee45a1fa46d2b2f.universally-closed-continuous-map"
+        },
+        {
+          "phrase": "separated and universally closed",
+          "state": "external",
+          "disposition": "Both conjuncts are required; separatedness is about the diagonal in X×_Y X, not ordinary Hausdorffness of X."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.7ee45a1fa46d2b2f.quasiproper-continuous-map",
+      "version_sha256": "63daabab62d587ac7dc6e143bf01ff66f4d7db11286cf9d67bc48d9c11818766",
+      "complete": true,
+      "review_rationale": "Read this quasi-proper convention as inverse images of quasi-compact subsets remaining quasi-compact; does not assert universal closedness or separatedness under other conventions.",
+      "references": [
+        {
+          "phrase": "continuous map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "quasi-compact subset of Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space"
+        },
+        {
+          "phrase": "inverse image f^{-1}(K)",
+          "state": "unassigned",
+          "context": "Set theory/topology: preimage of a subset under a continuous map"
+        },
+        {
+          "phrase": "every quasi-compact subset",
+          "state": "external",
+          "disposition": "The subset can be non-open, and the requirement is not the same as inverse images of closed sets being closed."
+        }
+      ]
+    }
+  ]
+}
