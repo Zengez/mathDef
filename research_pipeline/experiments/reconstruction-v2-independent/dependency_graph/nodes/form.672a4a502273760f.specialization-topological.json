@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.672a4a502273760f.specialization-topological",
   "version_sha256": "d6eb1acaa47506b1e3caeb572e670e545c84451dcc8ff4936ef3b09701c79e0c",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        24,
-        41
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.102e55f6c961f18a70a9"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.8b2285226577aa499fa7"
+    },
+    {
+      "phrase": "closure of singleton {y}",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross107.topological-closure",
+      "occurrence_id": "occ.ad2b4902a8866e072629"
+    },
+    {
+      "phrase": "singleton {y}",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.381e003031c5324ec435"
+    },
+    {
+      "phrase": "y generalizes x",
+      "state": "external",
+      "disposition": "Generalization is the converse of specialization; no new independent relation is posited.",
+      "occurrence_id": "occ.5b51db3be078af3bd108"
     }
   ],
-  "snapshot_sha256": "85cdd596652c17491efc7c5b7576d6c2fdb24e0daa6358be9453fafde016eef3",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "96e2cab9de08ca8327e9bbc3df7cc84f3b920ba6863ce6547ba83e08fe81da5f",
+  "review_rationale": "Read both equivalent formulations of specialization, including x lying in closure of {y} and the reverse ordering used for generalization."
 }

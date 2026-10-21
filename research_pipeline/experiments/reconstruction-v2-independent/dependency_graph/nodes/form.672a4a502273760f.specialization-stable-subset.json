@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.672a4a502273760f.specialization-stable-subset",
   "version_sha256": "ec6b767bbd6d6370068a0279e29604691505d7f1adde4e91d4b60632d63d5420",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        2,
-        8
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.279580c79734e1f2a736"
+      "phrase": "subset T⊆X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.e3399067e1a2b63932e6"
+    },
+    {
+      "phrase": "closure of {y}",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross107.topological-closure",
+      "occurrence_id": "occ.688e40cdf90917d10c37"
+    },
+    {
+      "phrase": "specialization of y",
+      "state": "existing",
+      "target_meaning_id": "meaning.672a4a502273760f.specialization-topological",
+      "occurrence_id": "occ.5b80292b9d708afe5ce7"
+    },
+    {
+      "phrase": "whenever y∈T ... x also belongs to T",
+      "state": "external",
+      "disposition": "Stability under specialization does not force T to be closed in an arbitrary space.",
+      "occurrence_id": "occ.dcb9b08e6dca2d0d3d80"
     }
   ],
-  "snapshot_sha256": "4183fb6afad1c7dc224e50921becf5bdfdd24dfa60daa2ceb5c96add4ccae550",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "2f8602fed7c2b633edc84c328f56edd937cdac86bb0b4ce950be7c13af2bb45c",
+  "review_rationale": "Read the full specialization-stability quantifiers and linked the closure-of-singleton and point-specialization meanings, avoiding topological closedness assumptions."
 }

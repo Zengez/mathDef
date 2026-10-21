@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.646e4dcbd9b6f1e1.topological-ring",
   "version_sha256": "03f497391324c755234793649bde87ad83ea94dc581a2ee3637168e25e5fa14d",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.833660ecb99c1dd64abd"
+    },
+    {
+      "phrase": "topology",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.7aa664b181e2476a00d9"
+    },
+    {
+      "phrase": "continuous maps",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+      "occurrence_id": "occ.8b8c37ae8a50e47fc49c"
+    },
+    {
+      "phrase": "R×R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology",
+      "occurrence_id": "occ.6fa5cf69494fdab12e9d"
+    }
+  ],
+  "snapshot_sha256": "8340a6d18d50836f025799aa573ea5e98c899aa5053135d0a918ffe5d9b07107",
+  "review_rationale": "Read the entire topological-ring definition, keeping both addition and multiplication continuity conditions and avoiding identity and separation assumptions."
 }
