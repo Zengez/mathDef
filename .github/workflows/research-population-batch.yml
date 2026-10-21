@@ -82,15 +82,18 @@ jobs:
                 --workspace "$WORKSPACE" --mode status
             fi
             if [ "$MODE" != "status" ]; then
+              # New independent provisional meanings automatically enter the
+              # durable graph inventory. This never certifies or rescans old
+              # formulations and does not touch the frozen Wave1.
+              python -m research_pipeline.engine.dependency_graph \
+                --workspace "$WORKSPACE" --mode inventory
               python -m research_pipeline.engine.population_queue \
                 --workspace "$WORKSPACE" \
                 --profile research_pipeline/adapters/mathdef/population_topics.json --write
             fi
-            if [ -d "$WORKSPACE/population" ]; then
-              git add -- "$WORKSPACE/population"
-            fi
-            if git diff --cached --name-only | grep -v "^$WORKSPACE/population/"; then
-              echo "Attempted change outside independent ledger" >&2
+            git add -- "$WORKSPACE/population" "$WORKSPACE/dependency_graph"
+            if git diff --cached --name-only | grep -Ev "^$WORKSPACE/(population|dependency_graph)/"; then
+              echo "Attempted change outside the isolated independent ledgers" >&2
               exit 1
             fi
             if git diff --cached --quiet; then echo "No changed research files"; exit 0; fi
