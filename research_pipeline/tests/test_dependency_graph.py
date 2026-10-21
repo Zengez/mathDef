@@ -7,7 +7,7 @@ from pathlib import Path
 from research_pipeline.engine.core import Workspace, PipelineError, digest
 from research_pipeline.engine.dependency_graph import (
     inventory_sync, store, read, graph_path, tree, propose, research_queue, missing_key,
-    resolve, amend, live_nodes)
+    resolve, amend, live_nodes, apply_inbox)
 from research_pipeline.adapters.mathdef.dependency_scan import propose as lexical
 
 
@@ -190,6 +190,32 @@ class DependencyGraphTests(unittest.TestCase):
         result = inventory_sync(self.root)
         self.assertEqual(result["unscanned"], 1)
         self.assertEqual(result["closed"], 0)
+
+    def test_committed_graph_inbox_receipts_are_replay_safe(self):
+        self.add("A", "primitive")
+        self.write_fixture()
+        graph = graph_path(self.root)
+        inbox = graph / "inbox"
+        inbox.mkdir(parents=True, exist_ok=True)
+        batch = {"schema_version": 1, "id": "semantic-a", "mode": "ingest",
+                 "items": [self.entry("form.a", [])]}
+        path = inbox / "semantic-a.json"
+        path.write_text(json.dumps(batch), encoding="utf-8")
+        self.assertEqual(apply_inbox(self.root)["applied"], ["semantic-a"])
+        self.assertEqual(read(graph / "STATE.json")["summary"]["closed"], 1)
+        receipt = read(graph / "applied/semantic-a.json")
+        self.assertFalse(receipt["human_certified"])
+        self.assertEqual(apply_inbox(self.root)["already_applied"], ["semantic-a"])
+        path.write_text(json.dumps(dict(batch, injected="tamper")), encoding="utf-8")
+        with self.assertRaises(PipelineError):
+            apply_inbox(self.root)
+        path.write_text(json.dumps(batch), encoding="utf-8")
+        # Crash after full graph mutation but before receipt: exact replay
+        # must reconstruct the receipt and leave the same scanned node.
+        (graph / "applied/semantic-a.json").unlink()
+        result = apply_inbox(self.root)
+        self.assertEqual(result["applied"], ["semantic-a"])
+        self.assertEqual(read(graph / "STATE.json")["summary"]["closed"], 1)
 
     def test_uncommitted_partial_and_marker_recovery(self):
         self.add("A", "B")
