@@ -646,10 +646,50 @@ def resolve(workspace, resolutions):
     return rebuild(workspace, inv)
 
 
+def apply_inbox(workspace, limit=20):
+    """Commit-friendly, replay-safe ingestion of explicitly reviewed graph batches.
+
+    Receipt is written LAST. Git commits the ledger and receipt together,
+    so a remote restart either sees the entire package or must replay it.
+    """
+    graph = graph_path(workspace)
+    inbox = graph / "inbox"
+    applied = graph / "applied"
+    applied.mkdir(parents=True, exist_ok=True)
+    valid_modes = {
+        "ingest": lambda pkg: store(workspace, pkg["items"]),
+        "amend": lambda pkg: amend(workspace, pkg["amendments"]),
+        "resolve": lambda pkg: resolve(workspace, pkg["resolutions"]),
+    }
+    result = {"applied": [], "already_applied": [], "max_packages": limit}
+    for file in sorted(inbox.glob("*.json"))[:max(0, limit)] if inbox.is_dir() else ():
+        pkg = read(file)
+        if (pkg.get("schema_version") != SCHEMA or
+                pkg.get("id") != file.stem or
+                pkg.get("mode") not in valid_modes or
+                not KEY_RE.fullmatch(file.stem)):
+            raise PipelineError("Invalid or unsupported dependency graph batch: " + str(file))
+        receipt_file = applied / file.name
+        receipt_sha = digest(pkg)
+        prior = read(receipt_file)
+        if prior:
+            if prior.get("sha256") != receipt_sha or prior.get("mode") != pkg["mode"]:
+                raise PipelineError("Mutated already-applied graph batch " + file.name)
+            result["already_applied"].append(file.stem)
+            continue
+        valid_modes[pkg["mode"]](pkg)
+        atomic_json(receipt_file, {"id": file.stem, "sha256": receipt_sha,
+                                   "mode": pkg["mode"],
+                                   "status": "applied_in_independent_graph_only",
+                                   "human_certified": False})
+        result["applied"].append(file.stem)
+    return result
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--workspace", type=Path, required=True)
-    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "amend", "resolve", "status", "tree", "queue"),
+    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "amend", "resolve", "apply_inbox", "status", "tree", "queue"),
                    required=True)
     p.add_argument("--adapter", default="research_pipeline.adapters.mathdef.dependency_scan")
     p.add_argument("--limit", type=int, default=30)
@@ -685,6 +725,8 @@ def main():
         if batch.get("schema_version") != 1:
             raise PipelineError("Unsupported resolution batch")
         result = resolve(args.workspace, batch["resolutions"])
+    elif args.mode == "apply_inbox":
+        result = apply_inbox(args.workspace, max(0, args.limit))
     elif args.mode == "tree":
         result = tree(args.workspace, args.root_formulation)
     elif args.mode == "queue":
