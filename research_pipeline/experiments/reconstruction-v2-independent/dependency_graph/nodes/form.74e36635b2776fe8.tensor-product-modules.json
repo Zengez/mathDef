@@ -2,35 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.74e36635b2776fe8.tensor-product-modules",
   "version_sha256": "ee07cb5fe102e77997396307bcaf6440eb756dc46d60aac8fb40bb51ab0ad8fe",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "bilinear map",
-      "span": [
-        82,
-        94
-      ],
+      "phrase": "R-modules M,N and P",
       "state": "existing",
-      "target_meaning_id": "meaning.74e36635b2776fe8.bilinear-map-modules",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.5d41d95a5a40952fdab2"
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.892d0d3658f1fed65121"
     },
     {
-      "phrase": "bilinear map",
-      "span": [
-        162,
-        174
-      ],
+      "phrase": "bilinear map M×N→M⊗_R N",
       "state": "existing",
       "target_meaning_id": "meaning.74e36635b2776fe8.bilinear-map-modules",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.c0636c449aff18c216de"
+      "occurrence_id": "occ.ba088999af82028d9671"
+    },
+    {
+      "phrase": "R-linear factorization to P",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.1e18c4d6528616487437"
+    },
+    {
+      "phrase": "universal factorization through M⊗_R N",
+      "state": "unassigned",
+      "context": "Category and module theory: unique R-linear factor through the tensor universal bilinear map",
+      "occurrence_id": "occ.626b69ad7d1ef43bdf29"
+    },
+    {
+      "phrase": "every bilinear b factors uniquely",
+      "state": "external",
+      "disposition": "Uniqueness and the quantification over all codomain modules are the substantive universal property, not an assumed chosen basis.",
+      "occurrence_id": "occ.39bb38c1141d1fad44f6"
     }
   ],
-  "snapshot_sha256": "66fb4f28bcde9c3953ed84ec044ef498beac6de7cf919daa88f21d18a0b05afd",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "d708ee3c023b907a9ecbcedb2c68c86bf19f003d98c32c09bca6dbf0d2595098",
+  "review_rationale": "Examined the universal property including the initial bilinear map, existence and uniqueness of its R-linear factorization for every target R-module P. The side-of-action convention is not silently inferred for noncommutative R."
 }

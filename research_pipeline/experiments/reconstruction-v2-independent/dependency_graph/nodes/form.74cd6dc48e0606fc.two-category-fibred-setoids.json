@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.74cd6dc48e0606fc.two-category-fibred-setoids",
   "version_sha256": "a5e63601401625e56904f417758973545f76bf8ab85856eeb75737dce5fcf928",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "category fibred in setoids",
-      "span": [
-        6,
-        32
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.74cd6dc48e0606fc.category-fibred-in-setoids"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.dc259ed83a220f090c57"
+      "phrase": "2-category",
+      "state": "existing",
+      "target_meaning_id": "meaning.ec5e3a0d13f85f3a.strict-two-category",
+      "occurrence_id": "occ.54d7afaf4e3df5467040"
+    },
+    {
+      "phrase": "categories fibred in setoids over C",
+      "state": "existing",
+      "target_meaning_id": "meaning.74cd6dc48e0606fc.category-fibred-in-setoids",
+      "occurrence_id": "occ.722c0cb94bde1a10e13c"
+    },
+    {
+      "phrase": "functors commuting with projection",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "occurrence_id": "occ.16a2b11f235608c62497"
+    },
+    {
+      "phrase": "categories over a base C",
+      "state": "existing",
+      "target_meaning_id": "meaning.56119d315cf02fdf.two-category-over-base",
+      "occurrence_id": "occ.117147cff4f8303568e0"
+    },
+    {
+      "phrase": "natural transformations over identity arrows of C",
+      "state": "unassigned",
+      "context": "Category theory: natural transformations between functors over a base whose components project to identities",
+      "occurrence_id": "occ.ee696c85ab0637734a2b"
+    },
+    {
+      "phrase": "2-morphisms over identity arrows",
+      "state": "external",
+      "disposition": "The restriction is essential: arbitrary natural transformations between the underlying functors are not the same 2-morphisms.",
+      "occurrence_id": "occ.60f367baf4f057aee3a0"
     }
   ],
-  "snapshot_sha256": "32a65d64366e4e38202dbd6d3fb5b6cb006b67cd0682cdd356d9db830002dc9d",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "96f1bfba4d46d26eb075598ecd3e30dc4fd588bb4c66e32fd52e8e695127051f",
+  "review_rationale": "Read the object, 1-morphism, and 2-morphism clauses of the fibred-setoid 2-category, ensuring that natural transformations lie over identity arrows of the base and functors commute with projections."
 }

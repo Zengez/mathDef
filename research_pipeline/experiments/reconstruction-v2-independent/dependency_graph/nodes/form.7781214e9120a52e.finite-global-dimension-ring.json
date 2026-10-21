@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.7781214e9120a52e.finite-global-dimension-ring",
   "version_sha256": "e47b221975281cc41842a59d3d43565e6b7cd3d9e447d1981596f343111b34c7",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        49,
-        56
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.f2a2fb33213e214febfd"
+      "phrase": "projective dimension of R-module",
+      "state": "existing",
+      "target_meaning_id": "meaning.7781214e9120a52e.projective-dimension-module",
+      "occurrence_id": "occ.f604e14a29e4afffc5ae"
+    },
+    {
+      "phrase": "R-module",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.5ef795f24c4faa6cb669"
+    },
+    {
+      "phrase": "there exists a finite integer n",
+      "state": "external",
+      "disposition": "Uniform finite upper bound across all R-modules, not a separate n that can vary with M.",
+      "occurrence_id": "occ.c04ad8bf32fea337566d"
+    },
+    {
+      "phrase": "minimum such n",
+      "state": "external",
+      "disposition": "Least integer upper bound is the actual global dimension, without assuming it is 0.",
+      "occurrence_id": "occ.220802803a77e50fb3ed"
     }
   ],
-  "snapshot_sha256": "063d7bc192263005e45b49a929be66037c0432974a56f2329da25a759f209ab3",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "fa800016ade7dc2131f63b181c145b5ba3e28a38f5e0141766b383a9284a76b2",
+  "review_rationale": "Read the uniform finite bound across all R-modules, with global dimension defined as the least such nonnegative integer. This does not assert that every module is projective or that the ring has finite cardinality."
 }

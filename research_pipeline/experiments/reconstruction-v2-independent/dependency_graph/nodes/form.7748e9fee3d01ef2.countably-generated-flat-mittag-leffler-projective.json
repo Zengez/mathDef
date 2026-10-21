@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.7748e9fee3d01ef2.countably-generated-flat-mittag-leffler-projective",
   "version_sha256": "05ef2544d4087967f4dcfcc19aa1e73201d9190482ed3b8cc0de547a39424c49",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.8fa942e05a0edf5cac47"
+    },
+    {
+      "phrase": "projective module",
+      "state": "existing",
+      "target_meaning_id": "meaning.fc44c63c239e5c20.projective-module-hom",
+      "occurrence_id": "occ.818650f0aee5087eb781"
+    },
+    {
+      "phrase": "flat module",
+      "state": "existing",
+      "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-module",
+      "occurrence_id": "occ.6373263650b8986ef51d"
+    },
+    {
+      "phrase": "Mittag-Leffler tensor comparison",
+      "state": "existing",
+      "target_meaning_id": "meaning.7748e9fee3d01ef2.mittag-leffler-module-tensor",
+      "occurrence_id": "occ.0d2a9b24f7e33d9a07ad"
+    },
+    {
+      "phrase": "countably generated R-module",
+      "state": "unassigned",
+      "context": "Module theory: generation of a module by a finite or countably infinite set of elements",
+      "occurrence_id": "occ.c69fe0e79f8f06aa986e"
+    },
+    {
+      "phrase": "if and only if",
+      "state": "external",
+      "disposition": "Countable generation is a mandatory hypothesis of this particular characterization.",
+      "occurrence_id": "occ.b4beaed8421c36e81fca"
+    }
+  ],
+  "snapshot_sha256": "6fb3ad0bcd094fbdc007108b554ac562faf5ea5accffbacd79f175d1de4103ab",
+  "review_rationale": "Read the biconditional only in the stated countably generated R-module context; flatness plus the tensor-comparison Mittag-Leffler condition characterizes projectivity here, not projectivity of all flat modules."
 }

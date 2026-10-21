@@ -2,23 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.74cd6dc48e0606fc.category-fibred-in-setoids",
   "version_sha256": "b1cd1878026c1dec3b9796f5e32a52ba30dc10608f11ce5d4316b025ef6f93da",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "category fibred in groupoids",
-      "span": [
-        41,
-        69
-      ],
+      "phrase": "category fibred in groupoids p:E→C",
       "state": "existing",
       "target_meaning_id": "meaning.5e4b8f6efeda6522.category-fibred-in-groupoids",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.17618af3e04bbf80beb8"
+      "occurrence_id": "occ.040d71621eee60009be9"
+    },
+    {
+      "phrase": "setoid fibre categories E_U",
+      "state": "existing",
+      "target_meaning_id": "meaning.74cd6dc48e0606fc.setoid-category",
+      "occurrence_id": "occ.76322497706de75aa418"
+    },
+    {
+      "phrase": "fibre category E_U of p",
+      "state": "unassigned",
+      "context": "Category theory: category of objects of E over U with morphisms projecting to identity on U",
+      "occurrence_id": "occ.7edf5e16e703b9de06d3"
+    },
+    {
+      "phrase": "each fibre",
+      "state": "external",
+      "disposition": "The stated condition holds for every U in C; it is not equivalent to the total category being a setoid.",
+      "occurrence_id": "occ.508549adfbc769e8ab77"
     }
   ],
-  "snapshot_sha256": "17191e02a571c020520ca4279e8cc7c77dad5418a0a506759d5cc897b6a40487",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "df1ab1467a921c7c954e162a077a1603a6fc1bf70d156b4f59c06b1e2efc09e1",
+  "review_rationale": "Examined the defining restriction of a groupoid-fibred category: every fibre E_U is a setoid. This is a fibrewise restriction over C, not the assertion that the total category E is a setoid."
 }
