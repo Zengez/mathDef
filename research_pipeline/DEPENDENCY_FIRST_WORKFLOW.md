@@ -93,7 +93,12 @@ the user's manual certification.
 still OFF by default.**
 
 1. With full Pass 1 scans, inspect the **entire**
-   `unresolved_occurrences.jsonl`, including its originating formulation,
+   `unresolved_occurrences.jsonl` or run this read-only deterministic
+   surface grouping (it does **not** declare synonymy or contextual identity):
+   ```bash
+   python -m research_pipeline.engine.dependency_graph --workspace "$W" --mode consolidation_worklist --limit 20
+   ```
+   Review every group and its originating formulation,
    wording and contextual information. Compare candidate uses across the
    whole existing corpus. Deduplicate possible missing meanings *as a
    classification problem*, not as multiple fresh source investigations.
@@ -162,6 +167,9 @@ mathDef definitions before the independent freeze.
 - `research_queue(...).missing_research_permitted`: true only with valid
   consolidation gate. This scheduler does not conduct research itself.
 - `--mode worklist`: read-only/no-network reproducible next scan input.
+- `--mode consolidation_worklist`: read-only grouped occurrence analysis, no equivalence claims.
+- `research_queue(...).candidate_preview_only`: unapproved unresolved missing candidates are visible but NOT research tasks before the gate.
+- `population/QUEUE.json.unconsolidated_missing_candidate_previews`: same non-actionable status for the preexisting population planner.
 
 **Generic implementation and consistency details:** The graph engine
 stores adjacency once per formulation, generates per-root nested views
