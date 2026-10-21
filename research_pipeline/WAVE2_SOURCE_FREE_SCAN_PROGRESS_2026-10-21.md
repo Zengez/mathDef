@@ -1,5 +1,73 @@
 # Wave 2 — source-free semantic reference scanning pilot (2026-10-21)
 
+## Latest verified continuation: batches 023–027 (229 / 659)
+
+**This section supersedes all older count snapshots.** Current graph
+`STATE.json`, `CHECKPOINT.json` and completed `applied/` receipts
+remain authoritative if additional work has been committed.
+
+| Graph batch | Full semantic scans | Source-free reference decisions | Verified graph Action |
+|---|---:|---:|---|
+| `semantic-existing-initial-023` | 8 | 36 | [39691703931](https://github.com/Zengez/mathDef/actions/runs/39691703931) |
+| `semantic-existing-initial-024` | 8 | 36 | [39691887166](https://github.com/Zengez/mathDef/actions/runs/39691887166) |
+| `semantic-existing-initial-025` | 8 | 39 | [39692085459](https://github.com/Zengez/mathDef/actions/runs/39692085459) |
+| `semantic-existing-initial-026` | 8 | 39 | [39692294224](https://github.com/Zengez/mathDef/actions/runs/39692294224) |
+| `semantic-existing-initial-027` | 8 | 40 | [39692503789](https://github.com/Zengez/mathDef/actions/runs/39692503789) |
+| **Total this continuation** | **40** | **190** | **All successful with applied receipts** |
+
+This chunk reviewed complete independent screened texts (no outside
+sources) on preorder/inverse systems, module/ring localization,
+the relative algebraic de Rham complex, separable elements and
+polynomials, field extensions, profinite spaces, embedded associated
+primes, setoid and fibred 2-categories, tensor products, the
+Mittag-Leffler property, finite global dimension, Ext, projective/free
+resolutions, Kähler differentials, derivations, properness and
+universal closedness in topology, category-theoretic products,
+quasi-regular sequences, catenary rings, geometric integrality,
+and strict continuous maps.
+
+As required by Pass 1, the scanner matched only meanings already
+present in the independent collection. It recorded mathematical
+references not confidently matchable as `unassigned` and explicitly
+accounted for elementary constraints or internal definition clauses
+with `external` dispositions. A special care was taken not to
+confuse finite tower length with finite field-extension degree,
+ordinary exactness with purity, universal closedness with other
+proper-map conventions, or tensor-product side conventions over
+possibly noncommutative rings. These observations do not amount
+to mathematical correctness approval or source verification.
+
+**Verified live graph after batch 027:**
+
+- 611 existing contextual meanings, 659 individual formulations.
+- **229 full semantic scans**, **430 incomplete provisional lexical
+  scans**, 0 completely unscanned.
+- **317 unassigned** reference occurrences, **287 preliminary ambiguous**
+  lexical occurrences.
+- 13 historical candidate records, 12 unresolved; 10 append-only
+  semantic correction events. No Pass 2 consolidation has begun.
+- 659 Open; 0 Closed; `phase=scan_and_link_existing`; consolidation
+  gate false and missing-definition research still prohibited.
+- Isolated pipeline tests succeeded for the latest Action
+  [39692503952](https://github.com/Zengez/mathDef/actions/runs/39692503952).
+- Each of the five inbox packages and applied receipts is preserved in
+  the isolated independent dependency graph.
+
+**Next deterministic worklist:** first
+`form.83a528850cdf6a59.submersive-continuous-map`, followed by
+`form.8594a432b165bcda.integral-closure-relative` and
+`form.8594a432b165bcda.integral-element-over-subring`. Read live
+state and exact versioned original independent formulations before
+preparing the next batch. Do not repeat batches 023–027.
+
+No frozen Wave1 edits, historically reviewed Wave2 definition changes,
+provisional new-definition research, external source lookup, use of
+original production mathDef, automatic promotion, certification, or
+unrelated breadth expansion took place.
+
+---
+
+
 ## Latest continuation — Batches 017–022 (189/659 complete)
 
 This section supersedes all earlier numeric checkpoints. The authoritative
