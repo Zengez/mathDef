@@ -242,6 +242,32 @@ class DependencyGraphTests(unittest.TestCase):
         self.assertEqual(result["scan_incomplete"], 1)
         self.assertEqual(result["closed"], 0)
 
+    def test_cross_domain_word_is_ambiguity_not_confident_meaning(self):
+        self.add("Source", "A positive integer occurs here.", "Commutative algebra")
+        self.add("integer", "a foundational integer concept", "Foundational number theory")
+        self.write_fixture()
+        graph = graph_path(self.root)
+        inv = read(graph / "INVENTORY.json")
+        suggestions = lexical(inv["formulations"]["form.source"], inv["meanings"])
+        self.assertEqual(len(suggestions), 1)
+        self.assertEqual(suggestions[0]["state"], "ambiguous")
+        self.assertEqual(suggestions[0]["candidate_meaning_ids"], ["meaning.integer"])
+        # Recreate an earlier adapter's overconfident lexical proposal; the
+        # new adapter fingerprint refreshes ONLY this unreviewed incomplete node.
+        old = [{"phrase": "integer", "span": [11, 18],
+                "state": "existing", "target_meaning_id": "meaning.integer",
+                "origin": "unreviewed_lexical_proposal"}]
+        store(self.root, [self.entry("form.source", old, complete=False),
+                          self.entry("form.integer", [], complete=True)])
+        result = propose(self.root, "research_pipeline.adapters.mathdef.dependency_scan", limit=10)
+        self.assertEqual(result["proposed_this_run"], 1)
+        self.assertEqual(read(graph / "STATE.json")["summary"]["scan_complete"], 1)
+        node = live_nodes(graph, read(graph / "INVENTORY.json"))["form.source"]
+        self.assertEqual(node["references"][0]["state"], "ambiguous")
+        self.assertTrue(node.get("proposal_fingerprint"))
+        self.assertEqual(propose(self.root, "research_pipeline.adapters.mathdef.dependency_scan")
+                         ["proposed_this_run"], 0)
+
     def test_proposals_not_exhaustive_and_replays_are_idempotent(self):
         self.add("A", "the B implies B")
         self.add("B", "constant")
