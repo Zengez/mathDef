@@ -1,38 +1,30 @@
 {
   "schema_version": 1,
   "strategy": "balanced independent breadth with bounded prerequisite lookahead",
-  "breadth_candidates": [
-    {
-      "id": "measure-and-analysis",
-      "research_prompt": "Independently research a separate measure/analysis branch outside recently reviewed concepts; retain source-specific hypotheses.",
-      "priority": "normal",
-      "source_review_required": true
-    },
-    {
-      "id": "topology-and-geometry",
-      "research_prompt": "Independently research a topology or geometry topic with a new contextual meaning, comparing only likely collisions.",
-      "priority": "normal",
-      "source_review_required": true
-    },
-    {
-      "id": "algebra-and-logic",
-      "research_prompt": "Independently research algebraic structures or logic with source-specific scope, avoiding hidden convention shifts.",
-      "priority": "normal",
-      "source_review_required": true
-    }
-  ],
+  "breadth_candidates": [],
   "completed_breadth_topics": [
     "affine-geometry",
+    "algebra-and-logic",
     "graph-cycles",
     "matrix-trace",
+    "measure-and-analysis",
     "number-theory-congruence",
-    "probability-independence"
+    "probability-independence",
+    "topology-and-geometry"
   ],
   "deferred_target_clusters": [
     {
       "target_query_normalized": "affine combination of finitely many vectors in a real vector space",
       "awaiting_relation_ids": [
         "rel.wave2.pop140.affine-hull-affine-combination"
+      ],
+      "number_of_affected_relations": 1,
+      "priority": "normal"
+    },
+    {
+      "target_query_normalized": "extended nonnegative real number system 0 and order",
+      "awaiting_relation_ids": [
+        "rel.wave2.pop141.outer-extended"
       ],
       "number_of_affected_relations": 1,
       "priority": "normal"
@@ -55,19 +47,15 @@
     }
   ],
   "suggested_next_package": {
-    "breadth_topic_candidates": [
-      "measure-and-analysis",
-      "topology-and-geometry",
-      "algebra-and-logic"
-    ],
+    "breadth_topic_candidates": [],
     "maximum_deferred_target_inclusions": 2,
     "rule": "Independently inspect sources and collisions; never mechanically certify candidate labels."
   },
   "reconciliation_findings": {
-    "pending_review": 9,
-    "unresolved_target": 3,
-    "pending_link_review": 8,
-    "open_issue": 1
+    "pending_review": 15,
+    "unresolved_target": 4,
+    "pending_link_review": 15,
+    "open_issue": 2
   },
   "coverage_and_stop_policy": {
     "state": "proposed_not_approved",
