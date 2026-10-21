@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-032",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.93aaac46cdf41116.henselian-local-ring",
+      "version_sha256": "19e1cfd0c47979b5181fe9a179638e9d43c7ff0cbe8f20b681b47ce5b3cfcb1c",
+      "complete": true,
+      "review_rationale": "Read the exact simple-root lifting condition: a root of the reduced monic polynomial mod maximal ideal lifts to R with the same residue. A simple root is not an arbitrary zero and polynomial monicity is a substantive hypothesis.",
+      "references": [
+        {
+          "phrase": "local ring (R,m)",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "maximal ideal m",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-maximal-ideal"
+        },
+        {
+          "phrase": "residue field κ=R/m",
+          "state": "unassigned",
+          "context": "Commutative algebra: residue field of a local ring as quotient by the maximal ideal"
+        },
+        {
+          "phrase": "monic polynomial f∈R[T]",
+          "state": "unassigned",
+          "context": "Polynomial algebra: polynomial in one indeterminate with leading coefficient equal to 1"
+        },
+        {
+          "phrase": "simple zero of reduced polynomial f-bar over κ",
+          "state": "unassigned",
+          "context": "Polynomial algebra: simple root of the coefficientwise reduction of f modulo m"
+        },
+        {
+          "phrase": "lifting a residue field root to R",
+          "state": "unassigned",
+          "context": "Henselian algebra: element a∈R reducing modulo m to a-bar and satisfying f(a)=0"
+        },
+        {
+          "phrase": "every monic polynomial and every simple zero",
+          "state": "external",
+          "disposition": "The quantifiers range over all eligible pairs; multiple roots in κ are not covered by this simple-root criterion."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.93aaac46cdf41116.strictly-henselian-local-ring",
+      "version_sha256": "4c20886f358c73fdd0e67aaf23b4837c6498ddc482297bdfbfc64576b5b2b4fb",
+      "complete": true,
+      "review_rationale": "Read the strict Henselian criterion as Henselianity plus a separably closed residue field, not an algebraically closed residue field: purely inseparable extensions may remain.",
+      "references": [
+        {
+          "phrase": "Henselian local ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.93aaac46cdf41116.henselian-local-ring"
+        },
+        {
+          "phrase": "separable algebraic field extension",
+          "state": "existing",
+          "target_meaning_id": "meaning.720eaae9156f6f4e.separable-algebraic-field-extension"
+        },
+        {
+          "phrase": "residue field of local ring",
+          "state": "unassigned",
+          "context": "Commutative algebra: quotient κ=R/m by the maximal ideal of a local ring"
+        },
+        {
+          "phrase": "separably closed field κ",
+          "state": "unassigned",
+          "context": "Field theory: field with no nontrivial separable algebraic extensions, distinct from algebraically closed in positive characteristic"
+        },
+        {
+          "phrase": "no nontrivial separable algebraic extension",
+          "state": "external",
+          "disposition": "This does not require absence of nontrivial purely inseparable algebraic extensions."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.93ca4dd46b3ed2ee.essentially-finite-presentation-ring-map",
+      "version_sha256": "c0602edf0422c92629e68697ba621a515a5f0b73dd063e25f2bca720f1b59678",
+      "complete": true,
+      "review_rationale": "Read the condition that S be a localization of some finitely presented R-algebra A, with finitely many polynomial generators and defining relations. It is stronger than essentially finite type but permits localization after presentation.",
+      "references": [
+        {
+          "phrase": "ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "localization of a ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "finite-presentation R-algebra A",
+          "state": "existing",
+          "target_meaning_id": "meaning.415a1503ae7ed97d.finitely-presented-algebra"
+        },
+        {
+          "phrase": "polynomial generators and finite relations",
+          "state": "unassigned",
+          "context": "Commutative algebra: presentation A=R[T_1,…,T_n]/(f_1,…,f_m) with finite n and m"
+        },
+        {
+          "phrase": "some finitely presented R-algebra A",
+          "state": "external",
+          "disposition": "A may be chosen; S itself need not be finitely presented over R after arbitrary localization."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.93ca4dd46b3ed2ee.essentially-finite-type-ring-map",
+      "version_sha256": "a1d66c1a911a1d71b598cb8de0c2a8e6a5bbaa39b47329d072f69e02fc2d6ebe",
+      "complete": true,
+      "review_rationale": "Read the existence of a finitely generated R-algebra A with a localization T^{-1}A isomorphic to S. Finite type refers to generators of A and does not assert a finite relation presentation.",
+      "references": [
+        {
+          "phrase": "ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "finitely generated R-algebra A",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map"
+        },
+        {
+          "phrase": "localization T^{-1}A",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "R-algebra isomorphism S≅T^{-1}A",
+          "state": "unassigned",
+          "context": "Commutative algebra: bijective R-algebra map compatible with structural ring homomorphism"
+        },
+        {
+          "phrase": "some finitely generated A",
+          "state": "external",
+          "disposition": "A is finite type over R, whereas S is only required to be isomorphic to its localization."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.9442fc10b22be057.artinian-commutative-ring",
+      "version_sha256": "35d47155a6ff8768258334a69962957eb17eee9f8fc1ae0dae1b0df7c8b1d526",
+      "complete": true,
+      "review_rationale": "Read the descending-chain condition on ideals as the defining Artinian property for a commutative ring. Not the ascending-chain condition for Noetherian rings, and not finite cardinality of R.",
+      "references": [
+        {
+          "phrase": "commutative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "ideals I_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "descending chain condition on ideals",
+          "state": "unassigned",
+          "context": "Order theory: every decreasing sequence of ideals under inclusion eventually stabilizes"
+        },
+        {
+          "phrase": "eventual stabilization",
+          "state": "external",
+          "disposition": "Every chain has its own stabilization index; Artinian does not mean the ring has a finite number of ideals."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.951ae8411d8a974b.depth-module-ideal",
+      "version_sha256": "b22c7a4be8298dca5a8aaf94265325c20b5c848fc99e37df52a4a69149c9c94d",
+      "complete": true,
+      "review_rationale": "Read the exact module-theoretic depth relative to ideal I as a supremum of lengths of M-regular sequences in I when IM differs from M; preserve the explicitly assigned infinite value when IM=M.",
+      "references": [
+        {
+          "phrase": "finite R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        },
+        {
+          "phrase": "ideal I⊆R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "M-regular sequence",
+          "state": "existing",
+          "target_meaning_id": "meaning.f17ea18ebee0660f.module-regular-sequence"
+        },
+        {
+          "phrase": "submodule IM generated by products I·M",
+          "state": "unassigned",
+          "context": "Module theory: submodule generated by ideal coefficients multiplying elements of M"
+        },
+        {
+          "phrase": "supremum of lengths of regular sequences",
+          "state": "unassigned",
+          "context": "Order theory and commutative algebra: least upper bound or infinity for lengths of M-regular sequences in I"
+        },
+        {
+          "phrase": "IM=M means depth=∞",
+          "state": "external",
+          "disposition": "This is an explicit special convention; no regular sequence maximum is sought when IM=M."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.951ae8411d8a974b.depth-module-local-ring",
+      "version_sha256": "fc68fe44841fb2ef5809458f74df40b10910f8678ca1888f908892893a7c4376",
+      "complete": true,
+      "review_rationale": "Read local-ring depth as depth_m(M) for a finite module, using regular sequences from the maximal ideal; retain depth(0)=infinity convention rather than assuming nonzero module.",
+      "references": [
+        {
+          "phrase": "local ring (R,m)",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "finite module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        },
+        {
+          "phrase": "depth_m(M)",
+          "state": "existing",
+          "target_meaning_id": "meaning.951ae8411d8a974b.depth-module-ideal"
+        },
+        {
+          "phrase": "M-regular sequences in m",
+          "state": "existing",
+          "target_meaning_id": "meaning.f17ea18ebee0660f.module-regular-sequence"
+        },
+        {
+          "phrase": "depth(0)=∞",
+          "state": "external",
+          "disposition": "The zero module is explicitly assigned infinite depth; do not replace this with ordinary numerical sequence length."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.96053e8d2dff5465.lattice-vector-space",
+      "version_sha256": "f69a6f88cc39aab03a98000079dc13ae83b6023485fb5d3b66b47886c321fa69",
+      "complete": true,
+      "review_rationale": "Read the R-lattice condition in a finite-dimensional K-vector space over the fraction field of a one-dimensional Noetherian local domain. The finite R-submodule must span V after scalar extension, not merely be any discrete lattice in a Euclidean space.",
+      "references": [
+        {
+          "phrase": "Noetherian local domain R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "local ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "integral domain R and fraction field K",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain"
+        },
+        {
+          "phrase": "Krull dimension one",
+          "state": "existing",
+          "target_meaning_id": "meaning.22c049b8eee93897.krull-dimension-ring"
+        },
+        {
+          "phrase": "finite R-submodule M⊆V",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        },
+        {
+          "phrase": "finite-dimensional K-vector space V",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field"
+        },
+        {
+          "phrase": "K-span of R-submodule M equals V",
+          "state": "unassigned",
+          "context": "Linear algebra: linear span of M in a vector space over fraction field K"
+        },
+        {
+          "phrase": "one-dimensional local domain",
+          "state": "external",
+          "disposition": "Dimension refers to Krull dimension of R, not to vector space dimension of V, which may be any finite value."
+        }
+      ]
+    }
+  ]
+}
