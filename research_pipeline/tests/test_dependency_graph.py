@@ -88,6 +88,7 @@ class DependencyGraphTests(unittest.TestCase):
         ref = {"phrase": "Missing C", "context": "Algebra", "state": "missing"}
         store(self.root, [self.entry("form.a", [ref]), self.entry("form.b", [ref])])
         self.add("C", "depends on D")
+        self.write_fixture()
         self.assertEqual(inventory_sync(self.root)["unscanned"], 1)
         inv = read(graph_path(self.root) / "INVENTORY.json")
         cid = missing_key("Missing C", "Algebra")
@@ -102,7 +103,7 @@ class DependencyGraphTests(unittest.TestCase):
         self.assertEqual(result["unresolved_missing_candidates"], 1)
         self.assertEqual(result["open"], 3)
         self.add("D", "a primitive")
-        inventory_sync(self.root)
+        self.write_fixture()
         inv = read(graph_path(self.root) / "INVENTORY.json")
         row_d = {"missing_candidate_id": missing_key("D", "Algebra"),
                  "target_meaning_id": "meaning.d",
