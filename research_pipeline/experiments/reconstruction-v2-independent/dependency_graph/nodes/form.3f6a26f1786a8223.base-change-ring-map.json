@@ -2,10 +2,30 @@
   "schema_version": 1,
   "formulation_id": "form.3f6a26f1786a8223.base-change-ring-map",
   "version_sha256": "5a36b9024c50295e6e1fb59ff8fbf82611a30be1ea02361eacc8d6718f63c2bd",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ring homomorphisms R→S and R→R′",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "matching_note": "The base-change diagram uses unital commutative ring homomorphisms.",
+      "occurrence_id": "occ.3eeffd4b3d6ce3c25a26"
+    },
+    {
+      "phrase": "induced homomorphism R′→S⊗_R R′",
+      "state": "unassigned",
+      "context": "Commutative algebra: extension of scalars of a commutative R-algebra to the R-algebra R′",
+      "reason": "The induced map has a tensor-product target with ring structure; cannot substitute arbitrary module tensor product alone.",
+      "occurrence_id": "occ.6137b03292c1aa47a472"
+    },
+    {
+      "phrase": "S⊗_R R′",
+      "state": "existing",
+      "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+      "matching_note": "The underlying tensor product is the usual R-module tensor product, with additional algebra structure not supplied solely by this link.",
+      "occurrence_id": "occ.3a59bcd786bdc9d7afaf"
+    }
+  ],
+  "snapshot_sha256": "d272b715ae640ff0e62d84e27f0220ea93ec921958ee20c38531ee6575958f07",
+  "review_rationale": "Read base change of a commutative ring homomorphism and distinguished the tensor product's underlying R-module construction from its additional algebra structure."
 }

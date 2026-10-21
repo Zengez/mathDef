@@ -2,10 +2,37 @@
   "schema_version": 1,
   "formulation_id": "form.3fe40ac4fb74bff2.pure-ideal",
   "version_sha256": "3f68f6d749666c150e5493ed99b4a9f25fd1eefdf57f30cf26a39187202534e4",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ideal I",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "matching_note": "The pure ideal is a ring ideal.",
+      "occurrence_id": "occ.70b4d9ca854c8a69d9b0"
+    },
+    {
+      "phrase": "quotient module R/I",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "matching_note": "R/I has the ambient quotient R-module structure, while quotient-module construction is separately unassigned.",
+      "occurrence_id": "occ.cbf6f92691f78455012a"
+    },
+    {
+      "phrase": "flat over R",
+      "state": "existing",
+      "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-module",
+      "matching_note": "Flatness is the existing module property applied to R/I.",
+      "occurrence_id": "occ.330813cdbf5e5d83c9ad"
+    },
+    {
+      "phrase": "quotient module R/I",
+      "state": "unassigned",
+      "context": "Module theory: quotient of the regular R-module R by ideal submodule I",
+      "reason": "The exact quotient construction should be pooled with other module and ideal-quotient occurrences.",
+      "occurrence_id": "occ.aa0d793eaf0ddcf82a90"
+    }
+  ],
+  "snapshot_sha256": "73c2e782dbebbe5650cdb17223b7a7f1b8557442461d20bf75cb14c8db6d8ce0",
+  "review_rationale": "Examined pure ideal through flatness of the quotient module R/I, recognizing the existing module/ideal/flat contexts and preserving quotient construction."
 }

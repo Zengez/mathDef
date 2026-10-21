@@ -2,26 +2,36 @@
   "schema_version": 1,
   "formulation_id": "form.3fcd082413a6b2eb.relative-dimension-ring-map",
   "version_sha256": "cd6bc4d882919e0ea6f97fbd91ce1283471c5420c3560fde37827d202ad93e69",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "ring homomorphism",
-      "span": [
-        40,
-        57
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.ring-map-general",
-        "meaning.wave2.foundation.ring-map-unital"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.3e65481ccd5a1a642a85"
+      "phrase": "finite-type ring homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map",
+      "matching_note": "The relative dimension is taken for a finite-type commutative ring map.",
+      "occurrence_id": "occ.5e7bd883edca575b8d76"
+    },
+    {
+      "phrase": "q∈Spec(S)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "matching_note": "q varies over prime ideals of S.",
+      "occurrence_id": "occ.8debd11ae47398611903"
+    },
+    {
+      "phrase": "relative fibre dimensions dim_q(S/R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.3fcd082413a6b2eb.relative-dimension-at-prime",
+      "matching_note": "The global relative dimension is the supremum of indexed local fibre dimensions.",
+      "occurrence_id": "occ.3563046b691d67a69094"
+    },
+    {
+      "phrase": "supremum over all primes q",
+      "state": "external",
+      "disposition": "This is the usual order-theoretic least upper bound of the local dimensions, not a separate mathematical meaning.",
+      "occurrence_id": "occ.2cb21f18e320e365ccf5"
     }
   ],
-  "snapshot_sha256": "8e450207324d366fc73154b7e40ad2598e8f9b996ccb567a2c209d5f6a55912e",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "71f99df5342b989e5526a77a75f09b75defc1d5dc2de28369e79dbc3e2a3a08a",
+  "review_rationale": "Read the global relative ring-map dimension as supremum of local dimensions at prime points of Spec(S), with correct finite-type convention."
 }

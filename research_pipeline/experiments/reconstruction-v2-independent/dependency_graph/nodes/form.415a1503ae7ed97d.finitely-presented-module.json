@@ -2,25 +2,43 @@
   "schema_version": 1,
   "formulation_id": "form.415a1503ae7ed97d.finitely-presented-module",
   "version_sha256": "5c07067d039114a287ab788f8a0fd2be7283b5735d9443421ef835a643479fd6",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "exact sequence",
-      "span": [
-        42,
-        56
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation13.exact-sequence-abelian-category"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.933ea87bd84d8b9c4c22"
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "matching_note": "M is a unital R-module.",
+      "occurrence_id": "occ.40d84e37b3c7b03a9109"
+    },
+    {
+      "phrase": "exact sequence R^m→R^n→M→0",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category",
+      "matching_note": "Modules form an abelian category and the condition is exactness.",
+      "occurrence_id": "occ.1be2b0c55430393367ec"
+    },
+    {
+      "phrase": "R^m and R^n",
+      "state": "unassigned",
+      "context": "Module theory: finite-rank free R-modules with chosen bases of finite cardinality",
+      "reason": "The source and target of the presentation are finite free modules.",
+      "occurrence_id": "occ.57d0ca0332e71f6682cf"
+    },
+    {
+      "phrase": "finitely many generators and relations",
+      "state": "unassigned",
+      "context": "Module theory: finitely generated module with finitely generated relation submodule",
+      "reason": "The finite-presentation condition is stronger than finite generation alone.",
+      "occurrence_id": "occ.6cfbdd568b6ab8b5693c"
+    },
+    {
+      "phrase": "m,n finite",
+      "state": "external",
+      "disposition": "The indexing sizes are finite natural numbers, as explicitly stipulated.",
+      "occurrence_id": "occ.ccfdad70ddfcaa5e1439"
     }
   ],
-  "snapshot_sha256": "c191ec0cc34267eda4c72ecd861873f70ded3a8c0bb51c374b02c6e004d14a1b",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "38f8fbd3287e8c93db2ea7de4d745ba7281f5ca985af6c55d429d47b73aa4ea2",
+  "review_rationale": "Read module finite presentation through an exact sequence from finite free modules, preserving the extra free module and relations constructions."
 }
