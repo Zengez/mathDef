@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-correction-universal-japanese-base-003",
+  "mode": "amend",
+  "amendments": [
+    {
+      "amendment_id": "amend.source_free_link_correction.20261021.04",
+      "formulation_id": "form.3f6cdddd076e5ca0.universally-japanese-ring",
+      "version_sha256": "369d438bd64fff021dcf733b267ef7627b2f1c20174e890ca32e3e605cc2a61c",
+      "expected_node_sha256": "28bb27efa85401fe59f7c843d3c5656fd89fa0e6ffd0a09ddefede302b7f40b1",
+      "complete": true,
+      "review_rationale": "Read universally Japanese ring through finite-type domain algebras and finiteness of normalization inside finite fraction-field extensions, retaining ordinary Japanese and integral closure as unassigned.",
+      "reviewed_by": "assistant_source_free_mathematical_link_review",
+      "reason": "Fix overly strong dependency: a universally Japanese base ring R is not required to be an integral domain. Only the finite-type algebra S in the quantifier is a domain.",
+      "references": [
+        {
+          "phrase": "ring R",
+          "state": "external",
+          "disposition": "The base ring R is an ambient commutative unital ring; the text imposes the integral-domain hypothesis on the finite-type R-algebra S, not on R."
+        },
+        {
+          "phrase": "finite-type R-algebra S",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map",
+          "matching_note": "S is finitely generated as an R-algebra.",
+          "occurrence_id": "occ.f569e313fd8f44abdce4"
+        },
+        {
+          "phrase": "S integral domain",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.integral-domain",
+          "matching_note": "The target ring has the nonzero domain property.",
+          "occurrence_id": "occ.22a8a7062deb014f09c9"
+        },
+        {
+          "phrase": "fraction field of S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain",
+          "matching_note": "Every finite fraction-field extension refers to the indexed field of fractions.",
+          "occurrence_id": "occ.1eda6f6722264be60c9e"
+        },
+        {
+          "phrase": "Japanese (N-2)",
+          "state": "unassigned",
+          "context": "Commutative algebra: Japanese/N-2 ring property, finite normalization over finite fraction-field extensions",
+          "reason": "The ordinary Japanese property should not be conflated with the stronger universally Japanese property.",
+          "occurrence_id": "occ.fe22172c476313a01bb1"
+        },
+        {
+          "phrase": "integral closure of S in finite extensions",
+          "state": "unassigned",
+          "context": "Commutative algebra: integral closure of integral domain S inside finite field extensions of its fraction field",
+          "reason": "The integral-element property may supply prerequisite evidence but not the whole closure construction.",
+          "occurrence_id": "occ.ae834f591267d7d6bc26"
+        }
+      ]
+    }
+  ]
+}
