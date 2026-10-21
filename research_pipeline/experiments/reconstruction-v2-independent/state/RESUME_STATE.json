@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "b4be6118b595bb636097e7f88440a539ca4fa4a37e7494dabf2b497823d8a528"
+    "resume_plan_sha256": "7676466c3bd151347b2a1d4755aa9dddf6066fc91bc8f198e9af9281c12dd57a"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -57,7 +57,7 @@
     "The B134 missing target coverage categories (numeric Kronecker delta, falling factorial at k=0, convex subset of real vector space) were independently source-reviewed in B135–137 and retroactively linked to Stirling and convex-hull formulations in B138; still not exhaustive coverage.",
     "Source-scope caution: ProofWiki Definition:Falling Factorial itself has n>0 only; x falling to zero equals 1 is justified separately by ProofWiki Binomial Coefficient with Zero. Do not misattribute the extension."
   ],
-  "next_action": "2026-10-21 improved Wave2 workflow verified end-to-end. Automatic consolidated population workflow SUCCESS GitHub run 39640683758, commit e85a791d7: Batch139 independently sourced modular congruence (two forms) and finite square-matrix trace (one form); 2 draft meanings, 3 draft observations, 3 provisional formulation reviews, 2 unresolved target links recorded in isolated population ledger. Existing screened independent corpus 595 meanings/639 reviews/887 links UNCHANGED, frozen Wave1 unchanged; production mathDef original never read for research. Explicit reconciled approval/promotion module and tests implemented; it has NOT been applied to provisional content. Generic queue now skips pilot topics. NEXT: Batch140 breadth via source-backed package(s), or strengthen/rehearse deferred audit before reconciliation. Use population/STATUS.json, QUEUE.json, research_pipeline/POPULATION_WORKFLOW.md and research_pipeline/adapters/mathdef/population_topics.json. Do not add per-batch Python workflows. Work ~12-14 active minutes and checkpoint.",
+  "next_action": "VERIFIED 2026-10-21 Batch140 in reusable independent Wave2 population workflow: automated Actions 39642095943 SUCCESS, 5 new mathematical meanings (affine hull two forms, independent event pair, mutually independent indexed family, pairwise independent indexed family, simple graph cycle) and 6 individually source-observed provisional formulations; 6 candidate links and one ProofWiki pairwise-quantifier source-quality hold. Totals provisional population: 1 new source collection, 7 terms, 9 observations, 7 meanings, 9 formulations, 8 candidate relations, 1 open source-quality issue, 3 unresolved target queries. Existing reviewed independent Wave2 registry remains 14 sources/481 terms/953 observations/595 meanings/639 reviewed forms/887 screened relations; frozen Wave1 unchanged; original production never consulted. Discovered rare interruption edge case for versioned revision replay, fixed in main and regression run 39642677860 success. NEXT Batch141: use population/QUEUE.json for breadth in measure/analysis, topology/geometry, algebra/logic. Keep independent sources, provisional status, and deferred reconciliation. Aim ~12-14 active minutes per exchange, commit research packages and verify auto-triggered workflow. Do not prematurely freeze or promote.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
@@ -105,13 +105,13 @@
     }
   },
   "resume_steps": [
-    "Fast resume: read this resume plan, research_pipeline/POPULATION_WORKFLOW.md, and population/STATUS.json plus population/QUEUE.json; do not reread historical Batches1–139 or recertify previous work.",
-    "Next source-based independent breadth task: Batch140 choose unprocessed affine geometry, probability independence, graph cycles, or other topic from population queue; verify source URL, meaning collisions and contextual hypotheses; store new provisional package under population/inbox on GitHub main.",
-    "On inbox commit GitHub Actions research-population-batch.yml runs automatically. Verify run conclusion and the resulting commit/STATUS/QUEUE. If Actions fails, inspect affected run only, correct and retry; do not report queued work completed.",
-    "Defer cross-batch mathematical reconciliation until agreed Wave2 first-pass milestone. Keep source-linked mathematical rationale for each new form and unresolved target_query for missing prerequisites; don't invent links.",
-    "Reconciliation-to-promotion gate exists in research_pipeline/adapters/mathdef/population_promotion.py and tests, but requires explicit version-bound approval after all provisional issues are mathematically reconciled. Never auto-promote, seal, freeze, publish or compare original production before readiness.",
-    "Historical screened independent Wave2 checkpoint AB remains 14 approved source collections, 481 terms, 953 observations, 595 meanings, 639 forms (633 linked/6 justified no-target), 887 acyclic prerequisite links; two new meanings are separate provisional work.",
-    "Maintain generic engine topic-neutral for reuse in theorem or educational terminology repositories; mathematics-specific judgments stay in mathDef adapter."
+    "Read current population/STATUS.json and QUEUE.json, this short resume plan and research_pipeline/POPULATION_WORKFLOW.md; avoid rechecking Batches1–140.",
+    "NEXT Batch141: source-backed independent breadth from not-yet-attempted measure-and-analysis, topology-and-geometry, or algebra-and-logic. Check against screened and provisional meanings for collisions, carefully scope source variants and record any source defect as issues. Do not consult original production mathDef.",
+    "Commit a JSON research package under population/inbox. Consolidated GitHub Actions auto-runs population; verify the exact successful run and changed STATUS.json/QUEUE.json before claiming admission. Do not write new per-batch scripts.",
+    "Keep source, term, observation, meaning, provisional review and link records independent. Missing prerequisite targets stay in target_query for later reconciliation; don't chase recursive breadth without reason.",
+    "Versioned revisions now have interrupted-record replay protection, regression tested. No need to reread historical source screens; validate changed or failed work only.",
+    "After agreed Wave2 first-pass coverage, perform mathematical consistency, individual-link source and scope audits, corrections and the explicit approved promotion gate. Nothing is publication-certified, human peer reviewed, sealed, frozen or comparable with original production before a separate final review.",
+    "Main reviewed independent corpus: 595 meanings, 639 screen-decisioned formulations and 887 cycle-free reviewed links. Provisional corpus after B140: 7 meanings, 9 formulations, 8 candidate links, 3 unresolved targets and 1 source issue."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -135,18 +135,18 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "First live Batch139 auto-triggered population workflow, successfully committed provisional records and priority queue",
+      "purpose": "Batch140 real independent research package auto-admission, 5 meanings and six provisional forms",
+      "run_id": 39642095943
+    },
+    {
+      "previously_reported_conclusion": "success",
+      "purpose": "Revision receipt interruption replay test and full isolated CI, branch merge to main",
+      "run_id": 39642677860
+    },
+    {
+      "previously_reported_conclusion": "success",
+      "purpose": "Batch139 first population pilot",
       "run_id": 39640683758
-    },
-    {
-      "previously_reported_conclusion": "success",
-      "purpose": "Research pipeline test on end-to-end pilot merge",
-      "run_id": 39640683754
-    },
-    {
-      "previously_reported_conclusion": "success",
-      "purpose": "Reconciliation propagation review patch regression tests",
-      "run_id": 39640996372
     }
   ]
 }
