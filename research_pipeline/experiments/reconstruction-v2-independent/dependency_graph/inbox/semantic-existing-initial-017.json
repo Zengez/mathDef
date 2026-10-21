@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-017",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.672a4a502273760f.specializing-continuous-map",
+      "version_sha256": "1038746c06589af601b10602ca93f24b9496d8c9e60bb4b59cd93bad2006f3a8",
+      "complete": true,
+      "review_rationale": "Read the whole specialization-lifting condition and the domain/codomain quantifiers. Reused the existing continuous map and specialization relation meanings without conflating the condition with continuity.",
+      "references": [
+        {
+          "state": "existing",
+          "phrase": "continuous map",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "state": "existing",
+          "phrase": "specialization in Y",
+          "target_meaning_id": "meaning.672a4a502273760f.specialization-topological"
+        },
+        {
+          "state": "existing",
+          "phrase": "specialization in X",
+          "target_meaning_id": "meaning.672a4a502273760f.specialization-topological"
+        },
+        {
+          "state": "external",
+          "phrase": "lifting with f(x)=y",
+          "disposition": "The displayed point-lifting condition is the defining extra requirement rather than an existing separate kind of map."
+        }
+      ]
+    }
+  ]
+}
