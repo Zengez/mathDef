@@ -1,5 +1,69 @@
 # Wave 2 — source-free semantic reference scanning pilot (2026-10-21)
 
+## Latest continuation — batches 028–032, verified 269/659
+
+**Live STATE.json and committed applied receipts supersede this snapshot
+when additional processing has occurred.** The current source-free
+Pass 1 independently reviewed 40 additional complete mathematical
+formulations and recorded 198 occurrence decisions:
+
+| Reviewed batch | Full scans | Occurrences | Verified graph Action |
+|---|---:|---:|---|
+| `semantic-existing-initial-028` | 8 | 34 | [39693084221](https://github.com/Zengez/mathDef/actions/runs/39693084221) |
+| `semantic-existing-initial-029` | 8 | 39 | [39693298117](https://github.com/Zengez/mathDef/actions/runs/39693298117) |
+| `semantic-existing-initial-030` | 8 | 42 | [39693493689](https://github.com/Zengez/mathDef/actions/runs/39693493689) |
+| `semantic-existing-initial-031` | 8 | 38 | [39693679484](https://github.com/Zengez/mathDef/actions/runs/39693679484) |
+| `semantic-existing-initial-032` | 8 | 45 | [39693872778](https://github.com/Zengez/mathDef/actions/runs/39693872778) |
+| **Total continuation** | **40** | **198** | **All five SUCCESS and applied receipts verified** |
+
+Mathematical contexts included integral closure and integral ring maps,
+Noetherian conditions and their equivalent variants, formality and
+unique lifting, scheme base changes and fibres, inertia of fibred
+categories, Japanese and N-1 domains, graded rings, inverse systems,
+complete intersections and ideal sheaves, categorical limits/products
+and colimits/coproducts, the Jacobson radical, finite generation and
+finite presentation of modules, Henselian rings, essentially finite
+type/presentation maps, Artinian conditions, module depth and lattices.
+
+The primary rigor checks were quantifier scope, map direction,
+distinction between local and global constructions, exact ambient
+algebraic objects and separation of related but different notions.
+Unrecognized constructions were recorded as **unassigned occurrences**
+with contextual descriptions rather than declared distinct missing
+mathematical meanings. These internal scans are not source verification,
+mathematical correctness certification, user approval or promotion.
+
+**Verified graph after batch 032:**
+
+- 611 contextual meanings; 659 formulations (639 screened + 20 provisional).
+- **269 full semantic scans; 390 incomplete lexical proposals; zero unscanned.**
+- **366 unassigned** mathematical-reference occurrences; **273 ambiguous**
+  preliminary lexical occurrences.
+- 13 historical missing-candidate records (12 unresolved); 10
+  append-only scan correction events (none newly added in this chunk).
+- All **659 Open**, **0 Closed**. `scan_and_link_existing` phase,
+  invalid consolidation gate and missing-definition research disabled.
+- The latest isolated test Action
+  [39693872723](https://github.com/Zengez/mathDef/actions/runs/39693872723)
+  succeeded, as did all five ingestion Actions. Each batch has its
+  exact SHA receipt at `dependency_graph/applied/ID.json`.
+- The frozen independent Wave1, screened Wave2 formulation text,
+  provisional B139–B142 content and original production mathDef were
+  not modified or consulted; no external definitions were researched,
+  no broadened Batch143 added, no population promotion performed.
+
+**Next deterministic worklist:** First
+`form.96053e8d2dff5465.order-vanishing-one-dimensional`, followed
+by `form.988d26ef7c849694.epimorphism-commutative-rings`,
+`form.9d27e470d02eae69.filtered-category`, and
+`form.9d27e470d02eae69.filtered-colimit`. Re-read the current
+graph STATE/CHECKPOINT, original independent source formulation and
+its version-bound node, validate all existing contextual IDs, and
+continue only source-free Pass 1 scans.
+
+---
+
+
 ## Latest verified continuation: batches 023–027 (229 / 659)
 
 **This section supersedes all older count snapshots.** Current graph
