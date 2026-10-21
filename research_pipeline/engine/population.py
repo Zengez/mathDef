@@ -94,14 +94,20 @@ def validate_package(package, current, parent):
     draft = {k: dict(current[k]) for k in KINDS}
     for kind in KINDS:
         rows = package.get(kind, [])
+        seen_in_batch = set()
         if not isinstance(rows, list):
             raise PipelineError(kind + " must be an array")
         for row in rows:
             if not isinstance(row, dict) or not isinstance(row.get("id"), str) or not row["id"]:
                 raise PipelineError("Missing " + kind + " stable ID")
             key = row["id"]
-            if key in draft[kind] or (kind in parent and key in parent[kind]):
-                raise PipelineError("Existing record cannot be silently overwritten: " + key)
+            if key in seen_in_batch:
+                raise PipelineError("Repeated ID within the same batch: " + key)
+            seen_in_batch.add(key)
+            if kind in parent and key in parent[kind]:
+                raise PipelineError("Previously screened record cannot be overwritten: " + key)
+            if key in draft[kind] and canonical(draft[kind][key]) != canonical(row):
+                raise PipelineError("Conflicting already ingested provisional record: " + key)
             if not all(c.isascii() and (c.isalnum() or c in "-_.") for c in key):
                 raise PipelineError("Unsafe record ID: " + key)
             draft[kind][key] = dict(row)
@@ -216,7 +222,7 @@ def apply(workspace, package_path, dry_run=False, policy=None):
         return {"batch": name, "dry_run": True, "added": {k: len(package.get(k, [])) for k in KINDS}}
     # Write independent draft records; historical screened corpora stay untouched.
     for kind in KINDS:
-        rows = package.get(kind, [])
+        rows = [r for r in package.get(kind, []) if r["id"] not in current[kind]]
         if rows:
             path = root / "population" / "records" / (kind + ".jsonl")
             body = path.read_text(encoding="utf-8") if path.exists() else ""
@@ -229,7 +235,17 @@ def apply(workspace, package_path, dry_run=False, policy=None):
         body += "".join(canonical(r) + "\n" for r in revisions)
         write_atomic(path, body)
     write_atomic(record_path, json.dumps({"id": name, "sha256": incoming,
+                "chat_exchange_id": package.get("chat_exchange_id"),
+                "research_minutes_reported": package.get("research_minutes_reported"),
                 "counts": {k: len(package.get(k, [])) for k in KINDS}}, indent=2) + "\n")
+    post = audit(root)
+    write_atomic(root / "population" / "STATUS.json", json.dumps({
+        "latest_package": name, "draft_counts": post["draft_counts"],
+        "reconciliation_backlog": post["finding_summary"],
+        "revision_count": post["revision_count"], "review_mode": "provisional_population",
+        "main_screened_corpus_untouched": True,
+        "next_action": "Continue independent breadth; defer cross-batch mathematical reconciliation."
+    }, indent=2, ensure_ascii=False) + "\n")
     return {"batch": name, "replayed": False, "status": "committed",
             "added": {k: len(package.get(k, [])) for k in KINDS}}
 
