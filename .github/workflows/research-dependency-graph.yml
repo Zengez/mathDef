@@ -1,0 +1,75 @@
+name: Independent Wave2 dependency graph pilot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research_pipeline/engine/dependency_graph.py'
+      - 'research_pipeline/adapters/mathdef/dependency_scan.py'
+      - 'research_pipeline/tests/test_dependency_graph.py'
+      - '.github/workflows/research-dependency-graph.yml'
+  workflow_dispatch:
+    inputs:
+      proposal_limit:
+        description: "Additional unscanned formulation proposal snapshots (zero for inventory only)"
+        required: false
+        default: '40'
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  graph:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test crash recovery and contextual-linking invariants
+        run: |
+          python -m compileall -q research_pipeline/engine/dependency_graph.py research_pipeline/adapters/mathdef/dependency_scan.py
+          python -m unittest research_pipeline.tests.test_dependency_graph -v
+      - name: Generate and commit isolated inventory and bounded, nonauthoritative graph proposals
+        env:
+          PROPOSAL_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.proposal_limit || '40' }}
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          WORKSPACE="research_pipeline/experiments/reconstruction-v2-independent"
+          GRAPH="$WORKSPACE/dependency_graph"
+          case "$PROPOSAL_LIMIT" in ''|*[!0-9]*) echo "Invalid proposal limit" >&2; exit 1 ;; esac
+          if [ "$PROPOSAL_LIMIT" -gt 100 ]; then echo "Bound at 100 per commit" >&2; exit 1; fi
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python -m research_pipeline.engine.dependency_graph \
+              --workspace "$WORKSPACE" --mode inventory
+            python -m research_pipeline.engine.dependency_graph \
+              --workspace "$WORKSPACE" --mode propose --limit "$PROPOSAL_LIMIT"
+            python -m research_pipeline.engine.dependency_graph \
+              --workspace "$WORKSPACE" --mode queue --limit 10 > /tmp/dependency-queue-summary.json
+            git add -- "$GRAPH"
+            if git diff --cached --name-only | grep -v "^$GRAPH/"; then
+              echo "Write escaped isolated graph workspace" >&2; exit 1
+            fi
+            if git diff --cached --quiet; then echo "No new graph work"; exit 0; fi
+            git commit -m "Checkpoint independent Wave2 dependency inventory and safe scan proposals"
+            if git push origin HEAD:main; then
+              echo "Persisted graph snapshot and bounded pilot"; exit 0
+            fi
+            echo "Concurrent population write: restart from newest committed graph"
+          done
+          echo "Unable to commit graph after retries" >&2
+          exit 1
