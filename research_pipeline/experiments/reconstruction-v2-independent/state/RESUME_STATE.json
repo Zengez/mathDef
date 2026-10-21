@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "b250a503f5557a5ad53e07cdc4676c1e25a8fd1d171230ad51e3c2b499605378"
+    "resume_plan_sha256": "8abd1cf22dc196f4e62b35616796d4943fe6aae331747147285f0c6598860e97"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -13,15 +13,15 @@
     "original_priority_firstpass_records": 192,
     "production_corpus_used": false,
     "review_dispositions": {
-      "linked": 605,
+      "linked": 612,
       "no_supported_target": 6
     },
-    "reviewed_formulations": 611,
-    "screened_contextual_meanings": 577,
-    "screened_relationships": 825,
-    "source_observations": 924,
+    "reviewed_formulations": 618,
+    "screened_contextual_meanings": 583,
+    "screened_relationships": 840,
+    "source_observations": 932,
     "sources": 14,
-    "terms": 465
+    "terms": 469
   },
   "known_blockers": [
     "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
@@ -50,24 +50,26 @@
     "Source audit Batch112: ProofWiki Definition:Directional Derivative says gradient-dot-unit-vector under merely 'gradient exists', mathematically insufficient if gradient denotes existing coordinate partials; counterexample xy/(x²+y²), f(0,0)=0. Source observation .02 deliberately quarantined, not approved mathematical form. Total differentiability is sufficient for equivalent line restriction formula.",
     "Closed metric ball at radius r can strictly contain closure of corresponding open ball in a general metric space (e.g. discrete metric radius 1). Do not infer equality from an overbar notational convention.",
     "The three specifically identified definition dependency target gaps from Batch120 (subgroup, left coset/coset product, real power-series convergence) were source-reviewed and retroactively linked in Batch124; broader undiscovered missing targets may still exist.",
-    "Previously source-held ProofWiki Graph Isomorphism one-way-edge clause and Directional Derivative gradient-only clause still excluded from approved mathematical meanings."
+    "Previously source-held ProofWiki Graph Isomorphism one-way-edge clause and Directional Derivative gradient-only clause still excluded from approved mathematical meanings.",
+    "Batch125 ProofWiki Uniform Convergence Infinite Series section incorrectly writes partial sum s_n(x)=Σ_{k=1}^n f_n(x) rather than Σ f_k(x); source observation held and excluded from screened meanings.",
+    "Batch127 two unscreened prerequisite targets: product topology of function space T^D and eigenvalue of field-linear operator. Require direct source/math review, no fabricated links."
   ],
-  "next_action": "INDEPENDENT Wave2 Batches121–124 VERIFIED, GitHub Actions runs 39515808241 (source), 39516021238 (meanings), 39516259269 (new direct links), 39516609108 (retroactive dependency gaps), all SUCCESS. 14 approved independent source collections, 465 attributed headings, 924 independent source observations, 577 screened mathematical contextual meanings, 611 individually reviewed formulations (605 linked, 6 individually justified no-target, 0 pending), 825 mathematically source-grounded acyclic prerequisite relationships. Batch121 source-intake four terms/five observations; Batch122 five distinct mathematical meanings incl subgroup, left/right cosets, real convergent series, centered real power series; Batch123 eight direct links; Batch124 SIX further retroactive links: three normal subgroup formulations→subgroup, quotient group→left coset, analytic real ordinary generating function→real power series at center 0 and→real series convergence. All historical 819 links retained and all 611 earlier formulation decisions/rationales unchanged (only link IDs appended to five formerly reviewed formulations). Both mathematically suspect source claims (gradient-only directional derivative and forward-only graph isomorphism) still held and not promoted. Frozen independent Wave1 unchanged, five Wave2 stages unsealed, production mathDef corpus never consulted/compared. NEXT Batch125 new mathematical breadth with exact independent source provenance, variants screened separately, adapters subject-specific/engine generic. Read WAVE2_PROGRESS_2026-10-20_X.md.",
+  "next_action": "Independent mathDef Wave2 Batches125–127 VERIFIED: Actions 39525344705 source intake SUCCESS, 39525525324 mathematical scope SUCCESS, 39525835162 15 reviewed prerequisite links SUCCESS. Totals: 14 approved independent sources, 469 term headings, 932 source observations (3 held potentially erroneous source claims, all excluded), 583 mathematically screened contextual meanings, 618 individually reviewed formulations (612 linked, 6 justified no-supported-target, zero pending), 840 individually source-screened noncircular prerequisite links. New topics: pointwise convergence of real functions and topological maps; uniform convergence to metric/real targets; locally uniform convergence from topological source to metric target; nonzero eigenvectors of field-linear operators with equivalent Av=λv and nonzero kernel(A−λI) variants. Source held ProofWiki Uniform Convergence bad partial-sum indexing Σf_n instead of Σf_k, in addition to earlier held defective graph-isomorphism and directional-derivative variants. All 825 earlier links and 611 unrelated individual reviews preserved. Missing target candidates: function-space product topology and independently screened eigenvalue of K-linear operator (not invented). Frozen Wave1 unchanged, five Wave2 stages UNSEALED, production corpus not consulted. NEXT Batch128: bounded independent cross-field source discovery, optional target recovery and retroactive source-review, maintain topic-neutral generic engine. Read research_pipeline/WAVE2_PROGRESS_2026-10-20_Y.md.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
-      "rows": 577,
-      "sha256": "caaac0fcbc70060f8db15552f079feb9615cc897f06685538353d185a1945ba7"
+      "rows": 583,
+      "sha256": "1077c70e2ec16ce57e88dab92b7559f21924bb17fad0f8dd70bed89985cf7ba7"
     },
     "current_link_stage": {
-      "record_digest": "fd0bb0ab1fe3e88b70ff07f127cfe1c09fd206da30060a8579d3bd0ed1b3f5b1",
+      "record_digest": "426d5bd52c003fbfa9abf7c3b3b5b66b89439869c4757b323a6320a0578a0cc6",
       "sealed": false,
-      "sha256": "dfc4a6ef7faaced68b833f80f1ea1585524bb8fd5ee891564487b08bd1ef4c90",
-      "total": 825
+      "sha256": "faff953063435212c7b599067e11513fa7c98f4fb86211fcc2e5dc564c96465b",
+      "total": 840
     },
     "definition_links": {
-      "rows": 825,
-      "sha256": "7c8a30b483d161a2963f98f4c10fb609a39d52f6992e21d00c957d28da92a4b5"
+      "rows": 840,
+      "sha256": "2d011fa4a7e2d1520f4907b6e6892fe70f8a3dfba0a6c3355c5767164e0f818d"
     },
     "firstpass_priorities": {
       "rows": 192,
@@ -75,23 +77,23 @@
     },
     "individual_link_reviews": {
       "decisions": {
-        "linked": 605,
+        "linked": 612,
         "no_supported_target": 6
       },
-      "rows": 611,
-      "sha256": "20f583642268262f3efe4b4a9d78aed40e9653738353c9a256e1ed8beb098ae6"
+      "rows": 618,
+      "sha256": "b45f7eb36c79189ddbe305408cfb170aff8054f0ae62a37c598856697df0aefd"
     },
     "source_observations": {
-      "rows": 924,
-      "sha256": "06e2be0a21fa1df298fe22c6f355cc03876a9523ffe5296edfd88ed87b8bb503"
+      "rows": 932,
+      "sha256": "1f5190055b9f84da7f7fa6e44b665d4470ea4304496b16505b3a5b1777ea4735"
     },
     "sources": {
       "rows": 14,
       "sha256": "b122833748dff90cb025f4dd82393fdf428f2bf339531675280eb49312c0a38b"
     },
     "term_headings": {
-      "rows": 465,
-      "sha256": "00849c421dc1f20725948ece6172e9c6fa3d961bc206bf2a40e1c064b2ee1e34"
+      "rows": 469,
+      "sha256": "dd51eeefacd12918f0a8e3e046ef41ff44e73d984e35986c45faf88ba688ad4d"
     },
     "wave2_lineage": {
       "first_wave_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
@@ -100,15 +102,16 @@
     }
   },
   "resume_steps": [
-    "Read this short adapter resume plan and generated research state/RESUME_STATE.json first. No full chronological checkpoint audit.",
-    "Confirm latest GitHub main SHA and four success runs Batch121–124, or newer changed research state.",
-    "Trust existing 611 individually reviewed formulations (605 linked, 6 justified no-target, 0 pending) and 825 acyclic links when hash/validation matches; do not repeat completed Batches94–124.",
-    "Newly recovered independent subgroup, two distinct coset orientations, finite-real-limit series and unevaluated centered real power-series meaning are screened; old normality, quotient and OGF forms gained six specifically approved retroactive links without altering their prior decisions.",
-    "Both held weak ProofWiki source statements remain source observations only: gradient existence insufficient for directional derivative, forward-edge preservation insufficient for simple graph isomorphism.",
-    "Broaden independent research into fresh mathematical areas and check current independent meanings for collisions; preserve distinct mathematical contexts and equivalent variants. Follow direct source rights and exact locator provenance.",
-    "Keep generic reusable research engine subject-neutral; math rules and mathematical review policies only in mathDef adapter.",
-    "Frozen independent Wave1 untouched, all five Wave2 stages unsealed and no original production mathDef corpus comparison until independent reconstruction freeze.",
-    "Work approximately 12–14 active minutes, commit complete separate stages and refresh portable checkpoint before timeout."
+    "Read this short resume plan and generated state/RESUME_STATE.json before working, not the full chronological work archive.",
+    "Verify current main SHA and three successful workflows 39525344705, 39525525324, 39525835162, plus any newer research-affecting runs.",
+    "Trust 618 individual review dispositions (612 linked, 6 no-target) and 840 noncircular mathematical source-specific prerequisites if frozen digest and validation match; do not repeat Batches94–127.",
+    "Preserve three historical source-held statements unpromoted: insufficient gradient-only directional derivative, forward-only edge-preserving graph 'isomorphism', uniform-series partial-sum f_n/f_k indexing error.",
+    "Retain real pointwise x-specific N, metric uniform global-in-domain N, locally uniform neighborhood U_x and nonzero linear-operator eigenvector requirements. Keep equivalent eigenvector forms in one meaning.",
+    "Missing screened targets from Batch127: T^D product topology and a field-linear-operator eigenvalue meaning; source these independently if relevant before retroactive exact prerequisite links, without inventing evidence.",
+    "Broaden independent mathematical source coverage rather than recursively filling only recently researched foundational links; collision-check existing independent meanings and contexts.",
+    "Generic engine remains topic-neutral for future math theorems and math-education terminology; mathematics-specific decisions live in mathDef adapter.",
+    "Frozen independent Wave1 unchanged, five Wave2 stages UNSEALED, production corpus never inspected/compared until independent reconstruction freeze.",
+    "Use bounded ~12–14-minute intervals with committed source/math/link stages and verified checkpoint before ending."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -118,8 +121,8 @@
       "sha256": "aeebc436b42634812ad521a742d530cf44e2f342616b0f46e6c1b3da10d7c6ec"
     },
     "wave2_research_support": {
-      "files": 751,
-      "sha256": "85749c6e79ad0383768a121bd50059b40b225e3226440bd9dcdacdb7ea9cdd83"
+      "files": 769,
+      "sha256": "db4e9aa2d9f9b606b83d63b3f1fa7e62022420e9d7da90825111560e99aded38"
     }
   },
   "verification_limitations": [
@@ -132,23 +135,18 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch124 six reviewed retroactive links; preserve prior 819 edges and all earlier formulation decisions",
-      "run_id": 39516609108
+      "purpose": "Batch127 15 exact reviewed convergence/eigenvector prerequisites and all historic 825 links preserved",
+      "run_id": 39525835162
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch123 eight new subgroup coset and real series screened direct dependencies, historic 811 links preserved",
-      "run_id": 39516259269
+      "purpose": "Batch126 six scoped meanings and seven accepted formulations; erroneous source statement excluded",
+      "run_id": 39525525324
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch122 five mathematically screened contextual meanings and five forms; 606 prior dispositions kept",
-      "run_id": 39516021238
-    },
-    {
-      "previously_reported_conclusion": "success",
-      "purpose": "Batch121 four directly sourced term headings and five individual observations",
-      "run_id": 39515808241
+      "purpose": "Batch125 four directly screened source topics, eight individual observations with one uniform-series indexing error quarantined",
+      "run_id": 39525344705
     }
   ]
 }
