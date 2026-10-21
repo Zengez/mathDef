@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.57385eed4f89f154.exact-functor",
   "version_sha256": "ebdccecda32d98e2af1b8974372f618807047add436d406282f3402fe772b4db",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "state": "existing",
+      "phrase": "functor",
+      "target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "occurrence_id": "occ.7d46ecb5a1de2e3d4f59"
+    },
+    {
+      "state": "existing",
+      "phrase": "finite limits",
+      "target_meaning_id": "meaning.4b9834a2990971e9.finite-limit",
+      "occurrence_id": "occ.d54e8cd6d89fccd9741c"
+    },
+    {
+      "state": "existing",
+      "phrase": "finite colimits",
+      "target_meaning_id": "meaning.4b9834a2990971e9.finite-colimit",
+      "occurrence_id": "occ.ec0591cadc6d14bda5f7"
+    },
+    {
+      "state": "unassigned",
+      "phrase": "preserves both finite limits and finite colimits",
+      "context": "Category theory: functorial preservation of limiting and colimiting cones and their universal properties",
+      "occurrence_id": "occ.b3368c30a74692cc11d0"
+    },
+    {
+      "state": "external",
+      "phrase": "left exact and right exact",
+      "disposition": "The two terms are the stated directions of finite-limit and finite-colimit preservation; this is not the additive or abelian-category sequence-exactness definition.",
+      "occurrence_id": "occ.545f0296b199761c782b"
+    }
+  ],
+  "snapshot_sha256": "44ae22a9bd9ff66e82c1eebbd6dffcbcc0f444be84b3caeeeef267ea52b0cf37",
+  "review_rationale": "Read the exact-functor statement in its own finite-limit/finite-colimit category-theoretic context, linked both categorical notions, and expressly distinguished it from other senses of exactness involving exact sequences."
 }
