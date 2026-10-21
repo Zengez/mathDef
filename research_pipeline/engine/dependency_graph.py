@@ -742,12 +742,14 @@ def research_queue(workspace, limit=20):
     candidates = [x for x in candidates if x["status"] == "unresearched"]
     candidates.sort(key=lambda x: (-x["upstream_formulation_count"],
                          -x["occurrence_count"], x["id"]))
+    permitted = phase == "research_missing_dependencies"
     return {"phase": phase, "breadth_batch_143": "on_hold",
-        "missing_research_permitted": phase == "research_missing_dependencies",
+        "missing_research_permitted": permitted,
         "unassigned_occurrences": state["unassigned_occurrences"],
         "ambiguous_occurrences": state["ambiguous_occurrences"],
-        "requires_source_research_and_explicit_review": True,
-        "candidates": candidates[:limit],
+        "requires_source_research_and_explicit_review": permitted,
+        "candidates": candidates[:limit] if permitted else [],
+        "candidate_preview_only": candidates[:limit] if not permitted else [],
         "remaining": max(0, len(candidates) - limit)}
 
 
@@ -857,6 +859,48 @@ def scan_worklist(workspace, limit=10):
             "total_remaining": len(todo), "items": items}
 
 
+def consolidation_worklist(workspace, limit=20):
+    """Read-only grouping of unresolved occurrences, NOT meaning equivalence."""
+    graph = graph_path(workspace)
+    inv = read(graph / "INVENTORY.json")
+    if not inv:
+        raise PipelineError("Build inventory before grouping unresolved occurrences")
+    state = read(graph / "STATE.json", {}).get("summary", {})
+    groups = defaultdict(list)
+    rows = []
+    source = graph / "unresolved_occurrences.jsonl"
+    if source.is_file():
+        rows = [json.loads(line) for line in source.read_text(encoding="utf-8").splitlines()
+                if line.strip()]
+    for occurrence in rows:
+        groups[norm(occurrence["phrase"])].append(occurrence)
+    ordered = sorted(groups.items(), key=lambda kv: (-len(kv[1]), kv[0]))
+    batch = []
+    for phrase, occurrences in ordered[:max(0, limit)]:
+        occurrences = sorted(occurrences, key=lambda r:
+                             (r["from_formulation"], r["occurrence_id"]))
+        batch.append({
+            "surface_key": phrase, "occurrence_count": len(occurrences),
+            "distinct_formulation_count": len(set(o["from_formulation"] for o in occurrences)),
+            "contexts": sorted(set(o.get("context", inv["formulations"][o["from_formulation"]]["context"])
+                                   for o in occurrences)),
+            "observations": [{"formulation_id": o["from_formulation"],
+                              "occurrence_id": o["occurrence_id"],
+                              "phrase": o["phrase"], "state": o["state"],
+                              "context": o.get("context", ""),
+                              "candidate_meaning_ids": o.get("candidate_meaning_ids", []),
+                              "missing_candidate_id": o.get("missing_candidate_id"),
+                              "reason": o.get("reason", "")}
+                             for o in occurrences],
+            "warning": "Surface grouping only; homonyms MUST be split by mathematical context."
+        })
+    return {"phase": state.get("phase"), "initial_scan_complete":
+                state.get("scan_complete") == state.get("total_formulations"),
+            "external_definition_research_permitted": state.get("consolidation_gate_valid", False),
+            "total_unresolved_occurrences": len(rows), "distinct_surface_keys": len(groups),
+            "groups": batch}
+
+
 def seal_consolidation(workspace, event):
     """Explicit reviewed phase barrier; stale/new occurrences invalidate it."""
     graph = graph_path(workspace)
@@ -883,7 +927,7 @@ def seal_consolidation(workspace, event):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--workspace", type=Path, required=True)
-    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "amend", "resolve", "alias", "consolidate", "apply_inbox", "worklist", "status", "tree", "queue"),
+    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "amend", "resolve", "alias", "consolidate", "apply_inbox", "worklist", "consolidation_worklist", "status", "tree", "queue"),
                    required=True)
     p.add_argument("--adapter", default="research_pipeline.adapters.mathdef.dependency_scan")
     p.add_argument("--limit", type=int, default=30)
@@ -935,6 +979,8 @@ def main():
         result = seal_consolidation(args.workspace, batch["gate"])
     elif args.mode == "worklist":
         result = scan_worklist(args.workspace, max(0, args.limit))
+    elif args.mode == "consolidation_worklist":
+        result = consolidation_worklist(args.workspace, max(0, args.limit))
     elif args.mode == "apply_inbox":
         result = apply_inbox(args.workspace, max(0, args.limit))
     elif args.mode == "tree":
