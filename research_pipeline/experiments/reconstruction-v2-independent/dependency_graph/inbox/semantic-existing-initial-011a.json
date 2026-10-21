@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-011a",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.42730c7ef758df2a.two-fibre-product",
+      "version_sha256": "6ac7777172e0e277374dbd2bf536a2586ec4e87cbdff2f4b53fac2255226e437",
+      "complete": true,
+      "review_rationale": "Read higher-categorical 2-fibre-product universality and connected it to the existing (2,1)-category and 2-finality meanings, retaining pseudocone data.",
+      "references": [
+        {
+          "phrase": "(2,1)-category",
+          "state": "existing",
+          "target_meaning_id": "meaning.0bf601085c1029d4.two-one-category",
+          "matching_note": "All 2-morphisms in the ambient higher category are invertible."
+        },
+        {
+          "phrase": "terminal object in the 2-categorical sense",
+          "state": "existing",
+          "target_meaning_id": "meaning.42730c7ef758df2a.two-final-object",
+          "matching_note": "The terminal property is evaluated 2-categorically."
+        },
+        {
+          "phrase": "invertible 2-morphism between maps W→Z",
+          "state": "unassigned",
+          "context": "Higher category theory: coherence isomorphism of 1-morphisms defining a pseudocone",
+          "reason": "The coherence 2-cell is additional data for a pseudo-pullback."
+        },
+        {
+          "phrase": "maps W→X and W→Y",
+          "state": "unassigned",
+          "context": "Higher category theory: pseudocone over a span in a (2,1)-category",
+          "reason": "The maps and coherence arrow form a cone, not necessarily a universal object."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.42730c7ef758df2a.two-final-object",
+      "version_sha256": "8d245a0d546cefe2343c7439ce331b4f0607faca48d92a8409e6958cf53d03d7",
+      "complete": true,
+      "review_rationale": "Reviewed the final-object condition of a (2,1)-category without collapsing it into ordinary 1-category terminality.",
+      "references": [
+        {
+          "phrase": "(2,1)-category",
+          "state": "existing",
+          "target_meaning_id": "meaning.0bf601085c1029d4.two-one-category",
+          "matching_note": "The ambient category has invertible 2-morphisms."
+        },
+        {
+          "phrase": "1-morphism Y→T",
+          "state": "unassigned",
+          "context": "Higher category theory: 1-cell from any object to a final object",
+          "reason": "Existence of 1-cells is part of the higher-categorical finality condition."
+        },
+        {
+          "phrase": "exactly one 2-morphism connecting any two",
+          "state": "unassigned",
+          "context": "Higher category theory: contractible Hom-groupoid in a (2,1)-category",
+          "reason": "Unique comparison 2-cells characterize finality, not ordinary terminality."
+        },
+        {
+          "phrase": "final object",
+          "state": "external",
+          "disposition": "The special (2,1)-categorical final-object property is the meaning being defined; ordinary 1-category finality is not its dependency."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.428415804368c582.stone-cech-compactification",
+      "version_sha256": "a4815fdbf61056ddfeca41dfe6a4dd4b9271e64a413294afe8197d338be29d13",
+      "complete": true,
+      "review_rationale": "Reviewed universal-map Stone–Čech compactification through topological continuity, compactness and Hausdorffness, retaining its source-specific factorization requirement.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space",
+          "matching_note": "The source has an arbitrary topology."
+        },
+        {
+          "phrase": "continuous map",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+          "matching_note": "Both η and the universal extension maps are continuous."
+        },
+        {
+          "phrase": "compact space",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.broad67.compact-topological-space",
+          "matching_note": "The compact Hausdorff target has the open-cover compactness property."
+        },
+        {
+          "phrase": "Hausdorff space",
+          "state": "existing",
+          "target_meaning_id": "meaning.e62923cd8ef99cd1.hausdorff-space",
+          "matching_note": "The target also satisfies the Hausdorff separation condition."
+        },
+        {
+          "phrase": "factors uniquely through a continuous map",
+          "state": "unassigned",
+          "context": "Topology: universal mapping property for compact Hausdorff targets",
+          "reason": "The unique extension condition does not itself assert a dense embedding of every source X."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.4406a87f2ff9b7d8.field-norm",
+      "version_sha256": "7fd105a414defa0013fbdaea9b34773b8ee833addef82d18beb5df16a5651fb2",
+      "complete": true,
+      "review_rationale": "Reviewed field norm by determinant of multiplication as a linear map of finite-dimensional extensions.",
+      "references": [
+        {
+          "phrase": "finite extension L/K",
+          "state": "existing",
+          "target_meaning_id": "meaning.4777518984e96a98.finite-field-extension",
+          "matching_note": "Field norm uses a finite-dimensional field extension."
+        },
+        {
+          "phrase": "K-linear endomorphism L→L",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.field-vector-linear",
+          "matching_note": "Multiplication by α defines a K-linear endomorphism."
+        },
+        {
+          "phrase": "determinant over K",
+          "state": "unassigned",
+          "context": "Linear algebra: determinant of a K-linear endomorphism of finite-dimensional vector space",
+          "reason": "The determinant is a general linear-algebra object, distinct from field norm."
+        },
+        {
+          "phrase": "multiplication-by-α",
+          "state": "unassigned",
+          "context": "Field theory: multiplication endomorphism m_α:x↦αx of extension L",
+          "reason": "This construction also appears in the trace definition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.4406a87f2ff9b7d8.field-trace",
+      "version_sha256": "d25e2ff89e7977a80db39deb7e25a38e2d18050e1da3366c40630dce323cd428",
+      "complete": true,
+      "review_rationale": "Reviewed field trace through the trace of multiplication as a K-linear endomorphism, distinct from field norm.",
+      "references": [
+        {
+          "phrase": "finite extension L/K",
+          "state": "existing",
+          "target_meaning_id": "meaning.4777518984e96a98.finite-field-extension",
+          "matching_note": "Field trace is defined for finite field extensions."
+        },
+        {
+          "phrase": "K-linear endomorphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.field-vector-linear",
+          "matching_note": "Multiplication by α is linear over K."
+        },
+        {
+          "phrase": "trace over K",
+          "state": "unassigned",
+          "context": "Linear algebra: trace of a K-linear endomorphism of finite-dimensional vector space",
+          "reason": "The matrix trace is used to define the field trace."
+        },
+        {
+          "phrase": "multiplication x↦αx",
+          "state": "unassigned",
+          "context": "Field theory: multiplication endomorphism of extension L considered as K-vector space",
+          "reason": "This shares the field-norm multiplication construction."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.445e8dc5147c408d.tensor-algebra",
+      "version_sha256": "703d86e9211c2742ea41b0ba0bd784f9b95c506839d5248d6fcb3298b9e84fd7",
+      "complete": true,
+      "review_rationale": "Reviewed tensor algebra as graded sum of tensor powers with concatenation multiplication, preserving the structural algebraic prerequisites.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "M is a module over R."
+        },
+        {
+          "phrase": "tensor powers of M",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+          "matching_note": "The n-fold tensor powers iterate the module tensor product."
+        },
+        {
+          "phrase": "graded associative R-algebra",
+          "state": "unassigned",
+          "context": "Graded algebra: tensor algebra with multiplication preserving nonnegative grading",
+          "reason": "The graded algebra structure is separate from the underlying R-module."
+        },
+        {
+          "phrase": "direct sum of tensor powers",
+          "state": "unassigned",
+          "context": "Module theory: countable direct sum indexed by nonnegative tensor degrees",
+          "reason": "The direct sum forms the graded module underlying tensor algebra."
+        },
+        {
+          "phrase": "multiplication by concatenation of tensors",
+          "state": "unassigned",
+          "context": "Multilinear algebra: tensor concatenation product T^m(M)×T^n(M)→T^{m+n}(M)",
+          "reason": "This is the algebra multiplication, beyond ordinary module tensor product."
+        }
+      ]
+    }
+  ]
+}
