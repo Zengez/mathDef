@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.50d335de00e5f11d.algebraic-extension",
   "version_sha256": "aed6b1eb292cb2676102d7fa12ab83fb7e9f0ef30307234b07d742e4b3fe01ce",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "extension K/k of fields",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "occurrence_id": "occ.da70982d04b166074942"
+    },
+    {
+      "phrase": "every element α∈K satisfies a nonzero polynomial with coefficients in k",
+      "state": "existing",
+      "target_meaning_id": "meaning.d0a078e59e1495da.algebraic-element-extension",
+      "occurrence_id": "occ.e7ba97c9f997613c4058"
+    },
+    {
+      "phrase": "polynomial with coefficients in k",
+      "state": "unassigned",
+      "context": "Algebra: polynomial ring k[T] over a field and evaluation at an extension element",
+      "occurrence_id": "occ.6025dbaf9f73fb23ce82"
+    },
+    {
+      "phrase": "every element α∈K",
+      "state": "external",
+      "disposition": "Universal quantifier over the extension, not a finiteness or transcendence assertion.",
+      "occurrence_id": "occ.aba9f0c1d4e6775add96"
+    }
+  ],
+  "snapshot_sha256": "d3c151f807795a8c84a6985934d11f2d058841056829acc77e0f15217c7b753d",
+  "review_rationale": "Read the whole algebraicity criterion and matched the synonym extension field to the actual existing field-extension meaning, with the algebraic-element definition capturing polynomial vanishing. Kept polynomial-ring evaluation separate for later contextual matching."
 }

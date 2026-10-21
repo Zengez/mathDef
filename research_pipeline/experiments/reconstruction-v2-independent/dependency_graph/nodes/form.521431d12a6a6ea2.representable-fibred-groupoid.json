@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.521431d12a6a6ea2.representable-fibred-groupoid",
   "version_sha256": "0bc1d22d7b0a7e9f87b03404148378159955af93869081c87e3c2fa91d710922",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category p:S→C fibred in groupoids",
+      "state": "existing",
+      "target_meaning_id": "meaning.5e4b8f6efeda6522.category-fibred-in-groupoids",
+      "occurrence_id": "occ.303e9dc2a2d8bc1a14b9"
+    },
+    {
+      "phrase": "equivalence over C",
+      "state": "existing",
+      "target_meaning_id": "meaning.ec5e3a0d13f85f3a.equivalence-objects-two-category",
+      "occurrence_id": "occ.f1af5ff6bfe0bffca3d9"
+    },
+    {
+      "phrase": "categories over C",
+      "state": "existing",
+      "target_meaning_id": "meaning.56119d315cf02fdf.two-category-over-base",
+      "occurrence_id": "occ.90fedb61cc9fb64ed563"
+    },
+    {
+      "phrase": "slice category C/X",
+      "state": "unassigned",
+      "context": "Category theory: overcategory or slice category whose objects are arrows into X",
+      "occurrence_id": "occ.5aa4d35d562e6640728c"
+    },
+    {
+      "phrase": "there exists an object X of C",
+      "state": "external",
+      "disposition": "Existence of a representing object, not an assertion that the fibred category is representable by a scheme.",
+      "occurrence_id": "occ.b7ea769e7bdd05ba6420"
+    }
+  ],
+  "snapshot_sha256": "89d55323ed23d1783a7cbf52f21c218f97e0a13985345df12e6a6d7dc3675e9d",
+  "review_rationale": "Reviewed the entire fibred-groupoid representability criterion, distinguished equivalence in the 2-category of categories over C from an ordinary set-valued representable functor, and preserved the overcategory C/X as an unassigned construction."
 }

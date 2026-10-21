@@ -2,23 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.50d335de00e5f11d.normal-algebraic-extension",
   "version_sha256": "254320894f454eff5be8a09e05df72c0918f9c35602cf3db26d4cb4d0474b2bf",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "algebraic extension",
-      "span": [
-        3,
-        22
-      ],
+      "phrase": "algebraic extension K/k",
       "state": "existing",
-      "target_meaning_id": "meaning.d0a078e59e1495da.algebraic-field-extension",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.f065f149a7a565d68d0f"
+      "target_meaning_id": "meaning.50d335de00e5f11d.algebraic-extension",
+      "occurrence_id": "occ.3373a163cfcf1c992683"
+    },
+    {
+      "phrase": "irreducible polynomial over k",
+      "state": "unassigned",
+      "context": "Field theory: irreducible polynomial over the base field k, not necessarily separable",
+      "occurrence_id": "occ.f322f3538b58b9161b63"
+    },
+    {
+      "phrase": "splits completely into linear factors over K",
+      "state": "unassigned",
+      "context": "Field theory: polynomial splitting as product of linear factors over an extension field",
+      "occurrence_id": "occ.e2e3ad2a4ec28fce9298"
+    },
+    {
+      "phrase": "one root in K",
+      "state": "external",
+      "disposition": "A polynomial root is an element satisfying the polynomial equation; the hypothesis is conditional, not a request for a distinguished primitive element.",
+      "occurrence_id": "occ.d132418a7f170d0489ac"
     }
   ],
-  "snapshot_sha256": "3e08be9b456917b3b98436d5e2402a9bc4b0371c1ddbbc23b96e52e1ff1e83aa",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "8b208fdc27c963422c01d9fba21eda650f0f19fb7f588dc43b89c00f1557878b",
+  "review_rationale": "Reviewed the complete irreducible-polynomial criterion for normality, preserving the irreducible-polynomial and complete-splitting conditions without incorrectly identifying ordinary irreducibility with separability or linking to the splitting-field construction itself."
 }

@@ -2,23 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.50d335de00e5f11d.galois-extension-review",
   "version_sha256": "604ba90f6ca5e1c829eb9e157356a93dfce56848ce704f714ff567ea6504fd22",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "algebraic extension",
-      "span": [
-        3,
-        22
-      ],
+      "phrase": "algebraic extension K/k",
       "state": "existing",
-      "target_meaning_id": "meaning.d0a078e59e1495da.algebraic-field-extension",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.b7d1ea0cc191afce0402"
+      "target_meaning_id": "meaning.50d335de00e5f11d.algebraic-extension",
+      "occurrence_id": "occ.cbde20de1f58b15080a1"
+    },
+    {
+      "phrase": "separable",
+      "state": "existing",
+      "target_meaning_id": "meaning.50d335de00e5f11d.separable-algebraic-extension",
+      "occurrence_id": "occ.7685c282e79846365e74"
+    },
+    {
+      "phrase": "normal",
+      "state": "existing",
+      "target_meaning_id": "meaning.50d335de00e5f11d.normal-algebraic-extension",
+      "occurrence_id": "occ.2de1c4d6eb98c9492e4c"
+    },
+    {
+      "phrase": "both separable and normal over k",
+      "state": "external",
+      "disposition": "Conjunction of two distinct requirements on the same algebraic extension; no additional Galois-group condition is introduced by the wording.",
+      "occurrence_id": "occ.423ae002882bdbc20358"
     }
   ],
-  "snapshot_sha256": "476626f2c58c1c1a9ca26a78cf5d54a481b144e04776c151d78a180b5d4cdfac",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "f5ee552b81a9fdfdf4d9c3b2d97fae84d3a8d50a98703b0b55b338a22c106965",
+  "review_rationale": "Inspected the entire characterization of a Galois algebraic extension and linked precisely its algebraic, separable and normal prerequisites, without adding a spurious primitive-element or Galois-group dependency."
 }
