@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-019",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.6a21c2d4f3354c8f.reduced-induced-closed-subscheme",
+      "version_sha256": "3492b7b67d6eb111f28d2b6af6ab4279eef9bae8b2e09500ef4ec45c7a6f1fc2",
+      "complete": true,
+      "review_rationale": "Read the whole reduced induced closed subscheme definition. Distinguished the underlying closed subset from its scheme structure, reduction, and the uniqueness among reduced closed subschemes.",
+      "references": [
+        {
+          "phrase": "scheme X",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine"
+        },
+        {
+          "phrase": "reduced closed subscheme",
+          "state": "existing",
+          "target_meaning_id": "meaning.6a21c2d4f3354c8f.reduced-scheme"
+        },
+        {
+          "phrase": "closed subscheme of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f376cdea16a26da.closed-immersion-locally-ringed-space"
+        },
+        {
+          "phrase": "closed subset T",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "underlying topological space of a subscheme",
+          "state": "unassigned",
+          "context": "Algebraic geometry: underlying topological space of a closed subscheme with inherited topology"
+        },
+        {
+          "phrase": "unique reduced structure on T",
+          "state": "external",
+          "disposition": "Uniqueness is confined to the induced reduced closed subscheme, not all schemes with the same closed underlying set."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.6a21c2d4f3354c8f.reduced-scheme",
+      "version_sha256": "fdadc3d2f143911fdb1f60d8c7903714adc0286b719a711cb6d112e653aacaab",
+      "complete": true,
+      "review_rationale": "Read every clause of pointwise reducedness of the local rings of a scheme, distinguishing the structure-sheaf stalk from section rings and the reduced-ring condition from weaker absence of zero divisors.",
+      "references": [
+        {
+          "phrase": "scheme X",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine"
+        },
+        {
+          "phrase": "local ring O_{X,x}",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "reduced ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.reduced-ring"
+        },
+        {
+          "phrase": "stalk O_{X,x}",
+          "state": "unassigned",
+          "context": "Sheaf theory: stalk of the scheme structure sheaf at a point x"
+        },
+        {
+          "phrase": "for each point x",
+          "state": "external",
+          "disposition": "The definition requires every local ring to be reduced; a single reduced stalk is insufficient."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.6a21c2d4f3354c8f.reduced-scheme-sections-equivalent",
+      "version_sha256": "d1083f3ccd9beb9f381af47dc5b765a0f36786fbc62cd927bb1191353d96060f",
+      "complete": true,
+      "review_rationale": "Examined the entire equivalent sectionwise characterization of a reduced scheme, retaining the quantifier over all open U rather than checking only global sections.",
+      "references": [
+        {
+          "phrase": "scheme X",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine"
+        },
+        {
+          "phrase": "ring O_X(U) has no nonzero nilpotents",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.reduced-ring"
+        },
+        {
+          "phrase": "sections O_X(U) over open U",
+          "state": "unassigned",
+          "context": "Sheaf theory: section ring of the scheme structure sheaf over an open subset"
+        },
+        {
+          "phrase": "every open subset U",
+          "state": "external",
+          "disposition": "Universal quantification is over all opens, not just affines or the full space."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.6a3376e5ecb82bfb.topology-basis",
+      "version_sha256": "a7bc3b5148e132fc44f8010f0d456f24c3e014249c120b46f28f283e449647a8",
+      "complete": true,
+      "review_rationale": "Reviewed the full pointwise neighborhood-refinement characterization of a basis and its containment quantifiers without countability or metrizability assumptions.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "open sets",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "family B of open sets",
+          "state": "unassigned",
+          "context": "Set theory: family of subsets, here all open in X"
+        },
+        {
+          "phrase": "some basis member contains x and lies in U",
+          "state": "external",
+          "disposition": "The defining basis condition is local refinement for every x in every open U."
+        }
+      ]
+    }
+  ]
+}
