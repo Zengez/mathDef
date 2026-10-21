@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "work_budget_minutes_target": 12,
-  "next_action": "LATEST VERIFIED 2026-10-21 — SOURCE-FREE DEPENDENCY-FIRST PASS 1: Existing independent inventory remains 611 contextual meanings, 659 formulations (639 screened + 20 earlier provisional), unchanged. Full contextual semantic scans now 78/659 (581 lexical-only pending). In this Chat, three batches semantic-existing-initial-005, -006, -007 added 36 full source-free scans and 184 occurrence decisions, all verified by graph Actions 39676180583, 39676750624, 39677495139 and saved applied receipts. Six earlier unassigned references to 'field extension K/k' were corrected via append-only semantic-existing-correction-field-extension-001 (run 39677088365), mapping to preexisting meaning.7210832bc589f307.field-extension ('extension field'); 6 amendment events. Current graph: 128 unassigned occurrences, 377 preliminary ambiguous occurrences, 13 candidate missing rows/12 unresolved, all 659 Open, none Closed, phase scan_and_link_existing, no consolidation gate and NO missing-definition research permitted. Avoid external lookup, new terms, general breadth Batch143, global candidate consolidation until all initial formulation contents are completely semantically scanned. NEXT: Read research_pipeline/DEPENDENCY_FIRST_WORKFLOW.md and WAVE2_SOURCE_FREE_SCAN_PROGRESS_2026-10-21.md; check live dependency_graph STATE/CHECKPOINT, execute --mode worklist --limit 8, process next bounded reviewed source-free items; verify exact target IDs AND SHA anchors against inventory/nodes before committing graph/inbox ingests; verify workflow success/receipt. The old field-extension correction task is COMPLETE. Never touch frozen Wave1 or compare with original production mathDef.",
+  "next_action": "LATEST VERIFIED 2026-10-21 SOURCE-FREE PASS 1: live independent dependency graph has 611 existing contextual meanings; 659 formulations; 152 completed full semantic scans (previous chat 126 + 26 this chat in batches semantic-existing-initial-012, -013 and -014); 507 lexical-only pending; 0 unscanned. All three new inbox packages have succeeded and have verified receipt records, with GitHub graph runs 39687479871 (012), 39687813998 (013), 39688077352 (014). This chat added 123 reviewed reference decisions. Current live graph unassigned=243, ambiguous lexical=333, amendment events=10, missing candidate records=13 with 12 unresolved; open=659/659, phase=scan_and_link_existing, no consolidation gate. Recover the live STATE.json first; it always supersedes this plan if newer. NEXT: worklist --limit 8; first next formulation is form.5b6d4a7f88629b12.left-adjoint (followed by form.5d1733b1dcffde12.universal-square-zero-thickening), not any previously processed 012-014. Read entire source-free math text, find existing contextual-meaning links, save unresolved as unassigned, validate every target ID and active node SHA, commit batch, verify Action and applied receipt. DO NOT consult original production mathDef, external mathematical sources, or begin Pass 2/3, term additions, broadened Batch143, freeze, promotion, or certification.",
   "resume_steps": [
-    "Read research_pipeline/DEPENDENCY_FIRST_WORKFLOW.md CURRENT EXECUTION CONTRACT, research_pipeline/WAVE2_SOURCE_FREE_SCAN_PROGRESS_2026-10-21.md newest checkpoint and live independent dependency_graph/STATE.json, CHECKPOINT.json and population/QUEUE.json. Live state supersedes historic fields.",
-    "Resume first-pass source-free semantic scans from python -m research_pipeline.engine.dependency_graph --workspace research_pipeline/experiments/reconstruction-v2-independent --mode worklist --limit 8. Batches 005-007 and the six field-extension amendments are already admitted; don't repeat them.",
-    "Read full mathematical contents of each unscreened formulation, link obvious matching contextual meanings in existing independent corpus, preserve unresolved occurrence phrase/context with state=unassigned, and distinguish primitive external uses. Do not use web/source research in this first bulk pass; do not add missing definitions.",
-    "Validate every proposed target_meaning_id against current independent meanings, and every version_sha256 against live graph node/inventory BEFORE committing a batch, to avoid wasted failed Actions runs. Keep each submission source-version-bound and review-rationale-backed.",
-    "Commit modest batches at dependency_graph/inbox/*.json and confirm independent graph GitHub Actions success, matching applied receipt and persisted graph STATE. Six previous field-extension alias corrections are append-only and already finished.",
-    "After all 659 initial formulations have complete semantic scans, use --mode consolidation_worklist to compare the whole unresolved occurrence pool globally, reuse existing meanings and form shared missing meaning candidates; no premature source-based definition research.",
-    "Only after full Pass 1 and the reviewed fingerprint-bound consolidation gate may Pass 3 external source research populate independent provisional missing definitions. Separate mathematical source and human certification remain deferred, and unrelated breadth stays on hold.",
-    "Frozen Wave1, screened independent Wave2, and existing provisional batches must stay unchanged, original production mathDef never consulted before independent freeze. Source-free dependency graph indexes, not chat memory, are authoritative."
+    "Read DEPENDENCY_FIRST_WORKFLOW.md CURRENT EXECUTION CONTRACT and Section 10 of TEMP_DEPENDENCY_FIRST_WAVE2_PLAN.md. Verify live STATE.json/CHECKPOINT.json/applied receipts (current checkpoint 152 scans, older docs list 78 or 126).",
+    "Resume deterministically at --mode worklist --limit 8; do not re-scan 012, 013, 014 or 011a, 011b, or any previous completed formulation. The next first incomplete formulation on the latest checked graph is form.5b6d4a7f88629b12.left-adjoint.",
+    "Use only the existing independent 611-meaning catalog and unchanged formulation text. Link valid contextual concepts to exact IDs; store unassigned mathematical occurrences with contexts; mark explicit elementary/out-of-scope dispositions; check quantifiers, domains, arrows and possible overloaded notions.",
+    "Before creating a batch fetch all current dependency_graph/nodes/FORMULATION.json files and verify version_sha256 and scan_status, then check all target_meaning_id values exist in current independently screened/provisional meanings.",
+    "Commit only new graph/inbox ID.json scan packages. Verify successful GitHub graph run and exact applied/ID.json receipt and live STATE before counting scans.",
+    "All 26 newly verified complete scans (012=8, 013=10, 014=8) remain immutable; mistakes require append-only amends, never overwriting node content. Maintain historical correction ledger (10 events).",
+    "Until all 659 current formulations have complete scans, do not begin global occurrence consolidation, missing-definition research, source lookup, new definitions, unrelated Batch143 or promotion. After Pass 1 use consolidation_worklist for Pass 2.",
+    "Keep frozen Wave1, screened Wave2, and provisional B139-B142 mathematical definitions unchanged; never compare original production mathDef during independent reconstruction."
   ],
   "workflow_runs_to_check_live": [
     {
@@ -123,7 +123,7 @@
     "phase": "scan_and_link_existing",
     "workspace": "research_pipeline/experiments/reconstruction-v2-independent/dependency_graph",
     "doc": "research_pipeline/DEPENDENCY_FIRST_WORKFLOW.md",
-    "scan_batch": "semantic-existing-initial-007",
+    "scan_batch": "semantic-existing-initial-014",
     "alias_batch": "semantic-existing-correction-field-extension-001",
     "graph_action_verified": 39677495139,
     "first_semantic_batch_action_verified": 39662748281,
@@ -131,8 +131,8 @@
     "isolated_tests_verified": 39663202361,
     "catalog_contextual_meanings": 611,
     "formulations": 659,
-    "scan_complete": 78,
-    "scan_incomplete": 581,
+    "scan_complete": 152,
+    "scan_incomplete": 507,
     "unscanned": 0,
     "open": 659,
     "closed": 0,
@@ -140,13 +140,34 @@
     "unresolved_missing_candidates": 12,
     "alias_candidate_records": 1,
     "missing_occurrences": 17,
-    "ambiguous_occurrences": 377,
-    "note": "Verified 78 complete semantic content scans, 581 lexical-only. Batches005-007 and six field-extension amendments committed. Preserve all provenance; no external source research or new terms during bulk first pass.",
-    "next_goal": "Continue complete source-free semantic formulation scans with rigorous ID/SHA precheck and GitHub receipt verification; only after all forms scanned begin global unresolved occurrence consolidation.",
+    "ambiguous_occurrences": 333,
+    "note": "All 26 scans have applied receipts; completed node files and live STATE are authoritative. No source search, no new meanings, no consolidation.",
+    "next_goal": "Continue deterministic worklist at form.5b6d4a7f88629b12.left-adjoint and beyond with full source-free reviews, exact meaning ID / node SHA prevalidation, verified inbox receipts.",
     "breadth_batch_143": "on_hold",
-    "unassigned_occurrences": 128,
-    "scan_amendment_event_count": 6,
+    "unassigned_occurrences": 243,
+    "scan_amendment_event_count": 10,
     "consolidation_gate_valid": false,
-    "missing_research_permitted": false
+    "missing_research_permitted": false,
+    "latest_verified_action": 39688077352,
+    "verified_new_batches": [
+      {
+        "id": "semantic-existing-initial-012",
+        "scans": 8,
+        "reference_decisions": 34,
+        "run": 39687479871
+      },
+      {
+        "id": "semantic-existing-initial-013",
+        "scans": 10,
+        "reference_decisions": 48,
+        "run": 39687813998
+      },
+      {
+        "id": "semantic-existing-initial-014",
+        "scans": 8,
+        "reference_decisions": 41,
+        "run": 39688077352
+      }
+    ]
   }
 }
