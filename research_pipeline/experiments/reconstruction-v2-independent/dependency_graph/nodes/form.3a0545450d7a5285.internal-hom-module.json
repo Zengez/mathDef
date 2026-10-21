@@ -2,10 +2,36 @@
   "schema_version": 1,
   "formulation_id": "form.3a0545450d7a5285.internal-hom-module",
   "version_sha256": "f5b90dc34ea1acc534f01c7bf3695afc7b6766ad777d10676407d9dab5ea9d68",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "modules M,N",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "matching_note": "The arguments are ordinary unital R-modules.",
+      "occurrence_id": "occ.a1e476731c4866e84c7d"
+    },
+    {
+      "phrase": "R-linear homomorphisms",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.module-linear",
+      "matching_note": "Maps are R-linear transformations of modules, not merely arbitrary set functions.",
+      "occurrence_id": "occ.32c89677be0080a40ff2"
+    },
+    {
+      "phrase": "pointwise addition of homomorphisms",
+      "state": "unassigned",
+      "context": "Module theory: additive abelian group of module homomorphisms Hom_R(M,N)",
+      "reason": "The pointwise operation gives the internal Hom its module structure; preserve the construction for global matching.",
+      "occurrence_id": "occ.48f804b470f3e0aa6944"
+    },
+    {
+      "phrase": "(r·f)(m)=r·f(m)",
+      "state": "external",
+      "disposition": "The scalar action is explicitly given and is part of this definition, not an additional unexplained term.",
+      "occurrence_id": "occ.e0b955f9e8e2e7fee0ac"
+    }
+  ],
+  "snapshot_sha256": "2bbc6ddbe816edee987868303465ef51eccdf9dab7c0b76fa91e6f5e179469c8",
+  "review_rationale": "Reviewed internal Hom as an R-module of R-linear module maps, preserving pointwise operations and scalar action in the source-free record."
 }

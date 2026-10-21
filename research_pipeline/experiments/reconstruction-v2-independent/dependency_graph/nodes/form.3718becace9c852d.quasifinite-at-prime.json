@@ -2,26 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.3718becace9c852d.quasifinite-at-prime",
   "version_sha256": "bb42d9415ad7e72f4f29336e25f35d9c66ee68c9dad870e2a7bf6f40fedecf60",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "ring homomorphism",
-      "span": [
-        25,
-        42
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.ring-map-general",
-        "meaning.wave2.foundation.ring-map-unital"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.a02b4d0811e1b5567df8"
+      "phrase": "finite-type ring homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map",
+      "matching_note": "Finite-type is the commutative unital ring-map property, not finite presentation.",
+      "occurrence_id": "occ.3d49d8de52e04f8e275f"
+    },
+    {
+      "phrase": "Spec(S), Spec(R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "matching_note": "q and p are prime-spectrum points of S and R.",
+      "occurrence_id": "occ.7452c5efbd59586f23b3"
+    },
+    {
+      "phrase": "fibre Spec(S⊗_R κ(p))",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.local-ring-fibre-at-prime",
+      "matching_note": "The ring map's fibre is constructed over the residue field at p; keep ring-fibre type distinct from topological inverse image.",
+      "occurrence_id": "occ.443ce1d8b699a858b3d5"
+    },
+    {
+      "phrase": "isolated point of the fibre",
+      "state": "unassigned",
+      "context": "Topology: isolated point in topological fibre Spec(S⊗_R κ(p))",
+      "reason": "The isolated-point condition requires the point to form an open singleton in the fibre topology.",
+      "occurrence_id": "occ.e4ba1ae286dac9264ea1"
+    },
+    {
+      "phrase": "residue field κ(p)",
+      "state": "unassigned",
+      "context": "Commutative algebra: residue field of local ring R_p at a prime ideal p",
+      "reason": "The residue field occurs in other local fibre and flatness definitions.",
+      "occurrence_id": "occ.1f5f08904d321df12b1e"
+    },
+    {
+      "phrase": "local fibre has dimension zero",
+      "state": "existing",
+      "target_meaning_id": "meaning.bd90654fb341045a.local-krull-dimension-point",
+      "matching_note": "The local dimension is a topological Krull-dimension notion at the fibre point.",
+      "occurrence_id": "occ.b6871a1b24a78a9908d9"
     }
   ],
-  "snapshot_sha256": "224fccfccacbe2eef7d91781e54aeb466e7788949ce43e323ebdbaac781614e8",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "7f9c6ce5c99c968ed1580a7a42d46aeb974c7f50b3328f92e923f5fca20d3e6d",
+  "review_rationale": "Reviewed quasi-finite-at-prime through finite-type ring maps, prime spectrum and scheme fibre dimensions, retaining isolated fibre points and residue fields for global occurrence matching."
 }

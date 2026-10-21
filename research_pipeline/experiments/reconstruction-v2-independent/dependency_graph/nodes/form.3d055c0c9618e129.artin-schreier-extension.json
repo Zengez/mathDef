@@ -2,39 +2,44 @@
   "schema_version": 1,
   "formulation_id": "form.3d055c0c9618e129.artin-schreier-extension",
   "version_sha256": "0ee3308b4c5d29fc0ca00ade0177f10d69cbc403161adec728738df7adc55766",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "characteristic",
-      "span": [
-        23,
-        37
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.dbce785fa0c96b0a.field-characteristic"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.87cd84166994c2b9e212"
+      "phrase": "field K",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "matching_note": "The coefficient field has characteristic p.",
+      "occurrence_id": "occ.fea8695dfadc5f03b071"
     },
     {
-      "phrase": "group",
-      "span": [
-        179,
-        184
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.10adef43985ca0bcdbdc"
+      "phrase": "prime characteristic p",
+      "state": "existing",
+      "target_meaning_id": "meaning.dbce785fa0c96b0a.field-characteristic",
+      "matching_note": "This is the existing field-characteristic notion.",
+      "occurrence_id": "occ.7ea7a2a6637a65e802e7"
+    },
+    {
+      "phrase": "cyclic Galois group",
+      "state": "existing",
+      "target_meaning_id": "meaning.26fa733af18b53e7.galois-group",
+      "matching_note": "The extension has a Galois automorphism group, with an additional cyclicity condition.",
+      "occurrence_id": "occ.104b5b24c763805c1e0b"
+    },
+    {
+      "phrase": "cyclic group of order p",
+      "state": "unassigned",
+      "context": "Abstract algebra: cyclic finite group of cardinality prime p",
+      "reason": "Group cyclicity and group order may have distinct general meanings and should not be silently supplied by the Galois group meaning.",
+      "occurrence_id": "occ.80d494a01cc3766bbe21"
+    },
+    {
+      "phrase": "adjoining a solution of t^p-t=a",
+      "state": "unassigned",
+      "context": "Field theory: adjoining to K a root of Artin–Schreier polynomial x^p−x−a",
+      "reason": "The field-extension-by-root construction should be compared to other field-adjunction occurrences.",
+      "occurrence_id": "occ.a25b0680d53faa60fcf3"
     }
   ],
-  "snapshot_sha256": "f884e2dea294001fbb346cb08d83e7b3d5c3ac84f5b586f246263416a44b4b96",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "03193de50ec1a5b19d9c4bb8f8424e1d91fa949a4690c92681dd69d0410a33e5",
+  "review_rationale": "Reviewed Artin–Schreier extension using field characteristic and cyclic Galois group, preserving finite cyclicity and adjoining an Artin–Schreier root for global consolidation."
 }

@@ -2,10 +2,29 @@
   "schema_version": 1,
   "formulation_id": "form.3653fa0ad844d187.discrete-category",
   "version_sha256": "2618d200b753039d7952b6042df235ebd245c5c18b468a77e3b03fe04c53ee38",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category C",
+      "state": "unassigned",
+      "context": "Category theory: potentially large category with all objects and morphisms",
+      "reason": "Discrete category need not be small; avoid replacing it with a small-category-only definition.",
+      "occurrence_id": "occ.b92a5b5e1e21c486309e"
+    },
+    {
+      "phrase": "identity morphism",
+      "state": "unassigned",
+      "context": "Category theory: identity arrow of an object in a general category",
+      "reason": "The identity law is a categorical axiom and may not need its own separate meaning after global review.",
+      "occurrence_id": "occ.297e956c68ec9afc5c48"
+    },
+    {
+      "phrase": "no arrows between distinct objects",
+      "state": "external",
+      "disposition": "This consequence follows immediately from the fact that only identity arrows are allowed and is not a new prerequisite.",
+      "occurrence_id": "occ.e73b7b81e0aa89404c65"
+    }
+  ],
+  "snapshot_sha256": "3cdac6817376d3375050053bd12439538984f025dbc4d061be88e7732e39c2a4",
+  "review_rationale": "Reviewed discrete category by the identity-only arrow condition; kept arbitrary category size and identity arrows as context-sensitive occurrences without assuming smallness."
 }

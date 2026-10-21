@@ -2,53 +2,36 @@
   "schema_version": 1,
   "formulation_id": "form.3c73940f47e92e99.open-subspace-locally-ringed-space",
   "version_sha256": "38ddfe17da2aa204057d1503b9f8ee81a1a9b54744a4b76f75a9488876e9966d",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        12,
-        18
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.432537be6d988304c252"
+      "phrase": "locally ringed space",
+      "state": "existing",
+      "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space",
+      "matching_note": "Both ambient and restricted objects have locally ringed-space structure.",
+      "occurrence_id": "occ.bc028c60471a00018394"
     },
     {
-      "phrase": "locally ringed space",
-      "span": [
-        50,
-        70
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.52683cac2ccf3bad.locally-ringed-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.f2baf2675f0a0fed8932"
+      "phrase": "open subset U",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "matching_note": "U is an open subset of the underlying topological space.",
+      "occurrence_id": "occ.ed8fceb2632eb0b1b00b"
     },
     {
-      "phrase": "locally ringed space",
-      "span": [
-        105,
-        125
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.52683cac2ccf3bad.locally-ringed-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.95dbdfee24e17503d507"
+      "phrase": "restriction of the structure sheaf O_X|_U",
+      "state": "unassigned",
+      "context": "Sheaf theory: restriction of a sheaf to an open subspace U",
+      "reason": "The restriction of the structure sheaf creates the smaller locally ringed-space sheaf.",
+      "occurrence_id": "occ.46af8b4057c4589414f0"
+    },
+    {
+      "phrase": "underlying space U",
+      "state": "external",
+      "disposition": "U is the specified underlying open subspace, not a separate new mathematical construction.",
+      "occurrence_id": "occ.8138ec785d68edc98f7c"
     }
   ],
-  "snapshot_sha256": "5b3bb5418fbec11876043bec882ed2bba9b353dc47d4c6db2033031bea0e8eda",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "878418db8a8b1e5a7c29c7e6cfa2402ca504fd3370a35fc620b4a7ac0e2cb00e",
+  "review_rationale": "Read open locally ringed subspace as restriction of a locally ringed space and structure sheaf to an open subset."
 }

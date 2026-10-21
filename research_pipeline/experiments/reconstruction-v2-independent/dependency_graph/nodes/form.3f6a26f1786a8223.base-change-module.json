@@ -2,10 +2,44 @@
   "schema_version": 1,
   "formulation_id": "form.3f6a26f1786a8223.base-change-module",
   "version_sha256": "7804e7ceb65381b0d4081c478f149c4a44e2750606b5b934f28c53952b398f41",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "S-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "matching_note": "M has an S-module structure.",
+      "occurrence_id": "occ.8830da507db681521a4a"
+    },
+    {
+      "phrase": "map R→R′",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "matching_note": "Commutative ring base-change homomorphism preserves identity.",
+      "occurrence_id": "occ.cde81c3178acfd974a19"
+    },
+    {
+      "phrase": "tensor product M⊗_R R′",
+      "state": "existing",
+      "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+      "matching_note": "The module tensor construction underlies base change.",
+      "occurrence_id": "occ.f0836ace8137b57750cf"
+    },
+    {
+      "phrase": "S⊗_R R′",
+      "state": "existing",
+      "target_meaning_id": "meaning.3f6a26f1786a8223.base-change-ring-map",
+      "matching_note": "The target algebra is the scalar-extension ring from ring-map base change.",
+      "occurrence_id": "occ.6c34060e8da053f6055b"
+    },
+    {
+      "phrase": "R-algebra S",
+      "state": "unassigned",
+      "context": "Commutative algebra: algebra S with a unital base homomorphism R→S",
+      "reason": "R-algebra data should be grouped with companion scalar-extension and general algebra occurrences.",
+      "occurrence_id": "occ.b482d98a020896956760"
+    }
+  ],
+  "snapshot_sha256": "1b57b2952f0dd7768354ca4056935b9b91b9b0d56393d71cff39e74ab91568ae",
+  "review_rationale": "Read module base change as tensoring along a commutative ring map, linking module, tensor product and ring base change while retaining general algebra structure as an occurrence."
 }

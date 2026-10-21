@@ -2,10 +2,44 @@
   "schema_version": 1,
   "formulation_id": "form.3653fa0ad844d187.two-category-fibred-sets",
   "version_sha256": "879e70532c8b26f00ac773e1b1c40656ac8cc4df30ec026e3fa876afa5da076e",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category fibred in sets",
+      "state": "existing",
+      "target_meaning_id": "meaning.3653fa0ad844d187.category-fibred-in-sets",
+      "matching_note": "The objects are fibrations of the separately defined fibred-in-sets type.",
+      "occurrence_id": "occ.e5f76f87c15255e2b739"
+    },
+    {
+      "phrase": "2-category",
+      "state": "existing",
+      "target_meaning_id": "meaning.ec5e3a0d13f85f3a.strict-two-category",
+      "matching_note": "The given objects/1-arrows/2-arrows form a strict 2-category in the indexed convention.",
+      "occurrence_id": "occ.25770a1f1d7012424e4d"
+    },
+    {
+      "phrase": "base category C",
+      "state": "unassigned",
+      "context": "Category theory: possibly non-small base category C",
+      "reason": "Do not silently identify arbitrary base categories with small categories.",
+      "occurrence_id": "occ.9746f0afb5f21b711d2e"
+    },
+    {
+      "phrase": "functors commuting with projections",
+      "state": "unassigned",
+      "context": "Category theory: functors over a base category, forming 1-morphisms of fibred categories",
+      "reason": "The commuting triangle with projections is additional structure beyond a general functor.",
+      "occurrence_id": "occ.34d6642cd31d64ee9930"
+    },
+    {
+      "phrase": "natural transformations lying over identity arrows",
+      "state": "unassigned",
+      "context": "Higher category theory: 2-morphisms of functors over the identity on a base category",
+      "reason": "Preserve the relative-to-base naturality condition for later matching.",
+      "occurrence_id": "occ.bc63f0c96662c2a842ff"
+    }
+  ],
+  "snapshot_sha256": "d555dce9a740400feef4f651c0c9bd68e1f5641e0ac625348dd69d3f1c7caac8",
+  "review_rationale": "Reviewed the 2-category of fibred-in-sets categories over a base, linking the known fibred-in-sets and strict 2-category structures and saving functors/natural transformations over C."
 }
