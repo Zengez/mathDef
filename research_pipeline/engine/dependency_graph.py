@@ -202,6 +202,31 @@ def missing_key(phrase, context):
     return stable_id("missing", {"phrase": norm(phrase), "context": norm(context)})
 
 
+def alias_map(graph, available, events=None):
+    """Replay reviewed, flat missing-candidate aliases without losing identity."""
+    path = graph / "candidate_aliases.jsonl"
+    events = (events if events is not None else
+              [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()
+               if line.strip()] if path.exists() else [])
+    aliases = {}
+    seen = set()
+    for event in events:
+        key = event.get("alias_candidate_id")
+        target = event.get("canonical_candidate_id")
+        eid = event.get("alias_id")
+        if not eid or eid in seen:
+            raise PipelineError("Repeated/invalid missing alias event ID")
+        seen.add(eid)
+        if key not in available or target not in available:
+            continue  # Historical aliases are retained if sources are removed.
+        if key == target or key in aliases or target in aliases:
+            raise PipelineError("Conflicting or chained missing alias (use canonical target)")
+        if not event.get("reviewed_by") or len(event.get("reason", "").strip()) < 40:
+            raise PipelineError("Missing alias requires substantive contextual review")
+        aliases[key] = target
+    return aliases
+
+
 def rebuild(workspace, inventory=None):
     """Reconstruct every derived index from committed version-valid node snapshots."""
     graph = graph_path(workspace)
@@ -244,6 +269,7 @@ def rebuild(workspace, inventory=None):
                     "source": "reference_scan", "status": "unresearched",
                 })
             refs_by_form[fid].append(ref)
+    aliases = alias_map(graph, candidate_map)
     resolutions = {}
     resolution_file = graph / "resolutions.jsonl"
     saved_resolutions = (json.loads(line) for line in
@@ -255,6 +281,8 @@ def rebuild(workspace, inventory=None):
             raise PipelineError("Duplicate append-only candidate resolution " + key)
         if key not in candidate_map or mid not in meanings:
             continue  # A stale or no-longer-applicable review cannot close anything.
+        if key in aliases:
+            raise PipelineError("An aliased missing candidate cannot own a resolution")
         if resolution.get("target_version_sha256") != digest(meanings[mid]):
             continue
         resolutions[key] = resolution
@@ -272,10 +300,16 @@ def rebuild(workspace, inventory=None):
             seen_occ.add(oid)
             _reference_state(ref, meanings, candidate_map)
             effective = ref
-            if ref["state"] == "missing" and ref["missing_candidate_id"] in resolutions:
-                key = ref["missing_candidate_id"]
+            if ref["state"] == "missing" and ref["missing_candidate_id"] in aliases:
+                original_key = ref["missing_candidate_id"]
+                canonical_key = aliases[original_key]
+                reverse["missing-alias:" + original_key].add(fid)
+                effective = {**ref, "missing_candidate_id": canonical_key,
+                             "observed_missing_candidate_id": original_key}
+            if effective["state"] == "missing" and effective["missing_candidate_id"] in resolutions:
+                key = effective["missing_candidate_id"]
                 reverse["missing:" + key].add(fid)  # Retain traceability.
-                effective = {**ref, "state": "existing",
+                effective = {**effective, "state": "existing",
                              "target_meaning_id": resolutions[key]["target_meaning_id"],
                              "resolved_missing_candidate_id": key,
                              "origin": ref.get("origin", "scan") + ":candidate_resolution"}
@@ -324,7 +358,11 @@ def rebuild(workspace, inventory=None):
     candidates = []
     for k, c in sorted(candidate_map.items()):
         incoming = sorted(reverse.get("missing:" + k, ()))
-        candidates.append({**c, "status": "resolved" if k in resolutions else "unresearched",
+        candidate_status = ("alias" if k in aliases else
+                            "resolved" if k in resolutions else "unresearched")
+        candidates.append({**c, "status": candidate_status,
+                           "alias_of": aliases.get(k),
+                           "alias_ids": sorted(x for x, y in aliases.items() if y == k),
                            "resolved_target_meaning_id":
                                resolutions[k]["target_meaning_id"] if k in resolutions else None,
                            "incoming_formulation_ids": incoming,
@@ -347,7 +385,8 @@ def rebuild(workspace, inventory=None):
         "scan_complete": counts["complete"], "scan_incomplete": counts["scan_incomplete"],
         "unscanned": counts["unscanned"], "open": len(blocked),
         "closed": len(state_rows) - len(blocked), "missing_candidates": len(candidates),
-        "unresolved_missing_candidates": sum(x["status"] != "resolved" for x in candidates),
+        "unresolved_missing_candidates": sum(x["status"] == "unresearched" for x in candidates),
+        "alias_candidate_records": len(aliases),
         "missing_occurrences": sum(r["state"] == "missing" for r in occurrences),
         "ambiguous_occurrences": sum(r["state"] == "ambiguous" for r in occurrences),
         "seed_relations": len(inv["seed_relations"]),
@@ -597,6 +636,43 @@ def tree(workspace, root, max_depth=30):
     return visit(root, set(), 0)
 
 
+def alias_candidates(workspace, proposed):
+    """Append source-reviewed identity aliases; never rewrite original candidates."""
+    graph = graph_path(workspace)
+    path = graph / "candidate_aliases.jsonl"
+    current = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()
+               if line.strip()] if path.exists() else []
+    current_ids = {x.get("alias_id"): x for x in current}
+    if len(current_ids) != len(current):
+        raise PipelineError("Duplicate alias ID in history")
+    candidate_records = [json.loads(line) for line in
+        (graph / "missing_candidates.jsonl").read_text(encoding="utf-8").splitlines()
+        if line.strip()]
+    known = {c["id"] for c in candidate_records}
+    pending = list(current)
+    for event in proposed:
+        eid = event.get("alias_id")
+        if not eid or not KEY_RE.fullmatch(eid):
+            raise PipelineError("Invalid alias event ID")
+        if eid in current_ids:
+            if current_ids[eid] != event:
+                raise PipelineError("Alias ID reused with changed content")
+            continue
+        if (event.get("alias_candidate_id") not in known or
+                event.get("canonical_candidate_id") not in known):
+            raise PipelineError("Alias must connect existing graph candidates")
+        if event.get("alias_candidate_id") == event.get("canonical_candidate_id"):
+            raise PipelineError("Candidate may not alias itself")
+        pending.append(event)
+        current_ids[eid] = event
+    # Verify all events and forbid cycles/chains BEFORE writing the ledger.
+    alias_map(graph, known, pending)
+    if pending != current:
+        write_atomic(path, "".join(json.dumps(x, sort_keys=True, ensure_ascii=False) + "\n"
+                                   for x in pending))
+    return rebuild(workspace)
+
+
 def research_queue(workspace, limit=20):
     graph = graph_path(workspace)
     candidates = [json.loads(x) for x in
@@ -606,7 +682,7 @@ def research_queue(workspace, limit=20):
         phase = "scan_and_disambiguate_first"
     else:
         phase = "research_missing_dependencies"
-    candidates = [x for x in candidates if x["status"] != "resolved"]
+    candidates = [x for x in candidates if x["status"] == "unresearched"]
     candidates.sort(key=lambda x: (-x["upstream_formulation_count"],
                          -x["occurrence_count"], x["id"]))
     return {"phase": phase, "breadth_batch_143": "on_hold",
@@ -660,6 +736,7 @@ def apply_inbox(workspace, limit=20):
         "ingest": lambda pkg: store(workspace, pkg["items"]),
         "amend": lambda pkg: amend(workspace, pkg["amendments"]),
         "resolve": lambda pkg: resolve(workspace, pkg["resolutions"]),
+        "alias": lambda pkg: alias_candidates(workspace, pkg["aliases"]),
     }
     result = {"applied": [], "already_applied": [], "max_packages": limit}
     for file in sorted(inbox.glob("*.json"))[:max(0, limit)] if inbox.is_dir() else ():
@@ -689,7 +766,7 @@ def apply_inbox(workspace, limit=20):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--workspace", type=Path, required=True)
-    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "amend", "resolve", "apply_inbox", "status", "tree", "queue"),
+    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "amend", "resolve", "alias", "apply_inbox", "status", "tree", "queue"),
                    required=True)
     p.add_argument("--adapter", default="research_pipeline.adapters.mathdef.dependency_scan")
     p.add_argument("--limit", type=int, default=30)
@@ -725,6 +802,14 @@ def main():
         if batch.get("schema_version") != 1:
             raise PipelineError("Unsupported resolution batch")
         result = resolve(args.workspace, batch["resolutions"])
+    elif args.mode == "alias":
+        inbox = (graph / "inbox").resolve()
+        if not args.batch or not args.batch.resolve().is_relative_to(inbox):
+            raise PipelineError("Alias packages must be committed within dependency_graph/inbox")
+        batch = read(args.batch)
+        if batch.get("schema_version") != SCHEMA:
+            raise PipelineError("Unsupported alias batch")
+        result = alias_candidates(args.workspace, batch["aliases"])
     elif args.mode == "apply_inbox":
         result = apply_inbox(args.workspace, max(0, args.limit))
     elif args.mode == "tree":
