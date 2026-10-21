@@ -314,14 +314,25 @@ def audit(workspace, write=False, certify=False):
         visited.add(node)
     for node in list(graph):
         visit(node)
+    # A correction creates a downstream audit obligation only until the
+    # affected individually reviewed dependency references the NEW context.
+    # Do not leave a permanent uncloseable audit finding after a correction.
     for event in revisions:
         if event["kind"] == "meanings":
             changed = draft["meanings"][event["id"]]
-            affected = [r["id"] for r in list(base["relations"].values()) + list(draft["relations"].values())
-                        if r.get("target_meaning") == changed["id"] or
-                        any(f["id"] == r.get("from_formulation") for f in changed["formulations"])]
+            updated_sha = digest(changed)
+            affected = []
+            for rel in list(base["relations"].values()) + list(draft["relations"].values()):
+                outgoing = any(f["id"] == rel.get("from_formulation")
+                               for f in changed["formulations"])
+                incoming = rel.get("target_meaning") == changed["id"]
+                if ((outgoing and rel.get("source_meaning_sha256") != updated_sha)
+                        or (incoming and rel.get("target_meaning_sha256") != updated_sha)):
+                    affected.append(rel["id"])
             if affected:
-                flag("downstream_review", changed["id"], "Affected edges: " + ", ".join(affected[:25]))
+                flag("downstream_review", changed["id"],
+                     "Re-review affected links against current meaning revision: " +
+                     ", ".join(affected[:25]))
     result = {"status": "ready_for_final_review" if not findings else "reconciliation_required",
               "draft_counts": {k: len(v) for k, v in draft.items()},
               "revision_count": len(revisions), "findings": findings,
