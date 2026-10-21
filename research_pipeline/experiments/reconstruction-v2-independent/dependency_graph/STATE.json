@@ -6,8 +6,8 @@
     "total_formulations": 659,
     "screened_formulations": 639,
     "provisional_formulations": 20,
-    "scan_complete": 6,
-    "scan_incomplete": 653,
+    "scan_complete": 18,
+    "scan_incomplete": 641,
     "unscanned": 0,
     "open": 659,
     "closed": 0,
@@ -15,13 +15,13 @@
     "unresolved_missing_candidates": 12,
     "alias_candidate_records": 1,
     "missing_occurrences": 17,
-    "ambiguous_occurrences": 411,
-    "unassigned_occurrences": 0,
-    "unresolved_fingerprint": "eec4c8f437e28cc5e029a5cd4466d3d5ffac41e23b3dd7aab733a11479daf0d4",
+    "ambiguous_occurrences": 405,
+    "unassigned_occurrences": 13,
+    "unresolved_fingerprint": "9f1642a3713c185526b3e51a037352294bd3700429264ac5f3cf951d1e9851af",
     "phase": "scan_and_link_existing",
     "consolidation_gate_valid": false,
     "seed_relations": 891,
-    "scan_occurrences": 556,
+    "scan_occurrences": 612,
     "scan_amendment_event_count": 0,
     "automatic_completion_is_not_certification": true,
     "breadth_expansion": "on_hold"
@@ -71,56 +71,48 @@
       "version_sha256": "6cf77b965e1d7c9f65fc75b446e7c66d361a421b79c887abab7090b801b6cb9a"
     },
     "form.03c6dc1e9f953f76.krull-topology": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "ambiguous:occ.e9b32ef2b09baf99d8c4",
-        "scan_incomplete"
+        "unassigned:occ.6f2fa6a350cc44d4eae2",
+        "unassigned:occ.57b2855fd42769a95c9a"
       ],
       "version_sha256": "38a48382503eb1151ee26e2fb1b19792225abc90d6359e4a170dae9a584ac75a"
     },
     "form.049afb81432d58ef.constructible-subset-noetherian": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
-      "direct_blockers": [
-        "ambiguous:occ.19419aa1fd50637a7db2",
-        "ambiguous:occ.9a49d8e89fcc819f66c1",
-        "scan_incomplete"
-      ],
+      "direct_blockers": [],
       "version_sha256": "046ef1b52ea07e83e296cf28d9e41224974591bababa3006d450379a875d684d"
     },
     "form.05531f966e3a206f.associate-elements": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
-      "direct_blockers": [
-        "scan_incomplete"
-      ],
+      "direct_blockers": [],
       "version_sha256": "a51def0d348daee4a647e454492cda6e102ac85eadfbe4940e364ed100c7b9d1"
     },
     "form.05531f966e3a206f.dedekind-domain": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "unassigned:occ.af8489391ee4c6b71d50"
       ],
       "version_sha256": "3a8de92504968729026740f5f33ea6018d0f15729b2f514737052b35bc535c30"
     },
     "form.05531f966e3a206f.irreducible-element": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
-      "direct_blockers": [
-        "scan_incomplete"
-      ],
+      "direct_blockers": [],
       "version_sha256": "4aa5df1407efbe8d14743ce4e11d012cb4ad666117d02e4895350128fb49863a"
     },
     "form.05531f966e3a206f.prime-element": {
@@ -147,76 +139,73 @@
       "version_sha256": "c1a2ed587e7a17cef338ad236e7557f00da7292455c9d631f323a0418c27cd89"
     },
     "form.05531f966e3a206f.unique-factorization-domain": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
-      "direct_blockers": [
-        "scan_incomplete"
-      ],
+      "direct_blockers": [],
       "version_sha256": "bac19aae49df1b4b7ec469d2a3a61ec2a1c607cc804813968e7020efa9c44185"
     },
     "form.081430bc340a055a.cardinality": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "unassigned:occ.36773f143f04df009dd6",
+        "unassigned:occ.d8a6871914f226e887ab"
       ],
       "version_sha256": "b0e8620bf283261ac8cb94af48dac10355a2ada2b5eced87cbf51b98407435b3"
     },
     "form.097db25e2f156689.clopen-subset-of-spectrum": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "ambiguous:occ.336da22773f0e917fd33",
-        "scan_incomplete"
+        "unassigned:occ.96143d084d90e6aff492",
+        "unassigned:occ.987cbaf86b771c468f46",
+        "unassigned:occ.abeef0a001d4cf3c6b85"
       ],
       "version_sha256": "7d47c90a9aac6cfa2da71d348da436f571c8f1369b34e7a45ae326113bf59a3e"
     },
     "form.09cfb70140dddf4d.categorically-compact-object": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "unassigned:occ.147cd792885b0fabc8ea",
+        "unassigned:occ.587975d5466517d2a160",
+        "unassigned:occ.004ded30ddb5a7d2c9f2",
+        "unassigned:occ.99936b3916e832a75219"
       ],
       "version_sha256": "b3756fb438c35d2311ae0ebf6db8b4cac35fdcbb8151374fb8acfddbea2bb180"
     },
     "form.0bf601085c1029d4.two-one-category": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "unassigned:occ.24d9495c91772e647def"
       ],
       "version_sha256": "a17222333b9ba9f02c917e353fe1682ecb128865e03fd3e1cf9df5c92d5d81a5"
     },
     "form.0c1db7d894ba43e1.g-unramified-at-prime": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
-      "direct_blockers": [
-        "scan_incomplete"
-      ],
+      "direct_blockers": [],
       "version_sha256": "94a2637b52361ce89f2362d73e09c9a9860044c0c8405243f207c0323831fde5"
     },
     "form.0c1db7d894ba43e1.g-unramified-ring-map": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
-      "direct_blockers": [
-        "ambiguous:occ.e24d723c44e41438cbbf",
-        "ambiguous:occ.88c566a965d66faf40bc",
-        "scan_incomplete"
-      ],
+      "direct_blockers": [],
       "version_sha256": "6ce91ab5d8e182656322cec0214175d379668ddf34fcb95715621d1c70b01315"
     },
     "form.0c1db7d894ba43e1.unramified-at-prime": {

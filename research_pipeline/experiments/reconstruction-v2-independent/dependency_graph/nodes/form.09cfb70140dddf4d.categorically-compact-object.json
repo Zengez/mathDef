@@ -2,10 +2,58 @@
   "schema_version": 1,
   "formulation_id": "form.09cfb70140dddf4d.categorically-compact-object",
   "version_sha256": "b3756fb438c35d2311ae0ebf6db8b4cac35fdcbb8151374fb8acfddbea2bb180",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category C",
+      "state": "unassigned",
+      "context": "Category theory: category with a possibly non-small class of objects and morphisms",
+      "reason": "Existing small-category meaning adds size restrictions that do not follow from this arbitrary category C; do not make an invalid confident link.",
+      "occurrence_id": "occ.147cd792885b0fabc8ea"
+    },
+    {
+      "phrase": "filtered diagram M_i",
+      "state": "existing",
+      "target_meaning_id": "meaning.9d27e470d02eae69.filtered-category",
+      "matching_note": "The indexing shape is filtered in the category-theoretic sense; no claim that the diagram is essentially constant.",
+      "occurrence_id": "occ.4fdb4b8ef86927c90cd3"
+    },
+    {
+      "phrase": "colimit exists",
+      "state": "existing",
+      "target_meaning_id": "meaning.9d27e470d02eae69.filtered-colimit",
+      "matching_note": "The defining comparison uses the filtered colimit of M_i when it exists.",
+      "occurrence_id": "occ.30a34d27c357b443ac65"
+    },
+    {
+      "phrase": "colim_i Hom_C(X,M_i)",
+      "state": "existing",
+      "target_meaning_id": "meaning.8f7683667fac9d28.category-colimit",
+      "matching_note": "The source of the comparison is a colimit of Hom sets, interpreted as a diagram of sets; don't confuse this with a module colimit.",
+      "occurrence_id": "occ.a4ccf39f1c8a8206756b"
+    },
+    {
+      "phrase": "Hom_C(X,M_i)",
+      "state": "unassigned",
+      "context": "Category theory: set or class of morphisms between two objects in a category C",
+      "reason": "The Hom construction and potential size issue warrant later classification; no unverified blanket smallness assumption.",
+      "occurrence_id": "occ.587975d5466517d2a160"
+    },
+    {
+      "phrase": "natural map colim_i Hom_C(X,M_i) → Hom_C(X,colim_i M_i)",
+      "state": "unassigned",
+      "context": "Category theory: canonical comparison from a colimit of representable Hom functors to Hom of colimit",
+      "reason": "The canonical comparison has a specific functorial construction; record without researching whether it merits its own named meaning.",
+      "occurrence_id": "occ.004ded30ddb5a7d2c9f2"
+    },
+    {
+      "phrase": "bijective",
+      "state": "unassigned",
+      "context": "Set theory and category theory: bijective map of Hom sets in the categorical compactness test",
+      "reason": "Likely the same underlying bijection concept as in cardinality; preserve independent occurrence for Pass 2.",
+      "occurrence_id": "occ.99936b3916e832a75219"
+    }
+  ],
+  "snapshot_sha256": "933ed35f2157c84f4162f3a226cbd4bced4da60b79b5f4d6bc52b7cdc6a3438b",
+  "review_rationale": "Reviewed the full categorical compactness comparison, distinguished filtered indexing and colimit meanings from arbitrary category/Hom/canonical map/bijection occurrences, without imposing unsupported smallness."
 }

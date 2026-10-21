@@ -2,10 +2,29 @@
   "schema_version": 1,
   "formulation_id": "form.05531f966e3a206f.associate-elements",
   "version_sha256": "a51def0d348daee4a647e454492cda6e102ac85eadfbe4940e364ed100c7b9d1",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "integral domain R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.integral-domain",
+      "matching_note": "Integral domain has the same nonzero commutative unital ring convention as this associate relation.",
+      "occurrence_id": "occ.435cd8a0bd56b32ff4c9"
+    },
+    {
+      "phrase": "invertible element u of R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.unit-of-ring",
+      "matching_note": "An invertible multiplicative ring element is a unit; distinguish the unity element itself.",
+      "occurrence_id": "occ.13a329cec6cd9b341e81"
+    },
+    {
+      "phrase": "a=ub",
+      "state": "external",
+      "disposition": "The product and equality are the inherited ring multiplication and equality on elements, not a second independent named construction.",
+      "occurrence_id": "occ.08b6a5bbbb8897cc5872"
+    }
+  ],
+  "snapshot_sha256": "635d1343f7751e6c7d8e0bb483601f67db235fc0d7f260198a6200ca4cc1ed89",
+  "review_rationale": "Reviewed the short associate-elements definition in an integral domain, identified a ring unit as the inverse witness, and treated multiplication as ambient ring structure without creating a missing definition."
 }

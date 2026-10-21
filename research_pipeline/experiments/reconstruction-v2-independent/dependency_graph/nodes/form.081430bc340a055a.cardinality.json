@@ -2,10 +2,43 @@
   "schema_version": 1,
   "formulation_id": "form.081430bc340a055a.cardinality",
   "version_sha256": "b0e8620bf283261ac8cb94af48dac10355a2ada2b5eced87cbf51b98407435b3",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ordinal",
+      "state": "existing",
+      "target_meaning_id": "meaning.f810d472f5a4d367.von-neumann-ordinal",
+      "matching_note": "The least ordinal representative is an ordinal in the indexed set-theoretic sense.",
+      "occurrence_id": "occ.1d38c6a91ba71bcee2e1"
+    },
+    {
+      "phrase": "smallest ordinal",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.well-ordered-set",
+      "matching_note": "The meaning of least ordinal uses the usual well-ordering of ordinals, rather than arbitrary cardinal arithmetic.",
+      "occurrence_id": "occ.27b58fe1f96ae553f571"
+    },
+    {
+      "phrase": "equipotent to A",
+      "state": "unassigned",
+      "context": "Set theory: equinumerosity of two sets established by existence of a bijection",
+      "reason": "The occurrence should be globally compared with bijections/equipotence elsewhere before any new definition is researched.",
+      "occurrence_id": "occ.36773f143f04df009dd6"
+    },
+    {
+      "phrase": "bijection with A",
+      "state": "unassigned",
+      "context": "Set theory: bijective map between two sets, one of which is A",
+      "reason": "This may be the construction underlying equipotence, but the first pass should not yet merge their contextual meaning identities.",
+      "occurrence_id": "occ.d8a6871914f226e887ab"
+    },
+    {
+      "phrase": "set A",
+      "state": "external",
+      "disposition": "A is an arbitrary set, treated as the ambient foundational object rather than presuming another newly discovered mathematical term.",
+      "occurrence_id": "occ.e9c73de92a453300c58b"
+    }
+  ],
+  "snapshot_sha256": "4977bab4d3e895940097d0af53a42b085be7584b40c45665b947f5632caa00a5",
+  "review_rationale": "Reviewed the ordinal-representative definition of cardinality, linked the existing ordinal and well-order notions, and preserved separate equipotence and bijection occurrences for global consolidation."
 }
