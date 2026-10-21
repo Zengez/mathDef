@@ -2,26 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.5d1733b1dcffde12.universal-square-zero-thickening",
   "version_sha256": "5b5215f8600ac69742a885a59a053e9fe43c2093c884151ac6bd19066f47acb1",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "kernel",
-      "span": [
-        127,
-        133
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation13.abelian-group-homomorphism-kernel",
-        "meaning.wave2.foundation13.preadditive-category-kernel"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.161eb6c2909b6791a731"
+      "state": "existing",
+      "phrase": "formally unramified ring map R→S",
+      "target_meaning_id": "meaning.44fae2299dfd2f0a.formally-unramified-map",
+      "occurrence_id": "occ.537b06e706d60490fef7"
+    },
+    {
+      "state": "existing",
+      "phrase": "surjective R-algebra map S′→S",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.37c9f8d8e3864699e270"
+    },
+    {
+      "state": "existing",
+      "phrase": "square-zero ideal I of A",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.3ef9cfd3f526f2bfdfe5"
+    },
+    {
+      "state": "unassigned",
+      "phrase": "square-zero kernel",
+      "context": "Deformation theory: kernel ideal J of an algebra homomorphism satisfying J²=0",
+      "occurrence_id": "occ.414c84af782a5fe37531"
+    },
+    {
+      "state": "unassigned",
+      "phrase": "square-zero ideal I of A",
+      "context": "Ring theory: ideal I satisfying I²=0, including ideal multiplication",
+      "occurrence_id": "occ.54978c317a1f70613c20"
+    },
+    {
+      "state": "unassigned",
+      "phrase": "unique compatible lift S′→A",
+      "context": "Deformation theory: lifting R-algebra maps against square-zero quotients under the specified commuting map",
+      "occurrence_id": "occ.8c14693e38584d6686d1"
+    },
+    {
+      "state": "external",
+      "phrase": "every R-algebra map S→A/I",
+      "disposition": "Universal quantification over compatible maps to a quotient; the statement itself asserts no existence of lifts for maps S→A.",
+      "occurrence_id": "occ.630014fbfae365977803"
     }
   ],
-  "snapshot_sha256": "6af3b536e91b3906f4e1782507b061b9f05a25ae599b8e18dd2a5a5ce55c9ba4",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "22273083552528c64c11e3147c7bac86ad2811ad77a0d50bf73b25ee513392d3",
+  "review_rationale": "Inspected the full first-order thickening and universal lifting property, distinguished the source's formally unramified condition from a formally smooth lifting condition, and recorded square-zero kernels and compatible lifts without inventing separate meanings."
 }

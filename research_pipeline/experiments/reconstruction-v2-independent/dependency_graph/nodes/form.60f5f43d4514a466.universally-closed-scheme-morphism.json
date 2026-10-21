@@ -2,23 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.60f5f43d4514a466.universally-closed-scheme-morphism",
   "version_sha256": "38a9c6b9660073c069b2c7ed0bf76d59f530ae424a5179514e4091dc35815054",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "scheme",
-      "span": [
-        2,
-        8
-      ],
       "state": "existing",
-      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.7169dea773b12b479dda"
+      "phrase": "scheme morphism f:X→S",
+      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "occurrence_id": "occ.2ca91e506ad875efc9c9"
+    },
+    {
+      "state": "existing",
+      "phrase": "base-change map X×_S S′→S′",
+      "target_meaning_id": "meaning.8a65ad25b01e5104.base-change-scheme",
+      "occurrence_id": "occ.4593f40433e502c18bf9"
+    },
+    {
+      "state": "existing",
+      "phrase": "X×_S S′",
+      "target_meaning_id": "meaning.c31e56dc023fcbcc.scheme-fibre-product",
+      "occurrence_id": "occ.97d9ed078d3fcfd4c3cd"
+    },
+    {
+      "state": "unassigned",
+      "phrase": "sends closed subsets to closed subsets",
+      "context": "Topology: closed map of topological spaces underlying a scheme morphism",
+      "occurrence_id": "occ.f415977d6ab73b0127b3"
+    },
+    {
+      "state": "external",
+      "phrase": "for every morphism S′→S",
+      "disposition": "Base-change universality ranges over all scheme maps, not all continuous topological maps and not only flat base changes.",
+      "occurrence_id": "occ.6091afd8f9611d4a3e11"
     }
   ],
-  "snapshot_sha256": "b88352f5678f9d519af12edc6c23b9c45fa79a2ab9834ea4e127cb132feef563",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "9c787e385039c499c2bd612d3964036b574c96e938611e40970e90e04e740624",
+  "review_rationale": "Reviewed the entire universal closedness condition, separated scheme morphism, scheme base change and fibre product, and avoided treating universal closedness under scheme changes as a claim involving all topological base changes."
 }

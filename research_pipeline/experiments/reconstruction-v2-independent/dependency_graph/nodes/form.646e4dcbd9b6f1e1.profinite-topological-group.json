@@ -2,49 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.646e4dcbd9b6f1e1.profinite-topological-group",
   "version_sha256": "d5fc847f8828eb43ca8652b15418dd5f4bf6134ca0a4c3fffb9c744e15ccd4a5",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "group",
-      "span": [
-        12,
-        17
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.7ddc5dd438beb0f92ebb"
+      "state": "existing",
+      "phrase": "topological group",
+      "target_meaning_id": "meaning.646e4dcbd9b6f1e1.topological-group",
+      "occurrence_id": "occ.e2acf15685b71ccfb2bc"
     },
     {
-      "phrase": "topological group",
-      "span": [
-        23,
-        40
-      ],
       "state": "existing",
-      "target_meaning_id": "meaning.646e4dcbd9b6f1e1.topological-group",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.cc79ba57ddba6e1e2b49"
+      "phrase": "inverse limit",
+      "target_meaning_id": "meaning.a1d0959fa7703e41.inverse-limit-topological-spaces",
+      "occurrence_id": "occ.6fb54781b92f108cc717"
     },
     {
-      "phrase": "topological group",
-      "span": [
-        65,
-        82
-      ],
       "state": "existing",
-      "target_meaning_id": "meaning.646e4dcbd9b6f1e1.topological-group",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.95ad28a4c58e6ec30ce8"
+      "phrase": "finite discrete topological groups",
+      "target_meaning_id": "meaning.wave2.foundation.group",
+      "occurrence_id": "occ.80d443651cbd9a28f81a"
+    },
+    {
+      "state": "unassigned",
+      "phrase": "finite discrete topological groups",
+      "context": "Topology: finite groups carrying the discrete topology, with group-homomorphic transition maps",
+      "occurrence_id": "occ.a15929b4ceb71c2008b2"
+    },
+    {
+      "state": "unassigned",
+      "phrase": "isomorphic as a topological group",
+      "context": "Topology and group theory: isomorphism continuous in both directions and preserving group law",
+      "occurrence_id": "occ.3622f35cf2ba0d39062b"
+    },
+    {
+      "state": "external",
+      "phrase": "inverse limit of finite discrete topological groups",
+      "disposition": "The system is indexed by cofiltered compatible homomorphisms, not an arbitrary product of finite groups.",
+      "occurrence_id": "occ.6e81574bfcad5746311a"
     }
   ],
-  "snapshot_sha256": "b117bc9090515d70b27896e9b10577e5facf1a3d011503da7be60b852fc90733",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "e5daa0f64a2978aa9d99bd666ad1228c10edb69a67f886f5c59a002928cc29ce",
+  "review_rationale": "Read the whole profinite-group definition, kept the topological group and inverse-limit prerequisites, and retained the stronger topological group isomorphism plus finite discrete structures instead of identifying an arbitrary compact group as profinite."
 }
