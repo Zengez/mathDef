@@ -208,6 +208,20 @@ def rebuild(workspace, inventory=None):
                     "source": "reference_scan", "status": "unresearched",
                 })
             refs_by_form[fid].append(ref)
+    resolutions = {}
+    resolution_file = graph / "resolutions.jsonl"
+    saved_resolutions = (json.loads(line) for line in
+        resolution_file.read_text(encoding="utf-8").splitlines() if line.strip()
+    ) if resolution_file.exists() else ()
+    for resolution in saved_resolutions:
+        key, mid = resolution["missing_candidate_id"], resolution["target_meaning_id"]
+        if key in resolutions:
+            raise PipelineError("Duplicate append-only candidate resolution " + key)
+        if key not in candidate_map or mid not in meanings:
+            continue  # A stale or no-longer-applicable review cannot close anything.
+        if resolution.get("target_version_sha256") != digest(meanings[mid]):
+            continue
+        resolutions[key] = resolution
     reverse = defaultdict(set)
     outgoing = defaultdict(set)
     occurrences = []
@@ -221,8 +235,17 @@ def rebuild(workspace, inventory=None):
                 raise PipelineError("Duplicate occurrence: " + oid)
             seen_occ.add(oid)
             _reference_state(ref, meanings, candidate_map)
-            occurrences.append({"from_formulation": fid, **ref})
-            state = ref["state"]
+            effective = ref
+            if ref["state"] == "missing" and ref["missing_candidate_id"] in resolutions:
+                key = ref["missing_candidate_id"]
+                reverse["missing:" + key].add(fid)  # Retain traceability.
+                effective = {**ref, "state": "existing",
+                             "target_meaning_id": resolutions[key]["target_meaning_id"],
+                             "resolved_missing_candidate_id": key,
+                             "origin": ref.get("origin", "scan") + ":candidate_resolution"}
+            occurrences.append({"from_formulation": fid, **effective})
+            state = effective["state"]
+            ref = effective
             if state == "existing":
                 mid = ref["target_meaning_id"]
                 reverse["meaning:" + mid].add(fid)
@@ -265,7 +288,10 @@ def rebuild(workspace, inventory=None):
     candidates = []
     for k, c in sorted(candidate_map.items()):
         incoming = sorted(reverse.get("missing:" + k, ()))
-        candidates.append({**c, "incoming_formulation_ids": incoming,
+        candidates.append({**c, "status": "resolved" if k in resolutions else "unresearched",
+                           "resolved_target_meaning_id":
+                               resolutions[k]["target_meaning_id"] if k in resolutions else None,
+                           "incoming_formulation_ids": incoming,
                            "occurrence_count": sum(r.get("missing_candidate_id") == k
                                for r in occurrences),
                            "upstream_formulation_count": len(incoming)})
@@ -285,6 +311,7 @@ def rebuild(workspace, inventory=None):
         "scan_complete": counts["complete"], "scan_incomplete": counts["scan_incomplete"],
         "unscanned": counts["unscanned"], "open": len(blocked),
         "closed": len(state_rows) - len(blocked), "missing_candidates": len(candidates),
+        "unresolved_missing_candidates": sum(x["status"] != "resolved" for x in candidates),
         "missing_occurrences": sum(r["state"] == "missing" for r in occurrences),
         "ambiguous_occurrences": sum(r["state"] == "ambiguous" for r in occurrences),
         "seed_relations": len(inv["seed_relations"]),
@@ -446,6 +473,7 @@ def research_queue(workspace, limit=20):
         phase = "scan_and_disambiguate_first"
     else:
         phase = "research_missing_dependencies"
+    candidates = [x for x in candidates if x["status"] != "resolved"]
     candidates.sort(key=lambda x: (-x["upstream_formulation_count"],
                          -x["occurrence_count"], x["id"]))
     return {"phase": phase, "breadth_batch_143": "on_hold",
@@ -454,10 +482,41 @@ def research_queue(workspace, limit=20):
         "remaining": max(0, len(candidates) - limit)}
 
 
+def resolve(workspace, resolutions):
+    """Append-only version-bound candidate-to-meaning decisions, not certification."""
+    graph = graph_path(workspace)
+    inv = read(graph / "INVENTORY.json")
+    if not inv:
+        raise PipelineError("Inventory required before resolving candidates")
+    candidate_ids = {json.loads(x)["id"] for x in
+        (graph / "missing_candidates.jsonl").read_text(encoding="utf-8").splitlines() if x.strip()}
+    path = graph / "resolutions.jsonl"
+    existing = [json.loads(x) for x in path.read_text(encoding="utf-8").splitlines()
+                if x.strip()] if path.exists() else []
+    prior = {x["missing_candidate_id"]: x for x in existing}
+    for row in resolutions:
+        cid, mid = row.get("missing_candidate_id"), row.get("target_meaning_id")
+        if cid not in candidate_ids or mid not in inv["meanings"]:
+            raise PipelineError("Resolution candidate/meaning not in inventory")
+        if row.get("target_version_sha256") != digest(inv["meanings"][mid]):
+            raise PipelineError("Stale target meaning version")
+        if len(row.get("review_rationale", "").strip()) < 40:
+            raise PipelineError("Resolution requires substantive contextual review")
+        if cid in prior:
+            if prior[cid] != row:
+                raise PipelineError("Cannot overwrite append-only resolution")
+            continue
+        prior[cid] = row
+        existing.append(row)
+    write_atomic(path, "".join(json.dumps(r, sort_keys=True, ensure_ascii=False) + "\n"
+                                for r in existing))
+    return rebuild(workspace, inv)
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--workspace", type=Path, required=True)
-    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "status", "tree", "queue"),
+    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "resolve", "status", "tree", "queue"),
                    required=True)
     p.add_argument("--adapter", default="research_pipeline.adapters.mathdef.dependency_scan")
     p.add_argument("--limit", type=int, default=30)
@@ -477,6 +536,14 @@ def main():
         if batch.get("schema_version") != 1:
             raise PipelineError("Unsupported scan batch")
         result = store(args.workspace, batch["items"])
+    elif args.mode == "resolve":
+        inbox = (graph / "inbox").resolve()
+        if not args.batch or not args.batch.resolve().is_relative_to(inbox):
+            raise PipelineError("Resolution batches must be committed within dependency_graph/inbox")
+        batch = read(args.batch)
+        if batch.get("schema_version") != 1:
+            raise PipelineError("Unsupported resolution batch")
+        result = resolve(args.workspace, batch["resolutions"])
     elif args.mode == "tree":
         result = tree(args.workspace, args.root_formulation)
     elif args.mode == "queue":
