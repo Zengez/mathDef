@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-022",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.6f35dab884da6c30.etale-ring-map",
+      "version_sha256": "cefcba21d7caa84fbcb6bfac9abee3947aa88d1d3bc2f23126df9c0959082cbb",
+      "complete": true,
+      "review_rationale": "Read the entire étale ring-map characterization, including the requirement of finite presentation and vanishing of both homology degrees of the naive cotangent complex, not merely formal unramifiedness.",
+      "references": [
+        {
+          "phrase": "ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "finitely presented over R",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-presentation-ring-map"
+        },
+        {
+          "phrase": "naive cotangent complex NL_{S/R}",
+          "state": "existing",
+          "target_meaning_id": "meaning.138b13bf27c037c1.naive-cotangent-complex"
+        },
+        {
+          "phrase": "Kähler differentials Ω_{S/R}",
+          "state": "existing",
+          "target_meaning_id": "meaning.7ca4fb934b2f076c.kahler-differentials"
+        },
+        {
+          "phrase": "H_1(NL_{S/R})=0",
+          "state": "unassigned",
+          "context": "Homological algebra: first homology module of a two-term cotangent complex"
+        },
+        {
+          "phrase": "zero homology in degrees 1 and 0",
+          "state": "external",
+          "disposition": "Both vanishing conditions are explicitly required; no additional étaleness-at-prime condition is inferred."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.702f390cae5f9540.equalizer-category",
+      "version_sha256": "865290c2fd6c394da6dc07982022b987c5c57245ab5b3108fd116060f16ec91e",
+      "complete": true,
+      "review_rationale": "Read the complete categorical equalizer property, identifying parallel arrows and equality after precomposition, and the universal uniqueness of factorization through the equalizing arrow.",
+      "references": [
+        {
+          "phrase": "category C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "parallel morphisms f,g:X⇉Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "factorization h through e",
+          "state": "unassigned",
+          "context": "Category theory: unique factorization of any arrow equalized by the given pair"
+        },
+        {
+          "phrase": "f∘e=g∘e",
+          "state": "external",
+          "disposition": "This equality is the defining equalizing equation, and the universal part additionally requires unique factorization."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.709d3d2f82950c5b.directed-preordered-set",
+      "version_sha256": "26d98622cc46385d368850103dc6486913cccdc1d8a9e72d78ec130f185448b7",
+      "complete": true,
+      "review_rationale": "Examined the entire directed-set definition, retaining reflexivity and transitivity of the underlying preorder, nonemptiness and the common upper bound quantifier; antisymmetry is not required.",
+      "references": [
+        {
+          "phrase": "preordered set I",
+          "state": "existing",
+          "target_meaning_id": "meaning.709d3d2f82950c5b.preordered-set"
+        },
+        {
+          "phrase": "nonempty",
+          "state": "external",
+          "disposition": "This is an explicit nonemptiness requirement rather than an assumption that an empty preorder is directed."
+        },
+        {
+          "phrase": "for any i,j there is k with i≤k and j≤k",
+          "state": "external",
+          "disposition": "The common upper bound is the defining directedness condition and does not add antisymmetry."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.709d3d2f82950c5b.inductive-system",
+      "version_sha256": "8a648137a97e21e67a249ed7c71426c7077ac11061193a2bc19d01b99b99fd91",
+      "complete": true,
+      "review_rationale": "Read the full direct-system definition: objects indexed by a preorder, transition arrows for every comparable pair, identity transitions and compatible composition. No filteredness or directedness of I is asserted in this formulation.",
+      "references": [
+        {
+          "phrase": "preorder I",
+          "state": "existing",
+          "target_meaning_id": "meaning.709d3d2f82950c5b.preordered-set"
+        },
+        {
+          "phrase": "category C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "objects and transition morphisms",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "identity f_ii and compatibility f_ik=f_jk∘f_ij",
+          "state": "external",
+          "disposition": "These are the functorial transition equations for the indexed system, not a demand for isomorphic arrows."
+        }
+      ]
+    }
+  ]
+}
