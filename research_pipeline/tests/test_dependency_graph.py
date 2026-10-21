@@ -134,6 +134,23 @@ class DependencyGraphTests(unittest.TestCase):
         with self.assertRaises(PipelineError):
             apply_inbox(self.root, limit=20)
 
+    def test_completed_tracks_recursive_existing_traversal_not_direct_missing(self):
+        self.add("A", "requires B")
+        self.add("B", "requires missing C")
+        self.write_fixture()
+        store(self.root, [self.entry("form.a", [self.ref("B")])])
+        status = read(graph_path(self.root) / "STATE.json")["formulations"]
+        self.assertTrue(status["form.a"]["encountered"])
+        self.assertFalse(status["form.a"]["completed"])
+        self.assertFalse(status["form.b"]["encountered"])
+        self.assertFalse(status["form.b"]["completed"])
+        store(self.root, [self.entry("form.b", [
+            {"phrase": "missing C", "state": "missing", "context": "Algebra"}])])
+        status = read(graph_path(self.root) / "STATE.json")["formulations"]
+        self.assertTrue(status["form.a"]["completed"])
+        self.assertTrue(status["form.b"]["completed"])
+        self.assertEqual(status["form.a"]["structural_status"], "open")
+
     def test_missing_resolution_is_pinned_to_target_content(self):
         self.add("A", "missing important concept C")
         self.add("C", "initial statement")
