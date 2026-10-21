@@ -1,5 +1,45 @@
 # Wave 2 — source-free semantic reference scanning pilot (2026-10-21)
 
+## Latest source-free Pass 1 — 309/659 complete
+
+The live graph and applied receipts supersede any older numbers below.
+Five new semantic batches have **successful GitHub Actions and receipts**:
+
+| Batch | Complete scans | Occurrences | Action |
+|---|---:|---:|---|
+| `semantic-existing-initial-033` | 8 | 43 | 39694941243 |
+| `semantic-existing-initial-034` | 8 | 48 | 39695122736 |
+| `semantic-existing-initial-035` | 8 | 40 | 39695341017 |
+| `semantic-existing-initial-036` | 8 | 40 | 39695494121 |
+| `semantic-existing-initial-037` | 8 | 40 | 39696190963 |
+
+**This continuation: 40 fully reviewed formulations, 211 source-free
+reference decisions.** Two incorrect contextual links were independently
+corrected through append-only review packages
+`semantic-existing-correction-scope-004a` (Action 39695924259) and
+`semantic-existing-correction-scope-004b` (39695959925). Both
+applied receipts and the latest isolated test run (39696191097) passed.
+The corrections distinguish bases of non-open quasi-compact neighborhoods
+from open topology bases, and exclude an unmentioned formal-étale
+comparison from formal smoothness's dependencies.
+
+**Graph:** 611 existing contextual meanings; 659 formulations;
+309 complete, 350 preliminary lexical-only; 423 unassigned occurrences;
+243 ambiguous lexical occurrences; 13 historical missing-candidate rows
+of which 12 unresolved; 12 append-only correction events; all 659 Open;
+phase `scan_and_link_existing` with consolidation and new-definition
+research gated OFF. No mathematical source content was modified, and no
+external research or original production corpus was consulted.
+
+**Next:** `form.b1c99b8dae7a6bde.locally-finite-collection`, then
+`form.b1c99b8dae7a6bde.ordered-stratification`, then
+`form.b1d6371a257864cf.quasiseparated-scheme-morphism`.
+All incoming links and source formulation versions must be validated.
+See `research_pipeline/adapters/mathdef/resume_plan.json`.
+
+---
+
+
 ## Latest continuation — batches 028–032, verified 269/659
 
 **Live STATE.json and committed applied receipts supersede this snapshot
