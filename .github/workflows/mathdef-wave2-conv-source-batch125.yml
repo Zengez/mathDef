@@ -1,0 +1,82 @@
+name: Admit independently sourced function convergence and eigenvector evidence — Batch 125
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-conv-source-batch125.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+jobs:
+  source-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Sync latest independent research main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generic engine and mathDef adapter tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Intake four source headings and eight individual source observations
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_conv_source_batch125 --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Reconcile source-term independent coverage
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage --wave1 research_pipeline/experiments/reconstruction-v1-recovery --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify frozen Wave1, untouched mathematical decisions, source hold
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          first=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(first.publication())==json.loads((first.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          counts={"sources":14,"terms":469,"observations":932,"meanings":577,"relations":825}
+          assert {k:len(w.records(k)) for k in counts}==counts
+          assert not any(w.state(k).get("sealed") for k in counts)
+          for k in ("sources","terms","observations","relations"):
+            assert all(w.records(k).get(i)==v for i,v in first.records(k).items())
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==611 and dict(Counter(r["decision"] for r in reviews))=={"linked":605,"no_supported_target":6}
+          assert {i for r in reviews for i in r["relation_ids"]}==set(w.records("relations"))
+          held=jsonl(w.root/"wave2/conv125_quarantined_source_claims.jsonl")
+          assert len(held)==1 and held[0]["observation_id"]=="obs.wave2.conv125.uniform-convergence.03"
+          for path in ("wave2/conv125_quarantined_source_claims.jsonl","wave2/quot118_quarantined_source_claims.jsonl","wave2/directional112_quarantined_source_claims.jsonl"):
+            h=jsonl(w.root/path)
+            assert len(h)==1 and h[0]["observation_id"] not in {i for m in w.records("meanings").values() for f in m["formulations"] for i in f["evidence_ids"]}
+          check_cycles(w.records("meanings"),w.records("relations"))
+          result=json.loads((w.root/"state/wave2_conv125_source_intake.json").read_text())
+          assert result["new_mathematical_meanings"]==result["new_links"]==0
+          assert result["held_bad_partial_sum_index"]==1 and result["nonzero_eigenvector_preserved"]
+          assert not result["human_peer_verified"] and not result["production_corpus_used"]
+          print(json.dumps(result,indent=2))
+          PY
+      - name: Commit only independent source-stage research
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Admit independently researched convergence/eigenvector source observations with uniform-series typo hold"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
