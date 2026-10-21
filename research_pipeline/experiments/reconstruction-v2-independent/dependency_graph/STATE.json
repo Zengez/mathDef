@@ -7,17 +7,17 @@
     "screened_formulations": 639,
     "provisional_formulations": 20,
     "scan_complete": 6,
-    "scan_incomplete": 554,
-    "unscanned": 99,
+    "scan_incomplete": 594,
+    "unscanned": 59,
     "open": 659,
     "closed": 0,
     "missing_candidates": 13,
-    "unresolved_missing_candidates": 13,
-    "alias_candidate_records": 0,
+    "unresolved_missing_candidates": 12,
+    "alias_candidate_records": 1,
     "missing_occurrences": 17,
-    "ambiguous_occurrences": 267,
+    "ambiguous_occurrences": 301,
     "seed_relations": 891,
-    "scan_occurrences": 460,
+    "scan_occurrences": 497,
     "scan_amendment_event_count": 0,
     "automatic_completion_is_not_certification": true,
     "breadth_expansion": "on_hold"
@@ -135,7 +135,7 @@
       "completed": true,
       "structural_status": "open",
       "direct_blockers": [
-        "missing:missing.6d8a70c23c4b7120411b"
+        "missing:missing.45359d317b7e3aba73da"
       ],
       "version_sha256": "c1a2ed587e7a17cef338ad236e7557f00da7292455c9d631f323a0418c27cd89"
     },
@@ -5927,8 +5927,8 @@
       "version_sha256": "793986d16841d26b23715e5b74791da91b54f815b5e64671d85616cdfdfcafd6"
     },
     "form.wave2.foundation.unit-of-ring": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -5937,68 +5937,79 @@
       "version_sha256": "f17e7653eb8466bd71b2898a46117982ce4496d0548953e71be59923ef791493"
     },
     "form.wave2.foundation.well-ordered-set": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.f6985f7cda25d42d4268",
         "scan_incomplete"
       ],
       "version_sha256": "80f9e3cc879ef0595cd6e5fdf6a2617b926065f8cb98b42efc3b2ec6a7e4060a"
     },
     "form.wave2.foundation13.abelian-group-homomorphism-kernel": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.590e3d91472c98a105f4",
+        "ambiguous:occ.d39adee6f5a538a91479",
+        "ambiguous:occ.2cf1d11850529c7bb76b",
         "scan_incomplete"
       ],
       "version_sha256": "41d077d3633b04d2dff4e36a7e51e57652d5a8465464f4fb5fca46abacd7a883"
     },
     "form.wave2.foundation13.exact-sequence-abelian-category": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.df3ebceff4bd62b57364",
         "scan_incomplete"
       ],
       "version_sha256": "a336fdd1a8e328a401705636eb79c58f5bc8f4665a575d550df00175109bbab8"
     },
     "form.wave2.foundation13.preadditive-category-cokernel": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.67cfc6d1b54adfe4f2f8",
         "scan_incomplete"
       ],
       "version_sha256": "01e34bb4c31fdc18ee19479b15cb9fca1dc5ec94a00643ca276243e85a88bc50"
     },
     "form.wave2.foundation13.preadditive-category-kernel": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.6fbba4d6f86f467c5ae9",
+        "ambiguous:occ.496ae5efd4f7e0623cd6",
+        "ambiguous:occ.36b8c809672b35202259",
         "scan_incomplete"
       ],
       "version_sha256": "65c9ea71da4e4cb687e9b6d58789902347ca3a67c88e65353a89b9a324b6531a"
     },
     "form.wave2.foundation15.abelian-category": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.e60248992f18cfa9b4cd",
+        "ambiguous:occ.298798e7a29ca90a4ec5",
         "scan_incomplete"
       ],
       "version_sha256": "27ce82d10fa13d85512eca03fbbe421afd58a951acc031c457370065a4d8a11b"
     },
     "form.wave2.foundation15.additive-category": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6007,28 +6018,30 @@
       "version_sha256": "f99af0281762c91992e17769adfe29a29a8640d82dd611e4c8826f6fe188a104"
     },
     "form.wave2.foundation15.preadditive-category": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.5b8e9bc07ef161ffcfce",
         "scan_incomplete"
       ],
       "version_sha256": "8672ea717e558c2258b989f93c79d59915d908f14f230394077d816435f12df7"
     },
     "form.wave2.foundation76.continuous-topological-map.01": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.1e3463b8ea9f7f4d34f4",
         "scan_incomplete"
       ],
       "version_sha256": "e9b617d1ba2e2c3464c7845c8ca5eea5690f8bdf468406758238bbef66f72360"
     },
     "form.wave2.foundation76.continuous-topological-map.02": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6037,28 +6050,32 @@
       "version_sha256": "699d15286d5acbef61eca58f00c357f6c05e69ff1020114d3243a2661d2112ad"
     },
     "form.wave2.foundation76.discrete-topology.01": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.943684d00dcda2f747b1",
+        "ambiguous:occ.682a6bc59a8fedbf496d",
+        "ambiguous:occ.0e284ae60b9d39a1b35a",
         "scan_incomplete"
       ],
       "version_sha256": "9c809b6f11dc8bff94ef428bf2332def8e6a1358e1dd0a5ad3f495a1e16a0fa2"
     },
     "form.wave2.foundation76.noetherian-module.01": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.9433eb7e4fbc1d8c7e54",
         "scan_incomplete"
       ],
       "version_sha256": "387d47d817226c504ce7e7bb4da8991de127000fa66173cf0933a44728f455a1"
     },
     "form.wave2.foundation76.noetherian-module.02": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6067,8 +6084,8 @@
       "version_sha256": "af82f88c70e3e10e58716fd12e0cc6b2debb71f66e21f0be800ed98ddaa59def"
     },
     "form.wave2.foundation76.noetherian-module.03": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6077,18 +6094,19 @@
       "version_sha256": "04364584e1ebf777188d0135a179b2fec000a43481a28eef2f394e467864e386"
     },
     "form.wave2.foundation76.submodule.01": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.1a2efef5f52384c59a28",
         "scan_incomplete"
       ],
       "version_sha256": "b21e01bcdf45d2377abf577a92733fbfd496e7fd42a533e6756944ce905ea891"
     },
     "form.wave2.graph42.loopless-undirected-multigraph": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6097,8 +6115,8 @@
       "version_sha256": "dd31a367bf59507f2c1637aa68c3ed69337108c5efb8b6168d48e436d07f71b9"
     },
     "form.wave2.graph42.simple-undirected": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6107,28 +6125,31 @@
       "version_sha256": "8bff812cfaa8bda897c3b8b96cb25caddaaf4453d0cc9b7ace44987a003a7fb9"
     },
     "form.wave2.group116.group-orbit.1": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.7877dda2481e6098b46c",
         "scan_incomplete"
       ],
       "version_sha256": "6118708c4ec22eb930df3ecccea9067b33ae8ad069fba8ea61e02c28899ef7c9"
     },
     "form.wave2.group116.group-orbit.2": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.c50858ef686f4d1c2b31",
+        "ambiguous:occ.8e8b419a596aa9a27858",
         "scan_incomplete"
       ],
       "version_sha256": "12b20fed3ea7531bc146beb43e60909f178bc0bc5f98b1645b7f177a6445d927"
     },
     "form.wave2.group116.group-stabilizer": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6137,8 +6158,8 @@
       "version_sha256": "f9b9329cb7b3cb7c8a1f59ad5b98ea4694f0c3413811c6708aefb9578b173a43"
     },
     "form.wave2.group116.measure-pushforward": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6147,8 +6168,8 @@
       "version_sha256": "b9370010a710834809dc26e135a93231bcaf0f7cda5a4b61e507320a35990a94"
     },
     "form.wave2.group116.set-partition.1": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6157,8 +6178,8 @@
       "version_sha256": "16ec23556bd32f8be619e1659c29f04ee08c5ed378bf1cdc6c71366840de8b50"
     },
     "form.wave2.group116.set-partition.2": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6167,8 +6188,8 @@
       "version_sha256": "937ea5805e9ce8c996136fd062276822b550ee5546b7e4d16d2964daaccc76a2"
     },
     "form.wave2.integer59.fraction-field-integral-domain": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6177,8 +6198,8 @@
       "version_sha256": "5adf427f05a9b697b0523044e2b975c93f8501021a033ba73b51f24e310a3e45"
     },
     "form.wave2.integer59.fraction-field-universal": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6187,58 +6208,66 @@
       "version_sha256": "af9d8d16403664f385a2113f0f39e39ed3f6f5c1d67b81ce68a3fa844b899363"
     },
     "form.wave2.integer59.integer-equivalence-class": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.c5c299e58253a9d48df6",
+        "ambiguous:occ.4f3a8e92b442ce9bceb9",
+        "ambiguous:occ.30c8d681ad19a5acdb9a",
         "scan_incomplete"
       ],
       "version_sha256": "97901ef2ff18199b52b2789813aaa984d4e3721c73a56cb774a46ca28d2ccb95"
     },
     "form.wave2.integer59.integer-ring": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.44aef43d8745be079b69",
+        "ambiguous:occ.db5db93db293a11b2f42",
         "scan_incomplete"
       ],
       "version_sha256": "4b25faa61a01d2c09a8c5b7b5e9f721473d946314c4b179649f0302dcfab8ccd"
     },
     "form.wave2.module94.right-module-nonunital": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.d6939f10b7111fbc70cc",
         "scan_incomplete"
       ],
       "version_sha256": "6619ba1a37a3e1872bc2b38b2b9584763cacb454b4bc9787f433b6e0eba64971"
     },
     "form.wave2.module94.unital-left-module": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.7f2855da03627408a050",
         "scan_incomplete"
       ],
       "version_sha256": "04557ec6ce830fbb831d7c4dc5bb876f74099f65abde22228217a537f7d27aab"
     },
     "form.wave2.module94.unital-right-module": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.b651587070a6535ecf3b",
         "scan_incomplete"
       ],
       "version_sha256": "769d622b6f799faae4af2f0102f044bdbfda54cc5849377b62b5131994846206"
     },
     "form.wave2.pop139.congruence-multiple": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6248,18 +6277,19 @@
       "version_sha256": "8e456483d9614e48ebaf4dd4352dae4c8346639291fa5c208890f6b314191c8a"
     },
     "form.wave2.pop139.congruence-remainder": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.67c8f0b6ac6c3e7cc21d",
         "scan_incomplete"
       ],
       "version_sha256": "f714431c71f7a5fa2efe9b6ba81d114502f1e2ab1867153d10a099222caad251"
     },
     "form.wave2.pop139.matrix-trace": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6269,19 +6299,20 @@
       "version_sha256": "e513285542018b8f8f564db8e0bda84f23590ef1c2a6abbfde2b3088a588b50a"
     },
     "form.wave2.pop140.affine-hull-combinations": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
         "missing:missing.162c8a146060e41fc577",
+        "ambiguous:occ.ca2729960c6f47fe291e",
         "scan_incomplete"
       ],
       "version_sha256": "d624f6f8f78877c42964ab8b63c14e00773449579e6593eae1fdfba647b1daab"
     },
     "form.wave2.pop140.affine-hull-intersection": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
@@ -6290,38 +6321,41 @@
       "version_sha256": "db006ee0430da4c3faa1f6d5c5622215de7a658249393791791df1fbc5ec81cf"
     },
     "form.wave2.pop140.independent-pair": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.7c3630a8bf688b46028e",
         "scan_incomplete"
       ],
       "version_sha256": "0ed86e899e7d8e111852d8608a37814aa479986e489456d8581cd8c7bd5f5efe"
     },
     "form.wave2.pop140.mutually-independent": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.953b3f40205305ffbd78",
         "scan_incomplete"
       ],
       "version_sha256": "ab6ffe9e9014f0c336064f3a14486e49e6b89d21cb9e53d96f3563ade5d6e2aa"
     },
     "form.wave2.pop140.pairwise-independent": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
+        "ambiguous:occ.049cefc14bf64761d681",
         "scan_incomplete"
       ],
       "version_sha256": "186ea4d23a63592d582889dea31ec8ccfab4faff2a4253eb4ea7584600a045e1"
     },
     "form.wave2.pop140.simple-graph-cycle": {
-      "scan_status": "unscanned",
-      "encountered": false,
+      "scan_status": "scan_incomplete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
