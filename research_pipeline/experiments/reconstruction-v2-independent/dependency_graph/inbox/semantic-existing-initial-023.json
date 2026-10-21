@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-023",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.709d3d2f82950c5b.inverse-system",
+      "version_sha256": "6f695c91151e95781dab398e0c13b1a9fc823d3e606497d9e4ae7b70e5254731",
+      "complete": true,
+      "review_rationale": "Examined all transition arrows and their indices: the maps go from i to j when j≤i, and composition is tested when k≤j≤i. This is an inverse diagram over a preorder, not a direct system or a prerequisite of directedness.",
+      "references": [
+        {
+          "phrase": "preorder I",
+          "state": "existing",
+          "target_meaning_id": "meaning.709d3d2f82950c5b.preordered-set"
+        },
+        {
+          "phrase": "category C and arrows",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "indexed objects M_i and transition maps",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "identity and compatible compositions",
+          "state": "external",
+          "disposition": "Identity transitions and f_ik=f_jk∘f_ij are the defining compatibility conditions, without an assumed cofiltered indexing set."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.709d3d2f82950c5b.partially-ordered-set",
+      "version_sha256": "3e2640d98b426282dbb1445180a301f450b264e4309f13cf4a97a372e0ccb5b4",
+      "complete": true,
+      "review_rationale": "Read the full partial-order criterion, specifically adding antisymmetry to reflexivity and transitivity of a preorder. A partial order is not assumed linear or well ordered.",
+      "references": [
+        {
+          "phrase": "preordered set",
+          "state": "existing",
+          "target_meaning_id": "meaning.709d3d2f82950c5b.preordered-set"
+        },
+        {
+          "phrase": "antisymmetry of a binary relation",
+          "state": "unassigned",
+          "context": "Order theory: antisymmetry property, i≤j and j≤i imply i=j"
+        },
+        {
+          "phrase": "i≤j and j≤i imply i=j",
+          "state": "external",
+          "disposition": "This is the additional antisymmetry axiom; it does not assert total comparability."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.709d3d2f82950c5b.preordered-set",
+      "version_sha256": "406b060230b2a8383fccea129ee924b703f9ca08897dacc07c8335b6cdc6ca9c",
+      "complete": true,
+      "review_rationale": "Inspected both prerequisite relation properties: a binary relation on I that is reflexive and transitive; antisymmetry is neither included nor inferred.",
+      "references": [
+        {
+          "phrase": "binary relation ≤ on I",
+          "state": "unassigned",
+          "context": "Set theory: binary relation on I as a subset of I×I"
+        },
+        {
+          "phrase": "reflexive relation",
+          "state": "unassigned",
+          "context": "Relation theory: every i is related to itself"
+        },
+        {
+          "phrase": "transitive relation",
+          "state": "unassigned",
+          "context": "Relation theory: if i relates to j and j to k then i relates to k"
+        },
+        {
+          "phrase": "set I",
+          "state": "external",
+          "disposition": "The underlying set is not required to have a discrete, ordered or finite topology."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.70f44988651b76b5.module-localization-at-multiplicative-set",
+      "version_sha256": "1a5df72ae57daa97b18f7718a6cbd090d3a33c582ce7b0c08d9a3086c9496882",
+      "complete": true,
+      "review_rationale": "Read all fraction, denominator and equivalence clauses of S-inverse-M, retaining the witness t∈S; the ring S-inverse-R supplies its module structure. The localization construction is not a field of fractions unless additional hypotheses hold.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "ring S^{-1}R",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "multiplicative subset S⊆R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "multiplicative subset S",
+          "state": "unassigned",
+          "context": "Commutative algebra: multiplicative subset of a commutative ring, containing 1 and closed under multiplication"
+        },
+        {
+          "phrase": "fractions m/s modulo equivalence",
+          "state": "unassigned",
+          "context": "Module theory: equivalence relation for localization of an R-module along multiplicative set S"
+        },
+        {
+          "phrase": "there exists t∈S with t(s′m−sm′)=0",
+          "state": "external",
+          "disposition": "The displayed witness is essential to equality of localized module fractions and is not ordinary equality of numerator cross-products."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.70f44988651b76b5.ring-localization-at-multiplicative-set",
+      "version_sha256": "117142cc52db2ac32267ea4b7d50fb67e3893ec50ac3e582929b5b273ab5eba2",
+      "complete": true,
+      "review_rationale": "Read the entire ring-localization fraction construction including a possible zero divisor, the t witness, and the commutative-ring context. Does not conflate localization with forming a field or inverting arbitrary zero divisors.",
+      "references": [
+        {
+          "phrase": "commutative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "subset S⊆R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "multiplicative subset S",
+          "state": "unassigned",
+          "context": "Commutative algebra: multiplicatively closed subset of a commutative ring, containing 1"
+        },
+        {
+          "phrase": "ring fractions modulo the stated equivalence",
+          "state": "unassigned",
+          "context": "Commutative algebra: equivalence relation on numerator-denominator pairs in localization"
+        },
+        {
+          "phrase": "t(rs′−r′s)=0 for some t∈S",
+          "state": "external",
+          "disposition": "The witness corrects naive cross multiplication when S includes zero divisors; it is the specified fraction equivalence."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.711d6a9a3f5a61ca.relative-de-rham-complex",
+      "version_sha256": "e18c34cb472aa1086dba10d0364985dd822aa1b799785191b3c3a6a168e47939",
+      "complete": true,
+      "review_rationale": "Inspected the full graded Ω complex and universal extension of derivations; distinguished exterior powers from tensor powers, and degree p from homology degree. The differential is defined on wedge products, with Ω^0=B.",
+      "references": [
+        {
+          "phrase": "ring homomorphism A→B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "Kähler differentials Ω^1_{B/A}",
+          "state": "existing",
+          "target_meaning_id": "meaning.7ca4fb934b2f076c.kahler-differentials"
+        },
+        {
+          "phrase": "universal derivation",
+          "state": "existing",
+          "target_meaning_id": "meaning.7ca4fb934b2f076c.r-derivation"
+        },
+        {
+          "phrase": "exterior powers ∧^p_B Ω^1_{B/A}",
+          "state": "unassigned",
+          "context": "Multilinear algebra: pth exterior power of a module over B"
+        },
+        {
+          "phrase": "graded differential complex Ω^•",
+          "state": "unassigned",
+          "context": "Homological algebra: cochain complex with degree-raising differential satisfying d²=0"
+        },
+        {
+          "phrase": "d(b_0 db_1∧⋯∧db_p)=db_0∧⋯∧db_p",
+          "state": "external",
+          "disposition": "This Leibniz-compatible differential rule extends the universal derivation and is not a tensor product operation."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.720eaae9156f6f4e.separable-algebraic-element",
+      "version_sha256": "2d54a5adef9a3d9ea68b127791e2dfdcd9167f6fbaa436e9856c12b1c9db323a",
+      "complete": true,
+      "review_rationale": "Read the short separable algebraic-element definition, distinguishing element-level separability via its minimal polynomial from separability of an entire field extension.",
+      "references": [
+        {
+          "phrase": "algebraic element α of E/F",
+          "state": "existing",
+          "target_meaning_id": "meaning.d0a078e59e1495da.algebraic-element-extension"
+        },
+        {
+          "phrase": "field extension E/F",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "phrase": "minimal polynomial over F",
+          "state": "existing",
+          "target_meaning_id": "meaning.3aaa8d6f2195bb8e.minimal-polynomial"
+        },
+        {
+          "phrase": "separable irreducible polynomial",
+          "state": "existing",
+          "target_meaning_id": "meaning.720eaae9156f6f4e.separable-irreducible-polynomial"
+        },
+        {
+          "phrase": "over F",
+          "state": "external",
+          "disposition": "The base field for the minimal polynomial is the given F, not necessarily a field of definition enlarged to E."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.720eaae9156f6f4e.separable-algebraic-field-extension",
+      "version_sha256": "c7452701c5331c620681c5ffff3cca910bad79f60aa47e0f8a4492b9bcb7a131",
+      "complete": true,
+      "review_rationale": "Read the full separable algebraic-extension statement; it requires all elements to be separable algebraic elements and has an explicit algebraic-extension hypothesis. No finite degree or Galois normality is assumed.",
+      "references": [
+        {
+          "phrase": "algebraic extension E/F",
+          "state": "existing",
+          "target_meaning_id": "meaning.50d335de00e5f11d.algebraic-extension"
+        },
+        {
+          "phrase": "separable algebraic element",
+          "state": "existing",
+          "target_meaning_id": "meaning.720eaae9156f6f4e.separable-algebraic-element"
+        },
+        {
+          "phrase": "every element of E",
+          "state": "external",
+          "disposition": "The quantification includes every element without restricting to primitive generators, finite fields, or algebraic closures."
+        }
+      ]
+    }
+  ]
+}
