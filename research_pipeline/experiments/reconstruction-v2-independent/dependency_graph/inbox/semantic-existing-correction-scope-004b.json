@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-correction-scope-004b",
+  "mode": "amend",
+  "amendments": [
+    {
+      "amendment_id": "amend.scope-formalsmooth-20261021-01",
+      "formulation_id": "form.aacbc297769cc94a.formally-smooth-ring-map",
+      "version_sha256": "830512f57d20e8b50cdfc7f367e1718cfd92d975dc3829f3d142cbe0089487e5",
+      "expected_node_sha256": "760bf44845d58d89cf68244b29d1654cf8fb19cd71614ca89254734f5828390c",
+      "reviewed_by": "assistant-contextual-semantics-pass1",
+      "reason": "The original source definition does not invoke formally étale ring maps. This link came from the review comparison, so it is not a true outgoing dependency and must be omitted.",
+      "complete": true,
+      "review_rationale": "Reviewed the whole square-zero lifting statement and retained the ring map, ideal, R-algebra quotient, and compatible lift. Removed the extraneous formal-étale comparison as a false dependency.",
+      "references": [
+        {
+          "phrase": "commutative ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "ideal I⊆A",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "R-algebra and quotient map A→A/I",
+          "state": "unassigned",
+          "context": "Commutative algebra: R-algebra with quotient by square-zero ideal and compatible R-algebra structure"
+        },
+        {
+          "phrase": "lift of homomorphism S→A/I to S→A",
+          "state": "unassigned",
+          "context": "Category theory and commutative algebra: diagonal lift in commuting square of R-algebra maps"
+        },
+        {
+          "phrase": "I²=0 and every R-algebra map has a lift",
+          "state": "external",
+          "disposition": "Existence is required for each square-zero extension; uniqueness is not part of this definition."
+        }
+      ]
+    }
+  ]
+}
