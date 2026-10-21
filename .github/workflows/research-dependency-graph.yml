@@ -65,8 +65,13 @@ jobs:
               --workspace "$WORKSPACE" --mode propose --limit "$PROPOSAL_LIMIT"
             python -m research_pipeline.engine.dependency_graph \
               --workspace "$WORKSPACE" --mode queue --limit 10 > /tmp/dependency-queue-summary.json
-            git add -- "$GRAPH"
-            if git diff --cached --name-only | grep -v "^$GRAPH/"; then
+            # The legacy population planner must never retain unrelated breadth
+            # recommendations after the dependency graph changes phase.
+            python -m research_pipeline.engine.population_queue \
+              --workspace "$WORKSPACE" \
+              --profile research_pipeline/adapters/mathdef/population_topics.json --write
+            git add -- "$GRAPH" "$WORKSPACE/population/QUEUE.json"
+            if git diff --cached --name-only | grep -Ev "^($GRAPH/|$WORKSPACE/population/QUEUE[.]json$)"; then
               echo "Write escaped isolated graph workspace" >&2; exit 1
             fi
             if git diff --cached --quiet; then echo "No new graph work"; exit 0; fi
