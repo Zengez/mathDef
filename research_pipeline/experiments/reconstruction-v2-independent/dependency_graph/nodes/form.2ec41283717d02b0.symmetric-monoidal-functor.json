@@ -2,23 +2,30 @@
   "schema_version": 1,
   "formulation_id": "form.2ec41283717d02b0.symmetric-monoidal-functor",
   "version_sha256": "fc8b1cbb58a028ac2f6771a77b02c6bffb68f709c7e9ed749d4c3eea3e9d0420",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
       "phrase": "strong monoidal functor",
-      "span": [
-        34,
-        57
-      ],
       "state": "existing",
       "target_meaning_id": "meaning.2ec41283717d02b0.strong-monoidal-functor",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.894069684a9b15c69d17"
+      "matching_note": "The underlying functor includes coherent tensor and unit isomorphisms.",
+      "occurrence_id": "occ.aa38d7ccfcaa75169a83"
+    },
+    {
+      "phrase": "symmetric monoidal categories",
+      "state": "existing",
+      "target_meaning_id": "meaning.2ec41283717d02b0.symmetric-monoidal-category",
+      "matching_note": "Both source and target have symmetric monoidal structures.",
+      "occurrence_id": "occ.87f4828cd33637418538"
+    },
+    {
+      "phrase": "structural tensor isomorphisms commute with symmetry/exchange isomorphisms",
+      "state": "unassigned",
+      "context": "Category theory: symmetry preservation equation for a strong monoidal functor",
+      "reason": "This is the additional symmetry-compatible condition distinguishing the symmetric functor.",
+      "occurrence_id": "occ.7bd87dc48a298caf21c6"
     }
   ],
-  "snapshot_sha256": "06f5b82025da5419fef6d3d9e6592fcfbcbb5b8af41c02fc56625618187ae13e",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "632168fc0078db9122996c4aa6e2b724da6411dfd5b0c04357c1a09f2f49c899",
+  "review_rationale": "Reviewed the symmetric monoidal functor as a symmetry-compatible strong monoidal functor between symmetric categories, retaining the additional compatibility equation."
 }

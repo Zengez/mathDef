@@ -2,25 +2,29 @@
   "schema_version": 1,
   "formulation_id": "form.2d96a50b600ecbfc.noetherian-topological-space",
   "version_sha256": "50f5a081ae754a4eb6a4be042931841693bd04bc8664bc25c02967ff0b236fa2",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
       "phrase": "topological space",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.7281112e456227202c46"
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "matching_note": "Noetherian topological space uses ordinary open and closed subsets.",
+      "occurrence_id": "occ.8bcc25da9c90cb8d4bd6"
+    },
+    {
+      "phrase": "descending sequence of closed subsets",
+      "state": "unassigned",
+      "context": "Topology: descending chain of closed subsets X⊇F_1⊇F_2⊇…",
+      "reason": "Descending-chain condition is a topological analogue of a Noetherian condition, but not the ring Noetherianity meaning.",
+      "occurrence_id": "occ.9f70ce88f63f8f74d86c"
+    },
+    {
+      "phrase": "eventually becomes constant",
+      "state": "external",
+      "disposition": "The stabilization condition is explicitly described and does not require a separate named definition.",
+      "occurrence_id": "occ.9599fd5eb3402c2f4a55"
     }
   ],
-  "snapshot_sha256": "2072647030a3a8e96ef4bfbcec838c8d919042c6a7503731eb69848d641f4633",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "99b211876a07ea75f4068737bfbfaa452a4d5aeb2df89a1bdd36b22d1e393961",
+  "review_rationale": "Read the Noetherian-space descending-closed-set chain condition, linking topology without misidentifying it with Noetherian ring conditions."
 }

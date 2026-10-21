@@ -2,10 +2,58 @@
   "schema_version": 1,
   "formulation_id": "form.2c5739452921ea24.geometrically-irreducible-algebra",
   "version_sha256": "5c6670e740f685c5f4a7d1f06875dfbdfac5a4d393ec5768f1286a437ec92e93",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "field extension K/k",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "matching_note": "The base-change test ranges over arbitrary field extensions.",
+      "occurrence_id": "occ.e8894521ed7d511d2591"
+    },
+    {
+      "phrase": "prime spectrum",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "matching_note": "The ring's spectrum is the topological space of prime ideals.",
+      "occurrence_id": "occ.6a5c309dd6c2db87a550"
+    },
+    {
+      "phrase": "prime ideal",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "matching_note": "The unique minimal prime in the test is a prime ideal.",
+      "occurrence_id": "occ.b4d51ac092eb8dca24bb"
+    },
+    {
+      "phrase": "k-algebra A",
+      "state": "unassigned",
+      "context": "Commutative algebra: algebra over a specified base field k",
+      "reason": "The algebraic structure must be compared with companion geometrically normal definitions.",
+      "occurrence_id": "occ.87cc5111c6657a991b27"
+    },
+    {
+      "phrase": "A⊗_k K",
+      "state": "unassigned",
+      "context": "Commutative algebra: scalar extension of a k-algebra to the field K",
+      "reason": "A tensor product of k-algebras carries a ring structure beyond tensor products of modules.",
+      "occurrence_id": "occ.a296bfdf4dfb3644ef5a"
+    },
+    {
+      "phrase": "minimal prime ideal",
+      "state": "unassigned",
+      "context": "Commutative algebra: minimal prime ideal in a commutative ring",
+      "reason": "Minimality of prime ideals by inclusion is a contextual construction.",
+      "occurrence_id": "occ.a82ca65fefbb5bd87153"
+    },
+    {
+      "phrase": "irreducible prime spectrum",
+      "state": "unassigned",
+      "context": "Point-set topology and algebraic geometry: irreducible topological space Spec(A⊗_k K)",
+      "reason": "The prime spectrum has topological irreducibility, not necessarily algebraic integral-domain assumptions.",
+      "occurrence_id": "occ.c584591f52a0917f1e2d"
+    }
+  ],
+  "snapshot_sha256": "2c5198877e2c59ed63a6a9ffa4fdd6b1a5c417cd753f61f3573541af9422da90",
+  "review_rationale": "Examined geometric irreducibility using arbitrary field extension, scalar extension, minimal prime and irreducibility of the prime spectrum, leaving specialized contextual notions unassigned."
 }

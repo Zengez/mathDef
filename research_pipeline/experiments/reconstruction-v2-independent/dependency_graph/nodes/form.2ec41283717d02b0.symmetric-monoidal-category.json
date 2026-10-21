@@ -2,35 +2,37 @@
   "schema_version": 1,
   "formulation_id": "form.2ec41283717d02b0.symmetric-monoidal-category",
   "version_sha256": "e4adff46061885313001acfb7b6b51d12ed87f540dcb64bdfc7ffe7dfda174b5",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
       "phrase": "monoidal category",
-      "span": [
-        12,
-        29
-      ],
       "state": "existing",
       "target_meaning_id": "meaning.2ec41283717d02b0.monoidal-category",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.83b57b6e96cfef468c6b"
+      "matching_note": "A symmetric monoidal category first has the monoidal category data.",
+      "occurrence_id": "occ.ccad9415427c76b8a8b5"
     },
     {
-      "phrase": "monoidal category",
-      "span": [
-        35,
-        52
-      ],
-      "state": "existing",
-      "target_meaning_id": "meaning.2ec41283717d02b0.monoidal-category",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.8a3469c3d1d2e82bbc6f"
+      "phrase": "natural exchange isomorphism X⊗Y→Y⊗X",
+      "state": "unassigned",
+      "context": "Category theory: braiding/symmetry natural isomorphism between tensor permutations",
+      "reason": "This is the symmetry datum, not the basic associator alone.",
+      "occurrence_id": "occ.1f2842e3805a83bf21e3"
+    },
+    {
+      "phrase": "involutive",
+      "state": "unassigned",
+      "context": "Category theory: symmetry squared equals identity natural transformation",
+      "reason": "Involutivity of the exchange isomorphisms is an additional symmetric condition.",
+      "occurrence_id": "occ.01b5ab3f89a0733630c3"
+    },
+    {
+      "phrase": "coherence diagrams",
+      "state": "unassigned",
+      "context": "Category theory: hexagon and associator coherence for symmetric braidings",
+      "reason": "Compatibility of symmetry with the associator is a specialized categorical axiom.",
+      "occurrence_id": "occ.568296066b980fccbdbb"
     }
   ],
-  "snapshot_sha256": "a75cbd43b3650005227400b43fb78fe76892103d1dd6857d0be9d799a034f206",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "ba77ac79536764d157593acb2ab5347de8cf56c55de9d62d9eddfdb002ea39d6",
+  "review_rationale": "Reviewed symmetric monoidal categories through natural exchange isomorphism and associator compatibility, retaining braiding and coherence occurrences."
 }

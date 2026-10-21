@@ -2,10 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.2ab2c62d4a9bd0a6.direct-sum-devissage",
   "version_sha256": "ea93e69ac452365a46346bebe03a316952304e64f3d0dcf212bb7a74ce282604",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "matching_note": "The ambient M is an ordinary unital module over R.",
+      "occurrence_id": "occ.2d18228e1fd90281462c"
+    },
+    {
+      "phrase": "ordinal-indexed",
+      "state": "existing",
+      "target_meaning_id": "meaning.f810d472f5a4d367.von-neumann-ordinal",
+      "matching_note": "The filtration is indexed by ordinals.",
+      "occurrence_id": "occ.bf9bc18e8cb003cdaa87"
+    },
+    {
+      "phrase": "submodules M_α",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.submodule",
+      "matching_note": "Each member of the increasing chain is a submodule of M.",
+      "occurrence_id": "occ.34ed62b81a68654d8606"
+    },
+    {
+      "phrase": "limit ordinals",
+      "state": "existing",
+      "target_meaning_id": "meaning.f810d472f5a4d367.limit-ordinal",
+      "matching_note": "Continuity of the filtration is imposed at limit ordinal stages.",
+      "occurrence_id": "occ.e5de8da14bd2aaeec0cf"
+    },
+    {
+      "phrase": "successor inclusion splits as a direct summand",
+      "state": "unassigned",
+      "context": "Module theory: split injection of submodules and direct summand decomposition",
+      "reason": "Splitting is an extra categorical/module-theoretic structure not supplied by submodule alone.",
+      "occurrence_id": "occ.a39e76db1d33c6ed047d"
+    },
+    {
+      "phrase": "continuous at limit ordinals",
+      "state": "unassigned",
+      "context": "Ordinal-indexed module filtration: union of earlier submodules at each limit stage",
+      "reason": "This is a continuity convention for transfinite chains of modules.",
+      "occurrence_id": "occ.32b08459cb9e54abbe3a"
+    },
+    {
+      "phrase": "starting at zero and with union M",
+      "state": "external",
+      "disposition": "The zero-submodule and full-union conditions are explicitly part of this filtration's axioms.",
+      "occurrence_id": "occ.4f948ee0df1a7efe6290"
+    }
+  ],
+  "snapshot_sha256": "5cd6c24b21949296c20e81df139db9e8d6f19f134ef2f9d8ef59ae0d7752de7a",
+  "review_rationale": "Reviewed the entire transfinite direct-sum dévissage using modules, submodules and ordinals, preserving splitting and transfinite-continuity constructions."
 }

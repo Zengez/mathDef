@@ -2,37 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.2cde0248ffe81c00.tor-functor-modules",
   "version_sha256": "70dfbc99f7481e4dea13d4bb5a343d73ff11171205c27b56011c16b8a9cfb157",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        50,
-        57
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.d55f4cfa89da48b33517"
+      "phrase": "modules M and N",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "matching_note": "Both arguments of Tor are unital modules over the commutative ring.",
+      "occurrence_id": "occ.1ca74b8ceac09b7f5abc"
     },
     {
-      "phrase": "free resolution",
-      "span": [
-        133,
-        148
-      ],
+      "phrase": "integer i≥0",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.integer-equivalence-class",
+      "matching_note": "The grading index is a nonnegative integer.",
+      "occurrence_id": "occ.650a4be5514e24746303"
+    },
+    {
+      "phrase": "free resolution of M",
       "state": "existing",
       "target_meaning_id": "meaning.788671763be693df.free-module-resolution",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.4392bb490021d120c8b6"
+      "matching_note": "This is the explicitly indexed free resolution of the module.",
+      "occurrence_id": "occ.ce80036199563512bf3e"
+    },
+    {
+      "phrase": "F_•⊗_R N",
+      "state": "existing",
+      "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+      "matching_note": "The complex is tensored termwise over the ring R.",
+      "occurrence_id": "occ.c19bef11e4883a62053d"
+    },
+    {
+      "phrase": "ith homology module",
+      "state": "unassigned",
+      "context": "Homological algebra: homology of a chain complex in degree i",
+      "reason": "This is defined using kernels and images of differentials and is distinct from Tor itself.",
+      "occurrence_id": "occ.6a21b2d29edb812e2170"
+    },
+    {
+      "phrase": "free resolution F_•",
+      "state": "unassigned",
+      "context": "Homological algebra: chain complex of free modules resolving M",
+      "reason": "The existing resolution meaning supplies the concept, but the chain-complex structure is an additional possible dependency.",
+      "occurrence_id": "occ.5e1c78e3f89196ca9649"
+    },
+    {
+      "phrase": "independent of that resolution",
+      "state": "external",
+      "disposition": "The isomorphism type's independence from the chosen free resolution is a well-definedness statement.",
+      "occurrence_id": "occ.9c859e8566bd6d6c859e"
     }
   ],
-  "snapshot_sha256": "ebb1c4ff3446da2bae40190b10e0c7b1eba4863787705b36deaa60edec21dd73",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "47f199b7e8a3c65a5a6095b61b9c604a5c8caf1c73f1f2db3933c15f3bd9e20e",
+  "review_rationale": "Reviewed definition of Tor from a free resolution and tensor product, retaining the homology module and chain complex as related homological constructions."
 }

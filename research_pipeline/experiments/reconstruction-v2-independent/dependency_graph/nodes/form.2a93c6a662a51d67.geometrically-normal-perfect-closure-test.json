@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.2a93c6a662a51d67.geometrically-normal-perfect-closure-test",
   "version_sha256": "cc46546e3bbe29636cddb3895177f1f87106af1791dea524f036dc7c5b495e1d",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
+      "phrase": "geometrically normal",
+      "state": "existing",
+      "target_meaning_id": "meaning.2a93c6a662a51d67.geometrically-normal-algebra",
+      "matching_note": "The formulation is an equivalent scalar-extension test for the previously indexed geometric normality property.",
+      "occurrence_id": "occ.c47676b2004523f211d0"
+    },
+    {
       "phrase": "normal ring",
-      "span": [
-        121,
-        132
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.363d711d668364b7.normal-ring"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.0e6ef82fd9601965424f"
+      "state": "existing",
+      "target_meaning_id": "meaning.363d711d668364b7.normal-ring",
+      "matching_note": "Normality here is the previously indexed commutative ring condition.",
+      "occurrence_id": "occ.071797726b17ecebc5a8"
+    },
+    {
+      "phrase": "finite purely inseparable field extensions",
+      "state": "existing",
+      "target_meaning_id": "meaning.12e554f8d49d5361.purely-inseparable-extension",
+      "matching_note": "The finite field extensions in the test satisfy the characteristic-p inseparability condition.",
+      "occurrence_id": "occ.b1f8f2def87ce3ec5043"
+    },
+    {
+      "phrase": "k^perf⊗_k A",
+      "state": "existing",
+      "target_meaning_id": "meaning.3f6a26f1786a8223.base-change-ring-map",
+      "matching_note": "Tensoring the algebra with an extension of the base field is a base-change operation.",
+      "occurrence_id": "occ.f9d3aae5af5fff7098af"
+    },
+    {
+      "phrase": "perfect closure of k",
+      "state": "unassigned",
+      "context": "Field theory: perfect closure of a field k in positive characteristic",
+      "reason": "The perfect closure is a field extension distinct from ordinary algebraic closure and should be globally matched later.",
+      "occurrence_id": "occ.30a0334e9022bc133287"
+    },
+    {
+      "phrase": "k-algebra A",
+      "state": "unassigned",
+      "context": "Commutative algebra: unital algebra over a field k",
+      "reason": "The base-field algebra structure should be matched with the same occurrence in the companion geometric-normality formulation.",
+      "occurrence_id": "occ.97512a4a5334937e9a6f"
     }
   ],
-  "snapshot_sha256": "b09a6b038a6b17d9d5b60722371f9ec7cf527036d9ac9c1d51c7d609975f39d7",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "f34befe00fcc4d9b0e4ebff18c1a089017c2bb38ec434cd33f06ec1cf04c0ff8",
+  "review_rationale": "Read the geometric-normality perfect-closure alternative, linking ring normality, pure inseparability and scalar extension while keeping perfect closure and k-algebra structure unassigned for global matching."
 }
