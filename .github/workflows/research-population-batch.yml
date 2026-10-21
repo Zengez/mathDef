@@ -64,6 +64,11 @@ jobs:
               python -m research_pipeline.engine.population \
                 --workspace "$WORKSPACE" --mode status
             fi
+            if [ "$MODE" != "status" ]; then
+              python -m research_pipeline.engine.population_queue \
+                --workspace "$WORKSPACE" \
+                --profile research_pipeline/adapters/mathdef/population_topics.json --write
+            fi
             if [ -d "$WORKSPACE/population" ]; then
               git add -- "$WORKSPACE/population"
             fi
