@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-016",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.646e4dcbd9b6f1e1.topological-module",
+      "version_sha256": "0760928492e0ac3367e6d3c68783c325a204a8da9f76c4d167973eb79934ba7d",
+      "complete": true,
+      "review_rationale": "Read both operation continuity conditions and identified the underlying module, topological ring, and product topology; no unstated completeness or Hausdorff requirement.",
+      "references": [
+        {
+          "phrase": "topological ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.646e4dcbd9b6f1e1.topological-ring"
+        },
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.left-module-nonunital"
+        },
+        {
+          "phrase": "topology on M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "continuous addition and scalar multiplication",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "M×M and R×M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology"
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.646e4dcbd9b6f1e1.topological-ring",
+      "version_sha256": "03f497391324c755234793649bde87ad83ea94dc581a2ee3637168e25e5fa14d",
+      "complete": true,
+      "review_rationale": "Read the entire topological-ring definition, keeping both addition and multiplication continuity conditions and avoiding identity and separation assumptions.",
+      "references": [
+        {
+          "phrase": "ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "topology",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "continuous maps",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "R×R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology"
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.65fea875f9a5aa40.gluing-data-schemes",
+      "version_sha256": "071b73a72f4c7a29c0e871ef20a808b958abb9700d114c25206b788f18ebbe2d",
+      "complete": true,
+      "review_rationale": "Reviewed all scheme-gluing clauses, the open subschemes and pairwise isomorphisms, and the triple-overlap cocycle without confusing it with module descent.",
+      "references": [
+        {
+          "phrase": "schemes X_i",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine"
+        },
+        {
+          "phrase": "open subschemes U_ij",
+          "state": "existing",
+          "target_meaning_id": "meaning.3c73940f47e92e99.open-subspace-locally-ringed-space"
+        },
+        {
+          "phrase": "isomorphisms φ_ij",
+          "state": "unassigned",
+          "context": "Algebraic geometry: isomorphism of schemes on overlapping open subschemes"
+        },
+        {
+          "phrase": "triple overlaps and φ_ik=φ_jk∘φ_ij",
+          "state": "unassigned",
+          "context": "Algebraic geometry: cocycle compatibility of scheme gluing isomorphisms"
+        },
+        {
+          "phrase": "U_ii=X_i",
+          "state": "external",
+          "disposition": "This is the stipulated diagonal-overlap condition, not an additional type of scheme."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.6676171d9e5698af.affine-closed-subscheme",
+      "version_sha256": "b7f29912c03b2d558e3120a93bddd1dec74567ab3d9ba64557e5675c15d5e64b",
+      "complete": true,
+      "review_rationale": "Examined the complete quotient-spectrum characterization, closed immersion and scheme-over-base isomorphism without equating quotient rings to fraction fields.",
+      "references": [
+        {
+          "phrase": "affine scheme Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.4c7d59ba7058613b.affine-scheme"
+        },
+        {
+          "phrase": "Spec(R/I)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "ideal I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "closed immersion",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f376cdea16a26da.closed-immersion-locally-ringed-space"
+        },
+        {
+          "phrase": "quotient map R→R/I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "quotient ring R/I",
+          "state": "unassigned",
+          "context": "Commutative algebra: quotient ring by ideal"
+        },
+        {
+          "phrase": "isomorphic over Spec(R)",
+          "state": "unassigned",
+          "context": "Algebraic geometry: isomorphism of schemes over a fixed base"
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.672a4a502273760f.generalization-stable-subset",
+      "version_sha256": "7baf43933eca93735a1fd2bf54d02449da91ad7667d6e32a67b8635a37405ccc",
+      "complete": true,
+      "review_rationale": "Inspected the whole generalization-stable definition and the orientation of its point relation; did not conflate it with specialization stability.",
+      "references": [
+        {
+          "phrase": "subset T⊆X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "generalization y of x",
+          "state": "existing",
+          "target_meaning_id": "meaning.672a4a502273760f.specialization-topological"
+        },
+        {
+          "phrase": "contains every generalization",
+          "state": "external",
+          "disposition": "Closure under this point relation does not imply that T is an open subset."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.672a4a502273760f.generalizing-continuous-map",
+      "version_sha256": "2fe5b43a102d172e30b087bb1afd5b3ba3dc12d651c775ea977e48d001802314",
+      "complete": true,
+      "review_rationale": "Read all source and target point roles in the generalization lifting condition, retaining the relation direction and not inferring an open-map hypothesis.",
+      "references": [
+        {
+          "phrase": "continuous map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "generalization y′⇝f(x)",
+          "state": "existing",
+          "target_meaning_id": "meaning.672a4a502273760f.specialization-topological"
+        },
+        {
+          "phrase": "generalization x′⇝x",
+          "state": "existing",
+          "target_meaning_id": "meaning.672a4a502273760f.specialization-topological"
+        },
+        {
+          "phrase": "lifts with f(x′)=y′",
+          "state": "external",
+          "disposition": "The extra existential lift condition is not equivalent to ordinary continuity or to openness."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.672a4a502273760f.specialization-stable-subset",
+      "version_sha256": "ec6b767bbd6d6370068a0279e29604691505d7f1adde4e91d4b60632d63d5420",
+      "complete": true,
+      "review_rationale": "Read the full specialization-stability quantifiers and linked the closure-of-singleton and point-specialization meanings, avoiding topological closedness assumptions.",
+      "references": [
+        {
+          "phrase": "subset T⊆X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "closure of {y}",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross107.topological-closure"
+        },
+        {
+          "phrase": "specialization of y",
+          "state": "existing",
+          "target_meaning_id": "meaning.672a4a502273760f.specialization-topological"
+        },
+        {
+          "phrase": "whenever y∈T ... x also belongs to T",
+          "state": "external",
+          "disposition": "Stability under specialization does not force T to be closed in an arbitrary space."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.672a4a502273760f.specialization-topological",
+      "version_sha256": "d6eb1acaa47506b1e3caeb572e670e545c84451dcc8ff4936ef3b09701c79e0c",
+      "complete": true,
+      "review_rationale": "Read both equivalent formulations of specialization, including x lying in closure of {y} and the reverse ordering used for generalization.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "closure of singleton {y}",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross107.topological-closure"
+        },
+        {
+          "phrase": "singleton {y}",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "y generalizes x",
+          "state": "external",
+          "disposition": "Generalization is the converse of specialization; no new independent relation is posited."
+        }
+      ]
+    }
+  ]
+}
