@@ -5,7 +5,8 @@ import unittest
 from pathlib import Path
 
 from research_pipeline.engine.core import Workspace, PipelineError
-from research_pipeline.engine.population import apply, audit, digest, snapshot
+from research_pipeline.engine.population import apply, audit, digest, snapshot, canonical
+from research_pipeline.engine.population_queue import plan
 
 
 class PopulationTests(unittest.TestCase):
@@ -94,6 +95,26 @@ class PopulationTests(unittest.TestCase):
         self.assertEqual(data["meanings"]["meaning.sample"]["context"], "Improved context")
         self.assertEqual(len(changes), 1)
         self.assertEqual(data["meanings"]["meaning.sample"]["formulations"][0]["id"], "form.sample")
+
+    def test_partial_interruption_replays_exact_prior_rows(self):
+        path = self.write(self.package)
+        partial = self.root / "population" / "records" / "sources.jsonl"
+        partial.parent.mkdir(parents=True, exist_ok=True)
+        partial.write_text(canonical(self.package["sources"][0]) + "\\n".replace("\\\\n", "\\n"), encoding="utf-8")
+        result = apply(self.root, path)
+        self.assertEqual(result["status"], "committed")
+        self.assertEqual(len(snapshot(self.root)[0]["sources"]), 1)
+        self.assertTrue((self.root / "population" / "STATUS.json").is_file())
+
+    def test_queue_clusters_missing_targets(self):
+        apply(self.root, self.write(self.package))
+        cfg = self.root / "topics.json"
+        cfg.write_text(json.dumps({"schema_version": 1,
+            "breadth_topics": [{"id": "topic-a", "research_prompt": "Research a new branch"}],
+            "prerequisite_lookahead_limit": 1}), encoding="utf-8")
+        result = plan(self.root, cfg)
+        self.assertEqual(result["deferred_target_clusters"][0]["number_of_affected_relations"], 1)
+        self.assertEqual(result["suggested_next_package"]["maximum_deferred_target_inclusions"], 1)
 
     def test_source_rights_gate(self):
         self.package["sources"][0]["rights"] = "disallowed"
