@@ -2,37 +2,36 @@
   "schema_version": 1,
   "formulation_id": "form.0c4c23579959165d.transcendence-degree",
   "version_sha256": "01b5dc5eb5f8343710d8240780ae8f018e13bc52ca8e1244e4dda5a86f37cac8",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "cardinality",
-      "span": [
-        68,
-        79
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.081430bc340a055a.cardinality"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.1fce6d541c9083a2db9a"
+      "phrase": "field extension K/k",
+      "state": "unassigned",
+      "context": "Field theory: arbitrary field extension k⊆K",
+      "reason": "The field extension itself has no confidently matched general contextual target.",
+      "occurrence_id": "occ.e07295c0a83b73296a5e"
     },
     {
-      "phrase": "transcendence basis",
-      "span": [
-        87,
-        106
-      ],
+      "phrase": "cardinality",
+      "state": "existing",
+      "target_meaning_id": "meaning.081430bc340a055a.cardinality",
+      "matching_note": "The degree is the cardinality of a basis set; it is not a dimension in an unrelated vector space.",
+      "occurrence_id": "occ.d4a188077bd7cc220bf8"
+    },
+    {
+      "phrase": "transcendence basis of K over k",
       "state": "existing",
       "target_meaning_id": "meaning.0c4c23579959165d.transcendence-basis",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.2ff44e01f27ad7b13fc8"
+      "matching_note": "The basis is explicitly the existing algebraic-independence-plus-algebraicity concept.",
+      "occurrence_id": "occ.6701de85bca09d8f96b1"
+    },
+    {
+      "phrase": "independent of the particular basis chosen",
+      "state": "external",
+      "disposition": "The independence-of-choice statement asserts well-definedness of cardinality rather than a separate named reference.",
+      "occurrence_id": "occ.5d68e5fcb721a79b304d"
     }
   ],
-  "snapshot_sha256": "d614ba494d292f90753b6f4c2ce4b04b3e170ef32438a1319b9fed2b8fd6da73",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "14c37c8539f7f95b7e46addf1a7feb990ffee309e89cd002ccab1cd9f70aff81",
+  "review_rationale": "Reviewed the cardinality-of-a-transcendence-basis definition; reused the established cardinality and transcendence-basis meanings and left its arbitrary extension context unclassified."
 }

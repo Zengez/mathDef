@@ -2,10 +2,36 @@
   "schema_version": 1,
   "formulation_id": "form.0c1db7d894ba43e1.unramified-ring-map",
   "version_sha256": "9a0c260bad740c4267109113b0d86734978c43a0b1b0e7da57479d142ef3d9f6",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "homomorphism of commutative rings R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "matching_note": "Stacks-style commutative rings and R-algebras employ identity-preserving ring homomorphisms.",
+      "occurrence_id": "occ.72a418ffc076ec8cb765"
+    },
+    {
+      "phrase": "S is finitely generated as an R-algebra",
+      "state": "existing",
+      "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map",
+      "matching_note": "Finite-type ring maps are precisely the finite generation condition on the target as an R-algebra; do not confuse with finite presentation.",
+      "occurrence_id": "occ.550d09b59d3283f23e1c"
+    },
+    {
+      "phrase": "Kähler differentials Ω_{S/R}",
+      "state": "existing",
+      "target_meaning_id": "meaning.7ca4fb934b2f076c.kahler-differentials",
+      "matching_note": "The module Ω_{S/R} is the existing Kähler differential module of a ring homomorphism.",
+      "occurrence_id": "occ.d40f43f31eeb8d76c17e"
+    },
+    {
+      "phrase": "module of Kähler differentials Ω_{S/R} is zero",
+      "state": "external",
+      "disposition": "The zero condition is equality to the zero S-module; the named differential-module concept is already linked.",
+      "occurrence_id": "occ.e69a979104352dd4aba4"
+    }
+  ],
+  "snapshot_sha256": "93406b460b1d44fe7468eeec3fbdfdbc0d7f62ce1f5ca7b4b5acaf00178b421a",
+  "review_rationale": "Read all requirements for the Stacks unramified homomorphism; correctly separated finite type from finite presentation and reused the indexed Kähler differential module without source consultation."
 }
