@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.ab260940ea9c523d.connected-topological-space",
   "version_sha256": "bcf746fc860bc9ef39a5e948b15dc8733dac3445193931a92701d51f77c1b047",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        11,
-        28
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.ed15c5d39aa22f04a998"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.27194b07c22a1ee22889"
+    },
+    {
+      "phrase": "clopen subset of X",
+      "state": "unassigned",
+      "context": "Topology: subset simultaneously open and closed in the ambient space",
+      "occurrence_id": "occ.6548281ac6eaceba6dce"
+    },
+    {
+      "phrase": "disjoint decomposition into two nonempty open subsets",
+      "state": "unassigned",
+      "context": "Topology: separation of a space by complementary disjoint nonempty open sets",
+      "occurrence_id": "occ.401eeea4f1b02aff2298"
+    },
+    {
+      "phrase": "nonempty X",
+      "state": "external",
+      "disposition": "The given formulation excludes the empty space from connectedness by its stated convention.",
+      "occurrence_id": "occ.bc1508cd3e855568ff17"
     }
   ],
-  "snapshot_sha256": "bb28f444f2621d53b79add2e8cda0560b9b69d5696f6dd51da0e1bc90767e65b",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "4e43c2bdc5082c249952ac2fbf5526e6f99c3f8a27154e1a3759d15c4b3b2b95",
+  "review_rationale": "Read nonemptiness and both equivalent conditions: absence of separation into two nonempty open pieces and trivial clopen subsets. Kept the explicit nonempty convention rather than silently using the empty-is-connected convention."
 }

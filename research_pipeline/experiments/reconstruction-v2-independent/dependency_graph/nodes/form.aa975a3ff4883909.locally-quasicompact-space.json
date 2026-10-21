@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.aa975a3ff4883909.locally-quasicompact-space",
   "version_sha256": "687fc676c7bc8b037cab22e2b20677839ee4dd3d5e0d70b9403627fc73fc3631",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.03ff73a82263887e31b0"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.8acf5f524e8ce16d77af"
+    },
+    {
+      "phrase": "quasi-compact neighborhood K",
+      "state": "existing",
+      "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space",
+      "occurrence_id": "occ.dd2f78247d0f9655d7e5"
+    },
+    {
+      "phrase": "neighborhood basis at x",
+      "state": "existing",
+      "target_meaning_id": "meaning.6a3376e5ecb82bfb.topology-basis",
+      "occurrence_id": "occ.fdbd4d7843917254c823"
+    },
+    {
+      "phrase": "neighborhood of a point in a topological space",
+      "state": "unassigned",
+      "context": "Topology: subset containing an open set around the point, not necessarily open itself",
+      "occurrence_id": "occ.aff0b311a7caa8b4109e"
+    },
+    {
+      "phrase": "for every neighborhood U of x",
+      "state": "external",
+      "disposition": "The quasi-compact K can depend on both x and U, and no ambient Hausdorff condition is asserted.",
+      "occurrence_id": "occ.cc304b2a503dada3e698"
     }
   ],
-  "snapshot_sha256": "9d928daf00d26e3dac60bbcf26a367431cc186be0f04440744d51099f50c774c",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "6cf5f2a51997f042a1a67677e8e937dc07e57167b6c070b776adc71305f26f1d",
+  "review_rationale": "Reviewed every-point and every-neighborhood quantification, requiring a quasi-compact neighborhood K of x contained in the prescribed neighborhood U, not merely local compactness in a Hausdorff sense."
 }

@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.a9ca2e716ceffd36.support-module",
   "version_sha256": "faf04ab0cc6f1333c2b0e706477d2a19db99bf044a48d44c8d7400e4a55ab9f6",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        48,
-        54
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.c0688f518a36e23380f0"
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.d1b42ad2ad99a045620a"
+    },
+    {
+      "phrase": "prime spectrum Spec(R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.33c3b79d183212d4c2d9"
+    },
+    {
+      "phrase": "module localization M_p",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set",
+      "occurrence_id": "occ.3febdecbd75ef3428967"
+    },
+    {
+      "phrase": "prime ideal p",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "occurrence_id": "occ.7418fc3a7736ede0de92"
+    },
+    {
+      "phrase": "localization at complement R\\p",
+      "state": "unassigned",
+      "context": "Commutative algebra: multiplicative subset complementary to prime ideal used for localizing module M",
+      "occurrence_id": "occ.b7d85058c69b68dc3581"
+    },
+    {
+      "phrase": "M_p≠0",
+      "state": "external",
+      "disposition": "The support membership test is nonvanishing of the localized module, not simply nonvanishing of M or annihilator of a single element.",
+      "occurrence_id": "occ.79536322ab69e12af81b"
     }
   ],
-  "snapshot_sha256": "836cf850fdc27dd1c96a3619d1c5b934946421f88120001372b4fa19962335dd",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "f2d652745fda074033102b6dfc16b4ac974f57e19acbe8cc91bc2fc363464fc5",
+  "review_rationale": "Read the set of prime ideals where the localized R-module M_p is nonzero, distinguishing module localization at p from localization of R or pointwise module annihilation."
 }

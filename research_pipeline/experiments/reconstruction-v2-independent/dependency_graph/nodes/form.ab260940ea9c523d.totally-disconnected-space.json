@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.ab260940ea9c523d.totally-disconnected-space",
   "version_sha256": "e7f6ba4870989d1b92cf878ccab1a1aff202281287eced57c15e595b0145882d",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.c5e6b960be67d63a6aaa"
+      "phrase": "connected components of space",
+      "state": "existing",
+      "target_meaning_id": "meaning.ab260940ea9c523d.connected-component-space",
+      "occurrence_id": "occ.070b43e69bc807746b14"
+    },
+    {
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.1b9c74c340b1ef57065a"
+    },
+    {
+      "phrase": "singleton {x}",
+      "state": "unassigned",
+      "context": "Set theory: one-element subset of X viewed as a connected component",
+      "occurrence_id": "occ.c83d59f3f6008d211904"
+    },
+    {
+      "phrase": "each connected component singleton",
+      "state": "external",
+      "disposition": "The criterion does not require the topology to be discrete or all closures of open subsets to be open.",
+      "occurrence_id": "occ.7f4031ce00c0217a3f7b"
     }
   ],
-  "snapshot_sha256": "4a35dc324bb28610dbfc6bdd213a00cc7b75634b4a9c030f2a52a69ba71de851",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "f8bd3ed972e7e31c2e17986d261c179caec34535c1225cff784bf1ebd8978e9c",
+  "review_rationale": "Read the pointwise statement that every connected component is a singleton, without identifying it with extremal disconnectedness, discrete topology, or failure of path-connectedness."
 }

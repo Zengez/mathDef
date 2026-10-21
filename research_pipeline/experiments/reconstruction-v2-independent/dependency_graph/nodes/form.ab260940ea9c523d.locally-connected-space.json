@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.ab260940ea9c523d.locally-connected-space",
   "version_sha256": "67e0cc00105f0276659d7efd0cc39e3d62cf9ba7595d895939a9ba62079f33cb",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.cacb701c41b3b1474547"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.67c95d194a06c061ece4"
+    },
+    {
+      "phrase": "connected neighborhood",
+      "state": "existing",
+      "target_meaning_id": "meaning.ab260940ea9c523d.connected-topological-space",
+      "occurrence_id": "occ.7886d14b31bb7a1dcecd"
+    },
+    {
+      "phrase": "neighborhood basis",
+      "state": "existing",
+      "target_meaning_id": "meaning.6a3376e5ecb82bfb.topology-basis",
+      "occurrence_id": "occ.cdc96f16a3e31332ec7d"
+    },
+    {
+      "phrase": "fundamental system of connected neighborhoods",
+      "state": "unassigned",
+      "context": "Topology: at each x, a family of connected neighborhoods refining every neighborhood of x",
+      "occurrence_id": "occ.35074b31080df08042ca"
+    },
+    {
+      "phrase": "each point possesses a fundamental system",
+      "state": "external",
+      "disposition": "The system is required to refine arbitrary neighborhoods, not a single globally connected covering.",
+      "occurrence_id": "occ.806f208c508e37ea4447"
     }
   ],
-  "snapshot_sha256": "3b9b70b91cd7010469217b700f882cee658e60734f892bf61d0c0d4e2835872d",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "581cad8767b77ec2e1a12663eb47b8731c25d08bfded9f5b232978ee574b5d45",
+  "review_rationale": "Read local connectedness as existence of a neighborhood basis consisting of connected neighborhoods around each point; mere existence of one connected neighborhood at each point is insufficient."
 }
