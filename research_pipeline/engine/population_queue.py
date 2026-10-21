@@ -42,17 +42,29 @@ def plan(workspace, profile):
                  "priority": "high" if candidate["upstream_formulation_count"] > 1 else "normal"}
                 for candidate in queue["candidates"]
             ]
+            previews = [
+                {"missing_candidate_id": candidate["id"],
+                 "context": candidate.get("context", ""),
+                 "surface_phrase": candidate["query"],
+                 "observed_in_formulations": candidate["incoming_formulation_ids"],
+                 "actionable": False}
+                for candidate in queue["candidate_preview_only"]
+            ]
             return {
                 "schema_version": 1,
                 "strategy": "dependency_first_until_structural_stabilization",
                 "breadth_candidates": [], "completed_breadth_topics": [],
                 "breadth_batch_143": "on_hold",
                 "deferred_target_clusters": clusters,
+                "unconsolidated_missing_candidate_previews": previews,
+                "unresolved_occurrence_count": graph_status.get("unassigned_occurrences", 0),
+                "missing_research_permitted": queue["missing_research_permitted"],
                 "suggested_next_package": {
                     "breadth_topic_candidates": [],
-                    "maximum_deferred_target_inclusions": len(clusters),
-                    "rule": ("Finish unscanned/contextual formulation scans before "
-                             "deduplicated missing-meaning research; no unrelated breadth.")
+                    "maximum_deferred_target_inclusions": (len(clusters) if queue["missing_research_permitted"] else 0),
+                    "rule": ("Complete initial source-free mathematical reference scans, then "
+                             "consolidate the entire unassigned/ambiguous occurrence pool. "
+                             "Only a valid consolidation gate permits missing-definition research.")
                 },
                 "graph_checkpoint": {
                     "phase": queue["phase"],
@@ -61,6 +73,8 @@ def plan(workspace, profile):
                     "scan_complete": graph_status["scan_complete"],
                     "unscanned": graph_status["unscanned"],
                     "scan_incomplete": graph_status["scan_incomplete"],
+                    "unassigned_occurrences": graph_status.get("unassigned_occurrences", 0),
+                    "consolidation_gate_valid": graph_status.get("consolidation_gate_valid", False),
                 },
                 "reconciliation_findings": pending["finding_summary"],
                 "note": "Graph-derived scheduling only. Does not certify or promote records.",
