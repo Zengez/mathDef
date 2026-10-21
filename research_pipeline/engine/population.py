@@ -83,7 +83,7 @@ def snapshot(workspace):
     return data, impacts
 
 
-def validate_package(package, current, parent):
+def validate_package(package, current, parent, already_applied_revisions=frozenset()):
     if package.get("schema_version") != 1 or not isinstance(package.get("id"), str):
         raise PipelineError("Batch needs schema_version=1 and id")
     batch_id = package["id"]
@@ -191,7 +191,8 @@ def validate_package(package, current, parent):
         kind, key = event.get("kind"), event.get("target_id")
         require(kind in KINDS and key in current[kind] and key not in parent.get(kind, {}),
                 "Revisions may update only prior provisional records")
-        require(event.get("expected_sha256") == digest(current[kind][key])
+        require((event.get("id") in already_applied_revisions or
+                 event.get("expected_sha256") == digest(current[kind][key]))
                 and event.get("replacement", {}).get("id") == key
                 and bool(event.get("reason")), "Revision must be version-anchored and justified")
     # Every new form gets an explicit local review state, even if only pending.
@@ -213,6 +214,17 @@ def apply(workspace, package_path, dry_run=False, policy=None):
     name = package.get("id", "")
     current, _ = snapshot(root)
     parent = parent_records(root)
+    history = read_jsonl(root / "population" / "revisions.jsonl")
+    prior_events = {event.get("id"): event for event in history}
+    if len(prior_events) != len(history):
+        raise PipelineError("Duplicate historical revision ID")
+    already_applied = set()
+    for event in package.get("revisions", []):
+        previous = prior_events.get(event.get("id"))
+        if previous is not None:
+            if canonical(previous) != canonical(event):
+                raise PipelineError("Revision ID reused with different content")
+            already_applied.add(event["id"])
     record_path = root / "population" / "applied" / (name + ".json")
     incoming = digest(package)
     if record_path.exists():
@@ -220,7 +232,7 @@ def apply(workspace, package_path, dry_run=False, policy=None):
         if previous.get("sha256") != incoming:
             raise PipelineError("Previously applied batch changed")
         return {"batch": name, "replayed": True, "status": "unchanged"}
-    validate_package(package, current, parent)
+    validate_package(package, current, parent, already_applied)
     if policy:
         if not policy.startswith('research_pipeline.adapters.'):
             raise PipelineError('External policy modules are not allowed')
@@ -236,7 +248,8 @@ def apply(workspace, package_path, dry_run=False, policy=None):
             body = path.read_text(encoding="utf-8") if path.exists() else ""
             body += "".join(canonical(r) + "\n" for r in rows)
             write_atomic(path, body)
-    revisions = package.get("revisions", [])
+    revisions = [r for r in package.get("revisions", [])
+                 if r["id"] not in already_applied]
     if revisions:
         path = root / "population" / "revisions.jsonl"
         body = path.read_text(encoding="utf-8") if path.exists() else ""
