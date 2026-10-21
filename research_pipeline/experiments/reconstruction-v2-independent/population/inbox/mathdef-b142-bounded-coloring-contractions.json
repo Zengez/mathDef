@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "id": "mathdef-b142-bounded-coloring-contractions",
+  "production_corpus_consulted": false,
+  "research_topic_ids": [
+    "functional-analysis",
+    "graph-coloring",
+    "metric-fixed-points"
+  ],
+  "source_review_note": "Cross-read independently sourced ProofWiki definitions; quarantined two source-specific notation/quantifier defects rather than reusing them. Reviewed corpus and original production mathDef never consulted beyond exact independent collision check.",
+  "terms": [
+    {
+      "id": "term.wave2.pop142.bounded-linear",
+      "label": "bounded linear transformation",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3ASpace_of_Bounded_Linear_Transformations"
+    },
+    {
+      "id": "term.wave2.pop142.operator-norm",
+      "label": "norm of a bounded linear transformation",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3ANorm_on_Bounded_Linear_Transformation"
+    },
+    {
+      "id": "term.wave2.pop142.proper-vertex-color",
+      "label": "proper vertex k-coloring of a simple graph",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AProper_Coloring/Vertex_Coloring"
+    },
+    {
+      "id": "term.wave2.pop142.contraction",
+      "label": "contraction map between metric spaces",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AContraction_Mapping_%28Metric_Space%29"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs.wave2.pop142.bounded-uniform",
+      "term_id": "term.wave2.pop142.bounded-linear",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3ASpace_of_Bounded_Linear_Transformations",
+      "record_kind": "paraphrase",
+      "text": "Over real or complex normed vector spaces X,Y, a linear transformation T:X→Y belongs to the bounded-transformation space when there is one finite M>0 satisfying ||Tx||_Y≤M||x||_X for every x.",
+      "editorial_note": "ProofWiki Space of Bounded Linear Transformations uses a single uniform M; unlike its separate Bounded Linear Transformation page's invalid reversed-quantifier formulation."
+    },
+    {
+      "id": "obs.wave2.pop142.norm-ball",
+      "term_id": "term.wave2.pop142.operator-norm",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3ANorm_on_Bounded_Linear_Transformation",
+      "record_kind": "paraphrase",
+      "text": "The norm of a bounded linear transformation is the supremum of the norms ||Tx|| over all input vectors with ||x|| at most one.",
+      "editorial_note": "ProofWiki Norm on Bounded Linear Transformation Definition 1; unit ball always contains zero."
+    },
+    {
+      "id": "obs.wave2.pop142.norm-inf",
+      "term_id": "term.wave2.pop142.operator-norm",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3ANorm_on_Bounded_Linear_Transformation",
+      "record_kind": "paraphrase",
+      "text": "An equivalent norm is the infimum of positive constants C such that ||Tx||≤C||x|| holds for all x. For zero operator the infimum is zero.",
+      "editorial_note": "ProofWiki Definition 4; do not use its Definition 3 as printed for general codomain Y, where it writes ||Tx||_X rather than ||Tx||_Y."
+    },
+    {
+      "id": "obs.wave2.pop142.vertex-color",
+      "term_id": "term.wave2.pop142.proper-vertex-color",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AProper_Coloring/Vertex_Coloring",
+      "record_kind": "paraphrase",
+      "text": "A proper k-vertex coloring of a simple graph assigns each vertex one of k labeled colors such that adjacent vertices have different colors; some palette colors need not occur.",
+      "editorial_note": "ProofWiki proper vertex coloring definition explicitly maps V→{1,…,k}; the map need not be surjective, and k≥1 under fixed positive-palette convention."
+    },
+    {
+      "id": "obs.wave2.pop142.contraction-map",
+      "term_id": "term.wave2.pop142.contraction",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AContraction_Mapping_%28Metric_Space%29",
+      "record_kind": "paraphrase",
+      "text": "A contraction mapping between metric spaces satisfies a global Lipschitz inequality with one constant 0≤q<1 for every pair of points of the domain.",
+      "editorial_note": "ProofWiki contraction of metric spaces; mapping need not map a space to itself and does not require domain completeness unless proving a fixed-point theorem."
+    }
+  ],
+  "meanings": [
+    {
+      "id": "meaning.wave2.pop142.bounded-linear",
+      "term_group_id": "group.wave2.pop142.bounded-linear",
+      "display_term": "bounded linear transformation",
+      "context": "Functional analysis: linear map X→Y between real or complex normed spaces with one global bound",
+      "term_ids": [
+        "term.wave2.pop142.bounded-linear"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop142.bounded-linear",
+          "text": "Let X,Y be normed vector spaces over the same field F∈{ℝ,ℂ} and T:X→Y a linear map. T is bounded if there exists a real M≥0 such that ||Tx||_Y≤M||x||_X for every x∈X.",
+          "evidence_ids": [
+            "obs.wave2.pop142.bounded-uniform"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "The uniform quantifier ∃M∀x is essential; ∀x∃M yields a condition automatically true for any linear map and is defective. A common scalar field and specified domain/codomain norms are retained.",
+          "human_verified": false
+        }
+      ],
+      "editorial_status": "provisional_population",
+      "human_verified": false
+    },
+    {
+      "id": "meaning.wave2.pop142.bounded-operator-norm",
+      "term_group_id": "group.wave2.pop142.bounded-operator-norm",
+      "display_term": "norm of a bounded linear transformation",
+      "context": "Functional analysis: operator norm on real/complex bounded linear maps between normed spaces",
+      "term_ids": [
+        "term.wave2.pop142.operator-norm"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop142.operator-norm-ball",
+          "text": "For a bounded linear T:X→Y between real or complex normed vector spaces, define ||T||=sup{||Tx||_Y : x∈X, ||x||_X≤1}. This is a finite nonnegative real number.",
+          "evidence_ids": [
+            "obs.wave2.pop142.norm-ball"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "Uses the source-backed supremum over the unit ball, including x=0. Boundedness ensures a finite supremum and allows X={0}, where ||T||=0.",
+          "human_verified": false
+        },
+        {
+          "id": "form.wave2.pop142.operator-norm-inf",
+          "text": "For bounded linear T:X→Y between real or complex normed spaces, equivalently ||T||=inf{M>0 : ||Tx||_Y≤M||x||_X for all x∈X}, with infimum taken in [0,+∞].",
+          "evidence_ids": [
+            "obs.wave2.pop142.norm-inf"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "The alternative infimum-of-uniform-bounds formulation is equivalent to the unit-ball supremum; no illegal norm of Tx in X is used when T maps X into a different Y.",
+          "human_verified": false
+        }
+      ],
+      "editorial_status": "provisional_population",
+      "human_verified": false
+    },
+    {
+      "id": "meaning.wave2.pop142.proper-vertex-color",
+      "term_group_id": "group.wave2.pop142.proper-vertex-color",
+      "display_term": "proper vertex k-coloring",
+      "context": "Graph theory: fixed integer k≥1, loopless simple undirected graph; coloring need not use every palette color",
+      "term_ids": [
+        "term.wave2.pop142.proper-vertex-color"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop142.proper-vertex-k-color",
+          "text": "Let G=(V,E) be a loopless simple undirected graph and let k≥1 be an integer. A proper vertex k-coloring of G is a map c:V→{1,…,k} such that for every edge {u,v}∈E, c(u)≠c(v). Surjectivity is not required.",
+          "evidence_ids": [
+            "obs.wave2.pop142.vertex-color"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "The source specifies a mapping to a palette with k labels and differing adjacent colors. This is separate from chromatic number (minimum k) and permits unused colors, including for an empty vertex set.",
+          "human_verified": false
+        }
+      ],
+      "editorial_status": "provisional_population",
+      "human_verified": false
+    },
+    {
+      "id": "meaning.wave2.pop142.contraction-map",
+      "term_group_id": "group.wave2.pop142.contraction-map",
+      "display_term": "contraction mapping",
+      "context": "Metric spaces: globally Lipschitz mapping with a constant strictly below one",
+      "term_ids": [
+        "term.wave2.pop142.contraction"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop142.contraction-map",
+          "text": "Let (X,d_X) and (Y,d_Y) be nonempty metric spaces and f:X→Y. The map f is a contraction if there exists q∈[0,1) such that d_Y(f(x),f(y))≤q·d_X(x,y) for all x,y∈X.",
+          "evidence_ids": [
+            "obs.wave2.pop142.contraction-map"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "Contraction is a pointwise global metric inequality, not a fixed-point theorem; no completeness or self-map is assumed. Domain and codomain metric spaces are nonempty to match the existing sourced metric-space meaning.",
+          "human_verified": false
+        }
+      ],
+      "editorial_status": "provisional_population",
+      "human_verified": false
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel.wave2.pop142.bounded-normed",
+      "from_formulation": "form.wave2.pop142.bounded-linear",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "normed vector spaces",
+      "editorial_reason": "A bounded linear map requires two normed spaces with a shared real/complex scalar field and vector norms, grounded in the independently sourced normed-vector-space meaning.",
+      "human_verified": false,
+      "target_meaning": "meaning.wave2.analysis98.normed-vector-space"
+    },
+    {
+      "id": "rel.wave2.pop142.bounded-linear-map",
+      "from_formulation": "form.wave2.pop142.bounded-linear",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "T:X→Y a linear map",
+      "editorial_reason": "The meaning relies on preserving vector addition and scalar multiplication, so the specific linear-transformation prerequisite should be sourced before screening the link.",
+      "human_verified": false,
+      "target_query": "Linear transformation between two vector spaces over the same scalar field"
+    },
+    {
+      "id": "rel.wave2.pop142.norm-bounded",
+      "from_formulation": "form.wave2.pop142.operator-norm-ball",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "bounded linear T:X→Y",
+      "editorial_reason": "A finite operator norm is defined here only for linear transformations satisfying the uniform bound; the newly sourced boundedness meaning supplies the exact restriction.",
+      "human_verified": false,
+      "target_meaning": "meaning.wave2.pop142.bounded-linear"
+    },
+    {
+      "id": "rel.wave2.pop142.norm-inf-bounded",
+      "from_formulation": "form.wave2.pop142.operator-norm-inf",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "bounded linear T:X→Y",
+      "editorial_reason": "The infimum of admissible operator bounds is taken over all vectors and requires the same bounded linear transformation as the companion supremum formulation.",
+      "human_verified": false,
+      "target_meaning": "meaning.wave2.pop142.bounded-linear"
+    },
+    {
+      "id": "rel.wave2.pop142.vertex-simple",
+      "from_formulation": "form.wave2.pop142.proper-vertex-k-color",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "G=(V,E)",
+      "editorial_reason": "The condition on endpoints {u,v} relies on a loopless undirected simple graph, matching the independently reviewed simple graph context.",
+      "human_verified": false,
+      "target_meaning": "meaning.wave2.graph42.simple-undirected"
+    },
+    {
+      "id": "rel.wave2.pop142.contraction-metric",
+      "from_formulation": "form.wave2.pop142.contraction-map",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "(X,d_X) and (Y,d_Y)",
+      "editorial_reason": "The contraction inequality uses domain and codomain metric distances; the existing reviewed metric-space meaning supplies both metric structures.",
+      "human_verified": false,
+      "target_meaning": "meaning.wave2.analysis98.metric-space"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review.wave2.pop142.bounded-linear",
+      "formulation_id": "form.wave2.pop142.bounded-linear",
+      "status": "provisional",
+      "reason": "Independently sourced this mathematical concept with its scope and quantifiers; defer full cross-context consistency and individual dependency-link reviews.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21",
+      "human_verified": false
+    },
+    {
+      "id": "review.wave2.pop142.operator-norm-ball",
+      "formulation_id": "form.wave2.pop142.operator-norm-ball",
+      "status": "provisional",
+      "reason": "Independently sourced this mathematical concept with its scope and quantifiers; defer full cross-context consistency and individual dependency-link reviews.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21",
+      "human_verified": false
+    },
+    {
+      "id": "review.wave2.pop142.operator-norm-inf",
+      "formulation_id": "form.wave2.pop142.operator-norm-inf",
+      "status": "provisional",
+      "reason": "Independently sourced this mathematical concept with its scope and quantifiers; defer full cross-context consistency and individual dependency-link reviews.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21",
+      "human_verified": false
+    },
+    {
+      "id": "review.wave2.pop142.proper-vertex-k-color",
+      "formulation_id": "form.wave2.pop142.proper-vertex-k-color",
+      "status": "provisional",
+      "reason": "Independently sourced this mathematical concept with its scope and quantifiers; defer full cross-context consistency and individual dependency-link reviews.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21",
+      "human_verified": false
+    },
+    {
+      "id": "review.wave2.pop142.contraction-map",
+      "formulation_id": "form.wave2.pop142.contraction-map",
+      "status": "provisional",
+      "reason": "Independently sourced this mathematical concept with its scope and quantifiers; defer full cross-context consistency and individual dependency-link reviews.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21",
+      "human_verified": false
+    }
+  ],
+  "issues": [
+    {
+      "id": "issue.wave2.pop142.bounded-quantifier",
+      "status": "open",
+      "source_locator": "https://proofwiki.org/wiki/Definition%3ABounded_Linear_Transformation",
+      "comparison_locator": "https://proofwiki.org/wiki/Definition%3ASpace_of_Bounded_Linear_Transformations",
+      "related_formulation_id": "form.wave2.pop142.bounded-linear",
+      "reason": "ProofWiki Definition:Bounded Linear Transformation (Normed Vector Space section) displays ∀v∃c>0 rather than the required ∃c>0∀v, which wrongly allows nonuniform bounds. The separately sourced bounded-transformation-space definition correctly uses a uniform M, so this draft follows that version.",
+      "severity": "source_quality",
+      "human_verified": false
+    },
+    {
+      "id": "issue.wave2.pop142.operator-norm-codomain",
+      "status": "open",
+      "source_locator": "https://proofwiki.org/wiki/Definition%3ANorm_on_Bounded_Linear_Transformation",
+      "related_formulation_id": "form.wave2.pop142.operator-norm-inf",
+      "reason": "ProofWiki Norm on Bounded Linear Transformation Definition 3 writes ||Ax||_X for general A:X→Y although Ax lies in Y; its Definitions 1,2,4 use the typed codomain correctly. The independent population adopts Definitions 1 and 4 and quarantines the inconsistent variant pending audit.",
+      "severity": "source_quality",
+      "human_verified": false
+    }
+  ]
+}
