@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.6f35dab884da6c30.etale-at-prime",
   "version_sha256": "dbb79698efbb2b68fc59c3f5d45905737bafad7a266cb63cfa99ed0eb00cb61b",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ring map R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.6b72d74187a69d5737e5"
+    },
+    {
+      "phrase": "prime q∈Spec(S)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "occurrence_id": "occ.65d6b159d4db0fdecb9b"
+    },
+    {
+      "phrase": "Spec(S)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.a78618372ab53ea1fad8"
+    },
+    {
+      "phrase": "localized ring map R→S_g",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+      "occurrence_id": "occ.402fec37a6ec8862cc04"
+    },
+    {
+      "phrase": "étale",
+      "state": "existing",
+      "target_meaning_id": "meaning.6f35dab884da6c30.etale-ring-map",
+      "occurrence_id": "occ.456c787ff0a5ec6cc11a"
+    },
+    {
+      "phrase": "principal localization S_g",
+      "state": "unassigned",
+      "context": "Commutative algebra: localization at multiplicative powers of a single element g",
+      "occurrence_id": "occ.b126f246d33ddc47795c"
+    },
+    {
+      "phrase": "g∈S\\q",
+      "state": "external",
+      "disposition": "The localization element must avoid the target prime q; it is a local existence condition, not an assertion that q is maximal.",
+      "occurrence_id": "occ.8f9efbb2067fef8f62bc"
+    }
+  ],
+  "snapshot_sha256": "4aee5c3c26c5432cab3b651f50a1c601fe20435dcfa39dc40819bd3bd6690de7",
+  "review_rationale": "Read the entire local étaleness criterion at a target prime q, keeping g outside q, the localization S_g, and the étale condition on R to S_g, not on a general source-prime localization."
 }

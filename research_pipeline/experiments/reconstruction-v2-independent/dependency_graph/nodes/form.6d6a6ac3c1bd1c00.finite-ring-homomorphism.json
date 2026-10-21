@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.6d6a6ac3c1bd1c00.finite-ring-homomorphism",
   "version_sha256": "b57f2af0896349a558378271cebcdf5ae3c23992b3108fd907ff045ea2bf9908",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ring homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.dfd40f81af0ed441fba9"
+    },
+    {
+      "phrase": "R-module S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.1aef91620dcadf4f7fad"
+    },
+    {
+      "phrase": "finitely generated R-module",
+      "state": "existing",
+      "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module",
+      "occurrence_id": "occ.064427ad545e5b358e95"
+    },
+    {
+      "phrase": "through the given homomorphism",
+      "state": "external",
+      "disposition": "Scalar multiplication by R on S uses the specified ring map rather than an arbitrary external action.",
+      "occurrence_id": "occ.ee0826f5c7d9677d8e07"
+    }
+  ],
+  "snapshot_sha256": "e45807531f1b8086452c02e09fd4ef93a07294cdbfdff54d015f8aa2e903ab9c",
+  "review_rationale": "Reviewed finite ring homomorphism as a module-finiteness condition on S via the given scalar ring map, not as a finite-cardinality ring or a ring map of finite presentation."
 }
