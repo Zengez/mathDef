@@ -388,7 +388,7 @@ def store(workspace, items):
         status = "complete" if entry.get("complete") is True else "scan_incomplete"
         node = make_snapshot(inv, fid, entry.get("references", []),
                              status, entry.get("review_rationale", ""))
-        existing = read_node(node_file(graph, fid))
+        existing = live_nodes(graph, inv).get(fid)
         if existing and existing.get("version_sha256") == node["version_sha256"]:
             if existing.get("scan_status") == "complete" and existing != node:
                 raise PipelineError("Cannot overwrite completed scan without a versioned correction")
