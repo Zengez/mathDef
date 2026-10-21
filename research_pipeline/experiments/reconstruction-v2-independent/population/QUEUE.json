@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "strategy": "balanced independent breadth with bounded prerequisite lookahead",
+  "breadth_candidates": [
+    {
+      "id": "affine-geometry",
+      "research_prompt": "Independently source affine spaces, affine combinations, affine hull; distinguish convex from affine hull and avoid unstated finite-dimensional assumptions.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "probability-independence",
+      "research_prompt": "Independently source independence of events and of sigma-algebras or random variables, preserving pairwise versus mutual independence.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "matrix-trace",
+      "research_prompt": "Independently source trace of finite square matrices over specified rings/fields; distinguish operator trace in finite-dimensional contexts.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "graph-cycles",
+      "research_prompt": "Independently source simple-graph cycles/circuits and distinguish paths, walks, directed cycles and graph-theoretic conventions.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "number-theory-congruence",
+      "research_prompt": "Independently source congruence modulo positive integers and modular equivalence; distinguish residue class and representative.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "measure-and-analysis",
+      "research_prompt": "Independently research a separate measure/analysis branch outside recently reviewed concepts; retain source-specific hypotheses.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "topology-and-geometry",
+      "research_prompt": "Independently research a topology or geometry topic with a new contextual meaning, comparing only likely collisions.",
+      "priority": "normal",
+      "source_review_required": true
+    },
+    {
+      "id": "algebra-and-logic",
+      "research_prompt": "Independently research algebraic structures or logic with source-specific scope, avoiding hidden convention shifts.",
+      "priority": "normal",
+      "source_review_required": true
+    }
+  ],
+  "deferred_target_clusters": [
+    {
+      "target_query_normalized": "integer divisibility by positive modulus and integer multiple",
+      "awaiting_relation_ids": [
+        "rel.wave2.pop139.congruence-divisibility"
+      ],
+      "number_of_affected_relations": 1,
+      "priority": "normal"
+    },
+    {
+      "target_query_normalized": "square matrix of finite order over a field",
+      "awaiting_relation_ids": [
+        "rel.wave2.pop139.trace-square-matrix"
+      ],
+      "number_of_affected_relations": 1,
+      "priority": "normal"
+    }
+  ],
+  "suggested_next_package": {
+    "breadth_topic_candidates": [
+      "affine-geometry",
+      "probability-independence",
+      "matrix-trace"
+    ],
+    "maximum_deferred_target_inclusions": 2,
+    "rule": "Independently inspect sources and collisions; never mechanically certify candidate labels."
+  },
+  "reconciliation_findings": {
+    "pending_review": 3,
+    "unresolved_target": 2,
+    "pending_link_review": 2
+  },
+  "coverage_and_stop_policy": {
+    "state": "proposed_not_approved",
+    "automatically_freeze": false,
+    "goals": [
+      "Meaningful independent breadth across mathematical areas",
+      "Every accepted final formulation has source-specific mathematical review",
+      "All provisional or held content explicitly resolved or excluded",
+      "Screened noncircular dependencies and completed citation audit",
+      "Full independent reconstruction frozen before original mathDef comparison"
+    ],
+    "review_after_batches": 6,
+    "measure": [
+      "new_contextual_meanings_per_chat_exchange",
+      "new_formulations_per_chat_exchange",
+      "source_and_link_hold_rate",
+      "reconciliation_backlog_growth",
+      "recurring_execution_or_timeout_failures"
+    ],
+    "note": "Coverage threshold and freeze decision remain a separate explicit research judgment; do not infer that mathematics is exhausted."
+  },
+  "note": "Candidate queue only; no automatic mathematical research, admission, publication or freeze."
+}
