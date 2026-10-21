@@ -443,3 +443,57 @@ For prior research state, consult `research_pipeline/adapters/mathdef/resume_pla
 and the latest independent population `STATUS.json`/`QUEUE.json`; those
 legacy breadth-oriented checkpoints describe the completed B139–B142 work
 but **do not override this newer design decision**.
+
+
+## 10. LATER CLARIFICATION — First complete the original graph, then interpret and research missing meanings
+
+**Agreement added 2026-10-21 after the original design and its §8 recovery
+specification.** For the FIRST bulk pass, minimize external mathematical
+research and changes to the definition corpus. It is preferable to finish
+identifying references within the existing population *before* researching
+missing meanings, even where discovering and linking references takes
+substantial contextual mathematical judgment.
+
+The required ordering is now:
+
+1. **Source-free content scan and existing-meaning linking:** For all currently
+   known formulation variants, read/scan their contents, reuse existing
+   meanings where justified, and save a versioned **occurrence** when an
+   apparent mathematical reference has no clear existing contextual target.
+   An occurrence need not yet assert the identity of a distinct missing
+   meaning. Capture its wording, context and origin; don't research outside
+   sources or add definitions during this pass. Store source-free lexical
+   hints only as proposals, never claim them exhaustive.
+2. **Global missing-occurrence consolidation:** Once all original formulations
+   have complete semantic scans, compare every unresolved occurrence across
+   the entire existing corpus. Determine which can match existing meanings,
+   which are homonyms, which are likely references to the same missing
+   contextual meaning, and which are external/primitive or deferred. First
+   do this without research where possible. The user's idea is to research
+   any *needed contextual interpretation* once and compare it against all
+   likely occurrences, rather than spend effort on each instance while
+   scanning. Keep original occurrences even when grouped or classified.
+   This phase is NOT yet the new-definition-population phase.
+3. **Source-backed missing-definition research and admission:** Only once
+   the missing-occurrence pool has been considered globally and the first
+   pass is explicitly marked consolidated, research and admit missing
+   meanings/variants through the existing independent provisional
+   population system. Then scan only new/changed formulations and repeat
+   the above procedure for the expanded dependency network.
+4. **Unrelated breadth expansion:** Only after dependency-driven
+   stabilization, search new unrelated areas; integrate discoveries using
+   the same passes. Manual certification is still much later.
+
+For efficiency and interruption recovery, keep a distinct
+`unresolved_occurrences.jsonl` independent of the deduplicated
+`missing_candidates.jsonl`. An `unassigned` occurrence is a valid record
+that does not yet presuppose a separate missing mathematical meaning; an
+explicitly reviewed candidate is a later interpretation of such evidence.
+The phase gate is bound to exact inventory and unresolved-pool fingerprints
+so a stale prior pass cannot authorize new research after content changes.
+
+The **current executable handbook** is
+`research_pipeline/DEPENDENCY_FIRST_WORKFLOW.md`. Its first section states
+the concrete commands and the current phase's prohibitions. Future chats
+should use that executable handbook along with the durable graph
+`STATE.json`, `CHECKPOINT.json` and exact worklists.
