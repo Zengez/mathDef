@@ -67,6 +67,15 @@ class PopulationTests(unittest.TestCase):
         with self.assertRaises(PipelineError):
             audit(self.root, certify=True)
 
+    def test_auto_stamp_review_hash_in_immutable_draft(self):
+        del self.package["reviews"][0]["formulation_sha256"]
+        path = self.write(self.package)
+        self.assertEqual(apply(self.root, path)["status"], "committed")
+        records = snapshot(self.root)[0]
+        review = records["reviews"]["review.sample"]
+        self.assertEqual(review["formulation_sha256"],
+                         digest({"formulation": self.form, "context": "Test context"}))
+
     def test_reject_overwriting_or_bad_evidence(self):
         self.package["observations"][0]["source_id"] = "src.unseen"
         with self.assertRaises(PipelineError):
