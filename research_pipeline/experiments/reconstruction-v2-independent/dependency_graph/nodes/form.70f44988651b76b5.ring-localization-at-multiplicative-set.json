@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.70f44988651b76b5.ring-localization-at-multiplicative-set",
   "version_sha256": "117142cc52db2ac32267ea4b7d50fb67e3893ec50ac3e582929b5b273ab5eba2",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        46,
-        52
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.2fe94f6d371a8d109eb1"
+      "phrase": "commutative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.ebc021fc0823536f7532"
+    },
+    {
+      "phrase": "subset S⊆R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.ada9b0615b4110adaab5"
+    },
+    {
+      "phrase": "multiplicative subset S",
+      "state": "unassigned",
+      "context": "Commutative algebra: multiplicatively closed subset of a commutative ring, containing 1",
+      "occurrence_id": "occ.c254eb5ee4bc80265e68"
+    },
+    {
+      "phrase": "ring fractions modulo the stated equivalence",
+      "state": "unassigned",
+      "context": "Commutative algebra: equivalence relation on numerator-denominator pairs in localization",
+      "occurrence_id": "occ.81e88c82fe2aed8606f8"
+    },
+    {
+      "phrase": "t(rs′−r′s)=0 for some t∈S",
+      "state": "external",
+      "disposition": "The witness corrects naive cross multiplication when S includes zero divisors; it is the specified fraction equivalence.",
+      "occurrence_id": "occ.cce1f256ce24ac58e87b"
     }
   ],
-  "snapshot_sha256": "2ccfdea4fb169adb3a2446f9250a02e7c4f3b0d318185c08dedb3b3f79dd4b9a",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "332ba2f41d4c2646359a1ab5fc2c16ba2475e52bcbb895ed8ebf63afe1ce1359",
+  "review_rationale": "Read the entire ring-localization fraction construction including a possible zero divisor, the t witness, and the commutative-ring context. Does not conflate localization with forming a field or inverting arbitrary zero divisors."
 }

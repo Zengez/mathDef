@@ -2,26 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.709d3d2f82950c5b.preordered-set",
   "version_sha256": "406b060230b2a8383fccea129ee924b703f9ca08897dacc07c8335b6cdc6ca9c",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "binary relation",
-      "span": [
-        68,
-        83
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.binary-relation-subset",
-        "meaning.wave2.foundation.binary-relation-typed"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.336efaf20594ebd28f3d"
+      "phrase": "binary relation ≤ on I",
+      "state": "unassigned",
+      "context": "Set theory: binary relation on I as a subset of I×I",
+      "occurrence_id": "occ.0c75703f5bcdde5afb7f"
+    },
+    {
+      "phrase": "reflexive relation",
+      "state": "unassigned",
+      "context": "Relation theory: every i is related to itself",
+      "occurrence_id": "occ.88449a3f45897fac1dfb"
+    },
+    {
+      "phrase": "transitive relation",
+      "state": "unassigned",
+      "context": "Relation theory: if i relates to j and j to k then i relates to k",
+      "occurrence_id": "occ.dc43f7fd0c03f07a5dac"
+    },
+    {
+      "phrase": "set I",
+      "state": "external",
+      "disposition": "The underlying set is not required to have a discrete, ordered or finite topology.",
+      "occurrence_id": "occ.3d8a620b4f6033a6bf24"
     }
   ],
-  "snapshot_sha256": "89b98804068b91d09e1b3d541d6c32cfe95d13e4afa6dc97f202b9634bdeb9cb",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "da5f96a302a83769f68cc90e8dfe83e4c0354507b7f0ef1a9807fc5a66f0126e",
+  "review_rationale": "Inspected both prerequisite relation properties: a binary relation on I that is reflexive and transitive; antisymmetry is neither included nor inferred."
 }
