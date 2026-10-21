@@ -2,10 +2,44 @@
   "schema_version": 1,
   "formulation_id": "form.15af666c5e2af983.linearly-disjoint-extensions",
   "version_sha256": "39e7f3a3e3a40f76c8a08a9fdf71f8f02c339009d42d8428b1dd0dc4cdbdae9c",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "fields K and L extend k",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "matching_note": "Both K/k and L/k are extensions of the same base field k inside a common overfield.",
+      "occurrence_id": "occ.30a1eccc55cee6ca7967"
+    },
+    {
+      "phrase": "tensor product over k",
+      "state": "existing",
+      "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+      "matching_note": "The tensor product K⊗_k L is defined using their natural k-vector-space/module structures.",
+      "occurrence_id": "occ.2bc662c7e67d43118be5"
+    },
+    {
+      "phrase": "compositum KL",
+      "state": "unassigned",
+      "context": "Field theory: smallest subfield of a common overfield containing both subfields K and L",
+      "reason": "The field compositum is a specific generated-field construction.",
+      "occurrence_id": "occ.86f188bb35eabf5e6624"
+    },
+    {
+      "phrase": "multiplication map from their tensor product over k to their compositum KL",
+      "state": "unassigned",
+      "context": "Field theory: canonical k-bilinear multiplication map K⊗_k L→KL",
+      "reason": "The tensor-product universal map into the compositum has contextual source and target, to consolidate later.",
+      "occurrence_id": "occ.8e746e9fcb94fd955793"
+    },
+    {
+      "phrase": "injective",
+      "state": "unassigned",
+      "context": "Set theory and algebra: injective map of the underlying k-vector spaces",
+      "reason": "Same possible injectivity concept as the polynomial-evaluation occurrence in the prior batch; preserve evidence.",
+      "occurrence_id": "occ.839d6a4689fc716116a4"
+    }
+  ],
+  "snapshot_sha256": "8319c94ab487edf3d373641fec4a24d18c453f97fd7d46d9c13cef5e86b67854",
+  "review_rationale": "Reviewed the linear-disjointness criterion in a common field extension, linking extension fields and tensor products but retaining compositum, canonical multiplication map and injectivity as unassigned uses."
 }

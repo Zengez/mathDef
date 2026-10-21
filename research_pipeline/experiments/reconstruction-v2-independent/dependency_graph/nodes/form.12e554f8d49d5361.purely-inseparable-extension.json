@@ -2,25 +2,35 @@
   "schema_version": 1,
   "formulation_id": "form.12e554f8d49d5361.purely-inseparable-extension",
   "version_sha256": "2c96e77d380e36967eddb2d2ddd1c7d77d0ad074fe98bf27eeaf9fced0a14659",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "characteristic",
-      "span": [
-        17,
-        31
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.dbce785fa0c96b0a.field-characteristic"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.04f9420e6f10058f339a"
+      "phrase": "field F of characteristic p greater than zero",
+      "state": "existing",
+      "target_meaning_id": "meaning.dbce785fa0c96b0a.field-characteristic",
+      "matching_note": "The positive prime characteristic p is the existing field characteristic concept.",
+      "occurrence_id": "occ.9b97ff2a5428e402c245"
+    },
+    {
+      "phrase": "extension K/F",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "matching_note": "The ambient extension is an arbitrary field inclusion K/F; the existing extension-field meaning supports it.",
+      "occurrence_id": "occ.5e1ed4c73a5d8849792d"
+    },
+    {
+      "phrase": "p-power alpha^(p^n)",
+      "state": "external",
+      "disposition": "Exponentiation of a field element uses the existing field multiplication and positive-integer indexing convention, without requiring a separate standalone definition.",
+      "occurrence_id": "occ.31b91202230bfbd7ba17"
+    },
+    {
+      "phrase": "alpha^(p^n) lies in F",
+      "state": "external",
+      "disposition": "Ordinary membership of the element power in the base subfield is the defining condition, not a new contextual object.",
+      "occurrence_id": "occ.e80e2a847a80b57de4f4"
     }
   ],
-  "snapshot_sha256": "0fd4b131dda66683eb2943403eea1e6316c5ff3fb74497a7c8469e620fa39a40",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "5032d041d4fd1cbc1e99ebaf555d7a668c5f5c09a728f6a06e6d06eddab8fbac",
+  "review_rationale": "Examined the full prime-characteristic p-power condition and correctly linked the general field-extension and characteristic notions, while treating exponentiation and subfield membership as already available structure."
 }

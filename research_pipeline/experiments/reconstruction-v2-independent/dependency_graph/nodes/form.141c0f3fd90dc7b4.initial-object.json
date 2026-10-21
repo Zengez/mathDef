@@ -2,10 +2,29 @@
   "schema_version": 1,
   "formulation_id": "form.141c0f3fd90dc7b4.initial-object",
   "version_sha256": "1699f2a019f6a05f21f3e950cafb09bd505406f28e44247b5c923cfe22a53524",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category C",
+      "state": "unassigned",
+      "context": "Category theory: arbitrary category, not necessarily small",
+      "reason": "The ambient category is not specified small and should be matched consistently with the companion terminal object.",
+      "occurrence_id": "occ.1ee8ec25b093805cbb61"
+    },
+    {
+      "phrase": "morphism originating at I",
+      "state": "unassigned",
+      "context": "Category theory: morphism between two objects in an arbitrary category",
+      "reason": "Uses the same general categorical-arrow concept as the terminal-object statement.",
+      "occurrence_id": "occ.7d8ce0856dd31c128681"
+    },
+    {
+      "phrase": "exactly one morphism",
+      "state": "external",
+      "disposition": "Uniqueness of each arrow from I to Y is a quantifier condition, not a separate mathematical term.",
+      "occurrence_id": "occ.94dd22a7717c7c1b36a8"
+    }
+  ],
+  "snapshot_sha256": "17ba3b64db66be9b520a26729662fbe8d82306fce8cf20516ef75228e3b992e0",
+  "review_rationale": "Reviewed initiality as unique outgoing arrows in an arbitrary category and used the same unassigned category and arrow concepts as the companion terminal-object formulation."
 }
