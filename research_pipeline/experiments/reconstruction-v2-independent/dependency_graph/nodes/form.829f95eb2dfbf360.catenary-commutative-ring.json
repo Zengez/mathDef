@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.829f95eb2dfbf360.catenary-commutative-ring",
   "version_sha256": "4b6cb4b3bd605ab76a6f5990d44c83ec27b134e41f45a9d8f2453375f76ea62e",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "commutative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.ed9d5ce08497e2cba5fa"
+    },
+    {
+      "phrase": "prime ideals p and q",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "occurrence_id": "occ.eb3e7b7b6cacefe57c6d"
+    },
+    {
+      "phrase": "chains of prime ideals",
+      "state": "existing",
+      "target_meaning_id": "meaning.22c049b8eee93897.chain-of-prime-ideals",
+      "occurrence_id": "occ.f19d3f33dca27111c79e"
+    },
+    {
+      "phrase": "maximal finite chain connecting primes",
+      "state": "unassigned",
+      "context": "Order theory: saturated finite chain under prime-ideal inclusion between fixed endpoints",
+      "occurrence_id": "occ.c18be4b1a69bd040c2bd"
+    },
+    {
+      "phrase": "all maximal finite chains have equal length and lengths are bounded above",
+      "state": "external",
+      "disposition": "Both equal-length and bounded-length clauses are explicitly stated; no Noetherian hypothesis is silently imposed.",
+      "occurrence_id": "occ.9038c6c65c0144a046d2"
+    }
+  ],
+  "snapshot_sha256": "a73f137703c89e7a85b6db0565085c831d0995e790ef13a449249959264b5c01",
+  "review_rationale": "Read catenarity across any comparable primes, using maximal finite prime chains connecting the endpoints and the stated boundedness of their possible lengths. This condition does not require R to be Noetherian."
 }

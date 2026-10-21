@@ -2,39 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.7ee45a1fa46d2b2f.universally-closed-continuous-map",
   "version_sha256": "5e8c69599f30b80a9a919941bb1ef8b9af1f82a26d71ebf14ef7b6ad23bfce4a",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "continuous map",
-      "span": [
-        2,
-        16
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation76.continuous-topological-map"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.74a9ba09ddf23e3f1b33"
+      "phrase": "continuous map f:X→Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+      "occurrence_id": "occ.bec8b1a2dd4066bd8f06"
     },
     {
-      "phrase": "continuous map",
-      "span": [
-        98,
-        112
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation76.continuous-topological-map"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.1d9a60c8dc5e59bd80ec"
+      "phrase": "fibre product X×_Y Z",
+      "state": "existing",
+      "target_meaning_id": "meaning.be14669c52f30e79.categorical-fibre-product",
+      "occurrence_id": "occ.e99d911e98050c98e775"
+    },
+    {
+      "phrase": "closed map X×_Y Z→Z",
+      "state": "unassigned",
+      "context": "Topology: closed map sending every topologically closed subset to a closed subset",
+      "occurrence_id": "occ.6e82ef5216fb56ffab83"
+    },
+    {
+      "phrase": "topological fibre product with subspace topology",
+      "state": "unassigned",
+      "context": "Topology: pullback of topological spaces over common target Y",
+      "occurrence_id": "occ.fe21441e8263c4d9dc10"
+    },
+    {
+      "phrase": "every continuous base-change map Z→Y",
+      "state": "external",
+      "disposition": "No restriction to discrete or compact Z; the closedness condition is stable under all displayed base changes.",
+      "occurrence_id": "occ.6b816d6935eb2d0b8289"
     }
   ],
-  "snapshot_sha256": "3b7ae6fa3473c97b89c8e51e7aa0ae412c9f739357e236824bb8dc49e7e3534f",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "495d82091246b54a316b134225869298567edf128b264a06895fc526c0b93ed6",
+  "review_rationale": "Read the relative-base-change quantifier in this definition: all continuous maps Z→Y are permitted, and the induced projection X×_Y Z→Z must be closed. Do not equate this with merely closed original f, or only external products Z×f."
 }

@@ -2,10 +2,27 @@
   "schema_version": 1,
   "formulation_id": "form.8069f09a769d34f5.binary-product-category",
   "version_sha256": "65b21cb3c3c5aa0ff91181ae46577ca6661613e8e6704308e5f0af144dfa56e2",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.7c34e05c70f1d8b93831"
+    },
+    {
+      "phrase": "projections p:P→X and q:P→Y",
+      "state": "unassigned",
+      "context": "Category theory: binary product cone consisting of two arrows with common domain",
+      "occurrence_id": "occ.fac89a30b8966ced21d6"
+    },
+    {
+      "phrase": "for every object Z and arrows f,g a unique h exists",
+      "state": "external",
+      "disposition": "The uniqueness of the induced h commuting with both projections is the universal product property, not mere existence of P.",
+      "occurrence_id": "occ.b3fcc61f7bb2e4c401a5"
+    }
+  ],
+  "snapshot_sha256": "e520d895e1cc7e76521006a415a5708677d18e1bacc1f2360af3154b9b79eb92",
+  "review_rationale": "Reviewed a binary categorical product via its object P, two projection arrows, and unique mediating arrow for every pair of maps into X and Y. This is not necessarily Cartesian product of underlying sets."
 }

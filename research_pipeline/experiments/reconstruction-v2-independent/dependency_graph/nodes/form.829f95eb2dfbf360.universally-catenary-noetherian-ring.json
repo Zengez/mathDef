@@ -2,23 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.829f95eb2dfbf360.universally-catenary-noetherian-ring",
   "version_sha256": "bf9a28593454dc269810d1b3c4e54de1e39a341b9a437bdcdfd865d4454bc314",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "Noetherian ring",
-      "span": [
-        2,
-        17
-      ],
+      "phrase": "Noetherian ring R",
       "state": "existing",
       "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.d5b25198e4d7171e616a"
+      "occurrence_id": "occ.4719305ff97a7378b64a"
+    },
+    {
+      "phrase": "catenary R-algebra",
+      "state": "existing",
+      "target_meaning_id": "meaning.829f95eb2dfbf360.catenary-commutative-ring",
+      "occurrence_id": "occ.46d2aad870346c0c5d9b"
+    },
+    {
+      "phrase": "finite-type ring map to R-algebra",
+      "state": "existing",
+      "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map",
+      "occurrence_id": "occ.0ebd41aae08dbe65ce16"
+    },
+    {
+      "phrase": "every finitely generated R-algebra",
+      "state": "external",
+      "disposition": "Quantification covers all finite-type R-algebras, not just finite integral ring extensions.",
+      "occurrence_id": "occ.2bb11db5c4043cb5af28"
     }
   ],
-  "snapshot_sha256": "f87a4431b489e23971c4fc63a70e7b0ab07353a43c753c291277a717d8c30874",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "44dce785bc5bc4dff546658af386e1dbf29a4d7ea6504b6ecb6ab74e7f6bacf7",
+  "review_rationale": "Read the universal criterion over every finitely generated R-algebra, distinct from catenarity of the base ring alone and from base change to only finite or field extensions."
 }

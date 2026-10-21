@@ -2,40 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.83a528850cdf6a59.strict-continuous-map",
   "version_sha256": "423f4e9e71ba7d92ba2aae19ab5f77abbdb0d42e6716884f75e68127a8d1d3ef",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "continuous map",
-      "span": [
-        2,
-        16
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation76.continuous-topological-map"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.d0149d8f7f12b44451bd"
+      "phrase": "continuous map f:X→Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+      "occurrence_id": "occ.4211276e663d664a541b"
     },
     {
-      "phrase": "subspace topology",
-      "span": [
-        101,
-        118
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subspace-topology-general",
-        "meaning.wave2.foundation.subspace-topology-nonempty"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.a15cd364f4f9e4f73927"
+      "phrase": "subspace topology on f(X)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subspace-topology-general",
+      "occurrence_id": "occ.464e69ba2fae4579728f"
+    },
+    {
+      "phrase": "image f(X)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.image-of-mapping",
+      "occurrence_id": "occ.a25582de63ed96c9eac8"
+    },
+    {
+      "phrase": "quotient topology induced by surjection X→f(X)",
+      "state": "unassigned",
+      "context": "Topology: final quotient topology associated with a surjection onto its set-theoretic image",
+      "occurrence_id": "occ.b062ca83eb434c299a05"
+    },
+    {
+      "phrase": "two topologies agree on f(X)",
+      "state": "external",
+      "disposition": "Equality is required on the image, not on all of Y; the map need not be surjective onto Y.",
+      "occurrence_id": "occ.6b26eab6bbe38f4ab292"
     }
   ],
-  "snapshot_sha256": "af8b50e70cf41e4a05e72a297b18cacb68e121b73b1783d78fb9b7ee0d39f022",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "0dcee85eb9c63ebca70d706a55dbb53776b54b494aed28e578275845a408f7c7",
+  "review_rationale": "Read the strict-map comparison of two topologies on the image f(X): quotient topology induced by X and subspace topology induced by Y. This need not require f to be globally surjective onto Y."
 }
