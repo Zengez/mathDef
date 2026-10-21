@@ -6,6 +6,179 @@
 
 Read this file, TEMP_DEPENDENCY_FIRST_WAVE2_PLAN.md, then independent dependency_graph/CHECKPOINT.json, STATE.json and INVENTORY.json. Inspect the shared missing candidate registry and the research queue. Never reparse an unchanged, complete, version-valid node. Source population records and Batches 139–142 remain separate, unchanged inputs.
 
+## CURRENT EXECUTION CONTRACT — occurrence-first, no-external-research initial pass (2026-10-21)
+
+**Read this section first in every fresh Chat.** This is the current
+execution order, superseding older advice to research a missing dependency
+immediately or continue unrelated Batch143. The temporary design document
+records the original intent; this file describes the executable process.
+
+The purpose of this phase is to maximize *deterministic reuse* of the 659
+already inventoried definition formulations and 611 meanings **without
+adding new meanings or looking up external sources yet**. The historical
+screened/provisional mathematical contents remain unchanged. Phase completion
+describes the assistant's own mathematical reference identification, not
+the user's manual certification.
+
+**Pass 1: Existing-definition scan and linking; external research = OFF.**
+
+1. Load `dependency_graph/CHECKPOINT.json`, `STATE.json`,
+   `INVENTORY.json`, `unresolved_occurrences.jsonl`,
+   `missing_candidates.jsonl`, and any fully reviewed scan snapshots.
+   The graph is authoritative *only for what it has actually scanned*.
+   Historical links and lexical proposals are hints, not exhaustive scans.
+2. Run from the repository root:
+   ```bash
+   W=research_pipeline/experiments/reconstruction-v2-independent
+   python -m research_pipeline.engine.dependency_graph --workspace "$W" --mode inventory
+   python -m research_pipeline.engine.dependency_graph --workspace "$W" --mode worklist --limit 8
+   ```
+   The worklist includes each source formulation's full text and context,
+   old link seeds, hash and local lexical hints; it does **not** consult
+   external sources. Pick a manageable batch. Existing `complete` scans
+   must not be redone without an explicit append-only amendment.
+3. Read the **entire mathematical content** of each selected formulation.
+   Identify each mathematical term/reference, including significant unnamed
+   constructions missed by exact lexical matching. For each occurrence:
+   - `existing`: link to an appropriately contextualized existing meaning
+     only when justified from our current independent collection.
+   - `unassigned`: record exact wording and contextual clues if the
+     referenced mathematical idea has no confidently identified existing
+     target. **Do not decide it is a genuinely missing distinct meaning.**
+     Unassigned occurrences remain in the global pool for Pass 2.
+   - `ambiguous`: several plausible existing meanings, with explicit reason.
+   - `external`: explicit justified primitive/out-of-scope disposition.
+   - `missing`: may be used if a source-free existing-corpus check already
+     establishes an independently meaningful, precise missing candidate,
+     but `unassigned` is preferable to premature source research.
+   - `deferred`: other precisely described classification blocker.
+4. Before assigning a `missing` identity, check **both** existing
+   contextual meanings and the *entire stored occurrence/missing-candidate
+   pool*, to avoid redoing even lightweight contextual work. Similar
+   surface words alone do not establish equivalence; do not merge homonyms.
+5. Submit a version-bound `ingest` package at
+   `dependency_graph/inbox/UNIQUE_ID.json`, with each item containing
+   `formulation_id`, `version_sha256`, `complete: true`,
+   `review_rationale` (at least 40 characters) and **all** references
+   observed in the formulation. A full pass is required to mark complete.
+   Example:
+   ```json
+   {
+     "schema_version": 1, "id": "semantic-initial-002", "mode": "ingest",
+     "items": [
+       {
+         "formulation_id": "form.example", "version_sha256": "REAL_HASH_FROM_WORKLIST",
+         "complete": true,
+         "review_rationale": "Read the entire mathematical definition and considered every substantive reference.",
+         "references": [
+           {"phrase": "existing notion", "state": "existing",
+            "target_meaning_id": "meaning.actual-id"},
+           {"phrase": "unclassified construction", "state": "unassigned",
+            "context": "Actual domain, object types and surrounding mathematical use"}
+         ]
+       }
+     ]
+   }
+   ```
+   The illustrative IDs above are placeholders; use real ones from inventory.
+6. Commit the batch to `main`; the independent dependency-graph GitHub
+   Action reads the inbox automatically, validates it, updates actual node
+   files, rebuilds indexes, and writes a receipt in `applied/` in a single
+   committed transaction. Verify run SUCCESS and receipt before claiming
+   completion. Continue until `scan_complete == total_formulations`.
+   Resuming after interruption loads committed nodes, skips completed
+   unchanged scans, and repeats only unfinished units.
+
+**Pass 2: Global occurrence consolidation; external definition research =
+still OFF by default.**
+
+1. With full Pass 1 scans, inspect the **entire**
+   `unresolved_occurrences.jsonl`, including its originating formulation,
+   wording and contextual information. Compare candidate uses across the
+   whole existing corpus. Deduplicate possible missing meanings *as a
+   classification problem*, not as multiple fresh source investigations.
+2. If an unassigned occurrence has a clear existing target, classify it by
+   append-only `amend` of the effective complete scan; if a genuinely
+   missing contextual candidate is justified from internal evidence,
+   amend it to `missing` with precise context. If unrelated or primitive,
+   use an `external` disposition. Ambiguities should be classified
+   explicitly or marked `deferred` with a reason. Use reviewed `alias`
+   events for **demonstrated** equivalent missing phrases; never
+   mechanically merge vaguely similar mathematical words.
+3. The persistent *original* occurrence remains in the original immutable
+   scan or revision ledger. Amendments have reviewer attribution, full
+   replacement adjacency, rationale, exact prior-node hash and version
+   anchor. Every update rebuilds occurrence and reverse-dependency
+   ledgers. No missing-definition content is added in this pass.
+4. When the first-pass entire set is completely scanned and there are **zero
+   unassigned and zero ambiguous** references left, use its exact current
+   `INVENTORY.json.source_inventory_sha256` and
+   `STATE.json.summary.unresolved_fingerprint` to create a reviewed
+   `consolidate` inbox package:
+   ```json
+   {
+     "schema_version": 1, "id": "consolidation-round-001",
+     "mode": "consolidate",
+     "gate": {
+       "schema_version": 1,
+       "inventory_sha256": "REAL_SHA_FROM_INVENTORY",
+       "unresolved_fingerprint": "REAL_SHA_FROM_STATE",
+       "reviewed_by": "assistant-contextual-reviewer",
+       "rationale": "Substantive record of how the entire saved unresolved-occurrence pool was consolidated and checked for duplicate candidate identities."
+     }
+   }
+   ```
+   The graph Action records `CONSOLIDATION.json` only when the scan is
+   complete and occurrence classifications are appropriately resolved.
+   **Any later inventory/content/occurrence changes invalidate this gate.**
+   `STATE.json.summary.phase` will become
+   `research_missing_dependencies` only with a valid gate.
+
+**Pass 3: Research and populate missing meanings; external sources = ON.**
+
+Only after the valid Pass 2 gate, investigate consolidated
+`missing_candidates.jsonl` in prioritized groups. For every candidate,
+compare contextual variants and sources, add source-supported new meanings
+through the existing *provisional* population JSON packages, then make an
+explicit version-anchored `resolve` event mapping the stable candidate to
+the correct contextual target. New content is automatically inventoried and
+its new formulations are scheduled for Pass 1 scanning; repeat the three
+passes for the expanded dependency set. Separate unrelated subject-breadth
+exploration is reserved for later structural stabilization.
+
+**Crucial boundary:** A green CI check confirms only mechanical integrity.
+Neither completed linking nor `CONSOLIDATION.json` grants mathematical
+source certification or human approval. Never consult original production
+mathDef definitions before the independent freeze.
+
+**Observable phase controls:**
+
+- `STATE.json.summary.phase`: `scan_and_link_existing`,
+  `consolidate_occurrences`, or `research_missing_dependencies`.
+- `STATE.json.summary.unassigned_occurrences`: unclassified mathematical
+  references without prematurely assigned missing-meaning identity.
+- `unresolved_occurrences.jsonl`: durable evidence pool independent of
+  missing-candidate identities.
+- `research_queue(...).missing_research_permitted`: true only with valid
+  consolidation gate. This scheduler does not conduct research itself.
+- `--mode worklist`: read-only/no-network reproducible next scan input.
+
+**Generic implementation and consistency details:** The graph engine
+stores adjacency once per formulation, generates per-root nested views
+on demand, and maintains reverse dependency indexes. `encountered` means
+**semantically content-scanned** (a lexical proposal does not count),
+`completed` means its reachable *existing* formulation scans finished,
+and `closed` additionally means no unresolved transitive blocker.
+The first-pass source inventory remains 611 meanings and 659 formulations
+at this documented baseline (639 screened + 20 provisional); six were
+reviewed complete at the last checkpoint. New and corrected source
+formulations require fresh hashes and scanning. The inbox handler
+paginates *unapplied* records rather than starving beyond 20 earlier
+receipts; candidate resolutions are pinned to formulation-content
+versions, not just display-term metadata.
+
+---
+
 ## Stored schema
 
 Workspace: research_pipeline/experiments/reconstruction-v2-independent/dependency_graph/
@@ -13,6 +186,8 @@ Workspace: research_pipeline/experiments/reconstruction-v2-independent/dependenc
 - INVENTORY.json: independently screened and separately provisional contextual meanings and every individual formulation, context and source-content hashes. Existing relations are imported as seeds and do NOT prove exhaustive scanning.
 - nodes/FORMULATION_ID.json: complete atomic per-formulation adjacency snapshots, version hash, individual occurrences and scan status.
 - occurrences.jsonl, edges.jsonl: reproducible exact occurrence and edge ledger.
+- unresolved_occurrences.jsonl: unassigned, ambiguous, deferred, and missing occurrences pooled independently of early meaning identity.
+- CONSOLIDATION.json: explicitly reviewed, full-inventory and occurrence-fingerprint-bound phase gate.
 - missing_candidates.jsonl: shared contextual missing candidates, with incoming dependent forms and occurrence counts.
 - reverse_index.json: reverse dependents for meaning nodes and missing candidates.
 - resolutions.jsonl: append-only, version-anchored editorial mappings to newly admitted or pre-existing meanings.
@@ -30,6 +205,7 @@ From repository root, where WORKSPACE means research_pipeline/experiments/recons
 
     python -m research_pipeline.engine.dependency_graph --workspace "$WORKSPACE" --mode inventory
     python -m research_pipeline.engine.dependency_graph --workspace "$WORKSPACE" --mode propose --limit 40
+    python -m research_pipeline.engine.dependency_graph --workspace "$WORKSPACE" --mode worklist --limit 8
     python -m research_pipeline.engine.dependency_graph --workspace "$WORKSPACE" --mode status
     python -m research_pipeline.engine.dependency_graph --workspace "$WORKSPACE" --mode queue --limit 20
     python -m research_pipeline.engine.dependency_graph --workspace "$WORKSPACE" --mode tree --root-formulation FORMULATION_ID
@@ -122,7 +298,7 @@ Neither batch changed a screened definition or certified mathematical truth.
 ## Explicit limitations (follow-up implementation)
 
 Automatic lexical proposals remain non-exhaustive, and all proposal-only nodes
-stay Open. Existing 891 screened/candidate relation seeds are historical
+stay Open. The occurrence-first phase gate prevents an automatic recommendation to research or add missing definitions before complete source-free scanning and global consolidation. Existing 891 screened/candidate relation seeds are historical
 prerequisite evidence, never a complete enumeration of mathematical vocabulary.
 Exact normalized phrase+context missing-candidate deduplication is deliberately
 conservative; synonymous queries, contextual homonyms and different
