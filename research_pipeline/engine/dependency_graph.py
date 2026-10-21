@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import importlib
+import hashlib
 import json
 import re
 from collections import defaultdict, Counter
@@ -429,6 +430,9 @@ def store(workspace, items):
         status = "complete" if entry.get("complete") is True else "scan_incomplete"
         node = make_snapshot(inv, fid, entry.get("references", []),
                              status, entry.get("review_rationale", ""))
+        if entry.get("proposal_fingerprint") and status == "scan_incomplete":
+            node["proposal_fingerprint"] = entry["proposal_fingerprint"]
+            node["scan_origin"] = "unreviewed_adapter_proposal"
         existing = current.get(fid)
         if fid in amended_ids and existing != node:
             raise PipelineError("Correct amended snapshots by append-only amendment, not store")
@@ -512,14 +516,29 @@ def propose(workspace, adapter, limit=30):
         raise PipelineError("Generate inventory first")
     nodes = live_nodes(graph, inv)
     module = importlib.import_module(adapter)
-    queue = [fid for fid in sorted(inv["formulations"])
-             if fid not in nodes]
+    # The source digest is an explicit adapter-version invalidation key.
+    # Refresh only safe, never-reviewed lexical proposals, never completed
+    # semantic reviews or manually curated incomplete work.
+    source_bytes = Path(module.__file__).read_bytes()
+    fingerprint = hashlib.sha256(source_bytes).hexdigest()
+    def refreshable(node):
+        return (node.get("scan_status") == "scan_incomplete"
+                and not node.get("review_rationale")
+                and node.get("proposal_fingerprint") != fingerprint
+                and (node.get("scan_origin") == "unreviewed_adapter_proposal"
+                     or (not node.get("scan_origin") and
+                         all(r.get("origin") == "unreviewed_lexical_proposal"
+                             for r in node.get("references", [])))))
+    # Work fresh forms first; afterward update outdated provisional proposals.
+    queue = ([fid for fid in sorted(inv["formulations"]) if fid not in nodes] +
+             [fid for fid in sorted(nodes) if refreshable(nodes[fid])])
     entries = []
     for fid in queue[:limit]:
         references = module.propose(inv["formulations"][fid], inv["meanings"])
         entries.append({"formulation_id": fid,
                         "version_sha256": inv["formulations"][fid]["version_sha256"],
-                        "references": references, "complete": False})
+                        "references": references, "complete": False,
+                        "proposal_fingerprint": fingerprint})
     if entries:
         result = store(workspace, entries)
     else:
