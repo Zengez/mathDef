@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "c50cee22f9c0dc5273ca4ce8fcbeaff7d946ab80f50b531abb362ffdcb6ca535"
+    "resume_plan_sha256": "4daf43dc5900fdc78ce38e74416439a9eba9e29f840da4c5ac87a31634983816"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -13,15 +13,15 @@
     "original_priority_firstpass_records": 192,
     "production_corpus_used": false,
     "review_dispositions": {
-      "linked": 626,
+      "linked": 633,
       "no_supported_target": 6
     },
-    "reviewed_formulations": 632,
-    "screened_contextual_meanings": 591,
-    "screened_relationships": 869,
-    "source_observations": 946,
+    "reviewed_formulations": 639,
+    "screened_contextual_meanings": 595,
+    "screened_relationships": 887,
+    "source_observations": 953,
     "sources": 14,
-    "terms": 477
+    "terms": 481
   },
   "known_blockers": [
     "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
@@ -53,25 +53,26 @@
     "Previously source-held ProofWiki Graph Isomorphism one-way-edge clause and Directional Derivative gradient-only clause still excluded from approved mathematical meanings.",
     "Batch125 ProofWiki Uniform Convergence Infinite Series section incorrectly writes partial sum s_n(x)=Σ_{k=1}^n f_n(x) rather than Σ f_k(x); source observation held and excluded from screened meanings.",
     "The exact two B127 logged prerequisite target gaps (product topology on function space T^D, eigenvalue of K-linear operator) were independently sourced in B128–130 and separately backfilled in B131, with no cyclic link or historical decision rewrite.",
-    "Batch134 outstanding independently screened prerequisite concepts: convex set/subset of real vector space, Kronecker delta and falling factorial; three categories logged and no unsupported relation fabricated.",
-    "ProofWiki Definition:Degree of Vertex incident-edge count equals distinct-neighbor count only for simple loopless graphs, not general multigraphs; accepted both forms only under explicit simple-graph scope."
+    "ProofWiki Definition:Degree of Vertex incident-edge count equals distinct-neighbor count only for simple loopless graphs, not general multigraphs; accepted both forms only under explicit simple-graph scope.",
+    "The B134 missing target coverage categories (numeric Kronecker delta, falling factorial at k=0, convex subset of real vector space) were independently source-reviewed in B135–137 and retroactively linked to Stirling and convex-hull formulations in B138; still not exhaustive coverage.",
+    "Source-scope caution: ProofWiki Definition:Falling Factorial itself has n>0 only; x falling to zero equals 1 is justified separately by ProofWiki Binomial Coefficient with Zero. Do not misattribute the extension."
   ],
-  "next_action": "Independent Wave2 Batches132–134 VERIFIED successful GitHub Actions 39527991209 (four source headings/eight observations), 39528163558 (four screened meanings/eight formulations), 39528416620 (fourteen direct individually justified links). Totals: 14 approved external source collections; 477 independently attributed source headings; 946 individual observations (three older questionable source variants held and not approved); 591 mathematically screened contextual meanings; 632 individually reviewed formulations (626 linked, 6 justified no-supported-target, 0 pending); 869 acyclic independently sourced prerequisite links. Bell B0=1 counts empty partition; second-kind Stirling recursion and falling factorial coefficient forms grouped as equivalents; convex hull finite convex combinations, intersection convex supersets, least convex superset grouped (incl empty subset); degree as incident edges vs neighbors valid ONLY in simple undirected loopless graphs, not generally multigraphs. Previous 855 links and 624 unrelated formulation review decisions preserved exactly. Three missing targets documented: convex subset, falling factorial, Kronecker delta. Frozen Wave1 unchanged, all five Wave2 stages unsealed, production mathematical definitions/citations not read or compared. NEXT Batch135: bounded independent mathematical breadth outside these topics, with optional carefully sourced missing-target recovery. Generic engine remains topic-neutral; math-specific conventions in adapter. Read WAVE2_PROGRESS_2026-10-20_AA.md.",
+  "next_action": "INDEPENDENT Wave2 Batches135–138 VERIFIED PASS on GitHub Actions 39529138225 (source 4 headings and 7 observations), 39529315377 (4 new meanings and 7 independently reviewed source formulations), 39529548233 (14 direct individually screened links), 39529729911 (4 retroactive Stirling/convex-hull links). Current counts 14 source collections, 481 independent term headings, 953 source observations (three historically held incorrect source variants excluded), 595 mathematically screened contextual meanings, 639 reviewed formulations (633 linked, 6 justified no-supported-target, zero pending), 887 cycle-free direct mathematical prerequisites. Previous 883 direct links and ALL 639 formulation decisions/rationales preserved in retroactive Batch138, only new IDs appended to four affected old form records. Foundational mathematical distinctions: convex subset of REAL vector space (empty allowed), falling factorial x^{underlined 0}=1 separately corroborated by ProofWiki Binomial Coefficient with Zero (principal Falling Factorial source n>0 only), numeric Kronecker equality delta distinct from ring-valued delta, bipartite simple graph equivalent two-part edges and non-surjective proper two-coloring (empty classes allowed). Frozen independent Wave1 unchanged, five Wave2 stages UNSEALED, no original production mathDef corpus consulted or compared. NEXT Batch139 independently source new mathematical breadth beyond recent convex/Stirling/Bell/bipartite cluster, preserve math adapter only specialization and generic engine neutrality. See WAVE2_PROGRESS_2026-10-20_AB.md (checkpoint AA documented Batches132–134).",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
-      "rows": 591,
-      "sha256": "371b853a5a23f2c5234551c31621d6248c30c202f37810070e1579b104aba4c7"
+      "rows": 595,
+      "sha256": "c586e39e6bf61ada759a52271e2b72676056c0181a384367bd59af9cab9f7367"
     },
     "current_link_stage": {
-      "record_digest": "5b08ac101b40ab86e2357aa458ab25c9b4e7259892b592d0fbe1ab6a1adbf6c6",
+      "record_digest": "55804e9bff8b0b0a210ba6111ea353c9be23b8a68733cc716a9201b02aa28f44",
       "sealed": false,
-      "sha256": "3b86924f289a49f062f696bb0528f46803b39e500d2073c9675433951a965d93",
-      "total": 869
+      "sha256": "e17ccc878d8b321f4a3593ae43bb5bcb155b4f54616b536aaae1e113066c8606",
+      "total": 887
     },
     "definition_links": {
-      "rows": 869,
-      "sha256": "0535a93c20e9a945b4334c26462ebd8260e7a9bd220e5a42f80d471a2657e469"
+      "rows": 887,
+      "sha256": "95362945d91124f9040ee20f9b0c2eabbbce20376f27e82e76dcff1adeeb7312"
     },
     "firstpass_priorities": {
       "rows": 192,
@@ -79,23 +80,23 @@
     },
     "individual_link_reviews": {
       "decisions": {
-        "linked": 626,
+        "linked": 633,
         "no_supported_target": 6
       },
-      "rows": 632,
-      "sha256": "5f39cf7945a1878805c952cf44b4da71fe512ca39c959bade651b7e624b0c76c"
+      "rows": 639,
+      "sha256": "965ee603192d77a28df7fbe2259c1b169e28932661f70f70f24c0b9b3c940b68"
     },
     "source_observations": {
-      "rows": 946,
-      "sha256": "1a7d7c69d8cbcebd38d7bc9a5c6284b20b25078eb5b99743fdddb3bee52ebae2"
+      "rows": 953,
+      "sha256": "e8a9c5fef0378b94468d2695761d93096f563aa57539617bc639fc744974a118"
     },
     "sources": {
       "rows": 14,
       "sha256": "b122833748dff90cb025f4dd82393fdf428f2bf339531675280eb49312c0a38b"
     },
     "term_headings": {
-      "rows": 477,
-      "sha256": "93927b3d40d4dd44598f07c526ee4aa827116d13151f73766ba5706eef4ef2e4"
+      "rows": 481,
+      "sha256": "f96a45f8aa54d82a68a28c5dbde7492757aa4dee9e647812e5d9ecdfec4f8e4b"
     },
     "wave2_lineage": {
       "first_wave_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
@@ -104,16 +105,16 @@
     }
   },
   "resume_steps": [
-    "Read mathDef adapter resume_plan.json and generated compact research state/RESUME_STATE.json; do not reread all historic checkpoint banners.",
-    "Confirm newest main commit SHA and successful three workflows 39527991209, 39528163558, 39528416620, or newer research-affecting runs.",
-    "Trust 632 independently reviewed source-specific formulations (626 linked, 6 justified no-target) and 869 cycle-free links when checkpoint hashes and validation match; do not repeat completed Batches94–134.",
-    "Preserve four recently screened meanings: Bell number including B0=1, Stirling second kind equivalent recursion/monic falling-factorial basis forms, convex hull equivalent three forms including empty subset, and incident-edge vs neighbor vertex degree ONLY for loopless simple graphs.",
-    "Missing source-screened prerequisite target categories from Batch134: convex subset in a real vector space, falling factorial for polynomial expansion, and Kronecker delta for recurrence. Record as genuine missing until separate independent research; do not invent links.",
-    "Preserve three previous quarantined unsafe source observations, all unpromoted: gradient-only directional derivative, forward-only graph isomorphism, and uniform series partial-sum f_n/f_k indexing mistake. ProofWiki degree generalization to multigraph is scoped away without promoting false equivalence.",
-    "Expand independent mathematical breadth in different fields after meaning collision audit. Keep mathematical review and individually source-screened link stages separated.",
-    "Keep generic engine topic neutral for future math theorem and math education vocabulary pipelines, specialized math policy in mathDef adapter.",
-    "Frozen independently reconstructed Wave1 unchanged, all five editable Wave2 stages UNSEALED, original production mathDef mathematical files and citations uninspected until independent freeze.",
-    "Bound active sessions around 12–14 minutes and commit, validate full history and refresh portable checkpoint before ending."
+    "Read this short adapter resume plan, compact research state/RESUME_STATE.json, and latest WAVE2_PROGRESS_2026-10-20_AB.md; avoid rereading all historical checkpoint archives.",
+    "Confirm latest GitHub main SHA and successful runs for Batches135–138, or any newer state-affecting workflows.",
+    "Trust 639 individual formulation decisions (633 linked, six justified no-supported-target, none pending) and 887 acyclic screened prerequisite links if counts/digest agree. Do not redo completed Batches94–138.",
+    "Preserve precise differences: convex set over a REAL vector space (empty allowed); falling factorial n=0 explicitly corroborated by a separate source because principal ProofWiki definition covers only positive n; numeric equality delta is not ring-valued delta; two-coloring need not use both colors.",
+    "Previous Stirling and convex hull formulations gained four independently source-screened retroactive links to falling factorial, Kronecker delta and convex subset while original review conclusions, rationales and links remained immutable.",
+    "Retain three historically held mathematically defective ProofWiki source claims unpromoted: gradient-only directional derivative, forward-only graph isomorphism and incorrectly summed f_n instead of f_k in uniform series.",
+    "Next discover independent source-backed breadth in other mathematical branches, collision-check existing reconstructed meanings, separate source intake, mathematical screening and individual prerequisite links. Do not chase unbounded recursive definitions.",
+    "Keep research engine subject-neutral for subsequent mathematical theorem/math-education terminology adapters, put all mathematics policy in research_pipeline/adapters/mathdef.",
+    "All five independent Wave2 stages UNSEALED, independent Wave1 frozen and original production mathDef mathematical corpus unopened/uncompared until independent Wave2 freeze.",
+    "Work roughly 12–14 active minutes and finish with committed stages and a verified portable restart checkpoint."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -123,8 +124,8 @@
       "sha256": "aeebc436b42634812ad521a742d530cf44e2f342616b0f46e6c1b3da10d7c6ec"
     },
     "wave2_research_support": {
-      "files": 810,
-      "sha256": "91adf9e61f7070a65158c1a116febd2b7e4e2714365c93e68adf4c9c17ec3d38"
+      "files": 831,
+      "sha256": "9a6afb175ca54d3140ed5aab82547d7c0649701bb84dd5a44f989e63f7938b52"
     }
   },
   "verification_limitations": [
@@ -137,18 +138,23 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch134 14 direct Bell/Stirling/convex/degree links, all historic 855 links and 624 unrelated decisions preserved",
-      "run_id": 39528416620
+      "purpose": "Batch138 four retroactive Stirling/convex-hull source-specific links, 883 older links and all prior individual decisions preserved",
+      "run_id": 39529729911
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch133 4 source-scoped mathematical meanings with 8 formulations grouped correctly",
-      "run_id": 39528163558
+      "purpose": "Batch137 14 direct source-verified convex/falling/delta/bipartite prerequisite links",
+      "run_id": 39529548233
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch132 four independent source headings and eight individually cited observations",
-      "run_id": 39527991209
+      "purpose": "Batch136 four contextual meanings with seven mathematically screened source formulations",
+      "run_id": 39529315377
+    },
+    {
+      "previously_reported_conclusion": "success",
+      "purpose": "Batch135 four independently sourced headings/seven observations, falling factorial zero-case corroborated separately",
+      "run_id": 39529138225
     }
   ]
 }
