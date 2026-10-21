@@ -25,6 +25,46 @@ def plan(workspace, profile):
     if config.get("schema_version") != 1 or not isinstance(config.get("breadth_topics"), list):
         raise PipelineError("Planning profile needs schema version and breadth_topics")
     pending = audit(root)
+    graph_status_file = root / "dependency_graph" / "STATE.json"
+    if graph_status_file.is_file():
+        graph_status = read_json(graph_status_file)["summary"]
+        # Generic handshake: when a graph-driven project explicitly holds
+        # unrelated breadth, this legacy breadth planner must not override it.
+        if graph_status.get("breadth_expansion") == "on_hold":
+            from .dependency_graph import research_queue
+            queue = research_queue(root, limit=1000)
+            clusters = [
+                {"missing_candidate_id": candidate["id"],
+                 "target_query_normalized": normalized(candidate["query"]),
+                 "context": candidate.get("context", ""),
+                 "awaiting_formulation_ids": candidate["incoming_formulation_ids"],
+                 "number_of_affected_formulations": candidate["upstream_formulation_count"],
+                 "priority": "high" if candidate["upstream_formulation_count"] > 1 else "normal"}
+                for candidate in queue["candidates"]
+            ]
+            return {
+                "schema_version": 1,
+                "strategy": "dependency_first_until_structural_stabilization",
+                "breadth_candidates": [], "completed_breadth_topics": [],
+                "breadth_batch_143": "on_hold",
+                "deferred_target_clusters": clusters,
+                "suggested_next_package": {
+                    "breadth_topic_candidates": [],
+                    "maximum_deferred_target_inclusions": len(clusters),
+                    "rule": ("Finish unscanned/contextual formulation scans before "
+                             "deduplicated missing-meaning research; no unrelated breadth.")
+                },
+                "graph_checkpoint": {
+                    "phase": queue["phase"],
+                    "inventory_sha256": graph_status["inventory_sha256"],
+                    "open": graph_status["open"], "closed": graph_status["closed"],
+                    "scan_complete": graph_status["scan_complete"],
+                    "unscanned": graph_status["unscanned"],
+                    "scan_incomplete": graph_status["scan_incomplete"],
+                },
+                "reconciliation_findings": pending["finding_summary"],
+                "note": "Graph-derived scheduling only. Does not certify or promote records.",
+            }
     grouped = defaultdict(list)
     for finding in pending["findings"]:
         if finding["kind"] == "unresolved_target":
