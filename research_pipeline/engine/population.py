@@ -7,6 +7,7 @@ evidence and revisions are hashed; exhaustive review is deferred to audit.
 from __future__ import annotations
 
 import argparse
+import importlib
 import hashlib
 import json
 import os
@@ -187,7 +188,7 @@ def validate_package(package, current, parent):
     return draft
 
 
-def apply(workspace, package_path, dry_run=False):
+def apply(workspace, package_path, dry_run=False, policy=None):
     root = Path(workspace).resolve()
     package_path = Path(package_path).resolve()
     # Only committed packages inside this isolated experiment may be run remotely.
@@ -206,6 +207,11 @@ def apply(workspace, package_path, dry_run=False):
             raise PipelineError("Previously applied batch changed")
         return {"batch": name, "replayed": True, "status": "unchanged"}
     validate_package(package, current, parent)
+    if policy:
+        if not policy.startswith('research_pipeline.adapters.'):
+            raise PipelineError('External policy modules are not allowed')
+        plugin = importlib.import_module(policy)
+        plugin.validate_package(package, root)
     if dry_run:
         return {"batch": name, "dry_run": True, "added": {k: len(package.get(k, [])) for k in KINDS}}
     # Write independent draft records; historical screened corpora stay untouched.
@@ -312,11 +318,12 @@ def main():
     p.add_argument("--mode", choices=("populate", "reconcile", "certify", "status"), default="status")
     p.add_argument("--batch", type=Path)
     p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--policy", help="Reviewed project policy module for populate")
     args = p.parse_args()
     if args.mode == "populate":
         if not args.batch:
             p.error("--batch required for populate")
-        result = apply(args.workspace, args.batch, dry_run=args.dry_run)
+        result = apply(args.workspace, args.batch, dry_run=args.dry_run, policy=args.policy)
     else:
         result = audit(args.workspace, write=args.mode == "reconcile", certify=args.mode == "certify")
     print(json.dumps(result, indent=2, ensure_ascii=False))
