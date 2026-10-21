@@ -1,0 +1,77 @@
+name: Independent research population or reconciliation
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Population, reconciliation audit, or read-only status"
+        required: true
+        type: choice
+        options:
+          - populate
+          - reconcile
+          - status
+      batch_path:
+        description: "For populate: committed JSON inside independent Wave2 population/inbox/"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+
+jobs:
+  research:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate reusable engine and adapter
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef
+          python -m unittest research_pipeline.tests.test_population -v
+      - name: Process independent package, recomputing on push collision
+        env:
+          MODE: ${{ inputs.mode }}
+          BATCH: ${{ inputs.batch_path }}
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          WORKSPACE="research_pipeline/experiments/reconstruction-v2-independent"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git checkout -B main origin/main
+            if [ "$MODE" = "populate" ]; then
+              if [ -z "$BATCH" ]; then echo "batch_path is required" >&2; exit 1; fi
+              python -m research_pipeline.engine.population \
+                --workspace "$WORKSPACE" --mode populate --batch "$BATCH" \
+                --policy research_pipeline.adapters.mathdef.population_policy
+            elif [ "$MODE" = "reconcile" ]; then
+              python -m research_pipeline.engine.population \
+                --workspace "$WORKSPACE" --mode reconcile
+            else
+              python -m research_pipeline.engine.population \
+                --workspace "$WORKSPACE" --mode status
+            fi
+            git add -- "$WORKSPACE/population"
+            if git diff --cached --name-only | grep -v "^$WORKSPACE/population/"; then
+              echo "Attempted change outside independent ledger" >&2
+              exit 1
+            fi
+            if git diff --cached --quiet; then echo "No changed research files"; exit 0; fi
+            git commit -m "Apply independent population package or reconciliation report"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "New main revision; recompute from latest committed inputs"
+          done
+          exit 1
