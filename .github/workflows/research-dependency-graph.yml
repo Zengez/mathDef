@@ -7,6 +7,7 @@ on:
       - 'research_pipeline/engine/dependency_graph.py'
       - 'research_pipeline/adapters/mathdef/dependency_scan.py'
       - 'research_pipeline/tests/test_dependency_graph.py'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/dependency_graph/inbox/*.json'
       - '.github/workflows/research-dependency-graph.yml'
   workflow_dispatch:
     inputs:
@@ -56,6 +57,10 @@ jobs:
             git checkout -B main origin/main
             python -m research_pipeline.engine.dependency_graph \
               --workspace "$WORKSPACE" --mode inventory
+            # A committed semantic-scan batch is ingested only into this
+            # independent graph; no promotion or certification occurs.
+            python -m research_pipeline.engine.dependency_graph \
+              --workspace "$WORKSPACE" --mode apply_inbox --limit 20
             python -m research_pipeline.engine.dependency_graph \
               --workspace "$WORKSPACE" --mode propose --limit "$PROPOSAL_LIMIT"
             python -m research_pipeline.engine.dependency_graph \
