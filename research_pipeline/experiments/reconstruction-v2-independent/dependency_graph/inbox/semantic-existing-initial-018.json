@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-018",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.6775f8b2e6e1cceb.grothendieck-fibred-category",
+      "version_sha256": "630254c775ae11a0436c6b08b238bb1c30b08be6cec1121cdc2b58d8726e1403",
+      "complete": true,
+      "review_rationale": "Reviewed the full fibration axiom, preserving its quantification over base arrows into the image of an object, and using precisely the existing cartesian arrow notion without introducing a cleavage.",
+      "references": [
+        {
+          "phrase": "functor p:E→C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "objects and arrows of E and C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "p-cartesian arrow",
+          "state": "existing",
+          "target_meaning_id": "meaning.6775f8b2e6e1cceb.strongly-cartesian-morphism"
+        },
+        {
+          "phrase": "for each object and base morphism, a lift exists",
+          "state": "external",
+          "disposition": "The lifting requirement defines the fibration itself; no splitting or groupoid-fibre condition follows."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.6775f8b2e6e1cceb.strongly-cartesian-morphism",
+      "version_sha256": "a8d4ac2d91f249443dec3f937b977b411ea2ebcc60c76ac29bce805e389e73f6",
+      "complete": true,
+      "review_rationale": "Read all quantified object and arrow roles, including the base-arrow commuting condition, and distinguished the cartesian factorization from ordinary categorical products or limits.",
+      "references": [
+        {
+          "phrase": "functor p:E→C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "arrows of E",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "base arrow of C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "factors uniquely through φ",
+          "state": "external",
+          "disposition": "The commuting-base constraint and unique factorization are part of the cartesian-arrow definition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.68206e8850bdd349.universally-exact-sequence",
+      "version_sha256": "ba1472d778dc44953935217958de3a37601912cdce2312ad83967301e8e4c80e",
+      "complete": true,
+      "review_rationale": "Reviewed both formulations of universal exactness: a short exact sequence and its first-arrow injectivity under tensoring by every module, with no weakening of universal quantifiers.",
+      "references": [
+        {
+          "phrase": "R-modules",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.left-module-nonunital"
+        },
+        {
+          "phrase": "short exact sequence",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category"
+        },
+        {
+          "phrase": "tensor products",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "injectivity of the first arrow after tensoring",
+          "state": "existing",
+          "target_meaning_id": "meaning.68206e8850bdd349.universally-injective-module-map"
+        },
+        {
+          "phrase": "entire tensor sequence remains exact",
+          "state": "external",
+          "disposition": "The given equivalence retains exactness after all tensor products, not just ordinary exactness."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.68206e8850bdd349.universally-injective-module-map",
+      "version_sha256": "09e3ac5451521fb7f4600eceb3ed2ad3a913e005dd4f477e822f0b9248cbd9d2",
+      "complete": true,
+      "review_rationale": "Reviewed the exact tensor-induced module homomorphism and its injectivity requirement for every R-module Q, including non-flat Q.",
+      "references": [
+        {
+          "phrase": "R-modules M and N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.left-module-nonunital"
+        },
+        {
+          "phrase": "tensor map f⊗id_Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "injective tensor-induced map",
+          "state": "unassigned",
+          "context": "Module theory: injective module map, here induced by tensoring"
+        },
+        {
+          "phrase": "every R-module Q",
+          "state": "external",
+          "disposition": "The stated quantifier is over all Q; not only flat or finitely presented modules."
+        }
+      ]
+    }
+  ]
+}
