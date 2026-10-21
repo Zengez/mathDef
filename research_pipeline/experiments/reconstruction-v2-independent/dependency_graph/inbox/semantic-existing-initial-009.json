@@ -1,0 +1,454 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-009",
+  "mode": "ingest",
+  "research_scope": "Contextual full-content source-free dependency scan for twelve existing independent formulations; no outside mathematical research and no new definitions.",
+  "items": [
+    {
+      "formulation_id": "form.3653fa0ad844d187.discrete-category",
+      "version_sha256": "2618d200b753039d7952b6042df235ebd245c5c18b468a77e3b03fe04c53ee38",
+      "complete": true,
+      "review_rationale": "Reviewed discrete category by the identity-only arrow condition; kept arbitrary category size and identity arrows as context-sensitive occurrences without assuming smallness.",
+      "references": [
+        {
+          "phrase": "category C",
+          "state": "unassigned",
+          "context": "Category theory: potentially large category with all objects and morphisms",
+          "reason": "Discrete category need not be small; avoid replacing it with a small-category-only definition."
+        },
+        {
+          "phrase": "identity morphism",
+          "state": "unassigned",
+          "context": "Category theory: identity arrow of an object in a general category",
+          "reason": "The identity law is a categorical axiom and may not need its own separate meaning after global review."
+        },
+        {
+          "phrase": "no arrows between distinct objects",
+          "state": "external",
+          "disposition": "This consequence follows immediately from the fact that only identity arrows are allowed and is not a new prerequisite."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.3653fa0ad844d187.two-category-fibred-sets",
+      "version_sha256": "879e70532c8b26f00ac773e1b1c40656ac8cc4df30ec026e3fa876afa5da076e",
+      "complete": true,
+      "review_rationale": "Reviewed the 2-category of fibred-in-sets categories over a base, linking the known fibred-in-sets and strict 2-category structures and saving functors/natural transformations over C.",
+      "references": [
+        {
+          "phrase": "category fibred in sets",
+          "state": "existing",
+          "target_meaning_id": "meaning.3653fa0ad844d187.category-fibred-in-sets",
+          "matching_note": "The objects are fibrations of the separately defined fibred-in-sets type."
+        },
+        {
+          "phrase": "2-category",
+          "state": "existing",
+          "target_meaning_id": "meaning.ec5e3a0d13f85f3a.strict-two-category",
+          "matching_note": "The given objects/1-arrows/2-arrows form a strict 2-category in the indexed convention."
+        },
+        {
+          "phrase": "base category C",
+          "state": "unassigned",
+          "context": "Category theory: possibly non-small base category C",
+          "reason": "Do not silently identify arbitrary base categories with small categories."
+        },
+        {
+          "phrase": "functors commuting with projections",
+          "state": "unassigned",
+          "context": "Category theory: functors over a base category, forming 1-morphisms of fibred categories",
+          "reason": "The commuting triangle with projections is additional structure beyond a general functor."
+        },
+        {
+          "phrase": "natural transformations lying over identity arrows",
+          "state": "unassigned",
+          "context": "Higher category theory: 2-morphisms of functors over the identity on a base category",
+          "reason": "Preserve the relative-to-base naturality condition for later matching."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.3718becace9c852d.quasifinite-at-prime",
+      "version_sha256": "bb42d9415ad7e72f4f29336e25f35d9c66ee68c9dad870e2a7bf6f40fedecf60",
+      "complete": true,
+      "review_rationale": "Reviewed quasi-finite-at-prime through finite-type ring maps, prime spectrum and scheme fibre dimensions, retaining isolated fibre points and residue fields for global occurrence matching.",
+      "references": [
+        {
+          "phrase": "finite-type ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map",
+          "matching_note": "Finite-type is the commutative unital ring-map property, not finite presentation."
+        },
+        {
+          "phrase": "Spec(S), Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+          "matching_note": "q and p are prime-spectrum points of S and R."
+        },
+        {
+          "phrase": "fibre Spec(S⊗_R κ(p))",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.local-ring-fibre-at-prime",
+          "matching_note": "The ring map's fibre is constructed over the residue field at p; keep ring-fibre type distinct from topological inverse image."
+        },
+        {
+          "phrase": "isolated point of the fibre",
+          "state": "unassigned",
+          "context": "Topology: isolated point in topological fibre Spec(S⊗_R κ(p))",
+          "reason": "The isolated-point condition requires the point to form an open singleton in the fibre topology."
+        },
+        {
+          "phrase": "residue field κ(p)",
+          "state": "unassigned",
+          "context": "Commutative algebra: residue field of local ring R_p at a prime ideal p",
+          "reason": "The residue field occurs in other local fibre and flatness definitions."
+        },
+        {
+          "phrase": "local fibre has dimension zero",
+          "state": "existing",
+          "target_meaning_id": "meaning.bd90654fb341045a.local-krull-dimension-point",
+          "matching_note": "The local dimension is a topological Krull-dimension notion at the fibre point."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.39488f3e396a1c77.algebraic-closure",
+      "version_sha256": "cbaa44128696347dc181a5e747a980ebc21b7442be1abaf961e85b7ed58ce5f4",
+      "complete": true,
+      "review_rationale": "Examined field algebraic closure, linking general field extension, algebraic elements and algebraically closed field, saving polynomial nonconstancy for later grouping.",
+      "references": [
+        {
+          "phrase": "field F",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+          "matching_note": "F is an ordinary field."
+        },
+        {
+          "phrase": "extension field K containing F",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+          "matching_note": "The inclusion F⊆K is the existing field-extension concept."
+        },
+        {
+          "phrase": "every element algebraic over F",
+          "state": "existing",
+          "target_meaning_id": "meaning.d0a078e59e1495da.algebraic-element-extension",
+          "matching_note": "The elementwise algebraicity condition is already indexed."
+        },
+        {
+          "phrase": "every nonconstant polynomial over K has a root in K",
+          "state": "existing",
+          "target_meaning_id": "meaning.39488f3e396a1c77.algebraically-closed",
+          "matching_note": "The ambient K is required to satisfy the existing algebraically closed field property."
+        },
+        {
+          "phrase": "nonconstant polynomial",
+          "state": "unassigned",
+          "context": "Polynomial algebra: polynomial with degree at least one over a field K",
+          "reason": "The nonconstant condition should be matched across polynomial definitions and degrees later."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.39488f3e396a1c77.algebraically-closed",
+      "version_sha256": "f2868734ceed08ebd1ed168fad5f16308608bc30f190a14eba73afbce9630a34",
+      "complete": true,
+      "review_rationale": "Read algebraically closed field via absence of proper algebraic extensions and roots of nonconstant polynomials, separating polynomial roots from unrelated root notation.",
+      "references": [
+        {
+          "phrase": "field K",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+          "matching_note": "K is a field."
+        },
+        {
+          "phrase": "algebraic field extension",
+          "state": "existing",
+          "target_meaning_id": "meaning.50d335de00e5f11d.algebraic-extension",
+          "matching_note": "The prohibition concerns proper algebraic extensions, not all proper field extensions."
+        },
+        {
+          "phrase": "one-variable polynomial with coefficients in K",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.nonzero-polynomial-degree",
+          "matching_note": "The polynomial and its positive-degree condition are part of ordinary polynomial algebra."
+        },
+        {
+          "phrase": "root in K",
+          "state": "unassigned",
+          "context": "Field theory: root of a polynomial f∈K[x], i.e. a∈K with f(a)=0",
+          "reason": "Polynomial roots recur in splitting fields and quotient-field constructions."
+        },
+        {
+          "phrase": "no proper extension",
+          "state": "external",
+          "disposition": "Properness is set-theoretic strict field inclusion, with ordinary negation as stated."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.3a0545450d7a5285.internal-hom-module",
+      "version_sha256": "f5b90dc34ea1acc534f01c7bf3695afc7b6766ad777d10676407d9dab5ea9d68",
+      "complete": true,
+      "review_rationale": "Reviewed internal Hom as an R-module of R-linear module maps, preserving pointwise operations and scalar action in the source-free record.",
+      "references": [
+        {
+          "phrase": "modules M,N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "The arguments are ordinary unital R-modules."
+        },
+        {
+          "phrase": "R-linear homomorphisms",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear",
+          "matching_note": "Maps are R-linear transformations of modules, not merely arbitrary set functions."
+        },
+        {
+          "phrase": "pointwise addition of homomorphisms",
+          "state": "unassigned",
+          "context": "Module theory: additive abelian group of module homomorphisms Hom_R(M,N)",
+          "reason": "The pointwise operation gives the internal Hom its module structure; preserve the construction for global matching."
+        },
+        {
+          "phrase": "(r·f)(m)=r·f(m)",
+          "state": "external",
+          "disposition": "The scalar action is explicitly given and is part of this definition, not an additional unexplained term."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.3aaa8d6f2195bb8e.minimal-polynomial",
+      "version_sha256": "4166430d7d2406dd05e3cc0e81083f752f1ce0c05b1daae7ab66ce2be1899f3d",
+      "complete": true,
+      "review_rationale": "Reviewed the minimal polynomial using field inclusion, algebraic element and evaluation-kernel of polynomial algebra; avoided mislinking ring homomorphism kernel to category kernels.",
+      "references": [
+        {
+          "phrase": "extension E/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+          "matching_note": "This is a general field inclusion k⊆E."
+        },
+        {
+          "phrase": "algebraic over k",
+          "state": "existing",
+          "target_meaning_id": "meaning.d0a078e59e1495da.algebraic-element-extension",
+          "matching_note": "The chosen element α satisfies a polynomial over k."
+        },
+        {
+          "phrase": "monic polynomial",
+          "state": "unassigned",
+          "context": "Polynomial algebra: monic polynomial over field k with leading coefficient one",
+          "reason": "Monicity is a polynomial property, not field characteristic."
+        },
+        {
+          "phrase": "kernel of evaluation k[t]→E",
+          "state": "unassigned",
+          "context": "Commutative algebra: kernel ideal of the unital polynomial-evaluation map at α",
+          "reason": "Do not mislink ring-map kernel to abelian-group or preadditive-category kernels."
+        },
+        {
+          "phrase": "irreducible over k",
+          "state": "unassigned",
+          "context": "Field theory: irreducibility of a polynomial in k[t]",
+          "reason": "Irreducibility is a field-polynomial property and can be compared with ring element irreducibility."
+        },
+        {
+          "phrase": "evaluation k[t]→E at alpha",
+          "state": "unassigned",
+          "context": "Field theory: ring evaluation map on polynomial algebra k[t] sending indeterminate to α",
+          "reason": "The chosen evaluation map may be the same construction occurring in polynomial-independence definitions."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.3c73940f47e92e99.open-immersion-locally-ringed-space",
+      "version_sha256": "b5930826480275fee8ce2453e1cb9122fb31060a605571a7f73e226aec5fc317",
+      "complete": true,
+      "review_rationale": "Examined locally ringed open immersion as an isomorphism of ringed sheaves over a topological homeomorphism and saved sheaf inverse-image and sheaf isomorphism contexts.",
+      "references": [
+        {
+          "phrase": "morphism of locally ringed spaces",
+          "state": "existing",
+          "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space-morphism",
+          "matching_note": "The morphism f includes sheaf and topological maps respecting local rings."
+        },
+        {
+          "phrase": "homeomorphism onto an open subset",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.directional113.homeomorphism-topological",
+          "matching_note": "The underlying space map is a topological homeomorphism onto its image."
+        },
+        {
+          "phrase": "open subset of Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space",
+          "matching_note": "Openness is relative to the topology of Y."
+        },
+        {
+          "phrase": "induced morphism f^{-1}O_Y→O_X",
+          "state": "unassigned",
+          "context": "Sheaf theory: inverse-image sheaf morphism on a locally ringed-space morphism",
+          "reason": "Sheaf inverse-image differs from the ordinary preimage of an open set."
+        },
+        {
+          "phrase": "isomorphism of sheaves of rings",
+          "state": "unassigned",
+          "context": "Sheaf theory: isomorphism in the category of sheaves of unital rings",
+          "reason": "An isomorphism of sheaves is not merely an equality of stalks without further structure."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.3c73940f47e92e99.open-subspace-locally-ringed-space",
+      "version_sha256": "38ddfe17da2aa204057d1503b9f8ee81a1a9b54744a4b76f75a9488876e9966d",
+      "complete": true,
+      "review_rationale": "Read open locally ringed subspace as restriction of a locally ringed space and structure sheaf to an open subset.",
+      "references": [
+        {
+          "phrase": "locally ringed space",
+          "state": "existing",
+          "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space",
+          "matching_note": "Both ambient and restricted objects have locally ringed-space structure."
+        },
+        {
+          "phrase": "open subset U",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space",
+          "matching_note": "U is an open subset of the underlying topological space."
+        },
+        {
+          "phrase": "restriction of the structure sheaf O_X|_U",
+          "state": "unassigned",
+          "context": "Sheaf theory: restriction of a sheaf to an open subspace U",
+          "reason": "The restriction of the structure sheaf creates the smaller locally ringed-space sheaf."
+        },
+        {
+          "phrase": "underlying space U",
+          "state": "external",
+          "disposition": "U is the specified underlying open subspace, not a separate new mathematical construction."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.3d054062d7995be3.snake-lemma-connecting-map",
+      "version_sha256": "b20c41e90ca04ba12bfcdc09f88aac8e298f0f26000a3768a1698b0e639e1497",
+      "complete": true,
+      "review_rationale": "Reviewed snake connecting map in an exact commutative diagram of abelian groups; linked kernel/cokernel and exactness while recording the commuting diagram and quotient classes.",
+      "references": [
+        {
+          "phrase": "abelian groups",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group",
+          "matching_note": "The entire diagram is in abelian groups."
+        },
+        {
+          "phrase": "exact rows",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category",
+          "matching_note": "Both rows impose the exactness condition of the chosen abelian category."
+        },
+        {
+          "phrase": "ker(γ)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.abelian-group-homomorphism-kernel",
+          "matching_note": "This kernel is of an abelian-group homomorphism γ."
+        },
+        {
+          "phrase": "coker(α)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.preadditive-category-cokernel",
+          "matching_note": "The cokernel occurs in an abelian category where this existing cokernel meaning applies."
+        },
+        {
+          "phrase": "commutative diagram",
+          "state": "unassigned",
+          "context": "Category theory: commutative diagram of abelian group homomorphisms with two exact rows",
+          "reason": "The snake map needs a compatible diagram with commuting squares."
+        },
+        {
+          "phrase": "class of an element u in coker(α)",
+          "state": "unassigned",
+          "context": "Homological algebra: coset class in a cokernel quotient of abelian groups",
+          "reason": "The quotient class is a concrete cokernel representation."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.3d055c0c9618e129.artin-schreier-extension",
+      "version_sha256": "0ee3308b4c5d29fc0ca00ade0177f10d69cbc403161adec728738df7adc55766",
+      "complete": true,
+      "review_rationale": "Reviewed Artin–Schreier extension using field characteristic and cyclic Galois group, preserving finite cyclicity and adjoining an Artin–Schreier root for global consolidation.",
+      "references": [
+        {
+          "phrase": "field K",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+          "matching_note": "The coefficient field has characteristic p."
+        },
+        {
+          "phrase": "prime characteristic p",
+          "state": "existing",
+          "target_meaning_id": "meaning.dbce785fa0c96b0a.field-characteristic",
+          "matching_note": "This is the existing field-characteristic notion."
+        },
+        {
+          "phrase": "cyclic Galois group",
+          "state": "existing",
+          "target_meaning_id": "meaning.26fa733af18b53e7.galois-group",
+          "matching_note": "The extension has a Galois automorphism group, with an additional cyclicity condition."
+        },
+        {
+          "phrase": "cyclic group of order p",
+          "state": "unassigned",
+          "context": "Abstract algebra: cyclic finite group of cardinality prime p",
+          "reason": "Group cyclicity and group order may have distinct general meanings and should not be silently supplied by the Galois group meaning."
+        },
+        {
+          "phrase": "adjoining a solution of t^p-t=a",
+          "state": "unassigned",
+          "context": "Field theory: adjoining to K a root of Artin–Schreier polynomial x^p−x−a",
+          "reason": "The field-extension-by-root construction should be compared to other field-adjunction occurrences."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.3f6a26f1786a8223.base-change-module",
+      "version_sha256": "7804e7ceb65381b0d4081c478f149c4a44e2750606b5b934f28c53952b398f41",
+      "complete": true,
+      "review_rationale": "Read module base change as tensoring along a commutative ring map, linking module, tensor product and ring base change while retaining general algebra structure as an occurrence.",
+      "references": [
+        {
+          "phrase": "S-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "M has an S-module structure."
+        },
+        {
+          "phrase": "map R→R′",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "Commutative ring base-change homomorphism preserves identity."
+        },
+        {
+          "phrase": "tensor product M⊗_R R′",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+          "matching_note": "The module tensor construction underlies base change."
+        },
+        {
+          "phrase": "S⊗_R R′",
+          "state": "existing",
+          "target_meaning_id": "meaning.3f6a26f1786a8223.base-change-ring-map",
+          "matching_note": "The target algebra is the scalar-extension ring from ring-map base change."
+        },
+        {
+          "phrase": "R-algebra S",
+          "state": "unassigned",
+          "context": "Commutative algebra: algebra S with a unital base homomorphism R→S",
+          "reason": "R-algebra data should be grouped with companion scalar-extension and general algebra occurrences."
+        }
+      ]
+    }
+  ]
+}
