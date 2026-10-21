@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.88f3852fe6ad95bb.mittag-leffler-inverse-system",
   "version_sha256": "eac2f5bb3ac15e660e32feada38e668d52a3796c169056bd2cc8484fcd1e49d7",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "directed indexing set I",
+      "state": "existing",
+      "target_meaning_id": "meaning.709d3d2f82950c5b.directed-preordered-set",
+      "occurrence_id": "occ.85818454b16bf405a6c5"
+    },
+    {
+      "phrase": "inverse system (A_i,φ_ji)",
+      "state": "existing",
+      "target_meaning_id": "meaning.709d3d2f82950c5b.inverse-system",
+      "occurrence_id": "occ.28b8d49d59531e40fa1f"
+    },
+    {
+      "phrase": "image im(φ_ki)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.image-of-mapping",
+      "occurrence_id": "occ.f035f631fe4553ae2ab8"
+    },
+    {
+      "phrase": "for every i exists j≥i for all k≥j",
+      "state": "external",
+      "disposition": "The stabilizing index may depend on i; equality is of images in A_i, not equality of transition maps.",
+      "occurrence_id": "occ.5d902675a14359e7ffba"
+    }
+  ],
+  "snapshot_sha256": "1a4e107faa3ce1c2a6d8d95aefc034d8d786dd6cc12c9717ad18f7ffde9175b7",
+  "review_rationale": "Reviewed the full eventual-stabilization condition for images of inverse-system transition maps: for each i there exists j≥i such that all later images at i coincide. This is a Mittag-Leffler property of systems of sets and is not the tensor-comparison Mittag-Leffler property of modules."
 }

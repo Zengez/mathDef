@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.8a5f1888f076f50d.formally-etale-ring-map",
   "version_sha256": "a5bf61021231816c1a06826083e51debdb15bdf7b0bcf3f2c4a15cb5832ddb79",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ring map R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.221546f10adc4beb902f"
+    },
+    {
+      "phrase": "R-algebra A and maps",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.36783f64ba41f7c53d6a"
+    },
+    {
+      "phrase": "ideal I⊆A",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.b4e5e8b6267bf2697e75"
+    },
+    {
+      "phrase": "square-zero ideal I²=0",
+      "state": "unassigned",
+      "context": "Commutative algebra: square-zero ideal with vanishing ideal product I²",
+      "occurrence_id": "occ.7e3e0649baa4f50e6315"
+    },
+    {
+      "phrase": "quotient algebra A/I",
+      "state": "unassigned",
+      "context": "Commutative algebra: quotient R-algebra of A by ideal I",
+      "occurrence_id": "occ.fe1c4371b0c8b06c0eeb"
+    },
+    {
+      "phrase": "unique compatible lifting S→A of S→A/I",
+      "state": "unassigned",
+      "context": "Deformation theory: a uniquely determined lift of an R-algebra homomorphism through a square-zero quotient",
+      "occurrence_id": "occ.78f3ec14e3d73a457468"
+    },
+    {
+      "phrase": "every R-algebra A and ideal I",
+      "state": "external",
+      "disposition": "The source quantifies over all such square-zero extensions, not only split or finite ones.",
+      "occurrence_id": "occ.08ad2df2d550c2ac4bc3"
+    }
+  ],
+  "snapshot_sha256": "b65e75e16711751a5db02b255e2b7e6f7a4d6463b23197a73b5911109605d9ed",
+  "review_rationale": "Read the unique-lift property for every square-zero ideal I of any R-algebra A, preserving both existence and uniqueness of a compatible lift S→A. Formally étale is stronger than only formally unramified, and this is not simply the finite-presentation étale condition."
 }

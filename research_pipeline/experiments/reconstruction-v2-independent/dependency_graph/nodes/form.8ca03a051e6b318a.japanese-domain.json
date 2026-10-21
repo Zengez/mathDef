@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.8ca03a051e6b318a.japanese-domain",
   "version_sha256": "55427f80836377c80d803e919bdc00d54767ad62ebb77570ca3a8da625f7f7d7",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "finite field extension",
-      "span": [
-        106,
-        128
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.4777518984e96a98.finite-field-extension"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.2d5e63aaa59c787929cc"
+      "phrase": "integral domain R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.integral-domain",
+      "occurrence_id": "occ.ded09b1535632c874365"
+    },
+    {
+      "phrase": "fraction field K of R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain",
+      "occurrence_id": "occ.709a52eb6d3c2d7f1058"
+    },
+    {
+      "phrase": "finite field extension L/K",
+      "state": "existing",
+      "target_meaning_id": "meaning.4777518984e96a98.finite-field-extension",
+      "occurrence_id": "occ.4337a9f7bf772286d491"
+    },
+    {
+      "phrase": "integral closure of R in L",
+      "state": "existing",
+      "target_meaning_id": "meaning.8594a432b165bcda.integral-closure-relative",
+      "occurrence_id": "occ.823632f38bd83a1bc938"
+    },
+    {
+      "phrase": "finite R-module",
+      "state": "existing",
+      "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module",
+      "occurrence_id": "occ.a77ddd19a9072754bd54"
+    },
+    {
+      "phrase": "every finite extension L/K",
+      "state": "external",
+      "disposition": "Finite refers to field extension degree; the module-finiteness of the integral closure is a further required condition.",
+      "occurrence_id": "occ.9da2dfcd3176c98c0d28"
     }
   ],
-  "snapshot_sha256": "b22f3c328563e19ab1be843202c4d35fbec14bbd903753955143c990d6763b02",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "732305124d1f282195a78446bcfe83d33997aa887e5143179249377460809c35",
+  "review_rationale": "Read N-2/Japanese relative to the fraction field K of an integral domain R. For each finite field extension L/K the integral closure inside L must be finite as an R-module; not just integral, not only normal in K, and not a field with finitely many elements."
 }

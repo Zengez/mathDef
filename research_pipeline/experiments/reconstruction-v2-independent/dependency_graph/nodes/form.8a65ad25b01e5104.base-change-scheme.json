@@ -2,35 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.8a65ad25b01e5104.base-change-scheme",
   "version_sha256": "69d4aaa16fec28ecdc0f4ed012440a7c3b9dc03a4fd8860ed45a136b9bb4718b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "scheme",
-      "span": [
-        6,
-        12
-      ],
+      "phrase": "scheme morphism X→S",
       "state": "existing",
-      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.fa45a1b721a0787dc9f3"
+      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "occurrence_id": "occ.38de759604875feeb64e"
     },
     {
-      "phrase": "scheme",
-      "span": [
-        95,
-        101
-      ],
+      "phrase": "morphism S′→S",
       "state": "existing",
-      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.d68a99390118fe8ad33f"
+      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "occurrence_id": "occ.cf83d8b53e7d731f8a72"
+    },
+    {
+      "phrase": "scheme fibre product X×_S S′",
+      "state": "existing",
+      "target_meaning_id": "meaning.c31e56dc023fcbcc.scheme-fibre-product",
+      "occurrence_id": "occ.c655a7488cec92875998"
+    },
+    {
+      "phrase": "projection X_{S′}→S′",
+      "state": "external",
+      "disposition": "The canonical projection is part of the fibre-product structure, not an arbitrary chosen map.",
+      "occurrence_id": "occ.5c8b557259284201d163"
     }
   ],
-  "snapshot_sha256": "d12640d2e75aff358f6a2b27a1fa326825bcd0a67e81b34a605064120d87fbb5",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "c194744f81b26d138b32537c53c4c8e8cdced24b7a354a7a5e88cca48d9a1001",
+  "review_rationale": "Read the construction of scheme base change as a fibre product over S with projection to S′; the new scheme is not simply the Cartesian product of underlying topological spaces."
 }
