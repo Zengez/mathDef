@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.variant71.noetherian.ascending-chain-condition",
   "version_sha256": "22a5d318c74eb2c30c55b6f53e3479e2ff201cb3a87cb1cf3d00b53007c5b28d",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "commutative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.3529920d5938106f18f2"
+    },
+    {
+      "phrase": "ideals I_n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.4aeaa1edc330a2f7b642"
+    },
+    {
+      "phrase": "ascending chain condition on ideals",
+      "state": "unassigned",
+      "context": "Order theory: an increasing chain of subobjects eventually becomes constant",
+      "occurrence_id": "occ.aa0ae1243620d682b36e"
+    },
+    {
+      "phrase": "every ascending chain stabilizes",
+      "state": "external",
+      "disposition": "For each such sequence there is some index after which all successive ideals are identical; not a bound uniform across chains.",
+      "occurrence_id": "occ.2a199adda420df4bdf8a"
+    }
+  ],
+  "snapshot_sha256": "3836d19706e62155a25937c6c39a5556dd0305261acb729c10ba61684da94485",
+  "review_rationale": "Read this separate ACC formulation of Noetherianity: every ascending chain of ideals stabilizes. The chain is countably indexed but no descending-chain condition or Artinian hypothesis is being added."
 }

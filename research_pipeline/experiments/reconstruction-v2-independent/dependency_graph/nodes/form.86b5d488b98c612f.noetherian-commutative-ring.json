@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.86b5d488b98c612f.noetherian-commutative-ring",
   "version_sha256": "ee398af64083302095b9a89c5c8805d50d706f4bd49c0375706dbd0e0c253e16",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "commutative ring R with identity",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.e997c6057ee0b16d1209"
+    },
+    {
+      "phrase": "ideal of R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.45b579195b3d782de40d"
+    },
+    {
+      "phrase": "finitely generated R-module",
+      "state": "existing",
+      "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module",
+      "occurrence_id": "occ.1daea544e6044dc21b63"
+    },
+    {
+      "phrase": "every ideal finitely generated",
+      "state": "external",
+      "disposition": "Finiteness is of a generating set of each ideal, not the number of elements in the ideal or the number of ideals.",
+      "occurrence_id": "occ.0bb869c8629315bbe54c"
+    }
+  ],
+  "snapshot_sha256": "53fc1d8a71840f59102e36199acb6fee3bb24fc341df7dd44d99737035416c88",
+  "review_rationale": "Inspected the finite-generation-of-every-ideal characterization for a commutative unital ring. Distinguished ideal generation from finite cardinality of ideals and from requiring the ring itself to be finitely generated over another ring."
 }

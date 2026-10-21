@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.variant71.noetherian.noetherian-as-module",
   "version_sha256": "44405c6874c5f1549a9e2026c3fadbfa44dc9e5fc5702e06b53f279cef34f603",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "left R-module R over itself",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.990f69b96c17625d97a4"
+    },
+    {
+      "phrase": "Noetherian module",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.noetherian-module",
+      "occurrence_id": "occ.a9aaed3e4bbccde3304c"
+    },
+    {
+      "phrase": "commutative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.861648bec3c634dd5fa7"
+    },
+    {
+      "phrase": "R acting on itself by multiplication",
+      "state": "external",
+      "disposition": "The standard regular module uses ring multiplication; it does not require an additional independently selected module action.",
+      "occurrence_id": "occ.7a64c4bd9a4f95ca6326"
+    }
+  ],
+  "snapshot_sha256": "dfe5b7e9dc983af0a055d4b9e1a8566c58ee687815ca62b46eeb032f8daf8f2c",
+  "review_rationale": "Read the regular-module characterization with R acting on itself from the left. For commutative unital R, its submodules are exactly ideals; the Noetherian-module condition is not a module-freeness condition."
 }

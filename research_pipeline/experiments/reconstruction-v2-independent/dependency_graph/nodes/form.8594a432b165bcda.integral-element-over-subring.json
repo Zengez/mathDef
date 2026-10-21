@@ -2,26 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.8594a432b165bcda.integral-element-over-subring",
   "version_sha256": "7f4ad32fc598e473ef83c107374699beea546d2183aea059eeafd8bc87d043b7",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "ring homomorphism",
-      "span": [
-        6,
-        23
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.ring-map-general",
-        "meaning.wave2.foundation.ring-map-unital"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.ca49c76bfc95fd6112d2"
+      "phrase": "ring homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.de1cfdea43cb79063456"
+    },
+    {
+      "phrase": "monic polynomial over image of R",
+      "state": "unassigned",
+      "context": "Commutative algebra: monic univariate polynomial with coefficients in the image of a ring map R→S",
+      "occurrence_id": "occ.d4a48c96778e613c3db4"
+    },
+    {
+      "phrase": "satisfies polynomial equation",
+      "state": "unassigned",
+      "context": "Ring theory: evaluation of polynomial at element s∈S yielding zero",
+      "occurrence_id": "occ.2941b015038399dab666"
+    },
+    {
+      "phrase": "some monic polynomial",
+      "state": "external",
+      "disposition": "This is existential and imposes neither minimality nor uniqueness of the polynomial.",
+      "occurrence_id": "occ.d795494a9832aa1612f4"
     }
   ],
-  "snapshot_sha256": "b0531df33f58ceda1e4f305d2a326d785df5653c78292eaf894b5081040a7b03",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "07f93206b5faff272b378f0b09f9fe7a6320f7de0de24272c481f151c4d51fa9",
+  "review_rationale": "Read the full elementwise monic-polynomial criterion including the coefficient ring's image in S. No irreducibility or separability of the witnessing polynomial is implied."
 }

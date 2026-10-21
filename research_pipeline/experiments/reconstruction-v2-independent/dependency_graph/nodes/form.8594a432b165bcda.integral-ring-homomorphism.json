@@ -2,26 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.8594a432b165bcda.integral-ring-homomorphism",
   "version_sha256": "d1ad2a497f23eeae851247c51e5bba98312783b7890cdcc2bbef04ab6514cf9e",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "ring homomorphism",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.ring-map-general",
-        "meaning.wave2.foundation.ring-map-unital"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.70e747575cd1d7b94044"
+      "phrase": "ring homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.fd6dec332c294e12dcc9"
+    },
+    {
+      "phrase": "integral element s over R",
+      "state": "existing",
+      "target_meaning_id": "meaning.8594a432b165bcda.integral-element-over-subring",
+      "occurrence_id": "occ.b0066e6087bfd82cf8a4"
+    },
+    {
+      "phrase": "monic polynomial over R",
+      "state": "unassigned",
+      "context": "Commutative algebra: monic polynomial in R[T] whose value at s under R→S vanishes",
+      "occurrence_id": "occ.eb69c728ba6127290087"
+    },
+    {
+      "phrase": "every element s∈S",
+      "state": "external",
+      "disposition": "The witness polynomial may depend on s; this does not require the ring homomorphism to be finite as a module.",
+      "occurrence_id": "occ.66f178345423462d3f11"
     }
   ],
-  "snapshot_sha256": "b600fad9f4523a2756cd0ea74745b935995aca0fd0722a9aa3940581b78e1f84",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "40d3cef7467377b03d4579dca5bde946c339099fe5c90aaa038c825686a9c0af",
+  "review_rationale": "Reviewed the element-by-element universal quantification making a ring homomorphism integral: every s∈S is integral over R, with a possibly different monic polynomial for each s."
 }

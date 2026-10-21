@@ -2,26 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.8594a432b165bcda.integral-closure-relative",
   "version_sha256": "92bebf011ee870039c10a59d618cf321a21c2f9fd9be7c9feafc59ed3da4ba8f",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "ring homomorphism",
-      "span": [
-        6,
-        23
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.ring-map-general",
-        "meaning.wave2.foundation.ring-map-unital"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.1332112dc7bbebb31dd0"
+      "phrase": "ring homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.1e4a2e27dc9e81dcd424"
+    },
+    {
+      "phrase": "elements integral over R",
+      "state": "existing",
+      "target_meaning_id": "meaning.8594a432b165bcda.integral-element-over-subring",
+      "occurrence_id": "occ.719feb165310abffe078"
+    },
+    {
+      "phrase": "subring of S",
+      "state": "unassigned",
+      "context": "Commutative algebra: subring of S containing the image of R with inherited ring operations",
+      "occurrence_id": "occ.14837906752e7f11c79a"
+    },
+    {
+      "phrase": "all elements integral over image of R",
+      "state": "external",
+      "disposition": "The quantified set comprehends integral elements inside S; the ambient ring S is part of the definition.",
+      "occurrence_id": "occ.31e863422768ad312266"
     }
   ],
-  "snapshot_sha256": "886acb4b5941fda290b710d6063eccc72fd2abd44a82e03d2028de966ed8d9e9",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "b69e270e733e6bb77a84864ab52ade4a9dac3d4b02bb0a60de362a4667b96aac",
+  "review_rationale": "Read the definition relative to the specified ring homomorphism R→S. The closure consists of elements of S integral over the image of R; it is not the absolute integral closure of a field or the integral closure inside an unspecified fraction field."
 }

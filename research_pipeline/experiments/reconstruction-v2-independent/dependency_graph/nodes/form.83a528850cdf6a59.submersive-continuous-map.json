@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.83a528850cdf6a59.submersive-continuous-map",
   "version_sha256": "1620373fbacadf98c746265b93e795858111ec79dac3aeb43f8185ec7dab2be1",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "continuous map",
-      "span": [
-        2,
-        16
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation76.continuous-topological-map"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.7056570752948bbb15ef"
+      "phrase": "continuous map f:X→Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+      "occurrence_id": "occ.0ec9501754d125839f1b"
+    },
+    {
+      "phrase": "open subsets U⊆Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.979df121e1ebce753534"
+    },
+    {
+      "phrase": "surjective continuous map",
+      "state": "unassigned",
+      "context": "Set theory and topology: surjective function f with image equal to all of Y",
+      "occurrence_id": "occ.27463c327dc14c0260fc"
+    },
+    {
+      "phrase": "quotient topology on Y for f",
+      "state": "unassigned",
+      "context": "Topology: final or quotient topology induced by a surjection X→Y",
+      "occurrence_id": "occ.539cd08669ab8d9f4334"
+    },
+    {
+      "phrase": "inverse image f^{-1}(U)",
+      "state": "unassigned",
+      "context": "Set theory: inverse image or preimage of a subset under a function",
+      "occurrence_id": "occ.5f9948e645a6bbb99650"
+    },
+    {
+      "phrase": "U open iff f^{-1}(U) open",
+      "state": "external",
+      "disposition": "The biconditional is the quotient-topology test; openness of f as a map is not asserted.",
+      "occurrence_id": "occ.f782a69df2d320b3e145"
     }
   ],
-  "snapshot_sha256": "6c8339bef6ad1a4cdcb75b5076ea034182e5c9c8fe774fbf41e48fb710e9fd91",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "50a1fd3eeef1030e31ef49d0b806e71c9198840bdc27a10bdbad90f77df981c6",
+  "review_rationale": "Read both the quotient-topology statement and inverse-image criterion for the entire submersive map formulation. Surjectivity onto Y is indispensable, unlike strictness merely onto f(X); no open-map requirement is inferred."
 }

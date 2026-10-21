@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.variant71.noetherian.maximal-condition",
   "version_sha256": "4c1321b2aa30f1685d0a6dfe57c003ac45c0df4039705c6651ba9da8a85b9064",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "commutative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.0e3638121af0d732d7a8"
+    },
+    {
+      "phrase": "ideals of R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.3888f31d4e113172a7ce"
+    },
+    {
+      "phrase": "maximal element of a collection under inclusion",
+      "state": "unassigned",
+      "context": "Order theory: maximal element of a specified partially ordered collection, not a global maximal ideal",
+      "occurrence_id": "occ.340a362a02b8bc62a198"
+    },
+    {
+      "phrase": "every nonempty collection",
+      "state": "external",
+      "disposition": "The existence condition applies to each selected family and its internal inclusion order, not just to proper ideals.",
+      "occurrence_id": "occ.7ae426ed72ca0bde86ac"
+    }
+  ],
+  "snapshot_sha256": "c6db6b4cfe812197aa3b716eb8e47cbc990b1bc6cc9b407e62760d44a36e9e58",
+  "review_rationale": "Reviewed the maximal-condition characterization: each nonempty family of ideals contains a maximal member under set inclusion. Maximal here is within the chosen family, not a maximal proper ideal of R."
 }
