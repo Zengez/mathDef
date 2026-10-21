@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.471f985f2fbe7b49.splitting-field",
   "version_sha256": "f9c3cc2c2c2c5c9afc7596f431f9af9eba3eadf807b7d08a463bd53a96681cee",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "field F",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "matching_note": "F is a field.",
+      "occurrence_id": "occ.2a429bda81c8570814c1"
+    },
+    {
+      "phrase": "field extension E/F",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "matching_note": "E is an extension of F.",
+      "occurrence_id": "occ.a01c989d7205323fae47"
+    },
+    {
+      "phrase": "nonconstant polynomial P",
+      "state": "unassigned",
+      "context": "Polynomial algebra: polynomial with positive degree over F",
+      "reason": "The nonconstant requirement has its ordinary algebraic meaning.",
+      "occurrence_id": "occ.357ee5f9a80da2fb06a7"
+    },
+    {
+      "phrase": "factors into linear terms",
+      "state": "unassigned",
+      "context": "Polynomial algebra: splitting into degree-one factors over E",
+      "reason": "An extension-field factorization condition.",
+      "occurrence_id": "occ.9abf1c3127f874044507"
+    },
+    {
+      "phrase": "generated over F by all roots",
+      "state": "unassigned",
+      "context": "Field theory: smallest field containing F and the roots of P",
+      "reason": "The field-generation condition requires a contextual match.",
+      "occurrence_id": "occ.23f8b22fcdd08cec8567"
+    },
+    {
+      "phrase": "roots of P",
+      "state": "unassigned",
+      "context": "Field theory: zeros of a polynomial in extension field E",
+      "reason": "Compare to algebraic closure and minimal-polynomial occurrences.",
+      "occurrence_id": "occ.704b4d53e48e3e0e2675"
+    }
+  ],
+  "snapshot_sha256": "9b102322a9b9d79051b64f7aa862563d3327ce90a070208edcc287bc2e19105e",
+  "review_rationale": "Reviewed splitting field as the generated extension where a polynomial factors into linear terms, retaining root and generation contexts."
 }

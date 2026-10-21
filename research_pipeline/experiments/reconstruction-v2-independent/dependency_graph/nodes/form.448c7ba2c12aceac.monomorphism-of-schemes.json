@@ -2,39 +2,29 @@
   "schema_version": 1,
   "formulation_id": "form.448c7ba2c12aceac.monomorphism-of-schemes",
   "version_sha256": "ebd3332bcbbc1a4becbaf83cc3a54bdcaa2904906973faac2d7d60242ce1926f",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "monomorphism",
-      "span": [
-        36,
-        48
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.eed0c34725956bb5.categorical-monomorphism"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.9f70b47b3dc2daa73cc6"
+      "phrase": "morphism of schemes",
+      "state": "existing",
+      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "matching_note": "The given f is a scheme morphism.",
+      "occurrence_id": "occ.5750fbf11f265e4fb0c2"
     },
     {
-      "phrase": "scheme",
-      "span": [
-        64,
-        70
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.bdc3e54fd4523fad.scheme-local-affine"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.39dcc5235ee909bfebea"
+      "phrase": "monomorphism",
+      "state": "existing",
+      "target_meaning_id": "meaning.eed0c34725956bb5.categorical-monomorphism",
+      "matching_note": "Left cancellation in the category of schemes is the ordinary categorical monomorphism.",
+      "occurrence_id": "occ.74e760ab4e1a791596bd"
+    },
+    {
+      "phrase": "f∘g=f∘h forces g=h",
+      "state": "external",
+      "disposition": "The cancellation implication is the actual property being defined.",
+      "occurrence_id": "occ.3696c9918b48b194062c"
     }
   ],
-  "snapshot_sha256": "7c97edf866081633273a2cf90066c78acce675cc29831c8eddcdaf6cfa1c029f",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "646b8ccc22201f18215a1c1cfe8625e3110ff44ace23eb223e37da042b707633",
+  "review_rationale": "Reviewed scheme monomorphism by cancellation of morphisms in the category of schemes and linked its categorical monomorphism meaning."
 }

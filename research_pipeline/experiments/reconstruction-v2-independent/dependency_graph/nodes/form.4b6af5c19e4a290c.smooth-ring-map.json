@@ -2,10 +2,50 @@
   "schema_version": 1,
   "formulation_id": "form.4b6af5c19e4a290c.smooth-ring-map",
   "version_sha256": "9858695e8beed77f60af4ee282a04b997a8f797ca7103202fb46ace0d45bbde8",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "matching_note": "A unital commutative ring map.",
+      "occurrence_id": "occ.d4e89454e397fe2a3240"
+    },
+    {
+      "phrase": "finitely presented R-algebra",
+      "state": "existing",
+      "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-presentation-ring-map",
+      "matching_note": "The condition is ring-map finite presentation.",
+      "occurrence_id": "occ.d2145d83c4a1427018c8"
+    },
+    {
+      "phrase": "naive cotangent complex",
+      "state": "existing",
+      "target_meaning_id": "meaning.138b13bf27c037c1.naive-cotangent-complex",
+      "matching_note": "The existing relative naive cotangent complex.",
+      "occurrence_id": "occ.7a463d9dda141e276679"
+    },
+    {
+      "phrase": "finite projective S-module",
+      "state": "existing",
+      "target_meaning_id": "meaning.fd99f695f227af4a.finite-projective-module",
+      "matching_note": "The comparison module is finite projective.",
+      "occurrence_id": "occ.736b5a303e819bcafa32"
+    },
+    {
+      "phrase": "quasi-isomorphic",
+      "state": "unassigned",
+      "context": "Homological algebra: quasi-isomorphism of chain complexes",
+      "reason": "Quasi-isomorphism induces homology isomorphisms.",
+      "occurrence_id": "occ.58be043c88b3996ccc1a"
+    },
+    {
+      "phrase": "in degree zero",
+      "state": "external",
+      "disposition": "The degree concentration is explicit in this formulation.",
+      "occurrence_id": "occ.0fced094c61b27b4e7f1"
+    }
+  ],
+  "snapshot_sha256": "be933a632e5f0318cdc8e673e4d96a3c863be5c461bef1fbd6f9de0ba291e820",
+  "review_rationale": "Reviewed smoothness using relative cotangent complex, ring finite presentation and finite projective module, saving quasi-isomorphism."
 }

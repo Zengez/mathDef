@@ -2,25 +2,37 @@
   "schema_version": 1,
   "formulation_id": "form.4777518984e96a98.finite-field-extension",
   "version_sha256": "98d0a8a3bf208cd720866bbb68e244e428f16760bde74df9173947e9b99caa04",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        146,
-        153
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.02ba07907f5b9df69945"
+      "phrase": "field extension E/F",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "matching_note": "E includes the base field F.",
+      "occurrence_id": "occ.279af221903136ffe32c"
+    },
+    {
+      "phrase": "vector space E over F",
+      "state": "existing",
+      "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "matching_note": "E has its canonical F-vector-space structure.",
+      "occurrence_id": "occ.d87fd5fba100375a3419"
+    },
+    {
+      "phrase": "vector-space dimension",
+      "state": "unassigned",
+      "context": "Linear algebra: cardinality of a basis of E over F",
+      "reason": "This dimension is not the same as Krull ring dimension.",
+      "occurrence_id": "occ.310811c583de371c8a7e"
+    },
+    {
+      "phrase": "finite integer",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.integer-equivalence-class",
+      "matching_note": "The dimension has finite integer value.",
+      "occurrence_id": "occ.2cb66f33bd83d70ae448"
     }
   ],
-  "snapshot_sha256": "1081c7daf93818460ab05167606d79d31a8af591ca8e8d1f913dfe2f3243beee",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "414492e7e9d5b50bda4a330ab08a8ebab5b01f3d8fa04b86cf37ac5e2727b13a",
+  "review_rationale": "Reviewed finite extension by basis cardinality of its vector-space structure over the base field."
 }
