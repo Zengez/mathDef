@@ -110,3 +110,47 @@ website and every historical batch script remain unchanged.
 The generic population engine has no mathematical vocabulary. Other projects
 may provide their own adapters for theorem hypotheses/proofs, educational
 terminology, or other research domains.
+
+## Explicit reconciliation-to-promotion bridge (implemented 2026-10-21)
+
+The mathDef adapter exposes a separate opt-in gate:
+
+    python -m research_pipeline.adapters.mathdef.population_promotion --workspace research_pipeline/experiments/reconstruction-v2-independent
+
+Preflight blocks on unresolved population audit findings, missing or stale
+formulation reviews, missing prerequisite dispositions, unresolved target links,
+source and rights failures, cycles, or duplicate meanings. Every individual
+mathematical formulation needs a CURRENT version-anchored screened review with
+a substantive reason and reviewer attribution. Every formulation either has
+screened prerequisite links or an explicit justified no-supported-target
+disposition. Each link needs exact source and target locators and independent
+review rationale; provisional link candidates cannot be promoted.
+
+To authorize promotion, create a separate explicit approval JSON file inside
+the independent population/ directory. Required keys are
+approved_for_independent_promotion=true, draft_digest,
+preexisting_catalog_digest, preexisting_review_digest, reviewer, and rationale.
+The three SHA digests must equal the preflight output. Never supply approval
+just because a mechanical audit passed: this requires substantive research
+reconciliation.
+
+To apply after independent review:
+
+    python -m research_pipeline.adapters.mathdef.population_promotion --workspace research_pipeline/experiments/reconstruction-v2-independent --approval PATH_TO_APPROVAL_JSON --apply
+
+This moves source-screened material into the unsealed independent Wave2
+registries, archives the existing review ledger, then refreshes the
+global-catalog references in a single deliberate operation. It does not seal,
+publish, compare with original mathDef, or claim human external peer review.
+Actual live promotion must run on a Git branch with a single reviewed commit.
+It does not run as part of the normal population workflow.
+
+The promotion adapter currently supports one whole-ledger approval/promotion,
+not incremental re-promotion of previously promoted draft IDs. Its fixture
+tests cover provisional rejection, explicit approval, and stale approval
+rejection. An independent mathematical reconciliation remains necessary.
+
+The normal consolidated workflow is now automatically triggered by a committed
+JSON research package on main in population/inbox. It processes unapplied
+packages idempotently, updates STATUS.json, and builds QUEUE.json.
+workflow_dispatch remains available for manual runs.
