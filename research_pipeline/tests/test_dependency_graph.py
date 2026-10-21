@@ -8,7 +8,7 @@ from research_pipeline.engine.core import Workspace, PipelineError, digest
 from research_pipeline.engine.dependency_graph import (
     inventory_sync, store, read, graph_path, tree, propose, research_queue, missing_key,
     resolve, amend, live_nodes, apply_inbox, alias_candidates,
-     meaning_version, scan_worklist, seal_consolidation)
+     meaning_version, scan_worklist, seal_consolidation, consolidation_worklist)
 from research_pipeline.adapters.mathdef.dependency_scan import propose as lexical
 
 
@@ -75,6 +75,10 @@ class DependencyGraphTests(unittest.TestCase):
         self.assertEqual(summary["phase"], "consolidate_occurrences")
         row = json.loads((graph / "unresolved_occurrences.jsonl").read_text().strip())
         self.assertEqual(row["state"], "unassigned")
+        grouped = consolidation_worklist(self.root)
+        self.assertEqual(grouped["total_unresolved_occurrences"], 1)
+        self.assertEqual(grouped["groups"][0]["surface_key"], "an unusual notion")
+        self.assertFalse(grouped["external_definition_research_permitted"])
         self.assertEqual(research_queue(self.root)["missing_research_permitted"], False)
         self.assertEqual(research_queue(self.root)["candidates"], [])
         with self.assertRaises(PipelineError):
@@ -202,7 +206,7 @@ class DependencyGraphTests(unittest.TestCase):
         self.assertEqual(inventory_sync(self.root)["scan_complete"], 2)
         self.assertEqual(prior, read(graph_path(self.root) / "nodes/form.a.json"))
         queue = research_queue(self.root)
-        self.assertEqual(queue["candidates"][0]["upstream_formulation_count"], 2)
+        self.assertEqual(queue["candidate_preview_only"][0]["upstream_formulation_count"], 2)
         self.assertEqual(queue["phase"], "consolidate_occurrences")
         self.assertFalse(queue["missing_research_permitted"])
 
