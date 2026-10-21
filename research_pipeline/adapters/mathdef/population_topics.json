@@ -43,6 +43,81 @@
       "id": "algebra-and-logic",
       "priority": "normal",
       "research_prompt": "Independently research algebraic structures or logic with source-specific scope, avoiding hidden convention shifts."
+    },
+    {
+      "id": "functional-analysis",
+      "priority": "normal",
+      "research_prompt": "Functional analysis: independently source normed/Banach-space concepts, continuous linear operators, boundedness and operator norm. Check existing independent meanings and separate norm from induced topology."
+    },
+    {
+      "id": "graph-coloring",
+      "priority": "normal",
+      "research_prompt": "Graph theory: source proper vertex coloring and chromatic number in simple undirected graphs, including finite-versus-infinite coloring and the empty graph convention."
+    },
+    {
+      "id": "metric-fixed-points",
+      "priority": "normal",
+      "research_prompt": "Metric and dynamical systems: source contractions, fixed points and iterations with exact domain/codomain and completeness assumptions; distinguish a contraction mapping from the fixed-point theorem."
+    },
+    {
+      "id": "smooth-manifold",
+      "priority": "normal",
+      "research_prompt": "Differential geometry: source smooth manifolds, smooth charts/atlases and tangent vectors with specified regularity and topological hypotheses."
+    },
+    {
+      "id": "algebraic-topology",
+      "priority": "normal",
+      "research_prompt": "Algebraic topology: source paths, homotopy of paths and the fundamental group, carefully differentiating based versus unbased homotopies."
+    },
+    {
+      "id": "number-theory-arithmetic",
+      "priority": "normal",
+      "research_prompt": "Elementary number theory: source gcd, Euler totient, multiplicative function, preserving empty-set and positive-number conventions."
+    },
+    {
+      "id": "first-order-logic",
+      "priority": "normal",
+      "research_prompt": "Model theory/logic: source first-order signature, structure, interpretation and satisfaction; separate variables, assignments and sentences."
+    },
+    {
+      "id": "numerical-analysis",
+      "priority": "normal",
+      "research_prompt": "Numerical analysis: source matrix condition number, spectral radius and convergence of iterative methods without assuming unjustified norms or diagonalisability."
+    },
+    {
+      "id": "stochastic-processes",
+      "priority": "normal",
+      "research_prompt": "Probability: source stochastic processes, discrete-time Markov chains and transition matrices with explicit state-space, time-homogeneity and row/column conventions."
+    },
+    {
+      "id": "convex-optimization",
+      "priority": "normal",
+      "research_prompt": "Convex optimization: source convex functions, convex conjugates, subgradients and strong duality only with exact domain and assumptions; avoid mistaking theorem statements for definitions."
+    },
+    {
+      "id": "cardinals-and-ordinals",
+      "priority": "normal",
+      "research_prompt": "Foundational set theory: source cardinal and ordinal numbers, ordinals as transitive well-ordered sets, successor ordinals and equivalence by bijection."
+    },
+    {
+      "id": "topological-separation",
+      "priority": "normal",
+      "research_prompt": "General topology: source Hausdorff/T1/T0 separation conditions, regularity and normality with explicit space-level T1 conventions."
+    },
+    {
+      "id": "combinatorics-generating-functions",
+      "priority": "normal",
+      "research_prompt": "Enumerative combinatorics: source ordinary and exponential generating functions and formal power series without assuming analytic convergence."
+    },
+    {
+      "id": "measure-measurability",
+      "priority": "normal",
+      "research_prompt": "Measure theory: source Carathéodory measurability, measurable maps, almost everywhere and null sets; differentiate completed versus noncompleted measure spaces."
+    },
+    {
+      "id": "dynamical-systems",
+      "priority": "normal",
+      "research_prompt": "Dynamics: source topological dynamical system, invariant subset, orbit, periodic point and recurrence in discrete time."
     }
   ],
   "completion_policy": {
@@ -69,5 +144,6 @@
     "matrix-trace",
     "number-theory-congruence"
   ],
-  "pilot_note": "Batch139 independently researched congruence modulo positive integer and finite square-matrix trace in provisional ledger. Completed topics are suppressed in future breadth queue; not yet certified or published."
+  "pilot_note": "Batch139 independently researched congruence modulo positive integer and finite square-matrix trace in provisional ledger. Completed topics are suppressed in future breadth queue; not yet certified or published.",
+  "queue_replenishment_note": "Initial eight pilot breadth topics completed by independent provisional batches 139-141; appended subject-neutral mathematical leads to preserve exploratory coverage without writing more orchestration scripts. Treat these as research directions, not assertions of missing definitions. Collision-check exact independently screened and provisional meanings before intake. Research queue regenerated when next package is automatically admitted."
 }
