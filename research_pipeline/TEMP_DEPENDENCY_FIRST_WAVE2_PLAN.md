@@ -255,7 +255,174 @@ Minimal acceptance scenarios:
 7. Automated closed status does **not** turn candidate mathematical
    screening into certification or human verification.
 
-## 8. Decision and next action (as of this note)
+## 8. **NEW EXPLICIT REQUIREMENT: durable repository dependency map and crash-safe replay**
+
+**Added after user clarification, 2026-10-21. This is required for the
+implementation, not an optional optimization.** During graph discovery,
+write the results to *real machine-readable files committed in the
+independent repository workspace*, updating durable state continuously in
+small, restartable units. If a Chat response times out or a GitHub workflow
+is interrupted, a new Chat should be able to read this graph and resume
+without re-parsing or re-researching any already completed work.
+
+### 8.1 Precompute / persist the initial structure before expensive research
+
+As the FIRST structural pass, enumerate **every contextual meaning and every
+individual formulation/variant**, including the already screened independent
+Wave 2 catalog and recent provisional population batches. Build a durable
+inventory, then extract potential references from those formulations. Record:
+
+- formulation and owning meaning IDs, source and **source-content hashes**;
+- every detected mathematical reference occurrence and exact context/phrase;
+- the best matching **existing contextual meaning** when known, the shared
+  *already identified* missing-meaning candidate when it exists, or an
+  unresolved/ambiguous reference;
+- existing versus missing status (and a separate ambiguous/external state);
+- outgoing and reverse incoming relationships;
+- whether the formulation has actually completed its *content scan*,
+  whether its traversal is completed, and whether it is structurally
+  Open or Closed; and
+- the last durable checkpoint/scan version that justifies those statuses.
+
+**Very important:** Merely enumerating a formulation or importing an
+already-reviewed link does NOT prove we have identified *every* mathematical
+reference in that formulation. Initialize it as `unscanned` or
+`scan_incomplete` until its content has been fully examined and its complete
+outgoing reference set has been durably recorded. Do not invent links or
+mark the node complete from the absence of extracted references.
+
+The user's proposed representation can be understood as **one rooted
+recursive dependency tree for every formulation**, even where the trees
+repeat shared descendants. Such views are useful, but storing each expanded
+tree verbatim would duplicate most of the graph and could explode in size
+or grow forever along A→B→C→A. Store each formulation and its **immediate
+children once** in a normalized directed graph; then construct any
+per-root nested tree view by recursively reading the saved adjacency index.
+During a tree rendering, stop descending when a node already occurs on
+the *current path*, but still display the edge that closes the cycle.
+Missing nodes terminate their tree branch and keep their shared candidate
+identity. This is semantically equivalent to the user's redundant-root
+nested reference trees, without costly redundant storage.
+
+For example, a cached record for A referencing existing B and missing C
+can be as small as:
+
+```json
+{
+  "formulation_id": "form.A",
+  "version_sha256": "sha256-of-source-formulation-and-context",
+  "scan_status": "complete",
+  "references": [
+    {
+      "occurrence_id": "form.A:ref.1",
+      "phrase": "B",
+      "state": "existing",
+      "target_meaning_id": "meaning.B"
+    },
+    {
+      "occurrence_id": "form.A:ref.2",
+      "phrase": "C",
+      "state": "missing",
+      "missing_candidate_id": "missing.C"
+    }
+  ],
+  "structural_status": "open"
+}
+```
+
+(The SHA string and identifiers above are **illustrative**; no graph scan
+has yet been performed, and no record above is claimed to exist.)
+
+### 8.2 Proposed on-repository files
+
+Keep the real derived structure in an isolated workspace directory such as:
+
+```
+research_pipeline/experiments/reconstruction-v2-independent/
+  dependency_graph/
+    INVENTORY.json              # explicit scan universe + source version
+    nodes/                      # keyed per-formulation, full reference snapshot
+    missing_candidates.jsonl    # stable deduplicated contextual candidates
+    occurrences.jsonl           # all appearances of candidate references
+    edges.jsonl                 # resolved/provisional links, origin -> meaning
+    reverse_index.json          # origin nodes for each target/candidate
+    STATE.json                  # open/closed and processed status, counts
+    CHECKPOINT.json             # latest fully committed successful scan unit
+```
+
+These are suggested filenames, not a requirement to use monolithic giant
+JSON files. Prefer small per-formulation records and indexes that can be
+reconstructed from the authoritative records. The format should remain
+domain-agnostic in the core engine and mathematics-specific only in its
+adapter. Graph files must not rewrite previously screened definition data.
+
+### 8.3 Safe interruption, restart and incremental updates
+
+1. A scan unit may be a single formulation or a *small bounded batch* of
+   formulations, but all saved results and status transitions must be
+   **idempotent, version-bound and recoverable**. Once a formulation's full
+   reference set is assembled, persist it atomically *before* marking its
+   scan complete. Never mark a node complete merely because scanning started.
+2. **Commit successful bounded updates to GitHub.** Only committed content
+   survives a fresh chat or disposable GitHub Actions runner. Uncommitted
+   local data or an in-memory DFS stack is NOT a recovery mechanism. At a
+   timeout, the latest committed checkpoint defines what was actually done.
+3. A failed partial scan is either ignored or replayed against the same
+   version hash; it can never leave an apparently completed record with
+   missing children. Use atomic staging/manifest-last commits or an
+   equivalent validated transaction protocol. Deterministic IDs and
+   duplicate-safe upserts prevent multiplying occurrences and candidate
+   records on replay.
+4. On restart, load the existing graph from GitHub, verify content hashes
+   for changed formulations, and begin with **unscanned, interrupted or
+   invalidated units**. Do NOT reparse already persisted unchanged forms.
+   The DFS encountered/completed sets may safely reset because the durable
+   adjacency and scan statuses survive. No need to remember where a Chat
+   response was interrupted; its unfinished units are still queued.
+5. As missing candidate C is researched and admitted, update C's graph
+   node and the references pointing to that **stable missing candidate
+   ID**, propagate closure through the reverse dependency index, and
+   scan the newly added definition(s). Do not rebuild every root's nested
+   tree or redo unrelated lexical scans.
+6. If a formulation changes, detect the hash mismatch, mark affected
+   cached results stale, and rescan that formulation and necessary impacted
+   references; never silently retain outdated links as certified closure.
+7. Maintain explicit durable counts of inventory nodes, scanned/complete
+   nodes, Open/Closed nodes, missing/ambiguous candidates and unresolved
+   occurrences. The snapshot must distinguish **known scanned work** from
+   inventory awaiting scanning.
+
+**Efficiency trade-off:** Committing every single term immediately is safe
+but may incur substantial GitHub overhead. A small bounded group of
+completed independent scan units per verified GitHub commit is also safe:
+at worst the uncommitted tail is repeated, and no unfinished node is falsely
+completed. Use the smallest practical commit cadence consistent with the
+short Chat response/Action timeout window. This is the only sense in which
+we should deviate from 'update the structure as you go through each term.'
+
+### 8.4 Required interruption/restart tests
+
+- Stop after writing part of a node's children: restart must consider that
+  node unscanned/uncompleted, not falsely Closed.
+- Stop after persisting adjacency but before writing a complete marker:
+  restart must finalize or replay safely, not duplicate occurrences.
+- Commit A and B, interrupt before C: resume from C without rescanning A/B;
+  A/B retain references to shared missing candidates.
+- Materialize A→B→C→A from the adjacency graph as a finite per-root nested
+  view, while retaining C→A in the actual saved links.
+- Admit a missing meaning that resolves references from multiple already
+  scanned definitions: update their status through reverse dependencies,
+  without rescanning unaffected formulations.
+- Restore from a clean Git checkout in a new process without requiring any
+  transient local workspace, hidden chat state or manual recovery notes.
+
+The first engineering milestone should therefore be a **committed,
+recoverable initial inventory + graph snapshot** (with explicit `unscanned`
+statuses where semantic scans remain pending). Only after that should
+we spend substantial time researching the deduplicated missing-meaning
+queue or expand unrelated mathematical breadth.
+
+## 9. Decision and next action (as of this note)
 
 - **Agreed:** dependency-first, stable-inventory-first construction with
   expected dependency-driven growth, *then* deliberate breadth expansion.
