@@ -1,5 +1,64 @@
 # Wave 2 — source-free semantic reference scanning pilot (2026-10-21)
 
+## Latest continuation — Batches 017–022 (189/659 complete)
+
+This section supersedes all earlier numeric checkpoints. The authoritative
+`dependency_graph/STATE.json`, saved node records and `applied/` receipts
+take precedence if newer Actions have run.
+
+The independent Wave2 contextual catalog remains **611 meanings** and
+**659 existing formulations**. This continuation advanced from **168**
+completed source-free semantic scans to **189** (**21 new scans**) with
+**99 full-scan reference decisions**:
+
+| Batch | Completed formulations | Reference decisions | Verified successful graph Action |
+|---|---:|---:|---|
+| `semantic-existing-initial-017` | 1 | 4 | [39690064912](https://github.com/Zengez/mathDef/actions/runs/39690064912) |
+| `semantic-existing-initial-018` | 4 | 17 | [39690483687](https://github.com/Zengez/mathDef/actions/runs/39690483687) |
+| `semantic-existing-initial-019` | 4 | 19 | [39690581793](https://github.com/Zengez/mathDef/actions/runs/39690581793) |
+| `semantic-existing-initial-020` | 4 | 20 | [39690901573](https://github.com/Zengez/mathDef/actions/runs/39690901573) |
+| `semantic-existing-initial-021` | 4 | 22 | [39691039590](https://github.com/Zengez/mathDef/actions/runs/39691039590) |
+| `semantic-existing-initial-022` | 4 | 17 | [39691186057](https://github.com/Zengez/mathDef/actions/runs/39691186057) |
+
+**Verification:** Every package has an `applied/<batch>.json` receipt,
+and its graph Action finished successfully. The isolated pipeline
+tests also passed, including run 39691185891.
+
+**Current verified graph:** 189 complete, 470 incomplete lexical
+proposals, no unscanned; 271 unassigned reference occurrences,
+313 preliminary lexical ambiguities, 13 historical missing-candidate
+rows (12 unresolved), 10 append-only correction events. All 659 are
+Open and phase remains `scan_and_link_existing`. The consolidation
+gate and missing-definition research remain OFF.
+
+**Operational finding:** Batch 020 initially failed at validation because
+two entries referred to nonexistent meaning ID
+`meaning.wave2.foundation.mapping-total`. No scan was applied by that
+failed run. We checked the independent catalog and corrected the
+*unapplied* batch to the actual total-function meaning
+`meaning.wave2.foundation.mapping-element-assignment`. Rerunning
+the GitHub Action succeeded and generated the verified receipt. This
+reinforces the existing rule to validate every target against the live
+independent catalog, not to infer IDs from plausible names.
+
+The work exclusively reviewed the contents of existing independent
+formulations and linked existing meanings (or recorded unassigned
+references). No outside mathematical sources, original production
+definitions, additional mathematical meanings, global consolidation,
+research into missing candidates, promotion, Wave1 modifications,
+reviewed Wave2 content edits or unrelated Batch143 work occurred.
+
+**Next deterministic worklist:** `form.709d3d2f82950c5b.inverse-system`,
+then `form.709d3d2f82950c5b.partially-ordered-set`, then
+`form.709d3d2f82950c5b.preordered-set`. Use
+`python -m research_pipeline.engine.dependency_graph --workspace research_pipeline/experiments/reconstruction-v2-independent --mode worklist --limit 8`
+or equivalent GitHub read access; verify exact hashes and target IDs;
+commit bounded unique `inbox/` batches and wait for successful
+receipt before increasing completion counts.
+
+---
+
+
 ## Most recent verified continuation — batch 016
 
 This section supersedes the older 160-completed handoff below.
