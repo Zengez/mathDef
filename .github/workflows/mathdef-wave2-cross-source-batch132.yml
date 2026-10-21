@@ -1,0 +1,80 @@
+name: Admit independently sourced Bell Stirling convex hull and vertex degree — Batch 132
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-cross-source-batch132.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+jobs:
+  source-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Sync latest independent main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Portable engine and mathDef adapter regression tests
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Admit four headings and eight independent observations
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_cross_source_batch132 --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Reconcile first and second wave coverage
+        run: |
+          python -m research_pipeline.engine.wave2_term_coverage --wave1 research_pipeline/experiments/reconstruction-v1-recovery --wave2 research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify source-only scope, historical reviews and frozen lineage
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          a=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(a.publication())==json.loads((a.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          counts={"sources":14,"terms":477,"observations":946,"meanings":587,"relations":855}
+          assert {k:len(w.records(k)) for k in counts}==counts
+          assert not any(w.state(k).get("sealed") for k in counts)
+          for k in ("sources","terms","observations","relations"):
+            assert all(w.records(k).get(i)==r for i,r in a.records(k).items())
+          reviews=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          assert len(reviews)==624 and dict(Counter(r["decision"] for r in reviews))=={"linked":618,"no_supported_target":6}
+          assert {i for r in reviews for i in r["relation_ids"]}==set(w.records("relations"))
+          for path in ("wave2/conv125_quarantined_source_claims.jsonl","wave2/quot118_quarantined_source_claims.jsonl","wave2/directional112_quarantined_source_claims.jsonl"):
+            h=jsonl(w.root/path)
+            assert len(h)==1 and h[0]["observation_id"] not in {i for m in w.records("meanings").values() for f in m["formulations"] for i in f["evidence_ids"]}
+          check_cycles(w.records("meanings"),w.records("relations"))
+          result=json.loads((w.root/"state/wave2_cross132_source_intake.json").read_text())
+          assert result["new_meanings"]==result["new_links"]==0
+          assert result["bell_number_zero_partition_case"] and result["multigraph_neighbor_count_not_equivalent"]
+          assert not result["human_peer_verified"] and not result["production_corpus_used"]
+          print(json.dumps(result,indent=2))
+          PY
+      - name: Commit only independent source evidence
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Admit sourced Bell and Stirling numbers convex hull and simple vertex degree"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
