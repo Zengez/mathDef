@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "id": "mathdef-b140-affine-independence-cycles",
+  "production_corpus_consulted": false,
+  "research_topic_ids": [
+    "affine-geometry",
+    "probability-independence",
+    "graph-cycles"
+  ],
+  "source_review_note": "Direct source review of Harvard-hosted mathematical exposition and approved ProofWiki definitions. Each formulation is independently paraphrased with contextual hypotheses, not human peer reviewed. Pairwise index-quantifier defect recorded explicitly; no original production mathDef content consulted.",
+  "sources": [
+    {
+      "id": "src.harvard_yang_semidefinite",
+      "title": "Harvard SEAS: Mathematical Background for Semidefinite Optimization (Hank Yang)",
+      "url": "https://hankyang.seas.harvard.edu/Semidefinite/background.html",
+      "authority_reviewed": true,
+      "rights": "locator_only",
+      "access": "free",
+      "authority_rationale": "Faculty-hosted mathematical exposition with explicit affine-combination and affine-hull statements and empty-set convention.",
+      "rights_note": "No affirmative unrestricted text-reuse right assumed; citation/URL with newly authored paraphrases only."
+    }
+  ],
+  "terms": [
+    {
+      "id": "term.wave2.pop140.affine-hull",
+      "label": "Affine hull of a set of vectors",
+      "source_id": "src.harvard_yang_semidefinite",
+      "locator": "https://hankyang.seas.harvard.edu/Semidefinite/background.html"
+    },
+    {
+      "id": "term.wave2.pop140.independent-pair",
+      "label": "Independent events",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition:Independent_Events"
+    },
+    {
+      "id": "term.wave2.pop140.mutually-independent-events",
+      "label": "Mutually independent indexed family of events",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition:Independent_Events/General_Definition"
+    },
+    {
+      "id": "term.wave2.pop140.pairwise-independent-events",
+      "label": "Pairwise independent indexed family of events",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition:Pairwise_Independent_Events"
+    },
+    {
+      "id": "term.wave2.pop140.simple-graph-cycle",
+      "label": "Cycle in a simple undirected graph",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition:Cycle_(Graph_Theory)"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs.wave2.pop140.affine-combinations",
+      "term_id": "term.wave2.pop140.affine-hull",
+      "source_id": "src.harvard_yang_semidefinite",
+      "locator": "https://hankyang.seas.harvard.edu/Semidefinite/background.html",
+      "record_kind": "paraphrase",
+      "text": "On the real space R^d, the affine hull of S comprises finite sums of points of S with real coefficients whose total is exactly one; with S empty, no such combination exists.",
+      "editorial_note": "Harvard-hosted mathematical background §1.2.1, finite-dimensional R^n and explicit empty-hull convention; independently rewritten."
+    },
+    {
+      "id": "obs.wave2.pop140.affine-closure",
+      "term_id": "term.wave2.pop140.affine-hull",
+      "source_id": "src.harvard_yang_semidefinite",
+      "locator": "https://hankyang.seas.harvard.edu/Semidefinite/background.html",
+      "record_kind": "paraphrase",
+      "text": "The affine hull is the least affine-closed set containing S, equivalently the intersection of all affine-closed supersets of S. Empty S has empty affine hull under the affine-closed-set convention.",
+      "editorial_note": "Harvard §1.2.1 states smallest affine subspace and the empty-set convention; 'affine-closed' makes the empty convention explicit."
+    },
+    {
+      "id": "obs.wave2.pop140.independent-pair",
+      "term_id": "term.wave2.pop140.independent-pair",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition:Independent_Events",
+      "record_kind": "paraphrase",
+      "text": "Two measurable events are independent when the probability of their intersection equals the product of their probabilities. The product formula is meaningful even if either event has probability zero.",
+      "editorial_note": "ProofWiki main page Definition 2 uses a positive-probability preamble, but its general finite-family definition does not; the pair product-law extension to zero probability is valid."
+    },
+    {
+      "id": "obs.wave2.pop140.independent-family",
+      "term_id": "term.wave2.pop140.mutually-independent-events",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition:Independent_Events/General_Definition",
+      "record_kind": "paraphrase",
+      "text": "An indexed family of measurable events is jointly independent if all its finite subfamilies have intersection probabilities equal to the product of the event probabilities.",
+      "editorial_note": "ProofWiki general definition quantified over all finite index subsets, not just pairs; empty index subset works by P(Omega)=1."
+    },
+    {
+      "id": "obs.wave2.pop140.pairwise-independent",
+      "term_id": "term.wave2.pop140.pairwise-independent-events",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition:Pairwise_Independent_Events",
+      "record_kind": "paraphrase",
+      "text": "An indexed family of events is pairwise independent when the two-event probability product rule holds for each pair with distinct indices.",
+      "editorial_note": "ProofWiki explicitly equates the condition with all size-two index subsets, but its symbolic quantifier omits j≠k. Correct distinct-index interpretation adopted; source defect logged as issue."
+    },
+    {
+      "id": "obs.wave2.pop140.simple-cycle",
+      "term_id": "term.wave2.pop140.simple-graph-cycle",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition:Cycle_(Graph_Theory)",
+      "record_kind": "paraphrase",
+      "text": "A cycle in a simple loopless undirected graph can be represented by at least three distinct vertices in cyclic order, with an edge between each consecutive pair including last to first.",
+      "editorial_note": "ProofWiki's broad circuit/cycle definition allows other graph types and flags the ≥3 restriction for simple graphs; only simple undirected context is admitted here."
+    }
+  ],
+  "meanings": [
+    {
+      "id": "meaning.wave2.pop140.affine-hull",
+      "term_group_id": "group.wave2.pop140.affine-hull",
+      "display_term": "affine hull",
+      "context": "Finite-dimensional real affine geometry: subsets of R^d, integer d≥1, with empty hull allowed",
+      "term_ids": [
+        "term.wave2.pop140.affine-hull"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop140.affine-hull-combinations",
+          "text": "For an integer d≥1 and a set S⊆ℝ^d, aff(S) is the set of all vectors ∑_{i=1}^{k} αᵢxᵢ with k≥1, xᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. In particular aff(∅)=∅.",
+          "evidence_ids": [
+            "obs.wave2.pop140.affine-combinations"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "The real coefficient-sum-one requirement is essential and differs from convex combinations, which require nonnegative coefficients; allowing arbitrary finite k but k≥1 makes the empty-set case exactly ∅."
+        },
+        {
+          "id": "form.wave2.pop140.affine-hull-intersection",
+          "text": "Let d≥1 and S⊆ℝ^d. Define aff(S) as the intersection of all affine-closed subsets C⊆ℝ^d containing S, where affine-closed means containing every finite affine combination of its members; the empty set is affine-closed.",
+          "evidence_ids": [
+            "obs.wave2.pop140.affine-closure"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "The intersection characterization is source-backed and equivalent to the finite-combination characterization, explicitly allowing the empty affine-closed set so aff(∅)=∅ without a nonempty affine-subspace convention conflict."
+        }
+      ],
+      "human_verified": false
+    },
+    {
+      "id": "meaning.wave2.pop140.independent-pair",
+      "term_group_id": "group.wave2.pop140.independent-pair",
+      "display_term": "independent events",
+      "context": "Probability theory: two measurable events in a probability space, including probability-zero cases",
+      "term_ids": [
+        "term.wave2.pop140.independent-pair"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop140.independent-pair",
+          "text": "For measurable A,B in a probability space (Ω,Σ,P), the events A and B are independent if and only if P(A∩B)=P(A)P(B). No positive-probability assumption is required for this product-rule definition.",
+          "evidence_ids": [
+            "obs.wave2.pop140.independent-pair"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "The source's unconditional product identity, interpreted via the general independent-family definition, remains valid for P(A)=0 or P(B)=0; conditional-probability formulations need separate nonzero-denominator hypotheses."
+        }
+      ],
+      "human_verified": false
+    },
+    {
+      "id": "meaning.wave2.pop140.mutual-event-independence",
+      "term_group_id": "group.wave2.pop140.mutual-event-independence",
+      "display_term": "mutually independent events",
+      "context": "Probability theory: joint independence of an arbitrary indexed family of measurable events",
+      "term_ids": [
+        "term.wave2.pop140.mutually-independent-events"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop140.mutually-independent",
+          "text": "For a probability space (Ω,Σ,P) and indexed measurable events (Aᵢ)_{i∈I}, the family is mutually independent if for every finite J⊆I, P(⋂_{j∈J} Aⱼ)=∏_{j∈J}P(Aⱼ), with the empty intersection Ω and empty product 1.",
+          "evidence_ids": [
+            "obs.wave2.pop140.independent-family"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "Every finite index subset is required, not merely every size-two subset; under the empty-index convention both sides equal 1, and repeated equal events at different indices still count as distinct indexed entries."
+        }
+      ],
+      "human_verified": false
+    },
+    {
+      "id": "meaning.wave2.pop140.pairwise-event-independence",
+      "term_group_id": "group.wave2.pop140.pairwise-event-independence",
+      "display_term": "pairwise independent events",
+      "context": "Probability theory: pairwise but not necessarily jointly independent indexed measurable events",
+      "term_ids": [
+        "term.wave2.pop140.pairwise-independent-events"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop140.pairwise-independent",
+          "text": "Let (Aᵢ)_{i∈I} be measurable events on one probability space. The family is pairwise independent if for every i,j∈I with i≠j, P(Aᵢ∩Aⱼ)=P(Aᵢ)P(Aⱼ). This does not in general imply joint independence for three or more events.",
+          "evidence_ids": [
+            "obs.wave2.pop140.pairwise-independent"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "Distinct indices are required, because allowing i=j forces P(Aᵢ)=P(Aᵢ)² and wrongly excludes nontrivial event probabilities; ProofWiki's cardinality-two restatement supports the distinct-index reading despite a displayed quantifier omission."
+        }
+      ],
+      "human_verified": false
+    },
+    {
+      "id": "meaning.wave2.pop140.simple-undirected-cycle",
+      "term_group_id": "group.wave2.pop140.simple-undirected-cycle",
+      "display_term": "cycle in a simple undirected graph",
+      "context": "Graph theory: a finite cycle in a loopless simple undirected graph; length at least three",
+      "term_ids": [
+        "term.wave2.pop140.simple-graph-cycle"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop140.simple-graph-cycle",
+          "text": "For a simple loopless undirected graph G=(V,E), a cycle is a finite cyclic sequence v₀,v₁,…,v_{k−1},v₀ with k≥3, the vertices v₀,…,v_{k−1} pairwise distinct, and {vᵢ,v_{(i+1) mod k}}∈E for every 0≤i<k.",
+          "evidence_ids": [
+            "obs.wave2.pop140.simple-cycle"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "The source's circuit-with-no-repeated-intermediate-vertex definition specializes to simple undirected loopless graphs; k≥3 excludes loops and length-two parallel-edge cycles allowed by broader multigraph conventions."
+        }
+      ],
+      "human_verified": false
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel.wave2.pop140.affine-hull-affine-combination",
+      "from_formulation": "form.wave2.pop140.affine-hull-combinations",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "target_query": "Affine combination of finitely many vectors in a real vector space",
+      "source_phrase": "∑_{i=1}^{k} αᵢxᵢ",
+      "editorial_reason": "Affine hull construction requires the independently sourced notion of a finite affine combination with coefficients summing to one, distinct from convex combinations."
+    },
+    {
+      "id": "rel.wave2.pop140.affine-hull-vector-space",
+      "from_formulation": "form.wave2.pop140.affine-hull-intersection",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "target_meaning": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "source_phrase": "ℝ^d",
+      "editorial_reason": "The affine-closed superset characterization is scoped to a real vector space; the existing field-vector-space definition provides the structural ambient addition and scalar multiplication."
+    },
+    {
+      "id": "rel.wave2.pop140.independent-pair-probability-space",
+      "from_formulation": "form.wave2.pop140.independent-pair",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "target_meaning": "meaning.wave2.prob90.probability-space",
+      "source_phrase": "(Ω,Σ,P)",
+      "editorial_reason": "The pairwise probability identity presupposes a normalized probability space and measurable events; this is an independently screened matching probability-space meaning."
+    },
+    {
+      "id": "rel.wave2.pop140.mutual-probability-space",
+      "from_formulation": "form.wave2.pop140.mutually-independent",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "target_meaning": "meaning.wave2.prob90.probability-space",
+      "source_phrase": "P(⋂_{j∈J} Aⱼ)",
+      "editorial_reason": "The finite-family intersection and probability product must be evaluated with a single probability measure on the measurable event space."
+    },
+    {
+      "id": "rel.wave2.pop140.pairwise-pair-independence",
+      "from_formulation": "form.wave2.pop140.pairwise-independent",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "target_meaning": "meaning.wave2.pop140.independent-pair",
+      "source_phrase": "P(Aᵢ∩Aⱼ)=P(Aᵢ)P(Aⱼ)",
+      "editorial_reason": "Pairwise independence reduces to the previously defined independent-event condition for every two DISTINCT indices, not to the stronger all-finite-subfamilies condition."
+    },
+    {
+      "id": "rel.wave2.pop140.cycle-simple-graph",
+      "from_formulation": "form.wave2.pop140.simple-graph-cycle",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "target_meaning": "meaning.wave2.graph42.simple-undirected",
+      "source_phrase": "G=(V,E)",
+      "editorial_reason": "An undirected cycle uses edges as two-element vertex subsets, excluding loops and parallel edges; the independently screened loopless simple-graph context matches precisely."
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review.wave2.pop140.affine-hull-combinations",
+      "formulation_id": "form.wave2.pop140.affine-hull-combinations",
+      "status": "provisional",
+      "reason": "New source-grounded mathematical formulation reviewed for local context; cross-meaning equivalence and dependency screening deferred to reconciliation.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21"
+    },
+    {
+      "id": "review.wave2.pop140.affine-hull-intersection",
+      "formulation_id": "form.wave2.pop140.affine-hull-intersection",
+      "status": "provisional",
+      "reason": "New source-grounded mathematical formulation reviewed for local context; cross-meaning equivalence and dependency screening deferred to reconciliation.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21"
+    },
+    {
+      "id": "review.wave2.pop140.independent-pair",
+      "formulation_id": "form.wave2.pop140.independent-pair",
+      "status": "provisional",
+      "reason": "New source-grounded mathematical formulation reviewed for local context; cross-meaning equivalence and dependency screening deferred to reconciliation.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21"
+    },
+    {
+      "id": "review.wave2.pop140.mutually-independent",
+      "formulation_id": "form.wave2.pop140.mutually-independent",
+      "status": "provisional",
+      "reason": "New source-grounded mathematical formulation reviewed for local context; cross-meaning equivalence and dependency screening deferred to reconciliation.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21"
+    },
+    {
+      "id": "review.wave2.pop140.pairwise-independent",
+      "formulation_id": "form.wave2.pop140.pairwise-independent",
+      "status": "provisional",
+      "reason": "New source-grounded mathematical formulation reviewed for local context; cross-meaning equivalence and dependency screening deferred to reconciliation.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21"
+    },
+    {
+      "id": "review.wave2.pop140.simple-graph-cycle",
+      "formulation_id": "form.wave2.pop140.simple-graph-cycle",
+      "status": "provisional",
+      "reason": "New source-grounded mathematical formulation reviewed for local context; cross-meaning equivalence and dependency screening deferred to reconciliation.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21"
+    }
+  ],
+  "issues": [
+    {
+      "id": "issue.wave2.pop140.pairwise-proofwiki-quantifier",
+      "status": "open",
+      "reason": "ProofWiki pairwise independent events displayed symbolic quantifier appears to omit i≠j, contradicted by the same page's cardinality-two-subset characterization. Preserve corrected distinct-index formula and verify the source defect in the reconciliation audit.",
+      "source_locator": "https://proofwiki.org/wiki/Definition:Pairwise_Independent_Events",
+      "related_formulation_id": "form.wave2.pop140.pairwise-independent",
+      "severity": "source_quality",
+      "human_verified": false
+    }
+  ]
+}
