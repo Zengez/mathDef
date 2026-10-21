@@ -34,6 +34,14 @@ def read(path, fallback=None):
     return json.loads(path.read_text(encoding="utf-8")) if path.is_file() else fallback
 
 
+def read_node(path):
+    try:
+        return read(path)
+    except json.JSONDecodeError:
+        # Interrupted partial node files must never masquerade as completed scans.
+        return None
+
+
 def stable_id(prefix, item):
     return prefix + "." + digest(item)[:20]
 
@@ -126,7 +134,7 @@ def node_file(graph, fid):
 def live_nodes(graph, inv):
     nodes = {}
     for fid, entry in inv["formulations"].items():
-        node = read(node_file(graph, fid))
+        node = read_node(node_file(graph, fid))
         if node is None:
             continue
         if (node.get("formulation_id") != fid or
@@ -353,7 +361,7 @@ def store(workspace, items):
         status = "complete" if entry.get("complete") is True else "scan_incomplete"
         node = make_snapshot(inv, fid, entry.get("references", []),
                              status, entry.get("review_rationale", ""))
-        existing = read(node_file(graph, fid))
+        existing = read_node(node_file(graph, fid))
         if existing and existing.get("version_sha256") == node["version_sha256"]:
             if existing.get("scan_status") == "complete" and existing != node:
                 raise PipelineError("Cannot overwrite completed scan without a versioned correction")
@@ -362,7 +370,7 @@ def store(workspace, items):
         staged[fid] = node
     for fid, node in staged.items():
         # The exact full adjacency + complete marker are one atomic node file.
-        if read(node_file(graph, fid)) != node:
+        if read_node(node_file(graph, fid)) != node:
             atomic_json(node_file(graph, fid), node)
     return rebuild(workspace, inv)
 
