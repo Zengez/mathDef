@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "id": "mathdef-b141-outer-connected-actions",
+  "production_corpus_consulted": false,
+  "research_topic_ids": [
+    "measure-and-analysis",
+    "topology-and-geometry",
+    "algebra-and-logic"
+  ],
+  "source_review_note": "Read independently sourced ProofWiki and Encyclopedia of Mathematics definitions. Strict full-power-set outer-measure convention retains monotonicity; EOM variant and monotonicity omission logged for reconciliation. Original production mathDef content never consulted.",
+  "terms": [
+    {
+      "id": "term.wave2.pop141.outer-measure",
+      "label": "outer measure on a set",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AOuter_Measure",
+      "discovery_method": "independently_verified_external_definition"
+    },
+    {
+      "id": "term.wave2.pop141.metric-outer-measure",
+      "label": "metric outer measure",
+      "source_id": "src.eom",
+      "locator": "https://encyclopediaofmath.org/wiki/Outer_measure",
+      "discovery_method": "independently_verified_external_definition"
+    },
+    {
+      "id": "term.wave2.pop141.connected-space",
+      "label": "connected topological space",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AConnected_Topological_Space/Definition_1",
+      "discovery_method": "independently_verified_external_definition"
+    },
+    {
+      "id": "term.wave2.pop141.left-action",
+      "label": "left group action",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AGroup_Action/Left_Group_Action",
+      "discovery_method": "independently_verified_external_definition"
+    },
+    {
+      "id": "term.wave2.pop141.right-action",
+      "label": "right group action",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AGroup_Action/Right_Group_Action",
+      "discovery_method": "independently_verified_external_definition"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs.wave2.pop141.outer-monotone",
+      "term_id": "term.wave2.pop141.outer-measure",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AOuter_Measure",
+      "record_kind": "paraphrase",
+      "text": "An extended nonnegative set function defined on all subsets of X is an outer measure when it vanishes on the empty set, is monotone for inclusion, and is countably subadditive for sequences of subsets.",
+      "editorial_note": "ProofWiki explicitly states all three conditions including monotonicity; source-restricted mathematical paraphrase, not lifted wording."
+    },
+    {
+      "id": "obs.wave2.pop141.metric-separated",
+      "term_id": "term.wave2.pop141.metric-outer-measure",
+      "source_id": "src.eom",
+      "locator": "https://encyclopediaofmath.org/wiki/Outer_measure",
+      "record_kind": "paraphrase",
+      "text": "For an outer measure on all subsets of a metric space, the metric outer-measure property is additivity for any two subsets whose mutual distance is strictly positive.",
+      "editorial_note": "Encyclopedia of Mathematics article 'Outer measure', Definition 3; cited as a strengthening of standard outer measure, not as independent replacement for its monotonicity condition."
+    },
+    {
+      "id": "obs.wave2.pop141.connected-separation",
+      "term_id": "term.wave2.pop141.connected-space",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AConnected_Topological_Space/Definition_1",
+      "record_kind": "paraphrase",
+      "text": "A topological space is connected exactly when its underlying set does not split into two disjoint nonempty open sets whose union covers the space.",
+      "editorial_note": "ProofWiki Definition 1 of connected topological space; the empty space has no nonempty separation and is thus connected under this convention."
+    },
+    {
+      "id": "obs.wave2.pop141.connected-clopen",
+      "term_id": "term.wave2.pop141.connected-space",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Equivalence_of_Definitions_of_Connected_Topological_Space",
+      "record_kind": "paraphrase",
+      "text": "Connectedness of a topological space is equivalent to having no subset that is both open and closed except the empty set and the whole underlying space.",
+      "editorial_note": "ProofWiki equivalence article Definition 4 with proof relating no separation to the clopen-set condition; same context, second equivalent formulation."
+    },
+    {
+      "id": "obs.wave2.pop141.action-left",
+      "term_id": "term.wave2.pop141.left-action",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AGroup_Action/Left_Group_Action",
+      "record_kind": "paraphrase",
+      "text": "A left action of a group G on a set X is a total assignment G×X to X respecting ordered multiplication of elements of G and the identity action on all x.",
+      "editorial_note": "ProofWiki left group action definition, including action order (gh)x=g(hx); left orientation is mathematically different from a right action for nonabelian G."
+    },
+    {
+      "id": "obs.wave2.pop141.action-right",
+      "term_id": "term.wave2.pop141.right-action",
+      "source_id": "src.proofwiki",
+      "locator": "https://proofwiki.org/wiki/Definition%3AGroup_Action/Right_Group_Action",
+      "record_kind": "paraphrase",
+      "text": "A right action of a group G on a set X is a total assignment X×G to X obeying (xg)h=x(gh) and the right identity law xe=x.",
+      "editorial_note": "ProofWiki right group action definition with explicit order; distinguish from opposite-composition convention and left action."
+    }
+  ],
+  "meanings": [
+    {
+      "id": "meaning.wave2.pop141.outer-measure",
+      "term_group_id": "group.wave2.pop141.outer-measure",
+      "display_term": "outer measure",
+      "context": "Measure theory: extended nonnegative outer measure on the full power set of an arbitrary set X",
+      "term_ids": [
+        "term.wave2.pop141.outer-measure"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop141.outer-measure-full",
+          "text": "Let X be a set. A function μ*:𝒫(X)→[0,+∞] is an outer measure on X when μ*(∅)=0, A⊆B implies μ*(A)≤μ*(B), and μ*(⋃_{n=1}^∞ Aₙ)≤∑_{n=1}^∞ μ*(Aₙ) for every sequence (Aₙ) of subsets of X.",
+          "evidence_ids": [
+            "obs.wave2.pop141.outer-monotone"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "Keep empty-set normalization, inclusion monotonicity and countable subadditivity as distinct axioms. The full power-set convention supports arbitrary X including X empty; it is a restricted version of the possible hereditary-sigma-ring domain.",
+          "human_verified": false
+        }
+      ],
+      "editorial_status": "provisional_population",
+      "human_verified": false
+    },
+    {
+      "id": "meaning.wave2.pop141.metric-outer-measure",
+      "term_group_id": "group.wave2.pop141.metric-outer-measure",
+      "display_term": "metric outer measure",
+      "context": "Measure theory on a nonempty metric space (X,d): metric additivity strengthening of a full-power-set outer measure",
+      "term_ids": [
+        "term.wave2.pop141.metric-outer-measure"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop141.metric-outer-measure",
+          "text": "Let (X,d) be a nonempty metric space and let μ*:𝒫(X)→[0,+∞] be an outer measure. It is a metric outer measure if μ*(A∪B)=μ*(A)+μ*(B) whenever A,B⊆X and inf{d(a,b):a∈A,b∈B}>0, taking inf∅=+∞ when one set is empty.",
+          "evidence_ids": [
+            "obs.wave2.pop141.metric-separated"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "The Encyclopedia of Mathematics Definition 3 imposes exact additivity on positively separated subsets. We separately require the standard monotone outer-measure axioms; nonempty X matches the existing independently sourced metric-space meaning and inf-empty convention handles empty A or B.",
+          "human_verified": false
+        }
+      ],
+      "editorial_status": "provisional_population",
+      "human_verified": false
+    },
+    {
+      "id": "meaning.wave2.pop141.connected-space",
+      "term_group_id": "group.wave2.pop141.connected-space",
+      "display_term": "connected topological space",
+      "context": "Point-set topology: connectedness of any topological space, including the empty space",
+      "term_ids": [
+        "term.wave2.pop141.connected-space"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop141.connected-no-separation",
+          "text": "A topological space (X,τ) is connected if there do not exist U,V∈τ with U≠∅, V≠∅, U∩V=∅ and U∪V=X.",
+          "evidence_ids": [
+            "obs.wave2.pop141.connected-separation"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "The no-separation characterization is direct from ProofWiki; empty X counts connected because there is no partition into nonempty open subsets, and no Hausdorff or other separation axiom is imposed.",
+          "human_verified": false
+        },
+        {
+          "id": "form.wave2.pop141.connected-clopen",
+          "text": "A topological space (X,τ) is connected if every subset C⊆X that is both open and closed in X satisfies C=∅ or C=X.",
+          "evidence_ids": [
+            "obs.wave2.pop141.connected-clopen"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "ProofWiki states and proves equivalence of the clopen-set characterization and absence of an open separation. The formulation includes the empty ambient space and requires only the open-set topology.",
+          "human_verified": false
+        }
+      ],
+      "editorial_status": "provisional_population",
+      "human_verified": false
+    },
+    {
+      "id": "meaning.wave2.pop141.left-action",
+      "term_group_id": "group.wave2.pop141.left-action",
+      "display_term": "left group action",
+      "context": "Abstract algebra: left action of a group G on an arbitrary set X",
+      "term_ids": [
+        "term.wave2.pop141.left-action"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop141.left-action",
+          "text": "Let (G,·) be a group with identity e and let X be a set. A left action is a map α:G×X→X such that α(e,x)=x and α(g,α(h,x))=α(g·h,x) for all g,h∈G and x∈X.",
+          "evidence_ids": [
+            "obs.wave2.pop141.action-left"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "Both identity and compatibility are required; order matters in a nonabelian group. Explicit domain G×X distinguishes this left action from a right action, and X may be empty without contradiction.",
+          "human_verified": false
+        }
+      ],
+      "editorial_status": "provisional_population",
+      "human_verified": false
+    },
+    {
+      "id": "meaning.wave2.pop141.right-action",
+      "term_group_id": "group.wave2.pop141.right-action",
+      "display_term": "right group action",
+      "context": "Abstract algebra: right action of a group G on an arbitrary set X",
+      "term_ids": [
+        "term.wave2.pop141.right-action"
+      ],
+      "formulations": [
+        {
+          "id": "form.wave2.pop141.right-action",
+          "text": "Let (G,·) be a group with identity e and let X be a set. A right action is a map β:X×G→X such that β(x,e)=x and β(β(x,g),h)=β(x,g·h) for all g,h∈G and x∈X.",
+          "evidence_ids": [
+            "obs.wave2.pop141.action-right"
+          ],
+          "review_state": "candidate",
+          "mathematical_rationale": "The source-specific ordered composition β(β(x,g),h)=β(x,gh) is required; reversing the group multiplication would change the right-action convention. The domain X×G and identity law distinguish it from a left action; empty X allowed.",
+          "human_verified": false
+        }
+      ],
+      "editorial_status": "provisional_population",
+      "human_verified": false
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel.wave2.pop141.outer-extended",
+      "from_formulation": "form.wave2.pop141.outer-measure-full",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "μ*:𝒫(X)→[0,+∞]",
+      "editorial_reason": "An outer measure has nonnegative extended-real values; defer exact extension-of-reals target rather than substitute ordinary real numbers, which would omit +∞.",
+      "human_verified": false,
+      "target_query": "Extended nonnegative real number system [0,+∞] and order"
+    },
+    {
+      "id": "rel.wave2.pop141.metric-outer-dependency",
+      "from_formulation": "form.wave2.pop141.metric-outer-measure",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "μ*:𝒫(X)→[0,+∞]",
+      "editorial_reason": "A metric outer measure is a full-power-set outer measure plus an additional positive-separation additivity condition. Do not mistake this for any measure with domain a σ-algebra.",
+      "human_verified": false,
+      "target_meaning": "meaning.wave2.pop141.outer-measure"
+    },
+    {
+      "id": "rel.wave2.pop141.metric-space-dependency",
+      "from_formulation": "form.wave2.pop141.metric-outer-measure",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "(X,d)",
+      "editorial_reason": "Positive distance between subsets is defined from the underlying metric d, so the independently reviewed metric-space meaning is a direct structural prerequisite.",
+      "human_verified": false,
+      "target_meaning": "meaning.wave2.analysis98.metric-space"
+    },
+    {
+      "id": "rel.wave2.pop141.connected-topology-a",
+      "from_formulation": "form.wave2.pop141.connected-no-separation",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "(X,τ)",
+      "editorial_reason": "The first connectedness condition requires the topology's open-set family and disjoint unions of open subsets; the existing topological-space meaning supports this.",
+      "human_verified": false,
+      "target_meaning": "meaning.wave2.foundation.topological-space"
+    },
+    {
+      "id": "rel.wave2.pop141.connected-topology-b",
+      "from_formulation": "form.wave2.pop141.connected-clopen",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "(X,τ)",
+      "editorial_reason": "The second characterization uses open and closed subsets relative to the same topological space, with no separation axioms beyond the topology itself.",
+      "human_verified": false,
+      "target_meaning": "meaning.wave2.foundation.topological-space"
+    },
+    {
+      "id": "rel.wave2.pop141.left-group",
+      "from_formulation": "form.wave2.pop141.left-action",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "(G,·)",
+      "editorial_reason": "An action presupposes the group multiplication, identity and associativity; these are source-reviewed by the existing abstract group meaning.",
+      "human_verified": false,
+      "target_meaning": "meaning.wave2.foundation.group"
+    },
+    {
+      "id": "rel.wave2.pop141.right-group",
+      "from_formulation": "form.wave2.pop141.right-action",
+      "relation_type": "definition_uses",
+      "review_state": "candidate",
+      "source_phrase": "(G,·)",
+      "editorial_reason": "The right-compatibility condition uses group multiplication in the SAME order as the action; the previously reviewed abstract-group prerequisite supplies the identity and multiplication.",
+      "human_verified": false,
+      "target_meaning": "meaning.wave2.foundation.group"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review.wave2.pop141.outer-measure-full",
+      "formulation_id": "form.wave2.pop141.outer-measure-full",
+      "status": "provisional",
+      "reason": "Source-specific formulation and scope were checked for this current population batch. Full mathematical cross-definition consistency and each candidate dependency review remain deferred.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21",
+      "human_verified": false
+    },
+    {
+      "id": "review.wave2.pop141.metric-outer-measure",
+      "formulation_id": "form.wave2.pop141.metric-outer-measure",
+      "status": "provisional",
+      "reason": "Source-specific formulation and scope were checked for this current population batch. Full mathematical cross-definition consistency and each candidate dependency review remain deferred.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21",
+      "human_verified": false
+    },
+    {
+      "id": "review.wave2.pop141.connected-no-separation",
+      "formulation_id": "form.wave2.pop141.connected-no-separation",
+      "status": "provisional",
+      "reason": "Source-specific formulation and scope were checked for this current population batch. Full mathematical cross-definition consistency and each candidate dependency review remain deferred.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21",
+      "human_verified": false
+    },
+    {
+      "id": "review.wave2.pop141.connected-clopen",
+      "formulation_id": "form.wave2.pop141.connected-clopen",
+      "status": "provisional",
+      "reason": "Source-specific formulation and scope were checked for this current population batch. Full mathematical cross-definition consistency and each candidate dependency review remain deferred.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21",
+      "human_verified": false
+    },
+    {
+      "id": "review.wave2.pop141.left-action",
+      "formulation_id": "form.wave2.pop141.left-action",
+      "status": "provisional",
+      "reason": "Source-specific formulation and scope were checked for this current population batch. Full mathematical cross-definition consistency and each candidate dependency review remain deferred.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21",
+      "human_verified": false
+    },
+    {
+      "id": "review.wave2.pop141.right-action",
+      "formulation_id": "form.wave2.pop141.right-action",
+      "status": "provisional",
+      "reason": "Source-specific formulation and scope were checked for this current population batch. Full mathematical cross-definition consistency and each candidate dependency review remain deferred.",
+      "reviewed_by": "assistant_independent_population_research_2026_10_21",
+      "human_verified": false
+    }
+  ],
+  "issues": [
+    {
+      "id": "issue.wave2.pop141.eom-outer-measure-convention",
+      "status": "open",
+      "reason": "Encyclopedia of Mathematics article Outer measure admits hereditary σ-ring domains, in contrast with the full-power-set ProofWiki convention, and its opening definition does not separately state monotonicity. Verify intended convention and whether monotonicity is assumed elsewhere before adding any alternative EOM-based formulation. Do NOT silently merge these axiom/domain variants.",
+      "severity": "source_scope_discrepancy",
+      "source_locator": "https://encyclopediaofmath.org/wiki/Outer_measure",
+      "comparison_locator": "https://proofwiki.org/wiki/Definition%3AOuter_Measure",
+      "related_meaning_id": "meaning.wave2.pop141.outer-measure",
+      "human_verified": false
+    }
+  ]
+}
