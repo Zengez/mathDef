@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "independent_research": true,
+  "breadth_topics_per_package": 3,
+  "prerequisite_lookahead_limit": 2,
+  "breadth_topics": [
+    {
+      "id": "affine-geometry",
+      "priority": "normal",
+      "research_prompt": "Independently source affine spaces, affine combinations, affine hull; distinguish convex from affine hull and avoid unstated finite-dimensional assumptions."
+    },
+    {
+      "id": "probability-independence",
+      "priority": "normal",
+      "research_prompt": "Independently source independence of events and of sigma-algebras or random variables, preserving pairwise versus mutual independence."
+    },
+    {
+      "id": "matrix-trace",
+      "priority": "normal",
+      "research_prompt": "Independently source trace of finite square matrices over specified rings/fields; distinguish operator trace in finite-dimensional contexts."
+    },
+    {
+      "id": "graph-cycles",
+      "priority": "normal",
+      "research_prompt": "Independently source simple-graph cycles/circuits and distinguish paths, walks, directed cycles and graph-theoretic conventions."
+    },
+    {
+      "id": "number-theory-congruence",
+      "priority": "normal",
+      "research_prompt": "Independently source congruence modulo positive integers and modular equivalence; distinguish residue class and representative."
+    },
+    {
+      "id": "measure-and-analysis",
+      "priority": "normal",
+      "research_prompt": "Independently research a separate measure/analysis branch outside recently reviewed concepts; retain source-specific hypotheses."
+    },
+    {
+      "id": "topology-and-geometry",
+      "priority": "normal",
+      "research_prompt": "Independently research a topology or geometry topic with a new contextual meaning, comparing only likely collisions."
+    },
+    {
+      "id": "algebra-and-logic",
+      "priority": "normal",
+      "research_prompt": "Independently research algebraic structures or logic with source-specific scope, avoiding hidden convention shifts."
+    }
+  ],
+  "completion_policy": {
+    "state": "proposed_not_approved",
+    "automatically_freeze": false,
+    "goals": [
+      "Meaningful independent breadth across mathematical areas",
+      "Every accepted final formulation has source-specific mathematical review",
+      "All provisional or held content explicitly resolved or excluded",
+      "Screened noncircular dependencies and completed citation audit",
+      "Full independent reconstruction frozen before original mathDef comparison"
+    ],
+    "review_after_batches": 6,
+    "measure": [
+      "new_contextual_meanings_per_chat_exchange",
+      "new_formulations_per_chat_exchange",
+      "source_and_link_hold_rate",
+      "reconciliation_backlog_growth",
+      "recurring_execution_or_timeout_failures"
+    ],
+    "note": "Coverage threshold and freeze decision remain a separate explicit research judgment; do not infer that mathematics is exhausted."
+  }
+}
