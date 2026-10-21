@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "629b16d9d3201eb6fa18786c806d78d3805851fde39359c04e692169f7aa365d"
+    "resume_plan_sha256": "c50cee22f9c0dc5273ca4ce8fcbeaff7d946ab80f50b531abb362ffdcb6ca535"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -13,15 +13,15 @@
     "original_priority_firstpass_records": 192,
     "production_corpus_used": false,
     "review_dispositions": {
-      "linked": 618,
+      "linked": 626,
       "no_supported_target": 6
     },
-    "reviewed_formulations": 624,
-    "screened_contextual_meanings": 587,
-    "screened_relationships": 855,
-    "source_observations": 938,
+    "reviewed_formulations": 632,
+    "screened_contextual_meanings": 591,
+    "screened_relationships": 869,
+    "source_observations": 946,
     "sources": 14,
-    "terms": 473
+    "terms": 477
   },
   "known_blockers": [
     "Eight Encyclopedia of Mathematics source locators remain unverified (access errors).",
@@ -52,24 +52,26 @@
     "The three specifically identified definition dependency target gaps from Batch120 (subgroup, left coset/coset product, real power-series convergence) were source-reviewed and retroactively linked in Batch124; broader undiscovered missing targets may still exist.",
     "Previously source-held ProofWiki Graph Isomorphism one-way-edge clause and Directional Derivative gradient-only clause still excluded from approved mathematical meanings.",
     "Batch125 ProofWiki Uniform Convergence Infinite Series section incorrectly writes partial sum s_n(x)=Σ_{k=1}^n f_n(x) rather than Σ f_k(x); source observation held and excluded from screened meanings.",
-    "The exact two B127 logged prerequisite target gaps (product topology on function space T^D, eigenvalue of K-linear operator) were independently sourced in B128–130 and separately backfilled in B131, with no cyclic link or historical decision rewrite."
+    "The exact two B127 logged prerequisite target gaps (product topology on function space T^D, eigenvalue of K-linear operator) were independently sourced in B128–130 and separately backfilled in B131, with no cyclic link or historical decision rewrite.",
+    "Batch134 outstanding independently screened prerequisite concepts: convex set/subset of real vector space, Kronecker delta and falling factorial; three categories logged and no unsupported relation fabricated.",
+    "ProofWiki Definition:Degree of Vertex incident-edge count equals distinct-neighbor count only for simple loopless graphs, not general multigraphs; accepted both forms only under explicit simple-graph scope."
   ],
-  "next_action": "INDEPENDENT Wave2 Batches128–131 VERIFIED PASS on GitHub Actions 39526539812 source intake, 39526737505 mathematical screening, 39527010719 12 direct reviewed links, 39527211300 3 reviewed retroactive links. Counts: 14 independent source collections, 473 attributed source headings, 938 individually cited source observations (3 historic unsound-source claims held/unpromoted), 587 mathematically screened contextual meanings, 624 individually dispositioned formulations (618 linked, 6 justified no-target, 0 pending), 855 source-screened NONCIRCULAR mathematical prerequisites. New mathematical topics: indexed product topology (cylinder subbasis vs finite-support product basis equivalent), field-linear-operator eigenvalue (nontrivial shifted kernel vs nonzero v eigen-equation equivalent, no finite-dimensionality), nonempty connected simple undirected graph, convergent real exponential generating function distinct from formal and ordinary. All old 840 links/618 historic form reviews preserved during stage130; Batch131 closed BOTH previously explicitly logged missing target categories by old topological pointwise→product topology and two old eigenvector formulations→operator eigenvalue, adding 3 links while preserving 852 older links and original 624 individual decisions/rationales (only IDs appended). Frozen Wave1 unchanged; all five Wave2 stages UNSEALED; original production mathDef mathematics NEVER read/compared. NEXT Batch132 bounded independent breadth beyond this cluster; do not chase only prerequisites, maintain generic engine subject-neutral. Read research_pipeline/WAVE2_PROGRESS_2026-10-20_Z.md.",
+  "next_action": "Independent Wave2 Batches132–134 VERIFIED successful GitHub Actions 39527991209 (four source headings/eight observations), 39528163558 (four screened meanings/eight formulations), 39528416620 (fourteen direct individually justified links). Totals: 14 approved external source collections; 477 independently attributed source headings; 946 individual observations (three older questionable source variants held and not approved); 591 mathematically screened contextual meanings; 632 individually reviewed formulations (626 linked, 6 justified no-supported-target, 0 pending); 869 acyclic independently sourced prerequisite links. Bell B0=1 counts empty partition; second-kind Stirling recursion and falling factorial coefficient forms grouped as equivalents; convex hull finite convex combinations, intersection convex supersets, least convex superset grouped (incl empty subset); degree as incident edges vs neighbors valid ONLY in simple undirected loopless graphs, not generally multigraphs. Previous 855 links and 624 unrelated formulation review decisions preserved exactly. Three missing targets documented: convex subset, falling factorial, Kronecker delta. Frozen Wave1 unchanged, all five Wave2 stages unsealed, production mathematical definitions/citations not read or compared. NEXT Batch135: bounded independent mathematical breadth outside these topics, with optional carefully sourced missing-target recovery. Generic engine remains topic-neutral; math-specific conventions in adapter. Read WAVE2_PROGRESS_2026-10-20_AA.md.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
-      "rows": 587,
-      "sha256": "43416b5a05f7dab1b58ce039916b4a0d6ade1827f54ad6aacb8dd26a6360e3d9"
+      "rows": 591,
+      "sha256": "371b853a5a23f2c5234551c31621d6248c30c202f37810070e1579b104aba4c7"
     },
     "current_link_stage": {
-      "record_digest": "3f785565c0c5421cbc60d4ac51c5d1790985784e21733ac747b604258b7e18af",
+      "record_digest": "5b08ac101b40ab86e2357aa458ab25c9b4e7259892b592d0fbe1ab6a1adbf6c6",
       "sealed": false,
-      "sha256": "ff0fbbd8920484c484fba067f16a659e8797a4d9cc0e7c506a76fefd677a5b80",
-      "total": 855
+      "sha256": "3b86924f289a49f062f696bb0528f46803b39e500d2073c9675433951a965d93",
+      "total": 869
     },
     "definition_links": {
-      "rows": 855,
-      "sha256": "a9872fd0d87996227bb3a17b7c7a52c77a8edc2d292db4af0a9affc011501357"
+      "rows": 869,
+      "sha256": "0535a93c20e9a945b4334c26462ebd8260e7a9bd220e5a42f80d471a2657e469"
     },
     "firstpass_priorities": {
       "rows": 192,
@@ -77,23 +79,23 @@
     },
     "individual_link_reviews": {
       "decisions": {
-        "linked": 618,
+        "linked": 626,
         "no_supported_target": 6
       },
-      "rows": 624,
-      "sha256": "12316acabbfd65452e6680cb7725dcb8224210a14d002a8daad342d4dcaf00f6"
+      "rows": 632,
+      "sha256": "5f39cf7945a1878805c952cf44b4da71fe512ca39c959bade651b7e624b0c76c"
     },
     "source_observations": {
-      "rows": 938,
-      "sha256": "0df8b7af193a398a78d2c6c62fb6705b7395997e56637b9124f70ba25641377e"
+      "rows": 946,
+      "sha256": "1a7d7c69d8cbcebd38d7bc9a5c6284b20b25078eb5b99743fdddb3bee52ebae2"
     },
     "sources": {
       "rows": 14,
       "sha256": "b122833748dff90cb025f4dd82393fdf428f2bf339531675280eb49312c0a38b"
     },
     "term_headings": {
-      "rows": 473,
-      "sha256": "9e783ecad94561f26c708640ee24db80d97d31693ec4a55e053289ac4815dcd6"
+      "rows": 477,
+      "sha256": "93927b3d40d4dd44598f07c526ee4aa827116d13151f73766ba5706eef4ef2e4"
     },
     "wave2_lineage": {
       "first_wave_digest": "7e9df8ae638dd48d8f8a68ec79c44e2ae3e35d40da6cfe8c15c5e6703781e801",
@@ -102,16 +104,16 @@
     }
   },
   "resume_steps": [
-    "Read this short adapter resume_plan and generated RESUME_STATE.json; avoid full chronological checkpoint archive.",
-    "Confirm latest main SHA, all four successful Batches128–131 workflows and no intervening research-affecting runs.",
-    "Trust 624 individually dispositioned formulations (618 linked, 6 justified no-target, 0 pending) and 855 acyclic source-screened relationships if frozen digest, recorded counts and history checks match. Do not redo Batches94–131.",
-    "Retain source-scoped product topology's cylinder SUBBASIS and finite-support open rectangle BASIS as equivalent formulations, without conflating product with box topology.",
-    "Operator eigenvalue is scalar λ with nontrivial shifted kernel, not an eigenvector; nonzero vector criterion equivalent. Eigenvector→eigenvalue dependency is one-way; retroactive backfill of two old variants and topological pointwise convergence→T^D product topology completed.",
-    "Nonempty-vertex connected graph convention explicitly recorded; real analytic EGF ∑a_n z^n/n! limited to real convergence domain, not a formal power series.",
-    "Keep three previously source-held false/insufficient claims excluded from accepted mathematical meanings: gradient-only directional derivative, forward-only graph isomorphism, and uniform-series partial-sum f_n index typo.",
-    "Expand independently sourced mathematical breadth in fresh subject areas after collision audit; individually screen source variants and definition prerequisite links. Do not recursively pursue only newly found target gaps.",
-    "Keep generic engine topic-neutral and math-specific rules in research_pipeline/adapters/mathdef. Frozen independent Wave1 unchanged; five Wave2 stages UNSEALED and production-original mathematical files/citations unconsulted until independent freeze.",
-    "Work ~12–14 active minutes per batch session and commit/source-verify portable research checkpoint well before timing out."
+    "Read mathDef adapter resume_plan.json and generated compact research state/RESUME_STATE.json; do not reread all historic checkpoint banners.",
+    "Confirm newest main commit SHA and successful three workflows 39527991209, 39528163558, 39528416620, or newer research-affecting runs.",
+    "Trust 632 independently reviewed source-specific formulations (626 linked, 6 justified no-target) and 869 cycle-free links when checkpoint hashes and validation match; do not repeat completed Batches94–134.",
+    "Preserve four recently screened meanings: Bell number including B0=1, Stirling second kind equivalent recursion/monic falling-factorial basis forms, convex hull equivalent three forms including empty subset, and incident-edge vs neighbor vertex degree ONLY for loopless simple graphs.",
+    "Missing source-screened prerequisite target categories from Batch134: convex subset in a real vector space, falling factorial for polynomial expansion, and Kronecker delta for recurrence. Record as genuine missing until separate independent research; do not invent links.",
+    "Preserve three previous quarantined unsafe source observations, all unpromoted: gradient-only directional derivative, forward-only graph isomorphism, and uniform series partial-sum f_n/f_k indexing mistake. ProofWiki degree generalization to multigraph is scoped away without promoting false equivalence.",
+    "Expand independent mathematical breadth in different fields after meaning collision audit. Keep mathematical review and individually source-screened link stages separated.",
+    "Keep generic engine topic neutral for future math theorem and math education vocabulary pipelines, specialized math policy in mathDef adapter.",
+    "Frozen independently reconstructed Wave1 unchanged, all five editable Wave2 stages UNSEALED, original production mathDef mathematical files and citations uninspected until independent freeze.",
+    "Bound active sessions around 12–14 minutes and commit, validate full history and refresh portable checkpoint before ending."
   ],
   "schema_version": 1,
   "scope": "Independent research reconstruction; no use of original production definitions",
@@ -121,8 +123,8 @@
       "sha256": "aeebc436b42634812ad521a742d530cf44e2f342616b0f46e6c1b3da10d7c6ec"
     },
     "wave2_research_support": {
-      "files": 792,
-      "sha256": "bd65c06a9d3471be4104018d5256ffd2b67f39cecd2e45fe477c0c40c9acb521"
+      "files": 809,
+      "sha256": "a0b58dc7f15300a95418f2c7b9fb0e93c8194fd216b8b0f2b5d6b3127bea78fe"
     }
   },
   "verification_limitations": [
@@ -135,23 +137,18 @@
   "workflow_runs_to_check_live": [
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch131 three source-screened retroactive product topology and eigenvalue links, preserved 852 previous edges and all historic rationales",
-      "run_id": 39527211300
+      "purpose": "Batch134 14 direct Bell/Stirling/convex/degree links, all historic 855 links and 624 unrelated decisions preserved",
+      "run_id": 39528416620
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch130 twelve direct individual mathematical prerequisite reviews and 840 old edges preserved",
-      "run_id": 39527010719
+      "purpose": "Batch133 4 source-scoped mathematical meanings with 8 formulations grouped correctly",
+      "run_id": 39528163558
     },
     {
       "previously_reported_conclusion": "success",
-      "purpose": "Batch129 four contextual meanings and six attributed formulations",
-      "run_id": 39526737505
-    },
-    {
-      "previously_reported_conclusion": "success",
-      "purpose": "Batch128 four independent source headings and six individual research observations",
-      "run_id": 39526539812
+      "purpose": "Batch132 four independent source headings and eight individually cited observations",
+      "run_id": 39527991209
     }
   ]
 }
