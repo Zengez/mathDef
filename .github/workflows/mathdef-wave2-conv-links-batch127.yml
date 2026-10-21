@@ -1,0 +1,86 @@
+name: Review pointwise uniform local convergence and eigenvector dependencies — Batch 127
+on:
+  push:
+    paths:
+      - '.github/workflows/mathdef-wave2-conv-links-batch127.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mathdef-independent-wave2-writes
+  cancel-in-progress: false
+jobs:
+  link-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Sync independent screened research main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run portable tests for reusable engine and math-specific adaptor
+        run: |
+          python -m compileall -q research_pipeline/engine research_pipeline/adapters/mathdef research_pipeline/tests
+          python -m unittest discover -s research_pipeline/tests -q
+      - name: Individually screen 15 source-specific mathematical prerequisites
+        run: |
+          python -m research_pipeline.adapters.mathdef.wave2_conv_links_batch127 --workspace research_pipeline/experiments/reconstruction-v2-independent
+      - name: Verify frozen lineage, 825 older links, 611 prior reviews and held source defects
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from research_pipeline.engine.core import Workspace,jsonl,digest
+          from research_pipeline.engine.wave2_apply_links import check_cycles
+          first=Workspace("research_pipeline/experiments/reconstruction-v1-recovery")
+          w=Workspace("research_pipeline/experiments/reconstruction-v2-independent")
+          assert digest(first.publication())==json.loads((first.root/"state/wave1_freeze.json").read_text())["published_catalog_digest"]
+          counts={"sources":14,"terms":469,"observations":932,"meanings":583,"relations":840}
+          assert {k:len(w.records(k)) for k in counts}==counts
+          assert not any(w.state(k).get("sealed") for k in counts)
+          for k in ("sources","terms","observations","relations"):
+            assert all(w.records(k).get(i)==v for i,v in first.records(k).items())
+          old=jsonl(w.root/"state/wave2_formulation_reviews_snapshot_618_before_conv127.jsonl")
+          now=jsonl(w.root/"state/wave2_formulation_reviews.jsonl")
+          index={r["formulation_id"]:r for r in now}
+          assert len(old)==len(now)==len(index)==618
+          for p in old:
+            if not p["formulation_id"].startswith("form.wave2.conv126."):
+              assert index[p["formulation_id"]]==p
+          assert len([k for k in w.records("relations") if k.startswith("rel.wave2.conv127.")])==15
+          assert dict(Counter(r["decision"] for r in now))=={"linked":612,"no_supported_target":6}
+          assert {i for r in now for i in r["relation_ids"]}==set(w.records("relations"))
+          assert all(r["meaning_catalog_digest"]==digest(list(w.records("meanings").values())) for r in now)
+          for path in ("wave2/conv125_quarantined_source_claims.jsonl","wave2/quot118_quarantined_source_claims.jsonl","wave2/directional112_quarantined_source_claims.jsonl"):
+            held=jsonl(w.root/path)
+            assert len(held)==1 and held[0]["observation_id"] not in {i for m in w.records("meanings").values() for f in m["formulations"] for i in f["evidence_ids"]}
+          check_cycles(w.records("meanings"),w.records("relations"))
+          report=json.loads((w.root/"state/wave2_conv127_link_review.json").read_text())
+          assert report["all_825_prior_links_preserved"] and report["all_611_old_reviews_preserved"]
+          assert report["three_held_source_errors_remain_unpromoted"] and report["nonzero_eigenvector_required"]
+          assert len(jsonl(w.root/"wave2/conv127_missing_prerequisite_targets.jsonl"))==2
+          assert not report["human_peer_verified"] and not report["production_corpus_used"]
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Commit only independent screened prerequisites with historical review snapshots
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- research_pipeline/experiments/reconstruction-v2-independent
+          if git diff --cached --name-only | grep -v '^research_pipeline/experiments/reconstruction-v2-independent/'; then exit 1; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Screen 15 convergence and eigenvector mathematical dependencies preserving earlier 825 links"
+          for i in 1 2 3 4; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
