@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-043d",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.e606496d592fe305.relatively-prime-polynomials-roots",
+      "version_sha256": "4ec4c4b74d7da9bd6497cfcb0db9458fba2cfd7c08cfaac758c56fb3a5dd049c",
+      "complete": true,
+      "review_rationale": "Read the roots-based equivalent criterion for two coprime polynomials over arbitrary k, ensuring common zeros are tested in an algebraic closure rather than only in k itself.",
+      "references": [
+        {
+          "phrase": "field k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "algebraic closure of k",
+          "state": "existing",
+          "target_meaning_id": "meaning.39488f3e396a1c77.algebraic-closure"
+        },
+        {
+          "phrase": "polynomial f or g over k",
+          "state": "unassigned",
+          "context": "Element of univariate polynomial algebra k[x], evaluated after scalar extension into the algebraic closure."
+        },
+        {
+          "phrase": "common zero of f and g",
+          "state": "unassigned",
+          "context": "Element α in an algebraic closure of k satisfying f(α)=0=g(α)."
+        },
+        {
+          "phrase": "coprimality iff absence of common algebraic-closure root",
+          "state": "external",
+          "disposition": "Univariate polynomial equivalence over a field; k-rational roots alone do not suffice for this criterion."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.e62923cd8ef99cd1.hausdorff-space",
+      "version_sha256": "9755b3a2c3cfdae838e9aad38f20829504b34248b92e63c05cc62ffa6ddc311e",
+      "complete": true,
+      "review_rationale": "Read Hausdorff separation for every pair of distinct points with two disjoint open neighborhoods, without assuming compactness, metrizability or discrete topology.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "open subsets of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "open neighborhood of point",
+          "state": "unassigned",
+          "context": "Open set in the given topology that contains the specified point."
+        },
+        {
+          "phrase": "disjoint open neighborhoods of distinct points",
+          "state": "unassigned",
+          "context": "For any x≠y, find open U containing x and V containing y with U∩V=∅."
+        },
+        {
+          "phrase": "pairwise distinct-point quantifier",
+          "state": "external",
+          "disposition": "The separation property applies to every distinct pair; it does not require singleton sets to be open."
+        }
+      ]
+    }
+  ]
+}
