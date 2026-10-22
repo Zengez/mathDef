@@ -2,26 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.e91cf25c30aa59b9.faithfully-flat-ring-map",
   "version_sha256": "eb866923b294151cb18aa2adf00e31f8e226b04999f24f870283ea7e0e58b748",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "ring homomorphism",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.ring-map-general",
-        "meaning.wave2.foundation.ring-map-unital"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.896fc2ba7c3d34fb4057"
+      "phrase": "unital ring homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.ae36d889658027e1022d"
+    },
+    {
+      "phrase": "faithfully flat R-module S",
+      "state": "existing",
+      "target_meaning_id": "meaning.e91cf25c30aa59b9.faithfully-flat-module",
+      "occurrence_id": "occ.c7a1ec9a975bee5d03f1"
+    },
+    {
+      "phrase": "unital R-module",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.072931b72684db063b7f"
+    },
+    {
+      "phrase": "R-module structure on S via R→S",
+      "state": "unassigned",
+      "context": "Define scalar multiplication r·s=φ(r)s for φ:R→S; the property is evaluated with this specific action.",
+      "occurrence_id": "occ.3b8776fff2dbae0ec9dd"
+    },
+    {
+      "phrase": "faithful flatness of homomorphism",
+      "state": "external",
+      "disposition": "Transfers the module property to the codomain through restriction of scalars; not a property of S absent a specified ring map.",
+      "occurrence_id": "occ.b565e9f6a64c63ecf368"
     }
   ],
-  "snapshot_sha256": "36d56455779198c139309df050137458cce47383173a161cf87d1d4aa51e1f86",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "123d0d6637e42a2fc0d3b838446941e211209dc98208088eb2ae82ac779a61d5",
+  "review_rationale": "Read faithfully flat ring maps by restriction of scalars along a unital homomorphism R→S and application of the faithfully flat module criterion to S as an R-module."
 }
