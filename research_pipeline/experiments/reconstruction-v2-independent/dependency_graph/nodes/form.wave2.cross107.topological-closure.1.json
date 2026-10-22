@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.cross107.topological-closure.1",
   "version_sha256": "c4266bc4cd24b4e0874af4e9ad23c19a68802333bb9a6b42a0adab85391448fa",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        6,
-        23
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.c0a0f051e0f9ebe627b9"
+      "phrase": "topological space (X,tau)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.45dedbe4a86700e414f3"
+    },
+    {
+      "phrase": "subset A⊆X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.d7026f7f188b89746a40"
+    },
+    {
+      "phrase": "topologically closed subset F",
+      "state": "unassigned",
+      "context": "Subset F whose complement relative to X belongs to tau.",
+      "occurrence_id": "occ.37eef196cbc13df7bfa6"
+    },
+    {
+      "phrase": "intersection of all closed supersets of A",
+      "state": "unassigned",
+      "context": "Set of points lying in every closed subset F of X that contains A.",
+      "occurrence_id": "occ.5af9075d0b15716ee36f"
+    },
+    {
+      "phrase": "least closed superset",
+      "state": "external",
+      "disposition": "The intersection remains closed and contains A; no arbitrary extrinsic universe is used.",
+      "occurrence_id": "occ.5c5a9539e6ba027a4f87"
     }
   ],
-  "snapshot_sha256": "6d471a931282e157b838f18bbfebc02bfffc143260fd858bc96d2cbf1e8f48fc",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "ce86cab610e5f2f4651d0183409b295bd11057ca970427b4a27995bb4799baa1",
+  "review_rationale": "Read closure of subset as intersection of all closed supersets within given topological space, with closedness via open complement."
 }

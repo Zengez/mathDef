@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.cross110.field-vector-linear",
   "version_sha256": "cb3ae96c4f7e580cf2aa5f485ec3eef781c319c0ef86fe92d77fe6feb535254a",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "vector spaces V,W over common field K",
+      "state": "existing",
+      "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "occurrence_id": "occ.25e731b3e78b962e74d5"
+    },
+    {
+      "phrase": "map T:V→W",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.2725d4f6002edaad383e"
+    },
+    {
+      "phrase": "K-linearity of field-vector transformation",
+      "state": "unassigned",
+      "context": "For each scalar a∈K and vectors v,w∈V, T(av+w)=aT(v)+T(w).",
+      "occurrence_id": "occ.60ec588b4f42e8f91879"
+    },
+    {
+      "phrase": "same scalar field in source and target",
+      "state": "external",
+      "disposition": "Linearity uses one common K-action on both spaces; not merely an additive set mapping.",
+      "occurrence_id": "occ.94cfc89952f82254a727"
+    }
+  ],
+  "snapshot_sha256": "b26b9249ca744199127c08ec3570d18c0ea5d5a63c255a88a7f9ca78b996ceff",
+  "review_rationale": "Read linearity of map between vector spaces over common field through preservation of affine combination T(av+w)=aT(v)+T(w), ensuring same module scalar field."
 }

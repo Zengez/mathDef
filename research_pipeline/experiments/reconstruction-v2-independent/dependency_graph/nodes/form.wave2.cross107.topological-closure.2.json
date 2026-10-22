@@ -2,53 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.cross107.topological-closure.2",
   "version_sha256": "8ae83ed54b2cdbeb766c85a91c5a5e49ee2d406d576c56bd04a59ec8364609fd",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        6,
-        12
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.3b197241af4eb0c946a3"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.06e559c51db2de049c4f"
     },
     {
-      "phrase": "topological space",
-      "span": [
-        20,
-        37
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.f65a772fe1edf60a3e33"
+      "phrase": "subset A⊆X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.508a221eda4ed0142a05"
     },
     {
-      "phrase": "subset",
-      "span": [
-        84,
-        90
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.761ea847339c5644e65d"
+      "phrase": "family of closed supersets of A",
+      "state": "unassigned",
+      "context": "All F⊆X with A⊆F and X\\F open.",
+      "occurrence_id": "occ.c51cc4a5989c3ae2c328"
+    },
+    {
+      "phrase": "least closed superset under inclusion",
+      "state": "unassigned",
+      "context": "Unique closed C containing A such that C⊆F for every closed F containing A.",
+      "occurrence_id": "occ.173ed5ab03ed76e76c7f"
+    },
+    {
+      "phrase": "least does not mean minimal-but-not-least",
+      "state": "external",
+      "disposition": "Closure is contained in each closed superset, not merely one of many minimal elements.",
+      "occurrence_id": "occ.2fb845b10439bef2c8fa"
     }
   ],
-  "snapshot_sha256": "0ea4913e842720a659f60fcb85e9b5e226730d93f54830684f6220a12012c6e1",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "3bdc6b574b796350802607aef605156d9be6ac60019f1ebd90afd132025f2568",
+  "review_rationale": "Read order-theoretic least closed superset characterization of topological closure, specifying inclusion relation among closed supersets."
 }
