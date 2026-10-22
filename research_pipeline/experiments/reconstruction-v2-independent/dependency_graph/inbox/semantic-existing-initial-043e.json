@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-043e",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.e62923cd8ef99cd1.hausdorff-diagonal-characterization",
+      "version_sha256": "ed649944feffe57a2b91c9b325b94719f7890cf621446664fed56714e63d310d",
+      "complete": true,
+      "review_rationale": "Read the iff diagonal-closed characterization of a Hausdorff topological space in the binary product topology, distinguishing a diagonal subset from an arbitrary closed graph.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "product topology on X×X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology"
+        },
+        {
+          "phrase": "Cartesian product X×X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.cartesian-product-binary"
+        },
+        {
+          "phrase": "diagonal subset Δ_X={(x,x):x∈X}",
+          "state": "unassigned",
+          "context": "Set of ordered pairs of equal entries, regarded as subset of X×X."
+        },
+        {
+          "phrase": "closed subset of X×X",
+          "state": "unassigned",
+          "context": "Set whose complement is open in the product topology."
+        },
+        {
+          "phrase": "Hausdorff if and only if diagonal closed",
+          "state": "external",
+          "disposition": "Equivalent topological criterion, not extra requirement on top of the disjoint-open-neighborhood definition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.e91cf25c30aa59b9.faithfully-flat-module",
+      "version_sha256": "c5fc6808fe3080c9073dabd9cce05c6c1b3614044b4e5b80b88afb08a9a68d65",
+      "complete": true,
+      "review_rationale": "Read the faithful flatness predicate as both preservation and reflection of exactness of arbitrary module sequences by the tensor functor, distinct from flatness alone.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "tensor product of R-modules",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "exact sequence of modules",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category"
+        },
+        {
+          "phrase": "flat module, preservation of exactness",
+          "state": "existing",
+          "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-module"
+        },
+        {
+          "phrase": "tensor functor −⊗_R M",
+          "state": "unassigned",
+          "context": "Endofunctor from R-modules to R-modules formed by tensoring each object and morphism with M."
+        },
+        {
+          "phrase": "reflection of exactness",
+          "state": "unassigned",
+          "context": "If a tensor-transformed module sequence is exact, then the original sequence was exact; stronger than preservation."
+        },
+        {
+          "phrase": "preserves and reflects arbitrary exactness",
+          "state": "external",
+          "disposition": "Faithful flatness requires both directions for arbitrary module sequences; applying M to a single exact sequence is not sufficient."
+        }
+      ]
+    }
+  ]
+}
