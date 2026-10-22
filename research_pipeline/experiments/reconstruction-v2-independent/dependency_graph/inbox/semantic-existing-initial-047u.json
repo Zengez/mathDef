@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-047u",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.variant71.connected.01",
+      "version_sha256": "61d5d23ce21d8e2ac7339d3dd3baa56cde18283f49d4290c91cd5ffe53c8c40b",
+      "complete": true,
+      "review_rationale": "Reviewed connected space by impossibility of two disjoint nonempty open sets whose union covers X, with no nonempty-ambient-space requirement.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "open subsets U and V of X",
+          "state": "unassigned",
+          "context": "Sets declared open by the topology of X."
+        },
+        {
+          "phrase": "nonempty U and nonempty V",
+          "state": "unassigned",
+          "context": "Both candidate open sets contain points."
+        },
+        {
+          "phrase": "disjointness U cap V empty",
+          "state": "unassigned",
+          "context": "No point of X belongs to both candidate open sets."
+        },
+        {
+          "phrase": "covering U union V = X",
+          "state": "unassigned",
+          "context": "Every point of X lies in U or V."
+        },
+        {
+          "phrase": "empty space included",
+          "state": "external",
+          "disposition": "Empty X admits no pair of nonempty opens and is therefore connected under this formulation."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.variant71.connected.02",
+      "version_sha256": "ed726671fb9f4a509d19ed210a2118c88a4e5766bc1bae410bd7618546036518",
+      "complete": true,
+      "review_rationale": "Reviewed connectedness via trivial clopen subsets only, checking that open and closed are relative to same topological space and empty space is retained.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "subset C of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "clopen subset C",
+          "state": "unassigned",
+          "context": "Subset both open in X and closed in X, equivalently C and X minus C open."
+        },
+        {
+          "phrase": "only empty and whole-space clopens",
+          "state": "unassigned",
+          "context": "Every such C must equal empty set or all of X."
+        },
+        {
+          "phrase": "alternative axiom not self-dependency",
+          "state": "external",
+          "disposition": "Equivalent clopen characterization of same connectedness meaning and convention."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.variant71.connected.03",
+      "version_sha256": "d51be616bc26018912d4cb4a65710c9f4aa0ec7c42be77d328655571f8fdc206",
+      "complete": true,
+      "review_rationale": "Reviewed connectedness as absence of continuous surjection onto nonempty discrete two-point space, using genuine topological continuity and surjectivity on exactly two elements.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "continuous map",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "discrete topology on two-element space",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.discrete-topology"
+        },
+        {
+          "phrase": "two-element discrete target {0,1}",
+          "state": "unassigned",
+          "context": "Set of exactly two distinct elements, all of whose subsets are open."
+        },
+        {
+          "phrase": "surjective mapping from X onto two points",
+          "state": "unassigned",
+          "context": "Function attaining both target elements at some inputs in X."
+        },
+        {
+          "phrase": "no continuous surjection",
+          "state": "unassigned",
+          "context": "There does not exist a mapping satisfying both continuity and surjectivity onto specified target."
+        },
+        {
+          "phrase": "empty space convention retained",
+          "state": "external",
+          "disposition": "Empty X has no surjection onto nonempty two-element target, hence satisfies this connectedness criterion."
+        }
+      ]
+    }
+  ]
+}
