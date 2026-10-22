@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.rational55.rational-number",
   "version_sha256": "f4a565a79305fc1993f13c3decaf81fb29ce90460b642be3f31a3ad6d2ede16d",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "integer ring Z",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.integer-ring",
+      "occurrence_id": "occ.14928dc18665dfafb299"
+    },
+    {
+      "phrase": "fraction field of integral domain",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain",
+      "occurrence_id": "occ.1dde570260d3b9f3fd77"
+    },
+    {
+      "phrase": "integers p,q,r,s",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.integer-equivalence-class",
+      "occurrence_id": "occ.b2bc8c591dd3bf586cc6"
+    },
+    {
+      "phrase": "nonzero denominator q",
+      "state": "unassigned",
+      "context": "Integer denominator q not equal to zero of Z.",
+      "occurrence_id": "occ.fe656d0a034e5abae839"
+    },
+    {
+      "phrase": "fraction pair equivalence ps=rq",
+      "state": "unassigned",
+      "context": "Cross multiplication criterion for equality of integer fractions p/q and r/s with nonzero denominators.",
+      "occurrence_id": "occ.041a9a46d0bbc563863f"
+    },
+    {
+      "phrase": "rational field not real number construction",
+      "state": "external",
+      "disposition": "This definition is closed over integer arithmetic and does not assume a real-number completion.",
+      "occurrence_id": "occ.254ee2b9b8deaf5d52a2"
+    }
+  ],
+  "snapshot_sha256": "3af596a80c702c5ad1d993de436d921e453ecb896f0eb90726c0526408501462",
+  "review_rationale": "Reviewed rationals as field of fractions of integer ring with nonzero integer denominators and cross multiplication criterion for fraction equality."
 }

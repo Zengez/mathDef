@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.quot119.simple-graph-isomorphism",
   "version_sha256": "47ecad856ea46cc3ac9c59e28453a4e0e93c436e27d0cef52f92453fca34cd64",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "simple undirected graphs G and H",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.graph42.simple-undirected",
+      "occurrence_id": "occ.6a0d617350cdba76a451"
+    },
+    {
+      "phrase": "mapping f:V_G to V_H",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.e67f6ad46ac3d4f4d6fb"
+    },
+    {
+      "phrase": "bijection of vertex sets",
+      "state": "unassigned",
+      "context": "Function injective and surjective on the entire target vertex set.",
+      "occurrence_id": "occ.faab79971b77379b4144"
+    },
+    {
+      "phrase": "adjacency preserved and reflected",
+      "state": "unassigned",
+      "context": "For every distinct u,v, edge {u,v} occurs in G exactly when {f(u),f(v)} occurs in H.",
+      "occurrence_id": "occ.99c86a4f9d1c6eee88e7"
+    },
+    {
+      "phrase": "unordered edges of simple graphs",
+      "state": "unassigned",
+      "context": "Edges are two-element subsets, without orientation or loops.",
+      "occurrence_id": "occ.97738a3e8f0630ac9c7f"
+    },
+    {
+      "phrase": "isomorphism not mere graph homomorphism",
+      "state": "external",
+      "disposition": "Preservation alone is insufficient; reflection and bijectivity are required.",
+      "occurrence_id": "occ.6b43c44c015f595801d2"
+    }
+  ],
+  "snapshot_sha256": "b44e32290b5e0d68c320323e3f7318443670c2db3821ff61bc7988d6dcc06c74",
+  "review_rationale": "Reviewed graph isomorphism as bijective vertex map preserving and reflecting unordered adjacency, assuming both graph inputs simple and undirected and distinct-vertex condition."
 }

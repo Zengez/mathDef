@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.rational55.rational-absolute-value",
   "version_sha256": "621b349662418df7d8089c011f5bf671d1bee645da77619c386e0da643879417",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "rational number q",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.rational55.rational-number",
+      "occurrence_id": "occ.7db1464506fd097653a0"
+    },
+    {
+      "phrase": "usual total ordering on rationals",
+      "state": "unassigned",
+      "context": "Order relation comparing rationals from their integer-fraction representations.",
+      "occurrence_id": "occ.42de765bbf9b63323cea"
+    },
+    {
+      "phrase": "piecewise map |q|",
+      "state": "unassigned",
+      "context": "Result equals q when q>=0 and additive inverse -q when q<0.",
+      "occurrence_id": "occ.2050c1a536f6967bb197"
+    },
+    {
+      "phrase": "nonnegative rational codomain",
+      "state": "unassigned",
+      "context": "Subset of Q consisting of zero together with positive rationals.",
+      "occurrence_id": "occ.c856f69e29be1e5dfa72"
+    },
+    {
+      "phrase": "no real square root prerequisite",
+      "state": "external",
+      "disposition": "Definition uses rational ordering and negation only.",
+      "occurrence_id": "occ.deaa0626fa5902518586"
+    }
+  ],
+  "snapshot_sha256": "0adc8ce0b0443d46cd4d535323d9264c10ca976c4ae0afdc796820dd68064ed1",
+  "review_rationale": "Reviewed rational modulus by piecewise sign in rational total order, avoiding square-root definitions or dependence on constructed real numbers."
 }
