@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.fc44c63c239e5c20.projective-module-summand",
   "version_sha256": "f8b137e7de7f2b57d87c38cd27be6eaf8e9595a50e61df40958e6adc9b525e73",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "projective module P",
+      "state": "existing",
+      "target_meaning_id": "meaning.fc44c63c239e5c20.projective-module-hom",
+      "occurrence_id": "occ.9b31814bc080cdbc10a7"
+    },
+    {
+      "phrase": "R-module Q",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.a26308ec782dd3065f2f"
+    },
+    {
+      "phrase": "module isomorphism",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.module-linear",
+      "occurrence_id": "occ.939aaca1497ceae8b300"
+    },
+    {
+      "phrase": "free module R^(I) on index set I",
+      "state": "unassigned",
+      "context": "Direct sum of copies of R indexed by I with finite support, I not assumed finite.",
+      "occurrence_id": "occ.058d47e7c3fdc4761cbd"
+    },
+    {
+      "phrase": "P⊕Q as a direct sum",
+      "state": "unassigned",
+      "context": "External direct sum decomposition of R-modules exhibiting P as a direct summand.",
+      "occurrence_id": "occ.2abaa09f6fba084d85b6"
+    },
+    {
+      "phrase": "free module need not have finite rank",
+      "state": "external",
+      "disposition": "The characterization of arbitrary projectives allows infinite index set I, unlike finite projective modules.",
+      "occurrence_id": "occ.6243e8af4d6adc3082a4"
+    }
+  ],
+  "snapshot_sha256": "f09835e1cc5314eb3ba1a55b21be5931d6e2feae67c846d8da091a0fe388edad",
+  "review_rationale": "Read the direct-summand criterion for projective modules as the existence of a complement Q to P inside a possibly infinite free R-module, distinguishing direct sum from quotient or finite freeness."
 }

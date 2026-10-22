@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.fa3b484c09596cfd.graded-module",
   "version_sha256": "215c12d80942f225bfce08215c9e66f9e5c5a61862452e38935549df88a14271",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "nonnegatively graded ring S",
+      "state": "existing",
+      "target_meaning_id": "meaning.fa3b484c09596cfd.nonnegatively-graded-ring",
+      "occurrence_id": "occ.cfc626cdc0df54a99532"
+    },
+    {
+      "phrase": "S-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.0cd4e42727a43a05353a"
+    },
+    {
+      "phrase": "integer grading indices j∈Z",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.integer-ring",
+      "occurrence_id": "occ.ecc9e04144f1f74c1c79"
+    },
+    {
+      "phrase": "direct sum decomposition M=⊕_j M_j",
+      "state": "unassigned",
+      "context": "Every module element is uniquely a finite sum of homogeneous components drawn from the degree-indexed additive subgroups.",
+      "occurrence_id": "occ.19a573417563be81c4f7"
+    },
+    {
+      "phrase": "homogeneous components M_j",
+      "state": "unassigned",
+      "context": "Degree-j additive subgroup of M, compatible with the S-action.",
+      "occurrence_id": "occ.94bc995c79b856c0566b"
+    },
+    {
+      "phrase": "S_n M_j⊆M_{n+j}",
+      "state": "unassigned",
+      "context": "Products of scalar degree-n and module degree-j elements lie in module degree n+j.",
+      "occurrence_id": "occ.b1b906b6a4c570c11cdc"
+    },
+    {
+      "phrase": "ring indices nonnegative; module indices integer",
+      "state": "external",
+      "disposition": "The base graded ring may have only n≥0, while the graded module may have negative degrees.",
+      "occurrence_id": "occ.5d1f72d420dcff624cb5"
+    }
+  ],
+  "snapshot_sha256": "4c3bcbe7ed85caaf4291dc2b5b4d9cafaf441b00a34f306204a2394c9407200f",
+  "review_rationale": "Read a Z-graded module over a nonnegatively graded ring, with a direct sum decomposition and compatible degree addition under S_n multiplication, distinguishing grading of scalars and modules."
 }

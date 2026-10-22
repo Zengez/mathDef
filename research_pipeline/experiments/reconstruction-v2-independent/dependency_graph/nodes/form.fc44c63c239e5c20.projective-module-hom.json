@@ -2,10 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.fc44c63c239e5c20.projective-module-hom",
   "version_sha256": "b105e13148bf3b64dc81d035e902dd836c84d78f93c932a4378b9967d998c95a",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module P",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.76925e824365a9a0e1f2"
+    },
+    {
+      "phrase": "R-linear module homomorphisms",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.module-linear",
+      "occurrence_id": "occ.64fcebdfc52294688012"
+    },
+    {
+      "phrase": "Hom_R(P,−)",
+      "state": "existing",
+      "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module",
+      "occurrence_id": "occ.39f5d47c28c7dc288777"
+    },
+    {
+      "phrase": "exactness",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category",
+      "occurrence_id": "occ.f78da6f25f9ec8141b41"
+    },
+    {
+      "phrase": "covariant Hom functor",
+      "state": "unassigned",
+      "context": "Functor mapping N to Hom_R(P,N) and morphisms g to post-composition with g.",
+      "occurrence_id": "occ.16442c72a28077573a90"
+    },
+    {
+      "phrase": "surjective module homomorphism M→N",
+      "state": "unassigned",
+      "context": "Every element in N is image of an element of M, required for the lifting test.",
+      "occurrence_id": "occ.b26a37cb959ad3dc39da"
+    },
+    {
+      "phrase": "lifting P→M across M→N",
+      "state": "unassigned",
+      "context": "For every map P→N and surjection M→N, there exists a map P→M whose composite is original P→N.",
+      "occurrence_id": "occ.b3a767cd0439ffc4931f"
+    },
+    {
+      "phrase": "exactness and lifting equivalence",
+      "state": "external",
+      "disposition": "A pair of equivalent projectivity criteria; this is not the weaker property of being finitely generated.",
+      "occurrence_id": "occ.74cb5c2dcfdce44d4f33"
+    }
+  ],
+  "snapshot_sha256": "c0c02cd14694ced7a261502111da82dae9322d4c10da36947600800928b64665",
+  "review_rationale": "Read projectivity of a module through exactness of covariant Hom_R(P,−) and the equivalent lifting criterion against every surjective module map, not just a single lifting diagram."
 }

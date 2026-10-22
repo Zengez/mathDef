@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.fa3b484c09596cfd.nonnegatively-graded-ring",
   "version_sha256": "8a71c96b9deb191fa6096931ed0df8f895d2f92783779c02262a6b48f3c1d3f8",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "nonnegative integer indices n,m",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.9c3bd06ae19c5fb49059"
+    },
+    {
+      "phrase": "additive group components S_n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "occurrence_id": "occ.cc678bd014ab3ff89976"
+    },
+    {
+      "phrase": "direct sum S=⊕_{n≥0}S_n",
+      "state": "unassigned",
+      "context": "Every element has a unique finite homogeneous decomposition among additively indexed components.",
+      "occurrence_id": "occ.16593232151336c45835"
+    },
+    {
+      "phrase": "graded multiplication S_n S_m⊆S_{n+m}",
+      "state": "unassigned",
+      "context": "Products of homogeneous components of degrees n,m have degree n+m.",
+      "occurrence_id": "occ.c0b1f1816ee841fca1d0"
+    },
+    {
+      "phrase": "nonnegative grading convention",
+      "state": "external",
+      "disposition": "This formulation imposes S_n only for n≥0; it does not require negative-degree pieces.",
+      "occurrence_id": "occ.69ca347bd02a5dd4e300"
+    }
+  ],
+  "snapshot_sha256": "dde65e34907ee4bef3fc3b5bbf80f610c4051fc7be8ce61731e6316b33b56efb",
+  "review_rationale": "Read the direct-sum decomposition of a ring indexed by nonnegative integers, degree pieces as additive groups and multiplicative compatibility S_n S_m⊆S_{n+m}."
 }
