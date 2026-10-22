@@ -2,68 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.prereq122.subgroup",
   "version_sha256": "f5998651a72672518592a8c90d6a7ee0a9dfd67ef4fd0687af9835a9e623e067",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "group",
-      "span": [
-        15,
-        20
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.5127ae0a4b0f76128dc0"
+      "phrase": "group (G,*)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.group",
+      "occurrence_id": "occ.8b61613f4180f35731ed"
     },
     {
-      "phrase": "subset",
-      "span": [
-        38,
-        44
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.caf68ef5b74ad362a483"
+      "phrase": "subset H of G",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.a7a50a7360b770aefcfc"
     },
     {
-      "phrase": "group",
-      "span": [
-        125,
-        130
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.60a15612fd769d2aeb73"
+      "phrase": "internal binary operation on H",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.binary-operation-internal",
+      "occurrence_id": "occ.f23e68a9c75fc1cd57de"
     },
     {
-      "phrase": "binary operation",
-      "span": [
-        141,
-        157
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.binary-operation-general",
-        "meaning.wave2.foundation.binary-operation-internal"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.023b94c5aded909ea8d3"
+      "phrase": "restriction of ambient group operation",
+      "state": "unassigned",
+      "context": "Use same multiplication * as G, with H closed so each pair in H yields element in H.",
+      "occurrence_id": "occ.5ceb0189ec48b69df3a1"
+    },
+    {
+      "phrase": "group structure on H",
+      "state": "unassigned",
+      "context": "Closure, associativity, identity and inverses hold for restriction of ambient operation.",
+      "occurrence_id": "occ.cc3d60a9b4e041b6a818"
+    },
+    {
+      "phrase": "operation inherited not invented",
+      "state": "external",
+      "disposition": "No new independently chosen group law is allowed on H in this subgroup formulation.",
+      "occurrence_id": "occ.d3733dad7793555f9513"
     }
   ],
-  "snapshot_sha256": "de0b66d653c4b21c34d705d4c0c2a48c39e2eb285cdbf2a13820c4c5c22aa3bb",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "0808dbbcb4c9c6cff48ce5db590e3600ca7a47f034ba0341efd019c0ba2bc1a7",
+  "review_rationale": "Read subgroup as subset H of group G carrying inherited binary operation that itself obeys all group axioms; arbitrary subsets are not assumed closed."
 }

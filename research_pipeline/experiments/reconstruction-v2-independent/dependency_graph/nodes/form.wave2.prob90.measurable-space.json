@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.prob90.measurable-space",
   "version_sha256": "299227ea5dafe6802281217022edd5da9bd580250819c883d2fd99d8ce473f57",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "sigma-algebra Sigma on X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.sigma-algebra",
+      "occurrence_id": "occ.b894662e6eb74621ab7e"
+    },
+    {
+      "phrase": "ordered pair (X,Sigma)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski",
+      "occurrence_id": "occ.3725cc74fcf5dea01233"
+    },
+    {
+      "phrase": "measurable subsets of X",
+      "state": "unassigned",
+      "context": "Members of Sigma; not automatically every subset in the full power set.",
+      "occurrence_id": "occ.d8e9e2e2430982a6dc88"
+    },
+    {
+      "phrase": "measurable space without measure",
+      "state": "external",
+      "disposition": "A measure or probability function is not part of this definition.",
+      "occurrence_id": "occ.3575ccc1000b9720df50"
+    }
+  ],
+  "snapshot_sha256": "4b14061724396d9ba1895e0898ca5f6adc9ec6cc228933721e1a06473d4f9151",
+  "review_rationale": "Read measurable space as pair of set X and sigma-algebra Sigma over all its measurable subsets, with no assigned numerical measure."
 }
