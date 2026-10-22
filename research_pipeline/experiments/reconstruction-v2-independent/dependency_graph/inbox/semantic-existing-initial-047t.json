@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-047t",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.set63.natural-positive-convention",
+      "version_sha256": "cecfa8915eb2f9ae7ef8b6a964fd4bf2bf864b8e3a64d10d2082fadbeebbcc81",
+      "complete": true,
+      "review_rationale": "Reviewed natural numbers as positive counting sequence 1,2,3,... contrasted with N_{>0} notation when another convention includes zero.",
+      "references": [
+        {
+          "phrase": "zero-inclusive natural numbers N as contrast",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "positive counting progression 1,2,3,...",
+          "state": "unassigned",
+          "context": "Counting numbers starting at one and omitting zero."
+        },
+        {
+          "phrase": "positive subset notation N_{>0}",
+          "state": "unassigned",
+          "context": "Notation for strictly positive natural numbers under zero-inclusive convention."
+        },
+        {
+          "phrase": "not zero-inclusive itself",
+          "state": "external",
+          "disposition": "The primary meaning of N in this formulation starts at one; no claim that zero belongs to it."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.set63.relation-reflexive-symmetric-transitive",
+      "version_sha256": "29c3ec62f1b06da6209814eacd447551cf128a0ec6167fd9f3d2f526dfd04270",
+      "complete": true,
+      "review_rationale": "Reviewed equivalence relation as subset of SxS with reflexivity, symmetry and transitivity, preserving quantified logical implications and set of ordered pairs.",
+      "references": [
+        {
+          "phrase": "subset of S times S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "ordered pair (x,y)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski"
+        },
+        {
+          "phrase": "binary relation on S",
+          "state": "unassigned",
+          "context": "Collection of ordered pairs of elements of S, represented by a subset of Cartesian square."
+        },
+        {
+          "phrase": "reflexivity x~x",
+          "state": "unassigned",
+          "context": "Every element x of S is related to itself."
+        },
+        {
+          "phrase": "symmetry x~y implies y~x",
+          "state": "unassigned",
+          "context": "Relation holds in reverse order whenever it holds forward."
+        },
+        {
+          "phrase": "transitivity x~y and y~z imply x~z",
+          "state": "unassigned",
+          "context": "Two consecutive related pairs yield related outer endpoints."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.set63.set-of-equivalence-classes",
+      "version_sha256": "1672cb94f256487d6acc0e70cea482a0a6f25bb06a20deec0ae973c8eee01fbe",
+      "complete": true,
+      "review_rationale": "Reviewed quotient set of equivalence relation as collection of all equivalence classes [x] on underlying set S, not an arbitrary subset of S.",
+      "references": [
+        {
+          "phrase": "equivalence relation ~ on S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive"
+        },
+        {
+          "phrase": "equivalence class [x]",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.set-of-related-elements"
+        },
+        {
+          "phrase": "quotient set S/~",
+          "state": "unassigned",
+          "context": "Collection containing exactly the distinct equivalence classes of S under relation ~."
+        },
+        {
+          "phrase": "representative x in S",
+          "state": "unassigned",
+          "context": "Each class appearing in quotient has at least one representative element x of S."
+        },
+        {
+          "phrase": "quotient elements are classes not individual points",
+          "state": "external",
+          "disposition": "Different representatives can determine the same quotient element."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.set63.set-of-related-elements",
+      "version_sha256": "105f9f2e4b76f67c8230d7f789d8817d52a7946f0fee1d4768f009aa60ce38ca",
+      "complete": true,
+      "review_rationale": "Reviewed equivalence class [x] as all y in S satisfying y~x for fixed x and an equivalence relation; all its members represent the same class.",
+      "references": [
+        {
+          "phrase": "equivalence relation ~",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive"
+        },
+        {
+          "phrase": "subset of S represented by class",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "class membership y~x",
+          "state": "unassigned",
+          "context": "Elements y of S belonging to class exactly when they relate to chosen representative x."
+        },
+        {
+          "phrase": "equivalent representatives",
+          "state": "unassigned",
+          "context": "Any two members of one equivalence class determine the same class under the relation."
+        },
+        {
+          "phrase": "representative not canonical",
+          "state": "external",
+          "disposition": "The representative x is a choice of element used to describe the class, not necessarily a unique distinguished element."
+        }
+      ]
+    }
+  ]
+}
