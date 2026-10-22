@@ -2,23 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.d4ab743e56d30cb4.cohen-macaulay-local-ring",
   "version_sha256": "7b844a151eda0f42289b30e1fc82c5529edfdf327c11b9eb73797dd8414ecc9d",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "local ring",
-      "span": [
-        13,
-        23
-      ],
+      "phrase": "Noetherian ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
+      "occurrence_id": "occ.bf144f93996dbaeb1936"
+    },
+    {
+      "phrase": "local ring (R,m)",
       "state": "existing",
       "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.69c73f825bb1ad821c4f"
+      "occurrence_id": "occ.c74228c1dfa1bcb59690"
+    },
+    {
+      "phrase": "depth_m(R) of R as a local module",
+      "state": "existing",
+      "target_meaning_id": "meaning.951ae8411d8a974b.depth-module-local-ring",
+      "occurrence_id": "occ.04fcfd0e5a1c52bf2222"
+    },
+    {
+      "phrase": "Krull dimension dim(R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.22c049b8eee93897.krull-dimension-ring",
+      "occurrence_id": "occ.aaa2edacb38141e7a43e"
+    },
+    {
+      "phrase": "R viewed as an R-module",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.1ddb84cf67e74b942b9f"
+    },
+    {
+      "phrase": "depth_m(R)=dim(R)",
+      "state": "external",
+      "disposition": "This is the Cohen–Macaulay criterion for the ring itself; equality with the dimension of a different module is not asserted.",
+      "occurrence_id": "occ.8cc798c7ee8bc8198a2f"
     }
   ],
-  "snapshot_sha256": "382523d2dd043d5cfafd01b0fe88624e575d49eef91c9288f87c85bba521fc47",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "1d3a8dbb66fe2e03fb5e476a577fd3337c0c62456eb836cd6dcc399990acdb5e",
+  "review_rationale": "Read the Cohen–Macaulay condition for a Noetherian local ring, identifying its unique maximal ideal, local-module depth of R itself and Krull dimension of R, not the dimension of an arbitrary finitely generated module."
 }

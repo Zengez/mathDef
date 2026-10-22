@@ -6,8 +6,8 @@
     "total_formulations": 659,
     "screened_formulations": 639,
     "provisional_formulations": 20,
-    "scan_complete": 349,
-    "scan_incomplete": 310,
+    "scan_complete": 353,
+    "scan_incomplete": 306,
     "unscanned": 0,
     "open": 659,
     "closed": 0,
@@ -15,13 +15,13 @@
     "unresolved_missing_candidates": 12,
     "alias_candidate_records": 1,
     "missing_occurrences": 17,
-    "ambiguous_occurrences": 215,
-    "unassigned_occurrences": 485,
-    "unresolved_fingerprint": "393cc9f52b2421bb4e44c58fcfdacd46f4df79d1b8eac88e3a9d6bc7aa459d6f",
+    "ambiguous_occurrences": 214,
+    "unassigned_occurrences": 493,
+    "unresolved_fingerprint": "d7f34b40ca960724578976bcb5fe10e7be24ee471c0751a283c8a60daf588727",
     "phase": "scan_and_link_existing",
     "consolidation_gate_valid": false,
     "seed_relations": 891,
-    "scan_occurrences": 2014,
+    "scan_occurrences": 2034,
     "scan_amendment_event_count": 12,
     "automatic_completion_is_not_certification": true,
     "breadth_expansion": "on_hold"
@@ -3592,44 +3592,46 @@
       "version_sha256": "19aab5939abe4e38edc06d4fbd1e0a6ae8a4739f94b2737d37c174852f941cde"
     },
     "form.d0a078e59e1495da.algebraic-field-extension": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "unassigned:occ.f5f631093c42f7d5553a"
       ],
       "version_sha256": "d9bd33044bbb4f04db0c6f48f40896a5ae7f0357b874f7a6c69350d319be91a8"
     },
     "form.d2b85c43cfbc6c05.finite-presentation-ring-map": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "ambiguous:occ.f6b4c7cafdb084c8fa55",
-        "scan_incomplete"
+        "unassigned:occ.b9cfb9548669bc9a6e7b",
+        "unassigned:occ.cd49f621e0722309f3a2",
+        "unassigned:occ.04d59b3f6be0eda4684c",
+        "unassigned:occ.d4c56b7e6d1af7592b29"
       ],
       "version_sha256": "2f5ac43569732500ed7ccafc2b4a1bc7da657140085558d0238ae921ef2e8095"
     },
     "form.d2b85c43cfbc6c05.finite-type-ring-map": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "unassigned:occ.89653dbedba151e237c6",
+        "unassigned:occ.55de7b814ad2986e1fa4",
+        "unassigned:occ.57e2b9270c0b900226c0"
       ],
       "version_sha256": "25b2aa68e5587bd7aa5e55e641c87f6e09b3dc7c01759814599b526f88570e34"
     },
     "form.d4ab743e56d30cb4.cohen-macaulay-local-ring": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
-      "direct_blockers": [
-        "scan_incomplete"
-      ],
+      "direct_blockers": [],
       "version_sha256": "7b844a151eda0f42289b30e1fc82c5529edfdf327c11b9eb73797dd8414ecc9d"
     },
     "form.d4ab743e56d30cb4.cohen-macaulay-noetherian-ring": {

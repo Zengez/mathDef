@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.d0a078e59e1495da.algebraic-field-extension",
   "version_sha256": "d9bd33044bbb4f04db0c6f48f40896a5ae7f0357b874f7a6c69350d319be91a8",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "field extension E/F",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "occurrence_id": "occ.17ad098c8760a80d1849"
+    },
+    {
+      "phrase": "algebraic element of E over F",
+      "state": "existing",
+      "target_meaning_id": "meaning.d0a078e59e1495da.algebraic-element-extension",
+      "occurrence_id": "occ.efae3dbeb50d3fb90583"
+    },
+    {
+      "phrase": "base field F",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.2772be3f09a8e39ab5bd"
+    },
+    {
+      "phrase": "nonzero polynomial in F[x]",
+      "state": "unassigned",
+      "context": "Univariate polynomial over the embedded base field whose coefficients are not all zero",
+      "occurrence_id": "occ.f5f631093c42f7d5553a"
+    },
+    {
+      "phrase": "every element of E satisfies some polynomial",
+      "state": "external",
+      "disposition": "The defining universal quantifier is essential; this is stronger than asserting the existence of a single algebraic element.",
+      "occurrence_id": "occ.90329f3376329ff47bb2"
+    }
+  ],
+  "snapshot_sha256": "1b9f89ac22a7a8bd299eb4caecc46f901a8c21cd528df0130dacf499c6fb047c",
+  "review_rationale": "Read universal quantification over all elements of the extension field with the nonzero polynomial relation over the base field; the existence of one algebraic element is not enough to make the whole extension algebraic."
 }
