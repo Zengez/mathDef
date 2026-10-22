@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.found85.adapted-continuous",
   "version_sha256": "48b208ec4f94d6e18403dd1c39b4948a79f85b0d06470bb2c897f8660c4a4650",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "stochastic process indexed by t≥0",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.found85.stochastic-process",
+      "occurrence_id": "occ.855464fab82bc14babf7"
+    },
+    {
+      "phrase": "sigma-algebra filtration",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.found85.discrete-filtration",
+      "occurrence_id": "occ.4dc2044654482ca4b966"
+    },
+    {
+      "phrase": "measurable real random variable",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prob90.random-variable-real",
+      "occurrence_id": "occ.4d6cc3a8a1fa33be4827"
+    },
+    {
+      "phrase": "continuous-time filtration (F_t)",
+      "state": "unassigned",
+      "context": "Increasing family of sub-sigma-algebras indexed by all nonnegative real times t.",
+      "occurrence_id": "occ.e417d1de11424cc7abdd"
+    },
+    {
+      "phrase": "X_t is F_t-measurable",
+      "state": "unassigned",
+      "context": "All Borel preimages of X_t belong to information sigma-algebra at corresponding time t.",
+      "occurrence_id": "occ.5eba8b83b304184ae258"
+    },
+    {
+      "phrase": "adaptedness not sample-path continuity",
+      "state": "external",
+      "disposition": "Continuous indexing t does not mean sample paths t↦X_t are continuous.",
+      "occurrence_id": "occ.d0188a6d2c332df3d71a"
+    }
+  ],
+  "snapshot_sha256": "3678a56be3bb422a8513dff9d3c3aa623739ec651da61556bc7515f18b59e8c3",
+  "review_rationale": "Read adapted real-valued continuous-time stochastic process as measurable at time t relative to corresponding filtration sigma-algebra."
 }

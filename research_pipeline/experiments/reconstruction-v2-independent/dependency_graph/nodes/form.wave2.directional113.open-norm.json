@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.directional113.open-norm",
   "version_sha256": "17991fd8ad3c19e93fb99f979aa8e72fdf86c952438401ada07123eb3302c9e1",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "normed vector space",
-      "span": [
-        6,
-        25
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.analysis98.normed-vector-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.4b0a101eb2938ec65799"
+      "phrase": "normed vector space V",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis98.normed-vector-space",
+      "occurrence_id": "occ.ff16f04ddca0670547ad"
+    },
+    {
+      "phrase": "norm on V",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis98.norm-over-normed-division-ring",
+      "occurrence_id": "occ.9584ca942b195dbdb8cc"
+    },
+    {
+      "phrase": "displacement norm ∥v−a∥",
+      "state": "unassigned",
+      "context": "Length of difference from center a to vector v in specified norm.",
+      "occurrence_id": "occ.6b25d19f2d1accb3ac30"
+    },
+    {
+      "phrase": "open norm ball radius r>0",
+      "state": "unassigned",
+      "context": "Subset of all v with norm(v−a)<r.",
+      "occurrence_id": "occ.cd681a50e23e941b110e"
+    },
+    {
+      "phrase": "open norm balls are metric open balls",
+      "state": "external",
+      "disposition": "Norm induces metric d(v,a)=∥v−a∥ for this structure.",
+      "occurrence_id": "occ.5ebc46361a43ac25a912"
     }
   ],
-  "snapshot_sha256": "98cae08b02df3b23f429018e98b957da315bf851bc4afc1330c46c3713fa92da",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "ec24e3533fa7813941c17227efa232449dbead37adff5694d1981b6dac3c87be",
+  "review_rationale": "Read norm open ball with chosen normed space, center and positive radius, strict inequality of norm displacement."
 }
