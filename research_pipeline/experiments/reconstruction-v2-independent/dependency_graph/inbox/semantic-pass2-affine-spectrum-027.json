@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-affine-spectrum-027",
+  "mode": "amend",
+  "research_scope": "Five complete source-free algebraic topology/prime spectrum reviews. No external research, new meanings, or automatic aliases.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.affine_spectrum.20261022.01",
+      "formulation_id": "form.097db25e2f156689.clopen-subset-of-spectrum",
+      "version_sha256": "7d47c90a9aac6cfa2da71d348da436f571c8f1369b34e7a45ae326113bf59a3e",
+      "expected_node_sha256": "6e0b45811c3c785c8a7bd3cf952f485725fe2997a493d6f9648622b2ad6a2813",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete original formulation and effective full dependency adjacency in commutative algebra and topology; separated set operations that define the focal structure from independent ring/spectral prerequisites, preserving prior full references and source version.",
+      "reason": "Source-free Pass2 contextual consolidation of spectrum, distinguished opens, algebraic vanishing loci, minimal prime ideals and topological irreducibility; candidate matching remains provisional.",
+      "references": [
+        {
+          "context": "Commutative algebra: commutative ring with multiplicative identity",
+          "matching_note": "Consolidation of 'commutative ring R' with the previously identified unital commutative-ring missing candidate; multiplication commutativity and a specified identity are both required, unlike optional-unity associative ring.",
+          "phrase": "commutative ring R",
+          "reason": "Shares the already recorded missing commutative-unital ring context; do not source-research it before global occurrence consolidation.",
+          "state": "missing"
+        },
+        {
+          "matching_note": "This occurrence denotes the prime spectrum of the given commutative ring.",
+          "phrase": "Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "matching_note": "U is an ordinary subset of the underlying set of prime ideals.",
+          "phrase": "subset U of Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "matching_note": "Clopen is openness and closedness in the ambient spectrum topology; the topological-space axioms supply these predicates.",
+          "phrase": "simultaneously open and closed",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "matching_note": "Points p of the prime spectrum correspond to prime ideals in the commutative unital ring.",
+          "phrase": "p in Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "idempotent e of R (so e²=e)",
+          "state": "missing",
+          "context": "Commutative algebra: idempotent ring element e∈R satisfying e²=e, in a commutative unital ring; e=0 and e=1 allowed.",
+          "reason": "The algebraic element-idempotence condition is independently reusable, not the same as a clopen subset of the spectrum.",
+          "matching_note": "Check globally against other idempotent-ring-element references; do not identify with idempotent ideals."
+        },
+        {
+          "phrase": "D(e)",
+          "state": "missing",
+          "context": "Algebraic geometry: principal distinguished open subset D(f)={p∈Spec(R):f∉p} of the prime spectrum of a commutative unital ring, specialized here to an idempotent e.",
+          "reason": "The distinguished open construction is independently reusable from the characterization of clopen spectral subsets.",
+          "matching_note": "Compare to D(f) occurring in constructibility and affine scheme charts."
+        },
+        {
+          "disposition": "Ordinary uniqueness quantification over ring elements does not create another contextual definition.",
+          "phrase": "this e is unique",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.affine_spectrum.20261022.02",
+      "formulation_id": "form.21c2ca138324d040.spectrum-ring",
+      "version_sha256": "2d1f96cd02da44ad4db4b63d1952518d2b8b66036b94f24b4c3185f0ab538122",
+      "expected_node_sha256": "6b1a0735960648bc44ec9ac3cf544cced1e766785f805b074e9106ee7943ae25",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete original formulation and effective full dependency adjacency in commutative algebra and topology; separated set operations that define the focal structure from independent ring/spectral prerequisites, preserving prior full references and source version.",
+      "reason": "Source-free Pass2 contextual consolidation of spectrum, distinguished opens, algebraic vanishing loci, minimal prime ideals and topological irreducibility; candidate matching remains provisional.",
+      "references": [
+        {
+          "phrase": "prime ideals of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+          "matching_note": "The spectrum's underlying points are prime ideals of the commutative ring."
+        },
+        {
+          "phrase": "topology",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space",
+          "matching_note": "The prime spectrum carries an open-set topology."
+        },
+        {
+          "phrase": "Zariski topology",
+          "state": "external",
+          "disposition": "The Zariski topology on the spectrum is exactly the topology *being defined* here by the closed subsets V(I), so linking to a separate independently presupposed Zariski topology would create a circular prerequisite."
+        },
+        {
+          "phrase": "closed sets V(I)",
+          "state": "missing",
+          "context": "Commutative algebra/algebraic geometry: locus V(I)={p∈Spec(R):I⊆p} of prime ideals containing an ideal I in a commutative ring; these provide Zariski closed subsets.",
+          "reason": "The algebraic vanishing-locus construction V(I) is usable in other formulations independently of the spectrum's selected presentation.",
+          "matching_note": "Potential circularity: V(I) depends on the *underlying set of primes*, not on an already topologized spectrum. Audit independent definition strategy."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.affine_spectrum.20261022.03",
+      "formulation_id": "form.ed035ec300dc4ceb.irreducible-component-spectrum",
+      "version_sha256": "b185987ef8a09d6da14a605d3d746ef8dbfcae410d12b758b825874c655473fe",
+      "expected_node_sha256": "d90deb70d4ff95cc50311f075799e4cab271686dfe9671d03ba18cde56b17c58",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete original formulation and effective full dependency adjacency in commutative algebra and topology; separated set operations that define the focal structure from independent ring/spectral prerequisites, preserving prior full references and source version.",
+      "reason": "Source-free Pass2 contextual consolidation of spectrum, distinguished opens, algebraic vanishing loci, minimal prime ideals and topological irreducibility; candidate matching remains provisional.",
+      "references": [
+        {
+          "context": "Commutative algebra: commutative ring with multiplicative identity",
+          "matching_note": "Consolidation of 'commutative ring R' with the previously identified unital commutative-ring missing candidate; multiplication commutativity and a specified identity are both required, unlike optional-unity associative ring.",
+          "phrase": "commutative ring R",
+          "state": "missing"
+        },
+        {
+          "phrase": "prime spectrum Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "prime ideal p",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "irreducible component of topological space",
+          "state": "existing",
+          "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-component"
+        },
+        {
+          "phrase": "minimal prime under inclusion",
+          "state": "missing",
+          "context": "Commutative algebra: minimal prime ideal p of a commutative ring R, minimal among all prime ideals under inclusion, not necessarily a minimal nonzero ideal.",
+          "reason": "The ring-theoretic minimal-prime property is independently useful in irreducible-component descriptions.",
+          "matching_note": "Compare with minimal-prime terminology elsewhere, retaining inclusion order and ring context."
+        },
+        {
+          "phrase": "closed set V(p) in Spec(R)",
+          "state": "missing",
+          "context": "Algebraic geometry: Zariski closed subset V(p) of Spec(R) consisting of prime ideals q containing a fixed prime p, special case of V(I).",
+          "reason": "The displayed component is given by the reusable vanishing-locus construction.",
+          "matching_note": "Possible alias with general V(I) after global contextual comparison, but retain prime-ideal source restriction."
+        },
+        {
+          "disposition": "An algebraic characterization of maximal irreducible closed subsets; it does not claim all prime ideals give distinct components.",
+          "phrase": "exactly the components V(p) for minimal primes",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.affine_spectrum.20261022.04",
+      "formulation_id": "form.c766a18ce285a2d8.constructible-subset-affine-spectrum",
+      "version_sha256": "f2336b4ec64a99d490e007b0d621c501c6f465c8aebe0ec58a76c0b545b94276",
+      "expected_node_sha256": "0299444131815f4a11ea4e71b6f78ff88eb5d29620c08d5b8c68851d0204ea22",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete original formulation and effective full dependency adjacency in commutative algebra and topology; separated set operations that define the focal structure from independent ring/spectral prerequisites, preserving prior full references and source version.",
+      "reason": "Source-free Pass2 contextual consolidation of spectrum, distinguished opens, algebraic vanishing loci, minimal prime ideals and topological irreducibility; candidate matching remains provisional.",
+      "references": [
+        {
+          "phrase": "subset C of Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "prime spectrum Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "Zariski topology on the affine spectrum",
+          "state": "existing",
+          "target_meaning_id": "meaning.ffa8e88785ba9c2b.scheme-zariski-topology"
+        },
+        {
+          "phrase": "distinguished basic open D(f)",
+          "state": "missing",
+          "context": "Commutative algebra: distinguished principal open D(f)={p∈Spec(R):f∉p} for f∈R, a basis open of the Zariski topology.",
+          "reason": "The specific principal open is reusable beyond the Boolean/constructible normal form.",
+          "matching_note": "Check against D(e) occurrence in clopen spectral subsets."
+        },
+        {
+          "phrase": "common vanishing closed locus V(g_1,…,g_m)",
+          "state": "missing",
+          "context": "Algebraic geometry: V(g_1,…,g_m)={p∈Spec(R):g_i∈p for each i}, equal to V((g_1,…,g_m)); g_i are ring elements.",
+          "reason": "Finite collections of equations give a reusable vanishing-locus construction, not constructibility itself.",
+          "matching_note": "Compare to general V(I) and V(p), preserving finite-generation special case."
+        },
+        {
+          "phrase": "finite unions of intersections D(f)∩V(g_1,…,g_m)",
+          "state": "external",
+          "disposition": "Finite union and intersection are set operations; the displayed constructible normal form assumes no Noetherian condition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.affine_spectrum.20261022.05",
+      "formulation_id": "form.e0dd0b0cffcfff0b.irreducible-topological-space",
+      "version_sha256": "d42d679b419e353c29d1745c9c5210d921bcff0dc16c1006caea0245e95f84fc",
+      "expected_node_sha256": "bfe640588b234ed9973bd5d51bddcf801fd03e292375d1103fe80f4f42bc3edd",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete original formulation and effective full dependency adjacency in commutative algebra and topology; separated set operations that define the focal structure from independent ring/spectral prerequisites, preserving prior full references and source version.",
+      "reason": "Source-free Pass2 contextual consolidation of spectrum, distinguished opens, algebraic vanishing loci, minimal prime ideals and topological irreducibility; candidate matching remains provisional.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "proper subset of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "closed subset of a topological space",
+          "state": "missing",
+          "context": "General topology: closed F⊆X exactly when X\\F is open in the specified topology; this depends on the ambient X and is distinct from Zariski-closed subschemes.",
+          "reason": "Closed-set status is a reusable topological prerequisite independently of irreducibility.",
+          "matching_note": "Match contextually to closure formulation's topologically closed subset."
+        },
+        {
+          "phrase": "union of two proper closed subsets",
+          "state": "external",
+          "disposition": "The prohibition of writing X=F∪G with F,G proper closed is the defining predicate of irreducibility. Union is an ordinary underlying set operation, not a separately required special 'union of proper closed sets' concept."
+        },
+        {
+          "phrase": "nonempty space convention",
+          "state": "external",
+          "disposition": "An empty space is explicitly excluded from irreducibility in this formulation even though alternative conventions may exist."
+        },
+        {
+          "phrase": "cannot be written as union of two proper closed subsets",
+          "state": "external",
+          "disposition": "The definition rules out any such pair, not merely disjoint closed decompositions."
+        }
+      ]
+    }
+  ]
+}
