@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046k",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.found85.discrete-filtration",
+      "version_sha256": "8b78c7b55abf6e03fea01ce940241ff10e2d48647edf53fef9318f37c2aad9a8",
+      "complete": true,
+      "review_rationale": "Read discrete-time filtration as nested sequence of sub-sigma-algebras F_n⊆F with monotone inclusion for all ordered indices n≤m.",
+      "references": [
+        {
+          "phrase": "sigma-algebra F",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.sigma-algebra"
+        },
+        {
+          "phrase": "nonnegative integer index n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "subset inclusion",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "increasing family of sigma-algebras",
+          "state": "unassigned",
+          "context": "For each indices n≤m, every event measurable by time n is included in F_m."
+        },
+        {
+          "phrase": "filtration not necessarily strictly increasing",
+          "state": "external",
+          "disposition": "Equality F_n=F_m is allowed for some n<m."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.found85.proper-coloring",
+      "version_sha256": "3b9f38a407f2596bb88737cc37bf347a504b1273d25d467e3c2c004849dc3ada",
+      "complete": true,
+      "review_rationale": "Read proper k-vertex-coloring as function to k color labels with inequality on endpoints of every simple-graph edge, without requiring use of all labels.",
+      "references": [
+        {
+          "phrase": "simple undirected graph G",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.graph42.simple-undirected"
+        },
+        {
+          "phrase": "function c:V→{1,…,k}",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "finite set of k color labels",
+          "state": "unassigned",
+          "context": "Label set indexed 1 through positive integer k."
+        },
+        {
+          "phrase": "adjacent vertices receive different colors",
+          "state": "unassigned",
+          "context": "For every edge {u,v}∈E, c(u)≠c(v)."
+        },
+        {
+          "phrase": "surjectivity not required",
+          "state": "external",
+          "disposition": "A proper k-coloring may employ fewer than k colors."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.found85.stochastic-process",
+      "version_sha256": "2ebe3d5c1159bccfe313a5068d82d0851d59573f4101a5fb79805c2edc1b95f9",
+      "complete": true,
+      "review_rationale": "Read stochastic process as family of measurable S-valued random variables over one probability space and shared measurable state space, indexed by arbitrary index set.",
+      "references": [
+        {
+          "phrase": "probability space (Ω,F,P)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prob90.probability-space"
+        },
+        {
+          "phrase": "general random variable",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prob90.random-variable-general"
+        },
+        {
+          "phrase": "sigma algebra of target",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.sigma-algebra"
+        },
+        {
+          "phrase": "I-indexed collection (X_i)",
+          "state": "unassigned",
+          "context": "Family of measurable functions from Ω into common state space E for all i∈I."
+        },
+        {
+          "phrase": "no temporal order required",
+          "state": "external",
+          "disposition": "Index set I may be arbitrary, and no adaptedness or independence is part of the bare process definition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.abelian-group",
+      "version_sha256": "2cf83e1b1920478a975e3332dc1cbae96fd64d695ef114f4bac9262455631f57",
+      "complete": true,
+      "review_rationale": "Read abelian group as group whose operation is commutative for every ordered pair of elements, preserving all group axioms via parent definition.",
+      "references": [
+        {
+          "phrase": "group (G,*)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "phrase": "commutative binary operation a*b=b*a",
+          "state": "unassigned",
+          "context": "For all a,b∈G, multiplication can be reversed without changing its result."
+        },
+        {
+          "phrase": "commutativity is additional to group axioms",
+          "state": "external",
+          "disposition": "Associativity, identity and inverses come from group definition."
+        }
+      ]
+    }
+  ]
+}
