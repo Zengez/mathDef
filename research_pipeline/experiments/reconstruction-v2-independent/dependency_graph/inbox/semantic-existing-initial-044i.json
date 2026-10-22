@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-044i",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.fc44c63c239e5c20.projective-module-hom",
+      "version_sha256": "b105e13148bf3b64dc81d035e902dd836c84d78f93c932a4378b9967d998c95a",
+      "complete": true,
+      "review_rationale": "Read projectivity of a module through exactness of covariant Hom_R(P,−) and the equivalent lifting criterion against every surjective module map, not just a single lifting diagram.",
+      "references": [
+        {
+          "phrase": "R-module P",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "R-linear module homomorphisms",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear"
+        },
+        {
+          "phrase": "Hom_R(P,−)",
+          "state": "existing",
+          "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module"
+        },
+        {
+          "phrase": "exactness",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category"
+        },
+        {
+          "phrase": "covariant Hom functor",
+          "state": "unassigned",
+          "context": "Functor mapping N to Hom_R(P,N) and morphisms g to post-composition with g."
+        },
+        {
+          "phrase": "surjective module homomorphism M→N",
+          "state": "unassigned",
+          "context": "Every element in N is image of an element of M, required for the lifting test."
+        },
+        {
+          "phrase": "lifting P→M across M→N",
+          "state": "unassigned",
+          "context": "For every map P→N and surjection M→N, there exists a map P→M whose composite is original P→N."
+        },
+        {
+          "phrase": "exactness and lifting equivalence",
+          "state": "external",
+          "disposition": "A pair of equivalent projectivity criteria; this is not the weaker property of being finitely generated."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.fc44c63c239e5c20.projective-module-summand",
+      "version_sha256": "f8b137e7de7f2b57d87c38cd27be6eaf8e9595a50e61df40958e6adc9b525e73",
+      "complete": true,
+      "review_rationale": "Read the direct-summand criterion for projective modules as the existence of a complement Q to P inside a possibly infinite free R-module, distinguishing direct sum from quotient or finite freeness.",
+      "references": [
+        {
+          "phrase": "projective module P",
+          "state": "existing",
+          "target_meaning_id": "meaning.fc44c63c239e5c20.projective-module-hom"
+        },
+        {
+          "phrase": "R-module Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "module isomorphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear"
+        },
+        {
+          "phrase": "free module R^(I) on index set I",
+          "state": "unassigned",
+          "context": "Direct sum of copies of R indexed by I with finite support, I not assumed finite."
+        },
+        {
+          "phrase": "P⊕Q as a direct sum",
+          "state": "unassigned",
+          "context": "External direct sum decomposition of R-modules exhibiting P as a direct summand."
+        },
+        {
+          "phrase": "free module need not have finite rank",
+          "state": "external",
+          "disposition": "The characterization of arbitrary projectives allows infinite index set I, unlike finite projective modules."
+        }
+      ]
+    }
+  ]
+}
