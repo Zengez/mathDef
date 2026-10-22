@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-044e",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.f72779e263dd3e51.domination-local-rings",
+      "version_sha256": "09e649230306bc48c887e329a54abb0d81e9b52bbe370f8a14e320e2c6d254c2",
+      "complete": true,
+      "review_rationale": "Read domination of local subrings of one common field through inclusion and contraction of the larger ring's maximal ideal; kept local-ring maximal ideals distinct.",
+      "references": [
+        {
+          "phrase": "local ring A and local ring B",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "maximal ideals m_A and m_B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-maximal-ideal"
+        },
+        {
+          "phrase": "common containing field",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "local subring inclusion A⊆B",
+          "state": "unassigned",
+          "context": "Inclusion as subrings of a fixed ambient field, preserving identities."
+        },
+        {
+          "phrase": "contraction m_B∩A=m_A",
+          "state": "unassigned",
+          "context": "The maximal ideal of B pulled back along inclusion A→B equals the maximal ideal of A."
+        },
+        {
+          "phrase": "domination is asymmetric",
+          "state": "external",
+          "disposition": "B dominates A only when B extends A and the maximal ideals are compatible; ordinary abstract ring isomorphism does not establish it."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.f72779e263dd3e51.valuation-ring-fraction-field",
+      "version_sha256": "e01ad808e47d1fe8965631d98b00c3cd65a501155985197d8d0f7a9dc7067ff0",
+      "complete": true,
+      "review_rationale": "Read valuation ring as an integral domain with its own fraction field satisfying reciprocal membership for every nonzero fraction; distinguished fractions in the field from arbitrary ring elements.",
+      "references": [
+        {
+          "phrase": "integral domain V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.integral-domain"
+        },
+        {
+          "phrase": "fraction field K of V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain"
+        },
+        {
+          "phrase": "multiplicative inverses in field K",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "nonzero fraction x in K",
+          "state": "unassigned",
+          "context": "Element x≠0 of the fraction field of V, for which both x and x^{-1} are well-defined."
+        },
+        {
+          "phrase": "x or x inverse belongs to V",
+          "state": "unassigned",
+          "context": "For each nonzero fraction either x lies in V or the reciprocal lies in V, inclusive or; both may lie in V for units."
+        },
+        {
+          "phrase": "valuation-ring reciprocity criterion",
+          "state": "external",
+          "disposition": "This is an equivalent characterization independent of a chosen explicit valuation map, not a discrete value-group hypothesis."
+        }
+      ]
+    }
+  ]
+}
