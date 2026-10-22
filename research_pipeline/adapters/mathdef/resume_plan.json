@@ -1,41 +1,51 @@
 {
   "schema_version": 1,
   "work_budget_minutes_target": 12,
-  "next_action": "2026-10-22 VERIFIED WAVE2 PASS-2 CHUNK2 HANDOFF: 611 independent contextual meanings, 659/659 semantic formulation scans complete, 659 Open, 0 Closed, no human certification. Pass2 is consolidate_occurrences, gate false and external definition research OFF. Previous chunk 1166 unassigned/35 missing/15 candidates/38 amendment events; NOW 1101 unassigned, 0 ambiguous, 66 missing occurrences, 21 missing candidate records (20 unresolved, 1 historical alias), 83 immutable append-only amendment events. This chunk reviewed 45 source formulations in five packages: semantic-pass2-category-size-consolidation-001 (12; unrestricted ordinary category candidate vs 2 finite small index categories), semantic-pass2-residue-fields-consolidation-001 (10 local-ring residue field cases incl κ(p)/κ(s)), semantic-pass2-field-algebras-consolidation-001 (5 k-algebra cases), semantic-pass2-repeated-typed-prerequisites-001 (6; diagram functors, multiplicative subsets, countably generated modules), semantic-pass2-defining-axiom-clauses-001 (12; 32 examined defining axioms/operation clauses classified as explanatory not separate missing prerequisites). All five packages have verified applied receipts and graph CI SUCCESS through run 39833427684; isolated tests SUCCESS through 39833427792. Added subject-neutral, read-only review helper research_pipeline/engine/dependency_context_worklist.py and test_dependency_context_worklist.py, isolated tests successful for commits d779f7fe7 and 266be6e9b; documented in DEPENDENCY_FIRST_WORKFLOW.md. READ research_pipeline/WAVE2_PASS2_CONSOLIDATION_PROGRESS_2026-10-22_CHUNK2.md and all live registries, then keep source-free semantic consolidation, with attention to actual named dependencies vs defining axioms, topical homonyms and effective node digest. No external research, new meanings, production corpus access, Batch143, unreviewed candidate aliases, consolidation gate, promotion, freeze or certification.",
+  "next_action": "2026-10-22 VERIFIED WAVE2 PASS-2 CHUNK3 HANDOFF: 611 independent contextual meanings, all 659/659 semantic formulations complete; 659 Open / 0 Closed, zero human certification. Pass2 'consolidate_occurrences', gate FALSE and definition research OFF. Compared with previous chunk: unassigned 1101→1061, missing occurrences 66→96, raw missing candidate records 21→49, reviewed aliases 1→26, **unresolved canonical candidates 20→23** (exactly 3 distinct new concepts: polynomial algebra, quotient ring by ideal, quotient module by submodule), append-only amendments 83→120 (37 further full-node amendments). Six new immutable graph packages: semantic-pass2-polynomial-algebra-consolidation-001 (10), -quotient-ring-consolidation-001 (10), -polynomial-and-quotient-candidate-aliases-001 (17), -quotient-module-consolidation-001 (10), -quotient-module-candidate-aliases-001 (8), -equivalence-quotient-set-existing-links-001 (7 forms, 10 reviewed decisions). ALL have applied receipts and independent graph/test CI SUCCESS, latest graph run 39836362823 and tests 39836362837. READ research_pipeline/WAVE2_PASS2_CONSOLIDATION_PROGRESS_2026-10-22_CHUNK3.md and live registries; continue source-free Pass2 contextual classification. CRITICAL: missing IDs depend on both phrase AND context: for distinct phrases of proven identical prerequisite construction, first use version-pinned 'missing' amendments then reviewed 'alias' events after candidate creation. Do not conflate polynomial algebra vs quotient/presentation, ring quotient vs module quotient vs topology, or create circular self-definition link to quotient set. NO new meanings/source research, production corpus, Batch143, consolidation gate or certification.",
   "resume_steps": [
-    "Read research_pipeline/DEPENDENCY_FIRST_WORKFLOW.md CURRENT EXECUTION CONTRACT, TEMP_DEPENDENCY_FIRST_WAVE2_PLAN.md §§8,10, this resume_plan.json, research_pipeline/WAVE2_PASS2_CONSOLIDATION_PROGRESS_2026-10-22_CHUNK2.md (CURRENT), and historical initial/progress files, then LIVE independent dependency_graph/STATE.json, CHECKPOINT.json, INVENTORY.json, unresolved_occurrences.jsonl, missing_candidates.jsonl, amendments.jsonl. Live state takes precedence.",
-    "Pass1 complete: 659/659 scans, 611 meanings; structurally 659 Open/0 Closed, zero certified. Pass2 1101 unassigned, 0 ambiguous, 66 missing occurrences, 21 missing candidate records, 83 amendment events; gate FALSE, no external definition research.",
-    "Five THIS-CHUNK immutable source-free amend packages: semantic-pass2-category-size-consolidation-001 (12), semantic-pass2-residue-fields-consolidation-001 (10), semantic-pass2-field-algebras-consolidation-001 (5), semantic-pass2-repeated-typed-prerequisites-001 (6), semantic-pass2-defining-axiom-clauses-001 (12). Each has applied_in_independent_graph_only receipt; latest graph CI run 39833427684 SUCCESS and isolated tests 39833427792 SUCCESS. NEVER edit completed applied inbox packets.",
-    "New reusable read-only helper: python -m research_pipeline.engine.dependency_context_worklist --workspace research_pipeline/experiments/reconstruction-v2-independent --contains 'category' --limit 20. It joins definition text, contextual source, all current adjacent references, meaning targets, current effective full-node SHA256 and version hash; contains is merely surface navigation not semantic equivalence. Regression tests checked its non-mutating behavior and hash.",
-    "Next groups: polynomial ring constructions, quotient and ideal powers, slice/comma categories, topological notions. Check distinct mathematical object types and synonyms across ALL remaining occurrences. Critically, many references are internal defining equations/axioms or operation datum, not true standalone prerequisite terms: review each source manually and use substantive external disposition only when appropriate. Do not auto-convert unassigned to missing.",
-    "Previous five Pass2 packets semantic-pass2-eigen-operator-amend-001, -powerset-consolidation-001, -commutative-ring-unital-001, -subgroup-and-module-scope-001, -injective-map-consolidation-001 also remain immutable. Original 659 source formulations unchanged. Avoid small category/general category, injective map/coproduct arrow, field/ring, real/rational and self-definition misconstruals.",
-    "Append-only full adjacency amendments require exact current effective-node SHA256 (if amended, latest replacement from ledger, not original node file), exact version, detailed reason and reviewer. Always verify applied receipt, CI success, state and candidate counts. Keep generic workflow machinery topic neutral and math-specific review in adapter/editor.",
-    "No consolidation gate until global occurrence ledger reviewed and unassigned/ambiguous both zero. No new definitions or research; no original production corpus, Batch143, promotion, human certification or freeze."
+    "Read research_pipeline/DEPENDENCY_FIRST_WORKFLOW.md CURRENT EXECUTION CONTRACT, TEMP_DEPENDENCY_FIRST_WAVE2_PLAN.md §§8,10, this plan, and CURRENT research_pipeline/WAVE2_PASS2_CONSOLIDATION_PROGRESS_2026-10-22_CHUNK3.md. Then read LIVE dependency_graph/STATE.json, CHECKPOINT.json, INVENTORY.json, unresolved_occurrences.jsonl, missing_candidates.jsonl, amendments.jsonl and candidate_aliases.jsonl; live committed state supersedes static figures.",
+    "Pass1 done: 659/659 semantic scans and 611 meanings. Pass2 latest verified: 1061 unassigned, 0 ambiguous, 96 missing occurrences, 49 candidate registry records (26 reviewed alias records, 23 unresolved canonical candidate concepts), 120 amendment events; gate FALSE, all 659 Open, no outside-source definition research.",
+    "Six CHUNK3 append-only immutable source-free packages: semantic-pass2-polynomial-algebra-consolidation-001 (10 amendments), semantic-pass2-quotient-ring-consolidation-001 (10), semantic-pass2-polynomial-and-quotient-candidate-aliases-001 (17 aliases), semantic-pass2-quotient-module-consolidation-001 (10), semantic-pass2-quotient-module-candidate-aliases-001 (8 aliases), semantic-pass2-equivalence-quotient-set-existing-links-001 (7 amendments / 10 reference decisions). All have applied receipts, graph CI latest 39836362823 and isolated tests latest 39836362837 successful. Never modify applied inbox packets.",
+    "IMPORTANT identity invariant: missing-candidate key hashes normalized BOTH phrase and context. Sharing one contextual missing meaning does not automatically unify phrase-specific candidate records. After manually verifying equivalence, submit separately reviewed 'alias' package mapping each alias candidate to canonical candidate. Preserve source wording, original occurrence identity and object-type distinctions; never bulk-merge mere similar phrases.",
+    "Next contextual groups: topological quotient spaces/quotient topology (not quotient set or ring), categorical slice/comma categories (avoid conflation with iso-comma), ideal multiplication and powers, module-power and associated-graded constructions, polynomial evaluation homomorphisms, and possible exact existing meaning synonyms. Review complete original mathematical text for each source; identify true independent prerequisites versus defining axioms or notational clauses.",
+    "Use subject-neutral read-only helper python -m research_pipeline.engine.dependency_context_worklist --workspace research_pipeline/experiments/reconstruction-v2-independent --contains '...' --limit 20. Cross-check relevant source and every current adjacent reference with meanings; version-pin replacements against current *effective* node full SHA256, not original node after amendments. Use bounded append-only amend events and confirm graph receipt and both Actions.",
+    "Earlier Pass2 chunk1 and chunk2 packages, all 659 source formulations, original snapshots, screened content and provisional population remain unchanged. No unrelated new mathematical meanings, no outside research, no original production mathDef, no Batch143, no promotion or certification. Do not record consolidate gate until entire occurrence ledger contextually reviewed, unassigned and ambiguous both zero.",
+    "Post-pass global mathematical consistency audit remains required after source-free Pass2; never mistake successful graph CI, candidate aliasing, completed semantic scans, or a mechanical closure for mathematical certification."
   ],
   "workflow_runs_to_check_live": [
     {
-      "run_id": 39833427684,
-      "purpose": "Pass2 defining-axiom source-free package (12 forms, 32 clauses); graph SUCCESS",
+      "run_id": 39836362823,
+      "purpose": "Latest chunk3 graph: equivalence relations and quotient-set existing links; verified success",
       "previously_reported_conclusion": "success"
     },
     {
-      "run_id": 39833427792,
-      "purpose": "Research pipeline isolated tests after defining-axiom batch; SUCCESS",
+      "run_id": 39836362837,
+      "purpose": "Latest chunk3 pipeline isolated tests; verified success",
       "previously_reported_conclusion": "success"
     },
     {
-      "run_id": 39832986220,
-      "purpose": "Pass2 repeated-typed-prerequisites (6 amendments); graph SUCCESS",
+      "run_id": 39836091411,
+      "purpose": "Quotient-module aliases; verified graph success",
       "previously_reported_conclusion": "success"
     },
     {
-      "run_id": 39832884744,
-      "purpose": "Generic read-only contextual-review helper regression tests; SUCCESS",
+      "run_id": 39835922001,
+      "purpose": "Quotient-module amendments; verified graph success",
       "previously_reported_conclusion": "success"
     },
     {
-      "run_id": 39832255850,
-      "purpose": "Pass2 field-algebras consolidation; graph SUCCESS",
+      "run_id": 39835752354,
+      "purpose": "Polynomial/quotient-ring candidate aliases; verified graph success",
+      "previously_reported_conclusion": "success"
+    },
+    {
+      "run_id": 39835407497,
+      "purpose": "Quotient-ring amendments; verified graph success",
+      "previously_reported_conclusion": "success"
+    },
+    {
+      "run_id": 39835113512,
+      "purpose": "Polynomial-algebra amendments; verified graph success",
       "previously_reported_conclusion": "success"
     }
   ],
