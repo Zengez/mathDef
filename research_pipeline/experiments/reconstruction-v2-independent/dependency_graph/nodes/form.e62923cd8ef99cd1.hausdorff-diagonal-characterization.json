@@ -2,39 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.e62923cd8ef99cd1.hausdorff-diagonal-characterization",
   "version_sha256": "ed649944feffe57a2b91c9b325b94719f7890cf621446664fed56714e63d310d",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.3b5d26eca2976164b2c9"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.dd5e6ddaa85a5e2a2e0f"
     },
     {
-      "phrase": "subset",
-      "span": [
-        85,
-        91
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.aab9782768d9078a8c5b"
+      "phrase": "product topology on X×X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology",
+      "occurrence_id": "occ.8dc8840b6bb6484926bd"
+    },
+    {
+      "phrase": "Cartesian product X×X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.cartesian-product-binary",
+      "occurrence_id": "occ.da8c895bd82bb8936e73"
+    },
+    {
+      "phrase": "diagonal subset Δ_X={(x,x):x∈X}",
+      "state": "unassigned",
+      "context": "Set of ordered pairs of equal entries, regarded as subset of X×X.",
+      "occurrence_id": "occ.02966ecb851414d2b2b5"
+    },
+    {
+      "phrase": "closed subset of X×X",
+      "state": "unassigned",
+      "context": "Set whose complement is open in the product topology.",
+      "occurrence_id": "occ.299ab8af4a6b18b90427"
+    },
+    {
+      "phrase": "Hausdorff if and only if diagonal closed",
+      "state": "external",
+      "disposition": "Equivalent topological criterion, not extra requirement on top of the disjoint-open-neighborhood definition.",
+      "occurrence_id": "occ.069c3c5130d851e618f2"
     }
   ],
-  "snapshot_sha256": "be28cce480fd3e7126ace26de050ee57af2c1f438328a02dfa1b560a993cacf8",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "485cd1d9df5ee7d63b8ee489f61ed1f3dee301295fe02a788834ca7937ecdf5a",
+  "review_rationale": "Read the iff diagonal-closed characterization of a Hausdorff topological space in the binary product topology, distinguishing a diagonal subset from an arbitrary closed graph."
 }

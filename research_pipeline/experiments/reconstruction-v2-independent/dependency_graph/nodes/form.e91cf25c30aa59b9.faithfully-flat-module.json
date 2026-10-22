@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.e91cf25c30aa59b9.faithfully-flat-module",
   "version_sha256": "c5fc6808fe3080c9073dabd9cce05c6c1b3614044b4e5b80b88afb08a9a68d65",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.9d67ee1cc38d53043865"
+    },
+    {
+      "phrase": "tensor product of R-modules",
+      "state": "existing",
+      "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+      "occurrence_id": "occ.f7bc4e9a31d9102fea05"
+    },
+    {
+      "phrase": "exact sequence of modules",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category",
+      "occurrence_id": "occ.46a0bf0bca3b0cdc9030"
+    },
+    {
+      "phrase": "flat module, preservation of exactness",
+      "state": "existing",
+      "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-module",
+      "occurrence_id": "occ.e2722687ba50d1410315"
+    },
+    {
+      "phrase": "tensor functor −⊗_R M",
+      "state": "unassigned",
+      "context": "Endofunctor from R-modules to R-modules formed by tensoring each object and morphism with M.",
+      "occurrence_id": "occ.e05bb4012504f7f2eb91"
+    },
+    {
+      "phrase": "reflection of exactness",
+      "state": "unassigned",
+      "context": "If a tensor-transformed module sequence is exact, then the original sequence was exact; stronger than preservation.",
+      "occurrence_id": "occ.e3d5a9a0325a4a76d5e8"
+    },
+    {
+      "phrase": "preserves and reflects arbitrary exactness",
+      "state": "external",
+      "disposition": "Faithful flatness requires both directions for arbitrary module sequences; applying M to a single exact sequence is not sufficient.",
+      "occurrence_id": "occ.23a37e053339681529cf"
+    }
+  ],
+  "snapshot_sha256": "3220339356df0817770c96e5f8f12e1f09d0c06a47fad3706f97abe8e04e6ecc",
+  "review_rationale": "Read the faithful flatness predicate as both preservation and reflection of exactness of arbitrary module sequences by the tensor functor, distinct from flatness alone."
 }

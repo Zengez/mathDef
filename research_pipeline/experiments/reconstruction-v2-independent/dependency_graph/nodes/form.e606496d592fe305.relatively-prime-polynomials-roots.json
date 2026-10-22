@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.e606496d592fe305.relatively-prime-polynomials-roots",
   "version_sha256": "4ec4c4b74d7da9bd6497cfcb0db9458fba2cfd7c08cfaac758c56fb3a5dd049c",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "algebraic closure",
-      "span": [
-        102,
-        119
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.39488f3e396a1c77.algebraic-closure"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.98b13900ca6773317f3f"
+      "phrase": "field k",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.8ce5401a3b5004bbc37e"
+    },
+    {
+      "phrase": "algebraic closure of k",
+      "state": "existing",
+      "target_meaning_id": "meaning.39488f3e396a1c77.algebraic-closure",
+      "occurrence_id": "occ.9fd857b9ff453a01874d"
+    },
+    {
+      "phrase": "polynomial f or g over k",
+      "state": "unassigned",
+      "context": "Element of univariate polynomial algebra k[x], evaluated after scalar extension into the algebraic closure.",
+      "occurrence_id": "occ.cbddf3bf2e14b7fe61eb"
+    },
+    {
+      "phrase": "common zero of f and g",
+      "state": "unassigned",
+      "context": "Element α in an algebraic closure of k satisfying f(α)=0=g(α).",
+      "occurrence_id": "occ.c7f6ed4120d29f6e4668"
+    },
+    {
+      "phrase": "coprimality iff absence of common algebraic-closure root",
+      "state": "external",
+      "disposition": "Univariate polynomial equivalence over a field; k-rational roots alone do not suffice for this criterion.",
+      "occurrence_id": "occ.1a06d37866447de12237"
     }
   ],
-  "snapshot_sha256": "db61448d6cbd89a21d410efbcb0b50aae97d50be021db49aad96bc365a8d1448",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "50c7bd0b8800c9d23fd8d47af61201410b65e713a19bda024f74e491085ce399",
+  "review_rationale": "Read the roots-based equivalent criterion for two coprime polynomials over arbitrary k, ensuring common zeros are tested in an algebraic closure rather than only in k itself."
 }
