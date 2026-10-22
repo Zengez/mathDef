@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-043n",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.f0d993a60533fc99.groupoid-valued-presheaf",
+      "version_sha256": "2a6113be379223c84e94e15dccd033fecaf78f4c7307a05ae127123cd567acb2",
+      "complete": true,
+      "review_rationale": "Read a strict groupoid-valued presheaf as an ordinary functor from C-opposite to the category of groupoids, with contravariant pullback functors satisfying literal composition and identity equalities.",
+      "references": [
+        {
+          "phrase": "category C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "opposite category C^op",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.opposite-category"
+        },
+        {
+          "phrase": "covariant functor F:C^op→Groupoids",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "groupoid F(U)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-groupoid"
+        },
+        {
+          "phrase": "category Groupoids of groupoids and functors",
+          "state": "unassigned",
+          "context": "Target 1-category whose objects are groupoids and morphisms ordinary functors."
+        },
+        {
+          "phrase": "pullback functor f*:F(U)→F(V)",
+          "state": "unassigned",
+          "context": "Functor induced contravariantly from f:V→U in base C."
+        },
+        {
+          "phrase": "strict functoriality (f∘g)*=g*∘f*",
+          "state": "external",
+          "disposition": "The equalities hold on the nose, not merely up to pseudofunctorial natural isomorphism."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.f0d993a60533fc99.split-fibred-groupoid",
+      "version_sha256": "d3208daa555909638d5c2495f615b23a905d5e807fda6dcfdb2fe9b3772268ca",
+      "complete": true,
+      "review_rationale": "Read a split category fibred in groupoids by isomorphism over its base category to a Grothendieck construction of a strict contravariant groupoid-valued functor, preserving the strict-versus-pseudo distinction.",
+      "references": [
+        {
+          "phrase": "category fibred in groupoids E→C",
+          "state": "existing",
+          "target_meaning_id": "meaning.5e4b8f6efeda6522.category-fibred-in-groupoids"
+        },
+        {
+          "phrase": "strict groupoid-valued presheaf over C",
+          "state": "existing",
+          "target_meaning_id": "meaning.f0d993a60533fc99.groupoid-valued-presheaf"
+        },
+        {
+          "phrase": "opposite category for contravariance",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.opposite-category"
+        },
+        {
+          "phrase": "Grothendieck construction of a presheaf of groupoids",
+          "state": "unassigned",
+          "context": "Category of pairs (U,x∈F(U)) with base arrows and corresponding compatible pullback arrows, projecting to C."
+        },
+        {
+          "phrase": "isomorphism over base category C",
+          "state": "unassigned",
+          "context": "Isomorphism of categories commuting with both projection functors to C, not merely arbitrary abstract equivalence."
+        },
+        {
+          "phrase": "strict functor rather than arbitrary pseudofunctor",
+          "state": "external",
+          "disposition": "This splitness criterion requires a strict chosen pullback structure as expressed in its stored formulation."
+        }
+      ]
+    }
+  ]
+}
