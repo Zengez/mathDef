@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-spectral-local-topology-028",
+  "mode": "amend",
+  "research_scope": "Five complete independent source-free reviews of spectral, constructible and local topological constructions. No new definition, external source research or automatic alias.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.spectral_local_topology.20261022.01",
+      "formulation_id": "form.d7087bb79cf848fa.spectral-topological-space",
+      "version_sha256": "f98f06e34e8f3ce88c35b953155ae94b6ad04186cdf2efe43dd058c0753ec9b5",
+      "expected_node_sha256": "8de735d155de2e901e00841a52f8dcf1927a590002d6f7b429553018fa878e82",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete source formulation and prior effective dependency adjacency; differentiated spectral sobriety, patch topology, locally constructible restrictions, indexed set partitions, and possibly non-open neighborhoods, preserving all old edges and source version.",
+      "reason": "Source-free Pass2 full-formulation mathematical consolidation of spectral and locally defined topological structures; candidate deduplication pending global audit.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "quasi-compact space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space"
+        },
+        {
+          "phrase": "quasi-compact open subsets of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space"
+        },
+        {
+          "phrase": "basis of the topology",
+          "state": "existing",
+          "target_meaning_id": "meaning.6a3376e5ecb82bfb.topology-basis"
+        },
+        {
+          "phrase": "sober topological space",
+          "state": "missing",
+          "context": "General topology: sobriety of X, every nonempty irreducible closed subset has a unique generic point x whose closure equals that subset; not equivalent to Hausdorffness.",
+          "reason": "Sobriety is an independent topological property required of spectral spaces.",
+          "matching_note": "Preserve irreducible closed, nonempty, existence and uniqueness of generic point."
+        },
+        {
+          "phrase": "binary intersections of quasi-compact open sets remain quasi-compact",
+          "state": "external",
+          "disposition": "The closure of quasi-compact opens under binary intersection is an axiom defining the spectral-space structure, not a theorem valid in all quasi-compact spaces. The underlying notions are separately linked."
+        },
+        {
+          "phrase": "quasi-compact opens form a basis",
+          "state": "external",
+          "disposition": "Every original open can be expressed as a union of quasi-compact opens, not necessarily as one quasi-compact open."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.spectral_local_topology.20261022.02",
+      "formulation_id": "form.d7087bb79cf848fa.constructible-topology-spectral",
+      "version_sha256": "e02180a2c9f203f50dcf11c06c59c6972dd8c45ce8023f7f1f26b9690bfcdad6",
+      "expected_node_sha256": "047170e42dfdbc2ed125183d7b49e7526f0296a0566879959fd0399825b1b6df",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete source formulation and prior effective dependency adjacency; differentiated spectral sobriety, patch topology, locally constructible restrictions, indexed set partitions, and possibly non-open neighborhoods, preserving all old edges and source version.",
+      "reason": "Source-free Pass2 full-formulation mathematical consolidation of spectral and locally defined topological structures; candidate deduplication pending global audit.",
+      "references": [
+        {
+          "phrase": "spectral space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.d7087bb79cf848fa.spectral-topological-space"
+        },
+        {
+          "phrase": "quasi-compact open subsets of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space"
+        },
+        {
+          "phrase": "subbasis for a generated topology",
+          "state": "existing",
+          "target_meaning_id": "meaning.6a3376e5ecb82bfb.topology-subbasis"
+        },
+        {
+          "phrase": "ambient topological space and its original topology",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "complements of quasi-compact open subsets",
+          "state": "missing",
+          "context": "Set theory/topology: relative complements X\\U of quasi-compact open U⊆X; these need not be open in the original spectral topology.",
+          "reason": "The underlying complement operation is reusable and helps generate the patch topology.",
+          "matching_note": "Candidate may overlap with existing relative-complement construction; retain the ambient X."
+        },
+        {
+          "phrase": "topology generated by designated subsets",
+          "state": "missing",
+          "context": "General topology: smallest topology on X containing a designated subbasis 𝒮, generated by arbitrary unions of finite intersections of members of 𝒮.",
+          "reason": "Topology generation from a designated family is a reusable construction independent of the spectral patch topology.",
+          "matching_note": "Compare to indexed topology-subbasis definition; distinct from the original topology."
+        },
+        {
+          "phrase": "these sets constitute a subbasis",
+          "state": "external",
+          "disposition": "The combined family forms a subbasis for the newly generated patch topology; it is not claimed to be a basis or a subbasis for the original spectral topology."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.spectral_local_topology.20261022.03",
+      "formulation_id": "form.eea0cd4a31af555c.locally-constructible-subset",
+      "version_sha256": "3c1818f4a8fe85b81daee07a3d7f40c7cdd1146153f2830bcf9716571a4f9707",
+      "expected_node_sha256": "9f0577b96499c1f7924a000f51b8b03b741fefd7004acf8ee3c63852853cbd9c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete source formulation and prior effective dependency adjacency; differentiated spectral sobriety, patch topology, locally constructible restrictions, indexed set partitions, and possibly non-open neighborhoods, preserving all old edges and source version.",
+      "reason": "Source-free Pass2 full-formulation mathematical consolidation of spectral and locally defined topological structures; candidate deduplication pending global audit.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "subset E of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "constructible subset in the source convention",
+          "state": "existing",
+          "target_meaning_id": "meaning.eea0cd4a31af555c.constructible-subset-stacks"
+        },
+        {
+          "phrase": "subspace topology on V_i",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subspace-topology-general"
+        },
+        {
+          "phrase": "open cover (V_i) of X",
+          "state": "missing",
+          "context": "General topology: arbitrary indexed open cover (V_i) of X, with union X and no finite-subcover requirement.",
+          "reason": "The locally constructible test presupposes a family of open charts covering X.",
+          "matching_note": "Compare globally with compactness open-cover candidate."
+        },
+        {
+          "phrase": "local restriction E∩V_i",
+          "state": "missing",
+          "context": "General topology: intersection E∩V_i of a subset E⊆X with an open subspace V_i⊆X, considered with the induced topology on V_i.",
+          "reason": "Local restriction of a subset is independent of testing its constructibility on the chart.",
+          "matching_note": "Do not infer global constructibility of E."
+        },
+        {
+          "phrase": "existence of some open cover",
+          "state": "external",
+          "disposition": "The locally constructible condition needs a suitable covering, not the statement that E is globally constructible."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.spectral_local_topology.20261022.04",
+      "formulation_id": "form.b1c99b8dae7a6bde.locally-closed-partition",
+      "version_sha256": "f450a5d1632c8c1e37885bfd0005958136d2b986ba29929bb2e2ab72950748dd",
+      "expected_node_sha256": "4c4619790f1a446b9b0bf1720b7f34401f35490be2300752aef39a5d0160746a",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete source formulation and prior effective dependency adjacency; differentiated spectral sobriety, patch topology, locally constructible restrictions, indexed set partitions, and possibly non-open neighborhoods, preserving all old edges and source version.",
+      "reason": "Source-free Pass2 full-formulation mathematical consolidation of spectral and locally defined topological structures; candidate deduplication pending global audit.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "locally closed subset X_i",
+          "state": "missing",
+          "context": "General topology: locally closed subset A⊆X expressible as O∩F with O open and F closed in X, equivalently open in its closure.",
+          "reason": "Local closedness is a reusable topological property of each partition piece.",
+          "matching_note": "Do not conflate with merely closed or constructible."
+        },
+        {
+          "phrase": "disjoint union partition X=⨆_i X_i",
+          "state": "missing",
+          "context": "Set theory: indexed partition X=⋃_i X_i by pairwise disjoint subsets covering all X, without requiring finitely many pieces or topology of a coproduct.",
+          "reason": "A set partition is a reusable notion independent of a topological disjoint-union construction.",
+          "matching_note": "Keep pairwise disjointness and coverage, not categorical coproduct properties."
+        },
+        {
+          "phrase": "all of X covered and pieces pairwise disjoint",
+          "state": "external",
+          "disposition": "No finiteness, ordering, or local finiteness of the family is required by this formulation."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.spectral_local_topology.20261022.05",
+      "formulation_id": "form.aa975a3ff4883909.locally-quasicompact-space",
+      "version_sha256": "687fc676c7bc8b037cab22e2b20677839ee4dd3d5e0d70b9403627fc73fc3631",
+      "expected_node_sha256": "140026055b677aa69d8bc9b1ae5a4ebee91895daf2da0341ac162201d006c090",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete source formulation and prior effective dependency adjacency; differentiated spectral sobriety, patch topology, locally constructible restrictions, indexed set partitions, and possibly non-open neighborhoods, preserving all old edges and source version.",
+      "reason": "Source-free Pass2 full-formulation mathematical consolidation of spectral and locally defined topological structures; candidate deduplication pending global audit.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "quasi-compact neighborhood K",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space"
+        },
+        {
+          "phrase": "neighborhood basis at x",
+          "state": "missing",
+          "context": "General topology: family 𝒩_x of neighborhoods of x such that for every neighborhood U of x there exists B∈𝒩_x with B⊆U; B need not itself be open.",
+          "reason": "Neighborhood-basis structure is independent of its requiring quasi-compact members.",
+          "matching_note": "Preserve non-open neighborhoods allowed in source."
+        },
+        {
+          "phrase": "neighborhood of a point in a topological space",
+          "state": "missing",
+          "context": "General topology: neighborhood N of point x if there exists an open U with x∈U⊆N, without requiring N to be open.",
+          "reason": "The neighborhood concept is a prerequisite and may not be replaced by openness of N.",
+          "matching_note": "Specific non-open neighborhood convention already deliberate in earlier correction."
+        },
+        {
+          "disposition": "The quasi-compact neighborhood K can depend on both x and U, and no ambient Hausdorff condition is asserted.",
+          "phrase": "for every neighborhood U of x",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}
