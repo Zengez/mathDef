@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.ordered-pair-kuratowski",
   "version_sha256": "7259eb35d3519093ad4133b25216b85dd90b709ec9f323669b6c371ac6033aa4",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "subset and set construction",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.2aca513f0e59139d1d4b"
+    },
+    {
+      "phrase": "singleton {a} and unordered pair {a,b}",
+      "state": "unassigned",
+      "context": "Basic finite sets assembled from the two input sets/elements.",
+      "occurrence_id": "occ.ccbbdda014a5cd337197"
+    },
+    {
+      "phrase": "nested pair {{a},{a,b}}",
+      "state": "unassigned",
+      "context": "Kuratowski set construction representing ordered pair (a,b).",
+      "occurrence_id": "occ.321c5775ec99876ca4ca"
+    },
+    {
+      "phrase": "componentwise equality criterion",
+      "state": "unassigned",
+      "context": "Equality of represented pairs iff first coordinates match and second coordinates match.",
+      "occurrence_id": "occ.37b19138dfe17d48b2f7"
+    },
+    {
+      "phrase": "ordered pair differs from unordered pair",
+      "state": "external",
+      "disposition": "Nested representation preserves coordinate order, even when values differ.",
+      "occurrence_id": "occ.4af3e8d42960634f7645"
+    }
+  ],
+  "snapshot_sha256": "096a4fbb362ff66d4f64d66dc91ae8a5d5f505fb72c65139dda4066fb2357241",
+  "review_rationale": "Read Kuratowski ordered pair representation as nested set {{a},{a,b}} and its coordinate equality characterization for arbitrary sets."
 }

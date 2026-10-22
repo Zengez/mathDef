@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.nonzero-polynomial-degree",
   "version_sha256": "93eb2d5d2bb6f8fd708d3c4000d8a212a1f58afc0854dc5b68280c1470694d81",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        135,
-        142
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.c072da5c89d7aca7facc"
+      "phrase": "nonnegative integer exponent k",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.b4e94585b45180bdad7d"
+    },
+    {
+      "phrase": "univariate polynomial P∈R[X]",
+      "state": "unassigned",
+      "context": "Finite formal sum of monomial coefficients a_k times indeterminate X^k over commutative ring R.",
+      "occurrence_id": "occ.2a35a2fe36c2484c0797"
+    },
+    {
+      "phrase": "largest nonzero coefficient index",
+      "state": "unassigned",
+      "context": "Maximum k≥0 for which a_k≠0_R.",
+      "occurrence_id": "occ.c9266b39a0661c0efe78"
+    },
+    {
+      "phrase": "zero polynomial finite degree excluded",
+      "state": "external",
+      "disposition": "No finite degree is assigned to identically zero polynomial under this convention.",
+      "occurrence_id": "occ.242ce0c6227c481412dd"
     }
   ],
-  "snapshot_sha256": "a44ac6ad79c354837499763b04f3af36b41b349a01556ec7a6b50764146f3d54",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "dfdcdd2fce0b2cd0ae811e929e3fedf6e4e456d2fc156a5f06e8c566c05cb816",
+  "review_rationale": "Read finite degree of nonzero univariate polynomial over commutative unital ring as largest index with nonzero coefficient, excluding zero polynomial finite degree."
 }

@@ -2,23 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.nonnegative-measure",
   "version_sha256": "6372ae846af6b6b64fdf276bf8c108a2fe5c649990e3c107eadba6df8714eead",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "sigma-algebra",
-      "span": [
-        11,
-        24
-      ],
+      "phrase": "sigma algebra Sigma",
       "state": "existing",
       "target_meaning_id": "meaning.wave2.foundation.sigma-algebra",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.41f2e17cac2ce0d915b7"
+      "occurrence_id": "occ.aac61413912a88edf4ce"
+    },
+    {
+      "phrase": "mapping μ:Sigma→[0,+infty]",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.de70607be3805abc2e18"
+    },
+    {
+      "phrase": "extended nonnegative real values",
+      "state": "unassigned",
+      "context": "Allowed measure values are finite nonnegative real numbers or +∞.",
+      "occurrence_id": "occ.b11eb2ada6ac82c2d6c3"
+    },
+    {
+      "phrase": "μ(empty)=0",
+      "state": "unassigned",
+      "context": "Empty measurable set assigned zero mass.",
+      "occurrence_id": "occ.a43e6f3de8e694a96611"
+    },
+    {
+      "phrase": "countable additivity for disjoint sequence",
+      "state": "unassigned",
+      "context": "For any pairwise disjoint E_n in Sigma, μ(union E_n)=sum μ(E_n).",
+      "occurrence_id": "occ.e6c0b75c3d0d509753ed"
+    },
+    {
+      "phrase": "not merely finite additivity",
+      "state": "external",
+      "disposition": "Countable disjoint unions are required; total mass μ(X) need not be one.",
+      "occurrence_id": "occ.794e0f90919cc5b2fb96"
     }
   ],
-  "snapshot_sha256": "e18db71e61b4ea47c565c220451dadb93405295e48f2c7464e6bfa702337b239",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "d40c07a46e108865dc2367734bd11913cf8115ee21823cbae01191f851211cc9",
+  "review_rationale": "Read nonnegative extended-valued measure on sigma-algebra with empty-set zero and countable additivity over disjoint measurable sequences."
 }
