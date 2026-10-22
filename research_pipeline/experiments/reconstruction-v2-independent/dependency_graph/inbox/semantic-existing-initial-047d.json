@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-047d",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.integer59.fraction-field-universal",
+      "version_sha256": "af9d8d16403664f385a2113f0f39e39ed3f6f5c1d67b81ce68a3fa844b899363",
+      "complete": true,
+      "review_rationale": "Read the fraction-field universal property over integral domain D with field F and injective embedding, requiring a unique compatible field homomorphism into each other containing field K.",
+      "references": [
+        {
+          "phrase": "integral domain D",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.integral-domain"
+        },
+        {
+          "phrase": "field F and arbitrary field K",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "ring maps i and j",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "injective ring map i:D to F",
+          "state": "unassigned",
+          "context": "One-to-one unital homomorphism embedding D as a subring of field F."
+        },
+        {
+          "phrase": "universal commutative triangle h composed with i equals j",
+          "state": "unassigned",
+          "context": "For every injective embedding of D into any field K, a factorization through F exists."
+        },
+        {
+          "phrase": "unique field homomorphism h:F to K",
+          "state": "unassigned",
+          "context": "Single multiplicative/additive unit-preserving field map commuting with D embeddings."
+        },
+        {
+          "phrase": "universal property equivalent to concrete fractions",
+          "state": "external",
+          "disposition": "This alternative presents the same fraction-field meaning without redefining it via an unnecessary self-link."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.integer59.integer-equivalence-class",
+      "version_sha256": "97901ef2ff18199b52b2789813aaa984d4e3721c73a56cb774a46ca28d2ccb95",
+      "complete": true,
+      "review_rationale": "Read integer as quotient of ordered pairs of natural numbers by formal-difference equivalence, with coordinate equation a+d=b+c; do not confuse with field fractions.",
+      "references": [
+        {
+          "phrase": "natural numbers a,b,c,d",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "ordered pairs (a,b)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski"
+        },
+        {
+          "phrase": "equivalence class [a,b]",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.set-of-related-elements"
+        },
+        {
+          "phrase": "formal-difference equivalence relation",
+          "state": "unassigned",
+          "context": "On N by N, (a,b) equivalent to (c,d) precisely if a+d=b+c."
+        },
+        {
+          "phrase": "quotient set (N x N)/~",
+          "state": "unassigned",
+          "context": "Set of all equivalence classes of natural-number pairs for the formal-difference relation."
+        },
+        {
+          "phrase": "formal difference a-b",
+          "state": "unassigned",
+          "context": "Informal interpretation of ordered pair as the difference represented by its integer class."
+        },
+        {
+          "phrase": "zero-inclusive natural convention",
+          "state": "external",
+          "disposition": "The quotient construction uses the zero-inclusive natural-number model available in the current independent inventory."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.integer59.integer-ring",
+      "version_sha256": "4b25faa61a01d2c09a8c5b7b5e9f721473d946314c4b179649f0302dcfab8ccd",
+      "complete": true,
+      "review_rationale": "Read ring of integers as the integer set equipped with ordinary addition and multiplication, distinct from a specific class representation and with ring axioms implicit.",
+      "references": [
+        {
+          "phrase": "underlying integer set Z",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.integer-equivalence-class"
+        },
+        {
+          "phrase": "ring structure on Z",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "integer addition +",
+          "state": "unassigned",
+          "context": "Well-defined associative commutative binary addition with additive identity and inverses on integer elements."
+        },
+        {
+          "phrase": "integer multiplication",
+          "state": "unassigned",
+          "context": "Associative distributive multiplication with multiplicative identity 1 on integer elements."
+        },
+        {
+          "phrase": "ordinary integer ring not field",
+          "state": "external",
+          "disposition": "Ring Z has its usual unital commutative structure and not all nonzero elements have multiplicative inverses."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.module94.right-module-nonunital",
+      "version_sha256": "6619ba1a37a3e1872bc2b38b2b9584763cacb454b4bc9787f433b6e0eba64971",
+      "complete": true,
+      "review_rationale": "Read a right R-module over possibly nonunital associative ring via abelian additive group and right scalar action satisfying both distributivities and right associativity; no unit axiom added.",
+      "references": [
+        {
+          "phrase": "associative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "abelian group (M,+)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "right scalar action M x R to M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "distributivity over vector addition (m+n)r=mr+nr",
+          "state": "unassigned",
+          "context": "The right scalar action is additive in its M input."
+        },
+        {
+          "phrase": "distributivity over scalar addition m(r+s)=mr+ms",
+          "state": "unassigned",
+          "context": "The right scalar action is additive in its R input."
+        },
+        {
+          "phrase": "module action associativity (mr)s=m(rs)",
+          "state": "unassigned",
+          "context": "Compatibility of right action with ring multiplication, in the correct right-sided order."
+        },
+        {
+          "phrase": "unity not required",
+          "state": "external",
+          "disposition": "The right-module definition does not impose m1=m without a specified unit-preserving convention."
+        }
+      ]
+    }
+  ]
+}
