@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-042b",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.d8201788fcb507c5.compatible-localized-sections",
+      "version_sha256": "cb65e83e6880156b7eec972ef9189fca74a8537c42df8d4fbdd5bb06b7079c13",
+      "complete": true,
+      "review_rationale": "Read the finite standard-open covering data, all module localizations, agreement after localizing to pairwise overlaps, and the asserted characterization by diagonal localization. Kept the gluing conclusion separate from the definition of compatibility.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "module localization M_{f_i} and M_{f_i f_j}",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "f_1,…,f_n generate the unit ideal",
+          "state": "unassigned",
+          "context": "Commutative algebra: ideal (f_1,…,f_n)=R, ensuring associated principal standard opens cover Spec(R)"
+        },
+        {
+          "phrase": "standard open D(f_i) of Spec(R)",
+          "state": "unassigned",
+          "context": "Zariski basic open consisting of primes not containing f_i; pairs intersect as D(f_i f_j)"
+        },
+        {
+          "phrase": "tuple of locally defined module sections m_i",
+          "state": "unassigned",
+          "context": "Element m_i of each localization M_{f_i}, viewed over the corresponding standard open"
+        },
+        {
+          "phrase": "restriction from M_{f_i} to M_{f_i f_j}",
+          "state": "unassigned",
+          "context": "Further module localization along f_j, used to compare local values on a common overlap"
+        },
+        {
+          "phrase": "diagonal localization map M→∏_i M_{f_i}",
+          "state": "unassigned",
+          "context": "Map sending m to its images m/1 in each local module; its image is the compatible-tuples subgroup"
+        },
+        {
+          "phrase": "such tuples are exactly the image of M",
+          "state": "external",
+          "disposition": "Finite principal-open descent/gluing statement under the unit-ideal hypothesis; not an assertion for arbitrary noncovering families."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.d8201788fcb507c5.module-gluing-data-standard-cover",
+      "version_sha256": "bea060ce8ae26cbbbcdcfe808cdac00c5da5388045e8715f2ce4bf1b9c70643f",
+      "complete": true,
+      "review_rationale": "Read locally defined modules on finitely many standard opens and the pairwise localized isomorphisms with identity and triple-cocycle constraints. Distinguished module descent from the separate scheme gluing datum.",
+      "references": [
+        {
+          "phrase": "Spec(R) with its prime spectrum topology",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "R_{f_i}-module M_i",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "localization of rings R_{f_i}",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "localization of modules on overlaps",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "finite standard open cover by D(f_i)",
+          "state": "unassigned",
+          "context": "Finite principal Zariski opens whose union is Spec(R), equivalently the f_i generate the unit ideal"
+        },
+        {
+          "phrase": "transition isomorphisms over D(f_i f_j)",
+          "state": "unassigned",
+          "context": "R_{f_i f_j}-linear isomorphisms between the two localized overlap modules"
+        },
+        {
+          "phrase": "triple-overlap cocycle constraint",
+          "state": "unassigned",
+          "context": "Compositions of pairwise transition isomorphisms agree with the direct transition over every triple common localization"
+        },
+        {
+          "phrase": "identity and triple-overlap relations",
+          "state": "external",
+          "disposition": "Descent coherence conditions on overlap isomorphisms; not simply arbitrary pairwise module isomorphisms."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.daec56e6a2a51cae.connected-category",
+      "version_sha256": "f6bf27520105f9d94575bb0075e29ad87844d541a321ed39efde3490bb24c737",
+      "complete": true,
+      "review_rationale": "Read nonemptiness and undirected zigzag connectivity of any two objects through finitely many morphisms in a category. Did not require a single forward arrow, invertibility of arrows, or topological connectedness.",
+      "references": [
+        {
+          "phrase": "category I, objects and morphisms",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "finite zigzag of arrows between objects",
+          "state": "unassigned",
+          "context": "A finite sequence of consecutive objects with a morphism joining each pair in either direction; arrows need not be invertible"
+        },
+        {
+          "phrase": "nonempty object collection",
+          "state": "external",
+          "disposition": "The nonemptiness requirement is explicit; an empty category is not connected under this convention."
+        },
+        {
+          "phrase": "directions of zigzag arrows may alternate",
+          "state": "external",
+          "disposition": "Connectivity uses the underlying undirected incidence of morphisms, not a directed path condition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.daec56e6a2a51cae.connected-indexed-limit",
+      "version_sha256": "ded3f1ea38ba4af95d44f7d189cff3b3a22152f20c775dd599656cc3faed94bf",
+      "complete": true,
+      "review_rationale": "Read the qualification that the indexing category, not a limiting object, is connected. Examined both limits and colimits of diagrams and retained their separate generic existing meanings.",
+      "references": [
+        {
+          "phrase": "connected indexing category",
+          "state": "existing",
+          "target_meaning_id": "meaning.daec56e6a2a51cae.connected-category"
+        },
+        {
+          "phrase": "category-indexed limit of a diagram",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f7683667fac9d28.category-limit"
+        },
+        {
+          "phrase": "category-indexed colimit of a diagram",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f7683667fac9d28.category-colimit"
+        },
+        {
+          "phrase": "diagram with indexing category",
+          "state": "unassigned",
+          "context": "Functor from the connected indexing category into a target category whose limit or colimit is considered"
+        },
+        {
+          "phrase": "connectedness of limit or colimit",
+          "state": "external",
+          "disposition": "The adjective describes the shape/index of a limiting construction; it is not a connected topological object or a claim that the limit object is connected."
+        }
+      ]
+    }
+  ]
+}
