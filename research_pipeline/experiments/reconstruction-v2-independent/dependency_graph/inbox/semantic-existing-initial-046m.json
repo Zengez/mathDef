@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046m",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.foundation.binary-relation-typed",
+      "version_sha256": "f837e0c4c459a9a2200d8cc857e54b2f2680e8ba64d774c8ab0232871bdfab5a",
+      "complete": true,
+      "review_rationale": "Read typed binary relation as ordered triple of domain, codomain and graph subset, with membership sRt iff ordered pair lies in graph.",
+      "references": [
+        {
+          "phrase": "Cartesian product S×T",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.cartesian-product-binary"
+        },
+        {
+          "phrase": "subset of product",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "untyped relation as subset",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.binary-relation-subset"
+        },
+        {
+          "phrase": "typed relation triple (S,T,R)",
+          "state": "unassigned",
+          "context": "Data explicitly retain source S, target T and graph R⊆S×T."
+        },
+        {
+          "phrase": "typed sets matter",
+          "state": "external",
+          "disposition": "Bare graph R need not determine original ambient S and T uniquely."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.cartesian-product-binary",
+      "version_sha256": "c4484ae5e9f436e03905e89247a0c529c3431a481daa752b52af22ee17ef5a4b",
+      "complete": true,
+      "review_rationale": "Read Cartesian product of S and T as set of all ordered pairs with first coordinate from S and second from T, retaining ordered nature.",
+      "references": [
+        {
+          "phrase": "set comprehension relation",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "ordered pair (s,t)",
+          "state": "unassigned",
+          "context": "Ordered tuple of two elements where position matters."
+        },
+        {
+          "phrase": "Cartesian product S×T",
+          "state": "unassigned",
+          "context": "All pairs (s,t) where s∈S and t∈T."
+        },
+        {
+          "phrase": "order of factors matters",
+          "state": "external",
+          "disposition": "Product S×T is not identical by literal equality to T×S in general."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.category-functor",
+      "version_sha256": "83a4393782e9586ea43ae3b1d93a4ce943a6e23e1a7db99563c366cd9219cf04",
+      "complete": true,
+      "review_rationale": "Read covariant functor between small categories as assignments of objects and arrows preserving source, target, identities and binary composition.",
+      "references": [
+        {
+          "phrase": "small categories A,B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "object assignment x↦F(x)",
+          "state": "unassigned",
+          "context": "Maps each source category object to target category object."
+        },
+        {
+          "phrase": "arrow assignment f↦F(f)",
+          "state": "unassigned",
+          "context": "For f:x→y, target arrow F(f):F(x)→F(y)."
+        },
+        {
+          "phrase": "composition preservation",
+          "state": "unassigned",
+          "context": "For composable f,g, F(g∘f)=F(g)∘F(f)."
+        },
+        {
+          "phrase": "identity preservation",
+          "state": "unassigned",
+          "context": "F(id_x)=id_{F(x)} for every source object x."
+        },
+        {
+          "phrase": "covariant arrow orientation",
+          "state": "external",
+          "disposition": "Functor does not reverse arrows; contravariant functors use the opposite category."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.commutative-maximal-ideal",
+      "version_sha256": "6462b581ad9bc43fa0b22a8d1fa3dc9e5af26a834b898d7daa62823eaed78a2d",
+      "complete": true,
+      "review_rationale": "Read maximal ideal of commutative unital ring as proper ideal having no intermediate ideals strictly between it and whole ring.",
+      "references": [
+        {
+          "phrase": "ideal of associative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "proper subset",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-proper"
+        },
+        {
+          "phrase": "subset inclusion between ideals",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "commutative ring with unity",
+          "state": "unassigned",
+          "context": "Ring multiplication commutative with specified identity 1."
+        },
+        {
+          "phrase": "maximal proper ideal",
+          "state": "unassigned",
+          "context": "Any ideal J with m⊆J⊆R must equal m or R."
+        },
+        {
+          "phrase": "maximal versus prime",
+          "state": "external",
+          "disposition": "This is maximal among proper ideals; it is not the same predicate as being prime in a general ring."
+        }
+      ]
+    }
+  ]
+}
