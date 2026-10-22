@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-040b",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.be14669c52f30e79.categorical-fibre-product",
+      "version_sha256": "8420c5c83362c309d975f77d444e363364d1c63921b664eac406e33aa3a28e06",
+      "complete": true,
+      "review_rationale": "Read the full pullback universal property for two arrows into S, including commutativity of fp and gq and uniqueness of a mediating arrow for every compatible pair into X and Y.",
+      "references": [
+        {
+          "phrase": "category and arrows",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "commuting cone to arrows X→S and Y→S",
+          "state": "unassigned",
+          "context": "Category theory: compatible pair of arrows P→X and P→Y with equal composites to S"
+        },
+        {
+          "phrase": "unique mediating arrow T→P",
+          "state": "unassigned",
+          "context": "Category theory: universal factorization of any compatible pair of arrows to X and Y"
+        },
+        {
+          "phrase": "fp=gq and fu=gv",
+          "state": "external",
+          "disposition": "These are equalities between composites in the category, not new conditions of invertibility."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.c15e2b26c207d87e.interior-subset-topological",
+      "version_sha256": "35ae2cafe093ea3c3bf530235a6b9f009f30dbcebc0c492356d7a7f67b9e9802",
+      "complete": true,
+      "review_rationale": "Reviewed both union-of-open-subsets and greatest-open-subset formulations of the interior of A in an ambient space X; the interior depends on the topology of X.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "subset A⊆X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "open subsets of X contained in A",
+          "state": "unassigned",
+          "context": "Topology: open subsets of the ambient topology lying within a specified subset"
+        },
+        {
+          "phrase": "union of all such open subsets",
+          "state": "external",
+          "disposition": "The union itself is open by the topology axioms, and equals the greatest open subset contained in A."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.c15e2b26c207d87e.nowhere-dense-subset",
+      "version_sha256": "7495231184625304eb34b993b01b7100e8b7878730defc6f718800e89efe7cb0",
+      "complete": true,
+      "review_rationale": "Read both nested operations implicit in the nowhere-dense criterion: closure taken first inside X, then interior of that closure in X. This is stronger than A merely having empty interior.",
+      "references": [
+        {
+          "phrase": "subset A of topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "closure of A in X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross107.topological-closure"
+        },
+        {
+          "phrase": "interior of closure",
+          "state": "existing",
+          "target_meaning_id": "meaning.c15e2b26c207d87e.interior-subset-topological"
+        },
+        {
+          "phrase": "interior of closure is empty",
+          "state": "external",
+          "disposition": "The empty-interior condition applies to the closure, not just A; no Baire-space assumption is present."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.c236facceae1dd0f.geometrically-regular-noetherian-algebra",
+      "version_sha256": "023b5e04405670214b0229ffe8a702f941edef107e422cdf08f41bcc7e979990",
+      "complete": true,
+      "review_rationale": "Examined geometric regularity after every finite field extension K/k, with Noetherian base algebra and its tensor extension, separately from the stated all-extension equivalence under the Stacks hypotheses. Did not equate regularity with geometric reducedness.",
+      "references": [
+        {
+          "phrase": "Noetherian ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "finite field extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.4777518984e96a98.finite-field-extension"
+        },
+        {
+          "phrase": "tensor product R⊗_k K",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "regular Noetherian ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.regular-noetherian-ring"
+        },
+        {
+          "phrase": "k-algebra R",
+          "state": "unassigned",
+          "context": "Commutative algebra: commutative algebra over field k via ring homomorphism"
+        },
+        {
+          "phrase": "scalar extension of k-algebra",
+          "state": "unassigned",
+          "context": "Commutative algebra: tensor-extended ring R⊗_k K with induced algebra multiplication"
+        },
+        {
+          "phrase": "equivalent all-field-extension test under specified hypotheses",
+          "state": "external",
+          "disposition": "The all-extensions equivalence is conditioned on the indicated theorem's hypotheses, which are not silently dropped."
+        }
+      ]
+    }
+  ]
+}
