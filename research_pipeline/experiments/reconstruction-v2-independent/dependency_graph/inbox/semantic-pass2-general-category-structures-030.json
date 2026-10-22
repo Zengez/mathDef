@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-general-category-structures-030",
+  "mode": "amend",
+  "research_scope": "Five complete categorical reviews, including size-scope corrections for pullbacks, filtered categories and adjunctions; no research or new meanings.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.general_category_structures.20261022.01",
+      "formulation_id": "form.34c38bc0b482f182.binary-coproduct-category",
+      "version_sha256": "70c17c183bdef4acd9344aa7c2a9845232bd51293058aee20aba639f70c5ac0a",
+      "expected_node_sha256": "d47dc4799e8bda70e1c2cba54de221e22f3c7b9c614e748532149778e1cf039b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed all full source mathematical text and effective references, preserving the difference between arbitrary and small categories, terminal/final universal clauses versus prerequisite diagram structures, filteredness axioms, adjunction naturality and fibres over base objects.",
+      "reason": "Source-free contextual review of categorical universal structures, correcting restrictive small-category reference links without adding source material or aliases.",
+      "references": [
+        {
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Source occurrence 'category C' denotes an ordinary category without a smallness requirement. Existing small-category meaning is too restrictive; do not conflate a fibred category, groupoid or slice category with the ambient category.",
+          "phrase": "category (size-unrestricted)",
+          "reason": "The existing generic category meaning explicitly assumes smallness, not warranted here.",
+          "state": "missing"
+        },
+        {
+          "phrase": "morphisms X→P and Y→P",
+          "state": "missing",
+          "context": "Category theory: pair of coproduct cocone legs i:X→P,j:Y→P from two specified objects to a common vertex P, independent of whether P satisfies universal coproduct property.",
+          "reason": "The compatible pair of injections is structural data used before asserting their universality.",
+          "matching_note": "The arrows are not generally monomorphisms in an arbitrary category."
+        },
+        {
+          "phrase": "unique h:P→Z",
+          "state": "external",
+          "disposition": "Unique existence of h making h∘i=f and h∘j=g for every f,g is the defining universal property of the binary coproduct; no additional pre-existing 'unique-map' concept is assumed."
+        },
+        {
+          "disposition": "Composition equations are already ordinary operations in the ambient category.",
+          "phrase": "h∘i=f and h∘j=g",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.general_category_structures.20261022.02",
+      "formulation_id": "form.be14669c52f30e79.categorical-fibre-product",
+      "version_sha256": "8420c5c83362c309d975f77d444e363364d1c63921b664eac406e33aa3a28e06",
+      "expected_node_sha256": "d1e7fba9ba6b63cff9db22cd43bdfdb35042e0dc6648c31fe9827046720a215a",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed all full source mathematical text and effective references, preserving the difference between arbitrary and small categories, terminal/final universal clauses versus prerequisite diagram structures, filteredness axioms, adjunction naturality and fibres over base objects.",
+      "reason": "Source-free contextual review of categorical universal structures, correcting restrictive small-category reference links without adding source material or aliases.",
+      "references": [
+        {
+          "phrase": "category and arrows",
+          "state": "missing",
+          "context": "Category theory: ordinary (possibly nonsmall) category with objects, identities, morphisms and associative composition; the definition of pullbacks does not restrict C to be small.",
+          "reason": "The indexed meaning of a small category incorrectly imposes set-sized object collection on an arbitrary categorical pullback.",
+          "matching_note": "Scope correction to general category, not a new source or definition."
+        },
+        {
+          "phrase": "commuting cone to arrows X→S and Y→S",
+          "state": "missing",
+          "context": "Category theory: compatible cone over a cospan f:X→S, g:Y→S, consisting of arrows p:P→X,q:P→Y with fp=gq; P not necessarily a pullback.",
+          "reason": "The compatible cone is prerequisite diagram data separate from the pullback's universal property.",
+          "matching_note": "Keep direction opposite to pushout cocones and distinct from pseudocones with invertible 2-cells."
+        },
+        {
+          "phrase": "unique mediating arrow T→P",
+          "state": "external",
+          "disposition": "Unique mediating morphism from every compatible cone to P is the defining universal property of a pullback; do not introduce a self-dependent universal pullback as a prerequisite."
+        },
+        {
+          "phrase": "fp=gq and fu=gv",
+          "state": "external",
+          "disposition": "These are equalities between composites in the category, not new conditions of invertibility."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.general_category_structures.20261022.03",
+      "formulation_id": "form.9d27e470d02eae69.filtered-category",
+      "version_sha256": "c76575141609755d07170796fa16f1752020d92b7e7ce42762c095bcbeb82be1",
+      "expected_node_sha256": "4286c84310fc37e855659c90a8c46ba6ed8fdf40820a5fd969e20884839ba5d2",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed all full source mathematical text and effective references, preserving the difference between arbitrary and small categories, terminal/final universal clauses versus prerequisite diagram structures, filteredness axioms, adjunction naturality and fibres over base objects.",
+      "reason": "Source-free contextual review of categorical universal structures, correcting restrictive small-category reference links without adding source material or aliases.",
+      "references": [
+        {
+          "phrase": "category I and its objects/arrows",
+          "state": "missing",
+          "context": "Category theory: an ordinary category I with objects, arrows, identities and composition; smallness is not explicitly stipulated by the filtered-category axioms in this source.",
+          "reason": "The linked small-category meaning imposes a size condition not present in the formulation.",
+          "matching_note": "Keep general category candidate distinct from small indexed categories in later audit."
+        },
+        {
+          "phrase": "pair of parallel arrows u,v:i⇉j",
+          "state": "missing",
+          "context": "Category theory: two parallel arrows u,v:i→j in a category with the same domain i and codomain j; equality after postcomposition j→k is the filteredness condition.",
+          "reason": "Parallel arrows are a reusable diagram shape distinct from equalizing them.",
+          "matching_note": "Keep the parallel-pair structure apart from the axiom that it eventually coequalizes."
+        },
+        {
+          "phrase": "arrows to common object",
+          "state": "external",
+          "disposition": "Requiring an object k with arrows i→k and j→k for each pair of objects i,j is a defining axiom of filteredness. The existential requirement must not become a recursively presupposed property."
+        },
+        {
+          "phrase": "after an arrow j→k, u and v become equal",
+          "state": "external",
+          "disposition": "The specified equalization of parallel arrows is a separate requirement from a common upper object; all three axioms are present."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.general_category_structures.20261022.04",
+      "formulation_id": "form.5b6d4a7f88629b12.left-adjoint",
+      "version_sha256": "6fc095cf637677eab8191015c530ca925c199731423231f3df7b4aa59617cc8c",
+      "expected_node_sha256": "baa3b644bf45f94b209e88d0418f474e8ac53a873b5921a48727a975f56f5a85",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed all full source mathematical text and effective references, preserving the difference between arbitrary and small categories, terminal/final universal clauses versus prerequisite diagram structures, filteredness axioms, adjunction naturality and fibres over base objects.",
+      "reason": "Source-free contextual review of categorical universal structures, correcting restrictive small-category reference links without adding source material or aliases.",
+      "references": [
+        {
+          "phrase": "functors L:C to D and R:D to C",
+          "state": "missing",
+          "context": "Category theory: two ordinary covariant functors between categories C and D, L:C→D and R:D→C, with no specified smallness; neither is a contravariant functor.",
+          "reason": "Earlier small-source-and-target category functor meaning is more restrictive than the general adjunction formula.",
+          "matching_note": "Correction preserves covariance and dual domain/codomain directions."
+        },
+        {
+          "phrase": "bijections between the morphisms L(X) to Y in D and X to R(Y) in C",
+          "state": "missing",
+          "context": "Category theory: family of hom-set bijections Hom_D(LX,Y)≅Hom_C(X,RY), indexed by X∈C,Y∈D, with each hom class set-valued under needed local-smallness conventions.",
+          "reason": "Adjunction uses bijections of hom collections and functorial compatibility; these are reusable categorical components.",
+          "matching_note": "Do not infer an object-level isomorphism LX≅RY or ignore naturality."
+        },
+        {
+          "phrase": "natural in both X and Y",
+          "state": "missing",
+          "context": "Category theory: naturality of a family of hom-set bijections in variables X and Y, commuting with morphisms in C and D; the X-variable is contravariant in both hom functors.",
+          "reason": "Naturality in each variable is mathematically stronger than independent pointwise bijections.",
+          "matching_note": "Audit alongside natural transformations/2-variable natural isomorphism without identifying with plain bijection."
+        },
+        {
+          "state": "external",
+          "phrase": "for functors L and R",
+          "disposition": "The two functors run in opposite directions between C and D, but neither is assumed contravariant."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.general_category_structures.20261022.05",
+      "formulation_id": "form.3653fa0ad844d187.category-fibred-in-sets",
+      "version_sha256": "c841d7cb0c7d9b494993aebc56fb95af711b5303a3ce289f93772ea832cc988e",
+      "expected_node_sha256": "13574990fa4fef45c49d90a6e872e53f7b7ecd3f5ec99d3ad338a519806773a9",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed all full source mathematical text and effective references, preserving the difference between arbitrary and small categories, terminal/final universal clauses versus prerequisite diagram structures, filteredness axioms, adjunction naturality and fibres over base objects.",
+      "reason": "Source-free contextual review of categorical universal structures, correcting restrictive small-category reference links without adding source material or aliases.",
+      "references": [
+        {
+          "phrase": "category fibred in groupoids",
+          "state": "existing",
+          "target_meaning_id": "meaning.5e4b8f6efeda6522.category-fibred-in-groupoids",
+          "matching_note": "A fibred category with groupoid fibres is the immediate parent meaning."
+        },
+        {
+          "phrase": "discrete category",
+          "state": "existing",
+          "target_meaning_id": "meaning.3653fa0ad844d187.discrete-category",
+          "matching_note": "Every fibre E_U is discrete, with only identity arrows."
+        },
+        {
+          "phrase": "category p:E→C",
+          "state": "missing",
+          "context": "Category theory: ordinary functor p:E→C from total category E to base category C, without requiring source or target categories to be small.",
+          "reason": "The fibred category structure is organized over an ordinary functor between potentially large categories.",
+          "matching_note": "Compare with size-unrestricted functor candidate from adjunction/presheaf contexts."
+        },
+        {
+          "phrase": "fibre E_U over U",
+          "state": "missing",
+          "context": "Category theory: fibre category E_U of functor p:E→C over object U∈C, consisting of objects x with p(x)=U and arrows α between them with p(α)=id_U.",
+          "reason": "The fibre-category construction is independently reusable when requiring all fibres be discrete.",
+          "matching_note": "Keep fibre of a category-over-base distinct from topological fibres and tensor products."
+        }
+      ]
+    }
+  ]
+}
