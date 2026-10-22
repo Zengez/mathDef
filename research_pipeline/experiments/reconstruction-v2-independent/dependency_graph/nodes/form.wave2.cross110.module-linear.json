@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.cross110.module-linear",
   "version_sha256": "4d77231e188db1e8de53ff48561413fb10c627b322d30980ebb30de602db6eda",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "associative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.7af383aaea6b603e0d5c"
+    },
+    {
+      "phrase": "left R-modules M,N",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.b57895b8f1e348fa3ac7"
+    },
+    {
+      "phrase": "map T:M→N",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.14482fde04aed7bf770a"
+    },
+    {
+      "phrase": "additive preservation",
+      "state": "unassigned",
+      "context": "For m,m′ in M, T(m+m′)=T(m)+T(m′).",
+      "occurrence_id": "occ.0b702acafdcc03b0ee87"
+    },
+    {
+      "phrase": "R-scalar compatibility",
+      "state": "unassigned",
+      "context": "For each r in R and m in M, T(rm)=rT(m).",
+      "occurrence_id": "occ.b989b0f40475669b5926"
+    },
+    {
+      "phrase": "module linearity does not assume field K",
+      "state": "external",
+      "disposition": "This variant allows general associative rings and is not limited to vector-space transformations.",
+      "occurrence_id": "occ.803cd029703e26d79937"
+    }
+  ],
+  "snapshot_sha256": "f5fe8308c14242947d9691006e714a9d584693734d1ceef5ed78e5063c3148dd",
+  "review_rationale": "Read additive and scalar-preserving R-linear map between left modules over same associative ring, without requiring the ring to be a field."
 }

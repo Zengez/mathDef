@@ -2,40 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.cross110.finite-image-rank",
   "version_sha256": "8fda7f82cc8666707d2f504d053f2173be7b46009b6e04bba129e5391181e79b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "linear transformation",
-      "span": [
-        8,
-        29
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.cross110.field-vector-linear",
-        "meaning.wave2.cross110.module-linear"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.f2f809c2553e22c5f4c0"
+      "phrase": "field-linear transformation T",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.field-vector-linear",
+      "occurrence_id": "occ.b39fd14fc081b968a6e4"
     },
     {
-      "phrase": "integer",
-      "span": [
-        168,
-        175
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.39a2cb0433b7804578a7"
+      "phrase": "vector space V,W over K",
+      "state": "existing",
+      "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "occurrence_id": "occ.cda700ac38c02da4a0c2"
+    },
+    {
+      "phrase": "image of mapping",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.image-of-mapping",
+      "occurrence_id": "occ.98c885da946fde8cff0c"
+    },
+    {
+      "phrase": "natural numbers including zero",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.69fafc09fc4cd95a4c70"
+    },
+    {
+      "phrase": "finite-dimensional image subspace im(T)",
+      "state": "unassigned",
+      "context": "Span of output vectors T(v) has a finite vector-space basis over K.",
+      "occurrence_id": "occ.f3a50a5afd1b8b8cd8c9"
+    },
+    {
+      "phrase": "dimension of vector space im(T)",
+      "state": "unassigned",
+      "context": "Cardinality of basis of finite-dimensional image, expressed as nonnegative integer.",
+      "occurrence_id": "occ.59392154aa4e8da4dd58"
+    },
+    {
+      "phrase": "finite rank requires finite-dimensional image",
+      "state": "external",
+      "disposition": "Definition does not assign a finite integer rank to infinite-dimensional image.",
+      "occurrence_id": "occ.a20af841fe88149f0b1b"
     }
   ],
-  "snapshot_sha256": "f0d59ef53ec6aad3627594dbb08aff23eb398fe4e7e2b549405d1a43806bb100",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "708f161bbeb25e9e22fc43d6788a30e91200750f5e8d8329a1f054825631b830",
+  "review_rationale": "Read rank of K-linear transformation with finite-dimensional image as dimension of image subspace, explicitly finite nonnegative integer and separate from nullity."
 }
