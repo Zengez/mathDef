@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046w",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.foundation.well-ordered-set",
+      "version_sha256": "80f9e3cc879ef0595cd6e5fdf6a2617b926065f8cb98b42efc3b2ec6a7e4060a",
+      "complete": true,
+      "review_rationale": "Reviewed well-order as a total order on S with a least element for every nonempty subset; kept totality separate from the well-ordering minimum property and did not confuse least and merely minimal elements.",
+      "references": [
+        {
+          "phrase": "underlying relation is a partial order",
+          "state": "existing",
+          "target_meaning_id": "meaning.709d3d2f82950c5b.partially-ordered-set"
+        },
+        {
+          "phrase": "subset A of S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "total order on S",
+          "state": "unassigned",
+          "context": "Partial order with any two elements comparable, beyond the weaker partial-order condition."
+        },
+        {
+          "phrase": "nonempty subset A",
+          "state": "unassigned",
+          "context": "Subset containing at least one element, quantified over all such subsets of S."
+        },
+        {
+          "phrase": "least element a of A",
+          "state": "unassigned",
+          "context": "An a in A that is below or equal to every x in A under the given total order."
+        },
+        {
+          "phrase": "well order not mere linear order",
+          "state": "external",
+          "disposition": "Additional every-nonempty-subset least-element property distinguishes well order from arbitrary total order."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation13.abelian-group-homomorphism-kernel",
+      "version_sha256": "41d077d3633b04d2dff4e36a7e51e57652d5a8465464f4fb5fca46abacd7a883",
+      "complete": true,
+      "review_rationale": "Reviewed concrete kernel of additive group homomorphism as zero preimage, with subgroup structure and its canonical inclusion; not confused with a generic categorical equalizer.",
+      "references": [
+        {
+          "phrase": "abelian groups A and B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "mapping f:A to B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "additive group homomorphism",
+          "state": "unassigned",
+          "context": "Mapping of abelian groups preserving addition and hence zero and inverses."
+        },
+        {
+          "phrase": "zero element 0_B",
+          "state": "unassigned",
+          "context": "Identity element of the additive abelian group B."
+        },
+        {
+          "phrase": "kernel preimage of zero",
+          "state": "unassigned",
+          "context": "Subset of A comprising all a for which f(a) equals the zero element of B."
+        },
+        {
+          "phrase": "additive subgroup of A",
+          "state": "unassigned",
+          "context": "Subset ker(f) of group A closed under group addition and inverses."
+        },
+        {
+          "phrase": "canonical subgroup inclusion ker(f) to A",
+          "state": "unassigned",
+          "context": "Natural inclusion homomorphism sending each kernel element to the same element in A."
+        },
+        {
+          "phrase": "concrete kernel in abelian groups",
+          "state": "external",
+          "disposition": "This specializes the abstract kernel universal-property notion to a concrete additive group."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation13.exact-sequence-abelian-category",
+      "version_sha256": "a336fdd1a8e328a401705636eb79c58f5bc8f4665a575d550df00175109bbab8",
+      "complete": true,
+      "review_rationale": "Reviewed complex and exact sequence as composable arrows with consecutive zero composites, using image and kernel subobjects at every applicable position of an abelian category.",
+      "references": [
+        {
+          "phrase": "additive category",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation15.additive-category"
+        },
+        {
+          "phrase": "abelian category",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation15.abelian-category"
+        },
+        {
+          "phrase": "kernel of Y to Z",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.preadditive-category-kernel"
+        },
+        {
+          "phrase": "sequence of composable arrows",
+          "state": "unassigned",
+          "context": "Chain of objects and morphisms with matching domains/codomains."
+        },
+        {
+          "phrase": "zero composite of consecutive maps",
+          "state": "unassigned",
+          "context": "Composite of adjacent arrows equals distinguished zero morphism."
+        },
+        {
+          "phrase": "image subobject of X to Y",
+          "state": "unassigned",
+          "context": "Categorical image of a morphism, represented by a subobject of its codomain; not simply the point-set image of a function."
+        },
+        {
+          "phrase": "equality im(X to Y)=ker(Y to Z)",
+          "state": "unassigned",
+          "context": "Exactness at Y as equality of the corresponding subobjects, or their canonical equivalence in the abelian category."
+        },
+        {
+          "phrase": "zero object in short exact sequence",
+          "state": "unassigned",
+          "context": "Distinguished zero object in the abelian category, supplying the endpoints 0→A→B→C→0."
+        },
+        {
+          "phrase": "exact at every applicable position",
+          "state": "external",
+          "disposition": "The short exact form includes endpoint conditions and zero composites; the condition is not merely a complex."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation13.preadditive-category-cokernel",
+      "version_sha256": "01e34bb4c31fdc18ee19479b15cb9fca1dc5ec94a00643ca276243e85a88bc50",
+      "complete": true,
+      "review_rationale": "Reviewed cokernel universal property for a morphism in a preadditive category, requiring p f=0 and unique factorization of any other arrow annihilating f; existence conditional.",
+      "references": [
+        {
+          "phrase": "preadditive category",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation15.preadditive-category"
+        },
+        {
+          "phrase": "zero morphism and equation p composed with f equals zero",
+          "state": "unassigned",
+          "context": "The additive identity arrow in an abelian hom-set; p annihilates f under composition."
+        },
+        {
+          "phrase": "universal factorization through p",
+          "state": "unassigned",
+          "context": "Any morphism q:Y to Z annihilating f uniquely factors as h composed with p, for one h:C to Z."
+        },
+        {
+          "phrase": "uniqueness of mediating arrow h",
+          "state": "unassigned",
+          "context": "There is exactly one arrow from cokernel object C to Z satisfying q=h composed with p."
+        },
+        {
+          "phrase": "cokernel existence conditional",
+          "state": "external",
+          "disposition": "A general preadditive category need not supply a cokernel of every morphism; the definition is conditional on an exhibiting universal arrow."
+        }
+      ]
+    }
+  ]
+}
