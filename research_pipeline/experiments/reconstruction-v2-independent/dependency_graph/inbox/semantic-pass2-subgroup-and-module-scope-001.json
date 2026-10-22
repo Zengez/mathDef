@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-subgroup-and-module-scope-001",
+  "mode": "amend",
+  "research_scope": "Resolve three additive subgroups against generic subgroup and correct one left-module unitality overlink in independent graph.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.subgroup_module_scope.20261022.01",
+      "formulation_id": "form.wave2.foundation.two-sided-ideal",
+      "version_sha256": "c3a2a5b3338f59e49af2ff89d697db51eb25ec58608343b7bd782ee6cdeb5559",
+      "expected_node_sha256": "f182518210ef38e84d62154188a5c8436b31020b1a9f76846ac89764fbcf2eab",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_mathematical_consistency_review",
+      "review_rationale": "Reviewed two-sided ideal for a possibly noncommutative associative ring, retaining additive subgroup and both left/right multiplicative absorption as independent conditions.",
+      "reason": "Source-free comparison of the entire ideal/kernel/submodule formulation to the existing subgroup-of-a-group meaning confirms the additive subgroup is a typed special instance. Link it rather than falsely record a distinct missing meaning, retaining all remaining substantive requirements.",
+      "references": [
+        {
+          "phrase": "ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "subset I of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "additive group (R,+)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "additive subgroup (I,+)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prereq122.subgroup",
+          "matching_note": "A subgroup of the ambient additive (abelian) group, satisfying the inherited group operation and inverse axioms; the generic subgroup definition is context-appropriate."
+        },
+        {
+          "phrase": "closure under left multiplication r*i",
+          "state": "unassigned",
+          "context": "For every r in R and i in I, product r i remains in I."
+        },
+        {
+          "phrase": "closure under right multiplication i*r",
+          "state": "unassigned",
+          "context": "For every r in R and i in I, product i r remains in I."
+        },
+        {
+          "phrase": "two-sided not merely left or right ideal",
+          "state": "external",
+          "disposition": "Both multiplication directions are required; commutativity is not assumed."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.subgroup_module_scope.20261022.02",
+      "formulation_id": "form.wave2.foundation13.abelian-group-homomorphism-kernel",
+      "version_sha256": "41d077d3633b04d2dff4e36a7e51e57652d5a8465464f4fb5fca46abacd7a883",
+      "expected_node_sha256": "7aca5da53984c6618c5ef68315420e771c73fbb3be08080e8836c9bc1f759198",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_mathematical_consistency_review",
+      "review_rationale": "Reviewed concrete kernel of additive group homomorphism as zero preimage, with subgroup structure and its canonical inclusion; not confused with a generic categorical equalizer.",
+      "reason": "Source-free comparison of the entire ideal/kernel/submodule formulation to the existing subgroup-of-a-group meaning confirms the additive subgroup is a typed special instance. Link it rather than falsely record a distinct missing meaning, retaining all remaining substantive requirements.",
+      "references": [
+        {
+          "phrase": "abelian groups A and B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "mapping f:A to B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "additive group homomorphism",
+          "state": "unassigned",
+          "context": "Mapping of abelian groups preserving addition and hence zero and inverses."
+        },
+        {
+          "phrase": "zero element 0_B",
+          "state": "unassigned",
+          "context": "Identity element of the additive abelian group B."
+        },
+        {
+          "phrase": "kernel preimage of zero",
+          "state": "unassigned",
+          "context": "Subset of A comprising all a for which f(a) equals the zero element of B."
+        },
+        {
+          "phrase": "additive subgroup of A",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prereq122.subgroup",
+          "matching_note": "A subgroup of the ambient additive (abelian) group, satisfying the inherited group operation and inverse axioms; the generic subgroup definition is context-appropriate."
+        },
+        {
+          "phrase": "canonical subgroup inclusion ker(f) to A",
+          "state": "unassigned",
+          "context": "Natural inclusion homomorphism sending each kernel element to the same element in A."
+        },
+        {
+          "phrase": "concrete kernel in abelian groups",
+          "state": "external",
+          "disposition": "This specializes the abstract kernel universal-property notion to a concrete additive group."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.subgroup_module_scope.20261022.03",
+      "formulation_id": "form.wave2.foundation76.submodule.01",
+      "version_sha256": "b21e01bcdf45d2377abf577a92733fbfd496e7fd42a533e6756944ce905ea891",
+      "expected_node_sha256": "813948c501952a6104d118106c0528d8c679c9fce413056fb704ba11307c4a4e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_mathematical_consistency_review",
+      "review_rationale": "Read left-module submodule test: additive subgroup of M stable under left scalar multiplication, with inherited operations and no mistaken right-module link.",
+      "reason": "Source-free comparison of the entire ideal/kernel/submodule formulation to the existing subgroup-of-a-group meaning confirms the additive subgroup is a typed special instance. Link it rather than falsely record a distinct missing meaning, retaining all remaining substantive requirements.",
+      "references": [
+        {
+          "phrase": "left R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.left-module-nonunital"
+        },
+        {
+          "phrase": "subset N of M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "additive group M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "additive subgroup N of M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prereq122.subgroup",
+          "matching_note": "A subgroup of the ambient additive (abelian) group, satisfying the inherited group operation and inverse axioms; the generic subgroup definition is context-appropriate."
+        },
+        {
+          "phrase": "left scalar multiplication r*n",
+          "state": "unassigned",
+          "context": "Operation by a scalar r in R on n in M, with rn required to lie in N."
+        },
+        {
+          "phrase": "restricted module operations",
+          "state": "external",
+          "disposition": "N inherits the ambient module's addition and scalar action rather than defining independent operations."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.subgroup_module_scope.20261022.04",
+      "formulation_id": "form.wave2.cross110.module-linear",
+      "version_sha256": "4d77231e188db1e8de53ff48561413fb10c627b322d30980ebb30de602db6eda",
+      "expected_node_sha256": "9a6b0ea5d8dc94499780e8b012411ff72e0b062c79bda11771e7085fd4213f27",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_mathematical_consistency_review",
+      "review_rationale": "Read additive and scalar-preserving R-linear map between left modules over same associative ring, without requiring the ring to be a field.",
+      "reason": "The source assumes an associative ring only and never stipulates ring unity or the 1m=m module axiom. The original link to unital left modules improperly strengthened its hypotheses; use the preexisting general left-module meaning.",
+      "references": [
+        {
+          "phrase": "associative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "left R-modules M,N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.left-module-nonunital",
+          "matching_note": "The source assumes an associative ring but does not require a specified multiplicative identity or unital module action. Use the general left-module meaning rather than the stricter unital convention."
+        },
+        {
+          "phrase": "map T:M→N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "additive preservation",
+          "state": "unassigned",
+          "context": "For m,m′ in M, T(m+m′)=T(m)+T(m′)."
+        },
+        {
+          "phrase": "R-scalar compatibility",
+          "state": "unassigned",
+          "context": "For each r in R and m in M, T(rm)=rT(m)."
+        },
+        {
+          "phrase": "module linearity does not assume field K",
+          "state": "external",
+          "disposition": "This variant allows general associative rings and is not limited to vector-space transformations."
+        }
+      ]
+    }
+  ]
+}
