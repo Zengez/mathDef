@@ -2,10 +2,63 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.pop141.outer-measure-full",
   "version_sha256": "3b05f7d3ee653a69a010d9fe6d918cec433b804acde6c0195373b73077407196",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "mapping from P(X) into extended nonnegative reals",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.ba0b131f5ddec5fd1c16"
+    },
+    {
+      "phrase": "subset relation A subseteq B",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.b151fbbd3c0966c03ae6"
+    },
+    {
+      "phrase": "nonnegative integers or positive countable sequence indices",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-positive-convention",
+      "occurrence_id": "occ.e386cf9bc6ce97039d3e"
+    },
+    {
+      "phrase": "power set P(X)",
+      "state": "unassigned",
+      "context": "Collection of all subsets of X, domain of the outer-measure function.",
+      "occurrence_id": "occ.f1e60154995fe54986a6"
+    },
+    {
+      "phrase": "extended nonnegative real codomain [0,+infinity]",
+      "state": "unassigned",
+      "context": "Values are real numbers at least zero together with formal +infinity.",
+      "occurrence_id": "occ.ee2c1949b3e8710ace4e"
+    },
+    {
+      "phrase": "empty-set zero mu*(empty)=0",
+      "state": "unassigned",
+      "context": "Normalization of mass of empty subset.",
+      "occurrence_id": "occ.868260ff38a7b39cc0d4"
+    },
+    {
+      "phrase": "monotonicity A subseteq B implies mu*(A)<=mu*(B)",
+      "state": "unassigned",
+      "context": "Outer measure respects set inclusion by nondecreasing assigned size.",
+      "occurrence_id": "occ.572c1df32d46d2f8750e"
+    },
+    {
+      "phrase": "countable subadditivity",
+      "state": "unassigned",
+      "context": "Measure of union of countably many arbitrary subsets is at most sum of individual outer measures.",
+      "occurrence_id": "occ.cddcb6d84ae98383c09e"
+    },
+    {
+      "phrase": "subadditivity not additivity",
+      "state": "external",
+      "disposition": "No measurable-set domain restriction or countable exact-additivity claim imposed.",
+      "occurrence_id": "occ.03fb9ac2331538f7cc02"
+    }
+  ],
+  "snapshot_sha256": "abf803308ab7256e831d6ff87ae85b44a8a1ef034b1e8ee656a74dcbd663274f",
+  "review_rationale": "Reviewed outer measure as extended-nonnegative set function on every subset, with empty-set normalization, inclusion monotonicity and countable subadditivity over arbitrary sequences, not countable additivity."
 }
