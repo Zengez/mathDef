@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-preimages-topology-small-batch-001",
+  "mode": "amend",
+  "research_scope": "Five fully reviewed topological contexts, six occurrences of underlying inverse images and surjectivity. Bounded small-batch transaction after previous large repository read timed out.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.preimages_topology.20261022.01",
+      "formulation_id": "form.27eb121021fd989d.quasicompact-map",
+      "version_sha256": "6259791d5c85b155beab23e954c3bb23e33e71f6c0652957765e75f7fc96329c",
+      "expected_node_sha256": "7d0a99ebb021dbfbab48ffa8b80fc7e42c62c53555fcc134f95405d0c5d5859f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Examined quasi-compactness of a continuous map through quasi-compact inverse-image subspaces and ordinary continuity, retaining inverse-image terminology for subsequent consolidation.",
+      "reason": "Full source-specific contextual review of 'quasicompact map'. Set-theoretic inverse image under a map is the common prerequisite, while topology/continuity/quasi-compactness/surjectivity conditions remain distinct. Matched against the independent inventory with no external source or new meaning.",
+      "references": [
+        {
+          "phrase": "continuous map",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+          "matching_note": "The map is continuous between topological spaces."
+        },
+        {
+          "phrase": "quasi-compact open subset of Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space",
+          "matching_note": "The open subset has the finite-subcover compactness property."
+        },
+        {
+          "phrase": "quasi-compact in X",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space",
+          "matching_note": "The inverse-image subspace is quasi-compact."
+        },
+        {
+          "phrase": "subset of Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+          "matching_note": "An open subset is an ordinary subset of Y."
+        },
+        {
+          "phrase": "inverse image",
+          "state": "missing",
+          "context": "Set theory: preimage or inverse image of subset B⊆Y under an arbitrary function f:X→Y, defined as f^{-1}[B]={x∈X:f(x)∈B}; notation f^{-1}[B] never presupposes that f is invertible. Includes underlying set preimages of open/measurable sets and contractions of prime ideals under ring homomorphisms, where additional structure is a separate condition.",
+          "matching_note": "This is the underlying set preimage; requiring openness, quasi-compactness or spectrality is a separate source condition and not part of the inverse-image operation."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.preimages_topology.20261022.02",
+      "formulation_id": "form.7ee45a1fa46d2b2f.quasiproper-continuous-map",
+      "version_sha256": "63daabab62d587ac7dc6e143bf01ff66f4d7db11286cf9d67bc48d9c11818766",
+      "expected_node_sha256": "bc248ebe761c1138af3aae0c92d5bccdde4ea648da3020b90dc2aff493a53159",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read this quasi-proper convention as inverse images of quasi-compact subsets remaining quasi-compact; does not assert universal closedness or separatedness under other conventions.",
+      "reason": "Full source-specific contextual review of 'quasi-proper continuous map'. Set-theoretic inverse image under a map is the common prerequisite, while topology/continuity/quasi-compactness/surjectivity conditions remain distinct. Matched against the independent inventory with no external source or new meaning.",
+      "references": [
+        {
+          "phrase": "continuous map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "quasi-compact subset of Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space"
+        },
+        {
+          "phrase": "inverse image f^{-1}(K)",
+          "state": "missing",
+          "context": "Set theory: preimage or inverse image of subset B⊆Y under an arbitrary function f:X→Y, defined as f^{-1}[B]={x∈X:f(x)∈B}; notation f^{-1}[B] never presupposes that f is invertible. Includes underlying set preimages of open/measurable sets and contractions of prime ideals under ring homomorphisms, where additional structure is a separate condition.",
+          "matching_note": "This is the underlying set preimage; requiring openness, quasi-compactness or spectrality is a separate source condition and not part of the inverse-image operation."
+        },
+        {
+          "phrase": "every quasi-compact subset",
+          "state": "external",
+          "disposition": "The subset can be non-open, and the requirement is not the same as inverse images of closed sets being closed."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.preimages_topology.20261022.03",
+      "formulation_id": "form.83a528850cdf6a59.submersive-continuous-map",
+      "version_sha256": "1620373fbacadf98c746265b93e795858111ec79dac3aeb43f8185ec7dab2be1",
+      "expected_node_sha256": "cef0e7c364967b54920f4c4838eb84c6da30b85bbc3536354c70a289f1babb7c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read both the quotient-topology statement and inverse-image criterion for the entire submersive map formulation. Surjectivity onto Y is indispensable, unlike strictness merely onto f(X); no open-map requirement is inferred.",
+      "reason": "Full source-specific contextual review of 'submersive map'. Set-theoretic inverse image under a map is the common prerequisite, while topology/continuity/quasi-compactness/surjectivity conditions remain distinct. Matched against the independent inventory with no external source or new meaning.",
+      "references": [
+        {
+          "phrase": "continuous map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "open subsets U⊆Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "context": "Set theory: surjective function f:X→Y whose image is the entire stated codomain Y; for module homomorphisms this is the underlying-set surjectivity of the R-linear map, independent of linearity, free domain, or choice of basis.",
+          "phrase": "surjective continuous map",
+          "state": "missing",
+          "matching_note": "Surjectivity is onto Y, not merely onto f(X); the quotient topology and continuity are separate source conditions."
+        },
+        {
+          "context": "Point-set topology: quotient (final) topology induced by a surjective continuous map q:X→Q, where U⊆Q is open exactly when q^{-1}(U) is open in X; includes canonical quotient-set maps and the map X→f(X) when equipped with final topology, independently of whether a larger codomain Y is surjected onto.",
+          "matching_note": "Identifies the same final-topology construction induced by a surjection onto its specified target; it is distinct from the set quotient, a subspace topology, an open map condition, or global surjectivity onto an unrelated ambient space.",
+          "phrase": "quotient topology on Y for f",
+          "state": "missing"
+        },
+        {
+          "context": "Set theory: preimage or inverse image of subset B⊆Y under an arbitrary function f:X→Y, defined as f^{-1}[B]={x∈X:f(x)∈B}; notation f^{-1}[B] never presupposes that f is invertible. Includes underlying set preimages of open/measurable sets and contractions of prime ideals under ring homomorphisms, where additional structure is a separate condition.",
+          "phrase": "inverse image f^{-1}(U)",
+          "state": "missing",
+          "matching_note": "This is the underlying set preimage; requiring openness, quasi-compactness or spectrality is a separate source condition and not part of the inverse-image operation."
+        },
+        {
+          "disposition": "The biconditional is the quotient-topology test; openness of f as a map is not asserted.",
+          "phrase": "U open iff f^{-1}(U) open",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.preimages_topology.20261022.04",
+      "formulation_id": "form.bcda9860a078827b.quasicompact-morphism-schemes",
+      "version_sha256": "b6e9c28ba60089ecf73e0e4400c307664b3a674d8ffc26e27556acbcead12941",
+      "expected_node_sha256": "da79383beb0bc4a4730e69d16a1e29f8ca489e7d1ddf3734099931974072b07e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed inverse images of all quasi-compact open subsets of S and the equivalent test on affine open subsets. The quasi-compactness is of the preimage, not necessarily of X or of S globally.",
+      "reason": "Full source-specific contextual review of 'quasi-compact morphism of schemes'. Set-theoretic inverse image under a map is the common prerequisite, while topology/continuity/quasi-compactness/surjectivity conditions remain distinct. Matched against the independent inventory with no external source or new meaning.",
+      "references": [
+        {
+          "phrase": "morphism of schemes f:X→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism"
+        },
+        {
+          "phrase": "quasi-compact space",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space"
+        },
+        {
+          "phrase": "affine open subscheme",
+          "state": "existing",
+          "target_meaning_id": "meaning.4c7d59ba7058613b.affine-scheme"
+        },
+        {
+          "phrase": "inverse image f^{-1}(U) for an open U",
+          "state": "missing",
+          "context": "Set theory: preimage or inverse image of subset B⊆Y under an arbitrary function f:X→Y, defined as f^{-1}[B]={x∈X:f(x)∈B}; notation f^{-1}[B] never presupposes that f is invertible. Includes underlying set preimages of open/measurable sets and contractions of prime ideals under ring homomorphisms, where additional structure is a separate condition.",
+          "matching_note": "This is the underlying set preimage; requiring openness, quasi-compactness or spectrality is a separate source condition and not part of the inverse-image operation."
+        },
+        {
+          "phrase": "suffices to test affine opens of S",
+          "state": "external",
+          "disposition": "Affine opens give a local base for this quasi-compactness condition; do not assume every open is affine."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.preimages_topology.20261022.05",
+      "formulation_id": "form.d7087bb79cf848fa.spectral-continuous-map",
+      "version_sha256": "86c5961ab15105c13a6dbfa238eb775427917c916550cc9a137bd1065ff0db8d",
+      "expected_node_sha256": "4d93f3777f46b3333b82c3632fa3a84a8cc8cd508b759bf1ee36e917ebb981b6",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the continuous map between two spectral spaces and the specific quasi-compact-open inverse-image preservation property. The general quasicompact map definition has this same predicate but not the spectral domain and codomain requirements.",
+      "reason": "Full source-specific contextual review of 'spectral map'. Set-theoretic inverse image under a map is the common prerequisite, while topology/continuity/quasi-compactness/surjectivity conditions remain distinct. Matched against the independent inventory with no external source or new meaning.",
+      "references": [
+        {
+          "phrase": "continuous map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "spectral source and target X,Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.d7087bb79cf848fa.spectral-topological-space"
+        },
+        {
+          "phrase": "quasi-compact open subsets of Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space"
+        },
+        {
+          "phrase": "quasicompact-map inverse-image condition",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-map"
+        },
+        {
+          "phrase": "inverse image of each quasi-compact open subset",
+          "state": "missing",
+          "context": "Set theory: preimage or inverse image of subset B⊆Y under an arbitrary function f:X→Y, defined as f^{-1}[B]={x∈X:f(x)∈B}; notation f^{-1}[B] never presupposes that f is invertible. Includes underlying set preimages of open/measurable sets and contractions of prime ideals under ring homomorphisms, where additional structure is a separate condition.",
+          "matching_note": "This is the underlying set preimage; requiring openness, quasi-compactness or spectrality is a separate source condition and not part of the inverse-image operation."
+        },
+        {
+          "phrase": "spectral map versus general quasi-compact map",
+          "state": "external",
+          "disposition": "The inverse-image criterion is reused; being a spectral map additionally assumes spectral spaces on both sides."
+        }
+      ]
+    }
+  ]
+}
