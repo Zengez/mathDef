@@ -2,40 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.cross107.module-linear-kernel",
   "version_sha256": "a644a068bf3f3dcf8953c600487e36639e6a41962993ae8d9027ce13bf670f73",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "kernel",
-      "span": [
-        90,
-        96
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation13.abelian-group-homomorphism-kernel",
-        "meaning.wave2.foundation13.preadditive-category-kernel"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.c5c3e065eadd2cf33143"
+      "phrase": "left R-modules M,N",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.4a1d14c39fab76d44c46"
     },
     {
-      "phrase": "group",
-      "span": [
-        175,
-        180
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.6890b470f8d199e4f730"
+      "phrase": "R-linear map phi:M→N",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.module-linear",
+      "occurrence_id": "occ.568dd5931da7e40abc0a"
+    },
+    {
+      "phrase": "additive-group identity of N",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "occurrence_id": "occ.0abedc9930158fe11634"
+    },
+    {
+      "phrase": "kernel phi^{-1}({0_N})",
+      "state": "unassigned",
+      "context": "Elements m∈M such that phi(m)=0_N, a submodule of M.",
+      "occurrence_id": "occ.98ce11fb67ac208564b7"
+    },
+    {
+      "phrase": "module kernel not restricted to fields",
+      "state": "external",
+      "disposition": "Domain ring need only be associative under this formulation, distinct from vector-space kernel context.",
+      "occurrence_id": "occ.7887f1d68dc362b26a93"
     }
   ],
-  "snapshot_sha256": "8d7704f2877737a5529ff635133c972cd6248e1c859f0642631ce616dc162f6d",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "7851091c3e8308b76c7ebf8fa76a3a09d817e96377596802edef2a1510f3f7b5",
+  "review_rationale": "Read kernel of R-linear map of left modules as preimage of additive zero element of target N, preserving noncommutative ring/module context."
 }

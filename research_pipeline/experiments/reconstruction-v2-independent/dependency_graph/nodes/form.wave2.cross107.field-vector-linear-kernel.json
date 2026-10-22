@@ -2,41 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.cross107.field-vector-linear-kernel",
   "version_sha256": "ee3ae0d469435c5a90e9eb15b0bbbf990cebfe82e3b9af2338b23106a727fa76",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "linear transformation",
-      "span": [
-        52,
-        73
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.cross110.field-vector-linear",
-        "meaning.wave2.cross110.module-linear"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.7c3c5b8e2da5c3c38a75"
+      "phrase": "vector spaces V,W over common field",
+      "state": "existing",
+      "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "occurrence_id": "occ.680d1c194bba0a31ed34"
     },
     {
-      "phrase": "kernel",
-      "span": [
-        85,
-        91
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation13.abelian-group-homomorphism-kernel",
-        "meaning.wave2.foundation13.preadditive-category-kernel"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.8cfe5e8594c1af91c5c3"
+      "phrase": "K-linear transformation T",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.field-vector-linear",
+      "occurrence_id": "occ.7de6dff6dd35d5d9108b"
+    },
+    {
+      "phrase": "inverse image of singleton",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.edcb18d85bbcf4fa40c2"
+    },
+    {
+      "phrase": "zero vector 0_W",
+      "state": "unassigned",
+      "context": "Additive identity of target vector space W.",
+      "occurrence_id": "occ.643c41e491fd705bb955"
+    },
+    {
+      "phrase": "kernel subspace of V",
+      "state": "unassigned",
+      "context": "Set of v∈V mapped to target zero vector under linear transformation T.",
+      "occurrence_id": "occ.2a6c8e31c24a4283a05e"
+    },
+    {
+      "phrase": "kernel belongs to domain V",
+      "state": "external",
+      "disposition": "The preimage uses target zero but is a subset of source V.",
+      "occurrence_id": "occ.863324e53eac4abfeafb"
     }
   ],
-  "snapshot_sha256": "4eced6c4fad913121c164b3280577ea1edfb5f64aeed56039a56ad752e19c8e9",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "afd3fb8ffab57f9baf4c9b8d5f64d29021db525000bbb229f09a1f0e8b0b7b92",
+  "review_rationale": "Read kernel of K-linear transformation as inverse image of zero vector in W, an additive subspace of source V rather than target W."
 }
