@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.bcda9860a078827b.quasicompact-morphism-schemes",
   "version_sha256": "b6e9c28ba60089ecf73e0e4400c307664b3a674d8ffc26e27556acbcead12941",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        93,
-        99
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.4dcd69d4e6bb7e6ce7b3"
+      "phrase": "morphism of schemes f:X→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "occurrence_id": "occ.efbe6a2d0993b7f431df"
+    },
+    {
+      "phrase": "quasi-compact space",
+      "state": "existing",
+      "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space",
+      "occurrence_id": "occ.9d027948e47fd81ea076"
+    },
+    {
+      "phrase": "affine open subscheme",
+      "state": "existing",
+      "target_meaning_id": "meaning.4c7d59ba7058613b.affine-scheme",
+      "occurrence_id": "occ.2f9b5e07ffe993a53c0f"
+    },
+    {
+      "phrase": "inverse image f^{-1}(U) for an open U",
+      "state": "unassigned",
+      "context": "Topology: inverse image of open subset under continuous underlying scheme map",
+      "occurrence_id": "occ.58f58199e18fd223211a"
+    },
+    {
+      "phrase": "suffices to test affine opens of S",
+      "state": "external",
+      "disposition": "Affine opens give a local base for this quasi-compactness condition; do not assume every open is affine.",
+      "occurrence_id": "occ.4a1588260487110f39f1"
     }
   ],
-  "snapshot_sha256": "c345bee2788f22d4d051e52b0d18fda11f3b4bfd4bd6aa27174fa9c9a6a9e8be",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "44ea4995450b94b21a8c36e5aa1fd6cb8dc011884df0c0ff40e45b7fa5dece46",
+  "review_rationale": "Reviewed inverse images of all quasi-compact open subsets of S and the equivalent test on affine open subsets. The quasi-compactness is of the preimage, not necessarily of X or of S globally."
 }

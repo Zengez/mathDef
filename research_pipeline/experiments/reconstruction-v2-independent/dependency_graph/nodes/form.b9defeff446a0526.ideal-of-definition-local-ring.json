@@ -2,23 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.b9defeff446a0526.ideal-of-definition-local-ring",
   "version_sha256": "3fb9913ad250771266c5b4cc520056fed2ce4032b1659f4afab34ee40a408a50",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "local ring",
-      "span": [
-        17,
-        27
-      ],
+      "phrase": "Noetherian local ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
+      "occurrence_id": "occ.7bbb2635b3c47c50a97e"
+    },
+    {
+      "phrase": "local ring with maximal ideal m",
       "state": "existing",
       "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.b562ab14a12d1370aee5"
+      "occurrence_id": "occ.3cb2521b6e11a8b66205"
+    },
+    {
+      "phrase": "ideal I of R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.9e1a5a8eb89b67c09a26"
+    },
+    {
+      "phrase": "radical of an ideal I",
+      "state": "unassigned",
+      "context": "Commutative algebra: ideal radical consisting of elements with a positive power in I",
+      "occurrence_id": "occ.af8528ec8ee6f4e5b8d2"
+    },
+    {
+      "phrase": "m-primary ideal",
+      "state": "unassigned",
+      "context": "Commutative algebra: primary ideal with radical equal to maximal ideal m",
+      "occurrence_id": "occ.d00efea315321d2e7c59"
+    },
+    {
+      "phrase": "equivalently",
+      "state": "external",
+      "disposition": "The two criteria refer to the same ideal I, without claiming every proper ideal has radical m.",
+      "occurrence_id": "occ.cff5237fcdcd9b8335b4"
     }
   ],
-  "snapshot_sha256": "31b3c669e212f169c6a56a1f7e3683f9e9e1691a3eb778bb78c45a2c8acf7009",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "be665365fb84ba6962690df2323b64d5ec841aafcbaa2772902db81158fe6639",
+  "review_rationale": "Read the equivalence radical(I)=m and m-primary for an ideal in a Noetherian local ring. Preserved the radical and primary-ideal notions as contextual unassigned references and did not confuse an ideal of definition with an arbitrary m-contained ideal."
 }

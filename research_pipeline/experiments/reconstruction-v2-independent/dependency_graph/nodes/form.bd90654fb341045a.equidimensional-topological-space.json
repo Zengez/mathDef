@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.bd90654fb341045a.equidimensional-topological-space",
   "version_sha256": "ea6d08417cc906979bafdd57e8221b8125ad3e4754033051d1e9cd24c22f38dc",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.0a9fd2066383b344af98"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.982d0a624d731d581ad7"
+    },
+    {
+      "phrase": "irreducible components",
+      "state": "existing",
+      "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-component",
+      "occurrence_id": "occ.6225ffd5c338af28e6f9"
+    },
+    {
+      "phrase": "Krull dimension of a topological space",
+      "state": "existing",
+      "target_meaning_id": "meaning.bd90654fb341045a.krull-dimension-space",
+      "occurrence_id": "occ.c6fc174c18db371d1b8d"
+    },
+    {
+      "phrase": "all components have equal dimension",
+      "state": "external",
+      "disposition": "The quantifier ranges over irreducible components, not all closed subsets or arbitrary neighbourhoods.",
+      "occurrence_id": "occ.59f1f5b0f1fb5544a24f"
     }
   ],
-  "snapshot_sha256": "05db7d840addc67a0f75b66f8dfa52db675aa3310ebc6057c703511001e1aa76",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "88c784b7214224af1b6bed4591f72dc9130a8512dd8a734da458d40da1ee74c3",
+  "review_rationale": "Read the equality of Krull dimensions of all irreducible components, distinguishing dimensions of irreducible components from equality of local dimensions at all points."
 }

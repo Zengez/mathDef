@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.bd90654fb341045a.krull-dimension-space",
   "version_sha256": "975b64fa93c0e29173cea47977232983976ca7cebb9817bcbd9491cf088b4518",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        25,
-        42
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.d21cc748d5c94742e0e9"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.635ed7cd37a603a27236"
+    },
+    {
+      "phrase": "irreducible closed subset",
+      "state": "existing",
+      "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-topological-space",
+      "occurrence_id": "occ.b6b58eff4071fad2af6f"
+    },
+    {
+      "phrase": "strict finite chain of irreducible closed subsets",
+      "state": "unassigned",
+      "context": "Order theory and topology: inclusion chain of distinct irreducible closed subspaces with integer length",
+      "occurrence_id": "occ.0ddc4dad0bcdc240d082"
+    },
+    {
+      "phrase": "supremum and dimension −∞ for empty space",
+      "state": "external",
+      "disposition": "The dimension is a supremum of finite chain lengths with a separate convention for the empty space, not a maximum guaranteed to exist.",
+      "occurrence_id": "occ.a46a957050e9cc1c9af5"
     }
   ],
-  "snapshot_sha256": "93b33814bb116a3cf786469d4809e31d9b2798bdc32fca77f6750d380833b355",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "886d907b99879b707d1f57bd5ea0feb207a62c8a68552a21dfe9af48535dd8ae",
+  "review_rationale": "Examined supremum over lengths of strict finite chains of irreducible closed subsets and the special empty-space dimension convention. The chain entries need not be irreducible components."
 }
