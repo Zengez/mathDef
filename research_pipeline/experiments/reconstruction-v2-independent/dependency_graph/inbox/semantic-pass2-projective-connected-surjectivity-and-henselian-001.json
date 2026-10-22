@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-projective-connected-surjectivity-and-henselian-001",
+  "mode": "amend",
+  "research_scope": "Three small source-context-reviewed formulations: underlying function onto property and distinct monic/simple root properties, without merging root multiplicities or source-specific map structure.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.surj_monic_simple.20261022.01",
+      "formulation_id": "form.fc44c63c239e5c20.projective-module-hom",
+      "version_sha256": "b105e13148bf3b64dc81d035e902dd836c84d78f93c932a4378b9967d998c95a",
+      "expected_node_sha256": "93c96f7655e79d4c5fcc764bc2d743a419dd58a3eba932f7cb74b1e7d1bde2c9",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read projectivity of a module through exactness of covariant Hom_R(P,−) and the equivalent lifting criterion against every surjective module map, not just a single lifting diagram.",
+      "reason": "Reviewed the complete original formulation 'projective module' and the independent meaning corpus. Separated the ordinary onto-map predicate from structure and identified monic polynomial and simple-root prerequisites in their correct coefficient ring/residue field contexts. All remaining source references and mathematical qualifiers are preserved.",
+      "references": [
+        {
+          "phrase": "R-module P",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "R-linear module homomorphisms",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear"
+        },
+        {
+          "phrase": "Hom_R(P,−)",
+          "state": "existing",
+          "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module"
+        },
+        {
+          "phrase": "exactness",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category"
+        },
+        {
+          "phrase": "covariant Hom functor",
+          "state": "unassigned",
+          "context": "Functor mapping N to Hom_R(P,N) and morphisms g to post-composition with g."
+        },
+        {
+          "phrase": "surjective module homomorphism M→N",
+          "state": "missing",
+          "context": "Set theory: surjective function f:X→Y whose image is the entire stated codomain Y; for module homomorphisms this is the underlying-set surjectivity of the R-linear map, independent of linearity, free domain, or choice of basis.",
+          "matching_note": "The structured map is surjective on underlying sets. Module linearity or topological continuity and discrete two-point codomain are additional requirements."
+        },
+        {
+          "phrase": "lifting P→M across M→N",
+          "state": "unassigned",
+          "context": "For every map P→N and surjection M→N, there exists a map P→M whose composite is original P→N."
+        },
+        {
+          "phrase": "exactness and lifting equivalence",
+          "state": "external",
+          "disposition": "A pair of equivalent projectivity criteria; this is not the weaker property of being finitely generated."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.surj_monic_simple.20261022.02",
+      "formulation_id": "form.93aaac46cdf41116.henselian-local-ring",
+      "version_sha256": "19e1cfd0c47979b5181fe9a179638e9d43c7ff0cbe8f20b681b47ce5b3cfcb1c",
+      "expected_node_sha256": "82fd64d6f8191440f89e0228143bf2e523ac53ad6ebb99447e21ba1fde0e0c4e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the exact simple-root lifting condition: a root of the reduced monic polynomial mod maximal ideal lifts to R with the same residue. A simple root is not an arbitrary zero and polynomial monicity is a substantive hypothesis.",
+      "reason": "Reviewed the complete original formulation 'Henselian local ring' and the independent meaning corpus. Separated the ordinary onto-map predicate from structure and identified monic polynomial and simple-root prerequisites in their correct coefficient ring/residue field contexts. All remaining source references and mathematical qualifiers are preserved.",
+      "references": [
+        {
+          "phrase": "local ring (R,m)",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "maximal ideal m",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-maximal-ideal"
+        },
+        {
+          "context": "Commutative algebra and algebraic geometry: residue field A/m of a commutative local ring (A,m), including the prime-localized κ(p)=R_p/pR_p and the scheme-point κ(s)=O_{S,s}/m_s.",
+          "matching_note": "Original phrase 'residue field κ=R/m' denotes quotient by the maximal ideal of a local ring, including the localized-at-prime and scheme-stalk cases; not an arbitrary extension field.",
+          "phrase": "residue field of a local ring",
+          "state": "missing"
+        },
+        {
+          "context": "Polynomial algebra: a nonzero univariate polynomial f(X)=a_nX^n+⋯+a_0 over a commutative unital coefficient ring is monic if its leading coefficient a_n equals the multiplicative identity 1, including degree zero unit polynomial 1.",
+          "phrase": "monic polynomial f∈R[T]",
+          "state": "missing",
+          "matching_note": "The leading polynomial coefficient is the multiplicative identity; residue field and Hensel lifting properties remain distinct."
+        },
+        {
+          "context": "Polynomial algebra over a field: a simple root α of f in a field extension means f(α)=0 and f'(α)≠0, equivalently (x−α)^2 does not divide f over that extension field. For reduction modulo a maximal ideal the root and derivative are taken in the residue field.",
+          "phrase": "simple zero of reduced polynomial f-bar over κ",
+          "state": "missing",
+          "matching_note": "The reduction polynomial has derivative nonzero at its root in the residue field, making it simple rather than repeated."
+        },
+        {
+          "context": "Henselian algebra: element a∈R reducing modulo m to a-bar and satisfying f(a)=0",
+          "phrase": "lifting a residue field root to R",
+          "state": "unassigned"
+        },
+        {
+          "disposition": "The quantifiers range over all eligible pairs; multiple roots in κ are not covered by this simple-root criterion.",
+          "phrase": "every monic polynomial and every simple zero",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.surj_monic_simple.20261022.03",
+      "formulation_id": "form.wave2.variant71.connected.03",
+      "version_sha256": "d51be616bc26018912d4cb4a65710c9f4aa0ec7c42be77d328655571f8fdc206",
+      "expected_node_sha256": "2432702d9c5326a079d00a28be859afedcad93cbb8da8f94991fb753343f3f2a",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed connectedness as absence of continuous surjection onto nonempty discrete two-point space, using genuine topological continuity and surjectivity on exactly two elements.",
+      "reason": "Reviewed the complete original formulation 'connected space' and the independent meaning corpus. Separated the ordinary onto-map predicate from structure and identified monic polynomial and simple-root prerequisites in their correct coefficient ring/residue field contexts. All remaining source references and mathematical qualifiers are preserved.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "continuous map",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "discrete topology on two-element space",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.discrete-topology"
+        },
+        {
+          "phrase": "two-element discrete target {0,1}",
+          "state": "unassigned",
+          "context": "Set of exactly two distinct elements, all of whose subsets are open."
+        },
+        {
+          "phrase": "surjective mapping from X onto two points",
+          "state": "missing",
+          "context": "Set theory: surjective function f:X→Y whose image is the entire stated codomain Y; for module homomorphisms this is the underlying-set surjectivity of the R-linear map, independent of linearity, free domain, or choice of basis.",
+          "matching_note": "The structured map is surjective on underlying sets. Module linearity or topological continuity and discrete two-point codomain are additional requirements."
+        },
+        {
+          "phrase": "no continuous surjection",
+          "state": "unassigned",
+          "context": "There does not exist a mapping satisfying both continuity and surjectivity onto specified target."
+        },
+        {
+          "phrase": "empty space convention retained",
+          "state": "external",
+          "disposition": "Empty X has no surjection onto nonempty two-element target, hence satisfies this connectedness criterion."
+        }
+      ]
+    }
+  ]
+}
