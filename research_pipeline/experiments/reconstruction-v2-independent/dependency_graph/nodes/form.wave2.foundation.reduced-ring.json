@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.reduced-ring",
   "version_sha256": "988e8049bde64a631cb2d68c1a60aca6a717c2f87664a263ba01a2645c9a48d8",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        69,
-        76
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.9266f8773d595dcaa6e2"
+      "phrase": "associative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.74473e177924509c9991"
+    },
+    {
+      "phrase": "nilpotent element r",
+      "state": "unassigned",
+      "context": "Some positive integer n has r^n=0.",
+      "occurrence_id": "occ.6b31cbdd3c20907f1b1d"
+    },
+    {
+      "phrase": "reduced nilpotent condition",
+      "state": "unassigned",
+      "context": "For every r and positive n, r^n=0 implies r=0.",
+      "occurrence_id": "occ.009e99e9226df284800f"
+    },
+    {
+      "phrase": "reduced not integral domain",
+      "state": "external",
+      "disposition": "Reduced rings may contain nonzero zero divisors; lack of nilpotents is weaker than domain condition.",
+      "occurrence_id": "occ.9f31f600c395c51b9f82"
     }
   ],
-  "snapshot_sha256": "fa7be2e7b36511ccacb2db490a0ed91550af2e799a5b285f3df15310998d0284",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "4dd7e39f3086a3facbd11efef42147c68c3cf483ea202e62ad00559743a04f38",
+  "review_rationale": "Read reduced associative ring through nonexistence of nonzero nilpotent elements, quantified over positive exponents and all elements."
 }

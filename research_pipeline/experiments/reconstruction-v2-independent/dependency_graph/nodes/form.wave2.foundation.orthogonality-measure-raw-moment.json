@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.orthogonality-measure-raw-moment",
   "version_sha256": "9513dcafdb98c01ab292d560fd81f20359d3e78ee36ddb53f7f621e131c51351",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        111,
-        118
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.05a746e3772144f80795"
+      "phrase": "nonnegative measure μ",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.nonnegative-measure",
+      "occurrence_id": "occ.9fac9b0959ee0903acf4"
+    },
+    {
+      "phrase": "nonnegative integer n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.9f177159201b5e2cafc7"
+    },
+    {
+      "phrase": "Borel sigma algebra",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.alternative39.borel-sigma-algebra-topological",
+      "occurrence_id": "occ.b2ae5282a5f6f6ac7495"
+    },
+    {
+      "phrase": "Lebesgue–Stieltjes integral of x^n",
+      "state": "unassigned",
+      "context": "Integral with respect to measure μ over real interval (a,b).",
+      "occurrence_id": "occ.bce4cd3b20687f5ea4a9"
+    },
+    {
+      "phrase": "μ-integrability of power function",
+      "state": "unassigned",
+      "context": "Function x↦x^n is integrable with respect to μ, normally requiring finite integral of absolute value.",
+      "occurrence_id": "occ.39e1936320e1b3656c1a"
+    },
+    {
+      "phrase": "raw moment versus centered moment",
+      "state": "external",
+      "disposition": "Integrand is x^n rather than (x−mean)^n.",
+      "occurrence_id": "occ.76b6491e3cdcc59ab017"
     }
   ],
-  "snapshot_sha256": "ab397837d225d82c5e8b1ec89cf3e35b1560ac921e89805e5f9259ae6b94ecf8",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "0728697e22ee63c3b9633ab4b4a7e912243513647f9bcdfa6ba293ea02c19e99",
+  "review_rationale": "Read nth raw moment of nonnegative Borel or Lebesgue–Stieltjes measure as integral of x^n over real interval, conditioned on integrability; distinguish from centered moments."
 }

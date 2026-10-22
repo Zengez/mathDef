@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.regular-noetherian-ring",
   "version_sha256": "0091678cfc774cdc5154fce989f51918f0455b5671ed7f4d2d9d8cad1e555223",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "local ring",
-      "span": [
-        63,
-        73
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.e885e5783b207340564b"
+      "phrase": "Noetherian commutative ring",
+      "state": "existing",
+      "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
+      "occurrence_id": "occ.af5a912c7617e603ff1c"
+    },
+    {
+      "phrase": "prime ideal",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "occurrence_id": "occ.9e15d99ab6d8d24bc70e"
+    },
+    {
+      "phrase": "localized ring R_p",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+      "occurrence_id": "occ.e812d98fdb027d6ede23"
+    },
+    {
+      "phrase": "regular local ring",
+      "state": "existing",
+      "target_meaning_id": "meaning.14c44fee62bf6075.regular-local-ring",
+      "occurrence_id": "occ.6cc1f5fbf28d76155319"
+    },
+    {
+      "phrase": "every prime localization",
+      "state": "external",
+      "disposition": "Regularity quantified over all prime ideals, not only maximal ideals in the source text.",
+      "occurrence_id": "occ.38aab446e31408ad9458"
     }
   ],
-  "snapshot_sha256": "d547a8e8c6401c789abb154e4f56fa6330f5da595929f544da069ab8198aa95f",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "4710c7095712ecd51bf27af2f4a2a2cbde6f26a12b5083b30f1183348163eda7",
+  "review_rationale": "Read globally regular Noetherian commutative ring by requiring every localization at prime ideal to be a regular local ring."
 }
