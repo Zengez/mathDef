@@ -2,23 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.c31e56dc023fcbcc.scheme-fibre-product",
   "version_sha256": "2025fe6ebf5de3a3041ebdd6f169201436dfbceacea2c84e2c65daba7b6f55a5",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "scheme",
-      "span": [
-        63,
-        69
-      ],
+      "phrase": "schemes X, Y, S",
       "state": "existing",
       "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.2d17a3ed0e9dfc17a5e4"
+      "occurrence_id": "occ.c68e54a5334460e55757"
+    },
+    {
+      "phrase": "scheme morphisms X→S and Y→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "occurrence_id": "occ.f8951222b67672febc79"
+    },
+    {
+      "phrase": "categorical fibre product or pullback",
+      "state": "existing",
+      "target_meaning_id": "meaning.be14669c52f30e79.categorical-fibre-product",
+      "occurrence_id": "occ.56c85e438639081e8442"
+    },
+    {
+      "phrase": "universal property of scheme fibre product",
+      "state": "existing",
+      "target_meaning_id": "meaning.bd914b941fe03a76.scheme-fibre-product-universal",
+      "occurrence_id": "occ.d4a587453f9090ebf4e0"
+    },
+    {
+      "phrase": "commuting projection arrows X×_S Y→X and X×_S Y→Y",
+      "state": "unassigned",
+      "context": "The projection cone consists of scheme morphisms whose composites with X→S and Y→S agree",
+      "occurrence_id": "occ.c6bafde45310ff2de323"
+    },
+    {
+      "phrase": "compatible morphisms from an arbitrary test scheme",
+      "state": "unassigned",
+      "context": "Maps T→X and T→Y with equal composites into S, uniquely factoring through the pullback object",
+      "occurrence_id": "occ.a68a015ed12b136d4ee1"
     }
   ],
-  "snapshot_sha256": "26805ba25d81a14dbab5ce0fb4013e5a902ef8a19b687d3db5439b679c80b546",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "e8439c305ef099f34e557dec3d27797f678b9bbeca0605b51919cbf269ca632e",
+  "review_rationale": "Read the entire scheme fibre-product universal property with morphisms over S, the scheme object, commuting projections and the unique compatible mediating morphism. Distinguished scheme pullback from merely set-theoretic products."
 }
