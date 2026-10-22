@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046q",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.foundation.monoid",
+      "version_sha256": "57d2bad7e36493a880012f06405bafb1509c035d6e4a9fabbfc4504b731b81b9",
+      "complete": true,
+      "review_rationale": "Read monoid as set with internal associative binary operation and two-sided identity, without inverse axioms; distinct from group.",
+      "references": [
+        {
+          "phrase": "internal binary operation",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.binary-operation-internal"
+        },
+        {
+          "phrase": "associativity of monoid product",
+          "state": "unassigned",
+          "context": "For all a,b,c∈M, (a star b) star c equals a star (b star c)."
+        },
+        {
+          "phrase": "two-sided identity e∈M",
+          "state": "unassigned",
+          "context": "There exists e such that e star a=a=a star e for all a∈M."
+        },
+        {
+          "phrase": "no inverses required",
+          "state": "external",
+          "disposition": "A monoid need not be a group; all group elements have inverses, monoid elements may not."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.nonnegative-measure",
+      "version_sha256": "6372ae846af6b6b64fdf276bf8c108a2fe5c649990e3c107eadba6df8714eead",
+      "complete": true,
+      "review_rationale": "Read nonnegative extended-valued measure on sigma-algebra with empty-set zero and countable additivity over disjoint measurable sequences.",
+      "references": [
+        {
+          "phrase": "sigma algebra Sigma",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.sigma-algebra"
+        },
+        {
+          "phrase": "mapping μ:Sigma→[0,+infty]",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "extended nonnegative real values",
+          "state": "unassigned",
+          "context": "Allowed measure values are finite nonnegative real numbers or +∞."
+        },
+        {
+          "phrase": "μ(empty)=0",
+          "state": "unassigned",
+          "context": "Empty measurable set assigned zero mass."
+        },
+        {
+          "phrase": "countable additivity for disjoint sequence",
+          "state": "unassigned",
+          "context": "For any pairwise disjoint E_n in Sigma, μ(union E_n)=sum μ(E_n)."
+        },
+        {
+          "phrase": "not merely finite additivity",
+          "state": "external",
+          "disposition": "Countable disjoint unions are required; total mass μ(X) need not be one."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.nonzero-polynomial-degree",
+      "version_sha256": "93eb2d5d2bb6f8fd708d3c4000d8a212a1f58afc0854dc5b68280c1470694d81",
+      "complete": true,
+      "review_rationale": "Read finite degree of nonzero univariate polynomial over commutative unital ring as largest index with nonzero coefficient, excluding zero polynomial finite degree.",
+      "references": [
+        {
+          "phrase": "nonnegative integer exponent k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "univariate polynomial P∈R[X]",
+          "state": "unassigned",
+          "context": "Finite formal sum of monomial coefficients a_k times indeterminate X^k over commutative ring R."
+        },
+        {
+          "phrase": "largest nonzero coefficient index",
+          "state": "unassigned",
+          "context": "Maximum k≥0 for which a_k≠0_R."
+        },
+        {
+          "phrase": "zero polynomial finite degree excluded",
+          "state": "external",
+          "disposition": "No finite degree is assigned to identically zero polynomial under this convention."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.ordered-pair-kuratowski",
+      "version_sha256": "7259eb35d3519093ad4133b25216b85dd90b709ec9f323669b6c371ac6033aa4",
+      "complete": true,
+      "review_rationale": "Read Kuratowski ordered pair representation as nested set {{a},{a,b}} and its coordinate equality characterization for arbitrary sets.",
+      "references": [
+        {
+          "phrase": "subset and set construction",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "singleton {a} and unordered pair {a,b}",
+          "state": "unassigned",
+          "context": "Basic finite sets assembled from the two input sets/elements."
+        },
+        {
+          "phrase": "nested pair {{a},{a,b}}",
+          "state": "unassigned",
+          "context": "Kuratowski set construction representing ordered pair (a,b)."
+        },
+        {
+          "phrase": "componentwise equality criterion",
+          "state": "unassigned",
+          "context": "Equality of represented pairs iff first coordinates match and second coordinates match."
+        },
+        {
+          "phrase": "ordered pair differs from unordered pair",
+          "state": "external",
+          "disposition": "Nested representation preserves coordinate order, even when values differ."
+        }
+      ]
+    }
+  ]
+}
