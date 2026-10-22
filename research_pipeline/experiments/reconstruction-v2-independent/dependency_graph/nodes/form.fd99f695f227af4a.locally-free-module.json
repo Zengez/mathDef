@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.fd99f695f227af4a.locally-free-module",
   "version_sha256": "c54b0729cea02a4280ab01db9eab241c47212b28e848210e986ecec4cdbfb1d0",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.ed58ff1fb53bccc4d058"
+    },
+    {
+      "phrase": "Spec(R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.922f7bd7436005cab177"
+    },
+    {
+      "phrase": "module localization M_{f_i}",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set",
+      "occurrence_id": "occ.a798674369abb57161d0"
+    },
+    {
+      "phrase": "ring localization R_{f_i}",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+      "occurrence_id": "occ.035109749f418e074641"
+    },
+    {
+      "phrase": "cover of Spec(R) by standard opens D(f_i)",
+      "state": "unassigned",
+      "context": "Every prime ideal fails to contain at least one f_i; basic opens form a cover.",
+      "occurrence_id": "occ.4b755a4864eda742007a"
+    },
+    {
+      "phrase": "free R_{f_i}-module",
+      "state": "unassigned",
+      "context": "Localized module admits a basis over the localized ring; rank need not be finite in this definition.",
+      "occurrence_id": "occ.f79780e34efe6c19129b"
+    },
+    {
+      "phrase": "locally free need not be finite locally free",
+      "state": "external",
+      "disposition": "No finite-rank condition appears in the local freeness statement.",
+      "occurrence_id": "occ.ad3720ac1756175806cf"
+    }
+  ],
+  "snapshot_sha256": "eba48bd055e9bacf2e118b75505bc2e4d9c2ad39256fd80dc9a985d1d2695585",
+  "review_rationale": "Read local freeness of an R-module on basic Zariski open cover, with module and ring localization and free modules of possibly infinite and variable rank."
 }
