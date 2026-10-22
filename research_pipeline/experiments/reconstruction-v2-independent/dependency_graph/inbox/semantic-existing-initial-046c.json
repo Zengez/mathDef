@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046c",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.cross107.derivative-function-open-interval",
+      "version_sha256": "68ee067f29e00533ae8e7cf769944eac028c4addf92373b66c6e0e9e8ed874b3",
+      "complete": true,
+      "review_rationale": "Read derivative as entire real-valued function assigned pointwise to differentiable f on an open interval, using punctured difference-quotient limits and domain restrictions.",
+      "references": [
+        {
+          "phrase": "derivative at interior point",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis.real-derivative-point"
+        },
+        {
+          "phrase": "finite real limit",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis.real-limit-punctured-epsilon-delta"
+        },
+        {
+          "phrase": "real function f:I→R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "differentiable at every point of I",
+          "state": "unassigned",
+          "context": "For each x inside open interval I, finite difference-quotient limit exists."
+        },
+        {
+          "phrase": "derivative function f′:I→R",
+          "state": "unassigned",
+          "context": "Map assigning to every x the derivative limit lim_{h→0}(f(x+h)−f(x))/h for nonzero h with x+h∈I."
+        },
+        {
+          "phrase": "derivative function distinct from derivative at one point",
+          "state": "external",
+          "disposition": "The domain of f′ consists of every point in I and presupposes differentiability at each."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.cross107.field-vector-linear-kernel",
+      "version_sha256": "ee3ae0d469435c5a90e9eb15b0bbbf990cebfe82e3b9af2338b23106a727fa76",
+      "complete": true,
+      "review_rationale": "Read kernel of K-linear transformation as inverse image of zero vector in W, an additive subspace of source V rather than target W.",
+      "references": [
+        {
+          "phrase": "vector spaces V,W over common field",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field"
+        },
+        {
+          "phrase": "K-linear transformation T",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.field-vector-linear"
+        },
+        {
+          "phrase": "inverse image of singleton",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "zero vector 0_W",
+          "state": "unassigned",
+          "context": "Additive identity of target vector space W."
+        },
+        {
+          "phrase": "kernel subspace of V",
+          "state": "unassigned",
+          "context": "Set of v∈V mapped to target zero vector under linear transformation T."
+        },
+        {
+          "phrase": "kernel belongs to domain V",
+          "state": "external",
+          "disposition": "The preimage uses target zero but is a subset of source V."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.cross107.module-linear-kernel",
+      "version_sha256": "a644a068bf3f3dcf8953c600487e36639e6a41962993ae8d9027ce13bf670f73",
+      "complete": true,
+      "review_rationale": "Read kernel of R-linear map of left modules as preimage of additive zero element of target N, preserving noncommutative ring/module context.",
+      "references": [
+        {
+          "phrase": "left R-modules M,N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "R-linear map phi:M→N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear"
+        },
+        {
+          "phrase": "additive-group identity of N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "kernel phi^{-1}({0_N})",
+          "state": "unassigned",
+          "context": "Elements m∈M such that phi(m)=0_N, a submodule of M."
+        },
+        {
+          "phrase": "module kernel not restricted to fields",
+          "state": "external",
+          "disposition": "Domain ring need only be associative under this formulation, distinct from vector-space kernel context."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.cross107.topological-boundary.1",
+      "version_sha256": "30f0136ae790cf0a5a250c9124884edc3fd22338bb7d1fd5da939970596c49e5",
+      "complete": true,
+      "review_rationale": "Read topological boundary of A in fixed ambient X as closure minus interior, tracking ambient-relative topology and operations.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "closure cl_X(A)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross107.topological-closure"
+        },
+        {
+          "phrase": "interior int_X(A)",
+          "state": "existing",
+          "target_meaning_id": "meaning.c15e2b26c207d87e.interior-subset-topological"
+        },
+        {
+          "phrase": "subset A⊆X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "set difference closure minus interior",
+          "state": "unassigned",
+          "context": "Points of closure not belonging to interior of A, both calculated relative to same X."
+        },
+        {
+          "phrase": "boundary depends on ambient topology",
+          "state": "external",
+          "disposition": "The subscript X is significant; replacing ambient topology may change boundary."
+        }
+      ]
+    }
+  ]
+}
