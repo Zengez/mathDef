@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.module94.right-module-nonunital",
   "version_sha256": "6619ba1a37a3e1872bc2b38b2b9584763cacb454b4bc9787f433b6e0eba64971",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "abelian group",
-      "span": [
-        42,
-        55
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.abelian-group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.d6939f10b7111fbc70cc"
+      "phrase": "associative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.f1bdfdf5e2fcfa86bf1b"
+    },
+    {
+      "phrase": "abelian group (M,+)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "occurrence_id": "occ.73c9841c71eca34cd46a"
+    },
+    {
+      "phrase": "right scalar action M x R to M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.94c053ee357a31d58621"
+    },
+    {
+      "phrase": "distributivity over vector addition (m+n)r=mr+nr",
+      "state": "unassigned",
+      "context": "The right scalar action is additive in its M input.",
+      "occurrence_id": "occ.07de2d524d99ce57d5a9"
+    },
+    {
+      "phrase": "distributivity over scalar addition m(r+s)=mr+ms",
+      "state": "unassigned",
+      "context": "The right scalar action is additive in its R input.",
+      "occurrence_id": "occ.b13a7b51e2668ecce33f"
+    },
+    {
+      "phrase": "module action associativity (mr)s=m(rs)",
+      "state": "unassigned",
+      "context": "Compatibility of right action with ring multiplication, in the correct right-sided order.",
+      "occurrence_id": "occ.3862a11f20ce3d18b988"
+    },
+    {
+      "phrase": "unity not required",
+      "state": "external",
+      "disposition": "The right-module definition does not impose m1=m without a specified unit-preserving convention.",
+      "occurrence_id": "occ.78fa14dc1a0112d3fc73"
     }
   ],
-  "snapshot_sha256": "a2ac310baf6a334ba10494f084e3bae1041262b7c499d9fc970c02e673ffefa2",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "e16b1be7a402c41f294461bee11c8104c62755550d181c3a751fd767122665ed",
+  "review_rationale": "Read a right R-module over possibly nonunital associative ring via abelian additive group and right scalar action satisfying both distributivities and right associativity; no unit axiom added."
 }

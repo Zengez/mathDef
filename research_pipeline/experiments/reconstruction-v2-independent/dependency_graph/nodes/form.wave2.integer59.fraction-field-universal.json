@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.integer59.fraction-field-universal",
   "version_sha256": "af9d8d16403664f385a2113f0f39e39ed3f6f5c1d67b81ce68a3fa844b899363",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "integral domain D",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.integral-domain",
+      "occurrence_id": "occ.bf5550a0d2690823ada1"
+    },
+    {
+      "phrase": "field F and arbitrary field K",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.496b11a96dd53ce197cf"
+    },
+    {
+      "phrase": "ring maps i and j",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.06de5c1a0f649636ec90"
+    },
+    {
+      "phrase": "injective ring map i:D to F",
+      "state": "unassigned",
+      "context": "One-to-one unital homomorphism embedding D as a subring of field F.",
+      "occurrence_id": "occ.f3c4658be769e13e5d45"
+    },
+    {
+      "phrase": "universal commutative triangle h composed with i equals j",
+      "state": "unassigned",
+      "context": "For every injective embedding of D into any field K, a factorization through F exists.",
+      "occurrence_id": "occ.05bb0fc6c43dc3e66f98"
+    },
+    {
+      "phrase": "unique field homomorphism h:F to K",
+      "state": "unassigned",
+      "context": "Single multiplicative/additive unit-preserving field map commuting with D embeddings.",
+      "occurrence_id": "occ.9a9d493f3bcdbd64f415"
+    },
+    {
+      "phrase": "universal property equivalent to concrete fractions",
+      "state": "external",
+      "disposition": "This alternative presents the same fraction-field meaning without redefining it via an unnecessary self-link.",
+      "occurrence_id": "occ.fd3d81ead2305f62c727"
+    }
+  ],
+  "snapshot_sha256": "7e38aeb185ca253605cb111b8cad8e078acaae04924ac675ca4b175f89944eb4",
+  "review_rationale": "Read the fraction-field universal property over integral domain D with field F and injective embedding, requiring a unique compatible field homomorphism into each other containing field K."
 }

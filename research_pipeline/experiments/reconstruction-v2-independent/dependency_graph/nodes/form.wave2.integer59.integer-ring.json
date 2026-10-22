@@ -2,39 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.integer59.integer-ring",
   "version_sha256": "4b25faa61a01d2c09a8c5b7b5e9f721473d946314c4b179649f0302dcfab8ccd",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        90,
-        97
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.44aef43d8745be079b69"
+      "phrase": "underlying integer set Z",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.integer-equivalence-class",
+      "occurrence_id": "occ.b2a6d2c15d5550f6abeb"
     },
     {
-      "phrase": "integer",
-      "span": [
-        111,
-        118
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.db5db93db293a11b2f42"
+      "phrase": "ring structure on Z",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.ba066bba08a2be21df4d"
+    },
+    {
+      "phrase": "integer addition +",
+      "state": "unassigned",
+      "context": "Well-defined associative commutative binary addition with additive identity and inverses on integer elements.",
+      "occurrence_id": "occ.22a00c477fc034c078ee"
+    },
+    {
+      "phrase": "integer multiplication",
+      "state": "unassigned",
+      "context": "Associative distributive multiplication with multiplicative identity 1 on integer elements.",
+      "occurrence_id": "occ.8e577fc95d3405004d87"
+    },
+    {
+      "phrase": "ordinary integer ring not field",
+      "state": "external",
+      "disposition": "Ring Z has its usual unital commutative structure and not all nonzero elements have multiplicative inverses.",
+      "occurrence_id": "occ.3d6159e4903f2dfd51b4"
     }
   ],
-  "snapshot_sha256": "5db0359d96693e0892c8b4cac95f56195692dc2d716f08c027165d5eaa430cf8",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "562f8c8f3bde2c83116fe227ed0aae5ac8c5a720c5e928c7a1e3120ffe890682",
+  "review_rationale": "Read ring of integers as the integer set equipped with ordinary addition and multiplication, distinct from a specific class representation and with ring axioms implicit."
 }
