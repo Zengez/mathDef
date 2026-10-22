@@ -2,39 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.cross110.sequence-accumulation",
   "version_sha256": "a14922f76eff546a20106c02ac2435bdb1be4e7efb44fe7ef512b510a2b84e7c",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        41,
-        58
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.916eceb207a435d00baa"
+      "phrase": "topological space (X,tau)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.090023ed081c3941b861"
     },
     {
-      "phrase": "accumulation point",
-      "span": [
-        92,
-        110
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.cross110.set-accumulation"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.c346468909cc48678fd5"
+      "phrase": "open neighborhood of x",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.bd93db5a220c7acb05e5"
+    },
+    {
+      "phrase": "indexed sequence (x_n)",
+      "state": "unassigned",
+      "context": "Mapping from natural-number index set to topological space X; repeated values allowed.",
+      "occurrence_id": "occ.64fd65f128a9cda6fd65"
+    },
+    {
+      "phrase": "infinite set of visiting indices",
+      "state": "unassigned",
+      "context": "For any open U containing x, set of n satisfying x_n∈U is infinite.",
+      "occurrence_id": "occ.d7c1a59ee1ed455d323f"
+    },
+    {
+      "phrase": "visiting indices not distinct points",
+      "state": "external",
+      "disposition": "Repeated sequence values count at distinct indices, unlike set accumulation definition.",
+      "occurrence_id": "occ.4c2fd73658a3ee69a81f"
     }
   ],
-  "snapshot_sha256": "0250300e1c35f64aaf0df02bf6ca597123c3cf1da6c5e9eea9d4fd128d50b62a",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "4ebe8388562c0cb8438e17118df47a5c11cef6f60b06b59d318afd0596310541",
+  "review_rationale": "Read accumulation point of a sequence using infinitely many visiting indices inside each neighborhood, counting repeated occurrences separately from distinct set values."
 }

@@ -2,39 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.cross110.set-accumulation",
   "version_sha256": "ae7273e29fe44934da3e8978ad2e4d292ee6e1ad5c83f19a0b32ea015de3b8cc",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        13,
-        30
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.7a3f85b4db4ef51ec00b"
+      "phrase": "closure of subset A",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross107.topological-closure",
+      "occurrence_id": "occ.38364870d3d973a26f37"
     },
     {
-      "phrase": "accumulation point",
-      "span": [
-        50,
-        68
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.cross110.sequence-accumulation"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.b31c9acf41ac30fe9b64"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.6577090910f3f9032c54"
+    },
+    {
+      "phrase": "subset A⊆X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.67a1f5c2e782d63683bc"
+    },
+    {
+      "phrase": "punctured set A\\{x}",
+      "state": "unassigned",
+      "context": "Members of A other than x, whether or not x belongs to A.",
+      "occurrence_id": "occ.8004e2a9427ba9ac2ef7"
+    },
+    {
+      "phrase": "every open neighborhood meets A\\{x}",
+      "state": "unassigned",
+      "context": "For all neighborhoods U of x, U intersect (A\\{x}) is nonempty.",
+      "occurrence_id": "occ.86fc71980ea9d5464919"
+    },
+    {
+      "phrase": "set-accumulation distinct from sequence index accumulation",
+      "state": "external",
+      "disposition": "Requires distinct spatial points rather than infinitely many repeated visits.",
+      "occurrence_id": "occ.2a88e18c3582ce3e454c"
     }
   ],
-  "snapshot_sha256": "a75fc604522764188ebae200b587a41221a2f1fbb91797f6abdd0a2277bc04be",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "e27949ec9ae18062251272a88f0d633e8c9fcd8fc2e545d734d644c489c19dcd",
+  "review_rationale": "Read accumulation of subset at a point via closure of A minus the point, requiring every neighborhood to meet A at another point."
 }
