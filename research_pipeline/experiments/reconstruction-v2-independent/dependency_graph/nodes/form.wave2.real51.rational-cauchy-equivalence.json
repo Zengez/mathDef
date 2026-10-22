@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.real51.rational-cauchy-equivalence",
   "version_sha256": "bccd9a91d4fe933787dab41ba8d6cc683707a3b72ca2c724550d1180e6e13a47",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "rational Cauchy sequences a_n,b_n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real51.rational-cauchy",
+      "occurrence_id": "occ.9d3df9c8935e210b74f3"
+    },
+    {
+      "phrase": "strictly positive rational epsilon",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.rational55.strictly-positive-rational",
+      "occurrence_id": "occ.34510ccc8ff4693b1fb2"
+    },
+    {
+      "phrase": "rational absolute value |a_n-b_n|",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.rational55.rational-absolute-value",
+      "occurrence_id": "occ.aa3722cf2bb93fbda535"
+    },
+    {
+      "phrase": "eventually small pointwise difference",
+      "state": "unassigned",
+      "context": "For every rational epsilon>0, beyond some common N every index n satisfies |a_n-b_n|<epsilon.",
+      "occurrence_id": "occ.1e23c55348be75c83307"
+    },
+    {
+      "phrase": "equivalence relation on Cauchy sequences",
+      "state": "unassigned",
+      "context": "Relation identifying any two Cauchy sequences whose termwise difference tends to zero.",
+      "occurrence_id": "occ.86b8dbd85351aadcc452"
+    },
+    {
+      "phrase": "equivalence without completed reals",
+      "state": "external",
+      "disposition": "Condition is formulated using only rational arithmetic and needs no previously constructed real field.",
+      "occurrence_id": "occ.c10f9aabe1009b2649c8"
+    }
+  ],
+  "snapshot_sha256": "bb720dcfe49b52cf2fa0b89d78c7d6f7cb7c5f2f5ea4366b60b0b4385b2510c1",
+  "review_rationale": "Reviewed equivalence of two rational Cauchy sequences by eventual epsilon closeness of pointwise difference to zero, preserving all quantifiers and positive-rational epsilon scope."
 }

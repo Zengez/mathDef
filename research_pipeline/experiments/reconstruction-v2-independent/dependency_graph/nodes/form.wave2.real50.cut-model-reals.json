@@ -2,10 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.real50.cut-model-reals",
   "version_sha256": "45905a931584874ab48180eb4dc4a8a278f54b303e2bae8af59a11c0d5cf5efe",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "Dedekind lower cuts of Q",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real50.dedekind-rational-lower-cut",
+      "occurrence_id": "occ.9e914fbe58db58214546"
+    },
+    {
+      "phrase": "rational q and r",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.rational55.rational-number",
+      "occurrence_id": "occ.0b237676ab1635948e2e"
+    },
+    {
+      "phrase": "subset-order A subseteq B",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.ec4872705e176f9fc808"
+    },
+    {
+      "phrase": "real ordered field realized by cuts",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field",
+      "occurrence_id": "occ.4ee8ef85ed90ce054f61"
+    },
+    {
+      "phrase": "set of all rational lower cuts R_D",
+      "state": "unassigned",
+      "context": "Family of qualifying Dedekind cuts, serving as underlying set of the concrete real model.",
+      "occurrence_id": "occ.a58312ce05bbfe2d9363"
+    },
+    {
+      "phrase": "rational embedding q maps to {r:r<q}",
+      "state": "unassigned",
+      "context": "Injection of rational field into lower cuts by strict lower segment.",
+      "occurrence_id": "occ.2e190fba3a2c79049104"
+    },
+    {
+      "phrase": "arithmetic on Dedekind cuts",
+      "state": "unassigned",
+      "context": "Cut-based binary addition and multiplication, requiring separate well-definedness and field-axiom proofs.",
+      "occurrence_id": "occ.e89de941e2bcfd8bf460"
+    },
+    {
+      "phrase": "ordered-field axioms and completeness as proof obligations",
+      "state": "external",
+      "disposition": "This formulation describes a construction whose arithmetic and least-upper-bound properties must be established; it does not claim those theorems proved.",
+      "occurrence_id": "occ.ef192eb20e93b284b85f"
+    }
+  ],
+  "snapshot_sha256": "267214fcfa81a27eb1dbe94091448ddaf8933b7fbf7cfa1b6633378fd0df4561",
+  "review_rationale": "Reviewed Dedekind-cut real model as all rational lower cuts ordered by inclusion, rational embedding by strict lower sets, and resulting real-field axioms after arithmetic and completeness are proved."
 }

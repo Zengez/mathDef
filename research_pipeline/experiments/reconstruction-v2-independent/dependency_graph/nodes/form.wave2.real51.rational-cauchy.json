@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.real51.rational-cauchy",
   "version_sha256": "d1fd0cd4889b9f2851ff5fcdf51b64c3f29e05a34f6ba9cc628b72ca210b4941",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "rational sequence a_n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.rational55.rational-sequence",
+      "occurrence_id": "occ.5be1fa9d370c6c1efbe4"
+    },
+    {
+      "phrase": "strictly positive rational epsilon",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.rational55.strictly-positive-rational",
+      "occurrence_id": "occ.a4332b9fa7fec325867b"
+    },
+    {
+      "phrase": "rational absolute value",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.rational55.rational-absolute-value",
+      "occurrence_id": "occ.709b0c1ccd05c3ae075e"
+    },
+    {
+      "phrase": "eventual pairwise closeness of terms",
+      "state": "unassigned",
+      "context": "For each rational epsilon>0 exists N with every pair of indices m,n>=N having |a_m-a_n|<epsilon.",
+      "occurrence_id": "occ.f8d30d450e83090aba34"
+    },
+    {
+      "phrase": "index bound N",
+      "state": "unassigned",
+      "context": "Positive integer cutoff after which all comparisons satisfy the epsilon inequality.",
+      "occurrence_id": "occ.e8810b14e1484d04cea7"
+    },
+    {
+      "phrase": "no limit assumed",
+      "state": "external",
+      "disposition": "Being Cauchy in Q does not imply convergence to a rational number.",
+      "occurrence_id": "occ.0c995842df01ef493a90"
+    }
+  ],
+  "snapshot_sha256": "90b712a406deb188872b4eecef8e25c3532f3bc7be2d1241c1a8c3cc21cbfa21",
+  "review_rationale": "Reviewed rational Cauchy sequence with rational epsilon test for all sufficiently late pairs of indices, without presuming a rational or real limit exists."
 }
