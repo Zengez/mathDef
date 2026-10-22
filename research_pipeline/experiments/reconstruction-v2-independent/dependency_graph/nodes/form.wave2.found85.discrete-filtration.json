@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.found85.discrete-filtration",
   "version_sha256": "8b78c7b55abf6e03fea01ce940241ff10e2d48647edf53fef9318f37c2aad9a8",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "measurable space",
-      "span": [
-        6,
-        22
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.prob90.measurable-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.e5ca2d5dad9128bce55b"
+      "phrase": "sigma-algebra F",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.sigma-algebra",
+      "occurrence_id": "occ.35ca38829a87fc77ccf5"
+    },
+    {
+      "phrase": "nonnegative integer index n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.7b91aae8da41d2496cd5"
+    },
+    {
+      "phrase": "subset inclusion",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.8bb7ff86b0303e6ef689"
+    },
+    {
+      "phrase": "increasing family of sigma-algebras",
+      "state": "unassigned",
+      "context": "For each indices n≤m, every event measurable by time n is included in F_m.",
+      "occurrence_id": "occ.0c7efdc295a336bd5b00"
+    },
+    {
+      "phrase": "filtration not necessarily strictly increasing",
+      "state": "external",
+      "disposition": "Equality F_n=F_m is allowed for some n<m.",
+      "occurrence_id": "occ.9b7ad2fddc0ab3a5f62d"
     }
   ],
-  "snapshot_sha256": "f8e1cd5a8641e6b313a3295db053f236cbaaf2022bc40ca66a883ee8e7b142f0",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "ea21c41f8faa98a8a2d71d9380f179b64360916807b3460897130a671d2dcff7",
+  "review_rationale": "Read discrete-time filtration as nested sequence of sub-sigma-algebras F_n⊆F with monotone inclusion for all ordered indices n≤m."
 }

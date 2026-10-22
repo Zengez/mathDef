@@ -2,39 +2,27 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.abelian-group",
   "version_sha256": "2cf83e1b1920478a975e3332dc1cbae96fd64d695ef114f4bac9262455631f57",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "group",
-      "span": [
-        11,
-        16
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.6caaa472e6dd3495b0e7"
+      "phrase": "group (G,*)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.group",
+      "occurrence_id": "occ.25a6f2f2e5ed159d7894"
     },
     {
-      "phrase": "group",
-      "span": [
-        22,
-        27
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.a4d603dc1992f6378bdc"
+      "phrase": "commutative binary operation a*b=b*a",
+      "state": "unassigned",
+      "context": "For all a,b∈G, multiplication can be reversed without changing its result.",
+      "occurrence_id": "occ.fb87aac08e58d17fd7b3"
+    },
+    {
+      "phrase": "commutativity is additional to group axioms",
+      "state": "external",
+      "disposition": "Associativity, identity and inverses come from group definition.",
+      "occurrence_id": "occ.5bd5f10044a1c599beaa"
     }
   ],
-  "snapshot_sha256": "c5142e058f604bbff4086666c43b1ed68d546cf665df6c7a44599d0efc9b9cc7",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "be017f52636e9e506f7fa29e8439bd3c0ef5fd90397b6f0140625d4b16222a14",
+  "review_rationale": "Read abelian group as group whose operation is commutative for every ordered pair of elements, preserving all group axioms via parent definition."
 }

@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.found85.stochastic-process",
   "version_sha256": "2ebe3d5c1159bccfe313a5068d82d0851d59573f4101a5fb79805c2edc1b95f9",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "probability space",
-      "span": [
-        6,
-        23
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.prob90.probability-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.ac8fba1b17b48a9951b4"
+      "phrase": "probability space (Ω,F,P)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prob90.probability-space",
+      "occurrence_id": "occ.a0ab29985db35a966d83"
+    },
+    {
+      "phrase": "general random variable",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prob90.random-variable-general",
+      "occurrence_id": "occ.cb99b90f751d06acd732"
+    },
+    {
+      "phrase": "sigma algebra of target",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.sigma-algebra",
+      "occurrence_id": "occ.cf4b651b671a4757f4d7"
+    },
+    {
+      "phrase": "I-indexed collection (X_i)",
+      "state": "unassigned",
+      "context": "Family of measurable functions from Ω into common state space E for all i∈I.",
+      "occurrence_id": "occ.6512a97e508039d681f0"
+    },
+    {
+      "phrase": "no temporal order required",
+      "state": "external",
+      "disposition": "Index set I may be arbitrary, and no adaptedness or independence is part of the bare process definition.",
+      "occurrence_id": "occ.3fc7221d2032c81be623"
     }
   ],
-  "snapshot_sha256": "5e042a2b584c8407e833034c065dc0f40ee4d7ad364586954b635c0272ae6e5b",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "90cbbe80bd09372cde93c25edb81336868967de4a66cc0c5a0f2615fe0aa707a",
+  "review_rationale": "Read stochastic process as family of measurable S-valued random variables over one probability space and shared measurable state space, indexed by arbitrary index set."
 }
