@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.e0849711d61cd26f.nth-root-of-unity",
   "version_sha256": "9328960032a613e46bcebb154ead674e6a8304b723edca01ceeb77320e861fc9",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "field F",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.331dfe0f1f997bf3b851"
+    },
+    {
+      "phrase": "multiplicative group structure",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.group",
+      "occurrence_id": "occ.2ff1b8f02b52ff747739"
+    },
+    {
+      "phrase": "subgroup μ_n(F) of F×",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prereq122.subgroup",
+      "occurrence_id": "occ.81a856cab23f1d26d9f7"
+    },
+    {
+      "phrase": "positive integer n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-positive-convention",
+      "occurrence_id": "occ.9ac7626ac5f793b20bec"
+    },
+    {
+      "phrase": "multiplicative group F× of field units",
+      "state": "unassigned",
+      "context": "The nonzero elements of F under field multiplication, with inverses and identity 1",
+      "occurrence_id": "occ.3acb0d4a539a2f185f66"
+    },
+    {
+      "phrase": "nth multiplicative power ζ^n=1",
+      "state": "unassigned",
+      "context": "The product of n copies of ζ in F equals the multiplicative identity 1_F",
+      "occurrence_id": "occ.42e0943b64d94dec5a58"
+    },
+    {
+      "phrase": "all nth roots form a subgroup",
+      "state": "external",
+      "disposition": "Closure under products and inverses follows from field commutativity; primitiveness is not required.",
+      "occurrence_id": "occ.f0af380737c86de7cf39"
+    }
+  ],
+  "snapshot_sha256": "ed6f869a571329d1eeb3da4286786bdd3ccceb3c1f699884fbaeaf139875e00e",
+  "review_rationale": "Read nth roots of unity as solutions of ζ^n=1 in a field and separately the assertion that all solutions form a multiplicative subgroup of F×; distinguished arbitrary roots from primitive roots of exact order n."
 }
