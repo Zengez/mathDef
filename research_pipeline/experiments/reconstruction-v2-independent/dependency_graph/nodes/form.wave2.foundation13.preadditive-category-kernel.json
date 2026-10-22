@@ -2,53 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation13.preadditive-category-kernel",
   "version_sha256": "65c9ea71da4e4cb687e9b6d58789902347ca3a67c88e65353a89b9a324b6531a",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
       "phrase": "preadditive category",
-      "span": [
-        26,
-        46
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation15.preadditive-category"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.6fbba4d6f86f467c5ae9"
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation15.preadditive-category",
+      "occurrence_id": "occ.b5b06aa336aa8ea37284"
     },
     {
-      "phrase": "kernel",
-      "span": [
-        50,
-        56
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation13.abelian-group-homomorphism-kernel"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.496ae5efd4f7e0623cd6"
+      "phrase": "zero morphism f composed with i equals zero",
+      "state": "unassigned",
+      "context": "Distinguished additive identity of the morphism abelian group Hom(K,Y), annihilated by composition.",
+      "occurrence_id": "occ.8ffccac5090deec1580f"
     },
     {
-      "phrase": "kernel",
-      "span": [
-        173,
-        179
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation13.abelian-group-homomorphism-kernel"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.36b8c809672b35202259"
+      "phrase": "universal factorization j=i composed with h",
+      "state": "unassigned",
+      "context": "Every arrow j:Z→X killed by f factors through inclusion i:K→X.",
+      "occurrence_id": "occ.76f1ad94e5cc3ae1f0c9"
+    },
+    {
+      "phrase": "unique factorizing morphism h",
+      "state": "unassigned",
+      "context": "For any arrow j killed by f, exactly one arrow h:Z→K makes the factorization commute.",
+      "occurrence_id": "occ.a25ef9c37f0b29558c90"
+    },
+    {
+      "phrase": "kernel existence conditional",
+      "state": "external",
+      "disposition": "A kernel universal morphism may not exist for every arrow of an arbitrary preadditive category.",
+      "occurrence_id": "occ.ab725b3c90754c13384e"
     }
   ],
-  "snapshot_sha256": "38b9410942b953511c2db81a433ecee48170ecbbeda7dca0d058b309cb696caf",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "a2cc4db59e12e42e24e54aa63f33f2e347dfa580260a0c968387bf3cc7097ccb",
+  "review_rationale": "Reviewed a kernel morphism's universal factorization in a preadditive category, retaining zero composites, unique mediation, arrow direction and conditional existence."
 }

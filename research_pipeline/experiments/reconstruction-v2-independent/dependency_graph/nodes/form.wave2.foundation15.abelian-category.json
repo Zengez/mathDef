@@ -2,52 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation15.abelian-category",
   "version_sha256": "27ce82d10fa13d85512eca03fbbe421afd58a951acc031c457370065a4d8a11b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "additive category",
-      "span": [
-        28,
-        45
-      ],
+      "phrase": "additive category C",
       "state": "existing",
       "target_meaning_id": "meaning.wave2.foundation15.additive-category",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.d3a9443b5acb793b0ed1"
+      "occurrence_id": "occ.4e40bb56f4dd1923dcf5"
     },
     {
-      "phrase": "kernel",
-      "span": [
-        78,
-        84
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation13.abelian-group-homomorphism-kernel",
-        "meaning.wave2.foundation13.preadditive-category-kernel"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.e60248992f18cfa9b4cd"
+      "phrase": "kernel of every morphism",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation13.preadditive-category-kernel",
+      "occurrence_id": "occ.ba6ecfbb35c49e00b2ca"
     },
     {
-      "phrase": "cokernel",
-      "span": [
-        91,
-        99
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation13.preadditive-category-cokernel"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.298798e7a29ca90a4ec5"
+      "phrase": "cokernel of every morphism",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation13.preadditive-category-cokernel",
+      "occurrence_id": "occ.60b34dd4f972ec53e0c0"
+    },
+    {
+      "phrase": "coimage Coim(f) of categorical morphism",
+      "state": "unassigned",
+      "context": "Cokernel of kernel of an arrow in an additive category, provided these constructions exist.",
+      "occurrence_id": "occ.be6d709fff7764ce5d93"
+    },
+    {
+      "phrase": "image Im(f) of categorical morphism",
+      "state": "unassigned",
+      "context": "Kernel of cokernel of an arrow, a categorical image rather than the elementwise image of a set map.",
+      "occurrence_id": "occ.d16924147f8f7213d455"
+    },
+    {
+      "phrase": "canonical comparison Coim(f) to Im(f)",
+      "state": "unassigned",
+      "context": "Canonical morphism connecting the coimage and image by universal properties.",
+      "occurrence_id": "occ.b8246ace7b4fb4ff3a5a"
+    },
+    {
+      "phrase": "isomorphism of categorical morphisms",
+      "state": "unassigned",
+      "context": "Arrow having a two-sided inverse under categorical composition.",
+      "occurrence_id": "occ.31a2db03710bcb9bb228"
+    },
+    {
+      "phrase": "every morphism has kernel and cokernel",
+      "state": "external",
+      "disposition": "Required universal availability distinguishes an abelian category from a merely additive one.",
+      "occurrence_id": "occ.7f7646e111d1dcd836ab"
     }
   ],
-  "snapshot_sha256": "45b52561943ea029f14073ddfb17e65601a3cee565ae253f719314cc6e714fd3",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "3ef3583724acd5056f68616120f8c3e1d83efc8d382005bb1f3d593d49358acb",
+  "review_rationale": "Reviewed abelian category as additive category with all kernels/cokernels and invertible coimage-to-image comparison, distinguishing the categorical universal notions from set-theoretic images."
 }

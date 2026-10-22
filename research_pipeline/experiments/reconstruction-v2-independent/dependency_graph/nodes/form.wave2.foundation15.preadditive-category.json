@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation15.preadditive-category",
   "version_sha256": "8672ea717e558c2258b989f93c79d59915d908f14f230394077d816435f12df7",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "abelian group",
-      "span": [
-        113,
-        126
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.abelian-group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.5b8e9bc07ef161ffcfce"
+      "phrase": "abelian group Hom_C(X,Y)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "occurrence_id": "occ.2052ae098cbfa56c345f"
+    },
+    {
+      "phrase": "bilinear composition",
+      "state": "existing",
+      "target_meaning_id": "meaning.74e36635b2776fe8.bilinear-map-modules",
+      "occurrence_id": "occ.83174d76d2d4fa00f145"
+    },
+    {
+      "phrase": "ambient category C",
+      "state": "unassigned",
+      "context": "Objects, arrows, identities and associative composition without a small-category cardinality hypothesis.",
+      "occurrence_id": "occ.1263826e2c7ad43a694b"
+    },
+    {
+      "phrase": "morphism set Hom_C(X,Y)",
+      "state": "unassigned",
+      "context": "Collection of arrows from X to Y, carrying its own abelian group structure.",
+      "occurrence_id": "occ.5135cf4d13624556f051"
+    },
+    {
+      "phrase": "composition Hom(Y,Z) x Hom(X,Y) to Hom(X,Z)",
+      "state": "unassigned",
+      "context": "Partially typed composition of arrows, additive in each variable.",
+      "occurrence_id": "occ.312325fc780a666b671a"
+    },
+    {
+      "phrase": "not necessarily small or additive category",
+      "state": "external",
+      "disposition": "Finite products and an underlying object set are not additional hypotheses in this formulation.",
+      "occurrence_id": "occ.1fab713e918e04d5d949"
     }
   ],
-  "snapshot_sha256": "379e1c74181ae6ddb7b6e65469f8e56cbf2ebc51555eebd54e1cebb354615cda",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "7a80a06407697141e1d1a0037c0e96a5c759b64c6f075d9fd85d00ba19f7c23e",
+  "review_rationale": "Reviewed preadditive category as category with abelian-group hom-sets and bilinear composition, not assuming smallness or finite products from the stronger additive-category notion."
 }
