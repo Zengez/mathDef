@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-accelerated-topology-analysis-005",
+  "mode": "amend",
+  "research_scope": "Source-free complete original formulation reviews in analysis, topology, linear algebra, preserving full adjacency and audit status.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk8.20261022.6",
+      "formulation_id": "form.wave2.analysis98.norm-over-normed-division-ring",
+      "version_sha256": "03695737ad36404b3cb48ae04571a5075b6f4fec85f13d2a315f8115298267dd",
+      "expected_node_sha256": "6ca8f7a328ed04aa0febdb0ed791d9b4f5c6cd2b2e17cfe23765105bb35740b5",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Read complete original source text of norm on a vector space with all its dependency occurrences, separating named mathematical prerequisites from the criterion defining this object. Preserved original reference phrases and all existing edges. Provisional dispositions are queued for the eventual global consistency audit.",
+      "reason": "Source-free mathematical context review of norm on a vector space, with type-specific references and original source version preserved. The user-approved faster classifications must be checked later without treating CI as mathematical certification.",
+      "references": [
+        {
+          "phrase": "normed division ring K",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.scalar101.normed-division-ring"
+        },
+        {
+          "phrase": "vector space over division ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.scalar101.left-vector-over-division-ring"
+        },
+        {
+          "phrase": "multiplicative scalar norm |·|_K",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.scalar101.division-ring-multiplicative-norm"
+        },
+        {
+          "phrase": "function ∥·∥:V→nonnegative R",
+          "state": "external",
+          "disposition": "The nonnegative real-valued magnitude function is precisely the norm being defined, not an already assumed norm."
+        },
+        {
+          "phrase": "positive definiteness of vector norm",
+          "state": "external",
+          "disposition": "Zero iff zero vector is a defining norm axiom, present in the source; general positive-definite forms may have separate meanings."
+        },
+        {
+          "phrase": "absolute homogeneity under scalars",
+          "state": "external",
+          "disposition": "Scalar homogeneity ∥av∥=|a|_K∥v∥ is a defining axiom here, with scalar multiplicative norm separately linked."
+        },
+        {
+          "phrase": "norm triangle inequality",
+          "state": "external",
+          "disposition": "The subadditivity of vector norm is a constitutive norm axiom in this source, not independent presupposition of a norm."
+        },
+        {
+          "phrase": "left scalar-action convention",
+          "state": "external",
+          "disposition": "Homogeneity is stated as ∥av∥ using a left vector space; right-module variants require their own compatible action."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk8.20261022.7",
+      "formulation_id": "form.wave2.analysis.real-absolute-value",
+      "version_sha256": "0c2b18fa8b161aed7b7fff4995db14480872aae928bee9941d5354beed3c20ab",
+      "expected_node_sha256": "2c7b8f06cd31588b37c6eb39cec7dc402afb7dfebb7a40e0b8bcc2aefa9fb01c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Read complete original source text of absolute value of a real number with all its dependency occurrences, separating named mathematical prerequisites from the criterion defining this object. Preserved original reference phrases and all existing edges. Provisional dispositions are queued for the eventual global consistency audit.",
+      "reason": "Source-free mathematical context review of absolute value of a real number, with type-specific references and original source version preserved. The user-approved faster classifications must be checked later without treating CI as mathematical certification.",
+      "references": [
+        {
+          "phrase": "ordered real number system",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "piecewise sign condition x≥0 versus x<0",
+          "state": "external",
+          "disposition": "The x≥0 versus x<0 case distinction is the defining piecewise expression for |x| over the linked ordered real field."
+        },
+        {
+          "phrase": "absolute-value function |x|",
+          "state": "external",
+          "disposition": "The function |x| is the object being defined, so linking to an assumed pre-existing absolute-value function would be circular."
+        },
+        {
+          "phrase": "distance |a−b| on real line",
+          "state": "missing",
+          "context": "Real analysis: Euclidean distance between two real numbers a,b defined as d(a,b)=|a−b|, as an application of real absolute value, not its definition.",
+          "matching_note": "Accelerated source-free missing prerequisite, to be checked for equivalence and completeness during global mathematical consistency audit."
+        },
+        {
+          "phrase": "nonnegativity of absolute value",
+          "state": "external",
+          "disposition": "The piecewise definition entails |x|≥0; distance interpretation is an accompanying consequence."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk8.20261022.8",
+      "formulation_id": "form.wave2.foundation.subspace-topology-nonempty",
+      "version_sha256": "ee2587624542cce7c6e6a7fa3edfe958bf98f24dafaa549a9c4e4c2f44e51a8d",
+      "expected_node_sha256": "5508097d50ee6ea935ad9d1fcdbd7424587d534bade792047e5c202a12e8278f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Read complete original source text of subspace topology with all its dependency occurrences, separating named mathematical prerequisites from the criterion defining this object. Preserved original reference phrases and all existing edges. Provisional dispositions are queued for the eventual global consistency audit.",
+      "reason": "Source-free mathematical context review of subspace topology, with type-specific references and original source version preserved. The user-approved faster classifications must be checked later without treating CI as mathematical certification.",
+      "references": [
+        {
+          "phrase": "ambient topological space (X,tau)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "non-strict subset A of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "nonempty subset A",
+          "state": "external",
+          "disposition": "The strict nonempty-subset restriction is the source convention, with general subset relation already linked; don't infer it for other topological spaces."
+        },
+        {
+          "phrase": "intersection A cap U",
+          "state": "missing",
+          "context": "Set theory: binary intersection A∩U of two sets, whose elements belong to both A and U; applied to ambient open sets and a subspace.",
+          "matching_note": "Accelerated source-free missing prerequisite, to be checked for equivalence and completeness during global mathematical consistency audit."
+        },
+        {
+          "phrase": "induced subspace topology tau_A",
+          "state": "external",
+          "disposition": "The collection τ_A={A∩U:U∈τ} is the very topology being defined on the subset; a separate subspace topology is not assumed."
+        },
+        {
+          "phrase": "exclusion of empty A by convention",
+          "state": "external",
+          "disposition": "This is a restricted convention, not an assertion that the general subspace topology cannot be defined on the empty set."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk8.20261022.9",
+      "formulation_id": "form.wave2.alternative39.adjacency-matrix-simple-undirected",
+      "version_sha256": "3c76d57c1343993dea9d98c1f2626bb22af17e3cce6c2f0895da5bdc3e33b08c",
+      "expected_node_sha256": "77ceb57d0fe014d7747e7cfe6f1f5774cd56b01c9a0d92a2558628880c81332d",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Read complete original source text of adjacency matrix of a finite simple undirected graph with all its dependency occurrences, separating named mathematical prerequisites from the criterion defining this object. Preserved original reference phrases and all existing edges. Provisional dispositions are queued for the eventual global consistency audit.",
+      "reason": "Source-free mathematical context review of adjacency matrix of a finite simple undirected graph, with type-specific references and original source version preserved. The user-approved faster classifications must be checked later without treating CI as mathematical certification.",
+      "references": [
+        {
+          "phrase": "finite simple undirected graph G=(V,E)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.graph42.simple-undirected"
+        },
+        {
+          "phrase": "chosen ordering V={v_1,…,v_n}",
+          "state": "missing",
+          "context": "Graph/combinatorics: finite vertex enumeration as a bijection {1,…,n}→V, choosing an indexing order on V.",
+          "matching_note": "Accelerated source-free missing prerequisite, to be checked for equivalence and completeness during global mathematical consistency audit."
+        },
+        {
+          "phrase": "n-by-n matrix over entries 0,1",
+          "state": "missing",
+          "context": "Linear algebra: n×n square matrix indexed by row and column pairs with entries drawn from {0,1}, independent of graph incidence.",
+          "matching_note": "Accelerated source-free missing prerequisite, to be checked for equivalence and completeness during global mathematical consistency audit."
+        },
+        {
+          "phrase": "edge indicator a_ij",
+          "state": "external",
+          "disposition": "The matrix entry's 0/1 edge-membership rule is the defining adjacency-matrix criterion of this graph's ordering."
+        },
+        {
+          "phrase": "simple undirected implies zero diagonal and symmetric matrix",
+          "state": "external",
+          "disposition": "These follow from looplessness and unordered edges and are not further data."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk8.20261022.10",
+      "formulation_id": "form.wave2.analysis98.complex-inner-product-space",
+      "version_sha256": "2adec135c98817db6d6a3e3460cad93f2405a5a296872d6bcfb505d94d502650",
+      "expected_node_sha256": "a8069489cfa004ec819e136d854ebfb0ecbf3cabe61404f26f2910d729fe4823",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Read complete original source text of inner product space with all its dependency occurrences, separating named mathematical prerequisites from the criterion defining this object. Preserved original reference phrases and all existing edges. Provisional dispositions are queued for the eventual global consistency audit.",
+      "reason": "Source-free mathematical context review of inner product space, with type-specific references and original source version preserved. The user-approved faster classifications must be checked later without treating CI as mathematical certification.",
+      "references": [
+        {
+          "phrase": "complex vector space V",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field"
+        },
+        {
+          "phrase": "complex number field C",
+          "state": "missing",
+          "context": "Algebra: complex number field ℂ, with conjugation and complex scalar operations, distinguished from real field ℝ.",
+          "matching_note": "Accelerated source-free missing prerequisite, to be checked for equivalence and completeness during global mathematical consistency audit."
+        },
+        {
+          "phrase": "Hermitian sesquilinear form V×V→C",
+          "state": "missing",
+          "context": "Complex linear algebra: Hermitian sesquilinear form on complex vector space V, linear in first argument, conjugate linear in second and conjugate symmetric.",
+          "matching_note": "Accelerated source-free missing prerequisite, to be checked for equivalence and completeness during global mathematical consistency audit."
+        },
+        {
+          "phrase": "positive definiteness",
+          "state": "external",
+          "disposition": "The requirement ⟨v,v⟩>0 for v≠0 is the defining positivity condition of this inner-product variant; a generic positive-definite form is a separately reviewable named property."
+        },
+        {
+          "phrase": "first-slot linear convention",
+          "state": "external",
+          "disposition": "This is one of two standard conventions; this source explicitly chooses first-slot linearity, not second-slot linearity."
+        }
+      ]
+    }
+  ]
+}
