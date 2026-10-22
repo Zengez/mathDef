@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-041b",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.c50e4715a45d9236.relative-global-complete-intersection",
+      "version_sha256": "227f831b82d12bff901bfc957cdf89b39ec6ddd00436dca239006ad000bb9bbe",
+      "complete": true,
+      "review_rationale": "Checked the specified quotient presentation of a relative complete-intersection map, with its finite polynomial generators and relations and the dimension condition on every nonempty scheme fibre rather than only global Krull dimension.",
+      "references": [
+        {
+          "phrase": "unital ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "finite presentation R[x_1,…,x_n]/(f_1,…,f_c)",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-presentation-ring-map"
+        },
+        {
+          "phrase": "polynomial ring R[x_1,…,x_n]",
+          "state": "unassigned",
+          "context": "Multivariable polynomial R-algebra in finitely many indeterminates"
+        },
+        {
+          "phrase": "quotient by ideal (f_1,…,f_c)",
+          "state": "unassigned",
+          "context": "Commutative ring quotient by the finitely generated ideal of relations f_i"
+        },
+        {
+          "phrase": "scheme-theoretic fibres of Spec(S)→Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.8a65ad25b01e5104.scheme-theoretic-fibre"
+        },
+        {
+          "phrase": "scheme morphism Spec(S)→Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.eb0cd2c67c6ee622.affine-scheme-morphism-ring-map"
+        },
+        {
+          "phrase": "Krull dimension of each nonempty fibre",
+          "state": "existing",
+          "target_meaning_id": "meaning.bd90654fb341045a.krull-dimension-space"
+        },
+        {
+          "phrase": "dimension n−c for all nonempty fibres",
+          "state": "external",
+          "disposition": "This is the stipulated relative expected-dimension condition; zero fibres are excluded and it is not merely the absolute dimension of Spec(S)."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.c50e4715a45d9236.syntomic-ring-homomorphism",
+      "version_sha256": "c009396dad97d461f394bdf7ef5644ae27935e8fe5c012a4e11e0c47e581a16e",
+      "complete": true,
+      "review_rationale": "Reviewed all three syntomic conditions with the correct unital ring-map convention: flatness, finite presentation and local-complete-intersection algebra structure after residue-field base change at every prime.",
+      "references": [
+        {
+          "phrase": "unital ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "flat ring map",
+          "state": "existing",
+          "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-ring-map"
+        },
+        {
+          "phrase": "finitely presented ring map",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-presentation-ring-map"
+        },
+        {
+          "phrase": "prime spectrum Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "local complete intersection algebra over κ(p)",
+          "state": "existing",
+          "target_meaning_id": "meaning.8dbafc093b30c2a3.local-complete-intersection-algebra"
+        },
+        {
+          "phrase": "base change S⊗_R κ(p) of the ring map",
+          "state": "existing",
+          "target_meaning_id": "meaning.3f6a26f1786a8223.base-change-ring-map"
+        },
+        {
+          "phrase": "residue field κ(p)",
+          "state": "unassigned",
+          "context": "For p∈Spec(R), fraction field of local residue ring R_p/pR_p; not an arbitrary extension field"
+        },
+        {
+          "phrase": "tensor-product algebra structure on S⊗_R κ(p)",
+          "state": "unassigned",
+          "context": "Induced commutative κ(p)-algebra multiplication on the module tensor product under base change"
+        },
+        {
+          "phrase": "for every p∈Spec(R)",
+          "state": "external",
+          "disposition": "The fibre condition is imposed at every prime; there is no claim that flatness or local complete intersection alone suffices."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.c766a18ce285a2d8.constructible-subset-affine-spectrum",
+      "version_sha256": "f2336b4ec64a99d490e007b0d621c501c6f465c8aebe0ec58a76c0b545b94276",
+      "complete": true,
+      "review_rationale": "Read the finite-union normal form for constructible subsets of an arbitrary affine prime spectrum, separately identifying distinguished opens and finite-equation closed loci without importing a Noetherian hypothesis.",
+      "references": [
+        {
+          "phrase": "subset C of Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "prime spectrum Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "Zariski topology on the affine spectrum",
+          "state": "existing",
+          "target_meaning_id": "meaning.ffa8e88785ba9c2b.scheme-zariski-topology"
+        },
+        {
+          "phrase": "distinguished basic open D(f)",
+          "state": "unassigned",
+          "context": "Subset of prime ideals not containing f in R, for a commutative ring R"
+        },
+        {
+          "phrase": "common vanishing closed locus V(g_1,…,g_m)",
+          "state": "unassigned",
+          "context": "Subset of prime ideals of R containing every specified relation g_i, equivalently V of the generated ideal"
+        },
+        {
+          "phrase": "finite unions of intersections D(f)∩V(g_1,…,g_m)",
+          "state": "external",
+          "disposition": "Finite union and intersection are set operations; the displayed constructible normal form assumes no Noetherian condition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.c8b6cfd6a058ab26.finite-field",
+      "version_sha256": "c4e0508ff2c241563352e2c81b2889c9b9276fa94a7e39d1f77541a29d29cb9e",
+      "complete": true,
+      "review_rationale": "Read the defining field and finite-underlying-set clauses, then distinguished the asserted prime-power cardinality classification as a mathematical consequence rather than an extra independent axiom.",
+      "references": [
+        {
+          "phrase": "field",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "cardinality of the underlying set",
+          "state": "existing",
+          "target_meaning_id": "meaning.081430bc340a055a.cardinality"
+        },
+        {
+          "phrase": "prime natural number p",
+          "state": "unassigned",
+          "context": "Number theory: positive integer p>1 with no positive divisors except 1 and p, not a prime ideal"
+        },
+        {
+          "phrase": "positive integer exponent n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-positive-convention"
+        },
+        {
+          "phrase": "necessarily cardinality p^n",
+          "state": "external",
+          "disposition": "Prime-power size is a theorem about finite fields, not an additional defining condition or a source of arbitrary finite cardinalities."
+        }
+      ]
+    }
+  ]
+}
