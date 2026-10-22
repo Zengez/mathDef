@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.research81.martingale-discrete.02",
   "version_sha256": "215d3340410bffedf91b40cf1e011289c47a71802ee1c069e1861486a711b649",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "martingale",
-      "span": [
-        77,
-        87
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.research81.martingale-continuous-index"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.9565f3bbbb19282024b7"
+      "phrase": "discrete adapted real-valued process",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.found85.adapted-discrete",
+      "occurrence_id": "occ.0ee926c81952628dda9c"
+    },
+    {
+      "phrase": "filtration F_n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.found85.discrete-filtration",
+      "occurrence_id": "occ.4008daa6ba9480c4af26"
+    },
+    {
+      "phrase": "conditional expectation E[X_m|F_n]",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.found85.conditional-expectation",
+      "occurrence_id": "occ.c43df7341f8e7b0ceb4d"
+    },
+    {
+      "phrase": "nonnegative integer indices n,m",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.5934a3ed0482e69e14dc"
+    },
+    {
+      "phrase": "integrable X_n for every n",
+      "state": "unassigned",
+      "context": "Finite expected absolute value for every indexed random variable.",
+      "occurrence_id": "occ.e9216a4630c3dd7362e9"
+    },
+    {
+      "phrase": "almost-sure equality for all n<=m",
+      "state": "unassigned",
+      "context": "E[X_m|F_n]=X_n almost surely for every ordered pair of discrete indices with n<=m.",
+      "occurrence_id": "occ.d648af749e6e57938ddf"
+    },
+    {
+      "phrase": "same discrete martingale meaning",
+      "state": "external",
+      "disposition": "All-future formulation is the alternative version of the one-step condition, not a separate dependency target.",
+      "occurrence_id": "occ.40ae36d1e2eb24c33d63"
     }
   ],
-  "snapshot_sha256": "63cc2a7aef49d2ee3a7436c07f1a7d848967a7b2ddb48415904c04b006f7d87a",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "00dd4cdb300128c6c17f910f26b7ef53cedc397e6a2621f3a04653de8619b09d",
+  "review_rationale": "Reviewed all-future conditional-expectation form of discrete martingale, preserving integrability and adaptation, with all integer n<=m quantification and almost-sure equality."
 }

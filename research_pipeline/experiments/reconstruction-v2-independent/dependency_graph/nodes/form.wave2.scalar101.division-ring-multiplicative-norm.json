@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.scalar101.division-ring-multiplicative-norm",
   "version_sha256": "0a76b8668581609a2c6f632177db53135919a19ba0ab434aed853e5c9248c735",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "division ring",
-      "span": [
-        24,
-        37
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.scalar101.division-ring"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.0bfc5de6c420e96a5c35"
+      "phrase": "associative division ring D",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.scalar101.division-ring",
+      "occurrence_id": "occ.6acc3ee8e0533f5c61b0"
+    },
+    {
+      "phrase": "mapping |.|_D:D to nonnegative reals",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.cc5fed6ed82409957147"
+    },
+    {
+      "phrase": "real nonnegative values",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field",
+      "occurrence_id": "occ.a6ad68499fee35e88ebf"
+    },
+    {
+      "phrase": "positive definiteness |a|=0 iff a=0",
+      "state": "unassigned",
+      "context": "Norm is zero exactly at additive zero of division ring.",
+      "occurrence_id": "occ.9f4adfe1c7a47d95f75a"
+    },
+    {
+      "phrase": "multiplicativity |ab|=|a||b|",
+      "state": "unassigned",
+      "context": "Exact equality for products in division ring, stronger than submultiplicative inequality.",
+      "occurrence_id": "occ.42ebf5a0184dcd51c547"
+    },
+    {
+      "phrase": "triangle inequality |a+b|<=|a|+|b|",
+      "state": "unassigned",
+      "context": "Norm of sum is bounded by sum of norms.",
+      "occurrence_id": "occ.2f2f42e1ba08b75d5d1e"
+    },
+    {
+      "phrase": "do not substitute vector norm",
+      "state": "external",
+      "disposition": "The object assigned a norm is the scalar division ring itself, not an arbitrary vector space over D.",
+      "occurrence_id": "occ.36e3f0610e831b967834"
     }
   ],
-  "snapshot_sha256": "b9edd9771db88ea62050c765ee12c7606f7d8d30e6b361e95de32852d39e8f56",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "f6bb500f3bfb9b361ebbcf4ffa4ac58c56429e90235d4363b7be7a263675ad29",
+  "review_rationale": "Reviewed norm on division ring as nonnegative real-valued mapping with definite zero, exact multiplicativity and triangle inequality; not merely submultiplicative."
 }

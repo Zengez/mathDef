@@ -2,39 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.scalar101.division-ring",
   "version_sha256": "5036a804d53c01a475d463dc1fcc517c8403bde2462742d84aaeefd99c9df49a",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "group",
-      "span": [
-        85,
-        90
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.2e0f16d0c258ff450f8c"
+      "phrase": "associative ring with identity",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.ac1fcf17ac23f5ef4882"
     },
     {
-      "phrase": "abelian group",
-      "span": [
-        132,
-        145
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.abelian-group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.56fae8eefef13667731d"
+      "phrase": "nonzero elements form group under multiplication",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.group",
+      "occurrence_id": "occ.12a237b0ef45f6b98dc4"
+    },
+    {
+      "phrase": "additive abelian group",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "occurrence_id": "occ.4b657b947cd23961e731"
+    },
+    {
+      "phrase": "multiplicative identity 1_D",
+      "state": "unassigned",
+      "context": "Two-sided unit of ring multiplication, distinct from additive zero.",
+      "occurrence_id": "occ.d190b8c5293b3c3c596e"
+    },
+    {
+      "phrase": "every nonzero element has two-sided inverse",
+      "state": "unassigned",
+      "context": "For each nonzero a in D there exists b with ab=ba=1_D.",
+      "occurrence_id": "occ.e15658a1c4bc70c6af4c"
+    },
+    {
+      "phrase": "left and right distributivity",
+      "state": "unassigned",
+      "context": "Multiplication distributes over addition in both argument positions.",
+      "occurrence_id": "occ.a1652c4264dbaed5c348"
+    },
+    {
+      "phrase": "noncommutative permitted",
+      "state": "external",
+      "disposition": "Unlike a field, multiplication in a division ring need not commute.",
+      "occurrence_id": "occ.137a275c1e7f313342a0"
     }
   ],
-  "snapshot_sha256": "24dd6d30b6db52700c83c891a834294c2ca3cba33465c92c62dd4392585b0c71",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "66568b73c108046c4b8626d2f483129a8ed560e1b9db71b3162a8618bf6e1f39",
+  "review_rationale": "Reviewed nonzero associative unital division ring where every nonzero element has two-sided multiplicative inverse and multiplication need not commute; addition remains abelian."
 }
