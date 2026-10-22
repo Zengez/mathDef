@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-044g",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.f810d472f5a4d367.limit-ordinal",
+      "version_sha256": "9c3ea1f6a636c452c07e8d2b763a2d8454aa36a762b36e6f5961d1d2c245a2e9",
+      "complete": true,
+      "review_rationale": "Read limit ordinal by both nonzero restriction and absence of an ordinal predecessor whose successor equals lambda; kept successor distinct from set-theoretic maximal elements.",
+      "references": [
+        {
+          "phrase": "ordinal lambda",
+          "state": "existing",
+          "target_meaning_id": "meaning.f810d472f5a4d367.von-neumann-ordinal"
+        },
+        {
+          "phrase": "successor ordinal",
+          "state": "existing",
+          "target_meaning_id": "meaning.f810d472f5a4d367.successor-ordinal"
+        },
+        {
+          "phrase": "zero ordinal",
+          "state": "unassigned",
+          "context": "Empty von Neumann ordinal, excluded from the limit-ordinal convention used here."
+        },
+        {
+          "phrase": "not successor of any ordinal",
+          "state": "external",
+          "disposition": "Negative condition universally quantifies over ordinals; not a statement that lambda is an infinite cardinal."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.f810d472f5a4d367.successor-ordinal",
+      "version_sha256": "e13a518108a5c13b874d6ba4645eb3f48d0954109c9a905c1c3308b74fbe425e",
+      "complete": true,
+      "review_rationale": "Read successor ordinals using von Neumann set representatives, with alpha+1 equal to alpha union its singleton, distinguished from a numerical plus one in arbitrary ordered sets.",
+      "references": [
+        {
+          "phrase": "von Neumann ordinal alpha",
+          "state": "existing",
+          "target_meaning_id": "meaning.f810d472f5a4d367.von-neumann-ordinal"
+        },
+        {
+          "phrase": "subset and singleton set construction",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "alpha∪{alpha}",
+          "state": "unassigned",
+          "context": "Set union of all members of ordinal alpha and the singleton containing alpha itself."
+        },
+        {
+          "phrase": "ordinal successor operation alpha+1",
+          "state": "unassigned",
+          "context": "Canonical least ordinal strictly larger than alpha, concretely alpha union its singleton."
+        },
+        {
+          "phrase": "successor ordinal characterization",
+          "state": "external",
+          "disposition": "An ordinal is a successor precisely if it equals beta+1 for some ordinal beta."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.f810d472f5a4d367.von-neumann-ordinal",
+      "version_sha256": "775d0e0545c2ff83e74b5d437669fe8f4ce438f7e6966f835b3faaee30600b8b",
+      "complete": true,
+      "review_rationale": "Read von Neumann ordinal as a transitive set well-ordered by membership, including the least-element property and each member being a subset, without confusing the order with arbitrary numeric ordering.",
+      "references": [
+        {
+          "phrase": "well-ordered relation on set alpha",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.well-ordered-set"
+        },
+        {
+          "phrase": "set inclusion beta⊆alpha",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "transitive set alpha",
+          "state": "unassigned",
+          "context": "Set alpha satisfying for each beta∈alpha that beta⊆alpha."
+        },
+        {
+          "phrase": "membership relation ∈ as a well-order",
+          "state": "unassigned",
+          "context": "Relation beta∈gamma between ordinal elements beta,gamma inside alpha, with every nonempty subset having an ∈-least member."
+        },
+        {
+          "phrase": "every member of alpha is subset of alpha",
+          "state": "external",
+          "disposition": "The explicit transitivity condition is part of the ordinal definition, not optional inferred numeric comparison."
+        }
+      ]
+    }
+  ]
+}
