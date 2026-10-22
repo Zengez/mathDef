@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-accelerated-connected-site-graded-015",
+  "mode": "amend",
+  "research_scope": "Five original complete-formulation reviews: connectedness, site covering, prime subfield, homogeneous ideal, and Proj.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk10.20261022.01",
+      "formulation_id": "form.wave2.variant71.connected.01",
+      "version_sha256": "61d5d23ce21d8e2ac7339d3dd3baa56cde18283f49d4290c91cd5ffe53c8c40b",
+      "expected_node_sha256": "8c9c66959e49709eb8a28b5e0ce0cfce9f286ed19d2cc16c75ddbe5a9ded3820",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Reviewed entire original connected space source and every prior reference. Preserved evidence, full adjacency and mathematical context; distinguished missing typed prerequisites from definition-local stipulations. These fast classifications require later global consistency review.",
+      "reason": "Source-free source-preserving Pass2 contextual full-definition review of connected space; no new source, definition, or outside research.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "open subsets U and V of X",
+          "state": "external",
+          "disposition": "Membership of U,V in the topology is already typed by the linked topological-space prerequisite and is part of the source-specific separation criterion."
+        },
+        {
+          "phrase": "nonempty U and nonempty V",
+          "state": "external",
+          "disposition": "Nonemptiness of both candidate opens is a constituent condition for a nontrivial separation; X is allowed to be empty."
+        },
+        {
+          "phrase": "disjointness U cap V empty",
+          "state": "external",
+          "disposition": "The intersection-equals-empty equation is part of the separation forbidden by connectedness, rather than a prior disconnectedness assumption."
+        },
+        {
+          "phrase": "covering U union V = X",
+          "state": "external",
+          "disposition": "Covering X by those two candidate open sets is part of the defining separation criterion."
+        },
+        {
+          "phrase": "empty space included",
+          "state": "external",
+          "disposition": "Empty X admits no pair of nonempty opens and is therefore connected under this formulation."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk10.20261022.02",
+      "formulation_id": "form.2a92541d9744fa5d.covering-family-of-site",
+      "version_sha256": "713db21eb140dde4662fbd9a5c256ffdde796c56c26fb6157fe555dabb11e720",
+      "expected_node_sha256": "2fa13049ddb44e979f62cc596d027a92f3bf6e7b14abf574d8a0471ba14369f3",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Reviewed entire original covering family in a Grothendieck site source and every prior reference. Preserved evidence, full adjacency and mathematical context; distinguished missing typed prerequisites from definition-local stipulations. These fast classifications require later global consistency review.",
+      "reason": "Source-free source-preserving Pass2 contextual full-definition review of covering family in a Grothendieck site; no new source, definition, or outside research.",
+      "references": [
+        {
+          "phrase": "site (C,Cov)",
+          "state": "existing",
+          "reason": "The Grothendieck site notion is not established by a generic category definition.",
+          "target_meaning_id": "meaning.wave2.foundation.grothendieck-site-pretopology",
+          "matching_note": "Reviewed independently typed existing meaning. General grading scope subject to final cross-definition audit."
+        },
+        {
+          "phrase": "collection of arrows U_i→U",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.fixed-target-morphism-family",
+          "matching_note": "An indexed family of morphisms has common target U."
+        },
+        {
+          "phrase": "isomorphism covers",
+          "state": "external",
+          "reason": "This is a covering-family closure axiom specialized to site structure.",
+          "disposition": "Singleton isomorphism families being covers is an axiom of the site already linked, not a separate presumed covering-family object."
+        },
+        {
+          "phrase": "compositional refinement and pullback",
+          "state": "external",
+          "reason": "The site axioms invoke categorical pullback and compositional refinement, not generic set intersection.",
+          "disposition": "Refinement and base-change stability are stipulated site axioms, inherited from the linked source-specific site convention."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk10.20261022.03",
+      "formulation_id": "form.dbce785fa0c96b0a.prime-subfield",
+      "version_sha256": "85d021d4035b70d1be417453fa2fc25e1ae400f7e4e5603d8f31560e5d728cc9",
+      "expected_node_sha256": "1535b4405cb930ecc25fe916a82d94fc65ff1d1b0d930daa2e7695fbfd1c4560",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Reviewed entire original prime subfield source and every prior reference. Preserved evidence, full adjacency and mathematical context; distinguished missing typed prerequisites from definition-local stipulations. These fast classifications require later global consistency review.",
+      "reason": "Source-free source-preserving Pass2 contextual full-definition review of prime subfield; no new source, definition, or outside research.",
+      "references": [
+        {
+          "phrase": "field F",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "field characteristic",
+          "state": "existing",
+          "target_meaning_id": "meaning.dbce785fa0c96b0a.field-characteristic"
+        },
+        {
+          "phrase": "field of rational numbers Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.rational-number"
+        },
+        {
+          "phrase": "finite prime field F_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.1fd51873f9f0afbd.prime-field-finite"
+        },
+        {
+          "phrase": "subfield of F",
+          "state": "missing",
+          "context": "Field theory: subfield K of field F, containing the identities and closed under addition, multiplication, additive inverses, and inverse of every nonzero element.",
+          "matching_note": "Provisional source-free candidate; contextual identity with other meanings and missing records requires global review."
+        },
+        {
+          "phrase": "smallest subfield of F by inclusion",
+          "state": "external",
+          "disposition": "Minimality among all subfields of F is the defining prime-subfield property, equivalently the subfield generated by the unit 1_F."
+        },
+        {
+          "phrase": "field isomorphism Q or F_p",
+          "state": "missing",
+          "context": "Field theory: bijective unital field homomorphism, here from prime subfield to ℚ in characteristic zero or 𝔽_p in characteristic p; distinguished from mere bijection of sets.",
+          "matching_note": "Provisional source-free candidate; contextual identity with other meanings and missing records requires global review."
+        },
+        {
+          "phrase": "Q when char 0 and F_p when char p>0",
+          "state": "external",
+          "disposition": "The characteristic-dependent identification is the standard structural classification, not two simultaneously contained prime subfields."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk10.20261022.04",
+      "formulation_id": "form.29b2c34cc33d4b62.homogeneous-ideal",
+      "version_sha256": "b94f112a63f7bdccabfaf6c17cf5e62d6107171bcf057dabed26fa781db91428",
+      "expected_node_sha256": "0f776ea6415a4cb42706134f068a5e8287ea06107f4567e3d9b36b9f919cfd3b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Reviewed entire original homogeneous ideal source and every prior reference. Preserved evidence, full adjacency and mathematical context; distinguished missing typed prerequisites from definition-local stipulations. These fast classifications require later global consistency review.",
+      "reason": "Source-free source-preserving Pass2 contextual full-definition review of homogeneous ideal; no new source, definition, or outside research.",
+      "references": [
+        {
+          "phrase": "ideal I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+          "matching_note": "A homogeneous ideal is first an ordinary ring ideal."
+        },
+        {
+          "phrase": "S-submodule",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.submodule",
+          "matching_note": "An ideal is an S-submodule of the ring regarded as its own module."
+        },
+        {
+          "phrase": "graded ring S=⊕_d S_d",
+          "state": "existing",
+          "reason": "The graded ring concept is not identical to the indexed Noetherian graded-ring context.",
+          "target_meaning_id": "meaning.fa3b484c09596cfd.nonnegatively-graded-ring",
+          "matching_note": "Reviewed independently typed existing meaning. General grading scope subject to final cross-definition audit."
+        },
+        {
+          "phrase": "homogeneous component",
+          "state": "missing",
+          "reason": "Componentwise membership criterion is a distinct graded-algebra construction.",
+          "context": "Graded ring theory: homogeneous degree-d component a_d in decomposition a=Σ_d a_d of a graded-ring element, with finitely many nonzero components. General Z-graded vs nonnegative conventions require global scope audit.",
+          "matching_note": "Provisional source-free candidate; contextual identity with other meanings and missing records requires global review."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk10.20261022.05",
+      "formulation_id": "form.29b2c34cc33d4b62.proj-graded-ring",
+      "version_sha256": "e5f17a4e9551cc417032ef88e18d98b5bb37a80c0cdade695019ebea59419fd3",
+      "expected_node_sha256": "22f83e777a872ace9d0de53aa2fa4a84dfdaf9a3e67c80998ae13896871682a5",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Reviewed entire original homogeneous spectrum Proj(S) source and every prior reference. Preserved evidence, full adjacency and mathematical context; distinguished missing typed prerequisites from definition-local stipulations. These fast classifications require later global consistency review.",
+      "reason": "Source-free source-preserving Pass2 contextual full-definition review of homogeneous spectrum Proj(S); no new source, definition, or outside research.",
+      "references": [
+        {
+          "phrase": "topological space",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space",
+          "matching_note": "Proj(S) is equipped with a topology."
+        },
+        {
+          "phrase": "prime ideals",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+          "matching_note": "The homogeneous prime ideals are primes of a commutative ring."
+        },
+        {
+          "phrase": "subspace topology",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subspace-topology-general",
+          "matching_note": "Proj(S) may be empty; use the general arbitrary-subspace version."
+        },
+        {
+          "phrase": "Spec(S)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+          "matching_note": "The underlying spectrum is the prime spectrum of the graded commutative ring."
+        },
+        {
+          "phrase": "homogeneous ideals",
+          "state": "existing",
+          "target_meaning_id": "meaning.29b2c34cc33d4b62.homogeneous-ideal",
+          "matching_note": "This supplies the homogeneous condition for prime ideals."
+        },
+        {
+          "phrase": "nonnegatively graded commutative ring",
+          "state": "existing",
+          "reason": "Ordinary Noetherian graded-ring context should not be assumed.",
+          "target_meaning_id": "meaning.fa3b484c09596cfd.nonnegatively-graded-ring",
+          "matching_note": "Reviewed independently typed existing meaning. General grading scope subject to final cross-definition audit."
+        },
+        {
+          "phrase": "irrelevant ideal S_+",
+          "state": "missing",
+          "reason": "The special ideal excluded from Proj is a contextual ring construction.",
+          "context": "Graded algebra: irrelevant ideal S_+=⊕_{n>0} S_n, generated by positive-degree homogeneous elements of a nonnegatively graded ring.",
+          "matching_note": "Provisional source-free candidate; contextual identity with other meanings and missing records requires global review."
+        }
+      ]
+    }
+  ]
+}
