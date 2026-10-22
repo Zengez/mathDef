@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.pop140.simple-graph-cycle",
   "version_sha256": "8c3e814c50243934798e1a683b55f7d71becebdacbfbfb0f8fa33151860bc714",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "simple undirected graph G",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.graph42.simple-undirected",
+      "occurrence_id": "occ.d5bfaf25bf9577321276"
+    },
+    {
+      "phrase": "positive integer cycle length k",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-positive-convention",
+      "occurrence_id": "occ.73a20fd1ae06aa4117b1"
+    },
+    {
+      "phrase": "finite cyclic vertex sequence",
+      "state": "unassigned",
+      "context": "Ordered finite list v_0 to v_(k-1) closed by return to starting vertex.",
+      "occurrence_id": "occ.4005d1ebebe5b913bb76"
+    },
+    {
+      "phrase": "pairwise distinct cycle vertices",
+      "state": "unassigned",
+      "context": "Apart from repeated final starting vertex, no two vertices at indices 0 through k-1 coincide.",
+      "occurrence_id": "occ.dfce55655fcce4709820"
+    },
+    {
+      "phrase": "successive undirected edge membership",
+      "state": "unassigned",
+      "context": "For every index i, unordered pair of v_i and v_(i+1 mod k) belongs to graph edge set.",
+      "occurrence_id": "occ.93c2042732b128d66289"
+    },
+    {
+      "phrase": "cyclic index modulo k",
+      "state": "unassigned",
+      "context": "Wrap index k-1 back to index zero in cyclic adjacency formula.",
+      "occurrence_id": "occ.cd8cbf9775563d41357f"
+    },
+    {
+      "phrase": "length lower bound k>=3",
+      "state": "external",
+      "disposition": "Loopless simple graph cannot have loops or two-edge repeated walks as simple cycles.",
+      "occurrence_id": "occ.32732dc64d22ec9ff2a7"
+    }
+  ],
+  "snapshot_sha256": "b9e6fe54f6ac313d6275dedce4031e89968223847494ba14d0c05d8f4b2653ab",
+  "review_rationale": "Reviewed finite simple cycle as cyclic vertex sequence of length k>=3 in loopless simple undirected graph, with distinct interior vertices and every successive edge present."
 }

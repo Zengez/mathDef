@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.pop140.mutually-independent",
   "version_sha256": "ab6ffe9e9014f0c336064f3a14486e49e6b89d21cb9e53d96f3563ade5d6e2aa",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "probability space",
-      "span": [
-        6,
-        23
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.prob90.probability-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.953b3f40205305ffbd78"
+      "phrase": "probability space (Omega,Sigma,P)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prob90.probability-space",
+      "occurrence_id": "occ.e521961e45db9333433e"
+    },
+    {
+      "phrase": "two-event independence as special case",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.pop140.independent-pair",
+      "occurrence_id": "occ.b3bbf6643b439e8d5bc3"
+    },
+    {
+      "phrase": "indexed family of measurable events (A_i)",
+      "state": "unassigned",
+      "context": "Choice of one measurable event in the common sigma algebra for every index i in arbitrary index set I.",
+      "occurrence_id": "occ.f5fcc4fb1a0ca9ba7f35"
+    },
+    {
+      "phrase": "finite index subset J",
+      "state": "unassigned",
+      "context": "Finite collection of distinct indices from the possibly infinite index set I.",
+      "occurrence_id": "occ.4c3704d467db88b14a3f"
+    },
+    {
+      "phrase": "finite intersection over J",
+      "state": "unassigned",
+      "context": "Event shared by all A_j for indices j in J, equal to Omega for J empty.",
+      "occurrence_id": "occ.45fe786a2bed3f54f5af"
+    },
+    {
+      "phrase": "finite product of event probabilities",
+      "state": "unassigned",
+      "context": "Product of real numbers P(A_j) over the finite set J, interpreted as one if J empty.",
+      "occurrence_id": "occ.4c9e588cbcb87e143bef"
+    },
+    {
+      "phrase": "mutual not just pairwise independence",
+      "state": "external",
+      "disposition": "For three or more events every finite joint intersection must satisfy product identity, not only pairs.",
+      "occurrence_id": "occ.dae17acc8d918e78ae34"
     }
   ],
-  "snapshot_sha256": "ce477a42fbab985b0c1ece4624e1202adeaed8943e00cf0afd8e9b9566762ae3",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "63510f7719f3e39a5da91f8796cc6db4f0ef13eb7e6303199e58a4b4b8e421fe",
+  "review_rationale": "Reviewed mutual independence for arbitrary indexed family of events using every finite index subset, including singleton and empty-index product conventions, not merely pairwise tests."
 }

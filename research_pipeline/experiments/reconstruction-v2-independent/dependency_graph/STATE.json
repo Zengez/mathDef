@@ -6,8 +6,8 @@
     "total_formulations": 659,
     "screened_formulations": 639,
     "provisional_formulations": 20,
-    "scan_complete": 600,
-    "scan_incomplete": 59,
+    "scan_complete": 604,
+    "scan_incomplete": 55,
     "unscanned": 0,
     "open": 659,
     "closed": 0,
@@ -15,13 +15,13 @@
     "unresolved_missing_candidates": 12,
     "alias_candidate_records": 1,
     "missing_occurrences": 17,
-    "ambiguous_occurrences": 61,
-    "unassigned_occurrences": 1040,
-    "unresolved_fingerprint": "0641890e05b90438c593bb7a84a1b6f7a858f5ecf6cefa1898f419e81b574abf",
+    "ambiguous_occurrences": 58,
+    "unassigned_occurrences": 1054,
+    "unresolved_fingerprint": "152d82a230f694f657c7e2d816423acff39e578ca24403c6ccd33835f32f90ca",
     "phase": "scan_and_link_existing",
     "consolidation_gate_valid": false,
     "seed_relations": 891,
-    "scan_occurrences": 3284,
+    "scan_occurrences": 3306,
     "scan_amendment_event_count": 13,
     "automatic_completion_is_not_certification": true,
     "breadth_expansion": "on_hold"
@@ -6400,45 +6400,52 @@
       "version_sha256": "0ed86e899e7d8e111852d8608a37814aa479986e489456d8581cd8c7bd5f5efe"
     },
     "form.wave2.pop140.mutually-independent": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "ambiguous:occ.953b3f40205305ffbd78",
-        "scan_incomplete"
+        "unassigned:occ.f5fcc4fb1a0ca9ba7f35",
+        "unassigned:occ.4c3704d467db88b14a3f",
+        "unassigned:occ.45fe786a2bed3f54f5af",
+        "unassigned:occ.4c9e588cbcb87e143bef"
       ],
       "version_sha256": "ab6ffe9e9014f0c336064f3a14486e49e6b89d21cb9e53d96f3563ade5d6e2aa"
     },
     "form.wave2.pop140.pairwise-independent": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "ambiguous:occ.049cefc14bf64761d681",
-        "scan_incomplete"
+        "unassigned:occ.38db3c8b1f624cca7131",
+        "unassigned:occ.f4f68a44fe031d0f2563"
       ],
       "version_sha256": "186ea4d23a63592d582889dea31ec8ccfab4faff2a4253eb4ea7584600a045e1"
     },
     "form.wave2.pop140.simple-graph-cycle": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "unassigned:occ.4005d1ebebe5b913bb76",
+        "unassigned:occ.dfce55655fcce4709820",
+        "unassigned:occ.93c2042732b128d66289",
+        "unassigned:occ.cd8cbf9775563d41357f"
       ],
       "version_sha256": "8c3e814c50243934798e1a683b55f7d71becebdacbfbfb0f8fa33151860bc714"
     },
     "form.wave2.pop141.connected-no-separation": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
-      "completed": false,
+      "scan_status": "complete",
+      "encountered": true,
+      "completed": true,
       "structural_status": "open",
       "direct_blockers": [
-        "ambiguous:occ.e91665df84733824c6fa",
-        "scan_incomplete"
+        "unassigned:occ.b53bca0361df4c33d3a3",
+        "unassigned:occ.9c35836815b207566d56",
+        "unassigned:occ.7ff95a4b40ee4e4d28ec",
+        "unassigned:occ.30f26d874147436718dd"
       ],
       "version_sha256": "5f2cd3ee8ccc70e73d43499630d058cc23783afb0aa4460b015932a5df484506"
     },

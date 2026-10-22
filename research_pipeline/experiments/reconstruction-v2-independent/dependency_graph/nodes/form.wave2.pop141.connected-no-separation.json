@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.pop141.connected-no-separation",
   "version_sha256": "5f2cd3ee8ccc70e73d43499630d058cc23783afb0aa4460b015932a5df484506",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.e91665df84733824c6fa"
+      "phrase": "topological space (X,tau)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.7a88dbc1a92ca545a9d3"
+    },
+    {
+      "phrase": "open subsets U and V",
+      "state": "unassigned",
+      "context": "Members of topology tau on the same ambient set X.",
+      "occurrence_id": "occ.b53bca0361df4c33d3a3"
+    },
+    {
+      "phrase": "U and V disjoint",
+      "state": "unassigned",
+      "context": "Their intersection is empty.",
+      "occurrence_id": "occ.9c35836815b207566d56"
+    },
+    {
+      "phrase": "U and V cover X",
+      "state": "unassigned",
+      "context": "Their union equals the entire underlying space.",
+      "occurrence_id": "occ.7ff95a4b40ee4e4d28ec"
+    },
+    {
+      "phrase": "U,V nonempty",
+      "state": "unassigned",
+      "context": "Both candidate open sets contain at least one point.",
+      "occurrence_id": "occ.30f26d874147436718dd"
+    },
+    {
+      "phrase": "empty space convention",
+      "state": "external",
+      "disposition": "No separation of the empty space into two nonempty opens exists, so empty space is connected under this source convention.",
+      "occurrence_id": "occ.1527ae403daf0ca9aabe"
     }
   ],
-  "snapshot_sha256": "cd39d3fb6b0d47a539a9a94d3feff42cb582c3a1500243359ebd72d3089aba59",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "405ad8baceea37d5b6cf1d7877c9ce9e4ed40ed5163de567b2e41d9487a3788e",
+  "review_rationale": "Reviewed connectedness as absence of separation into two disjoint nonempty open subsets covering X, valid even for the empty topological space."
 }
