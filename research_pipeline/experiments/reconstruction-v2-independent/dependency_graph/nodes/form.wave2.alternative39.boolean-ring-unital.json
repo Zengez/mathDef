@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.alternative39.boolean-ring-unital",
   "version_sha256": "1ff72078c2e94440de7e37fafb4923c9aa50e68894ba4a668038b162856457c0",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "Boolean ring",
-      "span": [
-        2,
-        14
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.alternative39.boolean-ring-nonunital"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.dda786c152d38d1bfff5"
+      "phrase": "unital associative ring structure",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.53265b9c3aed08901b53"
+    },
+    {
+      "phrase": "associative ring with multiplicative identity 1_R",
+      "state": "unassigned",
+      "context": "Ring with additive abelian group and associative distributive multiplication, possessing a specified two-sided identity.",
+      "occurrence_id": "occ.f8ed6d27dd9bd1d803cc"
+    },
+    {
+      "phrase": "every element idempotent x²=x",
+      "state": "unassigned",
+      "context": "Universal multiplicative idempotence throughout R, not just for selected idempotents.",
+      "occurrence_id": "occ.0e7c2145a2bd1f481a89"
+    },
+    {
+      "phrase": "unital convention versus nonunital Boolean ring",
+      "state": "external",
+      "disposition": "Unity is an explicit additional structural assumption and is not silently imposed on the other variant.",
+      "occurrence_id": "occ.a950bb7fd98d74511567"
     }
   ],
-  "snapshot_sha256": "9e7370dd67850947c026c47fb2658bfd5a91b62bc841d5c693b76d8ade3b8aef",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "1982dba592c50288eb0ec89d43586fabeb2d2bbdf2c936c6865e214efcf56cdf",
+  "review_rationale": "Read associative Boolean ring with required unity and idempotence of all elements, distinguishing the unital convention from the separate nonunital variant."
 }

@@ -2,23 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.analysis.indefinite-integral-on-interval",
   "version_sha256": "0c684c18446694c19c451e15d9e7c2cc720de40766f0c55980301e8ee0370941",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "antiderivative",
-      "span": [
-        16,
-        30
-      ],
+      "phrase": "antiderivative F of f on I",
       "state": "existing",
       "target_meaning_id": "meaning.wave2.analysis.antiderivative-on-interval",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.174fa0b641520315dab9"
+      "occurrence_id": "occ.435aca22d067cae7e878"
+    },
+    {
+      "phrase": "real functions on I",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.62a474bd836335c08411"
+    },
+    {
+      "phrase": "family {F+C:C∈R}",
+      "state": "unassigned",
+      "context": "Set of functions x↦F(x)+C for all real constants C, each on the same interval I.",
+      "occurrence_id": "occ.de9c4ca13100d7bde051"
+    },
+    {
+      "phrase": "additive constant C∈R",
+      "state": "unassigned",
+      "context": "Constant real-valued function on I, whose derivative is zero.",
+      "occurrence_id": "occ.64080a3ec2b7841aa17d"
+    },
+    {
+      "phrase": "symbol indefinite integral does not denote a single number",
+      "state": "external",
+      "disposition": "It denotes a family of functions, not a definite integral over an interval.",
+      "occurrence_id": "occ.8c63e47f842a4b1fe9bd"
     }
   ],
-  "snapshot_sha256": "4464a8145f42bd6ba8b29267c9dce34d1fff1118cd55553f2f7c2be7a3d7b647",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "6520b5e5f915cef66a719fba43037226e526937821403c3e084a282437f01972",
+  "review_rationale": "Read indefinite integral as family of all constant shifts of an antiderivative on the same interval, distinct from a Riemann or Lebesgue definite integral."
 }

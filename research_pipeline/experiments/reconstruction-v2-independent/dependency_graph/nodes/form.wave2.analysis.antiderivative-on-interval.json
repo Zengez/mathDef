@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.analysis.antiderivative-on-interval",
   "version_sha256": "4c522d3505cb0b25c59310f92815347bdda17542823900aefe57cb3fe707e232",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "real derivative at interior point",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis.real-derivative-point",
+      "occurrence_id": "occ.2d6270a65c98d15d1dc7"
+    },
+    {
+      "phrase": "derivative function on an open interval",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross107.derivative-function-open-interval",
+      "occurrence_id": "occ.d577a3b1e0f882414419"
+    },
+    {
+      "phrase": "function f:I→R and F:I→R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.bd8d5394150987661fe2"
+    },
+    {
+      "phrase": "open real interval I",
+      "state": "unassigned",
+      "context": "Interval in R that is open in usual topology; each x is an interior point suitable for derivative.",
+      "occurrence_id": "occ.113bdb3a79485e05c316"
+    },
+    {
+      "phrase": "pointwise equality F′(x)=f(x)",
+      "state": "unassigned",
+      "context": "For every x in I, the finite derivative of F exists and agrees with f's value.",
+      "occurrence_id": "occ.960e3d6e6d1f3a79f2ac"
+    },
+    {
+      "phrase": "antiderivative need not be unique",
+      "state": "external",
+      "disposition": "If one exists, adding real constants gives others; equality of the derivative alone does not select a unique F.",
+      "occurrence_id": "occ.6fedad5e03a22490cec1"
+    }
+  ],
+  "snapshot_sha256": "c9e00c904eda372ba2df1ce194eb4d4bc8f16a00b2a9c9fb75eed6c30d2aebd7",
+  "review_rationale": "Read real antiderivative as differentiable function F on an open interval whose pointwise derivative equals the given f everywhere, and retained the shared interval."
 }
