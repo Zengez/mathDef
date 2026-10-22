@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-formal-polynomial-initial-topology-001",
+  "mode": "amend",
+  "research_scope": "Four source-reviewed full-node amendments, separating formal derivative and quotient ring unit, polynomial splitting, general initial topology and Galois automorphism evaluation.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.derivative_initial.20261022.01",
+      "formulation_id": "form.29edcdafba2cae3d.standard-etale-ring-map",
+      "version_sha256": "7f2c40f829d83a5b399678bb5be3ad2c807d9b985bd4b1529056a8fe09372afc",
+      "expected_node_sha256": "f98b61d77aedb2a2585344206b42fed389a68c2901c2a26fa42464af16d6e8bd",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the standard étale polynomial quotient/localization criterion, distinguishing source ring homomorphism and étaleness from monic polynomial and formal derivative concepts.",
+      "reason": "Inspected the entire original mathematical text and existing independent contextual meanings. Separated algebraic formal derivative from unit-of-ring condition; polynomial splitting from a splitting field; Galois automorphism evaluation from polynomial evaluation; and initial topology from a merely topological space. Preserved all other references, source hypotheses, and original content.",
+      "references": [
+        {
+          "phrase": "ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "The étale ring-map definition uses the commutative unital algebra convention."
+        },
+        {
+          "phrase": "étale",
+          "state": "existing",
+          "target_meaning_id": "meaning.6f35dab884da6c30.etale-ring-map",
+          "matching_note": "Standard étale is a particular presentation guaranteeing the existing étale property."
+        },
+        {
+          "phrase": "localization R[x]_g",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+          "matching_note": "The quotient is taken after ring localization at polynomial g."
+        },
+        {
+          "phrase": "R-algebra isomorphic to R[x]_g/(f)",
+          "state": "unassigned",
+          "context": "Commutative algebra: a standard étale algebra presentation by polynomial localization and quotient",
+          "reason": "The compound quotient construction is not equivalent to any one existing ring-localization meaning."
+        },
+        {
+          "phrase": "monic polynomial f",
+          "state": "missing",
+          "context": "Polynomial algebra: a nonzero univariate polynomial f(X)=a_nX^n+⋯+a_0 over a commutative unital coefficient ring is monic if its leading coefficient a_n equals the multiplicative identity 1, including degree zero unit polynomial 1.",
+          "reason": "This may be a separate indexed polynomial property; leave the occurrence unassigned.",
+          "matching_note": "Reviewed independent prerequisite in this full-source context, with all extra field, polynomial, topology, and invertibility hypotheses kept."
+        },
+        {
+          "phrase": "f′ invertible",
+          "state": "external",
+          "reason": "Differentiation of a formal polynomial differs from analysis derivative and must be context-matched.",
+          "disposition": "Compound condition requiring formal polynomial derivative and invertibility of its image in the specified quotient ring; these two prerequisites are separately represented without creating a third independent mathematical object.",
+          "matching_note": "Source condition retained as explanatory criterion, with separate derivative and unit prerequisites."
+        },
+        {
+          "phrase": "formal polynomial derivative f′",
+          "state": "missing",
+          "context": "Commutative algebra: formal derivative D:R[X]→R[X] of a univariate polynomial over a commutative unital coefficient ring R, uniquely specified by D(Σ_{i=0}^n a_i X^i)=Σ_{i=1}^n (i·a_i)X^{i−1}; a purely algebraic operation that works in positive characteristic without requiring analytic limits.",
+          "matching_note": "Formal algebraic derivative, separately from the image's invertibility in a quotient."
+        },
+        {
+          "phrase": "unit of quotient ring containing f′",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.unit-of-ring",
+          "matching_note": "The image of the derivative must be multiplicatively invertible in R[x]_g/(f), so the unit-of-ring meaning is appropriate."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.derivative_initial.20261022.02",
+      "formulation_id": "form.720eaae9156f6f4e.separable-irreducible-polynomial",
+      "version_sha256": "7edcd86cff14f9380fd7e56c25d306645711e3dd3f6994dd2d4064eb5a88c67b",
+      "expected_node_sha256": "b2e43819094f69171747d67b4b2ec581c14382b888e40638ce4047819b34c02b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the two equivalent characterizations in their field-coefficient context: the formal derivative is coprime to f, equivalently no repeated roots in an algebraic closure. Do not conflate a zero derivative with separability.",
+      "reason": "Inspected the entire original mathematical text and existing independent contextual meanings. Separated algebraic formal derivative from unit-of-ring condition; polynomial splitting from a splitting field; Galois automorphism evaluation from polynomial evaluation; and initial topology from a merely topological space. Preserved all other references, source hypotheses, and original content.",
+      "references": [
+        {
+          "phrase": "relatively prime polynomials f and f′",
+          "state": "existing",
+          "target_meaning_id": "meaning.e606496d592fe305.relatively-prime-polynomials"
+        },
+        {
+          "phrase": "algebraic closure of F",
+          "state": "existing",
+          "target_meaning_id": "meaning.39488f3e396a1c77.algebraic-closure"
+        },
+        {
+          "matching_note": "For field k, the polynomial ring k[x] is an integral domain; a nonconstant nonunit irreducible polynomial is precisely an irreducible element of that integral domain, with no separability requirement.",
+          "phrase": "irreducible f∈F[x]",
+          "state": "existing",
+          "target_meaning_id": "meaning.05531f966e3a206f.irreducible-element"
+        },
+        {
+          "context": "Commutative algebra: formal derivative D:R[X]→R[X] of a univariate polynomial over a commutative unital coefficient ring R, uniquely specified by D(Σ_{i=0}^n a_i X^i)=Σ_{i=1}^n (i·a_i)X^{i−1}; a purely algebraic operation that works in positive characteristic without requiring analytic limits.",
+          "phrase": "formal derivative f′",
+          "state": "missing",
+          "matching_note": "Reviewed independent prerequisite in this full-source context, with all extra field, polynomial, topology, and invertibility hypotheses kept."
+        },
+        {
+          "context": "Polynomial algebra over a field: a multiple (repeated) root α of polynomial f in an extension field, meaning (x−α)^2 divides f after base extension, equivalently f(α)=f′(α)=0 when the formal derivative is used; distinct from the ordinary root concept.",
+          "matching_note": "A repeated root is a root of algebraic multiplicity ≥2 in the algebraic closure, not every polynomial root or the abstract separability property.",
+          "phrase": "repeated root in algebraic closure",
+          "state": "missing"
+        },
+        {
+          "disposition": "The coprimality criterion and no-repeated-root property concern the same polynomial; no irreducibility condition on f′ is required.",
+          "phrase": "equivalently",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.derivative_initial.20261022.03",
+      "formulation_id": "form.50d335de00e5f11d.normal-algebraic-extension",
+      "version_sha256": "254320894f454eff5be8a09e05df72c0918f9c35602cf3db26d4cb4d0474b2bf",
+      "expected_node_sha256": "95c1f9e244373968dc3d62fec7a19c7ba747a8ec2b01ec712cd71c1e18f7f32d",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed the complete irreducible-polynomial criterion for normality, preserving the irreducible-polynomial and complete-splitting conditions without incorrectly identifying ordinary irreducibility with separability or linking to the splitting-field construction itself.",
+      "reason": "Inspected the entire original mathematical text and existing independent contextual meanings. Separated algebraic formal derivative from unit-of-ring condition; polynomial splitting from a splitting field; Galois automorphism evaluation from polynomial evaluation; and initial topology from a merely topological space. Preserved all other references, source hypotheses, and original content.",
+      "references": [
+        {
+          "phrase": "algebraic extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.50d335de00e5f11d.algebraic-extension"
+        },
+        {
+          "matching_note": "For field k, the polynomial ring k[x] is an integral domain; a nonconstant nonunit irreducible polynomial is precisely an irreducible element of that integral domain, with no separability requirement.",
+          "phrase": "irreducible polynomial over k",
+          "state": "existing",
+          "target_meaning_id": "meaning.05531f966e3a206f.irreducible-element"
+        },
+        {
+          "context": "Field theory: a polynomial f∈k[X] splits completely over an extension field K/k when its image factors as a scalar times a product of linear factors in K[X], equivalently all of its roots counted with multiplicity lie in K; distinct from the minimal field generated by those roots.",
+          "phrase": "splits completely into linear factors over K",
+          "state": "missing",
+          "matching_note": "Reviewed independent prerequisite in this full-source context, with all extra field, polynomial, topology, and invertibility hypotheses kept."
+        },
+        {
+          "disposition": "A polynomial root is an element satisfying the polynomial equation; the hypothesis is conditional, not a request for a distinguished primitive element.",
+          "phrase": "one root in K",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.derivative_initial.20261022.04",
+      "formulation_id": "form.03c6dc1e9f953f76.krull-topology",
+      "version_sha256": "38a48382503eb1151ee26e2fb1b19792225abc90d6359e4a170dae9a584ac75a",
+      "expected_node_sha256": "4436024fb213f14676888de400625725e84f51a3b9b84857666415c6ae4639cc",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the entire Krull-topology formulation and distinguished field Galois structure, topological continuity, discrete codomain and profiniteness; recorded the initial-topology and evaluation-map constructions without external research.",
+      "reason": "Inspected the entire original mathematical text and existing independent contextual meanings. Separated algebraic formal derivative from unit-of-ring condition; polynomial splitting from a splitting field; Galois automorphism evaluation from polynomial evaluation; and initial topology from a merely topological space. Preserved all other references, source hypotheses, and original content.",
+      "references": [
+        {
+          "phrase": "Galois extension E/F",
+          "state": "existing",
+          "target_meaning_id": "meaning.26fa733af18b53e7.galois-field-extension",
+          "matching_note": "The definition explicitly assumes E/F is Galois; match the existing Galois field-extension meaning."
+        },
+        {
+          "phrase": "Gal(E/F)",
+          "state": "existing",
+          "target_meaning_id": "meaning.26fa733af18b53e7.galois-group",
+          "matching_note": "The automorphisms fixing F form the relative Galois group, not a generic group alone."
+        },
+        {
+          "phrase": "weakest topology making every evaluation map continuous",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space",
+          "matching_note": "Uses open-set topology on the Galois group; the weakest/initial construction is separately unassigned."
+        },
+        {
+          "phrase": "continuous",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+          "matching_note": "Evaluation maps into E with its discrete topology are continuous under the stated source topology."
+        },
+        {
+          "phrase": "E is discrete",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.discrete-topology",
+          "matching_note": "The codomain E is equipped with its full-power-set topology; E nonempty as a field."
+        },
+        {
+          "phrase": "profinite",
+          "state": "existing",
+          "target_meaning_id": "meaning.646e4dcbd9b6f1e1.profinite-topological-group",
+          "matching_note": "The text explicitly asserts that the resulting topological Galois group is profinite."
+        },
+        {
+          "phrase": "weakest topology making every evaluation map continuous",
+          "state": "missing",
+          "context": "General topology: initial topology on a set X induced by maps f_i:X→(Y_i,τ_i) into topological spaces, namely the coarsest topology on X for which every f_i is continuous; it is generated by the family of all preimages f_i^{-1}[U] with U∈τ_i.",
+          "reason": "The existing topological-space and continuity definitions do not separately name the initial-topology construction; record it for global classification without outside research.",
+          "matching_note": "Reviewed independent prerequisite in this full-source context, with all extra field, polynomial, topology, and invertibility hypotheses kept."
+        },
+        {
+          "phrase": "evaluation map sigma ↦ sigma(a)",
+          "state": "missing",
+          "context": "Field theory: evaluation map of Galois-group automorphisms at a fixed element a∈E, ev_a:Gal(E/F)→E, σ↦σ(a), where its continuity is relative to the chosen topologies; distinct from polynomial evaluation homomorphisms.",
+          "reason": "The point-evaluation construction has not been shown to have a stand-alone contextual meaning; save the occurrence, not a distinct new term.",
+          "matching_note": "Reviewed independent prerequisite in this full-source context, with all extra field, polynomial, topology, and invertibility hypotheses kept."
+        }
+      ]
+    }
+  ]
+}
