@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-047p",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.real50.cut-model-reals",
+      "version_sha256": "45905a931584874ab48180eb4dc4a8a278f54b303e2bae8af59a11c0d5cf5efe",
+      "complete": true,
+      "review_rationale": "Reviewed Dedekind-cut real model as all rational lower cuts ordered by inclusion, rational embedding by strict lower sets, and resulting real-field axioms after arithmetic and completeness are proved.",
+      "references": [
+        {
+          "phrase": "Dedekind lower cuts of Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real50.dedekind-rational-lower-cut"
+        },
+        {
+          "phrase": "rational q and r",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.rational-number"
+        },
+        {
+          "phrase": "subset-order A subseteq B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "real ordered field realized by cuts",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "set of all rational lower cuts R_D",
+          "state": "unassigned",
+          "context": "Family of qualifying Dedekind cuts, serving as underlying set of the concrete real model."
+        },
+        {
+          "phrase": "rational embedding q maps to {r:r<q}",
+          "state": "unassigned",
+          "context": "Injection of rational field into lower cuts by strict lower segment."
+        },
+        {
+          "phrase": "arithmetic on Dedekind cuts",
+          "state": "unassigned",
+          "context": "Cut-based binary addition and multiplication, requiring separate well-definedness and field-axiom proofs."
+        },
+        {
+          "phrase": "ordered-field axioms and completeness as proof obligations",
+          "state": "external",
+          "disposition": "This formulation describes a construction whose arithmetic and least-upper-bound properties must be established; it does not claim those theorems proved."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.real50.dedekind-rational-lower-cut",
+      "version_sha256": "dea9312905342edf7bc6492d5e007ed6b0938225ca9f3378e7f886288507a90b",
+      "complete": true,
+      "review_rationale": "Reviewed a rational lower cut as a proper nonempty downward-closed rational subset with no largest member; retained rational-order scope.",
+      "references": [
+        {
+          "phrase": "rational numbers Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.rational-number"
+        },
+        {
+          "phrase": "subset A of Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "nonempty proper subset A",
+          "state": "unassigned",
+          "context": "Set containing some rational but not every rational."
+        },
+        {
+          "phrase": "downward-closed subset under rational order",
+          "state": "unassigned",
+          "context": "If a belongs to A then every rational q<a must also lie in A."
+        },
+        {
+          "phrase": "no largest element",
+          "state": "unassigned",
+          "context": "For every a in A another b in A satisfies a<b."
+        },
+        {
+          "phrase": "lower cut excludes whole Q and empty set",
+          "state": "external",
+          "disposition": "Both properness and nonemptiness are explicit, unlike arbitrary downsets."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.real51.rational-cauchy",
+      "version_sha256": "d1fd0cd4889b9f2851ff5fcdf51b64c3f29e05a34f6ba9cc628b72ca210b4941",
+      "complete": true,
+      "review_rationale": "Reviewed rational Cauchy sequence with rational epsilon test for all sufficiently late pairs of indices, without presuming a rational or real limit exists.",
+      "references": [
+        {
+          "phrase": "rational sequence a_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.rational-sequence"
+        },
+        {
+          "phrase": "strictly positive rational epsilon",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.strictly-positive-rational"
+        },
+        {
+          "phrase": "rational absolute value",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.rational-absolute-value"
+        },
+        {
+          "phrase": "eventual pairwise closeness of terms",
+          "state": "unassigned",
+          "context": "For each rational epsilon>0 exists N with every pair of indices m,n>=N having |a_m-a_n|<epsilon."
+        },
+        {
+          "phrase": "index bound N",
+          "state": "unassigned",
+          "context": "Positive integer cutoff after which all comparisons satisfy the epsilon inequality."
+        },
+        {
+          "phrase": "no limit assumed",
+          "state": "external",
+          "disposition": "Being Cauchy in Q does not imply convergence to a rational number."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.real51.rational-cauchy-equivalence",
+      "version_sha256": "bccd9a91d4fe933787dab41ba8d6cc683707a3b72ca2c724550d1180e6e13a47",
+      "complete": true,
+      "review_rationale": "Reviewed equivalence of two rational Cauchy sequences by eventual epsilon closeness of pointwise difference to zero, preserving all quantifiers and positive-rational epsilon scope.",
+      "references": [
+        {
+          "phrase": "rational Cauchy sequences a_n,b_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real51.rational-cauchy"
+        },
+        {
+          "phrase": "strictly positive rational epsilon",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.strictly-positive-rational"
+        },
+        {
+          "phrase": "rational absolute value |a_n-b_n|",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.rational-absolute-value"
+        },
+        {
+          "phrase": "eventually small pointwise difference",
+          "state": "unassigned",
+          "context": "For every rational epsilon>0, beyond some common N every index n satisfies |a_n-b_n|<epsilon."
+        },
+        {
+          "phrase": "equivalence relation on Cauchy sequences",
+          "state": "unassigned",
+          "context": "Relation identifying any two Cauchy sequences whose termwise difference tends to zero."
+        },
+        {
+          "phrase": "equivalence without completed reals",
+          "state": "external",
+          "disposition": "Condition is formulated using only rational arithmetic and needs no previously constructed real field."
+        }
+      ]
+    }
+  ]
+}
