@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-047b",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.graph42.simple-undirected",
+      "version_sha256": "8bff812cfaa8bda897c3b8b96cb25caddaaf4453d0cc9b7ace44987a003a7fb9",
+      "complete": true,
+      "review_rationale": "Reviewed vertex-set and set-of-doubletons graph representation, excluding both loops and parallel edges while allowing finite or infinite V; cardinality-two is exact.",
+      "references": [
+        {
+          "phrase": "edge E consists of subsets of V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "graph data pair G=(V,E)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski"
+        },
+        {
+          "phrase": "edge two-element subset of vertices",
+          "state": "unassigned",
+          "context": "Unordered pair {u,v} with exactly two distinct elements of V, hence u!=v."
+        },
+        {
+          "phrase": "family of all two-element vertex subsets",
+          "state": "unassigned",
+          "context": "The collection of all e contained in V whose cardinality is exactly two."
+        },
+        {
+          "phrase": "edge family E is a set",
+          "state": "unassigned",
+          "context": "No repeated edge copies because E is a set of doubletons, unlike a multigraph edge multiset."
+        },
+        {
+          "phrase": "looplessness and finite/infinite vertices",
+          "state": "external",
+          "disposition": "No loops or parallel copies in this simple graph; no finite-cardinality assumption on vertex set V."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.group116.group-orbit.1",
+      "version_sha256": "6118708c4ec22eb930df3ecccea9067b33ae8ad069fba8ea61e02c28899ef7c9",
+      "complete": true,
+      "review_rationale": "Read orbit as full collection of translates g acting on a chosen x under specified left group action, equivalently all points accessible by one group element.",
+      "references": [
+        {
+          "phrase": "group G",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "phrase": "left action of G on X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.pop141.left-action"
+        },
+        {
+          "phrase": "image of action map g↦g*x",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.image-of-mapping"
+        },
+        {
+          "phrase": "orbit G dot x",
+          "state": "unassigned",
+          "context": "Set {g dot x : g in G} with x fixed, taking all elements of acting group."
+        },
+        {
+          "phrase": "existential characterization of orbit",
+          "state": "unassigned",
+          "context": "Members y of X are in the orbit when at least one g in G maps x to y."
+        },
+        {
+          "phrase": "fixed basepoint under group action",
+          "state": "external",
+          "disposition": "Orbit belongs to a chosen element x and specified action, not an arbitrary partition of X."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.group116.group-orbit.2",
+      "version_sha256": "12b20fed3ea7531bc146beb43e60909f178bc0bc5f98b1645b7f177a6445d927",
+      "complete": true,
+      "review_rationale": "Read the equivalence-class formulation of orbit induced by left group action; verified that reflexivity/symmetry/transitivity arise from group axioms but not from an arbitrary binary relation.",
+      "references": [
+        {
+          "phrase": "left G-action on X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.pop141.left-action"
+        },
+        {
+          "phrase": "action-induced equivalence relation x~_G y",
+          "state": "unassigned",
+          "context": "Relation holds if there exists g in G for which y=g*x; it is reflexive, symmetric and transitive by group-action laws."
+        },
+        {
+          "phrase": "equivalence class [x]",
+          "state": "unassigned",
+          "context": "All elements y of X equivalent to x under the action-induced relation."
+        },
+        {
+          "phrase": "orbit defined via equivalence class",
+          "state": "external",
+          "disposition": "Equivalent presentation of the orbit under the same action; avoid self-referential link to the sibling orbit meaning."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.group116.group-stabilizer",
+      "version_sha256": "f9b9329cb7b3cb7c8a1f59ad5b98ea4694f0c3413811c6708aefb9578b173a43",
+      "complete": true,
+      "review_rationale": "Read point stabilizer as all group elements fixing a chosen x under the specified left action; recognized subgroup closure as a consequence, not as an alternative orbit definition.",
+      "references": [
+        {
+          "phrase": "group G",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "phrase": "left group action G on X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.pop141.left-action"
+        },
+        {
+          "phrase": "set of elements fixing x",
+          "state": "unassigned",
+          "context": "Subset of G consisting of g such that g dot x equals x for fixed x in X."
+        },
+        {
+          "phrase": "pointwise action evaluation g dot x",
+          "state": "unassigned",
+          "context": "Evaluation of given left action at an ordered pair (g,x), using the specified group action."
+        },
+        {
+          "phrase": "subgroup structure of stabilizer",
+          "state": "external",
+          "disposition": "Stabilizer is necessarily a subgroup of G, but the displayed definition is the fixing-element subset."
+        }
+      ]
+    }
+  ]
+}
