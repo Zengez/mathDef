@@ -6,7 +6,7 @@ from pathlib import Path
 
 from research_pipeline.engine.core import Workspace, digest
 from research_pipeline.engine.dependency_graph import (
-    graph_path, inventory_sync, live_nodes, read, store,
+    graph_path, inventory_sync, live_nodes, read, store, amend,
 )
 from research_pipeline.engine.dependency_context_worklist import build_review_bundle
 
@@ -91,6 +91,58 @@ class ContextualWorklistTests(unittest.TestCase):
         zero = build_review_bundle(self.root, limit=0)
         self.assertEqual(zero["returned_surface_groups"], 0)
         self.assertEqual(zero["formulations"], {})
+
+
+    def test_repeatable_surface_filters_are_or_and_deduplicate_source_load(self):
+        graph = graph_path(self.root)
+        inv = read(graph / "INVENTORY.json")
+        prior = live_nodes(graph, inv)["form.alpha"]
+        refs = [{k: v for k, v in r.items() if k != "occurrence_id"}
+                for r in prior["references"]]
+        refs.append({
+            "phrase": "a second unrelated mathematical construction",
+            "state": "unassigned",
+            "context": "Another meaning, not inferred from the surface phrase.",
+        })
+        amend(self.root, [{
+            "amendment_id": "amend.multi-filter-fixture",
+            "formulation_id": "form.alpha",
+            "version_sha256": inv["formulations"]["form.alpha"]["version_sha256"],
+            "expected_node_sha256": digest(prior),
+            "complete": True,
+            "reviewed_by": "test-fixture-reviewer",
+            "review_rationale": "Independently examined both unassigned contextual phrases in the source fixture.",
+            "reason": "Adds a second synthetic unresolved occurrence to test navigation-only surface selection without a semantic-equivalence inference.",
+            "references": refs,
+        }])
+        before = {p.name: p.read_bytes() for p in graph.iterdir() if p.is_file()}
+        found = build_review_bundle(
+            self.root, limit=20,
+            contains_any=("rare context", "second unrelated", "NO MATCH"))
+        self.assertTrue(found["read_only"])
+        self.assertEqual(found["matched_surface_groups"], 2)
+        self.assertEqual(found["returned_surface_groups"], 2)
+        self.assertEqual(len(found["formulations"]), 1)
+        self.assertEqual(set(g["surface_key"] for g in found["groups"]), {
+            "rare context-bound construction",
+            "a second unrelated mathematical construction",
+        })
+        self.assertEqual(found["surface_filters_any"],
+                         ["rare context", "second unrelated", "NO MATCH"])
+        # Old single-filter API and combined-filter semantics remain stable.
+        old = build_review_bundle(self.root, contains="rare context")
+        self.assertEqual(old["matched_surface_groups"], 1)
+        combined = build_review_bundle(
+            self.root, contains="rare context",
+            contains_any=("second unrelated",))
+        self.assertEqual(combined["matched_surface_groups"], 2)
+        limited = build_review_bundle(
+            self.root, limit=1, contains_any=("rare", "second unrelated"))
+        self.assertEqual(limited["matched_surface_groups"], 2)
+        self.assertEqual(limited["returned_surface_groups"], 1)
+        self.assertEqual(before, {
+            p.name: p.read_bytes() for p in graph.iterdir() if p.is_file()
+        })
 
 
 if __name__ == "__main__":
