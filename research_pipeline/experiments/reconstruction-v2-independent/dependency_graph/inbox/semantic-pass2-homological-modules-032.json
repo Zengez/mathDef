@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-homological-modules-032",
+  "mode": "amend",
+  "research_scope": "Five source-free full-reference reviews: free resolution, Ext, Tor, direct-summand projectivity and Hom projectivity. No new meanings or external research.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.homological_modules.20261022.01",
+      "formulation_id": "form.788671763be693df.free-module-resolution",
+      "version_sha256": "88a708c984d789bedcc946d7acbcd0a03e0006ca5257c33843a19c4507b44e59",
+      "expected_node_sha256": "65713323a8b79d8b4daf0f274a4e1a8bbf09e6b398375cd745e47bfd7a8c32c2",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Full-formulation semantic review of free resolutions, chain/cochain complexes, homology and cohomology, arbitrary-rank free/direct-summand modules and projective Hom exactness, preserving complete prior adjacency and original source version.",
+      "reason": "Source-free Wave2 Pass2 typed prerequisite consolidation for homological algebra; provisional identities require later cross-definition consistency audit.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "exact augmented chain complex",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category"
+        },
+        {
+          "phrase": "free R-module F_i",
+          "state": "missing",
+          "context": "Module theory: free left R-module over a unital ring with an R-basis, equivalently a direct sum R^{(I)} of copies of R, possibly infinite rank.",
+          "reason": "A free R-module is independent prerequisite data for a free resolution.",
+          "matching_note": "Compare with R^(I), finite free modules, and categorical projectivity; free does not mean finite rank."
+        },
+        {
+          "phrase": "augmented chain complex ⋯→F_1→F_0→M→0",
+          "state": "missing",
+          "context": "Homological algebra: augmented nonnegative chain complex of R-modules with differentials d_i:F_i→F_{i-1}, augmentation ε:F_0→M, zero composites, and an exactness condition for being a resolution.",
+          "reason": "The chain-complex structure, augmentation, and exactness are typed mathematical prerequisites, not a mere sequence of arrows.",
+          "matching_note": "Compare graded chain versus cochain complex and general exact augmented complex; exactness supplied separately."
+        },
+        {
+          "phrase": "every F_i free",
+          "state": "external",
+          "disposition": "Free implies projective under standard unital module conventions, but the definition explicitly chooses free rather than arbitrary projectives."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.homological_modules.20261022.02",
+      "formulation_id": "form.788671763be693df.ext-group",
+      "version_sha256": "fa8adfb0f893348f71089e3e7327faa0ae57fc2e627f3e52e7be3e1218fbbd27",
+      "expected_node_sha256": "246ebed883b3c30ed30469f7f610575d4c7311f6265911bd058bacd53b0f9582",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Full-formulation semantic review of free resolutions, chain/cochain complexes, homology and cohomology, arbitrary-rank free/direct-summand modules and projective Hom exactness, preserving complete prior adjacency and original source version.",
+      "reason": "Source-free Wave2 Pass2 typed prerequisite consolidation for homological algebra; provisional identities require later cross-definition consistency audit.",
+      "references": [
+        {
+          "phrase": "R-modules M and N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "free resolution F_•→M",
+          "state": "existing",
+          "target_meaning_id": "meaning.788671763be693df.free-module-resolution"
+        },
+        {
+          "phrase": "Hom_R(F_i,N)",
+          "state": "existing",
+          "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module"
+        },
+        {
+          "phrase": "cochain complex Hom_R(F_•,N)",
+          "state": "missing",
+          "context": "Homological algebra: cochain complex induced by contravariant Hom_R(−,N) on a chain complex F_•, with coboundary maps induced by precomposition with the original differentials.",
+          "reason": "The construction distinguishes cohomological degree and reversed arrows from an ordinary chain complex.",
+          "matching_note": "Free resolution and Hom_R module are already linked; don't treat Ext as a prior notion."
+        },
+        {
+          "phrase": "ith cohomology of a cochain complex",
+          "state": "missing",
+          "context": "Homological algebra: ith cohomology H^i(C^•)=ker(d^i:C^i→C^{i+1})/im(d^{i−1}:C^{i−1}→C^i) for a cochain complex, with im contained in ker.",
+          "reason": "Cohomology is a separately reusable construction on cochain complexes, not the derived Ext group itself.",
+          "matching_note": "Keep cohomology distinct from homology of chain complexes (Tor)."
+        },
+        {
+          "phrase": "Ext_R^i",
+          "state": "external",
+          "disposition": "The superscript indexes cohomology, not ordinary ring exponentiation, and no particular free resolution is preferred."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.homological_modules.20261022.03",
+      "formulation_id": "form.2cde0248ffe81c00.tor-functor-modules",
+      "version_sha256": "70dfbc99f7481e4dea13d4bb5a343d73ff11171205c27b56011c16b8a9cfb157",
+      "expected_node_sha256": "8d9d48811e2f068c1c2329be218b208e43b16c729c6bf0c624c7b04db35eafcc",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Full-formulation semantic review of free resolutions, chain/cochain complexes, homology and cohomology, arbitrary-rank free/direct-summand modules and projective Hom exactness, preserving complete prior adjacency and original source version.",
+      "reason": "Source-free Wave2 Pass2 typed prerequisite consolidation for homological algebra; provisional identities require later cross-definition consistency audit.",
+      "references": [
+        {
+          "phrase": "modules M and N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "Both arguments of Tor are unital modules over the commutative ring."
+        },
+        {
+          "phrase": "integer i≥0",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.integer-equivalence-class",
+          "matching_note": "The grading index is a nonnegative integer."
+        },
+        {
+          "phrase": "free resolution of M",
+          "state": "existing",
+          "target_meaning_id": "meaning.788671763be693df.free-module-resolution",
+          "matching_note": "This is the explicitly indexed free resolution of the module."
+        },
+        {
+          "phrase": "F_•⊗_R N",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+          "matching_note": "The complex is tensored termwise over the ring R."
+        },
+        {
+          "phrase": "ith homology module",
+          "state": "missing",
+          "context": "Homological algebra: ith homology H_i(C_•)=ker(d_i:C_i→C_{i−1})/im(d_{i+1}:C_{i+1}→C_i) of a chain complex of modules.",
+          "reason": "Homology is a general chain-complex construction used to define Tor, independent of Tor itself.",
+          "matching_note": "Not the ith cohomology of a cochain complex."
+        },
+        {
+          "phrase": "free resolution F_•",
+          "state": "existing",
+          "target_meaning_id": "meaning.788671763be693df.free-module-resolution",
+          "matching_note": "A second reference to the very same existing free resolution already linked by 'free resolution of M'; the chain-complex structure is part of its stated meaning, not an extra missing resolution."
+        },
+        {
+          "phrase": "independent of that resolution",
+          "state": "external",
+          "disposition": "The isomorphism type's independence from the chosen free resolution is a well-definedness statement."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.homological_modules.20261022.04",
+      "formulation_id": "form.fc44c63c239e5c20.projective-module-summand",
+      "version_sha256": "f8b137e7de7f2b57d87c38cd27be6eaf8e9595a50e61df40958e6adc9b525e73",
+      "expected_node_sha256": "fe26ca616fbe764efcbc88372cb16644be757318178f7c9f9e59b78f39ca7391",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Full-formulation semantic review of free resolutions, chain/cochain complexes, homology and cohomology, arbitrary-rank free/direct-summand modules and projective Hom exactness, preserving complete prior adjacency and original source version.",
+      "reason": "Source-free Wave2 Pass2 typed prerequisite consolidation for homological algebra; provisional identities require later cross-definition consistency audit.",
+      "references": [
+        {
+          "phrase": "projective module P",
+          "state": "existing",
+          "target_meaning_id": "meaning.fc44c63c239e5c20.projective-module-hom"
+        },
+        {
+          "phrase": "R-module Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "module isomorphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear"
+        },
+        {
+          "phrase": "free module R^(I) on index set I",
+          "state": "missing",
+          "context": "Module theory: free R-module R^{(I)} of finitely supported functions I→R, direct sum of one copy of R for each i∈I; I may be infinite.",
+          "reason": "The characterization of projectivity permits free modules of arbitrary rank.",
+          "matching_note": "Compare with free-module prerequisite for resolutions and finite free presentation separately."
+        },
+        {
+          "phrase": "P⊕Q as a direct sum",
+          "state": "missing",
+          "context": "Module theory: external direct sum P⊕Q of two R-modules, with canonical injections and projections; P is a direct summand of R^{(I)} when P⊕Q≅R^{(I)}.",
+          "reason": "The direct-summand structure is independent of projectivity and is a separate categorical/module construction.",
+          "matching_note": "Do not conflate external direct sum with internal sum or direct product for infinite families."
+        },
+        {
+          "phrase": "free module need not have finite rank",
+          "state": "external",
+          "disposition": "The characterization of arbitrary projectives allows infinite index set I, unlike finite projective modules."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.homological_modules.20261022.05",
+      "formulation_id": "form.fc44c63c239e5c20.projective-module-hom",
+      "version_sha256": "b105e13148bf3b64dc81d035e902dd836c84d78f93c932a4378b9967d998c95a",
+      "expected_node_sha256": "a131ad3467d78ebac3f22e447c8f65fc91cd54b5b30f6ba2b23f1f7f33931b2e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Full-formulation semantic review of free resolutions, chain/cochain complexes, homology and cohomology, arbitrary-rank free/direct-summand modules and projective Hom exactness, preserving complete prior adjacency and original source version.",
+      "reason": "Source-free Wave2 Pass2 typed prerequisite consolidation for homological algebra; provisional identities require later cross-definition consistency audit.",
+      "references": [
+        {
+          "phrase": "R-module P",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "R-linear module homomorphisms",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear"
+        },
+        {
+          "phrase": "Hom_R(P,−)",
+          "state": "existing",
+          "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module"
+        },
+        {
+          "phrase": "exactness",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category"
+        },
+        {
+          "phrase": "covariant Hom functor",
+          "state": "missing",
+          "context": "Module category: covariant functor Hom_R(P,−) from R-Mod to abelian groups/modules where appropriate, sending N to Hom_R(P,N), g:N→N' to postcomposition g∘−.",
+          "reason": "The Hom functor is a reusable structure, not merely the Hom_R(P,N) object; source/target category sizes should not be unnecessarily restricted.",
+          "matching_note": "Contrast contravariant Hom_R(−,N) and small-category-only covariant functors."
+        },
+        {
+          "context": "Set theory: surjective function f:X→Y whose image is the entire stated codomain Y; for module homomorphisms this is the underlying-set surjectivity of the R-linear map, independent of linearity, free domain, or choice of basis.",
+          "matching_note": "The structured map is surjective on underlying sets. Module linearity or topological continuity and discrete two-point codomain are additional requirements.",
+          "phrase": "surjective module homomorphism M→N",
+          "state": "missing"
+        },
+        {
+          "phrase": "lifting P→M across M→N",
+          "state": "external",
+          "disposition": "The assertion that every map P→N admits a lift P→M across every surjective M→N is the *defining equivalent projectivity criterion* of this formulation, not a pre-existing extra type of projective module."
+        },
+        {
+          "disposition": "A pair of equivalent projectivity criteria; this is not the weaker property of being finitely generated.",
+          "phrase": "exactness and lifting equivalence",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}
