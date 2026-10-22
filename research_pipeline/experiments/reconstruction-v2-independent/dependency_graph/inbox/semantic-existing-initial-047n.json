@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-047n",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.quot119.simple-graph-isomorphism",
+      "version_sha256": "47ecad856ea46cc3ac9c59e28453a4e0e93c436e27d0cef52f92453fca34cd64",
+      "complete": true,
+      "review_rationale": "Reviewed graph isomorphism as bijective vertex map preserving and reflecting unordered adjacency, assuming both graph inputs simple and undirected and distinct-vertex condition.",
+      "references": [
+        {
+          "phrase": "simple undirected graphs G and H",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.graph42.simple-undirected"
+        },
+        {
+          "phrase": "mapping f:V_G to V_H",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "bijection of vertex sets",
+          "state": "unassigned",
+          "context": "Function injective and surjective on the entire target vertex set."
+        },
+        {
+          "phrase": "adjacency preserved and reflected",
+          "state": "unassigned",
+          "context": "For every distinct u,v, edge {u,v} occurs in G exactly when {f(u),f(v)} occurs in H."
+        },
+        {
+          "phrase": "unordered edges of simple graphs",
+          "state": "unassigned",
+          "context": "Edges are two-element subsets, without orientation or loops."
+        },
+        {
+          "phrase": "isomorphism not mere graph homomorphism",
+          "state": "external",
+          "disposition": "Preservation alone is insufficient; reflection and bijectivity are required."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.rational55.rational-absolute-value",
+      "version_sha256": "621b349662418df7d8089c011f5bf671d1bee645da77619c386e0da643879417",
+      "complete": true,
+      "review_rationale": "Reviewed rational modulus by piecewise sign in rational total order, avoiding square-root definitions or dependence on constructed real numbers.",
+      "references": [
+        {
+          "phrase": "rational number q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.rational-number"
+        },
+        {
+          "phrase": "usual total ordering on rationals",
+          "state": "unassigned",
+          "context": "Order relation comparing rationals from their integer-fraction representations."
+        },
+        {
+          "phrase": "piecewise map |q|",
+          "state": "unassigned",
+          "context": "Result equals q when q>=0 and additive inverse -q when q<0."
+        },
+        {
+          "phrase": "nonnegative rational codomain",
+          "state": "unassigned",
+          "context": "Subset of Q consisting of zero together with positive rationals."
+        },
+        {
+          "phrase": "no real square root prerequisite",
+          "state": "external",
+          "disposition": "Definition uses rational ordering and negation only."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.rational55.rational-number",
+      "version_sha256": "f4a565a79305fc1993f13c3decaf81fb29ce90460b642be3f31a3ad6d2ede16d",
+      "complete": true,
+      "review_rationale": "Reviewed rationals as field of fractions of integer ring with nonzero integer denominators and cross multiplication criterion for fraction equality.",
+      "references": [
+        {
+          "phrase": "integer ring Z",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.integer-ring"
+        },
+        {
+          "phrase": "fraction field of integral domain",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain"
+        },
+        {
+          "phrase": "integers p,q,r,s",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.integer-equivalence-class"
+        },
+        {
+          "phrase": "nonzero denominator q",
+          "state": "unassigned",
+          "context": "Integer denominator q not equal to zero of Z."
+        },
+        {
+          "phrase": "fraction pair equivalence ps=rq",
+          "state": "unassigned",
+          "context": "Cross multiplication criterion for equality of integer fractions p/q and r/s with nonzero denominators."
+        },
+        {
+          "phrase": "rational field not real number construction",
+          "state": "external",
+          "disposition": "This definition is closed over integer arithmetic and does not assume a real-number completion."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.rational55.rational-sequence",
+      "version_sha256": "e4dd9d86d5fdaa39ede56122f83b67560558cd919859b1ada845c6c01f87b3a7",
+      "complete": true,
+      "review_rationale": "Reviewed rational sequences as functions from positive integers or specified natural-number subset to rational field, with positive full indexing for Cauchy construction.",
+      "references": [
+        {
+          "phrase": "rational values in Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.rational-number"
+        },
+        {
+          "phrase": "positive natural-number index set",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-positive-convention"
+        },
+        {
+          "phrase": "mapping a:Npositive to Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "subset of N index set",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "nth term a_n=a(n)",
+          "state": "unassigned",
+          "context": "Value of indexed function at positive integer n."
+        },
+        {
+          "phrase": "Cauchy sequences require entire positive index set",
+          "state": "external",
+          "disposition": "A partial-index sequence may be allowed generally, but full positive indexing is required for the specified infinite Cauchy construction."
+        }
+      ]
+    }
+  ]
+}
