@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-quotient-ring-consolidation-001",
+  "mode": "amend",
+  "research_scope": "Ten mathematically reviewed occurrences of quotient commutative rings by ideals, distinguishing quotient module, quotient topology, localization, adic powers and residue-field extra properties.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.quotient_ring.20261022.01",
+      "formulation_id": "form.1be2fa074ef447b0.i-adic-ring-completion",
+      "version_sha256": "eacff749a736bec13dc4f4906ff8532b7fff4dd094822e982937c570d4fd2fa6",
+      "expected_node_sha256": "f3afcd4c32ac6423cb19646d76a7fea566ff766444fd1fa14cfd912444282507",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed the ring I-adic completion and its quotient-ring bonding maps, separating it from the indexed module inverse limit because preserving ring structure is a contextual distinction.",
+      "reason": "Read the entire contextual source and checked independent meanings: the quotient of a commutative ring by a two-sided ideal is a standalone construction absent from the 611 existing meanings. Its special cases with polynomial relations, integers modulo primes, stalk-localized rings and adic ideal powers share the same quotient-ring concept. This does not classify the separate ideal-power construction, residue-field property, module quotient, or deformation-theoretic lift as equivalent meanings. Specifically examined 'quotient rings R/I^n' in 'I-adic completion of a ring'.",
+      "references": [
+        {
+          "phrase": "ideal I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+          "matching_note": "I is an ideal of the commutative ring R."
+        },
+        {
+          "phrase": "inverse limit of the quotient rings",
+          "state": "unassigned",
+          "context": "Commutative algebra: inverse limit of a countable inverse system of quotient rings",
+          "reason": "A module inverse limit exists but using it as a ring definition would ignore the ring-structure context."
+        },
+        {
+          "phrase": "quotient rings R/I^n",
+          "state": "missing",
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology."
+        },
+        {
+          "phrase": "transition maps given by reduction modulo smaller powers",
+          "state": "unassigned",
+          "context": "Commutative algebra: natural quotient homomorphism R/I^{n+1}→R/I^n",
+          "reason": "These maps arise from nested powers of I; do not conduct new research in the first scan."
+        },
+        {
+          "phrase": "over positive integers n",
+          "state": "external",
+          "disposition": "The indexing set of positive natural numbers is standard ambient notation."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.quotient_ring.20261022.02",
+      "formulation_id": "form.1fd51873f9f0afbd.field-from-irreducible-polynomial",
+      "version_sha256": "b99fa9490ead56e57f17684320cf96cb8134cda1b2267b5dc71129813d65055e",
+      "expected_node_sha256": "d98dd20cae25ea78afd4cf7035660e3b9ec09d938a4ff529cd1a2205735dbb54",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the polynomial quotient field construction in full, linking field/field-extension terminology and retaining irreducible polynomials and principal quotient for source-free global grouping.",
+      "reason": "Read the entire contextual source and checked independent meanings: the quotient of a commutative ring by a two-sided ideal is a standalone construction absent from the 611 existing meanings. Its special cases with polynomial relations, integers modulo primes, stalk-localized rings and adic ideal powers share the same quotient-ring concept. This does not classify the separate ideal-power construction, residue-field property, module quotient, or deformation-theoretic lift as equivalent meanings. Specifically examined 'quotient k[x]/(f)' in 'quotient field construction from an irreducible polynomial'.",
+      "references": [
+        {
+          "phrase": "field k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+          "matching_note": "k is the coefficient field."
+        },
+        {
+          "phrase": "field extending k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+          "matching_note": "A quotient field k[x]/(f) contains an isomorphic copy of k."
+        },
+        {
+          "phrase": "irreducible polynomial f in k[x]",
+          "state": "unassigned",
+          "context": "Polynomial algebra: irreducible nonconstant polynomial over field k",
+          "reason": "Ring-element irreducibility may supply a related concept but requires contextual disambiguation."
+        },
+        {
+          "phrase": "quotient k[x]/(f)",
+          "state": "missing",
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology."
+        },
+        {
+          "phrase": "class of x as a root of f",
+          "state": "unassigned",
+          "context": "Field theory: the residue class of polynomial variable x annihilated by f",
+          "reason": "This is a root of the polynomial in the quotient field extension."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.quotient_ring.20261022.03",
+      "formulation_id": "form.1fd51873f9f0afbd.prime-field-finite",
+      "version_sha256": "d8571473d00b8a6242e6b0d728dc9d1fddc45c8d8b34fb29dcae53c2031768c9",
+      "expected_node_sha256": "6770f13aafbb4edfb22e08a44a3b9b68177bc2fad1a2a969bb00be90742ddf2d",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the characteristic-p finite prime field construction and separated integers, prime integer property, quotient algebra and residue-class meanings without importing external research.",
+      "reason": "Read the entire contextual source and checked independent meanings: the quotient of a commutative ring by a two-sided ideal is a standalone construction absent from the 611 existing meanings. Its special cases with polynomial relations, integers modulo primes, stalk-localized rings and adic ideal powers share the same quotient-ring concept. This does not classify the separate ideal-power construction, residue-field property, module quotient, or deformation-theoretic lift as equivalent meanings. Specifically examined 'quotient Z/(p)' in 'finite prime field of characteristic p'.",
+      "references": [
+        {
+          "phrase": "integer",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.integer-equivalence-class",
+          "matching_note": "The given prime p and its residue classes concern ordinary integers."
+        },
+        {
+          "phrase": "finite prime field F_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.c8b6cfd6a058ab26.finite-field",
+          "matching_note": "The quotient by a prime integer has p elements and forms a finite field."
+        },
+        {
+          "phrase": "prime integer p",
+          "state": "unassigned",
+          "context": "Number theory: positive prime integer p",
+          "reason": "Prime-number structure differs from prime ideals of arbitrary rings."
+        },
+        {
+          "phrase": "quotient Z/(p)",
+          "state": "missing",
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology."
+        },
+        {
+          "phrase": "integer residue classes modulo p",
+          "state": "unassigned",
+          "context": "Number theory: congruence classes of integers modulo p",
+          "reason": "Compare these with the existing provisional modular-integer congruence meaning only in global consolidation."
+        },
+        {
+          "phrase": "operations inherited from integers",
+          "state": "external",
+          "disposition": "The quotient inherits the usual addition and multiplication of integer residue classes."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.quotient_ring.20261022.04",
+      "formulation_id": "form.2cde0248ffe81c00.tor-flatness-criterion",
+      "version_sha256": "f70d3d8bbb2c929076b88961ff08e7ed9dd02ccb1c749d72b89245dc56f54060",
+      "expected_node_sha256": "b299a16010d5c771864e4ac50f000a0577d6d6bc130afedf1690b2873a6f87bf",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the Tor-flatness vanishing criterion and distinguished ordinary modules, Tor, ideal generation and quotient rings without external research.",
+      "reason": "Read the entire contextual source and checked independent meanings: the quotient of a commutative ring by a two-sided ideal is a standalone construction absent from the 611 existing meanings. Its special cases with polynomial relations, integers modulo primes, stalk-localized rings and adic ideal powers share the same quotient-ring concept. This does not classify the separate ideal-power construction, residue-field property, module quotient, or deformation-theoretic lift as equivalent meanings. Specifically examined 'quotient R/I' in 'Tor-vanishing criterion for module flatness'.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "The condition concerns a unital module."
+        },
+        {
+          "phrase": "flat",
+          "state": "existing",
+          "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-module",
+          "matching_note": "Flatness of M is the existing module-theoretic property."
+        },
+        {
+          "phrase": "Tor_i^R(M,N)",
+          "state": "existing",
+          "target_meaning_id": "meaning.2cde0248ffe81c00.tor-functor-modules",
+          "matching_note": "Tor has its own previously indexed homological construction."
+        },
+        {
+          "phrase": "ideal I⊆R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+          "matching_note": "I is an ordinary ring ideal in the commutative ring."
+        },
+        {
+          "phrase": "finitely generated ideal I",
+          "state": "unassigned",
+          "context": "Commutative algebra: ideal generated by a finite set of ring elements",
+          "reason": "The finite-ideal-generation prerequisite recurs in Noetherian/regular-local definitions."
+        },
+        {
+          "phrase": "quotient R/I",
+          "state": "missing",
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology."
+        },
+        {
+          "phrase": "Tor_i^R(M,N)=0 for all i>0",
+          "state": "external",
+          "disposition": "Vanishing in positive degrees is a zero-module equality in the already defined Tor family."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.quotient_ring.20261022.05",
+      "formulation_id": "form.44fae2299dfd2f0a.formally-unramified-map",
+      "version_sha256": "872bcc2ff2dcc8a0940dd95e7f3aef1d2c7d4f9dbe25bacce29b62b8afd594a6",
+      "expected_node_sha256": "b3857170c4d3329b4f3f3d9ec25f8d1bc850c62abb7a7f55c3c8a400ec5f3b4e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed formal unramified lifting uniqueness for square-zero quotients, saving quotient and lift terminology.",
+      "reason": "Read the entire contextual source and checked independent meanings: the quotient of a commutative ring by a two-sided ideal is a standalone construction absent from the 611 existing meanings. Its special cases with polynomial relations, integers modulo primes, stalk-localized rings and adic ideal powers share the same quotient-ring concept. This does not classify the separate ideal-power construction, residue-field property, module quotient, or deformation-theoretic lift as equivalent meanings. Specifically examined 'quotient A/I' in 'formally unramified ring homomorphism'.",
+      "references": [
+        {
+          "phrase": "ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "Unital commutative ring-map setting."
+        },
+        {
+          "phrase": "ideal I⊆A",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+          "matching_note": "I is a ring ideal."
+        },
+        {
+          "phrase": "square-zero ideal",
+          "state": "unassigned",
+          "context": "Commutative algebra: ideal I with I²=0",
+          "reason": "A specialized ideal-power condition."
+        },
+        {
+          "phrase": "quotient A/I",
+          "state": "missing",
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology."
+        },
+        {
+          "phrase": "lift S→A/I to S→A",
+          "state": "unassigned",
+          "context": "Commutative algebra: algebra homomorphism lift along square-zero quotient",
+          "reason": "A contextual lifting structure."
+        },
+        {
+          "phrase": "at most one lift",
+          "state": "external",
+          "disposition": "Uniqueness is part of the formal-unramified condition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.quotient_ring.20261022.06",
+      "formulation_id": "form.6676171d9e5698af.affine-closed-subscheme",
+      "version_sha256": "b7f29912c03b2d558e3120a93bddd1dec74567ab3d9ba64557e5675c15d5e64b",
+      "expected_node_sha256": "5263e4d07956a16db4f7d2f0948387fac6fb1658103fdde5960794b1cc9c00fc",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Examined the complete quotient-spectrum characterization, closed immersion and scheme-over-base isomorphism without equating quotient rings to fraction fields.",
+      "reason": "Read the entire contextual source and checked independent meanings: the quotient of a commutative ring by a two-sided ideal is a standalone construction absent from the 611 existing meanings. Its special cases with polynomial relations, integers modulo primes, stalk-localized rings and adic ideal powers share the same quotient-ring concept. This does not classify the separate ideal-power construction, residue-field property, module quotient, or deformation-theoretic lift as equivalent meanings. Specifically examined 'quotient ring R/I' in 'closed subscheme of an affine scheme'.",
+      "references": [
+        {
+          "phrase": "affine scheme Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.4c7d59ba7058613b.affine-scheme"
+        },
+        {
+          "phrase": "Spec(R/I)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "ideal I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "closed immersion",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f376cdea16a26da.closed-immersion-locally-ringed-space"
+        },
+        {
+          "phrase": "quotient map R→R/I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "quotient ring R/I",
+          "state": "missing",
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology."
+        },
+        {
+          "phrase": "isomorphic over Spec(R)",
+          "state": "unassigned",
+          "context": "Algebraic geometry: isomorphism of schemes over a fixed base"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.quotient_ring.20261022.07",
+      "formulation_id": "form.8a5f1888f076f50d.formally-etale-ring-map",
+      "version_sha256": "a5bf61021231816c1a06826083e51debdb15bdf7b0bcf3f2c4a15cb5832ddb79",
+      "expected_node_sha256": "f4499258a21d1d910b4e6b495c8573dd6c3a9868b66255ff5a0792f289065a45",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the unique-lift property for every square-zero ideal I of any R-algebra A, preserving both existence and uniqueness of a compatible lift S→A. Formally étale is stronger than only formally unramified, and this is not simply the finite-presentation étale condition.",
+      "reason": "Read the entire contextual source and checked independent meanings: the quotient of a commutative ring by a two-sided ideal is a standalone construction absent from the 611 existing meanings. Its special cases with polynomial relations, integers modulo primes, stalk-localized rings and adic ideal powers share the same quotient-ring concept. This does not classify the separate ideal-power construction, residue-field property, module quotient, or deformation-theoretic lift as equivalent meanings. Specifically examined 'quotient algebra A/I' in 'formally étale ring map'.",
+      "references": [
+        {
+          "phrase": "ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "R-algebra A and maps",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "ideal I⊆A",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "square-zero ideal I²=0",
+          "state": "unassigned",
+          "context": "Commutative algebra: square-zero ideal with vanishing ideal product I²"
+        },
+        {
+          "phrase": "quotient algebra A/I",
+          "state": "missing",
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology."
+        },
+        {
+          "phrase": "unique compatible lifting S→A of S→A/I",
+          "state": "unassigned",
+          "context": "Deformation theory: a uniquely determined lift of an R-algebra homomorphism through a square-zero quotient"
+        },
+        {
+          "phrase": "every R-algebra A and ideal I",
+          "state": "external",
+          "disposition": "The source quantifies over all such square-zero extensions, not only split or finite ones."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.quotient_ring.20261022.08",
+      "formulation_id": "form.e39c701ba05418fb.formal-smoothness-field-extension",
+      "version_sha256": "2cd9128304808a6852d58a8b1b268629bd0e93876d3a90cffb3c3b860cee5b19",
+      "expected_node_sha256": "091bbc8bbbce467a0da32e331de9b119bbd25e1cff6b1b5b96ff6f94ac979ab1",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the square-zero lifting property for a field extension as a k-algebra, including all quantified target k-algebras and both characteristic-dependent structural assertions.",
+      "reason": "Read the entire contextual source and checked independent meanings: the quotient of a commutative ring by a two-sided ideal is a standalone construction absent from the 611 existing meanings. Its special cases with polynomial relations, integers modulo primes, stalk-localized rings and adic ideal powers share the same quotient-ring concept. This does not classify the separate ideal-power construction, residue-field property, module quotient, or deformation-theoretic lift as equivalent meanings. Specifically examined 'square-zero quotient A/I' in 'formal smoothness of a field extension'.",
+      "references": [
+        {
+          "phrase": "field extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "phrase": "formal smoothness of k→K",
+          "state": "existing",
+          "target_meaning_id": "meaning.aacbc297769cc94a.formally-smooth-ring-map"
+        },
+        {
+          "phrase": "unital algebra homomorphism K→A/I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "arbitrary separable field extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.5a7f5216e916198b.separable-arbitrary-field-extension"
+        },
+        {
+          "phrase": "field characteristic",
+          "state": "existing",
+          "target_meaning_id": "meaning.dbce785fa0c96b0a.field-characteristic"
+        },
+        {
+          "phrase": "square-zero quotient A/I",
+          "state": "missing",
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology."
+        },
+        {
+          "phrase": "lift from K→A/I to K→A",
+          "state": "unassigned",
+          "context": "An algebra map into A whose composite with A→A/I equals the given map."
+        },
+        {
+          "phrase": "separability equivalence in positive characteristic and automatic characteristic-zero case",
+          "state": "external",
+          "disposition": "These are structural claims accompanying the formal lifting definition, rather than extra conditions placed on an individual lift."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.quotient_ring.20261022.09",
+      "formulation_id": "form.f3d1c8c59cda279e.complete-local-ring",
+      "version_sha256": "0d10d037007fa52b10e7aba036dcb8293df3ea4b41fb808ed045e4904cae2153",
+      "expected_node_sha256": "382bce5e65613747f438db74776abc6a22d4978452f6a652ec9650afc7309b85",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read completeness of a local ring via its maximal ideal adic limit, canonical map and isomorphism, preserving the quotient transition maps and equivalence with no new completion elements.",
+      "reason": "Read the entire contextual source and checked independent meanings: the quotient of a commutative ring by a two-sided ideal is a standalone construction absent from the 611 existing meanings. Its special cases with polynomial relations, integers modulo primes, stalk-localized rings and adic ideal powers share the same quotient-ring concept. This does not classify the separate ideal-power construction, residue-field property, module quotient, or deformation-theoretic lift as equivalent meanings. Specifically examined 'quotient rings R/m^n' in 'complete local ring'.",
+      "references": [
+        {
+          "phrase": "local ring (R,m)",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "maximal ideal m",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-maximal-ideal"
+        },
+        {
+          "phrase": "m-adic completion inverse limit",
+          "state": "existing",
+          "target_meaning_id": "meaning.1be2fa074ef447b0.i-adic-ring-completion"
+        },
+        {
+          "phrase": "I-adic completeness criterion",
+          "state": "existing",
+          "target_meaning_id": "meaning.1be2fa074ef447b0.i-adic-completeness"
+        },
+        {
+          "phrase": "quotient rings R/m^n",
+          "state": "missing",
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology."
+        },
+        {
+          "phrase": "canonical ring homomorphism R→lim R/m^n",
+          "state": "unassigned",
+          "context": "Map sending r to the compatible tuple of its residue classes in every quotient ring."
+        },
+        {
+          "phrase": "isomorphism of rings",
+          "state": "unassigned",
+          "context": "Bijective additive and multiplicative map with a ring-homomorphic inverse."
+        },
+        {
+          "phrase": "completion introduces no new elements",
+          "state": "external",
+          "disposition": "Restatement of surjectivity and injectivity of the canonical comparison map, not a new separate completion procedure."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.quotient_ring.20261022.10",
+      "formulation_id": "form.wave2.foundation.local-ring-fibre-at-prime",
+      "version_sha256": "bbf977d0ba1d092fc1afd7c22c4a241aa895769cbf3df4de3903d9e5329ff63d",
+      "expected_node_sha256": "2d243430389353871d98dd15a0e6f2777df67d0d2b80a92dda893f5ea41c2039",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read local ring of fiber of ring map R→S at q via localized S_q modulo extended contracted prime pS_q and equivalent localization of tensor fiber over residue field.",
+      "reason": "Read the entire contextual source and checked independent meanings: the quotient of a commutative ring by a two-sided ideal is a standalone construction absent from the 611 existing meanings. Its special cases with polynomial relations, integers modulo primes, stalk-localized rings and adic ideal powers share the same quotient-ring concept. This does not classify the separate ideal-power construction, residue-field property, module quotient, or deformation-theoretic lift as equivalent meanings. Specifically examined 'quotient S_q/pS_q' in 'local ring of a fibre at a prime'.",
+      "references": [
+        {
+          "phrase": "commutative ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "prime ideal q in S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "prime localization of rings",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "scheme-theoretic fiber ring context",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.local-ring-fibre-at-prime"
+        },
+        {
+          "phrase": "contraction p=q∩R",
+          "state": "unassigned",
+          "context": "Inverse image prime ideal in R under the specified homomorphism."
+        },
+        {
+          "phrase": "quotient S_q/pS_q",
+          "state": "missing",
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology."
+        },
+        {
+          "phrase": "fibre tensor ring S⊗_Rκ(p)",
+          "state": "unassigned",
+          "context": "Base-change of S along residue-field map R→κ(p)."
+        },
+        {
+          "phrase": "ring fibre localization at q",
+          "state": "external",
+          "disposition": "Local fiber ring is not the original S_q: quotient by pS_q is essential."
+        }
+      ]
+    }
+  ]
+}
