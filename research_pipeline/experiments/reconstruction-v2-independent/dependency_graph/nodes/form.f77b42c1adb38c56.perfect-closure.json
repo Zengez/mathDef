@@ -2,37 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.f77b42c1adb38c56.perfect-closure",
   "version_sha256": "1a879075ce5896d96acafcb3985438f7ac31fe91f4abb8443c8358d6f200dc76",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "characteristic",
-      "span": [
-        45,
-        59
-      ],
+      "phrase": "base field k",
       "state": "existing",
-      "target_meaning_id": "meaning.dbce785fa0c96b0a.field-characteristic",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.a3a3c33bad98a1cc3a57"
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.9b556eb49787c6005f91"
     },
     {
-      "phrase": "algebraic closure",
-      "span": [
-        179,
-        196
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.39488f3e396a1c77.algebraic-closure"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.72b4c9d26fa9137efb84"
+      "phrase": "field of characteristic p>0",
+      "state": "existing",
+      "target_meaning_id": "meaning.dbce785fa0c96b0a.field-characteristic",
+      "occurrence_id": "occ.dfb304e79ed20c350d78"
+    },
+    {
+      "phrase": "perfect field extension",
+      "state": "existing",
+      "target_meaning_id": "meaning.f77b42c1adb38c56.perfect-field",
+      "occurrence_id": "occ.0bd161430eb052689baa"
+    },
+    {
+      "phrase": "algebraic closure of k",
+      "state": "existing",
+      "target_meaning_id": "meaning.39488f3e396a1c77.algebraic-closure",
+      "occurrence_id": "occ.da0ae61aeb42e8e26365"
+    },
+    {
+      "phrase": "field extension",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "occurrence_id": "occ.4102fb7151fbd39ab233"
+    },
+    {
+      "phrase": "compatible iterated p-power roots of elements of k",
+      "state": "unassigned",
+      "context": "Chosen roots at every p^n-power level inside the fixed algebraic closure, with pth powers relating successive roots.",
+      "occurrence_id": "occ.d984899d13388e84c1c8"
+    },
+    {
+      "phrase": "smallest perfect extension containing k",
+      "state": "unassigned",
+      "context": "Intersection/minimal field containing k and the required roots, tested by inclusion among fields in the fixed algebraic closure.",
+      "occurrence_id": "occ.918dbc306ec3d39664f5"
+    },
+    {
+      "phrase": "positive characteristic requirement",
+      "state": "external",
+      "disposition": "This construction is explicitly restricted to p>0 and does not assert nontrivial perfect closure in characteristic zero.",
+      "occurrence_id": "occ.6bc1d79ddbd7c58a48f0"
     }
   ],
-  "snapshot_sha256": "a7ad5dfc6fd5415a64198b39c28c4a6c7ef8ff756143ace05bce099f3f906c13",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "9a06f00daa9fcc1df0dc03235380dfc68dffc5a658681f20aa4c024ea9e0af28",
+  "review_rationale": "Read the perfect closure in positive characteristic inside a fixed algebraic closure, requiring minimal perfect extension and compatible iterated pth-power roots, not arbitrary algebraic elements."
 }
