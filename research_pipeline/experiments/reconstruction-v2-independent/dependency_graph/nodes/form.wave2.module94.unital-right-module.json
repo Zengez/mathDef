@@ -2,25 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.module94.unital-right-module",
   "version_sha256": "769d622b6f799faae4af2f0102f044bdbfda54cc5849377b62b5131994846206",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "abelian group",
-      "span": [
-        52,
-        65
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.abelian-group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.b651587070a6535ecf3b"
+      "phrase": "associative ring R with identity",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.eeaacd96c80f0a8313ae"
+    },
+    {
+      "phrase": "abelian group M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "occurrence_id": "occ.db617f55774e5af5ec98"
+    },
+    {
+      "phrase": "right module action without unity",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.right-module-nonunital",
+      "occurrence_id": "occ.b5dfcb1f79191adbf921"
+    },
+    {
+      "phrase": "right scalar action M x R to M",
+      "state": "unassigned",
+      "context": "Scalar multiplication with module element first and scalar second.",
+      "occurrence_id": "occ.cc654b06d6c87f8733ab"
+    },
+    {
+      "phrase": "right distributivities (m+n)r and m(r+s)",
+      "state": "unassigned",
+      "context": "Action distributes over addition in both module and ring.",
+      "occurrence_id": "occ.d00ef4f016b055478ed1"
+    },
+    {
+      "phrase": "right associativity (mr)s=m(rs)",
+      "state": "unassigned",
+      "context": "Action order agrees with right-sided multiplication by successive scalars.",
+      "occurrence_id": "occ.00b22fd145699cc9ebab"
+    },
+    {
+      "phrase": "unital axiom m1=m",
+      "state": "unassigned",
+      "context": "The specified ring identity acts trivially on the right of each module element.",
+      "occurrence_id": "occ.cb2e55c1b202c3ee2595"
+    },
+    {
+      "phrase": "left versus right module",
+      "state": "external",
+      "disposition": "Right action is not silently identified with a left action over a noncommutative ring.",
+      "occurrence_id": "occ.5492e2dd0b7df1c060d9"
     }
   ],
-  "snapshot_sha256": "779df303f1881cf09563adc19fbb3aa3fab7842797f43789efabf1c498e4affc",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "15fcdbba721acc2e4a5b77870d4fac7b5f347bd1d38d13c8b5d5c48424859562",
+  "review_rationale": "Read unital right module as abelian additive group with scalar action on right respecting distributivity and associativity plus m1=m, without swapping it to left-module action."
 }

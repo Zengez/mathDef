@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.pop139.congruence-remainder",
   "version_sha256": "f714431c71f7a5fa2efe9b6ba81d114502f1e2ab1867153d10a099222caad251",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        20,
-        27
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.67c8f0b6ac6c3e7cc21d"
+      "phrase": "integers a,b,m",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.integer-equivalence-class",
+      "occurrence_id": "occ.f979f1fabc61ca91af34"
+    },
+    {
+      "phrase": "positive modulus m",
+      "state": "unassigned",
+      "context": "Integer m greater than zero with respect to usual order on Z.",
+      "occurrence_id": "occ.67ecea2aa1695d977a66"
+    },
+    {
+      "phrase": "least nonnegative remainder upon division by m",
+      "state": "unassigned",
+      "context": "Unique integer r in {0,...,m-1} such that a=q*m+r for some integer q.",
+      "occurrence_id": "occ.ae6a639bcd539e431394"
+    },
+    {
+      "phrase": "equal remainders modulo m",
+      "state": "unassigned",
+      "context": "Remainder computed for a and b at the same fixed positive modulus m is identical.",
+      "occurrence_id": "occ.ac0219addc2e9a7654e6"
+    },
+    {
+      "phrase": "equivalent congruence formulation",
+      "state": "external",
+      "disposition": "Same integer-congruence meaning as divisibility-of-difference definition; a self-link is not a mathematical prerequisite.",
+      "occurrence_id": "occ.dd0f9b6cd3d7207c1eb4"
     }
   ],
-  "snapshot_sha256": "731534f3a0f8199d7f3ea5848fed4aee4916610dc01bd8345034e37ccb7a080f",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "f459e4756a37d6b55893719979de6c22e123ded313c44a011aa4e00b17612de7",
+  "review_rationale": "Read least-nonnegative-remainder characterization of integer congruence for positive modulus, separating Euclidean division from equivalence of the resulting residues."
 }
