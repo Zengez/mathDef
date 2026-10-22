@@ -448,6 +448,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.06d3b29d2fa8ad998a3d",
+      "context": "Real construction from rational Cauchy sequences: eventual strict positivity with a common positive rational margin δ>0, meaning ∃N ∀n≥N a_n≥δ, stronger than eventual pointwise positivity.",
+      "surface_phrase": "eventual uniform lower bound a_n>=delta",
+      "observed_in_formulations": [
+        "form.wave2.real52.positive-cauchy-class"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.07e25eec2547df68421c",
       "context": "Graph/combinatorics: finite vertex enumeration as a bijection {1,…,n}→V, choosing an indexing order on V.",
       "surface_phrase": "chosen ordering V={v_1,…,v_n}",
@@ -462,6 +471,15 @@
       "surface_phrase": "usual total ordering on rationals",
       "observed_in_formulations": [
         "form.wave2.rational55.rational-absolute-value"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.0f9ce4837c92ff02c397",
+      "context": "Real construction: set R_D of all Dedekind lower cuts of rational numbers, used as carrier for cut-based real number model.",
+      "surface_phrase": "set of all rational lower cuts R_D",
+      "observed_in_formulations": [
+        "form.wave2.real50.cut-model-reals"
       ],
       "actionable": false
     },
@@ -727,6 +745,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.3913df323abde5188991",
+      "context": "Ring theory: two-sided multiplicative inverse b for an element a≠0 in a unital ring, satisfying ab=ba=1_D; stronger than a one-sided inverse.",
+      "surface_phrase": "every nonzero element has two-sided inverse",
+      "observed_in_formulations": [
+        "form.wave2.scalar101.division-ring"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.39e4d92e2f3e4374dd27",
       "context": "Commutative algebra: nilpotent element of a commutative ring",
       "surface_phrase": "nilpotent",
@@ -907,6 +934,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.5ffbe645365000af7490",
+      "context": "Algebra: centered monomials (x−ξ)^n formed from real variable x, real center ξ, and nonnegative integer exponent n, constituting power-series terms.",
+      "surface_phrase": "real variable x and shifted powers",
+      "observed_in_formulations": [
+        "form.wave2.prereq122.real-centered-power-series"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.60a357687f0e1c93d908",
       "context": "Probability theory: an indexed family of measurable events A_i∈Σ, for i in an arbitrary index set I, all in the same probability space (Ω,Σ,P).",
       "surface_phrase": "indexed family of measurable events (A_i)",
@@ -943,11 +979,29 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.65047bc1cb43a4da3792",
+      "context": "Real analysis/field construction: addition and multiplication on rational Dedekind lower cuts, defined by operations on rational representatives and followed by well-definedness proofs.",
+      "surface_phrase": "arithmetic on Dedekind cuts",
+      "observed_in_formulations": [
+        "form.wave2.real50.cut-model-reals"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.6cb0441a08c98c8d720b",
       "context": "Arithmetic: subset ℚ_{≥0} of rational numbers consisting of zero together with rational q>0, serving as the codomain of rational modulus.",
       "surface_phrase": "nonnegative rational codomain",
       "observed_in_formulations": [
         "form.wave2.rational55.rational-absolute-value"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.6e286e5d25f8e80fa9f6",
+      "context": "Order theory: property that subset A has no greatest element; for every a∈A there exists b∈A with a<b. Distinct from a set having no maximal element in partial orders.",
+      "surface_phrase": "no largest element",
+      "observed_in_formulations": [
+        "form.wave2.real50.dedekind-rational-lower-cut"
       ],
       "actionable": false
     },
@@ -1002,6 +1056,15 @@
       "surface_phrase": "support X of N+1 distinct real points",
       "observed_in_formulations": [
         "form.wave2.analysis.orthogonal-polynomials-finite"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.80fe89921faf5393a2c5",
+      "context": "Real analysis: sequence (a_n) of real coefficients indexed by nonnegative integers, a function ℕ_0→ℝ; no assumption of convergence.",
+      "surface_phrase": "coefficient sequence (a_n)",
+      "observed_in_formulations": [
+        "form.wave2.prereq122.real-centered-power-series"
       ],
       "actionable": false
     },
@@ -1092,6 +1155,15 @@
       "surface_phrase": "symmetry x~y implies y~x",
       "observed_in_formulations": [
         "form.wave2.set63.relation-reflexive-symmetric-transitive"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.973624633db2f6611c19",
+      "context": "Ordered algebra: canonical injective order-preserving map ℚ→R_D sending rational q to strict lower segment {r∈ℚ:r<q}; distinct from arbitrary field embedding.",
+      "surface_phrase": "rational embedding q maps to {r:r<q}",
+      "observed_in_formulations": [
+        "form.wave2.real50.cut-model-reals"
       ],
       "actionable": false
     },
@@ -1200,6 +1272,15 @@
       "surface_phrase": "undirected multigraph edge multiset E",
       "observed_in_formulations": [
         "form.wave2.graph42.loopless-undirected-multigraph"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.b1e0a8b58dda986e68d9",
+      "context": "Order theory: downward-closed or lower set A of partially ordered S; whenever a∈A and q≤a then q∈A, here specializing to rational order.",
+      "surface_phrase": "downward-closed subset under rational order",
+      "observed_in_formulations": [
+        "form.wave2.real50.dedekind-rational-lower-cut"
       ],
       "actionable": false
     },
@@ -1362,6 +1443,15 @@
       "surface_phrase": "infinitely many points of increase",
       "observed_in_formulations": [
         "form.wave2.analysis.orthogonal-polynomials-measure"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.cada73fbf03ab8dc7722",
+      "context": "Ring theory: two-sided multiplicative identity 1_D in an associative ring D, acting as unit for multiplication and distinct from additive zero.",
+      "surface_phrase": "multiplicative identity 1_D",
+      "observed_in_formulations": [
+        "form.wave2.scalar101.division-ring"
       ],
       "actionable": false
     },
@@ -1564,7 +1654,7 @@
       "actionable": false
     }
   ],
-  "unresolved_occurrence_count": 758,
+  "unresolved_occurrence_count": 743,
   "missing_research_permitted": false,
   "suggested_next_package": {
     "breadth_topic_candidates": [],
@@ -1579,7 +1669,7 @@
     "scan_complete": 659,
     "unscanned": 0,
     "scan_incomplete": 0,
-    "unassigned_occurrences": 758,
+    "unassigned_occurrences": 743,
     "consolidation_gate_valid": false
   },
   "reconciliation_findings": {
