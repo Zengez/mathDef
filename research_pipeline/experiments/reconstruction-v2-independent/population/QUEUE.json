@@ -627,6 +627,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.30c1c32a0c618c43d3de",
+      "context": "Finite-dimensional real affine geometry: sum of finitely many coefficient-weighted points ∑α_i x_i with ∑α_i=1, not necessarily nonnegative coefficients.",
+      "surface_phrase": "finite affine combination",
+      "observed_in_formulations": [
+        "form.wave2.pop140.affine-hull-intersection"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.321f1c1041b950cab75b",
       "context": "Real analysis: Riemann sum associated to a bounded real-valued function and a tagged finite partition; sum of f(ξ_i)(x_i−x_{i−1}).",
       "surface_phrase": "tagged Riemann sum S",
@@ -834,6 +843,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.72d70ff235732c7f0318",
+      "context": "Combinatorics: finite initial segment {1,...,k} of the positive integers, used as a palette of k distinct color labels.",
+      "surface_phrase": "finite color palette {1,...,k}",
+      "observed_in_formulations": [
+        "form.wave2.pop142.proper-vertex-k-color"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.7913d8a82788b1402bf9",
       "context": "Real analysis: convergence of a real sequence (s_N) to s∈ℝ, with the epsilon-N criterion: all sufficiently late terms approach s.",
       "surface_phrase": "limit of partial sums as N to infinity",
@@ -843,11 +861,29 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.7ba2e387d06fd2055387",
+      "context": "Algebra: a binary operation induced on equivalence classes is well-defined when the result is independent of the chosen representatives; normality supplies this for group cosets.",
+      "surface_phrase": "well-defined coset product",
+      "observed_in_formulations": [
+        "form.wave2.quot119.quotient-group"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.85d3921d2aa075f7883a",
       "context": "Linear algebra: n by n square matrix over field K, an array A=(a_ij) indexed by ordered pairs 1≤i,j≤n.",
       "surface_phrase": "square matrix A in M_n(K)",
       "observed_in_formulations": [
         "form.wave2.pop139.matrix-trace"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.85dcc7f7445e61c66023",
+      "context": "Finite-dimensional affine geometry: subset C⊆R^d stable under every finite affine combination of points of C, with coefficients summing to one.",
+      "surface_phrase": "affine-closed subset C",
+      "observed_in_formulations": [
+        "form.wave2.pop140.affine-hull-intersection"
       ],
       "actionable": false
     },
@@ -1023,6 +1059,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.babcda8464728aa791fe",
+      "context": "Set theory: arbitrary intersection of a family of subsets, here all affine-closed supersets of S, yielding their common elements.",
+      "surface_phrase": "intersection of all affine-closed supersets",
+      "observed_in_formulations": [
+        "form.wave2.pop140.affine-hull-intersection"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.bad6d2828e5b104f3868",
       "context": "Graph/set theory: an unordered two-element subset e={u,v}⊆V with u≠v, used as an edge of a simple undirected graph.",
       "surface_phrase": "edge two-element subset of vertices",
@@ -1055,6 +1100,15 @@
       "surface_phrase": "complex number field C",
       "observed_in_formulations": [
         "form.wave2.analysis98.complex-inner-product-space"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.c417b771ae34189771ee",
+      "context": "Group theory: set of left cosets G/N={gN:g∈G} of a normal subgroup N≤G, serving as the quotient carrier.",
+      "surface_phrase": "set G/N of all N-cosets",
+      "observed_in_formulations": [
+        "form.wave2.quot119.quotient-group"
       ],
       "actionable": false
     },
@@ -1131,6 +1185,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.cd86e488d6ee7d3c34b4",
+      "context": "Set theory/probability: binary set intersection A∩B, the outcomes simultaneously belonging to both measurable events.",
+      "surface_phrase": "intersection A cap B",
+      "observed_in_formulations": [
+        "form.wave2.pop140.independent-pair"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.d1ff280194ed594202ae",
       "context": "Commutative algebra: finite polynomial expression with coefficients a_0,...,a_n∈R in an indeterminate or its evaluation at x∈S under R⊆S.",
       "surface_phrase": "polynomial a_0+a_1*x+...+a_n*x^n",
@@ -1140,11 +1203,29 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.d4465c439f68dccab222",
+      "context": "Group theory: conjugation of group element n by g, the operation n↦gng^{-1} using the group inverse, distinct from conjugacy classes.",
+      "surface_phrase": "conjugation gng^{-1}",
+      "observed_in_formulations": [
+        "form.wave2.quot119.normal-subgroup.2"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.d617d5cccdce63cce9b6",
       "context": "Abelian category theory: canonical morphism Coim(f)→Im(f) induced by factorization of f through its coimage and image, an isomorphism in an abelian category.",
       "surface_phrase": "canonical comparison Coim(f) to Im(f)",
       "observed_in_formulations": [
         "form.wave2.foundation15.abelian-category"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.d6c06597f8ca65e951f2",
+      "context": "Graph theory: adjacency relation between distinct vertices u and v of a loopless undirected graph, holding exactly when {u,v}∈E.",
+      "surface_phrase": "adjacent vertices connected by edge {u,v}",
+      "observed_in_formulations": [
+        "form.wave2.pop142.proper-vertex-k-color"
       ],
       "actionable": false
     },
@@ -1237,9 +1318,18 @@
         "form.wave2.analysis98.norm-over-real-or-complex"
       ],
       "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.fbd11071cfe5ca8ef6e2",
+      "context": "Group theory: conjugate of subset N⊆G by g∈G, the subset {gng^{-1}:n∈N} obtained by conjugating every element.",
+      "surface_phrase": "conjugate subset gNg^{-1}",
+      "observed_in_formulations": [
+        "form.wave2.quot119.normal-subgroup.2"
+      ],
+      "actionable": false
     }
   ],
-  "unresolved_occurrence_count": 807,
+  "unresolved_occurrence_count": 792,
   "missing_research_permitted": false,
   "suggested_next_package": {
     "breadth_topic_candidates": [],
@@ -1254,7 +1344,7 @@
     "scan_complete": 659,
     "unscanned": 0,
     "scan_incomplete": 0,
-    "unassigned_occurrences": 807,
+    "unassigned_occurrences": 792,
     "consolidation_gate_valid": false
   },
   "reconciliation_findings": {
