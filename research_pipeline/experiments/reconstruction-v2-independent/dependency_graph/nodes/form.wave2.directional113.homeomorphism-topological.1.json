@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.directional113.homeomorphism-topological.1",
   "version_sha256": "d89e95c376661479b1a100b22f87b1421ca33ba3921d0f884f855c56a0e1102b",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "topological spaces X,Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.4bc45b8b44b970d7f0c3"
+    },
+    {
+      "phrase": "continuous topological map f",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+      "occurrence_id": "occ.71a2c44791e220402ef4"
+    },
+    {
+      "phrase": "mapping f:X→Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.ca24b6e30973b132931a"
+    },
+    {
+      "phrase": "bijection",
+      "state": "unassigned",
+      "context": "Injective and surjective mapping from X onto Y.",
+      "occurrence_id": "occ.da87f453c95427184af7"
+    },
+    {
+      "phrase": "inverse continuous map f^{-1}",
+      "state": "unassigned",
+      "context": "Inverse function Y→X exists by bijectivity and is continuous for respective topologies.",
+      "occurrence_id": "occ.bf4a80da5cdf2e04d61f"
+    },
+    {
+      "phrase": "continuous bijection not necessarily homeomorphism",
+      "state": "external",
+      "disposition": "The separate inverse-continuity requirement is essential.",
+      "occurrence_id": "occ.eea3ef74cd3fe1c1923e"
+    }
+  ],
+  "snapshot_sha256": "2c69ef6a21e548b5288bd7c850771278f8cd694790f8f99b361dc9ddadb60ac4",
+  "review_rationale": "Read homeomorphism as bijective continuous map between topological spaces with continuous inverse, noting continuous bijection alone insufficient."
 }

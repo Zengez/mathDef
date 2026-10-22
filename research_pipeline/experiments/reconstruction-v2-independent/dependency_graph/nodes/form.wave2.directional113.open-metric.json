@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.directional113.open-metric",
   "version_sha256": "54a8d63402dae64c40c82c661663c0c15bb0a09be6362c01945894a8680b8f9d",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "metric space",
-      "span": [
-        6,
-        18
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.analysis98.metric-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.df26064afcc809be7331"
+      "phrase": "metric space (X,d)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis98.metric-space",
+      "occurrence_id": "occ.68a4a159c0103261a5bb"
+    },
+    {
+      "phrase": "center a∈X radius r>0",
+      "state": "unassigned",
+      "context": "Fixed point and strictly positive real scalar.",
+      "occurrence_id": "occ.283e6dfb0ef44d2c4b26"
+    },
+    {
+      "phrase": "open metric ball B_d(a,r)",
+      "state": "unassigned",
+      "context": "Subset of all x∈X with d(x,a)<r.",
+      "occurrence_id": "occ.5043e6809c237a949517"
+    },
+    {
+      "phrase": "strict distance inequality",
+      "state": "external",
+      "disposition": "Open metric balls form basis of metric topology, but need not equal all open sets individually.",
+      "occurrence_id": "occ.ffacd86715cb11f4b572"
     }
   ],
-  "snapshot_sha256": "8677aa9823ed811860edb8c317e852557f234a64292fd56fecb5a01d47355697",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "9fed059205d2806abab80250d618f129fb4af4367fe1250a4d7c3e4e9b36d852",
+  "review_rationale": "Read open metric ball as strict distance-sublevel set for fixed center and positive radius under a specified metric."
 }

@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.directional113.directional-differentiable",
   "version_sha256": "8284c9dd226cde6ba0e9aed7cdd8f05c3f6038db0c6c06c8f444999a2585c8c7",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "real derivative at interior point",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis.real-derivative-point",
+      "occurrence_id": "occ.6675e6ff2637156b7446"
+    },
+    {
+      "phrase": "finite real limit",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis.real-limit-punctured-epsilon-delta",
+      "occurrence_id": "occ.04e0d1360d433654e346"
+    },
+    {
+      "phrase": "real vector space R^n",
+      "state": "existing",
+      "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "occurrence_id": "occ.abd052c3f65d98373d08"
+    },
+    {
+      "phrase": "unit vector u∈R^n",
+      "state": "unassigned",
+      "context": "Direction vector with Euclidean length one.",
+      "occurrence_id": "occ.1ab246340f4472b79d34"
+    },
+    {
+      "phrase": "directional difference quotient",
+      "state": "unassigned",
+      "context": "[f(a+tu)−f(a)]/t for nonzero real t tending to zero.",
+      "occurrence_id": "occ.af56259ffd1af88edaeb"
+    },
+    {
+      "phrase": "differentiability assumption of f at a",
+      "state": "external",
+      "disposition": "This source assumes f differentiable at a, although directional limits can be defined more generally.",
+      "occurrence_id": "occ.a5f55cddd21d8ab35b23"
+    }
+  ],
+  "snapshot_sha256": "556fac3cd784aaea342ac4ca13c92949bb82801117ec50e4a16c009afdc41f72",
+  "review_rationale": "Read directional derivative along unit direction u in R^n at differentiable f, with one-variable real limit of restriction t↦f(a+tu)."
 }
