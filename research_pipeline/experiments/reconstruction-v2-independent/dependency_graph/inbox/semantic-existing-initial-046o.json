@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046o",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.foundation.group",
+      "version_sha256": "7ed1ebeed29d21b555cca7e8560b35487bd97989be7129aa366469a58d9ea6c6",
+      "complete": true,
+      "review_rationale": "Read group as set with internal binary associative operation, two-sided identity and two-sided inverses for all elements.",
+      "references": [
+        {
+          "phrase": "internal binary operation",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.binary-operation-internal"
+        },
+        {
+          "phrase": "associativity (a*b)*c=a*(b*c)",
+          "state": "unassigned",
+          "context": "All triples of group elements satisfy the associative law."
+        },
+        {
+          "phrase": "two-sided identity e",
+          "state": "unassigned",
+          "context": "Chosen e∈G obeys e*a=a=a*e for every a."
+        },
+        {
+          "phrase": "two-sided inverse element b for each a",
+          "state": "unassigned",
+          "context": "For each a∈G there exists b∈G with a*b=e=b*a."
+        },
+        {
+          "phrase": "commutativity not assumed",
+          "state": "external",
+          "disposition": "Groups need not be abelian; that is a separate meaning."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.integral-domain",
+      "version_sha256": "2ee729db766ce96fbc0d6d636329e4983fb15a3127db1fa2aabacba2835c92a0",
+      "complete": true,
+      "review_rationale": "Read integral domain under commutative unital nonzero convention as no zero divisors, retaining 0≠1 and ring commutativity.",
+      "references": [
+        {
+          "phrase": "associative ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "commutative unital nonzero ring R",
+          "state": "unassigned",
+          "context": "Ring with commutative multiplication and 0_R distinct from 1_R."
+        },
+        {
+          "phrase": "absence of zero divisors",
+          "state": "unassigned",
+          "context": "For all a,b, ab=0 entails a=0 or b=0."
+        },
+        {
+          "phrase": "nonzero ring requirement",
+          "state": "external",
+          "disposition": "The zero ring is excluded in this integral-domain convention."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.integral-over-ideal",
+      "version_sha256": "f47967c0e1c6133466383afe7b51cf522dcb7e239cc02af6a2e8dea70a45033d",
+      "complete": true,
+      "review_rationale": "Read element integral over ring ideal through monic polynomial with coefficient a_j in I to power d-j, evaluated under ring map at g.",
+      "references": [
+        {
+          "phrase": "commutative ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "ideal I of ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "integral element over base ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.8594a432b165bcda.integral-element-over-subring"
+        },
+        {
+          "phrase": "monic polynomial P(T) of degree d",
+          "state": "unassigned",
+          "context": "Polynomial T^d plus terms with leading coefficient 1 and finite degree d≥1."
+        },
+        {
+          "phrase": "coefficient a_j belongs I^{d−j}",
+          "state": "unassigned",
+          "context": "For term of degree j, coefficient lies in designated power of ideal I."
+        },
+        {
+          "phrase": "evaluated polynomial phi(P)(g)=0",
+          "state": "unassigned",
+          "context": "Apply ring map to coefficients, evaluate at g∈S and require zero."
+        },
+        {
+          "phrase": "integral over ideal stronger than integral over R",
+          "state": "external",
+          "disposition": "All lower coefficients constrained to corresponding powers of I, rather than arbitrary R."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.left-module-nonunital",
+      "version_sha256": "7902de68ae59790c2e70c6f108700785948d1a4f4de6f67e6f33adee69ceb1f3",
+      "complete": true,
+      "review_rationale": "Read left module over potentially nonunital associative ring as abelian additive group and compatible scalar action with distributivity and associativity, with optional unital enhancement.",
+      "references": [
+        {
+          "phrase": "associative ring R, unity optional",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "abelian group (M,+)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "left module with unital convention",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "left action R×M→M",
+          "state": "unassigned",
+          "context": "Scalar r multiplies module m, producing an element of M."
+        },
+        {
+          "phrase": "module distributivity and scalar associativity",
+          "state": "unassigned",
+          "context": "r(m+n)=rm+rn, (r+s)m=rm+sm and (rs)m=r(sm)."
+        },
+        {
+          "phrase": "optional unital action condition",
+          "state": "unassigned",
+          "context": "If R has 1, unital module additionally has 1_R m=m for all m."
+        },
+        {
+          "phrase": "nonunital base allowed",
+          "state": "external",
+          "disposition": "The universal module axioms here do not require an identity in R or unity action."
+        }
+      ]
+    }
+  ]
+}
