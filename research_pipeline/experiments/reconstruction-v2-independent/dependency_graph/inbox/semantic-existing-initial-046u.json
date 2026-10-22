@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046u",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.foundation.subset-proper",
+      "version_sha256": "c75aced69c1a53a4b13dc00bba035a38b298b0f13318a7e5a16869dfd81c1e6b",
+      "complete": true,
+      "review_rationale": "Read proper-subset definition with both non-strict inclusion and strict inequality; the extra witness of an element in B outside A is required, not optional.",
+      "references": [
+        {
+          "phrase": "A subseteq B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "strict inequality A not equal B",
+          "state": "unassigned",
+          "context": "Two sets have different members and are not equal; coupled to non-strict inclusion."
+        },
+        {
+          "phrase": "element of B not in A",
+          "state": "unassigned",
+          "context": "An existential witness to strict inclusion, equivalently nonemptiness of B minus A."
+        },
+        {
+          "phrase": "properness excludes equality",
+          "state": "external",
+          "disposition": "Unlike the ordinary subset relation, A and B cannot be identical under this condition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.subspace-topology-general",
+      "version_sha256": "25cb02e4f7acc7c42b5e2287e5ad7c069427ae2aae0f8211eee94e8237211c91",
+      "complete": true,
+      "review_rationale": "Reviewed general subspace topology from intersections of ambient open sets with arbitrary subset, including empty subset and the resulting induced topological space.",
+      "references": [
+        {
+          "phrase": "ambient topological space (X,tau)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "subset A of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "relative intersection A cap U",
+          "state": "unassigned",
+          "context": "Set-theoretic intersection of subset A with ambient open subset U of X."
+        },
+        {
+          "phrase": "induced family tau_A of opens",
+          "state": "unassigned",
+          "context": "Collection of all intersections A cap U as U ranges over tau, with resulting topology on A."
+        },
+        {
+          "phrase": "empty subset allowed",
+          "state": "external",
+          "disposition": "General topological-space convention admits an empty subspace and does not impose a nonempty hypothesis."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.subspace-topology-nonempty",
+      "version_sha256": "ee2587624542cce7c6e6a7fa3edfe958bf98f24dafaa549a9c4e4c2f44e51a8d",
+      "complete": true,
+      "review_rationale": "Reviewed restricted topology convention under which only nonempty subsets may be topological subspaces; kept identical induced-open-set construction but not the unrestricted empty case.",
+      "references": [
+        {
+          "phrase": "ambient topological space (X,tau)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "non-strict subset A of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "nonempty subset A",
+          "state": "unassigned",
+          "context": "An underlying subset A for which at least one element exists; source convention excludes the empty set."
+        },
+        {
+          "phrase": "intersection A cap U",
+          "state": "unassigned",
+          "context": "Intersection of A with each open U from the ambient topology tau."
+        },
+        {
+          "phrase": "induced subspace topology tau_A",
+          "state": "unassigned",
+          "context": "The collection of all sets A cap U for U in tau, defining the open sets on A."
+        },
+        {
+          "phrase": "exclusion of empty A by convention",
+          "state": "external",
+          "disposition": "This is a restricted convention, not an assertion that the general subspace topology cannot be defined on the empty set."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.tagged-riemann-integral",
+      "version_sha256": "b72811bab9eb7f7ef523f412f6e92416751c8820e34b45fe730446e5178c1660",
+      "complete": true,
+      "review_rationale": "Read full tagged Riemann-sum epsilon–delta definition for bounded real function on nondegenerate compact interval, with arbitrary tags, finite partitions, mesh, and uniform fine-partition quantification.",
+      "references": [
+        {
+          "phrase": "bounded real function f:[a,b] to R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "real endpoints a,b and integral L",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "absolute difference |S-L|",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis.real-absolute-value"
+        },
+        {
+          "phrase": "positive integer number of subintervals n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-positive-convention"
+        },
+        {
+          "phrase": "compact real interval [a,b] with a<b",
+          "state": "unassigned",
+          "context": "Closed bounded real interval with strict ordering of its endpoints."
+        },
+        {
+          "phrase": "boundedness of real-valued f",
+          "state": "unassigned",
+          "context": "Existence of uniform bound on magnitude |f(x)| over all x in [a,b]."
+        },
+        {
+          "phrase": "finite partition a=x_0<...<x_n=b",
+          "state": "unassigned",
+          "context": "Finite strictly increasing endpoint subdivision of [a,b]."
+        },
+        {
+          "phrase": "arbitrary tags xi_i in subinterval",
+          "state": "unassigned",
+          "context": "A freely chosen sample point in each closed subinterval of the partition."
+        },
+        {
+          "phrase": "tagged Riemann sum S",
+          "state": "unassigned",
+          "context": "Finite sum of values f(xi_i) times widths x_i-x_(i-1)."
+        },
+        {
+          "phrase": "mesh of tagged partition",
+          "state": "unassigned",
+          "context": "Maximum among lengths of the finitely many subintervals of the partition."
+        },
+        {
+          "phrase": "epsilon-delta fine-partition requirement",
+          "state": "unassigned",
+          "context": "For every positive epsilon there exists a positive delta for which all tagged partitions of mesh below delta have sum within epsilon of L."
+        },
+        {
+          "phrase": "proper not improper Riemann integration",
+          "state": "external",
+          "disposition": "Definition is restricted to bounded integrand on compact interval with a<b, not an infinite-endpoint or singular improper integral."
+        }
+      ]
+    }
+  ]
+}
