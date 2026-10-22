@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-analysis-functions-024",
+  "mode": "amend",
+  "research_scope": "Five source-free full-formulation reviews in elementary real analysis and inner product theory. No new content, external sources or automatic aliases.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.analysis_functions.20261022.01",
+      "formulation_id": "form.wave2.analysis.antiderivative-on-interval",
+      "version_sha256": "4c522d3505cb0b25c59310f92815347bdda17542823900aefe57cb3fe707e232",
+      "expected_node_sha256": "a7f1233de258c7ab1f03244085b69c7c7dee849cb4311ff1976e9f9a482da9bf",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete independently sourced real-analysis formulation, exact object types and all existing dependency references. Separated structural mathematical prerequisites from the quantifiers, equalities and set notation defining the source meaning while preserving the entire previous adjacency and source version.",
+      "reason": "Source-free Pass2 full-reference consolidation of derivatives, real finite limits, antiderivatives, indefinite integrals and inner-product structures.",
+      "references": [
+        {
+          "phrase": "real derivative at interior point",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis.real-derivative-point"
+        },
+        {
+          "phrase": "derivative function on an open interval",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross107.derivative-function-open-interval"
+        },
+        {
+          "phrase": "function f:I→R and F:I→R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "open real interval I",
+          "state": "missing",
+          "context": "Real analysis/topology: open interval I⊆ℝ, possibly unbounded, such that for each x∈I there exists δ>0 with (x−δ,x+δ)⊆I; each point is interior to the real domain.",
+          "reason": "The source differentiates at every point of an open real interval, not at arbitrary boundary points of an interval.",
+          "matching_note": "Check against open subsets of ℝ and open interval candidates in global audit, not against abstract arbitrary intervals without topology."
+        },
+        {
+          "phrase": "pointwise equality F′(x)=f(x)",
+          "state": "external",
+          "disposition": "Equality for every x in I between derivative values F′(x) and f(x) is exactly the predicate defining an antiderivative; the derivative and derivative-function notions are linked separately."
+        },
+        {
+          "phrase": "antiderivative need not be unique",
+          "state": "external",
+          "disposition": "If one exists, adding real constants gives others; equality of the derivative alone does not select a unique F."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.analysis_functions.20261022.02",
+      "formulation_id": "form.wave2.analysis.indefinite-integral-on-interval",
+      "version_sha256": "0c684c18446694c19c451e15d9e7c2cc720de40766f0c55980301e8ee0370941",
+      "expected_node_sha256": "32b09cc3b8876588cdc5add7cb157f7d2a12ec3b25e30c8b854ebc9d41e4e7a5",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete independently sourced real-analysis formulation, exact object types and all existing dependency references. Separated structural mathematical prerequisites from the quantifiers, equalities and set notation defining the source meaning while preserving the entire previous adjacency and source version.",
+      "reason": "Source-free Pass2 full-reference consolidation of derivatives, real finite limits, antiderivatives, indefinite integrals and inner-product structures.",
+      "references": [
+        {
+          "phrase": "antiderivative F of f on I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis.antiderivative-on-interval"
+        },
+        {
+          "phrase": "real functions on I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "family {F+C:C∈R}",
+          "state": "external",
+          "disposition": "The displayed set of additive translates F+C is the actual object designated by this formulation of the indefinite integral, not a separate prerequisite definition; function addition and constants are ordinary operations in this context."
+        },
+        {
+          "phrase": "additive constant C∈R",
+          "state": "missing",
+          "context": "Real analysis: constant real-valued function c_I:I→ℝ mapping all x∈I to a fixed C∈ℝ, added pointwise to a differentiable function F; derivative of the constant function is zero.",
+          "reason": "The notation F+C presupposes the constant-function construction, not a single special value of the definite integral.",
+          "matching_note": "Avoid conflating integration constant as scalar parameter with a distinct fixed antiderivative."
+        },
+        {
+          "phrase": "symbol indefinite integral does not denote a single number",
+          "state": "external",
+          "disposition": "It denotes a family of functions, not a definite integral over an interval."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.analysis_functions.20261022.03",
+      "formulation_id": "form.wave2.analysis.real-derivative-point",
+      "version_sha256": "b6dd549ce46ea3875f9b7a86147e743f585a764e48037ddeba392ef49bc4086c",
+      "expected_node_sha256": "d81c0106f733f23ca8ce2da46247bdf6ea67ccbfec1a4a9f9a0b9a85e123354a",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete independently sourced real-analysis formulation, exact object types and all existing dependency references. Separated structural mathematical prerequisites from the quantifiers, equalities and set notation defining the source meaning while preserving the entire previous adjacency and source version.",
+      "reason": "Source-free Pass2 full-reference consolidation of derivatives, real finite limits, antiderivatives, indefinite integrals and inner-product structures.",
+      "references": [
+        {
+          "phrase": "finite real limit",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis.real-limit-punctured-epsilon-delta"
+        },
+        {
+          "phrase": "real-valued function f:I→R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "open real interval I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "difference quotient (f(a+h)−f(a))/h",
+          "state": "missing",
+          "context": "Single-variable real analysis: difference quotient Q(h)=[f(a+h)−f(a)]/h for h≠0 with a,a+h in the domain of f; interpreted as a function of punctured nonzero increments h.",
+          "reason": "The difference quotient is a reusable construction preceding its limit, which defines the derivative.",
+          "matching_note": "This is an ordinary real difference quotient, not a partial derivative, metric slope of a curve, or differential in a normed vector space."
+        },
+        {
+          "phrase": "limit h→0 with h≠0",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis.real-limit-punctured-epsilon-delta",
+          "matching_note": "The finite real limit of the difference quotient function as its real input h approaches 0 through nonzero increments is exactly the indexed punctured-limit concept; no value at h=0 is required."
+        },
+        {
+          "phrase": "finite derivative",
+          "state": "external",
+          "disposition": "Derivative is defined only if the difference quotient approaches a finite real number."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.analysis_functions.20261022.04",
+      "formulation_id": "form.wave2.analysis.real-limit-punctured-epsilon-delta",
+      "version_sha256": "1ee8ffe568044c4a45103765f86ca35187c35de810c92214750196cb64a3503c",
+      "expected_node_sha256": "b40ec0b56f9b8ab21ca4eb2862e948809fa470922b73447524d8aca63aeec5df",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete independently sourced real-analysis formulation, exact object types and all existing dependency references. Separated structural mathematical prerequisites from the quantifiers, equalities and set notation defining the source meaning while preserving the entire previous adjacency and source version.",
+      "reason": "Source-free Pass2 full-reference consolidation of derivatives, real finite limits, antiderivatives, indefinite integrals and inner-product structures.",
+      "references": [
+        {
+          "phrase": "real absolute value |·|",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis.real-absolute-value"
+        },
+        {
+          "phrase": "strictly positive real numbers",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "function f",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "punctured neighborhood of a",
+          "state": "missing",
+          "context": "Real topology: deleted δ-neighborhood {x∈ℝ:0<|x−a|<δ} of a, intersected with the function domain; the center a itself is excluded.",
+          "reason": "The punctured neighborhood is a reusable domain restriction and is not the same thing as requiring continuity at a.",
+          "matching_note": "Check against general topological punctured neighborhoods, preserving real metric interval context."
+        },
+        {
+          "phrase": "epsilon-delta quantification",
+          "state": "external",
+          "disposition": "The ∀ε>0 ∃δ>0 ∀x implication is the defining logical predicate of a finite real limit; it is not a separately required notion of epsilon-delta continuity. Real ordering/absolute value are already linked."
+        },
+        {
+          "phrase": "value f(a) not required",
+          "state": "external",
+          "disposition": "Only punctured domain values are used, so the value at a need not exist or equal L."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.analysis_functions.20261022.05",
+      "formulation_id": "form.wave2.analysis98.real-inner-product-space",
+      "version_sha256": "0ceceb7693047e97f215ae624339c8afcdf2df70c307db3583a259fb5aeb709f",
+      "expected_node_sha256": "7c22512e070d97198cb56501f5e37dca9b21207a41dcc1ade04522da27ea668c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete independently sourced real-analysis formulation, exact object types and all existing dependency references. Separated structural mathematical prerequisites from the quantifiers, equalities and set notation defining the source meaning while preserving the entire previous adjacency and source version.",
+      "reason": "Source-free Pass2 full-reference consolidation of derivatives, real finite limits, antiderivatives, indefinite integrals and inner-product structures.",
+      "references": [
+        {
+          "phrase": "real vector space V",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field"
+        },
+        {
+          "phrase": "symmetric bilinear form",
+          "state": "missing",
+          "context": "Real linear algebra: bilinear map B:V×V→ℝ linear separately in each vector argument and symmetric B(u,v)=B(v,u); distinct from a complex Hermitian sesquilinear form.",
+          "reason": "Real inner-product-space structure presupposes the bilinear and symmetric properties as reusable algebraic prerequisites.",
+          "matching_note": "Compare globally with module bilinear-map context; field ℝ and symmetry should not be lost."
+        },
+        {
+          "phrase": "positive-definite form",
+          "state": "missing",
+          "context": "Real linear algebra: positive-definiteness of a symmetric bilinear form B on real V, with B(v,v)>0 for all nonzero v∈V and B(0,0)=0.",
+          "reason": "Positive definiteness is an independently meaningful predicate on forms, not supplied automatically by symmetry or bilinearity.",
+          "matching_note": "Do not confuse with semidefinite forms (which permit nonzero vectors with zero self-pairing)."
+        },
+        {
+          "phrase": "real rather than complex Hermitian convention",
+          "state": "external",
+          "disposition": "No conjugate-linear component in the real bilinear form definition."
+        }
+      ]
+    }
+  ]
+}
