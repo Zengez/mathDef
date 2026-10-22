@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-045h",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.branch129.nonempty-connected-graph",
+      "version_sha256": "8acedb465db621ed354e05aa47b20b752c47d159268db5030cbf6dc67a8471ef",
+      "complete": true,
+      "review_rationale": "Read graph connectivity on a nonempty simple undirected graph through existence of finite walks for all ordered vertex pairs, allowing trivial walk for equal vertices.",
+      "references": [
+        {
+          "phrase": "simple undirected graph G=(V,E)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.graph42.simple-undirected"
+        },
+        {
+          "phrase": "finite walk from u to v",
+          "state": "unassigned",
+          "context": "Finite vertex sequence with consecutive vertices adjacent, including length-zero singleton walk when u=v."
+        },
+        {
+          "phrase": "every pair u,v in V",
+          "state": "unassigned",
+          "context": "Universal vertex-pair quantification in the nonempty graph."
+        },
+        {
+          "phrase": "nonempty vertex set and zero-length walks",
+          "state": "external",
+          "disposition": "Connectivity excludes empty graph by convention and permits u=v by zero-step walk."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.branch129.operator-eigenvalue.1",
+      "version_sha256": "04281481cf32bd7c04d7d549dde0a1e9d14b64b23dded54a1a0be8f47df6aa13",
+      "complete": true,
+      "review_rationale": "Read eigenvalue of field-linear endomorphism by nontrivial kernel of A minus scalar identity, and preserved scalar field and operator domain-codomain match.",
+      "references": [
+        {
+          "phrase": "K-vector space V",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field"
+        },
+        {
+          "phrase": "kernel of field-linear transformation",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross107.field-vector-linear-kernel"
+        },
+        {
+          "phrase": "K-linear operator A:V→V",
+          "state": "unassigned",
+          "context": "Linear endomorphism respecting addition and scalar multiplication on vector space V."
+        },
+        {
+          "phrase": "identity operator I_V",
+          "state": "unassigned",
+          "context": "Linear map v↦v on V."
+        },
+        {
+          "phrase": "difference A−λI_V",
+          "state": "unassigned",
+          "context": "Linear endomorphism v↦A(v)−λv."
+        },
+        {
+          "phrase": "nonzero kernel ker(A−λI_V)",
+          "state": "unassigned",
+          "context": "Kernel contains a nonzero vector, rather than merely the zero vector."
+        },
+        {
+          "phrase": "eigenvalue scalar lambda∈K",
+          "state": "external",
+          "disposition": "Lambda must belong to the scalar field of V, not an eigenvalue in an unstated field extension."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.branch129.operator-eigenvalue.2",
+      "version_sha256": "722ad504ad3e46cad9ee3242bd9a1d6d28fc337b4a14c85cecced95a7345184f",
+      "complete": true,
+      "review_rationale": "Read equivalent eigenvalue equation A(v)=λv for some nonzero vector and linked to same field-linear operator context, without requiring every vector to satisfy it.",
+      "references": [
+        {
+          "phrase": "K-vector space V",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field"
+        },
+        {
+          "phrase": "alternate kernel-based eigenvalue definition",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.branch129.operator-eigenvalue"
+        },
+        {
+          "phrase": "linear endomorphism A:V→V",
+          "state": "unassigned",
+          "context": "K-linear map from vector space to itself."
+        },
+        {
+          "phrase": "nonzero eigenvector v",
+          "state": "unassigned",
+          "context": "Vector v distinct from zero satisfying the displayed scalar-eigen equation."
+        },
+        {
+          "phrase": "eigen equation A(v)=λv",
+          "state": "unassigned",
+          "context": "Image of selected nonzero vector is its scalar multiple by λ."
+        },
+        {
+          "phrase": "existential nonzero v",
+          "state": "external",
+          "disposition": "Exactly one witness vector suffices for eigenvalue status; the equation need not hold for all vectors."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.branch129.real-convergent-egf",
+      "version_sha256": "6d3078c2492f86b6e3cbfb6d081eb062436ef3a044173eaa6c16021f06fef5b2",
+      "complete": true,
+      "review_rationale": "Read exponential generating function of a real sequence only on the real convergence domain of its n-factorial-weighted power series, retaining nonnegative indices and convergence.",
+      "references": [
+        {
+          "phrase": "convergent real series",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prereq122.real-series-convergent"
+        },
+        {
+          "phrase": "real power series",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prereq122.real-centered-power-series"
+        },
+        {
+          "phrase": "natural indexing n≥0",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "real function E_A:D→R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "factorial n! of nonnegative integer",
+          "state": "unassigned",
+          "context": "Product of integers from 1 to n with 0!=1, appearing in each coefficient."
+        },
+        {
+          "phrase": "convergence domain D⊆R",
+          "state": "unassigned",
+          "context": "Set of real z where series Σ(a_n/n!)z^n converges."
+        },
+        {
+          "phrase": "function defined only on D",
+          "state": "external",
+          "disposition": "Does not assert entire real line convergence; outside D series does not define real value."
+        }
+      ]
+    }
+  ]
+}
