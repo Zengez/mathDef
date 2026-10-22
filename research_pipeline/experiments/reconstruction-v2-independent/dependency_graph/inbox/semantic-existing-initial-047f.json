@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-047f",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.pop139.matrix-trace",
+      "version_sha256": "e513285542018b8f8f564db8e0bda84f23590ef1c2a6abbfde2b3088a588b50a",
+      "complete": true,
+      "review_rationale": "Reviewed the finite diagonal-sum trace of n-by-n matrix over field K with positive size n; distinguished this linear-algebra trace from trace in a field extension.",
+      "references": [
+        {
+          "phrase": "field K",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "positive integer n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-positive-convention"
+        },
+        {
+          "phrase": "square matrix A in M_n(K)",
+          "state": "unassigned",
+          "context": "Array of n rows and n columns with entries a_ij in the field K."
+        },
+        {
+          "phrase": "diagonal entries a_ii",
+          "state": "unassigned",
+          "context": "Entries whose row index equals column index in a square matrix."
+        },
+        {
+          "phrase": "finite sum of n diagonal entries",
+          "state": "unassigned",
+          "context": "Field sum indexed by i from 1 through n, yielding an element of K."
+        },
+        {
+          "phrase": "not field-extension trace",
+          "state": "external",
+          "disposition": "Trace of a matrix here is not itself the trace of an element of a field extension."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.pop140.affine-hull-combinations",
+      "version_sha256": "d624f6f8f78877c42964ab8b63c14e00773449579e6593eae1fdfba647b1daab",
+      "complete": true,
+      "review_rationale": "Reviewed affine hull as all finite nonempty affine combinations of S subset R^d with coefficients summing to one; preserved empty S convention and fixed dimension d>=1.",
+      "references": [
+        {
+          "phrase": "real vector space R^d",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field"
+        },
+        {
+          "phrase": "real coefficients alpha_i",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "subset S of R^d",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "finite affine combination sum alpha_i*x_i",
+          "state": "unassigned",
+          "context": "Linear combination of finitely many vectors x_i in S with scalar coefficients summing to one."
+        },
+        {
+          "phrase": "coefficient normalization sum alpha_i=1",
+          "state": "unassigned",
+          "context": "Sum of the real coefficients of an affine combination equals one; coefficients need not be nonnegative."
+        },
+        {
+          "phrase": "positive integer d and k",
+          "state": "unassigned",
+          "context": "Dimension d and number k of participating points at least one."
+        },
+        {
+          "phrase": "affine hull of empty set is empty",
+          "state": "external",
+          "disposition": "With k>=1, S empty produces no combinations; this source explicitly permits empty affine hull."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.pop140.affine-hull-intersection",
+      "version_sha256": "db006ee0430da4c3faa1f6d5c5622215de7a658249393791791df1fbc5ec81cf",
+      "complete": true,
+      "review_rationale": "Reviewed affine hull as intersection of all affine-combination-closed supersets of S, including empty affine-closed set and arbitrarily many supersets; not equated with convex hull.",
+      "references": [
+        {
+          "phrase": "real vector space R^d",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field"
+        },
+        {
+          "phrase": "subsets S and C of R^d",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "affine-closed subset C",
+          "state": "unassigned",
+          "context": "Subset closed under all finite affine combinations with real coefficients summing to one, without a nonnegativity constraint."
+        },
+        {
+          "phrase": "intersection of all affine-closed supersets",
+          "state": "unassigned",
+          "context": "Meet of the family of all affine-closed subsets C containing S, yielding least affine-closed superset."
+        },
+        {
+          "phrase": "finite affine combination",
+          "state": "unassigned",
+          "context": "Sum of finitely many scalar-weighted vectors with scalar coefficients totaling one."
+        },
+        {
+          "phrase": "empty set is affine-closed",
+          "state": "external",
+          "disposition": "Universal closure requirement is vacuous for an empty set; preserves the explicit empty-hull convention."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.pop140.independent-pair",
+      "version_sha256": "0ed86e899e7d8e111852d8608a37814aa479986e489456d8581cd8c7bd5f5efe",
+      "complete": true,
+      "review_rationale": "Read independent-events probability product rule on one probability space for two measurable sets, allowing zero probabilities and requiring intersection probability equality.",
+      "references": [
+        {
+          "phrase": "probability space (Omega,Sigma,P)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prob90.probability-space"
+        },
+        {
+          "phrase": "measurable events A and B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prob90.measurable-space"
+        },
+        {
+          "phrase": "intersection A cap B",
+          "state": "unassigned",
+          "context": "Set consisting of sample points lying in both measurable events."
+        },
+        {
+          "phrase": "probability product P(A)P(B)",
+          "state": "unassigned",
+          "context": "Product of probabilities of two events on the same normalized probability space."
+        },
+        {
+          "phrase": "product rule for independence",
+          "state": "unassigned",
+          "context": "Independence holds exactly when intersection probability equals product of the two marginal event probabilities."
+        },
+        {
+          "phrase": "zero-probability cases allowed",
+          "state": "external",
+          "disposition": "No positivity or conditional-probability division hypothesis is needed for the defining product rule."
+        }
+      ]
+    }
+  ]
+}
