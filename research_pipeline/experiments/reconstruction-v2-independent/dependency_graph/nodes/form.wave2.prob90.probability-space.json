@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.prob90.probability-space",
   "version_sha256": "a9faf0e857ed2df9de678c22b7b18adb9d2de051c62546b621dc9843975c4653",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "measurable space",
-      "span": [
-        57,
-        73
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.prob90.measurable-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.1e54f732c1a77c733c8b"
+      "phrase": "measurable space (Omega,Sigma)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prob90.measurable-space",
+      "occurrence_id": "occ.084ba6327bbbacc75754"
+    },
+    {
+      "phrase": "countably additive measure P on Sigma",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.nonnegative-measure",
+      "occurrence_id": "occ.d7b2925c475923d919ba"
+    },
+    {
+      "phrase": "total mass normalization P(Omega)=1",
+      "state": "unassigned",
+      "context": "Measure of underlying sample space is exactly real number one.",
+      "occurrence_id": "occ.5faf7164c3468dc637c3"
+    },
+    {
+      "phrase": "probability not arbitrary measure",
+      "state": "external",
+      "disposition": "Probability is distinguished by normalization to unit total mass.",
+      "occurrence_id": "occ.52443142a92245230be9"
     }
   ],
-  "snapshot_sha256": "df3981806f7c7d2dcaebb5e55a1664fbc691892aecbbed752f193bdd4a0ebc0b",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "feae168ae47cd565055326a9e1f23af6cabe14b353f7f6f24a8a2546597cd2b4",
+  "review_rationale": "Reviewed probability space as measurable space with nonnegative countably additive normalized measure, requiring full-space mass one and not merely arbitrary nonnegative measure."
 }

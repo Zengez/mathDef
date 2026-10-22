@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.prob90.random-variable-real",
   "version_sha256": "ef1ce9f5134bbad48086d459a730182e6add9b367fa01f2d05157f5778886b2e",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "random variable",
-      "span": [
-        14,
-        29
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.prob90.random-variable-general"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.2cb1d9df9a05c9d1f8e8"
+      "phrase": "probability space (Omega,F,P)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prob90.probability-space",
+      "occurrence_id": "occ.9df66b942a7e4232c43a"
+    },
+    {
+      "phrase": "Borel sigma algebra B(R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.alternative39.borel-sigma-algebra-topological",
+      "occurrence_id": "occ.97851445b5265234b634"
+    },
+    {
+      "phrase": "general measurable-valued random variable",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prob90.random-variable-general",
+      "occurrence_id": "occ.cecb7f1fec81eec5e089"
+    },
+    {
+      "phrase": "real codomain R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field",
+      "occurrence_id": "occ.03d5d1686739b3253d49"
+    },
+    {
+      "phrase": "preimage X^{-1}((-infinity,a])",
+      "state": "unassigned",
+      "context": "Sample points omega with X(omega)<=a, tested for each real threshold a.",
+      "occurrence_id": "occ.212021e0e0106b7e25c6"
+    },
+    {
+      "phrase": "lower-ray test for measurability",
+      "state": "unassigned",
+      "context": "Membership of X inverse image of each closed lower halfline in sample sigma algebra F.",
+      "occurrence_id": "occ.03c6340702f3de66df93"
+    },
+    {
+      "phrase": "equivalence to full Borel-measurability",
+      "state": "external",
+      "disposition": "Closed lower rays generate the real Borel sigma algebra; testing all of them suffices.",
+      "occurrence_id": "occ.180a5284c09bace08961"
     }
   ],
-  "snapshot_sha256": "8784e1dafa41c7d21c86c73f9c0c94101f42aa6afb6e406863ac168345b93593",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "93fd48c9c8ba4ed36c714cb046e6b4e7954ed2161f5c1e13153b62a5ff7efae7",
+  "review_rationale": "Read real random variable through Borel measurability, including equivalent lower-ray inverse-image tests; distinguish target Borel sigma algebra from domain F."
 }
