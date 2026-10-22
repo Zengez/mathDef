@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.d7087bb79cf848fa.spectral-topological-space",
   "version_sha256": "f98f06e34e8f3ce88c35b953155ae94b6ad04186cdf2efe43dd058c0753ec9b5",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.2cedb131afac8b9dde95"
+    },
+    {
+      "phrase": "quasi-compact space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space",
+      "occurrence_id": "occ.b03ac0c3fbb4eb36be97"
+    },
+    {
+      "phrase": "quasi-compact open subsets of X",
+      "state": "existing",
+      "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space",
+      "occurrence_id": "occ.d719e6d30e0dc12bc69c"
+    },
+    {
+      "phrase": "basis of the topology",
+      "state": "existing",
+      "target_meaning_id": "meaning.6a3376e5ecb82bfb.topology-basis",
+      "occurrence_id": "occ.c4d38a06aa1b881d0bd7"
+    },
+    {
+      "phrase": "sober topological space",
+      "state": "unassigned",
+      "context": "Every irreducible nonempty closed subset has a unique generic point; sobriety is separate from Hausdorffness",
+      "occurrence_id": "occ.9de38e65c92326a26a14"
+    },
+    {
+      "phrase": "binary intersections of quasi-compact open sets remain quasi-compact",
+      "state": "unassigned",
+      "context": "Coherence/finiteness condition imposed on the family of quasi-compact opens, not arbitrary quasi-compact subsets",
+      "occurrence_id": "occ.9293a94c78a85b9c7ad7"
+    },
+    {
+      "phrase": "quasi-compact opens form a basis",
+      "state": "external",
+      "disposition": "Every original open can be expressed as a union of quasi-compact opens, not necessarily as one quasi-compact open.",
+      "occurrence_id": "occ.e911de33bb9c36588e82"
+    }
+  ],
+  "snapshot_sha256": "93066a660b80f8fdd3eb6eb171cbad92d55e9e6ed61c2bae14039c5f59799690",
+  "review_rationale": "Read all four defining conditions for a spectral space: sobriety, quasi-compactness, stability of quasi-compact opens under binary intersection, and their basis property. Sobriety was not confused with Hausdorffness."
 }
