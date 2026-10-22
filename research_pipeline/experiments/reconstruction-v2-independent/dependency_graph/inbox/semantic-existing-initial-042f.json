@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-042f",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.e0849711d61cd26f.primitive-nth-root-of-unity",
+      "version_sha256": "ea6019767444b1665f3b2a9c675b321ad07db6ec74d3e9d6b8cee9ab34e3dc23",
+      "complete": true,
+      "review_rationale": "Read the multiplicative-order-exactly-n condition for a primitive root and distinguished it from merely satisfying ζ^n=1. The ambient multiplication is in the field's unit group.",
+      "references": [
+        {
+          "phrase": "field F",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "nth root of unity",
+          "state": "existing",
+          "target_meaning_id": "meaning.e0849711d61cd26f.nth-root-of-unity"
+        },
+        {
+          "phrase": "group of multiplicative units F×",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "phrase": "positive integer n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-positive-convention"
+        },
+        {
+          "phrase": "multiplicative order of ζ",
+          "state": "unassigned",
+          "context": "Least positive integer m for which ζ^m=1 in the group F×; primitive nth root requires order exactly n"
+        },
+        {
+          "phrase": "exact order n",
+          "state": "external",
+          "disposition": "Exact order rules out proper divisor orders even though such elements also satisfy ζ^n=1."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.e0dd0b0cffcfff0b.generic-point",
+      "version_sha256": "6720b5ac998f8e6331dea434596a7e7ee6e27ebd138d3687b34724bd80db4014",
+      "complete": true,
+      "review_rationale": "Read a generic point of an irreducible closed subset via the closure of its singleton, explicitly preserving the ambient topological space and irreducibility of the closed target subset.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "irreducible subset Z with subspace topology",
+          "state": "existing",
+          "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-topological-space"
+        },
+        {
+          "phrase": "closure of {η} in X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross107.topological-closure"
+        },
+        {
+          "phrase": "singleton subset {η} of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "irreducible closed subset Z of X",
+          "state": "unassigned",
+          "context": "Nonempty subset closed in X whose induced topology is irreducible; not necessarily an entire irreducible component"
+        },
+        {
+          "phrase": "closure of {η} equals Z",
+          "state": "external",
+          "disposition": "The equality defines the generic-point property and is not a requirement that η be a unique point without sobriety."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.e0dd0b0cffcfff0b.irreducible-component",
+      "version_sha256": "6422da4df86215e6e6ba6a98a32f17ae30e6384fc40c8079ebc2c9fac114c11a",
+      "complete": true,
+      "review_rationale": "Read an irreducible component as an irreducible subset maximal by inclusion, and kept the fact that maximal such subsets are closed as a derived property rather than requiring arbitrary closed subsets in the maximizing family.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "irreducible subset with induced topology",
+          "state": "existing",
+          "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-topological-space"
+        },
+        {
+          "phrase": "subset inclusion within X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "maximal irreducible subset under inclusion",
+          "state": "unassigned",
+          "context": "An irreducible subset not properly contained in any other irreducible subset of the ambient X"
+        },
+        {
+          "phrase": "every irreducible component is closed",
+          "state": "external",
+          "disposition": "Closure of an irreducible subset is irreducible, so inclusion-maximal irreducible subsets are closed."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.e0dd0b0cffcfff0b.irreducible-topological-space",
+      "version_sha256": "d42d679b419e353c29d1745c9c5210d921bcff0dc16c1006caea0245e95f84fc",
+      "complete": true,
+      "review_rationale": "Read irreducibility as a nonempty topological space that cannot be the union of two proper closed subsets. Distinguished the nonempty convention and equivalently overlapping nonempty open-set property without declaring it another definition.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "proper subset of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "closed subset of a topological space",
+          "state": "unassigned",
+          "context": "Complement of an open subset in X under the specified topology"
+        },
+        {
+          "phrase": "union of two proper closed subsets",
+          "state": "unassigned",
+          "context": "Set-theoretic union A∪B=X with A,B each closed and not equal to X"
+        },
+        {
+          "phrase": "nonempty space convention",
+          "state": "external",
+          "disposition": "An empty space is explicitly excluded from irreducibility in this formulation even though alternative conventions may exist."
+        },
+        {
+          "phrase": "cannot be written as union of two proper closed subsets",
+          "state": "external",
+          "disposition": "The definition rules out any such pair, not merely disjoint closed decompositions."
+        }
+      ]
+    }
+  ]
+}
