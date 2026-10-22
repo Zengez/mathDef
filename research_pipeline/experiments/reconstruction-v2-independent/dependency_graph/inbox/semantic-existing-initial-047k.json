@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-047k",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.prereq122.real-series-convergent",
+      "version_sha256": "afc818b173fe2c6ca26dd75322c666f3c89f40fa6cbb09ed4839002354e42be4",
+      "complete": true,
+      "review_rationale": "Read convergence of infinite real series through limits of finite partial sums, with nonnegative integer index and specified real limit s; distinguished sequence of coefficients from its sequence of sums.",
+      "references": [
+        {
+          "phrase": "real numbers a_n and s",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "nonnegative integer index n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "real coefficient sequence (a_n)",
+          "state": "unassigned",
+          "context": "Function indexed by natural numbers with real values."
+        },
+        {
+          "phrase": "finite partial sum s_N",
+          "state": "unassigned",
+          "context": "Real sum of terms a_0 through a_N for a fixed nonnegative index N."
+        },
+        {
+          "phrase": "limit of partial sums as N to infinity",
+          "state": "unassigned",
+          "context": "For every real epsilon>0 all sufficiently late partial sums lie within epsilon of s."
+        },
+        {
+          "phrase": "series sum equals limit s",
+          "state": "unassigned",
+          "context": "The numerical value assigned to an infinite series only when partial sums converge."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.prereq122.right-coset",
+      "version_sha256": "10d9a305dec04909a7980d562a42d503ba097c3fdcd2568190fe5fdb5e83fea2",
+      "complete": true,
+      "review_rationale": "Read right coset Hg of subgroup H as products hg with h varying and g fixed, keeping right-sided order distinct from left coset in nonabelian groups.",
+      "references": [
+        {
+          "phrase": "group G",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "phrase": "subgroup H of G",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prereq122.subgroup"
+        },
+        {
+          "phrase": "subset Hg of G",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "right translation by g",
+          "state": "unassigned",
+          "context": "Map h↦hg of subgroup elements using multiplication by g on the right."
+        },
+        {
+          "phrase": "right coset Hg",
+          "state": "unassigned",
+          "context": "Image set {hg:h in H} for fixed g in G."
+        },
+        {
+          "phrase": "right coset not necessarily left coset",
+          "state": "external",
+          "disposition": "Without normality of H, Hg need not equal gH."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.prereq122.subgroup",
+      "version_sha256": "f5998651a72672518592a8c90d6a7ee0a9dfd67ef4fd0687af9835a9e623e067",
+      "complete": true,
+      "review_rationale": "Read subgroup as subset H of group G carrying inherited binary operation that itself obeys all group axioms; arbitrary subsets are not assumed closed.",
+      "references": [
+        {
+          "phrase": "group (G,*)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "phrase": "subset H of G",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "internal binary operation on H",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.binary-operation-internal"
+        },
+        {
+          "phrase": "restriction of ambient group operation",
+          "state": "unassigned",
+          "context": "Use same multiplication * as G, with H closed so each pair in H yields element in H."
+        },
+        {
+          "phrase": "group structure on H",
+          "state": "unassigned",
+          "context": "Closure, associativity, identity and inverses hold for restriction of ambient operation."
+        },
+        {
+          "phrase": "operation inherited not invented",
+          "state": "external",
+          "disposition": "No new independently chosen group law is allowed on H in this subgroup formulation."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.prob90.measurable-space",
+      "version_sha256": "299227ea5dafe6802281217022edd5da9bd580250819c883d2fd99d8ce473f57",
+      "complete": true,
+      "review_rationale": "Read measurable space as pair of set X and sigma-algebra Sigma over all its measurable subsets, with no assigned numerical measure.",
+      "references": [
+        {
+          "phrase": "sigma-algebra Sigma on X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.sigma-algebra"
+        },
+        {
+          "phrase": "ordered pair (X,Sigma)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski"
+        },
+        {
+          "phrase": "measurable subsets of X",
+          "state": "unassigned",
+          "context": "Members of Sigma; not automatically every subset in the full power set."
+        },
+        {
+          "phrase": "measurable space without measure",
+          "state": "external",
+          "disposition": "A measure or probability function is not part of this definition."
+        }
+      ]
+    }
+  ]
+}
