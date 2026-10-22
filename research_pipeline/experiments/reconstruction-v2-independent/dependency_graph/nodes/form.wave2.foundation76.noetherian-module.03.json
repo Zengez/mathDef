@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation76.noetherian-module.03",
   "version_sha256": "04364584e1ebf777188d0135a179b2fec000a43481a28eef2f394e467864e386",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "module M over commutative unital ring A",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.ae4f7b558c846d2756c4"
+    },
+    {
+      "phrase": "A-submodules of M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.submodule",
+      "occurrence_id": "occ.01c68b90fe046759f969"
+    },
+    {
+      "phrase": "inclusion relation on submodules",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.898e0d5be9eaf244efc5"
+    },
+    {
+      "phrase": "nonempty collection of A-submodules",
+      "state": "unassigned",
+      "context": "Collection of A-submodules containing at least one member.",
+      "occurrence_id": "occ.573167ea1ff9e657fa46"
+    },
+    {
+      "phrase": "inclusion-maximal member",
+      "state": "unassigned",
+      "context": "A submodule N in the collection for which no strictly larger submodule from the same collection contains N.",
+      "occurrence_id": "occ.b918fd2e1e4c151969bb"
+    },
+    {
+      "phrase": "maximal not greatest",
+      "state": "external",
+      "disposition": "The chosen member need not contain all other members of the collection; finite generation is not inserted as a separate axiom.",
+      "occurrence_id": "occ.d0b3606097fecd9b97e5"
+    }
+  ],
+  "snapshot_sha256": "f56a90479ddd03af6b8b797dd4dc0b5db0b6ce0d11885ebff78ad608029c02b3",
+  "review_rationale": "Read the maximal-condition formulation, with quantification over every nonempty collection of A-submodules and maximality under inclusion, not a greatest submodule condition."
 }

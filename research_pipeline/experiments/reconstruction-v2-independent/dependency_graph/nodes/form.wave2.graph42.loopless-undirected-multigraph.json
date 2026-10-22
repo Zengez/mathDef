@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.graph42.loopless-undirected-multigraph",
   "version_sha256": "dd31a367bf59507f2c1637aa68c3ed69337108c5efb8b6168d48e436d07f71b9",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "vertex pair as two-element subset of V",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.1498517a0448b165c09e"
+    },
+    {
+      "phrase": "simple undirected graph special case",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.graph42.simple-undirected",
+      "occurrence_id": "occ.24c066b80ebdfd3a2693"
+    },
+    {
+      "phrase": "undirected multigraph edge multiset E",
+      "state": "unassigned",
+      "context": "A multiset of unordered pairs of two distinct vertices; different copies represent parallel edges.",
+      "occurrence_id": "occ.14a50896d7b0cad9210b"
+    },
+    {
+      "phrase": "two-element subset {u,v}",
+      "state": "unassigned",
+      "context": "Unordered vertex doubleton with u and v distinct; excludes loops by construction.",
+      "occurrence_id": "occ.fb11241fc2b1f1f0506f"
+    },
+    {
+      "phrase": "edge multiplicity",
+      "state": "unassigned",
+      "context": "Number of occurrences of a given unordered doubleton in the edge multiset.",
+      "occurrence_id": "occ.6b350843d67e2338907f"
+    },
+    {
+      "phrase": "graph as pair G=(V,E)",
+      "state": "unassigned",
+      "context": "Ordered pair bundling a vertex set with an edge multiset, with vertices not assumed finite.",
+      "occurrence_id": "occ.ff0966adce91ea4fc20b"
+    },
+    {
+      "phrase": "absence of loops and allowance of parallel edges",
+      "state": "external",
+      "disposition": "Looplessness follows from doubleton condition while repeat copies of the same doubleton are permitted.",
+      "occurrence_id": "occ.25dce26f3ffe2edb447a"
+    }
+  ],
+  "snapshot_sha256": "d1883333d9cf7a6f194f7010a6d758a67e8dc08514766c389f21fe572ff2a446",
+  "review_rationale": "Read graph as vertex set plus multiset of two-element unordered vertex subsets, allowing parallel edges, excluding loops, and imposing no finite-vertex condition."
 }
