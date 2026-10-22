@@ -2,25 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.strongly-transcendental-subring-element",
   "version_sha256": "859a1eb9debbec8891450f681abaea71c4695f209ae34a56b731942b649e34fe",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        134,
-        141
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.ddaac6f7d09013cdce5c"
+      "phrase": "associative rings R and S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.3466e2dca128ffa122d0"
+    },
+    {
+      "phrase": "subring inclusion R subset S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.a648a7b292616ca2e5d0"
+    },
+    {
+      "phrase": "nonnegative integer n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.3a9c6b3bcc9136f067d9"
+    },
+    {
+      "phrase": "commutative unital ring and common identity",
+      "state": "unassigned",
+      "context": "The commutative rings R and S have unity, with R included in S as a subring respecting the ring structure.",
+      "occurrence_id": "occ.2c6da3033fbad97bbc98"
+    },
+    {
+      "phrase": "polynomial a_0+a_1*x+...+a_n*x^n",
+      "state": "unassigned",
+      "context": "Finite polynomial expression in x with coefficients from the subring R, evaluated in S.",
+      "occurrence_id": "occ.a221fa064af6f8bd0772"
+    },
+    {
+      "phrase": "annihilator equation u*p(x)=0",
+      "state": "unassigned",
+      "context": "An element u in S annihilates the evaluated polynomial, requiring it to annihilate every coefficient separately.",
+      "occurrence_id": "occ.11737578e063edcbcf68"
+    },
+    {
+      "phrase": "zero-divisor phenomena in S",
+      "state": "unassigned",
+      "context": "The condition allows zero divisors and tests arbitrary multiplier u, rather than simply demanding no polynomial evaluates to zero.",
+      "occurrence_id": "occ.54bb0839149c90a034dc"
+    },
+    {
+      "phrase": "strong versus ordinary transcendence",
+      "state": "external",
+      "disposition": "The stated condition must not be collapsed into algebraic independence over a field, particularly with zero divisors.",
+      "occurrence_id": "occ.707fb28349d675d21ded"
     }
   ],
-  "snapshot_sha256": "043a3cbfebdd141a14be5b7413fa4407a18bee2d1f310a258c646aeb6b455a3c",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "ba9adf269733dfec82b940caa803acbdb3290cdfb55e0d2e3418572525ad1226",
+  "review_rationale": "Reviewed Stacks strong transcendence condition over a commutative unital subring, including the universal polynomial coefficients and annihilator implication involving a multiplier u; this is stronger than field transcendence."
 }

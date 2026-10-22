@@ -2,10 +2,27 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.subset-nonstrict",
   "version_sha256": "25bbdc1037ec8ab6279ee98201633fb1ae79bd53e642cd4cc8807ef2d827903b",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "element membership x in A and B",
+      "state": "unassigned",
+      "context": "Primitive set-membership relation defining inclusion of one set in another.",
+      "occurrence_id": "occ.55879c755ea6b098e948"
+    },
+    {
+      "phrase": "universal implication for all x",
+      "state": "unassigned",
+      "context": "Logical condition that membership in A implies membership in B for every potential element.",
+      "occurrence_id": "occ.8cf082f8302193a2fda3"
+    },
+    {
+      "phrase": "equality permitted in subset relation",
+      "state": "external",
+      "disposition": "The condition A subseteq B is non-strict and remains true for A=B; no properness requirement is part of this definition.",
+      "occurrence_id": "occ.ba9602639c5ddd7f5519"
+    }
+  ],
+  "snapshot_sha256": "4cd1261bb0f1b377118cd8780d1686e5f68d5a00bdc386b2b2a734419e97574c",
+  "review_rationale": "Reviewed the complete non-strict subset relation between sets by the universal membership implication, explicitly allowing equality and avoiding the stronger proper-subset interpretation."
 }

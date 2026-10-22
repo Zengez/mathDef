@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.unit-of-ring",
   "version_sha256": "f17e7653eb8466bd71b2898a46117982ce4496d0548953e71be59923ef791493",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "associative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.d6fbd48e37f425612bfd"
+    },
+    {
+      "phrase": "specified multiplicative identity 1_R",
+      "state": "unassigned",
+      "context": "Two-sided identity for ring multiplication, required to state the unit equations.",
+      "occurrence_id": "occ.a0035c8bee096bc1f5ef"
+    },
+    {
+      "phrase": "two-sided inverse v of u",
+      "state": "unassigned",
+      "context": "Ring element v with uv=1_R and vu=1_R.",
+      "occurrence_id": "occ.0e92580a55648805e718"
+    },
+    {
+      "phrase": "a unit need not equal unity",
+      "state": "external",
+      "disposition": "The identity element is itself a unit but most units in a ring need not be the identity.",
+      "occurrence_id": "occ.c336a5b07536ab5ae89d"
+    }
+  ],
+  "snapshot_sha256": "a2932086bd3d7de428201183e8b826b6f35b29d241ecc74d52a459e5b8686f2d",
+  "review_rationale": "Reviewed unit of associative unital ring as element possessing a two-sided multiplicative inverse, distinguishing an invertible element from the ring's identity element."
 }

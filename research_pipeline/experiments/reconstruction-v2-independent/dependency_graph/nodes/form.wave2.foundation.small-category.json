@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.small-category",
   "version_sha256": "0493c803df1840502c823ff5057298699040205253e27dfa6bcf11beac976604",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "ordered pair",
-      "span": [
-        73,
-        85
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.ordered-pair-kuratowski"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.6a8562c19ac39d6561db"
+      "phrase": "ordered pair of objects (x,y)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski",
+      "occurrence_id": "occ.63facc5875e800e3270b"
+    },
+    {
+      "phrase": "composition maps Hom(y,z) x Hom(x,y) to Hom(x,z)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.ee9f11f7e372f547a361"
+    },
+    {
+      "phrase": "object collection Ob(C)",
+      "state": "unassigned",
+      "context": "A set of all objects of the small category, rather than an unrestricted proper class.",
+      "occurrence_id": "occ.313a4d05f2c6d7fac2eb"
+    },
+    {
+      "phrase": "Hom_C(x,y) morphism sets",
+      "state": "unassigned",
+      "context": "For each object pair a set of arrows with specified source x and target y.",
+      "occurrence_id": "occ.256b3f4a5cab0985ee94"
+    },
+    {
+      "phrase": "composition operation on composable arrows",
+      "state": "unassigned",
+      "context": "Partial composition of morphisms restricted to matching sources and targets.",
+      "occurrence_id": "occ.7b1bdb8ddb6088732985"
+    },
+    {
+      "phrase": "associativity of composition",
+      "state": "unassigned",
+      "context": "For composable arrows f,g,h, (h composed with g) composed with f equals h composed with (g composed with f).",
+      "occurrence_id": "occ.3dcb505e0a56221dd45b"
+    },
+    {
+      "phrase": "identity arrows id_x",
+      "state": "unassigned",
+      "context": "For each object x an endomorphism serving as left and right unit for all composable morphisms.",
+      "occurrence_id": "occ.65bcbe99bf4734cc79f7"
     }
   ],
-  "snapshot_sha256": "5e9c2e0f55b933783e7f52121ebe63c9949558549e7e17d3cf12115b8b989382",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "6c5c82c686a6e04ad21cf94f1071f94d1acdcc912d008b0e1aceb4711b5775ba",
+  "review_rationale": "Reviewed entire category structure with object set, hom-sets for ordered pairs, associative composition maps, and each object's identity arrow; no large-category scope was inferred."
 }

@@ -2,53 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.subspace-topology-general",
   "version_sha256": "25cb02e4f7acc7c42b5e2287e5ad7c069427ae2aae0f8211eee94e8237211c91",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        6,
-        23
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.8248b64ea187e4e39713"
+      "phrase": "ambient topological space (X,tau)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.d6c5a216f9616e28ab48"
     },
     {
-      "phrase": "subset",
-      "span": [
-        38,
-        44
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.417e96b7203b47386b33"
+      "phrase": "subset A of X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.c5e5a392eb6e87b2d246"
     },
     {
-      "phrase": "subspace topology",
-      "span": [
-        54,
-        71
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subspace-topology-nonempty"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.96586d9ebc3a398d6ced"
+      "phrase": "relative intersection A cap U",
+      "state": "unassigned",
+      "context": "Set-theoretic intersection of subset A with ambient open subset U of X.",
+      "occurrence_id": "occ.bcc3a942391a2e2b5a09"
+    },
+    {
+      "phrase": "induced family tau_A of opens",
+      "state": "unassigned",
+      "context": "Collection of all intersections A cap U as U ranges over tau, with resulting topology on A.",
+      "occurrence_id": "occ.0d2a416ba0a479e8dbf3"
+    },
+    {
+      "phrase": "empty subset allowed",
+      "state": "external",
+      "disposition": "General topological-space convention admits an empty subspace and does not impose a nonempty hypothesis.",
+      "occurrence_id": "occ.c10ea33ecf2980b7e486"
     }
   ],
-  "snapshot_sha256": "e3fdbdf2b6d1b3719e0a9ed05c3c899bca79a4a22322f4cb70a43d4326404dfa",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "76713a8ed51382f63f8ac833bb72ed4867244559c8b94266b25ae7a77c2548ae",
+  "review_rationale": "Reviewed general subspace topology from intersections of ambient open sets with arbitrary subset, including empty subset and the resulting induced topological space."
 }

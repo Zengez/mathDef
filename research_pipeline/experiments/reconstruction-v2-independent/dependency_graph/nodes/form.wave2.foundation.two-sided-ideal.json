@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.two-sided-ideal",
   "version_sha256": "c3a2a5b3338f59e49af2ff89d697db51eb25ec58608343b7bd782ee6cdeb5559",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        19,
-        25
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.69036a9bb5b4d66ebda5"
+      "phrase": "ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.6a9f2824983ed62eb36e"
+    },
+    {
+      "phrase": "subset I of R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.9576d00cba758d05de0e"
+    },
+    {
+      "phrase": "additive group (R,+)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "occurrence_id": "occ.af05ebef635a3ba5b180"
+    },
+    {
+      "phrase": "additive subgroup (I,+)",
+      "state": "unassigned",
+      "context": "Subset closed under addition and additive inverses, containing additive identity, as a subgroup of additive group (R,+).",
+      "occurrence_id": "occ.c10f4fcfe77120bf1724"
+    },
+    {
+      "phrase": "closure under left multiplication r*i",
+      "state": "unassigned",
+      "context": "For every r in R and i in I, product r i remains in I.",
+      "occurrence_id": "occ.f3ed3b97b721bbabf987"
+    },
+    {
+      "phrase": "closure under right multiplication i*r",
+      "state": "unassigned",
+      "context": "For every r in R and i in I, product i r remains in I.",
+      "occurrence_id": "occ.8f8986d357408215f274"
+    },
+    {
+      "phrase": "two-sided not merely left or right ideal",
+      "state": "external",
+      "disposition": "Both multiplication directions are required; commutativity is not assumed.",
+      "occurrence_id": "occ.fd70e58004dafba2b7e1"
     }
   ],
-  "snapshot_sha256": "718844d9e09d434980055ca5416493fa21dc7f1dbf2a85e2eb1d5ee2507100f5",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "776c299d33ecef30f3ab9ff1d3b48dc487226c321183404a8a00903350dd3c26",
+  "review_rationale": "Reviewed two-sided ideal for a possibly noncommutative associative ring, retaining additive subgroup and both left/right multiplicative absorption as independent conditions."
 }
