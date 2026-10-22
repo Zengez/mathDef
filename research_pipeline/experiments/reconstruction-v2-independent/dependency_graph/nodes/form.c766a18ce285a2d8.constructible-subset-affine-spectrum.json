@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.c766a18ce285a2d8.constructible-subset-affine-spectrum",
   "version_sha256": "f2336b4ec64a99d490e007b0d621c501c6f465c8aebe0ec58a76c0b545b94276",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        2,
-        8
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.98b1383bbf2b6654eb1e"
+      "phrase": "subset C of Spec(R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.469ec57f9766c14b297a"
+    },
+    {
+      "phrase": "prime spectrum Spec(R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.c7bc1bda0b61a62223fe"
+    },
+    {
+      "phrase": "Zariski topology on the affine spectrum",
+      "state": "existing",
+      "target_meaning_id": "meaning.ffa8e88785ba9c2b.scheme-zariski-topology",
+      "occurrence_id": "occ.2b16267db8e5ed5d07e7"
+    },
+    {
+      "phrase": "distinguished basic open D(f)",
+      "state": "unassigned",
+      "context": "Subset of prime ideals not containing f in R, for a commutative ring R",
+      "occurrence_id": "occ.e9c618010ee344563aca"
+    },
+    {
+      "phrase": "common vanishing closed locus V(g_1,…,g_m)",
+      "state": "unassigned",
+      "context": "Subset of prime ideals of R containing every specified relation g_i, equivalently V of the generated ideal",
+      "occurrence_id": "occ.ecae2a025017b8da7365"
+    },
+    {
+      "phrase": "finite unions of intersections D(f)∩V(g_1,…,g_m)",
+      "state": "external",
+      "disposition": "Finite union and intersection are set operations; the displayed constructible normal form assumes no Noetherian condition.",
+      "occurrence_id": "occ.cc9c2af7750e3f40ecec"
     }
   ],
-  "snapshot_sha256": "665f8c45c3ac7521dd39c7a118d46a03a014624ab7fbaebdb3cc5b4f1735a3ff",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "c10bf4446ee3549eae208e5e4c1e226ac887ffbecb1029c49594a4c448d5af19",
+  "review_rationale": "Read the finite-union normal form for constructible subsets of an arbitrary affine prime spectrum, separately identifying distinguished opens and finite-equation closed loci without importing a Noetherian hypothesis."
 }

@@ -2,10 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.c50e4715a45d9236.relative-global-complete-intersection",
   "version_sha256": "227f831b82d12bff901bfc957cdf89b39ec6ddd00436dca239006ad000bb9bbe",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "unital ring map R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.c276b36ea749be76e781"
+    },
+    {
+      "phrase": "finite presentation R[x_1,…,x_n]/(f_1,…,f_c)",
+      "state": "existing",
+      "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-presentation-ring-map",
+      "occurrence_id": "occ.b4e3689726406d3ab6c8"
+    },
+    {
+      "phrase": "polynomial ring R[x_1,…,x_n]",
+      "state": "unassigned",
+      "context": "Multivariable polynomial R-algebra in finitely many indeterminates",
+      "occurrence_id": "occ.5873d278dd758cd79962"
+    },
+    {
+      "phrase": "quotient by ideal (f_1,…,f_c)",
+      "state": "unassigned",
+      "context": "Commutative ring quotient by the finitely generated ideal of relations f_i",
+      "occurrence_id": "occ.ea2ce970c38d4f972378"
+    },
+    {
+      "phrase": "scheme-theoretic fibres of Spec(S)→Spec(R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.8a65ad25b01e5104.scheme-theoretic-fibre",
+      "occurrence_id": "occ.82f95d786b86c91a015d"
+    },
+    {
+      "phrase": "scheme morphism Spec(S)→Spec(R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.eb0cd2c67c6ee622.affine-scheme-morphism-ring-map",
+      "occurrence_id": "occ.cd7578400e42597426be"
+    },
+    {
+      "phrase": "Krull dimension of each nonempty fibre",
+      "state": "existing",
+      "target_meaning_id": "meaning.bd90654fb341045a.krull-dimension-space",
+      "occurrence_id": "occ.d59abf69ef029891ea6d"
+    },
+    {
+      "phrase": "dimension n−c for all nonempty fibres",
+      "state": "external",
+      "disposition": "This is the stipulated relative expected-dimension condition; zero fibres are excluded and it is not merely the absolute dimension of Spec(S).",
+      "occurrence_id": "occ.e5011d7fd354f149588e"
+    }
+  ],
+  "snapshot_sha256": "43df65668aaac534b490b55ecfc78f335fca7027843da598a3eed4237ce2fcea",
+  "review_rationale": "Checked the specified quotient presentation of a relative complete-intersection map, with its finite polynomial generators and relations and the dimension condition on every nonempty scheme fibre rather than only global Krull dimension."
 }

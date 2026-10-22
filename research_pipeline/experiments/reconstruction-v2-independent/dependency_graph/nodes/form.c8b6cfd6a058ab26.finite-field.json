@@ -2,39 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.c8b6cfd6a058ab26.finite-field",
   "version_sha256": "c4e0508ff2c241563352e2c81b2889c9b9276fa94a7e39d1f77541a29d29cb9e",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "cardinality",
-      "span": [
-        96,
-        107
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.081430bc340a055a.cardinality"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.8e459fc4d4c93520d676"
+      "phrase": "field",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.711f2148e174e0fb47e7"
     },
     {
-      "phrase": "integer",
-      "span": [
-        145,
-        152
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.5b2ac318f7eeca1f9409"
+      "phrase": "cardinality of the underlying set",
+      "state": "existing",
+      "target_meaning_id": "meaning.081430bc340a055a.cardinality",
+      "occurrence_id": "occ.efcb5e4b47dc7a562718"
+    },
+    {
+      "phrase": "prime natural number p",
+      "state": "unassigned",
+      "context": "Number theory: positive integer p>1 with no positive divisors except 1 and p, not a prime ideal",
+      "occurrence_id": "occ.317baf6bb62805fddcaf"
+    },
+    {
+      "phrase": "positive integer exponent n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-positive-convention",
+      "occurrence_id": "occ.ed272971eb2e4f36c22f"
+    },
+    {
+      "phrase": "necessarily cardinality p^n",
+      "state": "external",
+      "disposition": "Prime-power size is a theorem about finite fields, not an additional defining condition or a source of arbitrary finite cardinalities.",
+      "occurrence_id": "occ.79022f9db712b9ea83f2"
     }
   ],
-  "snapshot_sha256": "2fae0e65b49c6bbfd8ca4cca256b4e449acb304bea6e70345384f58f49012030",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "38ce2dc889909e5aefc62d58ee48956ad3c0ea524a2aa3bad8031987dfdc0d98",
+  "review_rationale": "Read the defining field and finite-underlying-set clauses, then distinguished the asserted prime-power cardinality classification as a mathematical consequence rather than an extra independent axiom."
 }
