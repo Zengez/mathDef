@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.set63.relation-reflexive-symmetric-transitive",
   "version_sha256": "29c3ec62f1b06da6209814eacd447551cf128a0ec6167fd9f3d2f526dfd04270",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        36,
-        42
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.9418ba80536aaa16b337"
+      "phrase": "subset of S times S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.98205aae06e9309c29fd"
+    },
+    {
+      "phrase": "ordered pair (x,y)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski",
+      "occurrence_id": "occ.6c061a86d4da36dc2107"
+    },
+    {
+      "phrase": "binary relation on S",
+      "state": "unassigned",
+      "context": "Collection of ordered pairs of elements of S, represented by a subset of Cartesian square.",
+      "occurrence_id": "occ.0282c45499e5a343d1f9"
+    },
+    {
+      "phrase": "reflexivity x~x",
+      "state": "unassigned",
+      "context": "Every element x of S is related to itself.",
+      "occurrence_id": "occ.572a57376e477badfab1"
+    },
+    {
+      "phrase": "symmetry x~y implies y~x",
+      "state": "unassigned",
+      "context": "Relation holds in reverse order whenever it holds forward.",
+      "occurrence_id": "occ.5e51a045474a6d8891fc"
+    },
+    {
+      "phrase": "transitivity x~y and y~z imply x~z",
+      "state": "unassigned",
+      "context": "Two consecutive related pairs yield related outer endpoints.",
+      "occurrence_id": "occ.c44b9e0e4a31009f0f4f"
     }
   ],
-  "snapshot_sha256": "6b46986c634d6bd7c7f04befeb45b1fe05ae56c688d2f12d39b17a08b4ac7580",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "9e90f8ec2c428a6dd089ad2815461ba00856cba85831cedef57ecad1fa8fd1a7",
+  "review_rationale": "Reviewed equivalence relation as subset of SxS with reflexivity, symmetry and transitivity, preserving quantified logical implications and set of ordered pairs."
 }

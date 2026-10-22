@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.set63.set-of-equivalence-classes",
   "version_sha256": "1672cb94f256487d6acc0e70cea482a0a6f25bb06a20deec0ae973c8eee01fbe",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "equivalence relation",
-      "span": [
-        9,
-        29
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.set63.relation-reflexive-symmetric-transitive"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.95bbc9fca5d5502683b2"
+      "phrase": "equivalence relation ~ on S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive",
+      "occurrence_id": "occ.00a35249af966ecef70d"
+    },
+    {
+      "phrase": "equivalence class [x]",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.set-of-related-elements",
+      "occurrence_id": "occ.7be38a684f0d5a487bb8"
+    },
+    {
+      "phrase": "quotient set S/~",
+      "state": "unassigned",
+      "context": "Collection containing exactly the distinct equivalence classes of S under relation ~.",
+      "occurrence_id": "occ.60ef99a3acbfb6da7412"
+    },
+    {
+      "phrase": "representative x in S",
+      "state": "unassigned",
+      "context": "Each class appearing in quotient has at least one representative element x of S.",
+      "occurrence_id": "occ.4d204023021eaa7e7cc1"
+    },
+    {
+      "phrase": "quotient elements are classes not individual points",
+      "state": "external",
+      "disposition": "Different representatives can determine the same quotient element.",
+      "occurrence_id": "occ.372b6ef55ef023ce550a"
     }
   ],
-  "snapshot_sha256": "c5790c6b79ea3a13a44500e2671e53683509f1c371939d55032ef9f9ec033190",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "7e372d918501093e0b79856ecd725936da2c8bb010730e0b960f2abfcc142508",
+  "review_rationale": "Reviewed quotient set of equivalence relation as collection of all equivalence classes [x] on underlying set S, not an arbitrary subset of S."
 }

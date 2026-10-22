@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.set63.natural-positive-convention",
   "version_sha256": "cecfa8915eb2f9ae7ef8b6a964fd4bf2bf864b8e3a64d10d2082fadbeebbcc81",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "natural numbers",
-      "span": [
-        44,
-        59
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.set63.natural-including-zero"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.11885b2d6b42dca02934"
+      "phrase": "zero-inclusive natural numbers N as contrast",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.997f3e5aea441537e19a"
+    },
+    {
+      "phrase": "positive counting progression 1,2,3,...",
+      "state": "unassigned",
+      "context": "Counting numbers starting at one and omitting zero.",
+      "occurrence_id": "occ.6fdc5e2d525ed0365bef"
+    },
+    {
+      "phrase": "positive subset notation N_{>0}",
+      "state": "unassigned",
+      "context": "Notation for strictly positive natural numbers under zero-inclusive convention.",
+      "occurrence_id": "occ.d8194288bb84d9475e9f"
+    },
+    {
+      "phrase": "not zero-inclusive itself",
+      "state": "external",
+      "disposition": "The primary meaning of N in this formulation starts at one; no claim that zero belongs to it.",
+      "occurrence_id": "occ.74e766ff0d66e3bc3c1d"
     }
   ],
-  "snapshot_sha256": "bb9a44f6963cca2e874a21936a792cf6bff5ca53adc88edba289b1079a98d7e2",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "11df1459459aa80a675975c65d31ae1f1e703fd7d35949ff24bd5a42d03d5aac",
+  "review_rationale": "Reviewed natural numbers as positive counting sequence 1,2,3,... contrasted with N_{>0} notation when another convention includes zero."
 }

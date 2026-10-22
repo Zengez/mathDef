@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.set63.set-of-related-elements",
   "version_sha256": "105f9f2e4b76f67c8230d7f789d8817d52a7946f0fee1d4768f009aa60ce38ca",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "equivalence relation",
-      "span": [
-        11,
-        31
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.set63.relation-reflexive-symmetric-transitive"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.a9ebae7f5dcbc2cb4be4"
+      "phrase": "equivalence relation ~",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive",
+      "occurrence_id": "occ.d8f32307e80fd476c013"
+    },
+    {
+      "phrase": "subset of S represented by class",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.0bc1a2e320c50dcb5d3b"
+    },
+    {
+      "phrase": "class membership y~x",
+      "state": "unassigned",
+      "context": "Elements y of S belonging to class exactly when they relate to chosen representative x.",
+      "occurrence_id": "occ.2a9e6c9d6aedcc5cfc48"
+    },
+    {
+      "phrase": "equivalent representatives",
+      "state": "unassigned",
+      "context": "Any two members of one equivalence class determine the same class under the relation.",
+      "occurrence_id": "occ.2c830dae2e918b90bb3e"
+    },
+    {
+      "phrase": "representative not canonical",
+      "state": "external",
+      "disposition": "The representative x is a choice of element used to describe the class, not necessarily a unique distinguished element.",
+      "occurrence_id": "occ.42c5fe0184eefade0920"
     }
   ],
-  "snapshot_sha256": "83cbf28dca4c7256ae666c93d1819c1374fc56e4ef7d897128f3faad6c8b3bc9",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "b116c67478e39315b6ae5b0afbe7559df4f36f710582dc03f407b7d6a8ef0ffa",
+  "review_rationale": "Reviewed equivalence class [x] as all y in S satisfying y~x for fixed x and an equivalence relation; all its members represent the same class."
 }
