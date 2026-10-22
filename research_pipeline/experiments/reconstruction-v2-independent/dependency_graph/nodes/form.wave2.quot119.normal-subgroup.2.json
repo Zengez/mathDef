@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.quot119.normal-subgroup.2",
   "version_sha256": "b7345dcf02d8705273df9314e132b29d4083ff867a24d6e4069ebce7218911a7",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "group",
-      "span": [
-        6,
-        11
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.7600b10e9103f64d2f03"
+      "phrase": "group G",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.group",
+      "occurrence_id": "occ.bb4f6fcaa5c8f311b64b"
+    },
+    {
+      "phrase": "subgroup N of G",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prereq122.subgroup",
+      "occurrence_id": "occ.ded5f4ee8590f64aea1a"
+    },
+    {
+      "phrase": "conjugation gng^{-1}",
+      "state": "unassigned",
+      "context": "Group product involving g, element n in N and inverse of g.",
+      "occurrence_id": "occ.2a2b7a598ff474f2d5f1"
+    },
+    {
+      "phrase": "conjugate subset gNg^{-1}",
+      "state": "unassigned",
+      "context": "Set {g n g^{-1}:n in N} of group elements.",
+      "occurrence_id": "occ.d3921226e5ebb5aebb57"
+    },
+    {
+      "phrase": "equality with N for every g",
+      "state": "unassigned",
+      "context": "Conjugation by any group element preserves subgroup N as a set.",
+      "occurrence_id": "occ.79db84624c3e8b9ae3a3"
+    },
+    {
+      "phrase": "same normal-subgroup meaning",
+      "state": "external",
+      "disposition": "Conjugation-invariance is an equivalent condition, not a definition dependency back onto itself.",
+      "occurrence_id": "occ.3cc3380c8ece64f8f143"
     }
   ],
-  "snapshot_sha256": "54478b3a17d23a90e0140c065f3bb1f67b70e3f8baac4c35d201a897117788f7",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "3a02f2f4910283f631f29792befc00802a040b090b77bc665dc8e14da1ce1838",
+  "review_rationale": "Reviewed normality using invariance under each conjugation gNg^-1 in ambient group, taking inverses in group and equality of subgroup sets."
 }

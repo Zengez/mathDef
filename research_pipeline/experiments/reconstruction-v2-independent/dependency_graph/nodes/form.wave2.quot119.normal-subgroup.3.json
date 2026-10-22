@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.quot119.normal-subgroup.3",
   "version_sha256": "00e9ad6df0d45ffd6685405f7219cbf4115b71fc09db01084a33179bb0cc88a5",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "group",
-      "span": [
-        6,
-        11
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.0b94fb826a6d8ad00387"
+      "phrase": "group G",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.group",
+      "occurrence_id": "occ.6b61cb9b93bb9cfa0fb0"
+    },
+    {
+      "phrase": "subgroup N of G",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prereq122.subgroup",
+      "occurrence_id": "occ.f34485eb9162d159530f"
+    },
+    {
+      "phrase": "subset inclusion gNg^{-1} subseteq N",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.c5942565245c9fadf9d2"
+    },
+    {
+      "phrase": "conjugate set of subgroup",
+      "state": "unassigned",
+      "context": "Set obtained by conjugating every n in N with given g in G.",
+      "occurrence_id": "occ.8f809012aa2c5425f44b"
+    },
+    {
+      "phrase": "universal quantifier includes inverse elements",
+      "state": "unassigned",
+      "context": "Condition is demanded for each g and its inverse so both containment directions hold.",
+      "occurrence_id": "occ.3b65bd1d00407d0005cf"
+    },
+    {
+      "phrase": "one-sided inclusion suffices only universally",
+      "state": "external",
+      "disposition": "Condition for a single g alone would not imply normality; here it holds for every g.",
+      "occurrence_id": "occ.9fce8658351f548bbc55"
     }
   ],
-  "snapshot_sha256": "03c76d86ad6f5bc33351b4b0cd56ea6a54411e36bda0ee4221551f3412f3e9d7",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "fc488cb0221a3e9f634e4b6a513520b4788cfd0cd05256366f276df77427b7a3",
+  "review_rationale": "Reviewed normality via one-sided inclusion gNg^-1 subset N for all g, including inverse g^-1, which forces reverse inclusion and equality."
 }
