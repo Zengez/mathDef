@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.conv126.uniform-metric",
   "version_sha256": "aaf554ac18011e04f0d0b5a8d0fb960433a1e4a741bee96fe557ff41b32b225f",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "metric space",
-      "span": [
-        24,
-        36
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.analysis98.metric-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.7e79e0b7000bb2b74418"
+      "phrase": "metric space (M,d)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis98.metric-space",
+      "occurrence_id": "occ.137733c51742320ec800"
+    },
+    {
+      "phrase": "functions f_n and f:S→M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.a108383854f111ca4a44"
+    },
+    {
+      "phrase": "uniform epsilon threshold N_epsilon",
+      "state": "unassigned",
+      "context": "For every positive tolerance epsilon there exists one natural index bound independent of x∈S.",
+      "occurrence_id": "occ.c529726dbd24325596d0"
+    },
+    {
+      "phrase": "metric-distance bound d(f_n(x),f(x))<epsilon",
+      "state": "unassigned",
+      "context": "After threshold, inequality applies simultaneously to all domain inputs x.",
+      "occurrence_id": "occ.c3f4bcd839910346e005"
+    },
+    {
+      "phrase": "uniform quantifier order",
+      "state": "external",
+      "disposition": "All domain points are quantified after the existence of a single N for each epsilon.",
+      "occurrence_id": "occ.e4399782a38295bcb8c8"
     }
   ],
-  "snapshot_sha256": "a26a56b449c35cec1e7aa88e4417c89cee8486e2127fcb0ecceffdcbbe9d507a",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "9b698fb09f90071232a21cc242ca6075a3f92e00bfa6f09c36b9ba808ed09ee5",
+  "review_rationale": "Reviewed uniform convergence into metric space with one epsilon-dependent threshold valid across all domain points, unlike pointwise convergence."
 }

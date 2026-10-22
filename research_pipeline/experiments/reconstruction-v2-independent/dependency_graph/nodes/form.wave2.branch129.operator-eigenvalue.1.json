@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.branch129.operator-eigenvalue.1",
   "version_sha256": "04281481cf32bd7c04d7d549dde0a1e9d14b64b23dded54a1a0be8f47df6aa13",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "K-vector space V",
+      "state": "existing",
+      "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "occurrence_id": "occ.e58ecc00c23620ddb608"
+    },
+    {
+      "phrase": "kernel of field-linear transformation",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross107.field-vector-linear-kernel",
+      "occurrence_id": "occ.e5892293e90d8b7a6f72"
+    },
+    {
+      "phrase": "K-linear operator A:V→V",
+      "state": "unassigned",
+      "context": "Linear endomorphism respecting addition and scalar multiplication on vector space V.",
+      "occurrence_id": "occ.6b048d37675257bc1189"
+    },
+    {
+      "phrase": "identity operator I_V",
+      "state": "unassigned",
+      "context": "Linear map v↦v on V.",
+      "occurrence_id": "occ.e1cfb008ee6f51cde165"
+    },
+    {
+      "phrase": "difference A−λI_V",
+      "state": "unassigned",
+      "context": "Linear endomorphism v↦A(v)−λv.",
+      "occurrence_id": "occ.ba32e9d6da44cdb92162"
+    },
+    {
+      "phrase": "nonzero kernel ker(A−λI_V)",
+      "state": "unassigned",
+      "context": "Kernel contains a nonzero vector, rather than merely the zero vector.",
+      "occurrence_id": "occ.22a9c157c811a12e2a58"
+    },
+    {
+      "phrase": "eigenvalue scalar lambda∈K",
+      "state": "external",
+      "disposition": "Lambda must belong to the scalar field of V, not an eigenvalue in an unstated field extension.",
+      "occurrence_id": "occ.12b7a189b441c8ec0d31"
+    }
+  ],
+  "snapshot_sha256": "48e5efa55293c94ddf074234d6757f0404056b0f7dfa46d5ae91046760e0c0ba",
+  "review_rationale": "Read eigenvalue of field-linear endomorphism by nontrivial kernel of A minus scalar identity, and preserved scalar field and operator domain-codomain match."
 }

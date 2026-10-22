@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.conv126.eigenvector-linear-operator.1",
   "version_sha256": "eab75c3d81e5368f4e931f1f553795541076a8de80d7ffcbd169fffb2815d1b9",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "field K and vector space V",
+      "state": "existing",
+      "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "occurrence_id": "occ.462b4eb182ee4f911093"
+    },
+    {
+      "phrase": "eigenvalue lambda of A",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.branch129.operator-eigenvalue",
+      "occurrence_id": "occ.56efc62f0a9f8059f9fe"
+    },
+    {
+      "phrase": "K-linear operator A:V→V",
+      "state": "unassigned",
+      "context": "Linear endomorphism of K-vector space V.",
+      "occurrence_id": "occ.14e39850d504fe6165a7"
+    },
+    {
+      "phrase": "nonzero eigenvector v",
+      "state": "unassigned",
+      "context": "Vector distinct from zero satisfying A(v)=lambda*v.",
+      "occurrence_id": "occ.1eac4196aaa951938c75"
+    },
+    {
+      "phrase": "eigenvector associated to lambda",
+      "state": "external",
+      "disposition": "The eigen equation must use the specified eigenvalue lambda rather than an arbitrary scalar.",
+      "occurrence_id": "occ.bd3a5165c02c98c491c2"
+    }
+  ],
+  "snapshot_sha256": "2ed0101e1738e7550d0c3f3eaaeb28556647f26a190be3a846e064f94c0f3477",
+  "review_rationale": "Reviewed eigenvector for specified eigenvalue of field-linear operator as a nonzero vector obeying the eigen equation."
 }

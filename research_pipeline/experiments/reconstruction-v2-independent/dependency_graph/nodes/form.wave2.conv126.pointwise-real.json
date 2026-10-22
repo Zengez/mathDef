@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.conv126.pointwise-real",
   "version_sha256": "22819fab035f402fb3283bfe8b7b6a552276e5f3340514b11f65af8a0579acdb",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "real absolute value",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis.real-absolute-value",
+      "occurrence_id": "occ.2f12b4d03ed8e14e4bfb"
+    },
+    {
+      "phrase": "real-valued functions f_n,f on D",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.9f5c5e3ff81e9bef8f4c"
+    },
+    {
+      "phrase": "positive epsilon",
+      "state": "unassigned",
+      "context": "Tolerance ε>0 in real codomain.",
+      "occurrence_id": "occ.3bcc72b43158ccfc4925"
+    },
+    {
+      "phrase": "threshold N_{x,epsilon}",
+      "state": "unassigned",
+      "context": "Natural index may depend on evaluation point x and tolerance epsilon.",
+      "occurrence_id": "occ.2faf22fb744a96d10c9d"
+    },
+    {
+      "phrase": "for all n≥N and fixed x",
+      "state": "external",
+      "disposition": "Threshold cannot be required uniformly in x; that would impose a stronger condition.",
+      "occurrence_id": "occ.f5487b19852de8706425"
+    }
+  ],
+  "snapshot_sha256": "9f7c1c4089a0ae85ef0e717c0d707fce74321d3ae5bd6dda38f9e8173593c421",
+  "review_rationale": "Reviewed pointwise convergence of real functions using epsilon and point-dependent index threshold, retaining domain and fixed point quantification."
 }

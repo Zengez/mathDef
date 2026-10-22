@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.branch129.nonempty-connected-graph",
   "version_sha256": "8acedb465db621ed354e05aa47b20b752c47d159268db5030cbf6dc67a8471ef",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "simple undirected graph G=(V,E)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.graph42.simple-undirected",
+      "occurrence_id": "occ.452be6c0376c6a1cc0cb"
+    },
+    {
+      "phrase": "finite walk from u to v",
+      "state": "unassigned",
+      "context": "Finite vertex sequence with consecutive vertices adjacent, including length-zero singleton walk when u=v.",
+      "occurrence_id": "occ.d2cc48dbb0ec33d0d26b"
+    },
+    {
+      "phrase": "every pair u,v in V",
+      "state": "unassigned",
+      "context": "Universal vertex-pair quantification in the nonempty graph.",
+      "occurrence_id": "occ.a7c79383804e8800182a"
+    },
+    {
+      "phrase": "nonempty vertex set and zero-length walks",
+      "state": "external",
+      "disposition": "Connectivity excludes empty graph by convention and permits u=v by zero-step walk.",
+      "occurrence_id": "occ.5e8bc9cf2fcdfe7e9127"
+    }
+  ],
+  "snapshot_sha256": "cd4a6c94409143352eabfe2e4f3c4474d7bf04a46957b74c00af031bbf07865d",
+  "review_rationale": "Read graph connectivity on a nonempty simple undirected graph through existence of finite walks for all ordered vertex pairs, allowing trivial walk for equal vertices."
 }

@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.conv126.pointwise-topological",
   "version_sha256": "2a67544a0d303da57261be8768a64a4de92ea066464bff5e0a7f44f451f5ec10",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        15,
-        32
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.cd44d64da1a7dca4033d"
+      "phrase": "topological codomain T",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.8747618f86102ea64054"
+    },
+    {
+      "phrase": "indexed product topology",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology",
+      "occurrence_id": "occ.e36025fb6cd00e7355b9"
+    },
+    {
+      "phrase": "set-valued functions f_n,f:D→T",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.fd0233163cefcbc50e3d"
+    },
+    {
+      "phrase": "function space T^D",
+      "state": "unassigned",
+      "context": "Product of a copy of T for each domain input d∈D, identified with all functions D→T.",
+      "occurrence_id": "occ.e44e16e3e2baa3d39675"
+    },
+    {
+      "phrase": "sequential convergence in product topology",
+      "state": "unassigned",
+      "context": "For each basic product-topology neighborhood of limit function, eventually all sequence functions belong to it.",
+      "occurrence_id": "occ.55c7d8cf9514f12fdaca"
+    },
+    {
+      "phrase": "pointwise equivalent to product-space convergence",
+      "state": "external",
+      "disposition": "In product topology, only finitely many coordinates are restricted by each basic open neighborhood.",
+      "occurrence_id": "occ.7ffa8044214d58073342"
     }
   ],
-  "snapshot_sha256": "b085fabc955fb8c65a495cba0d5e9811b90747b0f085a605a0201fd7142733c8",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "cc59561e9a2265b737509a0da432cf6cb20f408cdabd3a172651d01c624fbfa7",
+  "review_rationale": "Reviewed pointwise convergence of functions to topological codomain through convergence as a sequence in function product space T^D with product topology."
 }

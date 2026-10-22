@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.bridge136.convex-real.2",
   "version_sha256": "c5c7a4f0d64f543bc26fe37ce9554c463f70e77f0434c81b8f27bcbb2a9ea04b",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "real vector space",
+      "state": "existing",
+      "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "occurrence_id": "occ.463609b980f165daecfd"
+    },
+    {
+      "phrase": "subset C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.0559fb0fb5ff473dc7e7"
+    },
+    {
+      "phrase": "Minkowski set sum tC+(1−t)C",
+      "state": "unassigned",
+      "context": "Set of all tx+(1−t)y with x and y separately chosen in C.",
+      "occurrence_id": "occ.846706b2df46d8ef1e11"
+    },
+    {
+      "phrase": "set inclusion tC+(1−t)C subset C",
+      "state": "unassigned",
+      "context": "Every convex combination with t in unit interval remains in C.",
+      "occurrence_id": "occ.82769237fb7909ae26e4"
+    },
+    {
+      "phrase": "only unit-interval coefficients",
+      "state": "external",
+      "disposition": "Definition does not assert closure under arbitrary real scalar multiples.",
+      "occurrence_id": "occ.cc0a7ae061c164e4a1f9"
+    }
+  ],
+  "snapshot_sha256": "26a65b583584245de7a5eb99637a8cf009547f83f9fa9e7425394f31d0ed775c",
+  "review_rationale": "Read set formulation of convexity via scalar multiples and Minkowski sum contained in original set for each t in [0,1]."
 }

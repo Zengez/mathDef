@@ -2,39 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.conv126.locally-uniform-metric",
   "version_sha256": "e40bb14d4277d20ec40e29375c047156207b069664ddb6ae0442dc29f064b6fb",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        11,
-        28
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.3550e7263e9504598987"
+      "phrase": "domain topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.c066979b435650ed3b96"
     },
     {
-      "phrase": "metric space",
-      "span": [
-        38,
-        50
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.analysis98.metric-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.7b3af649b422b16a0c30"
+      "phrase": "metric codomain (M,d)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis98.metric-space",
+      "occurrence_id": "occ.33425553c8bdc07458ff"
+    },
+    {
+      "phrase": "uniform convergence on U_x",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.conv126.uniform-metric",
+      "occurrence_id": "occ.7c1b978d9fa5bae4a294"
+    },
+    {
+      "phrase": "neighborhood U_x of each x",
+      "state": "unassigned",
+      "context": "For each x∈X select an open or neighborhood subset U_x containing x; no single U works for every x.",
+      "occurrence_id": "occ.a4d6162fdfc0b0d21377"
+    },
+    {
+      "phrase": "restriction of functions to U_x",
+      "state": "unassigned",
+      "context": "Functions f_n|U_x and f|U_x compared uniformly on the chosen neighborhood.",
+      "occurrence_id": "occ.affcc555f521e81dd00a"
+    },
+    {
+      "phrase": "local uniform is not global",
+      "state": "external",
+      "disposition": "Quantifiers permit a different neighborhood and convergence threshold across domain points.",
+      "occurrence_id": "occ.b75de51245f0b48befe2"
     }
   ],
-  "snapshot_sha256": "71d627a50ff2e899f1c7d79fdd5f27b9699aa4b83e53c14fa37599e945908c56",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "be1c3a2286e80fce5476c3d130d1d8b552c79828f9828fd821e6d0478fb4dc24",
+  "review_rationale": "Reviewed local uniform convergence of functions to a metric target with one neighborhood per domain point and uniform convergence of restrictions on that neighborhood."
 }

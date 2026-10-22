@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.analysis98.real-inner-product-space",
   "version_sha256": "0ceceb7693047e97f215ae624339c8afcdf2df70c307db3583a259fb5aeb709f",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "real vector space V",
+      "state": "existing",
+      "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "occurrence_id": "occ.c2f9ee323ab0b867f7df"
+    },
+    {
+      "phrase": "symmetric bilinear form",
+      "state": "unassigned",
+      "context": "Bilinear form V×V→R linear in both arguments and symmetric on interchange of arguments.",
+      "occurrence_id": "occ.3c15bc7c13c349d14469"
+    },
+    {
+      "phrase": "positive-definite form",
+      "state": "unassigned",
+      "context": "For nonzero v, the real self-pairing is positive, and vanishes for the zero vector.",
+      "occurrence_id": "occ.190ff59e92af96e191c8"
+    },
+    {
+      "phrase": "real rather than complex Hermitian convention",
+      "state": "external",
+      "disposition": "No conjugate-linear component in the real bilinear form definition.",
+      "occurrence_id": "occ.b9c831e9b1a8bb1f5e5f"
+    }
+  ],
+  "snapshot_sha256": "cdf308bb8a4f9ba6d41cd28c75cc1c9804a6cef1b1379299f582981ab262f757",
+  "review_rationale": "Read positive-definite symmetric bilinear real inner product on real vector space with no complex conjugation."
 }

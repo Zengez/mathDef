@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.branch129.real-convergent-egf",
   "version_sha256": "6d3078c2492f86b6e3cbfb6d081eb062436ef3a044173eaa6c16021f06fef5b2",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "convergent real series",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prereq122.real-series-convergent",
+      "occurrence_id": "occ.81353e9945f2fbb5d793"
+    },
+    {
+      "phrase": "real power series",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prereq122.real-centered-power-series",
+      "occurrence_id": "occ.61e76b9bb7fb8a8172d6"
+    },
+    {
+      "phrase": "natural indexing n≥0",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.414b637931beddd6a1d8"
+    },
+    {
+      "phrase": "real function E_A:D→R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.da57c0914ff17d01d3f8"
+    },
+    {
+      "phrase": "factorial n! of nonnegative integer",
+      "state": "unassigned",
+      "context": "Product of integers from 1 to n with 0!=1, appearing in each coefficient.",
+      "occurrence_id": "occ.c6114613b118fb4c8244"
+    },
+    {
+      "phrase": "convergence domain D⊆R",
+      "state": "unassigned",
+      "context": "Set of real z where series Σ(a_n/n!)z^n converges.",
+      "occurrence_id": "occ.67292f46f4c3d95191c9"
+    },
+    {
+      "phrase": "function defined only on D",
+      "state": "external",
+      "disposition": "Does not assert entire real line convergence; outside D series does not define real value.",
+      "occurrence_id": "occ.839c87f2f86ad1b8818a"
+    }
+  ],
+  "snapshot_sha256": "e12d5eedf6aa1ea635e42124edbd160dfd52734b4fa3779fcce5b562a1fb36db",
+  "review_rationale": "Read exponential generating function of a real sequence only on the real convergence domain of its n-factorial-weighted power series, retaining nonnegative indices and convergence."
 }
