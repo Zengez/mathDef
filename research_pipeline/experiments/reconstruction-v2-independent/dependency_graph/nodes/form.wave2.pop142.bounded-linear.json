@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.pop142.bounded-linear",
   "version_sha256": "a2e01a69301a8da098747643fd6374876c013749c73d4103d671b2daba43c154",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "normed vector spaces X,Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis98.normed-vector-space",
+      "occurrence_id": "occ.bcbeb1b6d58c7fb0d26e"
+    },
+    {
+      "phrase": "linear map T:X to Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.field-vector-linear",
+      "occurrence_id": "occ.8d69dc3e3bfe9d370937"
+    },
+    {
+      "phrase": "vector norms on X and Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis98.norm-over-real-or-complex",
+      "occurrence_id": "occ.9d6ce84c92be96b1e65f"
+    },
+    {
+      "phrase": "real constant M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field",
+      "occurrence_id": "occ.c0940bf6a171bdb889ff"
+    },
+    {
+      "phrase": "uniform bound ||Tx||_Y <= M ||x||_X",
+      "state": "unassigned",
+      "context": "One finite real M at least zero bounds the norm ratio globally for every x in domain.",
+      "occurrence_id": "occ.5fffa23a7a681961afe1"
+    },
+    {
+      "phrase": "same scalar field real or complex",
+      "state": "external",
+      "disposition": "X and Y share one field F in {R,C}; this definition makes no division-ring generalization.",
+      "occurrence_id": "occ.99daa263ac3d6575a0bf"
+    }
+  ],
+  "snapshot_sha256": "d2fa4f9ce5a08312bb1ff6a0f528d494d3a21e2780861c0904a0fac2aaf174a9",
+  "review_rationale": "Reviewed bounded linear transformation between real or complex normed vector spaces over one field, with a single uniform nonnegative real bound for all domain vectors."
 }

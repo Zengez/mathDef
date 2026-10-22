@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.pop141.right-action",
   "version_sha256": "8a00ad9f155175dcb001f74230429d800ee0a15145692f492cf2e4a040f0bb78",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "group",
-      "span": [
-        15,
-        20
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.56bb1a604e7ee9bd2bef"
+      "phrase": "group G and identity e",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.group",
+      "occurrence_id": "occ.23931958b736b728d673"
+    },
+    {
+      "phrase": "mapping beta:X times G to X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.c1260e4c9e088031772c"
+    },
+    {
+      "phrase": "right action identity beta(x,e)=x",
+      "state": "unassigned",
+      "context": "The group identity fixes every x under right action.",
+      "occurrence_id": "occ.c2e4aef19ee9648df13c"
+    },
+    {
+      "phrase": "right action compatibility beta(beta(x,g),h)=beta(x,gh)",
+      "state": "unassigned",
+      "context": "Successive right actions by g and h agree with action by product gh.",
+      "occurrence_id": "occ.f3b87ca6b2b5e0407e51"
+    },
+    {
+      "phrase": "right-sided convention preserved",
+      "state": "external",
+      "disposition": "Do not replace by left-action multiplication or assume G commutative.",
+      "occurrence_id": "occ.758780f22f038679eadd"
     }
   ],
-  "snapshot_sha256": "568519051488f28754439d9b66c1a678c4bd4a507cf0c04599628706fd2a5051",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "c5bdda0c8b3f29ddd9ab73df63958d048691bf91b0ccd6e4e34ad4fda00889da",
+  "review_rationale": "Reviewed right group action of G on X with map X times G to X, right-identity axiom, and multiplication order beta(beta(x,g),h)=beta(x,gh)."
 }
