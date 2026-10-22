@@ -2,39 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.e0dd0b0cffcfff0b.generic-point",
   "version_sha256": "6720b5ac998f8e6331dea434596a7e7ee6e27ebd138d3687b34724bd80db4014",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        41,
-        47
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.b5d149835182e6db13ec"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.b6563317af89702b94f4"
     },
     {
-      "phrase": "topological space",
-      "span": [
-        55,
-        72
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.83987741e3448b25a4f3"
+      "phrase": "irreducible subset Z with subspace topology",
+      "state": "existing",
+      "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-topological-space",
+      "occurrence_id": "occ.8084bb4a2c4823d10eb4"
+    },
+    {
+      "phrase": "closure of {η} in X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross107.topological-closure",
+      "occurrence_id": "occ.65ab96b3bc06047e71b2"
+    },
+    {
+      "phrase": "singleton subset {η} of X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.e15242bf6d3d23b98b91"
+    },
+    {
+      "phrase": "irreducible closed subset Z of X",
+      "state": "unassigned",
+      "context": "Nonempty subset closed in X whose induced topology is irreducible; not necessarily an entire irreducible component",
+      "occurrence_id": "occ.c2fd4924b7a082d9a937"
+    },
+    {
+      "phrase": "closure of {η} equals Z",
+      "state": "external",
+      "disposition": "The equality defines the generic-point property and is not a requirement that η be a unique point without sobriety.",
+      "occurrence_id": "occ.9ccebf92ae9490871996"
     }
   ],
-  "snapshot_sha256": "a5b1a2658d32778df0bbc377e0769c2bf81381e3cde1bcca80b4fcb5f5ca43c2",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "03d6ed58e1bb6325883f2e1f398e35d7b59836de6ad1034b0a437788380784f2",
+  "review_rationale": "Read a generic point of an irreducible closed subset via the closure of its singleton, explicitly preserving the ambient topological space and irreducibility of the closed target subset."
 }
