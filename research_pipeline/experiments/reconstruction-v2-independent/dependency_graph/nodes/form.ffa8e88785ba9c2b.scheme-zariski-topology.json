@@ -2,37 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.ffa8e88785ba9c2b.scheme-zariski-topology",
   "version_sha256": "b7e63fd46609fa1ad6a154bf2f48bd308bc3a55719d4dcb6a1cb479b3686f556",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "scheme",
-      "span": [
-        26,
-        32
-      ],
+      "phrase": "scheme X with underlying locally ringed space",
       "state": "existing",
       "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.5cfbc3150cd01b6d97d1"
+      "occurrence_id": "occ.693f0f5479566f104f90"
     },
     {
       "phrase": "locally ringed space",
-      "span": [
-        69,
-        89
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.52683cac2ccf3bad.locally-ringed-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.f19e9abbf95cb5cb0899"
+      "state": "existing",
+      "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space",
+      "occurrence_id": "occ.cd6da04e8e447f75166d"
+    },
+    {
+      "phrase": "prime spectrum Spec(R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.6b55d4674c2ad7eb5435"
+    },
+    {
+      "phrase": "affine scheme chart",
+      "state": "existing",
+      "target_meaning_id": "meaning.4c7d59ba7058613b.affine-scheme",
+      "occurrence_id": "occ.b91073379de99b05e12d"
+    },
+    {
+      "phrase": "topological space",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.fc7f66a5f4766c81f0c0"
+    },
+    {
+      "phrase": "standard open D(f) inside Spec(R)",
+      "state": "unassigned",
+      "context": "Principal Zariski open of primes not containing f, forming a basis of the affine chart.",
+      "occurrence_id": "occ.ab1778a55d86f121609a"
+    },
+    {
+      "phrase": "affine-chart restriction of topology",
+      "state": "unassigned",
+      "context": "Restriction of scheme topology to an affine open is the corresponding prime-spectrum Zariski topology.",
+      "occurrence_id": "occ.ac522ed070a15704edf3"
+    },
+    {
+      "phrase": "locally characterized by all affine charts",
+      "state": "external",
+      "disposition": "Topology compatibility on charts is used to characterize scheme topology; this is not the constructible or étale topology.",
+      "occurrence_id": "occ.f63aca13b7dd55a2fcf2"
     }
   ],
-  "snapshot_sha256": "3367887ff1ad1c6a28bb798631a82627835361685c31254253fa548b39e6c170",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "bbe5ad465b75ba094b84fc2b84ab52e4790e3546594577fa01df5f42b38aaee6",
+  "review_rationale": "Read scheme Zariski topology on the underlying locally ringed space, with its consistency on affine Spec charts, their prime-spectrum topology and principal distinguished opens."
 }

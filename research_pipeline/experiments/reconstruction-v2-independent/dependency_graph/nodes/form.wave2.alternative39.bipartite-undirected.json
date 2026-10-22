@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.alternative39.bipartite-undirected",
   "version_sha256": "87ebc42aee8624fa87382c8ee37bb491c4aae383020075c9bd31ab108b4ac52f",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "undirected simple graph G=(V,E)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.graph42.simple-undirected",
+      "occurrence_id": "occ.9172b5033adc28279244"
+    },
+    {
+      "phrase": "partition of vertex set",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.group116.set-partition",
+      "occurrence_id": "occ.a594ff879da4bdd96c71"
+    },
+    {
+      "phrase": "bipartite graph variant in same corpus",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.bridge136.simple-bipartite",
+      "occurrence_id": "occ.b6d03ed77e7051e5d41b"
+    },
+    {
+      "phrase": "subset of V",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.f73c699085828e028cea"
+    },
+    {
+      "phrase": "crossing edge between A and B",
+      "state": "unassigned",
+      "context": "Each unordered graph edge has one endpoint in A and the other in B.",
+      "occurrence_id": "occ.708b01825ddd74d7c09a"
+    },
+    {
+      "phrase": "A and B may be empty",
+      "state": "external",
+      "disposition": "The stated condition does not demand both parts be nonempty; for edge-free graphs an empty part is allowed.",
+      "occurrence_id": "occ.e590e873563c40d5893f"
+    }
+  ],
+  "snapshot_sha256": "836c752668d6d389399c7f56e7451d36ec4f6c42874336e4aa4950154a44719c",
+  "review_rationale": "Read two-part partition of vertices with every edge crossing between disjoint parts, and kept potential empty parts distinct from mandatory nonempty bipartitions."
 }

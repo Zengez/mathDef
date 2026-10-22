@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.alternative39.adjacency-matrix-simple-undirected",
   "version_sha256": "3c76d57c1343993dea9d98c1f2626bb22af17e3cce6c2f0895da5bdc3e33b08c",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "finite simple undirected graph G=(V,E)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.graph42.simple-undirected",
+      "occurrence_id": "occ.ed2087d825fc99c5b66d"
+    },
+    {
+      "phrase": "chosen ordering V={v_1,…,v_n}",
+      "state": "unassigned",
+      "context": "A bijective enumeration of graph vertices by 1 through n, required to index matrix rows and columns.",
+      "occurrence_id": "occ.49cb794e3d2b33725a2b"
+    },
+    {
+      "phrase": "n-by-n matrix over entries 0,1",
+      "state": "unassigned",
+      "context": "Square array indexed by ordered vertices with binary indicator entries.",
+      "occurrence_id": "occ.25bd9c0f8a183b13a85d"
+    },
+    {
+      "phrase": "edge indicator a_ij",
+      "state": "unassigned",
+      "context": "Entry equals 1 precisely when unordered pair {v_i,v_j} is an edge; otherwise 0.",
+      "occurrence_id": "occ.c35093997a5a162f790e"
+    },
+    {
+      "phrase": "simple undirected implies zero diagonal and symmetric matrix",
+      "state": "external",
+      "disposition": "These follow from looplessness and unordered edges and are not further data.",
+      "occurrence_id": "occ.06d6b674309762cb5067"
+    }
+  ],
+  "snapshot_sha256": "6d62c72dd685bcac9dddfb894b14782d4ea62dd9b484881e2f7d61287ca4b364",
+  "review_rationale": "Read adjacency matrix construction for a finite simple undirected graph, including chosen vertex enumeration, indicator entries and absence of loops; noted dependence on ordering."
 }

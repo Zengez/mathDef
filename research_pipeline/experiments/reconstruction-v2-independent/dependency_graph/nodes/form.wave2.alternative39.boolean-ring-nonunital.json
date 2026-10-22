@@ -2,25 +2,27 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.alternative39.boolean-ring-nonunital",
   "version_sha256": "0e5cc06487cef07106eb20aec634258cf41a9f4b75d6242278c34e406ba04193",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "Boolean ring",
-      "span": [
-        2,
-        14
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.alternative39.boolean-ring-unital"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.d09778710e37449fe5f0"
+      "phrase": "associative ring without required identity",
+      "state": "unassigned",
+      "context": "Additive abelian group and associative distributive multiplication; existence of multiplicative identity is not assumed.",
+      "occurrence_id": "occ.4a9f6c4efa31fd1390e3"
+    },
+    {
+      "phrase": "universal idempotence x²=x",
+      "state": "unassigned",
+      "context": "Every ring element multiplied by itself equals itself, the defining Boolean property.",
+      "occurrence_id": "occ.5366c5f86669223902fd"
+    },
+    {
+      "phrase": "no identity assumption",
+      "state": "external",
+      "disposition": "The absence of an assumed unity is material; do not equate its scope with the unital Boolean-ring variant.",
+      "occurrence_id": "occ.cb16d16ade923007500c"
     }
   ],
-  "snapshot_sha256": "1061d9d7709983758c153f01b8bb3fad92c68d8953701285ab1164bd8d6086bd",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "ab6a4d7a516ed832998959867a10d3d45567d4903b6cfced9b367bf1006503bb",
+  "review_rationale": "Read a Boolean ring in the possibly nonunital associative-ring convention with universal idempotence, and preserved its difference from the unital ring convention without assuming an identity."
 }
