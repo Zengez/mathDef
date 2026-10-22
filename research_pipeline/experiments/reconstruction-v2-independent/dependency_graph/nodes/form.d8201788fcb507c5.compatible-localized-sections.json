@@ -2,10 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.d8201788fcb507c5.compatible-localized-sections",
   "version_sha256": "cb65e83e6880156b7eec972ef9189fca74a8537c42df8d4fbdd5bb06b7079c13",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.27647e8572646fb7a1d7"
+    },
+    {
+      "phrase": "module localization M_{f_i} and M_{f_i f_j}",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set",
+      "occurrence_id": "occ.0453bc74d925353f2a41"
+    },
+    {
+      "phrase": "f_1,…,f_n generate the unit ideal",
+      "state": "unassigned",
+      "context": "Commutative algebra: ideal (f_1,…,f_n)=R, ensuring associated principal standard opens cover Spec(R)",
+      "occurrence_id": "occ.5ad55eadf3bae23fe8dd"
+    },
+    {
+      "phrase": "standard open D(f_i) of Spec(R)",
+      "state": "unassigned",
+      "context": "Zariski basic open consisting of primes not containing f_i; pairs intersect as D(f_i f_j)",
+      "occurrence_id": "occ.1b655d300d0b4b9cbef4"
+    },
+    {
+      "phrase": "tuple of locally defined module sections m_i",
+      "state": "unassigned",
+      "context": "Element m_i of each localization M_{f_i}, viewed over the corresponding standard open",
+      "occurrence_id": "occ.61b387ec6d16621d2649"
+    },
+    {
+      "phrase": "restriction from M_{f_i} to M_{f_i f_j}",
+      "state": "unassigned",
+      "context": "Further module localization along f_j, used to compare local values on a common overlap",
+      "occurrence_id": "occ.f327f4a49af30760088d"
+    },
+    {
+      "phrase": "diagonal localization map M→∏_i M_{f_i}",
+      "state": "unassigned",
+      "context": "Map sending m to its images m/1 in each local module; its image is the compatible-tuples subgroup",
+      "occurrence_id": "occ.00f9141d5c68332e4644"
+    },
+    {
+      "phrase": "such tuples are exactly the image of M",
+      "state": "external",
+      "disposition": "Finite principal-open descent/gluing statement under the unit-ideal hypothesis; not an assertion for arbitrary noncovering families.",
+      "occurrence_id": "occ.c8f96e4722c2548806dc"
+    }
+  ],
+  "snapshot_sha256": "848ad1238024a3b7e8e255159e4d08b33ecf1bb271acf36ad1e604ff38cdb82f",
+  "review_rationale": "Read the finite standard-open covering data, all module localizations, agreement after localizing to pairwise overlaps, and the asserted characterization by diagonal localization. Kept the gluing conclusion separate from the definition of compatibility."
 }

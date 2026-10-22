@@ -2,23 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.daec56e6a2a51cae.connected-indexed-limit",
   "version_sha256": "ded3f1ea38ba4af95d44f7d189cff3b3a22152f20c775dd599656cc3faed94bf",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "colimit of a diagram",
-      "span": [
-        11,
-        31
-      ],
+      "phrase": "connected indexing category",
+      "state": "existing",
+      "target_meaning_id": "meaning.daec56e6a2a51cae.connected-category",
+      "occurrence_id": "occ.db1790d2ef5d68c96252"
+    },
+    {
+      "phrase": "category-indexed limit of a diagram",
+      "state": "existing",
+      "target_meaning_id": "meaning.8f7683667fac9d28.category-limit",
+      "occurrence_id": "occ.cce1392e3eb7b3716838"
+    },
+    {
+      "phrase": "category-indexed colimit of a diagram",
       "state": "existing",
       "target_meaning_id": "meaning.8f7683667fac9d28.category-colimit",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.e0f2c15879785b686f14"
+      "occurrence_id": "occ.e0cf41e101694e9fe532"
+    },
+    {
+      "phrase": "diagram with indexing category",
+      "state": "unassigned",
+      "context": "Functor from the connected indexing category into a target category whose limit or colimit is considered",
+      "occurrence_id": "occ.c9f709859e2f7d0cf9be"
+    },
+    {
+      "phrase": "connectedness of limit or colimit",
+      "state": "external",
+      "disposition": "The adjective describes the shape/index of a limiting construction; it is not a connected topological object or a claim that the limit object is connected.",
+      "occurrence_id": "occ.15de2285a200ac553794"
     }
   ],
-  "snapshot_sha256": "55c5b001722ef1d0f9ab5534ecfb78d9207563b52ffcec2337636866f1e81796",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "f8cd7322f4dd0b13193740dee1a0b8ced6002b05028d5c4127179ed11460eb07",
+  "review_rationale": "Read the qualification that the indexing category, not a limiting object, is connected. Examined both limits and colimits of diagrams and retained their separate generic existing meanings."
 }
