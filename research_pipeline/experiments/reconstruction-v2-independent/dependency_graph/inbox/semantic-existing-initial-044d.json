@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-044d",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.f7206eb9332b9389.split-fibred-category",
+      "version_sha256": "3a68d29ad24210012afe70d21b7359719ffe4b0b8f4f8cb5688a0d3d4c224ab4",
+      "complete": true,
+      "review_rationale": "Reviewed split Grothendieck fibrations via a strict contravariant category-valued functor and the isomorphism of resulting fibred categories over the same base; distinguished groupoid special case.",
+      "references": [
+        {
+          "phrase": "fibred category p:E→C",
+          "state": "existing",
+          "target_meaning_id": "meaning.6775f8b2e6e1cceb.grothendieck-fibred-category"
+        },
+        {
+          "phrase": "strict category-valued presheaf on C",
+          "state": "existing",
+          "target_meaning_id": "meaning.f7206eb9332b9389.category-valued-presheaf"
+        },
+        {
+          "phrase": "contravariant functor",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.contravariant-functor"
+        },
+        {
+          "phrase": "category C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "Grothendieck construction of a category-valued functor",
+          "state": "unassigned",
+          "context": "Category of pairs (U,x in F(U)) and compatible morphisms, equipped with canonical projection to C."
+        },
+        {
+          "phrase": "isomorphic fibred categories over C",
+          "state": "unassigned",
+          "context": "Categorical isomorphism E≈∫F commuting with the specified functors to C, rather than equivalence ignoring projection."
+        },
+        {
+          "phrase": "split fibred category distinct from split fibred groupoid",
+          "state": "external",
+          "disposition": "The strict target is general Cat, not necessarily Groupoids; this formulation does not impose invertibility of every fibre arrow."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.f72779e263dd3e51.discrete-valuation-ring-value-group",
+      "version_sha256": "ada3dc74251fb0430f4b7bb09477e1ae34a2b67cab6e3636a6e5df1d1b0dd0e0",
+      "complete": true,
+      "review_rationale": "Read a discrete valuation ring in the Stacks convention through its valuation-ring structure and associated ordered value group isomorphic to Z, preserving ordered rather than abstract group isomorphism.",
+      "references": [
+        {
+          "phrase": "valuation ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.f72779e263dd3e51.valuation-ring-fraction-field"
+        },
+        {
+          "phrase": "integers Z as ordered additive group",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.integer-ring"
+        },
+        {
+          "phrase": "associated ordered value group of a valuation ring",
+          "state": "unassigned",
+          "context": "Group of values of nonzero elements of its fraction field modulo units, ordered using divisibility/the valuation order."
+        },
+        {
+          "phrase": "isomorphism of ordered groups with Z",
+          "state": "unassigned",
+          "context": "Group isomorphism preserving the total order, not merely a bijection of sets or unordered group isomorphism."
+        },
+        {
+          "phrase": "Stacks discrete valuation convention",
+          "state": "external",
+          "disposition": "The displayed definition uses the ordered value group criterion; it does not directly impose a Noetherian condition or a specified uniformizer."
+        }
+      ]
+    }
+  ]
+}
