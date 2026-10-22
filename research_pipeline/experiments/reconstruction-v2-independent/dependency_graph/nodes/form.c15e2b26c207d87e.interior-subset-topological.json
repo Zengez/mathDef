@@ -2,53 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.c15e2b26c207d87e.interior-subset-topological",
   "version_sha256": "35ae2cafe093ea3c3bf530235a6b9f009f30dbcebc0c492356d7a7f67b9e9802",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        27,
-        33
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.95a11247376e3ba34683"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.7441c29b042ea279e727"
     },
     {
-      "phrase": "topological space",
-      "span": [
-        41,
-        58
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.7911af2aacce592f3dc4"
+      "phrase": "subset A⊆X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.4174c25b349fb3ea26b8"
     },
     {
-      "phrase": "subset",
-      "span": [
-        145,
-        151
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.52c2371c4303ccbe38fd"
+      "phrase": "open subsets of X contained in A",
+      "state": "unassigned",
+      "context": "Topology: open subsets of the ambient topology lying within a specified subset",
+      "occurrence_id": "occ.e1395821e01e876fd01e"
+    },
+    {
+      "phrase": "union of all such open subsets",
+      "state": "external",
+      "disposition": "The union itself is open by the topology axioms, and equals the greatest open subset contained in A.",
+      "occurrence_id": "occ.2de837c790d2c2d80191"
     }
   ],
-  "snapshot_sha256": "332ae114e7e61593cd3f34e9c1b87407d04451973acf4d16cf177069a1c1ad18",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "8350307364b9ec015192d99694d4988aa115a8074711036df9fd14b918a7c86e",
+  "review_rationale": "Reviewed both union-of-open-subsets and greatest-open-subset formulations of the interior of A in an ambient space X; the interior depends on the topology of X."
 }

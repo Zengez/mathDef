@@ -2,39 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.c15e2b26c207d87e.nowhere-dense-subset",
   "version_sha256": "7495231184625304eb34b993b01b7100e8b7878730defc6f718800e89efe7cb0",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        2,
-        8
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.1829dc85c9991101acd4"
+      "phrase": "subset A of topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.8aefe96de40630f1fcef"
     },
     {
-      "phrase": "topological space",
-      "span": [
-        16,
-        33
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.560eb0d00796d8a15981"
+      "phrase": "closure of A in X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross107.topological-closure",
+      "occurrence_id": "occ.f238f8e50f0bf3796202"
+    },
+    {
+      "phrase": "interior of closure",
+      "state": "existing",
+      "target_meaning_id": "meaning.c15e2b26c207d87e.interior-subset-topological",
+      "occurrence_id": "occ.de74b4085ee82803d3ae"
+    },
+    {
+      "phrase": "interior of closure is empty",
+      "state": "external",
+      "disposition": "The empty-interior condition applies to the closure, not just A; no Baire-space assumption is present.",
+      "occurrence_id": "occ.24e91caf2c14dc36e5f5"
     }
   ],
-  "snapshot_sha256": "f04ba90b188c1dcd2617caaea64e6023cccd994517ed3cf9756868bf6309c76c",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "7be00da6b3ce4f267f67d29d86586fd1cda914b6cfe0def2d284dd13b45d37f1",
+  "review_rationale": "Read both nested operations implicit in the nowhere-dense criterion: closure taken first inside X, then interior of that closure in X. This is stronger than A merely having empty interior."
 }

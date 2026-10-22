@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.c236facceae1dd0f.geometrically-regular-noetherian-algebra",
   "version_sha256": "023b5e04405670214b0229ffe8a702f941edef107e422cdf08f41bcc7e979990",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "finite field extension",
-      "span": [
-        103,
-        125
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.4777518984e96a98.finite-field-extension"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.bcc4306d9277f07f4f8b"
+      "phrase": "Noetherian ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
+      "occurrence_id": "occ.f0a157a155efe4ce27be"
+    },
+    {
+      "phrase": "finite field extension K/k",
+      "state": "existing",
+      "target_meaning_id": "meaning.4777518984e96a98.finite-field-extension",
+      "occurrence_id": "occ.dd9cc5fcc7a754f1c4a9"
+    },
+    {
+      "phrase": "tensor product R⊗_k K",
+      "state": "existing",
+      "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+      "occurrence_id": "occ.fe087a030f494e438fa2"
+    },
+    {
+      "phrase": "regular Noetherian ring",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.regular-noetherian-ring",
+      "occurrence_id": "occ.6840d01d26bf80766048"
+    },
+    {
+      "phrase": "k-algebra R",
+      "state": "unassigned",
+      "context": "Commutative algebra: commutative algebra over field k via ring homomorphism",
+      "occurrence_id": "occ.f1e3af6773711c3db0f6"
+    },
+    {
+      "phrase": "scalar extension of k-algebra",
+      "state": "unassigned",
+      "context": "Commutative algebra: tensor-extended ring R⊗_k K with induced algebra multiplication",
+      "occurrence_id": "occ.56b95a72730da764d9ca"
+    },
+    {
+      "phrase": "equivalent all-field-extension test under specified hypotheses",
+      "state": "external",
+      "disposition": "The all-extensions equivalence is conditioned on the indicated theorem's hypotheses, which are not silently dropped.",
+      "occurrence_id": "occ.04841b52206cae864c37"
     }
   ],
-  "snapshot_sha256": "55685bd2d6ca4a17806e8c67fd7ca951e66019f64c47eead539d47ce50ba49a1",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "c3c3da933cabb0919441469ea7212fdb4097b347b3d0a8cf539228d3b4696e18",
+  "review_rationale": "Examined geometric regularity after every finite field extension K/k, with Noetherian base algebra and its tensor extension, separately from the stated all-extension equivalence under the Stacks hypotheses. Did not equate regularity with geometric reducedness."
 }

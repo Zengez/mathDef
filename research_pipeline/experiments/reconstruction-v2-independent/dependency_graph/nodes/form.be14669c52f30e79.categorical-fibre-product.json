@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.be14669c52f30e79.categorical-fibre-product",
   "version_sha256": "8420c5c83362c309d975f77d444e363364d1c63921b664eac406e33aa3a28e06",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category and arrows",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.70cdd25bc2cac194a962"
+    },
+    {
+      "phrase": "commuting cone to arrows X→S and Y→S",
+      "state": "unassigned",
+      "context": "Category theory: compatible pair of arrows P→X and P→Y with equal composites to S",
+      "occurrence_id": "occ.419455b585f1080d4e86"
+    },
+    {
+      "phrase": "unique mediating arrow T→P",
+      "state": "unassigned",
+      "context": "Category theory: universal factorization of any compatible pair of arrows to X and Y",
+      "occurrence_id": "occ.87563b74aaef12312b01"
+    },
+    {
+      "phrase": "fp=gq and fu=gv",
+      "state": "external",
+      "disposition": "These are equalities between composites in the category, not new conditions of invertibility.",
+      "occurrence_id": "occ.9bb53bc1e09ea580c168"
+    }
+  ],
+  "snapshot_sha256": "e46cf8fcec04c3c6ae58b1da377e363ab8a0a074a700d905addb62ab4fabae41",
+  "review_rationale": "Read the full pullback universal property for two arrows into S, including commutativity of fp and gq and uniqueness of a mediating arrow for every compatible pair into X and Y."
 }
