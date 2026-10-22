@@ -1177,6 +1177,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.51afa25f56e8fb9fb35f",
+      "context": "Topological set theory: sequence as a map ℕ→X, n↦x_n, with possible repetition of values; counting visits uses distinct natural-number indices.",
+      "surface_phrase": "indexed sequence (x_n)",
+      "observed_in_formulations": [
+        "form.wave2.cross110.sequence-accumulation"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.5201cd2732d7b14502ad",
       "context": "Category theory: zero morphism 0_{X,C} in an additive Hom-set of a preadditive category; here the composite p∘f equals this zero arrow.",
       "surface_phrase": "zero morphism and equation p composed with f equals zero",
@@ -1438,6 +1447,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.6bf4f56fd52a2eb8dc88",
+      "context": "Set theory: binary intersection B∩C of subsets of X, applied to the two topological closures B=cl_X(A), C=cl_X(X\\A); equality with the boundary is the definition of the current meaning.",
+      "surface_phrase": "intersection cl(A)∩cl(X\\A)",
+      "observed_in_formulations": [
+        "form.wave2.cross107.topological-boundary.2"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.6cb0441a08c98c8d720b",
       "context": "Arithmetic: subset ℚ_{≥0} of rational numbers consisting of zero together with rational q>0, serving as the codomain of rational modulus.",
       "surface_phrase": "nonnegative rational codomain",
@@ -1452,6 +1470,15 @@
       "surface_phrase": "no largest element",
       "observed_in_formulations": [
         "form.wave2.real50.dedekind-rational-lower-cut"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.6e6799b8a70160f31313",
+      "context": "General topology: closed subset F⊆X in topology τ, characterized by X\\F∈τ; no metric or Hausdorff assumptions.",
+      "surface_phrase": "topologically closed subset F",
+      "observed_in_formulations": [
+        "form.wave2.cross107.topological-closure.1"
       ],
       "actionable": false
     },
@@ -1915,6 +1942,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.9f4c16f7de397aa27498",
+      "context": "Set theory: infinite subset {n∈ℕ:x_n∈U} of natural-number indices, containing infinitely many distinct indices even if only one value is repeated in U; required for each open U containing x.",
+      "surface_phrase": "infinite set of visiting indices",
+      "observed_in_formulations": [
+        "form.wave2.cross110.sequence-accumulation"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.9f6f3ee9e141231a54d4",
       "context": "Number theory: integer divisibility m|(a-b), meaning there is an integer k such that a-b=km, with m nonzero here.",
       "surface_phrase": "integer divisibility of a-b by m",
@@ -2221,6 +2257,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.c521c381c9c487c1b47f",
+      "context": "Set theory: complement of A relative to its explicitly fixed ambient X, X\\A={x∈X:x∉A}; both closures in the boundary formula are taken in X.",
+      "surface_phrase": "complement X\\A",
+      "observed_in_formulations": [
+        "form.wave2.cross107.topological-boundary.2"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.c5a7afab433a3e7d30ed",
       "context": "Commutative algebra: associative R-algebra graded by nonnegative integer degrees, with multiplication taking degree i and degree j into degree i+j.",
       "surface_phrase": "graded associative R-algebra",
@@ -2316,6 +2361,15 @@
       "surface_phrase": "multiplicative identity 1_D",
       "observed_in_formulations": [
         "form.wave2.scalar101.division-ring"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.cc0d04136d006dfd7fb9",
+      "context": "Set theory: deletion A\\{x} of singleton {x} from a set A, whether or not x belongs to A; a specialized relative set complement.",
+      "surface_phrase": "punctured set A\\{x}",
+      "observed_in_formulations": [
+        "form.wave2.cross110.set-accumulation"
       ],
       "actionable": false
     },
@@ -2651,9 +2705,18 @@
         "form.wave2.quot119.normal-subgroup.2"
       ],
       "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.fbe845b2e6ab78c9890f",
+      "context": "Set theory: arbitrary indexed intersection ⋂_{F∈𝔽}F of subsets of X, here 𝔽 comprises the closed F containing A; identifying this intersection with cl_X(A) is the definition of closure.",
+      "surface_phrase": "intersection of all closed supersets of A",
+      "observed_in_formulations": [
+        "form.wave2.cross107.topological-closure.1"
+      ],
+      "actionable": false
     }
   ],
-  "unresolved_occurrence_count": 593,
+  "unresolved_occurrence_count": 583,
   "missing_research_permitted": false,
   "suggested_next_package": {
     "breadth_topic_candidates": [],
@@ -2668,7 +2731,7 @@
     "scan_complete": 659,
     "unscanned": 0,
     "scan_incomplete": 0,
-    "unassigned_occurrences": 593,
+    "unassigned_occurrences": 583,
     "consolidation_gate_valid": false
   },
   "reconciliation_findings": {
