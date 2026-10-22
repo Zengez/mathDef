@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.f7206eb9332b9389.split-fibred-category",
   "version_sha256": "3a68d29ad24210012afe70d21b7359719ffe4b0b8f4f8cb5688a0d3d4c224ab4",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "fibred category p:E→C",
+      "state": "existing",
+      "target_meaning_id": "meaning.6775f8b2e6e1cceb.grothendieck-fibred-category",
+      "occurrence_id": "occ.c24f30226536d85fd80f"
+    },
+    {
+      "phrase": "strict category-valued presheaf on C",
+      "state": "existing",
+      "target_meaning_id": "meaning.f7206eb9332b9389.category-valued-presheaf",
+      "occurrence_id": "occ.d7ae946172a2de1768ba"
+    },
+    {
+      "phrase": "contravariant functor",
+      "state": "existing",
+      "target_meaning_id": "meaning.fef4e69e96c25bfa.contravariant-functor",
+      "occurrence_id": "occ.bb3118e34320ab7108e2"
+    },
+    {
+      "phrase": "category C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.b93debd9cb95d433db0e"
+    },
+    {
+      "phrase": "Grothendieck construction of a category-valued functor",
+      "state": "unassigned",
+      "context": "Category of pairs (U,x in F(U)) and compatible morphisms, equipped with canonical projection to C.",
+      "occurrence_id": "occ.7cf1b6ed694a2e37c342"
+    },
+    {
+      "phrase": "isomorphic fibred categories over C",
+      "state": "unassigned",
+      "context": "Categorical isomorphism E≈∫F commuting with the specified functors to C, rather than equivalence ignoring projection.",
+      "occurrence_id": "occ.4f346d9da9812ae8f60f"
+    },
+    {
+      "phrase": "split fibred category distinct from split fibred groupoid",
+      "state": "external",
+      "disposition": "The strict target is general Cat, not necessarily Groupoids; this formulation does not impose invertibility of every fibre arrow.",
+      "occurrence_id": "occ.f46ec248e73036030a9c"
+    }
+  ],
+  "snapshot_sha256": "18124b55c1d60df5614c603798266ffb258e3d3bcf2ced4b40b10d733d11315d",
+  "review_rationale": "Reviewed split Grothendieck fibrations via a strict contravariant category-valued functor and the isomorphism of resulting fibred categories over the same base; distinguished groupoid special case."
 }

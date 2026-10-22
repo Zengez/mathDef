@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.f72779e263dd3e51.valuation-ring-fraction-field",
   "version_sha256": "e01ad808e47d1fe8965631d98b00c3cd65a501155985197d8d0f7a9dc7067ff0",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "integral domain V",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.integral-domain",
+      "occurrence_id": "occ.584dd0904744ad4f40c9"
+    },
+    {
+      "phrase": "fraction field K of V",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain",
+      "occurrence_id": "occ.26bf330e83199266f280"
+    },
+    {
+      "phrase": "multiplicative inverses in field K",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.1f51d7bdfabb8090f2dc"
+    },
+    {
+      "phrase": "nonzero fraction x in K",
+      "state": "unassigned",
+      "context": "Element x≠0 of the fraction field of V, for which both x and x^{-1} are well-defined.",
+      "occurrence_id": "occ.e585397de47fcdcd3344"
+    },
+    {
+      "phrase": "x or x inverse belongs to V",
+      "state": "unassigned",
+      "context": "For each nonzero fraction either x lies in V or the reciprocal lies in V, inclusive or; both may lie in V for units.",
+      "occurrence_id": "occ.f07b3998e15277fe28ec"
+    },
+    {
+      "phrase": "valuation-ring reciprocity criterion",
+      "state": "external",
+      "disposition": "This is an equivalent characterization independent of a chosen explicit valuation map, not a discrete value-group hypothesis.",
+      "occurrence_id": "occ.aa25567d2ee10297a4e6"
+    }
+  ],
+  "snapshot_sha256": "d0bead36682034f1b3e3f2985eb2c081407033a1de0da6c137ed70fe9d74cd5f",
+  "review_rationale": "Read valuation ring as an integral domain with its own fraction field satisfying reciprocal membership for every nonzero fraction; distinguished fractions in the field from arbitrary ring elements."
 }
