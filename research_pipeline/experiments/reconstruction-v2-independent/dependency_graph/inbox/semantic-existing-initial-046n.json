@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046n",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.foundation.commutative-prime-ideal",
+      "version_sha256": "7737ce01f18095e9ba19395364e40dfebf56b7b73e39034c459b1b7e611bcafe",
+      "complete": true,
+      "review_rationale": "Read prime ideal of commutative unital ring as proper ideal satisfying ab in P implies a or b in P, distinguishing prime property from maximality.",
+      "references": [
+        {
+          "phrase": "two-sided ideal of ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "proper subset P⊊R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-proper"
+        },
+        {
+          "phrase": "commutative unital ring",
+          "state": "unassigned",
+          "context": "Ring with commutative multiplication and specified identity."
+        },
+        {
+          "phrase": "primality of ideal",
+          "state": "unassigned",
+          "context": "For all ring elements a,b, ab∈P entails a∈P or b∈P."
+        },
+        {
+          "phrase": "prime ideal need not be maximal",
+          "state": "external",
+          "disposition": "Maximal ideals are prime for commutative unital rings, but not all prime ideals are maximal."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.field-commutative-unital",
+      "version_sha256": "5b9d8637905be04e7973631831aebe6ab38a4c601e30928316ceb9d3b6f58c95",
+      "complete": true,
+      "review_rationale": "Read field as nonzero commutative unital ring where every nonzero element has multiplicative inverse, tracking 0≠1 and unit condition.",
+      "references": [
+        {
+          "phrase": "associative ring axioms",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "unit of a unital ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.unit-of-ring"
+        },
+        {
+          "phrase": "commutative ring with identity",
+          "state": "unassigned",
+          "context": "Multiplication commutative, with specified two-sided multiplicative identity."
+        },
+        {
+          "phrase": "nonzero condition 0≠1",
+          "state": "unassigned",
+          "context": "Additive zero differs from multiplicative unit, excluding zero ring."
+        },
+        {
+          "phrase": "inverse for every nonzero element",
+          "state": "unassigned",
+          "context": "For each nonzero a exists b with ab=ba=1."
+        },
+        {
+          "phrase": "field requires all nonzero elements invertible",
+          "state": "external",
+          "disposition": "Integral domains need not be fields; no alternative division-ring noncommutative context is assumed."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.fixed-target-morphism-family",
+      "version_sha256": "5065b3ee1f235d3ecdc74dd09aac90f81e3f7c7a30a15804898a7b5ecac5dc73",
+      "complete": true,
+      "review_rationale": "Read indexed family of arrows to common category object U, retaining potentially empty index set, distinct source objects and duplicate arrow occurrences.",
+      "references": [
+        {
+          "phrase": "small category C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "set I of indices",
+          "state": "unassigned",
+          "context": "Indexing set may be empty and need not inject into arrow set."
+        },
+        {
+          "phrase": "objects U_i and arrows f_i:U_i→U",
+          "state": "unassigned",
+          "context": "For each index i, independently specified domain object U_i and morphism to fixed target U."
+        },
+        {
+          "phrase": "repetition allowed across indices",
+          "state": "external",
+          "disposition": "Equal underlying arrows with different index labels count as separate occurrences."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.grothendieck-site-pretopology",
+      "version_sha256": "d38b37f00d494c5c19be88e7b899f71ba26e189e0f77c97ccfdeabdff8bed9a3",
+      "complete": true,
+      "review_rationale": "Read Grothendieck site via small category with indexed covering families satisfying isomorphism, composition/refinement and base-change axioms.",
+      "references": [
+        {
+          "phrase": "small category C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "indexed family with fixed target",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.fixed-target-morphism-family"
+        },
+        {
+          "phrase": "fiber product in category",
+          "state": "existing",
+          "target_meaning_id": "meaning.be14669c52f30e79.categorical-fibre-product"
+        },
+        {
+          "phrase": "covering families Cov(C)",
+          "state": "unassigned",
+          "context": "Specified class of indexed families of arrows with common target deemed covering."
+        },
+        {
+          "phrase": "isomorphism singleton covering axiom",
+          "state": "unassigned",
+          "context": "Each one-arrow family consisting of categorical isomorphism must be a covering."
+        },
+        {
+          "phrase": "composition/refinement of coverings",
+          "state": "unassigned",
+          "context": "Covering families remain covering under composites with covering families of each member's domain."
+        },
+        {
+          "phrase": "base-change covering stability",
+          "state": "unassigned",
+          "context": "Pullback of covering family along any arrow remains covering when necessary fiber products exist."
+        },
+        {
+          "phrase": "site uses covering-family convention",
+          "state": "external",
+          "disposition": "Equivalent Grothendieck topology via covering sieves is a distinct presentation."
+        }
+      ]
+    }
+  ]
+}
