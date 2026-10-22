@@ -2,39 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.scalar101.normed-division-ring",
   "version_sha256": "4da8a6521d5d5cbef5877849a264fc08435ee34d85e2641d1fba91310f60a527",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "division ring",
-      "span": [
-        9,
-        22
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.scalar101.division-ring"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.a49cb9b2f6d0e06898a3"
+      "phrase": "associative division ring D",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.scalar101.division-ring",
+      "occurrence_id": "occ.723c16305988b78f0bec"
     },
     {
-      "phrase": "division ring",
-      "span": [
-        77,
-        90
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.scalar101.division-ring"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.b085032b6c6c344c94da"
+      "phrase": "multiplicative norm |.|_D on D",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.scalar101.division-ring-multiplicative-norm",
+      "occurrence_id": "occ.fde9030dea401b64b81c"
+    },
+    {
+      "phrase": "ordered pair (D,norm)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski",
+      "occurrence_id": "occ.ed64a44e2b92d1cacaa1"
+    },
+    {
+      "phrase": "scalar norm not a vector norm",
+      "state": "external",
+      "disposition": "The specified multiplicative norm belongs to underlying division ring; no vector space is required.",
+      "occurrence_id": "occ.b2e633585d83e8b9d333"
     }
   ],
-  "snapshot_sha256": "c6f8b2aa1769aec94e4dd92fc8a623576571c5ae1d0178f3030e3498140188a5",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "b79db8833ce563a3f0f6859d161803a41ed4750fd67c59f26227849fc631e0e3",
+  "review_rationale": "Reviewed normed division ring as ordered pair of associative division ring D and specified exact-multiplicative real-valued norm satisfying positive definiteness and triangle inequality."
 }

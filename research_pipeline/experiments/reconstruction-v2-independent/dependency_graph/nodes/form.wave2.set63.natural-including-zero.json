@@ -2,39 +2,27 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.set63.natural-including-zero",
   "version_sha256": "d37fd9b24913d3eb6e54dc3ce3eabcf56fdb1ed7b209547ec69a9cf1195662f8",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "natural numbers",
-      "span": [
-        59,
-        74
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.set63.natural-positive-convention"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.629da3dfcbe38ae5deb2"
+      "phrase": "natural counting progression 0,1,2,...",
+      "state": "unassigned",
+      "context": "Discrete progression of successive nonnegative whole-number values starting at zero.",
+      "occurrence_id": "occ.3d41845c7cc7ce7eddbb"
     },
     {
-      "phrase": "subset",
-      "span": [
-        99,
-        105
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.ce94ac6383e757c78358"
+      "phrase": "positive subset N_{>0}",
+      "state": "unassigned",
+      "context": "Natural numbers strictly greater than zero, namely N excluding zero.",
+      "occurrence_id": "occ.49886228d8caaaac675e"
+    },
+    {
+      "phrase": "zero-inclusive convention",
+      "state": "external",
+      "disposition": "This source's natural-number collection includes zero, unlike an alternative positive-start counting convention.",
+      "occurrence_id": "occ.ee86071b1ab79c72e77c"
     }
   ],
-  "snapshot_sha256": "1efa89c9db375942e405d4aa8864712b7964b2a86f800c4953d4bfbc06e3a58c",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "8a63619b2755d5a8120b4cf9e5a799ecbc78d014b1b7d09b15a64fa5a91d84a7",
+  "review_rationale": "Reviewed natural-number convention N={0,1,2,...} with explicitly distinguished positive subset consisting exactly of nonzero natural numbers."
 }
