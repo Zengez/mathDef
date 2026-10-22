@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-039b",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.b9defeff446a0526.ideal-of-definition-local-ring",
+      "version_sha256": "3fb9913ad250771266c5b4cc520056fed2ce4032b1659f4afab34ee40a408a50",
+      "complete": true,
+      "review_rationale": "Read the equivalence radical(I)=m and m-primary for an ideal in a Noetherian local ring. Preserved the radical and primary-ideal notions as contextual unassigned references and did not confuse an ideal of definition with an arbitrary m-contained ideal.",
+      "references": [
+        {
+          "phrase": "Noetherian local ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "local ring with maximal ideal m",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "ideal I of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "radical of an ideal I",
+          "state": "unassigned",
+          "context": "Commutative algebra: ideal radical consisting of elements with a positive power in I"
+        },
+        {
+          "phrase": "m-primary ideal",
+          "state": "unassigned",
+          "context": "Commutative algebra: primary ideal with radical equal to maximal ideal m"
+        },
+        {
+          "phrase": "equivalently",
+          "state": "external",
+          "disposition": "The two criteria refer to the same ideal I, without claiming every proper ideal has radical m."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.bcda9860a078827b.quasicompact-morphism-schemes",
+      "version_sha256": "b6e9c28ba60089ecf73e0e4400c307664b3a674d8ffc26e27556acbcead12941",
+      "complete": true,
+      "review_rationale": "Reviewed inverse images of all quasi-compact open subsets of S and the equivalent test on affine open subsets. The quasi-compactness is of the preimage, not necessarily of X or of S globally.",
+      "references": [
+        {
+          "phrase": "morphism of schemes f:X→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism"
+        },
+        {
+          "phrase": "quasi-compact space",
+          "state": "existing",
+          "target_meaning_id": "meaning.27eb121021fd989d.quasicompact-space"
+        },
+        {
+          "phrase": "affine open subscheme",
+          "state": "existing",
+          "target_meaning_id": "meaning.4c7d59ba7058613b.affine-scheme"
+        },
+        {
+          "phrase": "inverse image f^{-1}(U) for an open U",
+          "state": "unassigned",
+          "context": "Topology: inverse image of open subset under continuous underlying scheme map"
+        },
+        {
+          "phrase": "suffices to test affine opens of S",
+          "state": "external",
+          "disposition": "Affine opens give a local base for this quasi-compactness condition; do not assume every open is affine."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.bd90654fb341045a.equidimensional-topological-space",
+      "version_sha256": "ea6d08417cc906979bafdd57e8221b8125ad3e4754033051d1e9cd24c22f38dc",
+      "complete": true,
+      "review_rationale": "Read the equality of Krull dimensions of all irreducible components, distinguishing dimensions of irreducible components from equality of local dimensions at all points.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "irreducible components",
+          "state": "existing",
+          "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-component"
+        },
+        {
+          "phrase": "Krull dimension of a topological space",
+          "state": "existing",
+          "target_meaning_id": "meaning.bd90654fb341045a.krull-dimension-space"
+        },
+        {
+          "phrase": "all components have equal dimension",
+          "state": "external",
+          "disposition": "The quantifier ranges over irreducible components, not all closed subsets or arbitrary neighbourhoods."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.bd90654fb341045a.krull-dimension-space",
+      "version_sha256": "975b64fa93c0e29173cea47977232983976ca7cebb9817bcbd9491cf088b4518",
+      "complete": true,
+      "review_rationale": "Examined supremum over lengths of strict finite chains of irreducible closed subsets and the special empty-space dimension convention. The chain entries need not be irreducible components.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "irreducible closed subset",
+          "state": "existing",
+          "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-topological-space"
+        },
+        {
+          "phrase": "strict finite chain of irreducible closed subsets",
+          "state": "unassigned",
+          "context": "Order theory and topology: inclusion chain of distinct irreducible closed subspaces with integer length"
+        },
+        {
+          "phrase": "supremum and dimension −∞ for empty space",
+          "state": "external",
+          "disposition": "The dimension is a supremum of finite chain lengths with a separate convention for the empty space, not a maximum guaranteed to exist."
+        }
+      ]
+    }
+  ]
+}
