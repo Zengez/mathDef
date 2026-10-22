@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-043k",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.ec5e3a0d13f85f3a.strict-two-category",
+      "version_sha256": "4e2deb9844a42cc5b92d5475b51333b80013c813e887cd0933c21ef9756b523a",
+      "complete": true,
+      "review_rationale": "Read objects, hom-categories, 1-morphisms, 2-morphisms, strict composition functors, identity laws and interchange; this is strictly associative, unlike an arbitrary weak bicategory.",
+      "references": [
+        {
+          "phrase": "ordinary category structure on hom-categories",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "functorial composition",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "1-morphisms and 2-morphisms",
+          "state": "unassigned",
+          "context": "Objects and arrows respectively of each hom-category C(X,Y), with 1-morphisms between objects X,Y."
+        },
+        {
+          "phrase": "horizontal composition as functor",
+          "state": "unassigned",
+          "context": "Composition C(Y,Z)×C(X,Y)→C(X,Z) preserving the internal morphism structure of the hom-categories."
+        },
+        {
+          "phrase": "interchange law",
+          "state": "unassigned",
+          "context": "Compatibility between horizontal and vertical compositions of 2-morphisms."
+        },
+        {
+          "phrase": "strict associativity and unitality",
+          "state": "external",
+          "disposition": "Composition and identity constraints are equalities, not merely specified coherent natural isomorphisms."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.ed035ec300dc4ceb.irreducible-component-spectrum",
+      "version_sha256": "b185987ef8a09d6da14a605d3d746ef8dbfcae410d12b758b825874c655473fe",
+      "complete": true,
+      "review_rationale": "Read irreducible components of the affine spectrum as closed subsets V(p) for minimal prime ideals of the ring, preserving the ordering on primes and the Zariski topology.",
+      "references": [
+        {
+          "phrase": "commutative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-commutative-unital"
+        },
+        {
+          "phrase": "prime spectrum Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "prime ideal p",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "irreducible component of topological space",
+          "state": "existing",
+          "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-component"
+        },
+        {
+          "phrase": "minimal prime under inclusion",
+          "state": "unassigned",
+          "context": "Prime ideal p minimal in the partially ordered collection of prime ideals of R, not necessarily a minimal nonzero ideal."
+        },
+        {
+          "phrase": "closed set V(p) in Spec(R)",
+          "state": "unassigned",
+          "context": "Set of prime ideals q with p⊆q, endowed with subspace topology of the Zariski spectrum."
+        },
+        {
+          "phrase": "exactly the components V(p) for minimal primes",
+          "state": "external",
+          "disposition": "An algebraic characterization of maximal irreducible closed subsets; it does not claim all prime ideals give distinct components."
+        }
+      ]
+    }
+  ]
+}
