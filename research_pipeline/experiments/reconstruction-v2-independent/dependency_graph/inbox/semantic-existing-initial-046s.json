@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046s",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.foundation.ring-map-general",
+      "version_sha256": "e7c6931515cd8d70a4f2778a7b33b0103c77f9bdcf5ddb3283aa8a603e1e3c01",
+      "complete": true,
+      "review_rationale": "Reviewed full additive and multiplicative preservation identities of a map between associative, possibly nonunital rings; identified the function and ring prerequisites without imposing unit preservation.",
+      "references": [
+        {
+          "phrase": "associative rings R and S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "mapping phi:R to S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "preserves additive operation phi(a+b)=phi(a)+phi(b)",
+          "state": "unassigned",
+          "context": "Binary ring addition and compatibility of the mapping with addition for all a,b in its domain."
+        },
+        {
+          "phrase": "preserves multiplication phi(ab)=phi(a)phi(b)",
+          "state": "unassigned",
+          "context": "Compatibility of the same mapping with associative ring multiplication for all a,b in its domain."
+        },
+        {
+          "phrase": "optional multiplicative identities 1_R,1_S",
+          "state": "unassigned",
+          "context": "Ring identities may exist, but preservation is not part of this nonunital homomorphism definition."
+        },
+        {
+          "phrase": "unitality not required",
+          "state": "external",
+          "disposition": "The absence of phi(1_R)=1_S is a scope distinction, not an additional condition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.ring-map-unital",
+      "version_sha256": "2e49139e4b5546a62f63d9f1bfec1d1a380e7388cb71092faf00893f4c2c015d",
+      "complete": true,
+      "review_rationale": "Reviewed full unital ring-homomorphism formulation, separating the additive and multiplicative preservation inherited from the nonunital meaning from the additional preservation of specified units.",
+      "references": [
+        {
+          "phrase": "additive and multiplicative ring homomorphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-general"
+        },
+        {
+          "phrase": "unital associative rings R and S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "specified multiplicative identities 1_R and 1_S",
+          "state": "unassigned",
+          "context": "Two-sided multiplicative identity elements in the source and target rings."
+        },
+        {
+          "phrase": "preservation of identity phi(1_R)=1_S",
+          "state": "unassigned",
+          "context": "Extra condition distinguishing a unital ring homomorphism from the unrestricted ring-homomorphism meaning."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation.sigma-algebra",
+      "version_sha256": "0df8540e25987eba8bcc9924def4ff4cdb1701dce69e8067e9777b979000f34b",
+      "complete": true,
+      "review_rationale": "Reviewed complete sigma-algebra axioms on an underlying set, recording power set, relative complement and countable union separately and distinguishing the positive-integer indexing convention.",
+      "references": [
+        {
+          "phrase": "family Sigma subset of P(X)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "positive integer indexing n>=1",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-positive-convention"
+        },
+        {
+          "phrase": "power set P(X)",
+          "state": "unassigned",
+          "context": "Set of all subsets of an underlying set X, serving as the ambient collection for Sigma."
+        },
+        {
+          "phrase": "relative complement X minus A",
+          "state": "unassigned",
+          "context": "Set complement of a member A of Sigma relative to X."
+        },
+        {
+          "phrase": "countable union of members A_n",
+          "state": "unassigned",
+          "context": "Union of a sequence of members of Sigma indexed by positive integers, with closure of Sigma under that union."
+        },
+        {
+          "phrase": "X is contained in Sigma",
+          "state": "external",
+          "disposition": "The requirement X belongs to the family Sigma is an axiom of the definition, not a claim that Sigma contains every subset."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.broad67.sigma-difference-disjoint-countable",
+      "version_sha256": "9d354120659cf8bbb1f1c62748d3cfabbb45994c09711aa2a16473fa76236457",
+      "complete": true,
+      "review_rationale": "Reviewed alternative sigma-algebra axiomatization through set differences and countable pairwise-disjoint unions, without treating it as an independently new meaning or assuming arbitrary countable unions as a primitive.",
+      "references": [
+        {
+          "phrase": "family Sigma subset of P(X)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "sigma-algebra alternative meaning",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.sigma-algebra"
+        },
+        {
+          "phrase": "power set P(X)",
+          "state": "unassigned",
+          "context": "Collection of all subsets of X in which the sigma-algebra Sigma is a family."
+        },
+        {
+          "phrase": "difference A minus B",
+          "state": "unassigned",
+          "context": "Relative set difference for two members A,B of Sigma."
+        },
+        {
+          "phrase": "pairwise disjoint members",
+          "state": "unassigned",
+          "context": "A sequence of sets whose members have empty intersection whenever their indices differ."
+        },
+        {
+          "phrase": "countable union of pairwise disjoint members",
+          "state": "unassigned",
+          "context": "Closure under unions of all members of any countably indexed pairwise disjoint sequence in Sigma."
+        },
+        {
+          "phrase": "X member of Sigma",
+          "state": "external",
+          "disposition": "The ambient-set membership condition is an axiom; the equivalent formulation need not list arbitrary countable-union closure explicitly."
+        }
+      ]
+    }
+  ]
+}
