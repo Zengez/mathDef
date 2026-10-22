@@ -2,37 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.b9153ed268862243.valuative-uniqueness-separatedness",
   "version_sha256": "2ffeac7d3efc45588ff501bc75b472c4a0e5359b4470bc562b5d6e11bc89d51a",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "scheme",
-      "span": [
-        2,
-        8
-      ],
+      "phrase": "scheme morphism f:X→S",
       "state": "existing",
-      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.acf6b50750f4d0b0b9c0"
+      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "occurrence_id": "occ.ee88f8bae0c669c4a929"
     },
     {
-      "phrase": "valuation ring",
-      "span": [
-        95,
-        109
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.f72779e263dd3e51.valuation-ring-fraction-field"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.8a466194f4c8a40e6b09"
+      "phrase": "valuation ring V",
+      "state": "existing",
+      "target_meaning_id": "meaning.f72779e263dd3e51.valuation-ring-fraction-field",
+      "occurrence_id": "occ.c2b313cc1edf97e8119e"
+    },
+    {
+      "phrase": "fraction field K",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain",
+      "occurrence_id": "occ.a28873eb4b75c920a5f7"
+    },
+    {
+      "phrase": "Spec(V) and Spec(K)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.b99ce2b03ace24454c71"
+    },
+    {
+      "phrase": "commutative lifting diagram for schemes",
+      "state": "unassigned",
+      "context": "Algebraic geometry: compatibility of maps Spec(K)→X, Spec(V)→S and Spec(V)→X over a base",
+      "occurrence_id": "occ.99c107787d208bbeacb7"
+    },
+    {
+      "phrase": "at most one completing map",
+      "state": "external",
+      "disposition": "Only uniqueness is asserted; the condition does not require existence of a lift.",
+      "occurrence_id": "occ.bd75a34797ab52593401"
     }
   ],
-  "snapshot_sha256": "5e2488521ea8d0e0eb5618c85f9e8058b2db705d3cb06f0b04012d9e244e9742",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "4d5d8c8e1eb17a02938f2b7768252cdb362355c2f94cdc427715cdb2ddaf6e3d",
+  "review_rationale": "Inspected the valuative diagram and uniqueness-only lifting requirement. For every valuation ring and maps from its generic spectrum and full spectrum, at most one map to X must complete the triangles; existence is not assumed."
 }
