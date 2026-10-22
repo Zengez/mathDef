@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.d0a078e59e1495da.algebraic-element-extension",
   "version_sha256": "19aab5939abe4e38edc06d4fbd1e0a6ae8a4739f94b2737d37c174852f941cde",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "field extension E/F",
+      "state": "existing",
+      "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "occurrence_id": "occ.2294ef6b5c460cc90a07"
+    },
+    {
+      "phrase": "base field F",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.cd297a2ec6cec52d8f2a"
+    },
+    {
+      "phrase": "univariate polynomial f∈F[x]",
+      "state": "unassigned",
+      "context": "Polynomial ring in one indeterminate over the base field F, including the zero and nonzero polynomials",
+      "occurrence_id": "occ.0f27413d348442f77399"
+    },
+    {
+      "phrase": "polynomial evaluation f(α) at element of E",
+      "state": "unassigned",
+      "context": "Substitution of α∈E into polynomial with F coefficients using field inclusion F⊆E",
+      "occurrence_id": "occ.8f2de67c60d511ffa250"
+    },
+    {
+      "phrase": "nonzero polynomial satisfying f(α)=0",
+      "state": "external",
+      "disposition": "The existential polynomial relation is the defining criterion for algebraicity, not a requirement that α itself be nonzero.",
+      "occurrence_id": "occ.267bb10402f634a80bbe"
+    }
+  ],
+  "snapshot_sha256": "10c4d210490ccbda2597b872a5b761d56c27cbaeb54c6bb8fb83d674db830fe1",
+  "review_rationale": "Reviewed the field extension E/F, nonzero polynomial f with F-coefficients and its evaluation at α in E, preserving the distinction between an algebraic element and an entire algebraic extension."
 }

@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.ce0580b5d7dc0b7c.coequalizer-category",
   "version_sha256": "0fd8829cbee80df4eea096b5707f1cfa479dd9de64d743fdd990b88b9a150647",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category C with objects and arrows",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.2fa896b1445707eaa909"
+    },
+    {
+      "phrase": "parallel arrows f,g:X⇉Y",
+      "state": "unassigned",
+      "context": "Two morphisms with the same domain X and codomain Y, available for composition with q:Y→Q",
+      "occurrence_id": "occ.0d989c00249842cf89dd"
+    },
+    {
+      "phrase": "equalizing morphism q with qf=qg",
+      "state": "unassigned",
+      "context": "Arrow q:Y→Q whose precomposites with the given parallel arrows are equal",
+      "occurrence_id": "occ.17a38739b67b01795c6a"
+    },
+    {
+      "phrase": "unique universal factorization h=u q",
+      "state": "unassigned",
+      "context": "For each h:Y→Z satisfying hf=hg there is exactly one u:Q→Z with h=u∘q",
+      "occurrence_id": "occ.c68a9bd5632ef1070530"
+    },
+    {
+      "phrase": "equality of arrow composites",
+      "state": "external",
+      "disposition": "Categorical equality and composition are already part of the category axioms, not an additional algebraic equality theory.",
+      "occurrence_id": "occ.af0997d1ecb7a0f54bfe"
+    }
+  ],
+  "snapshot_sha256": "fd8e8ed7326ebdebe94cb4ee94120b6356680469f8581c98bb2309f7ef7f8453",
+  "review_rationale": "Read the coequalizer universal property of a parallel pair of arrows in a category, its equality qf=qg, and unique factoring arrow from any other equalizing morphism; did not replace it with a set-theoretic quotient without category assumptions."
 }
