@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.f0d993a60533fc99.groupoid-valued-presheaf",
   "version_sha256": "2a6113be379223c84e94e15dccd033fecaf78f4c7307a05ae127123cd567acb2",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.c4bee28d0572adcd6119"
+    },
+    {
+      "phrase": "opposite category C^op",
+      "state": "existing",
+      "target_meaning_id": "meaning.fef4e69e96c25bfa.opposite-category",
+      "occurrence_id": "occ.ed90528806b4f92b2d2d"
+    },
+    {
+      "phrase": "covariant functor F:C^op→Groupoids",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "occurrence_id": "occ.4670333d99930feaa78a"
+    },
+    {
+      "phrase": "groupoid F(U)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-groupoid",
+      "occurrence_id": "occ.3ddbfd4b763c4aeb29e6"
+    },
+    {
+      "phrase": "category Groupoids of groupoids and functors",
+      "state": "unassigned",
+      "context": "Target 1-category whose objects are groupoids and morphisms ordinary functors.",
+      "occurrence_id": "occ.70ff5e0852b49779ff9f"
+    },
+    {
+      "phrase": "pullback functor f*:F(U)→F(V)",
+      "state": "unassigned",
+      "context": "Functor induced contravariantly from f:V→U in base C.",
+      "occurrence_id": "occ.f7dcc6784cca16b9da69"
+    },
+    {
+      "phrase": "strict functoriality (f∘g)*=g*∘f*",
+      "state": "external",
+      "disposition": "The equalities hold on the nose, not merely up to pseudofunctorial natural isomorphism.",
+      "occurrence_id": "occ.d3d36e010454515a4017"
+    }
+  ],
+  "snapshot_sha256": "2b15a70a401161a7672bc707f54dd0cc65c8544a8e8fe4246d18ffdf6cc77043",
+  "review_rationale": "Read a strict groupoid-valued presheaf as an ordinary functor from C-opposite to the category of groupoids, with contravariant pullback functors satisfying literal composition and identity equalities."
 }

@@ -2,35 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.f0d993a60533fc99.split-fibred-groupoid",
   "version_sha256": "d3208daa555909638d5c2495f615b23a905d5e807fda6dcfdb2fe9b3772268ca",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "category fibred in groupoids",
-      "span": [
-        2,
-        30
-      ],
+      "phrase": "category fibred in groupoids E→C",
       "state": "existing",
       "target_meaning_id": "meaning.5e4b8f6efeda6522.category-fibred-in-groupoids",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.8107d589d97c63106bce"
+      "occurrence_id": "occ.db07eb34ad5a3300c9fb"
     },
     {
-      "phrase": "contravariant functor",
-      "span": [
-        132,
-        153
-      ],
+      "phrase": "strict groupoid-valued presheaf over C",
       "state": "existing",
-      "target_meaning_id": "meaning.fef4e69e96c25bfa.contravariant-functor",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.523609384503cff333b5"
+      "target_meaning_id": "meaning.f0d993a60533fc99.groupoid-valued-presheaf",
+      "occurrence_id": "occ.c35f84036f2a1fd96fdf"
+    },
+    {
+      "phrase": "opposite category for contravariance",
+      "state": "existing",
+      "target_meaning_id": "meaning.fef4e69e96c25bfa.opposite-category",
+      "occurrence_id": "occ.0ce8ab0bd150c5a7867e"
+    },
+    {
+      "phrase": "Grothendieck construction of a presheaf of groupoids",
+      "state": "unassigned",
+      "context": "Category of pairs (U,x∈F(U)) with base arrows and corresponding compatible pullback arrows, projecting to C.",
+      "occurrence_id": "occ.8e781f0a6a71ae967f68"
+    },
+    {
+      "phrase": "isomorphism over base category C",
+      "state": "unassigned",
+      "context": "Isomorphism of categories commuting with both projection functors to C, not merely arbitrary abstract equivalence.",
+      "occurrence_id": "occ.d37d2dfe4bd64586f069"
+    },
+    {
+      "phrase": "strict functor rather than arbitrary pseudofunctor",
+      "state": "external",
+      "disposition": "This splitness criterion requires a strict chosen pullback structure as expressed in its stored formulation.",
+      "occurrence_id": "occ.1b6bc57639a377e452bc"
     }
   ],
-  "snapshot_sha256": "3914529e4180731e7dedb0648f8e75fcb16171c472bb7b3b626ea0705197862b",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "8698acabb5bc45478fda36886f8b19c78000ffbd7a37124c6d9cada3266a9b16",
+  "review_rationale": "Read a split category fibred in groupoids by isomorphism over its base category to a Grothendieck construction of a strict contravariant groupoid-valued functor, preserving the strict-versus-pseudo distinction."
 }
