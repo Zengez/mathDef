@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.f7206eb9332b9389.category-valued-presheaf",
   "version_sha256": "b5dd29118a95b448e885b75e0e94c44062536d54c5287966c78d69655ac8b948",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "contravariant functor",
-      "span": [
-        93,
-        114
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.fef4e69e96c25bfa.contravariant-functor"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.a72a9f6a1b65736a7421"
+      "phrase": "category C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.725de7b1b51bc403701a"
+    },
+    {
+      "phrase": "opposite category C^op",
+      "state": "existing",
+      "target_meaning_id": "meaning.fef4e69e96c25bfa.opposite-category",
+      "occurrence_id": "occ.ff79b4fede77c9255762"
+    },
+    {
+      "phrase": "functor F:C^op→Cat",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "occurrence_id": "occ.58f1ff6370b6e18da474"
+    },
+    {
+      "phrase": "contravariant functor on C",
+      "state": "existing",
+      "target_meaning_id": "meaning.fef4e69e96c25bfa.contravariant-functor",
+      "occurrence_id": "occ.aa3c6b29b5195b066df8"
+    },
+    {
+      "phrase": "Cat as category of small categories",
+      "state": "unassigned",
+      "context": "Category with small categories as objects and ordinary functors as arrows.",
+      "occurrence_id": "occ.dbef56549597b5ee0303"
+    },
+    {
+      "phrase": "pullback functor f*:F(U)→F(V)",
+      "state": "unassigned",
+      "context": "Contravariant restriction of fibre categories assigned to f:V→U.",
+      "occurrence_id": "occ.55829ffc2ec82034ba81"
+    },
+    {
+      "phrase": "strict identity and composition of pullbacks",
+      "state": "external",
+      "disposition": "Literal (fg)*=g*f* and (id)*=id, rather than specified isomorphisms of a pseudofunctor.",
+      "occurrence_id": "occ.aa85d32879b409ded98c"
     }
   ],
-  "snapshot_sha256": "4e69e96b7fa1d4606f40fc1e2fbfb440569ee7d50f51e4be46e0a028709ebcb9",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "63531ff1bbf14c98e4028a637e445c3614d2e99300209b82ff828bc13af808c2",
+  "review_rationale": "Read strict category-valued presheaf as covariant functor from the opposite category into Cat with contravariant pullback functors, strict identities and composition, distinguishing pseudofunctors."
 }
