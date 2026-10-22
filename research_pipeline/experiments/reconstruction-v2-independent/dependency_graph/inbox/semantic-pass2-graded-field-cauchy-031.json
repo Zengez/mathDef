@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-graded-field-cauchy-031",
+  "mode": "amend",
+  "research_scope": "Five full source-free reviews covering geometric irreducibility, quasi-regular sequences, coefficient rings, Cauchy-real constructions and perfect fields.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.graded_field_cauchy.20261022.01",
+      "formulation_id": "form.2c5739452921ea24.geometrically-irreducible-algebra",
+      "version_sha256": "5c6670e740f685c5f4a7d1f06875dfbdfac5a4d393ec5768f1286a437ec92e93",
+      "expected_node_sha256": "749e8cc57a18438b63ab092c00ffbfa17ee603028268adad69981ce70a605f5e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read all source text and full effective dependency references, matching typed field scalar extensions, minimal-prime topology, graded module constructions, residue characteristics, quotient-class arithmetic and Frobenius; preserved theorem-level well-definedness warnings and complete original adjacency.",
+      "reason": "Source-free Pass2 contextual mathematical review of five algebra/field/real-number formulations, with provisional missing identities and source-local predicates for global audit.",
+      "references": [
+        {
+          "matching_note": "The base-change test ranges over arbitrary field extensions.",
+          "phrase": "field extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "matching_note": "The ring's spectrum is the topological space of prime ideals.",
+          "phrase": "prime spectrum",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "matching_note": "The unique minimal prime in the test is a prime ideal.",
+          "phrase": "prime ideal",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "context": "Commutative algebra: commutative unital algebra A over a specified base field k, with a chosen unital structure homomorphism k→A; A need not be a field, a domain or geometrically regular.",
+          "matching_note": "Source named this algebra 'k-algebra A'; k is a field and an explicit structure morphism to the commutative algebra is required.",
+          "phrase": "commutative unital algebra over a field",
+          "reason": "The algebraic structure must be compared with companion geometrically normal definitions.",
+          "state": "missing"
+        },
+        {
+          "phrase": "A⊗_k K",
+          "state": "missing",
+          "context": "Commutative algebra: scalar extension of commutative unital k-algebra A to field extension K/k, the commutative K-algebra A⊗_k K with multiplication (a⊗x)(b⊗y)=ab⊗xy.",
+          "reason": "Ring-valued scalar extension is a separate construction from merely tensoring modules.",
+          "matching_note": "Compare with base-change ring maps and general tensor-product algebra, respecting k-algebra structure."
+        },
+        {
+          "phrase": "minimal prime ideal",
+          "state": "missing",
+          "context": "Commutative algebra: minimal prime of a commutative unital ring, a prime ideal minimal under set inclusion among all prime ideals, not simply a prime ideal of minimal positive height.",
+          "reason": "Minimality among all prime ideals is an independent algebraic condition.",
+          "matching_note": "Compare to irreducible-component-spectrum's minimal prime candidate."
+        },
+        {
+          "phrase": "irreducible prime spectrum",
+          "state": "existing",
+          "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-topological-space",
+          "matching_note": "The equivalence here asserts Spec(A⊗_k K) is topologically irreducible and nonempty, matching the indexed irreducible-space meaning; no claim that the scalar-extended ring is an integral domain."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.graded_field_cauchy.20261022.02",
+      "formulation_id": "form.82307b7a25fdc9fd.quasiregular-sequence-module",
+      "version_sha256": "16835d9b6cde184043b2be178ea22f8587a06a8501eb0ddc6dc3dd2c729fea0a",
+      "expected_node_sha256": "c40b9ff0b6acc7ad1acbe7bf0cc328d7b9f50602f175030ee8f0e24ebf0e7004",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read all source text and full effective dependency references, matching typed field scalar extensions, minimal-prime topology, graded module constructions, residue characteristics, quotient-class arithmetic and Frobenius; preserved theorem-level well-definedness warnings and complete original adjacency.",
+      "reason": "Source-free Pass2 contextual mathematical review of five algebra/field/real-number formulations, with provisional missing identities and source-local predicates for global audit.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "ideal J generated by f_i",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "tensor product over R/J",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "quotient ring R/J and quotient module M/JM",
+          "state": "missing",
+          "context": "Commutative algebra: quotient ring R/J together with quotient module M/JM formed using the ideal action JM, an R/J-module; different quotient objects must not be conflated.",
+          "reason": "The graded comparison needs both the coefficient quotient ring and induced quotient module.",
+          "matching_note": "Compound reference to split in final audit; general quotient ring and quotient module meanings differ."
+        },
+        {
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree.",
+          "phrase": "polynomial ring (R/J)[X_1,…,X_c]",
+          "state": "missing"
+        },
+        {
+          "phrase": "associated graded module ⊕J^nM/J^{n+1}M",
+          "state": "missing",
+          "context": "Commutative algebra: associated graded module gr_J(M)=⊕_{n≥0}J^nM/J^{n+1}M for filtration by ideal powers J^n M; carries compatible action by gr_J(R).",
+          "reason": "The associated graded module is a reusable filtered-module construction.",
+          "matching_note": "Do not confuse this graded module with a generally nonnegatively graded ring or with completion."
+        },
+        {
+          "phrase": "graded isomorphism of the displayed canonical map",
+          "state": "missing",
+          "context": "Graded module algebra: homomorphism of graded modules that respects degree and is bijective with grading-preserving inverse, here canonical map from polynomial-algebra tensor module to gr_J(M).",
+          "reason": "The source compares two graded module structures, which is stricter than ungraded bijectivity.",
+          "matching_note": "Differentiate map's own isomorphism predicate from underlying graded-module isomorphism concept in global audit."
+        },
+        {
+          "disposition": "A specific graded comparison map is required to be an isomorphism; ordinary finite generation of J is insufficient.",
+          "phrase": "isomorphism",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.graded_field_cauchy.20261022.03",
+      "formulation_id": "form.f3d1c8c59cda279e.coefficient-ring-complete-local",
+      "version_sha256": "c58151af546b45718c38be9c40f663e3f29ea03d4d3a24dc0cac8386b38cab61",
+      "expected_node_sha256": "947d0ccc31b3b47bd14d89325a977c8eae1598332acc94d74b066364f45ad05a",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read all source text and full effective dependency references, matching typed field scalar extensions, minimal-prime topology, graded module constructions, residue characteristics, quotient-class arithmetic and Frobenius; preserved theorem-level well-definedness warnings and complete original adjacency.",
+      "reason": "Source-free Pass2 contextual mathematical review of five algebra/field/real-number formulations, with provisional missing identities and source-local predicates for global audit.",
+      "references": [
+        {
+          "phrase": "complete local ring (R,m)",
+          "state": "existing",
+          "target_meaning_id": "meaning.f3d1c8c59cda279e.complete-local-ring"
+        },
+        {
+          "phrase": "local ring and its maximal ideal",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "maximal ideal m of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-maximal-ideal"
+        },
+        {
+          "phrase": "subring Lambda of R that is complete and local",
+          "state": "existing",
+          "target_meaning_id": "meaning.f3d1c8c59cda279e.complete-local-ring"
+        },
+        {
+          "context": "Commutative algebra and algebraic geometry: residue field A/m of a commutative local ring (A,m), including the prime-localized κ(p)=R_p/pR_p and the scheme-point κ(s)=O_{S,s}/m_s.",
+          "matching_note": "Original phrase 'residue field of a local ring' denotes quotient by the maximal ideal of a local ring, including the localized-at-prime and scheme-stalk cases; not an arbitrary extension field.",
+          "phrase": "residue field of a local ring",
+          "state": "missing"
+        },
+        {
+          "phrase": "induced isomorphism of residue fields",
+          "state": "missing",
+          "context": "Commutative local algebra: field isomorphism Λ/(Λ∩m)→R/m induced by inclusion Λ⊆R, preserving the chosen maps and residue-field structures.",
+          "reason": "The residue comparison requires an actual field isomorphism with the correct quotient kernel, not only equal residue field characteristics.",
+          "matching_note": "Check residue field candidate and map kernel context; don't conflate with completion."
+        },
+        {
+          "phrase": "residue characteristic p",
+          "state": "missing",
+          "context": "Commutative algebra: characteristic p of the residue field R/m of a local ring; p is either 0 or a positive prime integer, not necessarily the characteristic of R.",
+          "reason": "Residue characteristic is an independently reusable invariant of local rings.",
+          "matching_note": "Equicharacteristic case p=0 matters for pΛ ideal in this definition."
+        },
+        {
+          "phrase": "ideal pLambda",
+          "state": "missing",
+          "context": "Commutative ring theory: principal ideal pΛ of Λ generated by image of integer p under ℤ→Λ; when p=0 this is zero ideal.",
+          "reason": "The displayed equality uses a principal ideal of Λ, not a bare ring element or ideal of R.",
+          "matching_note": "Potential alias to principal ideal construction with p=0 convention and coefficient-ring scope."
+        },
+        {
+          "disposition": "This is a precise coefficient-ring compatibility condition; it does not require Lambda to equal the whole ambient ring.",
+          "phrase": "Lambda intersect m=pLambda",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.graded_field_cauchy.20261022.04",
+      "formulation_id": "form.wave2.real52.cauchy-quotient-reals",
+      "version_sha256": "17fd6c77b4198dc22d614c0fc5196a5ecac8c629f7d17142cba8db7ec16d289a",
+      "expected_node_sha256": "3c979243f282a779200e5e33107d6080ac3acdf5fb01739e75de0cba3a5e407e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read all source text and full effective dependency references, matching typed field scalar extensions, minimal-prime topology, graded module constructions, residue characteristics, quotient-class arithmetic and Frobenius; preserved theorem-level well-definedness warnings and complete original adjacency.",
+      "reason": "Source-free Pass2 contextual mathematical review of five algebra/field/real-number formulations, with provisional missing identities and source-local predicates for global audit.",
+      "references": [
+        {
+          "phrase": "rational Cauchy sequences C_Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real51.rational-cauchy"
+        },
+        {
+          "phrase": "equivalence a~b",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real51.rational-cauchy-equivalence"
+        },
+        {
+          "phrase": "equivalence classes [a_n]",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.set-of-related-elements"
+        },
+        {
+          "phrase": "rational q constant sequence",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.rational-number"
+        },
+        {
+          "matching_note": "Verified ordinary set-theoretic equivalence relation, equivalence class or quotient set is precisely applicable to this source's objects. The source's additional generating-pair conditions, group-action laws, Cauchy relation, or concrete integer-model equations remain as defining data and are not replaced by the general target.",
+          "phrase": "quotient set C_Q/~",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.set-of-equivalence-classes"
+        },
+        {
+          "phrase": "pointwise class addition",
+          "state": "external",
+          "disposition": "The formula [a_n]+[b_n]=[a_n+b_n] defines addition on the quotient classes in this construction, not an independently available pre-defined real addition. Well-definedness under choice of representatives is a separate theorem obligation."
+        },
+        {
+          "phrase": "pointwise class multiplication",
+          "state": "external",
+          "disposition": "The formula [a_n][b_n]=[a_nb_n] defines multiplication on the quotient classes, not a prerequisite definition of multiplication on the real numbers; well-definedness is a theorem obligation."
+        },
+        {
+          "phrase": "embedding rational q as constant sequence",
+          "state": "missing",
+          "context": "Ordered-field construction: canonical injection ℚ→C_ℚ/∼ sending rational q to the equivalence class of constant rational Cauchy sequence (q,q,…) and respecting field operations once well-definedness is proved.",
+          "reason": "Embedding ℚ as constant-sequence classes is a distinct construction from taking arbitrary Cauchy equivalence classes.",
+          "matching_note": "The proof that this is a field embedding is not certified by a dependency classification."
+        },
+        {
+          "disposition": "The construction's well-definedness, ordered-field axioms and completeness require separate proofs.",
+          "phrase": "field and completeness proofs not assumed",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.graded_field_cauchy.20261022.05",
+      "formulation_id": "form.f77b42c1adb38c56.perfect-field",
+      "version_sha256": "d4eb4dfe684d7f8ade978594444e5de031dfde52b20361373a5768f0dcc8abcb",
+      "expected_node_sha256": "e1188e42e971880c6f51c416fa762afef242c34b2c3bd885905f77c9fd631668",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read all source text and full effective dependency references, matching typed field scalar extensions, minimal-prime topology, graded module constructions, residue characteristics, quotient-class arithmetic and Frobenius; preserved theorem-level well-definedness warnings and complete original adjacency.",
+      "reason": "Source-free Pass2 contextual mathematical review of five algebra/field/real-number formulations, with provisional missing identities and source-local predicates for global audit.",
+      "references": [
+        {
+          "phrase": "field k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "algebraic field extension",
+          "state": "existing",
+          "target_meaning_id": "meaning.50d335de00e5f11d.algebraic-extension"
+        },
+        {
+          "phrase": "separable algebraic extension",
+          "state": "existing",
+          "target_meaning_id": "meaning.50d335de00e5f11d.separable-algebraic-extension"
+        },
+        {
+          "phrase": "characteristic of field",
+          "state": "existing",
+          "target_meaning_id": "meaning.dbce785fa0c96b0a.field-characteristic"
+        },
+        {
+          "phrase": "Frobenius map x↦x^p",
+          "state": "missing",
+          "context": "Field theory in characteristic p>0: Frobenius endomorphism F:k→k, x↦x^p, preserving addition and multiplication; p must be a positive prime, not 0.",
+          "reason": "Frobenius is a reusable ring/field homomorphism independent of perfection.",
+          "matching_note": "Do not identify the Frobenius endomorphism with its surjectivity criterion."
+        },
+        {
+          "phrase": "every element is a pth power",
+          "state": "external",
+          "disposition": "Surjectivity of Frobenius, i.e. ∀x∈k ∃y∈k with y^p=x, is the defining equivalent perfect-field criterion in positive characteristic, not a new independent prerequisite; no p=0 power condition is asserted."
+        },
+        {
+          "phrase": "characteristic-zero fields are perfect",
+          "state": "external",
+          "disposition": "This is a consequence of separability of algebraic extensions in characteristic zero, not algebraic closedness."
+        }
+      ]
+    }
+  ]
+}
