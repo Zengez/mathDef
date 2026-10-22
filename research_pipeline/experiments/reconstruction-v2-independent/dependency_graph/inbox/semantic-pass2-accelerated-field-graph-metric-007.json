@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-accelerated-field-graph-metric-007",
+  "mode": "amend",
+  "research_scope": "Provisional source-free full-formulation reviews of graph/field/ring/fraction/metric foundational dependencies; audit pending.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk8.20261022.16",
+      "formulation_id": "form.wave2.graph42.loopless-undirected-multigraph",
+      "version_sha256": "dd31a367bf59507f2c1637aa68c3ed69337108c5efb8b6168d48e436d07f71b9",
+      "expected_node_sha256": "9cc369641e1b8422aed00196cffb108caad1f1a11ab6b57366f1bfd2cf02f57b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Entire original source definition loopless undirected multigraph reviewed, including all reference occurrences and mathematical object-type distinctions. Full adjacency maintained; source-local clauses and new source-free candidates receive a future global consistency and alias audit.",
+      "reason": "Accelerated source-free classification of full formulation loopless undirected multigraph while preserving existing independent provenance and type-specific prerequisites, without mathematically certifying source correctness or creating new definitions.",
+      "references": [
+        {
+          "phrase": "vertex pair as two-element subset of V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "simple undirected graph special case",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.graph42.simple-undirected"
+        },
+        {
+          "phrase": "undirected multigraph edge multiset E",
+          "state": "missing",
+          "context": "Graph theory: edge multiset of unordered two-element subsets of a vertex set V, allowing parallel copies but excluding loops.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "two-element subset {u,v}",
+          "state": "missing",
+          "context": "Graph/set theory: unordered doubleton {u,v}⊆V for distinct vertices u≠v, serving as a possible loopless undirected edge.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "edge multiplicity",
+          "state": "missing",
+          "context": "Multigraph theory: edge multiplicity of unordered pair {u,v}, the nonnegative integer number of edge copies connecting u and v in E.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "graph as pair G=(V,E)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski",
+          "matching_note": "Graph pair encodes ordered vertex set and edge multiset data; underlying ordered-pair notion is separately defined."
+        },
+        {
+          "phrase": "absence of loops and allowance of parallel edges",
+          "state": "external",
+          "disposition": "Looplessness follows from doubleton condition while repeat copies of the same doubleton are permitted."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk8.20261022.17",
+      "formulation_id": "form.dbce785fa0c96b0a.field-characteristic",
+      "version_sha256": "4f7c4c6af54c95e3ec9cb8bacec1da68ba0cdfebddd39d66951694ff1d090503",
+      "expected_node_sha256": "66501699d491b04fa944689a9c379eff01ae1fd6d146b1fa66f2571c52d7e1f4",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Entire original source definition characteristic reviewed, including all reference occurrences and mathematical object-type distinctions. Full adjacency maintained; source-local clauses and new source-free candidates receive a future global consistency and alias audit.",
+      "reason": "Accelerated source-free classification of full formulation characteristic while preserving existing independent provenance and type-specific prerequisites, without mathematically certifying source correctness or creating new definitions.",
+      "references": [
+        {
+          "phrase": "field F with multiplicative identity 1_F",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "positive integers n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-positive-convention"
+        },
+        {
+          "phrase": "additive structure on a field",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "additive multiple n·1_F",
+          "state": "missing",
+          "context": "Algebra: n-fold repeated addition of multiplicative identity 1_F in the additive abelian group of a field F, for positive integer n.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "least positive n with n·1_F=0",
+          "state": "external",
+          "disposition": "The least positive additive multiple of 1_F equaling zero, or nonexistence and characteristic zero, is the source's defining criterion for field characteristic."
+        },
+        {
+          "phrase": "prime integer",
+          "state": "missing",
+          "context": "Elementary number theory: prime integer p>1 with positive divisors precisely 1 and p; unlike a prime ideal in a ring.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "positive characteristic must be prime",
+          "state": "external",
+          "disposition": "An algebraic theorem following from field axioms, not an additional independent part of the definition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk8.20261022.18",
+      "formulation_id": "form.wave2.foundation.strongly-transcendental-subring-element",
+      "version_sha256": "859a1eb9debbec8891450f681abaea71c4695f209ae34a56b731942b649e34fe",
+      "expected_node_sha256": "2540b77c2f3b3d3c5f84865ce0ee3c556694c3567520e9974ff992f1afa82aeb",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Entire original source definition strongly transcendental element over a subring reviewed, including all reference occurrences and mathematical object-type distinctions. Full adjacency maintained; source-local clauses and new source-free candidates receive a future global consistency and alias audit.",
+      "reason": "Accelerated source-free classification of full formulation strongly transcendental element over a subring while preserving existing independent provenance and type-specific prerequisites, without mathematically certifying source correctness or creating new definitions.",
+      "references": [
+        {
+          "phrase": "associative rings R and S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "subring inclusion R subset S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "nonnegative integer n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "commutative unital ring and common identity",
+          "state": "missing",
+          "context": "Commutative algebra: inclusion of commutative rings R⊆S both with multiplicative unit, with inclusion preserving the common identity 1_R=1_S.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "polynomial a_0+a_1*x+...+a_n*x^n",
+          "state": "missing",
+          "context": "Commutative algebra: finite polynomial expression with coefficients a_0,...,a_n∈R in an indeterminate or its evaluation at x∈S under R⊆S.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "annihilator equation u*p(x)=0",
+          "state": "external",
+          "disposition": "The universally quantified implication from uP(x)=0 to ua_i=0 is the defining strong-transcendence criterion, not an assumed annihilator restriction."
+        },
+        {
+          "phrase": "zero-divisor phenomena in S",
+          "state": "missing",
+          "context": "Ring theory: zero divisor in a commutative ring S, a nonzero element participating in a product of two nonzero elements that equals 0; source's arbitrary multiplier u allows this context.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "strong versus ordinary transcendence",
+          "state": "external",
+          "disposition": "The stated condition must not be collapsed into algebraic independence over a field, particularly with zero divisors."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk8.20261022.19",
+      "formulation_id": "form.wave2.integer59.fraction-field-integral-domain",
+      "version_sha256": "5adf427f05a9b697b0523044e2b975c93f8501021a033ba73b51f24e310a3e45",
+      "expected_node_sha256": "58a77c6448d51581e082f77245c55af92776428b5c1a45821f8a3850313196a5",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Entire original source definition fraction field of an integral domain reviewed, including all reference occurrences and mathematical object-type distinctions. Full adjacency maintained; source-local clauses and new source-free candidates receive a future global consistency and alias audit.",
+      "reason": "Accelerated source-free classification of full formulation fraction field of an integral domain while preserving existing independent provenance and type-specific prerequisites, without mathematically certifying source correctness or creating new definitions.",
+      "references": [
+        {
+          "phrase": "integral domain D",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.integral-domain"
+        },
+        {
+          "phrase": "ordered pairs (a,b)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski"
+        },
+        {
+          "phrase": "fraction equivalence classes",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.set-of-related-elements"
+        },
+        {
+          "phrase": "result is field",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "cross-product equivalence (a,b)~(c,d) iff ad=bc",
+          "state": "external",
+          "disposition": "This pair equivalence relation is the explicit source-specific construction of fraction classes, not an assumed fraction-field notion; general equivalence relation is separately indexed."
+        },
+        {
+          "phrase": "nonzero denominator b",
+          "state": "external",
+          "disposition": "The b≠0 condition is a restriction in the source fraction representation to allow field construction, not a separate missing definition of a denominator."
+        },
+        {
+          "phrase": "fraction-class addition and multiplication",
+          "state": "missing",
+          "context": "Commutative algebra: rational-pair addition (a,b)+(c,d) represented by (ad+bc,bd) and multiplication by (ac,bd), inducing well-defined operations on equivalence classes.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "embedding D into Frac(D)",
+          "state": "missing",
+          "context": "Commutative algebra: canonical injective unital ring homomorphism D→Frac(D), sending a∈D to its fraction class a/1; distinct from the fraction-field object itself.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "fractions not literal rational numbers",
+          "state": "external",
+          "disposition": "This is a universal fraction-field construction for any integral domain, not the special rational-number fraction field."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.accelerated_chunk8.20261022.20",
+      "formulation_id": "form.wave2.analysis98.metric-space.compatible",
+      "version_sha256": "7f901b77c85d325244eca5692e45b3b11fa1025ec709e6f3aa93b7e98737ec36",
+      "expected_node_sha256": "127aae86ea15efb1063cc80a70a2a1386bfd9d199b452e0c004578ffcb87246b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_accelerated_contextual_review",
+      "review_rationale": "Entire original source definition metric space reviewed, including all reference occurrences and mathematical object-type distinctions. Full adjacency maintained; source-local clauses and new source-free candidates receive a future global consistency and alias audit.",
+      "reason": "Accelerated source-free classification of full formulation metric space while preserving existing independent provenance and type-specific prerequisites, without mathematically certifying source correctness or creating new definitions.",
+      "references": [
+        {
+          "phrase": "metric space (X,d)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.metric-space"
+        },
+        {
+          "phrase": "topological space (X,tau)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "basis for generated topology",
+          "state": "existing",
+          "target_meaning_id": "meaning.6a3376e5ecb82bfb.topology-basis"
+        },
+        {
+          "phrase": "metric open ball B_d(x,r)",
+          "state": "missing",
+          "context": "Metric topology: open ball B_d(x,r)={y∈X:d(x,y)<r} for x in metric space (X,d) and radius r>0.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "metric-induced topology tau_d",
+          "state": "missing",
+          "context": "Metric topology: topology τ_d generated by all open metric balls as a basis, on the same underlying set X of metric d.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        },
+        {
+          "phrase": "compatible triple (X,tau_d,d)",
+          "state": "external",
+          "disposition": "The compatible triple is a packaging of topology induced by the specified metric on the same nonempty set, not an independently assumed additional structure."
+        },
+        {
+          "phrase": "metrizable topology may admit multiple metrics",
+          "state": "external",
+          "disposition": "Existence of a compatible metric alone does not identify which metric is specified."
+        }
+      ]
+    }
+  ]
+}
