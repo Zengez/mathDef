@@ -2,10 +2,63 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.real52.cauchy-quotient-reals",
   "version_sha256": "17fd6c77b4198dc22d614c0fc5196a5ecac8c629f7d17142cba8db7ec16d289a",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "rational Cauchy sequences C_Q",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real51.rational-cauchy",
+      "occurrence_id": "occ.b5f330ce693121c9d8aa"
+    },
+    {
+      "phrase": "equivalence a~b",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real51.rational-cauchy-equivalence",
+      "occurrence_id": "occ.fde24bee2f9c454949d5"
+    },
+    {
+      "phrase": "equivalence classes [a_n]",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.set-of-related-elements",
+      "occurrence_id": "occ.31903b3cfa60f9bbdbe5"
+    },
+    {
+      "phrase": "rational q constant sequence",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.rational55.rational-number",
+      "occurrence_id": "occ.b00d07ba73b9ce3e8624"
+    },
+    {
+      "phrase": "quotient set C_Q/~",
+      "state": "unassigned",
+      "context": "Set of all rational Cauchy sequences grouped into equivalence classes.",
+      "occurrence_id": "occ.f947de7ebd42312e2347"
+    },
+    {
+      "phrase": "pointwise class addition",
+      "state": "unassigned",
+      "context": "[a_n]+[b_n]=[a_n+b_n], requiring independence from representatives.",
+      "occurrence_id": "occ.f65d48163bfac5c7ab8c"
+    },
+    {
+      "phrase": "pointwise class multiplication",
+      "state": "unassigned",
+      "context": "[a_n]*[b_n]=[a_n*b_n], requiring independence from representatives.",
+      "occurrence_id": "occ.963303b146bdfaaee19d"
+    },
+    {
+      "phrase": "embedding rational q as constant sequence",
+      "state": "unassigned",
+      "context": "Send each rational number q to class of sequence q,q,q,... in quotient.",
+      "occurrence_id": "occ.30e7039a7a21f1b77eca"
+    },
+    {
+      "phrase": "field and completeness proofs not assumed",
+      "state": "external",
+      "disposition": "The construction's well-definedness, ordered-field axioms and completeness require separate proofs.",
+      "occurrence_id": "occ.711deba086fb7afe124e"
+    }
+  ],
+  "snapshot_sha256": "a26e2c4c70122ed9800033181cbb3b43326d75730eddb6a1631b3f4c9b58d628",
+  "review_rationale": "Reviewed real-number Cauchy quotient as classes of rational Cauchy sequences under zero-difference equivalence with pointwise arithmetic and constant-sequence rational embedding."
 }
