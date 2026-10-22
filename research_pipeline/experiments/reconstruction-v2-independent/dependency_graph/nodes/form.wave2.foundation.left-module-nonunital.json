@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.left-module-nonunital",
   "version_sha256": "7902de68ae59790c2e70c6f108700785948d1a4f4de6f67e6f33adee69ceb1f3",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "abelian group",
-      "span": [
-        42,
-        55
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.abelian-group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.37ecb971ec58420dd444"
+      "phrase": "associative ring R, unity optional",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.9cbe09d658b93cc89cb8"
+    },
+    {
+      "phrase": "abelian group (M,+)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "occurrence_id": "occ.3a40c9b4496daed8d594"
+    },
+    {
+      "phrase": "left module with unital convention",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.58970b8534ecd734a687"
+    },
+    {
+      "phrase": "left action R×M→M",
+      "state": "unassigned",
+      "context": "Scalar r multiplies module m, producing an element of M.",
+      "occurrence_id": "occ.ca2cfe7785084e6e119f"
+    },
+    {
+      "phrase": "module distributivity and scalar associativity",
+      "state": "unassigned",
+      "context": "r(m+n)=rm+rn, (r+s)m=rm+sm and (rs)m=r(sm).",
+      "occurrence_id": "occ.0c2f2a80916edee62941"
+    },
+    {
+      "phrase": "optional unital action condition",
+      "state": "unassigned",
+      "context": "If R has 1, unital module additionally has 1_R m=m for all m.",
+      "occurrence_id": "occ.7c5d8e0d332f83b99754"
+    },
+    {
+      "phrase": "nonunital base allowed",
+      "state": "external",
+      "disposition": "The universal module axioms here do not require an identity in R or unity action.",
+      "occurrence_id": "occ.3e76454b68b05730b5c9"
     }
   ],
-  "snapshot_sha256": "349d3459511e9d77823911d72cef5ad3f15985b77e5be2ce00bde56c7139afe7",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "0c873abfaf235ffa67e5b00b0093639825b418d8d08ee0d442529ad04e7b5d9c",
+  "review_rationale": "Read left module over potentially nonunital associative ring as abelian additive group and compatible scalar action with distributivity and associativity, with optional unital enhancement."
 }

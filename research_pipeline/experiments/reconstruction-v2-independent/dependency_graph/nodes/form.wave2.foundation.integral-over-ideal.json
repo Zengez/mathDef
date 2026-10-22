@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.integral-over-ideal",
   "version_sha256": "f47967c0e1c6133466383afe7b51cf522dcb7e239cc02af6a2e8dea70a45033d",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "commutative ring homomorphism R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.35a98aa1846845e25e50"
+    },
+    {
+      "phrase": "ideal I of ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.9878bb411c355b44108f"
+    },
+    {
+      "phrase": "integral element over base ring",
+      "state": "existing",
+      "target_meaning_id": "meaning.8594a432b165bcda.integral-element-over-subring",
+      "occurrence_id": "occ.725f80d6a09938c0c463"
+    },
+    {
+      "phrase": "monic polynomial P(T) of degree d",
+      "state": "unassigned",
+      "context": "Polynomial T^d plus terms with leading coefficient 1 and finite degree d≥1.",
+      "occurrence_id": "occ.b2222771c743a4311830"
+    },
+    {
+      "phrase": "coefficient a_j belongs I^{d−j}",
+      "state": "unassigned",
+      "context": "For term of degree j, coefficient lies in designated power of ideal I.",
+      "occurrence_id": "occ.17c92be11745e32847d4"
+    },
+    {
+      "phrase": "evaluated polynomial phi(P)(g)=0",
+      "state": "unassigned",
+      "context": "Apply ring map to coefficients, evaluate at g∈S and require zero.",
+      "occurrence_id": "occ.8dd4b217410992346404"
+    },
+    {
+      "phrase": "integral over ideal stronger than integral over R",
+      "state": "external",
+      "disposition": "All lower coefficients constrained to corresponding powers of I, rather than arbitrary R.",
+      "occurrence_id": "occ.c1f79342f2f1f83f9e06"
+    }
+  ],
+  "snapshot_sha256": "3575b2d894cd63730075d1c2b4903a9f07c4a2be4f459217d68a94d9fab09260",
+  "review_rationale": "Read element integral over ring ideal through monic polynomial with coefficient a_j in I to power d-j, evaluated under ring map at g."
 }
