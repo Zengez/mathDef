@@ -2,39 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.eea0cd4a31af555c.locally-constructible-subset",
   "version_sha256": "3c1818f4a8fe85b81daee07a3d7f40c7cdd1146153f2830bcf9716571a4f9707",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        2,
-        8
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.418ea172158a949856aa"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.f8c9a3bfe9c4d32fde47"
     },
     {
-      "phrase": "subset",
-      "span": [
-        120,
-        126
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.ec376d8da677b6a71eff"
+      "phrase": "subset E of X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.0a327a2b71470d52d36c"
+    },
+    {
+      "phrase": "constructible subset in the source convention",
+      "state": "existing",
+      "target_meaning_id": "meaning.eea0cd4a31af555c.constructible-subset-stacks",
+      "occurrence_id": "occ.1354fdac762683f9d7fe"
+    },
+    {
+      "phrase": "subspace topology on V_i",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subspace-topology-general",
+      "occurrence_id": "occ.0fadade86fd53eddd41d"
+    },
+    {
+      "phrase": "open cover (V_i) of X",
+      "state": "unassigned",
+      "context": "Family of open subsets whose union is X, possibly infinite.",
+      "occurrence_id": "occ.14c82f456fd735764c05"
+    },
+    {
+      "phrase": "local restriction E∩V_i",
+      "state": "unassigned",
+      "context": "Intersection of E with each cover set, tested as a subset of the subspace V_i with its own topology.",
+      "occurrence_id": "occ.ff5aafb426d6c915ab49"
+    },
+    {
+      "phrase": "existence of some open cover",
+      "state": "external",
+      "disposition": "The locally constructible condition needs a suitable covering, not the statement that E is globally constructible.",
+      "occurrence_id": "occ.a0da4b4a46cfe95fc860"
     }
   ],
-  "snapshot_sha256": "ab31056b972bf03f110a44ad0ce1148129be7853e0b9a858f139e51dd890dc8b",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "3923779bb3181224048bf5df0c3cfe85c07ae08e2a432060035cef3436d8e91a",
+  "review_rationale": "Read locally constructible E in X by an open cover and constructibility of each restriction E∩V_i inside the subspace V_i, not necessarily global finite constructibility."
 }

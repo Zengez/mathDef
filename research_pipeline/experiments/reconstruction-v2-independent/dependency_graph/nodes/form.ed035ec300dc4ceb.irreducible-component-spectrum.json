@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.ed035ec300dc4ceb.irreducible-component-spectrum",
   "version_sha256": "b185987ef8a09d6da14a605d3d746ef8dbfcae410d12b758b825874c655473fe",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "commutative ring R",
+      "state": "unassigned",
+      "context": "Commutative ring R with a multiplicative identity, the ambient base of prime ideals and its spectrum; no precise independent standalone ring-axioms meaning was identified in the current meanings registry.",
+      "occurrence_id": "occ.7b9dd06326f614a2bd5a"
+    },
+    {
+      "phrase": "prime spectrum Spec(R)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.f4c5c028395e75ac10de"
+    },
+    {
+      "phrase": "prime ideal p",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "occurrence_id": "occ.ea440f0c7906f246950b"
+    },
+    {
+      "phrase": "irreducible component of topological space",
+      "state": "existing",
+      "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-component",
+      "occurrence_id": "occ.e3cc4d8a3c6edf11f02d"
+    },
+    {
+      "phrase": "minimal prime under inclusion",
+      "state": "unassigned",
+      "context": "Prime ideal p minimal in the partially ordered collection of prime ideals of R, not necessarily a minimal nonzero ideal.",
+      "occurrence_id": "occ.d8085bc54088628a3846"
+    },
+    {
+      "phrase": "closed set V(p) in Spec(R)",
+      "state": "unassigned",
+      "context": "Set of prime ideals q with p⊆q, endowed with subspace topology of the Zariski spectrum.",
+      "occurrence_id": "occ.3b7cc4c06bb7159575dd"
+    },
+    {
+      "phrase": "exactly the components V(p) for minimal primes",
+      "state": "external",
+      "disposition": "An algebraic characterization of maximal irreducible closed subsets; it does not claim all prime ideals give distinct components.",
+      "occurrence_id": "occ.834651b1e10482325a0f"
+    }
+  ],
+  "snapshot_sha256": "99e3c939a045174dd00e7a0d3e1caa513f08912572ad60379e53b4b8243276c9",
+  "review_rationale": "Read irreducible components of the affine spectrum as closed subsets V(p) for minimal prime ideals of the ring, preserving the ordering on primes and the Zariski topology."
 }

@@ -2,39 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.eea0cd4a31af555c.constructible-subset-stacks",
   "version_sha256": "1e68e17ac6aa189b84acd65bf6c2a61f5d044193b9232254e178c745f82e90e7",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        2,
-        8
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.8d8d4addd63ef4822c13"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.203491e707e0225867ed"
     },
     {
-      "phrase": "topological space",
-      "span": [
-        16,
-        33
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.d3ec7c1f05c89a909f84"
+      "phrase": "subset E of X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.dce1116b3770b4a90c83"
+    },
+    {
+      "phrase": "retrocompact open subset U of X",
+      "state": "unassigned",
+      "context": "Open U whose intersections with every quasi-compact open subset of X are quasi-compact; not assumed equivalent to U itself quasi-compact in all spaces.",
+      "occurrence_id": "occ.c9de231759c00f23f9c1"
+    },
+    {
+      "phrase": "difference U\\V of retrocompact open sets",
+      "state": "unassigned",
+      "context": "Set of points in open U not belonging to open V, for U and V satisfying retrocompactness.",
+      "occurrence_id": "occ.22609bce3f01c3f1ba37"
+    },
+    {
+      "phrase": "finite union of locally closed-type pieces",
+      "state": "unassigned",
+      "context": "Finite set union over differences U_i\\V_i under the stated retrocompact-open conditions.",
+      "occurrence_id": "occ.a0f54e601781dc3ed0cc"
+    },
+    {
+      "phrase": "constructible finite-union criterion",
+      "state": "external",
+      "disposition": "The source-specific retrocompact-open definition should not be replaced by every locally closed subset in an arbitrary topological space.",
+      "occurrence_id": "occ.d87023473944dc7edf85"
     }
   ],
-  "snapshot_sha256": "e165f6a1c000375ae5ef8da6787d049f244620a3dfc250195b577ab0296a8833",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "ad2437f581b7839f82379b11817d065ed09db69b1c4f5c97e15df44c0a26e23c",
+  "review_rationale": "Read constructibility as a finite union of open differences U\\V with each open retrocompact in ambient X; distinguished retrocompact openness from arbitrary quasicompactness."
 }
