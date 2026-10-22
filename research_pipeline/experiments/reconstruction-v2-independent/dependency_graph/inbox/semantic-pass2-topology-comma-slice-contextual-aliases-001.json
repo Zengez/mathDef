@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-topology-comma-slice-contextual-aliases-001",
+  "mode": "alias",
+  "research_scope": "Four manually reviewed phrase-specific aliases into three disjoint missing construction identities: final quotient topology, ordinary comma category and over/slice category.",
+  "aliases": [
+    {
+      "alias_id": "alias.pass2.quot.20261022.22809c7ff112b0a6ff75",
+      "alias_candidate_id": "missing.22809c7ff112b0a6ff75",
+      "canonical_candidate_id": "missing.0c5a27f2980fc722cbb5",
+      "reason": "These usages share the final topology induced on the exact surjective target by q:X→Q. For strict maps the target is the image f(X), not the entire ambient Y; for coequalizers the target is a quotient set. Both instantiate the same final-topology construction, without identifying quotient topology with a quotient set or subspace topology. Reviewed raw phrase 'quotient topology induced by surjection X→f(X)' against canonical 'quotient topology on Y for f' in their full source formulation contexts. Source phrasing and occurrence identities remain immutable.",
+      "reviewed_by": "assistant_source_free_contextual_review"
+    },
+    {
+      "alias_id": "alias.pass2.quot.20261022.4225143e27de664980cb",
+      "alias_candidate_id": "missing.4225143e27de664980cb",
+      "canonical_candidate_id": "missing.0c5a27f2980fc722cbb5",
+      "reason": "These usages share the final topology induced on the exact surjective target by q:X→Q. For strict maps the target is the image f(X), not the entire ambient Y; for coequalizers the target is a quotient set. Both instantiate the same final-topology construction, without identifying quotient topology with a quotient set or subspace topology. Reviewed raw phrase 'quotient topology on Y/~' against canonical 'quotient topology on Y for f' in their full source formulation contexts. Source phrasing and occurrence identities remain immutable.",
+      "reviewed_by": "assistant_source_free_contextual_review"
+    },
+    {
+      "alias_id": "alias.pass2.comma.20261022.8f9774ebf085c3590dac",
+      "alias_candidate_id": "missing.8f9774ebf085c3590dac",
+      "canonical_candidate_id": "missing.aba129fc5f7d346b2d0f",
+      "reason": "The same ordinary comma category construction specializes by fixing an object j on the left or right, yielding j↓H versus H↓j. They have opposite arrow orientations in each source, which must remain visible, but neither demands an invertible connecting arrow. The separate iso-comma category is not substituted. Reviewed raw phrase 'comma category (H↓j)' against canonical 'comma category (j↓H)' in their full source formulation contexts. Source phrasing and occurrence identities remain immutable.",
+      "reviewed_by": "assistant_source_free_contextual_review"
+    },
+    {
+      "alias_id": "alias.pass2.slice.20261022.7cfdfb73da67a5bd4528",
+      "alias_candidate_id": "missing.7cfdfb73da67a5bd4528",
+      "canonical_candidate_id": "missing.ad87c8a94e71b0501e7a",
+      "reason": "Both occurrences refer to the overcategory C/U whose objects are arrows V→U and morphisms triangles over U. Changing the bound base object name from U to X does not change the general slice-category meaning. This remains a specific construction, not a synonym for unrestricted comma or iso-comma categories. Reviewed raw phrase 'slice category C/X' against canonical 'slice category C/U' in their full source formulation contexts. Source phrasing and occurrence identities remain immutable.",
+      "reviewed_by": "assistant_source_free_contextual_review"
+    }
+  ]
+}
