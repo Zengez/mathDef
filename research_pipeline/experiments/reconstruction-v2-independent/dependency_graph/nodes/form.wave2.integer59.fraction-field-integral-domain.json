@@ -2,10 +2,63 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.integer59.fraction-field-integral-domain",
   "version_sha256": "5adf427f05a9b697b0523044e2b975c93f8501021a033ba73b51f24e310a3e45",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "integral domain D",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.integral-domain",
+      "occurrence_id": "occ.55db41db15d713e4df48"
+    },
+    {
+      "phrase": "ordered pairs (a,b)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski",
+      "occurrence_id": "occ.01075a32eefe2f3589a4"
+    },
+    {
+      "phrase": "fraction equivalence classes",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.set-of-related-elements",
+      "occurrence_id": "occ.93743558e769aaa430be"
+    },
+    {
+      "phrase": "result is field",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.78f89f9bdb7889f0427d"
+    },
+    {
+      "phrase": "cross-product equivalence (a,b)~(c,d) iff ad=bc",
+      "state": "unassigned",
+      "context": "Relation on pairs with nonzero denominators, identifying fractions with the same value.",
+      "occurrence_id": "occ.3da05a6b85c631a73390"
+    },
+    {
+      "phrase": "nonzero denominator b",
+      "state": "unassigned",
+      "context": "Restriction to denominator b not equal to zero of D.",
+      "occurrence_id": "occ.0d57da4c1253f840ad52"
+    },
+    {
+      "phrase": "fraction-class addition and multiplication",
+      "state": "unassigned",
+      "context": "Addition and multiplication defined using pair representations and proved independent of representative.",
+      "occurrence_id": "occ.a725cca973b36c30bcba"
+    },
+    {
+      "phrase": "embedding D into Frac(D)",
+      "state": "unassigned",
+      "context": "Injective unital ring homomorphism sending a in D to its class a/1.",
+      "occurrence_id": "occ.786333c5a409a39d52e2"
+    },
+    {
+      "phrase": "fractions not literal rational numbers",
+      "state": "external",
+      "disposition": "This is a universal fraction-field construction for any integral domain, not the special rational-number fraction field.",
+      "occurrence_id": "occ.dc583b32ad2290ebf0d7"
+    }
+  ],
+  "snapshot_sha256": "08ed058986d4d0868209d8dff521dbe6e0d4fa75c29bdfc6d57d6ccd97413a41",
+  "review_rationale": "Read fraction-field construction as equivalence classes of numerator/denominator pairs over an integral domain, denominators nonzero, with cross-multiplication relation and induced field arithmetic."
 }
