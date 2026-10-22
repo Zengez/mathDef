@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.associative-ring-identity-optional",
   "version_sha256": "490452b49ce40b9375958c811799f644d93461de0ed3ebc411a64b01b64e2355",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "abelian group",
-      "span": [
-        77,
-        90
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.abelian-group"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.49941feb774b24be8b67"
+      "phrase": "abelian additive group (R,+)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "occurrence_id": "occ.3127883f0dbb8eb8a956"
+    },
+    {
+      "phrase": "internal binary operations + and multiplication",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.binary-operation-internal",
+      "occurrence_id": "occ.db01b2acb46eabd46699"
+    },
+    {
+      "phrase": "associativity of multiplication",
+      "state": "unassigned",
+      "context": "For all a,b,c∈R, (ab)c=a(bc).",
+      "occurrence_id": "occ.eb4ab321c0e29e5a15b2"
+    },
+    {
+      "phrase": "two distributive laws",
+      "state": "unassigned",
+      "context": "For a,b,c∈R, a(b+c)=ab+ac and (a+b)c=ac+bc.",
+      "occurrence_id": "occ.7c4dd6b4574ef61d0d3c"
+    },
+    {
+      "phrase": "unit is optional in this ring convention",
+      "state": "external",
+      "disposition": "Existence of 1 is not an axiom, unlike most unital commutative-algebra conventions.",
+      "occurrence_id": "occ.770a59dbe6aba5f85f68"
     }
   ],
-  "snapshot_sha256": "36dc5fff1a3c96b1626a8cbaba49340cfbe49bdb62b856ce101fc6c975e93806",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "226a615f2c0444c1f5c1a10ac82e706857de7a5a7b5129faa7a254419d3e9a89",
+  "review_rationale": "Read nonunital associative ring axioms: abelian additive group, associative multiplication and left/right distributivity, explicitly not requiring multiplicative identity."
 }

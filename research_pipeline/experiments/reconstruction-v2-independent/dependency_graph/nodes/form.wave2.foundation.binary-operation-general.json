@@ -2,39 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.binary-operation-general",
   "version_sha256": "f40578cea1d583740ed434b7fc1043283f1db0919c0131497608320bf9f7d429",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "binary operation",
-      "span": [
-        18,
-        34
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.binary-operation-internal"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.348b0633c23d508e350f"
+      "phrase": "function assigning unique value",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.28344545fb93dbf4a690"
     },
     {
-      "phrase": "ordered pair",
-      "span": [
-        140,
-        152
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.ordered-pair-kuratowski"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.ae0c4a56aaa638191d4f"
+      "phrase": "Cartesian product S×T",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.cartesian-product-binary",
+      "occurrence_id": "occ.a6ad35ca6b6bf8cd1ce0"
+    },
+    {
+      "phrase": "heterogeneous binary operation star:S×T→U",
+      "state": "unassigned",
+      "context": "Total mapping with possibly different operand sets and output set; no internal closure requirement.",
+      "occurrence_id": "occ.1c9cb429ad99e4f65bad"
+    },
+    {
+      "phrase": "binary does not require S=T=U",
+      "state": "external",
+      "disposition": "This broader convention differs from internal binary operation on a single set.",
+      "occurrence_id": "occ.fa7e1e2588cf8a307502"
     }
   ],
-  "snapshot_sha256": "ce1f5bd123e322101aa6e869f830834f3616b969d54f5bc8a93f39aaf3270d21",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "b9b24d50ce68b8704e666b33a2a0350998e7e3b336060181692788c4b1a70e7e",
+  "review_rationale": "Read generalized binary operation of two possibly distinct input sets S,T and output set U as total function on Cartesian product, with one output for each ordered pair."
 }
