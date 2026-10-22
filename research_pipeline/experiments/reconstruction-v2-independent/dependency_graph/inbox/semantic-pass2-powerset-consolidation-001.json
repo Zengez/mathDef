@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-powerset-consolidation-001",
+  "mode": "amend",
+  "research_scope": "Consolidate five P(X)/P(S) occurrences into one typed power-set missing candidate; no new meaning or external lookup.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.powerset.20261022.01",
+      "formulation_id": "form.wave2.broad67.sigma-difference-disjoint-countable",
+      "version_sha256": "9d354120659cf8bbb1f1c62748d3cfabbb45994c09711aa2a16473fa76236457",
+      "expected_node_sha256": "146e703577e80d10ccd6f153b098c5735badd879e4c9ecaf8af55dd02ab151b2",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_global_occurrence_review",
+      "review_rationale": "Reviewed alternative sigma-algebra axiomatization through set differences and countable pairwise-disjoint unions, without treating it as an independently new meaning or assuming arbitrary countable unions as a primitive.",
+      "reason": "Compared entire source formulation, P(X)/P(S) occurrences across five definitions, existing 611 meanings and historical missing candidates. Power set is collection of all subsets, not the existing binary inclusion relation; one shared missing candidate is justified without external research.",
+      "references": [
+        {
+          "phrase": "family Sigma subset of P(X)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "context": "Set theory: power set of an arbitrary underlying set X, namely the collection of all subsets of X; variable names X and S are interchangeable.",
+          "phrase": "power set",
+          "state": "missing",
+          "matching_note": "Consolidated original notation 'power set P(X)' into the same set-theoretic power-set concept; no suitably typed meaning occurs among existing meanings."
+        },
+        {
+          "context": "Relative set difference for two members A,B of Sigma.",
+          "phrase": "difference A minus B",
+          "state": "unassigned"
+        },
+        {
+          "context": "A sequence of sets whose members have empty intersection whenever their indices differ.",
+          "phrase": "pairwise disjoint members",
+          "state": "unassigned"
+        },
+        {
+          "context": "Closure under unions of all members of any countably indexed pairwise disjoint sequence in Sigma.",
+          "phrase": "countable union of pairwise disjoint members",
+          "state": "unassigned"
+        },
+        {
+          "disposition": "The ambient-set membership condition is an axiom; the equivalent formulation need not list arbitrary countable-union closure explicitly.",
+          "phrase": "X member of Sigma",
+          "state": "external"
+        },
+        {
+          "disposition": "This form supplies equivalent axioms of the same sigma-algebra concept and must not have an artificial definition dependency upon its own meaning.",
+          "phrase": "equivalent sigma-algebra characterization",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.powerset.20261022.02",
+      "formulation_id": "form.wave2.foundation.sigma-algebra",
+      "version_sha256": "0df8540e25987eba8bcc9924def4ff4cdb1701dce69e8067e9777b979000f34b",
+      "expected_node_sha256": "d1c63f73359d0da3852c59a12bfaa0288dc868d8502288df736e6c22d7e21b3a",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_global_occurrence_review",
+      "review_rationale": "Reviewed complete sigma-algebra axioms on an underlying set, recording power set, relative complement and countable union separately and distinguishing the positive-integer indexing convention.",
+      "reason": "Compared entire source formulation, P(X)/P(S) occurrences across five definitions, existing 611 meanings and historical missing candidates. Power set is collection of all subsets, not the existing binary inclusion relation; one shared missing candidate is justified without external research.",
+      "references": [
+        {
+          "phrase": "family Sigma subset of P(X)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "positive integer indexing n>=1",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-positive-convention"
+        },
+        {
+          "phrase": "power set",
+          "state": "missing",
+          "context": "Set theory: power set of an arbitrary underlying set X, namely the collection of all subsets of X; variable names X and S are interchangeable.",
+          "matching_note": "Consolidated original notation 'power set P(X)' into the same set-theoretic power-set concept; no suitably typed meaning occurs among existing meanings."
+        },
+        {
+          "phrase": "relative complement X minus A",
+          "state": "unassigned",
+          "context": "Set complement of a member A of Sigma relative to X."
+        },
+        {
+          "phrase": "countable union of members A_n",
+          "state": "unassigned",
+          "context": "Union of a sequence of members of Sigma indexed by positive integers, with closure of Sigma under that union."
+        },
+        {
+          "phrase": "X is contained in Sigma",
+          "state": "external",
+          "disposition": "The requirement X belongs to the family Sigma is an axiom of the definition, not a claim that Sigma contains every subset."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.powerset.20261022.03",
+      "formulation_id": "form.wave2.foundation.topological-space",
+      "version_sha256": "dcfd18de9b8a66790d452b1c332763a10cbfaa02b4e02de5d368699881652d3b",
+      "expected_node_sha256": "86649004a10c93ca1260ae49f8e830d9a64cc663aadf9f2239ff33d010dc7eb6",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_global_occurrence_review",
+      "review_rationale": "Reviewed full arbitrary-space open-set axioms for a family tau of subsets of X, including empty and entire set, closure under arbitrary unions and finite intersections and empty underlying space.",
+      "reason": "Compared entire source formulation, P(X)/P(S) occurrences across five definitions, existing 611 meanings and historical missing candidates. Power set is collection of all subsets, not the existing binary inclusion relation; one shared missing candidate is justified without external research.",
+      "references": [
+        {
+          "phrase": "tau subset of P(X)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "power set",
+          "state": "missing",
+          "context": "Set theory: power set of an arbitrary underlying set X, namely the collection of all subsets of X; variable names X and S are interchangeable.",
+          "matching_note": "Consolidated original notation 'power set P(X)' into the same set-theoretic power-set concept; no suitably typed meaning occurs among existing meanings."
+        },
+        {
+          "phrase": "empty set and whole-set membership in tau",
+          "state": "unassigned",
+          "context": "Axioms that both the empty subset and ambient X are open."
+        },
+        {
+          "phrase": "arbitrary unions of open subsets",
+          "state": "unassigned",
+          "context": "Union over any indexed family of members of the topology, including potentially infinite indexing."
+        },
+        {
+          "phrase": "finite intersections of open subsets",
+          "state": "unassigned",
+          "context": "Intersection of any finite collection of open sets, including the empty finite intersection convention."
+        },
+        {
+          "phrase": "members of tau are open subsets",
+          "state": "external",
+          "disposition": "Open sets are defined by membership in tau, not imported from metric-space openness or a nonempty-space convention."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.powerset.20261022.04",
+      "formulation_id": "form.wave2.foundation76.discrete-topology.01",
+      "version_sha256": "9c809b6f11dc8bff94ef428bf2332def8e6a1358e1dd0a5ad3f495a1e16a0fa2",
+      "expected_node_sha256": "0eb22bae99204f11f3fb5a8e65ab1ab6f56fd90f34bcd417de24f1fc6304f623",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_global_occurrence_review",
+      "review_rationale": "Reviewed discrete topology on the source-specified nonempty set S by identifying its open sets with the entire power set; not generalized to empty domain by this independent source.",
+      "reason": "Compared entire source formulation, P(X)/P(S) occurrences across five definitions, existing 611 meanings and historical missing candidates. Power set is collection of all subsets, not the existing binary inclusion relation; one shared missing candidate is justified without external research.",
+      "references": [
+        {
+          "phrase": "topological space (S,tau)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "every subset of S is open",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "power set",
+          "state": "missing",
+          "context": "Set theory: power set of an arbitrary underlying set X, namely the collection of all subsets of X; variable names X and S are interchangeable.",
+          "matching_note": "Consolidated original notation 'power set P(S)' into the same set-theoretic power-set concept; no suitably typed meaning occurs among existing meanings."
+        },
+        {
+          "phrase": "nonempty underlying set S",
+          "state": "unassigned",
+          "context": "A set containing at least one element as explicitly required by this sourced formulation."
+        },
+        {
+          "phrase": "discreteness versus general topology",
+          "state": "external",
+          "disposition": "Every subset is open here, unlike an arbitrary topology; empty-space permissibility is not inferred."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.powerset.20261022.05",
+      "formulation_id": "form.wave2.pop141.outer-measure-full",
+      "version_sha256": "3b05f7d3ee653a69a010d9fe6d918cec433b804acde6c0195373b73077407196",
+      "expected_node_sha256": "ce580d9a8f826855a907ccc92a9af5d1b5972e2789bcb7dbde1955093ec95fbd",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_global_occurrence_review",
+      "review_rationale": "Reviewed outer measure as extended-nonnegative set function on every subset, with empty-set normalization, inclusion monotonicity and countable subadditivity over arbitrary sequences, not countable additivity.",
+      "reason": "Compared entire source formulation, P(X)/P(S) occurrences across five definitions, existing 611 meanings and historical missing candidates. Power set is collection of all subsets, not the existing binary inclusion relation; one shared missing candidate is justified without external research.",
+      "references": [
+        {
+          "phrase": "mapping from P(X) into extended nonnegative reals",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "subset relation A subseteq B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "nonnegative integers or positive countable sequence indices",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-positive-convention"
+        },
+        {
+          "phrase": "power set",
+          "state": "missing",
+          "context": "Set theory: power set of an arbitrary underlying set X, namely the collection of all subsets of X; variable names X and S are interchangeable.",
+          "matching_note": "Consolidated original notation 'power set P(X)' into the same set-theoretic power-set concept; no suitably typed meaning occurs among existing meanings."
+        },
+        {
+          "phrase": "extended nonnegative real codomain [0,+infinity]",
+          "state": "unassigned",
+          "context": "Values are real numbers at least zero together with formal +infinity."
+        },
+        {
+          "phrase": "empty-set zero mu*(empty)=0",
+          "state": "unassigned",
+          "context": "Normalization of mass of empty subset."
+        },
+        {
+          "phrase": "monotonicity A subseteq B implies mu*(A)<=mu*(B)",
+          "state": "unassigned",
+          "context": "Outer measure respects set inclusion by nondecreasing assigned size."
+        },
+        {
+          "phrase": "countable subadditivity",
+          "state": "unassigned",
+          "context": "Measure of union of countably many arbitrary subsets is at most sum of individual outer measures."
+        },
+        {
+          "phrase": "subadditivity not additivity",
+          "state": "external",
+          "disposition": "No measurable-set domain restriction or countable exact-additivity claim imposed."
+        }
+      ]
+    }
+  ]
+}
