@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.fef4e69e96c25bfa.contravariant-functor",
   "version_sha256": "9ab2a1ea2914925dbc9571ba9cca6b254b810e0835f680668d82ad5bb699173d",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category C and D",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.c046d19927ae96a888c2"
+    },
+    {
+      "phrase": "opposite category C^op",
+      "state": "existing",
+      "target_meaning_id": "meaning.fef4e69e96c25bfa.opposite-category",
+      "occurrence_id": "occ.529adf26a88883cecef8"
+    },
+    {
+      "phrase": "ordinary covariant functor",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "occurrence_id": "occ.545a1daa08979bbbb598"
+    },
+    {
+      "phrase": "arrow reversal F(X→Y):F(Y)→F(X)",
+      "state": "unassigned",
+      "context": "The output morphism in D goes from the image of the original target to the image of its source.",
+      "occurrence_id": "occ.ba573f2f644b2adbb297"
+    },
+    {
+      "phrase": "contravariant functor equivalently C^op→D",
+      "state": "external",
+      "disposition": "Opposite-category formulation entails reversed composition and preservation of identities in the appropriate order.",
+      "occurrence_id": "occ.e7b0c43339bafc6d3217"
+    }
+  ],
+  "snapshot_sha256": "cf99b7d9926bc0e1beba6a493bf02de4e7ce83a17560f5711458b9bf74b79fc4",
+  "review_rationale": "Read contravariance as ordinary covariance from the opposite category, including reversal of arrow direction and corresponding composition without introducing a second notion of functor."
 }

@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.fef4e69e96c25bfa.opposite-category",
   "version_sha256": "d8af2750ae6aa6f457b4a72205d96630af221b7bff62cdd56f0115aecae9576c",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.e98c75009435e51643b7"
+    },
+    {
+      "phrase": "Hom_{C^op}(X,Y)=Hom_C(Y,X)",
+      "state": "unassigned",
+      "context": "For each pair X,Y, the hom-set of the opposite category is the reversed-direction hom-set of C.",
+      "occurrence_id": "occ.30a44b6c04fd6a0b4629"
+    },
+    {
+      "phrase": "opposite composition",
+      "state": "unassigned",
+      "context": "If reversed arrows compose in C^op, their composite corresponds to the reversed order of the underlying C-composition.",
+      "occurrence_id": "occ.d39c1e7e33fc9d7cec1c"
+    },
+    {
+      "phrase": "same objects as C",
+      "state": "external",
+      "disposition": "The opposite category does not replace or dualize the objects themselves, only the morphisms and composition order.",
+      "occurrence_id": "occ.fc0f46bc2b35f420e969"
+    }
+  ],
+  "snapshot_sha256": "07e4082ae610aa1bac1e5d8ca6e8720f7d3c7c4d3bc017e27aa46067a9faffa9",
+  "review_rationale": "Read opposite category with identical object collection, all hom-set directions reversed, and reversed composition preserving the categorical identity and associativity laws."
 }
