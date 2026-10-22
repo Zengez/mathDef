@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.mapping-typed-graph",
   "version_sha256": "52ad86a2abd7c2a91c7f907f854b6f46077ac7c29b35ea55669be1828306d89b",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "Cartesian product X×Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.cartesian-product-binary",
+      "occurrence_id": "occ.e1bc6860e0da78026609"
+    },
+    {
+      "phrase": "typed binary relation (X,Y,G)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.binary-relation-typed",
+      "occurrence_id": "occ.671fbd3663aac038f751"
+    },
+    {
+      "phrase": "subset G of X×Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.a09a9d1836c4e4e8b128"
+    },
+    {
+      "phrase": "exactly one y per x",
+      "state": "unassigned",
+      "context": "For each x∈X there exists a unique y∈Y with (x,y)∈G.",
+      "occurrence_id": "occ.852e32788fc96684c0c1"
+    },
+    {
+      "phrase": "domain and codomain are part of mapping data",
+      "state": "external",
+      "disposition": "Unlike bare graph convention, different codomains can distinguish typed maps with identical graphs.",
+      "occurrence_id": "occ.8af8b62d83be19698a46"
+    }
+  ],
+  "snapshot_sha256": "8e7da5cfc9a097fb21afc59020f81849256e19f7bc23d0cd2e58b294533a1531",
+  "review_rationale": "Read typed function as triple (X,Y,G) with graph subset X×Y and total unique output property, explicitly retaining both domain and codomain."
 }
