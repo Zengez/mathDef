@@ -2,25 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.directional113.closed-metric",
   "version_sha256": "9a7cbf9509100583c2273b655f0879cbd33bf64bfdb343e59b7e076fd14a507b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "metric space",
-      "span": [
-        6,
-        18
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.analysis98.metric-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.6b24b099f32aa9b233db"
+      "phrase": "metric space (X,d)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis98.metric-space",
+      "occurrence_id": "occ.1019dad11aa7dcb09189"
+    },
+    {
+      "phrase": "center a∈X and radius r>0",
+      "state": "unassigned",
+      "context": "Chosen center and positive real radius.",
+      "occurrence_id": "occ.1694512143edcfd98599"
+    },
+    {
+      "phrase": "closed metric ball C_d(a,r)",
+      "state": "unassigned",
+      "context": "All x∈X with d(x,a)≤r.",
+      "occurrence_id": "occ.03fc07a702c823a4ceb7"
+    },
+    {
+      "phrase": "closed ball defined by weak inequality",
+      "state": "external",
+      "disposition": "This is the metric closed-ball set, not an assertion of equivalence with arbitrary closed subsets.",
+      "occurrence_id": "occ.0089f2e7b20d768c6b0f"
     }
   ],
-  "snapshot_sha256": "ffbf181cbf3bb0adfca576cb1459b5353ded86a60d7600388cb032bf82ca929d",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "034dfec6b90b379baabdf2d5481d95cff437ef5f863edd29dfd2122343218b39",
+  "review_rationale": "Read closed metric ball with strictly positive radius and nonstrict distance bound from center, not necessarily a closed set in every arbitrary topology context outside metric topology."
 }
