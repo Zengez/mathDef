@@ -816,6 +816,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.63acc9193a56ae7003b9",
+      "context": "Affine geometry: finite affine combination ∑_{i=1}^k α_i x_i of vectors or points with real coefficients ∑α_i=1, without positivity required.",
+      "surface_phrase": "finite affine combination sum alpha_i*x_i",
+      "observed_in_formulations": [
+        "form.wave2.pop140.affine-hull-combinations"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.7176b5fd74d3e3e5dc95",
       "context": "Set theory: reflexivity property of a binary relation R⊆S×S, namely (x,x)∈R for every x∈S.",
       "surface_phrase": "reflexivity x~x",
@@ -830,6 +839,15 @@
       "surface_phrase": "limit of partial sums as N to infinity",
       "observed_in_formulations": [
         "form.wave2.prereq122.real-series-convergent"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.85d3921d2aa075f7883a",
+      "context": "Linear algebra: n by n square matrix over field K, an array A=(a_ij) indexed by ordered pairs 1≤i,j≤n.",
+      "surface_phrase": "square matrix A in M_n(K)",
+      "observed_in_formulations": [
+        "form.wave2.pop139.matrix-trace"
       ],
       "actionable": false
     },
@@ -920,6 +938,24 @@
       "surface_phrase": "open neighborhood of f(x)",
       "observed_in_formulations": [
         "form.wave2.foundation76.continuous-topological-map.02"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.9f6f3ee9e141231a54d4",
+      "context": "Number theory: integer divisibility m|(a-b), meaning there is an integer k such that a-b=km, with m nonzero here.",
+      "surface_phrase": "integer divisibility of a-b by m",
+      "observed_in_formulations": [
+        "form.wave2.pop139.congruence-multiple"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.a128ec6b5c7fae2074c2",
+      "context": "Set theory: a family or collection of subsets of S indexed by some set, viewed as a set of subsets; here P may be empty when S is empty.",
+      "surface_phrase": "set family P",
+      "observed_in_formulations": [
+        "form.wave2.group116.set-partition.2"
       ],
       "actionable": false
     },
@@ -1023,6 +1059,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.c4602d674cca1ee0141b",
+      "context": "Algebra: finite sum of n specified elements of a field K, using its additive structure; trace is one particular application.",
+      "surface_phrase": "finite sum of n diagonal entries",
+      "observed_in_formulations": [
+        "form.wave2.pop139.matrix-trace"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.c5104821c3c70afa1f63",
       "context": "Category theory: ordinary functor between arbitrary categories C and D without assuming smallness; object/arrow assignments preserve identities and compositions.",
       "surface_phrase": "functor F:C→D",
@@ -1104,6 +1149,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.d745ad3ce1da1b107f4c",
+      "context": "Elementary number theory: Euclidean division remainder r of integer a by positive modulus m, uniquely satisfying a=qm+r and 0≤r<m.",
+      "surface_phrase": "least nonnegative remainder upon division by m",
+      "observed_in_formulations": [
+        "form.wave2.pop139.congruence-remainder"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.e329000e6f01aaf3d31b",
       "context": "Field theory: evaluation map of Galois-group automorphisms at a fixed element a∈E, ev_a:Gal(E/F)→E, σ↦σ(a), where its continuity is relative to the chosen topologies; distinct from polynomial evaluation homomorphisms.",
       "surface_phrase": "evaluation map sigma ↦ sigma(a)",
@@ -1118,6 +1172,15 @@
       "surface_phrase": "distance between sets inf d(a,b)",
       "observed_in_formulations": [
         "form.wave2.pop141.metric-outer-measure"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.e800fa4f698affae8100",
+      "context": "Linear algebra: main diagonal entries a_{ii} of an n by n square matrix, with coincident row and column index.",
+      "surface_phrase": "diagonal entries a_ii",
+      "observed_in_formulations": [
+        "form.wave2.pop139.matrix-trace"
       ],
       "actionable": false
     },
@@ -1176,7 +1239,7 @@
       "actionable": false
     }
   ],
-  "unresolved_occurrence_count": 822,
+  "unresolved_occurrence_count": 807,
   "missing_research_permitted": false,
   "suggested_next_package": {
     "breadth_topic_candidates": [],
@@ -1191,7 +1254,7 @@
     "scan_complete": 659,
     "unscanned": 0,
     "scan_incomplete": 0,
-    "unassigned_occurrences": 822,
+    "unassigned_occurrences": 807,
     "consolidation_gate_valid": false
   },
   "reconciliation_findings": {
