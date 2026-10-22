@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-044f",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.f77b42c1adb38c56.perfect-closure",
+      "version_sha256": "1a879075ce5896d96acafcb3985438f7ac31fe91f4abb8443c8358d6f200dc76",
+      "complete": true,
+      "review_rationale": "Read the perfect closure in positive characteristic inside a fixed algebraic closure, requiring minimal perfect extension and compatible iterated pth-power roots, not arbitrary algebraic elements.",
+      "references": [
+        {
+          "phrase": "base field k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "field of characteristic p>0",
+          "state": "existing",
+          "target_meaning_id": "meaning.dbce785fa0c96b0a.field-characteristic"
+        },
+        {
+          "phrase": "perfect field extension",
+          "state": "existing",
+          "target_meaning_id": "meaning.f77b42c1adb38c56.perfect-field"
+        },
+        {
+          "phrase": "algebraic closure of k",
+          "state": "existing",
+          "target_meaning_id": "meaning.39488f3e396a1c77.algebraic-closure"
+        },
+        {
+          "phrase": "field extension",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "phrase": "compatible iterated p-power roots of elements of k",
+          "state": "unassigned",
+          "context": "Chosen roots at every p^n-power level inside the fixed algebraic closure, with pth powers relating successive roots."
+        },
+        {
+          "phrase": "smallest perfect extension containing k",
+          "state": "unassigned",
+          "context": "Intersection/minimal field containing k and the required roots, tested by inclusion among fields in the fixed algebraic closure."
+        },
+        {
+          "phrase": "positive characteristic requirement",
+          "state": "external",
+          "disposition": "This construction is explicitly restricted to p>0 and does not assert nontrivial perfect closure in characteristic zero."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.f77b42c1adb38c56.perfect-field",
+      "version_sha256": "d4eb4dfe684d7f8ade978594444e5de031dfde52b20361373a5768f0dcc8abcb",
+      "complete": true,
+      "review_rationale": "Read all-algebraic-extension separability and the characteristic-based equivalence, including pth powers for all elements and distinguishing perfectness from algebraic closedness.",
+      "references": [
+        {
+          "phrase": "field k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "algebraic field extension",
+          "state": "existing",
+          "target_meaning_id": "meaning.50d335de00e5f11d.algebraic-extension"
+        },
+        {
+          "phrase": "separable algebraic extension",
+          "state": "existing",
+          "target_meaning_id": "meaning.50d335de00e5f11d.separable-algebraic-extension"
+        },
+        {
+          "phrase": "characteristic of field",
+          "state": "existing",
+          "target_meaning_id": "meaning.dbce785fa0c96b0a.field-characteristic"
+        },
+        {
+          "phrase": "Frobenius map x↦x^p",
+          "state": "unassigned",
+          "context": "In characteristic p>0, the multiplicative pth power mapping k→k."
+        },
+        {
+          "phrase": "every element is a pth power",
+          "state": "unassigned",
+          "context": "Surjectivity of the Frobenius map on k, in the positive-characteristic equivalence."
+        },
+        {
+          "phrase": "characteristic-zero fields are perfect",
+          "state": "external",
+          "disposition": "This is a consequence of separability of algebraic extensions in characteristic zero, not algebraic closedness."
+        }
+      ]
+    }
+  ]
+}
