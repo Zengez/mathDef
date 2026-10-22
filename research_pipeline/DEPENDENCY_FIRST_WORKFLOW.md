@@ -98,10 +98,32 @@ still OFF by default.**
    ```bash
    python -m research_pipeline.engine.dependency_graph --workspace "$W" --mode consolidation_worklist --limit 20
    ```
+   For context-rich review without repeatedly joining inventory/source/node files,
+   use the **generic, read-only** review bundle (substrings are a navigation
+   filter, *never* an equivalence judgment):
+   ```bash
+   python -m research_pipeline.engine.dependency_context_worklist \
+     --workspace "$W" --contains "residue field" --limit 20
+   ```
+   It includes original full source formulations, neighboring reference
+   dispositions, existing local meaning targets, and the **current effective
+   full-node SHA256** after any append-only amendments. Each bundle entry also
+   includes a *draft* full-reference template without occurrence IDs, so the
+   reviewer can prepare a version-anchored amendment without manual registry
+   joins. Only manual contextual analysis may classify those references.
+
    Review every group and its originating formulation,
    wording and contextual information. Compare candidate uses across the
    whole existing corpus. Deduplicate possible missing meanings *as a
    classification problem*, not as multiple fresh source investigations.
+   **Triage distinction:** A previously unmatched mathematical phrase may
+   be (a) an actual separately definable prerequisite, (b) a defining
+   equation/axiom or piece of the very structure under review, or (c) a
+   notation/quantifier convention. Only (a) automatically merits a missing
+   definition candidate; after full contextual review, (b)/(c) may receive
+   a well-explained `external` disposition. A known named concept such as
+   a group identity or an inverse is not dismissed just because it appears
+   inside another definition. Never bulk-reclassify by lexical patterns.
 2. If an unassigned occurrence has a clear existing target, classify it by
    append-only `amend` of the effective complete scan; if a genuinely
    missing contextual candidate is justified from internal evidence,
