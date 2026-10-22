@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.variant71.connected.01",
   "version_sha256": "61d5d23ce21d8e2ac7339d3dd3baa56cde18283f49d4290c91cd5ffe53c8c40b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "topological space",
-      "span": [
-        2,
-        19
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.8d2f16a1e8f4585b043a"
+      "phrase": "topological space X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.03c2b7a400e8621c4ecc"
+    },
+    {
+      "phrase": "open subsets U and V of X",
+      "state": "unassigned",
+      "context": "Sets declared open by the topology of X.",
+      "occurrence_id": "occ.540108b10ab54a2ed862"
+    },
+    {
+      "phrase": "nonempty U and nonempty V",
+      "state": "unassigned",
+      "context": "Both candidate open sets contain points.",
+      "occurrence_id": "occ.98e8c2df941ef1310f87"
+    },
+    {
+      "phrase": "disjointness U cap V empty",
+      "state": "unassigned",
+      "context": "No point of X belongs to both candidate open sets.",
+      "occurrence_id": "occ.187e2aa193d1a233598b"
+    },
+    {
+      "phrase": "covering U union V = X",
+      "state": "unassigned",
+      "context": "Every point of X lies in U or V.",
+      "occurrence_id": "occ.7517dd49c12acc33af85"
+    },
+    {
+      "phrase": "empty space included",
+      "state": "external",
+      "disposition": "Empty X admits no pair of nonempty opens and is therefore connected under this formulation.",
+      "occurrence_id": "occ.ca03a372ad5a7ff9eff3"
     }
   ],
-  "snapshot_sha256": "d38a26c9abe05f03d75389fe245b98c875f5b1e89f8df7e297c61fcbddfa7095",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "b4476d6c9cb88df5bd7019a5552a1e32c6ad299dc447bf379f9286b947c1ab01",
+  "review_rationale": "Reviewed connected space by impossibility of two disjoint nonempty open sets whose union covers X, with no nonempty-ambient-space requirement."
 }
