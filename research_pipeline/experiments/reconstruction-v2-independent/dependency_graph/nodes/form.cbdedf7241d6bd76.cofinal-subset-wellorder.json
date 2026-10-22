@@ -2,37 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.cbdedf7241d6bd76.cofinal-subset-wellorder",
   "version_sha256": "571369081f7841e0472a417a61594a56ba9c8023d4481aecbb3078ed41e4520d",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        2,
-        8
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.33a26946186d2a4ad63b"
-    },
-    {
-      "phrase": "well-ordered set",
-      "span": [
-        16,
-        32
-      ],
+      "phrase": "well-ordered set T",
       "state": "existing",
       "target_meaning_id": "meaning.wave2.foundation.well-ordered-set",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.42db6f5249e488514bf2"
+      "occurrence_id": "occ.05ac0a07a2583eb2b0d3"
+    },
+    {
+      "phrase": "subset A of T",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.90e67d76bbb31350273e"
+    },
+    {
+      "phrase": "order relation t≤a",
+      "state": "existing",
+      "target_meaning_id": "meaning.709d3d2f82950c5b.preordered-set",
+      "occurrence_id": "occ.4daf1f3675e0d2fc2409"
+    },
+    {
+      "phrase": "for each t∈T some a∈A satisfies t≤a",
+      "state": "external",
+      "disposition": "This is the cofinal upper-bound predicate in the given well-order, not a claim of order density or categorical cofinality.",
+      "occurrence_id": "occ.8af5b65c89a6e00c2256"
     }
   ],
-  "snapshot_sha256": "4b48157fcdde1ac3f2ca3f04092f1deb001b7de3143bf848e107e5ac37149f66",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "a55c6ffb73fcd940321ad9f6eba3a342b019d87f37ce3bde9562b7c7030c5015",
+  "review_rationale": "Examined cofinality of a subset within the actual well-order T, preserving the quantifiers and the non-strict comparison t≤a; neither a category-theoretic cofinal functor nor a merely dense subset."
 }

@@ -2,49 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.cbdedf7241d6bd76.cofinality-ordinal",
   "version_sha256": "aea8deaac5cc6b92e2f3e6e950655cc26f1102a6d38ea8c4c23873904e134ec2",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        98,
-        104
-      ],
+      "phrase": "ordinal α",
       "state": "existing",
-      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.7c68790d1c755dbb73d5"
+      "target_meaning_id": "meaning.f810d472f5a4d367.von-neumann-ordinal",
+      "occurrence_id": "occ.97c8b414d64e86118391"
     },
     {
-      "phrase": "cardinality",
-      "span": [
-        146,
-        157
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.081430bc340a055a.cardinality"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.953bc2f7a8650648ef8c"
+      "phrase": "cofinal subset of the well-ordered ordinal α",
+      "state": "existing",
+      "target_meaning_id": "meaning.cbdedf7241d6bd76.cofinal-subset-wellorder",
+      "occurrence_id": "occ.b92e7f7e8f5a7ded7863"
     },
     {
-      "phrase": "subset",
-      "span": [
-        171,
-        177
-      ],
+      "phrase": "cardinality of a cofinal subset",
       "state": "existing",
-      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.e04a19ac80a9bb3bfbcb"
+      "target_meaning_id": "meaning.081430bc340a055a.cardinality",
+      "occurrence_id": "occ.147ae9d3f85200533cb3"
+    },
+    {
+      "phrase": "order isomorphism between well-ordered sets",
+      "state": "unassigned",
+      "context": "Bijective relation-preserving and order-reflecting map giving an ordinal the same order type as a cofinal subset",
+      "occurrence_id": "occ.3ae00ec32d6f09aae707"
+    },
+    {
+      "phrase": "well-order on an ordinal",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.well-ordered-set",
+      "occurrence_id": "occ.6485728aab5ed3a3206b"
+    },
+    {
+      "phrase": "least order type and minimum-cardinality equivalence",
+      "state": "external",
+      "disposition": "These are two stated characterizations of cf(α) for a fixed ordinal, not unrelated notions or categorical functor cofinality.",
+      "occurrence_id": "occ.0342d2a13236ddc5ca2e"
     }
   ],
-  "snapshot_sha256": "dabb6fa2bb33c8b0215b7bb9aab2f9b987815ac3c952d1c3841c9e8e7b828791",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "29ab484842c91ffcbb2bccdb41e5c4b042d27f62236aa2a8ccc75bba2d4d598b",
+  "review_rationale": "Reviewed the ordinal cofinality definition via least ordinal order type of a cofinal subset and its alternative minimum-cardinality characterization; distinguished this from cofinality of a category and from ordinal successor."
 }
