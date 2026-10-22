@@ -2,47 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.bd914b941fe03a76.scheme-fibre-product-universal",
   "version_sha256": "b481e8ef8fa0b139be271d88ee079ad1f4829c0c793f6058845f64fc52dda32c",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "scheme",
-      "span": [
-        4,
-        10
-      ],
+      "phrase": "scheme morphisms X→S and Y→S",
       "state": "existing",
-      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.d98208e06b38e798ef92"
+      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "occurrence_id": "occ.da776d2d5c2acf83ff36"
     },
     {
-      "phrase": "scheme",
-      "span": [
-        66,
-        72
-      ],
+      "phrase": "scheme fibre product X×_S Y",
       "state": "existing",
-      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.562040031d7c1090cfc5"
+      "target_meaning_id": "meaning.c31e56dc023fcbcc.scheme-fibre-product",
+      "occurrence_id": "occ.ef59c5cdc3f3a4f843fc"
     },
     {
-      "phrase": "scheme",
-      "span": [
-        138,
-        144
-      ],
+      "phrase": "categorical fibre product",
       "state": "existing",
-      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.af0e4d33bb5085cf1147"
+      "target_meaning_id": "meaning.be14669c52f30e79.categorical-fibre-product",
+      "occurrence_id": "occ.0c53c3f689483b20edaf"
+    },
+    {
+      "phrase": "universal pair of maps T→X, T→Y over S",
+      "state": "unassigned",
+      "context": "Algebraic geometry: representing compatible pairs of S-scheme morphisms by maps into a fibre product",
+      "occurrence_id": "occ.bcc028ba9023feb7b615"
+    },
+    {
+      "phrase": "morphisms correspond bijectively for every T",
+      "state": "external",
+      "disposition": "Both existence and uniqueness are required, not merely a square with commuting projections.",
+      "occurrence_id": "occ.aac93cd670aa9c7d6429"
     }
   ],
-  "snapshot_sha256": "e0d6b3beb43e9aac10df5d521e714f3275374c418d02300c84d92862545a370f",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "04ca3ea70c0e8b443fc35d9b5e21ac725b3f471566a0b0c487b96de0ef4b2d42",
+  "review_rationale": "Read the entire universal scheme fibre-product property with projections commuting over S and a bijection for all test schemes T. Kept the equal-composite requirement and universal uniqueness."
 }

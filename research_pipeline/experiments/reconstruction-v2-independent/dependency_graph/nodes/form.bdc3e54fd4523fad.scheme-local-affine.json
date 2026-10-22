@@ -2,39 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.bdc3e54fd4523fad.scheme-local-affine",
   "version_sha256": "ff8308463e55904233eca0aaa523c64b7c6e11818f8a522770a5bd608250b45e",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "locally ringed space",
-      "span": [
-        14,
-        34
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.52683cac2ccf3bad.locally-ringed-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.835ba54ca6b5dd64f0b5"
+      "phrase": "locally ringed space (X,O_X)",
+      "state": "existing",
+      "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space",
+      "occurrence_id": "occ.fd482f22e20e346d25b5"
     },
     {
-      "phrase": "locally ringed space",
-      "span": [
-        110,
-        130
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.52683cac2ccf3bad.locally-ringed-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.fa5d6a7a9203c224b99a"
+      "phrase": "open locally ringed subspace",
+      "state": "existing",
+      "target_meaning_id": "meaning.3c73940f47e92e99.open-subspace-locally-ringed-space",
+      "occurrence_id": "occ.d2fb458a0102e0ca70ec"
+    },
+    {
+      "phrase": "Spec(R) and its prime spectrum",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.a20a11bf73b03c2489ff"
+    },
+    {
+      "phrase": "structure sheaf of Spec(R)",
+      "state": "unassigned",
+      "context": "Algebraic geometry: sheaf of commutative rings on prime spectrum of R",
+      "occurrence_id": "occ.37d81a8b0ccaad8eccfe"
+    },
+    {
+      "phrase": "isomorphism as locally ringed spaces",
+      "state": "unassigned",
+      "context": "Algebraic geometry: invertible locally ringed space morphism preserving structure sheaves and local stalks",
+      "occurrence_id": "occ.79473dabdcfb197b972e"
+    },
+    {
+      "phrase": "every point has an open affine neighbourhood",
+      "state": "external",
+      "disposition": "Local affine charts are required, but the whole scheme need not be affine.",
+      "occurrence_id": "occ.4c2071dab8fc3bef6a30"
     }
   ],
-  "snapshot_sha256": "8c1818a714d760c0f5e270d27696b4fa64ad5cb85862f97b56eb5ee775febc26",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "d791522ad438d63a1587aa1d0268ebfecad4eeb6e89d674bd4fb109409593225",
+  "review_rationale": "Read local affine-neighbourhood requirement for a locally ringed space, including isomorphism with the prime spectrum equipped with its structure sheaf; no single global affine presentation is asserted."
 }
