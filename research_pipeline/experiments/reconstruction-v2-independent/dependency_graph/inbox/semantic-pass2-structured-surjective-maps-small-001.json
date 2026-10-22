@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-structured-surjective-maps-small-001",
+  "mode": "amend",
+  "research_scope": "Three source-reviewed structured map surjectivity occurrences, separated from local map, localization, ring and algebra structure.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.surjections_small.20261022.01",
+      "formulation_id": "form.a54f6089c72fdd84.small-extension-artinian-local",
+      "version_sha256": "87b4037ece8b670b0368c06c371b691715358211f7a86c5d3bab6e5170b312a9",
+      "expected_node_sha256": "80d0d87b14c4b2ee0feadbcaa580efedc0b2e61c07142b668c2c68bb8977bb31",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed surjective local homomorphism B′→B, its kernel I of module length one, the square-zero consequence, and annihilation by the maximal ideal. A small extension is stronger than an arbitrary square-zero extension.",
+      "reason": "Reviewed the entire source definition of 'small extension of Artinian local rings'; ordinary onto-codomain surjectivity is the underlying predicate in this structured setting, while all source-specific ring, module, localization and polynomial-presentation hypotheses are preserved. No outside research or definition changes.",
+      "references": [
+        {
+          "phrase": "local Artinian rings B′ and B",
+          "state": "existing",
+          "target_meaning_id": "meaning.9442fc10b22be057.artinian-commutative-ring"
+        },
+        {
+          "phrase": "local ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "ring homomorphism B′→B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "module length one",
+          "state": "existing",
+          "target_meaning_id": "meaning.a95feee56dc057ee.module-composition-length"
+        },
+        {
+          "phrase": "surjective local homomorphism",
+          "state": "missing",
+          "context": "Set theory: surjective function f:X→Y whose image is the entire stated codomain Y; for module homomorphisms this is the underlying-set surjectivity of the R-linear map, independent of linearity, free domain, or choice of basis.",
+          "matching_note": "The structured ring/module map is onto its specified codomain as an underlying set map; local homomorphism, module localization or R-algebra compatibility are extra source conditions, not part of the general surjectivity prerequisite."
+        },
+        {
+          "phrase": "kernel ideal I",
+          "state": "unassigned",
+          "context": "Ring theory: kernel of homomorphism as ideal of B′"
+        },
+        {
+          "phrase": "I²=0 and maximal ideal annihilates I",
+          "state": "external",
+          "disposition": "These are mathematical consequences asserted of length-one kernel, not separate requirements equivalent for arbitrary extension."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.surjections_small.20261022.02",
+      "formulation_id": "form.c4da44394808f995.surjectivity-locus-module-map",
+      "version_sha256": "ad677986227c360dee58e3225a91aa5c62de97fc53721e417eb140d2edf51914",
+      "expected_node_sha256": "eb130c5fb6093d4f5c30a6e5a8adc5fafabc28f77ac16664df5fd642dc225a9e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the full surjectivity locus condition at all prime localizations and separated it from the additional theorem about openness under the source section's hypotheses. Did not substitute fibrewise surjectivity without justification.",
+      "reason": "Reviewed the entire source definition of 'locus of surjectivity of a module homomorphism'; ordinary onto-codomain surjectivity is the underlying predicate in this structured setting, while all source-specific ring, module, localization and polynomial-presentation hypotheses are preserved. No outside research or definition changes.",
+      "references": [
+        {
+          "phrase": "R-modules M,N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "homomorphism of R-modules φ:M→N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear"
+        },
+        {
+          "phrase": "prime spectrum Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "localized modules M_p and N_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "localization of the module homomorphism φ_p:M_p→N_p",
+          "state": "unassigned",
+          "context": "The map obtained by inverting R\\p on both domain and codomain, not the original map or a residue-field fibre map"
+        },
+        {
+          "phrase": "surjective localized module homomorphism",
+          "state": "missing",
+          "context": "Set theory: surjective function f:X→Y whose image is the entire stated codomain Y; for module homomorphisms this is the underlying-set surjectivity of the R-linear map, independent of linearity, free domain, or choice of basis.",
+          "matching_note": "The structured ring/module map is onto its specified codomain as an underlying set map; local homomorphism, module localization or R-algebra compatibility are extra source conditions, not part of the general surjectivity prerequisite."
+        },
+        {
+          "phrase": "open subset of Spec(R)",
+          "state": "unassigned",
+          "context": "Zariski-open locus under extra hypotheses stated by the source; not an unconditional property of the surjectivity locus"
+        },
+        {
+          "phrase": "openness for finite N under section hypotheses",
+          "state": "external",
+          "disposition": "An additional theorem-dependent assertion, not part of the predicate defining the surjectivity locus and not generalized to arbitrary N."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.surjections_small.20261022.03",
+      "formulation_id": "form.d2b85c43cfbc6c05.finite-type-ring-map",
+      "version_sha256": "25b2aa68e5587bd7aa5e55e641c87f6e09b3dc7c01759814599b526f88570e34",
+      "expected_node_sha256": "b7c8bcd80aff51e707bb2832bb90819e36c2e6963e3691046124651952800225",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read finite type as generation of S by finitely many elements as an R-algebra, equivalently a quotient of a finite-variable polynomial ring; did not smuggle in finite generation of the kernel ideal.",
+      "reason": "Reviewed the entire source definition of 'ring homomorphism of finite type'; ordinary onto-codomain surjectivity is the underlying predicate in this structured setting, while all source-specific ring, module, localization and polynomial-presentation hypotheses are preserved. No outside research or definition changes.",
+      "references": [
+        {
+          "phrase": "unital ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "context": "Smallest unital R-subalgebra of S containing a finite list of elements equals S",
+          "phrase": "R-algebra generated by finitely many elements",
+          "state": "unassigned"
+        },
+        {
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree.",
+          "phrase": "polynomial algebra R[x_1,…,x_n]",
+          "state": "missing"
+        },
+        {
+          "context": "Set theory: surjective function f:X→Y whose image is the entire stated codomain Y; for module homomorphisms this is the underlying-set surjectivity of the R-linear map, independent of linearity, free domain, or choice of basis.",
+          "phrase": "surjective R-algebra homomorphism R[x_1,…,x_n]→S",
+          "state": "missing",
+          "matching_note": "The structured ring/module map is onto its specified codomain as an underlying set map; local homomorphism, module localization or R-algebra compatibility are extra source conditions, not part of the general surjectivity prerequisite."
+        },
+        {
+          "disposition": "Finite type constrains the generators; finite presentation would additionally constrain relations and is not inferred.",
+          "phrase": "equivalence with a polynomial-ring quotient",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}
