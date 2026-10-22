@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.cross104.tree-unrooted.2",
   "version_sha256": "099985dba8d2f22ecdd80e21bcbc7f60d5631c5756d19e99338cbfd9e41f91e8",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "simple undirected graph",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.graph42.simple-undirected",
+      "occurrence_id": "occ.50f6668943fb6cdcab53"
+    },
+    {
+      "phrase": "connected simple graph",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.branch129.nonempty-connected-graph",
+      "occurrence_id": "occ.5dcdb233e4ea2a090ea5"
+    },
+    {
+      "phrase": "cycle in simple undirected graph",
+      "state": "unassigned",
+      "context": "Nontrivial closed graph path without repeated internal vertices, in simple undirected context.",
+      "occurrence_id": "occ.27dbcbe60a81035c4747"
+    },
+    {
+      "phrase": "equivalent acyclicity characterization",
+      "state": "external",
+      "disposition": "No cycle with simple connectivity, not an orientation or root condition.",
+      "occurrence_id": "occ.bed20e3ab5f8d2c60068"
+    }
+  ],
+  "snapshot_sha256": "8c8356d8bf517a506bb75ea14d11d2b911a6c783bcd9c36f223e829349fe1fc3",
+  "review_rationale": "Read equivalent tree criterion using simple connected graph with no cycles, keeping cycle meaning distinct from arbitrary closed walk with repeated edges."
 }

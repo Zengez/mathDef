@@ -2,10 +2,33 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.cross104.lipschitz-global",
   "version_sha256": "aac4ee5faddff93dc0d4ed8c2ef1cedd33cecbc560af8ea557bfaada6645cc1b",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "metric space X and Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.analysis98.metric-space",
+      "occurrence_id": "occ.1aef18c31672a69852f7"
+    },
+    {
+      "phrase": "map f:X→Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.14bf0afc8d856f46b71d"
+    },
+    {
+      "phrase": "global Lipschitz constant L≥0",
+      "state": "unassigned",
+      "context": "A single nonnegative real L such that for all x,y, d_Y(f(x),f(y))≤L d_X(x,y).",
+      "occurrence_id": "occ.25b86e88ca6d5490ccaa"
+    },
+    {
+      "phrase": "global condition has two freely varying points",
+      "state": "external",
+      "disposition": "One L for all pairs; stronger than restriction to one fixed reference point.",
+      "occurrence_id": "occ.80a37819d5cd06f40b32"
+    }
+  ],
+  "snapshot_sha256": "89df61bf45a878516b4086a86232e1070b694e9e1f2c4b68d8c90ea98cae285a",
+  "review_rationale": "Read globally Lipschitz mapping between metric spaces using a single nonnegative constant for all pairs of input points, distinguishing the anchored variant."
 }
