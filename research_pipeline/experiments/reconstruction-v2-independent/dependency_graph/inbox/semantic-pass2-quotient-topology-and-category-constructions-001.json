@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-quotient-topology-and-category-constructions-001",
+  "mode": "amend",
+  "research_scope": "Seven full source-reviewed references, grouped into exactly three genuinely missing contextual prerequisites: quotient topology, ordinary comma category, and slice category; preserve orientation, codomain, and iso-comma distinctions.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.topology_category.20261022.01",
+      "formulation_id": "form.83a528850cdf6a59.strict-continuous-map",
+      "version_sha256": "423f4e9e71ba7d92ba2aae19ab5f77abbdb0d42e6716884f75e68127a8d1d3ef",
+      "expected_node_sha256": "babef76f3c4e2482037899239847da886c08cf6d7b61a695b56be09dbd0b2659",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the strict-map comparison of two topologies on the image f(X): quotient topology induced by X and subspace topology induced by Y. This need not require f to be globally surjective onto Y.",
+      "reason": "Inspected the entire mathematical source and every original reference alongside all indexed meanings, distinguishing object types and extra conditions. Identifies the same final-topology construction induced by a surjection onto its specified target; it is distinct from the set quotient, a subspace topology, an open map condition, or global surjectivity onto an unrelated ambient space. Reviewed phrase 'quotient topology induced by surjection X→f(X)' in source 'strict continuous map'; preserving other references and the original source wording.",
+      "references": [
+        {
+          "phrase": "continuous map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "subspace topology on f(X)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subspace-topology-general"
+        },
+        {
+          "phrase": "image f(X)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.image-of-mapping"
+        },
+        {
+          "phrase": "quotient topology induced by surjection X→f(X)",
+          "state": "missing",
+          "context": "Point-set topology: quotient (final) topology induced by a surjective continuous map q:X→Q, where U⊆Q is open exactly when q^{-1}(U) is open in X; includes canonical quotient-set maps and the map X→f(X) when equipped with final topology, independently of whether a larger codomain Y is surjected onto.",
+          "matching_note": "Identifies the same final-topology construction induced by a surjection onto its specified target; it is distinct from the set quotient, a subspace topology, an open map condition, or global surjectivity onto an unrelated ambient space."
+        },
+        {
+          "phrase": "two topologies agree on f(X)",
+          "state": "external",
+          "disposition": "Equality is required on the image, not on all of Y; the map need not be surjective onto Y."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.topology_category.20261022.02",
+      "formulation_id": "form.83a528850cdf6a59.submersive-continuous-map",
+      "version_sha256": "1620373fbacadf98c746265b93e795858111ec79dac3aeb43f8185ec7dab2be1",
+      "expected_node_sha256": "3f43515316b1178d79e0aa04a02dd4c3e50be537c4af20f18e92acd15d6cdf8e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read both the quotient-topology statement and inverse-image criterion for the entire submersive map formulation. Surjectivity onto Y is indispensable, unlike strictness merely onto f(X); no open-map requirement is inferred.",
+      "reason": "Inspected the entire mathematical source and every original reference alongside all indexed meanings, distinguishing object types and extra conditions. Identifies the same final-topology construction induced by a surjection onto its specified target; it is distinct from the set quotient, a subspace topology, an open map condition, or global surjectivity onto an unrelated ambient space. Reviewed phrase 'quotient topology on Y for f' in source 'submersive map'; preserving other references and the original source wording.",
+      "references": [
+        {
+          "phrase": "continuous map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "open subsets U⊆Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "surjective continuous map",
+          "state": "unassigned",
+          "context": "Set theory and topology: surjective function f with image equal to all of Y"
+        },
+        {
+          "phrase": "quotient topology on Y for f",
+          "state": "missing",
+          "context": "Point-set topology: quotient (final) topology induced by a surjective continuous map q:X→Q, where U⊆Q is open exactly when q^{-1}(U) is open in X; includes canonical quotient-set maps and the map X→f(X) when equipped with final topology, independently of whether a larger codomain Y is surjected onto.",
+          "matching_note": "Identifies the same final-topology construction induced by a surjection onto its specified target; it is distinct from the set quotient, a subspace topology, an open map condition, or global surjectivity onto an unrelated ambient space."
+        },
+        {
+          "phrase": "inverse image f^{-1}(U)",
+          "state": "unassigned",
+          "context": "Set theory: inverse image or preimage of a subset under a function"
+        },
+        {
+          "phrase": "U open iff f^{-1}(U) open",
+          "state": "external",
+          "disposition": "The biconditional is the quotient-topology test; openness of f as a map is not asserted."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.topology_category.20261022.03",
+      "formulation_id": "form.af6115a1e1deaad3.coequalizer-topological-spaces",
+      "version_sha256": "d97958c2f4647b3a245d6edd9bcf92d84b74d4b46fc437a2c33c9b0696f94d5a",
+      "expected_node_sha256": "1e2a6e0d1b61c1bd8771ebe45bda4dad1b1d97137ccb427faf7c61104dbf07bd",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the coequalizer as a topological quotient of Y by the least equivalence relation identifying f(x) with g(x) for all x, with quotient topology; separate the categorical coequalizer property from the quotient equivalence closure.",
+      "reason": "Inspected the entire mathematical source and every original reference alongside all indexed meanings, distinguishing object types and extra conditions. Identifies the same final-topology construction induced by a surjection onto its specified target; it is distinct from the set quotient, a subspace topology, an open map condition, or global surjectivity onto an unrelated ambient space. Reviewed phrase 'quotient topology on Y/~' in source 'topological coequalizer'; preserving other references and the original source wording.",
+      "references": [
+        {
+          "phrase": "continuous maps f,g:X⇉Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "categorical coequalizer",
+          "state": "existing",
+          "target_meaning_id": "meaning.ce0580b5d7dc0b7c.coequalizer-category"
+        },
+        {
+          "phrase": "equivalence relation generated by f(x)~g(x)",
+          "state": "unassigned",
+          "context": "Set theory: smallest equivalence relation on Y containing prescribed pairs"
+        },
+        {
+          "phrase": "quotient topology on Y/~",
+          "state": "missing",
+          "context": "Point-set topology: quotient (final) topology induced by a surjective continuous map q:X→Q, where U⊆Q is open exactly when q^{-1}(U) is open in X; includes canonical quotient-set maps and the map X→f(X) when equipped with final topology, independently of whether a larger codomain Y is surjected onto.",
+          "matching_note": "Identifies the same final-topology construction induced by a surjection onto its specified target; it is distinct from the set quotient, a subspace topology, an open map condition, or global surjectivity onto an unrelated ambient space."
+        },
+        {
+          "phrase": "for every x∈X",
+          "state": "external",
+          "disposition": "The relation is generated by all prescribed pairs, not necessarily only those pairs without transitive closure."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.topology_category.20261022.04",
+      "formulation_id": "form.de2c8164874ee4a9.cofinal-category-functor",
+      "version_sha256": "2910d8f3e2b656c28c97fbad5d0012eacb126d1744b8a9e0bcd1ef1e9447b886",
+      "expected_node_sha256": "0b411e08b8dbb69152399b484b345db6cc6677246138ce0824a8a66f1944d77c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the cofinality condition for an ordinary functor H:I→J through the comma category (j↓H), including its object arrows j→H(i), nonemptiness and zigzag connectedness. Preserved arrow orientation and distinguished cofinality from cofinal subset of a well-order.",
+      "reason": "Inspected the entire mathematical source and every original reference alongside all indexed meanings, distinguishing object types and extra conditions. The ordinary comma-category construction specializes to one fixed source or target object; the arrow orientation remains explicit in the source and the existing iso-comma category is strictly more restrictive in requiring an isomorphism. Reviewed phrase 'comma category (j↓H)' in source 'cofinal functor'; preserving other references and the original source wording.",
+      "references": [
+        {
+          "phrase": "covariant functor H:I→J",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "categories I,J",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "connected category (j↓H)",
+          "state": "existing",
+          "target_meaning_id": "meaning.daec56e6a2a51cae.connected-category"
+        },
+        {
+          "phrase": "comma category (j↓H)",
+          "state": "missing",
+          "context": "Category theory: ordinary comma category of functors F:A→C, G:B→C, whose objects are triples (a,b,u:F(a)→G(b)) and morphisms are compatible commuting squares. Includes (j↓H) and (H↓j) with their opposite arrow directions as different instances; no assumption u is invertible.",
+          "matching_note": "The ordinary comma-category construction specializes to one fixed source or target object; the arrow orientation remains explicit in the source and the existing iso-comma category is strictly more restrictive in requiring an isomorphism."
+        },
+        {
+          "phrase": "arrows j→H(i)",
+          "state": "unassigned",
+          "context": "Objects of the under-comma construction, oriented from fixed j toward values of H"
+        },
+        {
+          "phrase": "finite zigzags among objects",
+          "state": "existing",
+          "target_meaning_id": "meaning.daec56e6a2a51cae.connected-category"
+        },
+        {
+          "phrase": "for every object j of J",
+          "state": "external",
+          "disposition": "The comma category must be nonempty and connected at each j, not merely at some objects."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.topology_category.20261022.05",
+      "formulation_id": "form.de2c8164874ee4a9.initial-category-functor",
+      "version_sha256": "37bceb98aef334e970a2fa6d08445a1ef3d5d45083dbc0cdac40f09846a304b5",
+      "expected_node_sha256": "ff47180a6e9bd9a7f3567030252665dc382b8e6307d8b566ed60e3a2e419164b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read initiality using the opposite-oriented comma category (H↓j) with arrows H(i)→j for every target j; retained the connectedness requirement and contrasted this explicitly with the cofinal-functor direction.",
+      "reason": "Inspected the entire mathematical source and every original reference alongside all indexed meanings, distinguishing object types and extra conditions. The ordinary comma-category construction specializes to one fixed source or target object; the arrow orientation remains explicit in the source and the existing iso-comma category is strictly more restrictive in requiring an isomorphism. Reviewed phrase 'comma category (H↓j)' in source 'initial functor'; preserving other references and the original source wording.",
+      "references": [
+        {
+          "phrase": "covariant functor H:I→J",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "categories I,J",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "connected comma category",
+          "state": "existing",
+          "target_meaning_id": "meaning.daec56e6a2a51cae.connected-category"
+        },
+        {
+          "phrase": "comma category (H↓j)",
+          "state": "missing",
+          "context": "Category theory: ordinary comma category of functors F:A→C, G:B→C, whose objects are triples (a,b,u:F(a)→G(b)) and morphisms are compatible commuting squares. Includes (j↓H) and (H↓j) with their opposite arrow directions as different instances; no assumption u is invertible.",
+          "matching_note": "The ordinary comma-category construction specializes to one fixed source or target object; the arrow orientation remains explicit in the source and the existing iso-comma category is strictly more restrictive in requiring an isomorphism."
+        },
+        {
+          "phrase": "arrows H(i)→j",
+          "state": "unassigned",
+          "context": "Objects of the over-comma construction, oriented toward fixed target j rather than away from it"
+        },
+        {
+          "phrase": "nonempty and connected for all j",
+          "state": "external",
+          "disposition": "Universal quantification over the objects of J is required; one connected comma category does not suffice."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.topology_category.20261022.06",
+      "formulation_id": "form.521431d12a6a6ea2.representable-fibred-groupoid",
+      "version_sha256": "0bc1d22d7b0a7e9f87b03404148378159955af93869081c87e3c2fa91d710922",
+      "expected_node_sha256": "042202e9a6d29613f04f365129c696ff4204b97d6309bd0700199fda2079870a",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed the entire fibred-groupoid representability criterion, distinguished equivalence in the 2-category of categories over C from an ordinary set-valued representable functor, and preserved the overcategory C/X as an unassigned construction.",
+      "reason": "Inspected the entire mathematical source and every original reference alongside all indexed meanings, distinguishing object types and extra conditions. The overcategory C/U is the category of all arrows with fixed codomain U and their commuting triangles; no invertibility is assumed and the base object's choice does not create a different prerequisite concept. Reviewed phrase 'slice category C/X' in source 'representable category fibred in groupoids'; preserving other references and the original source wording.",
+      "references": [
+        {
+          "phrase": "category p:S→C fibred in groupoids",
+          "state": "existing",
+          "target_meaning_id": "meaning.5e4b8f6efeda6522.category-fibred-in-groupoids"
+        },
+        {
+          "phrase": "equivalence over C",
+          "state": "existing",
+          "target_meaning_id": "meaning.ec5e3a0d13f85f3a.equivalence-objects-two-category"
+        },
+        {
+          "phrase": "categories over C",
+          "state": "existing",
+          "target_meaning_id": "meaning.56119d315cf02fdf.two-category-over-base"
+        },
+        {
+          "phrase": "slice category C/X",
+          "state": "missing",
+          "context": "Category theory: slice (over-)category C/U of a category C over an object U, with objects morphisms V→U and arrows commuting over U; a special ordinary comma-category construction but not the same concept as the general comma category or the existing iso-comma construction.",
+          "matching_note": "The overcategory C/U is the category of all arrows with fixed codomain U and their commuting triangles; no invertibility is assumed and the base object's choice does not create a different prerequisite concept."
+        },
+        {
+          "phrase": "there exists an object X of C",
+          "state": "external",
+          "disposition": "Existence of a representing object, not an assertion that the fibred category is representable by a scheme."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.topology_category.20261022.07",
+      "formulation_id": "form.ac92b309b6aae7a4.representable-one-morphism-fibred-groupoids",
+      "version_sha256": "62f1057979201ec16bd617a988193d8e8051365f023ef735e43e788f95740aaf",
+      "expected_node_sha256": "7583fb03fd815860b1fbf94a3ee7cfd94351f0ad51b351cfa22dac3a094e38f0",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed the 2-fibre-product test for every base object U and morphism C/U→Y, requiring the pullback fibred groupoid to be representable over U. This is relative representability of a 1-morphism, not representability of X alone.",
+      "reason": "Inspected the entire mathematical source and every original reference alongside all indexed meanings, distinguishing object types and extra conditions. The overcategory C/U is the category of all arrows with fixed codomain U and their commuting triangles; no invertibility is assumed and the base object's choice does not create a different prerequisite concept. Reviewed phrase 'slice category C/U' in source 'representable morphism of fibred groupoids'; preserving other references and the original source wording.",
+      "references": [
+        {
+          "phrase": "categories fibred in groupoids X,Y over C",
+          "state": "existing",
+          "target_meaning_id": "meaning.5e4b8f6efeda6522.category-fibred-in-groupoids"
+        },
+        {
+          "phrase": "2-fibre product (C/U)×_Y X",
+          "state": "existing",
+          "target_meaning_id": "meaning.42730c7ef758df2a.two-fibre-product"
+        },
+        {
+          "phrase": "representable fibred groupoid",
+          "state": "existing",
+          "target_meaning_id": "meaning.521431d12a6a6ea2.representable-fibred-groupoid"
+        },
+        {
+          "phrase": "slice category C/U",
+          "state": "missing",
+          "context": "Category theory: slice (over-)category C/U of a category C over an object U, with objects morphisms V→U and arrows commuting over U; a special ordinary comma-category construction but not the same concept as the general comma category or the existing iso-comma construction.",
+          "matching_note": "The overcategory C/U is the category of all arrows with fixed codomain U and their commuting triangles; no invertibility is assumed and the base object's choice does not create a different prerequisite concept."
+        },
+        {
+          "phrase": "1-morphism C/U→Y",
+          "state": "unassigned",
+          "context": "Higher category theory: functor over C from the slice category to fibred groupoid Y"
+        },
+        {
+          "phrase": "for every U∈C and C/U→Y",
+          "state": "external",
+          "disposition": "The universal base-change test must range over every object and such map; a single fibre test is not sufficient."
+        }
+      ]
+    }
+  ]
+}
