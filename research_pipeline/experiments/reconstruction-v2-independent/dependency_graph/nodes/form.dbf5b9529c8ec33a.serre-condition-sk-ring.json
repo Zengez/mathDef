@@ -2,23 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.dbf5b9529c8ec33a.serre-condition-sk-ring",
   "version_sha256": "1046749714bd17c6e1f6a70c204f8ab4779faa727b7e22cc2a984c2a2582c94b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "Noetherian ring",
-      "span": [
-        2,
-        17
-      ],
+      "phrase": "Noetherian commutative ring R",
       "state": "existing",
       "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.2739a4b89a13fdab731d"
+      "occurrence_id": "occ.260c1601442920c2b792"
+    },
+    {
+      "phrase": "prime ideal p of R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "occurrence_id": "occ.9f458f4a6e4c6c13e22c"
+    },
+    {
+      "phrase": "ring localization R_p",
+      "state": "existing",
+      "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+      "occurrence_id": "occ.d9e2bcff75794597410b"
+    },
+    {
+      "phrase": "depth of R_p as an R_p-module",
+      "state": "existing",
+      "target_meaning_id": "meaning.951ae8411d8a974b.depth-module-local-ring",
+      "occurrence_id": "occ.d6f6415656ca6e4e7e04"
+    },
+    {
+      "phrase": "Krull dimension of local ring R_p",
+      "state": "existing",
+      "target_meaning_id": "meaning.22c049b8eee93897.krull-dimension-ring",
+      "occurrence_id": "occ.d03acb3d4d28ed8b466f"
+    },
+    {
+      "phrase": "natural number bound k",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.c749c801af9a39402a3c"
+    },
+    {
+      "phrase": "depth(R_p)≥min(k,dim R_p) at all primes",
+      "state": "external",
+      "disposition": "Specializes the Serre module criterion to the ring considered as its own finite module.",
+      "occurrence_id": "occ.5d97bc20508334572ccb"
     }
   ],
-  "snapshot_sha256": "e85cb96e2ca6b0496e91564ee4347b461005d1de0edfc18f066af1adb593efad",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "f69cee18f64ef91159114f68c623224335ed861c751227d6262069c4cc43dc8c",
+  "review_rationale": "Read Serre (S_k) for a Noetherian ring by localizing at every prime and comparing local-ring depth against k and Krull dimension of R_p; kept the ring specialization distinct from an arbitrary finite module."
 }

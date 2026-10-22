@@ -2,23 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.dbf5b9529c8ec33a.serre-normality-criterion",
   "version_sha256": "733fdb093a6a661c65587e43ed005e6cf317acc63813d7a11bbd2efd5bc58d0a",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "Noetherian ring",
-      "span": [
-        2,
-        17
-      ],
+      "phrase": "Noetherian commutative ring R",
       "state": "existing",
       "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.0a29f630ce637826d72c"
+      "occurrence_id": "occ.64b5c59977fc228af232"
+    },
+    {
+      "phrase": "normal ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.363d711d668364b7.normal-ring",
+      "occurrence_id": "occ.e1bb671d7076eced7107"
+    },
+    {
+      "phrase": "Serre condition (R_1)",
+      "state": "existing",
+      "target_meaning_id": "meaning.dbf5b9529c8ec33a.serre-condition-rk",
+      "occurrence_id": "occ.ed568691f329f4ba2992"
+    },
+    {
+      "phrase": "Serre condition (S_2)",
+      "state": "existing",
+      "target_meaning_id": "meaning.dbf5b9529c8ec33a.serre-condition-sk-ring",
+      "occurrence_id": "occ.e7a3d6fdc511688011b1"
+    },
+    {
+      "phrase": "height-one prime ideals and codimension",
+      "state": "existing",
+      "target_meaning_id": "meaning.22c049b8eee93897.height-prime-ideal",
+      "occurrence_id": "occ.c67a21f5d79dd427bb28"
+    },
+    {
+      "phrase": "regular localizations in codimension one",
+      "state": "existing",
+      "target_meaning_id": "meaning.14c44fee62bf6075.regular-local-ring",
+      "occurrence_id": "occ.b1956fa981603dafcfbb"
+    },
+    {
+      "phrase": "depth over localized rings",
+      "state": "existing",
+      "target_meaning_id": "meaning.951ae8411d8a974b.depth-module-local-ring",
+      "occurrence_id": "occ.efee57a286da91c52227"
+    },
+    {
+      "phrase": "normal if and only if R_1 and S_2",
+      "state": "external",
+      "disposition": "Serre's normality criterion is a theorem under Noetherian hypotheses; the two conditions are not asserted to define normality without them.",
+      "occurrence_id": "occ.2309b220659ac666c860"
     }
   ],
-  "snapshot_sha256": "81d5c770f89423c6d595569c70e214ae7251e1d5070876ce95d978c7e9f27a18",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "7e7eb8a5402b60de1ce3100d28b25201a5689936d8a09c24946cb9efdf71f0e6",
+  "review_rationale": "Read the if-and-only-if normality criterion under its Noetherian ring hypothesis: (R_1) means regularity at primes of height ≤1, while (S_2) imposes depth bounds at every prime. This is a theorem criterion, not an independent new definition of normality."
 }
