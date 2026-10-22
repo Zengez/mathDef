@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.commutative-maximal-ideal",
   "version_sha256": "6462b581ad9bc43fa0b22a8d1fa3dc9e5af26a834b898d7daa62823eaed78a2d",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ideal of associative ring R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.ecbf548316b5422adf78"
+    },
+    {
+      "phrase": "proper subset",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-proper",
+      "occurrence_id": "occ.f371dcd856b19840c2dd"
+    },
+    {
+      "phrase": "subset inclusion between ideals",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.c2cc69bec138d9c88fcb"
+    },
+    {
+      "phrase": "commutative ring with unity",
+      "state": "unassigned",
+      "context": "Ring multiplication commutative with specified identity 1.",
+      "occurrence_id": "occ.5a508694a09aa4f19f61"
+    },
+    {
+      "phrase": "maximal proper ideal",
+      "state": "unassigned",
+      "context": "Any ideal J with m⊆J⊆R must equal m or R.",
+      "occurrence_id": "occ.b1d931111e9bdc02253d"
+    },
+    {
+      "phrase": "maximal versus prime",
+      "state": "external",
+      "disposition": "This is maximal among proper ideals; it is not the same predicate as being prime in a general ring.",
+      "occurrence_id": "occ.cce257d921e7381da7e3"
+    }
+  ],
+  "snapshot_sha256": "cb8d0ce3989743467dde5acef629510861e68c3815afca1885a3dfebd47a8779",
+  "review_rationale": "Read maximal ideal of commutative unital ring as proper ideal having no intermediate ideals strictly between it and whole ring."
 }
