@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-repeated-typed-prerequisites-001",
+  "mode": "amend",
+  "research_scope": "Three repeated contextual concepts (two occurrences each): diagram functor, multiplicative subset and countably generated module; no automatic classification.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.typed_repeated_prereqs.20261022.01",
+      "formulation_id": "form.2ab2c62d4a9bd0a6.kaplansky-devissage",
+      "version_sha256": "0fe84531cdedda798825aceb49a9e958568dc1b3f6e3ff79170395615cce0232",
+      "expected_node_sha256": "be0ed65d5b71b51a8fcc1d96eebf92b77c54f20206d2fd3da27a7c671bbad1fe",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed Kaplansky dévissage as a specialized direct-sum filtration with countably generated successive quotient modules, not finite generation.",
+      "reason": "Compared source formulation and inventory meanings for ordinary indexed diagrams, multiplicatively closed denominator sets, and countably generated modules, including the distinct stronger functor-smallness, finite generation, flatness and projectivity definitions. The reference is a shared precisely typed missing prerequisite, not an alias inferred from loose words.",
+      "references": [
+        {
+          "phrase": "direct sum dévissage",
+          "state": "existing",
+          "target_meaning_id": "meaning.2ab2c62d4a9bd0a6.direct-sum-devissage",
+          "matching_note": "The Kaplansky variant is a special case of the independently indexed direct-sum dévissage."
+        },
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "All modules and quotients are modules over the common ring R."
+        },
+        {
+          "phrase": "successive quotient M_{α+1}/M_α",
+          "state": "unassigned",
+          "context": "Module theory: quotient module of consecutive stages of an ordinal-indexed filtration",
+          "reason": "The quotient construction and its induced R-action should be compared to quotient-module occurrences."
+        },
+        {
+          "phrase": "countably generated module",
+          "state": "missing",
+          "context": "Module theory: an R-module admitting a finite or countably infinite set of generators under R-linear combinations; no projectivity, flatness, or finitely-generated-only condition.",
+          "reason": "This is not the same as a finitely generated module; do not substitute the existing finite-generation definition.",
+          "matching_note": "Source phrase 'countably generated R-module' reviewed in context; Both source definitions require generation of a module by at most countably many generators. Existing finite-generation and countably-generated-projective criteria impose extra hypotheses and are not definitions of the broader notion."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.typed_repeated_prereqs.20261022.02",
+      "formulation_id": "form.4b9834a2990971e9.finite-colimit",
+      "version_sha256": "128c412237252437aa0311c11243289df891d3b8b39860c8df5497f144dc5669",
+      "expected_node_sha256": "eea96420be342653006e81588337e6c8a534b8b6a7dfdc0d11b540b448676a04",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the full indexed colimit statement, distinguished the colimit universal object from the indexing functor and category, and treated finiteness of the index category as a cardinality restriction rather than a separate colimit notion.",
+      "reason": "Compared source formulation and inventory meanings for ordinary indexed diagrams, multiplicatively closed denominator sets, and countably generated modules, including the distinct stronger functor-smallness, finite generation, flatness and projectivity definitions. The reference is a shared precisely typed missing prerequisite, not an alias inferred from loose words.",
+      "references": [
+        {
+          "phrase": "colimit of a diagram",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f7683667fac9d28.category-colimit"
+        },
+        {
+          "context": "Category theory: ordinary covariant functor F:I→C from a small indexing category I to an arbitrary locally small target category C; no smallness requirement on C.",
+          "phrase": "diagram as functor from indexing category",
+          "state": "missing",
+          "matching_note": "Source phrase 'diagram F:I→C' reviewed in context; An indexed diagram is a functor, but the extant definition covers functors BETWEEN small categories and would impose unjustified smallness on the ambient target. Treat one contextual missing diagram concept instead."
+        },
+        {
+          "matching_note": "The source assumes a category with finitely many objects and morphisms. Its indexing category is therefore small; the finite-cardinality condition remains an additional source assumption. ('index category I')",
+          "phrase": "index category I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "disposition": "Finite cardinality of each indicated collection, including identity morphisms; an elementary finiteness condition, not a claim about finite limits themselves.",
+          "phrase": "finitely many objects and morphisms",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.typed_repeated_prereqs.20261022.03",
+      "formulation_id": "form.4b9834a2990971e9.finite-limit",
+      "version_sha256": "62c503d9b3eb3b9ca650209fc2c11fe37cb8871c3ffda58b11e23c4b91bda25e",
+      "expected_node_sha256": "b5fcb9a38851ecf79deddfdc9cb127efe999697ea56844ffd942f39cd8e4c3c1",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Inspected the entire finite-limit definition, used the universal categorical limit rather than any set-specific inverse limit, retained the underlying diagram and index-category notions for later internal matching, and accounted for the identities and finitude conditions.",
+      "reason": "Compared source formulation and inventory meanings for ordinary indexed diagrams, multiplicatively closed denominator sets, and countably generated modules, including the distinct stronger functor-smallness, finite generation, flatness and projectivity definitions. The reference is a shared precisely typed missing prerequisite, not an alias inferred from loose words.",
+      "references": [
+        {
+          "phrase": "limit of a diagram",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f7683667fac9d28.category-limit"
+        },
+        {
+          "context": "Category theory: ordinary covariant functor F:I→C from a small indexing category I to an arbitrary locally small target category C; no smallness requirement on C.",
+          "phrase": "diagram as functor from indexing category",
+          "state": "missing",
+          "matching_note": "Source phrase 'diagram F:I→C' reviewed in context; An indexed diagram is a functor, but the extant definition covers functors BETWEEN small categories and would impose unjustified smallness on the ambient target. Treat one contextual missing diagram concept instead."
+        },
+        {
+          "matching_note": "The source assumes a category with finitely many objects and morphisms. Its indexing category is therefore small; the finite-cardinality condition remains an additional source assumption. ('indexing category I')",
+          "phrase": "indexing category I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "disposition": "The explicit restriction requires finite collections of objects and morphisms; identities are arrows in a category, not a new specialized meaning.",
+          "phrase": "finitely many objects and finitely many morphisms, including identities",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.typed_repeated_prereqs.20261022.04",
+      "formulation_id": "form.70f44988651b76b5.module-localization-at-multiplicative-set",
+      "version_sha256": "1a5df72ae57daa97b18f7718a6cbd090d3a33c582ce7b0c08d9a3086c9496882",
+      "expected_node_sha256": "7d5317d70dfa6a53e2b085ca55c47e76f111243bb9f600434484c97369913590",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read all fraction, denominator and equivalence clauses of S-inverse-M, retaining the witness t∈S; the ring S-inverse-R supplies its module structure. The localization construction is not a field of fractions unless additional hypotheses hold.",
+      "reason": "Compared source formulation and inventory meanings for ordinary indexed diagrams, multiplicatively closed denominator sets, and countably generated modules, including the distinct stronger functor-smallness, finite generation, flatness and projectivity definitions. The reference is a shared precisely typed missing prerequisite, not an alias inferred from loose words.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "ring S^{-1}R",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "multiplicative subset S⊆R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "multiplicative subset of commutative ring",
+          "state": "missing",
+          "context": "Commutative algebra: subset S of a commutative unital ring R, containing 1_R and closed under multiplication, used as denominators in ring or module localization.",
+          "matching_note": "Source phrase 'multiplicative subset S' reviewed in context; Both source definitions explicitly use one multiplicatively closed denominator set, containing the unit. A localization construction is not the same meaning as its prerequisite multiplicative subset."
+        },
+        {
+          "phrase": "fractions m/s modulo equivalence",
+          "state": "unassigned",
+          "context": "Module theory: equivalence relation for localization of an R-module along multiplicative set S"
+        },
+        {
+          "phrase": "there exists t∈S with t(s′m−sm′)=0",
+          "state": "external",
+          "disposition": "The displayed witness is essential to equality of localized module fractions and is not ordinary equality of numerator cross-products."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.typed_repeated_prereqs.20261022.05",
+      "formulation_id": "form.70f44988651b76b5.ring-localization-at-multiplicative-set",
+      "version_sha256": "117142cc52db2ac32267ea4b7d50fb67e3893ec50ac3e582929b5b273ab5eba2",
+      "expected_node_sha256": "d3fb2500ac960b81b97432ffd893c7e54461bd8f435a91e3c23c998163909566",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the entire ring-localization fraction construction including a possible zero divisor, the t witness, and the commutative-ring context. Does not conflate localization with forming a field or inverting arbitrary zero divisors.",
+      "reason": "Compared source formulation and inventory meanings for ordinary indexed diagrams, multiplicatively closed denominator sets, and countably generated modules, including the distinct stronger functor-smallness, finite generation, flatness and projectivity definitions. The reference is a shared precisely typed missing prerequisite, not an alias inferred from loose words.",
+      "references": [
+        {
+          "phrase": "commutative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "subset S⊆R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "multiplicative subset of commutative ring",
+          "state": "missing",
+          "context": "Commutative algebra: subset S of a commutative unital ring R, containing 1_R and closed under multiplication, used as denominators in ring or module localization.",
+          "matching_note": "Source phrase 'multiplicative subset S' reviewed in context; Both source definitions explicitly use one multiplicatively closed denominator set, containing the unit. A localization construction is not the same meaning as its prerequisite multiplicative subset."
+        },
+        {
+          "phrase": "ring fractions modulo the stated equivalence",
+          "state": "unassigned",
+          "context": "Commutative algebra: equivalence relation on numerator-denominator pairs in localization"
+        },
+        {
+          "phrase": "t(rs′−r′s)=0 for some t∈S",
+          "state": "external",
+          "disposition": "The witness corrects naive cross multiplication when S includes zero divisors; it is the specified fraction equivalence."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.typed_repeated_prereqs.20261022.06",
+      "formulation_id": "form.7748e9fee3d01ef2.countably-generated-flat-mittag-leffler-projective",
+      "version_sha256": "05ef2544d4087967f4dcfcc19aa1e73201d9190482ed3b8cc0de547a39424c49",
+      "expected_node_sha256": "92865fd07937635a1caa643b09e67e0a135f2766fb0196763337482a13723855",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the biconditional only in the stated countably generated R-module context; flatness plus the tensor-comparison Mittag-Leffler condition characterizes projectivity here, not projectivity of all flat modules.",
+      "reason": "Compared source formulation and inventory meanings for ordinary indexed diagrams, multiplicatively closed denominator sets, and countably generated modules, including the distinct stronger functor-smallness, finite generation, flatness and projectivity definitions. The reference is a shared precisely typed missing prerequisite, not an alias inferred from loose words.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "projective module",
+          "state": "existing",
+          "target_meaning_id": "meaning.fc44c63c239e5c20.projective-module-hom"
+        },
+        {
+          "phrase": "flat module",
+          "state": "existing",
+          "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-module"
+        },
+        {
+          "phrase": "Mittag-Leffler tensor comparison",
+          "state": "existing",
+          "target_meaning_id": "meaning.7748e9fee3d01ef2.mittag-leffler-module-tensor"
+        },
+        {
+          "phrase": "countably generated module",
+          "state": "missing",
+          "context": "Module theory: an R-module admitting a finite or countably infinite set of generators under R-linear combinations; no projectivity, flatness, or finitely-generated-only condition.",
+          "matching_note": "Source phrase 'countably generated R-module' reviewed in context; Both source definitions require generation of a module by at most countably many generators. Existing finite-generation and countably-generated-projective criteria impose extra hypotheses and are not definitions of the broader notion."
+        },
+        {
+          "phrase": "if and only if",
+          "state": "external",
+          "disposition": "Countable generation is a mandatory hypothesis of this particular characterization."
+        }
+      ]
+    }
+  ]
+}
