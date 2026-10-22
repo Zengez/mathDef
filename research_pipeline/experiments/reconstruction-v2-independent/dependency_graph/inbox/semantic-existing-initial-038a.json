@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-038a",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.b1c99b8dae7a6bde.locally-finite-collection",
+      "version_sha256": "611d25b840acd76f39c63a03c31a75ccdac9dbda8ec5c91c7b3ff1aaacc5c105",
+      "complete": true,
+      "review_rationale": "Examined the whole local finiteness statement, including the point-specific open neighborhood and finite set of family indices meeting that neighborhood; not globally finite or merely point-finite.",
+      "references": [
+        {
+          "phrase": "family of subsets E_i",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "open neighborhood of x",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "open neighbourhood at each point",
+          "state": "unassigned",
+          "context": "Topology: open neighbourhood of a point in the given ambient topological space"
+        },
+        {
+          "phrase": "only finitely many indices i",
+          "state": "external",
+          "disposition": "Finiteness is for the index subset meeting the selected neighborhood, not for the full family."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.b1c99b8dae7a6bde.ordered-stratification",
+      "version_sha256": "16fb0563ef48c81bf8b5e438f1e0e4a2317f55a4d5078fde1fe307eb17cf578a",
+      "complete": true,
+      "review_rationale": "Read all closure-compatible stratification conditions: locally closed partition, partial order on indices and downward closure compatibility; local finiteness is not a stated assumption.",
+      "references": [
+        {
+          "phrase": "locally closed partition X=⨆ X_i",
+          "state": "existing",
+          "target_meaning_id": "meaning.b1c99b8dae7a6bde.locally-closed-partition"
+        },
+        {
+          "phrase": "partial order on indices",
+          "state": "existing",
+          "target_meaning_id": "meaning.709d3d2f82950c5b.partially-ordered-set"
+        },
+        {
+          "phrase": "topological closure of X_j",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross107.topological-closure"
+        },
+        {
+          "phrase": "union of pieces indexed i≤j",
+          "state": "unassigned",
+          "context": "Set theory: indexed union of strata over a down-set in a partially ordered index set"
+        },
+        {
+          "phrase": "closure X_j lies in union of pieces i≤j",
+          "state": "external",
+          "disposition": "Direction of order and containment is part of the defining compatibility, not its converse."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.b1d6371a257864cf.quasiseparated-scheme-morphism",
+      "version_sha256": "b824cfca430a8e2c061664ba83e1bbc021e40b547703c2b8fd11c128064b572b",
+      "complete": true,
+      "review_rationale": "Reviewed the full relative diagonal criterion and selected quasi-compactness of the diagonal as a scheme morphism; this is not the stronger closed immersion requirement.",
+      "references": [
+        {
+          "phrase": "scheme morphism f:X→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism"
+        },
+        {
+          "phrase": "scheme fibre product X×_S X",
+          "state": "existing",
+          "target_meaning_id": "meaning.c31e56dc023fcbcc.scheme-fibre-product"
+        },
+        {
+          "phrase": "quasi-compact scheme morphism Δ",
+          "state": "existing",
+          "target_meaning_id": "meaning.bcda9860a078827b.quasicompact-morphism-schemes"
+        },
+        {
+          "phrase": "diagonal morphism X→X×_S X",
+          "state": "unassigned",
+          "context": "Algebraic geometry: canonical diagonal of a scheme relative to a base scheme"
+        },
+        {
+          "phrase": "quasi-compact diagonal",
+          "state": "external",
+          "disposition": "The definition does not require closed immersion or separatedness."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.b1d6371a257864cf.separated-scheme-absolute",
+      "version_sha256": "6a4568f55ec6484af890c12cc528444a591c48a0b74052d55a1a207bc491d8ee",
+      "complete": true,
+      "review_rationale": "Read both absolute separatedness and quasi-separatedness variants, each checked on the structure map to Spec(Z); distinguish properties of the scheme map from a Hausdorff condition on X.",
+      "references": [
+        {
+          "phrase": "scheme X",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine"
+        },
+        {
+          "phrase": "separated morphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.b1d6371a257864cf.separated-scheme-morphism"
+        },
+        {
+          "phrase": "quasi-separated morphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.b1d6371a257864cf.quasiseparated-scheme-morphism"
+        },
+        {
+          "phrase": "Spec(Z)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "structure morphism X→Spec(Z)",
+          "state": "unassigned",
+          "context": "Algebraic geometry: canonical map from any scheme to integer spectrum as base"
+        },
+        {
+          "phrase": "respectively",
+          "state": "external",
+          "disposition": "Separatedness and quasi-separatedness are alternative criteria, not identical properties."
+        }
+      ]
+    }
+  ]
+}
