@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-preimages-schemes-and-measure-small-batch-001",
+  "mode": "amend",
+  "research_scope": "Five independently reviewed mathematical sources: prime contraction, continuity, measurable pushforward, real random variable, localized flat locus, with seven preimage or measurability decisions and two defining predicates.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.preimages_schemes_probability.20261022.01",
+      "formulation_id": "form.eb0cd2c67c6ee622.affine-scheme-morphism-ring-map",
+      "version_sha256": "7a42fd6368ab39c0f470e9e6bc4a22038ccad3fc7abcf27ada758f6ca724cd46",
+      "expected_node_sha256": "835432c35371572861d65924db22ab78a71ea308ee903b8e39d906b23857a34b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the contravariant equivalence between affine-scheme morphisms Spec(B)→Spec(A) and commutative-ring homomorphisms A→B, preserving the inverse-image action on prime ideals.",
+      "reason": "Full contextual audit of 'affine scheme morphisms and ring maps'; classifies underlying set-theoretic inverse images versus target-specific topological, scheme and sigma-algebra properties. Distinguishes the general measurable-map concept from random variables and pushforward measures; preserves defining predicates as explanatory context rather than new independent research concepts.",
+      "references": [
+        {
+          "phrase": "affine prime spectrum Spec(A)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "morphism of schemes",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism"
+        },
+        {
+          "phrase": "unital commutative ring map A→B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "prime ideals of B and A",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "inverse image φ⁻¹(q) of a prime ideal q",
+          "state": "missing",
+          "context": "Set theory: preimage or inverse image of subset B⊆Y under an arbitrary function f:X→Y, defined as f^{-1}[B]={x∈X:f(x)∈B}; notation f^{-1}[B] never presupposes that f is invertible. Includes underlying set preimages of open/measurable sets and contractions of prime ideals under ring homomorphisms, where additional structure is a separate condition.",
+          "matching_note": "Underlying set-theoretic preimage only; preservation of primeness, measurability, or openness is an extra mathematical property supplied by the surrounding source."
+        },
+        {
+          "phrase": "contravariant correspondence",
+          "state": "external",
+          "disposition": "The arrow on affine schemes reverses the ring-map direction; a map A→B gives Spec B→Spec A."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.preimages_schemes_probability.20261022.02",
+      "formulation_id": "form.wave2.foundation76.continuous-topological-map.01",
+      "version_sha256": "e9b617d1ba2e2c3464c7845c8ca5eea5690f8bdf468406758238bbef66f72360",
+      "expected_node_sha256": "f64d2539aeabc2aef3c0f456e80a8c13004319d94b9ef1dc5e3ef0829d1f5d0f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed inverse-image characterization of continuous function between topological spaces, including universal quantification over target open sets and requiring the preimage open in the source.",
+      "reason": "Full contextual audit of 'continuous map'; classifies underlying set-theoretic inverse images versus target-specific topological, scheme and sigma-algebra properties. Distinguishes the general measurable-map concept from random variables and pushforward measures; preserves defining predicates as explanatory context rather than new independent research concepts.",
+      "references": [
+        {
+          "phrase": "mapping f:X to Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "topological spaces X,Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "open subset V of Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "inverse image f^{-1}(V)",
+          "state": "missing",
+          "context": "Set theory: preimage or inverse image of subset B⊆Y under an arbitrary function f:X→Y, defined as f^{-1}[B]={x∈X:f(x)∈B}; notation f^{-1}[B] never presupposes that f is invertible. Includes underlying set preimages of open/measurable sets and contractions of prime ideals under ring homomorphisms, where additional structure is a separate condition.",
+          "matching_note": "Underlying set-theoretic preimage only; preservation of primeness, measurability, or openness is an extra mathematical property supplied by the surrounding source."
+        },
+        {
+          "phrase": "openness of preimage in X",
+          "state": "external",
+          "disposition": "This phrase states a part of the source's defining continuity criterion and is not an additional named prerequisite; the independently meaningful inverse-image operation is separately classified.",
+          "matching_note": "Explained definition-specific logical condition, rather than creating an extra prerequisite."
+        },
+        {
+          "phrase": "continuity for all target open sets",
+          "state": "external",
+          "disposition": "Global preimage criterion is equivalent to the pointwise neighborhood criterion for topological continuity."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.preimages_schemes_probability.20261022.03",
+      "formulation_id": "form.wave2.group116.measure-pushforward",
+      "version_sha256": "b9370010a710834809dc26e135a93231bcaf0f7cda5a4b61e507320a35990a94",
+      "expected_node_sha256": "94b4daafbbad8df5935149d09b4070eb3d40cf2c4e95f540e8c34d15168fda6c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read pushforward measure for two measurable spaces and a measurable map, using nonnegative sigma-additive measure and preimage under the map; no density or bijectivity assumed.",
+      "reason": "Full contextual audit of 'pushforward measure'; classifies underlying set-theoretic inverse images versus target-specific topological, scheme and sigma-algebra properties. Distinguishes the general measurable-map concept from random variables and pushforward measures; preserves defining predicates as explanatory context rather than new independent research concepts.",
+      "references": [
+        {
+          "phrase": "measurable spaces (X,Sigma) and (Y,Tau)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prob90.measurable-space"
+        },
+        {
+          "phrase": "nonnegative measure mu",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.nonnegative-measure"
+        },
+        {
+          "phrase": "mapping f:X to Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "(Sigma,Tau)-measurable mapping",
+          "state": "missing",
+          "context": "Measure theory: measurable function f:(X,Σ)→(Y,Τ) between measurable spaces, meaning f^{-1}[B]∈Σ for every B∈Τ; does not require probability on X, real-valued codomain or almost-everywhere equivalence.",
+          "matching_note": "General measurable map: every measurable target set has measurable preimage; independent of requiring probability measure source and distinct from the pushforward measure itself."
+        },
+        {
+          "phrase": "inverse image f^{-1}(B)",
+          "state": "missing",
+          "context": "Set theory: preimage or inverse image of subset B⊆Y under an arbitrary function f:X→Y, defined as f^{-1}[B]={x∈X:f(x)∈B}; notation f^{-1}[B] never presupposes that f is invertible. Includes underlying set preimages of open/measurable sets and contractions of prime ideals under ring homomorphisms, where additional structure is a separate condition.",
+          "matching_note": "Underlying set-theoretic preimage only; preservation of primeness, measurability, or openness is an extra mathematical property supplied by the surrounding source."
+        },
+        {
+          "phrase": "pushforward evaluation (f_*mu)(B)",
+          "state": "unassigned",
+          "context": "Assigns to each B in target sigma algebra Tau the source measure of its inverse image."
+        },
+        {
+          "phrase": "no injectivity or surjectivity requirement",
+          "state": "external",
+          "disposition": "Pushforward measure is defined for any appropriately measurable mapping, not just coordinate changes."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.preimages_schemes_probability.20261022.04",
+      "formulation_id": "form.wave2.prob90.random-variable-real",
+      "version_sha256": "ef1ce9f5134bbad48086d459a730182e6add9b367fa01f2d05157f5778886b2e",
+      "expected_node_sha256": "ca65a2cd2da03b29adc34f338c6186966930980a3a3b4fbda511fcf1426bc7ed",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read real random variable through Borel measurability, including equivalent lower-ray inverse-image tests; distinguish target Borel sigma algebra from domain F.",
+      "reason": "Full contextual audit of 'random variable'; classifies underlying set-theoretic inverse images versus target-specific topological, scheme and sigma-algebra properties. Distinguishes the general measurable-map concept from random variables and pushforward measures; preserves defining predicates as explanatory context rather than new independent research concepts.",
+      "references": [
+        {
+          "phrase": "probability space (Omega,F,P)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prob90.probability-space"
+        },
+        {
+          "phrase": "Borel sigma algebra B(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.alternative39.borel-sigma-algebra-topological"
+        },
+        {
+          "phrase": "general measurable-valued random variable",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prob90.random-variable-general"
+        },
+        {
+          "phrase": "real codomain R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "preimage X^{-1}((-infinity,a])",
+          "state": "missing",
+          "context": "Set theory: preimage or inverse image of subset B⊆Y under an arbitrary function f:X→Y, defined as f^{-1}[B]={x∈X:f(x)∈B}; notation f^{-1}[B] never presupposes that f is invertible. Includes underlying set preimages of open/measurable sets and contractions of prime ideals under ring homomorphisms, where additional structure is a separate condition.",
+          "matching_note": "Underlying set-theoretic preimage only; preservation of primeness, measurability, or openness is an extra mathematical property supplied by the surrounding source."
+        },
+        {
+          "phrase": "lower-ray test for measurability",
+          "state": "external",
+          "disposition": "This phrase states a part of the source's defining real-random-variable measurability criterion and is not an additional named prerequisite; the independently meaningful inverse-image operation is separately classified.",
+          "matching_note": "Explained definition-specific logical condition, rather than creating an extra prerequisite."
+        },
+        {
+          "phrase": "equivalence to full Borel-measurability",
+          "state": "external",
+          "disposition": "Closed lower rays generate the real Borel sigma algebra; testing all of them suffices."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.preimages_schemes_probability.20261022.05",
+      "formulation_id": "form.0d4f86b655697ed4.relative-flat-locus",
+      "version_sha256": "2d555d2aa19855ab3e3724ab107a97e35decef2ff3e9fad2c91e6f04584c4c0d",
+      "expected_node_sha256": "18e38ff152bcdacf9520b05cd242c060089fed1e5ab3cacde31df05dee8c000f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Examined both R- and R_p-flatness descriptions of the module flat locus, linking ring map, module, spectrum, prime ideal, localization and flatness while deferring prime contraction.",
+      "reason": "Full contextual audit of 'flat locus of an S-module over a base ring'; classifies underlying set-theoretic inverse images versus target-specific topological, scheme and sigma-algebra properties. Distinguishes the general measurable-map concept from random variables and pushforward measures; preserves defining predicates as explanatory context rather than new independent research concepts.",
+      "references": [
+        {
+          "phrase": "ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "This is a unital commutative ring map in the Stacks-style flatness setting."
+        },
+        {
+          "phrase": "S-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "The module is an S-module with identity action, over the commutative unital target ring."
+        },
+        {
+          "phrase": "subset of Spec(S)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+          "matching_note": "The flat locus is a subset of the target prime spectrum."
+        },
+        {
+          "phrase": "subset",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+          "matching_note": "The locus is an ordinary subset of the prime spectrum."
+        },
+        {
+          "phrase": "primes q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+          "matching_note": "Each point of Spec(S) is a prime ideal q of S."
+        },
+        {
+          "phrase": "localization M_q",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set",
+          "matching_note": "The stalk M_q is localization of the S-module M at S\\q."
+        },
+        {
+          "phrase": "flat as an R-module",
+          "state": "existing",
+          "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-module",
+          "matching_note": "Flatness is the indexed module-theoretic property relative to the base ring."
+        },
+        {
+          "phrase": "R_p-module for p=q∩R",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set",
+          "matching_note": "The ring R_p is a localization of R at the complement of the prime p."
+        },
+        {
+          "phrase": "p=q∩R",
+          "state": "missing",
+          "context": "Set theory: preimage or inverse image of subset B⊆Y under an arbitrary function f:X→Y, defined as f^{-1}[B]={x∈X:f(x)∈B}; notation f^{-1}[B] never presupposes that f is invertible. Includes underlying set preimages of open/measurable sets and contractions of prime ideals under ring homomorphisms, where additional structure is a separate condition.",
+          "matching_note": "Underlying set-theoretic preimage only; preservation of primeness, measurability, or openness is an extra mathematical property supplied by the surrounding source."
+        }
+      ]
+    }
+  ]
+}
