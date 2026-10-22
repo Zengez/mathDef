@@ -2,25 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.analysis98.norm-over-normed-division-ring",
   "version_sha256": "03695737ad36404b3cb48ae04571a5075b6f4fec85f13d2a315f8115298267dd",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "normed division ring",
-      "span": [
-        28,
-        48
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.scalar101.normed-division-ring"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.30f0ea50c0c858c9dc42"
+      "phrase": "normed division ring K",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.scalar101.normed-division-ring",
+      "occurrence_id": "occ.99a0e90e76ece7a678a3"
+    },
+    {
+      "phrase": "vector space over division ring",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.scalar101.left-vector-over-division-ring",
+      "occurrence_id": "occ.6a94d42b3537935baeda"
+    },
+    {
+      "phrase": "multiplicative scalar norm |·|_K",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.scalar101.division-ring-multiplicative-norm",
+      "occurrence_id": "occ.eed3b8ecf29cbe1c440c"
+    },
+    {
+      "phrase": "function ∥·∥:V→nonnegative R",
+      "state": "unassigned",
+      "context": "Specified map assigning a nonnegative real magnitude to each vector.",
+      "occurrence_id": "occ.a2ab64c4a9c3f609d649"
+    },
+    {
+      "phrase": "positive definiteness of vector norm",
+      "state": "unassigned",
+      "context": "Zero norm occurs if and only if the vector equals the zero vector.",
+      "occurrence_id": "occ.631b963f6730d430e656"
+    },
+    {
+      "phrase": "absolute homogeneity under scalars",
+      "state": "unassigned",
+      "context": "For every scalar a and vector v, ∥av∥=|a|_K∥v∥.",
+      "occurrence_id": "occ.4acecb8ce264057c281d"
+    },
+    {
+      "phrase": "norm triangle inequality",
+      "state": "unassigned",
+      "context": "For any v,w, norm of v+w is no greater than sum of norms.",
+      "occurrence_id": "occ.ca15ce24ea8e2aa7f87f"
+    },
+    {
+      "phrase": "left scalar-action convention",
+      "state": "external",
+      "disposition": "Homogeneity is stated as ∥av∥ using a left vector space; right-module variants require their own compatible action.",
+      "occurrence_id": "occ.5eb3423097630f7df517"
     }
   ],
-  "snapshot_sha256": "1d90698e0cca9ec17e731bfcdc1fd935f06966fdb9052baaf31f67bf19c355be",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "141706de96991a9ab84acf4af2eb20ff576d1fecf3e3f708a5b36eec581ccf1f",
+  "review_rationale": "Read a norm on a vector space over a normed division ring with the scalar modulus supplied by K; retained norm values in nonnegative reals, positive definiteness, absolute homogeneity and triangle inequality."
 }

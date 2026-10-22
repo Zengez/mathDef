@@ -2,10 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.analysis98.metric-space",
   "version_sha256": "b6785dc6c9d5fc607ae342116640dfbea21079c7e743f27165fe889ff1753286",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "real number system",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field",
+      "occurrence_id": "occ.e9143fc4544ca79d2d17"
+    },
+    {
+      "phrase": "mapping d:X×X→R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.8d0642d2be56419d3990"
+    },
+    {
+      "phrase": "binary Cartesian product X×X",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.cartesian-product-binary",
+      "occurrence_id": "occ.6d6cbeeb68077cfe63d8"
+    },
+    {
+      "phrase": "nonempty underlying set X",
+      "state": "unassigned",
+      "context": "The metric-space formulation explicitly rules out the empty set.",
+      "occurrence_id": "occ.b4e60a7b144bc32c0e51"
+    },
+    {
+      "phrase": "positive-definite metric function d",
+      "state": "unassigned",
+      "context": "d(x,x)=0 for all x and d(x,y)>0 for distinct x,y, giving nonnegativity.",
+      "occurrence_id": "occ.8b8e040ada2f56010ad6"
+    },
+    {
+      "phrase": "symmetry d(x,y)=d(y,x)",
+      "state": "unassigned",
+      "context": "Interchanging ordered inputs does not change the metric value.",
+      "occurrence_id": "occ.1f1efea79f7a46240245"
+    },
+    {
+      "phrase": "triangle inequality d(x,z)≤d(x,y)+d(y,z)",
+      "state": "unassigned",
+      "context": "Distance comparison for every triple of elements of X.",
+      "occurrence_id": "occ.618aeb16c18b4367968d"
+    },
+    {
+      "phrase": "metric need not be Euclidean",
+      "state": "external",
+      "disposition": "The axioms impose distances abstractly, not a particular coordinate norm.",
+      "occurrence_id": "occ.ceb2813bf947a486ff76"
+    }
+  ],
+  "snapshot_sha256": "ae585d30bf50c41488ee8a3defe646ffa847778c39f5ffb6daac6081af27532b",
+  "review_rationale": "Read the full metric axioms for a nonempty set and real-valued distance: diagonal zero, positive separation off diagonal, symmetry and triangle inequality."
 }
