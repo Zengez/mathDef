@@ -2,35 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.f810d472f5a4d367.von-neumann-ordinal",
   "version_sha256": "775d0e0545c2ff83e74b5d437669fe8f4ce438f7e6966f835b3faaee30600b8b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        99,
-        105
-      ],
+      "phrase": "well-ordered relation on set alpha",
       "state": "existing",
-      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.7ce619df6546572f6f9c"
+      "target_meaning_id": "meaning.wave2.foundation.well-ordered-set",
+      "occurrence_id": "occ.ec6248cab1d5469c2984"
     },
     {
-      "phrase": "subset",
-      "span": [
-        164,
-        170
-      ],
+      "phrase": "set inclusion beta⊆alpha",
       "state": "existing",
       "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.8a27ae860599a7802fe8"
+      "occurrence_id": "occ.c775d842072e1c85ce17"
+    },
+    {
+      "phrase": "transitive set alpha",
+      "state": "unassigned",
+      "context": "Set alpha satisfying for each beta∈alpha that beta⊆alpha.",
+      "occurrence_id": "occ.016bc47ebe3913d4b28f"
+    },
+    {
+      "phrase": "membership relation ∈ as a well-order",
+      "state": "unassigned",
+      "context": "Relation beta∈gamma between ordinal elements beta,gamma inside alpha, with every nonempty subset having an ∈-least member.",
+      "occurrence_id": "occ.f0182f77086228ee204b"
+    },
+    {
+      "phrase": "every member of alpha is subset of alpha",
+      "state": "external",
+      "disposition": "The explicit transitivity condition is part of the ordinal definition, not optional inferred numeric comparison.",
+      "occurrence_id": "occ.3eebfe29feefb1734987"
     }
   ],
-  "snapshot_sha256": "0080b18b9aec7aaf8e5d16a34e17beb7885b716d8d3bb031c349a146edebf37d",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "53814683ee87497a0750ec7f4968492e84cffe92d44e120747298e419fe9603b",
+  "review_rationale": "Read von Neumann ordinal as a transitive set well-ordered by membership, including the least-element property and each member being a subset, without confusing the order with arbitrary numeric ordering."
 }
