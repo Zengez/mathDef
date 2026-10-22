@@ -2,23 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.b1d6371a257864cf.separated-scheme-absolute",
   "version_sha256": "6a4568f55ec6484af890c12cc528444a591c48a0b74052d55a1a207bc491d8ee",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "scheme",
-      "span": [
-        2,
-        8
-      ],
+      "phrase": "scheme X",
       "state": "existing",
       "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.96f92471d61d52b73e16"
+      "occurrence_id": "occ.a85670f8807ad164b7b4"
+    },
+    {
+      "phrase": "separated morphism",
+      "state": "existing",
+      "target_meaning_id": "meaning.b1d6371a257864cf.separated-scheme-morphism",
+      "occurrence_id": "occ.707c82a50d1e9da27708"
+    },
+    {
+      "phrase": "quasi-separated morphism",
+      "state": "existing",
+      "target_meaning_id": "meaning.b1d6371a257864cf.quasiseparated-scheme-morphism",
+      "occurrence_id": "occ.0c6ab5f982ffe16c5de4"
+    },
+    {
+      "phrase": "Spec(Z)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.4ffbde7621e1a3f09cae"
+    },
+    {
+      "phrase": "structure morphism X→Spec(Z)",
+      "state": "unassigned",
+      "context": "Algebraic geometry: canonical map from any scheme to integer spectrum as base",
+      "occurrence_id": "occ.a4a6596f6406522fe739"
+    },
+    {
+      "phrase": "respectively",
+      "state": "external",
+      "disposition": "Separatedness and quasi-separatedness are alternative criteria, not identical properties.",
+      "occurrence_id": "occ.85906887f37db1a4a57a"
     }
   ],
-  "snapshot_sha256": "5e55b2ad9b7f351c7fd09efba8fd733f428d069b202f3fd323cf9de298744bd6",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "08d35b3030de301e11b9037f134210cc12cc9df351bcbe0f4e7fa7144ad305f8",
+  "review_rationale": "Read both absolute separatedness and quasi-separatedness variants, each checked on the structure map to Spec(Z); distinguish properties of the scheme map from a Hausdorff condition on X."
 }

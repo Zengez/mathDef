@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.b1c99b8dae7a6bde.ordered-stratification",
   "version_sha256": "16fb0563ef48c81bf8b5e438f1e0e4a2317f55a4d5078fde1fe307eb17cf578a",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "locally closed partition X=⨆ X_i",
+      "state": "existing",
+      "target_meaning_id": "meaning.b1c99b8dae7a6bde.locally-closed-partition",
+      "occurrence_id": "occ.42267ee2785500817d5e"
+    },
+    {
+      "phrase": "partial order on indices",
+      "state": "existing",
+      "target_meaning_id": "meaning.709d3d2f82950c5b.partially-ordered-set",
+      "occurrence_id": "occ.b7a14aad2e76945b6dd0"
+    },
+    {
+      "phrase": "topological closure of X_j",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross107.topological-closure",
+      "occurrence_id": "occ.3f7c684cf5a2c9e656bf"
+    },
+    {
+      "phrase": "union of pieces indexed i≤j",
+      "state": "unassigned",
+      "context": "Set theory: indexed union of strata over a down-set in a partially ordered index set",
+      "occurrence_id": "occ.1d626d73c3d45bc89f7b"
+    },
+    {
+      "phrase": "closure X_j lies in union of pieces i≤j",
+      "state": "external",
+      "disposition": "Direction of order and containment is part of the defining compatibility, not its converse.",
+      "occurrence_id": "occ.96358d65fd6d5f3a1fd0"
+    }
+  ],
+  "snapshot_sha256": "064e8cc3b462c6c5d0392d6aa7e42b16e4f9648fae181129fff18c65f8885019",
+  "review_rationale": "Read all closure-compatible stratification conditions: locally closed partition, partial order on indices and downward closure compatibility; local finiteness is not a stated assumption."
 }
