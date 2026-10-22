@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.rational55.strictly-positive-rational",
   "version_sha256": "789fc15cc9f37fffd049f79fde4bf7f38199710b06c8196671d38b0fc319fe76",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "rational number",
-      "span": [
-        2,
-        17
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.rational55.rational-number"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.6ab444d9397ff11d73e0"
+      "phrase": "rational number epsilon or q",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.rational55.rational-number",
+      "occurrence_id": "occ.f24c14e61319aecf42a5"
+    },
+    {
+      "phrase": "usual total order on Q",
+      "state": "unassigned",
+      "context": "Order relation on rational fractions with comparison against rational zero.",
+      "occurrence_id": "occ.b31fadc09ff1b45904d2"
+    },
+    {
+      "phrase": "strict positivity q>0",
+      "state": "unassigned",
+      "context": "Rational number greater than additive identity zero, not equal to it.",
+      "occurrence_id": "occ.f926ef94a28ba3048cb1"
+    },
+    {
+      "phrase": "set Q_{>0}",
+      "state": "unassigned",
+      "context": "Subset of rational field consisting of strictly positive rational elements.",
+      "occurrence_id": "occ.39f8252deb3a45793f13"
+    },
+    {
+      "phrase": "zero excluded",
+      "state": "external",
+      "disposition": "Strict positivity differs from nonnegative rational condition which allows zero.",
+      "occurrence_id": "occ.b3821c78f61e2f1b003f"
     }
   ],
-  "snapshot_sha256": "a0158ed768969accea404c7e0e6724c75d40da5f16976f7a48ba6063691e5878",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "d48cbd3cbce179526ee78bc72ea3ec97739ee10cdab0ba1df5aaf43b30264858",
+  "review_rationale": "Reviewed positivity in usual rational order with strict inequality q>0 and set Q_{>0}, keeping zero excluded and no real-number completion assumed."
 }

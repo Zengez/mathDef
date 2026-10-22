@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.real45.complete-ordered-real-field",
   "version_sha256": "d33193c9f42e515482edb4a7034a725a1c56940b7e80957c36c2ffc72963d624",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "totally ordered field",
-      "span": [
-        26,
-        47
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.real45.totally-ordered-field"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.e5b1bf3c60c3bb1610f3"
+      "phrase": "totally ordered field R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real45.totally-ordered-field",
+      "occurrence_id": "occ.5e8f4a0cfbe281f0fb5e"
+    },
+    {
+      "phrase": "Dedekind least-upper-bound completeness",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real45.dedekind-supremum",
+      "occurrence_id": "occ.eebf8c925ba999d21e95"
+    },
+    {
+      "phrase": "nonempty subset A of R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.db25305e7ed29cad8889"
+    },
+    {
+      "phrase": "bounded-above subset A",
+      "state": "unassigned",
+      "context": "There exists an upper bound u in R with a<=u for every a in A.",
+      "occurrence_id": "occ.01f0d9ccf52894691ee7"
+    },
+    {
+      "phrase": "least upper bound sup(A)",
+      "state": "unassigned",
+      "context": "Upper bound in R that is less than or equal to all other upper bounds.",
+      "occurrence_id": "occ.7c69ee4557689e591f23"
+    },
+    {
+      "phrase": "ordered-field isomorphism",
+      "state": "unassigned",
+      "context": "Bijective field homomorphism preserving the order between realizations of complete ordered fields.",
+      "occurrence_id": "occ.c0d986a01b13cd9424d7"
+    },
+    {
+      "phrase": "uniqueness up to isomorphism not literal equality",
+      "state": "external",
+      "disposition": "Different underlying sets may realize the same axiomatic ordered-field structure.",
+      "occurrence_id": "occ.83030ec5b3d0c5d33b48"
     }
   ],
-  "snapshot_sha256": "8ddb637e26e50e24166928ac23c5e468dc26a0df8e966dd77b5ce4ce0b64cb87",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "f2a4257cc1f7aea019773446a96583fcdcd41d8334b4c706d2d11f981acb7391",
+  "review_rationale": "Reviewed axiomatic real system as totally ordered field satisfying least-upper-bound completeness for all nonempty upper-bounded sets, with uniqueness only up to ordered-field isomorphism."
 }

@@ -2,39 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.real45.dedekind-supremum",
   "version_sha256": "51345a028f164bda19712b1ee40114e818151958a9e9dd2a75919ddc125b438e",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        78,
-        84
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.2bdaeac5820515330bb7"
+      "phrase": "partially ordered set (S,<=)",
+      "state": "existing",
+      "target_meaning_id": "meaning.709d3d2f82950c5b.partially-ordered-set",
+      "occurrence_id": "occ.0cf20e26a02cee89f6c7"
     },
     {
-      "phrase": "subset",
-      "span": [
-        193,
-        199
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.31fc85cbd27c73342e57"
+      "phrase": "subset A of S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.50a9a8726be25a3fa684"
+    },
+    {
+      "phrase": "upper bound of A in S",
+      "state": "unassigned",
+      "context": "Element u of S such that every a in A satisfies a<=u.",
+      "occurrence_id": "occ.6f94211705b06c96a4ea"
+    },
+    {
+      "phrase": "least upper bound sup(A)",
+      "state": "unassigned",
+      "context": "An upper bound no greater than any other upper bound, if one exists.",
+      "occurrence_id": "occ.26a013a3e0f79a1facd5"
+    },
+    {
+      "phrase": "nonempty and bounded-above qualifiers",
+      "state": "unassigned",
+      "context": "Hypothesis excludes empty A and sets without an upper bound, without imposing total order.",
+      "occurrence_id": "occ.a2b39da52d0c94ca9759"
+    },
+    {
+      "phrase": "not real-field-specific",
+      "state": "external",
+      "disposition": "Order-theoretic completeness here is not restricted to fields or real-number models.",
+      "occurrence_id": "occ.97464e9dc6c9c29170c7"
     }
   ],
-  "snapshot_sha256": "22dc53a5c0027b13b78dc5150c124d7956202872f6abea06a0b21506532cedbc",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "d17e9eab0978e6adb350adfcb902095190be6ba4cea9af4909c3d6a23b4c0fbf",
+  "review_rationale": "Reviewed Dedekind completeness of ordered set as supremum existence for each nonempty upper-bounded subset; neither empty-set supremum nor unbounded-set supremum required."
 }
