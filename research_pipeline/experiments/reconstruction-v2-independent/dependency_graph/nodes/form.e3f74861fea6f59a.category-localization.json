@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.e3f74861fea6f59a.category-localization",
   "version_sha256": "762982d551b003994e1eb46c8739940dd961da8c7c9567c36986850a6522f363",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "category C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.small-category",
+      "occurrence_id": "occ.1e08c75158e565530b2b"
+    },
+    {
+      "phrase": "multiplicative system of arrows S",
+      "state": "existing",
+      "target_meaning_id": "meaning.e3f74861fea6f59a.category-multiplicative-system",
+      "occurrence_id": "occ.7b33e96d2a1d5ccf736b"
+    },
+    {
+      "phrase": "functor Q:C→S⁻¹C",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "occurrence_id": "occ.2af70a3b4bf87c108e99"
+    },
+    {
+      "phrase": "invertible morphism in a category",
+      "state": "unassigned",
+      "context": "Morphism with a two-sided inverse under composition, unlike an invertible ring element.",
+      "occurrence_id": "occ.1b36f7ed9a80f3ecbbbe"
+    },
+    {
+      "phrase": "universal S-inverting factorization",
+      "state": "unassigned",
+      "context": "Every functor carrying S to isomorphisms factors through Q by a uniquely specified compatible functor up to the relevant categorical equivalence.",
+      "occurrence_id": "occ.a562e55cdf668341b1ff"
+    },
+    {
+      "phrase": "formal inversion of S",
+      "state": "external",
+      "disposition": "The symbols S⁻¹C denote a category obtained by inverting arrows rather than a ring-of-fractions construction.",
+      "occurrence_id": "occ.64609d7b91da833d0315"
+    }
+  ],
+  "snapshot_sha256": "06b90a892763c1a13e2439228950fa3c4c3ba33b01488d31f8a85fdaac132bfc",
+  "review_rationale": "Read universal categorical localization at a multiplicative system of arrows, retaining the functorial factorization property and distinction from localization of rings or modules."
 }
