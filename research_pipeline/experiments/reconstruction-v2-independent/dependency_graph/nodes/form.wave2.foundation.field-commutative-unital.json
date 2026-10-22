@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.field-commutative-unital",
   "version_sha256": "5b9d8637905be04e7973631831aebe6ab38a4c601e30928316ceb9d3b6f58c95",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "associative ring axioms",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+      "occurrence_id": "occ.59fd0e2ca3c748e266ec"
+    },
+    {
+      "phrase": "unit of a unital ring",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.unit-of-ring",
+      "occurrence_id": "occ.50d211fb5689a3c6e040"
+    },
+    {
+      "phrase": "commutative ring with identity",
+      "state": "unassigned",
+      "context": "Multiplication commutative, with specified two-sided multiplicative identity.",
+      "occurrence_id": "occ.6d32d954dec217a2eb2c"
+    },
+    {
+      "phrase": "nonzero condition 0≠1",
+      "state": "unassigned",
+      "context": "Additive zero differs from multiplicative unit, excluding zero ring.",
+      "occurrence_id": "occ.0e2d22caef091c20fc75"
+    },
+    {
+      "phrase": "inverse for every nonzero element",
+      "state": "unassigned",
+      "context": "For each nonzero a exists b with ab=ba=1.",
+      "occurrence_id": "occ.607da9d87effaa55b598"
+    },
+    {
+      "phrase": "field requires all nonzero elements invertible",
+      "state": "external",
+      "disposition": "Integral domains need not be fields; no alternative division-ring noncommutative context is assumed.",
+      "occurrence_id": "occ.0bcb4ed93d0616554db2"
+    }
+  ],
+  "snapshot_sha256": "7dc1ceb7dfaa03273737ac1cc8a5ca6c9f2f978fa59d53db97d9ab2f3a60cb36",
+  "review_rationale": "Read field as nonzero commutative unital ring where every nonzero element has multiplicative inverse, tracking 0≠1 and unit condition."
 }

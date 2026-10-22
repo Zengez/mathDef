@@ -2,10 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation.commutative-prime-ideal",
   "version_sha256": "7737ce01f18095e9ba19395364e40dfebf56b7b73e39034c459b1b7e611bcafe",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "two-sided ideal of ring",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal",
+      "occurrence_id": "occ.627d3af176bc1f99aa3d"
+    },
+    {
+      "phrase": "proper subset P⊊R",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-proper",
+      "occurrence_id": "occ.727abb8cee0f1e9dc524"
+    },
+    {
+      "phrase": "commutative unital ring",
+      "state": "unassigned",
+      "context": "Ring with commutative multiplication and specified identity.",
+      "occurrence_id": "occ.66a47abaebc5840a5e1b"
+    },
+    {
+      "phrase": "primality of ideal",
+      "state": "unassigned",
+      "context": "For all ring elements a,b, ab∈P entails a∈P or b∈P.",
+      "occurrence_id": "occ.ec3e2f1fe1d6c1862587"
+    },
+    {
+      "phrase": "prime ideal need not be maximal",
+      "state": "external",
+      "disposition": "Maximal ideals are prime for commutative unital rings, but not all prime ideals are maximal.",
+      "occurrence_id": "occ.725c88071d7d125544cc"
+    }
+  ],
+  "snapshot_sha256": "a129543ac0f3d7b34aa8b630bc7b5b63f014d0b1c9598f2613873b0288636c46",
+  "review_rationale": "Read prime ideal of commutative unital ring as proper ideal satisfying ab in P implies a or b in P, distinguishing prime property from maximality."
 }
