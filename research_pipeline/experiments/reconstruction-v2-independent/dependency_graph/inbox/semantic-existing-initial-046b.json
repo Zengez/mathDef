@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046b",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.cross104.lipschitz-at-point-anchored",
+      "version_sha256": "7df4b756b1a33743bc81a58f63a2fe06dd69a1f3ef73c83aa3fa2cfea4592539",
+      "complete": true,
+      "review_rationale": "Read anchored Lipschitz property with one fixed point a, one global constant L, and comparison against every x, deliberately not equating to pairwise global Lipschitzness.",
+      "references": [
+        {
+          "phrase": "metric spaces X,Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.metric-space"
+        },
+        {
+          "phrase": "real nonnegative Lipschitz constant",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "mapping f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "anchored Lipschitz inequality at a",
+          "state": "unassigned",
+          "context": "One fixed a∈X; choose L≥0 such that d_Y(f(x),f(a))≤L d_X(x,a) for every x∈X."
+        },
+        {
+          "phrase": "anchored not local or global pairwise condition",
+          "state": "external",
+          "disposition": "Anchored condition compares only against fixed a and need not imply same bound for arbitrary x,y."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.cross104.lipschitz-global",
+      "version_sha256": "aac4ee5faddff93dc0d4ed8c2ef1cedd33cecbc560af8ea557bfaada6645cc1b",
+      "complete": true,
+      "review_rationale": "Read globally Lipschitz mapping between metric spaces using a single nonnegative constant for all pairs of input points, distinguishing the anchored variant.",
+      "references": [
+        {
+          "phrase": "metric space X and Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.metric-space"
+        },
+        {
+          "phrase": "map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "global Lipschitz constant L≥0",
+          "state": "unassigned",
+          "context": "A single nonnegative real L such that for all x,y, d_Y(f(x),f(y))≤L d_X(x,y)."
+        },
+        {
+          "phrase": "global condition has two freely varying points",
+          "state": "external",
+          "disposition": "One L for all pairs; stronger than restriction to one fixed reference point."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.cross104.tree-unrooted.1",
+      "version_sha256": "e103de42c1e3f7c1537d9f80df69d81df5456b5343c0f5c9db0d3be6c5060fa9",
+      "complete": true,
+      "review_rationale": "Read graph-theoretic unrooted tree as connected simple undirected graph with no nontrivial closed edge-trail (circuit), retaining distinction from directed/rooted trees.",
+      "references": [
+        {
+          "phrase": "simple undirected graph",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.graph42.simple-undirected"
+        },
+        {
+          "phrase": "connected simple graph",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.branch129.nonempty-connected-graph"
+        },
+        {
+          "phrase": "circuit as nontrivial closed edge-trail",
+          "state": "unassigned",
+          "context": "Closed walk using each traversed edge at most once, with positive length, in a simple undirected graph."
+        },
+        {
+          "phrase": "absence of circuits",
+          "state": "external",
+          "disposition": "Acyclic graph property; a rooted orientation is not part of the definition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.cross104.tree-unrooted.2",
+      "version_sha256": "099985dba8d2f22ecdd80e21bcbc7f60d5631c5756d19e99338cbfd9e41f91e8",
+      "complete": true,
+      "review_rationale": "Read equivalent tree criterion using simple connected graph with no cycles, keeping cycle meaning distinct from arbitrary closed walk with repeated edges.",
+      "references": [
+        {
+          "phrase": "simple undirected graph",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.graph42.simple-undirected"
+        },
+        {
+          "phrase": "connected simple graph",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.branch129.nonempty-connected-graph"
+        },
+        {
+          "phrase": "cycle in simple undirected graph",
+          "state": "unassigned",
+          "context": "Nontrivial closed graph path without repeated internal vertices, in simple undirected context."
+        },
+        {
+          "phrase": "equivalent acyclicity characterization",
+          "state": "external",
+          "disposition": "No cycle with simple connectivity, not an orientation or root condition."
+        }
+      ]
+    }
+  ]
+}
