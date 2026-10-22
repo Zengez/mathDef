@@ -6,8 +6,8 @@
     "total_formulations": 659,
     "screened_formulations": 639,
     "provisional_formulations": 20,
-    "scan_complete": 314,
-    "scan_incomplete": 345,
+    "scan_complete": 315,
+    "scan_incomplete": 344,
     "unscanned": 0,
     "open": 659,
     "closed": 0,
@@ -16,12 +16,12 @@
     "alias_candidate_records": 1,
     "missing_occurrences": 17,
     "ambiguous_occurrences": 243,
-    "unassigned_occurrences": 428,
-    "unresolved_fingerprint": "b9524630175813a8b18b738af23e16a893612f4645637bd1f029afa781975414",
+    "unassigned_occurrences": 431,
+    "unresolved_fingerprint": "b4de66b7d472cd23774d9c70cf1a542561356102a9c4ff6a134ac5c555d636d7",
     "phase": "scan_and_link_existing",
     "consolidation_gate_valid": false,
     "seed_relations": 891,
-    "scan_occurrences": 1848,
+    "scan_occurrences": 1855,
     "scan_amendment_event_count": 12,
     "automatic_completion_is_not_certification": true,
     "breadth_expansion": "on_hold"
@@ -3225,12 +3225,14 @@
       "version_sha256": "9e47152617193b7a74090ab0e50d42a67bb6e03541f469c73476d7ef661d68fe"
     },
     "form.b3aefc22ee361c53.kummer-extension": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "unassigned:occ.0e665dad23d93968c7f0",
+        "unassigned:occ.5c3ca15c760402d706f9",
+        "unassigned:occ.daa36b7d19a4a6d7c4b6"
       ],
       "version_sha256": "16b24f39916621aafce0afcbd07806f0cd6156dc56e59815342cade0e31c363b"
     },
