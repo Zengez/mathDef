@@ -404,6 +404,24 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.87eab2bf93382f4b93d6",
+      "context": "Polynomial algebra: a nonzero univariate polynomial f(X)=a_nX^n+⋯+a_0 over a commutative unital coefficient ring is monic if its leading coefficient a_n equals the multiplicative identity 1, including degree zero unit polynomial 1.",
+      "surface_phrase": "monic polynomial",
+      "observed_in_formulations": [
+        "form.3aaa8d6f2195bb8e.minimal-polynomial"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.8e7388ef8958ac46b761",
+      "context": "Polynomial algebra over a field: a multiple (repeated) root α of polynomial f in an extension field, meaning (x−α)^2 divides f after base extension, equivalently f(α)=f′(α)=0 when the formal derivative is used; distinct from the ordinary root concept.",
+      "surface_phrase": "repeated root in algebraic closure",
+      "observed_in_formulations": [
+        "form.720eaae9156f6f4e.separable-irreducible-polynomial"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.b458f6a3824dab19725b",
       "context": "Measure theory: measurable function f:(X,Σ)→(Y,Τ) between measurable spaces, meaning f^{-1}[B]∈Σ for every B∈Τ; does not require probability on X, real-valued codomain or almost-everywhere equivalence.",
       "surface_phrase": "(Sigma,Tau)-measurable mapping",
@@ -420,9 +438,27 @@
         "form.wave2.pop139.matrix-trace"
       ],
       "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.c92229847927c5ddf560",
+      "context": "Polynomial algebra over fields: a root (zero) α∈K of a univariate polynomial f∈F[x] in a field extension K/F means f(α)=0_K using coefficient inclusion F→K and polynomial evaluation; includes the residue class of x in K=F[x]/(f) for nonconstant f.",
+      "surface_phrase": "class of x as a root of f",
+      "observed_in_formulations": [
+        "form.1fd51873f9f0afbd.field-from-irreducible-polynomial"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.fa5932b42daa1a3e0307",
+      "context": "Polynomial algebra over fields: a root (zero) α∈K of a univariate polynomial f∈F[x] in a field extension K/F means f(α)=0_K using coefficient inclusion F→K and polynomial evaluation; includes the residue class of x in K=F[x]/(f) for nonconstant f.",
+      "surface_phrase": "roots of a polynomial in a field",
+      "observed_in_formulations": [
+        "form.720eaae9156f6f4e.separable-degree-polynomial"
+      ],
+      "actionable": false
     }
   ],
-  "unresolved_occurrence_count": 1015,
+  "unresolved_occurrence_count": 1006,
   "missing_research_permitted": false,
   "suggested_next_package": {
     "breadth_topic_candidates": [],
@@ -437,7 +473,7 @@
     "scan_complete": 659,
     "unscanned": 0,
     "scan_incomplete": 0,
-    "unassigned_occurrences": 1015,
+    "unassigned_occurrences": 1006,
     "consolidation_gate_valid": false
   },
   "reconciliation_findings": {
