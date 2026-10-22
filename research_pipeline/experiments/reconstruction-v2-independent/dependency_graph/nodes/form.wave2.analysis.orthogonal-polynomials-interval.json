@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.analysis.orthogonal-polynomials-interval",
   "version_sha256": "03c2cb75270a18e0376f942c6b156e8e6214e50dfe65121818d33c7fceb5e5ca",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        124,
-        131
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.1ca087e2b8a0be4fd615"
+      "phrase": "real polynomial degree",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.nonzero-polynomial-degree",
+      "occurrence_id": "occ.99f87f6ab5df3934a2f2"
+    },
+    {
+      "phrase": "nonnegative integer degrees n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.4fc3f263eaa22d76453e"
+    },
+    {
+      "phrase": "real interval (a,b)",
+      "state": "unassigned",
+      "context": "Open real interval which is the domain for weighted integrals.",
+      "occurrence_id": "occ.c783bdef5d7b22af60a4"
+    },
+    {
+      "phrase": "nonnegative integrable weight w",
+      "state": "unassigned",
+      "context": "Real function w on (a,b) satisfying integrability, positivity of total integral, and finite weighted moments.",
+      "occurrence_id": "occ.d92d8f93f57b8a30a976"
+    },
+    {
+      "phrase": "finite moments ∫|x|^k w(x)dx",
+      "state": "unassigned",
+      "context": "For all positive integers k, absolute polynomial moments weighted by w are finite.",
+      "occurrence_id": "occ.6a7aee05a08e0f057135"
+    },
+    {
+      "phrase": "weighted integral orthogonality",
+      "state": "unassigned",
+      "context": "For distinct degrees n,m, the weighted integral of p_n p_m on (a,b) vanishes.",
+      "occurrence_id": "occ.ed420b1474ccfedea09e"
+    },
+    {
+      "phrase": "positive finite weighted mass",
+      "state": "external",
+      "disposition": "The source imposes 0<∫w<∞ and not mere nonnegativity of w pointwise.",
+      "occurrence_id": "occ.b09463254e51fded03bd"
     }
   ],
-  "snapshot_sha256": "a1466b26064ccd4258e99d9c26e74254a040690815f0f1ac8f9df705faf38167",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "04550c14050044bace73ddc81d6c90d0ea92e309485ca9d761b69f9794a78d6a",
+  "review_rationale": "Read interval-weight orthogonal system with nonnegative integrable weight, strictly positive finite total mass, all finite weighted moments, exact degree sequence and vanishing pairwise weighted integrals."
 }

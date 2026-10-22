@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.analysis.orthogonal-polynomials-countable",
   "version_sha256": "1824379289d749570d562d3a43e760c916bb9a6fd6ff587f299c5796ebb9cdc2",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        124,
-        131
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.d45f9b5679db0c566646"
+      "phrase": "integer polynomial degree n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.nonzero-polynomial-degree",
+      "occurrence_id": "occ.08c0c2139b5e356899e5"
+    },
+    {
+      "phrase": "nonnegative integer indexing n≥0",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-including-zero",
+      "occurrence_id": "occ.9290de43259ee749d548"
+    },
+    {
+      "phrase": "countably infinite discrete support X⊆R",
+      "state": "unassigned",
+      "context": "Infinite collection of distinct real points with a countable enumeration, as opposed to interval or measure-only support.",
+      "occurrence_id": "occ.3c2ba78db3c165e5db6e"
+    },
+    {
+      "phrase": "positive weights w_x",
+      "state": "unassigned",
+      "context": "Strictly positive real weight attached to each x in X.",
+      "occurrence_id": "occ.239f1fc46376dfa80458"
+    },
+    {
+      "phrase": "finite moments Σ|x|^k w_x",
+      "state": "unassigned",
+      "context": "For every nonnegative integer k, weighted nonnegative sum over countable support converges to a finite real number.",
+      "occurrence_id": "occ.767d517bdd2e6a46e27a"
+    },
+    {
+      "phrase": "weighted discrete orthogonality Σp_n(x)p_m(x)w_x=0",
+      "state": "unassigned",
+      "context": "Pairwise zero weighted inner products for distinct degrees n,m over the countable support.",
+      "occurrence_id": "occ.50e4af9a0c1563ece3eb"
+    },
+    {
+      "phrase": "degree condition deg p_n=n",
+      "state": "external",
+      "disposition": "Polynomials have exact prescribed degrees, not merely bounded degrees.",
+      "occurrence_id": "occ.b53afa311d20b4bfbe91"
     }
   ],
-  "snapshot_sha256": "e69c4cdc8189135834a79bc06ebd7ec95e8a52651ab5bafd0101d7a72cb8d499",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "4ff3988d5d2da9acbee9a34211af193d43956f4a5816c79ccb8bae68d0912e6f",
+  "review_rationale": "Read countably supported discrete orthogonal polynomial system with distinct real support points, strictly positive summable weights and all finite moments, degree-n polynomials and pairwise weighted sum zero."
 }

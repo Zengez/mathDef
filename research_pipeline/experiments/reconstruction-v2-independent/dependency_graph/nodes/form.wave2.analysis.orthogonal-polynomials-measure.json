@@ -2,10 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.analysis.orthogonal-polynomials-measure",
   "version_sha256": "a2de5c140e9390ea8e1c6edc9100fe4d971460704b4e2390b5e7052415a58abc",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "nonnegative measure μ",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.nonnegative-measure",
+      "occurrence_id": "occ.abb0cd3742819b5b941c"
+    },
+    {
+      "phrase": "nth raw moment of orthogonality measure",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.orthogonality-measure-raw-moment",
+      "occurrence_id": "occ.bacd2f1480c79ad4a86a"
+    },
+    {
+      "phrase": "polynomial degree n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.nonzero-polynomial-degree",
+      "occurrence_id": "occ.65c07fa61dee6bdba451"
+    },
+    {
+      "phrase": "Lebesgue–Stieltjes measure from nondecreasing function",
+      "state": "unassigned",
+      "context": "Measure induced by distribution-type monotone generating function meeting source admissibility constraints.",
+      "occurrence_id": "occ.fa3b0178ad5eb7625305"
+    },
+    {
+      "phrase": "infinitely many points of increase",
+      "state": "unassigned",
+      "context": "Underlying nondecreasing function has infinitely many points where it locally increases, ensuring nontrivial infinite orthogonality support.",
+      "occurrence_id": "occ.b3dc55aa92d33e20e424"
+    },
+    {
+      "phrase": "finite absolute moments ∫|x|^k dμ",
+      "state": "unassigned",
+      "context": "All nonnegative integer absolute moments are finite.",
+      "occurrence_id": "occ.c469e04d2d458c095025"
+    },
+    {
+      "phrase": "orthogonality ∫p_np_m dμ=0 for n≠m",
+      "state": "unassigned",
+      "context": "Cross products of distinct-degree polynomials have zero integral under measure μ.",
+      "occurrence_id": "occ.c9c8e80249bb391750d0"
+    },
+    {
+      "phrase": "nonnegative measure, bounded generator",
+      "state": "external",
+      "disposition": "This variant is not simply the interval weight formulation; it specifies Lebesgue–Stieltjes origin and support conditions.",
+      "occurrence_id": "occ.7752b7602bd636255aaa"
+    }
+  ],
+  "snapshot_sha256": "461d2779b87793af862a15dfbd02809b3775a33a8345dc99ccc1bbcb52ad63ce",
+  "review_rationale": "Read measure-theoretic orthogonal system relative to Lebesgue–Stieltjes measure induced by bounded nondecreasing function with infinite growth support and finite moments, exact polynomial degrees and zero cross-moments."
 }
