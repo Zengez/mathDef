@@ -341,3 +341,66 @@ review are not implemented (six manually reviewed complete scans were piloted), 
 Wave2 freeze occurs.
 
 Retain the temporary design note until outstanding requirements and pilot reviews are incorporated into durable machinery.
+
+
+## Pass 2 review efficiency tools — 2026-10-22 (multi-filter / preflight)
+
+Two portable, **read-only**, subject-neutral helper improvements were
+introduced during the third-to-fourth Pass-2 consolidation transition.
+They never assert that two phrases are equivalent and do not change the
+semantic graph, original definitions or external research phase.
+
+**One grouped review of several navigation substrings** (OR selection,
+deduplicated full formulation loads). Original `--contains "residue field"`
+usage and `build_review_bundle(..., contains="...")` remain compatible:
+
+```bash
+W=research_pipeline/experiments/reconstruction-v2-independent
+python -m research_pipeline.engine.dependency_context_worklist \
+  --workspace "$W" \
+  --contains-any "ideal" --contains-any "polynomial" \
+  --contains-any "quotient" --limit 30
+```
+
+The multiple filter arguments are a reviewer navigation aid, not semantic
+grouping or missing-candidate aliases. New regression tests verify OR
+matching, unique formulation context bundles, backwards compatibility,
+limit semantics and unchanged files.
+
+**Validate a reviewed inbox package before committing it** using the
+new module `research_pipeline.engine.dependency_review_preflight`:
+
+```bash
+python -m research_pipeline.engine.dependency_review_preflight \
+  --workspace "$W" \
+  --batch "$W/dependency_graph/inbox/REVIEWED_PACKAGE.json"
+```
+
+This preflight checks exact source inventory versions, the **effective**
+complete-node SHA256 after all valid prior amendments, full replacement
+adjacency validity, candidate identity preview, appended unique event IDs,
+existing candidate identities, and alias chain/cycle conflicts. It does
+not rewrite graph indexes, apply packages, infer contextual equivalence or
+perform mathematical certification. It accepts reviewed `amend` and
+`alias` packages; other package modes are intentionally not covered.
+Committed `applied` receipts still determine actual completion. Preflight
+must run on the *same* workspace snapshot to which the batch will be
+submitted, and a concurrent edit can still invalidate the precondition;
+revalidate against live repository state before commit.
+
+CI regressions in
+`research_pipeline/tests/test_dependency_context_worklist.py` and
+`research_pipeline/tests/test_dependency_review_preflight.py`
+cover source-load deduplication, read-only behavior, stale-node rejection,
+alias cycle rejection, receipt replay and incorrect package naming.
+Math-specific matching remains a deliberate reviewer responsibility.
+
+**Reviewer lesson:** A single raw phrase can conjoin multiple distinct
+mathematical operations (for example `R/I^n` contains both quotient-ring
+formation and an ideal power), while a defining equality such as
+`I∩J=IJ` is a predicate and not itself an independent prerequisite.
+Full reviewed append-only amendments may separate those references,
+retaining the original historical occurrence evidence. Do not collapse
+`I^n` and `I^n M`, ordinary vs symbolic prime-ideal powers, or ordinary
+comma vs iso-comma category constructions.
+
