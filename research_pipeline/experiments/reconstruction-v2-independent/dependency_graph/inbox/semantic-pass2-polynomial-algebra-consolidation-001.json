@@ -1,0 +1,459 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-polynomial-algebra-consolidation-001",
+  "mode": "amend",
+  "research_scope": "Ten source-reviewed contextual uses of a general commutative unital polynomial algebra across arbitrary, finite and univariate index sets; precise shared candidate without treating polynomial quotient/evaluation as identical.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.polynomial_algebra.20261022.01",
+      "formulation_id": "form.0c4c23579959165d.algebraic-independence",
+      "version_sha256": "700aae3545f4c6d356535ef54dbd65e1d776f39d1c6e97a3edd515943c77a656",
+      "expected_node_sha256": "ece876bea508b0b11fcb0460fc32b7375d1024d3979fdc137457bd3349eaf0a8",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Analyzed the full algebraic independence statement in an indexed polynomial algebra, linking unital evaluation homomorphisms and saving arbitrary field extensions, indexed polynomials and injectivity for later consolidation.",
+      "reason": "Verified full independent source formulation and existing contextual inventory; the displayed construction uses the polynomial algebra over a commutative unital coefficient ring, with finitely supported monomials. Finite, single, and set-indexed variable cases are instances of the same prerequisite, but polynomial quotients, evaluation maps, irreducibility, and ring-algebra presentation conditions remain separate mathematical concepts. No external references or new definitions are used. Specifically classified 'polynomial algebra k[X_i:i∈I]' in 'algebraic independence over a base field'.",
+      "references": [
+        {
+          "matching_note": "The corpus already defines general K/k field extensions under display label 'extension field'; the field inclusion is exactly the ambient concept used here. Reviewed without external source research.",
+          "phrase": "field extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "context": "Commutative field algebra: evaluation of an arbitrary-index polynomial algebra at a chosen family of elements x_i of K",
+          "phrase": "evaluation homomorphism k[X_i:i∈I]→K",
+          "reason": "The ring map and polynomial evaluation construction are mathematically contextual; do not hypothesize a full missing definition now.",
+          "state": "unassigned"
+        },
+        {
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "phrase": "polynomial algebra k[X_i:i∈I]",
+          "state": "missing",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree."
+        },
+        {
+          "matching_note": "Evaluation of a polynomial ring into K is a unital k-algebra homomorphism.",
+          "phrase": "homomorphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "context": "Set theory: injectivity of an arbitrary map f:X→Y, meaning f(x)=f(y) implies x=y for all x,y in X; for structured maps this is the underlying-set condition.",
+          "matching_note": "Source occurrence 'injective' expresses ordinary injectivity of the underlying map; distinguish universal injectivity/pure module maps and categorical coproduct structure arrows.",
+          "phrase": "injective mapping",
+          "reason": "The definition requires injectivity of evaluation; save as occurrence to compare with other references across subjects.",
+          "state": "missing"
+        },
+        {
+          "disposition": "An indexed family is used in the ordinary set-indexing convention, without an independent notion that must be introduced during this pass.",
+          "phrase": "family (x_i)",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_algebra.20261022.02",
+      "formulation_id": "form.138b13bf27c037c1.naive-cotangent-complex",
+      "version_sha256": "7a85f3a62252157891b9b8a569b33d58dddd5cefd29bdbcef36c588954addf5e",
+      "expected_node_sha256": "a6e0bc93ded25c4ee006d5ebb4624297f3a53e01acc530d54addc41b8644e088",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the full two-term naive cotangent complex description including polynomial presentation, kernel, ideal square, Kähler differentials, module tensor and universal derivation; unknown constructions are occurrence-only.",
+      "reason": "Verified full independent source formulation and existing contextual inventory; the displayed construction uses the polynomial algebra over a commutative unital coefficient ring, with finitely supported monomials. Finite, single, and set-indexed variable cases are instances of the same prerequisite, but polynomial quotients, evaluation maps, irreducibility, and ring-algebra presentation conditions remain separate mathematical concepts. No external references or new definitions are used. Specifically classified 'P=R[X_s:s∈S]' in 'naive cotangent complex of a ring homomorphism'.",
+      "references": [
+        {
+          "phrase": "ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "The polynomial presentation takes place in the commutative unital ring-map convention."
+        },
+        {
+          "phrase": "P=R[X_s:s∈S]",
+          "state": "missing",
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree."
+        },
+        {
+          "phrase": "map canonically onto S",
+          "state": "unassigned",
+          "context": "Commutative algebra: surjective evaluation map from the polynomial R-algebra R[X_s] to S",
+          "reason": "The canonical polynomial evaluation/surjection requires contextual identity; preserve this occurrence."
+        },
+        {
+          "phrase": "I=ker(P→S)",
+          "state": "unassigned",
+          "context": "Algebra: kernel ideal of a unital commutative ring homomorphism P→S",
+          "reason": "The kernel is a ring ideal with a specific universal definition, not merely an arbitrary ideal."
+        },
+        {
+          "phrase": "Ω_{P/R}",
+          "state": "existing",
+          "target_meaning_id": "meaning.7ca4fb934b2f076c.kahler-differentials",
+          "matching_note": "This is the relative Kähler differential module associated with the ring map R→P."
+        },
+        {
+          "phrase": "Ω_{P/R}⊗_P S",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+          "matching_note": "The term includes the tensor product of P-modules along the ring homomorphism P→S."
+        },
+        {
+          "phrase": "two-term complex I/I²→Ω_{P/R}⊗_P S",
+          "state": "unassigned",
+          "context": "Homological algebra: chain complex concentrated in two homological degrees with a differential",
+          "reason": "The chain complex and grading notion need contextual interpretation; it is not simply a module."
+        },
+        {
+          "phrase": "I/I²",
+          "state": "unassigned",
+          "context": "Commutative algebra: quotient of the ideal I by the ideal-square I² as a module",
+          "reason": "This quotient uses ideal multiplication and module quotient; postpone any new named definition."
+        },
+        {
+          "phrase": "induced differential from universal derivation",
+          "state": "unassigned",
+          "context": "Commutative algebra: universal derivation d:P→Ω_{P/R} and its induced boundary map on I/I²",
+          "reason": "The Kähler-differentials meaning provides the universal derivation context but not necessarily the induced map as a named term."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_algebra.20261022.03",
+      "formulation_id": "form.82307b7a25fdc9fd.quasiregular-sequence-module",
+      "version_sha256": "16835d9b6cde184043b2be178ea22f8587a06a8501eb0ddc6dc3dd2c729fea0a",
+      "expected_node_sha256": "bce57bcd0cec4ed7d136ae3bae74bd97b2aca2594e774c6bcc796ecb24b1fb65",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Inspected all terms of the graded-map criterion and the M/JM coefficient module, quotient ring R/J, polynomial variables, and J-adic associated graded pieces. Unlike M-regularity, quasi-regularity is defined here by a graded isomorphism and is not silently identified with an M-regular sequence.",
+      "reason": "Verified full independent source formulation and existing contextual inventory; the displayed construction uses the polynomial algebra over a commutative unital coefficient ring, with finitely supported monomials. Finite, single, and set-indexed variable cases are instances of the same prerequisite, but polynomial quotients, evaluation maps, irreducibility, and ring-algebra presentation conditions remain separate mathematical concepts. No external references or new definitions are used. Specifically classified 'polynomial ring (R/J)[X_1,…,X_c]' in 'quasi-regular sequence relative to a module'.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "ideal J generated by f_i",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "tensor product over R/J",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "quotient ring R/J and quotient module M/JM",
+          "state": "unassigned",
+          "context": "Commutative algebra: quotient ring and module by an ideal action"
+        },
+        {
+          "phrase": "polynomial ring (R/J)[X_1,…,X_c]",
+          "state": "missing",
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree."
+        },
+        {
+          "phrase": "associated graded module ⊕J^nM/J^{n+1}M",
+          "state": "unassigned",
+          "context": "Commutative algebra: associated graded module of J-adic filtration"
+        },
+        {
+          "phrase": "graded isomorphism of the displayed canonical map",
+          "state": "unassigned",
+          "context": "Graded commutative algebra: grading-preserving module isomorphism identifying variables with classes f_i"
+        },
+        {
+          "phrase": "isomorphism",
+          "state": "external",
+          "disposition": "A specific graded comparison map is required to be an isomorphism; ordinary finite generation of J is insufficient."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_algebra.20261022.04",
+      "formulation_id": "form.8dbafc093b30c2a3.global-complete-intersection-algebra",
+      "version_sha256": "e743c0df61c00c23a33cd142493d5267b6a5e8b26c13bab09b89d9e74fa62f34",
+      "expected_node_sha256": "30a059fde7a8b83a50bdab3ba5e6a065a5e08f14824d69db4ff4ca09d449f8bd",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the finite-type algebra presentation k[x_1,…,x_n]/(f_1,…,f_c) and the dimension equality dim(S)=n−c. This is the stated global criterion, not an assertion that any finite presentation is a complete intersection.",
+      "reason": "Verified full independent source formulation and existing contextual inventory; the displayed construction uses the polynomial algebra over a commutative unital coefficient ring, with finitely supported monomials. Finite, single, and set-indexed variable cases are instances of the same prerequisite, but polynomial quotients, evaluation maps, irreducibility, and ring-algebra presentation conditions remain separate mathematical concepts. No external references or new definitions are used. Specifically classified 'polynomial ring k[x_1,…,x_n]' in 'global complete intersection over a field'.",
+      "references": [
+        {
+          "phrase": "field k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "finite-type algebra S over k",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map"
+        },
+        {
+          "phrase": "Krull dimension dim(S)",
+          "state": "existing",
+          "target_meaning_id": "meaning.22c049b8eee93897.krull-dimension-ring"
+        },
+        {
+          "phrase": "polynomial ring k[x_1,…,x_n]",
+          "state": "missing",
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree."
+        },
+        {
+          "phrase": "quotient ring by ideal (f_1,…,f_c)",
+          "state": "unassigned",
+          "context": "Commutative algebra: quotient of polynomial ring by finitely generated ideal of relations"
+        },
+        {
+          "phrase": "dim(S)=n−c",
+          "state": "external",
+          "disposition": "This is an equality about the presentation and Krull dimension; no unspecified regular-sequence criterion is being substituted."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_algebra.20261022.05",
+      "formulation_id": "form.c50e4715a45d9236.relative-global-complete-intersection",
+      "version_sha256": "227f831b82d12bff901bfc957cdf89b39ec6ddd00436dca239006ad000bb9bbe",
+      "expected_node_sha256": "0ac592ce501b84795af2f7c4500582a7440bf86081dd53a2cec475f56b631be8",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Checked the specified quotient presentation of a relative complete-intersection map, with its finite polynomial generators and relations and the dimension condition on every nonempty scheme fibre rather than only global Krull dimension.",
+      "reason": "Verified full independent source formulation and existing contextual inventory; the displayed construction uses the polynomial algebra over a commutative unital coefficient ring, with finitely supported monomials. Finite, single, and set-indexed variable cases are instances of the same prerequisite, but polynomial quotients, evaluation maps, irreducibility, and ring-algebra presentation conditions remain separate mathematical concepts. No external references or new definitions are used. Specifically classified 'polynomial ring R[x_1,…,x_n]' in 'relative global complete-intersection presentation'.",
+      "references": [
+        {
+          "phrase": "unital ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "finite presentation R[x_1,…,x_n]/(f_1,…,f_c)",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-presentation-ring-map"
+        },
+        {
+          "phrase": "polynomial ring R[x_1,…,x_n]",
+          "state": "missing",
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree."
+        },
+        {
+          "phrase": "quotient by ideal (f_1,…,f_c)",
+          "state": "unassigned",
+          "context": "Commutative ring quotient by the finitely generated ideal of relations f_i"
+        },
+        {
+          "phrase": "scheme-theoretic fibres of Spec(S)→Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.8a65ad25b01e5104.scheme-theoretic-fibre"
+        },
+        {
+          "phrase": "scheme morphism Spec(S)→Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.eb0cd2c67c6ee622.affine-scheme-morphism-ring-map"
+        },
+        {
+          "phrase": "Krull dimension of each nonempty fibre",
+          "state": "existing",
+          "target_meaning_id": "meaning.bd90654fb341045a.krull-dimension-space"
+        },
+        {
+          "phrase": "dimension n−c for all nonempty fibres",
+          "state": "external",
+          "disposition": "This is the stipulated relative expected-dimension condition; zero fibres are excluded and it is not merely the absolute dimension of Spec(S)."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_algebra.20261022.06",
+      "formulation_id": "form.d2b85c43cfbc6c05.finite-presentation-ring-map",
+      "version_sha256": "2f5ac43569732500ed7ccafc2b4a1bc7da657140085558d0238ae921ef2e8095",
+      "expected_node_sha256": "134fd1d4fd9eaef9ada6d36496304e7b77a50570063f6e496f26f5bed482c431",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read finite ring-map presentation through a polynomial R-algebra quotient with finite generators and finite relations; distinguished ring algebra presentation from finite presentation of an R-module.",
+      "reason": "Verified full independent source formulation and existing contextual inventory; the displayed construction uses the polynomial algebra over a commutative unital coefficient ring, with finitely supported monomials. Finite, single, and set-indexed variable cases are instances of the same prerequisite, but polynomial quotients, evaluation maps, irreducibility, and ring-algebra presentation conditions remain separate mathematical concepts. No external references or new definitions are used. Specifically classified 'polynomial ring R[x_1,…,x_n]' in 'finitely presented ring homomorphism'.",
+      "references": [
+        {
+          "phrase": "unital ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "polynomial ring R[x_1,…,x_n]",
+          "state": "missing",
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree."
+        },
+        {
+          "phrase": "finitely generated ideal (f_1,…,f_m) of relations",
+          "state": "unassigned",
+          "context": "Ideal generated by a finite list of polynomial relations in R[x_1,…,x_n]"
+        },
+        {
+          "phrase": "quotient ring R[x_1,…,x_n]/(f_1,…,f_m)",
+          "state": "unassigned",
+          "context": "Ring obtained by factoring the polynomial algebra by the relation ideal"
+        },
+        {
+          "phrase": "R-algebra isomorphism from the quotient to S",
+          "state": "unassigned",
+          "context": "Ring isomorphism commuting with the given structure maps from R, not merely an R-module isomorphism"
+        },
+        {
+          "phrase": "n and m finite",
+          "state": "external",
+          "disposition": "Both generators and defining equations must be finite; a finitely generated R-algebra need not be finitely presented over an arbitrary R."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_algebra.20261022.07",
+      "formulation_id": "form.d2b85c43cfbc6c05.finite-type-ring-map",
+      "version_sha256": "25b2aa68e5587bd7aa5e55e641c87f6e09b3dc7c01759814599b526f88570e34",
+      "expected_node_sha256": "5dceaf3158146cedd7d0c8cc9c1d07a5a861637c6b10fc32b314948831a73a82",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read finite type as generation of S by finitely many elements as an R-algebra, equivalently a quotient of a finite-variable polynomial ring; did not smuggle in finite generation of the kernel ideal.",
+      "reason": "Verified full independent source formulation and existing contextual inventory; the displayed construction uses the polynomial algebra over a commutative unital coefficient ring, with finitely supported monomials. Finite, single, and set-indexed variable cases are instances of the same prerequisite, but polynomial quotients, evaluation maps, irreducibility, and ring-algebra presentation conditions remain separate mathematical concepts. No external references or new definitions are used. Specifically classified 'polynomial algebra R[x_1,…,x_n]' in 'ring homomorphism of finite type'.",
+      "references": [
+        {
+          "phrase": "unital ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "R-algebra generated by finitely many elements",
+          "state": "unassigned",
+          "context": "Smallest unital R-subalgebra of S containing a finite list of elements equals S"
+        },
+        {
+          "phrase": "polynomial algebra R[x_1,…,x_n]",
+          "state": "missing",
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree."
+        },
+        {
+          "phrase": "surjective R-algebra homomorphism R[x_1,…,x_n]→S",
+          "state": "unassigned",
+          "context": "Presentation as a quotient with no finite-generation assumption on the ideal of polynomial relations"
+        },
+        {
+          "phrase": "equivalence with a polynomial-ring quotient",
+          "state": "external",
+          "disposition": "Finite type constrains the generators; finite presentation would additionally constrain relations and is not inferred."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_algebra.20261022.08",
+      "formulation_id": "form.e606496d592fe305.relatively-prime-polynomials",
+      "version_sha256": "18c9f8b369f7ea61cb792fb6c1d7147088602ca8b4fd5f4a10f125ce5ec79e88",
+      "expected_node_sha256": "7650d7259a70cce810cd5dbc3f1770809ede41eb8e34b6107af1be185711c032",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read coprimality of two polynomials as the whole-ring generated-ideal criterion, retaining the base field, its polynomial ring, and explicit ideal generator pair.",
+      "reason": "Verified full independent source formulation and existing contextual inventory; the displayed construction uses the polynomial algebra over a commutative unital coefficient ring, with finitely supported monomials. Finite, single, and set-indexed variable cases are instances of the same prerequisite, but polynomial quotients, evaluation maps, irreducibility, and ring-algebra presentation conditions remain separate mathematical concepts. No external references or new definitions are used. Specifically classified 'univariate polynomial ring k[x]' in 'coprime polynomials'.",
+      "references": [
+        {
+          "phrase": "field k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "univariate polynomial ring k[x]",
+          "state": "missing",
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree."
+        },
+        {
+          "phrase": "ideal (f,g) generated by polynomials",
+          "state": "unassigned",
+          "context": "All k[x]-linear combinations af+bg with a,b∈k[x]."
+        },
+        {
+          "phrase": "unit ideal equals k[x]",
+          "state": "unassigned",
+          "context": "Ideal containing the unit polynomial 1 and hence every polynomial."
+        },
+        {
+          "phrase": "coprime when generated ideal is entire ring",
+          "state": "external",
+          "disposition": "Bezout ideal criterion: coefficients a,b exist with af+bg=1; this does not require f and g individually irreducible."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_algebra.20261022.09",
+      "formulation_id": "form.wave2.foundation.nonzero-polynomial-degree",
+      "version_sha256": "93eb2d5d2bb6f8fd708d3c4000d8a212a1f58afc0854dc5b68280c1470694d81",
+      "expected_node_sha256": "539330ce4bd1593239f8ceccd2fedf5a07ba4213bef7307afc4e1f586dc2c845",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read finite degree of nonzero univariate polynomial over commutative unital ring as largest index with nonzero coefficient, excluding zero polynomial finite degree.",
+      "reason": "Verified full independent source formulation and existing contextual inventory; the displayed construction uses the polynomial algebra over a commutative unital coefficient ring, with finitely supported monomials. Finite, single, and set-indexed variable cases are instances of the same prerequisite, but polynomial quotients, evaluation maps, irreducibility, and ring-algebra presentation conditions remain separate mathematical concepts. No external references or new definitions are used. Specifically classified 'univariate polynomial P∈R[X]' in 'degree of a nonzero univariate polynomial'.",
+      "references": [
+        {
+          "phrase": "nonnegative integer exponent k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "univariate polynomial P∈R[X]",
+          "state": "missing",
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree."
+        },
+        {
+          "phrase": "largest nonzero coefficient index",
+          "state": "unassigned",
+          "context": "Maximum k≥0 for which a_k≠0_R."
+        },
+        {
+          "phrase": "zero polynomial finite degree excluded",
+          "state": "external",
+          "disposition": "No finite degree is assigned to identically zero polynomial under this convention."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_algebra.20261022.10",
+      "formulation_id": "form.30083611f9483a64.characteristic-polynomial-matrix",
+      "version_sha256": "e9e3b69baec6b20bbd58b44735b4ac2060eefcf55883b68f714c6b169e49b8bf",
+      "expected_node_sha256": "2aa79c86cddaf3bc95a23666625a734f0dfa2f028fecb608ac327a9b296d3c6b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the complete characteristic-polynomial matrix definition, distinguishing determinant, square matrix, polynomial ring and matrix identity from the unrelated characteristic of a field.",
+      "reason": "Verified full independent source formulation and existing contextual inventory; the displayed construction uses the polynomial algebra over a commutative unital coefficient ring, with finitely supported monomials. Finite, single, and set-indexed variable cases are instances of the same prerequisite, but polynomial quotients, evaluation maps, irreducibility, and ring-algebra presentation conditions remain separate mathematical concepts. No external references or new definitions are used. Specifically classified 'R[t]' in 'characteristic polynomial of a square matrix'.",
+      "references": [
+        {
+          "phrase": "n×n matrix A over a commutative ring R",
+          "state": "unassigned",
+          "context": "Linear algebra: finite square matrix of elements of a commutative ring",
+          "reason": "A square matrix is a distinct object from the adjacency matrix of a graph; do not mislink it."
+        },
+        {
+          "phrase": "det(t I_n−A)",
+          "state": "unassigned",
+          "context": "Linear algebra: determinant of a square matrix of polynomial entries",
+          "reason": "The determinant is an algebraic construction over the polynomial ring R[t]."
+        },
+        {
+          "phrase": "R[t]",
+          "state": "missing",
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree."
+        },
+        {
+          "phrase": "identity matrix I_n",
+          "state": "unassigned",
+          "context": "Linear algebra: n-by-n identity matrix with diagonal units and off-diagonal zeros",
+          "reason": "This is a specific linear algebra identity, rather than an arbitrary group identity."
+        }
+      ]
+    }
+  ]
+}
