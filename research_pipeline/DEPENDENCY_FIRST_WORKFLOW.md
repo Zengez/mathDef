@@ -404,3 +404,46 @@ retaining the original historical occurrence evidence. Do not collapse
 `I^n` and `I^n M`, ordinary vs symbolic prime-ideal powers, or ordinary
 comma vs iso-comma category constructions.
 
+
+
+## Pass 2 bounded transaction sizing and preflight lesson (2026-10-22 Chunk 5)
+
+A recent repository-connector attempt to fetch **eleven distinct effective
+nodes together with the large amendment registry and inventory** timed out.
+No immutable inbox package was created during the failed attempt; the live
+graph and applied receipts were checked before reattempting. Splitting the
+source-reviewed work into **roughly 3–5 formulations per graph inbox package**
+allowed every subsequent package to apply with passing graph and isolated
+test CI. This is an empirical connector reliability observation, **not**
+permission to skip complete-formulation review or to discard context.
+
+Recommended economical sequence for this experimental interface:
+
+1. Fetch inventory and live unresolved registry once per topical review
+   cluster. Select target phrases and inspect **full original source text**
+   against existing independent meanings. Group only for *navigation*.
+2. For a bounded batch of ~3–5 distinct formulations, fetch the original
+   immutable node and the current append-only amendment events, reconstruct
+   the **effective** node, and validate the full digest and source version.
+   Reuse the same in-memory inventory/registry inside that batch.
+3. Emit exactly one immutable full-adjacency reviewed `mode:amend` inbox
+   package with context-specific rationale and preserved other references.
+   If any connector request times out or reports an uncertain result, **check
+   whether that exact path exists** before retrying; do not duplicate it.
+4. Confirm the independent graph Action and `applied/<batch>.json` receipt,
+   inspect the live `STATE.json` change, then collect all genuinely equivalent
+   fresh raw missing candidate IDs and review them **separately** in a short
+   `mode:alias` packet. A phrase-context hash intentionally creates more
+   candidate IDs than semantic concepts.
+5. Make small checkpoints after multiple successful batches. A passing
+   Action proves mechanical validity, **not** mathematical correctness.
+   Maintain manual review and a later whole-inventory consistency audit.
+
+Preserve direction and type: finite generated ideals (over commutative
+rings) reuse the existing finite generated **module** notion because the
+ideal is a submodule of the regular module; an irreducible polynomial over
+a field reuses irreducible **element** in the integral domain `k[x]`.
+These are explicitly reviewed specialization links, not keyword matches.
+Distinct concepts such as monic polynomials, simple versus multiple roots,
+and additional map structure are not collapsed. For preimages, an
+inverse-image **set** does not imply that a map has an inverse function.
