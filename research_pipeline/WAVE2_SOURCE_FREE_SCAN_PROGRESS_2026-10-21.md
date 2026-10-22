@@ -1,5 +1,79 @@
 # Wave 2 — source-free semantic reference scanning pilot (2026-10-21)
 
+## Latest verified continuation — batches 038a–040b (333/659)
+
+The live `dependency_graph/STATE.json` and `applied/` ledger supersede
+historical counts whenever newer work has been committed.
+
+At the start of this continuation, the live graph was already at
+**309/659 complete**, a more recent position than the previous chat's
+229 checkpoint. Historical scans 033–037 and two append-only corrections
+were already applied and therefore not repeated.
+
+This continuation added **24 complete source-free semantic scans**
+and **123 mathematical-reference occurrence decisions**:
+
+| Inbox package | Scans | Occurrences | Verified applied |
+|---|---:|---:|---|
+| `semantic-existing-initial-038a` | 4 | 20 | Yes |
+| `semantic-existing-initial-038b` | 1 | 4 | Yes |
+| `semantic-existing-initial-038c` | 1 | 7 | Yes |
+| `semantic-existing-initial-038d` | 1 | 5 | Yes |
+| `semantic-existing-initial-038e` | 1 | 5 | Yes |
+| `semantic-existing-initial-039a` | 4 | 23 | Yes |
+| `semantic-existing-initial-039b` | 4 | 19 | Yes |
+| `semantic-existing-initial-040a` | 4 | 21 | Yes |
+| `semantic-existing-initial-040b` | 4 | 19 | Yes |
+| **Total** | **24** | **123** | **All nine** |
+
+Every package had its graph-applied digest receipt checked. Latest graph
+Action [39699242448](https://github.com/Zengez/mathDef/actions/runs/39699242448)
+finished SUCCESS; latest isolated tests
+[39699242492](https://github.com/Zengez/mathDef/actions/runs/39699242492)
+also finished SUCCESS. Definitions and their reviewed meanings were not
+rewritten, and the original production corpus was not consulted.
+
+Mathematical contexts reviewed: locally finite subset families;
+ordered stratifications; separated and quasi-separated morphisms of
+schemes; Kummer extensions; vector spaces over fields; Grothendieck
+K groups of finite modules and projectives; valuative uniqueness;
+Hilbert and Hilbert–Samuel lengths; ideals of definition; scheme
+quasi-compactness; equidimensional topological spaces; topological
+Krull dimensions; the universal properties of scheme and categorical
+fibre products; scheme construction and morphisms; interiors and
+nowhere dense sets; geometrically regular Noetherian algebras.
+Unmatched constructions were preserved as `unassigned` with context,
+not prematurely researched or treated as distinct missing meanings.
+
+**Live verified graph summary after 040b:** 611 meanings,
+659 existing formulations, **333 complete**, **326 incomplete**,
+0 unscanned, 454 unassigned occurrences, 223 preliminary ambiguous
+lexical occurrences, 13 historical missing-candidate records (12
+unresolved), 12 append-only correction events; all 659 Open,
+`phase=scan_and_link_existing`, consolidation gate OFF, external
+definition research OFF.
+
+**Next deterministic worklist:** 
+`form.c31e56dc023fcbcc.affine-scheme-fibre-product` first,
+then `form.c31e56dc023fcbcc.scheme-fibre-product`,
+`form.c4da44394808f995.injectivity-locus-finite-projectives` and
+`form.c4da44394808f995.surjectivity-locus-module-map`.
+The next eight independent formulation texts and hashes were read
+for possible new batch 041; however, multiple attempts to create
+the first inbox file were rejected before submission. **No 041
+batch or scans were committed or applied.** Retry only ordinary
+validated inbox submission; no work from these attempts counts.
+
+Do not start global unassigned-occurrence consolidation, external
+missing-definition research, new definition population, unrelated
+breadth, promotion or mathematical certification until the
+dependency-first workflow gates permit them. Preserve frozen
+independent Wave1, historically reviewed Wave2 mathematical content,
+provisional B139–B142, and original production corpus independence.
+
+---
+
+
 ## Latest source-free Pass 1 — 309/659 complete
 
 The live graph and applied receipts supersede any older numbers below.
