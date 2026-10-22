@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-044j",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.fd3c1a1c0145915a.dimension-finite-module",
+      "version_sha256": "3f6b31cef96d0f4a92785436968c0e615a9d845355e97a5e9109d3e33883f8a7",
+      "complete": true,
+      "review_rationale": "Read dimension of finite module as Krull dimension of its support with supremum of chain lengths inside the support, not dimension of the ambient ring unless supports coincide.",
+      "references": [
+        {
+          "phrase": "finitely generated R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        },
+        {
+          "phrase": "Noetherian ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "support Supp_R(M)",
+          "state": "existing",
+          "target_meaning_id": "meaning.fd3c1a1c0145915a.support-finite-module"
+        },
+        {
+          "phrase": "prime ideal chains",
+          "state": "existing",
+          "target_meaning_id": "meaning.22c049b8eee93897.chain-of-prime-ideals"
+        },
+        {
+          "phrase": "Krull dimension",
+          "state": "existing",
+          "target_meaning_id": "meaning.bd90654fb341045a.krull-dimension-space"
+        },
+        {
+          "phrase": "supremum of chain lengths in Supp_R(M)",
+          "state": "unassigned",
+          "context": "Supremum of numbers of strict inclusions among prime ideals that belong to the module support."
+        },
+        {
+          "phrase": "module dimension may be below dim(R)",
+          "state": "external",
+          "disposition": "The support restricts the chains being measured, not all prime-ideal chains of R."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.fd3c1a1c0145915a.support-finite-module",
+      "version_sha256": "3ef50c040451c484b73e01026f53b414703614ee41c06797e7a8c96513652d4a",
+      "complete": true,
+      "review_rationale": "Read support of finite module as primes whose localized module is nonzero and the closedness conclusion under Noetherianity, preserving the prime-spectrum and localization requirements.",
+      "references": [
+        {
+          "phrase": "finitely generated R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        },
+        {
+          "phrase": "prime spectrum Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "prime ideal p",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "module localization M_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "Noetherian ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "nonzero localized module M_p",
+          "state": "unassigned",
+          "context": "Module localization at the complement of p has at least one nonzero element."
+        },
+        {
+          "phrase": "closed subset of Spec(R)",
+          "state": "unassigned",
+          "context": "A subset of Spec(R) that is closed for the Zariski topology, in the asserted Noetherian setting."
+        },
+        {
+          "phrase": "support of finite module is Zariski closed",
+          "state": "external",
+          "disposition": "Closedness is a consequence of finiteness (indeed holds for finite modules more generally), separate from the definition using nonzero localizations."
+        }
+      ]
+    }
+  ]
+}
