@@ -2,39 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.dbce785fa0c96b0a.field-characteristic",
   "version_sha256": "4f7c4c6af54c95e3ec9cb8bacec1da68ba0cdfebddd39d66951694ff1d090503",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        54,
-        61
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.c0838fe776d026431621"
+      "phrase": "field F with multiplicative identity 1_F",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.6395b65d61c61884ad1e"
     },
     {
-      "phrase": "integer",
-      "span": [
-        90,
-        97
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.8e35a665ce632642250f"
+      "phrase": "positive integers n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-positive-convention",
+      "occurrence_id": "occ.1eed6153ccb683ae8015"
+    },
+    {
+      "phrase": "additive structure on a field",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.2c74aaf1adbc425c84d6"
+    },
+    {
+      "phrase": "additive multiple n·1_F",
+      "state": "unassigned",
+      "context": "Sum of n copies of the multiplicative identity of F in its additive group",
+      "occurrence_id": "occ.acaac11c7a0c3ddb26a9"
+    },
+    {
+      "phrase": "least positive n with n·1_F=0",
+      "state": "unassigned",
+      "context": "Additive order of 1_F if finite, with zero characteristic defined if no positive such n exists",
+      "occurrence_id": "occ.58c2f613df3de7ced11a"
+    },
+    {
+      "phrase": "prime integer",
+      "state": "unassigned",
+      "context": "Positive integer greater than 1 divisible only by 1 and itself, not a prime ideal of a ring",
+      "occurrence_id": "occ.4f886831365de6547e9a"
+    },
+    {
+      "phrase": "positive characteristic must be prime",
+      "state": "external",
+      "disposition": "An algebraic theorem following from field axioms, not an additional independent part of the definition.",
+      "occurrence_id": "occ.aa2107c43a8ce0d5acdb"
     }
   ],
-  "snapshot_sha256": "d9d2b6c2ad7ff0eb6d035caa32212d681b0d80b1471e59351a9836f236832830",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "2bb1d1a451a389e50d8ff4ca08095800acb32662f4a86c83789c024199115243",
+  "review_rationale": "Read the additive order of 1_F and zero-characteristic alternative in a field, including integer scalar multiples and the consequence that positive characteristic is prime."
 }

@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.db846ebeca42b9ee.finitely-generated-module-stacks",
   "version_sha256": "ca123992965abd79f66e602fdd25b6eeb05fd0023824007d3958e2360b34394e",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.4e8630e9bec37ed55144"
+    },
+    {
+      "phrase": "finitely generated R-module",
+      "state": "existing",
+      "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module",
+      "occurrence_id": "occ.d189837196c77976e217"
+    },
+    {
+      "phrase": "R-linear homomorphism R^n→M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.module-linear",
+      "occurrence_id": "occ.881165411d4c353d26fc"
+    },
+    {
+      "phrase": "finite free module R^n",
+      "state": "unassigned",
+      "context": "Direct sum of n copies of R as a left R-module, with canonical standard basis",
+      "occurrence_id": "occ.4d94c6cd62d4d007122d"
+    },
+    {
+      "phrase": "surjective R-linear map R^n→M",
+      "state": "unassigned",
+      "context": "Every m∈M is the image of some n-tuple of coefficients from R",
+      "occurrence_id": "occ.ea8d29eb7c9418c06129"
+    },
+    {
+      "phrase": "R-linear span of generators m_1,…,m_n",
+      "state": "unassigned",
+      "context": "Set of finite sums Σ r_i m_i with coefficients r_i∈R, required to equal M",
+      "occurrence_id": "occ.399d5ca1a0f9b8631f8c"
+    },
+    {
+      "phrase": "equivalence of generating list and finite free surjection",
+      "state": "external",
+      "disposition": "An equivalent criterion for finite generation, not an extra injectivity or projectivity condition.",
+      "occurrence_id": "occ.315aba8647b5c5e461fc"
+    }
+  ],
+  "snapshot_sha256": "f9e511da004148a013f82ca28bb44ac8bf6ac69338cf7593d9353476420f5d8e",
+  "review_rationale": "Read the finite spanning-list criterion and equivalent surjection from a finite free module, preserving the module rather than algebra context and identifying ordinary linear surjectivity."
 }

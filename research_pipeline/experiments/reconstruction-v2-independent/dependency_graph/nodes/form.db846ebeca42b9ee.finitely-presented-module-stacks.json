@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.db846ebeca42b9ee.finitely-presented-module-stacks",
   "version_sha256": "c207eec153c0902aa8b5d8da764f15cd89f088e9e30081c8e24ffc569e29c9ac",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "exact sequence",
-      "span": [
-        52,
-        66
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation13.exact-sequence-abelian-category"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.7e17de3287ecc7b11f20"
+      "phrase": "finitely presented R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.415a1503ae7ed97d.finitely-presented-module",
+      "occurrence_id": "occ.62002921b2219fe6b25d"
+    },
+    {
+      "phrase": "R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.1e1d490e631a5bba1f92"
+    },
+    {
+      "phrase": "exact sequence R^m→R^n→M→0",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category",
+      "occurrence_id": "occ.8993e0aaa06ef84495b3"
+    },
+    {
+      "phrase": "R-linear maps in the presentation",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.module-linear",
+      "occurrence_id": "occ.1b131679adca5024f70f"
+    },
+    {
+      "phrase": "finite free modules R^m and R^n",
+      "state": "unassigned",
+      "context": "Finite direct sums of copies of R in the sequence, not arbitrary finitely generated projective modules",
+      "occurrence_id": "occ.1e1a0c7a9b86d33b31cf"
+    },
+    {
+      "phrase": "finitely many module defining relations",
+      "state": "unassigned",
+      "context": "Finite list generating the kernel of the surjection R^n→M, expressed by the image of R^m",
+      "occurrence_id": "occ.747647a6f90bb60e79b2"
+    },
+    {
+      "phrase": "m,n finite",
+      "state": "external",
+      "disposition": "Both generators and relations are finite; finite generation of M alone is insufficient over a non-Noetherian ring.",
+      "occurrence_id": "occ.ed2224a0f82ea060ce36"
     }
   ],
-  "snapshot_sha256": "b28d3599317911e0721fc5434f3b6f0116e0043832dfb6d04137ab03849956ef",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "da75882ff634f38800d3d32e91d3442e70bec574cae4d31f5b1341ce3158635c",
+  "review_rationale": "Read the finite presentation of an R-module as an exact sequence between finite-rank free modules and M, including the finite relation module and image-kernel exactness; not confused with finite presentation of a ring algebra."
 }
