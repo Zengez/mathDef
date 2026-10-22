@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-045k",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.bridge136.numeric-delta.2",
+      "version_sha256": "930f5ca84a2604bd73d71907dd3f369f033bb81fe9f548ec666da466fe502393",
+      "complete": true,
+      "review_rationale": "Verified Iverson bracket expression of the numerical Kronecker delta for two elements of the same set.",
+      "references": [
+        {
+          "phrase": "Iverson bracket indicator",
+          "state": "unassigned",
+          "context": "Numerical value 1 when predicate of equality is true and 0 otherwise."
+        },
+        {
+          "phrase": "equality of elements in Gamma",
+          "state": "external",
+          "disposition": "The underlying equality predicate has no new mathematical structure."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.bridge136.simple-bipartite.1",
+      "version_sha256": "56a4ceaa3adbac4cd228a33bd0d0360bbbe5b343c627fbd073e5b6b91631d2ab",
+      "complete": true,
+      "review_rationale": "Verified bipartiteness via disjoint partition of the vertices with every edge crossing between opposite parts.",
+      "references": [
+        {
+          "phrase": "simple undirected graph",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.graph42.simple-undirected"
+        },
+        {
+          "phrase": "partition of vertex set",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.group116.set-partition"
+        },
+        {
+          "phrase": "edge between opposite parts",
+          "state": "unassigned",
+          "context": "Every unordered pair belonging to the edge set has one endpoint in each vertex part."
+        },
+        {
+          "phrase": "empty part permitted",
+          "state": "external",
+          "disposition": "The bipartition condition does not require nonempty vertex parts."
+        }
+      ]
+    }
+  ]
+}
