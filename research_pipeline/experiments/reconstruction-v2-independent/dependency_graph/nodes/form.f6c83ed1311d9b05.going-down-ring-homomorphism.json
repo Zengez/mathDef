@@ -2,10 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.f6c83ed1311d9b05.going-down-ring-homomorphism",
   "version_sha256": "478f085f1090a2040b242e476b16a4ee85e128c45f74695c91fe037e8e7311e2",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "ring map R→S",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.0140712dc7a64a0fc2b8"
+    },
+    {
+      "phrase": "prime spectrum Spec(R), Spec(S)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.877ca975ebb7ede94726"
+    },
+    {
+      "phrase": "prime ideals p,p-prime,q-prime",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "occurrence_id": "occ.2295907ec123a32f3db7"
+    },
+    {
+      "phrase": "inclusion p⊆p-prime",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.2d3e07487253c36b98c0"
+    },
+    {
+      "phrase": "q-prime lies above p-prime",
+      "state": "unassigned",
+      "context": "For ring map phi:R→S, contraction phi^{-1}(q-prime) equals p-prime.",
+      "occurrence_id": "occ.4d950f05935d06c38603"
+    },
+    {
+      "phrase": "prime q⊆q-prime lying above p",
+      "state": "unassigned",
+      "context": "Seek prime ideal q of S included in the fixed q-prime, with contraction equal to p.",
+      "occurrence_id": "occ.e1ef916a6ec3e543d91e"
+    },
+    {
+      "phrase": "going-down direction of lifting",
+      "state": "external",
+      "disposition": "The input is the upper prime q-prime above p-prime; the property supplies a compatible lower q, not the going-up reverse process.",
+      "occurrence_id": "occ.e0ac21d1bb62089baa57"
+    }
+  ],
+  "snapshot_sha256": "86fc35fe22f3682f050418b0c3e364f001d2d0f8b8a743feb0c92bc6e975c90f",
+  "review_rationale": "Read going-down prime-chain lifting through a ring map with p contained in p-prime and a specified upper lying-over q-prime; retained contraction and lower lifting directions."
 }
