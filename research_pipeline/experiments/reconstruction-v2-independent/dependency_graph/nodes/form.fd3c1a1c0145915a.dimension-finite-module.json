@@ -2,23 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.fd3c1a1c0145915a.dimension-finite-module",
   "version_sha256": "3f6b31cef96d0f4a92785436968c0e615a9d845355e97a5e9109d3e33883f8a7",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "Noetherian ring",
-      "span": [
-        29,
-        44
-      ],
+      "phrase": "finitely generated R-module M",
+      "state": "existing",
+      "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module",
+      "occurrence_id": "occ.4d3385b26f5179cf9c68"
+    },
+    {
+      "phrase": "Noetherian ring R",
       "state": "existing",
       "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
-      "origin": "unreviewed_lexical_proposal",
-      "matching_note": "Exact display-term string; context/semantics still require inspection",
-      "occurrence_id": "occ.f185b63911a4c1ef57c3"
+      "occurrence_id": "occ.0823ba8e287da4ae2215"
+    },
+    {
+      "phrase": "support Supp_R(M)",
+      "state": "existing",
+      "target_meaning_id": "meaning.fd3c1a1c0145915a.support-finite-module",
+      "occurrence_id": "occ.247dccb39032c81544ed"
+    },
+    {
+      "phrase": "prime ideal chains",
+      "state": "existing",
+      "target_meaning_id": "meaning.22c049b8eee93897.chain-of-prime-ideals",
+      "occurrence_id": "occ.c062ce9806fc3fa53923"
+    },
+    {
+      "phrase": "Krull dimension",
+      "state": "existing",
+      "target_meaning_id": "meaning.bd90654fb341045a.krull-dimension-space",
+      "occurrence_id": "occ.7a6faadec31f3c32b996"
+    },
+    {
+      "phrase": "supremum of chain lengths in Supp_R(M)",
+      "state": "unassigned",
+      "context": "Supremum of numbers of strict inclusions among prime ideals that belong to the module support.",
+      "occurrence_id": "occ.6f543f0f83cbb9c000c0"
+    },
+    {
+      "phrase": "module dimension may be below dim(R)",
+      "state": "external",
+      "disposition": "The support restricts the chains being measured, not all prime-ideal chains of R.",
+      "occurrence_id": "occ.b105b5440433e8063034"
     }
   ],
-  "snapshot_sha256": "8f9e8d3fd415c038f792efeab76ef1a5def9629c8afccfc3eb7f6f41ff6d4841",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "c5d7b73cb2e7a4209922ebb97547be4de36f4728ea893a347687e8623575373d",
+  "review_rationale": "Read dimension of finite module as Krull dimension of its support with supremum of chain lengths inside the support, not dimension of the ambient ring unless supports coincide."
 }
