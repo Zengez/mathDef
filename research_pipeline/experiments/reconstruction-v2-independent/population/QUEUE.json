@@ -447,11 +447,29 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.14fb2e2c8ee691a830d3",
+      "context": "Real analysis: N-th finite partial sum of a real sequence, s_N=∑_{n=0}^{N}a_n, with an explicitly finite upper limit.",
+      "surface_phrase": "finite partial sum s_N",
+      "observed_in_formulations": [
+        "form.wave2.prereq122.real-series-convergent"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.162c8a146060e41fc577",
       "context": "Finite-dimensional real affine geometry: subsets of R^d, integer d≥1, with empty hull allowed",
       "surface_phrase": "Affine combination of finitely many vectors in a real vector space",
       "observed_in_formulations": [
         "form.wave2.pop140.affine-hull-combinations"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.20d00d042c8e5abc0061",
+      "context": "Real analysis: a real sequence as a function from nonnegative integers ℕ_0 into ℝ, assigning one real a_n for each nonnegative integer n.",
+      "surface_phrase": "real coefficient sequence (a_n)",
+      "observed_in_formulations": [
+        "form.wave2.prereq122.real-series-convergent"
       ],
       "actionable": false
     },
@@ -470,6 +488,15 @@
       "surface_phrase": "radical ideal I",
       "observed_in_formulations": [
         "form.03b55b8ca41abb20.jacobson-ring"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.26ce2acc7f34d02c9cd7",
+      "context": "Set theory/probability: intersection of a finite indexed family of subsets or events ⋂_{j∈J}A_j; under an empty-index convention equals the common ambient Ω.",
+      "surface_phrase": "finite intersection over J",
+      "observed_in_formulations": [
+        "form.wave2.pop140.mutually-independent"
       ],
       "actionable": false
     },
@@ -573,11 +600,38 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.5bc4d59c4af87cb4310c",
+      "context": "Set theory: finite subset J of a given index set I, the indexing object in finite products and intersections including the empty finite subset.",
+      "surface_phrase": "finite index subset J",
+      "observed_in_formulations": [
+        "form.wave2.pop140.mutually-independent"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.60a357687f0e1c93d908",
+      "context": "Probability theory: an indexed family of measurable events A_i∈Σ, for i in an arbitrary index set I, all in the same probability space (Ω,Σ,P).",
+      "surface_phrase": "indexed family of measurable events (A_i)",
+      "observed_in_formulations": [
+        "form.wave2.pop140.mutually-independent"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.7176b5fd74d3e3e5dc95",
       "context": "Set theory: reflexivity property of a binary relation R⊆S×S, namely (x,x)∈R for every x∈S.",
       "surface_phrase": "reflexivity x~x",
       "observed_in_formulations": [
         "form.wave2.set63.relation-reflexive-symmetric-transitive"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.7913d8a82788b1402bf9",
+      "context": "Real analysis: convergence of a real sequence (s_N) to s∈ℝ, with the epsilon-N criterion: all sufficiently late terms approach s.",
+      "surface_phrase": "limit of partial sums as N to infinity",
+      "observed_in_formulations": [
+        "form.wave2.prereq122.real-series-convergent"
       ],
       "actionable": false
     },
@@ -645,6 +699,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.c832a1797abe9e0db6b6",
+      "context": "Algebra/probability: finite product ∏_{j∈J} P(A_j) of real probabilities indexed by a finite set J, with empty product 1.",
+      "surface_phrase": "finite product of event probabilities",
+      "observed_in_formulations": [
+        "form.wave2.pop140.mutually-independent"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.c84405a9f915b0897178",
       "context": "Finite-dimensional linear algebra: n-by-n square matrices over a field K, n≥1",
       "surface_phrase": "Square matrix of finite order over a field",
@@ -672,6 +735,15 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.e50c8e4250f586e7f28e",
+      "context": "Metric geometry: distance between two subsets A,B of a metric space, defined as inf{d(a,b):a∈A,b∈B}, with an explicit convention for empty subsets.",
+      "surface_phrase": "distance between sets inf d(a,b)",
+      "observed_in_formulations": [
+        "form.wave2.pop141.metric-outer-measure"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.e8c6173a1007856e7c96",
       "context": "Polynomial algebra over a field: a simple root α of f in a field extension means f(α)=0 and f'(α)≠0, equivalently (x−α)^2 does not divide f over that extension field. For reduction modulo a maximal ideal the root and derivative are taken in the residue field.",
       "surface_phrase": "simple zero of reduced polynomial f-bar over κ",
@@ -690,7 +762,7 @@
       "actionable": false
     }
   ],
-  "unresolved_occurrence_count": 922,
+  "unresolved_occurrence_count": 902,
   "missing_research_permitted": false,
   "suggested_next_package": {
     "breadth_topic_candidates": [],
@@ -705,7 +777,7 @@
     "scan_complete": 659,
     "unscanned": 0,
     "scan_incomplete": 0,
-    "unassigned_occurrences": 922,
+    "unassigned_occurrences": 902,
     "consolidation_gate_valid": false
   },
   "reconciliation_findings": {
