@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-polynomial-evaluation-and-ring-kernel-001",
+  "mode": "amend",
+  "research_scope": "Five reviewed source formulations and eight decisions separating polynomial algebra, evaluation homomorphism, and ring-homomorphism kernel ideal, including distinct base-ring and polynomial-variable scope.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.polynomial_eval_kernel.20261022.01",
+      "formulation_id": "form.0c4c23579959165d.algebraic-independence",
+      "version_sha256": "700aae3545f4c6d356535ef54dbd65e1d776f39d1c6e97a3edd515943c77a656",
+      "expected_node_sha256": "355fa56d4f4e8466414a462156b1a56dcc6b59f3b2d1a796aeb4e7688ab63d19",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Analyzed the full algebraic independence statement in an indexed polynomial algebra, linking unital evaluation homomorphisms and saving arbitrary field extensions, indexed polynomials and injectivity for later consolidation.",
+      "reason": "Examined the complete source 'algebraic independence over a base field' and checked its existing-context meaning inventory. Reviewed separately polynomial algebras, evaluation homomorphisms and the kernels of commutative ring homomorphisms, retaining the original field, target, coefficients, and local quotient context. Did not confuse these with categorical evaluation, Galois automorphism evaluation, or arbitrary linear kernels.",
+      "references": [
+        {
+          "matching_note": "The corpus already defines general K/k field extensions under display label 'extension field'; the field inclusion is exactly the ambient concept used here. Reviewed without external source research.",
+          "phrase": "field extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "context": "Commutative algebra: evaluation R-algebra homomorphism ev_(a_i):R[X_i : i∈I]→A into a commutative unital R-algebra A, sending each formal indeterminate X_i to a specified a_i∈A and fixing the coefficients through the structure map R→A; includes univariate evaluation f(a) and the canonical R[X_s:s∈S]→S sending X_s to s.",
+          "phrase": "evaluation homomorphism k[X_i:i∈I]→K",
+          "state": "missing",
+          "matching_note": "Polynomial evaluation is the unique coefficient-preserving algebra map specified by images of indeterminates; target algebras and index sets remain source-specific. It differs from automorphism evaluation and counit/evaluation in monoidal categories."
+        },
+        {
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree.",
+          "phrase": "polynomial algebra k[X_i:i∈I]",
+          "state": "missing"
+        },
+        {
+          "matching_note": "Evaluation of a polynomial ring into K is a unital k-algebra homomorphism.",
+          "phrase": "homomorphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "context": "Set theory: injectivity of an arbitrary map f:X→Y, meaning f(x)=f(y) implies x=y for all x,y in X; for structured maps this is the underlying-set condition.",
+          "matching_note": "Source occurrence 'injective' expresses ordinary injectivity of the underlying map; distinguish universal injectivity/pure module maps and categorical coproduct structure arrows.",
+          "phrase": "injective mapping",
+          "reason": "The definition requires injectivity of evaluation; save as occurrence to compare with other references across subjects.",
+          "state": "missing"
+        },
+        {
+          "disposition": "An indexed family is used in the ordinary set-indexing convention, without an independent notion that must be introduced during this pass.",
+          "phrase": "family (x_i)",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_eval_kernel.20261022.02",
+      "formulation_id": "form.138b13bf27c037c1.naive-cotangent-complex",
+      "version_sha256": "7a85f3a62252157891b9b8a569b33d58dddd5cefd29bdbcef36c588954addf5e",
+      "expected_node_sha256": "463c7508f4dfae8a08cf6b685ee96776077e64721a63956e3bda23a8f764e0c7",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Read the full two-term naive cotangent complex description including polynomial presentation, kernel, ideal square, Kähler differentials, module tensor and universal derivation; unknown constructions are occurrence-only.",
+      "reason": "Examined the complete source 'naive cotangent complex of a ring homomorphism' and checked its existing-context meaning inventory. Reviewed separately polynomial algebras, evaluation homomorphisms and the kernels of commutative ring homomorphisms, retaining the original field, target, coefficients, and local quotient context. Did not confuse these with categorical evaluation, Galois automorphism evaluation, or arbitrary linear kernels.",
+      "references": [
+        {
+          "matching_note": "The polynomial presentation takes place in the commutative unital ring-map convention.",
+          "phrase": "ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree.",
+          "phrase": "P=R[X_s:s∈S]",
+          "state": "missing"
+        },
+        {
+          "context": "Commutative algebra: evaluation R-algebra homomorphism ev_(a_i):R[X_i : i∈I]→A into a commutative unital R-algebra A, sending each formal indeterminate X_i to a specified a_i∈A and fixing the coefficients through the structure map R→A; includes univariate evaluation f(a) and the canonical R[X_s:s∈S]→S sending X_s to s.",
+          "phrase": "map canonically onto S",
+          "state": "missing",
+          "matching_note": "Polynomial evaluation is the unique coefficient-preserving algebra map specified by images of indeterminates; target algebras and index sets remain source-specific. It differs from automorphism evaluation and counit/evaluation in monoidal categories."
+        },
+        {
+          "context": "Commutative algebra: kernel ideal of a unital homomorphism φ:A→B of commutative rings, consisting of all a∈A mapped to 0_B; for a polynomial evaluation map it is the ideal of polynomial relations, and for a quotient-localization composite it is the inverse image of zero in the target ring.",
+          "phrase": "I=ker(P→S)",
+          "state": "missing",
+          "matching_note": "This is the ring-homomorphism kernel ideal, rather than the categorical kernel of an arbitrary morphism, an unrelated module kernel, or the full evaluation map."
+        },
+        {
+          "matching_note": "This is the relative Kähler differential module associated with the ring map R→P.",
+          "phrase": "Ω_{P/R}",
+          "state": "existing",
+          "target_meaning_id": "meaning.7ca4fb934b2f076c.kahler-differentials"
+        },
+        {
+          "matching_note": "The term includes the tensor product of P-modules along the ring homomorphism P→S.",
+          "phrase": "Ω_{P/R}⊗_P S",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "context": "Homological algebra: chain complex concentrated in two homological degrees with a differential",
+          "phrase": "two-term complex I/I²→Ω_{P/R}⊗_P S",
+          "reason": "The chain complex and grading notion need contextual interpretation; it is not simply a module.",
+          "state": "unassigned"
+        },
+        {
+          "context": "Module theory: quotient left R-module M/N by an R-submodule N, whose elements are additive cosets m+N with addition and R-scalar action induced by M. Includes ideal modules I/I², successive filtration quotient modules and regular-module quotients R/I; extra ring, graded, flatness, or field structure is not part of this quotient-module meaning.",
+          "matching_note": "This source exhibits the standard quotient R-module construction M/N with inherited addition and scalar action. The specific submodule N and any additional algebraic properties are part of the original mathematical context, not a distinct quotient-module prerequisite.",
+          "phrase": "I/I²",
+          "state": "missing"
+        },
+        {
+          "context": "Commutative algebra: universal derivation d:P→Ω_{P/R} and its induced boundary map on I/I²",
+          "phrase": "induced differential from universal derivation",
+          "reason": "The Kähler-differentials meaning provides the universal derivation context but not necessarily the induced map as a named term.",
+          "state": "unassigned"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_eval_kernel.20261022.03",
+      "formulation_id": "form.3aaa8d6f2195bb8e.minimal-polynomial",
+      "version_sha256": "4166430d7d2406dd05e3cc0e81083f752f1ce0c05b1daae7ab66ce2be1899f3d",
+      "expected_node_sha256": "b5c953b12557332ef5fe6c674fad046caf88573e3c23e5c9feacb650c07d012b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed the minimal polynomial using field inclusion, algebraic element and evaluation-kernel of polynomial algebra; avoided mislinking ring homomorphism kernel to category kernels.",
+      "reason": "Examined the complete source 'minimal polynomial' and checked its existing-context meaning inventory. Reviewed separately polynomial algebras, evaluation homomorphisms and the kernels of commutative ring homomorphisms, retaining the original field, target, coefficients, and local quotient context. Did not confuse these with categorical evaluation, Galois automorphism evaluation, or arbitrary linear kernels.",
+      "references": [
+        {
+          "phrase": "extension E/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension",
+          "matching_note": "This is a general field inclusion k⊆E."
+        },
+        {
+          "phrase": "algebraic over k",
+          "state": "existing",
+          "target_meaning_id": "meaning.d0a078e59e1495da.algebraic-element-extension",
+          "matching_note": "The chosen element α satisfies a polynomial over k."
+        },
+        {
+          "phrase": "monic polynomial",
+          "state": "unassigned",
+          "context": "Polynomial algebra: monic polynomial over field k with leading coefficient one",
+          "reason": "Monicity is a polynomial property, not field characteristic."
+        },
+        {
+          "phrase": "kernel of evaluation k[t]→E",
+          "state": "missing",
+          "context": "Commutative algebra: kernel ideal of a unital homomorphism φ:A→B of commutative rings, consisting of all a∈A mapped to 0_B; for a polynomial evaluation map it is the ideal of polynomial relations, and for a quotient-localization composite it is the inverse image of zero in the target ring.",
+          "matching_note": "This is the ring-homomorphism kernel ideal, rather than the categorical kernel of an arbitrary morphism, an unrelated module kernel, or the full evaluation map."
+        },
+        {
+          "phrase": "irreducible over k",
+          "state": "unassigned",
+          "context": "Field theory: irreducibility of a polynomial in k[t]",
+          "reason": "Irreducibility is a field-polynomial property and can be compared with ring element irreducibility."
+        },
+        {
+          "phrase": "evaluation k[t]→E at alpha",
+          "state": "missing",
+          "context": "Commutative algebra: evaluation R-algebra homomorphism ev_(a_i):R[X_i : i∈I]→A into a commutative unital R-algebra A, sending each formal indeterminate X_i to a specified a_i∈A and fixing the coefficients through the structure map R→A; includes univariate evaluation f(a) and the canonical R[X_s:s∈S]→S sending X_s to s.",
+          "matching_note": "Polynomial evaluation is the unique coefficient-preserving algebra map specified by images of indeterminates; target algebras and index sets remain source-specific. It differs from automorphism evaluation and counit/evaluation in monoidal categories."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_eval_kernel.20261022.04",
+      "formulation_id": "form.d0a078e59e1495da.algebraic-element-extension",
+      "version_sha256": "19aab5939abe4e38edc06d4fbd1e0a6ae8a4739f94b2737d37c174852f941cde",
+      "expected_node_sha256": "c19e28b7249c9401481a9528e86eef3c3c198ea17dc94afc8c48a00bdac75833",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed the field extension E/F, nonzero polynomial f with F-coefficients and its evaluation at α in E, preserving the distinction between an algebraic element and an entire algebraic extension.",
+      "reason": "Examined the complete source 'algebraic element over a field' and checked its existing-context meaning inventory. Reviewed separately polynomial algebras, evaluation homomorphisms and the kernels of commutative ring homomorphisms, retaining the original field, target, coefficients, and local quotient context. Did not confuse these with categorical evaluation, Galois automorphism evaluation, or arbitrary linear kernels.",
+      "references": [
+        {
+          "phrase": "field extension E/F",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "phrase": "base field F",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "univariate polynomial f∈F[x]",
+          "state": "missing",
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "The expression f∈F[x] invokes the same general polynomial algebra over a commutative unital coefficient ring already contextually classified, without asserting any special irreducibility or evaluation property."
+        },
+        {
+          "phrase": "polynomial evaluation f(α) at element of E",
+          "state": "missing",
+          "context": "Commutative algebra: evaluation R-algebra homomorphism ev_(a_i):R[X_i : i∈I]→A into a commutative unital R-algebra A, sending each formal indeterminate X_i to a specified a_i∈A and fixing the coefficients through the structure map R→A; includes univariate evaluation f(a) and the canonical R[X_s:s∈S]→S sending X_s to s.",
+          "matching_note": "Polynomial evaluation is the unique coefficient-preserving algebra map specified by images of indeterminates; target algebras and index sets remain source-specific. It differs from automorphism evaluation and counit/evaluation in monoidal categories."
+        },
+        {
+          "phrase": "nonzero polynomial satisfying f(α)=0",
+          "state": "external",
+          "disposition": "The existential polynomial relation is the defining criterion for algebraicity, not a requirement that α itself be nonzero."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.polynomial_eval_kernel.20261022.05",
+      "formulation_id": "form.f3421024042fb45b.symbolic-power-prime-ideal",
+      "version_sha256": "96d838a2bde89d1094b8181b34cf77d95bf9272e4eacaf73a9971d2be98abacc",
+      "expected_node_sha256": "faa7fd7f7b96970547db227f4a25d8ec44a27959013e086215e3825f0e1c4337",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_review",
+      "review_rationale": "Reviewed symbolic powers of prime ideals as contractions from prime localization, and compared the equivalent kernel construction with the ordinary ideal power and the nonnegative exponent.",
+      "reason": "Examined the complete source 'symbolic powers of prime ideals' and checked its existing-context meaning inventory. Reviewed separately polynomial algebras, evaluation homomorphisms and the kernels of commutative ring homomorphisms, retaining the original field, target, coefficients, and local quotient context. Did not confuse these with categorical evaluation, Galois automorphism evaluation, or arbitrary linear kernels.",
+      "references": [
+        {
+          "phrase": "prime ideal p of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "localization R_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "integer exponent n≥0",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "context": "Commutative algebra: product IJ of two ideals of a commutative unital ring R, generated by finite sums of pairwise products; ordinary ideal powers I^n for n≥1 by repeated ideal multiplication, and by convention I^0=R when nonnegative exponents are used.",
+          "matching_note": "Ordinary p^n is formed by repeated ideal products, distinct from the symbolic power p^(n) defined by contraction from localization; n=0 is the unit ideal R.",
+          "phrase": "ordinary ideal power p^n",
+          "state": "missing"
+        },
+        {
+          "context": "Ideal in localized ring generated by images of elements of p^n.",
+          "phrase": "extended ideal p^n R_p",
+          "state": "unassigned"
+        },
+        {
+          "context": "Inverse image of localized ideal p^n R_p under the canonical localization map.",
+          "phrase": "contraction of an ideal under R→R_p",
+          "state": "unassigned"
+        },
+        {
+          "context": "Commutative algebra: kernel ideal of a unital homomorphism φ:A→B of commutative rings, consisting of all a∈A mapped to 0_B; for a polynomial evaluation map it is the ideal of polynomial relations, and for a quotient-localization composite it is the inverse image of zero in the target ring.",
+          "phrase": "kernel of R→R_p/p^nR_p",
+          "state": "missing",
+          "matching_note": "This is the ring-homomorphism kernel ideal, rather than the categorical kernel of an arbitrary morphism, an unrelated module kernel, or the full evaluation map."
+        },
+        {
+          "disposition": "The localization-and-contraction construction defines symbolic power without asserting equality with the ordinary ideal power.",
+          "phrase": "ordinary and symbolic ideal powers need not coincide",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}
