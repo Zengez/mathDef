@@ -2,25 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation76.noetherian-module.01",
   "version_sha256": "387d47d817226c504ce7e7bb4da8991de127000fa66173cf0933a44728f455a1",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "submodule",
-      "span": [
-        78,
-        87
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation76.submodule"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.9433eb7e4fbc1d8c7e54"
+      "phrase": "unital left module M over A",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+      "occurrence_id": "occ.88ae05089c92a593bf01"
+    },
+    {
+      "phrase": "A-submodule of M",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation76.submodule",
+      "occurrence_id": "occ.dd2d77eef4bfa24dd5d5"
+    },
+    {
+      "phrase": "finitely generated module",
+      "state": "existing",
+      "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module",
+      "occurrence_id": "occ.c55573486f8211c6ebb2"
+    },
+    {
+      "phrase": "commutative unital coefficient ring A",
+      "state": "unassigned",
+      "context": "Underlying ring structure with additive commutativity, multiplicative commutativity and specified identity.",
+      "occurrence_id": "occ.2db157191d12bde36a26"
+    },
+    {
+      "phrase": "every submodule finite generation",
+      "state": "external",
+      "disposition": "Noetherianity requires finite generation of all submodules, not only finite generation of M itself.",
+      "occurrence_id": "occ.6636eeb25ad0bfb28ab0"
     }
   ],
-  "snapshot_sha256": "b382090cff1e4419e3c8c690e2fd9a2b37a43c9314f6152103233a077936aa5e",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "0f42bde4fabebb93a7f83910c9c908f1d582e81fe026c8558a9b8d95ac871fe5",
+  "review_rationale": "Reviewed finite-generation characterization of Noetherian A-module, quantifying over every A-submodule and retaining the commutative unital coefficient-ring convention."
 }

@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation76.continuous-topological-map.01",
   "version_sha256": "e9b617d1ba2e2c3464c7845c8ca5eea5690f8bdf468406758238bbef66f72360",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        74,
-        80
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.1e3463b8ea9f7f4d34f4"
+      "phrase": "mapping f:X to Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.07c2dde1d39703741531"
+    },
+    {
+      "phrase": "topological spaces X,Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.e2486bf2f957610f2954"
+    },
+    {
+      "phrase": "open subset V of Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.9dab5e8dea515551516f"
+    },
+    {
+      "phrase": "inverse image f^{-1}(V)",
+      "state": "unassigned",
+      "context": "Set of all x in domain X whose image f(x) belongs to target subset V.",
+      "occurrence_id": "occ.26706422c88f9d055e49"
+    },
+    {
+      "phrase": "openness of preimage in X",
+      "state": "unassigned",
+      "context": "Membership of inverse image in source topology for every target open set.",
+      "occurrence_id": "occ.d12c5bf93979c7605df1"
+    },
+    {
+      "phrase": "continuity for all target open sets",
+      "state": "external",
+      "disposition": "Global preimage criterion is equivalent to the pointwise neighborhood criterion for topological continuity.",
+      "occurrence_id": "occ.d2fe488111070c652690"
     }
   ],
-  "snapshot_sha256": "4d11e46bf9a2af7c6789b6796b63672f30f6f1c66f2299fd0785b5ecb0518038",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "3ea76682765251369b610134cab1c8813093debff65666c28a6ac9e050ce2902",
+  "review_rationale": "Reviewed inverse-image characterization of continuous function between topological spaces, including universal quantification over target open sets and requiring the preimage open in the source."
 }

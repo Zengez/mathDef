@@ -2,10 +2,57 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation76.continuous-topological-map.02",
   "version_sha256": "699d15286d5acbef61eca58f00c357f6c05e69ff1020114d3243a2661d2112ad",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "mapping f:X to Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment",
+      "occurrence_id": "occ.a92bf65f73ad118e359e"
+    },
+    {
+      "phrase": "topological spaces X,Y",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.2cd09908ce654192add2"
+    },
+    {
+      "phrase": "image f(U) of subset U",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.cross110.image-of-mapping",
+      "occurrence_id": "occ.e10101095bfb4bfc4da7"
+    },
+    {
+      "phrase": "f(U) subset of V",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.8c0fa753c55f1f9163eb"
+    },
+    {
+      "phrase": "open neighborhood of x",
+      "state": "unassigned",
+      "context": "Open subset U of X containing the selected point x.",
+      "occurrence_id": "occ.810928e8ed6f6cbf26a5"
+    },
+    {
+      "phrase": "open neighborhood of f(x)",
+      "state": "unassigned",
+      "context": "Open subset V of Y containing the image of x.",
+      "occurrence_id": "occ.2d488e3af55a3fdd8c30"
+    },
+    {
+      "phrase": "pointwise neighborhood continuity criterion",
+      "state": "unassigned",
+      "context": "For every x and target open neighborhood V, some domain open neighborhood U satisfies f(U) subset V.",
+      "occurrence_id": "occ.c7a835634ab819ecf3d6"
+    },
+    {
+      "phrase": "equivalence to inverse-image continuity",
+      "state": "external",
+      "disposition": "This second formulation describes the same continuous-map meaning rather than a prerequisite on its sibling formulation.",
+      "occurrence_id": "occ.9371c5f38aed66ea81b3"
+    }
+  ],
+  "snapshot_sha256": "9f0a10feedbdb33ecc3c6a75bcde42c6533361434cb4c488a8e20f8412b7a9a7",
+  "review_rationale": "Reviewed neighborhood characterization of continuity at every point of the domain, requiring matching open neighborhoods and containment of the image f(U) in V, not merely pointwise membership."
 }

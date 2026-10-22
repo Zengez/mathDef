@@ -2,53 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.foundation76.discrete-topology.01",
   "version_sha256": "9c809b6f11dc8bff94ef428bf2332def8e6a1358e1dd0a5ad3f495a1e16a0fa2",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "subset",
-      "span": [
-        75,
-        81
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.943684d00dcda2f747b1"
+      "phrase": "topological space (S,tau)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.topological-space",
+      "occurrence_id": "occ.28e248359c8aa5251c6d"
     },
     {
-      "phrase": "subset",
-      "span": [
-        99,
-        105
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.subset-nonstrict"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.682a6bc59a8fedbf496d"
+      "phrase": "every subset of S is open",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.fbbc697b4fc1fe9bc3ba"
     },
     {
-      "phrase": "topological space",
-      "span": [
-        131,
-        148
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.topological-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.0e284ae60b9d39a1b35a"
+      "phrase": "power set P(S)",
+      "state": "unassigned",
+      "context": "Family comprising all subsets of the underlying set S.",
+      "occurrence_id": "occ.baee9b9ff98c4d36ff80"
+    },
+    {
+      "phrase": "nonempty underlying set S",
+      "state": "unassigned",
+      "context": "A set containing at least one element as explicitly required by this sourced formulation.",
+      "occurrence_id": "occ.ce422aea85008e95051d"
+    },
+    {
+      "phrase": "discreteness versus general topology",
+      "state": "external",
+      "disposition": "Every subset is open here, unlike an arbitrary topology; empty-space permissibility is not inferred.",
+      "occurrence_id": "occ.51a312b6e0f870216c4d"
     }
   ],
-  "snapshot_sha256": "7f54e303d66e3aa4d40bea3144578c8720b1120891b7f7f45513f338768e9428",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "12332e4311fdbe0c2a0a7c2d68d5a3b24d83a29371368a32db155ec4b52d8323",
+  "review_rationale": "Reviewed discrete topology on the source-specified nonempty set S by identifying its open sets with the entire power set; not generalized to empty domain by this independent source."
 }
