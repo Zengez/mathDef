@@ -6,8 +6,8 @@
     "total_formulations": 659,
     "screened_formulations": 639,
     "provisional_formulations": 20,
-    "scan_complete": 596,
-    "scan_incomplete": 63,
+    "scan_complete": 600,
+    "scan_incomplete": 59,
     "unscanned": 0,
     "open": 659,
     "closed": 0,
@@ -15,13 +15,13 @@
     "unresolved_missing_candidates": 12,
     "alias_candidate_records": 1,
     "missing_occurrences": 17,
-    "ambiguous_occurrences": 63,
-    "unassigned_occurrences": 1028,
-    "unresolved_fingerprint": "cba9ba4c38104845180f612eb36ad9d8484ea637d76c6528fca2393598e02b28",
+    "ambiguous_occurrences": 61,
+    "unassigned_occurrences": 1040,
+    "unresolved_fingerprint": "0641890e05b90438c593bb7a84a1b6f7a858f5ecf6cefa1898f419e81b574abf",
     "phase": "scan_and_link_existing",
     "consolidation_gate_valid": false,
     "seed_relations": 891,
-    "scan_occurrences": 3261,
+    "scan_occurrences": 3284,
     "scan_amendment_event_count": 13,
     "automatic_completion_is_not_certification": true,
     "breadth_expansion": "on_hold"
@@ -6350,46 +6350,52 @@
       "version_sha256": "f714431c71f7a5fa2efe9b6ba81d114502f1e2ab1867153d10a099222caad251"
     },
     "form.wave2.pop139.matrix-trace": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
         "missing:missing.c84405a9f915b0897178",
-        "scan_incomplete"
+        "unassigned:occ.ad2a286c0199046f237b",
+        "unassigned:occ.c4ac806dcb4d5cdf8a68",
+        "unassigned:occ.809cb681d815219f78e4"
       ],
       "version_sha256": "e513285542018b8f8f564db8e0bda84f23590ef1c2a6abbfde2b3088a588b50a"
     },
     "form.wave2.pop140.affine-hull-combinations": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
         "missing:missing.162c8a146060e41fc577",
-        "ambiguous:occ.ca2729960c6f47fe291e",
-        "scan_incomplete"
+        "unassigned:occ.6c9f5057ea1c1d9f1d3f",
+        "unassigned:occ.aded25a08d6794f69bd2",
+        "unassigned:occ.b51d24d1b85c2089c54e"
       ],
       "version_sha256": "d624f6f8f78877c42964ab8b63c14e00773449579e6593eae1fdfba647b1daab"
     },
     "form.wave2.pop140.affine-hull-intersection": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
-      "completed": false,
+      "scan_status": "complete",
+      "encountered": true,
+      "completed": true,
       "structural_status": "open",
       "direct_blockers": [
-        "scan_incomplete"
+        "unassigned:occ.bd6cd6014f49ba25815d",
+        "unassigned:occ.b8e2977bda5e963e16d8",
+        "unassigned:occ.1ba97134494b4db3777c"
       ],
       "version_sha256": "db006ee0430da4c3faa1f6d5c5622215de7a658249393791791df1fbc5ec81cf"
     },
     "form.wave2.pop140.independent-pair": {
-      "scan_status": "scan_incomplete",
-      "encountered": false,
+      "scan_status": "complete",
+      "encountered": true,
       "completed": false,
       "structural_status": "open",
       "direct_blockers": [
-        "ambiguous:occ.7c3630a8bf688b46028e",
-        "scan_incomplete"
+        "unassigned:occ.914c1dd05ff15da3e5d2",
+        "unassigned:occ.a92416cd2cc2c919012e",
+        "unassigned:occ.45cf0fdf6a2206b8a4ce"
       ],
       "version_sha256": "0ed86e899e7d8e111852d8608a37814aa479986e489456d8581cd8c7bd5f5efe"
     },

@@ -2,10 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.pop139.matrix-trace",
   "version_sha256": "e513285542018b8f8f564db8e0bda84f23590ef1c2a6abbfde2b3088a588b50a",
-  "scan_status": "scan_incomplete",
-  "references": [],
-  "snapshot_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "scan_status": "complete",
+  "references": [
+    {
+      "phrase": "field K",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital",
+      "occurrence_id": "occ.583e6658a3e6b3507347"
+    },
+    {
+      "phrase": "positive integer n",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.set63.natural-positive-convention",
+      "occurrence_id": "occ.6c96959c1bbcc3ff938f"
+    },
+    {
+      "phrase": "square matrix A in M_n(K)",
+      "state": "unassigned",
+      "context": "Array of n rows and n columns with entries a_ij in the field K.",
+      "occurrence_id": "occ.ad2a286c0199046f237b"
+    },
+    {
+      "phrase": "diagonal entries a_ii",
+      "state": "unassigned",
+      "context": "Entries whose row index equals column index in a square matrix.",
+      "occurrence_id": "occ.c4ac806dcb4d5cdf8a68"
+    },
+    {
+      "phrase": "finite sum of n diagonal entries",
+      "state": "unassigned",
+      "context": "Field sum indexed by i from 1 through n, yielding an element of K.",
+      "occurrence_id": "occ.809cb681d815219f78e4"
+    },
+    {
+      "phrase": "not field-extension trace",
+      "state": "external",
+      "disposition": "Trace of a matrix here is not itself the trace of an element of a field extension.",
+      "occurrence_id": "occ.866f2b6a2408d10f3646"
+    }
+  ],
+  "snapshot_sha256": "3f9fdd54d62fc8348a9d3cb76af1bfcc04c5b0a9a9e11bbbb872d6bc28d35693",
+  "review_rationale": "Reviewed the finite diagonal-sum trace of n-by-n matrix over field K with positive size n; distinguished this linear-algebra trace from trace in a field extension."
 }

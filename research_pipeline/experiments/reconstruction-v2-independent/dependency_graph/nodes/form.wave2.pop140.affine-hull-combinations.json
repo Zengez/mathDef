@@ -2,25 +2,51 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.pop140.affine-hull-combinations",
   "version_sha256": "d624f6f8f78877c42964ab8b63c14e00773449579e6593eae1fdfba647b1daab",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "integer",
-      "span": [
-        7,
-        14
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.integer59.integer-equivalence-class"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.ca2729960c6f47fe291e"
+      "phrase": "real vector space R^d",
+      "state": "existing",
+      "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field",
+      "occurrence_id": "occ.ebec0306255702a5ca79"
+    },
+    {
+      "phrase": "real coefficients alpha_i",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field",
+      "occurrence_id": "occ.9bbf32eb412b0f2e4dce"
+    },
+    {
+      "phrase": "subset S of R^d",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "occurrence_id": "occ.bc526e99936e8f56033b"
+    },
+    {
+      "phrase": "finite affine combination sum alpha_i*x_i",
+      "state": "unassigned",
+      "context": "Linear combination of finitely many vectors x_i in S with scalar coefficients summing to one.",
+      "occurrence_id": "occ.6c9f5057ea1c1d9f1d3f"
+    },
+    {
+      "phrase": "coefficient normalization sum alpha_i=1",
+      "state": "unassigned",
+      "context": "Sum of the real coefficients of an affine combination equals one; coefficients need not be nonnegative.",
+      "occurrence_id": "occ.aded25a08d6794f69bd2"
+    },
+    {
+      "phrase": "positive integer d and k",
+      "state": "unassigned",
+      "context": "Dimension d and number k of participating points at least one.",
+      "occurrence_id": "occ.b51d24d1b85c2089c54e"
+    },
+    {
+      "phrase": "affine hull of empty set is empty",
+      "state": "external",
+      "disposition": "With k>=1, S empty produces no combinations; this source explicitly permits empty affine hull.",
+      "occurrence_id": "occ.a42945fbd92a7f7fe949"
     }
   ],
-  "snapshot_sha256": "755b3f6766ccc54b641ca27d5873f81b48c3e349de76279e5bd29e25a5c26eb0",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "7e5bbda2c71a06797f3c26cdc7c3ad65329f5fee5c24df50fc347025268c5f2f",
+  "review_rationale": "Reviewed affine hull as all finite nonempty affine combinations of S subset R^d with coefficients summing to one; preserved empty S convention and fixed dimension d>=1."
 }

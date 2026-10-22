@@ -2,25 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.wave2.pop140.independent-pair",
   "version_sha256": "0ed86e899e7d8e111852d8608a37814aa479986e489456d8581cd8c7bd5f5efe",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "probability space",
-      "span": [
-        24,
-        41
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.prob90.probability-space"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.7c3630a8bf688b46028e"
+      "phrase": "probability space (Omega,Sigma,P)",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prob90.probability-space",
+      "occurrence_id": "occ.dd7d50ab85c2721e2dbc"
+    },
+    {
+      "phrase": "measurable events A and B",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.prob90.measurable-space",
+      "occurrence_id": "occ.e324c61b216ccf3abfec"
+    },
+    {
+      "phrase": "intersection A cap B",
+      "state": "unassigned",
+      "context": "Set consisting of sample points lying in both measurable events.",
+      "occurrence_id": "occ.914c1dd05ff15da3e5d2"
+    },
+    {
+      "phrase": "probability product P(A)P(B)",
+      "state": "unassigned",
+      "context": "Product of probabilities of two events on the same normalized probability space.",
+      "occurrence_id": "occ.a92416cd2cc2c919012e"
+    },
+    {
+      "phrase": "product rule for independence",
+      "state": "unassigned",
+      "context": "Independence holds exactly when intersection probability equals product of the two marginal event probabilities.",
+      "occurrence_id": "occ.45cf0fdf6a2206b8a4ce"
+    },
+    {
+      "phrase": "zero-probability cases allowed",
+      "state": "external",
+      "disposition": "No positivity or conditional-probability division hypothesis is needed for the defining product rule.",
+      "occurrence_id": "occ.68e54f26b3b51f3fc871"
     }
   ],
-  "snapshot_sha256": "74d93644d5e1a36aeb727a307c01ca531293bb9a16a818dbba9d6c65b71d0ecf",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "0eb8d3c1597b26472d3f5ee2b24ce624936911b708a89929781efa9076edea69",
+  "review_rationale": "Read independent-events probability product rule on one probability space for two measurable sets, allowing zero probabilities and requiring intersection probability equality."
 }
