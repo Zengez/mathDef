@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-047h",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.pop141.connected-clopen",
+      "version_sha256": "48652d488736a5358b164165eddf9c98e2236bd78ace55b7820ea9bfa27851e5",
+      "complete": true,
+      "review_rationale": "Reviewed clopen-subset equivalent characterization of connectedness over arbitrary topological space, including empty-space convention and requiring only trivial clopen subsets.",
+      "references": [
+        {
+          "phrase": "topological space (X,tau)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "subset C of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "open and closed subset C",
+          "state": "unassigned",
+          "context": "C belongs to the topology and its complement X minus C also belongs to that topology."
+        },
+        {
+          "phrase": "trivial clopen choices empty or X",
+          "state": "unassigned",
+          "context": "Every simultaneously open-and-closed subset must be one of the two extremal sets."
+        },
+        {
+          "phrase": "equivalent connectedness characterization",
+          "state": "external",
+          "disposition": "This clopen condition defines the same connectedness meaning; no self-reference to separation formulation."
+        },
+        {
+          "phrase": "empty-space case included",
+          "state": "external",
+          "disposition": "For empty X the only subset is empty, which equals X, making condition true."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.pop141.left-action",
+      "version_sha256": "7b3e42de5b042759bd22e14440f188ff381de2483fac41aca41f9fe4799cf256",
+      "complete": true,
+      "review_rationale": "Reviewed left group action as map from G times X to X respecting group identity and multiplication by nested evaluations; no right-action reversal and no free-action assumption.",
+      "references": [
+        {
+          "phrase": "group G with identity e",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "phrase": "mapping alpha:G times X to X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "ordered pair (g,x) input",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski"
+        },
+        {
+          "phrase": "identity action alpha(e,x)=x",
+          "state": "unassigned",
+          "context": "Identity group element fixes each point of acted-on set."
+        },
+        {
+          "phrase": "left action composition alpha(g,alpha(h,x))=alpha(gh,x)",
+          "state": "unassigned",
+          "context": "Successive action by h and then g equals left action by product gh."
+        },
+        {
+          "phrase": "left not right action",
+          "state": "external",
+          "disposition": "Action is on left with product gh matching order of function composition."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.pop141.metric-outer-measure",
+      "version_sha256": "9ede543da0932ccca5b70734f4fde288a246154e8deb7c4f0ec8e788ef56d11c",
+      "complete": true,
+      "review_rationale": "Reviewed metric outer measure as outer measure on entire power set of nonempty metric space, additive for subsets strictly positively separated by set distance; empty-set infimum convention preserved.",
+      "references": [
+        {
+          "phrase": "nonempty metric space (X,d)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.metric-space"
+        },
+        {
+          "phrase": "outer measure mu-star",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.pop141.outer-measure"
+        },
+        {
+          "phrase": "subsets A and B of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "distance between sets inf d(a,b)",
+          "state": "unassigned",
+          "context": "Infimum of pairwise metric distances for a in A and b in B."
+        },
+        {
+          "phrase": "positive separation of A and B",
+          "state": "unassigned",
+          "context": "Infimum pair distance is strictly greater than zero."
+        },
+        {
+          "phrase": "metric additivity mu*(A union B)",
+          "state": "unassigned",
+          "context": "For positively separated sets, outer measure of their union equals the sum of their measures."
+        },
+        {
+          "phrase": "infimum of empty set +infinity",
+          "state": "unassigned",
+          "context": "By convention set distance is +infty when one input set is empty."
+        },
+        {
+          "phrase": "metric additivity not full countable additivity",
+          "state": "external",
+          "disposition": "Additivity required only for separated sets, on top of all ordinary outer-measure axioms."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.pop141.outer-measure-full",
+      "version_sha256": "3b05f7d3ee653a69a010d9fe6d918cec433b804acde6c0195373b73077407196",
+      "complete": true,
+      "review_rationale": "Reviewed outer measure as extended-nonnegative set function on every subset, with empty-set normalization, inclusion monotonicity and countable subadditivity over arbitrary sequences, not countable additivity.",
+      "references": [
+        {
+          "phrase": "mapping from P(X) into extended nonnegative reals",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "subset relation A subseteq B",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "nonnegative integers or positive countable sequence indices",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-positive-convention"
+        },
+        {
+          "phrase": "power set P(X)",
+          "state": "unassigned",
+          "context": "Collection of all subsets of X, domain of the outer-measure function."
+        },
+        {
+          "phrase": "extended nonnegative real codomain [0,+infinity]",
+          "state": "unassigned",
+          "context": "Values are real numbers at least zero together with formal +infinity."
+        },
+        {
+          "phrase": "empty-set zero mu*(empty)=0",
+          "state": "unassigned",
+          "context": "Normalization of mass of empty subset."
+        },
+        {
+          "phrase": "monotonicity A subseteq B implies mu*(A)<=mu*(B)",
+          "state": "unassigned",
+          "context": "Outer measure respects set inclusion by nondecreasing assigned size."
+        },
+        {
+          "phrase": "countable subadditivity",
+          "state": "unassigned",
+          "context": "Measure of union of countably many arbitrary subsets is at most sum of individual outer measures."
+        },
+        {
+          "phrase": "subadditivity not additivity",
+          "state": "external",
+          "disposition": "No measurable-set domain restriction or countable exact-additivity claim imposed."
+        }
+      ]
+    }
+  ]
+}
