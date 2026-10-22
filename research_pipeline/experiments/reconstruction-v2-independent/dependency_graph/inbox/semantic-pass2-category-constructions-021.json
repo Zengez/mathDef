@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-category-constructions-021",
+  "mode": "amend",
+  "research_scope": "Five complete contextual source-free reviews: representability, pushouts, iso-comma categories, 2-fibre products and 2-finality. No new definitions, external research, or automatic aliases.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.category_constructions.20261022.01",
+      "formulation_id": "form.0e1768811a8dab34.representable-covariant-functor",
+      "version_sha256": "cb3c237913b7aef9bcef730230c117848ccff2c9d3466ae1f5c9311926124568",
+      "expected_node_sha256": "ade8c1e607acf55581b3491537503c5f3940dff0f4fc6e9ef20cb34f764cd231",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independently sourced categorical formulation and every existing dependency reference, preserving source and version, distinguishing independent categorical constructions from clauses that define the displayed universal property. Full contextual alias and mathematical audits remain mandatory.",
+      "reason": "Source-free Pass2 full-formulation contextual consolidation of selected categorical prerequisites, retaining prior full adjacency and earlier category-size corrections.",
+      "references": [
+        {
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Source occurrence 'category C' denotes an ordinary category without a smallness requirement. Existing small-category meaning is too restrictive; do not conflate a fibred category, groupoid or slice category with the ambient category.",
+          "phrase": "category (size-unrestricted)",
+          "reason": "The available small-category meaning would impose extra hypotheses not supplied by this definition.",
+          "state": "missing"
+        },
+        {
+          "phrase": "covariant functor F:C→Sets",
+          "state": "missing",
+          "context": "Category theory: covariant functor from an arbitrary category C to Sets, assigning sets to objects and functions to arrows, preserving identities and composition; do not impose source-category smallness.",
+          "reason": "The indexed covariant functor is restricted to small source categories, whereas this formula does not impose smallness.",
+          "matching_note": "Source-free provisional prerequisite. Compare globally with the reviewed missing unrestricted-functor candidate; do not automatically alias."
+        },
+        {
+          "phrase": "natural isomorphism F(Y)≅Hom_C(X,Y)",
+          "state": "missing",
+          "context": "Category theory: natural isomorphism between two covariant set-valued functors, a natural transformation with an inverse natural transformation; in particular its component bijections satisfy naturality in Y.",
+          "reason": "Pointwise bijections without naturality are insufficient for representability.",
+          "matching_note": "Source-free typed dependency; audit naturality and domain-size conventions later."
+        },
+        {
+          "phrase": "Hom_C(X,Y)",
+          "state": "missing",
+          "context": "Category theory: collection Hom_C(X,Y) of morphisms from X to Y in C, which must be set-valued for this representable functor; a possibly large category need not globally be small.",
+          "reason": "Representability uses a Hom-functor, and the indexed small-category hom-set candidate must not be treated as a general size-unrestricted category.",
+          "matching_note": "Compare with the separately recorded small-category hom-set and compact-object Hom occurrences in global alias audit."
+        },
+        {
+          "disposition": "Existential quantification over objects of C is ordinary categorical mathematical language, not a new contextual meaning.",
+          "phrase": "exists an object X",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.category_constructions.20261022.02",
+      "formulation_id": "form.26b6764e3ef7a953.pushout",
+      "version_sha256": "03886ab6a354c6f40ed9c16fc5e09ceae110bb4611049ae37f1246a0a635dfac",
+      "expected_node_sha256": "2a738308b591c4e879277b09128e5dba89ac37dc615d9f6428edc2fc0c8d5200",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independently sourced categorical formulation and every existing dependency reference, preserving source and version, distinguishing independent categorical constructions from clauses that define the displayed universal property. Full contextual alias and mathematical audits remain mandatory.",
+      "reason": "Source-free Pass2 full-formulation contextual consolidation of selected categorical prerequisites, retaining prior full adjacency and earlier category-size corrections.",
+      "references": [
+        {
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Source occurrence 'category' denotes an ordinary category without a smallness requirement. Existing small-category meaning is too restrictive; do not conflate a fibred category, groupoid or slice category with the ambient category.",
+          "phrase": "category (size-unrestricted)",
+          "reason": "The only indexed general category meaning is explicitly small; avoid imposing unwarranted smallness.",
+          "state": "missing"
+        },
+        {
+          "phrase": "morphisms B to A and B to C",
+          "state": "missing",
+          "context": "Category theory: a span or common-domain arrow diagram B→A and B→C in an arbitrary category, not a composable arrow pair and not the dual cospan.",
+          "reason": "The shape of the input diagram is a reusable categorical construction distinct from the pushout being defined.",
+          "matching_note": "Source-free typed categorical-span prerequisite; no source-category size assumption."
+        },
+        {
+          "phrase": "morphisms A to P and C to P agreeing on B",
+          "state": "missing",
+          "context": "Category theory: cocone over the span B→A,B→C, namely arrows A→P,C→P whose composites from B agree.",
+          "reason": "A compatible cocone is input data in a categorical pushout universal property.",
+          "matching_note": "Keep the cocone separate from its colimiting universal property and from the opposite limit cone."
+        },
+        {
+          "phrase": "every other compatible pair factors uniquely",
+          "state": "external",
+          "disposition": "This is the universal uniqueness clause *defining this pushout*. It asserts unique mediating maps for each other cocone, not a separately presupposed object or an independent 'unique-factorization domain' concept. Recheck source-local dispositions in the global audit."
+        },
+        {
+          "disposition": "P is the defined output object; it is not itself an additional missing contextual meaning.",
+          "phrase": "object P",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.category_constructions.20261022.03",
+      "formulation_id": "form.42730c7ef758df2a.iso-comma-category",
+      "version_sha256": "6a8ff557fd657f25ffe11683d4da3b82738e60ed17b38032c79567dd2c032b09",
+      "expected_node_sha256": "b156877dd2d443572d5d00573c2b65893667f18fc33508bee8fcdf6302de36fe",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independently sourced categorical formulation and every existing dependency reference, preserving source and version, distinguishing independent categorical constructions from clauses that define the displayed universal property. Full contextual alias and mathematical audits remain mandatory.",
+      "reason": "Source-free Pass2 full-formulation contextual consolidation of selected categorical prerequisites, retaining prior full adjacency and earlier category-size corrections.",
+      "references": [
+        {
+          "phrase": "functors F:A→C and G:B→C",
+          "state": "missing",
+          "context": "Category theory: pair of ordinary covariant functors with common codomain C and arbitrary category domains A and B, with no stated smallness condition; these are not pseudofunctors.",
+          "reason": "Only a small-source-category functor definition is currently indexed as an existing meaning.",
+          "matching_note": "Provisional context of general functors; global alias review against the unrestricted-functor candidate is required."
+        },
+        {
+          "phrase": "iso-comma category A×_C B",
+          "state": "existing",
+          "target_meaning_id": "meaning.42730c7ef758df2a.two-fibre-product",
+          "matching_note": "The iso-comma presentation constructs an explicit model of the 2-fibre-product."
+        },
+        {
+          "phrase": "triples (a,b,α:F(a)≅G(b))",
+          "state": "missing",
+          "context": "Category theory: isomorphism α between objects F(a) and G(b) of C, consisting of a morphism with a two-sided categorical inverse; it forms one component of the iso-comma object's defining triple.",
+          "reason": "The categorical isomorphism α is an independent prerequisite, distinct from a bare bijection between underlying sets.",
+          "matching_note": "Review against stored missing isomorphism-of-categorical-morphisms candidate, without merging automatically."
+        },
+        {
+          "phrase": "compatible pairs of arrows",
+          "state": "missing",
+          "context": "Category theory: morphism (u:a→a',v:b→b') of iso-comma triples making the compatibility square commute, G(v)∘α=α'∘F(u); this is square compatibility for morphisms of diagram objects.",
+          "reason": "The compatibility condition is a commutative-square construction used for the morphisms of the iso-comma category.",
+          "matching_note": "Candidate is a typed commutativity/coherence condition, not an arbitrary unstructured pair of arrows."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.category_constructions.20261022.04",
+      "formulation_id": "form.42730c7ef758df2a.two-fibre-product",
+      "version_sha256": "6ac7777172e0e277374dbd2bf536a2586ec4e87cbdff2f4b53fac2255226e437",
+      "expected_node_sha256": "271dd1a59cbccb950a1ee0543802e6a542c0948559152685a221e0d41e45c85a",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independently sourced categorical formulation and every existing dependency reference, preserving source and version, distinguishing independent categorical constructions from clauses that define the displayed universal property. Full contextual alias and mathematical audits remain mandatory.",
+      "reason": "Source-free Pass2 full-formulation contextual consolidation of selected categorical prerequisites, retaining prior full adjacency and earlier category-size corrections.",
+      "references": [
+        {
+          "phrase": "(2,1)-category",
+          "state": "existing",
+          "target_meaning_id": "meaning.0bf601085c1029d4.two-one-category",
+          "matching_note": "All 2-morphisms in the ambient higher category are invertible."
+        },
+        {
+          "phrase": "terminal object in the 2-categorical sense",
+          "state": "existing",
+          "target_meaning_id": "meaning.42730c7ef758df2a.two-final-object",
+          "matching_note": "The terminal property is evaluated 2-categorically."
+        },
+        {
+          "phrase": "invertible 2-morphism between maps W→Z",
+          "state": "missing",
+          "context": "Higher category theory: invertible comparison 2-cell between the composites W→X→Z and W→Y→Z in a (2,1)-category; every 2-cell there is invertible, but the specified comparison is still part of the pseudocone data.",
+          "reason": "The source requires a specific 2-isomorphism, not merely equality of composite 1-arrows.",
+          "matching_note": "Audit against the existing candidate for invertible 2-morphisms in a strict 2-category; do not conflate source restrictions."
+        },
+        {
+          "phrase": "maps W→X and W→Y",
+          "state": "missing",
+          "context": "Higher category theory: pseudocone over a cospan X→Z←Y from an object W, consisting of 1-cells W→X,W→Y and an invertible comparison 2-cell of their composites to Z.",
+          "reason": "The two legs together with their 2-cell are prerequisite structured test data for the universal 2-fibre product.",
+          "matching_note": "Do not identify this with an ordinary strictly commuting 1-category cone."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.category_constructions.20261022.05",
+      "formulation_id": "form.42730c7ef758df2a.two-final-object",
+      "version_sha256": "8d245a0d546cefe2343c7439ce331b4f0607faca48d92a8409e6958cf53d03d7",
+      "expected_node_sha256": "243a658093d30e00dce9f5eba08d73d0a1251891b3cd1dd90345aca421488b66",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independently sourced categorical formulation and every existing dependency reference, preserving source and version, distinguishing independent categorical constructions from clauses that define the displayed universal property. Full contextual alias and mathematical audits remain mandatory.",
+      "reason": "Source-free Pass2 full-formulation contextual consolidation of selected categorical prerequisites, retaining prior full adjacency and earlier category-size corrections.",
+      "references": [
+        {
+          "phrase": "(2,1)-category",
+          "state": "existing",
+          "target_meaning_id": "meaning.0bf601085c1029d4.two-one-category",
+          "matching_note": "The ambient category has invertible 2-morphisms."
+        },
+        {
+          "phrase": "1-morphism Y→T",
+          "state": "external",
+          "disposition": "Existence of a 1-cell from every Y to T is precisely a quantifier clause of the definition of 2-finality, while the ambient (2,1)-category is already linked. It is not a separately named prerequisite."
+        },
+        {
+          "phrase": "exactly one 2-morphism connecting any two",
+          "state": "external",
+          "disposition": "This is the defining uniqueness clause for 2-finality (equivalent to contractibility of the hom-groupoid in this setting). Do not confuse it with ordinary 1-categorical terminality or suppress reusable invertible-2-cell dependencies elsewhere."
+        },
+        {
+          "phrase": "final object",
+          "state": "external",
+          "disposition": "The special (2,1)-categorical final-object property is the meaning being defined; ordinary 1-category finality is not its dependency."
+        }
+      ]
+    }
+  ]
+}
