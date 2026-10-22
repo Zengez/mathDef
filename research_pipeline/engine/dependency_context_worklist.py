@@ -8,6 +8,7 @@ Usage:
     python -m research_pipeline.engine.dependency_context_worklist \
       --workspace research_pipeline/experiments/reconstruction-v2-independent \
       --contains "residue field" --limit 20
+    # Or: --contains-any "ideal" --contains-any "quotient" --limit 30
 """
 from __future__ import annotations
 
@@ -21,11 +22,14 @@ from research_pipeline.engine.dependency_graph import (
 )
 
 
-def build_review_bundle(workspace: Path, limit: int = 20, contains: str = "") -> dict:
+def build_review_bundle(workspace: Path, limit: int = 20, contains: str = "",
+                        contains_any: tuple[str, ...] = ()) -> dict:
     """Join grouped unresolved references to the original text and live adjacency.
 
-    `contains` selects *surface phrases*, not mathematical synonyms. The complete
-    list is inspected before filtering; `limit` applies to the matching groups.
+    `contains` and repeatable `contains_any` select *surface phrases*, not
+    mathematical synonyms. The filters are OR alternatives when both supplied.
+    The complete list is inspected before filtering; `limit` applies to matching
+    groups. Each source formulation is loaded only once across selected groups.
     Full current node SHA256 digests are the preconditions for any separate,
     reviewed append-only amendment. This function writes nothing.
     """
@@ -36,9 +40,9 @@ def build_review_bundle(workspace: Path, limit: int = 20, contains: str = "") ->
     # Reuse the generic deterministic surface grouping; request the full list
     # so a selective substring query does not silently miss later groups.
     grouped = consolidation_worklist(workspace, limit=10**9)
-    needle = norm(contains)
+    needles = [norm(x) for x in (contains, *contains_any) if norm(x)]
     matches = [g for g in grouped["groups"]
-               if not needle or needle in norm(g["surface_key"])]
+               if not needles or any(n in norm(g["surface_key"]) for n in needles)]
     selected = matches[:max(0, limit)]
     nodes = live_nodes(graph, inv)
     formulations = {}
@@ -80,6 +84,7 @@ def build_review_bundle(workspace: Path, limit: int = 20, contains: str = "") ->
             grouped["total_unresolved_occurrences"],
         "distinct_surface_keys": grouped["distinct_surface_keys"],
         "surface_filter": contains,
+        "surface_filters_any": list(contains_any),
         "matched_surface_groups": len(matches),
         "returned_surface_groups": len(selected),
         "groups": selected,
@@ -95,10 +100,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--workspace", type=Path, required=True)
     parser.add_argument("--contains", default="")
+    parser.add_argument("--contains-any", action="append", default=[],
+                        help="Repeat for OR-matched surface filters; no semantic grouping")
     parser.add_argument("--limit", type=int, default=20)
     args = parser.parse_args()
     print(json.dumps(build_review_bundle(
-        args.workspace, limit=args.limit, contains=args.contains),
+        args.workspace, limit=args.limit, contains=args.contains,
+        contains_any=tuple(args.contains_any)),
         ensure_ascii=False, indent=2))
 
 
