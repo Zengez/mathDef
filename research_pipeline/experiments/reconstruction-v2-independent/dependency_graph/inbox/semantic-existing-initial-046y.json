@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046y",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.foundation76.continuous-topological-map.01",
+      "version_sha256": "e9b617d1ba2e2c3464c7845c8ca5eea5690f8bdf468406758238bbef66f72360",
+      "complete": true,
+      "review_rationale": "Reviewed inverse-image characterization of continuous function between topological spaces, including universal quantification over target open sets and requiring the preimage open in the source.",
+      "references": [
+        {
+          "phrase": "mapping f:X to Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "topological spaces X,Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "open subset V of Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "inverse image f^{-1}(V)",
+          "state": "unassigned",
+          "context": "Set of all x in domain X whose image f(x) belongs to target subset V."
+        },
+        {
+          "phrase": "openness of preimage in X",
+          "state": "unassigned",
+          "context": "Membership of inverse image in source topology for every target open set."
+        },
+        {
+          "phrase": "continuity for all target open sets",
+          "state": "external",
+          "disposition": "Global preimage criterion is equivalent to the pointwise neighborhood criterion for topological continuity."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation76.continuous-topological-map.02",
+      "version_sha256": "699d15286d5acbef61eca58f00c357f6c05e69ff1020114d3243a2661d2112ad",
+      "complete": true,
+      "review_rationale": "Reviewed neighborhood characterization of continuity at every point of the domain, requiring matching open neighborhoods and containment of the image f(U) in V, not merely pointwise membership.",
+      "references": [
+        {
+          "phrase": "mapping f:X to Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "topological spaces X,Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "image f(U) of subset U",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.image-of-mapping"
+        },
+        {
+          "phrase": "f(U) subset of V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "open neighborhood of x",
+          "state": "unassigned",
+          "context": "Open subset U of X containing the selected point x."
+        },
+        {
+          "phrase": "open neighborhood of f(x)",
+          "state": "unassigned",
+          "context": "Open subset V of Y containing the image of x."
+        },
+        {
+          "phrase": "pointwise neighborhood continuity criterion",
+          "state": "unassigned",
+          "context": "For every x and target open neighborhood V, some domain open neighborhood U satisfies f(U) subset V."
+        },
+        {
+          "phrase": "equivalence to inverse-image continuity",
+          "state": "external",
+          "disposition": "This second formulation describes the same continuous-map meaning rather than a prerequisite on its sibling formulation."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation76.discrete-topology.01",
+      "version_sha256": "9c809b6f11dc8bff94ef428bf2332def8e6a1358e1dd0a5ad3f495a1e16a0fa2",
+      "complete": true,
+      "review_rationale": "Reviewed discrete topology on the source-specified nonempty set S by identifying its open sets with the entire power set; not generalized to empty domain by this independent source.",
+      "references": [
+        {
+          "phrase": "topological space (S,tau)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "every subset of S is open",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "power set P(S)",
+          "state": "unassigned",
+          "context": "Family comprising all subsets of the underlying set S."
+        },
+        {
+          "phrase": "nonempty underlying set S",
+          "state": "unassigned",
+          "context": "A set containing at least one element as explicitly required by this sourced formulation."
+        },
+        {
+          "phrase": "discreteness versus general topology",
+          "state": "external",
+          "disposition": "Every subset is open here, unlike an arbitrary topology; empty-space permissibility is not inferred."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation76.noetherian-module.01",
+      "version_sha256": "387d47d817226c504ce7e7bb4da8991de127000fa66173cf0933a44728f455a1",
+      "complete": true,
+      "review_rationale": "Reviewed finite-generation characterization of Noetherian A-module, quantifying over every A-submodule and retaining the commutative unital coefficient-ring convention.",
+      "references": [
+        {
+          "phrase": "unital left module M over A",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "A-submodule of M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.submodule"
+        },
+        {
+          "phrase": "finitely generated module",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        },
+        {
+          "phrase": "commutative unital coefficient ring A",
+          "state": "unassigned",
+          "context": "Underlying ring structure with additive commutativity, multiplicative commutativity and specified identity."
+        },
+        {
+          "phrase": "every submodule finite generation",
+          "state": "external",
+          "disposition": "Noetherianity requires finite generation of all submodules, not only finite generation of M itself."
+        }
+      ]
+    }
+  ]
+}
