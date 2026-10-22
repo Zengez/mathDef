@@ -1,0 +1,542 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-defining-axiom-clauses-001",
+  "mode": "amend",
+  "research_scope": "Human-reviewed source-free distinction between 32 self-defining axioms/structure-data clauses and actual upstream mathematical terms across 12 formulations; leaves substantive named dependencies untouched.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.01",
+      "formulation_id": "form.wave2.foundation.abelian-group",
+      "version_sha256": "2cf83e1b1920478a975e3332dc1cbae96fd64d695ef114f4bac9262455631f57",
+      "expected_node_sha256": "adb7ce988ae35cc4da965caae921eda68d04957700447839f134f53cbe138e1b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Read abelian group as group whose operation is commutative for every ordered pair of elements, preserving all group axioms via parent definition.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "group (G,*)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "phrase": "commutative binary operation a*b=b*a",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "commutativity is additional to group axioms",
+          "state": "external",
+          "disposition": "Associativity, identity and inverses come from group definition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.02",
+      "formulation_id": "form.wave2.foundation.left-module-nonunital",
+      "version_sha256": "7902de68ae59790c2e70c6f108700785948d1a4f4de6f67e6f33adee69ceb1f3",
+      "expected_node_sha256": "cc4e027b2e6f55fda3d24ffbe92354c90d4272277da0370e81494f01828dbbb8",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Read left module over potentially nonunital associative ring as abelian additive group and compatible scalar action with distributivity and associativity, with optional unital enhancement.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "associative ring R, unity optional",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "abelian group (M,+)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "left module with unital convention",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "left action R×M→M",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "module distributivity and scalar associativity",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "optional unital action condition",
+          "state": "unassigned",
+          "context": "If R has 1, unital module additionally has 1_R m=m for all m."
+        },
+        {
+          "phrase": "nonunital base allowed",
+          "state": "external",
+          "disposition": "The universal module axioms here do not require an identity in R or unity action."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.03",
+      "formulation_id": "form.wave2.foundation.ring-map-general",
+      "version_sha256": "e7c6931515cd8d70a4f2778a7b33b0103c77f9bdcf5ddb3283aa8a603e1e3c01",
+      "expected_node_sha256": "ea3d9f38569bde5516d10c44aa4f66b0b7ed5ae77467bb92dedf0a4b979ae3ca",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Reviewed full additive and multiplicative preservation identities of a map between associative, possibly nonunital rings; identified the function and ring prerequisites without imposing unit preservation.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "associative rings R and S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "mapping phi:R to S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "preserves additive operation phi(a+b)=phi(a)+phi(b)",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "preserves multiplication phi(ab)=phi(a)phi(b)",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "optional multiplicative identities 1_R,1_S",
+          "state": "unassigned",
+          "context": "Ring identities may exist, but preservation is not part of this nonunital homomorphism definition."
+        },
+        {
+          "phrase": "unitality not required",
+          "state": "external",
+          "disposition": "The absence of phi(1_R)=1_S is a scope distinction, not an additional condition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.04",
+      "formulation_id": "form.wave2.foundation.ring-map-unital",
+      "version_sha256": "2e49139e4b5546a62f63d9f1bfec1d1a380e7388cb71092faf00893f4c2c015d",
+      "expected_node_sha256": "c65da749615f2d2c5e37c61479dedec9b791d4e2685f6588ce6d07e5de0338df",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Reviewed full unital ring-homomorphism formulation, separating the additive and multiplicative preservation inherited from the nonunital meaning from the additional preservation of specified units.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "additive and multiplicative ring homomorphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-general"
+        },
+        {
+          "phrase": "unital associative rings R and S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "specified multiplicative identities 1_R and 1_S",
+          "state": "unassigned",
+          "context": "Two-sided multiplicative identity elements in the source and target rings."
+        },
+        {
+          "phrase": "preservation of identity phi(1_R)=1_S",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.05",
+      "formulation_id": "form.wave2.module94.right-module-nonunital",
+      "version_sha256": "6619ba1a37a3e1872bc2b38b2b9584763cacb454b4bc9787f433b6e0eba64971",
+      "expected_node_sha256": "d4885590f49b7e20a7807dac437292c39becc053e08e548762f62954b992584c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Read a right R-module over possibly nonunital associative ring via abelian additive group and right scalar action satisfying both distributivities and right associativity; no unit axiom added.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "associative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "abelian group (M,+)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "right scalar action M x R to M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "distributivity over vector addition (m+n)r=mr+nr",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "distributivity over scalar addition m(r+s)=mr+ms",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "module action associativity (mr)s=m(rs)",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "unity not required",
+          "state": "external",
+          "disposition": "The right-module definition does not impose m1=m without a specified unit-preserving convention."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.06",
+      "formulation_id": "form.wave2.module94.unital-left-module",
+      "version_sha256": "04557ec6ce830fbb831d7c4dc5bb876f74099f65abde22228217a537f7d27aab",
+      "expected_node_sha256": "f207ac184f035999ee2e442aa7745250bac2893fa201aa9e308d298ea5b98059",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Read unital left module action over an associative ring with identity, on additive abelian group, distinguishing order of left multiplication and scalar identity requirement.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "ring R with identity",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "abelian group M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "left module over R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.left-module-nonunital"
+        },
+        {
+          "phrase": "left scalar action R x M to M",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "left distributivity r(m+n)=rm+rn",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "left distributivity (r+s)m=rm+sm",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "associativity (rs)m=r(sm)",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "unital axiom 1m=m",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.07",
+      "formulation_id": "form.wave2.module94.unital-right-module",
+      "version_sha256": "769d622b6f799faae4af2f0102f044bdbfda54cc5849377b62b5131994846206",
+      "expected_node_sha256": "ecd0b0defa4ed0cc6c79db56271f4d841d5a686ebd6d6caf2ac0b3e3ff6456d5",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Read unital right module as abelian additive group with scalar action on right respecting distributivity and associativity plus m1=m, without swapping it to left-module action.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "associative ring R with identity",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "abelian group M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "right module action without unity",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.right-module-nonunital"
+        },
+        {
+          "phrase": "right scalar action M x R to M",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "right distributivities (m+n)r and m(r+s)",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "right associativity (mr)s=m(rs)",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "unital axiom m1=m",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "left versus right module",
+          "state": "external",
+          "disposition": "Right action is not silently identified with a left action over a noncommutative ring."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.08",
+      "formulation_id": "form.wave2.scalar101.division-ring-multiplicative-norm",
+      "version_sha256": "0a76b8668581609a2c6f632177db53135919a19ba0ab434aed853e5c9248c735",
+      "expected_node_sha256": "0acad4cf0492b8146b0a517672aab7e676b1ecd2a413e9b0d473355c70728b64",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Reviewed norm on division ring as nonnegative real-valued mapping with definite zero, exact multiplicativity and triangle inequality; not merely submultiplicative.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "associative division ring D",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.scalar101.division-ring"
+        },
+        {
+          "phrase": "mapping |.|_D:D to nonnegative reals",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "real nonnegative values",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "positive definiteness |a|=0 iff a=0",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "multiplicativity |ab|=|a||b|",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "triangle inequality |a+b|<=|a|+|b|",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "do not substitute vector norm",
+          "state": "external",
+          "disposition": "The object assigned a norm is the scalar division ring itself, not an arbitrary vector space over D."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.09",
+      "formulation_id": "form.wave2.scalar101.left-vector-over-division-ring",
+      "version_sha256": "bec9510590259a8335d07850a31cb6dfd01dd190b934e47f0e4773926b02cad3",
+      "expected_node_sha256": "c404dfb24e409493e524537c4962649c7d293fe978ba924cc9022b43005a93bf",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Reviewed left vector space over possibly noncommutative division ring with abelian addition and left scalar action, both distributivities, product association and unitality.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "division ring D",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.scalar101.division-ring"
+        },
+        {
+          "phrase": "abelian additive group V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "scalar action D times V to V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "left distributivity a(v+w)",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "left distributivity (a+b)v",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "left scalar associativity (ab)v=a(bv)",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "unit action 1_D*v=v",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "no commutativity imposed on D",
+          "state": "external",
+          "disposition": "This is a left module-style vector space over division ring, not automatically a right vector space."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.10",
+      "formulation_id": "form.wave2.scalar101.right-vector-over-division-ring",
+      "version_sha256": "f3d9cc790dc682d3360f00661469c6d194f25c9089e3010172290b880756efc8",
+      "expected_node_sha256": "a08280e0901ba42e8b07a2c83b4187ff3e100a0ab06948385684f6c6680c7965",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Reviewed right vector space over noncommutative division ring with abelian vector addition, right scalar action and correct product order (va)b=v(ab), plus unitality.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "division ring D",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.scalar101.division-ring"
+        },
+        {
+          "phrase": "abelian additive group V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "right scalar action V times D to V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "right distributivity (v+w)a",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "right distributivity v(a+b)",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "right scalar association (va)b=v(ab)",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "unit action v1_D=v",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "right not left convention",
+          "state": "external",
+          "disposition": "For noncommutative division ring one cannot silently identify right and left scalar actions."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.11",
+      "formulation_id": "form.wave2.pop142.bounded-linear",
+      "version_sha256": "a2e01a69301a8da098747643fd6374876c013749c73d4103d671b2daba43c154",
+      "expected_node_sha256": "cca67458db6a218f5ceb5c91f53c7bbb335deb90cfc4b6805b25d52e3b3ba385",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Reviewed bounded linear transformation between real or complex normed vector spaces over one field, with a single uniform nonnegative real bound for all domain vectors.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "normed vector spaces X,Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.normed-vector-space"
+        },
+        {
+          "phrase": "linear map T:X to Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.field-vector-linear"
+        },
+        {
+          "phrase": "vector norms on X and Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.norm-over-real-or-complex"
+        },
+        {
+          "phrase": "real constant M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "uniform bound ||Tx||_Y <= M ||x||_X",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "same scalar field real or complex",
+          "state": "external",
+          "disposition": "X and Y share one field F in {R,C}; this definition makes no division-ring generalization."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.defining_clauses.20261022.12",
+      "formulation_id": "form.wave2.pop142.contraction-map",
+      "version_sha256": "3acad80fcc3c25be83eff75baa5e1ea057794a399cef387b2c19211e71f21594",
+      "expected_node_sha256": "1e96d9a18331e95eb39c8c8de490f0fd7ce9b2debf6b4f7e2bc68dd8973623d2",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_definitional_clause_review",
+      "review_rationale": "Read strict global contraction between nonempty metric spaces with one constant q in [0,1) controlling distances for every pair; not simply a local Lipschitz condition.",
+      "reason": "Reviewed this source formulation's displayed algebraic axioms and quantified operation/bound clauses individually. These selected expressions are the predicates that DEFINE this structure or map, rather than independent mathematical prerequisites. Retain every formula and its explanation while removing spurious invented missing-meaning pressure; unrelated named concepts remain unassigned.",
+      "references": [
+        {
+          "phrase": "nonempty metric spaces (X,d_X), (Y,d_Y)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.metric-space"
+        },
+        {
+          "phrase": "mapping f:X to Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "real bound q in [0,1)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "global contraction inequality",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "single strict contraction constant q",
+          "state": "external",
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition."
+        },
+        {
+          "phrase": "nonempty spaces required",
+          "state": "external",
+          "disposition": "The two metric spaces are nonempty under the source's explicit convention."
+        }
+      ]
+    }
+  ]
+}
