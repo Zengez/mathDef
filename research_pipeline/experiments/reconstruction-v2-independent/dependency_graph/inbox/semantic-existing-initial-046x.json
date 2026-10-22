@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-046x",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.wave2.foundation13.preadditive-category-kernel",
+      "version_sha256": "65c9ea71da4e4cb687e9b6d58789902347ca3a67c88e65353a89b9a324b6531a",
+      "complete": true,
+      "review_rationale": "Reviewed a kernel morphism's universal factorization in a preadditive category, retaining zero composites, unique mediation, arrow direction and conditional existence.",
+      "references": [
+        {
+          "phrase": "preadditive category",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation15.preadditive-category"
+        },
+        {
+          "phrase": "zero morphism f composed with i equals zero",
+          "state": "unassigned",
+          "context": "Distinguished additive identity of the morphism abelian group Hom(K,Y), annihilated by composition."
+        },
+        {
+          "phrase": "universal factorization j=i composed with h",
+          "state": "unassigned",
+          "context": "Every arrow j:Z→X killed by f factors through inclusion i:K→X."
+        },
+        {
+          "phrase": "unique factorizing morphism h",
+          "state": "unassigned",
+          "context": "For any arrow j killed by f, exactly one arrow h:Z→K makes the factorization commute."
+        },
+        {
+          "phrase": "kernel existence conditional",
+          "state": "external",
+          "disposition": "A kernel universal morphism may not exist for every arrow of an arbitrary preadditive category."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation15.abelian-category",
+      "version_sha256": "27ce82d10fa13d85512eca03fbbe421afd58a951acc031c457370065a4d8a11b",
+      "complete": true,
+      "review_rationale": "Reviewed abelian category as additive category with all kernels/cokernels and invertible coimage-to-image comparison, distinguishing the categorical universal notions from set-theoretic images.",
+      "references": [
+        {
+          "phrase": "additive category C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation15.additive-category"
+        },
+        {
+          "phrase": "kernel of every morphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.preadditive-category-kernel"
+        },
+        {
+          "phrase": "cokernel of every morphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.preadditive-category-cokernel"
+        },
+        {
+          "phrase": "coimage Coim(f) of categorical morphism",
+          "state": "unassigned",
+          "context": "Cokernel of kernel of an arrow in an additive category, provided these constructions exist."
+        },
+        {
+          "phrase": "image Im(f) of categorical morphism",
+          "state": "unassigned",
+          "context": "Kernel of cokernel of an arrow, a categorical image rather than the elementwise image of a set map."
+        },
+        {
+          "phrase": "canonical comparison Coim(f) to Im(f)",
+          "state": "unassigned",
+          "context": "Canonical morphism connecting the coimage and image by universal properties."
+        },
+        {
+          "phrase": "isomorphism of categorical morphisms",
+          "state": "unassigned",
+          "context": "Arrow having a two-sided inverse under categorical composition."
+        },
+        {
+          "phrase": "every morphism has kernel and cokernel",
+          "state": "external",
+          "disposition": "Required universal availability distinguishes an abelian category from a merely additive one."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation15.additive-category",
+      "version_sha256": "f99af0281762c91992e17769adfe29a29a8640d82dd611e4c8826f6fe188a104",
+      "complete": true,
+      "review_rationale": "Reviewed additive category via finite products in a preadditive category, including empty product and equivalent zero-object and finite-direct-sum formulation.",
+      "references": [
+        {
+          "phrase": "preadditive category",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation15.preadditive-category"
+        },
+        {
+          "phrase": "binary categorical products",
+          "state": "existing",
+          "target_meaning_id": "meaning.8069f09a769d34f5.binary-product-category"
+        },
+        {
+          "phrase": "finite categorical products including empty product",
+          "state": "unassigned",
+          "context": "Existence of products for each finite family of objects, where the empty product is a terminal object."
+        },
+        {
+          "phrase": "zero object",
+          "state": "unassigned",
+          "context": "Object simultaneously initial and terminal in a preadditive category."
+        },
+        {
+          "phrase": "finite direct sums or biproducts",
+          "state": "unassigned",
+          "context": "Products and coproducts agreeing for finite families, with canonical injection and projection arrows."
+        },
+        {
+          "phrase": "equivalent finite-product/direct-sum characterization",
+          "state": "external",
+          "disposition": "These are equivalent characterizations of the same additive-category meaning, not a dependency upon itself."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.wave2.foundation15.preadditive-category",
+      "version_sha256": "8672ea717e558c2258b989f93c79d59915d908f14f230394077d816435f12df7",
+      "complete": true,
+      "review_rationale": "Reviewed preadditive category as category with abelian-group hom-sets and bilinear composition, not assuming smallness or finite products from the stronger additive-category notion.",
+      "references": [
+        {
+          "phrase": "abelian group Hom_C(X,Y)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "bilinear composition",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.bilinear-map-modules"
+        },
+        {
+          "phrase": "ambient category C",
+          "state": "unassigned",
+          "context": "Objects, arrows, identities and associative composition without a small-category cardinality hypothesis."
+        },
+        {
+          "phrase": "morphism set Hom_C(X,Y)",
+          "state": "unassigned",
+          "context": "Collection of arrows from X to Y, carrying its own abelian group structure."
+        },
+        {
+          "phrase": "composition Hom(Y,Z) x Hom(X,Y) to Hom(X,Z)",
+          "state": "unassigned",
+          "context": "Partially typed composition of arrows, additive in each variable."
+        },
+        {
+          "phrase": "not necessarily small or additive category",
+          "state": "external",
+          "disposition": "Finite products and an underlying object set are not additional hypotheses in this formulation."
+        }
+      ]
+    }
+  ]
+}
