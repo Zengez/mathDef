@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "id": "semantic-existing-initial-042d",
+  "mode": "ingest",
+  "items": [
+    {
+      "formulation_id": "form.dbf5b9529c8ec33a.serre-condition-rk",
+      "version_sha256": "e0a4b05da2233c0fd78edbc6ecb9186118e44143689c30047e59910dc957d54b",
+      "complete": true,
+      "review_rationale": "Read Serre's (R_k) condition pointwise at every prime of bounded height, recognizing localization and regularity of its Noetherian local ring. The condition is not regularity at all primes unless the height bound encompasses them.",
+      "references": [
+        {
+          "phrase": "Noetherian ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "prime ideal p of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "height of prime ideal p",
+          "state": "existing",
+          "target_meaning_id": "meaning.22c049b8eee93897.height-prime-ideal"
+        },
+        {
+          "phrase": "localization R_p of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "regular Noetherian local ring R_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.14c44fee62bf6075.regular-local-ring"
+        },
+        {
+          "phrase": "nonnegative integer bound k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "primes of height at most k",
+          "state": "external",
+          "disposition": "This bounded quantification defines property (R_k); it is not a claim that all localizations of R are regular."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.dbf5b9529c8ec33a.serre-condition-sk-module",
+      "version_sha256": "411e904dbf8cb3325f5e2bd8ca165b192204d800b0d4cee0d6b54bc76b0b8c3d",
+      "complete": true,
+      "review_rationale": "Reviewed Serre's (S_k) condition for a finite module at every prime, with localization of M, depth at the resulting local ring and local support dimension; distinguished module support dimension from dimension of all R_p.",
+      "references": [
+        {
+          "phrase": "finitely generated R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        },
+        {
+          "phrase": "Noetherian ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "prime ideals p of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "localized module M_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "depth of M_p over R_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.951ae8411d8a974b.depth-module-local-ring"
+        },
+        {
+          "phrase": "support Supp(M_p) and its Krull dimension",
+          "state": "existing",
+          "target_meaning_id": "meaning.fd3c1a1c0145915a.dimension-finite-module"
+        },
+        {
+          "phrase": "support of finite module",
+          "state": "existing",
+          "target_meaning_id": "meaning.fd3c1a1c0145915a.support-finite-module"
+        },
+        {
+          "phrase": "natural-number bound k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "depth(M_p)≥min(k,dim Supp(M_p))",
+          "state": "external",
+          "disposition": "This is the exact Serre depth inequality for finite modules; it must not be replaced by the ambient local ring's dimension."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.dbf5b9529c8ec33a.serre-condition-sk-ring",
+      "version_sha256": "1046749714bd17c6e1f6a70c204f8ab4779faa727b7e22cc2a984c2a2582c94b",
+      "complete": true,
+      "review_rationale": "Read Serre (S_k) for a Noetherian ring by localizing at every prime and comparing local-ring depth against k and Krull dimension of R_p; kept the ring specialization distinct from an arbitrary finite module.",
+      "references": [
+        {
+          "phrase": "Noetherian commutative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "prime ideal p of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "ring localization R_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "depth of R_p as an R_p-module",
+          "state": "existing",
+          "target_meaning_id": "meaning.951ae8411d8a974b.depth-module-local-ring"
+        },
+        {
+          "phrase": "Krull dimension of local ring R_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.22c049b8eee93897.krull-dimension-ring"
+        },
+        {
+          "phrase": "natural number bound k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "depth(R_p)≥min(k,dim R_p) at all primes",
+          "state": "external",
+          "disposition": "Specializes the Serre module criterion to the ring considered as its own finite module."
+        }
+      ]
+    },
+    {
+      "formulation_id": "form.dbf5b9529c8ec33a.serre-normality-criterion",
+      "version_sha256": "733fdb093a6a661c65587e43ed005e6cf317acc63813d7a11bbd2efd5bc58d0a",
+      "complete": true,
+      "review_rationale": "Read the if-and-only-if normality criterion under its Noetherian ring hypothesis: (R_1) means regularity at primes of height ≤1, while (S_2) imposes depth bounds at every prime. This is a theorem criterion, not an independent new definition of normality.",
+      "references": [
+        {
+          "phrase": "Noetherian commutative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "normal ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.363d711d668364b7.normal-ring"
+        },
+        {
+          "phrase": "Serre condition (R_1)",
+          "state": "existing",
+          "target_meaning_id": "meaning.dbf5b9529c8ec33a.serre-condition-rk"
+        },
+        {
+          "phrase": "Serre condition (S_2)",
+          "state": "existing",
+          "target_meaning_id": "meaning.dbf5b9529c8ec33a.serre-condition-sk-ring"
+        },
+        {
+          "phrase": "height-one prime ideals and codimension",
+          "state": "existing",
+          "target_meaning_id": "meaning.22c049b8eee93897.height-prime-ideal"
+        },
+        {
+          "phrase": "regular localizations in codimension one",
+          "state": "existing",
+          "target_meaning_id": "meaning.14c44fee62bf6075.regular-local-ring"
+        },
+        {
+          "phrase": "depth over localized rings",
+          "state": "existing",
+          "target_meaning_id": "meaning.951ae8411d8a974b.depth-module-local-ring"
+        },
+        {
+          "phrase": "normal if and only if R_1 and S_2",
+          "state": "external",
+          "disposition": "Serre's normality criterion is a theorem under Noetherian hypotheses; the two conditions are not asserted to define normality without them."
+        }
+      ]
+    }
+  ]
+}
