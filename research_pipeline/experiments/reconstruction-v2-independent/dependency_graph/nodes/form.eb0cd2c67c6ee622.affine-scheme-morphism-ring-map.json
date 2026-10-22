@@ -2,26 +2,45 @@
   "schema_version": 1,
   "formulation_id": "form.eb0cd2c67c6ee622.affine-scheme-morphism-ring-map",
   "version_sha256": "7a42fd6368ab39c0f470e9e6bc4a22038ccad3fc7abcf27ada758f6ca724cd46",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "ring homomorphism",
-      "span": [
-        108,
-        125
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.wave2.foundation.ring-map-general",
-        "meaning.wave2.foundation.ring-map-unital"
-      ],
-      "reason": "Multiple contextual meanings share this term; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.4bddd23574d423e1f1b2"
+      "phrase": "affine prime spectrum Spec(A)",
+      "state": "existing",
+      "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+      "occurrence_id": "occ.56c91eaf18e5ffde2882"
+    },
+    {
+      "phrase": "morphism of schemes",
+      "state": "existing",
+      "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "occurrence_id": "occ.894c66a5f5ae6e41c3d3"
+    },
+    {
+      "phrase": "unital commutative ring map A→B",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "occurrence_id": "occ.efc6b23d881a56483571"
+    },
+    {
+      "phrase": "prime ideals of B and A",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+      "occurrence_id": "occ.d7c7d658f6b6ab4f4524"
+    },
+    {
+      "phrase": "inverse image φ⁻¹(q) of a prime ideal q",
+      "state": "unassigned",
+      "context": "Preimage ideal under A→B; the induced map Spec(B)→Spec(A) sends q to φ⁻¹(q).",
+      "occurrence_id": "occ.412b7d02864c0639df93"
+    },
+    {
+      "phrase": "contravariant correspondence",
+      "state": "external",
+      "disposition": "The arrow on affine schemes reverses the ring-map direction; a map A→B gives Spec B→Spec A.",
+      "occurrence_id": "occ.1299555b8c50bd3e9fdd"
     }
   ],
-  "snapshot_sha256": "99ba31badbae8324df285307e88d049ada5d4f346c87228e016c941daeb95f7a",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "583aba4687d1ccbffc973606b96673c0caf51158be5fc1ef09d1552e5d1d8efe",
+  "review_rationale": "Read the contravariant equivalence between affine-scheme morphisms Spec(B)→Spec(A) and commutative-ring homomorphisms A→B, preserving the inverse-image action on prime ideals."
 }

@@ -2,39 +2,39 @@
   "schema_version": 1,
   "formulation_id": "form.ec5e3a0d13f85f3a.equivalence-objects-two-category",
   "version_sha256": "2d5d0e02ee2eefb7f23c4ca06c47409829d190c2658d5549bae098c542a33c1b",
-  "scan_status": "scan_incomplete",
+  "scan_status": "complete",
   "references": [
     {
-      "phrase": "strict 2-category",
-      "span": [
-        21,
-        38
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.ec5e3a0d13f85f3a.strict-two-category"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.b221c61e7205a14636e5"
+      "phrase": "strict 2-category C",
+      "state": "existing",
+      "target_meaning_id": "meaning.ec5e3a0d13f85f3a.strict-two-category",
+      "occurrence_id": "occ.1e948c7becf378c93c24"
     },
     {
-      "phrase": "strict 2-category",
-      "span": [
-        184,
-        201
-      ],
-      "state": "ambiguous",
-      "candidate_meaning_ids": [
-        "meaning.ec5e3a0d13f85f3a.strict-two-category"
-      ],
-      "reason": "Only indexed sense belongs to a different contextual domain; source-specific semantic disambiguation required",
-      "origin": "unreviewed_lexical_proposal",
-      "occurrence_id": "occ.b12b5f7ff7b909f81caa"
+      "phrase": "1-morphisms F:X→Y and G:Y→X",
+      "state": "unassigned",
+      "context": "Arrows of the hom-categories in the indicated directions.",
+      "occurrence_id": "occ.7eeb7640c138ebd80da8"
+    },
+    {
+      "phrase": "invertible 2-morphisms between 1-arrows",
+      "state": "unassigned",
+      "context": "2-cells admitting inverse with respect to vertical composition inside hom-categories.",
+      "occurrence_id": "occ.550071cd577e8a5cde67"
+    },
+    {
+      "phrase": "compositions F∘G and G∘F",
+      "state": "unassigned",
+      "context": "Strict horizontal composites of respective 1-morphisms, compared to identity 1-morphisms of Y and X.",
+      "occurrence_id": "occ.60411be827f1fe7968f4"
+    },
+    {
+      "phrase": "strict 2-category, not arbitrary weak bicategory",
+      "state": "external",
+      "disposition": "The assertion is explicitly scoped to the strict Stacks convention; weak associators or unit coherence is not silently added.",
+      "occurrence_id": "occ.7eb6c2b741cc4bc1c97e"
     }
   ],
-  "snapshot_sha256": "ddb9c67be5e6c5cff2d3fc37da95ce0d39868779b7bad10a050b6aa592a9e2af",
-  "review_rationale": "",
-  "proposal_fingerprint": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
-  "scan_origin": "unreviewed_adapter_proposal"
+  "snapshot_sha256": "24da139fca98056535d336c4d389250f863bdb7ddd611ad9beb3458e3539776f",
+  "review_rationale": "Read equivalence of objects in a strict 2-category via inverse-direction 1-morphisms and invertible 2-morphisms comparing their composites to identities; did not conflate weak bicategories with the strict setting."
 }
