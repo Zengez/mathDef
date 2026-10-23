@@ -1,6 +1,6 @@
 # Source-free source-formulation and second alias audit — 2026-10-23
 
-**Status:** candidate reviews submitted; verify exact independent workflow receipts and test CI before counting packet 145–146 applications. These packets do NOT authorize the forbidden new-source/population Batch143.
+**Status: VERIFIED AND APPLIED.** Exact `applied_in_independent_graph_only` receipts for alias packets 145–146, both `human_certified=false`. Graph [Actions 40024675398](https://github.com/Zengez/mathDef/actions/runs/40024675398) and isolated [Actions 40024675457](https://github.com/Zengez/mathDef/actions/runs/40024675457) both SUCCESS. Packet numbers 145–146 refer only to alias review and do not reopen the forbidden new-population Batch143. These packets do NOT authorize the forbidden new-source/population Batch143.
 
 ## Breadth of additional review
 
@@ -26,3 +26,7 @@ The pre-existing `form.3718becace9c852d.quasifinite-at-prime` error remains flag
 ## Next audit
 
 After receipt and GitHub CI verification, keep original mathematical source issues open for later authorized source-review, continue semantic type audit of effective references rather than original stale node snapshots, verify residual missing-candidate identity contexts, and keep consolidation gate FALSE.
+
+## Verified outcome and remaining follow-up
+
+From the preceding verified live baseline 568 unresolved canonical / 156 aliases, the combined **41 additional aliases** in this longer round reduce the unresolved canonical count to **527** and raise cumulative aliases to **197**. Exactly nine new alias packet receipts (136–142, 145–146); no new meanings, source formulations or amendment events. No graph cycles were reported by the independent checks; phase remains `consolidate_occurrences`, gate false. The submersive-map issue above and the prior quasi-finite-map issue are **original source-level errors** requiring a later explicitly authorized source audit and mathematical rewrite, not attempts to alter source during this dependency audit.

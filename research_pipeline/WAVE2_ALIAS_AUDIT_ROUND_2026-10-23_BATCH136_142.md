@@ -1,6 +1,6 @@
 # Independent Wave2 continuation — alias audit packets 136–142
 
-**Status:** source-context review staged, pending independent workflow receipts and graph/test validation.
+**Status: VERIFIED AND APPLIED.** All seven packets 136–142 have exact receipts `applied_in_independent_graph_only`, `human_certified=false`; independent graph [Actions 40024206458](https://github.com/Zengez/mathDef/actions/runs/40024206458) and isolated [Actions 40024206469](https://github.com/Zengez/mathDef/actions/runs/40024206469) both SUCCESS.
 
 ## Inputs and intent
 
@@ -22,4 +22,8 @@ Focus: categorical composability / locally ringed spaces / cone data / isomorphi
 
 ### Expected verification
 
-If all receipts and independent graph/isolated CI succeed, expected cumulative aliases **190** and unresolved canonical **534**, with the same 611 meanings and 659 formulation scans. Gate remains FALSE. Record exact Action IDs and receipt results before marking complete; the source-free review is not external citation certification.
+All seven applied successfully, producing **190** cumulative aliases and **534** unresolved canonical identities. The subsequent packets 145–146 (see the source triage report) also succeeded, yielding final **197** cumulative aliases and **527** unresolved canonical identities, with the same 611 meanings and 659 formulation scans. Gate remains FALSE. Record exact Action IDs and receipt results before marking complete; the source-free review is not external citation certification.
+
+## Verified post-round state
+
+Alias packets 145–146 have graph [Actions 40024675398](https://github.com/Zengez/mathDef/actions/runs/40024675398) and isolated [Actions 40024675457](https://github.com/Zengez/mathDef/actions/runs/40024675457) both SUCCESS; 2 additional exact alias receipts, no human certification. Final independent STATE: 611 meanings, 659 complete scans, 639 screened and 20 provisional formulations, 724 raw missing candidate IDs, 197 aliases, **527** unresolved canonical, 826 missing occurrences, 765 append-only amendments, zero ambiguous/unassigned, consolidation gate FALSE. Source inventory SHA stays `3759cab60c5fce7287492724fc2ed433ac6001c8a242b66f9bbc887e92294492`, unresolved fingerprint `af6c62e082893f1d3d64ec855436e833b47e03d13b7678f79c1fe5631740cc28`.
