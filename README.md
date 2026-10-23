@@ -115,3 +115,7 @@ That checkpoint reviewed **41 older entries** in commutative algebra and scheme 
 ## Historical PDE and numerical checkpoint (October 15, 2026)
 
 At that intermediate October 15, 2026 checkpoint, the repository contained 995 definitions. Work then audited all 36 original PDE definitions and all 35 numerical-analysis definitions, while adding 12 graduate-level microlocal-analysis and pseudodifferential-operator entries. Every edit and unresolved caveat is recorded in [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md), and all newly added entries are draft pending individual mathematical validation.
+
+## Public cross-project definition export
+
+The standard Pages build publishes a read-only, SHA-256 versioned definition snapshot and a small update manifest so companion projects such as mathThm can detect changes and refresh their local definition cache. See [DEFINITION_EXPORT.md](DEFINITION_EXPORT.md) for the stable endpoints, consumer protocol, scope, and validation details. Independent Wave 1 and Wave 2 research previews are not part of this production feed.

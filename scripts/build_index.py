@@ -7,8 +7,10 @@ from pathlib import Path
 
 if __package__:
     from scripts.dependency_links import load_overrides, populate_dependencies
+    from scripts.definition_export import write_definition_export
 else:
     from dependency_links import load_overrides, populate_dependencies
+    from definition_export import write_definition_export
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFS = ROOT / "definitions"
@@ -158,6 +160,7 @@ def main():
     shutil.copytree(ROOT / "web", OUT)
     entries.sort(key=lambda d: (d["term"].casefold(), d["id"]))
     (OUT / "definitions-index.json").write_text(json.dumps(entries,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    write_definition_export(entries, OUT)
     (OUT / "dependency-review.json").write_text(
         json.dumps(link_report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
