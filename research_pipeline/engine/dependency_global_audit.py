@@ -69,6 +69,87 @@ def load_live_snapshot(workspace: Path) -> dict:
     }
 
 
+def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = (),
+                            limit: int = 8, max_formulations: int = 3,
+                            contains: str = "") -> dict:
+    """Small, impact-ordered, context-complete read-only mathematical review queue.
+
+    Defaults to only unresolved CANONICAL candidate identities; applied
+    aliases and version-bound resolutions are never reviewed a second time.
+    Explicit candidate IDs must be unresolved canonical identities.
+    Source text and references are the current effective append-only version.
+    No similarity score is evidence of mathematical equivalence.
+    """
+    if limit < 0 or max_formulations < 1:
+        raise PipelineError("Review limits must be nonnegative, with >=1 source per candidate")
+    inv, nodes = snapshot["inventory"], snapshot["nodes"]
+    active = {c["id"]: c for c in snapshot.get("candidates", [])
+              if c.get("status") == "unresearched"
+              and not c.get("alias_of")
+              and not c.get("resolved_target_meaning_id")}
+    selected_ids = tuple(dict.fromkeys(candidate_ids))
+    unknown = [cid for cid in selected_ids if cid not in active]
+    if unknown:
+        raise PipelineError("Unknown or noncanonical/resolved candidate IDs: "
+                            + ", ".join(unknown))
+    if selected_ids:
+        chosen = [active[cid] for cid in selected_ids]
+    else:
+        chosen = sorted(active.values(), key=lambda c: (
+            -c.get("occurrence_count", 0),
+            -c.get("upstream_formulation_count", 0), c["id"]))
+        if contains:
+            needle = norm(contains)
+            chosen = [c for c in chosen if needle in norm(
+                c.get("query", "") + " " + c.get("context", ""))]
+        chosen = chosen[:limit]
+    items = []
+    for candidate in chosen:
+        source_ids = candidate.get("incoming_formulation_ids", [])
+        # Source membership is indexed in the canonical missing registry.
+        # Unknown source IDs are a visible risk, never silently fabricated.
+        sources = []
+        for fid in source_ids[:max_formulations]:
+            source = inv["formulations"].get(fid)
+            node = nodes.get(fid)
+            if source is None:
+                sources.append({"formulation_id": fid,
+                                "integrity_warning": "missing_source_formulation"})
+                continue
+            sources.append({
+                "formulation_id": fid, "source_meaning_id": source["meaning_id"],
+                "display_term": source["display_term"],
+                "full_source_text": source["text"],
+                "source_context": source.get("context", ""),
+                "source_version_sha256": source["version_sha256"],
+                "effective_node_sha256": digest(node) if node else None,
+                "complete_scan": bool(node and node.get("scan_status") == "complete"),
+                "all_effective_references": node.get("references", []) if node else [],
+            })
+        items.append({
+            "candidate_id": candidate["id"], "query": candidate.get("query", ""),
+            "mathematical_context": candidate.get("context", ""),
+            "occurrence_count": candidate.get("occurrence_count", 0),
+            "upstream_formulation_count": candidate.get("upstream_formulation_count", 0),
+            "source_formulation_count": len(source_ids),
+            "sources_truncated": max(0, len(source_ids) - len(sources)),
+            "source_formulations": sources,
+        })
+    return {
+        "schema_version": 1, "read_only": True, "mathematics_certified": False,
+        "automatic_aliases_or_edits": False,
+        "inventory_sha256": inv["source_inventory_sha256"],
+        "unresolved_fingerprint": snapshot["state"]["summary"].get(
+            "unresolved_fingerprint"),
+        "active_canonical_candidates": len(active),
+        "reviewed_candidate_count": len(items),
+        "candidates": items,
+        "warning": "Review entire source and effective references before "
+                   "any human-authored alias or version-bound resolution; "
+                   "recurrence ranks priority, never establishes equivalence.",
+    }
+
+
 def strongly_connected(adjacency: dict[str, set[str]]) -> list[list[str]]:
     """Nontrivial SCCs, including self-links; deterministic sorted output."""
     order, stack, on_stack, indices, lows, cyclic = [0], [], set(), {}, {}, []
@@ -453,6 +534,13 @@ def main() -> None:
     scan.add_argument("--candidate-limit", type=int, default=40)
     scan.add_argument("--snapshot-output", type=Path,
                       help="Optional TEMPORARY exhaustive snapshot outside the repository")
+    focus = sub.add_parser("focus", help="Compact source-complete unresolved-candidate worklist")
+    focus.add_argument("--candidate-id", action="append", default=[],
+                       help="Exact unresolved canonical candidate; repeatable")
+    focus.add_argument("--limit", type=int, default=8)
+    focus.add_argument("--max-formulations", type=int, default=3)
+    focus.add_argument("--contains", default="",
+                       help="Filter candidate query/context when no IDs supplied")
     prep = sub.add_parser("prepare", help="Offline anchored full-node amendment packets")
     prep.add_argument("--manifest", type=Path, required=True)
     prep.add_argument("--output-dir", type=Path, required=True)
@@ -472,6 +560,12 @@ def main() -> None:
                 encoding="utf-8")
             report["temporary_full_snapshot_path"] = str(args.snapshot_output)
         print(json.dumps(report, ensure_ascii=False, indent=2))
+    elif args.mode == "focus":
+        print(json.dumps(candidate_review_bundle(
+            load_live_snapshot(args.workspace),
+            candidate_ids=tuple(args.candidate_id), limit=args.limit,
+            max_formulations=args.max_formulations, contains=args.contains),
+            ensure_ascii=False, indent=2))
     else:
         print(json.dumps(write_offline_packets(
             args.workspace, args.manifest, args.output_dir, args.max_per_batch),
