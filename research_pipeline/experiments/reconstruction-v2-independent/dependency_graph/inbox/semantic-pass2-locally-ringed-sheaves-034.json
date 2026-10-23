@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-locally-ringed-sheaves-034",
+  "mode": "amend",
+  "research_scope": "Five full mathematical source reviews involving sheaves of rings, affine and general schemes and open immersions; no source research, meanings or automatic aliases.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.locally_ringed_sheaves.20261022.01",
+      "formulation_id": "form.4c7d59ba7058613b.affine-scheme",
+      "version_sha256": "72c7183cbf94bebd830e8d379f7816fe387480fef050e0b517d50ff40377796c",
+      "expected_node_sha256": "30cebd9d443ebaa857528c08278eb3da83660d11e1a4f91891965d2ff6e46118",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Full-formulation semantic review of sheaves of rings, stalks, locally ringed space isomorphisms and direct/inverse image sheaf morphisms. Retained complete prior adjacency and source version; distinctions require post-pass consistency audit.",
+      "reason": "Source-free Wave2 Pass2 typed prerequisite review of locally ringed spaces and schemes, with no original corpus change.",
+      "references": [
+        {
+          "state": "existing",
+          "phrase": "locally ringed space",
+          "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space"
+        },
+        {
+          "state": "existing",
+          "phrase": "prime spectrum of a commutative ring",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "structure sheaf",
+          "state": "missing",
+          "context": "Algebraic geometry: canonical structure sheaf O_Spec(R) of commutative rings on Spec(R), with O(D(f)) identified with R_f for distinguished opens and restrictions compatible with localization.",
+          "reason": "The underlying topological prime spectrum does not alone provide the required locally ringed structure.",
+          "matching_note": "Compare scheme and prime-spectrum structure sheaf occurrences in global audit."
+        },
+        {
+          "phrase": "isomorphic to",
+          "state": "missing",
+          "context": "Algebraic geometry: isomorphism of locally ringed spaces, a morphism with a two-sided inverse respecting continuous maps, sheaf maps and local ring stalk maps.",
+          "reason": "Locally ringed space isomorphism is stronger than topological homeomorphism.",
+          "matching_note": "Distinct from plain sheaf isomorphism or scheme identity."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.locally_ringed_sheaves.20261022.02",
+      "formulation_id": "form.52683cac2ccf3bad.locally-ringed-space",
+      "version_sha256": "81d8daeded237e2303558aa3c29f7845890e8f0cea4c10fcf5fd1d169ff4d5e4",
+      "expected_node_sha256": "8673a867eb175e6ea7da48aa0d43b112954a38c3dfd7cec16bf43b8e9e975207",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Full-formulation semantic review of sheaves of rings, stalks, locally ringed space isomorphisms and direct/inverse image sheaf morphisms. Retained complete prior adjacency and source version; distinctions require post-pass consistency audit.",
+      "reason": "Source-free Wave2 Pass2 typed prerequisite review of locally ringed spaces and schemes, with no original corpus change.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "local ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "sheaf of rings O_X",
+          "state": "missing",
+          "context": "Sheaf theory: sheaf of unital rings O_X on topological space X, satisfying locality and gluing with unital restriction homomorphisms.",
+          "reason": "The sheaf of rings is independent mathematical structure for a locally ringed space.",
+          "matching_note": "Compare arbitrary sheaves and specific structure sheaves without equating these."
+        },
+        {
+          "phrase": "stalk at every point of X",
+          "state": "missing",
+          "context": "Sheaf theory: stalk O_{X,x} of sheaf O_X at a point x, colimit of rings of sections over neighborhoods of x under restrictions, comprising germs.",
+          "reason": "The stalk construction is a reusable prerequisite for each stalk being a local ring.",
+          "matching_note": "Distinct from global sections and fibre categories."
+        },
+        {
+          "phrase": "every point of X",
+          "state": "external",
+          "disposition": "Universal quantification over stalk localness at each point, not just generic or closed points."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.locally_ringed_sheaves.20261022.03",
+      "formulation_id": "form.bdc3e54fd4523fad.scheme-local-affine",
+      "version_sha256": "ff8308463e55904233eca0aaa523c64b7c6e11818f8a522770a5bd608250b45e",
+      "expected_node_sha256": "4718ffc39769b8a3e2fe13f616630a17e2fbacb2cfa0323234a1fc470408b593",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Full-formulation semantic review of sheaves of rings, stalks, locally ringed space isomorphisms and direct/inverse image sheaf morphisms. Retained complete prior adjacency and source version; distinctions require post-pass consistency audit.",
+      "reason": "Source-free Wave2 Pass2 typed prerequisite review of locally ringed spaces and schemes, with no original corpus change.",
+      "references": [
+        {
+          "phrase": "locally ringed space (X,O_X)",
+          "state": "existing",
+          "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space"
+        },
+        {
+          "phrase": "open locally ringed subspace",
+          "state": "existing",
+          "target_meaning_id": "meaning.3c73940f47e92e99.open-subspace-locally-ringed-space"
+        },
+        {
+          "phrase": "Spec(R) and its prime spectrum",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "structure sheaf of Spec(R)",
+          "state": "missing",
+          "context": "Algebraic geometry: canonical sheaf O_Spec(R) on affine prime spectrum, sections over D(f) are localized rings R_f.",
+          "reason": "An affine chart is a locally ringed space with canonical sheaf, not just a spectrum of prime ideals.",
+          "matching_note": "Compare with affine scheme formulation's source-free structure sheaf candidate."
+        },
+        {
+          "phrase": "isomorphism as locally ringed spaces",
+          "state": "missing",
+          "context": "Algebraic geometry: invertible morphism (X,O_X)≅(Y,O_Y) of locally ringed spaces, preserving local stalk maps and compatible structure sheaves.",
+          "reason": "Scheme charts must be isomorphic as locally ringed spaces rather than merely homeomorphic.",
+          "matching_note": "Compare with isomorphism in affine scheme formulation."
+        },
+        {
+          "phrase": "every point has an open affine neighbourhood",
+          "state": "external",
+          "disposition": "Local affine charts are required, but the whole scheme need not be affine."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.locally_ringed_sheaves.20261022.04",
+      "formulation_id": "form.bdc3e54fd4523fad.scheme-morphism",
+      "version_sha256": "232de669dc15221418baa2b5816319a6e3f8a1d14b7dace33a4d82b95881123b",
+      "expected_node_sha256": "fc10644027c396ffd9dcddcda18ece551031d0556e5f53ef9934df774bebfab0",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Full-formulation semantic review of sheaves of rings, stalks, locally ringed space isomorphisms and direct/inverse image sheaf morphisms. Retained complete prior adjacency and source version; distinctions require post-pass consistency audit.",
+      "reason": "Source-free Wave2 Pass2 typed prerequisite review of locally ringed spaces and schemes, with no original corpus change.",
+      "references": [
+        {
+          "phrase": "morphism of locally ringed spaces",
+          "state": "existing",
+          "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space-morphism"
+        },
+        {
+          "phrase": "continuous map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "locally ringed spaces X and Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space"
+        },
+        {
+          "phrase": "sheaf homomorphism O_Y→f_*O_X",
+          "state": "missing",
+          "context": "Sheaf theory: homomorphism of sheaves of unital rings O_Y→f_*O_X on Y, where (f_*O_X)(V)=O_X(f^{-1}(V)), for continuous f:X→Y.",
+          "reason": "Morphism of ringed spaces includes a compatible sheaf map into the direct-image sheaf.",
+          "matching_note": "Do not interchange f_* and f^{-1} sheaf functors."
+        },
+        {
+          "phrase": "induced local stalk homomorphisms",
+          "state": "missing",
+          "context": "Locally ringed spaces: induced local ring homomorphisms O_{Y,f(x)}→O_{X,x} on stalks, preserving maximal ideals under inverse image.",
+          "reason": "Locality of induced stalk maps is stronger than arbitrary ring-homomorphism structure.",
+          "matching_note": "Keep direction opposite the underlying topological map."
+        },
+        {
+          "phrase": "O_Y→f_*O_X",
+          "state": "external",
+          "disposition": "The sheaf map reverses the direction of the underlying continuous map; no ordinary covariant map O_X→O_Y is inferred."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.locally_ringed_sheaves.20261022.05",
+      "formulation_id": "form.3c73940f47e92e99.open-immersion-locally-ringed-space",
+      "version_sha256": "b5930826480275fee8ce2453e1cb9122fb31060a605571a7f73e226aec5fc317",
+      "expected_node_sha256": "cd5b514011f7fcdc061523ce80ea04495325326269f786ee93f4b5a4ffe44495",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Full-formulation semantic review of sheaves of rings, stalks, locally ringed space isomorphisms and direct/inverse image sheaf morphisms. Retained complete prior adjacency and source version; distinctions require post-pass consistency audit.",
+      "reason": "Source-free Wave2 Pass2 typed prerequisite review of locally ringed spaces and schemes, with no original corpus change.",
+      "references": [
+        {
+          "phrase": "morphism of locally ringed spaces",
+          "state": "existing",
+          "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space-morphism",
+          "matching_note": "The morphism f includes sheaf and topological maps respecting local rings."
+        },
+        {
+          "phrase": "homeomorphism onto an open subset",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.directional113.homeomorphism-topological",
+          "matching_note": "The underlying space map is a topological homeomorphism onto its image."
+        },
+        {
+          "phrase": "open subset of Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space",
+          "matching_note": "Openness is relative to the topology of Y."
+        },
+        {
+          "phrase": "induced morphism f^{-1}O_Y→O_X",
+          "state": "missing",
+          "context": "Sheaf theory: morphism from inverse-image sheaf f^{-1}O_Y on X to O_X, adjoint to O_Y→f_*O_X; not an ordinary preimage of subsets.",
+          "reason": "The open-immersion definition refers specifically to inverse-image sheaf structure.",
+          "matching_note": "Compare to direct-image sheaf without equating their variances."
+        },
+        {
+          "phrase": "isomorphism of sheaves of rings",
+          "state": "missing",
+          "context": "Sheaf theory: invertible morphism of sheaves of unital rings on a common topological space, equivalently stalkwise ring isomorphism and compatible restrictions.",
+          "reason": "Open immersion needs an isomorphism of sheaves, separate from homeomorphism of underlying spaces.",
+          "matching_note": "Distinguish from isomorphism of locally ringed spaces."
+        }
+      ]
+    }
+  ]
+}
