@@ -785,10 +785,13 @@ def resolve(workspace, resolutions):
 
 
 def apply_inbox(workspace, limit=20):
-    """Commit-friendly, replay-safe ingestion of explicitly reviewed graph batches.
+    """Replay-safe ingestion with ONE rebuild per contiguous amendment group.
 
-    Receipt is written LAST. Git commits the ledger and receipt together,
-    so a remote restart either sees the entire package or must replay it.
+    Amend packets remain individually immutable and individually receipted, but
+    source-version-compatible complete-node events are validated together. A
+    group with any stale amendment writes no new ledger events or receipts.
+    Mode boundaries retain exact original operation order. The final Git
+    transaction still commits all derived graph files and receipts together.
     """
     graph = graph_path(workspace)
     inbox = graph / "inbox"
@@ -803,6 +806,28 @@ def apply_inbox(workspace, limit=20):
     }
     result = {"applied": [], "already_applied": [], "max_packages": limit}
     remaining = max(0, limit)
+    pending_amend = []
+
+    def receipt(file, pkg, receipt_sha):
+        atomic_json(applied / file.name, {
+            "id": file.stem, "sha256": receipt_sha,
+            "mode": pkg["mode"], "status": "applied_in_independent_graph_only",
+            "human_certified": False,
+        })
+        result["applied"].append(file.stem)
+
+    def flush_amendments():
+        if not pending_amend:
+            return
+        # All append-only events validate against consecutive effective nodes
+        # before amend() writes the ledger, and rebuild() runs only once.
+        combined = [item for _, pkg, _ in pending_amend
+                    for item in pkg["amendments"]]
+        amend(workspace, combined)
+        for file, pkg, receipt_sha in pending_amend:
+            receipt(file, pkg, receipt_sha)
+        pending_amend.clear()
+
     for file in sorted(inbox.glob("*.json")) if inbox.is_dir() else ():
         pkg = read(file)
         if (pkg.get("schema_version") != SCHEMA or
@@ -810,9 +835,8 @@ def apply_inbox(workspace, limit=20):
                 pkg.get("mode") not in valid_modes or
                 not KEY_RE.fullmatch(file.stem)):
             raise PipelineError("Invalid or unsupported dependency graph batch: " + str(file))
-        receipt_file = applied / file.name
         receipt_sha = digest(pkg)
-        prior = read(receipt_file)
+        prior = read(applied / file.name)
         if prior:
             if prior.get("sha256") != receipt_sha or prior.get("mode") != pkg["mode"]:
                 raise PipelineError("Mutated already-applied graph batch " + file.name)
@@ -820,15 +844,15 @@ def apply_inbox(workspace, limit=20):
             continue
         if remaining == 0:
             continue  # Old receipts never starve later unprocessed inbox items.
-        valid_modes[pkg["mode"]](pkg)
+        if pkg["mode"] == "amend":
+            pending_amend.append((file, pkg, receipt_sha))
+        else:
+            flush_amendments()
+            valid_modes[pkg["mode"]](pkg)
+            receipt(file, pkg, receipt_sha)
         remaining -= 1
-        atomic_json(receipt_file, {"id": file.stem, "sha256": receipt_sha,
-                                   "mode": pkg["mode"],
-                                   "status": "applied_in_independent_graph_only",
-                                   "human_certified": False})
-        result["applied"].append(file.stem)
+    flush_amendments()
     return result
-
 
 def scan_worklist(workspace, limit=10):
     """Deterministic, no-network first-pass input for a future Chat reviewer."""
