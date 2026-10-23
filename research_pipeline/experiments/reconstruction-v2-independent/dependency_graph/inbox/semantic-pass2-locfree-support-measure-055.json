@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-locfree-support-measure-055",
+  "mode": "amend",
+  "research_scope": "Five full source-free mathematical reviews on locally free modules, module support, ideal radical and measure-theoretic raw moments; no source updates.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.locfree_support_measure.20261023.01",
+      "formulation_id": "form.fd99f695f227af4a.finite-locally-free-module",
+      "version_sha256": "3e3a982afd8f9e0f63d862b1d168b97985bafe98ce6b1c057dd6a882fbb52186",
+      "expected_node_sha256": "ec5bd5b2a7f675710ff457648c354c9d9b35dfff29746cb299a5e4bb0fe06f53",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read finite local freeness of an R-module on standard open covers of Spec(R), preserving localization, finite rank on each open and potentially varying rank across opens.",
+      "reason": "Reviewed whole mathematical source, current effective adjacency and domain/rank/measure scope. Preserved original wording while noting global mathematical audit concerns.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "prime spectrum Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "localized modules on basic opens",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "ring localization on basic opens",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "locally free R-module",
+          "state": "existing",
+          "target_meaning_id": "meaning.fd99f695f227af4a.locally-free-module"
+        },
+        {
+          "phrase": "standard open cover D(f_i)",
+          "state": "missing",
+          "context": "Algebraic geometry: a family of distinguished Zariski-open subsets D(f_i)={p∈Spec(R):f_i∉p} covering Spec(R), with at least one f_i outside every prime p.",
+          "reason": "Standard-open covers are reusable local data for schemes/modules, distinct from the locally-free property imposed on localizations.",
+          "matching_note": "Provisional source-free contextual prerequisite, pending deduplication and source verification."
+        },
+        {
+          "phrase": "free module of finite rank over R_{f_i}",
+          "state": "missing",
+          "context": "Module theory: free module of finite rank n over the localized commutative ring R_{f_i}, isomorphic to R_{f_i}^{⊕n} for some finite n≥0, allowing n to depend on i.",
+          "reason": "Finite-rank freeness is a reusable module property distinct from the weaker unrestricted free module and from the cover condition.",
+          "matching_note": "Provisional source-free contextual prerequisite, pending deduplication and source verification."
+        },
+        {
+          "phrase": "rank allowed to vary by open set",
+          "state": "external",
+          "disposition": "Finite local freeness need not mean global constant rank or globally free module."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.locfree_support_measure.20261023.02",
+      "formulation_id": "form.fd99f695f227af4a.locally-free-module",
+      "version_sha256": "c54b0729cea02a4280ab01db9eab241c47212b28e848210e986ecec4cdbfb1d0",
+      "expected_node_sha256": "f9f43e8345d6fbe29f99ebe8621f617f953db0bf3275b6898e9ddb5a737ea98a",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read local freeness of an R-module on basic Zariski open cover, with module and ring localization and free modules of possibly infinite and variable rank.",
+      "reason": "Reviewed whole mathematical source, current effective adjacency and domain/rank/measure scope. Preserved original wording while noting global mathematical audit concerns.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "module localization M_{f_i}",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "ring localization R_{f_i}",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "cover of Spec(R) by standard opens D(f_i)",
+          "state": "missing",
+          "context": "Algebraic geometry: family of distinguished opens D(f_i) in Spec(R) with union equal to Spec(R); the f_i need not all be the same and the localizations are taken on these opens.",
+          "reason": "Zariski standard-open covers are independently reusable and should be compared with the related finite-locally-free occurrence during the post-pass audit.",
+          "matching_note": "Provisional source-free contextual prerequisite, pending deduplication and source verification."
+        },
+        {
+          "phrase": "free R_{f_i}-module",
+          "state": "missing",
+          "context": "Module theory: module over the localized ring R_{f_i} admitting a (possibly infinite) basis and therefore isomorphic to a direct sum of copies of R_{f_i}; no finite-rank assumption here.",
+          "reason": "Freeness over a localized ring is independently reusable and must not be conflated with finite-rank freeness.",
+          "matching_note": "Provisional source-free contextual prerequisite, pending deduplication and source verification."
+        },
+        {
+          "phrase": "locally free need not be finite locally free",
+          "state": "external",
+          "disposition": "No finite-rank condition appears in the local freeness statement."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.locfree_support_measure.20261023.03",
+      "formulation_id": "form.fd3c1a1c0145915a.support-finite-module",
+      "version_sha256": "3ef50c040451c484b73e01026f53b414703614ee41c06797e7a8c96513652d4a",
+      "expected_node_sha256": "eff084dcd02ba93163d95133fa47bec26f897d6000785116a396cf1cefd1355f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read support of finite module as primes whose localized module is nonzero and the closedness conclusion under Noetherianity, preserving the prime-spectrum and localization requirements.",
+      "reason": "Reviewed whole mathematical source, current effective adjacency and domain/rank/measure scope. Preserved original wording while noting global mathematical audit concerns.",
+      "references": [
+        {
+          "phrase": "finitely generated R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        },
+        {
+          "phrase": "prime spectrum Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "prime ideal p",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "module localization M_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "Noetherian ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "nonzero localized module M_p",
+          "state": "external",
+          "disposition": "The predicate M_p≠0 is the defining membership test for p in Supp_R(M); module localization is already linked and nonzero is foundational."
+        },
+        {
+          "phrase": "closed subset of Spec(R)",
+          "state": "missing",
+          "context": "Algebraic geometry: Zariski-closed subset of Spec(R), equivalently V(I)={p∈Spec(R):I⊆p} for some ideal I of R; here the support of a finite module is V(Ann_R M).",
+          "reason": "The Zariski closed-set notion is independently reusable. Mathematical-scope audit: for finitely generated modules this support is closed even without requiring R Noetherian.",
+          "matching_note": "Provisional source-free contextual prerequisite, pending deduplication and source verification."
+        },
+        {
+          "phrase": "support of finite module is Zariski closed",
+          "state": "external",
+          "disposition": "Closedness is a consequence of finiteness (indeed holds for finite modules more generally), separate from the definition using nonzero localizations."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.locfree_support_measure.20261023.04",
+      "formulation_id": "form.b9defeff446a0526.ideal-of-definition-local-ring",
+      "version_sha256": "3fb9913ad250771266c5b4cc520056fed2ce4032b1659f4afab34ee40a408a50",
+      "expected_node_sha256": "1633f05dbddd929c1001eb2d984acb9ab185fdee725d464e7217c634f768e186",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the equivalence radical(I)=m and m-primary for an ideal in a Noetherian local ring. Preserved the radical and primary-ideal notions as contextual unassigned references and did not confuse an ideal of definition with an arbitrary m-contained ideal.",
+      "reason": "Reviewed whole mathematical source, current effective adjacency and domain/rank/measure scope. Preserved original wording while noting global mathematical audit concerns.",
+      "references": [
+        {
+          "phrase": "Noetherian local ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "local ring with maximal ideal m",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "ideal I of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "radical of an ideal I",
+          "state": "missing",
+          "context": "Commutative algebra: radical sqrt(I)={r∈R:r^n∈I for some positive integer n} of an ideal I in a commutative ring R.",
+          "reason": "The radical is a reusable ideal operation, distinct from the specific local-ring condition sqrt(I)=m.",
+          "matching_note": "Provisional source-free contextual prerequisite, pending deduplication and source verification."
+        },
+        {
+          "phrase": "m-primary ideal",
+          "state": "missing",
+          "context": "Commutative algebra: m-primary ideal I of a Noetherian local ring (R,m), with sqrt(I)=m and I primary; in this Noetherian local setting radical m is equivalent to m-primary.",
+          "reason": "Primary ideals are reusable and should not be conflated with prime ideals or maximal ideals; record Noetherian-local equivalence explicitly.",
+          "matching_note": "Provisional source-free contextual prerequisite, pending deduplication and source verification."
+        },
+        {
+          "phrase": "equivalently",
+          "state": "external",
+          "disposition": "The two criteria refer to the same ideal I, without claiming every proper ideal has radical m."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.locfree_support_measure.20261023.05",
+      "formulation_id": "form.wave2.foundation.orthogonality-measure-raw-moment",
+      "version_sha256": "9513dcafdb98c01ab292d560fd81f20359d3e78ee36ddb53f7f621e131c51351",
+      "expected_node_sha256": "0c04a33f190f9b4cba22f9618b4ae93bf232fa11300b99647b5dd65e521282f9",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read nth raw moment of nonnegative Borel or Lebesgue–Stieltjes measure as integral of x^n over real interval, conditioned on integrability; distinguish from centered moments.",
+      "reason": "Reviewed whole mathematical source, current effective adjacency and domain/rank/measure scope. Preserved original wording while noting global mathematical audit concerns.",
+      "references": [
+        {
+          "phrase": "nonnegative measure μ",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.nonnegative-measure"
+        },
+        {
+          "phrase": "nonnegative integer n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "Borel sigma algebra",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.alternative39.borel-sigma-algebra-topological"
+        },
+        {
+          "phrase": "Lebesgue–Stieltjes integral of x^n",
+          "state": "missing",
+          "context": "Measure theory: Lebesgue integral ∫_{(a,b)} x^n dμ(x) of a measurable real power function with respect to a Borel/Lebesgue–Stieltjes measure μ on a real interval, with endpoint conventions according to source.",
+          "reason": "The integral relative to a measure is independently reusable; it is not the raw moment itself without the chosen exponent and measure.",
+          "matching_note": "Provisional source-free contextual prerequisite, pending deduplication and source verification."
+        },
+        {
+          "phrase": "μ-integrability of power function",
+          "state": "missing",
+          "context": "Measure theory: μ-integrability of x↦x^n means measurability and ∫_{(a,b)}|x|^n dμ(x)<∞, for n a nonnegative integer, under the conventional finite-L1 meaning of integrable.",
+          "reason": "Integrability is independently reusable; flag that the source's additional 'finite only when integral finite' may be redundant given its integrability assumption.",
+          "matching_note": "Provisional source-free contextual prerequisite, pending deduplication and source verification."
+        },
+        {
+          "phrase": "raw moment versus centered moment",
+          "state": "external",
+          "disposition": "Integrand is x^n rather than (x−mean)^n."
+        }
+      ]
+    }
+  ]
+}
