@@ -507,3 +507,30 @@ These are explicitly reviewed specialization links, not keyword matches.
 Distinct concepts such as monic polynomials, simple versus multiple roots,
 and additional map structure are not collapsed. For preimages, an
 inverse-image **set** does not imply that a map has an inverse function.
+
+
+## Accelerated audit v2 — source-free workflow (2026-10-23)
+
+The following improvements have been implemented and tested. They do not alter the phase gate, mathematical sources, or the certification standard.
+
+1. **Complete graph:** `dependency_global_audit scan` checks cycles across BOTH the original inventory seed edges and the latest effective scan edges. The prioritized queue uses severity, target fan-in and recurrence.
+2. **Mathematical candidate notation:** lexical candidate suggestions preserve arrow order/direction and operators, marking mismatched notation as a conflict and lowering their priority. Surface similarity NEVER authorizes automatic aliases.
+3. **Remember reviewed exceptions:** an optional `dependency_graph/audit_review_decisions.jsonl` records reviewed heuristic leads, with code, formulation ID, original version SHA256, effective node SHA256, occurrence ID (or null), reviewer, substantive rationale (40+ characters) and disposition `accepted_as_correct` or `needs_further_review`. These five identifying fields must match a current warning exactly. Structural/high-severity alerts cannot be suppressed; stale accepted reviews automatically return to the queue.
+4. **Smaller reviewed edits:** explicit manifest changes may supply `updates` plus `remove_fields` instead of `replacement`, with an occurrence ID and effective predecessor SHA. Unchanged metadata is preserved and novel missing-candidate identities are rejected.
+5. **Explicit safe staging:** `dependency_review_submit` checks EVERY packet and overlapping formulation before writing. Default is read-only. `--approved` stages reviewed packets into the isolated inbox; `--approved --commit` makes ONE local Git commit with only those files. No push or certification is automatic.
+6. **One graph rebuild per amendment group:** contiguous amendment packets are validated together, applied with one ledger update and one derived-index rebuild, and retain individual immutable receipts. A stale event aborts the entire group before any ledger mutation.
+
+Commands from a repository checkout:
+
+```bash
+W=research_pipeline/experiments/reconstruction-v2-independent
+python -m research_pipeline.engine.dependency_global_audit --workspace "$W" scan --limit 80 --candidate-limit 80 --snapshot-output /tmp/wave2-full-review.json
+python -m research_pipeline.engine.dependency_global_audit --workspace "$W" prepare --manifest /tmp/reviewed-decisions.json --output-dir /tmp/reviewed-packets --max-per-batch 5
+python -m research_pipeline.engine.dependency_review_submit --workspace "$W" --packet-dir /tmp/reviewed-packets
+# Only after explicit human/assistant contextual mathematical review:
+python -m research_pipeline.engine.dependency_review_submit --workspace "$W" --packet-dir /tmp/reviewed-packets --approved --commit
+```
+
+The final command creates a local commit, never pushes. For connector-based GitHub work, commit the SAME mathematically reviewed packets atomically and verify every applied receipt and both CI workflows. The consolidation gate remains FALSE until the full mathematical/contextual/citation/alias review is complete.
+
+---
