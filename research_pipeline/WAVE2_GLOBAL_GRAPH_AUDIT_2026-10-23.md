@@ -83,3 +83,19 @@ The previous per-formulation manual fetch/replay/hash/preflight sequence has bee
 4. Keep the accelerator, at most five whole nodes per packet, **multiple non-overlapping packets per one commit** where safe, exact CI/receipt checks, and GitHub checkpoint updates. No promotion, production corpus comparison, breadth Batch143 or manual certification.
 
 This checkpoint supersedes the older Packet 108 counts and the older dated Chunk28 resume positions, not the core contractual phase gates. An automatically clean graph is **not** a mathematically certified dictionary.
+
+
+## Audit accelerator v2: implementation and verification (2026-10-23)
+
+This round improved **infrastructure only**; there were no new mathematical edits and no change to the phase gate.
+
+- Full graph cycle detection now includes inventoried seed meaning relations as well as effective scanned edges. The prior read-only scanner checked scanned edges alone.
+- Potential contextual mismatches are ranked using severity, recurring patterns, and effective graph dependency fan-in, with review-only flags remaining explicitly nonauthoritative.
+- Notation-aware candidate grouping marks reversed arrows and incompatible algebraic symbols as conflicts, preventing unqualified perfect lexical matches from driving review or aliases.
+- Explicitly accepted *heuristic* review decisions can be recorded with formulation-version, effective-node and occurrence-bound hashes; they expire on any relevant node change. Integrity and high-severity findings cannot be suppressed.
+- Reviewed correction manifests can use reference-level `updates` and `remove_fields`, preserving untouched reference metadata.
+- `dependency_review_submit.py` performs whole-collection preflight, rejects overlapping/stale packages, and supports safe inbox staging or one explicitly approved **local** commit. It never pushes remotely.
+- `apply_inbox` now validates and appends consecutive amendment packets as a single group, rebuilding derived indexes once while retaining every individual receipt and crash-replay protection. Tests exercise both successful grouped application and all-or-nothing rejection of a stale event.
+- Existing isolated test suite and the live independent Wave2 global audit ran successfully in [Actions 40017509176](https://github.com/Zengez/mathDef/actions/runs/40017509176), [graph Actions 40017509260](https://github.com/Zengez/mathDef/actions/runs/40017509260), and [final isolated Actions 40017616071](https://github.com/Zengez/mathDef/actions/runs/40017616071).
+
+See the new **Accelerated audit v2** section of `research_pipeline/DEPENDENCY_FIRST_WORKFLOW.md` before resuming. The last mathematical position remains Packet 117: 611 meanings, 659/659 scanned, zero ambiguous/unassigned, 763 amendments, 826 provisional missing occurrences, 724 raw candidates, 78 aliases, 646 unresolved canonical candidates, zero graph cycles, **consolidation gate false**.
