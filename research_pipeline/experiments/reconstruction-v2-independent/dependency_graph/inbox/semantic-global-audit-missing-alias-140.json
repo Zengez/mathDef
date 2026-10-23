@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "semantic-global-audit-missing-alias-140",
+  "mode": "alias",
+  "research_scope": "Independent Wave2 source-free review of shared mathematical prerequisites with original context and non-merge restrictions.",
+  "aliases": [
+    {
+      "alias_id": "alias.global-audit.20261023.099",
+      "alias_candidate_id": "missing.a86515746a5993d1b7b4",
+      "canonical_candidate_id": "missing.0b84d58d6738b7667a3d",
+      "reason": "The 'scheme' source and 'affine scheme' source both invoke isomorphism of locally ringed spaces, meaning a two-sided inverse among morphisms preserving stalk-local ring structure. Scheme, affine and sheaf-local hypotheses remain in their parent definitions.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.100",
+      "alias_candidate_id": "missing.8b4f1a600244dc2dfa01",
+      "canonical_candidate_id": "missing.189a1049986dd4f651f4",
+      "reason": "The topological boundary expression cl_X(A)\\int_X(A) uses the same relative set complement C\\I as the sigma-algebra difference axiom A\\B. Closure and interior are independently typed sources and not transferred into set difference.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.101",
+      "alias_candidate_id": "missing.b149b3184163d8ed8644",
+      "canonical_candidate_id": "missing.189a1049986dd4f651f4",
+      "reason": "The constructible-set source uses U\\V for retrocompact open U,V, an instance of the binary set difference A\\B in the sigma-algebra source. Retrocompactness and openness are extra parent hypotheses, not generic properties of difference.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.102",
+      "alias_candidate_id": "missing.c521c381c9c487c1b47f",
+      "canonical_candidate_id": "missing.189a1049986dd4f651f4",
+      "reason": "The boundary formula's X\\A is the relative complement of A in ambient set X, a special case of A\\B. The ambient X and subsequent topological closure remain source-specific; no identification is made between complement and closure.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.103",
+      "alias_candidate_id": "missing.8a2ef3bfa9962f1da440",
+      "canonical_candidate_id": "missing.3a244864ffa7450b328d",
+      "reason": "Noetherian modules and Noetherian rings both invoke existence of an inclusion-maximal member of every nonempty poset family of respectively submodules or ideals. The abstract maximal-versus-greatest predicate is the same; the eligible family type and Noetherian properties are not identical.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    }
+  ]
+}

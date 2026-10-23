@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "semantic-global-audit-missing-alias-138",
+  "mode": "alias",
+  "research_scope": "Independent Wave2 source-free review of shared mathematical prerequisites with original context and non-merge restrictions.",
+  "aliases": [
+    {
+      "alias_id": "alias.global-audit.20261023.089",
+      "alias_candidate_id": "missing.3cad3880c2353eda8fd8",
+      "canonical_candidate_id": "missing.9f6f3ee9e141231a54d4",
+      "reason": "Both congruence-modulo-m variants for integers use m|(a−b), or existence of k∈ℤ with a−b=km; one emphasizes m>0 and the other m≠0. The common prerequisite is integer divisibility; positive-modulus convention stays parent-specific.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.090",
+      "alias_candidate_id": "missing.49539557333974b809f2",
+      "canonical_candidate_id": "missing.3b722d1bc0df2b9a4a1a",
+      "reason": "Locally uniform convergence and local quasi-compactness both quantify over general neighborhoods containing an open neighborhood of x, which need not themselves be open. Their respective uniformity and compactness conditions remain parent-level; do not merge these neighborhoods with the stricter open-neighborhood identity.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.091",
+      "alias_candidate_id": "missing.3ed8620c22a31b2b683e",
+      "canonical_candidate_id": "missing.8e961cb57c3f60513be8",
+      "reason": "The constructible-spectrum formulation uses the distinguished open D(f)={p:f∉p}, just as the Zariski-scheme topology and local complete-intersection formulations. These are the same principal Zariski-open prerequisite, with constructible Boolean operations and covering conditions retained in parents.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.092",
+      "alias_candidate_id": "missing.232358a9d50073615a4d",
+      "canonical_candidate_id": "missing.8e961cb57c3f60513be8",
+      "reason": "Local section gluing over standard D(f_i) and the Zariski-topology definition use the same distinguished prime-spectrum open D(f), where f_i is a specialized generator. Pairwise intersections D(f_i f_j), unit-ideal cover and gluing are additional parent conditions.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.093",
+      "alias_candidate_id": "missing.7d6fabf1bc337e0d6239",
+      "canonical_candidate_id": "missing.b05a1814a9da0d01922a",
+      "reason": "Scheme morphisms and morphisms of locally ringed spaces require the same local-homomorphism condition on stalk maps O_{Y,f(x)}→O_{X,x}, preserving maximal ideals by inverse image. Scheme-specific global sheaf compatibility is a separate parent condition.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    }
+  ]
+}
