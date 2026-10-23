@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "id": "semantic-global-audit-category-size-107",
+  "mode": "amend",
+  "research_scope": "Mandatory full-graph contextual scope audit of four category-theoretic definitions: replace overrestrictive small-category targets with a pre-existing unrestricted-category missing candidate; no source or meaning changes.",
+  "amendments": [
+    {
+      "amendment_id": "amend.global_audit.category_scope.20261023.01",
+      "formulation_id": "form.8f7683667fac9d28.general-categorical-coproduct",
+      "version_sha256": "3f6f9aeda93c7ec5bbf831789085f35649d0ee0c59a27e0c4fe6788df2405cac",
+      "expected_node_sha256": "4fc16310926f8bb4ca415e2647d23f1597db4966e35275ae6bd59f8dde5363b2",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Comprehensive contextual audit: read the complete original mathematical text for 'coproduct of a family', replayed the latest append-only replacement, and checked its ambient category C. Neither definition requires C to be small. Replace precisely one unwarranted small-category dependency with the already pooled size-unrestricted category candidate; preserve every other source-free reference and mathematical/source version.",
+      "reason": "Remove a mathematically overrestrictive small-category dependency in a source definition that only quantifies over an ambient category C of unspecified size; reuse existing contextual missing-category identity without admitting new definitions or changing original text.",
+      "references": [
+        {
+          "phrase": "colimit of a diagram",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f7683667fac9d28.category-colimit"
+        },
+        {
+          "phrase": "discrete indexing category",
+          "state": "existing",
+          "target_meaning_id": "meaning.3653fa0ad844d187.discrete-category"
+        },
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original source occurrence: \"family of objects X_i in category C\". This is an ambient category of unspecified size; the independently screened small-category meaning would impose an unwarranted smallness hypothesis. Reuse the existing unrestricted-category missing candidate, retaining the original wording in this note."
+        },
+        {
+          "disposition": "The structure arrows X_i→coprod X_i and their joint universal factorization are the defining coproduct cocone already represented by the linked colimit of a discrete diagram, not a separate prerequisite. The term 'injections' here should not be assumed to mean monomorphisms in an arbitrary category; flag for final wording audit.",
+          "phrase": "universal coproduct injections",
+          "state": "external"
+        },
+        {
+          "disposition": "A universal map out of the coproduct is specified; do not reverse it to product projections.",
+          "phrase": "dual universal property",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.global_audit.category_scope.20261023.02",
+      "formulation_id": "form.8f7683667fac9d28.general-categorical-product",
+      "version_sha256": "d39af974f135ba94dca5096b24a041ef006869f4ed4eb6fa7ce2fecba5c2c4d8",
+      "expected_node_sha256": "d32f4e666770ab5a26d928fdcec0fd6e06780626fe015148c28c95e39d7fd622",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Comprehensive contextual audit: read the complete original mathematical text for 'product of a family', replayed the latest append-only replacement, and checked its ambient category C. Neither definition requires C to be small. Replace precisely one unwarranted small-category dependency with the already pooled size-unrestricted category candidate; preserve every other source-free reference and mathematical/source version.",
+      "reason": "Remove a mathematically overrestrictive small-category dependency in a source definition that only quantifies over an ambient category C of unspecified size; reuse existing contextual missing-category identity without admitting new definitions or changing original text.",
+      "references": [
+        {
+          "phrase": "limit of a diagram",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f7683667fac9d28.category-limit"
+        },
+        {
+          "phrase": "discrete indexing category",
+          "state": "existing",
+          "target_meaning_id": "meaning.3653fa0ad844d187.discrete-category"
+        },
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original source occurrence: \"objects X_i in a category C\". This is an ambient category of unspecified size; the independently screened small-category meaning would impose an unwarranted smallness hypothesis. Reuse the existing unrestricted-category missing candidate, retaining the original wording in this note."
+        },
+        {
+          "disposition": "The projections from the product object to each X_i and their joint universal factorization property are the limiting cone that defines the categorical product of a discrete diagram; no separate self-referential product target is needed.",
+          "phrase": "universal product projections",
+          "state": "external"
+        },
+        {
+          "disposition": "Universal maps into the product follow projections, not coproduct injections.",
+          "phrase": "usual universal property",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.global_audit.category_scope.20261023.03",
+      "formulation_id": "form.8069f09a769d34f5.binary-product-category",
+      "version_sha256": "65b21cb3c3c5aa0ff91181ae46577ca6661613e8e6704308e5f0af144dfa56e2",
+      "expected_node_sha256": "d7abb3fbd70c5a57e1deefd276e408c00ba693bcd7a6c3d18297a49f8b0ce3ef",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Comprehensive contextual audit: read the complete original mathematical text for 'binary product of objects', replayed the latest append-only replacement, and checked its ambient category C. Neither definition requires C to be small. Replace precisely one unwarranted small-category dependency with the already pooled size-unrestricted category candidate; preserve every other source-free reference and mathematical/source version.",
+      "reason": "Remove a mathematically overrestrictive small-category dependency in a source definition that only quantifies over an ambient category C of unspecified size; reuse existing contextual missing-category identity without admitting new definitions or changing original text.",
+      "references": [
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original source occurrence: \"category C\". This is an ambient category of unspecified size; the independently screened small-category meaning would impose an unwarranted smallness hypothesis. Reuse the existing unrestricted-category missing candidate, retaining the original wording in this note."
+        },
+        {
+          "disposition": "The pair of projection arrows from P forms the defining product cone and is qualified by the universal factorization condition stated here; ordinary category morphisms are already supplied by the linked categorical setting.",
+          "phrase": "projections p:P→X and q:P→Y",
+          "state": "external"
+        },
+        {
+          "disposition": "The uniqueness of the induced h commuting with both projections is the universal product property, not mere existence of P.",
+          "phrase": "for every object Z and arrows f,g a unique h exists",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.global_audit.category_scope.20261023.04",
+      "formulation_id": "form.eed0c34725956bb5.categorical-monomorphism",
+      "version_sha256": "b096542c7e9230bb2194681c3e1bdf4ab56924d42b39c977ca3c1df4ed8da7d7",
+      "expected_node_sha256": "d4b20b002e510bd75c30433d5d1de4e8a5bafce3d796fa1266b1614e756b7e4c",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Comprehensive contextual audit: read the complete original mathematical text for 'monomorphism', replayed the latest append-only replacement, and checked its ambient category C. Neither definition requires C to be small. Replace precisely one unwarranted small-category dependency with the already pooled size-unrestricted category candidate; preserve every other source-free reference and mathematical/source version.",
+      "reason": "Remove a mathematically overrestrictive small-category dependency in a source definition that only quantifies over an ambient category C of unspecified size; reuse existing contextual missing-category identity without admitting new definitions or changing original text.",
+      "references": [
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original source occurrence: \"category C with its objects and morphisms\". This is an ambient category of unspecified size; the independently screened small-category meaning would impose an unwarranted smallness hypothesis. Reuse the existing unrestricted-category missing candidate, retaining the original wording in this note."
+        },
+        {
+          "context": "Category theory: two arrows with common source W and target X, available for composition by f:X→Y.",
+          "matching_note": "Provisional context-specific missing concept requiring global identity audit.",
+          "missing_candidate_id": "missing.862d46709395bdb180cc",
+          "phrase": "parallel arrows a,b:W→X",
+          "state": "missing"
+        },
+        {
+          "disposition": "Left cancellation against arbitrary parallel arrows is the defining monomorphism criterion.",
+          "phrase": "left cancellation by f",
+          "state": "external"
+        },
+        {
+          "disposition": "Categorical monicity is quantified over every source object; it is not defined by elementwise injectivity in arbitrary categories.",
+          "phrase": "for all objects W and all parallel arrows W→X",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}
