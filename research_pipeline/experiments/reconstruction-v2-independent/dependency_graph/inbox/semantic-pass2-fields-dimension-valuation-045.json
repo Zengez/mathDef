@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-fields-dimension-valuation-045",
+  "mode": "amend",
+  "research_scope": "Five complete source-free reviews: base-preserving rational function fields, dimension-function axioms, valuation criterion, profinite topology and common roots of polynomials; no new source or meaning.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.fields_dimension_valuation.20261022.01",
+      "formulation_id": "form.0c4c23579959165d.purely-transcendental-extension",
+      "version_sha256": "939c0e5356e55ade9056c38aa6641930c0c75238d244e965899ebd197ced71c3",
+      "expected_node_sha256": "5a6c48118b0e9b19b28c2468496c2461e10eba5dd7d3e3c5275e7ac7a6b164f9",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed the purely transcendental extension formulation, linked independence over the base, and saved base-preserving field isomorphisms and rational function fields without external research.",
+      "reason": "Re-reviewed the entire source definition and all existing effective dependencies in independent Wave2, retaining prior contextual meanings and separating standalone prerequisites from the formulation's defining predicates.",
+      "references": [
+        {
+          "matching_note": "The corpus already defines general K/k field extensions under display label 'extension field'; the field inclusion is exactly the ambient concept used here. Reviewed without external source research.",
+          "phrase": "extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "phrase": "isomorphic as an extension of k",
+          "state": "missing",
+          "context": "Field theory: isomorphism φ:K→L of field extensions of k with φ∘ι_K=ι_L for the chosen embeddings of k into K,L; under identified k-subfields φ fixes every element of k.",
+          "reason": "Base-preserving isomorphism of field extensions is stronger than an arbitrary abstract field isomorphism and is independently reusable.",
+          "matching_note": "Provisional source-free contextual classification; unique identity still subject to global audit."
+        },
+        {
+          "phrase": "field of rational functions in an arbitrary set of indeterminates over k",
+          "state": "missing",
+          "context": "Field theory: rational function field k(X_i : i∈I), defined as the field of fractions of the polynomial algebra in an arbitrary set I of algebraically independent indeterminates over field k; polynomial elements have finite support.",
+          "reason": "This field construction is separately reusable; distinguish it from a general field extension, algebraic closure, or arbitrary single-variable polynomial ring.",
+          "matching_note": "Provisional source-free contextual classification; unique identity still subject to global audit."
+        },
+        {
+          "matching_note": "Algebraic independence over k already has a matching contextual formulation.",
+          "phrase": "algebraically independent indeterminates over k",
+          "state": "existing",
+          "target_meaning_id": "meaning.0c4c23579959165d.algebraic-independence"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fields_dimension_valuation.20261022.02",
+      "formulation_id": "form.e205fb263a537d99.dimension-function-topological",
+      "version_sha256": "11f9dc09c438e60b0e9250f6ac3775b7ecb5878a724be15bef67377e0c1fe926",
+      "expected_node_sha256": "6754b525692720821cc604791a868070da5cbb57093dc9435d5359eebc1af14e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed full dimension-function text for integer codomain, specialization order, strict decrease and unit steps on immediate specializations.",
+      "reason": "Re-reviewed the entire source definition and all existing effective dependencies in independent Wave2, retaining prior contextual meanings and separating standalone prerequisites from the formulation's defining predicates.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "mapping δ:X→Z",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "ring of integers Z",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.integer-ring"
+        },
+        {
+          "phrase": "specialization relation between points",
+          "state": "existing",
+          "target_meaning_id": "meaning.672a4a502273760f.specialization-topological"
+        },
+        {
+          "phrase": "immediate specialization",
+          "state": "existing",
+          "target_meaning_id": "meaning.e205fb263a537d99.immediate-specialization"
+        },
+        {
+          "phrase": "strict decrease along specialization",
+          "state": "external",
+          "disposition": "The strict inequality required on every proper specialization is one of the dimension function's defining axioms; the specialization relation and integer codomain are already linked."
+        },
+        {
+          "phrase": "one-unit drop for an immediate specialization",
+          "state": "external",
+          "disposition": "The requirement that the integer value drop by exactly one along every immediate specialization is the second defining axiom, not another standalone concept. Check orientation and source convention in later global audit."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fields_dimension_valuation.20261022.03",
+      "formulation_id": "form.f72779e263dd3e51.valuation-ring-fraction-field",
+      "version_sha256": "e01ad808e47d1fe8965631d98b00c3cd65a501155985197d8d0f7a9dc7067ff0",
+      "expected_node_sha256": "b0d6d1984596417e63cdb165ad78b18d4c5cec19824d27c244139a340bd96578",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read valuation ring as an integral domain with its own fraction field satisfying reciprocal membership for every nonzero fraction; distinguished fractions in the field from arbitrary ring elements.",
+      "reason": "Re-reviewed the entire source definition and all existing effective dependencies in independent Wave2, retaining prior contextual meanings and separating standalone prerequisites from the formulation's defining predicates.",
+      "references": [
+        {
+          "phrase": "integral domain V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.integral-domain"
+        },
+        {
+          "phrase": "fraction field K of V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.integer59.fraction-field-integral-domain"
+        },
+        {
+          "phrase": "multiplicative inverses in field K",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "nonzero fraction x in K",
+          "state": "external",
+          "disposition": "This is the universal quantifier domain K×=K\\{0} in the definition, ensuring x^{-1} exists. The field of fractions and field inverse operations are already linked."
+        },
+        {
+          "phrase": "x or x inverse belongs to V",
+          "state": "external",
+          "disposition": "Inclusive disjunction of x∈V and x^{-1}∈V for every nonzero x∈K is precisely the defining valuation-ring membership criterion; it is not a separate prerequisite. Both may hold for a unit of V."
+        },
+        {
+          "phrase": "valuation-ring reciprocity criterion",
+          "state": "external",
+          "disposition": "This is an equivalent characterization independent of a chosen explicit valuation map, not a discrete value-group hypothesis."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fields_dimension_valuation.20261022.04",
+      "formulation_id": "form.646e4dcbd9b6f1e1.profinite-topological-group",
+      "version_sha256": "d5fc847f8828eb43ca8652b15418dd5f4bf6134ca0a4c3fffb9c744e15ccd4a5",
+      "expected_node_sha256": "f6bf78f00cbfaa7b2786f9df5aa34a91f43cfacd98c349504443148400f19948",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the whole profinite-group definition, kept the topological group and inverse-limit prerequisites, and retained the stronger topological group isomorphism plus finite discrete structures instead of identifying an arbitrary compact group as profinite.",
+      "reason": "Re-reviewed the entire source definition and all existing effective dependencies in independent Wave2, retaining prior contextual meanings and separating standalone prerequisites from the formulation's defining predicates.",
+      "references": [
+        {
+          "state": "existing",
+          "phrase": "topological group",
+          "target_meaning_id": "meaning.646e4dcbd9b6f1e1.topological-group"
+        },
+        {
+          "state": "existing",
+          "phrase": "inverse limit",
+          "target_meaning_id": "meaning.a1d0959fa7703e41.inverse-limit-topological-spaces"
+        },
+        {
+          "state": "existing",
+          "phrase": "finite discrete topological groups",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "state": "missing",
+          "phrase": "finite discrete topological groups",
+          "context": "Topology and group theory: finite abstract groups endowed with their discrete topology, where multiplication and inversion are continuous; morphisms of the inverse system are continuous group homomorphisms.",
+          "reason": "The finite discrete group objects forming the inverse system are a contextual reusable prerequisite; distinguish them from arbitrary finite groups without specified topology.",
+          "matching_note": "Provisional source-free contextual classification; unique identity still subject to global audit."
+        },
+        {
+          "state": "missing",
+          "phrase": "isomorphic as a topological group",
+          "context": "Topological group theory: group isomorphism φ:G→H that is also a homeomorphism, equivalently a continuous bijective group homomorphism whose inverse is continuous.",
+          "reason": "A topological-group isomorphism must preserve both group operations and topology; a bare group isomorphism or a bijection/homeomorphism alone is insufficient.",
+          "matching_note": "Provisional source-free contextual classification; unique identity still subject to global audit."
+        },
+        {
+          "state": "external",
+          "phrase": "inverse limit of finite discrete topological groups",
+          "disposition": "The system is indexed by cofiltered compatible homomorphisms, not an arbitrary product of finite groups."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fields_dimension_valuation.20261022.05",
+      "formulation_id": "form.e606496d592fe305.relatively-prime-polynomials-roots",
+      "version_sha256": "4ec4c4b74d7da9bd6497cfcb0db9458fba2cfd7c08cfaac758c56fb3a5dd049c",
+      "expected_node_sha256": "40028af12b006f2c9bd0b7bfaee2dbb2e8e37c203db937ab1425ae77f1dea637",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the roots-based equivalent criterion for two coprime polynomials over arbitrary k, ensuring common zeros are tested in an algebraic closure rather than only in k itself.",
+      "reason": "Re-reviewed the entire source definition and all existing effective dependencies in independent Wave2, retaining prior contextual meanings and separating standalone prerequisites from the formulation's defining predicates.",
+      "references": [
+        {
+          "phrase": "field k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "algebraic closure of k",
+          "state": "existing",
+          "target_meaning_id": "meaning.39488f3e396a1c77.algebraic-closure"
+        },
+        {
+          "phrase": "polynomial f or g over k",
+          "state": "missing",
+          "context": "Polynomial algebra: arbitrary elements f,g∈k[X] of the univariate polynomial ring over a field k, including zero and constant polynomials; each polynomial may be evaluated in an extension field of k.",
+          "reason": "Univariate polynomial elements are reusable objects; do not link to a nonzero-polynomial-degree definition because zero polynomials are allowed here.",
+          "matching_note": "Provisional source-free contextual classification; unique identity still subject to global audit."
+        },
+        {
+          "phrase": "common zero of f and g",
+          "state": "missing",
+          "context": "Polynomial algebra: a common zero of f,g∈k[X] in an extension L/k is an element α∈L with f(α)=0 and g(α)=0, in this formulation L is an algebraic closure of k.",
+          "reason": "A simultaneous polynomial root is independently reusable and stronger than specifying a root of one polynomial; preserve extension-field context and compare during later missing-candidate audit.",
+          "matching_note": "Provisional source-free contextual classification; unique identity still subject to global audit."
+        },
+        {
+          "phrase": "coprimality iff absence of common algebraic-closure root",
+          "state": "external",
+          "disposition": "Univariate polynomial equivalence over a field; k-rational roots alone do not suffice for this criterion."
+        }
+      ]
+    }
+  ]
+}
