@@ -133,14 +133,19 @@ def stage_reviewed_packets(workspace: Path, packet_dir: Path, *,
                     delete=False) as t:
                 tmp = Path(t.name)
                 try:
-                    shutil.copyfileobj(path.open("rb"), t)
+                    with path.open("rb") as source:
+                        shutil.copyfileobj(source, t)
                 except Exception:
                     tmp.unlink(missing_ok=True)
                     raise
-            if target.exists():
+            # Hard-link publication is atomic and cannot overwrite another
+            # editor's concurrently created inbox packet (unlike os.replace).
+            try:
+                os.link(tmp, target)
+            except FileExistsError as exc:
+                raise PipelineError("Concurrent review packet already exists") from exc
+            finally:
                 tmp.unlink(missing_ok=True)
-                raise PipelineError("Concurrent review packet already exists")
-            os.replace(tmp, target)
             written.append(target)
     except Exception:
         for path in written:
