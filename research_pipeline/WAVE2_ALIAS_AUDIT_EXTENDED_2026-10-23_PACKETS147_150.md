@@ -1,6 +1,6 @@
 # Extended Wave2 dependency audit, 2026-10-23 — packets 147–150
 
-**Status:** twenty mathematically source-context-reviewed identity packets staged for independent graph workflow; receipts and both CI statuses must be verified before counting.
+**Status: VERIFIED AND APPLIED.** All four alias packets 147–150 have exact receipts with `status=applied_in_independent_graph_only`, `human_certified=false`. [Independent graph Actions 40030704374](https://github.com/Zengez/mathDef/actions/runs/40030704374) and [isolated Actions 40030704375](https://github.com/Zengez/mathDef/actions/runs/40030704375) both SUCCESS. Twenty source-anchored aliases increased cumulative aliases from 197 to 217 and reduced canonical unresolved from 527 to 507.
 
 ## Scope
 
@@ -21,3 +21,7 @@ Reviewed 20 contextual candidate aliases against both full inventoried source fo
 ## Audit completion protocol
 
 Check exact receipts `semantic-global-audit-missing-alias-147.json` through `150.json` in `dependency_graph/applied/`; require `status=applied_in_independent_graph_only` and `human_certified=false`, plus green graph and isolated test workflows. Inspect live STATE, CHECKPOINT, version fingerprint and source inventory afterward. This stage does not enable missing-definition research, human certification, original corpus comparison, Wave1 edits, source correction, breadth expansion, or consolidation-gate sealing.
+
+## Final verified round state
+
+The next resolution packet 151 and alias packets 152–153 also passed independent graph/isolated test validation. This extended audit round finished at **226 cumulative reviewed aliases, 4 version-pinned candidate-to-existing-meaning resolutions, 494 remaining unresolved canonical identities, 822 provisional missing occurrences, 765 append-only amendments, 611 meanings and 659/659 completed formulations**. Gate remains FALSE. Read the later reports and live STATE to recover the exact fingerprint.

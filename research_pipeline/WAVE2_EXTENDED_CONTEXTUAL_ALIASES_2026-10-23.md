@@ -1,6 +1,6 @@
 # Wave2 extended contextual alias audit — October 23 2026, packets 152–153
 
-**Status:** nine source-reviewed cross-context prerequisite identities staged; exact graph receipts and isolated tests still required.
+**Status: VERIFIED AND APPLIED.** Both alias packets 152–153 have exact independent-only receipts with `human_certified=false`; [independent graph Actions 40031447614](https://github.com/Zengez/mathDef/actions/runs/40031447614) and [isolated Actions 40031447659](https://github.com/Zengez/mathDef/actions/runs/40031447659) both SUCCESS. Nine reviewed aliases bring the cumulative total to 226 and unresolved canonical identities to 494.
 
 Baseline after 147–151: 611 independent meanings, 659 complete formulation scans, 217 aliases, 4 candidate-to-existing-meaning resolutions, 503 unresolved canonical identities, 822 missing occurrences, 765 amendments, consolidation gate FALSE.
 

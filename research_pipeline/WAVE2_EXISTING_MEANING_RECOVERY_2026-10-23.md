@@ -1,6 +1,6 @@
 # Existing-meaning recovery from provisional missing candidates — October 23 2026
 
-**Status:** Four reviewer-anchored resolutions staged. Verify exact receipt and two CI checks prior to counting.
+**Status: VERIFIED AND APPLIED.** One packet 151, containing four version-pinned resolutions, has exact `applied_in_independent_graph_only` receipt with `human_certified=false`. [Independent graph Actions 40030934363](https://github.com/Zengez/mathDef/actions/runs/40030934363) and [isolated Actions 40030934536](https://github.com/Zengez/mathDef/actions/runs/40030934536) both SUCCESS; the four records resolved four candidate identities against existing meaning definitions, without new source/meaning additions.
 
 The full independent 659-formulation inventory already contains meanings for four prerequisites independently classified as provisional missing: metric open ball, perfect closure of field, measurable target space, and F-linear vector-space transformation. Reviewed both the parent source definition and the destination meaning's exact mathematical formulation, checked object types and kept source-specific restrictions (metric topology, characteristic, independence and boundedness) at the parent level.
 
@@ -16,3 +16,7 @@ The source-free appending `resolve` packet 151 contains four **version-pinned** 
 - Neither local compactness nor a closed embedding is silently promoted from its individual prerequisite.
 
 No external source research, production mathDef/Wave1 comparison, original source rewriting, breadth expansion, gate sealing or human certification is authorized by these decisions.
+
+## Caveat for perfect closure
+
+The existing meaning **perfect closure of a field** explicitly states its construction for characteristic p>0. A source context uses `k^perf` for arbitrary fields, naturally k itself when characteristic zero. The resolution reuses the correct positive-characteristic mathematical object, but the characteristic-zero convention is NOT literally documented by the existing full source formulation and must be checked in a later meaning-variant/source review. Structural existing-target resolution is not human citation certification.
