@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "semantic-global-audit-missing-alias-129",
+  "mode": "alias",
+  "research_scope": "Source-free mathematical prerequisite identity audit against original formulation text; parent scope and stronger structural conditions remain distinct.",
+  "aliases": [
+    {
+      "alias_id": "alias.global-audit.20261023.049",
+      "alias_candidate_id": "missing.15503c39af2a9bf386ef",
+      "canonical_candidate_id": "missing.6614c6b7c105cc0e6415",
+      "reason": "The categorical-compactness formulation writes Hom_C(X,M_i), and the preadditive and representable-presheaf formulations write Hom_C(X,Y). The prerequisite is the collection of C-arrows with fixed endpoints. Compactness uses set-valued Hom and may need its local-smallness or universe convention, retained in the parent formulation rather than imposed on the underlying Hom-collection.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.050",
+      "alias_candidate_id": "missing.2736dd8ef54a06c79e42",
+      "canonical_candidate_id": "missing.9583e5aa27671c66640e",
+      "reason": "The category-fibred-in-sets formulation and the category-fibred-in-setoids formulation use exactly the same fibre category E_U: objects e of E with p(e)=U and morphisms whose p-image is id_U. Whether the fibre is discrete or a setoid is an additional distinct restriction in the two parent definitions.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.051",
+      "alias_candidate_id": "missing.2a4c23153be5ee32b75f",
+      "canonical_candidate_id": "missing.b963edbe734f35266d3a",
+      "reason": "A system of parameters generates an m-primary ideal, and an ideal of definition of a Noetherian local ring is equivalently an ideal with radical m. Within the stated Noetherian local context sqrt(I)=m implies I is m-primary; the common prerequisite is the m-primary-ideal predicate, not equivalence of the two different parent concepts.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.052",
+      "alias_candidate_id": "missing.2fe33a0bd27720bf99b2",
+      "canonical_candidate_id": "missing.50fc57153b93520a247a",
+      "reason": "The finitely presented ring-map source writes S≅R[x_1,…,x_n]/(f_1,…,f_m). This invokes the general quotient-ring operation of a commutative unital ring by an ideal, specialized to a polynomial algebra and finitely generated relation ideal; those polynomial and finite-presentation requirements remain parent-specific.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.053",
+      "alias_candidate_id": "missing.49bede3253e851abfc9e",
+      "canonical_candidate_id": "missing.50fc57153b93520a247a",
+      "reason": "The global-complete-intersection-algebra source presents S as k[x_1,…,x_n]/(f_1,…,f_c). It invokes the same quotient-ring construction using ideal cosets and inherited ring operations; polynomial variables, finite relations, dimension equality and complete-intersection hypotheses are separately retained in the parent mathematical statement.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    }
+  ]
+}
