@@ -1,7 +1,7 @@
 {
   "configuration_evidence": {
     "adapter_config_sha256": "e41121ce4a4e76e5fab0d32505f4d6850c154515b17e0c5144d4148e7ceb69ce",
-    "resume_plan_sha256": "cfaa4531fae3721f2620af81d301eec40de34706d6889e6ec33d12963c15b9ca"
+    "resume_plan_sha256": "c719f37231988b2d6a6371694881379ea7bad49f184c42412237300e7b0f50b5"
   },
   "domain_validation": {
     "dependency_graph_has_cycles": false,
@@ -85,7 +85,7 @@
     "Chunk24: general object automorphism group, vertical automorphism kernel for relative inertia, natural transformations over base identities and fibre-category morphism projection require context-specific matching.",
     "Chunk24: separably closed fields need not be algebraically closed in characteristic p; saturated chains maximal by unrefinability may differ in length."
   ],
-  "next_action": "VERIFIED global graph audit through Packet 108 (2026-10-23): 611 meanings, 659/659 complete scans, 0 unassigned/ambiguous, 785 provisional missing occurrences, 724 raw missing candidates, 78 aliases, 646 unresolved canonical candidates, 722 amendments, 651 structurally Open / 8 Closed. Packets 107 and 108 corrected ten false category/parallel-arrow targets across nine formulations without adding missing-candidate identities; graph and isolated test Actions SUCCESS with exact applied receipts. All 2,708 combined edges (1,822 scan, 886 seed) have zero self-edges and zero multi-meaning strongly connected components. Read research_pipeline/WAVE2_GLOBAL_GRAPH_AUDIT_2026-10-23.md, then live graph. Continue targeted full-text contextual type/scope, mathematical rigor, source citation, variant-equivalence, and missing-candidate alias reviews BEFORE any consolidation gate, missing research, breadth expansion, certification or freeze.",
+  "next_action": "ACCELERATOR VERIFIED 2026-10-23: New read-only global scanner and offline reviewed-packet builder (research_pipeline/engine/dependency_global_audit.py) is implemented with targeted regression tests and LIVE Wave2 full-scan CI (run 40004385627 SUCCESS, 14-day wave2-global-dependency-review artifact). Resume mathematical/source/contextual/candidate alias audit by reviewing prioritized full-graph leads and bounded related groups, NOT manual reloading per node. Last effective graph snapshot unchanged from packet 108: 611 meanings, 659/659 scans, 0 unassigned / 0 ambiguous, 722 amendments, 785 missing occurrences, 724 candidates (646 unresolved canonical, 78 alias records), 0 graph SCC cycles; consolidation gate still false. Read new global audit checkpoint and live STATE. No external source research, new source content, broad Batch143, freeze or certification.",
   "project_id": "mathdef-independent-reconstruction-wave2",
   "record_evidence": {
     "contextual_meanings": {
@@ -133,6 +133,9 @@
     }
   },
   "resume_steps": [
+    "ACCELERATOR ACTIVE & VERIFIED (2026-10-23): use python -m research_pipeline.engine.dependency_global_audit --workspace research_pipeline/experiments/reconstruction-v2-independent scan --limit 80 --candidate-limit 50, or GitHub Actions 'Research pipeline isolated tests' artifact wave2-global-dependency-review (run 40004385627, SUCCESS). Read full source/context via optional --snapshot-output /tmp/wave2-effective-snapshot.json. Do not re-fetch and reconstruct 659 complete formulations individually.",
+    "For mathematically confirmed edits, create explicit decision manifest with inventory SHA, STATE unresolved fingerprint, original full source/context, live effective-node SHA, reference_index and expected_occurrence_id, and reviewed rationale; run dependency_global_audit prepare --manifest /tmp/reviewed-decisions.json --output-dir /tmp/reviewed-packets, which groups complete node amendments <=5 per offline packet and mechanically preflights them. Submit only after examining; verify exact receipt and graph/isolated Actions.",
+    "Global accelerator scanner only highlights review leads; it does NOT certify mathematics or source accuracy, create aliases, introduce missing meanings or permit consolidation gate. Keep mandatory mathematical/citation/variant/alias audit before gate. See research_pipeline/WAVE2_GLOBAL_GRAPH_AUDIT_2026-10-23.md and DEPENDENCY_FIRST_WORKFLOW.md.",
     "Read research_pipeline/WAVE2_GLOBAL_GRAPH_AUDIT_2026-10-23.md FIRST alongside research_pipeline/DEPENDENCY_FIRST_WORKFLOW.md and LIVE independent dependency_graph/{STATE.json,CHECKPOINT.json,INVENTORY.json,amendments.jsonl,missing_candidates.jsonl,candidate_aliases.jsonl,edges.jsonl}. Prior dated Chunk28 and older steps are historical and superseded by this 2026-10-23 Global Audit checkpoint.",
     "Verified GitHub packet 107: 4 context-specific size corrections, receipt applied_in_independent_graph_only, graph/test SUCCESS 40002142346/40002142360. Packet 108: 5 node amendments, six contextual fixes, receipt applied_in_independent_graph_only, graph/test SUCCESS 40002355459/40002355409. Source inventory unchanged; 0 unassigned and 0 ambiguous.",
     "Full-graph independent meaning-edge audit after 108: 611 meaning nodes, 1822 scan edges + 886 preexisting seed edges, zero self-links and zero nontrivial strongly connected components. This does NOT certify mathematical correctness of links or justify consolidation gate.",
