@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-henselization-module-083",
+  "mode": "amend",
+  "research_scope": "Independent source-free module representability, Henselian universal properties, residue fields, module length and annihilators.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.henselization_module.20261023.01",
+      "formulation_id": "form.a81a0fbec29f2186.principal-parts-module",
+      "version_sha256": "f27883175b0426d60573a320d6b3af895373c3176b6cc6699cc47594c7cce2e2",
+      "expected_node_sha256": "6c411c1737699d1f5114454ac7f30ce64231ed2afc81562f61d1a35d0761111c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical formulation, cross-checked contextual existing meanings and the stored global missing candidate pool, and preserved the full effective predecessor reference adjacency.",
+      "reason": "Source-free, full effective-node contextual classification with version-bound predecessor hash; duplicate candidate identity, source mathematics and exact semantic equivalences remain subject to later global audit.",
+      "references": [
+        {
+          "phrase": "ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "S-module M and variable N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "differential operators Diff^k_{S/R}(M,N)",
+          "state": "existing",
+          "target_meaning_id": "meaning.a81a0fbec29f2186.finite-order-differential-operator"
+        },
+        {
+          "phrase": "Hom_S(P^k(M),N)",
+          "state": "existing",
+          "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module"
+        },
+        {
+          "phrase": "naturally identified representing module",
+          "state": "missing",
+          "context": "Category and module theory: natural isomorphism of covariant functors in the target S-module N between Hom_S(P,N) and the sets of R-linear differential operators Diff^k_{S/R}(M,N), with components commuting with postcomposition along every S-linear map N→N′.",
+          "reason": "Representability requires a coherent natural family of bijections, not a pointwise equality of functor values. This is independently reusable natural-isomorphism structure.",
+          "matching_note": "Compare existing natural-isomorphism candidate missing.718fa3e492d42c0ced8e and presheaf-natural-transformation candidates; respect variance in target N and S-linearity of induced Hom maps."
+        },
+        {
+          "phrase": "every S-module N",
+          "state": "external",
+          "disposition": "The representation requires compatible bijections for all targets, not merely one chosen N."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.henselization_module.20261023.02",
+      "formulation_id": "form.a87b0cc83bb541e4.henselization-local-ring",
+      "version_sha256": "0a1fb254176841757e7686157776e848d34b5447755f98f753cbb5a02c1aafdb",
+      "expected_node_sha256": "3ac2aa6b08a660b41a3413009d12756e7c4d5b823e492c3b2b2f974f3f854406",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical formulation, cross-checked contextual existing meanings and the stored global missing candidate pool, and preserved the full effective predecessor reference adjacency.",
+      "reason": "Source-free, full effective-node contextual classification with version-bound predecessor hash; duplicate candidate identity, source mathematics and exact semantic equivalences remain subject to later global audit.",
+      "references": [
+        {
+          "phrase": "local ring (R,m)",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "Henselian local R-algebra",
+          "state": "existing",
+          "target_meaning_id": "meaning.93aaac46cdf41116.henselian-local-ring"
+        },
+        {
+          "phrase": "filtered colimit",
+          "state": "existing",
+          "target_meaning_id": "meaning.9d27e470d02eae69.filtered-colimit"
+        },
+        {
+          "phrase": "étale R-algebras",
+          "state": "existing",
+          "target_meaning_id": "meaning.6f35dab884da6c30.etale-ring-map"
+        },
+        {
+          "phrase": "initial among local R-homomorphisms",
+          "state": "existing",
+          "target_meaning_id": "meaning.141c0f3fd90dc7b4.initial-object",
+          "matching_note": "Henselization is initial only in the appropriately specified category of compatible local maps to Henselian local R-algebras with the relevant residue condition; the generic initial-object definition supplies the universal categorical shape."
+        },
+        {
+          "phrase": "maximal ideal mR^h and residue field R/m",
+          "state": "missing",
+          "context": "Commutative local algebra: local homomorphism (R,m)→(R^h,mR^h) extending the maximal ideal, with induced residue-field isomorphism R/m→R^h/mR^h, preserving the specified base-field identification.",
+          "reason": "Residue-field formation and its compatibility under a local algebra homomorphism are reusable algebraic prerequisites, beyond merely naming the universal henselization.",
+          "matching_note": "Compare existing residue-field candidate missing.38969d113c4ee1db6e98 and local homomorphism candidate missing.82c525cf52c351433b8a; separate ideal extension from quotient-field identification during global audit."
+        },
+        {
+          "phrase": "may be constructed as a filtered colimit",
+          "state": "external",
+          "disposition": "The construction is an alternative presentation using suitable étale neighborhoods, not a claim that any filtered diagram of étale algebras suffices."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.henselization_module.20261023.03",
+      "formulation_id": "form.a87b0cc83bb541e4.strict-henselization-local-ring",
+      "version_sha256": "35a4dbfcce30fad688a2747a648fdf8ddbb25807089df9b8a659b6dbea60e9c3",
+      "expected_node_sha256": "b0d7b7774a61f3bdc84e7f92fc67cc2fe688c79099caf61690148173594e295e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical formulation, cross-checked contextual existing meanings and the stored global missing candidate pool, and preserved the full effective predecessor reference adjacency.",
+      "reason": "Source-free, full effective-node contextual classification with version-bound predecessor hash; duplicate candidate identity, source mathematics and exact semantic equivalences remain subject to later global audit.",
+      "references": [
+        {
+          "phrase": "local ring (R,m)",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "strictly Henselian local ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.93aaac46cdf41116.strictly-henselian-local-ring"
+        },
+        {
+          "phrase": "Henselization universal local lifting pattern",
+          "state": "existing",
+          "target_meaning_id": "meaning.a87b0cc83bb541e4.henselization-local-ring"
+        },
+        {
+          "phrase": "separable closure κ^sep of residue field κ=R/m",
+          "state": "missing",
+          "context": "Field theory: chosen separable algebraic closure κ^sep of a field κ, a separable algebraic extension of κ that is separably closed, considered here for the residue field κ=R/m of a local ring.",
+          "reason": "A separable closure is independently definable; its chosen κ-embedding and distinction from a general algebraic extension are essential to strict henselization.",
+          "matching_note": "Do not equate separably closed κ itself with its separable closure, or presume algebraic closure of κ in characteristic p."
+        },
+        {
+          "phrase": "local ring homomorphisms compatible with residue embedding",
+          "state": "missing",
+          "context": "Local algebra: local homomorphism between local R-algebras inducing a specified compatible map of residue fields into the chosen separably closed extension κ^sep, so the residue-field square commutes.",
+          "reason": "Local ring maps and their induced residue-field homomorphisms are reusable constraints, distinct from strict henselization's universal property itself.",
+          "matching_note": "Compare local ring homomorphism candidate missing.82c525cf52c351433b8a, then check field embeddings and universal arrows separately in the global review."
+        },
+        {
+          "phrase": "residue field equals chosen κ^sep",
+          "state": "external",
+          "disposition": "The residue field is part of the chosen strict henselization data, not merely any algebraic extension of κ."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.henselization_module.20261023.04",
+      "formulation_id": "form.a95feee56dc057ee.module-composition-length",
+      "version_sha256": "d95787bfb25535f991348f4ad229fb7b3ad4190b4dd00ea24ef705a34df03fda",
+      "expected_node_sha256": "ee82aa5ff5894312e07be24aeba9154717f3885e6ac2411a57862d58a0cb6d3f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical formulation, cross-checked contextual existing meanings and the stored global missing candidate pool, and preserved the full effective predecessor reference adjacency.",
+      "reason": "Source-free, full effective-node contextual classification with version-bound predecessor hash; duplicate candidate identity, source mathematics and exact semantic equivalences remain subject to later global audit.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "R-submodules M_i",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.submodule"
+        },
+        {
+          "phrase": "strictly increasing finite chain of submodules",
+          "state": "missing",
+          "context": "Module theory and order theory: finite strict inclusion chain of submodules 0=M_0⊊M_1⊊⋯⊊M_n=M, with each proper inclusion counted as one step; not necessarily a composition series with simple successive factors.",
+          "reason": "Finite chains under proper submodule inclusion are independently usable order-theoretic data and must not be conflated with chains of prime ideals or composition series.",
+          "matching_note": "Compare general ascending submodule chain candidate missing.8d9fdc1b1763aba61b63, but distinguish strictness, finiteness and fixed endpoints."
+        },
+        {
+          "phrase": "supremum of integers n including unbounded case",
+          "state": "external",
+          "disposition": "Composition length here counts strict inclusions and can be infinite; it is not number of generators."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.henselization_module.20261023.05",
+      "formulation_id": "form.a9ca2e716ceffd36.annihilator-module",
+      "version_sha256": "184188a161e5cd675e3d697cfd8efe2d0a32244fa26cf33bf2e648345c441010",
+      "expected_node_sha256": "db74e33491b0e4ba5cc697e2a59c47f69621915c3e8f6cd9748c97eed0667de8",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical formulation, cross-checked contextual existing meanings and the stored global missing candidate pool, and preserved the full effective predecessor reference adjacency.",
+      "reason": "Source-free, full effective-node contextual classification with version-bound predecessor hash; duplicate candidate identity, source mathematics and exact semantic equivalences remain subject to later global audit.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "ideal of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "scalar product r·m and zero module element",
+          "state": "external",
+          "disposition": "The scalar action R×M→M and additive identity 0_M are inherent in the already linked definition of an R-module; requiring r·m=0_M for every m is exactly the annihilator predicate, not a new scalar-action prerequisite."
+        },
+        {
+          "phrase": "for every m∈M",
+          "state": "external",
+          "disposition": "The ideal contains exactly scalars killing every element of M, not just some element."
+        }
+      ]
+    }
+  ]
+}
