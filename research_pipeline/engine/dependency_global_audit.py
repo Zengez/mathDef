@@ -41,6 +41,7 @@ from research_pipeline.engine.dependency_audit_acceleration import (
 
 
 SMALL_CATEGORY = "meaning.wave2.foundation.small-category"
+SMALL_GROUPOID = "meaning.wave2.foundation.small-groupoid"
 FINITE_MODULE = "meaning.91ebb3796458d5bb.finite-generated-module"
 SEVERITY_ORDER = {"integrity": 0, "high": 1, "review": 2}
 
@@ -178,6 +179,24 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
                              "Ambient C is not explicitly assumed small in the "
                              "source. Check whether this link silently adds a "
                              "smallness hypothesis.", index=i, reference=ref)
+                if target == SMALL_GROUPOID and "groupoid" in phrase:
+                    # The only existing groupoid meaning requires a small
+                    # category. An arbitrary hom-category or fibre groupoid
+                    # need not be small. A literal Groupoids target category
+                    # denotes small groupoids in this independent corpus.
+                    source_text = source["text"]
+                    explicitly_small = bool(re.search(
+                        r"\\b(small|finite)\\s+groupoids?\\b",
+                        norm(source_text)))
+                    typed_groupoids = bool(re.search(
+                        r"\\bGroupoids\\b", source_text))
+                    if not explicitly_small and not typed_groupoids:
+                        flag("review", "groupoid_size_scope", fid, node,
+                             "The only existing groupoid meaning explicitly "
+                             "requires smallness; the source does not. Check "
+                             "whether this edge adds an unsupported size "
+                             "restriction. It is a review lead, not a "
+                             "certified error.", index=i, reference=ref)
                 if target == FINITE_MODULE and "ideal" in phrase:
                     flag("review", "ideal_vs_module_generation", fid, node,
                          "Check whether finite generation of an ideal is "
