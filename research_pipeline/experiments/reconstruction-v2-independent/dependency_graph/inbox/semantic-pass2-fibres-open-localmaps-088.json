@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-fibres-open-localmaps-088",
+  "mode": "amend",
+  "research_scope": "Source-free scheme fibre-product universality, topological interior, algebra scalar extension and induced localized/fibre module maps.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.fibres_open_localmaps.20261023.01",
+      "formulation_id": "form.bd914b941fe03a76.scheme-fibre-product-universal",
+      "version_sha256": "b481e8ef8fa0b139be271d88ee079ad1f4829c0c793f6058845f64fc52dda32c",
+      "expected_node_sha256": "45ce89116251409edc172698240aabd49eeb67e7b23c787d131375ee05a6acc3",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read full original independent formulation and latest effective complete node; compared related contextual meanings, existing missing candidates, all preserved earlier dispositions and unassigned references.",
+      "reason": "Whole-node source-free reviewed classification pinned to original source version and effective predecessor SHA, preserving prior references; mathematical and candidate-alias audit deferred to the mandatory global pass.",
+      "references": [
+        {
+          "phrase": "scheme morphisms X→S and Y→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism"
+        },
+        {
+          "phrase": "scheme fibre product X×_S Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.c31e56dc023fcbcc.scheme-fibre-product"
+        },
+        {
+          "phrase": "categorical fibre product",
+          "state": "existing",
+          "target_meaning_id": "meaning.be14669c52f30e79.categorical-fibre-product"
+        },
+        {
+          "phrase": "universal pair of maps T→X, T→Y over S",
+          "state": "external",
+          "disposition": "A compatible pair (u:T→X,v:T→Y) with f∘u=g∘v and its unique factorization through X×_S Y is exactly the universal mapping property of the already linked scheme and categorical fibre products. No self-referential additional universal-pair definition is needed."
+        },
+        {
+          "phrase": "morphisms correspond bijectively for every T",
+          "state": "external",
+          "disposition": "Both existence and uniqueness are required, not merely a square with commuting projections."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibres_open_localmaps.20261023.02",
+      "formulation_id": "form.c15e2b26c207d87e.interior-subset-topological",
+      "version_sha256": "35ae2cafe093ea3c3bf530235a6b9f009f30dbcebc0c492356d7a7f67b9e9802",
+      "expected_node_sha256": "5ca5b3b7a10c7aafc7f8900c29f3758c16aca6b5c8a8dffe4bd17dbd2b79bf28",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read full original independent formulation and latest effective complete node; compared related contextual meanings, existing missing candidates, all preserved earlier dispositions and unassigned references.",
+      "reason": "Whole-node source-free reviewed classification pinned to original source version and effective predecessor SHA, preserving prior references; mathematical and candidate-alias audit deferred to the mandatory global pass.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "subset A⊆X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "open subsets of X contained in A",
+          "state": "external",
+          "disposition": "This specifies the family {U∈τ:U⊆A} using the already linked topology and subset relation; it is the defining family used to construct the interior, not another independently named prerequisite. The largest member equals its union by topology axioms."
+        },
+        {
+          "phrase": "union of all such open subsets",
+          "state": "external",
+          "disposition": "The union itself is open by the topology axioms, and equals the greatest open subset contained in A."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibres_open_localmaps.20261023.03",
+      "formulation_id": "form.c236facceae1dd0f.geometrically-regular-noetherian-algebra",
+      "version_sha256": "023b5e04405670214b0229ffe8a702f941edef107e422cdf08f41bcc7e979990",
+      "expected_node_sha256": "d576a8852011f238edf62d641ba7d22e348cb4f9f14e5e22b93b60e731a672d4",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read full original independent formulation and latest effective complete node; compared related contextual meanings, existing missing candidates, all preserved earlier dispositions and unassigned references.",
+      "reason": "Whole-node source-free reviewed classification pinned to original source version and effective predecessor SHA, preserving prior references; mathematical and candidate-alias audit deferred to the mandatory global pass.",
+      "references": [
+        {
+          "phrase": "Noetherian ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "finite field extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.4777518984e96a98.finite-field-extension"
+        },
+        {
+          "phrase": "tensor product R⊗_k K",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "regular Noetherian ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.regular-noetherian-ring"
+        },
+        {
+          "context": "Commutative algebra: commutative unital algebra A over a specified base field k, with a chosen unital structure homomorphism k→A; A need not be a field, a domain or geometrically regular.",
+          "matching_note": "Source named this algebra 'k-algebra R'; k is a field and an explicit structure morphism to the commutative algebra is required.",
+          "missing_candidate_id": "missing.3b37131115a06556c3e4",
+          "phrase": "commutative unital algebra over a field",
+          "state": "missing"
+        },
+        {
+          "phrase": "scalar extension of k-algebra",
+          "state": "missing",
+          "context": "Commutative algebra: scalar extension of a commutative unital k-algebra R along field extension K/k, yielding the unital K-algebra R⊗_k K with induced multiplication (r⊗a)(s⊗b)=rs⊗ab and K-scalar structure.",
+          "reason": "The algebra structure after tensor extension is independently reusable and is not supplied merely by the existing underlying tensor-product-of-modules definition.",
+          "matching_note": "Compare existing scalar-extension candidate missing.349ddab09e0153a89615 and missing.06aec553766a35bb40ec; maintain distinction between field extension, tensor module, and scalar-extended algebra."
+        },
+        {
+          "disposition": "The all-extensions equivalence is conditioned on the indicated theorem's hypotheses, which are not silently dropped.",
+          "phrase": "equivalent all-field-extension test under specified hypotheses",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibres_open_localmaps.20261023.04",
+      "formulation_id": "form.c4da44394808f995.injectivity-locus-finite-projectives",
+      "version_sha256": "07e85cef6d12c72b60aa72777243e87ad9bfaea1c522ca47330662501088419d",
+      "expected_node_sha256": "4b595b97c01423eb99b2798c30fb858105cbc3656e597aa0ab1aab5e21562ea1",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read full original independent formulation and latest effective complete node; compared related contextual meanings, existing missing candidates, all preserved earlier dispositions and unassigned references.",
+      "reason": "Whole-node source-free reviewed classification pinned to original source version and effective predecessor SHA, preserving prior references; mathematical and candidate-alias audit deferred to the mandatory global pass.",
+      "references": [
+        {
+          "phrase": "finite projective R-modules P,Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.fd99f695f227af4a.finite-projective-module"
+        },
+        {
+          "phrase": "R-linear homomorphism φ:P→Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear"
+        },
+        {
+          "phrase": "prime spectrum Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "module tensor products P⊗_R κ(p), Q⊗_R κ(p)",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "context": "Commutative algebra and algebraic geometry: residue field A/m of a commutative local ring (A,m), including the prime-localized κ(p)=R_p/pR_p and the scheme-point κ(s)=O_{S,s}/m_s.",
+          "matching_note": "Original phrase 'residue field κ(p) of the local ring at prime p' denotes quotient by the maximal ideal of a local ring, including the localized-at-prime and scheme-stalk cases; not an arbitrary extension field.",
+          "missing_candidate_id": "missing.38969d113c4ee1db6e98",
+          "phrase": "residue field of a local ring",
+          "state": "missing"
+        },
+        {
+          "phrase": "fibrewise extension of module homomorphism φ at p",
+          "state": "missing",
+          "context": "Module theory: base change of an R-linear homomorphism φ:P→Q to the κ(p)-linear map φ⊗_R id_{κ(p)}:P⊗_Rκ(p)→Q⊗_Rκ(p), induced functorially by tensoring with the residue field.",
+          "reason": "Base changing a module map is independently reusable; forming the modules' tensor products alone does not define the induced linear map or preserve injectivity automatically.",
+          "matching_note": "Compare existing module base-change meaning.3f6a26f1786a8223.base-change-module, but distinguish change of module objects from induced map; no false implication that tensoring preserves injectivity."
+        },
+        {
+          "context": "Set theory: injectivity of an arbitrary map f:X→Y, meaning f(x)=f(y) implies x=y for all x,y in X; for structured maps this is the underlying-set condition.",
+          "matching_note": "Source occurrence 'injective κ(p)-linear transformation' expresses ordinary injectivity of the underlying map; distinguish universal injectivity/pure module maps and categorical coproduct structure arrows.",
+          "missing_candidate_id": "missing.4ba0cfe171bbe93d0c9a",
+          "phrase": "injective mapping",
+          "state": "missing"
+        },
+        {
+          "disposition": "This formulation only collects primes for which the fibre map is injective; it does not assert a topological openness theorem.",
+          "phrase": "locus as set of primes satisfying a predicate",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibres_open_localmaps.20261023.05",
+      "formulation_id": "form.c4da44394808f995.surjectivity-locus-module-map",
+      "version_sha256": "ad677986227c360dee58e3225a91aa5c62de97fc53721e417eb140d2edf51914",
+      "expected_node_sha256": "8518101c4683c8e9b3941167a051b64bf927a031d890f73496dbb20f1c6061d2",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read full original independent formulation and latest effective complete node; compared related contextual meanings, existing missing candidates, all preserved earlier dispositions and unassigned references.",
+      "reason": "Whole-node source-free reviewed classification pinned to original source version and effective predecessor SHA, preserving prior references; mathematical and candidate-alias audit deferred to the mandatory global pass.",
+      "references": [
+        {
+          "phrase": "R-modules M,N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "homomorphism of R-modules φ:M→N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear"
+        },
+        {
+          "phrase": "prime spectrum Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "localized modules M_p and N_p",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.module-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "localization of the module homomorphism φ_p:M_p→N_p",
+          "state": "missing",
+          "context": "Module theory: for R-linear φ:M→N and multiplicative S=R∖p, induced localized map S^{-1}φ:S^{-1}M→S^{-1}N defined by m/s↦φ(m)/s; the p-localized map φ_p is R_p-linear.",
+          "reason": "Induced localization of a module homomorphism is independently reusable and differs from the already linked localized modules or from the residue-field fibre map.",
+          "matching_note": "Compare module localization existing meaning.70f44988651b76b5.module-localization-at-multiplicative-set and prime-complement candidates; distinguish φ_p from tensoring with κ(p)."
+        },
+        {
+          "context": "Set theory: surjective function f:X→Y whose image is the entire stated codomain Y; for module homomorphisms this is the underlying-set surjectivity of the R-linear map, independent of linearity, free domain, or choice of basis.",
+          "matching_note": "The structured ring/module map is onto its specified codomain as an underlying set map; local homomorphism, module localization or R-algebra compatibility are extra source conditions, not part of the general surjectivity prerequisite.",
+          "missing_candidate_id": "missing.471fcef613ed2542515d",
+          "phrase": "surjective localized module homomorphism",
+          "state": "missing"
+        },
+        {
+          "phrase": "open subset of Spec(R)",
+          "state": "external",
+          "disposition": "The theorem-dependent assertion that the defined locus is Zariski-open uses the existing prime-spectrum topology; it is not a prerequisite for defining the set of primes where φ_p is surjective. Preserve the source's extra hypotheses rather than asserting unconditional openness."
+        },
+        {
+          "disposition": "An additional theorem-dependent assertion, not part of the predicate defining the surjectivity locus and not generalized to arbitrary N.",
+          "phrase": "openness for finite N under section hypotheses",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}
