@@ -19,6 +19,42 @@ jobs:
         run: python -m compileall -q research_pipeline/engine research_pipeline/tests
       - name: Test portable engine and isolated mathDef preview
         run: python -m unittest discover -s research_pipeline/tests -v
+      - name: Run read-only global Wave2 dependency audit on live independent graph
+        run: |
+          W=research_pipeline/experiments/reconstruction-v2-independent
+          python -m research_pipeline.engine.dependency_global_audit \
+            --workspace "$W" scan --limit 80 --candidate-limit 50 \
+            > /tmp/wave2-global-dependency-audit.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          audit = json.loads(Path("/tmp/wave2-global-dependency-audit.json").read_text())
+          s = audit["summary"]
+          assert audit["read_only"] and not audit["mathematics_certified"]
+          assert s["formulation_count"] >= s["complete_effective_formulations"]
+          assert s["meaning_count"] >= 1
+          assert s["cycle_components"] == 0, "Global meaning dependency cycle regressed"
+          assert not any(f["severity"] == "integrity" for f in audit["flags"]), (
+              "Global audit surfaced broken node or reference identity"
+          )
+          print("Global independent graph:", s["meaning_count"], "meanings;",
+                s["complete_effective_formulations"], "/", s["formulation_count"],
+                "complete formulations;", s["existing_dependency_edges"],
+                "reviewed dependency edges;", s["total_flags"], "review leads.")
+          with Path(__import__("os").environ["GITHUB_STEP_SUMMARY"]).open("a") as fh:
+              fh.write("### Read-only Wave2 global dependency review\n\n")
+              fh.write(f"Meanings: {s['meaning_count']}; formulations: "
+                       f"{s['complete_effective_formulations']}/{s['formulation_count']}; "
+                       f"cycles: {s['cycle_components']}; review leads: "
+                       f"{s['total_flags']}.\n\n")
+              fh.write("Heuristic flags are **not** certified mathematical errors; "
+                       "passing checks does not certify definitions.\n")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wave2-global-dependency-review
+          path: /tmp/wave2-global-dependency-audit.json
+          retention-days: 14
       - name: Validate live independent research checkpoint against protected lineage
         run: |
           python -m research_pipeline.engine.resume_checkpoint \
