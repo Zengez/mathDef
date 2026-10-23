@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-integers-measure-normality-102",
+  "mode": "amend",
+  "research_scope": "Formal integer differences, measurable sets/maps, probability normalization, and normal-subgroup coset equality.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.21",
+      "formulation_id": "form.wave2.integer59.integer-equivalence-class",
+      "version_sha256": "97901ef2ff18199b52b2789813aaa984d4e3721c73a56cb774a46ca28d2ccb95",
+      "expected_node_sha256": "77675f074d5bd4020861c1f57e8e02f4082de28f228573985dbaf9adb175b97b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined complete independent mathematical text and canonical effective node, with screened group, quotient, measure and mapping prerequisites plus the full source-free missing-candidate pool.",
+      "reason": "Complete append-only effective node with all earlier classifications preserved, distinguishing separately reusable measurable subsets and measurable maps from defining normality and normalization equations.",
+      "references": [
+        {
+          "phrase": "natural numbers a,b,c,d",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "ordered pairs (a,b)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski"
+        },
+        {
+          "phrase": "equivalence class [a,b]",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.set-of-related-elements"
+        },
+        {
+          "matching_note": "Verified ordinary set-theoretic equivalence relation, equivalence class or quotient set is precisely applicable to this source's objects. The source's additional generating-pair conditions, group-action laws, Cauchy relation, or concrete integer-model equations remain as defining data and are not replaced by the general target.",
+          "phrase": "formal-difference equivalence relation",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive"
+        },
+        {
+          "matching_note": "Verified ordinary set-theoretic equivalence relation, equivalence class or quotient set is precisely applicable to this source's objects. The source's additional generating-pair conditions, group-action laws, Cauchy relation, or concrete integer-model equations remain as defining data and are not replaced by the general target.",
+          "phrase": "quotient set (N x N)/~",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.set-of-equivalence-classes"
+        },
+        {
+          "phrase": "formal difference a−b",
+          "state": "external",
+          "disposition": "Calling [a,b] the 'formal difference' a−b is interpretive notation for the integer equivalence class constructed from pairs of natural numbers, not an ordinary natural-number subtraction operation presumed available beforehand. The quotient set, equivalence relation, pair and natural-number constructions are already independently linked. Subtraction becomes a well-defined integer operation only with the appropriate induced arithmetic laws."
+        },
+        {
+          "disposition": "The quotient construction uses the zero-inclusive natural-number model available in the current independent inventory.",
+          "phrase": "zero-inclusive natural convention",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.22",
+      "formulation_id": "form.wave2.prob90.measurable-space",
+      "version_sha256": "299227ea5dafe6802281217022edd5da9bd580250819c883d2fd99d8ce473f57",
+      "expected_node_sha256": "10285123fb81a8e1fd2f92e61e99595e16fc50f6574d8e201b141931c8fba64c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined complete independent mathematical text and canonical effective node, with screened group, quotient, measure and mapping prerequisites plus the full source-free missing-candidate pool.",
+      "reason": "Complete append-only effective node with all earlier classifications preserved, distinguishing separately reusable measurable subsets and measurable maps from defining normality and normalization equations.",
+      "references": [
+        {
+          "phrase": "sigma-algebra Sigma on X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.sigma-algebra"
+        },
+        {
+          "phrase": "ordered pair (X,Sigma)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski"
+        },
+        {
+          "phrase": "measurable subset A∈Σ",
+          "state": "missing",
+          "context": "Measure theory: given a measurable space (X,Σ), a subset A⊆X is called measurable exactly when A∈Σ. This is not all subsets of X unless Σ is the full power set, and does not presuppose a measure or probability function.",
+          "reason": "The predicate of a particular subset being measurable relative to an ambient sigma-algebra is separately reusable in integration, event theory and preimage conditions, beyond the definition of the measurable-space pair itself.",
+          "matching_note": "Distinct from the sigma-algebra structure and from a general measurable function. No previously registered exact mathematical identity of a measurable subset was located in the independent candidate registry."
+        },
+        {
+          "phrase": "measurable space without measure",
+          "state": "external",
+          "disposition": "A measure or probability function is not part of this definition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.23",
+      "formulation_id": "form.wave2.prob90.probability-space",
+      "version_sha256": "a9faf0e857ed2df9de678c22b7b18adb9d2de051c62546b621dc9843975c4653",
+      "expected_node_sha256": "8d20a7b0ace0eb76ab3454cc9e4fd3c3a11f97d0b0bd2686c1f6690f053a6f62",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined complete independent mathematical text and canonical effective node, with screened group, quotient, measure and mapping prerequisites plus the full source-free missing-candidate pool.",
+      "reason": "Complete append-only effective node with all earlier classifications preserved, distinguishing separately reusable measurable subsets and measurable maps from defining normality and normalization equations.",
+      "references": [
+        {
+          "phrase": "measurable space (Omega,Sigma)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prob90.measurable-space"
+        },
+        {
+          "phrase": "countably additive measure P on Sigma",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.nonnegative-measure"
+        },
+        {
+          "phrase": "total probability normalization P(Ω)=1",
+          "state": "external",
+          "disposition": "Total mass P(Ω)=1 is the defining normalization axiom that distinguishes a probability measure/space from an arbitrary nonnegative countably additive measure; the measurable-space and measure concepts are already linked. It is not an additional independently named mathematical prerequisite, and the source does not require individual events to have positive probability."
+        },
+        {
+          "phrase": "probability not arbitrary measure",
+          "state": "external",
+          "disposition": "Probability is distinguished by normalization to unit total mass."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.24",
+      "formulation_id": "form.wave2.prob90.random-variable-general",
+      "version_sha256": "d8a78609b4992b1f14e28f280a4439e712576629d6a4da97bf92b396e859ca8e",
+      "expected_node_sha256": "5a18a1b948df651701acb0f4a981e29860442732349909d2512583247e92efbc",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined complete independent mathematical text and canonical effective node, with screened group, quotient, measure and mapping prerequisites plus the full source-free missing-candidate pool.",
+      "reason": "Complete append-only effective node with all earlier classifications preserved, distinguishing separately reusable measurable subsets and measurable maps from defining normality and normalization equations.",
+      "references": [
+        {
+          "phrase": "probability space (Omega,F,P)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prob90.probability-space"
+        },
+        {
+          "phrase": "measurable target (S,SigmaS)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prob90.measurable-space"
+        },
+        {
+          "phrase": "mapping X:Omega to S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "(F,Σ_S)-measurable mapping",
+          "state": "missing",
+          "missing_candidate_id": "missing.b458f6a3824dab19725b",
+          "context": "Measure theory: measurable map X:(Ω,F)→(S,Σ_S) characterized by X⁻¹[B]∈F for every target measurable B∈Σ_S; this does not require the target to be real, nor does it require X to be invertible.",
+          "reason": "General measurability of maps between measurable spaces is reusable beyond probabilistic random-variable applications and is explicitly registered as canonical provisional missing candidate missing.b458f6a3824dab19725b.",
+          "matching_note": "Reuses existing source-free general measurable-map candidate; the probability-space assumptions in the random-variable definition remain source-specific and separate."
+        },
+        {
+          "phrase": "real-valued not required",
+          "state": "external",
+          "disposition": "Target S may be any measurable space, not necessarily the real line."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.25",
+      "formulation_id": "form.wave2.quot119.normal-subgroup.1",
+      "version_sha256": "46014c9695b5e26abbb53aa870ae1cc196082aa9166ad8b23efb999e1fda4908",
+      "expected_node_sha256": "95bd07b759ec3325896b6cfa14cb0472cd441141803299ceb7658ccc4927c290",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined complete independent mathematical text and canonical effective node, with screened group, quotient, measure and mapping prerequisites plus the full source-free missing-candidate pool.",
+      "reason": "Complete append-only effective node with all earlier classifications preserved, distinguishing separately reusable measurable subsets and measurable maps from defining normality and normalization equations.",
+      "references": [
+        {
+          "phrase": "group G",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "phrase": "subgroup N of G",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prereq122.subgroup"
+        },
+        {
+          "phrase": "left coset gN",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prereq122.left-coset"
+        },
+        {
+          "phrase": "right coset Ng",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prereq122.right-coset"
+        },
+        {
+          "phrase": "equality gN=Ng for each g∈G",
+          "state": "external",
+          "disposition": "The equality of left and right cosets for every g∈G is exactly the defining normal-subgroup criterion in this formulation. The group, subgroup, and both left/right coset constructions are already independently linked. The statement is stronger than equality for one selected g and does not create a new independent coset-equality meaning."
+        },
+        {
+          "phrase": "normality not mere subgroup",
+          "state": "external",
+          "disposition": "Every subgroup has both coset families, but equality at every g is an additional condition."
+        }
+      ]
+    }
+  ]
+}
