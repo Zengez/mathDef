@@ -45,6 +45,14 @@ The lexical review also inspected tempting pairings that **must remain distinct*
 
 **Review lead, not yet proven to be an error:** a few broad category/functor source contexts reference `meaning.wave2.foundation.small-category` or another size-restricted target. Check the original full formulation's universe/smallness convention before either declaring a false target or substituting the source-free unrestricted-category candidate. Candidate occurrences for unrestricted categories and ordinary functors are still high-impact pending mathematical-context review.
 
+## Follow-up targeted read-only audit: category size and functor scope
+
+After all four packets applied, compared **12 source-indexed dependency-node records** in the categorical/functor cluster against the stored unrestricted-category (`missing.fcb5ab865c6d9dbb3d79`) and unrestricted-functor (`missing.c5104821c3c70afa1f63`) candidate contexts (62 occurrences across both classes). This inspection is a **lead audit**, not a full proof of erroneous links: original source-universe assumptions and any later effective append-only amendments must be checked before changing a reference.
+
+The review found a concrete **cross-record consistency risk**. `form.56119d315cf02fdf.two-category-over-base` links `category C` to the **small-category** meaning and two functor phrases to the indexed category-functor meaning, while its global missing-candidate occurrences classify broad categories and ordinary functors **without guaranteed smallness**. Other source-indexed nodes, for example `form.0e1768811a8dab34.representable-covariant-functor`, correctly preserve those broad categories and functors as unresolved; `form.3653fa0ad844d187.two-category-fibred-sets` leaves its possibly non-small base category unresolved. Further nodes with size-restricted category targets worth checking are `form.fef4e69e96c25bfa.opposite-category`, `form.fef4e69e96c25bfa.contravariant-functor`, `form.ec5e3a0d13f85f3a.strict-two-category`, and `form.709d3d2f82950c5b.inductive-system`.
+
+**No false-target amendment was submitted.** A mathematically correct correction requires reading the full original formulation's universe/smallness clause, checking the target meaning's exact version, and applying any change against the *effective* latest node hash, not an unamended snapshot. This should be a high-priority follow-up because the issue can contaminate many categorical prerequisites even with zero ambiguous scan occurrences.
+
 ## Next safe work
 
 Review the remaining 475 canonical candidates by *actual source formulation and current effective references*; prioritize high-impact candidates and unsupported type/size coercions, not just short label similarity. Sample unrelated unflagged meanings so the audit is not biased by lexical overlaps. Continue targeted source/variant/provenance correctness checks and keep the three source-quality issues in a separate explicitly deferred correction register.
