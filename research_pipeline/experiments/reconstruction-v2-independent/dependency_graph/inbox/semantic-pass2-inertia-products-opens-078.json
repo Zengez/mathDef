@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-inertia-products-opens-078",
+  "mode": "amend",
+  "research_scope": "Source-free inertia automorphism kernels, module products, polynomial quotients, distinguished opens and coproduct morphisms.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.inertia_products_opens.20261023.01",
+      "formulation_id": "form.8af10c63c1949034.relative-inertia-of-fibred-category",
+      "version_sha256": "f19d2e3d57c209001c43d2ad21eb4f97c479b3edb659df441419522e5940fadc",
+      "expected_node_sha256": "0837f7f0d59bf40ac307d1c82d04aa5cbb2fc43552c7c7119ce8319f5f888f57",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read full original independent mathematical statements and effective prior reference adjacency for relative inertia, inverse limits, polynomial quotients, principal Zariski opens and general categorical coproducts, distinguishing reusable concepts from defining cocone conditions.",
+      "reason": "Context-checked append-only entire-node replacement with source-version anchoring and exact SHA256 prior-node verification; did not modify mathematical sources or prematurely certify missing concepts.",
+      "references": [
+        {
+          "phrase": "morphism of fibred categories F:S→S′",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "inertia pair (x,α)",
+          "state": "existing",
+          "target_meaning_id": "meaning.8af10c63c1949034.inertia-of-fibred-category"
+        },
+        {
+          "phrase": "kernel of automorphism mapping F on an object",
+          "state": "missing",
+          "context": "Category theory: kernel of the induced group homomorphism Aut_S(x)→Aut_{S′}(F(x)) given by a functor F of categories fibred over C, comprising automorphisms α of x with F(α)=id_{F(x)}; the arrows should be vertical when defining relative inertia over C.",
+          "reason": "The automorphism-group kernel is a reusable categorical/group-theoretic construction and distinct from the relative-inertia category that uses it.",
+          "matching_note": "Audit source convention for verticality and compare separately recorded general Aut_C(x) and functorial automorphism candidates."
+        },
+        {
+          "phrase": "F(α)=id_{F(x)}",
+          "state": "external",
+          "disposition": "This exact identity condition is stricter than preserving automorphisms under F."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.inertia_products_opens.20261023.02",
+      "formulation_id": "form.8d61300dcabf30c0.inverse-limit-sequence-modules",
+      "version_sha256": "1ee045a3e8123494a730c9cce8b97cc562c9fc4d0e2289b802859df57b35471a",
+      "expected_node_sha256": "8b2e21119b180f91d43474f2817bf339ff9d31d3fa16f8559e239110408b4bd0",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read full original independent mathematical statements and effective prior reference adjacency for relative inertia, inverse limits, polynomial quotients, principal Zariski opens and general categorical coproducts, distinguishing reusable concepts from defining cocone conditions.",
+      "reason": "Context-checked append-only entire-node replacement with source-version anchoring and exact SHA256 prior-node verification; did not modify mathematical sources or prematurely certify missing concepts.",
+      "references": [
+        {
+          "phrase": "inverse sequence of modules",
+          "state": "existing",
+          "target_meaning_id": "meaning.8d61300dcabf30c0.inverse-sequence-of-modules"
+        },
+        {
+          "phrase": "R-module and submodule",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.submodule"
+        },
+        {
+          "phrase": "direct product ∏_{n≥1} M_n of R-modules",
+          "state": "missing",
+          "context": "Module theory: direct product ∏_{n≥1}M_n of countably many R-modules, consisting of arbitrary tuples (m_n) with coordinatewise module addition and scalar action; differs from direct sum, where elements have finite nonzero support.",
+          "reason": "The module product is independently reusable beyond the inverse-limit compatibility equations and is not an infinite direct sum.",
+          "matching_note": "Compare missing.9f74bfc8fef60ad63a96 for general indexed direct product of R-modules, with the countable-index specialization."
+        },
+        {
+          "phrase": "compatible tuples φ_n(m_n)=m_{n−1}",
+          "state": "external",
+          "disposition": "Compatibility is required for every n≥2 and defines the inverse-limit submodule."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.inertia_products_opens.20261023.03",
+      "formulation_id": "form.8dbafc093b30c2a3.global-complete-intersection-algebra",
+      "version_sha256": "e743c0df61c00c23a33cd142493d5267b6a5e8b26c13bab09b89d9e74fa62f34",
+      "expected_node_sha256": "a5a79b2a9af779c147d2e3087f6a01b86b0fe8a761d8470851d20db02b834cee",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read full original independent mathematical statements and effective prior reference adjacency for relative inertia, inverse limits, polynomial quotients, principal Zariski opens and general categorical coproducts, distinguishing reusable concepts from defining cocone conditions.",
+      "reason": "Context-checked append-only entire-node replacement with source-version anchoring and exact SHA256 prior-node verification; did not modify mathematical sources or prematurely certify missing concepts.",
+      "references": [
+        {
+          "phrase": "field k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.field-commutative-unital"
+        },
+        {
+          "phrase": "finite-type algebra S over k",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map"
+        },
+        {
+          "phrase": "Krull dimension dim(S)",
+          "state": "existing",
+          "target_meaning_id": "meaning.22c049b8eee93897.krull-dimension-ring"
+        },
+        {
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree.",
+          "phrase": "polynomial ring k[x_1,…,x_n]",
+          "state": "missing"
+        },
+        {
+          "phrase": "quotient ring by ideal (f_1,…,f_c)",
+          "state": "missing",
+          "context": "Commutative algebra: quotient of the polynomial ring k[X_1,…,X_n] by the ideal generated by finitely many polynomial relations f_1,…,f_c; operations are induced on additive ideal cosets, yielding a commutative unital k-algebra.",
+          "reason": "The quotient-ring construction is reusable independently of the global-complete-intersection dimension condition.",
+          "matching_note": "Compare canonical generic quotient-ring candidate missing.50fc57153b93520a247a, keeping quotient by polynomial relations distinct from generic ring module quotients."
+        },
+        {
+          "disposition": "This is an equality about the presentation and Krull dimension; no unspecified regular-sequence criterion is being substituted.",
+          "phrase": "dim(S)=n−c",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.inertia_products_opens.20261023.04",
+      "formulation_id": "form.8dbafc093b30c2a3.local-complete-intersection-algebra",
+      "version_sha256": "a6d7953dc007edf3168d07060d0698a3abd79801df4b003cb194bdbf7278be5d",
+      "expected_node_sha256": "11a6fc007eab3f94b7117e52a102b35888bbc54cb5101f6f95104f15d0ff4d90",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read full original independent mathematical statements and effective prior reference adjacency for relative inertia, inverse limits, polynomial quotients, principal Zariski opens and general categorical coproducts, distinguishing reusable concepts from defining cocone conditions.",
+      "reason": "Context-checked append-only entire-node replacement with source-version anchoring and exact SHA256 prior-node verification; did not modify mathematical sources or prematurely certify missing concepts.",
+      "references": [
+        {
+          "phrase": "finite-type k-algebra S",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map"
+        },
+        {
+          "phrase": "prime spectrum Spec(S)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "ring localization S_g",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "global complete intersection over k",
+          "state": "existing",
+          "target_meaning_id": "meaning.8dbafc093b30c2a3.global-complete-intersection-algebra"
+        },
+        {
+          "phrase": "standard principal open D(g)⊆Spec(S)",
+          "state": "missing",
+          "context": "Algebraic geometry: distinguished Zariski principal open D(g)={p∈Spec(S):g∉p} for g∈S, with induced topology, corresponding to Spec(S_g); a family of these opens may cover the spectrum.",
+          "reason": "The distinguished-open construction is an independent geometric prerequisite, unlike the local-complete-intersection condition imposed on the corresponding localized rings.",
+          "matching_note": "Compare missing.8e961cb57c3f60513be8 and missing.3ed8620c22a31b2b683e for equivalent basic Zariski opens."
+        },
+        {
+          "phrase": "cover by standard opens D(g_i)",
+          "state": "external",
+          "disposition": "Every point of Spec(S) belongs to at least one specified open, and each corresponding localization must be globally complete-intersection."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.inertia_products_opens.20261023.05",
+      "formulation_id": "form.8f7683667fac9d28.general-categorical-coproduct",
+      "version_sha256": "3f6f9aeda93c7ec5bbf831789085f35649d0ee0c59a27e0c4fe6788df2405cac",
+      "expected_node_sha256": "12331357bb2df852e6c6c3cc3328126cfe694c954e70f6e2bc2d40824165d43b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read full original independent mathematical statements and effective prior reference adjacency for relative inertia, inverse limits, polynomial quotients, principal Zariski opens and general categorical coproducts, distinguishing reusable concepts from defining cocone conditions.",
+      "reason": "Context-checked append-only entire-node replacement with source-version anchoring and exact SHA256 prior-node verification; did not modify mathematical sources or prematurely certify missing concepts.",
+      "references": [
+        {
+          "phrase": "colimit of a diagram",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f7683667fac9d28.category-colimit"
+        },
+        {
+          "phrase": "discrete indexing category",
+          "state": "existing",
+          "target_meaning_id": "meaning.3653fa0ad844d187.discrete-category"
+        },
+        {
+          "phrase": "family of objects X_i in category C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "universal coproduct injections",
+          "state": "external",
+          "disposition": "The structure arrows X_i→coprod X_i and their joint universal factorization are the defining coproduct cocone already represented by the linked colimit of a discrete diagram, not a separate prerequisite. The term 'injections' here should not be assumed to mean monomorphisms in an arbitrary category; flag for final wording audit."
+        },
+        {
+          "phrase": "dual universal property",
+          "state": "external",
+          "disposition": "A universal map out of the coproduct is specified; do not reverse it to product projections."
+        }
+      ]
+    }
+  ]
+}
