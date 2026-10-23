@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-resolutions-topological-products-076",
+  "mode": "amend",
+  "research_scope": "Source-free homological resolutions, Bourbaki closed maps, binary products and saturated prime chains.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.resolutions_topological_products.20261023.01",
+      "formulation_id": "form.7781214e9120a52e.projective-dimension-module",
+      "version_sha256": "f5e89eb9e1592f3431d9b5281ed67d414912df219e2a202f95ba446ad1808c84",
+      "expected_node_sha256": "3f71852f4ee14b40b5295e593467a1172253d4c3d8964a0d249f3684c31c7203",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read each full independent source mathematical formulation and its effective complete historical references; checked projective resolutions, closed maps, categorical product cone and saturated prime chains for contextual dependency versus defining conditions.",
+      "reason": "Whole-node source-free version-checked review preserving prior decisions and exact predecessor SHA256, with candidate equivalences deferred to global audit.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "projective modules P_i",
+          "state": "existing",
+          "target_meaning_id": "meaning.fc44c63c239e5c20.projective-module-hom"
+        },
+        {
+          "phrase": "exact sequence 0→P_n→⋯→P_0→M→0",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation13.exact-sequence-abelian-category"
+        },
+        {
+          "phrase": "projective resolution of an R-module",
+          "state": "missing",
+          "context": "Homological algebra: projective resolution of an R-module M, an augmented exact chain complex ⋯→P_2→P_1→P_0→M→0 with each P_i projective; finite length additionally requires vanishing P_i sufficiently far to the left.",
+          "reason": "A projective resolution is an independently reusable homological construction distinct from its numerical projective dimension.",
+          "matching_note": "Review global projective-resolution candidate variants, preserving exactness and the projective condition."
+        },
+        {
+          "phrase": "least integer n≥0 or infinity",
+          "state": "external",
+          "disposition": "The projective dimension is minimized over finite resolutions and defined to be infinite if none exists, not the length of an arbitrary resolution."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resolutions_topological_products.20261023.02",
+      "formulation_id": "form.7ca4fb934b2f076c.kahler-differentials",
+      "version_sha256": "253c634aa01075e2245adfa502aa9c73054ad8ce685711e20f1bbb6b1eb4edab",
+      "expected_node_sha256": "7830e5f70f67c58a09ed9d46892d8f2a67cc0b3c76a6d86559654137e55def95",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read each full independent source mathematical formulation and its effective complete historical references; checked projective resolutions, closed maps, categorical product cone and saturated prime chains for contextual dependency versus defining conditions.",
+      "reason": "Whole-node source-free version-checked review preserving prior decisions and exact predecessor SHA256, with candidate equivalences deferred to global audit.",
+      "references": [
+        {
+          "phrase": "ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "R-derivation d:S→Ω",
+          "state": "existing",
+          "target_meaning_id": "meaning.7ca4fb934b2f076c.r-derivation"
+        },
+        {
+          "phrase": "Hom_S(Ω,M)",
+          "state": "existing",
+          "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module"
+        },
+        {
+          "phrase": "S-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "module of universal Kähler differentials Ω_{S/R}",
+          "state": "external",
+          "disposition": "This universal representing module is exactly the Kähler-differentials object being defined here. The R-derivation, module Hom and S-module prerequisites are already linked; a new self-link would be circular."
+        },
+        {
+          "phrase": "for every S-module M",
+          "state": "external",
+          "disposition": "A natural universal Hom-versus-derivations bijection is required; checking a single target module is insufficient."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resolutions_topological_products.20261023.03",
+      "formulation_id": "form.7ee45a1fa46d2b2f.bourbaki-proper-map",
+      "version_sha256": "ff7176174a0d5b32a4c98608e3ee0b3029597613ab17a3732bbc02cfb505c393",
+      "expected_node_sha256": "93df4a91999cfc95b79917d48286b20f82b13c63584e991952896017b3e4e734",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read each full independent source mathematical formulation and its effective complete historical references; checked projective resolutions, closed maps, categorical product cone and saturated prime chains for contextual dependency versus defining conditions.",
+      "reason": "Whole-node source-free version-checked review preserving prior decisions and exact predecessor SHA256, with candidate equivalences deferred to global audit.",
+      "references": [
+        {
+          "phrase": "continuous map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map"
+        },
+        {
+          "phrase": "product topologies Z×X and Z×Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology"
+        },
+        {
+          "phrase": "closed map id_Z×f",
+          "state": "missing",
+          "context": "General topology: continuous closed map g:A→B sending every closed subset F⊆A to a closed subset g(F)⊆B. Here g=id_Z×f uses the product topologies, with no implicit Hausdorff or compactness requirement.",
+          "reason": "Closedness of a map is reusable independently of Bourbaki properness, which requires this property for every topological space Z.",
+          "matching_note": "Compare to missing.5afce6513485dfbcf054 and related general closed-map candidates, without treating properness as a synonym."
+        },
+        {
+          "phrase": "every topological space Z",
+          "state": "external",
+          "disposition": "The quantifier runs over all Z, not just discrete, compact, or base-change-over-Y spaces."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resolutions_topological_products.20261023.04",
+      "formulation_id": "form.8069f09a769d34f5.binary-product-category",
+      "version_sha256": "65b21cb3c3c5aa0ff91181ae46577ca6661613e8e6704308e5f0af144dfa56e2",
+      "expected_node_sha256": "be5524bbe52730fbe01cbe537e8a016cc28caa358fcfb263de796444c3cdeeaa",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read each full independent source mathematical formulation and its effective complete historical references; checked projective resolutions, closed maps, categorical product cone and saturated prime chains for contextual dependency versus defining conditions.",
+      "reason": "Whole-node source-free version-checked review preserving prior decisions and exact predecessor SHA256, with candidate equivalences deferred to global audit.",
+      "references": [
+        {
+          "phrase": "category C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "projections p:P→X and q:P→Y",
+          "state": "external",
+          "disposition": "The pair of projection arrows from P forms the defining product cone and is qualified by the universal factorization condition stated here; ordinary category morphisms are already supplied by the linked categorical setting."
+        },
+        {
+          "phrase": "for every object Z and arrows f,g a unique h exists",
+          "state": "external",
+          "disposition": "The uniqueness of the induced h commuting with both projections is the universal product property, not mere existence of P."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resolutions_topological_products.20261023.05",
+      "formulation_id": "form.829f95eb2dfbf360.catenary-commutative-ring",
+      "version_sha256": "4b6cb4b3bd605ab76a6f5990d44c83ec27b134e41f45a9d8f2453375f76ea62e",
+      "expected_node_sha256": "87f598b42c179225fef8d0af3899ffc6ed979ccf0d1113c4c441d23462ba799b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read each full independent source mathematical formulation and its effective complete historical references; checked projective resolutions, closed maps, categorical product cone and saturated prime chains for contextual dependency versus defining conditions.",
+      "reason": "Whole-node source-free version-checked review preserving prior decisions and exact predecessor SHA256, with candidate equivalences deferred to global audit.",
+      "references": [
+        {
+          "phrase": "commutative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "prime ideals p and q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal"
+        },
+        {
+          "phrase": "chains of prime ideals",
+          "state": "existing",
+          "target_meaning_id": "meaning.22c049b8eee93897.chain-of-prime-ideals"
+        },
+        {
+          "phrase": "maximal finite chain connecting primes",
+          "state": "missing",
+          "context": "Commutative algebra and order theory: saturated finite strict chain of primes p=p_0⊊p_1⊊⋯⊊p_n=q between fixed p⊆q, with no prime strictly between adjacent terms; maximal under refinement, not necessarily of greatest length.",
+          "reason": "The saturated prime-chain construction is reusable for Krull dimension independently of catenarity's equal-length requirement.",
+          "matching_note": "Compare irreducible-closed-subset maximal-chain candidates, keeping the prime-ideal inclusion ordering and endpoint scope distinct."
+        },
+        {
+          "phrase": "all maximal finite chains have equal length and lengths are bounded above",
+          "state": "external",
+          "disposition": "Both equal-length and bounded-length clauses are explicitly stated; no Noetherian hypothesis is silently imposed."
+        }
+      ]
+    }
+  ]
+}
