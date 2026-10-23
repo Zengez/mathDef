@@ -30,8 +30,10 @@
         "form.8af10c63c1949034.inertia-of-fibred-category",
         "form.8f7683667fac9d28.general-categorical-coproduct",
         "form.8f7683667fac9d28.general-categorical-product",
+        "form.9d27e470d02eae69.filtered-category",
         "form.9f75052b1742ab3f.cofiltered-category",
         "form.a570f5bed277bd8b.presheaf-fibre-product",
+        "form.be14669c52f30e79.categorical-fibre-product",
         "form.ce0580b5d7dc0b7c.coequalizer-category",
         "form.daec56e6a2a51cae.connected-category",
         "form.de2c8164874ee4a9.cofinal-category-functor",
@@ -43,6 +45,7 @@
         "form.eed0c34725956bb5.categorical-monomorphism",
         "form.f0d993a60533fc99.groupoid-valued-presheaf",
         "form.f7206eb9332b9389.category-valued-presheaf",
+        "form.f7206eb9332b9389.split-fibred-category",
         "form.fef4e69e96c25bfa.contravariant-functor",
         "form.fef4e69e96c25bfa.opposite-category",
         "form.fef4e69e96c25bfa.representable-presheaf",
@@ -530,6 +533,28 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.2ca12da5425144816e3c",
+      "context": "General topology: open neighborhood of a point x∈X, an open subset U of X containing x.",
+      "surface_phrase": "open neighborhood of x",
+      "observed_in_formulations": [
+        "form.bd90654fb341045a.local-krull-dimension-point",
+        "form.e62923cd8ef99cd1.hausdorff-space",
+        "form.wave2.foundation76.continuous-topological-map.02"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.08a2969d79ad1ddc1922",
+      "context": "Commutative algebra: for unital ring homomorphism φ:R→S and prime q⊆S, contraction p=φ^{-1}(q)⊆R, a prime ideal by inverse-image stability under ring homomorphisms; when φ is an inclusion this becomes q∩R.",
+      "surface_phrase": "contracted prime p=q∩R",
+      "observed_in_formulations": [
+        "form.3fcd082413a6b2eb.relative-dimension-at-prime",
+        "form.b0ca759b4a7e7bfb.relative-assassin-module",
+        "form.f6c83ed1311d9b05.going-up-ring-homomorphism"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.0c5a27f2980fc722cbb5",
       "context": "Point-set topology: quotient (final) topology induced by a surjective continuous map q:X→Q, where U⊆Q is open exactly when q^{-1}(U) is open in X; includes canonical quotient-set maps and the map X→f(X) when equipped with final topology, independently of whether a larger codomain Y is surjected onto.",
       "surface_phrase": "quotient topology on Y for f",
@@ -750,16 +775,6 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.2ca12da5425144816e3c",
-      "context": "General topology: open neighborhood of a point x∈X, an open subset U of X containing x.",
-      "surface_phrase": "open neighborhood of x",
-      "observed_in_formulations": [
-        "form.e62923cd8ef99cd1.hausdorff-space",
-        "form.wave2.foundation76.continuous-topological-map.02"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.a8c70a2a13320680c54c",
       "context": "Category theory: natural transformation a:F⇒G of functors C^op→Sets, with components a_U:F(U)→G(U) commuting with every restriction map.",
       "surface_phrase": "natural transformation a:F→G",
@@ -786,16 +801,6 @@
       "observed_in_formulations": [
         "form.2ab2c62d4a9bd0a6.kaplansky-devissage",
         "form.7748e9fee3d01ef2.countably-generated-flat-mittag-leffler-projective"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.08a2969d79ad1ddc1922",
-      "context": "Commutative algebra: for unital ring homomorphism φ:R→S and prime q⊆S, contraction p=φ^{-1}(q)⊆R, a prime ideal by inverse-image stability under ring homomorphisms; when φ is an inclusion this becomes q∩R.",
-      "surface_phrase": "contracted prime p=q∩R",
-      "observed_in_formulations": [
-        "form.3fcd082413a6b2eb.relative-dimension-at-prime",
-        "form.b0ca759b4a7e7bfb.relative-assassin-module"
       ],
       "actionable": false
     },
@@ -1036,16 +1041,6 @@
       "observed_in_formulations": [
         "form.42730c7ef758df2a.two-fibre-product",
         "form.ec5e3a0d13f85f3a.equivalence-objects-two-category"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.68baad0cbaf9575f0b7e",
-      "context": "Commutative algebra: a prime ideal q⊆S lies over a prime ideal p⊆R along a unital ring homomorphism φ:R→S when φ^{-1}(q)=p. This is a relation between specified primes, whose underlying operation is preimage, distinct from the existence-of-lift predicates called going up and going down.",
-      "surface_phrase": "prime q lying above p",
-      "observed_in_formulations": [
-        "form.f6c83ed1311d9b05.going-down-ring-homomorphism",
-        "form.f6c83ed1311d9b05.going-up-ring-homomorphism"
       ],
       "actionable": false
     },
@@ -1470,16 +1465,6 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.ff999343a9d3baed47b5",
-      "context": "General topology: an open neighborhood U of a specified point x∈X, meaning x∈U and U belongs to the topology of X; local Krull dimension here ranges over all such U with their induced subspace topologies.",
-      "surface_phrase": "open neighbourhood U of x",
-      "observed_in_formulations": [
-        "form.b1c99b8dae7a6bde.locally-finite-collection",
-        "form.bd90654fb341045a.local-krull-dimension-point"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.908934f4b8323f2ba8a0",
       "context": "Integral domains: divisibility relation between ring elements",
       "surface_phrase": "divides",
@@ -1890,15 +1875,6 @@
       "surface_phrase": "degree-zero subring",
       "observed_in_formulations": [
         "form.29b2c34cc33d4b62.degree-zero-localization"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.2473a37ecddeac42985e",
-      "context": "Category theory: ordinary base category C (possibly large) for a fibred category p:E→C; no smallness hypothesis occurs in this source formulation.",
-      "surface_phrase": "category C",
-      "observed_in_formulations": [
-        "form.f7206eb9332b9389.split-fibred-category"
       ],
       "actionable": false
     },
@@ -2533,15 +2509,6 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.5b9f93c9e8355c4bc4c0",
-      "context": "Category theory: ordinary (possibly nonsmall) category with objects, identities, morphisms and associative composition; the definition of pullbacks does not restrict C to be small.",
-      "surface_phrase": "category and arrows",
-      "observed_in_formulations": [
-        "form.be14669c52f30e79.categorical-fibre-product"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.5bc4d59c4af87cb4310c",
       "context": "Set theory: finite subset J of a given index set I, the indexing object in finite products and intersections including the empty finite subset.",
       "surface_phrase": "finite index subset J",
@@ -2871,15 +2838,6 @@
       "surface_phrase": "well-defined coset product",
       "observed_in_formulations": [
         "form.wave2.quot119.quotient-group"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.7dc109f22452f0217a2a",
-      "context": "Category theory: an ordinary category I with objects, arrows, identities and composition; smallness is not explicitly stipulated by the filtered-category axioms in this source.",
-      "surface_phrase": "category I and its objects/arrows",
-      "observed_in_formulations": [
-        "form.9d27e470d02eae69.filtered-category"
       ],
       "actionable": false
     },
