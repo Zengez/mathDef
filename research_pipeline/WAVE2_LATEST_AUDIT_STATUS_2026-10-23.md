@@ -1,0 +1,11 @@
+# Wave2 — latest verified audit handoff, October 23, 2026
+
+This file supersedes the *historical* headline at the beginning of the large `WORK_CHECKPOINT.md` for the independent Wave2 mathematical dependency audit. Use **live** `experiments/reconstruction-v2-independent/dependency_graph/STATE.json` first; it is authoritative when newer packets apply.
+
+Latest exact receipts: `semantic-global-audit-missing-alias-162`, `semantic-global-audit-missing-resolve-163`, `semantic-global-audit-missing-resolve-164`, and `semantic-global-audit-missing-alias-165`, each applied in independent graph only, `human_certified=false`.
+
+Verified counts after packet 165: 611 meanings; 659/659 formulation scans (639 screened and 20 provisional); 724 original candidate IDs; **271 alias records**, **7 candidate-to-existing-meaning resolutions**, **446 unresolved canonical candidate identities** and 819 unresolved missing occurrences. Graph 651 open/8 closed; 765 append-only node amendments; 0 unassigned/ambiguous occurrences. Phase `consolidate_occurrences`; consolidation gate **FALSE**, external missing-definition research **OFF**, breadth Batch143 **ON HOLD**. Source inventory SHA `3759cab60c5fce7287492724fc2ed433ac6001c8a242b66f9bbc887e92294492`; unresolved fingerprint `fd222c2b1a6d97ff03676babed432e8d2dcc0a541a657e6afbeb75bb1c326f0d`.
+
+The continuation completed **seven contextual alias reviews plus three reviewed resolutions to previously existing mathematical meanings**. A stratified source-free sample reviewed 40 positions (38 distinct formulations) across ten topic buckets. Important *scope/variant convention*: existing connected-space meanings deliberately differ on whether the empty space is admitted; do not blindly equate the sources. Prior source-level flags about quasi-finiteness, submersive surjectivity and perfect closure in characteristic zero remain unresolved and unedited. Retrieve **effective graph nodes after replaying amendments**; do not use stale original node JSON as the current state.
+
+Read [complete mathematical report](WAVE2_SOURCE_FREE_AUDIT_CONTINUATION_2026-10-23_PACKETS162_165.md), `adapters/mathdef/resume_plan.json`, and exact applied receipts. No production mathDef, frozen Wave1, original source formulations, citation certification, or publication freeze was changed.
