@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "semantic-global-audit-missing-alias-160",
+  "mode": "alias",
+  "research_scope": "Source-free independent contextual mathematics audit of ordinary-functor prerequisites. No new meanings, no source edits, no consolidation gate or human certification.",
+  "aliases": [
+    {
+      "alias_id": "alias.global-audit.20261023.178",
+      "alias_candidate_id": "missing.7f7a9ea9ba237d4d230d",
+      "canonical_candidate_id": "missing.c5104821c3c70afa1f63",
+      "reason": "The limit/colimit and finite-diagram sources define a diagram F:I→C as an ordinary identity/composition-preserving functor from an indexing category I to an arbitrary target category C, not a small-to-small functor. Thus a diagram's underlying functor is precisely the unrestricted ordinary-functor prerequisite; index finiteness, connectedness, cone structure and universal limit/colimit claims remain parent-specific.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.179",
+      "alias_candidate_id": "missing.ba7c7234ba3861b43a27",
+      "canonical_candidate_id": "missing.c5104821c3c70afa1f63",
+      "reason": "The iso-comma-category source requires two ordinary covariant functors F:A→C and G:B→C, each preserving identities and composition without any smallness restriction. This invokes the general unrestricted ordinary-functor prerequisite twice; their shared codomain, the objects (a,b,α) and the iso-comma compatibility equations remain conditions only of the parent iso-comma construction.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.180",
+      "alias_candidate_id": "missing.c02e1ce9fa43e5498d67",
+      "canonical_candidate_id": "missing.c5104821c3c70afa1f63",
+      "reason": "The left-adjoint source uses ordinary functors L:C→D and R:D→C, differing only in domain/codomain orientation and naming from a generic identity/composition-preserving functor. Adjointness, naturality of Hom-bijections, and the fact that L and R have opposite domain assignments are extra parent constraints, not properties of an arbitrary functor.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.181",
+      "alias_candidate_id": "missing.78bf491fb0c8921f9fe5",
+      "canonical_candidate_id": "missing.c5104821c3c70afa1f63",
+      "reason": "The two-category-of-fibred-sets source uses functors H:E→E′ of total categories, ordinary functors at the level of objects/arrows, with the additional equation p′H=p. The general unrestricted functor prerequisite is identical while the over-base compatibility and fibration hypotheses remain source-specific and do not follow from ordinary functoriality.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    },
+    {
+      "alias_id": "alias.global-audit.20261023.182",
+      "alias_candidate_id": "missing.2eeb694b49cd0cf12a88",
+      "canonical_candidate_id": "missing.c5104821c3c70afa1f63",
+      "reason": "A tensor bifunctor ⊗:C×C→C in a monoidal category is an ordinary covariant functor with source the product category C×C, preserving identities and compositions for pairs of arrows. Its bifunctor notation does not introduce a different functoriality axiom. Product-category construction, tensor object, associator and monoidal coherence remain source-specific and are not collapsed into arbitrary functor meaning.",
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit"
+    }
+  ]
+}
