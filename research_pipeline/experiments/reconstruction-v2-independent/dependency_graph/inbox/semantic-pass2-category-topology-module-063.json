@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-category-topology-module-063",
+  "mode": "amend",
+  "research_scope": "Source-free category, commutative algebra, module theory and ideal-order dependency classification.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.category_topology_module.20261023.01",
+      "formulation_id": "form.141c0f3fd90dc7b4.final-object",
+      "version_sha256": "8a00984d0f12393e6fa6f0710d4a51c679c6b7a131354186a50434a99491ff63",
+      "expected_node_sha256": "3e4e7166fe13239a61cc35856f4963844bb20ccd88c9da61a2420f51a3a5be08",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read complete independent source text, its latest effective version-bound node and all prior contextual references; separated existing categorical morphism data from algebra tensor products, finite free modules and minimal prime ideals.",
+      "reason": "Whole-adjacency reviewed mathematical classification with preserved existing references, source version and SHA-256 predecessor, without mathematical source edits or external research.",
+      "references": [
+        {
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Source occurrence 'category C' denotes an ordinary category without a smallness requirement. Existing small-category meaning is too restrictive; do not conflate a fibred category, groupoid or slice category with the ambient category.",
+          "phrase": "category (size-unrestricted)",
+          "reason": "The existing category definition requires smallness; do not assume C is small.",
+          "state": "missing"
+        },
+        {
+          "phrase": "morphism from Y to T",
+          "state": "external",
+          "disposition": "The arrow Y→T is ordinary categorical morphism data supplied by the already recorded ambient category prerequisite. Requiring exactly one such arrow for each Y is the defining terminality condition, not a new morphism type."
+        },
+        {
+          "disposition": "Unique-existence quantification over arrows from Y to T is the defining condition, not a new mathematical object.",
+          "phrase": "exactly one morphism",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.category_topology_module.20261023.02",
+      "formulation_id": "form.141c0f3fd90dc7b4.initial-object",
+      "version_sha256": "1699f2a019f6a05f21f3e950cafb09bd505406f28e44247b5c923cfe22a53524",
+      "expected_node_sha256": "d685ca4c184d8102243cf2d3789779bb71a89b949a975def37b1b6408a9bd49b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read complete independent source text, its latest effective version-bound node and all prior contextual references; separated existing categorical morphism data from algebra tensor products, finite free modules and minimal prime ideals.",
+      "reason": "Whole-adjacency reviewed mathematical classification with preserved existing references, source version and SHA-256 predecessor, without mathematical source edits or external research.",
+      "references": [
+        {
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Source occurrence 'category C' denotes an ordinary category without a smallness requirement. Existing small-category meaning is too restrictive; do not conflate a fibred category, groupoid or slice category with the ambient category.",
+          "phrase": "category (size-unrestricted)",
+          "reason": "The ambient category is not specified small and should be matched consistently with the companion terminal object.",
+          "state": "missing"
+        },
+        {
+          "phrase": "morphism originating at I",
+          "state": "external",
+          "disposition": "The arrow I→Y is an ordinary morphism in the ambient category, whose structure is already recorded as a separate contextual prerequisite. The unique existence of this outgoing arrow is the defining initiality test."
+        },
+        {
+          "disposition": "Uniqueness of each arrow from I to Y is a quantifier condition, not a separate mathematical term.",
+          "phrase": "exactly one morphism",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.category_topology_module.20261023.03",
+      "formulation_id": "form.143bfc18b9ce9385.universal-homeomorphism-spectra",
+      "version_sha256": "1b3ed213f6a5fd65be246868d7075a3d2aceb5ac96f4ac782e7ed2dff4361474",
+      "expected_node_sha256": "0c48127372a0524064d9fee5436476789138acc2d39cab10465fa6249086fe90",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read complete independent source text, its latest effective version-bound node and all prior contextual references; separated existing categorical morphism data from algebra tensor products, finite free modules and minimal prime ideals.",
+      "reason": "Whole-adjacency reviewed mathematical classification with preserved existing references, source version and SHA-256 predecessor, without mathematical source edits or external research.",
+      "references": [
+        {
+          "phrase": "homomorphism of commutative rings R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "The base change uses unital commutative algebra maps."
+        },
+        {
+          "phrase": "R-algebra R′",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "An R-algebra structure is expressed by a unital structure map R→R′; precise R-algebra object remains a potential separate context."
+        },
+        {
+          "phrase": "Spec(S⊗_R R′)→Spec(R′)",
+          "state": "existing",
+          "target_meaning_id": "meaning.3f6a26f1786a8223.base-change-ring-map",
+          "matching_note": "The induced map after extension of scalars is the spectrum-level base change of a commutative ring map."
+        },
+        {
+          "phrase": "Spec(R′)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring",
+          "matching_note": "Both source and target are prime spectra of commutative rings."
+        },
+        {
+          "phrase": "homeomorphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.directional113.homeomorphism-topological",
+          "matching_note": "The induced spectral map must be a homeomorphism of the underlying topological spaces."
+        },
+        {
+          "phrase": "S⊗_R R′",
+          "state": "missing",
+          "context": "Commutative algebra: tensor product S⊗_R R′ of commutative unital R-algebras S and R′, with induced commutative unital R′-algebra multiplication (s⊗r′)(t⊗u′)=st⊗r′u′; the base-change algebra underlying Spec(S⊗_R R′).",
+          "reason": "The ring tensor product's induced multiplication and algebra structure are reusable prerequisites and not merely the tensor product of two underlying R-modules.",
+          "matching_note": "The base-change ring-map meaning already appears as a separate linked reference; audit candidate equivalence with other scalar-extension ring tensor occurrences."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.category_topology_module.20261023.04",
+      "formulation_id": "form.162eb0d0411cd217.flat-module-lazard",
+      "version_sha256": "2a732cf96f009db882cd8a0d65aa9d733d91d5e71953010b982429bd6bcf1df3",
+      "expected_node_sha256": "86c8751ec5dab8e1ce671a8e3d084f2993227188dbaadef7b5ee651b14004870",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read complete independent source text, its latest effective version-bound node and all prior contextual references; separated existing categorical morphism data from algebra tensor products, finite free modules and minimal prime ideals.",
+      "reason": "Whole-adjacency reviewed mathematical classification with preserved existing references, source version and SHA-256 predecessor, without mathematical source edits or external research.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "Lazard's theorem concerns ordinary unital modules over the ring R."
+        },
+        {
+          "phrase": "flat",
+          "state": "existing",
+          "target_meaning_id": "meaning.e91cf25c30aa59b9.flat-module",
+          "matching_note": "The same flat-module notion is characterized equivalently by filtered colimits."
+        },
+        {
+          "phrase": "filtered colimit",
+          "state": "existing",
+          "target_meaning_id": "meaning.9d27e470d02eae69.filtered-colimit",
+          "matching_note": "The indexing diagram is filtered in the categorical sense."
+        },
+        {
+          "phrase": "finite-rank free R-modules",
+          "state": "missing",
+          "context": "Module theory: finite-rank free left R-module R^n, n a finite nonnegative integer, equipped with a basis of cardinality n and isomorphic to a direct sum of n copies of the regular R-module.",
+          "reason": "Finite-rank free modules are reusable beyond Lazard's filtered-colimit criterion, unlike arbitrary projective or infinite-rank free modules.",
+          "matching_note": "Existing provisional canonical free-module record missing.83efb34a5e175413bd5a. Match for reviewed alias/deduplication, without presuming all free modules have finite rank."
+        },
+        {
+          "phrase": "exactness-preservation",
+          "state": "external",
+          "disposition": "The phrase describes the other equivalent characterization of flatness already linked; the passage does not require defining a new standalone exactness predicate now."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.category_topology_module.20261023.05",
+      "formulation_id": "form.16790121c4453020.weakly-associated-prime",
+      "version_sha256": "eba5e7bffab10bccc776708a3c00700580d6a3bfa19d3e1f591187dcfaf1c603",
+      "expected_node_sha256": "941e33e2a5e47cc432d458bf952cd84a5413e64ea0e0aeed485e43e82e3d29a7",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read complete independent source text, its latest effective version-bound node and all prior contextual references; separated existing categorical morphism data from algebra tensor products, finite free modules and minimal prime ideals.",
+      "reason": "Whole-adjacency reviewed mathematical classification with preserved existing references, source version and SHA-256 predecessor, without mathematical source edits or external research.",
+      "references": [
+        {
+          "phrase": "R-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "The module is over a commutative unital ring R in this associated-prime context."
+        },
+        {
+          "phrase": "prime ideal p of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.commutative-prime-ideal",
+          "matching_note": "p is prime in the ambient commutative unital ring."
+        },
+        {
+          "phrase": "annihilator Ann_R(m)",
+          "state": "existing",
+          "target_meaning_id": "meaning.a9ca2e716ceffd36.annihilator-module-element",
+          "matching_note": "This is the annihilator ideal of the chosen module element m."
+        },
+        {
+          "phrase": "prime ideals minimal over its annihilator Ann_R(m)",
+          "state": "missing",
+          "context": "Commutative algebra: prime ideal p minimal over an ideal I in a commutative unital ring R, meaning I⊆p and no prime ideal q satisfies I⊆q⊊p; the ideal here is Ann_R(m) for a module element m.",
+          "reason": "Minimal primes over an ideal are a reusable notion distinct from minimal associated primes or the annihilator's full prime spectrum.",
+          "matching_note": "The word 'minimal' is relative to primes containing I, not all prime ideals of R; compare with associated-prime candidates later."
+        },
+        {
+          "phrase": "some element m∈M",
+          "state": "external",
+          "disposition": "Existential quantification over a module's elements is ordinary module language."
+        }
+      ]
+    }
+  ]
+}
