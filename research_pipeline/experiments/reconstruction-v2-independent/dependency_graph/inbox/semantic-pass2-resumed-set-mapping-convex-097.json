@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-resumed-set-mapping-convex-097",
+  "mode": "amend",
+  "research_scope": "Relative set differences versus source-local linearity, mapping image, and convex-hull defining properties.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.resumed_review.20261023.21",
+      "formulation_id": "form.wave2.cross107.topological-boundary.1",
+      "version_sha256": "30f0136ae790cf0a5a250c9124884edc3fd22338bb7d1fd5da939970596c49e5",
+      "expected_node_sha256": "5036c5d57559a34a4585200bc18b98bf95e1bbf67251b02b9b2225dd317fc5a1",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire version-pinned independent mathematical formulation, preserved all established local references and historic effective amendments, and screened reusable set operations against the global provisional prerequisite pool without external sources.",
+      "reason": "Complete source-free predecessor-anchored replacement distinguishes the reusable set-theoretic difference from original defining predicates of linear maps, image of a map, and convex hull, without changing source content or claiming independent certification.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "closure cl_X(A)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross107.topological-closure"
+        },
+        {
+          "phrase": "interior int_X(A)",
+          "state": "existing",
+          "target_meaning_id": "meaning.c15e2b26c207d87e.interior-subset-topological"
+        },
+        {
+          "phrase": "subset A⊆X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "relative set difference cl_X(A)\\int_X(A)",
+          "state": "missing",
+          "missing_candidate_id": "missing.189a1049986dd4f651f4",
+          "context": "Set theory: relative complement C\\I={x∈C:x∉I} applied with C=cl_X(A) and I=int_X(A) in one fixed ambient space X. The two sets are already independently linked topological constructions, while set difference is reusable beyond topology.",
+          "reason": "Set difference/relative complement is independently reusable, and the already registered generic A\\B candidate exactly covers the operation; neither closure nor interior alone supplies subtraction of sets.",
+          "matching_note": "Use canonical provisional missing.189a1049986dd4f651f4. Do not replace cl(A)\\int(A) with A\\int(A) or A\\cl(X\\A), and retain the same ambient X."
+        },
+        {
+          "phrase": "boundary depends on ambient topology",
+          "state": "external",
+          "disposition": "The subscript X is significant; replacing ambient topology may change boundary."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resumed_review.20261023.22",
+      "formulation_id": "form.wave2.cross110.field-vector-linear",
+      "version_sha256": "cb3ae96c4f7e580cf2aa5f485ec3eef781c319c0ef86fe92d77fe6feb535254a",
+      "expected_node_sha256": "90bde41479fabd9fa49be54524c77083fc12f3049252848ad517adcc27708fcc",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire version-pinned independent mathematical formulation, preserved all established local references and historic effective amendments, and screened reusable set operations against the global provisional prerequisite pool without external sources.",
+      "reason": "Complete source-free predecessor-anchored replacement distinguishes the reusable set-theoretic difference from original defining predicates of linear maps, image of a map, and convex hull, without changing source content or claiming independent certification.",
+      "references": [
+        {
+          "phrase": "vector spaces V,W over common field K",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field"
+        },
+        {
+          "phrase": "map T:V→W",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "K-linearity of field-vector transformation",
+          "state": "external",
+          "disposition": "The displayed identity T(av+w)=aT(v)+T(w) for all a,v,w is the defining linearity condition of the very linear transformation being introduced. Field-vector-space and mapping prerequisites are already linked. Creating another K-linearity target equivalent to this definition would cause self-reference; the common K-action in V and W remains essential."
+        },
+        {
+          "phrase": "same scalar field in source and target",
+          "state": "external",
+          "disposition": "Linearity uses one common K-action on both spaces; not merely an additive set mapping."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resumed_review.20261023.23",
+      "formulation_id": "form.wave2.cross110.image-of-mapping.1",
+      "version_sha256": "4661bff357097fa0089f6cb90846d539bcfb70a8aa007784d147057dde7c1baf",
+      "expected_node_sha256": "76ebfb90de77d7e595df046967523443476392e5d2c6fc81fbb814d1b244143e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire version-pinned independent mathematical formulation, preserved all established local references and historic effective amendments, and screened reusable set operations against the global provisional prerequisite pool without external sources.",
+      "reason": "Complete source-free predecessor-anchored replacement distinguishes the reusable set-theoretic difference from original defining predicates of linear maps, image of a map, and convex hull, without changing source content or claiming independent certification.",
+      "references": [
+        {
+          "phrase": "total mapping f:S→T",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "subset of codomain T",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "existential preimage of t",
+          "state": "external",
+          "disposition": "The statement ∃s∈S with f(s)=t is precisely the membership criterion in the image im(f) being defined, not a requirement that f be invertible or a distinct preimage construction. The set-theoretic image is the subset of codomain T containing exactly these values; mappings and subsets are already linked."
+        },
+        {
+          "phrase": "image need not equal codomain",
+          "state": "external",
+          "disposition": "Surjectivity of f is not part of image definition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resumed_review.20261023.24",
+      "formulation_id": "form.wave2.cross110.image-of-mapping.2",
+      "version_sha256": "d9b86057d973d333a0ed9c1fe5e9560d78aac009b9792017ac35a777b389daa3",
+      "expected_node_sha256": "b440508f2b305604f797e1220be31262fc86a70b35ced1f0741972f14470eb56",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire version-pinned independent mathematical formulation, preserved all established local references and historic effective amendments, and screened reusable set operations against the global provisional prerequisite pool without external sources.",
+      "reason": "Complete source-free predecessor-anchored replacement distinguishes the reusable set-theoretic difference from original defining predicates of linear maps, image of a map, and convex hull, without changing source content or claiming independent certification.",
+      "references": [
+        {
+          "phrase": "mapping f:S→T",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "set comprehension of f(s)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "direct image of domain S",
+          "state": "external",
+          "disposition": "The set f[S]={f(s):s∈S} is the alternative defining notation for the image of a mapping already specified in this very formulation. Promoting full-domain direct image here to an extra missing meaning would duplicate the same image-of-mapping definition. Distinguish it from inverse image f^{-1}[B] and potential image of a proper subset A⊂S."
+        },
+        {
+          "phrase": "bracket notation uses entire domain",
+          "state": "external",
+          "disposition": "Notation f[S] is direct image of S, not preimage of S."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resumed_review.20261023.25",
+      "formulation_id": "form.wave2.cross133.convex-hull-real.3",
+      "version_sha256": "41e5ff60580981cbdd9bc98f4cd5190a15172fa225bbbf5e432a3e46d215494b",
+      "expected_node_sha256": "e4f994a96d6b9bc6214993458b8666f4da55681b240d263f9b928f681d744006",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire version-pinned independent mathematical formulation, preserved all established local references and historic effective amendments, and screened reusable set operations against the global provisional prerequisite pool without external sources.",
+      "reason": "Complete source-free predecessor-anchored replacement distinguishes the reusable set-theoretic difference from original defining predicates of linear maps, image of a map, and convex hull, without changing source content or claiming independent certification.",
+      "references": [
+        {
+          "phrase": "convex subset of real vector space",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.bridge136.convex-real"
+        },
+        {
+          "phrase": "subset inclusion",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "real vector space V",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field"
+        },
+        {
+          "phrase": "least convex superset of U",
+          "state": "external",
+          "disposition": "The unique least convex superset C of U, meaning U⊆C and C⊆D for every convex D with U⊆D, is this formulation's characterization of conv(U), not an additional prerequisite. Convexity and inclusion are already linked; leastness, rather than mere inclusion-minimality, is the quantified defining criterion."
+        },
+        {
+          "phrase": "least is stronger than minimal",
+          "state": "external",
+          "disposition": "Every admissible convex superset contains C; uniqueness follows."
+        }
+      ]
+    }
+  ]
+}
