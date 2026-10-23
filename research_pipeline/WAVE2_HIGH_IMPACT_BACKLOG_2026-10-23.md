@@ -1,3 +1,5 @@
+> **Post-packets-157 live handoff (October 23):** The numbers below are the historic *pre-154* triage baseline. Subsequent 19 approved source-free aliases in packets 154–157 leave **245 total aliases, 4 resolved-to-existing candidates, and 475 unresolved canonical candidate identities**, with 611 meanings and 659/659 scans; consolidation gate FALSE. The high-frequency candidate examples below remain review leads, not 475 verified missing definitions. See [the continuation report](WAVE2_CONTEXTUAL_AUDIT_CONTINUATION_2026-10-23_PACKETS154_157.md) and live STATE for authoritative totals.
+
 # Independent Wave2 — high-impact canonical prerequisite backlog, 2026-10-23
 
 **Verified base:** 494 unresolved canonical candidate identities after independent-only packets 147–153; 611 meanings, 659/659 scans, 226 aliases, 4 candidate-to-meaning resolutions, 822 missing occurrences; consolidation gate FALSE.
