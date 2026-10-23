@@ -324,13 +324,43 @@ def build_review_packages(snapshot: dict, manifest: dict,
             if (index in modified or edit.get("expected_node_sha256") != old_hash
                     or edit.get("expected_occurrence_id") != original.get("occurrence_id")):
                 raise PipelineError("Duplicate edit or stale effective occurrence: " + fid)
-            new = edit.get("replacement")
+            # Prefer an explicitly reviewed *delta*: leave untouched metadata
+            # and unrelated context identical, instead of manually retyping
+            # the entire original reference. Full replacement remains supported.
+            replacement = edit.get("replacement")
+            updates = edit.get("updates")
             rationale = edit.get("reason", "")
-            if not isinstance(new, dict) or len(str(rationale).strip()) < 40:
-                raise PipelineError("Reviewed full replacement and 40-character reason required")
+            if len(str(rationale).strip()) < 40:
+                raise PipelineError("Substantive mathematical change rationale required")
+            if (replacement is None) == (updates is None):
+                raise PipelineError("Supply exactly one of replacement or updates")
+            if updates is not None:
+                if not isinstance(updates, dict) or not updates:
+                    raise PipelineError("Delta updates must be a nonempty dictionary")
+                removals = edit.get("remove_fields", [])
+                if (not isinstance(removals, list) or
+                        any(not isinstance(k, str) for k in removals)):
+                    raise PipelineError("remove_fields must list reference keys")
+                forbidden = {"occurrence_id", "missing_candidate_id", "span"}
+                if forbidden & set(updates) or forbidden & set(removals):
+                    raise PipelineError("Reviewer cannot assign generated or span metadata")
+                new = dict(refs[index])
+                for name in removals:
+                    new.pop(name, None)
+                new.update(updates)
+            else:
+                if not isinstance(replacement, dict):
+                    raise PipelineError("Reviewed full replacement must be a dictionary")
+                new = replacement
             if "occurrence_id" in new:
                 raise PipelineError("Occurrence IDs are generated, not editor-assigned")
+            if (new.get("state") != "existing" and "target_meaning_id" in new):
+                raise PipelineError("Non-existing reference retains a stale target")
+            if new.get("state") == "existing" and "missing_candidate_id" in new:
+                raise PipelineError("Existing reference retains stale missing identity")
             if new.get("state") == "missing":
+                if not str(new.get("context", "")).strip():
+                    raise PipelineError("Missing references require mathematical context")
                 if missing_key(new.get("phrase", ""), new.get("context", "")) not in existing_candidates:
                     raise PipelineError("Cannot silently invent missing-candidate identities")
             if new == refs[index]:
