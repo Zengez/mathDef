@@ -1,0 +1,71 @@
+# Independent Wave2 audit continuation — October 23, 2026, packets 162–165
+
+**VERIFIED APPLIED in the independent graph only.** Four append-only review inbox packets, `semantic-global-audit-missing-alias-162`, `semantic-global-audit-missing-resolve-163`, `semantic-global-audit-missing-resolve-164`, and `semantic-global-audit-missing-alias-165`, each have an exact receipt with `status=applied_in_independent_graph_only`, `human_certified=false`. This round contributed **7 mathematical prerequisite aliases plus 3 candidate-to-existing-meaning resolutions**. All decisions used the original independent Wave2 formulation inventory, original context and target meaning texts; the matching target meaning version digests for resolve packets were independently computed from inventory and cross-checked against the previously recorded version-digest convention.
+
+## Before and after: verified independent graph
+
+| Metric | At handoff after 161 | Verified after 165 |
+| --- | ---: | ---: |
+| Existing meanings | 611 | **611** |
+| Complete formulation scans | 659 / 659 | **659 / 659** |
+| Screened / provisional | 639 / 20 | **639 / 20** |
+| Raw missing-candidate identities | 724 | **724** |
+| Cumulative alias records | 264 | **271** |
+| Cumulative candidate-to-existing-meaning resolutions | 4 | **7** |
+| Unresolved canonical candidate identities | 456 | **446** |
+| Remaining unresolved missing occurrence rows | 822 | **819** |
+| Append-only scan amendment events | 765 | **765** |
+| Unassigned / ambiguous occurrences | 0 / 0 | **0 / 0** |
+| Graph open / closed formulations | 651 / 8 | **651 / 8** |
+| Consolidation gate | FALSE | **FALSE** |
+
+The source inventory version hash remains `3759cab60c5fce7287492724fc2ed433ac6001c8a242b66f9bbc887e92294492`. The latest unresolved canonical fingerprint is `fd222c2b1a6d97ff03676babed432e8d2dcc0a541a657e6afbeb75bb1c326f0d`. `446` is a number of **unclassified canonical prerequisite identities**, not 446 independently certified absent mathematical definitions.
+
+## Applied mathematical identity work
+
+### Packet 162 — five reviewed aliases
+
+1. `missing.b6f995eb0e6379a2fdc8` → `missing.9720508883754c995559`: closed subsets of `Spec(R)` as `V(I)`, including support and irreducible-component contexts.
+2. `missing.d5080f42715b51f29dfe` → `missing.9720508883754c995559`: `V(g_1,…,g_m)=V((g_1,…,g_m))` as the finite-generator case of the same vanishing-locus construction. Constructibility and membership in a distinguished-open intersection are separate requirements.
+3. `missing.19bd1b05b35ea69f9373` → `missing.08a2969d79ad1ddc1922`: a prime `q` *lying over* `p` along `R→S` means `p=φ^{-1}(q)`, the same prime-contraction prerequisite.
+4. `missing.e31865cbca3aea4bdc09` → `missing.189a1049986dd4f651f4`: set complement `X\\A` as set-theoretic relative difference, specialized to ambient `X`. σ-algebra closure remains parent-specific.
+5. `missing.556738b88c8bde56e59f` → `missing.bf9f155d15473da985d2`: structural sheaf morphism for a continuous map, in the adjoint presentations `O_Y→f_*O_X` and `f^{-1}O_Y→O_X`; stalk-localness remains a separate requirement.
+
+### Packet 163 — two reviewed matches to already existing meanings
+
+1. `missing.61801675cc783a243555` → `meaning.wave2.cross110.module-linear`, target meaning version `bc931003378823cbaf44ba2fb2e81e0ff8546e21a399b7694ad2b3a8e958559d`. The prerequisite is **R-linearity** of a map between S-modules viewed by restricted scalars; no S-linearity follows, and being a differential operator remains a parent condition.
+2. `missing.9e6a2c16281f611afb84` → `meaning.dbce785fa0c96b0a.field-characteristic`, target meaning version `abc7cf2e08f0f5f85a6b2375336ce7dd2b221718e5f5c3900cefed6866561706`. Residue characteristic is the ordinary **field characteristic of R/m**. It is **not** asserted to equal the characteristic of the original local ring R.
+
+### Packet 164 — one reviewed match to an existing meaning
+
+`missing.45ae0b546c6f048a3f73` → `meaning.wave2.pop139.matrix-trace`, target meaning version `6ece00470d3124a26bdd6e158a2348ed14660183ca11cfbae08a341db8788d2a`. A K-linear endomorphism of the finite-dimensional K-vector space L has a matrix in any chosen K-basis. Its ordinary operator trace is the sum of the diagonal entries of that matrix, exactly the existing square-matrix trace construction. Independence of basis is the usual compatibility result; field trace of an element α continues to be the trace of the special endomorphism `x↦αx`, not the same concept as the arbitrary square-matrix trace.
+
+### Packet 165 — two reviewed aliases
+
+1. `missing.2625abfe8c5d9a4e741d` → `missing.bf9f155d15473da985d2`: closed-immersion `O_X→i_*O_Z` is a particular structure-sheaf homomorphism over a continuous map; **surjectivity, locally generated kernel and underlying closed homeomorphism** remain defining constraints of the parent closed immersion.
+2. `missing.9b13787cda328479954f` → `missing.60b81b3c7a42f7c2b9ee`: the σ-algebra generated by a random variable's measurable preimages specializes the generic **σ-algebra generated by a family of subsets**; its preimage family is already a σ-algebra. The family of open subsets τ in the Borel case, the measurable codomain, and mutual independence of multiple σ-algebras remain distinct contextual conditions.
+
+The original candidate identity, wording, complete source context and parent formulation remain traceable after aliases. These decisions are **shared-prerequisite** consolidations, not mathematical equivalences between the surrounding parent definitions.
+
+## Independent source-level quality spot check
+
+To avoid reviewing only lexical near-matches, sampled **40 source-formulation positions (38 distinct entries)** by deterministic ranks within ten overlapping domain buckets: algebra, topology, fields, categories, modules/linear algebra, algebraic geometry, analysis, number/elementary topics, probability/measure, and set/order theory. Examined their mathematical text and source-context labels in the independent inventory. This is a **source-free risk-oriented spot check**, not a proof of every statement, source URL validation, or external citation audit. No *new* confirmed incorrect effective dependency link was identified in this sample.
+
+**Convention / variant issue requiring deliberate reconciliation**:
+
+- `meaning.ab260940ea9c523d.connected-topological-space` explicitly restricts to a **nonempty** space, while `meaning.wave2.variant71.connected-empty-allowed` (three formulations) and `meaning.wave2.pop141.connected-space` (two formulations) explicitly allow the **empty space** as connected. The latter two are mathematically equivalent to the ordinary no-nontrivial-open-separation characterization, with the empty case vacuous. These are distinguishable **scope conventions**: retain both source records, label the nonempty domain rather than pretending unrestricted equivalence, and plan contextual variant prioritization / cross-links later. Do not blindly merge/replace the mathematical source records during dependency consolidation.
+- `meaning.wave2.foundation76.discrete-topology` similarly states a nonempty source domain, while the `τ=𝒫(S)` construction is also mathematically valid on the empty set. This is a scoped-definition completeness question, not a detected logical contradiction in its stated nonempty domain.
+
+**Important false-positive near-matches checked, not merged:** quotient set versus quotient group versus quotient ring; minimal prime of R versus prime minimal over a specified annihilator; disjoint direct sum of modules versus unrestricted module product; homology versus cohomology; arbitrary neighboring versus open neighboring sets; real versus complex form structures; finite versus countably infinite orthogonality support; closed subset versus closed subscheme; operator trace versus arbitrary field-extension trace (only the underlying square-matrix trace prerequisite is reused); small versus unrestricted category/functor. This audit explicitly uses **current effective snapshots after append-only amendments**, not superseded `nodes/*.json` snapshots.
+
+## Previously identified mathematical source-text issues remain open
+
+1. Quasi-finite-at-a-prime formulation: local fibre ring's Krull dimension zero does not alone imply that q is isolated in the entire finite-type fibre (counterexample generic point (0)∈Spec(k[t])).
+2. Submersive-map formulation: open-preimage biconditional alone does not imply **surjectivity**, which must stay in the equivalence.
+3. Perfect-closure convention: the positive-characteristic-only stored formulation requires a separate characteristic-zero convention check (`k^{perf}=k`), before variant claims or source certification.
+
+No original mathematical source texts, source citations, production mathDef corpus, independent Wave1 or frozen published references were changed. The Wave2 `consolidation_gate_valid` remains FALSE and breadth Batch143 / external missing-definition searches remain OFF.
+
+## Recommended next audit round
+
+First read `dependency_graph/STATE.json`, `CHECKPOINT.json`, `INVENTORY.json`, *effective append-only node amendments*, all four exact applied receipts and this report. Then prioritize the remaining 446 candidate identity classes by **mathematical type and multiple-source reuse**, not surface similarity. Prefer reviewing a few high-impact false-target or scope issues carefully to forcing dubious aliases; continue stratified dissimilar-source checks and prepare separately for eventual original source-citation verification. Maintain the source-free phase barrier and explicit non-certification status.
