@@ -2,6 +2,8 @@
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
+import research_pipeline.engine.dependency_graph as graph_module
 from pathlib import Path
 
 from research_pipeline.engine.core import Workspace, PipelineError, digest
@@ -367,6 +369,166 @@ class DependencyGraphTests(unittest.TestCase):
         self.assertFalse((graph / "applied" / "rollback-a.json").exists())
         self.assertFalse((graph / "applied" / "rollback-b.json").exists())
         self.assertEqual(live_nodes(graph, inv), original)
+
+    def test_grouped_alias_inbox_one_rebuild_with_individual_receipts(self):
+        for name in ("A", "B", "C"):
+            self.add(name, "a distinct original mathematical source")
+        self.write_fixture()
+        context = "Algebraic identity in a common domain"
+        store(self.root, [
+            self.entry("form." + name.casefold(),
+                       [{"phrase": "candidate " + name, "context": context,
+                         "state": "missing"}])
+            for name in ("A", "B", "C")
+        ])
+        graph = graph_path(self.root)
+        folder = graph / "inbox"
+        folder.mkdir(exist_ok=True)
+        for name in ("B", "C"):
+            event = {"alias_id": "alias.grouped-" + name.casefold(),
+                     "alias_candidate_id": missing_key("candidate " + name, context),
+                     "canonical_candidate_id": missing_key("candidate A", context),
+                     "reviewed_by": "source-free-fixture-reviewer",
+                     "reason": "The complete original mathematical context has "
+                               "been reviewed and this is the same prerequisite."}
+            batch_id = "aliases-group-" + name.casefold()
+            (folder / (batch_id + ".json")).write_text(json.dumps({
+                "schema_version": 1, "id": batch_id, "mode": "alias",
+                "aliases": [event],
+            }))
+        with patch.object(graph_module, "rebuild", wraps=graph_module.rebuild) as rebuild:
+            result = apply_inbox(self.root)
+            self.assertEqual(rebuild.call_count, 1)
+        self.assertEqual(result["applied"], ["aliases-group-b", "aliases-group-c"])
+        self.assertEqual(read(graph / "STATE.json")["summary"]
+                         ["unresolved_missing_candidates"], 1)
+        self.assertEqual(read(graph / "STATE.json")["summary"]
+                         ["alias_candidate_records"], 2)
+        for name in result["applied"]:
+            receipt = read(graph / "applied" / (name + ".json"))
+            self.assertFalse(receipt["human_certified"])
+            self.assertEqual(receipt["status"], "applied_in_independent_graph_only")
+        with patch.object(graph_module, "rebuild", wraps=graph_module.rebuild) as rebuild:
+            self.assertEqual(apply_inbox(self.root)["applied"], [])
+            self.assertEqual(rebuild.call_count, 0)
+
+    def test_grouped_alias_inbox_rejects_conflict_without_partial_receipts(self):
+        for name in ("A", "B"):
+            self.add(name, "independent underlying construction")
+        self.write_fixture()
+        context = "Commutative algebra source"
+        store(self.root, [
+            self.entry("form." + name.casefold(),
+                       [{"phrase": "object " + name, "context": context,
+                         "state": "missing"}])
+            for name in ("A", "B")
+        ])
+        graph = graph_path(self.root)
+        folder = graph / "inbox"
+        folder.mkdir(exist_ok=True)
+        for label, source, dest in (("a", "B", "A"), ("b", "A", "B")):
+            batch_id = "bad-alias-" + label
+            (folder / (batch_id + ".json")).write_text(json.dumps({
+                "schema_version": 1, "id": batch_id, "mode": "alias",
+                "aliases": [{
+                    "alias_id": "alias.bad-" + label,
+                    "alias_candidate_id": missing_key("object " + source, context),
+                    "canonical_candidate_id": missing_key("object " + dest, context),
+                    "reviewed_by": "fixture-reviewer",
+                    "reason": "Two source-context identities reviewed for the "
+                              "deliberately invalid cyclic alias regression.",
+                }],
+            }))
+        with self.assertRaises(PipelineError):
+            apply_inbox(self.root)
+        self.assertFalse((graph / "candidate_aliases.jsonl").exists())
+        self.assertFalse((graph / "applied/bad-alias-a.json").exists())
+        self.assertFalse((graph / "applied/bad-alias-b.json").exists())
+        self.assertEqual(read(graph / "STATE.json")["summary"]
+                         ["unresolved_missing_candidates"], 2)
+
+    def test_grouped_resolution_inbox_one_rebuild_and_mode_order(self):
+        for name in ("A", "B", "C"):
+            self.add(name, "a distinct independent mathematical source")
+        self.write_fixture()
+        context = "Module-theoretic definition context"
+        store(self.root, [
+            self.entry("form." + name.casefold(),
+                       [{"phrase": "missing " + name, "context": context,
+                         "state": "missing"}])
+            for name in ("A", "B")
+        ] + [self.entry("form.c", [])])
+        graph = graph_path(self.root)
+        inv = read(graph / "INVENTORY.json")
+        folder = graph / "inbox"
+        folder.mkdir(exist_ok=True)
+        for name in ("A", "B"):
+            batch_id = "resolutions-group-" + name.casefold()
+            (folder / (batch_id + ".json")).write_text(json.dumps({
+                "schema_version": 1, "id": batch_id, "mode": "resolve",
+                "resolutions": [{
+                    "missing_candidate_id": missing_key("missing " + name, context),
+                    "target_meaning_id": "meaning.c",
+                    "target_version_sha256": meaning_version(inv, "meaning.c"),
+                    "review_rationale": "This reviewed prerequisite points to "
+                                        "existing meaning C, in the same mathematical "
+                                        "setting; not an assertion of certification.",
+                }],
+            }))
+        with patch.object(graph_module, "rebuild", wraps=graph_module.rebuild) as rebuild:
+            result = apply_inbox(self.root)
+            self.assertEqual(rebuild.call_count, 1)
+        self.assertEqual(result["applied"],
+                         ["resolutions-group-a", "resolutions-group-b"])
+        self.assertEqual(read(graph / "STATE.json")["summary"]
+                         ["unresolved_missing_candidates"], 0)
+        self.assertEqual(read(graph / "STATE.json")["summary"]
+                         ["missing_occurrences"], 0)
+        for name in result["applied"]:
+            self.assertFalse(read(graph / "applied" / (name + ".json"))
+                             ["human_certified"])
+
+    def test_grouped_inbox_preserves_order_across_alias_resolve_boundaries(self):
+        for name in ("A", "B", "C"):
+            self.add(name, "independent source")
+        self.write_fixture()
+        context = "One mathematical context"
+        store(self.root, [
+            self.entry("form." + name.casefold(),
+                       [{"phrase": "candidate " + name, "context": context,
+                         "state": "missing"}])
+            for name in ("A", "B")
+        ] + [self.entry("form.c", [])])
+        graph = graph_path(self.root)
+        inv = read(graph / "INVENTORY.json")
+        inbox = graph / "inbox"
+        inbox.mkdir(exist_ok=True)
+        alias = {"schema_version": 1, "id": "mixed-01-alias", "mode": "alias",
+                 "aliases": [{
+                     "alias_id": "alias.mixed",
+                     "alias_candidate_id": missing_key("candidate B", context),
+                     "canonical_candidate_id": missing_key("candidate A", context),
+                     "reviewed_by": "fixture-reviewer",
+                     "reason": "The complete original contexts have the same "
+                               "mathematical prerequisite despite different naming.",
+                 }]}
+        resolution = {"schema_version": 1, "id": "mixed-02-resolve",
+                      "mode": "resolve", "resolutions": [{
+                          "missing_candidate_id": missing_key("candidate A", context),
+                          "target_meaning_id": "meaning.c",
+                          "target_version_sha256": meaning_version(inv, "meaning.c"),
+                          "review_rationale": "After prerequisite aliasing this "
+                                              "previously missing concept has the "
+                                              "exact existing version-bounded meaning C.",
+                      }]}
+        for packet in (alias, resolution):
+            (inbox / (packet["id"] + ".json")).write_text(json.dumps(packet))
+        with patch.object(graph_module, "rebuild", wraps=graph_module.rebuild) as rebuild:
+            result = apply_inbox(self.root)
+            self.assertEqual(rebuild.call_count, 2)
+        self.assertEqual(result["applied"], ["mixed-01-alias", "mixed-02-resolve"])
+        self.assertEqual(read(graph / "STATE.json")["summary"]
+                         ["unresolved_missing_candidates"], 0)
 
     def test_append_only_scan_amendment_restart_replay_and_stale_guard(self):
         self.add("A", "B and C")
