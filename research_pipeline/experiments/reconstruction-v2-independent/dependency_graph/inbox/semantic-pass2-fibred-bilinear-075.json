@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-fibred-bilinear-075",
+  "mode": "amend",
+  "research_scope": "Source-free category-fibration, automorphism, 2-morphism and bilinear tensor dependencies.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.fibred_bilinear.20261023.01",
+      "formulation_id": "form.74cd6dc48e0606fc.category-fibred-in-setoids",
+      "version_sha256": "b1cd1878026c1dec3b9796f5e32a52ba30dc10608f11ce5d4316b025ef6f93da",
+      "expected_node_sha256": "d477c2aabcad0bbbe708ba1e2571a913a141604f7d1841cbde03910f81fabfab",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed the independent original complete mathematical formulation, its effective history and contextual catalogue; distinguished fibred-category and automorphism prerequisites from the defining bilinearity and tensor universal property.",
+      "reason": "Whole-node source-free contextual review retaining all previous decisions, exact version and predecessor hash, with possible candidate aliases noted but not prematurely asserted.",
+      "references": [
+        {
+          "phrase": "category fibred in groupoids p:E→C",
+          "state": "existing",
+          "target_meaning_id": "meaning.5e4b8f6efeda6522.category-fibred-in-groupoids"
+        },
+        {
+          "phrase": "setoid fibre categories E_U",
+          "state": "existing",
+          "target_meaning_id": "meaning.74cd6dc48e0606fc.setoid-category"
+        },
+        {
+          "phrase": "fibre category E_U of p",
+          "state": "missing",
+          "context": "Category theory: fibre category E_U of a functor p:E→C over U∈C; objects are x∈E with p(x)=U and morphisms are arrows α:x→y in E whose image under p is id_U.",
+          "reason": "The fibre-category construction is independently useful beyond fibre categories that happen to be setoids; arbitrary base-changing arrows are not fibre-category arrows.",
+          "matching_note": "Compare with provisional fibre-category candidate missing.2736dd8ef54a06c79e42; preserve p(α)=id_U."
+        },
+        {
+          "phrase": "each fibre",
+          "state": "external",
+          "disposition": "The stated condition holds for every U in C; it is not equivalent to the total category being a setoid."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibred_bilinear.20261023.02",
+      "formulation_id": "form.74cd6dc48e0606fc.setoid-category",
+      "version_sha256": "b1d3b44e48b1260cce3bea331a63b47ead854c5b7e62449eb69e3c3d4a688b6a",
+      "expected_node_sha256": "a2144d8b137c26956fed986266a671c0e6b29afbbc08a94dd371f92e550748cb",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed the independent original complete mathematical formulation, its effective history and contextual catalogue; distinguished fibred-category and automorphism prerequisites from the defining bilinearity and tensor universal property.",
+      "reason": "Whole-node source-free contextual review retaining all previous decisions, exact version and predecessor hash, with possible candidate aliases noted but not prematurely asserted.",
+      "references": [
+        {
+          "phrase": "groupoid C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-groupoid"
+        },
+        {
+          "phrase": "identity automorphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "phrase": "automorphism group of an object",
+          "state": "missing",
+          "context": "Category theory: automorphism group Aut_C(x) of an object x, consisting of all invertible endomorphisms x→x with composition and identity; in a groupoid all arrows are invertible. This is distinct from a field-automorphism group or a subgroup of vertical automorphisms unless context requires it.",
+          "reason": "The general object automorphism group is a reusable categorical construction; setoidness demands that this group be trivial for every object.",
+          "matching_note": "Do not link to the existing field-extension automorphism group or equate trivial automorphism groups with disconnectedness."
+        },
+        {
+          "matching_note": "Verified ordinary set-theoretic equivalence relation, equivalence class or quotient set is precisely applicable to this source's objects. The source's additional generating-pair conditions, group-action laws, Cauchy relation, or concrete integer-model equations remain as defining data and are not replaced by the general target.",
+          "phrase": "equivalence relation on objects by existence of an arrow",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive"
+        },
+        {
+          "disposition": "For a groupoid with trivial automorphisms, this follows by cancellation of invertible arrows; no skeletal assumption is present.",
+          "phrase": "at most one arrow between objects",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibred_bilinear.20261023.03",
+      "formulation_id": "form.74cd6dc48e0606fc.two-category-fibred-setoids",
+      "version_sha256": "a5e63601401625e56904f417758973545f76bf8ab85856eeb75737dce5fcf928",
+      "expected_node_sha256": "59b2ef0117121be534f8acd225f66ea845e1e2ab19086f06e532e2d4bca3063a",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed the independent original complete mathematical formulation, its effective history and contextual catalogue; distinguished fibred-category and automorphism prerequisites from the defining bilinearity and tensor universal property.",
+      "reason": "Whole-node source-free contextual review retaining all previous decisions, exact version and predecessor hash, with possible candidate aliases noted but not prematurely asserted.",
+      "references": [
+        {
+          "phrase": "2-category",
+          "state": "existing",
+          "target_meaning_id": "meaning.ec5e3a0d13f85f3a.strict-two-category"
+        },
+        {
+          "phrase": "categories fibred in setoids over C",
+          "state": "existing",
+          "target_meaning_id": "meaning.74cd6dc48e0606fc.category-fibred-in-setoids"
+        },
+        {
+          "phrase": "functors commuting with projection",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "categories over a base C",
+          "state": "existing",
+          "target_meaning_id": "meaning.56119d315cf02fdf.two-category-over-base"
+        },
+        {
+          "phrase": "natural transformations over identity arrows of C",
+          "state": "missing",
+          "context": "Category theory: natural transformation α:F⇒G between functors p:E→C and q:E′→C commuting with projections, whose component arrows α_x:F(x)→G(x) satisfy q(α_x)=id_{p(x)} for every x.",
+          "reason": "A natural transformation in a 2-category over a fixed base has a vertical-component condition beyond ordinary naturality.",
+          "matching_note": "Compare to missing.5a53cd2d53ef5891adcb and missing.ff2c23b80fc7ac4368ab, preserving source/target and projection conventions."
+        },
+        {
+          "phrase": "2-morphisms over identity arrows",
+          "state": "external",
+          "disposition": "The restriction is essential: arbitrary natural transformations between the underlying functors are not the same 2-morphisms."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibred_bilinear.20261023.04",
+      "formulation_id": "form.74e36635b2776fe8.bilinear-map-modules",
+      "version_sha256": "40a7b53545a4f3ffd293de3ffaeeefe1b0cc858b92411d5f6f5d386d21965abd",
+      "expected_node_sha256": "6d9d3f175bc885262e636342c49a49227051e570cc802388ffb662bfb4780e51",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed the independent original complete mathematical formulation, its effective history and contextual catalogue; distinguished fibred-category and automorphism prerequisites from the defining bilinearity and tensor universal property.",
+      "reason": "Whole-node source-free contextual review retaining all previous decisions, exact version and predecessor hash, with possible candidate aliases noted but not prematurely asserted.",
+      "references": [
+        {
+          "phrase": "R-modules M, N and P",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "map b:M×N→P",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "R-linear in each variable separately",
+          "state": "external",
+          "disposition": "Linearity in each variable after fixing the other is the two-variable bilinearity axiom being defined; R-linearity is already indexed as a separate module-homomorphism prerequisite. This is not a self-link to a bilinear map."
+        },
+        {
+          "phrase": "the other variable fixed",
+          "state": "external",
+          "disposition": "Both separate linearity requirements are imposed, rather than a single linearity condition on M×N."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibred_bilinear.20261023.05",
+      "formulation_id": "form.74e36635b2776fe8.tensor-product-modules",
+      "version_sha256": "ee07cb5fe102e77997396307bcaf6440eb756dc46d60aac8fb40bb51ab0ad8fe",
+      "expected_node_sha256": "470441c6d8a696f1a7e8974f1361e485b369bc089bdc7ddbd4bc521b66019629",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed the independent original complete mathematical formulation, its effective history and contextual catalogue; distinguished fibred-category and automorphism prerequisites from the defining bilinearity and tensor universal property.",
+      "reason": "Whole-node source-free contextual review retaining all previous decisions, exact version and predecessor hash, with possible candidate aliases noted but not prematurely asserted.",
+      "references": [
+        {
+          "phrase": "R-modules M,N and P",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "bilinear map M×N→M⊗_R N",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.bilinear-map-modules"
+        },
+        {
+          "phrase": "R-linear factorization to P",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "universal factorization through M⊗_R N",
+          "state": "external",
+          "disposition": "The existence and uniqueness of an R-linear map through the canonical bilinear map for every bilinear b is precisely the universal property defining this tensor product, not a separate prerequisite tensor product or unrelated factorization object."
+        },
+        {
+          "phrase": "every bilinear b factors uniquely",
+          "state": "external",
+          "disposition": "Uniqueness and the quantification over all codomain modules are the substantive universal property, not an assumed chosen basis."
+        }
+      ]
+    }
+  ]
+}
