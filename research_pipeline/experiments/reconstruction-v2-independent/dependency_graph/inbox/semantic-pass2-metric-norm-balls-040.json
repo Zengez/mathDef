@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-metric-norm-balls-040",
+  "mode": "amend",
+  "research_scope": "Five source-free complete reviews of metric/norm balls and directional derivative; no external research, meanings or automatic aliases.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.metric_norm_balls.20261022.01",
+      "formulation_id": "form.wave2.directional113.open-metric",
+      "version_sha256": "54a8d63402dae64c40c82c661663c0c15bb0a09be6362c01945894a8680b8f9d",
+      "expected_node_sha256": "789de66e2a15de3f98631510d39f0e4b45205b76d0f7892d76bb6f7a1893777f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed complete metric and norm ball formulations and directional derivative contexts, separating the sets and quantifiers being defined from reusable vector-norm and directional difference constructions.",
+      "reason": "Source-free contextual dependency classification, preserving original source and full prior references; global candidate audit remains required.",
+      "references": [
+        {
+          "phrase": "metric space (X,d)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.metric-space"
+        },
+        {
+          "phrase": "center a∈X radius r>0",
+          "state": "external",
+          "disposition": "Choosing a center and strictly positive real radius is ordinary input data, not a missing concept."
+        },
+        {
+          "phrase": "open metric ball B_d(a,r)",
+          "state": "external",
+          "disposition": "The set {x:d(x,a)<r} is the open ball being defined, not a prerequisite already given."
+        },
+        {
+          "phrase": "strict distance inequality",
+          "state": "external",
+          "disposition": "Open metric balls form basis of metric topology, but need not equal all open sets individually."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.metric_norm_balls.20261022.02",
+      "formulation_id": "form.wave2.directional113.closed-metric",
+      "version_sha256": "9a7cbf9509100583c2273b655f0879cbd33bf64bfdb343e59b7e076fd14a507b",
+      "expected_node_sha256": "8c529d162072e05c6595d9459815d39a7950a3d680bf571e57d97eaaaa3103c3",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed complete metric and norm ball formulations and directional derivative contexts, separating the sets and quantifiers being defined from reusable vector-norm and directional difference constructions.",
+      "reason": "Source-free contextual dependency classification, preserving original source and full prior references; global candidate audit remains required.",
+      "references": [
+        {
+          "phrase": "metric space (X,d)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.metric-space"
+        },
+        {
+          "phrase": "center a∈X and radius r>0",
+          "state": "external",
+          "disposition": "Choosing center and positive radius is ordinary parameter data in this defining formula."
+        },
+        {
+          "phrase": "closed metric ball C_d(a,r)",
+          "state": "external",
+          "disposition": "The set {x:d(x,a)≤r} is exactly the closed ball under definition, not another prerequisite."
+        },
+        {
+          "phrase": "closed ball defined by weak inequality",
+          "state": "external",
+          "disposition": "This is the metric closed-ball set, not an assertion of equivalence with arbitrary closed subsets."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.metric_norm_balls.20261022.03",
+      "formulation_id": "form.wave2.directional113.open-norm",
+      "version_sha256": "17991fd8ad3c19e93fb99f979aa8e72fdf86c952438401ada07123eb3302c9e1",
+      "expected_node_sha256": "a9d54d0255445163744608193c1fc39ac4a5477f8fc4037636919a02227e5aa1",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed complete metric and norm ball formulations and directional derivative contexts, separating the sets and quantifiers being defined from reusable vector-norm and directional difference constructions.",
+      "reason": "Source-free contextual dependency classification, preserving original source and full prior references; global candidate audit remains required.",
+      "references": [
+        {
+          "phrase": "normed vector space V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.normed-vector-space"
+        },
+        {
+          "phrase": "norm on V",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.norm-over-normed-division-ring"
+        },
+        {
+          "phrase": "displacement norm ∥v−a∥",
+          "state": "missing",
+          "context": "Normed linear space: norm of vector displacement v−a from chosen center a to v; the induced metric is d(v,a)=∥v−a∥.",
+          "reason": "The vector-displacement construction is independently reusable.",
+          "matching_note": "The norm itself is already linked; avoid recursive definition of a norm ball."
+        },
+        {
+          "phrase": "open norm ball radius r>0",
+          "state": "external",
+          "disposition": "The displayed inequality ∥v−a∥<r precisely defines the open norm ball, not a prior open-ball prerequisite."
+        },
+        {
+          "phrase": "open norm balls are metric open balls",
+          "state": "external",
+          "disposition": "Norm induces metric d(v,a)=∥v−a∥ for this structure."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.metric_norm_balls.20261022.04",
+      "formulation_id": "form.wave2.directional113.closed-norm",
+      "version_sha256": "feb622b19dda7857aa48d56bf39386196eb8c53433c936c461b5a88b4e430b3d",
+      "expected_node_sha256": "0b93c6876898aa6e9c3db339c04b1181631d04202e313c50d759e3a66c60b76b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed complete metric and norm ball formulations and directional derivative contexts, separating the sets and quantifiers being defined from reusable vector-norm and directional difference constructions.",
+      "reason": "Source-free contextual dependency classification, preserving original source and full prior references; global candidate audit remains required.",
+      "references": [
+        {
+          "phrase": "normed vector space (V,∥·∥)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.normed-vector-space"
+        },
+        {
+          "phrase": "norm over specified scalar context",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.norm-over-normed-division-ring"
+        },
+        {
+          "phrase": "norm displacement ∥v−a∥",
+          "state": "missing",
+          "context": "Normed linear space: norm of difference vector v−a in V, equal to induced norm metric distance d(v,a).",
+          "reason": "Vector displacement norm is reusable and distinct from the closed ball's defining inequality.",
+          "matching_note": "Compare with open norm ball's displacement-norm occurrence in final alias audit."
+        },
+        {
+          "phrase": "closed norm ball of center and positive radius",
+          "state": "external",
+          "disposition": "The weak inequality ∥v−a∥≤r is the closed norm ball definition, not a previously assumed separate object."
+        },
+        {
+          "phrase": "norm-ball specialization of metric ball",
+          "state": "external",
+          "disposition": "Norm induces metric d(v,a)=∥v−a∥; this formulation depends on chosen norm."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.metric_norm_balls.20261022.05",
+      "formulation_id": "form.wave2.directional113.directional-differentiable",
+      "version_sha256": "8284c9dd226cde6ba0e9aed7cdd8f05c3f6038db0c6c06c8f444999a2585c8c7",
+      "expected_node_sha256": "658ea4578b192c110ac89a43a0e5977287280b689dd338c715caf42e0ed76c8d",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed complete metric and norm ball formulations and directional derivative contexts, separating the sets and quantifiers being defined from reusable vector-norm and directional difference constructions.",
+      "reason": "Source-free contextual dependency classification, preserving original source and full prior references; global candidate audit remains required.",
+      "references": [
+        {
+          "phrase": "real derivative at interior point",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis.real-derivative-point"
+        },
+        {
+          "phrase": "finite real limit",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis.real-limit-punctured-epsilon-delta"
+        },
+        {
+          "phrase": "real vector space R^n",
+          "state": "existing",
+          "target_meaning_id": "meaning.b64bc15f46fe0245.vector-space-over-field"
+        },
+        {
+          "phrase": "unit vector u∈R^n",
+          "state": "missing",
+          "context": "Euclidean vector u∈ℝ^n with Euclidean norm ∥u∥₂=1, a normalized direction.",
+          "reason": "Unit vector structure is reusable independently of directional differentiation.",
+          "matching_note": "Requires Euclidean norm; not a generic module unit or group unit."
+        },
+        {
+          "phrase": "directional difference quotient",
+          "state": "missing",
+          "context": "Multivariable real analysis: quotient [f(a+tu)−f(a)]/t for nonzero scalar t→0 and fixed vector direction u, with domain defined near a.",
+          "reason": "The directional difference-quotient construction is a reusable precursor to its limit.",
+          "matching_note": "Unlike ordinary scalar 1-D derivative quotient, argument moves along direction u."
+        },
+        {
+          "phrase": "differentiability assumption of f at a",
+          "state": "external",
+          "disposition": "This source assumes f differentiable at a, although directional limits can be defined more generally."
+        }
+      ]
+    }
+  ]
+}
