@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-fields-lifting-closure-070",
+  "mode": "amend",
+  "research_scope": "Source-free dependency consolidation of separable field extensions, rational-function fields, deformation lifts, fibred groupoids and universally closed schemes.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.fields_lifting_closure.20261023.01",
+      "formulation_id": "form.5a7f5216e916198b.separable-arbitrary-field-extension",
+      "version_sha256": "a8f1252d57ded2203403b951f2c9935e22a2a2647116f045633ad65f8913d1e5",
+      "expected_node_sha256": "7b3e4a95abecf5d49683487defa1287b367e366f9f76c299340b6150c7df245f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independent mathematical definition and effective previously classified reference list, comparing field generation, universal lift conditions, fibred-groupoid lifting and closed-map topology.",
+      "reason": "Exact-version full-adjacency source-free contextual analysis retaining all prior mathematical decisions and identifying existing missing-candidate equivalence questions for final global audit.",
+      "references": [
+        {
+          "state": "existing",
+          "phrase": "field extension K/k",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "state": "existing",
+          "phrase": "separably generated",
+          "target_meaning_id": "meaning.5a7f5216e916198b.separably-generated-extension"
+        },
+        {
+          "phrase": "finitely generated intermediate extension E/k",
+          "state": "missing",
+          "context": "Field theory: finitely generated intermediate extension E of k⊆K, satisfying k⊆E⊆K and E=k(a_1,...,a_n) for finitely many elements of K. This is field-generation, not finite vector-space degree or a necessarily algebraic extension.",
+          "reason": "Finite field generation is a reusable restriction for the definition of arbitrary separable extensions, and is not interchangeable with a finite-degree intermediate field.",
+          "matching_note": "Compare separately stored intermediate-subfield and generated-subfield provisional records; do not assume algebraicity."
+        },
+        {
+          "state": "external",
+          "phrase": "every finitely generated intermediate extension",
+          "disposition": "Quantification over the stated intermediate fields; cannot be replaced by checking only finite algebraic intermediate extensions."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fields_lifting_closure.20261023.02",
+      "formulation_id": "form.5a7f5216e916198b.separably-generated-extension",
+      "version_sha256": "0d16ca5bf92c50d07ef6675419ff7061dfa37401cd4b45aafb3d2c9f5a12a565",
+      "expected_node_sha256": "0de6e61384afed9036950fed91c05b230b9c689f457eba09cad1d146d013d299",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independent mathematical definition and effective previously classified reference list, comparing field generation, universal lift conditions, fibred-groupoid lifting and closed-map topology.",
+      "reason": "Exact-version full-adjacency source-free contextual analysis retaining all prior mathematical decisions and identifying existing missing-candidate equivalence questions for final global audit.",
+      "references": [
+        {
+          "state": "existing",
+          "phrase": "field extension K/k",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "state": "existing",
+          "phrase": "transcendence basis B⊆K over k",
+          "target_meaning_id": "meaning.0c4c23579959165d.transcendence-basis"
+        },
+        {
+          "state": "existing",
+          "phrase": "separable algebraic extension",
+          "target_meaning_id": "meaning.50d335de00e5f11d.separable-algebraic-extension"
+        },
+        {
+          "phrase": "rational-function field k(B)",
+          "state": "missing",
+          "context": "Field theory: rational-function field k(B) for a possibly infinite algebraically independent set B over field k, isomorphic to the fraction field of polynomial algebra k[X_b:b∈B]; individual rational functions use finitely many indeterminates.",
+          "reason": "The rational-function field is a reusable prerequisite beyond this separably-generated extension definition.",
+          "matching_note": "Compare candidate missing.92c051047df5e5a34ba3; do not prematurely alias field generation to transcendence basis."
+        },
+        {
+          "state": "external",
+          "phrase": "there exists a transcendence basis",
+          "disposition": "The statement is existential; it does not assert all transcendence bases provide the same separability condition without a separate theorem."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fields_lifting_closure.20261023.03",
+      "formulation_id": "form.5d1733b1dcffde12.universal-square-zero-thickening",
+      "version_sha256": "5b5215f8600ac69742a885a59a053e9fe43c2093c884151ac6bd19066f47acb1",
+      "expected_node_sha256": "2f3e48d091581dc87e87fb4682c62abd645d948e9f7d19faab1d962ed5c1665d",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independent mathematical definition and effective previously classified reference list, comparing field generation, universal lift conditions, fibred-groupoid lifting and closed-map topology.",
+      "reason": "Exact-version full-adjacency source-free contextual analysis retaining all prior mathematical decisions and identifying existing missing-candidate equivalence questions for final global audit.",
+      "references": [
+        {
+          "phrase": "formally unramified ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.44fae2299dfd2f0a.formally-unramified-map"
+        },
+        {
+          "phrase": "surjective R-algebra map S′→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "square-zero ideal I of A",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "disposition": "Composite clause combining the kernel ideal of the specified ring homomorphism with its square-zero property. These are independent prerequisites, both separately recorded; retaining the original clause avoids inventing a separate compound research object.",
+          "matching_note": "The source-specific combined condition is retained, with separate kernel and square-zero prerequisites.",
+          "phrase": "square-zero kernel",
+          "state": "external"
+        },
+        {
+          "context": "Commutative algebra: square-zero ideal I of a commutative unital ring A, characterized by I²={0} (equivalently ab=0 for all a,b∈I). The square-zero property is strictly stronger than mere nilpotence of an unspecified positive exponent.",
+          "matching_note": "A square-zero ideal has I²=0, independent of the source's quantified lifting or local ring hypotheses; nilpotence with a larger exponent alone is insufficient.",
+          "phrase": "square-zero ideal I of A",
+          "state": "missing"
+        },
+        {
+          "phrase": "unique compatible lift S′→A",
+          "state": "external",
+          "disposition": "Existence and uniqueness of a compatible R-algebra lift S′→A through the square-zero quotient is the defining universal property of this thickening. Lifting diagrams and the quotient map are underlying conditions already represented elsewhere, not another self-referential definition."
+        },
+        {
+          "disposition": "Universal quantification over compatible maps to a quotient; the statement itself asserts no existence of lifts for maps S→A.",
+          "phrase": "every R-algebra map S→A/I",
+          "state": "external"
+        },
+        {
+          "context": "Commutative algebra: kernel ideal of a unital homomorphism φ:A→B of commutative rings, consisting of all a∈A mapped to 0_B; for a polynomial evaluation map it is the ideal of polynomial relations, and for a quotient-localization composite it is the inverse image of zero in the target ring.",
+          "matching_note": "Kernel ideal under the relevant unital commutative ring homomorphism; nilpotence is classified separately.",
+          "phrase": "kernel ideal of source ring homomorphism",
+          "state": "missing"
+        },
+        {
+          "context": "Commutative algebra: square-zero ideal I of a commutative unital ring A, characterized by I²={0} (equivalently ab=0 for all a,b∈I). The square-zero property is strictly stronger than mere nilpotence of an unspecified positive exponent.",
+          "matching_note": "Square-zero ideal in source ring, separate from being a kernel.",
+          "phrase": "square-zero condition on its kernel ideal",
+          "state": "missing"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fields_lifting_closure.20261023.04",
+      "formulation_id": "form.5e4b8f6efeda6522.category-fibred-in-groupoids",
+      "version_sha256": "bc3935c534a078e3071134e855a3b80051326ebbd59dee260b5cd6712a7f3300",
+      "expected_node_sha256": "7ce949a6dd50ddd993ff45d09239c979b65fef0a96172eb878311299dedaa597",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independent mathematical definition and effective previously classified reference list, comparing field generation, universal lift conditions, fibred-groupoid lifting and closed-map topology.",
+      "reason": "Exact-version full-adjacency source-free contextual analysis retaining all prior mathematical decisions and identifying existing missing-candidate equivalence questions for final global audit.",
+      "references": [
+        {
+          "state": "existing",
+          "phrase": "functor p:E→C",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "state": "existing",
+          "phrase": "morphism f:V→U in C",
+          "target_meaning_id": "meaning.wave2.foundation.small-category"
+        },
+        {
+          "state": "existing",
+          "phrase": "lifts to a morphism y→x above f",
+          "target_meaning_id": "meaning.6775f8b2e6e1cceb.strongly-cartesian-morphism"
+        },
+        {
+          "state": "existing",
+          "phrase": "groupoids",
+          "target_meaning_id": "meaning.wave2.foundation.small-groupoid"
+        },
+        {
+          "phrase": "compatible base morphism between the sources of two arrows into x lifts uniquely",
+          "state": "external",
+          "disposition": "This unique cartesian lifting/factorization condition is part of the defining property of a category fibred in groupoids, using existing cartesian-arrow and groupoid references. Scope and vertical invertibility remain later mathematical audit questions."
+        },
+        {
+          "state": "external",
+          "phrase": "every morphism f:V→U",
+          "disposition": "Universal lifting quantification on arrows into objects of C; this is not an existence claim for arbitrary discrete fibres."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fields_lifting_closure.20261023.05",
+      "formulation_id": "form.60f5f43d4514a466.universally-closed-scheme-morphism",
+      "version_sha256": "38a9c6b9660073c069b2c7ed0bf76d59f530ae424a5179514e4091dc35815054",
+      "expected_node_sha256": "54c0bf3f3a742e53a48831c59377d45c6bf102d442fb3e0b46104366026b42d0",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independent mathematical definition and effective previously classified reference list, comparing field generation, universal lift conditions, fibred-groupoid lifting and closed-map topology.",
+      "reason": "Exact-version full-adjacency source-free contextual analysis retaining all prior mathematical decisions and identifying existing missing-candidate equivalence questions for final global audit.",
+      "references": [
+        {
+          "state": "existing",
+          "phrase": "scheme morphism f:X→S",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism"
+        },
+        {
+          "state": "existing",
+          "phrase": "base-change map X×_S S′→S′",
+          "target_meaning_id": "meaning.8a65ad25b01e5104.base-change-scheme"
+        },
+        {
+          "state": "existing",
+          "phrase": "X×_S S′",
+          "target_meaning_id": "meaning.c31e56dc023fcbcc.scheme-fibre-product"
+        },
+        {
+          "phrase": "sends closed subsets to closed subsets",
+          "state": "missing",
+          "context": "General topology: a continuous map f:X→Y is a closed map if every closed F⊆X has closed image f(F)⊆Y; here it is the underlying continuous map of a scheme base change, without a Hausdorff or properness assumption.",
+          "reason": "Closedness of a continuous map is reusable independently of the stronger scheme-universally-closed condition.",
+          "matching_note": "Compare with existing candidate missing.5afce6513485dfbcf054; preserve the scheme-specific base-change quantifier."
+        },
+        {
+          "state": "external",
+          "phrase": "for every morphism S′→S",
+          "disposition": "Base-change universality ranges over all scheme maps, not all continuous topological maps and not only flat base changes."
+        }
+      ]
+    }
+  ]
+}
