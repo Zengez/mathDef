@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-rational-martingale-acc-103",
+  "mode": "amend",
+  "research_scope": "Rational sequence notation and Cauchy equality, martingale integrability/almost-sure identities, abstract ACC.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.26",
+      "formulation_id": "form.wave2.rational55.rational-sequence",
+      "version_sha256": "e4dd9d86d5fdaa39ede56122f83b67560558cd919859b1ada845c6c01f87b3a7",
+      "expected_node_sha256": "9625a7a471c6bfec45e19801cdac4a1beb72350a26f59f6ff0e3fb2712ed6dd6",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read complete original independent mathematical formulation, checked all effective prior references and candidate pools, and distinguished index notation from conditional expectation, absolute integrability, almost-sure equality and the abstract chain condition.",
+      "reason": "Append-only version and predecessor-hash anchored complete node replacement, retaining every earlier classified occurrence; no new source, original meaning or mathematical formulation was added.",
+      "references": [
+        {
+          "phrase": "rational values in Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.rational-number"
+        },
+        {
+          "phrase": "positive natural-number index set",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-positive-convention"
+        },
+        {
+          "phrase": "mapping a:Npositive to Q",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "subset of N index set",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "nth term a_n=a(n)",
+          "state": "external",
+          "disposition": "The notation a_n=a(n) denotes the value of the already linked indexed function a:ℕ_{>0}→ℚ at n, not a new mathematical prerequisite. The rational codomain, positive-integer index set and mapping are already independently linked; in this source Cauchy sequences require the full positive-integer index set."
+        },
+        {
+          "phrase": "Cauchy sequences require entire positive index set",
+          "state": "external",
+          "disposition": "A partial-index sequence may be allowed generally, but full positive indexing is required for the specified infinite Cauchy construction."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.27",
+      "formulation_id": "form.wave2.real51.rational-cauchy-equivalence",
+      "version_sha256": "bccd9a91d4fe933787dab41ba8d6cc683707a3b72ca2c724550d1180e6e13a47",
+      "expected_node_sha256": "433aa0bcd383eab964a4585f91d404847c980b95ac565b541d8cdf03870ce4e8",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read complete original independent mathematical formulation, checked all effective prior references and candidate pools, and distinguished index notation from conditional expectation, absolute integrability, almost-sure equality and the abstract chain condition.",
+      "reason": "Append-only version and predecessor-hash anchored complete node replacement, retaining every earlier classified occurrence; no new source, original meaning or mathematical formulation was added.",
+      "references": [
+        {
+          "phrase": "rational Cauchy sequences a_n,b_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real51.rational-cauchy"
+        },
+        {
+          "phrase": "strictly positive rational epsilon",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.strictly-positive-rational"
+        },
+        {
+          "phrase": "rational absolute value |a_n-b_n|",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.rational55.rational-absolute-value"
+        },
+        {
+          "phrase": "eventually small difference |a_n−b_n|<ε",
+          "state": "external",
+          "disposition": "For each positive rational ε there must exist a (possibly ε-dependent) threshold N for which all n≥N have |a_n−b_n|<ε. This is the defining asymptotic equivalence predicate of the two rational Cauchy sequences, using already linked rational absolute values and positive rational bounds, not a new underlying real-field construction or extra meaning."
+        },
+        {
+          "matching_note": "Verified ordinary set-theoretic equivalence relation, equivalence class or quotient set is precisely applicable to this source's objects. The source's additional generating-pair conditions, group-action laws, Cauchy relation, or concrete integer-model equations remain as defining data and are not replaced by the general target.",
+          "phrase": "equivalence relation on Cauchy sequences",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive"
+        },
+        {
+          "disposition": "Condition is formulated using only rational arithmetic and needs no previously constructed real field.",
+          "phrase": "equivalence without completed reals",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.28",
+      "formulation_id": "form.wave2.research81.martingale-discrete.01",
+      "version_sha256": "83a3cb6953cb2b545c2c6298e0c185199aa4f96e9f3f798a4dff10707d8ced10",
+      "expected_node_sha256": "ccc09ad4960754f5b0a874e4964c0fcfbf3b17bebac8596a2124d0e7ed39c3bc",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read complete original independent mathematical formulation, checked all effective prior references and candidate pools, and distinguished index notation from conditional expectation, absolute integrability, almost-sure equality and the abstract chain condition.",
+      "reason": "Append-only version and predecessor-hash anchored complete node replacement, retaining every earlier classified occurrence; no new source, original meaning or mathematical formulation was added.",
+      "references": [
+        {
+          "phrase": "discrete adapted stochastic process",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.found85.adapted-discrete"
+        },
+        {
+          "phrase": "discrete filtration F_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.found85.discrete-filtration"
+        },
+        {
+          "phrase": "conditional expectation E[X_(n+1)|F_n]",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.found85.conditional-expectation"
+        },
+        {
+          "phrase": "real-valued random variables X_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prob90.random-variable-real"
+        },
+        {
+          "phrase": "nonnegative integer n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "integrability E|X_n|<∞",
+          "state": "missing",
+          "missing_candidate_id": "missing.e0654e8a4287aaa5bc7c",
+          "context": "Probability: every indexed real random variable X_n has finite absolute expectation E[|X_n|]<∞. Integrability is the L¹ criterion for real-valued measurable random variables, not merely a finite signed expectation interpreted without absolute integrability.",
+          "reason": "Integrability is independently reusable for expectations and stochastic analysis beyond the martingale defining conditional expectation identity.",
+          "matching_note": "Reuses existing general real-random-variable integrability candidate missing.e0654e8a4287aaa5bc7c; the quantifier for each n is retained in the martingale source."
+        },
+        {
+          "phrase": "almost-sure equality E[X_{n+1}|F_n]=X_n",
+          "state": "missing",
+          "missing_candidate_id": "missing.a59a623d35117ed60e71",
+          "context": "Probability: equality of two real random variables outside a P-null exceptional set, here conditional expectation E[X_{n+1}|F_n] and X_n for each fixed n≥0. The almost-sure equality notion is reusable; the conditional-expectation martingale identity is source-specific.",
+          "reason": "Equality almost surely is an independent probability-theoretic relation distinct from the source's actual martingale equation.",
+          "matching_note": "Reuses canonical provisional almost-sure-equality candidate missing.a59a623d35117ed60e71; do not infer a single common null exceptional set automatically without countability or an explicit construction."
+        },
+        {
+          "phrase": "one-step equivalent to all-future identity",
+          "state": "external",
+          "disposition": "For integrable adapted discrete-time processes, iterated tower property yields the all m>=n formulation; do not create self-edge."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.29",
+      "formulation_id": "form.wave2.research81.martingale-discrete.02",
+      "version_sha256": "215d3340410bffedf91b40cf1e011289c47a71802ee1c069e1861486a711b649",
+      "expected_node_sha256": "62e49afac2a575c4f3e8157e0bd6584c7717c9fd744b72da3238dec5c8125a14",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read complete original independent mathematical formulation, checked all effective prior references and candidate pools, and distinguished index notation from conditional expectation, absolute integrability, almost-sure equality and the abstract chain condition.",
+      "reason": "Append-only version and predecessor-hash anchored complete node replacement, retaining every earlier classified occurrence; no new source, original meaning or mathematical formulation was added.",
+      "references": [
+        {
+          "phrase": "discrete adapted real-valued process",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.found85.adapted-discrete"
+        },
+        {
+          "phrase": "filtration F_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.found85.discrete-filtration"
+        },
+        {
+          "phrase": "conditional expectation E[X_m|F_n]",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.found85.conditional-expectation"
+        },
+        {
+          "phrase": "nonnegative integer indices n,m",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "integrable X_n for every n",
+          "state": "missing",
+          "missing_candidate_id": "missing.e0654e8a4287aaa5bc7c",
+          "context": "Probability: each real-valued random variable X_n of the adapted discrete process has E[|X_n|]<∞. A common finite bound uniform across n is NOT required; each may have its own finite expectation.",
+          "reason": "General real-random-variable L¹ integrability is a stand-alone prerequisite for conditional expectation and martingale definitions; the source uses it at each index.",
+          "matching_note": "Same generic integrability notion as in the one-step martingale formulation, preserving source quantification for all n."
+        },
+        {
+          "phrase": "almost-sure equality E[X_m|F_n]=X_n for n≤m",
+          "state": "missing",
+          "missing_candidate_id": "missing.a59a623d35117ed60e71",
+          "context": "Probability: for each ordered pair of indices 0≤n≤m, the real random variables E[X_m|F_n] and X_n agree P-almost surely; not a pointwise equality for every ω∈Ω.",
+          "reason": "Almost-sure equality is an independently meaningful reusable equivalence relation, while this source adds its quantified conditional-expectation requirement.",
+          "matching_note": "Reuse generic missing.a59a623d35117ed60e71, retaining for every n≤m and the discrete-time tower-property context."
+        },
+        {
+          "phrase": "same discrete martingale meaning",
+          "state": "external",
+          "disposition": "All-future formulation is the alternative version of the one-step condition, not a separate dependency target."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.30",
+      "formulation_id": "form.wave2.variant71.noetherian.ascending-chain-condition",
+      "version_sha256": "22a5d318c74eb2c30c55b6f53e3479e2ff201cb3a87cb1cf3d00b53007c5b28d",
+      "expected_node_sha256": "79e987736187eb8beb7f63a2252cd43fe81bf4d8cf4ff32f73da7e3dc58fe9be",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read complete original independent mathematical formulation, checked all effective prior references and candidate pools, and distinguished index notation from conditional expectation, absolute integrability, almost-sure equality and the abstract chain condition.",
+      "reason": "Append-only version and predecessor-hash anchored complete node replacement, retaining every earlier classified occurrence; no new source, original meaning or mathematical formulation was added.",
+      "references": [
+        {
+          "phrase": "commutative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "ideals I_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "ascending chain condition on a poset of ideals",
+          "state": "missing",
+          "context": "Order theory: the ascending chain condition (ACC) on a partially ordered collection means each nondecreasing sequence x₁≤x₂≤⋯ is eventually constant. Here the collection is the ideals of R ordered by inclusion, and equality at intermediate steps is allowed.",
+          "reason": "General ACC is a reusable order-theoretic stabilization property used for modules, ideals and arbitrary posets, independently of whether the particular ring is being called Noetherian.",
+          "matching_note": "Compare prior candidate missing.8d9fdc1b1763aba61b63 (ascending chain of submodules) and generic Noetherian/maximal-element equivalences during global alias audit; do not silently equate the chain itself with its stabilization property."
+        },
+        {
+          "phrase": "every ascending chain stabilizes",
+          "state": "external",
+          "disposition": "For each such sequence there is some index after which all successive ideals are identical; not a bound uniform across chains."
+        }
+      ]
+    }
+  ]
+}
