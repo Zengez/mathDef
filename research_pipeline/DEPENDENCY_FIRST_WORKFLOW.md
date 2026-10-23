@@ -1,5 +1,7 @@
 # Dependency-first Wave 2: operating protocol
 
+> **2026-10-23 independent Wave2 audit addition:** The global read-only scanner also emits a `groupoid_size_scope` review lead when a current **effective** dependency maps a groupoid to the only existing **small-groupoid** meaning, while the source does not state smallness or explicitly use the `Groupoids` category of small groupoids. Three current formulation/reference pairs triggered this extra check (setoid category, strict (2,1)-category, and category fibred in groupoids). They require mathematical/size-context review, not automatic amendments. The scanner check was source-text/effective-ledger inspected but was **not** run through remote Python test execution here; no source definitions were changed. See `WAVE2_SOURCE_FREE_AUDIT_CONTINUATION_2026-10-23_PACKETS166_167.md`.
+
 **Experimental only.** The authoritative design is TEMP_DEPENDENCY_FIRST_WAVE2_PLAN.md, especially section 8. Automated closure is not mathematical certification, manual approval, promotion, publication, or a Wave 2 freeze. Frozen independent Wave 1 and historically screened independent Wave 2 remain read-only; original production mathDef definitions are forbidden inputs.
 
 ## Start here after interruption
