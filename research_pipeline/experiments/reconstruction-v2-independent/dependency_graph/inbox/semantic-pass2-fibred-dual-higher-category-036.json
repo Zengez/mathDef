@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-fibred-dual-higher-category-036",
+  "mode": "amend",
+  "research_scope": "Five full-formulation reviews on monoidal duals, fibred categories, groupoid constructions and 2-categorical fillers, with one general-category scope correction. No new meanings, sources or aliases.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.fibred_dual_higher_category.20261022.01",
+      "formulation_id": "form.2ec41283717d02b0.left-dual-object",
+      "version_sha256": "6912db9247bf3c30347d0b9b515c9bb21157bfabc9a5b70e01516bbfb43496a6",
+      "expected_node_sha256": "55467d4aec5b23ca9ba36594306a3cd5be34e79a40b5f9cbd5dec7b3e3d4c871",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed the complete independent source and effective adjacency for left duality, category-valued/groupoid-valued Grothendieck constructions, strict isomorphisms over a base, fibred 2-category morphisms and 2-commutative dotted-arrow fillers; preserved full prior adjacency and source-version checks.",
+      "reason": "Source-free Wave2 Pass2 contextual classification and one unsupported small-category scope correction, all identities provisional pending cross-definition audit.",
+      "references": [
+        {
+          "phrase": "monoidal category",
+          "state": "existing",
+          "target_meaning_id": "meaning.2ec41283717d02b0.monoidal-category",
+          "matching_note": "The left-dual object lives in a monoidal category."
+        },
+        {
+          "phrase": "η:1→X⊗Y and ε:Y⊗X→1",
+          "state": "missing",
+          "context": "Monoidal category theory: coevaluation η:1→X⊗Y and evaluation ε:Y⊗X→1 forming unit/counit data for a left dual pair Y of X.",
+          "reason": "Evaluation and coevaluation are structured morphism data independent of the duality axioms.",
+          "matching_note": "Check left/right dual conventions and tensor factor order in later global review."
+        },
+        {
+          "phrase": "triangle or snake composites",
+          "state": "missing",
+          "context": "Monoidal category theory: two snake/zigzag triangle composites built from evaluation, coevaluation, associators and unitors, required to equal the identity on X and Y.",
+          "reason": "These named duality coherence diagrams are reusable in rigid monoidal categories.",
+          "matching_note": "Distinct from Mac Lane's triangle coherence axiom defining monoidal categories."
+        },
+        {
+          "phrase": "identity maps on X and Y",
+          "state": "external",
+          "disposition": "Identities are part of the ambient category's structure and are not independent new terms here."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibred_dual_higher_category.20261022.02",
+      "formulation_id": "form.f0d993a60533fc99.split-fibred-groupoid",
+      "version_sha256": "d3208daa555909638d5c2495f615b23a905d5e807fda6dcfdb2fe9b3772268ca",
+      "expected_node_sha256": "e7c3979f44b78a481621fc5cbacd9f3a488e69ed9dbe9b224d4c33ae81c2d9a2",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed the complete independent source and effective adjacency for left duality, category-valued/groupoid-valued Grothendieck constructions, strict isomorphisms over a base, fibred 2-category morphisms and 2-commutative dotted-arrow fillers; preserved full prior adjacency and source-version checks.",
+      "reason": "Source-free Wave2 Pass2 contextual classification and one unsupported small-category scope correction, all identities provisional pending cross-definition audit.",
+      "references": [
+        {
+          "phrase": "category fibred in groupoids E→C",
+          "state": "existing",
+          "target_meaning_id": "meaning.5e4b8f6efeda6522.category-fibred-in-groupoids"
+        },
+        {
+          "phrase": "strict groupoid-valued presheaf over C",
+          "state": "existing",
+          "target_meaning_id": "meaning.f0d993a60533fc99.groupoid-valued-presheaf"
+        },
+        {
+          "phrase": "opposite category for contravariance",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.opposite-category"
+        },
+        {
+          "phrase": "Grothendieck construction of a presheaf of groupoids",
+          "state": "missing",
+          "context": "Category theory: Grothendieck category of elements ∫_C F for a strict groupoid-valued presheaf F:C^op→Groupoids, objects (U,x∈F(U)) and arrows base-compatible with pullbacks.",
+          "reason": "The construction of the total fibred category is a prerequisite to a split-fibred-groupoid presentation.",
+          "matching_note": "Check against category-valued Grothendieck construction; preserve groupoid-valued fibre restriction."
+        },
+        {
+          "phrase": "isomorphism over base category C",
+          "state": "missing",
+          "context": "Category theory: an isomorphism H:E→E' of categories equipped with projections p,p' to C, satisfying p'∘H=p and having an inverse over C.",
+          "reason": "Being isomorphic over C is stronger than an arbitrary equivalence of underlying categories.",
+          "matching_note": "Do not weaken strict isomorphism to categorical equivalence without changing the source."
+        },
+        {
+          "phrase": "strict functor rather than arbitrary pseudofunctor",
+          "state": "external",
+          "disposition": "This splitness criterion requires a strict chosen pullback structure as expressed in its stored formulation."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibred_dual_higher_category.20261022.03",
+      "formulation_id": "form.f7206eb9332b9389.split-fibred-category",
+      "version_sha256": "3a68d29ad24210012afe70d21b7359719ffe4b0b8f4f8cb5688a0d3d4c224ab4",
+      "expected_node_sha256": "51484c20957f208ad611fa76610f8c6c1d1dd85091033a6d3c8dd38ba6288ab4",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed the complete independent source and effective adjacency for left duality, category-valued/groupoid-valued Grothendieck constructions, strict isomorphisms over a base, fibred 2-category morphisms and 2-commutative dotted-arrow fillers; preserved full prior adjacency and source-version checks.",
+      "reason": "Source-free Wave2 Pass2 contextual classification and one unsupported small-category scope correction, all identities provisional pending cross-definition audit.",
+      "references": [
+        {
+          "phrase": "fibred category p:E→C",
+          "state": "existing",
+          "target_meaning_id": "meaning.6775f8b2e6e1cceb.grothendieck-fibred-category"
+        },
+        {
+          "phrase": "strict category-valued presheaf on C",
+          "state": "existing",
+          "target_meaning_id": "meaning.f7206eb9332b9389.category-valued-presheaf"
+        },
+        {
+          "phrase": "contravariant functor",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.contravariant-functor"
+        },
+        {
+          "phrase": "category C",
+          "state": "missing",
+          "context": "Category theory: ordinary base category C (possibly large) for a fibred category p:E→C; no smallness hypothesis occurs in this source formulation.",
+          "reason": "The existing small-category definition imposes unsupported smallness on a general fibred base.",
+          "matching_note": "Source-scope correction, compare existing size-unrestricted category candidate."
+        },
+        {
+          "phrase": "Grothendieck construction of a category-valued functor",
+          "state": "missing",
+          "context": "Category theory: Grothendieck category ∫_C F of a strict contravariant category-valued functor F:C^op→Cat, with objects (U,x∈F(U)), base-compatible arrows and canonical projection to C.",
+          "reason": "The total category construction is independent of the assertion that a fibred category is split.",
+          "matching_note": "Compare groupoid-valued construction while retaining general Cat fibres."
+        },
+        {
+          "phrase": "isomorphic fibred categories over C",
+          "state": "missing",
+          "context": "Category theory: isomorphism of fibred categories over common base C, with an inverse commuting strictly with projection functors.",
+          "reason": "The split characterization requires an isomorphism over C, not just a non-relative equivalence.",
+          "matching_note": "Compare groupoid-specific isomorphisms over base, not automatic synonym."
+        },
+        {
+          "phrase": "split fibred category distinct from split fibred groupoid",
+          "state": "external",
+          "disposition": "The strict target is general Cat, not necessarily Groupoids; this formulation does not impose invertibility of every fibre arrow."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibred_dual_higher_category.20261022.04",
+      "formulation_id": "form.3653fa0ad844d187.two-category-fibred-sets",
+      "version_sha256": "879e70532c8b26f00ac773e1b1c40656ac8cc4df30ec026e3fa876afa5da076e",
+      "expected_node_sha256": "444f8dfed034da4e903dc04828e0a8d14cb4049e3d117c7edd6ea8f6761bd5dc",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed the complete independent source and effective adjacency for left duality, category-valued/groupoid-valued Grothendieck constructions, strict isomorphisms over a base, fibred 2-category morphisms and 2-commutative dotted-arrow fillers; preserved full prior adjacency and source-version checks.",
+      "reason": "Source-free Wave2 Pass2 contextual classification and one unsupported small-category scope correction, all identities provisional pending cross-definition audit.",
+      "references": [
+        {
+          "matching_note": "The objects are fibrations of the separately defined fibred-in-sets type.",
+          "phrase": "category fibred in sets",
+          "state": "existing",
+          "target_meaning_id": "meaning.3653fa0ad844d187.category-fibred-in-sets"
+        },
+        {
+          "matching_note": "The given objects/1-arrows/2-arrows form a strict 2-category in the indexed convention.",
+          "phrase": "2-category",
+          "state": "existing",
+          "target_meaning_id": "meaning.ec5e3a0d13f85f3a.strict-two-category"
+        },
+        {
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Source occurrence 'base category C' denotes an ordinary category without a smallness requirement. Existing small-category meaning is too restrictive; do not conflate a fibred category, groupoid or slice category with the ambient category.",
+          "phrase": "category (size-unrestricted)",
+          "reason": "Do not silently identify arbitrary base categories with small categories.",
+          "state": "missing"
+        },
+        {
+          "phrase": "functors commuting with projections",
+          "state": "missing",
+          "context": "Category theory: functors H:E→E' over base C with p'∘H=p, forming 1-cells in a 2-category of fibred categories over C.",
+          "reason": "A functor over the base has additional projection-compatibility data.",
+          "matching_note": "Keep relative-to-base functoriality distinct from arbitrary functors."
+        },
+        {
+          "phrase": "natural transformations lying over identity arrows",
+          "state": "missing",
+          "context": "2-category theory: natural transformation α:H⇒K between functors over C whose component arrows project to identities id_{p(x)} in C.",
+          "reason": "Relative natural 2-morphisms are independently specified structures, not arbitrary natural transformations.",
+          "matching_note": "Avoid conflating identity on base with identity 2-cell of the ambient 2-category."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.fibred_dual_higher_category.20261022.05",
+      "formulation_id": "form.9d9d1e7e5a365423.category-of-dotted-arrows",
+      "version_sha256": "eb212972a4d4a076a213ecc1563b373b869fce42e78b781bf8ac336b6efde4d4",
+      "expected_node_sha256": "91c637b7dcf7c4e17aa743eff5fc84d3915a215397d96ec889308d97b4ee0bfc",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed the complete independent source and effective adjacency for left duality, category-valued/groupoid-valued Grothendieck constructions, strict isomorphisms over a base, fibred 2-category morphisms and 2-commutative dotted-arrow fillers; preserved full prior adjacency and source-version checks.",
+      "reason": "Source-free Wave2 Pass2 contextual classification and one unsupported small-category scope correction, all identities provisional pending cross-definition audit.",
+      "references": [
+        {
+          "phrase": "(2,1)-category",
+          "state": "existing",
+          "target_meaning_id": "meaning.0bf601085c1029d4.two-one-category"
+        },
+        {
+          "phrase": "1-morphisms, invertible 2-morphisms",
+          "state": "existing",
+          "target_meaning_id": "meaning.ec5e3a0d13f85f3a.strict-two-category"
+        },
+        {
+          "phrase": "2-commutative solid square",
+          "state": "missing",
+          "context": "(2,1)-category theory: square of 1-morphisms equipped with a specified invertible 2-cell identifying its two composites; not a strict equality of composites.",
+          "reason": "The given 2-commutative square is reusable higher-categorical diagram data.",
+          "matching_note": "Do not identify with strictly commuting 1-category square."
+        },
+        {
+          "phrase": "diagonal 1-morphism with compatible 2-cells",
+          "state": "missing",
+          "context": "(2,1)-category theory: diagonal filler 1-cell for a specified 2-commutative square together with invertible 2-cells satisfying compatibility with the solid square.",
+          "reason": "A 2-categorical dotted-arrow filler is more structured than a bare diagonal arrow.",
+          "matching_note": "The category of all fillers is the meaning being defined; the individual filler is prerequisite diagram data."
+        },
+        {
+          "phrase": "2-isomorphisms respecting filler data",
+          "state": "external",
+          "disposition": "Arrows in this filler category must commute with the specified 2-cell data, not arbitrary isomorphisms of its ambient objects."
+        }
+      ]
+    }
+  ]
+}
