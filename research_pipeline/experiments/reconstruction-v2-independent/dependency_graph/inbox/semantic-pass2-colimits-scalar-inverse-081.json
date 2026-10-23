@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-colimits-scalar-inverse-081",
+  "mode": "amend",
+  "research_scope": "Source-free ring epimorphisms, set filtered colimits, algebra scalar extension, topological inverse limits, and I-adic completion.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.colimits_scalar_inverse.20261023.01",
+      "formulation_id": "form.988d26ef7c849694.epimorphism-commutative-rings",
+      "version_sha256": "eae4dedf88243c97042d594fa703c40406605b1514ff6d5c3afacf5e517d88c0",
+      "expected_node_sha256": "36503d6b3496bbfdfc997053e6af7597fddb1b8206879b6429bfd561fbcee1c0",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire original independent mathematical formulation and effective complete node history, and compared related existing contextual meanings and existing global missing-candidate previews without consulting external research.",
+      "reason": "Preserve all previously disposed references and version-bound effective predecessor node; classify only the specifically reviewed unresolved occurrence. Distinct contexts and candidate equivalences remain subject to global mathematical reconciliation.",
+      "references": [
+        {
+          "phrase": "ring homomorphisms f,g,h",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "epimorphism in a category",
+          "state": "existing",
+          "target_meaning_id": "meaning.eed0c34725956bb5.categorical-epimorphism"
+        },
+        {
+          "phrase": "tensor product S⊗_R S",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "multiplication map S⊗_R S→S is ring isomorphism",
+          "state": "missing",
+          "context": "Commutative algebra: for a unital homomorphism f:R→S of commutative rings, the induced canonical R-algebra multiplication map μ:S⊗_R S→S, μ(s⊗t)=st; its being an isomorphism is the ring-epimorphism criterion.",
+          "reason": "The tensor-product algebra structure and canonical multiplication morphism are reusable constructions, not supplied by the existing module-only tensor-product definition.",
+          "matching_note": "Keep the source equivalence with categorical epimorphism separate from the definition of μ. Review related scalar-extension and R-algebra-isomorphism missing candidates globally."
+        },
+        {
+          "phrase": "g∘f=h∘f implies g=h for all g,h",
+          "state": "external",
+          "disposition": "Cancellation is tested for all commutative target rings T and maps out of S, not ordinary surjectivity of f."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.colimits_scalar_inverse.20261023.02",
+      "formulation_id": "form.9d27e470d02eae69.filtered-colimit",
+      "version_sha256": "4e16090fccfb601e22d9b41c4e8011d075a89b5d16fcface5cab500f631c8a4f",
+      "expected_node_sha256": "236b83b40bea1ed4d904c0643573a9d1e985477aa9e8fa4e548585c0adc402dd",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire original independent mathematical formulation and effective complete node history, and compared related existing contextual meanings and existing global missing-candidate previews without consulting external research.",
+      "reason": "Preserve all previously disposed references and version-bound effective predecessor node; classify only the specifically reviewed unresolved occurrence. Distinct contexts and candidate equivalences remain subject to global mathematical reconciliation.",
+      "references": [
+        {
+          "phrase": "filtered indexing category I",
+          "state": "existing",
+          "target_meaning_id": "meaning.9d27e470d02eae69.filtered-category"
+        },
+        {
+          "phrase": "colimit of diagram F:I→C",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f7683667fac9d28.category-colimit"
+        },
+        {
+          "phrase": "diagram F:I→C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "colimit of a diagram of sets",
+          "state": "existing",
+          "target_meaning_id": "meaning.50710e767dabd981.colimit-diagram-sets"
+        },
+        {
+          "phrase": "become equal at some later common stage",
+          "state": "external",
+          "disposition": "In a filtered diagram of sets, representatives become equivalent when their images agree after passing to a suitable common successor; this describes the defining colimit equivalence already captured by the existing set-colimit target, not a separate named prerequisite. It is not asserted for arbitrary category objects."
+        },
+        {
+          "phrase": "in Sets it identifies elements",
+          "state": "external",
+          "disposition": "The eventual equality description refers to set-valued diagrams and is not an elementwise definition valid in every category C."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.colimits_scalar_inverse.20261023.03",
+      "formulation_id": "form.a12da9dfe3ad7ff8.geometrically-connected-algebra",
+      "version_sha256": "9e5b75c3fabceebc719ec4bc5be8a455aa6722d77c166118cfa21e4317c73419",
+      "expected_node_sha256": "f4bb4da08b908092b53118cb65b5921c9812c6ea20418d9c771575e02178bb9d",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire original independent mathematical formulation and effective complete node history, and compared related existing contextual meanings and existing global missing-candidate previews without consulting external research.",
+      "reason": "Preserve all previously disposed references and version-bound effective predecessor node; classify only the specifically reviewed unresolved occurrence. Distinct contexts and candidate equivalences remain subject to global mathematical reconciliation.",
+      "references": [
+        {
+          "phrase": "field extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "phrase": "tensor product A⊗_k K",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "prime spectrum Spec(A⊗_k K)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "connected topological space",
+          "state": "existing",
+          "target_meaning_id": "meaning.ab260940ea9c523d.connected-topological-space"
+        },
+        {
+          "phrase": "k-algebra A and its scalar-extension K-algebra",
+          "state": "missing",
+          "context": "Commutative algebra: extension of scalars of a commutative unital k-algebra A along a field extension K/k, giving K-algebra A⊗_k K with multiplication (a⊗u)(b⊗v)=ab⊗uv, unit 1⊗1, and the canonical k-algebra map A→A⊗_k K.",
+          "reason": "The scalar-extended ring and its induced K-algebra operations are independently reusable; the existing tensor-product-of-modules target does not by itself encode multiplication or the unit.",
+          "matching_note": "Match against existing candidate family missing.349ddab09e0153a89615 and missing.70acd379da5fb31b72e5 at global review; do not infer algebraic closure, geometric connectedness or a field as codomain."
+        },
+        {
+          "phrase": "for every field extension K/k",
+          "state": "external",
+          "disposition": "All extensions are allowed, including transcendental ones; no Noetherian or finite type hypothesis is supplied."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.colimits_scalar_inverse.20261023.04",
+      "formulation_id": "form.a1d0959fa7703e41.inverse-limit-topological-spaces",
+      "version_sha256": "905d85bf148c3e8869b82f20ce8e2067c7f23bf9d965fb9b364a66b9f4af2e18",
+      "expected_node_sha256": "3a22851f8f7bfd8e345c0574dad334e76fcd4bb1be81eda1a16f206dca77e524",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire original independent mathematical formulation and effective complete node history, and compared related existing contextual meanings and existing global missing-candidate previews without consulting external research.",
+      "reason": "Preserve all previously disposed references and version-bound effective predecessor node; classify only the specifically reviewed unresolved occurrence. Distinct contexts and candidate equivalences remain subject to global mathematical reconciliation.",
+      "references": [
+        {
+          "phrase": "diagram of topological spaces",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "product ∏_i X_i of spaces",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology"
+        },
+        {
+          "phrase": "subspace topology on compatible families",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subspace-topology-general"
+        },
+        {
+          "phrase": "compatible families (x_i) under f_ij",
+          "state": "external",
+          "disposition": "The equations f_ij(x_j)=x_i for each specified arrow define exactly the compatible-tuple subset of the product used as the inverse-limit space. The existing functor/diagram, product-topology and subspace-topology prerequisites cover the structures; adding a separate inverse-limit compatibility target would be self-referential."
+        },
+        {
+          "phrase": "limit subset of product",
+          "state": "external",
+          "disposition": "The subset is restricted by the diagram equations and is not the entire topological product in general."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.colimits_scalar_inverse.20261023.05",
+      "formulation_id": "form.a38f1da0bc017afe.noetherian-i-adic-completion",
+      "version_sha256": "2f6bcc7fea8b92e4af2dc9e4ffd866ceb7b22df32a3de357c769c57755ce705c",
+      "expected_node_sha256": "b784fb49657a68b7ef5af23621c8e30cafb806ccdd74d006194979cf1d4feba2",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire original independent mathematical formulation and effective complete node history, and compared related existing contextual meanings and existing global missing-candidate previews without consulting external research.",
+      "reason": "Preserve all previously disposed references and version-bound effective predecessor node; classify only the specifically reviewed unresolved occurrence. Distinct contexts and candidate equivalences remain subject to global mathematical reconciliation.",
+      "references": [
+        {
+          "phrase": "Noetherian commutative ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "ideal I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "I-adic completion of ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.1be2fa074ef447b0.i-adic-ring-completion"
+        },
+        {
+          "phrase": "inverse limit of system",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f7683667fac9d28.category-limit"
+        },
+        {
+          "disposition": "Combined shorthand for the two distinct prerequisite constructions R/I^n and I^n; the source uses both. The combined conjunctive phrase should not be misregistered as its own distinct mathematical meaning.",
+          "matching_note": "This source phrase bundles two mathematically different prerequisite constructions; separate complete references have been recorded without equating an ideal power with the quotient ring.",
+          "phrase": "quotient ring R/I^n and ideal powers",
+          "state": "external"
+        },
+        {
+          "phrase": "structure homomorphism R→lim_n R/I^n",
+          "state": "external",
+          "disposition": "The canonical ring map sends r to its compatible residue-class tuple (r mod I^n)_n; it is induced by the quotient maps and inverse-limit cone already explicitly involved in the I-adic completion definition. It need not be injective without separatedness, and the map is not a new independent prerequisite meaning."
+        },
+        {
+          "disposition": "The inverse system uses the natural transition maps between ideal-power quotients and not arbitrary unrelated quotient rings.",
+          "phrase": "n ranges through nonnegative integers",
+          "state": "external"
+        },
+        {
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "Ordinary quotient ring by the nth power ideal; ideal-power construction is separately recorded.",
+          "missing_candidate_id": "missing.479fe8e3f095c78996eb",
+          "phrase": "quotient ring R/I^n",
+          "state": "missing"
+        },
+        {
+          "context": "Commutative algebra: product IJ of two ideals of a commutative unital ring R, generated by finite sums of pairwise products; ordinary ideal powers I^n for n≥1 by repeated ideal multiplication, and by convention I^0=R when nonnegative exponents are used.",
+          "matching_note": "The ideal power itself is formed by repeated ideal multiplication, independently of the quotient ring R/I^n.",
+          "missing_candidate_id": "missing.dff779a3d1b9161e5200",
+          "phrase": "ideal powers I^n",
+          "state": "missing"
+        }
+      ]
+    }
+  ]
+}
