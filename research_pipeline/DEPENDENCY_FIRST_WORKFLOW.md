@@ -6,6 +6,66 @@
 
 Read this file, TEMP_DEPENDENCY_FIRST_WAVE2_PLAN.md, then independent dependency_graph/CHECKPOINT.json, STATE.json and INVENTORY.json. Inspect the shared missing candidate registry and the research queue. Never reparse an unchanged, complete, version-valid node. Source population records and Batches 139–142 remain separate, unchanged inputs.
 
+## CURRENT AUDIT ACCELERATOR — global review without redundant per-node retrieval (2026-10-23)
+
+**The phase contract below is unchanged.** At 659/659 scanned and zero ambiguous/unassigned, do **not** restart Pass1 or prematurely open the consolidation gate. Finish the mathematical/contextual review and candidate-equivalence audit first. All inputs are the original independent Wave2 graph; no original-production corpus, frozen Wave1, breadth Batch143 or external missing-definition research is consulted.
+
+The reusable tool is now **\`research_pipeline.engine.dependency_global_audit\`**. It loads the inventory and **all effective append-only amendments once**, so previous corrected references remain intact:
+
+\`\`\`bash
+W=research_pipeline/experiments/reconstruction-v2-independent
+python -m research_pipeline.engine.dependency_global_audit --workspace "$W" scan \
+  --limit 80 --candidate-limit 50 > /tmp/wave2-global-audit.json
+
+# Only when reviewing original full statements and every current reference:
+python -m research_pipeline.engine.dependency_global_audit --workspace "$W" scan \
+  --snapshot-output /tmp/wave2-effective-snapshot.json \
+  --limit 80 > /tmp/wave2-audit-headlines.json
+\`\`\`
+
+The \`scan\` command computes meaning-level strong components and self-links, validates scanned state, checks existing/missing target identities, flags selected **heuristic** mathematical scope risks (such as a generic category being restricted to the small-category meaning, or ideal/module generation confusions), and collects **possible**, same-context-domain candidate lexical similarities. The summary reports all detected flags and returns a bounded prioritized sample. \`--snapshot-output\` writes a complete, temporary **review-only** source + effective-node bundle for all 659 formulations; do not commit these redundant generated snapshots. Scope checks are *leads*, not mathematical judgments: a missing warning is not proof that a reference is correct. Contextual reviewers must also sample unflagged records and examine known flagged source/citation/variant issues in progress logs. Similar candidate names are **not** automatic aliases.
+
+### Preparing approved edits efficiently
+
+The new \`prepare\` mode accepts an **explicit reviewer-authored** JSON decision manifest. Obtain \`expected_node_sha256\`, \`expected_occurrence_id\`, \`reference_index\`, \`formulation_id\`, version and full original mathematical context from the global snapshot or targeted review bundle:
+
+\`\`\`json
+{
+  "schema_version": 1,
+  "id": "reviewed-contextual-109",
+  "inventory_sha256": "COPY_CURRENT_INVENTORY_SHA256",
+  "unresolved_fingerprint": "COPY_CURRENT_STATE_UNRESOLVED_FINGERPRINT",
+  "reviewed_by": "assistant-contextual-mathematics-reviewer",
+  "review_rationale": "Explain the original full source and every surrounding dependency considered; the replacement has been mathematically checked.",
+  "changes": [
+    {
+      "formulation_id": "COPY_EXISTING_FORMULATION_ID",
+      "expected_node_sha256": "COPY_EFFECTIVE_NODE_SHA256",
+      "reference_index": 0,
+      "expected_occurrence_id": "COPY_OCCURRENCE_ID",
+      "reason": "Explain in substantive mathematical detail why this precise target is wrong and the proposed replacement is correct.",
+      "replacement": {
+        "phrase": "ACTUALLY_REVIEWED_REFERENCE",
+        "state": "existing",
+        "target_meaning_id": "COPY_VERIFIED_EXISTING_MEANING_ID"
+      }
+    }
+  ]
+}
+\`\`\`
+
+\`\`\`bash
+python -m research_pipeline.engine.dependency_global_audit --workspace "$W" prepare \
+  --manifest /tmp/reviewed-decisions.json \
+  --output-dir /tmp/reviewed-wave2-packets --max-per-batch 5
+\`\`\`
+
+The preparer rejects stale inventory/graph fingerprints, changed effective predecessor node hashes, altered occurrence identities, duplicate edits, unknown targets, no-op corrections and **unreviewed new missing-candidate identities**. It bundles all decisions for one formulation into one **complete** replacement snapshot, retains all other references, and splits into independent packets of **at most five complete formulations**. It runs the already-existing \`dependency_review_preflight\` on every generated packet. **All packages are offline**: generation/preflight neither publishes nor edits the graph. Only after examining each proposed complete packet may reviewers submit several nonoverlapping packets together in one commit to \`dependency_graph/inbox/\`, provided the GitHub Action's unapplied-inbox limit is respected; afterward verify exact applied receipt and the independent graph and isolated-test Actions for that commit. Recompute anchors if the graph changes in between. If a packet fails, stop and reconcile; never count mere creation or passing mechanical checks as mathematical correctness.
+
+Prioritize by error impact and contextual recurrence (false target / unjustified hypotheses / source rigor); group related definitions as one mathematical review. Distinguish **global dependency consistency** from **mathematical/source verification** and track outstanding certification separately. Retain the existing explicit Pass2 consolidation-gate requirements; neither zero cycles nor zero classifier backlog is sufficient to enter missing-definition research.
+
+---
+
 ## CURRENT EXECUTION CONTRACT — occurrence-first, no-external-research initial pass (2026-10-21)
 
 **Read this section first in every fresh Chat.** This is the current
