@@ -35,6 +35,9 @@ from research_pipeline.engine.dependency_graph import (
     KEY_RE, graph_path, live_nodes, make_snapshot, missing_key, norm, read,
 )
 from research_pipeline.engine.dependency_review_preflight import review_preflight
+from research_pipeline.engine.dependency_audit_acceleration import (
+    notation_aware_leads, rank_findings,
+)
 
 
 SMALL_CATEGORY = "meaning.wave2.foundation.small-category"
@@ -61,6 +64,7 @@ def load_live_snapshot(workspace: Path) -> dict:
         "inventory": inv, "state": state, "nodes": nodes,
         "candidates": jsonl(graph / "missing_candidates.jsonl"),
         "aliases": jsonl(graph / "candidate_aliases.jsonl"),
+        "review_ledger": jsonl(graph / "audit_review_decisions.jsonl"),
     }
 
 
@@ -96,46 +100,9 @@ def strongly_connected(adjacency: dict[str, set[str]]) -> list[list[str]]:
     return sorted(cyclic, key=lambda c: (-len(c), c))
 
 
-def _tokens(value: str) -> set[str]:
-    # Surface grouping only. This NEVER establishes mathematical equivalence.
-    return {x for x in re.findall(r"[^\W_]+", norm(value), re.UNICODE)
-            if len(x) > 2 and x not in {"the", "with", "and", "for", "from"}}
-
-
 def candidate_leads(candidates: list[dict], limit: int = 40) -> dict:
-    """Restrict near-surface comparisons to their stated domain heading.
-
-    Candidates and aliases are not automatically merged or reclassified.
-    """
-    canonical = [c for c in candidates if not c.get("alias_of")
-                 and not c.get("resolved_target_meaning_id")]
-    buckets = defaultdict(list)
-    for c in canonical:
-        domain = norm(str(c.get("context", "")).split(":", 1)[0])
-        buckets[domain].append(c)
-    leads = []
-    for domain, values in sorted(buckets.items()):
-        # Compare once per unordered pair, never cross mathematical domains.
-        for a, b in combinations(sorted(values, key=lambda x: x["id"]), 2):
-            sa, sb = _tokens(a.get("query", "")), _tokens(b.get("query", ""))
-            if not sa or not sb:
-                continue
-            score = len(sa & sb) / len(sa | sb)
-            if score >= 0.72:
-                leads.append({
-                    "domain": domain,
-                    "candidate_ids": [a["id"], b["id"]],
-                    "phrases": [a.get("query", ""), b.get("query", "")],
-                    "surface_jaccard": round(score, 3),
-                    "must_review_full_context": True,
-                    "established_equivalent": False,
-                })
-    leads.sort(key=lambda x: (-x["surface_jaccard"], x["domain"],
-                              x["candidate_ids"]))
-    return {"candidate_count": len(canonical), "possible_pairs": len(leads),
-            "leads": leads[:max(0, limit)],
-            "warning": "Lexical similarity is NEVER an alias decision. Review "
-                       "all original mathematical contexts before any alias."}
+    """Compatibility adapter for notation-aware contextual review leads."""
+    return notation_aware_leads(candidates, limit)
 
 
 def analyze_snapshot(snapshot: dict, *, limit: int = 60,
@@ -150,6 +117,7 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
     findings = []
     adjacency = {k: set() for k in meanings}
     edge_count = 0
+    seed_edges = 0
     counts = Counter()
 
     def flag(severity: str, code: str, fid: str, node: dict | None,
@@ -231,14 +199,26 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
                      "Reference still requires contextual adjudication.",
                      index=i, reference=ref)
 
+    # Combine authoritative seed relations with the effective append-only scan
+    # graph. Never infer completeness from scan edges alone; deferred legacy
+    # seed targets are missing placeholders, not asserted dependencies.
+    for seed in inv.get("seed_relations", []):
+        if not seed.get("target_meaning_id"):
+            continue
+        fid, target = seed.get("from_formulation"), seed["target_meaning_id"]
+        if fid not in form or target not in meanings:
+            counts["invalid_seed_relations"] += 1
+            continue
+        adjacency[form[fid]["meaning_id"]].add(target)
+        seed_edges += 1
     cycles = strongly_connected(adjacency)
     for component in cycles:
         counts["cyclic_components"] += 1
         if len(component) > 1:
             counts["cyclic_meanings"] += len(component)
-    findings.sort(key=lambda x: (SEVERITY_ORDER[x["severity"]],
-                                 x["code"], x["formulation_id"],
-                                 x.get("reference_index", -1)))
+    # Priority is impact-aware, but only a *reviewer's exact anchored decision*
+    # may mark a heuristic warning as accepted. Structural alerts stay visible.
+    ranked = rank_findings(findings, nodes, inv, snapshot.get("review_ledger", []))
     counts["cycle_edges_review_required"] = len(cycles)
     complete = sum(n.get("scan_status") == "complete" for n in nodes.values())
     summary = {
@@ -249,12 +229,17 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
         "meaning_count": len(meanings),
         "formulation_count": len(form),
         "complete_effective_formulations": complete,
-        "existing_dependency_edges": edge_count,
+        "existing_dependency_edges": edge_count + seed_edges,
+        "scan_dependency_edges": edge_count,
+        "seed_dependency_edges": seed_edges,
         "distinct_existing_dependency_pairs": sum(map(len, adjacency.values())),
         "cycle_components": len(cycles),
         "unassigned_occurrences": state.get("unassigned_occurrences"),
         "ambiguous_occurrences": state.get("ambiguous_occurrences"),
         "total_flags": len(findings),
+        "review_queue_count": len(ranked["needing_review"]),
+        "accepted_review_count": ranked["accepted_count"],
+        "stale_review_count": ranked["stale_review_count"],
         "flags_by_code": dict(sorted(counts.items())),
     }
     report = {
@@ -264,14 +249,19 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
         "automatic_aliases_or_edits": False,
         "summary": summary,
         "graph_cycle_components": cycles,
-        "returned_flags": min(max(0, limit), len(findings)),
-        "flags": findings[:max(0, limit)],
+        "graph_cycle_includes_seed_relations": True,
+        "returned_flags": min(max(0, limit), len(ranked["needing_review"])),
+        "flags": ranked["needing_review"][:max(0, limit)],
+        "review_queue_by_code": ranked["review_by_code"],
+        "reviewed_accepted_preview": ranked["accepted"][:10],
         "candidate_surface_review": candidate_leads(candidates, candidate_limit),
         "warning": "Potential contextual mismatches are REVIEW LEADS, not "
                    "confirmed mathematical errors. Acyclicity and passing CI "
                    "do not imply mathematical rigor or source certification.",
     }
     if include_effective_snapshot:
+        report["all_review_queue"] = ranked["needing_review"]
+        report["accepted_review_ledger_matches"] = ranked["accepted"]
         report["effective_formulations"] = {
             fid: {
                 "source": form[fid],
