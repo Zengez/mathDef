@@ -785,13 +785,14 @@ def resolve(workspace, resolutions):
 
 
 def apply_inbox(workspace, limit=20):
-    """Replay-safe ingestion with ONE rebuild per contiguous amendment group.
+    """Replay-safe, grouped append-only ingestion with one rebuild per mode run.
 
-    Amend packets remain individually immutable and individually receipted, but
-    source-version-compatible complete-node events are validated together. A
-    group with any stale amendment writes no new ledger events or receipts.
-    Mode boundaries retain exact original operation order. The final Git
-    transaction still commits all derived graph files and receipts together.
+    Consecutive amend, alias or resolve packets are validated as a single
+    same-mode group and retain individual immutable receipts. The graph is
+    rebuilt only once for that group. On a validation error, no ledger event
+    or receipt for the group is committed. Crossing mode boundaries preserves
+    the exact established lexical inbox order and rebuilds between modes.
+    The Git transaction commits graph indexes and receipts together.
     """
     graph = graph_path(workspace)
     inbox = graph / "inbox"
@@ -804,9 +805,12 @@ def apply_inbox(workspace, limit=20):
         "alias": lambda pkg: alias_candidates(workspace, pkg["aliases"]),
         "consolidate": lambda pkg: seal_consolidation(workspace, pkg["gate"]),
     }
+    grouped_fields = {"amend": "amendments", "alias": "aliases",
+                      "resolve": "resolutions"}
     result = {"applied": [], "already_applied": [], "max_packages": limit}
     remaining = max(0, limit)
-    pending_amend = []
+    pending = []
+    pending_mode = None
 
     def receipt(file, pkg, receipt_sha):
         atomic_json(applied / file.name, {
@@ -816,17 +820,20 @@ def apply_inbox(workspace, limit=20):
         })
         result["applied"].append(file.stem)
 
-    def flush_amendments():
-        if not pending_amend:
+    def flush_pending():
+        nonlocal pending_mode
+        if not pending:
             return
-        # All append-only events validate against consecutive effective nodes
-        # before amend() writes the ledger, and rebuild() runs only once.
-        combined = [item for _, pkg, _ in pending_amend
-                    for item in pkg["amendments"]]
-        amend(workspace, combined)
-        for file, pkg, receipt_sha in pending_amend:
+        mode = pending_mode
+        combined = [item for _, pkg, _ in pending
+                    for item in pkg[grouped_fields[mode]]]
+        # Each append-only API validates all new events before writing its
+        # ledger. Never issue a receipt if group-level validation fails.
+        valid_modes[mode]({grouped_fields[mode]: combined})
+        for file, pkg, receipt_sha in pending:
             receipt(file, pkg, receipt_sha)
-        pending_amend.clear()
+        pending.clear()
+        pending_mode = None
 
     for file in sorted(inbox.glob("*.json")) if inbox.is_dir() else ():
         pkg = read(file)
@@ -844,14 +851,18 @@ def apply_inbox(workspace, limit=20):
             continue
         if remaining == 0:
             continue  # Old receipts never starve later unprocessed inbox items.
-        if pkg["mode"] == "amend":
-            pending_amend.append((file, pkg, receipt_sha))
+        mode = pkg["mode"]
+        if mode in grouped_fields:
+            if pending and mode != pending_mode:
+                flush_pending()
+            pending_mode = mode
+            pending.append((file, pkg, receipt_sha))
         else:
-            flush_amendments()
-            valid_modes[pkg["mode"]](pkg)
+            flush_pending()
+            valid_modes[mode](pkg)
             receipt(file, pkg, receipt_sha)
         remaining -= 1
-    flush_amendments()
+    flush_pending()
     return result
 
 def scan_worklist(workspace, limit=10):
