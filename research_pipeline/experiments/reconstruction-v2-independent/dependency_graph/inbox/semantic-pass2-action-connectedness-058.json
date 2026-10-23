@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-action-connectedness-058",
+  "mode": "amend",
+  "research_scope": "Source-free mathematical review of connectedness, clopen sets, group-action axioms and equivalence-class representatives.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.action_connectedness.20261023.01",
+      "formulation_id": "form.wave2.pop141.connected-clopen",
+      "version_sha256": "48652d488736a5358b164165eddf9c98e2236bd78ace55b7820ea9bfa27851e5",
+      "expected_node_sha256": "e5c7285d407098984ea125a78326e781d63bcbdf302e932d3285a1b5817cd90c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independent mathematical source, previous effective adjacency, and relevant mathematical contexts; preserved all previously reviewed occurrences while distinguishing reusable terms from axioms of the very object being defined.",
+      "reason": "Source-free complete-adjacency classification against independently indexed meanings and global provisional candidates, with exact prior node hash and formulation version preserved; no source mathematical content changed.",
+      "references": [
+        {
+          "phrase": "topological space (X,tau)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "subset C of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "open and closed subset C",
+          "state": "missing",
+          "context": "Topology: a subset both open and closed in the ambient space X.",
+          "reason": "Clopen subsets of arbitrary topological spaces are reusable independently of connectedness; a clopen subset of Spec(R) alone would be too narrow.",
+          "matching_note": "Compare to provisional clopen subset of X candidate missing.844794a0f96feb96e453 and the parallel connectedness variant in global reviewed alias analysis."
+        },
+        {
+          "phrase": "trivial clopen choices empty or X",
+          "state": "external",
+          "disposition": "C=∅ or C=X is the defining prohibition of nontrivial clopen subsets used in this connectedness characterization, not a separate topological construction."
+        },
+        {
+          "phrase": "equivalent connectedness characterization",
+          "state": "external",
+          "disposition": "This clopen condition defines the same connectedness meaning; no self-reference to separation formulation."
+        },
+        {
+          "phrase": "empty-space case included",
+          "state": "external",
+          "disposition": "For empty X the only subset is empty, which equals X, making condition true."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.action_connectedness.20261023.02",
+      "formulation_id": "form.wave2.variant71.connected.02",
+      "version_sha256": "ed726671fb9f4a509d19ed210a2118c88a4e5766bc1bae410bd7618546036518",
+      "expected_node_sha256": "069ea1597219b9abe2c470f8b6593022204a7f9ab7a3adc70417c019f45b9f72",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independent mathematical source, previous effective adjacency, and relevant mathematical contexts; preserved all previously reviewed occurrences while distinguishing reusable terms from axioms of the very object being defined.",
+      "reason": "Source-free complete-adjacency classification against independently indexed meanings and global provisional candidates, with exact prior node hash and formulation version preserved; no source mathematical content changed.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space"
+        },
+        {
+          "phrase": "subset C of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "clopen subset C",
+          "state": "missing",
+          "context": "Topology: a subset both open and closed in the ambient space X.",
+          "reason": "The general topological clopen-set concept is independently useful, not to be confused with the affine-spectrum-specific clopen meaning.",
+          "matching_note": "Match the same contextual clopen concept provisionally stored elsewhere; preserve raw occurrence for later reviewed alias."
+        },
+        {
+          "phrase": "only empty and whole-space clopens",
+          "state": "external",
+          "disposition": "The restriction to the two trivial clopen sets is exactly this equivalent definition of connectedness, not an independent additional prerequisite."
+        },
+        {
+          "phrase": "alternative axiom not self-dependency",
+          "state": "external",
+          "disposition": "Equivalent clopen characterization of same connectedness meaning and convention."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.action_connectedness.20261023.03",
+      "formulation_id": "form.wave2.pop141.left-action",
+      "version_sha256": "7b3e42de5b042759bd22e14440f188ff381de2483fac41aca41f9fe4799cf256",
+      "expected_node_sha256": "2bab3a08965fb125b7cf9df882ad2fc52962ea99770c7efe998fe3a13792c391",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independent mathematical source, previous effective adjacency, and relevant mathematical contexts; preserved all previously reviewed occurrences while distinguishing reusable terms from axioms of the very object being defined.",
+      "reason": "Source-free complete-adjacency classification against independently indexed meanings and global provisional candidates, with exact prior node hash and formulation version preserved; no source mathematical content changed.",
+      "references": [
+        {
+          "phrase": "group G with identity e",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "phrase": "mapping alpha:G times X to X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "ordered pair (g,x) input",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ordered-pair-kuratowski"
+        },
+        {
+          "phrase": "identity action alpha(e,x)=x",
+          "state": "external",
+          "disposition": "The displayed identity equation is one of the defining axioms of the left action α; e is already supplied by the existing group meaning, so no further named prerequisite is needed."
+        },
+        {
+          "phrase": "left action composition alpha(g,alpha(h,x))=alpha(gh,x)",
+          "state": "external",
+          "disposition": "This is the defining left action compatibility equation; its order α(g,α(h,x))=α(gh,x) matters, but is not an additional independently defined operation."
+        },
+        {
+          "phrase": "left not right action",
+          "state": "external",
+          "disposition": "Action is on left with product gh matching order of function composition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.action_connectedness.20261023.04",
+      "formulation_id": "form.wave2.pop141.right-action",
+      "version_sha256": "8a00ad9f155175dcb001f74230429d800ee0a15145692f492cf2e4a040f0bb78",
+      "expected_node_sha256": "1e1ead16814abf8c03cbda47e4f910c9eadfe184f0914922fa9234156e9e54de",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independent mathematical source, previous effective adjacency, and relevant mathematical contexts; preserved all previously reviewed occurrences while distinguishing reusable terms from axioms of the very object being defined.",
+      "reason": "Source-free complete-adjacency classification against independently indexed meanings and global provisional candidates, with exact prior node hash and formulation version preserved; no source mathematical content changed.",
+      "references": [
+        {
+          "phrase": "group G and identity e",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.group"
+        },
+        {
+          "phrase": "mapping beta:X times G to X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "right action identity beta(x,e)=x",
+          "state": "external",
+          "disposition": "The identity equation β(x,e)=x is one of the axioms defining the right action; group identity has already been represented by the group prerequisite."
+        },
+        {
+          "phrase": "right action compatibility beta(beta(x,g),h)=beta(x,gh)",
+          "state": "external",
+          "disposition": "The equation β(β(x,g),h)=β(x,gh) defines the right-action compatibility law and must not be exchanged with the left-action law."
+        },
+        {
+          "phrase": "right-sided convention preserved",
+          "state": "external",
+          "disposition": "Do not replace by left-action multiplication or assume G commutative."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.action_connectedness.20261023.05",
+      "formulation_id": "form.wave2.set63.set-of-related-elements",
+      "version_sha256": "105f9f2e4b76f67c8230d7f789d8817d52a7946f0fee1d4768f009aa60ce38ca",
+      "expected_node_sha256": "3baab4ef46dc8549b0111296685d87d91974c44f265366667a512b55eaa05e0f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete independent mathematical source, previous effective adjacency, and relevant mathematical contexts; preserved all previously reviewed occurrences while distinguishing reusable terms from axioms of the very object being defined.",
+      "reason": "Source-free complete-adjacency classification against independently indexed meanings and global provisional candidates, with exact prior node hash and formulation version preserved; no source mathematical content changed.",
+      "references": [
+        {
+          "phrase": "equivalence relation ~",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive"
+        },
+        {
+          "phrase": "subset of S represented by class",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "class membership y~x",
+          "state": "external",
+          "disposition": "Membership y∈[x] exactly when y∼x is the defining set-comprehension predicate for the equivalence class; equivalence relation itself is already linked."
+        },
+        {
+          "phrase": "equivalent representatives",
+          "state": "external",
+          "disposition": "Under the already linked equivalence relation, any representative y related to x produces the same class [y]=[x]. This describes the class just being defined, not a separate prerequisite meaning."
+        },
+        {
+          "phrase": "representative not canonical",
+          "state": "external",
+          "disposition": "The representative x is a choice of element used to describe the class, not necessarily a unique distinguished element."
+        }
+      ]
+    }
+  ]
+}
