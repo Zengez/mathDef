@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-geometric-integrality-077",
+  "mode": "amend",
+  "research_scope": "Source-free algebra scalar extension, integral closure, monic polynomial and formal étale references.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.geometric_integrality.20261023.01",
+      "formulation_id": "form.831db4eab7a244a4.geometrically-integral-algebra",
+      "version_sha256": "e2599398f63dec2aa85f356f28b73a2e87afae74556d50e462bff8a8893b5e98",
+      "expected_node_sha256": "f39479a814734d0f4d5d75f5a4c346c3b177004ec6b65f7be0f54acd655649a2",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete original independent formulation and all effective previously classified occurrences, distinguishing module tensors from k-algebra multiplication and structure, subring inclusion, monic witnesses and the defining formal étale lifting universal condition.",
+      "reason": "Append-only source-free version-pinned whole-node reclassification retaining all earlier decisions, noting candidate equivalences for the eventual cross-definition consistency audit.",
+      "references": [
+        {
+          "phrase": "field extension K/k",
+          "state": "existing",
+          "target_meaning_id": "meaning.7210832bc589f307.field-extension"
+        },
+        {
+          "phrase": "tensor product A⊗_k K",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "integral domain",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.integral-domain"
+        },
+        {
+          "phrase": "k-algebra A and tensor-extended K-algebra",
+          "state": "missing",
+          "context": "Commutative algebra: extension of scalars of a commutative unital k-algebra A along a field extension K/k, forming a commutative unital K-algebra A⊗_k K with multiplication (a⊗x)(b⊗y)=ab⊗xy and canonical structure map K→A⊗_k K.",
+          "reason": "The induced K-algebra multiplication and base field structure are extra reusable data beyond the tensor product of underlying k-modules already linked.",
+          "matching_note": "Compare missing.70acd379da5fb31b72e5 and missing.fd5ad74037ddf003c38e without conflating geometric integrality with scalar extension itself."
+        },
+        {
+          "phrase": "every field extension K/k",
+          "state": "external",
+          "disposition": "Arbitrary field extensions are quantified, including transcendental extensions; the condition includes nonzero domain requirement."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.geometric_integrality.20261023.02",
+      "formulation_id": "form.831db4eab7a244a4.geometrically-integral-algebra-closure-test",
+      "version_sha256": "d69c394612258815b00f3b54111bd57b9e022bbb5d13833833dfd26f6344b7a0",
+      "expected_node_sha256": "365eee9dda1b27a6195270403af92143b071f4c4c51262e34b1b68cf04b8cbc8",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete original independent formulation and all effective previously classified occurrences, distinguishing module tensors from k-algebra multiplication and structure, subring inclusion, monic witnesses and the defining formal étale lifting universal condition.",
+      "reason": "Append-only source-free version-pinned whole-node reclassification retaining all earlier decisions, noting candidate equivalences for the eventual cross-definition consistency audit.",
+      "references": [
+        {
+          "phrase": "algebraic closure k̄ of k",
+          "state": "existing",
+          "target_meaning_id": "meaning.39488f3e396a1c77.algebraic-closure"
+        },
+        {
+          "phrase": "tensor product A⊗_k k̄",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules"
+        },
+        {
+          "phrase": "integral domain",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.integral-domain"
+        },
+        {
+          "phrase": "scalar extension of k-algebra",
+          "state": "missing",
+          "context": "Commutative algebra: scalar extension of a commutative unital k-algebra A to a field extension K/k, with induced K-algebra structure on A⊗_k K and multiplication on pure tensors; in this formulation K is the algebraic closure of k.",
+          "reason": "The algebra tensor multiplication and structure map are reusable prerequisites distinct from the property of being an integral domain after base change.",
+          "matching_note": "This is the algebraic-closure specialization of the general scalar-extension candidate and should be reviewed for a contextual alias."
+        },
+        {
+          "phrase": "equivalently",
+          "state": "external",
+          "disposition": "This condition is a second formulation of geometric integrality and does not replace algebraic closure by any arbitrary finite extension."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.geometric_integrality.20261023.03",
+      "formulation_id": "form.8594a432b165bcda.integral-closure-relative",
+      "version_sha256": "92bebf011ee870039c10a59d618cf321a21c2f9fd9be7c9feafc59ed3da4ba8f",
+      "expected_node_sha256": "2fd14a2e9f36546a85904da56325f386bf3302cc5f034e7404fe233c1f0b270d",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete original independent formulation and all effective previously classified occurrences, distinguishing module tensors from k-algebra multiplication and structure, subring inclusion, monic witnesses and the defining formal étale lifting universal condition.",
+      "reason": "Append-only source-free version-pinned whole-node reclassification retaining all earlier decisions, noting candidate equivalences for the eventual cross-definition consistency audit.",
+      "references": [
+        {
+          "phrase": "ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "elements integral over R",
+          "state": "existing",
+          "target_meaning_id": "meaning.8594a432b165bcda.integral-element-over-subring"
+        },
+        {
+          "phrase": "subring of S",
+          "state": "missing",
+          "context": "Ring theory: subring T of a commutative unital ring S that contains the image of a specified ring homomorphism R→S and inherits addition, multiplication and 1 from S; the subring is not assumed integrally closed.",
+          "reason": "The subring with inherited ring operations is a reusable construction, distinct from the integrality predicate selecting the elements of the closure.",
+          "matching_note": "The image R→S need not be injective; do not describe it simply as R⊆S absent an identified embedding."
+        },
+        {
+          "phrase": "all elements integral over image of R",
+          "state": "external",
+          "disposition": "The quantified set comprehends integral elements inside S; the ambient ring S is part of the definition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.geometric_integrality.20261023.04",
+      "formulation_id": "form.8594a432b165bcda.integral-ring-homomorphism",
+      "version_sha256": "d1ad2a497f23eeae851247c51e5bba98312783b7890cdcc2bbef04ab6514cf9e",
+      "expected_node_sha256": "a71fea07e82bd9b1b818453018f9c35123ec63e6732d31db23ee3317fc2cb74b",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete original independent formulation and all effective previously classified occurrences, distinguishing module tensors from k-algebra multiplication and structure, subring inclusion, monic witnesses and the defining formal étale lifting universal condition.",
+      "reason": "Append-only source-free version-pinned whole-node reclassification retaining all earlier decisions, noting candidate equivalences for the eventual cross-definition consistency audit.",
+      "references": [
+        {
+          "phrase": "ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "integral element s over R",
+          "state": "existing",
+          "target_meaning_id": "meaning.8594a432b165bcda.integral-element-over-subring"
+        },
+        {
+          "phrase": "monic polynomial over R",
+          "state": "missing",
+          "context": "Commutative algebra: a monic polynomial f(T)∈R[T] with leading coefficient 1_R, evaluated at s∈S through the structure map R→S; an integral element has a monic vanishing polynomial of positive degree.",
+          "reason": "Monic polynomial and evaluation are reusable algebraic operations; the quantification over all elements of S is the integral-map condition.",
+          "matching_note": "Review missing.87eab2bf93382f4b93d6 for the general monic-polynomial concept, preserving the positive-degree witness convention."
+        },
+        {
+          "phrase": "every element s∈S",
+          "state": "external",
+          "disposition": "The witness polynomial may depend on s; this does not require the ring homomorphism to be finite as a module."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.geometric_integrality.20261023.05",
+      "formulation_id": "form.8a5f1888f076f50d.formally-etale-ring-map",
+      "version_sha256": "a5bf61021231816c1a06826083e51debdb15bdf7b0bcf3f2c4a15cb5832ddb79",
+      "expected_node_sha256": "e66909ad47bba6767100b4a38352ab9c990f05f7ea407301968d6487d9abb12a",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Examined the complete original independent formulation and all effective previously classified occurrences, distinguishing module tensors from k-algebra multiplication and structure, subring inclusion, monic witnesses and the defining formal étale lifting universal condition.",
+      "reason": "Append-only source-free version-pinned whole-node reclassification retaining all earlier decisions, noting candidate equivalences for the eventual cross-definition consistency audit.",
+      "references": [
+        {
+          "phrase": "ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "R-algebra A and maps",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "ideal I⊆A",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "context": "Commutative algebra: square-zero ideal I of a commutative unital ring A, characterized by I²={0} (equivalently ab=0 for all a,b∈I). The square-zero property is strictly stronger than mere nilpotence of an unspecified positive exponent.",
+          "matching_note": "A square-zero ideal has I²=0, independent of the source's quantified lifting or local ring hypotheses; nilpotence with a larger exponent alone is insufficient.",
+          "phrase": "square-zero ideal I²=0",
+          "state": "missing"
+        },
+        {
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology.",
+          "phrase": "quotient algebra A/I",
+          "state": "missing"
+        },
+        {
+          "phrase": "unique compatible lifting S→A of S→A/I",
+          "state": "external",
+          "disposition": "Existence and uniqueness of an R-algebra lift over every square-zero quotient is precisely the defining formal-étale lifting condition. Square-zero ideals, quotient algebras and R-algebra maps are already independently classified, so this should not create a recursively defined unique-lift target."
+        },
+        {
+          "disposition": "The source quantifies over all such square-zero extensions, not only split or finite ones.",
+          "phrase": "every R-algebra A and ideal I",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}
