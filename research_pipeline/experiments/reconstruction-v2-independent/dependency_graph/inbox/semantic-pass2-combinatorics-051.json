@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-combinatorics-051",
+  "mode": "amend",
+  "research_scope": "Five full source-free reviews: Bell numbers, two Stirling variants, graph coloring and exponential generating functions.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.combinatorics.20261022.01",
+      "formulation_id": "form.wave2.cross133.bell-number",
+      "version_sha256": "cf8c7975b03267123c54c924bad80c2cbf216907fadc97540167fa454002d7e5",
+      "expected_node_sha256": "b2c6aebb78c958a551eac05477098b7ffc7e0efe79d4e43f6dfbf8a2d18a7cdd",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read Bell number B_n as count of partitions of any n-element set into disjoint nonempty blocks, including unique empty partition for n=0.",
+      "reason": "Reviewed full independent formulation and existing references; distinguished coefficient/adjacency defining predicates from reusable cardinality, arithmetic and convergence-domain concepts.",
+      "references": [
+        {
+          "phrase": "partition of a set",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.group116.set-partition"
+        },
+        {
+          "phrase": "natural number n including zero",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "finite cardinality |S|=n",
+          "state": "existing",
+          "target_meaning_id": "meaning.081430bc340a055a.cardinality",
+          "matching_note": "The existing cardinality definition applies to finite n-element sets as well as infinite sets."
+        },
+        {
+          "phrase": "number of distinct partitions",
+          "state": "external",
+          "disposition": "Counting all partitions of an n-element set is exactly the defining Bell number B_n; the partition concept is already linked."
+        },
+        {
+          "phrase": "Bell zero equals one",
+          "state": "external",
+          "disposition": "Empty set has exactly one partition, the empty family of blocks."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.combinatorics.20261022.02",
+      "formulation_id": "form.wave2.cross133.stirling-second-kind.1",
+      "version_sha256": "83cbcc491c531701893eb736039fcbfdeb1c8a5ae9c2127c0edd31a73fc12882",
+      "expected_node_sha256": "a50cdb257d69ab1c19ac022aa1ac268b5e44a8b4f2c525ce927a9e6ac9550357",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read Stirling second-kind numbers by base cases using Kronecker delta and two-term recurrence for positive n,k.",
+      "reason": "Reviewed full independent formulation and existing references; distinguished coefficient/adjacency defining predicates from reusable cardinality, arithmetic and convergence-domain concepts.",
+      "references": [
+        {
+          "phrase": "nonnegative integers n,k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "numeric Kronecker delta",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.bridge136.numeric-delta"
+        },
+        {
+          "phrase": "Stirling recurrence S(n,k)=S(n−1,k−1)+k*S(n−1,k)",
+          "state": "external",
+          "disposition": "The recurrence for positive n,k is the defining recursion for these Stirling numbers together with boundary conditions."
+        },
+        {
+          "phrase": "boundary values for k=0 or n=0",
+          "state": "external",
+          "disposition": "The Kronecker-delta values fix the initial conditions for the defining Stirling recurrence, not another prerequisite meaning."
+        },
+        {
+          "phrase": "Stirling second kind counts block partitions",
+          "state": "external",
+          "disposition": "Recurrence is the combinatorial second-kind convention, not first-kind permutation cycle counts."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.combinatorics.20261022.03",
+      "formulation_id": "form.wave2.cross133.stirling-second-kind.2",
+      "version_sha256": "3f35e98159d585e4223c473c9cbedac4fc307df8df8070d1d425db4c5d96cb8d",
+      "expected_node_sha256": "61f568007daa45406a4288c0a2cdc806d1cf1d88b7488bfe6632bc9a21f0c3bb",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read coefficient definition of Stirling numbers through expansion of monomial basis x^n in falling factorial basis, with zero-index empty product.",
+      "reason": "Reviewed full independent formulation and existing references; distinguished coefficient/adjacency defining predicates from reusable cardinality, arithmetic and convergence-domain concepts.",
+      "references": [
+        {
+          "phrase": "falling factorial of real x",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.bridge136.falling-real-nonnegative"
+        },
+        {
+          "phrase": "nonnegative integer n,k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "polynomial basis identity x^n=Σ S(n,k) falling(x,k)",
+          "state": "external",
+          "disposition": "This polynomial identity is the coefficient-based defining characterization of the Stirling numbers; falling factorials are already linked."
+        },
+        {
+          "phrase": "uniqueness of expansion coefficients",
+          "state": "external",
+          "disposition": "Uniqueness of coefficients for the falling-factorial basis is part of why the displayed identity defines S(n,k), not an additional prerequisite term. Source-level proof is not certified here."
+        },
+        {
+          "phrase": "not ordinary binomial coefficients",
+          "state": "external",
+          "disposition": "These constants are Stirling numbers, not coefficients in powers of (x+y)."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.combinatorics.20261022.04",
+      "formulation_id": "form.wave2.found85.proper-coloring",
+      "version_sha256": "3b9f38a407f2596bb88737cc37bf347a504b1273d25d467e3c2c004849dc3ada",
+      "expected_node_sha256": "55dc2688b88568956441582cc56ecae075c0463a7d072f063138e99b94aa1e8c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read proper k-vertex-coloring as function to k color labels with inequality on endpoints of every simple-graph edge, without requiring use of all labels.",
+      "reason": "Reviewed full independent formulation and existing references; distinguished coefficient/adjacency defining predicates from reusable cardinality, arithmetic and convergence-domain concepts.",
+      "references": [
+        {
+          "phrase": "simple undirected graph G",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.graph42.simple-undirected"
+        },
+        {
+          "phrase": "function c:V→{1,…,k}",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "finite set of k color labels",
+          "state": "missing",
+          "context": "Discrete mathematics: integer label set {1,2,…,k} for a positive integer k, used as a finite k-element codomain with distinct labels.",
+          "reason": "Finite integer label sets are reusable and distinct from a coloring's edge constraint; audit source convention for k=0 separately."
+        },
+        {
+          "phrase": "adjacent vertices receive different colors",
+          "state": "external",
+          "disposition": "For every edge {u,v}, requiring c(u)≠c(v) is the defining properness condition of vertex coloring, not an independent assumed object."
+        },
+        {
+          "phrase": "surjectivity not required",
+          "state": "external",
+          "disposition": "A proper k-coloring may employ fewer than k colors."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.combinatorics.20261022.05",
+      "formulation_id": "form.wave2.branch129.real-convergent-egf",
+      "version_sha256": "6d3078c2492f86b6e3cbfb6d081eb062436ef3a044173eaa6c16021f06fef5b2",
+      "expected_node_sha256": "51ccbf585b96be66cc50d23a1c48778f22c377f26b5934e80988d9b67e2ccb6f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read exponential generating function of a real sequence only on the real convergence domain of its n-factorial-weighted power series, retaining nonnegative indices and convergence.",
+      "reason": "Reviewed full independent formulation and existing references; distinguished coefficient/adjacency defining predicates from reusable cardinality, arithmetic and convergence-domain concepts.",
+      "references": [
+        {
+          "phrase": "convergent real series",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prereq122.real-series-convergent"
+        },
+        {
+          "phrase": "real power series",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.prereq122.real-centered-power-series"
+        },
+        {
+          "phrase": "natural indexing n≥0",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "phrase": "real function E_A:D→R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "factorial n! of nonnegative integer",
+          "state": "missing",
+          "context": "Elementary arithmetic: n!=1·2·…·n for positive integer n, with 0!=1, a finite product in natural numbers.",
+          "reason": "Factorial is a separately reusable arithmetic construction appearing in exponential generating functions."
+        },
+        {
+          "phrase": "convergence domain D⊆R",
+          "state": "missing",
+          "context": "Real analysis: convergence domain D={z∈ℝ:∑_{n≥0}c_nz^n converges} of a real power series with coefficients c_n, here c_n=a_n/n!.",
+          "reason": "A power-series convergence domain is independently reusable and should not be identified with the particular exponential generating function on it."
+        },
+        {
+          "phrase": "function defined only on D",
+          "state": "external",
+          "disposition": "Does not assert entire real line convergence; outside D series does not define real value."
+        }
+      ]
+    }
+  ]
+}
