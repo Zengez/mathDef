@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-resumed-lipschitz-tree-kernel-096",
+  "mode": "amend",
+  "research_scope": "Lipschitz anchored/global distinctions, graph circuits and cycles, set preimages inside module kernels.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.resumed_review.20261023.16",
+      "formulation_id": "form.wave2.cross104.lipschitz-at-point-anchored",
+      "version_sha256": "7df4b756b1a33743bc81a58f63a2fe06dd69a1f3ef73c83aa3fa2cfea4592539",
+      "expected_node_sha256": "6a7db8cfe0da8dc943b41c0b9434b74e43f1611801d32ea0dd360ed512fe7659",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete version-pinned independent source mathematics, confirmed all existing local dependencies, replayed the effective append-only node, and screened candidate graph cycles and the canonical set-theoretic preimage pool without external research.",
+      "reason": "Entire current node preserved except for one source-free independently reviewed reference. Explicitly distinguish the two Lipschitz variants, graph trail versus vertex-simple cycle, and general set preimage versus module kernel.",
+      "references": [
+        {
+          "phrase": "metric spaces X,Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.metric-space"
+        },
+        {
+          "phrase": "real nonnegative Lipschitz constant",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.real45.complete-ordered-real-field"
+        },
+        {
+          "phrase": "mapping f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "anchored Lipschitz inequality at a",
+          "state": "external",
+          "disposition": "With one fixed a∈X, the existence of L≥0 satisfying d_Y(f(x),f(a))≤Ld_X(x,a) for all x∈X is exactly the anchored-at-a property defined in this formulation. Metric spaces, nonnegative reals and mappings are already linked; no new meaning for this whole defining inequality is inferred. Keep it distinct from neighborhood-local Lipschitz and pairwise global Lipschitz."
+        },
+        {
+          "phrase": "anchored not local or global pairwise condition",
+          "state": "external",
+          "disposition": "Anchored condition compares only against fixed a and need not imply same bound for arbitrary x,y."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resumed_review.20261023.17",
+      "formulation_id": "form.wave2.cross104.lipschitz-global",
+      "version_sha256": "aac4ee5faddff93dc0d4ed8c2ef1cedd33cecbc560af8ea557bfaada6645cc1b",
+      "expected_node_sha256": "281aeb68182ac95a76a9d367c1c52f7db3c52aaa841a0eeea001bad98830a94f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete version-pinned independent source mathematics, confirmed all existing local dependencies, replayed the effective append-only node, and screened candidate graph cycles and the canonical set-theoretic preimage pool without external research.",
+      "reason": "Entire current node preserved except for one source-free independently reviewed reference. Explicitly distinguish the two Lipschitz variants, graph trail versus vertex-simple cycle, and general set preimage versus module kernel.",
+      "references": [
+        {
+          "phrase": "metric space X and Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.analysis98.metric-space"
+        },
+        {
+          "phrase": "map f:X→Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "phrase": "global Lipschitz constant L≥0",
+          "state": "external",
+          "disposition": "Existence of one L≥0 valid simultaneously for every pair x,y∈X is the defining quantified global Lipschitz inequality in this source. Metrics and mappings are already linked; the constant is a witness of the defining property rather than a distinct prerequisite identified here. Do not replace it with a bound involving only one anchored a, or assume the least constant is attained."
+        },
+        {
+          "phrase": "global condition has two freely varying points",
+          "state": "external",
+          "disposition": "One L for all pairs; stronger than restriction to one fixed reference point."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resumed_review.20261023.18",
+      "formulation_id": "form.wave2.cross104.tree-unrooted.1",
+      "version_sha256": "e103de42c1e3f7c1537d9f80df69d81df5456b5343c0f5c9db0d3be6c5060fa9",
+      "expected_node_sha256": "8e1f23b24401c4498bec64d4ea22b9ab9bb17df834cd89fb87cd62786884892d",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete version-pinned independent source mathematics, confirmed all existing local dependencies, replayed the effective append-only node, and screened candidate graph cycles and the canonical set-theoretic preimage pool without external research.",
+      "reason": "Entire current node preserved except for one source-free independently reviewed reference. Explicitly distinguish the two Lipschitz variants, graph trail versus vertex-simple cycle, and general set preimage versus module kernel.",
+      "references": [
+        {
+          "phrase": "simple undirected graph",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.graph42.simple-undirected"
+        },
+        {
+          "phrase": "connected simple graph",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.branch129.nonempty-connected-graph"
+        },
+        {
+          "phrase": "circuit as nontrivial closed edge-trail",
+          "state": "missing",
+          "context": "Graph theory on a loopless simple undirected graph: a circuit here is a nontrivial finite closed trail, namely a positive-length sequence of adjacent edges beginning and ending at the same vertex, traversing no undirected edge more than once. Unlike a simple cycle, other vertices may recur; distinguish graph circuits from matroid circuits and directed cycles.",
+          "reason": "Closed edge-trail/circuit is an independently reusable graph-theoretic notion and not the absence-of-circuits condition that defines a tree. No matching screened contextual meaning or matching prior candidate was identified.",
+          "matching_note": "The source specifies nontrivial closed edge-trails; do not silently collapse to the narrower vertex-simple cycle without recording their equivalence for *existence* in undirected simple graphs. The definition's 'no circuits' predicate remains in original source."
+        },
+        {
+          "phrase": "absence of circuits",
+          "state": "external",
+          "disposition": "Acyclic graph property; a rooted orientation is not part of the definition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resumed_review.20261023.19",
+      "formulation_id": "form.wave2.cross104.tree-unrooted.2",
+      "version_sha256": "099985dba8d2f22ecdd80e21bcbc7f60d5631c5756d19e99338cbfd9e41f91e8",
+      "expected_node_sha256": "f8e7dd2512b08b51d2ae8948668e02b37c2aa24b1bf72834ab8965110db307c2",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete version-pinned independent source mathematics, confirmed all existing local dependencies, replayed the effective append-only node, and screened candidate graph cycles and the canonical set-theoretic preimage pool without external research.",
+      "reason": "Entire current node preserved except for one source-free independently reviewed reference. Explicitly distinguish the two Lipschitz variants, graph trail versus vertex-simple cycle, and general set preimage versus module kernel.",
+      "references": [
+        {
+          "phrase": "simple undirected graph",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.graph42.simple-undirected"
+        },
+        {
+          "phrase": "connected simple graph",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.branch129.nonempty-connected-graph"
+        },
+        {
+          "phrase": "cycle in simple undirected graph",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.pop140.simple-undirected-cycle",
+          "matching_note": "The independent contextual meaning gives a finite vertex-simple undirected cycle with k≥3, exactly the relevant forbidden subgraph in the simple loopless graph tree characterization. Connectedness is separately linked and no rooted orientation is assumed."
+        },
+        {
+          "phrase": "equivalent acyclicity characterization",
+          "state": "external",
+          "disposition": "No cycle with simple connectivity, not an orientation or root condition."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.resumed_review.20261023.20",
+      "formulation_id": "form.wave2.cross107.module-linear-kernel",
+      "version_sha256": "a644a068bf3f3dcf8953c600487e36639e6a41962993ae8d9027ce13bf670f73",
+      "expected_node_sha256": "72329a9a6b39a1dd3588b40ba890e0dd3e5bcf1b85de044fe9f92295c4367d00",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the complete version-pinned independent source mathematics, confirmed all existing local dependencies, replayed the effective append-only node, and screened candidate graph cycles and the canonical set-theoretic preimage pool without external research.",
+      "reason": "Entire current node preserved except for one source-free independently reviewed reference. Explicitly distinguish the two Lipschitz variants, graph trail versus vertex-simple cycle, and general set preimage versus module kernel.",
+      "references": [
+        {
+          "phrase": "left R-modules M,N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "phrase": "R-linear map phi:M→N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear"
+        },
+        {
+          "phrase": "additive-group identity of N",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "preimage φ⁻¹({0_N})",
+          "state": "missing",
+          "missing_candidate_id": "missing.b86257b3cce62907e97e",
+          "context": "Set-theoretic inverse image of the singleton {0_N} under the underlying function φ:M→N, namely {m∈M:φ(m)=0_N}; the R-submodule property is a consequence of R-linearity. Inverse image is defined for every function, without requiring an inverse function.",
+          "reason": "General inverse image/preimage of a subset is a reusable mathematical construction, already represented by canonical provisional candidate missing.b86257b3cce62907e97e. The linear-kernel definition specializes it to the additive identity singleton.",
+          "matching_note": "Reuses the general preimage candidate and avoids incorrectly making the kernel itself a prerequisite of its own definition. The zero of N and R-linearity are already separate existing targets."
+        },
+        {
+          "phrase": "module kernel not restricted to fields",
+          "state": "external",
+          "disposition": "Domain ring need only be associative under this formulation, distinct from vector-space kernel context."
+        }
+      ]
+    }
+  ]
+}
