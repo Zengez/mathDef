@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-sheaf-algebra-idempotent-071",
+  "mode": "amend",
+  "research_scope": "Source-free contextual review of étale algebra colimits, idempotents, affine closed subschemes and sheaf stalk/section constructions.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.sheaf_algebra_idempotent.20261023.01",
+      "formulation_id": "form.62a7307a49a4bcdd.filtered-colimit-etale-algebras",
+      "version_sha256": "87a74793c536b7fa9d2aaf3976960687719b7896c5164bde2ca6cfaa3e1d3470",
+      "expected_node_sha256": "e023254ec1a8ee1de52eec44f29ece0c001c95da7be2c56b4d5d7937225deb31",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical definition and all preceding effective reference decisions; distinguished algebra isomorphisms, idempotents, base-preserving scheme isomorphisms, sheaf stalks and open section rings.",
+      "reason": "Reviewed version-anchored whole-node source-free classifications with explicit contextual candidate comparisons and no changes to existing mathematical source content.",
+      "references": [
+        {
+          "state": "existing",
+          "phrase": "étale R-algebras (A_i)",
+          "target_meaning_id": "meaning.6f35dab884da6c30.etale-ring-map"
+        },
+        {
+          "state": "existing",
+          "phrase": "filtered diagram",
+          "target_meaning_id": "meaning.9d27e470d02eae69.filtered-category"
+        },
+        {
+          "state": "existing",
+          "phrase": "colim_i A_i",
+          "target_meaning_id": "meaning.9d27e470d02eae69.filtered-colimit"
+        },
+        {
+          "state": "existing",
+          "phrase": "R-algebra A",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "phrase": "R-algebra isomorphism A≅colim_i A_i",
+          "state": "missing",
+          "context": "Commutative algebra: isomorphism of unital R-algebras, an invertible R-algebra homomorphism respecting the chosen ring structure maps R→A and R→B; in the source B is the filtered colimit of a diagram of étale R-algebras.",
+          "reason": "Compatibility of an algebra isomorphism with its specified base R is reusable beyond a particular filtered colimit and is stronger than underlying set or module bijectivity.",
+          "matching_note": "Compare generic R-algebra-isomorphism missing.5499c18bddb8831536d6 and other source-local polynomial quotient instances; preserve the diagram scope."
+        },
+        {
+          "state": "external",
+          "phrase": "there exists a filtered diagram",
+          "disposition": "Existence of a filtered indexing category and suitable comparison isomorphism; no assumption that each map between A_i is an isomorphism."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.sheaf_algebra_idempotent.20261023.02",
+      "formulation_id": "form.62b07936747a7a38.closed-union-connected-components",
+      "version_sha256": "b99b40a2ce4e67978838d35f12bd92982d59ae9ddbfc44001fa522bbfe1e82bf",
+      "expected_node_sha256": "2ed2304fb9e7034272784c0d18ecc2814b07a6eddfe424a2cc856d7b9248e48c",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical definition and all preceding effective reference decisions; distinguished algebra isomorphisms, idempotents, base-preserving scheme isomorphisms, sheaf stalks and open section rings.",
+      "reason": "Reviewed version-anchored whole-node source-free classifications with explicit contextual candidate comparisons and no changes to existing mathematical source content.",
+      "references": [
+        {
+          "state": "existing",
+          "phrase": "Spec(R)",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "state": "existing",
+          "phrase": "connected components",
+          "target_meaning_id": "meaning.ab260940ea9c523d.connected-component-space"
+        },
+        {
+          "state": "existing",
+          "phrase": "ideal I",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "idempotent elements of R",
+          "state": "missing",
+          "context": "Commutative ring theory: an idempotent element e of a commutative unital ring R satisfies e²=e, including e=0 and e=1, with no extra centrality condition needed in a commutative ring.",
+          "reason": "Idempotent ring elements are reusable prerequisites distinct from an arbitrary ring element or the particular topological union of connected components.",
+          "matching_note": "Compare existing idempotent candidate missing.21dbe26f26478a5abe77 and general noncommutative ring idempotent candidate separately."
+        },
+        {
+          "state": "existing",
+          "phrase": "V(I)",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "state": "external",
+          "phrase": "closed and a union",
+          "disposition": "The conjunction asserts that T is topologically closed and componentwise saturated; it does not say every union of connected components is automatically closed."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.sheaf_algebra_idempotent.20261023.03",
+      "formulation_id": "form.6676171d9e5698af.affine-closed-subscheme",
+      "version_sha256": "b7f29912c03b2d558e3120a93bddd1dec74567ab3d9ba64557e5675c15d5e64b",
+      "expected_node_sha256": "10cc1d76a5831a33acaa4e7701eeb094bd7a7f4a6ea547db9652806e16f483ad",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical definition and all preceding effective reference decisions; distinguished algebra isomorphisms, idempotents, base-preserving scheme isomorphisms, sheaf stalks and open section rings.",
+      "reason": "Reviewed version-anchored whole-node source-free classifications with explicit contextual candidate comparisons and no changes to existing mathematical source content.",
+      "references": [
+        {
+          "phrase": "affine scheme Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.4c7d59ba7058613b.affine-scheme"
+        },
+        {
+          "phrase": "Spec(R/I)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "phrase": "ideal I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "phrase": "closed immersion",
+          "state": "existing",
+          "target_meaning_id": "meaning.8f376cdea16a26da.closed-immersion-locally-ringed-space"
+        },
+        {
+          "phrase": "quotient map R→R/I",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+          "matching_note": "This is the ordinary quotient ring by an ideal. Distinct specific features of this occurrence (prime ideal, polynomial base ring, local ring, square-zero ideal or powers) remain in its mathematical source. It is not a general quotient module or a quotient topology.",
+          "phrase": "quotient ring R/I",
+          "state": "missing"
+        },
+        {
+          "phrase": "isomorphic over Spec(R)",
+          "state": "missing",
+          "context": "Algebraic geometry: isomorphism of S-schemes X and Y for a fixed base scheme S, consisting of mutually inverse scheme morphisms commuting with their structure morphisms to S; in this source S=Spec(R).",
+          "reason": "An isomorphism respecting a base scheme is reusable independently of a closed-subscheme presentation, and is stronger than mere homeomorphism or arbitrary scheme isomorphism.",
+          "matching_note": "Retain the base S and distinguished structure maps; compare with scheme-category isomorphism candidates in the eventual global audit."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.sheaf_algebra_idempotent.20261023.04",
+      "formulation_id": "form.6a21c2d4f3354c8f.reduced-scheme",
+      "version_sha256": "fdadc3d2f143911fdb1f60d8c7903714adc0286b719a711cb6d112e653aacaab",
+      "expected_node_sha256": "71a2565b649f923538cec67faeab312ebd9b82258a7e74f3f8995de41e69bb0f",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical definition and all preceding effective reference decisions; distinguished algebra isomorphisms, idempotents, base-preserving scheme isomorphisms, sheaf stalks and open section rings.",
+      "reason": "Reviewed version-anchored whole-node source-free classifications with explicit contextual candidate comparisons and no changes to existing mathematical source content.",
+      "references": [
+        {
+          "phrase": "scheme X",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine"
+        },
+        {
+          "phrase": "local ring O_{X,x}",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "reduced ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.reduced-ring"
+        },
+        {
+          "phrase": "stalk O_{X,x}",
+          "state": "missing",
+          "context": "Sheaf theory: stalk F_x of a sheaf F on a topological space X at x, the filtered colimit of sections F(U) over open neighborhoods U of x with restriction transition maps; for the structure sheaf O_X of a scheme the stalk is a local ring.",
+          "reason": "The stalk construction is reusable in sheaf theory and explains why the local rings O_{X,x} control reducedness pointwise; it is not just the entire sheaf or a global section ring.",
+          "matching_note": "Compare scheme local-ring and local-ring-of-stalk meanings, but retain sheaf neighborhood colimit construction."
+        },
+        {
+          "phrase": "for each point x",
+          "state": "external",
+          "disposition": "The definition requires every local ring to be reduced; a single reduced stalk is insufficient."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.sheaf_algebra_idempotent.20261023.05",
+      "formulation_id": "form.6a21c2d4f3354c8f.reduced-scheme-sections-equivalent",
+      "version_sha256": "d1083f3ccd9beb9f381af47dc5b765a0f36786fbc62cd927bb1191353d96060f",
+      "expected_node_sha256": "d9b59f436cad7767da53a0ff73d683f4b9f40b8fb05c6a026eff56d66dc9e1fe",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical definition and all preceding effective reference decisions; distinguished algebra isomorphisms, idempotents, base-preserving scheme isomorphisms, sheaf stalks and open section rings.",
+      "reason": "Reviewed version-anchored whole-node source-free classifications with explicit contextual candidate comparisons and no changes to existing mathematical source content.",
+      "references": [
+        {
+          "phrase": "scheme X",
+          "state": "existing",
+          "target_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine"
+        },
+        {
+          "phrase": "ring O_X(U) has no nonzero nilpotents",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.reduced-ring"
+        },
+        {
+          "phrase": "sections O_X(U) over open U",
+          "state": "missing",
+          "context": "Sheaf theory and algebraic geometry: ring O_X(U) of sections of a sheaf of commutative unital rings O_X over an open subset U of X, with pointwise ring operations and restriction homomorphisms for inclusions V⊆U; distinct from a stalk O_{X,x}.",
+          "reason": "The sheaf section ring is reusable apart from this reducedness characterization, and must not be conflated with the local stalk or ring of global sections over X.",
+          "matching_note": "Compare existing sheaf restriction and section-gluing candidates and distinguish O_X(U) from O_{X,x}."
+        },
+        {
+          "phrase": "every open subset U",
+          "state": "external",
+          "disposition": "Universal quantification is over all opens, not just affines or the full space."
+        }
+      ]
+    }
+  ]
+}
