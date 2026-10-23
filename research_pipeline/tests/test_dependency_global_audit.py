@@ -16,7 +16,8 @@ from research_pipeline.engine.dependency_review_submit import (
 )
 from research_pipeline.engine.dependency_global_audit import (
     analyze_snapshot, build_review_packages, candidate_leads,
-    load_live_snapshot, strongly_connected, write_offline_packets,
+    candidate_review_bundle, load_live_snapshot, strongly_connected,
+    write_offline_packets,
 )
 
 
@@ -137,6 +138,77 @@ class GlobalAuditTests(unittest.TestCase):
         self.assertEqual(result["possible_pairs"], 1)
         self.assertFalse(result["leads"][0]["established_equivalent"])
         self.assertEqual(result["candidate_count"], 3)
+
+    def test_focus_queue_prioritizes_canonical_recurrence_without_edits(self):
+        snapshot = self.snapshot()
+        snapshot["candidates"] = [
+            {"id": "missing.top", "status": "unresearched",
+             "query": "a high-impact missing construction",
+             "context": "Category theory: specified diagram source",
+             "occurrence_count": 7, "upstream_formulation_count": 2,
+             "incoming_formulation_ids": ["form.alpha", "form.beta"]},
+            {"id": "missing.low", "status": "unresearched",
+             "query": "low-impact object",
+             "context": "Ring theory: distinct construction",
+             "occurrence_count": 1, "upstream_formulation_count": 1,
+             "incoming_formulation_ids": ["form.beta"]},
+            {"id": "missing.alias", "status": "alias",
+             "alias_of": "missing.top", "query": "renamed construction",
+             "occurrence_count": 15,
+             "incoming_formulation_ids": ["form.alpha"]},
+            {"id": "missing.resolved", "status": "resolved",
+             "resolved_target_meaning_id": "meaning.beta",
+             "query": "already covered", "occurrence_count": 20,
+             "incoming_formulation_ids": ["form.alpha"]},
+        ]
+        before = {p.name: p.read_bytes()
+                  for p in self.graph.iterdir() if p.is_file()}
+        report = candidate_review_bundle(snapshot, limit=1,
+                                         max_formulations=1)
+        self.assertTrue(report["read_only"])
+        self.assertFalse(report["mathematics_certified"])
+        self.assertFalse(report["automatic_aliases_or_edits"])
+        self.assertEqual(report["active_canonical_candidates"], 2)
+        self.assertEqual(report["candidates"][0]["candidate_id"], "missing.top")
+        self.assertEqual(report["candidates"][0]["sources_truncated"], 1)
+        source = report["candidates"][0]["source_formulations"][0]
+        self.assertEqual(source["full_source_text"],
+                         self.inv["formulations"]["form.alpha"]["text"])
+        self.assertEqual(source["effective_node_sha256"],
+                         digest(self.snapshot()["nodes"]["form.alpha"]))
+        self.assertEqual(len(source["all_effective_references"]), 2)
+        self.assertEqual(before, {p.name: p.read_bytes()
+                                  for p in self.graph.iterdir() if p.is_file()})
+        selected = candidate_review_bundle(
+            snapshot, candidate_ids=("missing.low",), contains="unmatched",
+            max_formulations=4)
+        self.assertEqual(selected["candidates"][0]["candidate_id"], "missing.low")
+        self.assertEqual(selected["candidates"][0]["sources_truncated"], 0)
+        with self.assertRaises(PipelineError):
+            candidate_review_bundle(snapshot, candidate_ids=("missing.alias",))
+        with self.assertRaises(PipelineError):
+            candidate_review_bundle(snapshot, max_formulations=0)
+
+    def test_focus_queue_term_filter_and_fingerprint(self):
+        snapshot = self.snapshot()
+        snapshot["candidates"] = [
+            {"id": "missing.ring", "status": "unresearched",
+             "query": "commutative ideal", "context": "Ring theory",
+             "occurrence_count": 3,
+             "incoming_formulation_ids": ["form.beta"]},
+            {"id": "missing.cat", "status": "unresearched",
+             "query": "functor", "context": "Category theory: ordinary",
+             "occurrence_count": 2,
+             "incoming_formulation_ids": ["form.alpha"]},
+        ]
+        report = candidate_review_bundle(snapshot, contains="CATEGORY",
+                                         limit=10)
+        self.assertEqual([c["candidate_id"] for c in report["candidates"]],
+                         ["missing.cat"])
+        self.assertEqual(report["unresolved_fingerprint"],
+                         snapshot["state"]["summary"]["unresolved_fingerprint"])
+        self.assertEqual(report["inventory_sha256"],
+                         self.inv["source_inventory_sha256"])
 
     def test_full_node_preservation_and_two_edits_one_event(self):
         before = live_nodes(self.graph, self.inv)["form.alpha"]
