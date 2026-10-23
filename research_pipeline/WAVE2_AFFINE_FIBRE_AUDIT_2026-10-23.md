@@ -1,6 +1,6 @@
 # Independent Wave2 — affine fibre type-safety and source-mathematics audit (2026-10-23)
 
-**Status:** two reviewed full-node graph amendments staged; exact applied receipt and independent graph/test CI verification required before claiming applied. This pass does not modify original mathematical source texts, external citations, independent Wave1 or mathDef production.
+**Status: VERIFIED AND APPLIED.** Packet `semantic-global-audit-affine-fibre-type-135` has exact receipt `applied_in_independent_graph_only`, `human_certified=false`. Independent graph [Actions 40021923064](https://github.com/Zengez/mathDef/actions/runs/40021923064) and isolated [Actions 40021923072](https://github.com/Zengez/mathDef/actions/runs/40021923072) both SUCCESS. This pass does not modify original mathematical source texts, external citations, independent Wave1 or mathDef production.
 
 ## Concrete incorrect prerequisite targets
 
@@ -21,3 +21,7 @@ The original independent quasi-finite-at-a-prime formulation states that, for a 
 - Verify the exact applied receipt `semantic-global-audit-affine-fibre-type-135.json` with `human_certified=false`, independent graph CI SUCCESS and isolated test CI SUCCESS.
 - Expect amendment events +2 if fully applied, no new meanings/formulations, no source-text change and no unrelated reference losses.
 - Continue inspecting apparent whole-object/local-object, tensor-product underlying-module versus ring-object, and finite-generation hypotheses with original context. Maintain the phase gate FALSE; no external missing-definition research or breadth expansion.
+
+## Applied result
+
+Live STATE and CHECKPOINT verify **765** amendment events (previously 763); 611 meanings, 659/659 completed scans, no unassigned or ambiguous classifications, unchanged 724 raw candidates, 156 aliases and 568 unresolved canonical identities. The amended original-source source inventory SHA256 remains `3759cab60c5fce7287492724fc2ed433ac6001c8a242b66f9bbc887e92294492`. The mathematical counterexample is an unresolved **source-text** quality issue, not a third corrected dependency. Current consolidation gate is FALSE.

@@ -1,10 +1,10 @@
 # Independent Wave2 — contextual alias and false-friend audit, 2026-10-23, packets 129–134
 
-**Status:** reviewed packets committed to independent inbox; exact applied receipts, full graph and isolated CI must be verified before counting them. This is a source-free mathematical dependency audit, NOT external source verification, peer-refereeing, promotion or consolidation-gate approval.
+**Status: VERIFIED AND APPLIED.** All six packets 129–134 have exact receipts `applied_in_independent_graph_only`, `human_certified=false`. Graph [Actions 40021399375](https://github.com/Zengez/mathDef/actions/runs/40021399375) and isolated [Actions 40021399377](https://github.com/Zengez/mathDef/actions/runs/40021399377) both SUCCESS. This source-free audit is NOT external citation verification, peer-refereeing, promotion or consolidation-gate approval.
 
 ## Work performed
 
-Baseline verified from live graph: 611 meanings, 659/659 formulations scanned, zero ambiguous/unassigned; 724 raw candidate identities, 126 reviewed aliases and 598 unresolved canonical identities. Read the original independently inventoried mathematical formulation text and candidate context for **30** new shared-prerequisite identity decisions; specifically confirmed that the two original parent definitions were *not* being identified as equivalent when their stronger hypotheses differ. Submitted 6 packets of at most five aliases in one atomic change. If and only if application and both CI checks succeed, expected new aliases 156 and unresolved identities 568; original source texts, meanings and occurrence counts should remain stable.
+Baseline verified from live graph: 611 meanings, 659/659 formulations scanned, zero ambiguous/unassigned; 724 raw candidate identities, 126 reviewed aliases and 598 unresolved canonical identities. Read the original independently inventoried mathematical formulation text and candidate context for **30** new shared-prerequisite identity decisions; specifically confirmed that the two original parent definitions were *not* being identified as equivalent when their stronger hypotheses differ. Submitted 6 packets of at most five aliases in one atomic change. Application and CI **succeeded**. Live graph records **156** cumulative aliases and **568** unresolved canonical identities, with 724 raw candidate records, 826 provisional missing occurrences, 659/659 complete formulations, 0 unassigned/ambiguous, and source inventory unchanged. Subsequent targeted amendment packet 135 changed reference targets, not alias counts.
 
 ### Mathematical focus
 
@@ -34,3 +34,7 @@ Baseline verified from live graph: 611 meanings, 659/659 formulations scanned, z
 ## Observations about efficiency
 
 30 contextual candidate merges can be safely reviewed using a single retrieved candidate registry plus original inventoried source-text cache; packet construction is a deterministic mechanical operation afterward. Re-reviewing individual effective formulation snapshots is unnecessary for identity-only alias decisions. Notation and object-type conflict checks remain essential, and false friends should be recorded to avoid wasted repeat reviews. Verification through a single multi-packet submission amortizes GitHub write and CI overhead without weakening source-context review.
+
+## Final verified graph and handoff
+
+The subsequent [affine-fibre audit](WAVE2_AFFINE_FIBRE_AUDIT_2026-10-23.md) detected and corrected two whole-fibre/local-ring type errors, so the live amendment count is **765** (prior 763). Graph/test Actions for these corrections also SUCCESS: [40021923064](https://github.com/Zengez/mathDef/actions/runs/40021923064) and [40021923072](https://github.com/Zengez/mathDef/actions/runs/40021923072). The one source-level quasi-finiteness equivalence error remains explicitly flagged but not source-modified. The consolidation gate remains FALSE and unresolved fingerprint is `4ccfbccefa0faa5e440cce938b434909a9b5c2af0a0cd73dd99b60de556b8779`.
