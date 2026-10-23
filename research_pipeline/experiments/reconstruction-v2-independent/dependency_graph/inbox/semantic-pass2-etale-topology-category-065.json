@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-etale-topology-category-065",
+  "mode": "amend",
+  "research_scope": "Source-free étale, field perfection, topology-chain and categorical identity dependency classification.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.etale_topology_category.20261023.01",
+      "formulation_id": "form.29edcdafba2cae3d.standard-etale-ring-map",
+      "version_sha256": "7f2c40f829d83a5b399678bb5be3ad2c807d9b985bd4b1529056a8fe09372afc",
+      "expected_node_sha256": "1b8dd25d24f83c0020d6ab0f90c97ae91e99de74c5967fe70098dff0f41f45a1",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read entire independent source formulations and all effective historical links, reviewing standard étale presentations, perfect closures, maximal irreducible chains, codimension and categorical identity arrows.",
+      "reason": "Version-anchored whole-node mathematical review preserving all prior classification decisions, without new source research or altering meanings and definitions.",
+      "references": [
+        {
+          "matching_note": "The étale ring-map definition uses the commutative unital algebra convention.",
+          "phrase": "ring map R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital"
+        },
+        {
+          "matching_note": "Standard étale is a particular presentation guaranteeing the existing étale property.",
+          "phrase": "étale",
+          "state": "existing",
+          "target_meaning_id": "meaning.6f35dab884da6c30.etale-ring-map"
+        },
+        {
+          "matching_note": "The quotient is taken after ring localization at polynomial g.",
+          "phrase": "localization R[x]_g",
+          "state": "existing",
+          "target_meaning_id": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "R-algebra isomorphic to R[x]_g/(f)",
+          "state": "missing",
+          "context": "Commutative algebra: isomorphism of unital R-algebras, an invertible unital ring homomorphism preserving the specified structure maps from R; here it identifies S with the algebra given by a localization R[x]_g followed by quotient by (f).",
+          "reason": "R-algebra isomorphisms and their base compatibility are reusable, beyond the particular polynomial-localization presentation required for standard étaleness.",
+          "matching_note": "Compare missing.5499c18bddb8831536d6 for general R-algebra isomorphisms; preserve polynomial quotient/localization assumptions of this source."
+        },
+        {
+          "context": "Polynomial algebra: a nonzero univariate polynomial f(X)=a_nX^n+⋯+a_0 over a commutative unital coefficient ring is monic if its leading coefficient a_n equals the multiplicative identity 1, including degree zero unit polynomial 1.",
+          "matching_note": "Reviewed independent prerequisite in this full-source context, with all extra field, polynomial, topology, and invertibility hypotheses kept.",
+          "phrase": "monic polynomial f",
+          "reason": "This may be a separate indexed polynomial property; leave the occurrence unassigned.",
+          "state": "missing"
+        },
+        {
+          "disposition": "Compound condition requiring formal polynomial derivative and invertibility of its image in the specified quotient ring; these two prerequisites are separately represented without creating a third independent mathematical object.",
+          "matching_note": "Source condition retained as explanatory criterion, with separate derivative and unit prerequisites.",
+          "phrase": "f′ invertible",
+          "reason": "Differentiation of a formal polynomial differs from analysis derivative and must be context-matched.",
+          "state": "external"
+        },
+        {
+          "context": "Commutative algebra: formal derivative D:R[X]→R[X] of a univariate polynomial over a commutative unital coefficient ring R, uniquely specified by D(Σ_{i=0}^n a_i X^i)=Σ_{i=1}^n (i·a_i)X^{i−1}; a purely algebraic operation that works in positive characteristic without requiring analytic limits.",
+          "matching_note": "Formal algebraic derivative, separately from the image's invertibility in a quotient.",
+          "phrase": "formal polynomial derivative f′",
+          "state": "missing"
+        },
+        {
+          "matching_note": "The image of the derivative must be multiplicatively invertible in R[x]_g/(f), so the unit-of-ring meaning is appropriate.",
+          "phrase": "unit of quotient ring containing f′",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.unit-of-ring"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.etale_topology_category.20261023.02",
+      "formulation_id": "form.2a93c6a662a51d67.geometrically-normal-perfect-closure-test",
+      "version_sha256": "cc46546e3bbe29636cddb3895177f1f87106af1791dea524f036dc7c5b495e1d",
+      "expected_node_sha256": "06ee5522a545722cfa3815737c434fc40f3a069bfa0f0959de16b8618f9948df",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read entire independent source formulations and all effective historical links, reviewing standard étale presentations, perfect closures, maximal irreducible chains, codimension and categorical identity arrows.",
+      "reason": "Version-anchored whole-node mathematical review preserving all prior classification decisions, without new source research or altering meanings and definitions.",
+      "references": [
+        {
+          "matching_note": "The formulation is an equivalent scalar-extension test for the previously indexed geometric normality property.",
+          "phrase": "geometrically normal",
+          "state": "existing",
+          "target_meaning_id": "meaning.2a93c6a662a51d67.geometrically-normal-algebra"
+        },
+        {
+          "matching_note": "Normality here is the previously indexed commutative ring condition.",
+          "phrase": "normal ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.363d711d668364b7.normal-ring"
+        },
+        {
+          "matching_note": "The finite field extensions in the test satisfy the characteristic-p inseparability condition.",
+          "phrase": "finite purely inseparable field extensions",
+          "state": "existing",
+          "target_meaning_id": "meaning.12e554f8d49d5361.purely-inseparable-extension"
+        },
+        {
+          "matching_note": "Tensoring the algebra with an extension of the base field is a base-change operation.",
+          "phrase": "k^perf⊗_k A",
+          "state": "existing",
+          "target_meaning_id": "meaning.3f6a26f1786a8223.base-change-ring-map"
+        },
+        {
+          "phrase": "perfect closure of k",
+          "state": "missing",
+          "context": "Field theory: perfect closure k^perf of a field k in characteristic p>0, formed inside an algebraic closure by adjoining all compatible p^n-th roots of elements of k (n≥0), the smallest perfect field extension of k up to k-isomorphism; in characteristic zero, k is already perfect.",
+          "reason": "Perfect closure is a reusable field extension notion, not algebraic closure or the general purely inseparable extension property.",
+          "matching_note": "Compare the perfect-closure candidate from previous geometric reducedness and perfect-closure iterations; distinguish chosen embeddings from abstract uniqueness."
+        },
+        {
+          "context": "Commutative algebra: commutative unital algebra A over a specified base field k, with a chosen unital structure homomorphism k→A; A need not be a field, a domain or geometrically regular.",
+          "matching_note": "Source named this algebra 'k-algebra A'; k is a field and an explicit structure morphism to the commutative algebra is required.",
+          "phrase": "commutative unital algebra over a field",
+          "reason": "The base-field algebra structure should be matched with the same occurrence in the companion geometric-normality formulation.",
+          "state": "missing"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.etale_topology_category.20261023.03",
+      "formulation_id": "form.35c4e2887892c696.catenary-topological-space",
+      "version_sha256": "bb655a6979dcf8205ea7f3dbeb8ab77dd627f88a8fdfb0e0bcfd547b161c2dbf",
+      "expected_node_sha256": "2c54c1ad6f54b8dbc5e2ab534aa7e181df672a9584869c230696e762f00049cd",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read entire independent source formulations and all effective historical links, reviewing standard étale presentations, perfect closures, maximal irreducible chains, codimension and categorical identity arrows.",
+      "reason": "Version-anchored whole-node mathematical review preserving all prior classification decisions, without new source research or altering meanings and definitions.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space",
+          "matching_note": "Catenary space is an arbitrary topological space."
+        },
+        {
+          "phrase": "irreducible closed subsets Y⊆Z",
+          "state": "existing",
+          "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-topological-space",
+          "matching_note": "An irreducible closed subset has the irreducibility property in its subspace topology."
+        },
+        {
+          "phrase": "codim(Y,Z)",
+          "state": "existing",
+          "target_meaning_id": "meaning.35c4e2887892c696.codimension-irreducible-closed",
+          "matching_note": "The codimension is the chain-length invariant for nested irreducible closed subspaces."
+        },
+        {
+          "phrase": "maximal chains of irreducible closed subsets",
+          "state": "missing",
+          "context": "Order theory and topology: maximal (under extension) finite strict chains Y=Y_0⊊Y_1⊊⋯⊊Y_n=Z of irreducible closed subsets between fixed Y⊆Z in a topological space, maximal meaning no intermediate irreducible closed subset can be inserted.",
+          "reason": "Maximal chains in an inclusion-ordered family are a reusable order-theoretic construction distinct from requiring all their lengths to agree, which defines catenarity.",
+          "matching_note": "Preserve maximality by refinement/insertion, not a chain whose cardinality is necessarily greatest; compare candidate chains in Krull codimension statements."
+        },
+        {
+          "phrase": "all maximal chains have the same finite length",
+          "state": "external",
+          "disposition": "This equal-length requirement constitutes the catenary property rather than a separate named prerequisite."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.etale_topology_category.20261023.04",
+      "formulation_id": "form.35c4e2887892c696.codimension-irreducible-closed",
+      "version_sha256": "87aad1615a7711f511daae75c514013366b76a7b8074bccbdb504d5cad55a25d",
+      "expected_node_sha256": "9a0c16d8e6be99ed921735557484d25a2708aa64d1b28774d0fd9c9b79faa31e",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read entire independent source formulations and all effective historical links, reviewing standard étale presentations, perfect closures, maximal irreducible chains, codimension and categorical identity arrows.",
+      "reason": "Version-anchored whole-node mathematical review preserving all prior classification decisions, without new source research or altering meanings and definitions.",
+      "references": [
+        {
+          "phrase": "topological space X",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space",
+          "matching_note": "Codimension is defined in an arbitrary topological space."
+        },
+        {
+          "phrase": "irreducible closed subset Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-topological-space",
+          "matching_note": "Y is irreducible in its subspace topology."
+        },
+        {
+          "phrase": "strict chains Y=Y_0⊊⋯⊊Y_n",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-proper",
+          "matching_note": "The inclusions are proper, nested subset inclusions."
+        },
+        {
+          "phrase": "irreducible closed subsets of X",
+          "state": "existing",
+          "target_meaning_id": "meaning.e0dd0b0cffcfff0b.irreducible-topological-space",
+          "matching_note": "The closed subsets appearing as terms of this chain are irreducible in the inherited subspace topology, which is the existing irreducibility property also used by this formulation's earlier irreducible-closed-subset reference."
+        },
+        {
+          "phrase": "supremum of lengths",
+          "state": "external",
+          "disposition": "The definition directly takes a least upper bound of finite chain lengths."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.etale_topology_category.20261023.05",
+      "formulation_id": "form.3653fa0ad844d187.discrete-category",
+      "version_sha256": "2618d200b753039d7952b6042df235ebd245c5c18b468a77e3b03fe04c53ee38",
+      "expected_node_sha256": "8abc426044c38156f8787780ac9f005454d9cb9a34e401dbb1ad7ded023dd6d9",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read entire independent source formulations and all effective historical links, reviewing standard étale presentations, perfect closures, maximal irreducible chains, codimension and categorical identity arrows.",
+      "reason": "Version-anchored whole-node mathematical review preserving all prior classification decisions, without new source research or altering meanings and definitions.",
+      "references": [
+        {
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Source occurrence 'category C' denotes an ordinary category without a smallness requirement. Existing small-category meaning is too restrictive; do not conflate a fibred category, groupoid or slice category with the ambient category.",
+          "phrase": "category (size-unrestricted)",
+          "reason": "Discrete category need not be small; avoid replacing it with a small-category-only definition.",
+          "state": "missing"
+        },
+        {
+          "phrase": "identity morphism",
+          "state": "external",
+          "disposition": "Every object of an ordinary category has its identity arrow as part of the ambient category's intrinsic data, already provisionally recorded. The discrete-category restriction that these are all arrows is the defining property, not a newly introduced morphism species."
+        },
+        {
+          "disposition": "This consequence follows immediately from the fact that only identity arrows are allowed and is not a new prerequisite.",
+          "phrase": "no arrows between distinct objects",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}
