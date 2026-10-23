@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-sheaves-fibre-066",
+  "mode": "amend",
+  "research_scope": "Source-free classification of scheme fibre topology, sheaf restriction and algebra base structure.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.sheaves_fibre.20261023.01",
+      "formulation_id": "form.3718becace9c852d.quasifinite-at-prime",
+      "version_sha256": "bb42d9415ad7e72f4f29336e25f35d9c66ee68c9dad870e2a7bf6f40fedecf60",
+      "expected_node_sha256": "3864314ba2659665d63db9bde5863ff7a38d533a4e5756fbc392e03a0e2c9b36",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed full independent source statements, all earlier references and the relevant mathematical context for isolated fibres, sheaf restriction and module base changes.",
+      "reason": "Version-bound whole adjacency classifications with all earlier reviewed references preserved; no changes to source formulations.",
+      "references": [
+        {
+          "matching_note": "Finite-type is the commutative unital ring-map property, not finite presentation.",
+          "phrase": "finite-type ring homomorphism R→S",
+          "state": "existing",
+          "target_meaning_id": "meaning.d2b85c43cfbc6c05.finite-type-ring-map"
+        },
+        {
+          "matching_note": "q and p are prime-spectrum points of S and R.",
+          "phrase": "Spec(S), Spec(R)",
+          "state": "existing",
+          "target_meaning_id": "meaning.21c2ca138324d040.spectrum-ring"
+        },
+        {
+          "matching_note": "The ring map's fibre is constructed over the residue field at p; keep ring-fibre type distinct from topological inverse image.",
+          "phrase": "fibre Spec(S⊗_R κ(p))",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.local-ring-fibre-at-prime"
+        },
+        {
+          "phrase": "isolated point of the fibre",
+          "state": "missing",
+          "context": "Topology: isolated point x in a topological space T, characterized by openness of the singleton {x} in T; here T is the fibre Spec(S tensor_R kappa(p)) with its Zariski topology.",
+          "reason": "The isolated-point condition is a reusable topological property distinct from being quasi-finite at a selected prime.",
+          "matching_note": "A point may be isolated in a scheme fibre without being isolated in the ambient scheme."
+        },
+        {
+          "context": "Commutative algebra and algebraic geometry: residue field A/m of a commutative local ring (A,m), including the prime-localized κ(p)=R_p/pR_p and the scheme-point κ(s)=O_{S,s}/m_s.",
+          "matching_note": "Original phrase 'residue field κ(p)' denotes quotient by the maximal ideal of a local ring, including the localized-at-prime and scheme-stalk cases; not an arbitrary extension field.",
+          "phrase": "residue field of a local ring",
+          "reason": "The residue field occurs in other local fibre and flatness definitions.",
+          "state": "missing"
+        },
+        {
+          "matching_note": "The local dimension is a topological Krull-dimension notion at the fibre point.",
+          "phrase": "local fibre has dimension zero",
+          "state": "existing",
+          "target_meaning_id": "meaning.bd90654fb341045a.local-krull-dimension-point"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.sheaves_fibre.20261023.02",
+      "formulation_id": "form.3c73940f47e92e99.open-subspace-locally-ringed-space",
+      "version_sha256": "38ddfe17da2aa204057d1503b9f8ee81a1a9b54744a4b76f75a9488876e9966d",
+      "expected_node_sha256": "71a59826a09038cb04f1e98adcdcbffe0cdbbba21eb57a64c0d9f2701de5d322",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed full independent source statements, all earlier references and the relevant mathematical context for isolated fibres, sheaf restriction and module base changes.",
+      "reason": "Version-bound whole adjacency classifications with all earlier reviewed references preserved; no changes to source formulations.",
+      "references": [
+        {
+          "phrase": "locally ringed space",
+          "state": "existing",
+          "target_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space",
+          "matching_note": "Both ambient and restricted objects have locally ringed-space structure."
+        },
+        {
+          "phrase": "open subset U",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.topological-space",
+          "matching_note": "U is an open subset of the underlying topological space."
+        },
+        {
+          "phrase": "restriction of the structure sheaf O_X|_U",
+          "state": "missing",
+          "context": "Sheaf theory: restriction F|_U of a sheaf F of rings on X to an open subspace U, assigning F(V) to each open V in U with inherited restriction morphisms.",
+          "reason": "Sheaf restriction is a reusable construction distinct from the stalk at a point or global sections on an open set.",
+          "matching_note": "Keep the structure-sheaf and open-subspace conventions explicit."
+        },
+        {
+          "phrase": "underlying space U",
+          "state": "external",
+          "disposition": "U is the specified underlying open subspace, not a separate new mathematical construction."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.sheaves_fibre.20261023.03",
+      "formulation_id": "form.3f6a26f1786a8223.base-change-module",
+      "version_sha256": "7804e7ceb65381b0d4081c478f149c4a44e2750606b5b934f28c53952b398f41",
+      "expected_node_sha256": "972af344971c47cad1d9c7a225d62f351f7f57d3cb56f8e86045a5f0f1e025de",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Reviewed full independent source statements, all earlier references and the relevant mathematical context for isolated fibres, sheaf restriction and module base changes.",
+      "reason": "Version-bound whole adjacency classifications with all earlier reviewed references preserved; no changes to source formulations.",
+      "references": [
+        {
+          "phrase": "S-module M",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module",
+          "matching_note": "M has an S-module structure."
+        },
+        {
+          "phrase": "map R→R′",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "Commutative ring base-change homomorphism preserves identity."
+        },
+        {
+          "phrase": "tensor product M⊗_R R′",
+          "state": "existing",
+          "target_meaning_id": "meaning.74e36635b2776fe8.tensor-product-modules",
+          "matching_note": "The module tensor construction underlies base change."
+        },
+        {
+          "phrase": "S⊗_R R′",
+          "state": "existing",
+          "target_meaning_id": "meaning.3f6a26f1786a8223.base-change-ring-map",
+          "matching_note": "The target algebra is the scalar-extension ring from ring-map base change."
+        },
+        {
+          "phrase": "R-algebra S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+          "matching_note": "This algebra S has the chosen unital structure map R to S, which is represented by the existing unital ring-homomorphism meaning."
+        }
+      ]
+    }
+  ]
+}
