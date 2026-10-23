@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "id": "semantic-global-audit-category-batch-111",
+  "mode": "amend",
+  "research_scope": "Source-free global-context audit: independent formulations inspected in a related scope group; corrections are version and effective-predecessor anchored, at most five complete nodes per packet; mathematical review not human certification.",
+  "amendments": [
+    {
+      "amendment_id": "amend.global_audit.batched_category_scope.20261023.011",
+      "formulation_id": "form.e3f74861fea6f59a.category-localization",
+      "version_sha256": "762982d551b003994e1eb46c8739940dd961da8c7c9567c36986850a6522f363",
+      "expected_node_sha256": "4b4292d645c5ffabd35a4a4fa19595381aea54b7eb2c9ab1f1b4560f96f40008",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Reviewed the complete source statement for 'localization of a category', its contextual assumptions and every previously classified effective reference. The occurrence 'category C' incorrectly targeted the small-category meaning without an explicit smallness premise. Reclassified only these typed occurrences; preserved all independent dependency decisions, original formulation content and source hash.",
+      "reason": "Correct one or two mathematically unjustified small-category target links in an independently inventoried source statement without editing source content, inventing new candidate identities or changing unrelated dependency references.",
+      "references": [
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original reviewed source occurrence \"category C\" in the definition 'localization of a category'. The source makes no smallness assumption on its ambient category (or hom-categories); previous link to 'small category' imposed an unjustified restriction. This occurrence uses the existing size-unrestricted category candidate, not an automatically new missing concept."
+        },
+        {
+          "phrase": "multiplicative system of arrows S",
+          "state": "existing",
+          "target_meaning_id": "meaning.e3f74861fea6f59a.category-multiplicative-system"
+        },
+        {
+          "phrase": "functor Q:C→S⁻¹C",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "context": "Category theory: an isomorphism f:X→Y in a category C is a morphism admitting a two-sided inverse g:Y→X with gf=id_X and fg=id_Y, not a bijection of underlying sets unless special conditions hold.",
+          "matching_note": "Provisional context, subject to mathematical/candidate-equivalence audit before any source research.",
+          "missing_candidate_id": "missing.d3d0bc253a70e84d9d9f",
+          "phrase": "invertible morphism in a category",
+          "reason": "Categorical isomorphisms are a reusable structural prerequisite and are distinct from ring units or inverses of formal fractions.",
+          "state": "missing"
+        },
+        {
+          "disposition": "Factorization of every S-inverting functor through Q, with its categorical uniqueness/coherence, is the universal property defining localization at S; it must not be expanded circularly as a separately assumed localization. Preserve size-related nuances for global review.",
+          "phrase": "universal S-inverting factorization",
+          "state": "external"
+        },
+        {
+          "disposition": "The symbols S⁻¹C denote a category obtained by inverting arrows rather than a ring-of-fractions construction.",
+          "phrase": "formal inversion of S",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.global_audit.batched_category_scope.20261023.012",
+      "formulation_id": "form.e3f74861fea6f59a.category-multiplicative-system",
+      "version_sha256": "0b35e3f34024034b3ff5d4748c43bd5f8dbc99eeb8d850df38aae5875a2958c7",
+      "expected_node_sha256": "2650ebe6256304661a6ed76ab0073bd781e2a925d18ca86df6aa8156f05b99cd",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Reviewed the complete source statement for 'multiplicative system of arrows', its contextual assumptions and every previously classified effective reference. The occurrence 'category C with morphisms and identities' incorrectly targeted the small-category meaning without an explicit smallness premise. Reclassified only these typed occurrences; preserved all independent dependency decisions, original formulation content and source hash.",
+      "reason": "Correct one or two mathematically unjustified small-category target links in an independently inventoried source statement without editing source content, inventing new candidate identities or changing unrelated dependency references.",
+      "references": [
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original reviewed source occurrence \"category C with morphisms and identities\" in the definition 'multiplicative system of arrows'. The source makes no smallness assumption on its ambient category (or hom-categories); previous link to 'small category' imposed an unjustified restriction. This occurrence uses the existing size-unrestricted category candidate, not an automatically new missing concept."
+        },
+        {
+          "disposition": "The selected collection S of category morphisms is the object being defined; do not conflate with a multiplicatively closed subset of a commutative ring.",
+          "phrase": "multiplicative system S of category arrows",
+          "state": "external"
+        },
+        {
+          "context": "Category theory: two-sided Ore completion properties for arrows in a category localized at S, involving commutative squares for eligible cospans and spans.",
+          "matching_note": "Source-free provisional typed prerequisite; global alias and scope audit required.",
+          "missing_candidate_id": "missing.3710b4975d74d6cf4a18",
+          "phrase": "left and right Ore-square completion",
+          "state": "missing"
+        },
+        {
+          "context": "Category theory: two-sided cancellation conditions of a calculus of fractions, permitting suitable equalized composites after composing with arrows in S.",
+          "matching_note": "Source-free provisional typed prerequisite; global alias and scope audit required.",
+          "missing_candidate_id": "missing.16eb7002116042616e29",
+          "phrase": "left and right cancellation",
+          "state": "missing"
+        },
+        {
+          "disposition": "Two categorical structural closure conditions, independent of their ring-theoretic names.",
+          "phrase": "closure under composition and inclusion of identities",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.global_audit.batched_category_scope.20261023.013",
+      "formulation_id": "form.ec5e3a0d13f85f3a.strict-two-category",
+      "version_sha256": "4e2deb9844a42cc5b92d5475b51333b80013c813e887cd0933c21ef9756b523a",
+      "expected_node_sha256": "def5a64bac631de6dde08804385872c591585e810b32e869b0edad4e16d156b2",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Reviewed the complete source statement for 'strict 2-category', its contextual assumptions and every previously classified effective reference. The occurrence 'ordinary category structure on hom-categories' incorrectly targeted the small-category meaning without an explicit smallness premise. Reclassified only these typed occurrences; preserved all independent dependency decisions, original formulation content and source hash.",
+      "reason": "Correct one or two mathematically unjustified small-category target links in an independently inventoried source statement without editing source content, inventing new candidate identities or changing unrelated dependency references.",
+      "references": [
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original reviewed source occurrence \"ordinary category structure on hom-categories\" in the definition 'strict 2-category'. The source makes no smallness assumption on its ambient category (or hom-categories); previous link to 'small category' imposed an unjustified restriction. This occurrence uses the existing size-unrestricted category candidate, not an automatically new missing concept."
+        },
+        {
+          "phrase": "functorial composition",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "disposition": "The objects and arrows of hom-categories are the constituent 1- and 2-morphism data of this strict 2-category, already with ordinary category linked.",
+          "phrase": "1-morphisms and 2-morphisms",
+          "state": "external"
+        },
+        {
+          "disposition": "Composition between hom-categories is part of the strict 2-category structure and the general functor prerequisite is already linked.",
+          "phrase": "horizontal composition as functor",
+          "state": "external"
+        },
+        {
+          "context": "Higher category theory: interchange law for vertical and horizontal composition of 2-morphisms, expressing their functorial compatibility in a strict 2-category.",
+          "matching_note": "Provisional source-free contextual prerequisite; all homonym, variance, and comparison-isomorphism candidates must be audited before consolidation.",
+          "missing_candidate_id": "missing.90939810d7d17605bf00",
+          "phrase": "interchange law",
+          "state": "missing"
+        },
+        {
+          "disposition": "Composition and identity constraints are equalities, not merely specified coherent natural isomorphisms.",
+          "phrase": "strict associativity and unitality",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.global_audit.batched_category_scope.20261023.014",
+      "formulation_id": "form.f0d993a60533fc99.groupoid-valued-presheaf",
+      "version_sha256": "2a6113be379223c84e94e15dccd033fecaf78f4c7307a05ae127123cd567acb2",
+      "expected_node_sha256": "16ba946159fb28293dd8897a7925325cba799c4946cae83e25fca5f9a1ca0be7",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Reviewed the complete source statement for 'groupoid-valued presheaf', its contextual assumptions and every previously classified effective reference. The occurrence 'category C' incorrectly targeted the small-category meaning without an explicit smallness premise. Reclassified only these typed occurrences; preserved all independent dependency decisions, original formulation content and source hash.",
+      "reason": "Correct one or two mathematically unjustified small-category target links in an independently inventoried source statement without editing source content, inventing new candidate identities or changing unrelated dependency references.",
+      "references": [
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original reviewed source occurrence \"category C\" in the definition 'groupoid-valued presheaf'. The source makes no smallness assumption on its ambient category (or hom-categories); previous link to 'small category' imposed an unjustified restriction. This occurrence uses the existing size-unrestricted category candidate, not an automatically new missing concept."
+        },
+        {
+          "phrase": "opposite category C^op",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.opposite-category"
+        },
+        {
+          "phrase": "covariant functor F:C^op→Groupoids",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "groupoid F(U)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.small-groupoid"
+        },
+        {
+          "context": "Category theory: category Groupoids with small groupoids as objects and ordinary functors as morphisms, with usual functor identities/composition; universe conventions for size apply.",
+          "matching_note": "Provisional contextual missing identity, source-free and pending global mathematical audit.",
+          "missing_candidate_id": "missing.68d081846c512f3ae38a",
+          "phrase": "category Groupoids of groupoids and functors",
+          "reason": "The category of groupoids is a separately reusable target of groupoid-valued presheaves and is distinct from a single groupoid.",
+          "state": "missing"
+        },
+        {
+          "disposition": "The assignment f↦F(f^op):F(U)→F(V) is exactly the action of the strict groupoid-valued presheaf on a base arrow, not a separately assumed fibration pullback construction.",
+          "phrase": "pullback functor f*:F(U)→F(V)",
+          "state": "external"
+        },
+        {
+          "disposition": "The equalities hold on the nose, not merely up to pseudofunctorial natural isomorphism.",
+          "phrase": "strict functoriality (f∘g)*=g*∘f*",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.global_audit.batched_category_scope.20261023.015",
+      "formulation_id": "form.f7206eb9332b9389.category-valued-presheaf",
+      "version_sha256": "b5dd29118a95b448e885b75e0e94c44062536d54c5287966c78d69655ac8b948",
+      "expected_node_sha256": "7c63ac140a794ce29f33cd82a6645b82bf18b0e4749b24432db9e6f6523930ca",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Reviewed the complete source statement for 'category-valued presheaf', its contextual assumptions and every previously classified effective reference. The occurrence 'category C' incorrectly targeted the small-category meaning without an explicit smallness premise. Reclassified only these typed occurrences; preserved all independent dependency decisions, original formulation content and source hash.",
+      "reason": "Correct one or two mathematically unjustified small-category target links in an independently inventoried source statement without editing source content, inventing new candidate identities or changing unrelated dependency references.",
+      "references": [
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original reviewed source occurrence \"category C\" in the definition 'category-valued presheaf'. The source makes no smallness assumption on its ambient category (or hom-categories); previous link to 'small category' imposed an unjustified restriction. This occurrence uses the existing size-unrestricted category candidate, not an automatically new missing concept."
+        },
+        {
+          "phrase": "opposite category C^op",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.opposite-category"
+        },
+        {
+          "phrase": "functor F:C^op→Cat",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "contravariant functor on C",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.contravariant-functor"
+        },
+        {
+          "context": "Category theory: category Cat with small categories as objects, functors as morphisms, and functor composition; set-theoretic universe issues must be handled explicitly.",
+          "matching_note": "Provisional source-free classification; contextual candidate equivalence review required.",
+          "missing_candidate_id": "missing.1e57f82e00af556806fa",
+          "phrase": "Cat as category of small categories",
+          "reason": "Cat is a reusable functor target, distinct from any one small category.",
+          "state": "missing"
+        },
+        {
+          "disposition": "The reverse-direction functor F(f^op) is the value of the strictly contravariant presheaf F on f:V→U and is part of the defining functor data.",
+          "phrase": "pullback functor f*:F(U)→F(V)",
+          "state": "external"
+        },
+        {
+          "disposition": "Literal (fg)*=g*f* and (id)*=id, rather than specified isomorphisms of a pseudofunctor.",
+          "phrase": "strict identity and composition of pullbacks",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}

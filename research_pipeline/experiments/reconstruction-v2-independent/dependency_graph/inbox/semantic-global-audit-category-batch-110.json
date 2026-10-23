@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "id": "semantic-global-audit-category-batch-110",
+  "mode": "amend",
+  "research_scope": "Source-free global-context audit: independent formulations inspected in a related scope group; corrections are version and effective-predecessor anchored, at most five complete nodes per packet; mathematical review not human certification.",
+  "amendments": [
+    {
+      "amendment_id": "amend.global_audit.batched_category_scope.20261023.006",
+      "formulation_id": "form.8af10c63c1949034.inertia-of-fibred-category",
+      "version_sha256": "10ae4349749c668604a4deae2503d04f556b34df5033f1bbef8249ac3e6e5964",
+      "expected_node_sha256": "48dfe763b27749cd2da6f475b4928e2135174dcb78b72f50c94918e6bc081419",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Reviewed the complete source statement for 'inertia fibred category', its contextual assumptions and every previously classified effective reference. The occurrence 'objects and arrows in S' incorrectly targeted the small-category meaning without an explicit smallness premise. Reclassified only these typed occurrences; preserved all independent dependency decisions, original formulation content and source hash.",
+      "reason": "Correct one or two mathematically unjustified small-category target links in an independently inventoried source statement without editing source content, inventing new candidate identities or changing unrelated dependency references.",
+      "references": [
+        {
+          "phrase": "category S fibred over C",
+          "state": "existing",
+          "target_meaning_id": "meaning.6775f8b2e6e1cceb.grothendieck-fibred-category"
+        },
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original reviewed source occurrence \"objects and arrows in S\" in the definition 'inertia fibred category'. The source makes no smallness assumption on its ambient category (or hom-categories); previous link to 'small category' imposed an unjustified restriction. This occurrence uses the existing size-unrestricted category candidate, not an automatically new missing concept."
+        },
+        {
+          "context": "Category theory of fibred categories: a vertical automorphism α:x→x in a category S over C, invertible in S and satisfying p(α)=id_{p(x)} in C. The base identity condition is part of verticality, not automatic for a general endomorphism of S.",
+          "matching_note": "Preserve fibred-category context and invertibility; potential categorical automorphism prerequisite for global audit.",
+          "missing_candidate_id": "missing.229af74a7a716a68dd9e",
+          "phrase": "automorphism α of x over identity of p(x)",
+          "reason": "Vertical automorphisms are reusable group-theoretic/categorical data in the inertia construction, distinct from field-automorphism groups or general endomorphisms.",
+          "state": "missing"
+        },
+        {
+          "disposition": "In the newly defined inertia category, this is the definition of an arrow (x,α)→(x′,α′): β:x→x′ in S with βα=α′β, over the required base arrow. It defines the inertia category's own morphisms rather than a further missing object.",
+          "phrase": "intertwining morphisms between pairs",
+          "state": "external"
+        },
+        {
+          "disposition": "Automorphisms are vertical in the fibre; ordinary arrows not preserving base are excluded from the automorphism condition.",
+          "phrase": "over identity morphism in C",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.global_audit.batched_category_scope.20261023.007",
+      "formulation_id": "form.9f75052b1742ab3f.cofiltered-category",
+      "version_sha256": "18d4e59094c86af687189d7a3011714e3650803bb3f8ea45c23542767fc197d4",
+      "expected_node_sha256": "bf0029308074d84a7da4786fe76ff62ec41442bae4d92fe2166264b96ce08f80",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Reviewed the complete source statement for 'cofiltered indexing category', its contextual assumptions and every previously classified effective reference. The occurrence 'category I' incorrectly targeted the small-category meaning without an explicit smallness premise. Reclassified only these typed occurrences; preserved all independent dependency decisions, original formulation content and source hash.",
+      "reason": "Correct one or two mathematically unjustified small-category target links in an independently inventoried source statement without editing source content, inventing new candidate identities or changing unrelated dependency references.",
+      "references": [
+        {
+          "phrase": "opposite category I^op",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.opposite-category"
+        },
+        {
+          "phrase": "filtered category I^op",
+          "state": "existing",
+          "target_meaning_id": "meaning.9d27e470d02eae69.filtered-category"
+        },
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original reviewed source occurrence \"category I\" in the definition 'cofiltered indexing category'. The source makes no smallness assumption on its ambient category (or hom-categories); previous link to 'small category' imposed an unjustified restriction. This occurrence uses the existing size-unrestricted category candidate, not an automatically new missing concept."
+        },
+        {
+          "phrase": "nonempty and any two objects receive arrows from a common source",
+          "state": "external",
+          "disposition": "Direction is reversed from filteredness; existence alone does not entail the parallel-arrow axiom."
+        },
+        {
+          "phrase": "parallel arrows become equal after precomposition",
+          "state": "external",
+          "disposition": "Equalization takes place by precomposing with an arrow into their common source."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.global_audit.batched_category_scope.20261023.008",
+      "formulation_id": "form.a570f5bed277bd8b.presheaf-fibre-product",
+      "version_sha256": "864d270f198ed1cf45e72dc6622120e8b199eec651f5d7aed07be8d23ef22c0f",
+      "expected_node_sha256": "d355242270947a9f6992892a6cd7bf4aafe282830f0ad2464e8eaca449f09c86",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Reviewed the complete source statement for 'fibre product of presheaves', its contextual assumptions and every previously classified effective reference. The occurrence 'category C' incorrectly targeted the small-category meaning without an explicit smallness premise. Reclassified only these typed occurrences; preserved all independent dependency decisions, original formulation content and source hash.",
+      "reason": "Correct one or two mathematically unjustified small-category target links in an independently inventoried source statement without editing source content, inventing new candidate identities or changing unrelated dependency references.",
+      "references": [
+        {
+          "phrase": "set-valued presheaves on C",
+          "state": "existing",
+          "target_meaning_id": "meaning.fef4e69e96c25bfa.contravariant-functor"
+        },
+        {
+          "phrase": "fibre product of sets",
+          "state": "existing",
+          "target_meaning_id": "meaning.be14669c52f30e79.categorical-fibre-product"
+        },
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original reviewed source occurrence \"category C\" in the definition 'fibre product of presheaves'. The source makes no smallness assumption on its ambient category (or hom-categories); previous link to 'small category' imposed an unjustified restriction. This occurrence uses the existing size-unrestricted category candidate, not an automatically new missing concept."
+        },
+        {
+          "context": "Category theory: natural transformation η:F⇒G between contravariant functors C^op→Set, comprising component functions η_X:F(X)→G(X) that commute with all restriction maps along each arrow of C; here two such transformations supply the pullback cospan.",
+          "matching_note": "Check existing presheaf natural-transformation candidate missing.a8c70a2a13320680c54c; distinguish natural transformations of general functors and over-identity transformations in fibred categories.",
+          "missing_candidate_id": "missing.99ed82d968323ff940b1",
+          "phrase": "natural transformations F→G and H→G",
+          "reason": "Naturality is a reusable categorical coherence condition, independent of the objectwise fibre-product construction and stronger than arbitrary families of set maps.",
+          "state": "missing"
+        },
+        {
+          "disposition": "Functoriality of restrictions follows from the transformations' naturality and is not a distinct sheaf axiom.",
+          "phrase": "restriction maps componentwise",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.global_audit.batched_category_scope.20261023.009",
+      "formulation_id": "form.de2c8164874ee4a9.cofinal-category-functor",
+      "version_sha256": "2910d8f3e2b656c28c97fbad5d0012eacb126d1744b8a9e0bcd1ef1e9447b886",
+      "expected_node_sha256": "0ae733d733d158765805db70b458b1200343f21c3a1ec9a9f981252d2786a726",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Reviewed the complete source statement for 'cofinal functor', its contextual assumptions and every previously classified effective reference. The occurrence 'categories I,J' incorrectly targeted the small-category meaning without an explicit smallness premise. Reclassified only these typed occurrences; preserved all independent dependency decisions, original formulation content and source hash.",
+      "reason": "Correct one or two mathematically unjustified small-category target links in an independently inventoried source statement without editing source content, inventing new candidate identities or changing unrelated dependency references.",
+      "references": [
+        {
+          "phrase": "covariant functor H:I→J",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original reviewed source occurrence \"categories I,J\" in the definition 'cofinal functor'. The source makes no smallness assumption on its ambient category (or hom-categories); previous link to 'small category' imposed an unjustified restriction. This occurrence uses the existing size-unrestricted category candidate, not an automatically new missing concept."
+        },
+        {
+          "phrase": "connected category (j↓H)",
+          "state": "existing",
+          "target_meaning_id": "meaning.daec56e6a2a51cae.connected-category"
+        },
+        {
+          "context": "Category theory: ordinary comma category of functors F:A→C, G:B→C, whose objects are triples (a,b,u:F(a)→G(b)) and morphisms are compatible commuting squares. Includes (j↓H) and (H↓j) with their opposite arrow directions as different instances; no assumption u is invertible.",
+          "matching_note": "The ordinary comma-category construction specializes to one fixed source or target object; the arrow orientation remains explicit in the source and the existing iso-comma category is strictly more restrictive in requiring an isomorphism.",
+          "missing_candidate_id": "missing.aba129fc5f7d346b2d0f",
+          "phrase": "comma category (j↓H)",
+          "state": "missing"
+        },
+        {
+          "disposition": "The oriented maps j→H(i) are precisely the objects defining the under-comma category (j↓H), whose construction already has an existing provisional prerequisite; no separate source-local arrow-object identity is needed. The arrow direction is essential and must not be reversed.",
+          "phrase": "arrows j→H(i)",
+          "state": "external"
+        },
+        {
+          "phrase": "finite zigzags among objects",
+          "state": "existing",
+          "target_meaning_id": "meaning.daec56e6a2a51cae.connected-category"
+        },
+        {
+          "disposition": "The comma category must be nonempty and connected at each j, not merely at some objects.",
+          "phrase": "for every object j of J",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.global_audit.batched_category_scope.20261023.010",
+      "formulation_id": "form.de2c8164874ee4a9.initial-category-functor",
+      "version_sha256": "37bceb98aef334e970a2fa6d08445a1ef3d5d45083dbc0cdac40f09846a304b5",
+      "expected_node_sha256": "437708de528df34621410b4340122b7e56c669d30283991ad32f4f0695b25a3d",
+      "complete": true,
+      "reviewed_by": "assistant_global_graph_contextual_mathematics_audit",
+      "review_rationale": "Reviewed the complete source statement for 'initial functor', its contextual assumptions and every previously classified effective reference. The occurrence 'categories I,J' incorrectly targeted the small-category meaning without an explicit smallness premise. Reclassified only these typed occurrences; preserved all independent dependency decisions, original formulation content and source hash.",
+      "reason": "Correct one or two mathematically unjustified small-category target links in an independently inventoried source statement without editing source content, inventing new candidate identities or changing unrelated dependency references.",
+      "references": [
+        {
+          "phrase": "covariant functor H:I→J",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.category-functor"
+        },
+        {
+          "phrase": "category (size-unrestricted)",
+          "state": "missing",
+          "context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+          "matching_note": "Original reviewed source occurrence \"categories I,J\" in the definition 'initial functor'. The source makes no smallness assumption on its ambient category (or hom-categories); previous link to 'small category' imposed an unjustified restriction. This occurrence uses the existing size-unrestricted category candidate, not an automatically new missing concept."
+        },
+        {
+          "phrase": "connected comma category",
+          "state": "existing",
+          "target_meaning_id": "meaning.daec56e6a2a51cae.connected-category"
+        },
+        {
+          "context": "Category theory: ordinary comma category of functors F:A→C, G:B→C, whose objects are triples (a,b,u:F(a)→G(b)) and morphisms are compatible commuting squares. Includes (j↓H) and (H↓j) with their opposite arrow directions as different instances; no assumption u is invertible.",
+          "matching_note": "The ordinary comma-category construction specializes to one fixed source or target object; the arrow orientation remains explicit in the source and the existing iso-comma category is strictly more restrictive in requiring an isomorphism.",
+          "missing_candidate_id": "missing.8f9774ebf085c3590dac",
+          "phrase": "comma category (H↓j)",
+          "state": "missing"
+        },
+        {
+          "disposition": "The oriented maps H(i)→j are exactly the object data in the already classified over-comma category (H↓j); they are not independent of that comma-category construction. Preserve the opposite orientation from cofinality's (j↓H).",
+          "phrase": "arrows H(i)→j",
+          "state": "external"
+        },
+        {
+          "disposition": "Universal quantification over the objects of J is required; one connected comma category does not suffice.",
+          "phrase": "nonempty and connected for all j",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}
