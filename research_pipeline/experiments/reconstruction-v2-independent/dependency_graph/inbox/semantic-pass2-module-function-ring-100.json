@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "id": "semantic-pass2-module-function-ring-100",
+  "mode": "amend",
+  "research_scope": "Nonunital versus unital module actions, typed/bare graph mapping uniqueness, polynomial degree convention and general ring map unity.",
+  "amendments": [
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.11",
+      "formulation_id": "form.wave2.foundation.left-module-nonunital",
+      "version_sha256": "7902de68ae59790c2e70c6f108700785948d1a4f4de6f67e6f33adee69ceb1f3",
+      "expected_node_sha256": "933d34d43b3c1e78e8b5c98a0ad3bc9aaea1669ea5fa01e1dc07143093baaf66",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical statement, verified all version-valid historic node amendments, the previously established contextual links, and the distinction between structural prerequisites and its internal quantified defining clauses.",
+      "reason": "Source-free complete effective-node amendment preserving all previously resolved references and recording the reviewed defining criterion without creating a recursive missing prerequisite.",
+      "references": [
+        {
+          "phrase": "associative ring R, unity optional",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "abelian group (M,+)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.abelian-group"
+        },
+        {
+          "phrase": "left module with unital convention",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.module94.unital-left-module"
+        },
+        {
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition.",
+          "phrase": "left action R×M→M",
+          "state": "external"
+        },
+        {
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition.",
+          "phrase": "module distributivity and scalar associativity",
+          "state": "external"
+        },
+        {
+          "phrase": "optional unital action condition",
+          "state": "external",
+          "disposition": "The equation 1_R m=m when R has a unit is exactly the additional unital-module axiom distinguished from the nonunital left module under definition. The existing unital-left-module and identity-optional ring meanings supply its context. It is not an independent missing construction or a requirement imposed on modules over rings without unity."
+        },
+        {
+          "disposition": "The universal module axioms here do not require an identity in R or unity action.",
+          "phrase": "nonunital base allowed",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.12",
+      "formulation_id": "form.wave2.foundation.mapping-bare-graph",
+      "version_sha256": "50df993ff5ae248ff8a4a933f3c4ebb6d4ad0a9fa2d8c91d5c14f9ed686fbd91",
+      "expected_node_sha256": "b59c5e7dabaf5bdc6d21a6e8f8a99923b35e612942a61d058dee11ac91dc83ef",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical statement, verified all version-valid historic node amendments, the previously established contextual links, and the distinction between structural prerequisites and its internal quantified defining clauses.",
+      "reason": "Source-free complete effective-node amendment preserving all previously resolved references and recording the reviewed defining criterion without creating a recursive missing prerequisite.",
+      "references": [
+        {
+          "phrase": "Cartesian product X×Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.cartesian-product-binary"
+        },
+        {
+          "phrase": "subset graph G",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "unique output y for each x",
+          "state": "external",
+          "disposition": "The universally quantified existence and uniqueness of y for every x is the defining total, single-valued graph condition of the graph-only mapping. Cartesian product and subset are already linked. A bare graph does not uniquely determine the codomain even though this condition holds, and another same-mapping target would self-reference."
+        },
+        {
+          "phrase": "bare graph does not determine codomain Y",
+          "state": "external",
+          "disposition": "Same graph may be embedded in multiple ambient codomains, even with fixed domain."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.13",
+      "formulation_id": "form.wave2.foundation.mapping-typed-graph",
+      "version_sha256": "52ad86a2abd7c2a91c7f907f854b6f46077ac7c29b35ea55669be1828306d89b",
+      "expected_node_sha256": "671c5a067e05e5b7ddca3378ce70770975c403b85f82a297920ab6f16245cc80",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical statement, verified all version-valid historic node amendments, the previously established contextual links, and the distinction between structural prerequisites and its internal quantified defining clauses.",
+      "reason": "Source-free complete effective-node amendment preserving all previously resolved references and recording the reviewed defining criterion without creating a recursive missing prerequisite.",
+      "references": [
+        {
+          "phrase": "Cartesian product X×Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.cartesian-product-binary"
+        },
+        {
+          "phrase": "typed binary relation (X,Y,G)",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.binary-relation-typed"
+        },
+        {
+          "phrase": "subset G of X×Y",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.subset-nonstrict"
+        },
+        {
+          "phrase": "exactly one y per x",
+          "state": "external",
+          "disposition": "Exactly one output y∈Y for each x∈X is the defining functional-graph property of the typed mapping (X,Y,G). Typed relation, product and subset already have existing links. This does not make codomain Y redundant: it is explicitly retained as part of the map data."
+        },
+        {
+          "phrase": "domain and codomain are part of mapping data",
+          "state": "external",
+          "disposition": "Unlike bare graph convention, different codomains can distinguish typed maps with identical graphs."
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.14",
+      "formulation_id": "form.wave2.foundation.nonzero-polynomial-degree",
+      "version_sha256": "93eb2d5d2bb6f8fd708d3c4000d8a212a1f58afc0854dc5b68280c1470694d81",
+      "expected_node_sha256": "d23172d7156a8c5cdd309965e3b832a79f0e8e71db21b3885e537d3c008d8b12",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical statement, verified all version-valid historic node amendments, the previously established contextual links, and the distinction between structural prerequisites and its internal quantified defining clauses.",
+      "reason": "Source-free complete effective-node amendment preserving all previously resolved references and recording the reviewed defining criterion without creating a recursive missing prerequisite.",
+      "references": [
+        {
+          "phrase": "nonnegative integer exponent k",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.natural-including-zero"
+        },
+        {
+          "context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+          "matching_note": "Reviewed original source's polynomial expression with the common multivariate-polynomial construction. Index-set size and base coefficient ring specialize the same general commutative unital polynomial algebra; do not conflate it with localization, polynomial evaluation, the polynomial quotient or degree.",
+          "missing_candidate_id": "missing.615cc6add1af23b7ca05",
+          "phrase": "univariate polynomial P∈R[X]",
+          "state": "missing"
+        },
+        {
+          "phrase": "largest nonzero coefficient index",
+          "state": "external",
+          "disposition": "The greatest exponent k with a_k≠0_R is precisely the defining degree of a nonzero polynomial; the polynomial construction and nonnegative indices are already linked. Nonzeroness of P guarantees at least one such k and finite polynomial support guarantees its maximum. Do not assign a finite degree to the zero polynomial under this source convention."
+        },
+        {
+          "disposition": "No finite degree is assigned to identically zero polynomial under this convention.",
+          "phrase": "zero polynomial finite degree excluded",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.pass2.chunk29.20261023.15",
+      "formulation_id": "form.wave2.foundation.ring-map-general",
+      "version_sha256": "e7c6931515cd8d70a4f2778a7b33b0103c77f9bdcf5ddb3283aa8a603e1e3c01",
+      "expected_node_sha256": "64c34ae7e023b349c774420fcd349e5d70d286ec1a583877561544c02cb1baf1",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_review",
+      "review_rationale": "Read the entire independent mathematical statement, verified all version-valid historic node amendments, the previously established contextual links, and the distinction between structural prerequisites and its internal quantified defining clauses.",
+      "reason": "Source-free complete effective-node amendment preserving all previously resolved references and recording the reviewed defining criterion without creating a recursive missing prerequisite.",
+      "references": [
+        {
+          "phrase": "associative rings R and S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+        },
+        {
+          "phrase": "mapping phi:R to S",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.mapping-element-assignment"
+        },
+        {
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition.",
+          "phrase": "preserves additive operation phi(a+b)=phi(a)+phi(b)",
+          "state": "external"
+        },
+        {
+          "disposition": "This is a defining axiom, preservation equation, scalar-action datum, or internal quantified bound of the very concept defined in this formulation. It is retained here as mathematical explanatory content, not fabricated as an independent prerequisite meaning. Review specifically selected this clause after reading the full source definition.",
+          "phrase": "preserves multiplication phi(ab)=phi(a)phi(b)",
+          "state": "external"
+        },
+        {
+          "phrase": "optional multiplicative identities 1_R,1_S",
+          "state": "external",
+          "disposition": "Whether R and S possess identity elements, and whether φ preserves those identities, is a scope distinction accompanying the general ring-homomorphism definition. Its defining requirements are only preservation of addition and multiplication; the associative-ring structures are already linked, and φ(1_R)=1_S is not silently imposed."
+        },
+        {
+          "disposition": "The absence of phi(1_R)=1_S is a scope distinction, not an additional condition.",
+          "phrase": "unitality not required",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}
