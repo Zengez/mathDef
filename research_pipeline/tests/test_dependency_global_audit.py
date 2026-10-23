@@ -8,6 +8,12 @@ from research_pipeline.engine.core import PipelineError, Workspace, digest
 from research_pipeline.engine.dependency_graph import (
     graph_path, inventory_sync, live_nodes, read, store,
 )
+from research_pipeline.engine.dependency_audit_acceleration import (
+    audit_fingerprint, math_signature, rank_findings, validate_review_ledger,
+)
+from research_pipeline.engine.dependency_review_submit import (
+    review_packet_collection, stage_reviewed_packets,
+)
 from research_pipeline.engine.dependency_global_audit import (
     analyze_snapshot, build_review_packages, candidate_leads,
     load_live_snapshot, strongly_connected, write_offline_packets,
@@ -161,6 +167,129 @@ class GlobalAuditTests(unittest.TestCase):
         })
         with self.assertRaisesRegex(PipelineError, "invent missing"):
             build_review_packages(self.snapshot(), self.manifest([new_missing]))
+
+    def test_notation_conflicts_do_not_count_as_equivalence(self):
+        from research_pipeline.engine.dependency_global_audit import candidate_leads
+        candidates = [
+            {"id": "a", "query": "map X→M_i splitting M_i→X",
+             "context": "Category theory: a split map"},
+            {"id": "b", "query": "map M_i→X splitting X→M_i",
+             "context": "Category theory: a reverse split map"},
+        ]
+        lead = candidate_leads(candidates)["leads"][0]
+        self.assertEqual(lead["surface_jaccard"], 1.0)
+        self.assertTrue(lead["notation_conflict"])
+        self.assertFalse(lead["established_equivalent"])
+        self.assertLess(lead["review_priority"], lead["surface_jaccard"])
+        self.assertNotEqual(math_signature(candidates[0]["query"])["arrows"],
+                            math_signature(candidates[1]["query"])["arrows"])
+
+    def test_seed_graph_cycle_coverage_includes_original_relations(self):
+        snapshot = self.snapshot()
+        snapshot["inventory"]["seed_relations"] = [{
+            "from_formulation": "form.beta",
+            "target_meaning_id": "meaning.alpha",
+            "relation_id": "rel.fixture.beta-alpha"},
+        ]
+        # Add a scanned opposite edge, closing a cycle only when seed edges
+        # are combined with the effective reference graph.
+        snapshot["nodes"]["form.alpha"]["references"][0][
+            "target_meaning_id"] = "meaning.beta"
+        report = analyze_snapshot(snapshot)
+        self.assertTrue(report["graph_cycle_includes_seed_relations"])
+        self.assertEqual(report["summary"]["seed_dependency_edges"], 1)
+        self.assertEqual(report["summary"]["cycle_components"], 1)
+
+    def test_anchored_accepted_review_suppresses_only_exact_heuristic(self):
+        snapshot = self.snapshot()
+        snapshot["inventory"]["meanings"]["meaning.wave2.foundation.small-category"] = {
+            "display_term": "Small category"}
+        snapshot["nodes"]["form.alpha"]["references"][0]["target_meaning_id"] = (
+            "meaning.wave2.foundation.small-category")
+        first = analyze_snapshot(snapshot)
+        item = next(x for x in first["flags"] if x["code"] == "category_size_scope")
+        ledger = {
+            **audit_fingerprint(item),
+            "disposition": "accepted_as_correct", "reviewed_by": "fixture-editor",
+            "rationale": ("Reviewed the full formulation and all its assumptions; "
+                          "the apparent category scope is justified here by "
+                          "additional conditions visible to the reviewer."),
+        }
+        snapshot["review_ledger"] = [ledger]
+        report = analyze_snapshot(snapshot)
+        self.assertEqual(report["summary"]["accepted_review_count"], 1)
+        self.assertNotIn("category_size_scope", [f["code"] for f in report["flags"]])
+        snapshot["nodes"]["form.alpha"]["review_rationale"] += " Context reassessed."
+        stale = analyze_snapshot(snapshot)
+        self.assertEqual(stale["summary"]["accepted_review_count"], 0)
+        self.assertEqual(stale["summary"]["stale_review_count"], 1)
+        with self.assertRaisesRegex(PipelineError, "Structural integrity"):
+            validate_review_ledger([dict(ledger, code="self_dependency")])
+
+    def test_delta_edits_preserve_unmodified_reference_fields(self):
+        original = live_nodes(self.graph, self.inv)["form.alpha"]
+        edit = self.change()
+        edit.pop("replacement")
+        edit["updates"] = {"phrase": "new mathematical target", "state": "existing",
+                           "target_meaning_id": "meaning.alpha"}
+        p = build_review_packages(self.snapshot(), self.manifest([edit]))
+        updated = p[0]["amendments"][0]["references"]
+        self.assertEqual(updated[1]["phrase"], original["references"][1]["phrase"])
+        self.assertEqual(updated[1]["target_meaning_id"],
+                         original["references"][1]["target_meaning_id"])
+        self.assertEqual(len(updated), len(original["references"]))
+        self.assertEqual(updated[0]["phrase"], "new mathematical target")
+
+    def test_stale_target_not_allowed_in_delta_change(self):
+        edit = self.change()
+        edit.pop("replacement")
+        edit["updates"] = {"state": "external",
+                           "disposition": "This is defining local structure."}
+        with self.assertRaisesRegex(PipelineError, "stale target"):
+            build_review_packages(self.snapshot(), self.manifest([edit]))
+        edit["remove_fields"] = ["target_meaning_id"]
+        p = build_review_packages(self.snapshot(), self.manifest([edit]))
+        ref = p[0]["amendments"][0]["references"][0]
+        self.assertEqual(ref["state"], "external")
+        self.assertNotIn("target_meaning_id", ref)
+
+    def test_staging_is_explicit_and_does_not_push_or_touch_other_files(self):
+        manifest = self.manifest([self.change()])
+        manifest_path = self.root / "review-manifest.json"
+        manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+        packets = self.root / "offline-reviewed"
+        write_offline_packets(self.root, manifest_path, packets)
+        initial = review_packet_collection(self.root, packets)
+        self.assertEqual(initial["packet_count"], 1)
+        dry = stage_reviewed_packets(self.root, packets)
+        self.assertFalse(dry["stage_performed"])
+        self.assertFalse((self.graph / "inbox" /
+                          "global-review-fixture-001.json").exists())
+        with self.assertRaisesRegex(PipelineError, "explicit --approved"):
+            stage_reviewed_packets(self.root, packets, commit=True)
+        applied = stage_reviewed_packets(self.root, packets, approved=True)
+        self.assertTrue(applied["stage_performed"])
+        self.assertFalse(applied["commit_created"])
+        self.assertFalse(applied["push_performed"])
+        self.assertTrue((self.graph / "inbox" /
+                         "global-review-fixture-001.json").exists())
+        with self.assertRaisesRegex(PipelineError, "overwrit"):
+            stage_reviewed_packets(self.root, packets)
+
+    def test_reviewed_packet_collection_rejects_duplicate_formulation(self):
+        manifest = self.manifest([self.change()])
+        manifest_path = self.root / "review-manifest.json"
+        manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+        packets = self.root / "offline-reviewed"
+        write_offline_packets(self.root, manifest_path, packets)
+        first = next(packets.glob("*.json"))
+        copy = json.loads(first.read_text(encoding="utf-8"))
+        copy["id"] = "second-reviewed-packet"
+        copy["amendments"][0]["amendment_id"] = "amend.second-reviewed-packet"
+        (packets / (copy["id"] + ".json")).write_text(
+            json.dumps(copy), encoding="utf-8")
+        with self.assertRaisesRegex(PipelineError, "Repeated formulation"):
+            review_packet_collection(self.root, packets)
 
     def test_offline_preflight_does_not_submit_to_inbox(self):
         change = self.change()
