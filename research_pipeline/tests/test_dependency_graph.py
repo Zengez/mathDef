@@ -293,6 +293,81 @@ class DependencyGraphTests(unittest.TestCase):
         resolve(self.root, [row_d])
         self.assertEqual(store(self.root, [self.entry("form.d", [])])["closed"], 4)
 
+    def test_grouped_inbox_amendments_one_rebuild_with_individual_receipts(self):
+        self.add("A", "A depends on B")
+        self.add("B", "B depends on C")
+        self.add("C", "C is primitive")
+        self.write_fixture()
+        graph = graph_path(self.root)
+        store(self.root, [self.entry("form.a", []),
+                          self.entry("form.b", []),
+                          self.entry("form.c", [])])
+        inv = read(graph / "INVENTORY.json")
+        before = live_nodes(graph, inv)
+        for fid, dep, serial in [("form.a", "B", "a"),
+                                 ("form.b", "C", "b")]:
+            event = {
+                **self.entry(fid, [self.ref(dep)]),
+                "amendment_id": "amend.group-" + serial,
+                "expected_node_sha256": digest(before[fid]),
+                "reviewed_by": "independent-contextual-fixture-reviewer",
+                "reason": "Reviewed the complete source and identified this "
+                          "mathematically meaningful and previously omitted "
+                          "independent category dependency.",
+            }
+            folder = graph / "inbox"
+            folder.mkdir(exist_ok=True)
+            name = "group-" + serial
+            (folder / (name + ".json")).write_text(json.dumps({
+                "schema_version": 1, "id": name, "mode": "amend",
+                "amendments": [event],
+            }))
+        result = apply_inbox(self.root)
+        self.assertEqual(result["applied"], ["group-a", "group-b"])
+        self.assertEqual(len((graph / "amendments.jsonl").read_text().splitlines()), 2)
+        self.assertEqual(read(graph / "STATE.json")["summary"]
+                         ["scan_amendment_event_count"], 2)
+        for name in ["group-a", "group-b"]:
+            receipt = read(graph / "applied" / (name + ".json"))
+            self.assertEqual(receipt["status"], "applied_in_independent_graph_only")
+            self.assertFalse(receipt["human_certified"])
+        self.assertEqual(apply_inbox(self.root)["already_applied"],
+                         ["group-a", "group-b"])
+
+    def test_grouped_inbox_stale_second_event_rolls_back_whole_group(self):
+        self.add("A", "A depends on B")
+        self.add("B", "B depends on A")
+        self.write_fixture()
+        graph = graph_path(self.root)
+        store(self.root, [self.entry("form.a", []), self.entry("form.b", [])])
+        inv = read(graph / "INVENTORY.json")
+        original = live_nodes(graph, inv)
+        folder = graph / "inbox"
+        folder.mkdir(exist_ok=True)
+        for fid, dep, serial in [("form.a", "B", "a"),
+                                 ("form.b", "A", "b")]:
+            event = {
+                **self.entry(fid, [self.ref(dep)]),
+                "amendment_id": "amend.rollback-" + serial,
+                "expected_node_sha256": (
+                    digest(original[fid]) if serial == "a" else "f" * 64),
+                "reviewed_by": "independent-contextual-fixture-reviewer",
+                "reason": "Checked the entire independent source and every "
+                          "preexisting graph relation prior to proposing "
+                          "this illustrative append-only amendment.",
+            }
+            name = "rollback-" + serial
+            (folder / (name + ".json")).write_text(json.dumps({
+                "schema_version": 1, "id": name, "mode": "amend",
+                "amendments": [event],
+            }))
+        with self.assertRaisesRegex(PipelineError, "Stale or missing base"):
+            apply_inbox(self.root)
+        self.assertFalse((graph / "amendments.jsonl").exists())
+        self.assertFalse((graph / "applied" / "rollback-a.json").exists())
+        self.assertFalse((graph / "applied" / "rollback-b.json").exists())
+        self.assertEqual(live_nodes(graph, inv), original)
+
     def test_append_only_scan_amendment_restart_replay_and_stale_guard(self):
         self.add("A", "B and C")
         self.add("B", "a primitive")
