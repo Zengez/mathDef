@@ -130,6 +130,21 @@ class SeedOverrideReplayTests(unittest.TestCase):
             alias_map(self.graph, available,
                       originals + [event("alias.cycle.c-a", c, a)])
 
+    def test_source_provenance_survives_two_step_aliases(self):
+        observed = "missing.raw.limit"
+        intermediate = "missing.context.diagram"
+        canonical = "missing.general.category"
+        nodes = {"form.limit": {"references": [
+            {"state": "missing", "missing_candidate_id": observed},
+        ]}}
+        direct_sources = scan_missing_sources(nodes)
+        self.assertNotIn(canonical, direct_sources)
+        aliases = {observed: canonical, intermediate: canonical}
+        canonical_sources = scan_missing_sources(nodes, aliases)
+        self.assertIn("form.limit", canonical_sources[canonical])
+        self.assertIn("form.limit", canonical_sources[observed])
+        self.assertNotIn("form.other", canonical_sources[canonical])
+
     def test_real_ledger_two_hop_alias_replays_to_final_canonical(self):
         project_root = Path(__file__).resolve().parents[1]
         live_graph = (project_root / "experiments" /
