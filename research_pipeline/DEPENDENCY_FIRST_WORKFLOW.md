@@ -8,6 +8,98 @@
 
 Read this file, TEMP_DEPENDENCY_FIRST_WAVE2_PLAN.md, then independent dependency_graph/CHECKPOINT.json, STATE.json and INVENTORY.json. Inspect the shared missing candidate registry and the research queue. Never reparse an unchanged, complete, version-valid node. Source population records and Batches 139–142 remain separate, unchanged inputs.
 
+## Review throughput improvements — 2026-10-23
+
+The source-free phase and mathematical certification policy are **unchanged**.
+These improvements address work repeated during the recent 154–167 audit
+packets, not the rigor of the mathematical decisions.
+
+### A compact, mathematically contextual candidate worklist
+
+Instead of rereading the entire 724-entry candidate registry and the large
+659-formulation inventory for every candidate or choosing candidate pairs
+exclusively by spelling, use the new read-only focus command:
+
+```bash
+W=research_pipeline/experiments/reconstruction-v2-independent
+python -m research_pipeline.engine.dependency_global_audit \
+  --workspace "$W" focus --limit 8 --max-formulations 3
+
+# Fetch EVERY available parent source for one high-impact canonical candidate:
+python -m research_pipeline.engine.dependency_global_audit \
+  --workspace "$W" focus \
+  --candidate-id missing.fcb5ab865c6d9dbb3d79 --max-formulations 1000
+
+# Find candidates by mathematical object/context rather than source spelling alone:
+python -m research_pipeline.engine.dependency_global_audit \
+  --workspace "$W" focus --contains "sheaf" --limit 12
+```
+
+The focus output returns the current state fingerprint, original full source
+texts, mathematical contexts, complete effective-reference lists and effective
+node hashes. It ranks **only unresolved canonical candidate identities** by
+source recurrence and upstream formulation count; already aliased or
+resolved-to-existing candidates do not consume review slots. A truncated
+source selection is explicitly counted, never silently treated as a review of
+all contexts. Its output is a worklist, **not** an alias proposal and never a
+mathematical certification.
+
+### Batch changes by mode and by Git push
+
+The inbox dispatcher now batches **contiguous** `amend`, `alias` and
+`resolve` packets of the same mode into one ledger validation and **one**
+derived-index graph rebuild, while preserving an immutable individual
+receipt for each accepted packet. Any conflicting event within a group
+aborts that entire group before writing the relevant ledger or group
+receipts. Different modes remain in their original lexical execution order;
+the already-present batching of amendments is preserved.
+
+**Important for connector-driven work:** This optimization helps only when
+several packets reach the *same* inbox-dispatch run. Submitting one packet per
+separate GitHub commit/Action invocation still incurs one rebuild each. Where
+practical, combine several fully reviewed, independent mathematical
+identities into **one** source-reviewed `alias` packet and commit once, or
+atomically commit multiple nonoverlapping reviewed packets together. Never
+batch unreviewed decisions to reach a quota. The previous five-formulation
+limit applies to complete-node `amend` packets, **not** to reviewed
+prerequisite aliases. Retain exact individual packet receipts and check the
+live STATE after application. For `amend` or mixed-mode changes, use
+`dependency_review_submit` and its full-node preflight to preserve anchors.
+
+### Stop doing low-yield synonym passes indefinitely
+
+The current 438 unresolved canonical candidate identities are **not** an
+obligation to find 438 additional aliases; many represent genuinely distinct
+unpopulated prerequisites. Use the following review order:
+
+1. Verify integrity and high-severity false-target/scope flags, especially
+   size restrictions or mismatched mathematical object types.
+2. Review candidates with many source occurrences and meanings with unusually
+   high dependency fan-in, then candidate pairs sharing strong **mathematical**
+   context. Inspect *all* relevant full parent formulations before deciding.
+3. Log low-confidence resemblances and context-specific variants as review
+   leads, not forced aliases. Preserve non-merges with explanatory rationale.
+4. When further passes repeatedly produce only isolated low-impact cosmetic
+   identities, report diminishing returns and prepare an **explicitly
+   reviewed** consolidation decision for the remaining candidate classes.
+   Do **not** seal the gate or start external definition research merely
+   because the automated queue is empty; this requires the existing separate
+   gate contract and approval.
+
+For session handoffs, use `STATE.json` as the authoritative **numeric**
+checkpoint, retain the immutable decision packets/receipts, and update one
+compact latest-status/handoff report plus `resume_plan.json` only when
+execution instructions change. Do not rewrite the ~large historical
+`WORK_CHECKPOINT.md` or redundant old audit reports on every packet.
+
+**Testing status:** regression tests were added for batched alias/resolve
+rebuild counts, individual receipts, conflicting-group rollback, replay,
+mixed-mode ordering, and focus-queue read-only behavior. The code was
+committed; a successful CI run or local full-suite benchmark has **not yet
+been verified in this tool session**.
+
+---
+
 ## CURRENT AUDIT ACCELERATOR — global review without redundant per-node retrieval (2026-10-23)
 
 **The phase contract below is unchanged.** At 659/659 scanned and zero ambiguous/unassigned, do **not** restart Pass1 or prematurely open the consolidation gate. Finish the mathematical/contextual review and candidate-equivalence audit first. All inputs are the original independent Wave2 graph; no original-production corpus, frozen Wave1, breadth Batch143 or external missing-definition research is consulted.
