@@ -465,7 +465,8 @@ def rebuild(workspace, inventory=None):
         "phase": phase,
         "consolidation_gate_valid": gated,
         "seed_relations": len(inv["seed_relations"]),
-        "scan_occurrences": sum(r.get("origin") != "preexisting_relation" for r in occurrences),
+        "scan_occurrences": sum(not r.get("origin", "").startswith("preexisting_relation")
+                                for r in occurrences),
         "scan_amendment_event_count": len(amendment_events(graph)),
         "automatic_completion_is_not_certification": True,
         "breadth_expansion": "on_hold",
