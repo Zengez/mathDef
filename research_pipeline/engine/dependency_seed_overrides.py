@@ -22,13 +22,22 @@ def read_events(graph: Path) -> list[dict]:
             if line.strip()]
 
 
-def scan_missing_sources(nodes: dict) -> dict[str, set[str]]:
-    """Only a source-observed candidate can replace that source's seed link."""
+def scan_missing_sources(nodes: dict, aliases: dict[str, str] | None = None
+                         ) -> dict[str, set[str]]:
+    """Carry source provenance through reviewed aliases to final canonical IDs.
+
+    Preserve the observed raw ID too; a final candidate qualifies only because
+    an actual source reference reaches it by a validated alias chain.
+    """
+    aliases = aliases or {}
     found: dict[str, set[str]] = {}
     for fid, node in nodes.items():
         for ref in node.get("references", []):
             if ref.get("state") == "missing":
-                found.setdefault(ref["missing_candidate_id"], set()).add(fid)
+                observed = ref["missing_candidate_id"]
+                found.setdefault(observed, set()).add(fid)
+                final = aliases.get(observed, observed)
+                found.setdefault(final, set()).add(fid)
     return found
 
 
@@ -105,7 +114,7 @@ def append_seed_overrides(workspace: Path, proposed: list[dict]) -> dict:
     Validation completes before any ledger write. Inbox commits and rebuilt
     indexes are subsequently committed as one Git transaction by the workflow.
     """
-    from research_pipeline.engine.dependency_graph import live_nodes, rebuild
+    from research_pipeline.engine.dependency_graph import alias_map, live_nodes, rebuild
     graph = Path(workspace) / "dependency_graph"
     inv = json.loads((graph / "INVENTORY.json").read_text(encoding="utf-8"))
     current = read_events(graph)
@@ -141,7 +150,10 @@ def append_seed_overrides(workspace: Path, proposed: list[dict]) -> dict:
     resolved = ({json.loads(line)["missing_candidate_id"]
                  for line in resolution_file.read_text(encoding="utf-8").splitlines()
                  if line.strip()} if resolution_file.exists() else set())
-    replay_seed_overrides(inv, proposed_rows, scan_missing_sources(nodes),
+    observed_sources = scan_missing_sources(nodes)
+    final_aliases = alias_map(graph, set(observed_sources))
+    replay_seed_overrides(inv, proposed_rows,
+                          scan_missing_sources(nodes, final_aliases),
                           aliased=aliased, resolved=resolved)
     if proposed_rows != current:
         from research_pipeline.engine.population import write_atomic
