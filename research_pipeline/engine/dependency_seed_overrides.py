@@ -69,7 +69,8 @@ def replay_seed_overrides(inv: dict, events: list[dict],
         version = inv["formulations"][fid]["version_sha256"]
         if event.get("expected_version_sha256") != version:
             continue  # Retain stale earlier-version events without applying them.
-        if event.get("expected_seed_sha256") != digest(seed):
+        if (event.get("expected_seed_sha256") != digest(seed)
+                and event.get("expected_seed_record") != seed):
             continue  # A changed original seed also invalidates historical override.
         if rid in active:
             raise PipelineError("Repeated effective seed override: " + rid)
@@ -135,7 +136,8 @@ def append_seed_overrides(workspace: Path, proposed: list[dict]) -> dict:
         if rid not in seeds:
             raise PipelineError("Unknown seed relation")
         old = seeds[rid]
-        if (event.get("expected_seed_sha256") != digest(old)
+        if ((event.get("expected_seed_sha256") != digest(old)
+                 and event.get("expected_seed_record") != old)
                 or event.get("expected_version_sha256") !=
                 inv["formulations"][old["from_formulation"]]["version_sha256"]):
             raise PipelineError("New seed overrides must use current source and seed")
