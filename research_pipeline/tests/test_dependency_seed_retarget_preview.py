@@ -78,6 +78,30 @@ class SeedRetargetPreviewTests(unittest.TestCase):
             }],
         }
 
+    def test_live_round176_alias_repaired_proposals_match_sources(self):
+        root = Path(__file__).resolve().parents[1]
+        workspace = root / "experiments" / "reconstruction-v2-independent"
+        path = root / "review_proposals" / "WAVE2_SEED_SCOPE_ROUND176_READONLY.json"
+        if not path.is_file() or not (workspace / "dependency_graph" / "STATE.json").is_file():
+            self.skipTest("Full independent Wave2 graph not part of this installation")
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+        snapshot = load_live_snapshot(workspace)
+        if (snapshot["state"]["summary"]["unresolved_fingerprint"] !=
+                manifest["unresolved_fingerprint"]):
+            self.skipTest("Round 176 proposal is intentionally version-bound and now stale")
+        out = preview_seed_retargets(snapshot, manifest)
+        self.assertEqual(out["proposal_count"], 19)
+        self.assertFalse(out["applied"])
+        self.assertEqual(
+            sum(x["proposed_candidate_id"] == "missing.fcb5ab865c6d9dbb3d79"
+                for x in out["proposals"]), 17)
+        self.assertEqual(
+            sum(x["proposed_candidate_id"] == "missing.c5104821c3c70afa1f63"
+                for x in out["proposals"]), 2)
+        self.assertTrue(any(
+            x["relation_id"] == "rel.wave2.batch03.category-limit.to.small-category"
+            for x in out["proposals"]))
+
     def test_live_round175_proposals_are_valid_at_original_snapshot(self):
         root = Path(__file__).resolve().parents[1]
         workspace = root / "experiments" / "reconstruction-v2-independent"
