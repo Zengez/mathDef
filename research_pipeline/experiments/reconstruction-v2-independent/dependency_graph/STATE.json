@@ -11,18 +11,18 @@
     "unscanned": 0,
     "open": 651,
     "closed": 8,
-    "missing_candidates": 725,
-    "unresolved_missing_candidates": 420,
+    "missing_candidates": 728,
+    "unresolved_missing_candidates": 423,
     "alias_candidate_records": 298,
-    "missing_occurrences": 839,
+    "missing_occurrences": 842,
     "ambiguous_occurrences": 0,
     "unassigned_occurrences": 0,
-    "unresolved_fingerprint": "b40bf721311cef8d66971984c799bb8f5833e0447475ab766a97a4a3b9d0cf0b",
+    "unresolved_fingerprint": "f458448c3bd956d435bc305134a34aebdad9ed16aa761b5d72150a5d965320b9",
     "phase": "consolidate_occurrences",
     "consolidation_gate_valid": false,
     "seed_relations": 891,
     "scan_occurrences": 3598,
-    "scan_amendment_event_count": 766,
+    "scan_amendment_event_count": 769,
     "automatic_completion_is_not_certification": true,
     "breadth_expansion": "on_hold"
   },
@@ -186,7 +186,9 @@
       "encountered": true,
       "completed": true,
       "structural_status": "open",
-      "direct_blockers": [],
+      "direct_blockers": [
+        "missing:missing.1ebe938ec77d5606093e"
+      ],
       "version_sha256": "a17222333b9ba9f02c917e353fe1682ecb128865e03fd3e1cf9df5c92d5d81a5"
     },
     "form.0c1db7d894ba43e1.g-unramified-at-prime": {
@@ -1592,7 +1594,8 @@
       "completed": true,
       "structural_status": "open",
       "direct_blockers": [
-        "missing:missing.c5104821c3c70afa1f63"
+        "missing:missing.c5104821c3c70afa1f63",
+        "missing:missing.6dd26585ccd4e8c7b6ce"
       ],
       "version_sha256": "bc3935c534a078e3071134e855a3b80051326ebbd59dee260b5cd6712a7f3300"
     },
@@ -2081,6 +2084,7 @@
       "completed": true,
       "structural_status": "open",
       "direct_blockers": [
+        "missing:missing.467c799601bb5d539a8f",
         "missing:missing.591b9f9ee5edc9ff8963"
       ],
       "version_sha256": "b1d3b44e48b1260cce3bea331a63b47ead854c5b7e62449eb69e3c3d4a688b6a"
