@@ -339,6 +339,47 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
             continue
         adjacency[form[fid]["meaning_id"]].add(target)
         seed_edges += 1
+        # Legacy seed edges are *independent authoritative relations*, not
+        # overwritten by later contextual scan amendments. Audit their type
+        # assumptions independently, rather than mistaking fixed scan links
+        # for proof that all historical seed targets are appropriate.
+        words = norm(form[fid]["text"])
+        has_small_category = bool(re.search(
+            r"\bsmall\s+categor(?:y|ies)\b", words))
+        has_small_groupoid = bool(re.search(
+            r"\b(small|finite)\s+groupoids?\b", words))
+        typed_groupoids = bool(re.search(
+            r"\bGroupoids\b", form[fid]["text"]))
+        reason = None
+        code = None
+        if target == SMALL_CATEGORY and not has_small_category:
+            code = "legacy_seed_category_size_scope"
+            reason = ("Pre-existing seed targets the explicitly small-category "
+                      "meaning, but this source does not state that its ambient "
+                      "category is small. Review the seeded prerequisite "
+                      "separately from effective scan amendments.")
+        elif target == SMALL_GROUPOID and not (has_small_groupoid or typed_groupoids):
+            code = "legacy_seed_groupoid_size_scope"
+            reason = ("Pre-existing seed targets the explicitly small-groupoid "
+                      "meaning, but the source does not establish smallness. "
+                      "Preserve invertibility and verify the size convention.")
+        elif (target == "meaning.wave2.foundation.category-functor"
+              and not has_small_category):
+            code = "legacy_seed_functor_size_scope"
+            reason = ("Pre-existing seed points to the small-category functor "
+                      "meaning, while source functors do not explicitly have "
+                      "small domain and codomain categories.")
+        if code:
+            flag("review", code, fid, nodes.get(fid),
+                 reason + " Legacy relation ID: " + seed["relation_id"],
+                 reference={
+                     "phrase": seed.get("phrase", ""),
+                     "state": "existing",
+                     "target_meaning_id": target,
+                     "origin": "preexisting_seed_relation",
+                     "relation_id": seed["relation_id"],
+                     "occurrence_id": "legacy-seed:" + seed["relation_id"],
+                 })
     cycles = strongly_connected(adjacency)
     for component in cycles:
         counts["cyclic_components"] += 1
