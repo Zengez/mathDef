@@ -24,7 +24,35 @@ from research_pipeline.engine.dependency_graph import (
 )
 
 
-def review_preflight(workspace: Path, batch_path: Path) -> dict:
+def prepare_review_context(workspace: Path) -> dict:
+    """Read and replay the authoritative graph ONCE for a packet collection.
+
+    Only a single read-only validation session may reuse this context; callers
+    must reload it if any graph/inventory/ledger content changes. Each packet
+    receives a separate shallow nodes dictionary to prevent intra-batch edits
+    leaking across otherwise independent package checks.
+    """
+    graph = graph_path(workspace)
+    inv = read(graph / "INVENTORY.json")
+    if not isinstance(inv, dict) or not inv.get("formulations"):
+        raise PipelineError("Preflight requires an existing graph inventory")
+    path = graph / "missing_candidates.jsonl"
+    candidates = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()
+                  if line.strip()] if path.is_file() else []
+    return {
+        "inventory": inv,
+        "effective_nodes": live_nodes(graph, inv),
+        "candidate_ids": {row["id"] for row in candidates},
+        "reusable_ids": {
+            row["id"] for row in candidates if row.get("status") == "unresearched"
+            and not row.get("alias_of") and not row.get("resolved_target_meaning_id")
+        },
+        "amendment_ids": {event["amendment_id"] for event in amendment_events(graph)},
+    }
+
+
+def review_preflight(workspace: Path, batch_path: Path, *,
+                     prepared_context: dict | None = None) -> dict:
     """Mechanically validate an already human/assistant-reviewed batch, no writes.
 
     Same-version amendment preconditions are checked against the *effective*
@@ -34,7 +62,8 @@ def review_preflight(workspace: Path, batch_path: Path) -> dict:
     inferred by this function.
     """
     graph = graph_path(workspace)
-    inv = read(graph / "INVENTORY.json")
+    inv = (prepared_context["inventory"] if prepared_context is not None
+           else read(graph / "INVENTORY.json"))
     if not isinstance(inv, dict) or not inv.get("formulations"):
         raise PipelineError("Preflight requires an existing graph inventory")
     package = read(batch_path)
@@ -59,18 +88,15 @@ def review_preflight(workspace: Path, batch_path: Path) -> dict:
                 "mode": mode, "status": "already_applied", "package_sha256": package_hash,
                 "checked_events": 0, "new_candidate_preview": []}
 
-    nodes = live_nodes(graph, inv)
-    candidates_path = graph / "missing_candidates.jsonl"
-    known_reusable = {
-        row["id"] for line in candidates_path.read_text(encoding="utf-8").splitlines()
-        if line.strip() for row in [json.loads(line)]
-        if row.get("status") == "unresearched" and not row.get("alias_of")
-        and not row.get("resolved_target_meaning_id")
-    } if candidates_path.is_file() else set()
+    context = prepared_context or prepare_review_context(workspace)
+    # Never mutate shared context while simulating individual packet changes.
+    nodes = dict(context["effective_nodes"])
+    known_reusable = context["reusable_ids"]
+    known_candidates = context["candidate_ids"]
     preview = []
     seen_events = set()
     if mode == "amend":
-        historical = {event["amendment_id"] for event in amendment_events(graph)}
+        historical = context["amendment_ids"]
         proposed = package.get("amendments")
         if not isinstance(proposed, list) or not proposed:
             raise PipelineError("Amend package needs a nonempty amendments list")
@@ -106,16 +132,14 @@ def review_preflight(workspace: Path, batch_path: Path) -> dict:
                         "formulation_id": fid, "phrase": ref["phrase"],
                         "candidate_id": ref["missing_candidate_id"],
                         "explicit_reviewed_reuse": bool(ref.get("reviewed_existing_candidate_id")),
-                        "new_candidate_identity": ref["missing_candidate_id"] not in known_reusable,
+                        "new_candidate_identity": ref["missing_candidate_id"] not in known_candidates,
                     })
         checked = len(proposed)
     else:
         proposed = package.get("aliases")
         if not isinstance(proposed, list) or not proposed:
             raise PipelineError("Alias package needs a nonempty aliases list")
-        known = {json.loads(line)["id"] for line in
-                 (graph / "missing_candidates.jsonl").read_text(encoding="utf-8").splitlines()
-                 if line.strip()}
+        known = known_candidates
         old_file = graph / "candidate_aliases.jsonl"
         historical = ([json.loads(line) for line in
                        old_file.read_text(encoding="utf-8").splitlines()
