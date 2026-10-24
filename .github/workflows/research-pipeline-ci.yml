@@ -37,9 +37,10 @@ jobs:
           assert s["formulation_count"] >= s["complete_effective_formulations"]
           assert s["meaning_count"] >= 1
           assert s["cycle_components"] == 0, "Global meaning dependency cycle regressed"
-          assert not any(f["severity"] == "integrity" for f in audit["flags"]), (
-              "Global audit surfaced broken node or reference identity"
-          )
+          integrity_flags = [f for f in audit["flags"] if f["severity"] == "integrity"]
+          for flag in integrity_flags:
+              print("GLOBAL AUDIT INTEGRITY FLAG:", json.dumps(flag, sort_keys=True))
+          assert not integrity_flags, "Global audit surfaced broken node or reference identity"
           print("Global independent graph:", s["meaning_count"], "meanings;",
                 s["complete_effective_formulations"], "/", s["formulation_count"],
                 "complete formulations;", s["existing_dependency_edges"],
