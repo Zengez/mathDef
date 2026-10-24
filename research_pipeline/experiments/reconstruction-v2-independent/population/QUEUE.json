@@ -29,6 +29,7 @@
         "form.8069f09a769d34f5.binary-product-category",
         "form.8af10c63c1949034.inertia-of-fibred-category",
         "form.8f7683667fac9d28.category-colimit",
+        "form.8f7683667fac9d28.category-limit",
         "form.8f7683667fac9d28.general-categorical-coproduct",
         "form.8f7683667fac9d28.general-categorical-product",
         "form.9d27e470d02eae69.filtered-category",
@@ -66,6 +67,8 @@
         "form.3653fa0ad844d187.category-fibred-in-sets",
         "form.3653fa0ad844d187.two-category-fibred-sets",
         "form.42730c7ef758df2a.iso-comma-category",
+        "form.4b9834a2990971e9.finite-colimit",
+        "form.4b9834a2990971e9.finite-limit",
         "form.50710e767dabd981.colimit-diagram-sets",
         "form.50710e767dabd981.limit-diagram-sets",
         "form.56119d315cf02fdf.two-category-over-base",
@@ -79,12 +82,15 @@
         "form.74cd6dc48e0606fc.two-category-fibred-setoids",
         "form.8af10c63c1949034.relative-inertia-of-fibred-category",
         "form.8f7683667fac9d28.category-colimit",
+        "form.8f7683667fac9d28.category-limit",
         "form.9d27e470d02eae69.filtered-colimit",
         "form.a1d0959fa7703e41.inverse-limit-topological-spaces",
+        "form.daec56e6a2a51cae.connected-indexed-limit",
         "form.de2c8164874ee4a9.cofinal-category-functor",
         "form.de2c8164874ee4a9.initial-category-functor",
         "form.e3f74861fea6f59a.category-localization",
         "form.e91cf25c30aa59b9.faithfully-flat-module",
+        "form.e91cf25c30aa59b9.flat-module",
         "form.ec5e3a0d13f85f3a.strict-two-category",
         "form.f0d993a60533fc99.groupoid-valued-presheaf",
         "form.f7206eb9332b9389.category-valued-presheaf",
@@ -202,6 +208,25 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.7462fa5f90275b34779a",
+      "context": "Module theory: free left R-module over a unital ring with an R-basis, equivalently a direct sum R^{(I)} of copies of R, possibly infinite rank.",
+      "surface_phrase": "free R-module F_i",
+      "observed_in_formulations": [
+        "form.162eb0d0411cd217.flat-module-lazard",
+        "form.415a1503ae7ed97d.finitely-presented-module",
+        "form.41e3aea7f356bae3.rank-of-map-finite-free",
+        "form.788671763be693df.free-module-resolution",
+        "form.91ebb3796458d5bb.finite-generated-module",
+        "form.db846ebeca42b9ee.finitely-generated-module-stacks",
+        "form.db846ebeca42b9ee.finitely-presented-module-stacks",
+        "form.fc44c63c239e5c20.projective-module-summand",
+        "form.fd99f695f227af4a.finite-locally-free-module",
+        "form.fd99f695f227af4a.finite-projective-module",
+        "form.fd99f695f227af4a.locally-free-module"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.6baca7285e379e18e82b",
       "context": "Module theory: quotient left R-module M/N by an R-submodule N, whose elements are additive cosets m+N with addition and R-scalar action induced by M. Includes ideal modules I/I², successive filtration quotient modules and regular-module quotients R/I; extra ring, graded, flatness, or field structure is not part of this quotient-module meaning.",
       "surface_phrase": "quotient R-module by a submodule",
@@ -252,6 +277,21 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.15bb96cb26d587868bbe",
+      "context": "Category theory: f:X→Y is an isomorphism iff there exists g:Y→X with gf=id_X and fg=id_Y; no underlying-set bijectivity is assumed.",
+      "surface_phrase": "categorical isomorphism",
+      "observed_in_formulations": [
+        "form.4c7d59ba7058613b.affine-scheme",
+        "form.646e4dcbd9b6f1e1.profinite-topological-group",
+        "form.bdc3e54fd4523fad.scheme-local-affine",
+        "form.e3f74861fea6f59a.category-localization",
+        "form.f3d1c8c59cda279e.complete-local-ring",
+        "form.wave2.foundation.small-groupoid",
+        "form.wave2.foundation15.abelian-category"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.ad976486b1e3635e60d2",
       "context": "Commutative algebra: scalar extension of a commutative unital k-algebra R along field extension K/k, yielding the unital K-algebra R⊗_k K with induced multiplication (r⊗a)(s⊗b)=rs⊗ab and K-scalar structure.",
       "surface_phrase": "scalar extension of k-algebra",
@@ -281,16 +321,30 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.15bb96cb26d587868bbe",
-      "context": "Category theory: f:X→Y is an isomorphism iff there exists g:Y→X with gf=id_X and fg=id_Y; no underlying-set bijectivity is assumed.",
-      "surface_phrase": "categorical isomorphism",
+      "missing_candidate_id": "missing.6614c6b7c105cc0e6415",
+      "context": "Category theory: hom-collection Hom_C(X,Y) of arrows X→Y; a preadditive category requires these collections to be sets carrying abelian group structures, without requiring all objects to form a set.",
+      "surface_phrase": "morphism set Hom_C(X,Y)",
       "observed_in_formulations": [
-        "form.4c7d59ba7058613b.affine-scheme",
-        "form.646e4dcbd9b6f1e1.profinite-topological-group",
-        "form.e3f74861fea6f59a.category-localization",
-        "form.f3d1c8c59cda279e.complete-local-ring",
-        "form.wave2.foundation.small-groupoid",
-        "form.wave2.foundation15.abelian-category"
+        "form.09cfb70140dddf4d.categorically-compact-object",
+        "form.0e1768811a8dab34.representable-covariant-functor",
+        "form.23afebc5bde9e408.functor-of-points",
+        "form.fef4e69e96c25bfa.representable-presheaf",
+        "form.wave2.foundation.small-category",
+        "form.wave2.foundation15.preadditive-category"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.87eab2bf93382f4b93d6",
+      "context": "Polynomial algebra: a nonzero univariate polynomial f(X)=a_nX^n+⋯+a_0 over a commutative unital coefficient ring is monic if its leading coefficient a_n equals the multiplicative identity 1, including degree zero unit polynomial 1.",
+      "surface_phrase": "monic polynomial",
+      "observed_in_formulations": [
+        "form.29edcdafba2cae3d.standard-etale-ring-map",
+        "form.3aaa8d6f2195bb8e.minimal-polynomial",
+        "form.8594a432b165bcda.integral-element-over-subring",
+        "form.8594a432b165bcda.integral-ring-homomorphism",
+        "form.93aaac46cdf41116.henselian-local-ring",
+        "form.wave2.foundation.integral-over-ideal"
       ],
       "actionable": false
     },
@@ -415,19 +469,6 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.6614c6b7c105cc0e6415",
-      "context": "Category theory: hom-collection Hom_C(X,Y) of arrows X→Y; a preadditive category requires these collections to be sets carrying abelian group structures, without requiring all objects to form a set.",
-      "surface_phrase": "morphism set Hom_C(X,Y)",
-      "observed_in_formulations": [
-        "form.09cfb70140dddf4d.categorically-compact-object",
-        "form.23afebc5bde9e408.functor-of-points",
-        "form.fef4e69e96c25bfa.representable-presheaf",
-        "form.wave2.foundation.small-category",
-        "form.wave2.foundation15.preadditive-category"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.6fd10a9c752cfa68d45b",
       "context": "Field theory: subfield k(B) of an extension K/k generated by k together with a subset B⊆K, the intersection of all intermediate subfields containing k∪B; for algebraically independent B, it identifies with a rational-function field in the elements of B.",
       "surface_phrase": "subfield k(B) generated by k and B",
@@ -437,19 +478,6 @@
         "form.4bf98f05c3f5ea58.primitive-element",
         "form.5a7f5216e916198b.separable-arbitrary-field-extension",
         "form.b3aefc22ee361c53.kummer-extension"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.87eab2bf93382f4b93d6",
-      "context": "Polynomial algebra: a nonzero univariate polynomial f(X)=a_nX^n+⋯+a_0 over a commutative unital coefficient ring is monic if its leading coefficient a_n equals the multiplicative identity 1, including degree zero unit polynomial 1.",
-      "surface_phrase": "monic polynomial",
-      "observed_in_formulations": [
-        "form.29edcdafba2cae3d.standard-etale-ring-map",
-        "form.3aaa8d6f2195bb8e.minimal-polynomial",
-        "form.8594a432b165bcda.integral-ring-homomorphism",
-        "form.93aaac46cdf41116.henselian-local-ring",
-        "form.wave2.foundation.integral-over-ideal"
       ],
       "actionable": false
     },
@@ -475,6 +503,30 @@
         "form.5d1733b1dcffde12.universal-square-zero-thickening",
         "form.8a5f1888f076f50d.formally-etale-ring-map",
         "form.a54f6089c72fdd84.smooth-at-prime-noetherian-lifting"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.2ca12da5425144816e3c",
+      "context": "General topology: open neighborhood of a point x∈X, an open subset U of X containing x.",
+      "surface_phrase": "open neighborhood of x",
+      "observed_in_formulations": [
+        "form.b1c99b8dae7a6bde.locally-finite-collection",
+        "form.bd90654fb341045a.local-krull-dimension-point",
+        "form.e62923cd8ef99cd1.hausdorff-space",
+        "form.wave2.foundation76.continuous-topological-map.02"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.08a2969d79ad1ddc1922",
+      "context": "Commutative algebra: for unital ring homomorphism φ:R→S and prime q⊆S, contraction p=φ^{-1}(q)⊆R, a prime ideal by inverse-image stability under ring homomorphisms; when φ is an inclusion this becomes q∩R.",
+      "surface_phrase": "contracted prime p=q∩R",
+      "observed_in_formulations": [
+        "form.3fcd082413a6b2eb.relative-dimension-at-prime",
+        "form.b0ca759b4a7e7bfb.relative-assassin-module",
+        "form.f6c83ed1311d9b05.going-down-ring-homomorphism",
+        "form.f6c83ed1311d9b05.going-up-ring-homomorphism"
       ],
       "actionable": false
     },
@@ -539,18 +591,6 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.7462fa5f90275b34779a",
-      "context": "Module theory: free left R-module over a unital ring with an R-basis, equivalently a direct sum R^{(I)} of copies of R, possibly infinite rank.",
-      "surface_phrase": "free R-module F_i",
-      "observed_in_formulations": [
-        "form.788671763be693df.free-module-resolution",
-        "form.91ebb3796458d5bb.finite-generated-module",
-        "form.fc44c63c239e5c20.projective-module-summand",
-        "form.fd99f695f227af4a.locally-free-module"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.826fb5c503bdaf25ce7f",
       "context": "Probability theory: finite absolute expectation E|X_t|<∞ of the real random variable X_t for every real time t≥0 in a stochastic process.",
       "surface_phrase": "integrability E|X_t|<infinity",
@@ -563,6 +603,18 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.9720508883754c995559",
+      "context": "Commutative algebra/algebraic geometry: locus V(I)={p∈Spec(R):I⊆p} of prime ideals containing an ideal I in a commutative ring; these provide Zariski closed subsets.",
+      "surface_phrase": "closed sets V(I)",
+      "observed_in_formulations": [
+        "form.21c2ca138324d040.spectrum-ring",
+        "form.c766a18ce285a2d8.constructible-subset-affine-spectrum",
+        "form.ed035ec300dc4ceb.irreducible-component-spectrum",
+        "form.fd3c1a1c0145915a.support-finite-module"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.fa5932b42daa1a3e0307",
       "context": "Polynomial algebra over fields: a root (zero) α∈K of a univariate polynomial f∈F[x] in a field extension K/F means f(α)=0_K using coefficient inclusion F→K and polynomial evaluation; includes the residue class of x in K=F[x]/(f) for nonconstant f.",
       "surface_phrase": "roots of a polynomial in a field",
@@ -571,28 +623,6 @@
         "form.39488f3e396a1c77.algebraically-closed",
         "form.471f985f2fbe7b49.splitting-field",
         "form.720eaae9156f6f4e.separable-degree-polynomial"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.2ca12da5425144816e3c",
-      "context": "General topology: open neighborhood of a point x∈X, an open subset U of X containing x.",
-      "surface_phrase": "open neighborhood of x",
-      "observed_in_formulations": [
-        "form.bd90654fb341045a.local-krull-dimension-point",
-        "form.e62923cd8ef99cd1.hausdorff-space",
-        "form.wave2.foundation76.continuous-topological-map.02"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.08a2969d79ad1ddc1922",
-      "context": "Commutative algebra: for unital ring homomorphism φ:R→S and prime q⊆S, contraction p=φ^{-1}(q)⊆R, a prime ideal by inverse-image stability under ring homomorphisms; when φ is an inclusion this becomes q∩R.",
-      "surface_phrase": "contracted prime p=q∩R",
-      "observed_in_formulations": [
-        "form.3fcd082413a6b2eb.relative-dimension-at-prime",
-        "form.b0ca759b4a7e7bfb.relative-assassin-module",
-        "form.f6c83ed1311d9b05.going-up-ring-homomorphism"
       ],
       "actionable": false
     },
@@ -652,6 +682,17 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.751471447065f0d756cd",
+      "context": "General topology: a continuous map f:X→Y is a closed map if every closed F⊆X has closed image f(F)⊆Y; here it is the underlying continuous map of a scheme base change, without a Hausdorff or properness assumption.",
+      "surface_phrase": "sends closed subsets to closed subsets",
+      "observed_in_formulations": [
+        "form.60f5f43d4514a466.universally-closed-scheme-morphism",
+        "form.7ee45a1fa46d2b2f.bourbaki-proper-map",
+        "form.7ee45a1fa46d2b2f.universally-closed-continuous-map"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.80fe89921faf5393a2c5",
       "context": "Real analysis: sequence (a_n) of real coefficients indexed by nonnegative integers, a function ℕ_0→ℝ; no assumption of convergence.",
       "surface_phrase": "coefficient sequence (a_n)",
@@ -659,17 +700,6 @@
         "form.wave2.prereq122.real-centered-power-series",
         "form.wave2.prereq122.real-series-convergent",
         "form.wave2.quot119.ordinary-real-ogf"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.9720508883754c995559",
-      "context": "Commutative algebra/algebraic geometry: locus V(I)={p∈Spec(R):I⊆p} of prime ideals containing an ideal I in a commutative ring; these provide Zariski closed subsets.",
-      "surface_phrase": "closed sets V(I)",
-      "observed_in_formulations": [
-        "form.21c2ca138324d040.spectrum-ring",
-        "form.c766a18ce285a2d8.constructible-subset-affine-spectrum",
-        "form.fd3c1a1c0145915a.support-finite-module"
       ],
       "actionable": false
     },
@@ -696,6 +726,17 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.ab1dee70553ea0ff2c1c",
+      "context": "Category theory: cone from vertex L to a diagram F:I→C, a natural transformation constant_L⇒F with compatible arrows L→F(i); not necessarily a limit cone.",
+      "surface_phrase": "cone arrows L→F(i) compatible with all arrows of I",
+      "observed_in_formulations": [
+        "form.8f7683667fac9d28.category-limit",
+        "form.be14669c52f30e79.categorical-fibre-product",
+        "form.c31e56dc023fcbcc.scheme-fibre-product"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.b05a1814a9da0d01922a",
       "context": "Map of local rings taking preimage of target maximal ideal to source maximal ideal, stronger than an arbitrary unital ring homomorphism.",
       "surface_phrase": "local ring homomorphisms",
@@ -714,6 +755,17 @@
         "form.d8201788fcb507c5.module-gluing-data-standard-cover",
         "form.fd99f695f227af4a.finite-locally-free-module",
         "form.fd99f695f227af4a.locally-free-module"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.b599bdc9343a25050226",
+      "context": "Topology: a subset both open and closed in the ambient space X.",
+      "surface_phrase": "open and closed subset C",
+      "observed_in_formulations": [
+        "form.ab260940ea9c523d.connected-topological-space",
+        "form.wave2.pop141.connected-clopen",
+        "form.wave2.variant71.connected.02"
       ],
       "actionable": false
     },
@@ -1156,16 +1208,6 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.751471447065f0d756cd",
-      "context": "General topology: a continuous map f:X→Y is a closed map if every closed F⊆X has closed image f(F)⊆Y; here it is the underlying continuous map of a scheme base change, without a Hausdorff or properness assumption.",
-      "surface_phrase": "sends closed subsets to closed subsets",
-      "observed_in_formulations": [
-        "form.60f5f43d4514a466.universally-closed-scheme-morphism",
-        "form.7ee45a1fa46d2b2f.universally-closed-continuous-map"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.77eacb7314c513d85c72",
       "context": "Category theory: an isomorphism H:E→E' of categories equipped with projections p,p' to C, satisfying p'∘H=p and having an inverse over C.",
       "surface_phrase": "isomorphism over base category C",
@@ -1286,16 +1328,6 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.ab1dee70553ea0ff2c1c",
-      "context": "Category theory: cone from vertex L to a diagram F:I→C, a natural transformation constant_L⇒F with compatible arrows L→F(i); not necessarily a limit cone.",
-      "surface_phrase": "cone arrows L→F(i) compatible with all arrows of I",
-      "observed_in_formulations": [
-        "form.8f7683667fac9d28.category-limit",
-        "form.be14669c52f30e79.categorical-fibre-product"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.aba129fc5f7d346b2d0f",
       "context": "Category theory: ordinary comma category of functors F:A→C, G:B→C, whose objects are triples (a,b,u:F(a)→G(b)) and morphisms are compatible commuting squares. Includes (j↓H) and (H↓j) with their opposite arrow directions as different instances; no assumption u is invertible.",
       "surface_phrase": "comma category (j↓H)",
@@ -1342,16 +1374,6 @@
       "observed_in_formulations": [
         "form.wave2.group116.measure-pushforward",
         "form.wave2.prob90.random-variable-general"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.b599bdc9343a25050226",
-      "context": "Topology: a subset both open and closed in the ambient space X.",
-      "surface_phrase": "open and closed subset C",
-      "observed_in_formulations": [
-        "form.wave2.pop141.connected-clopen",
-        "form.wave2.variant71.connected.02"
       ],
       "actionable": false
     },
