@@ -2,12 +2,15 @@
 from __future__ import annotations
 
 import copy
+import json
+from pathlib import Path
 import unittest
 
 from research_pipeline.engine.core import PipelineError, digest
 from research_pipeline.engine.dependency_seed_retarget_preview import (
     preview_seed_retargets,
 )
+from research_pipeline.engine.dependency_global_audit import load_live_snapshot
 
 
 class SeedRetargetPreviewTests(unittest.TestCase):
@@ -74,6 +77,31 @@ class SeedRetargetPreviewTests(unittest.TestCase):
                 ),
             }],
         }
+
+    def test_live_round175_proposals_are_valid_at_original_snapshot(self):
+        root = Path(__file__).resolve().parents[1]
+        workspace = root / "experiments" / "reconstruction-v2-independent"
+        manifest_path = root / "review_proposals" / "WAVE2_SEED_SCOPE_ROUND175_READONLY.json"
+        if not manifest_path.is_file() or not (workspace / "dependency_graph" / "STATE.json").is_file():
+            self.skipTest("Full independent Wave2 graph not part of this installation")
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        snapshot = load_live_snapshot(workspace)
+        # Historical proposals become stale when the underlying graph advances.
+        # A new graph version should not silently reactivate old decisions.
+        current = snapshot["state"]["summary"]["unresolved_fingerprint"]
+        if current != manifest["unresolved_fingerprint"]:
+            self.skipTest("Round 175 manifest is intentionally stale for the current graph")
+        if snapshot["inventory"]["seed_relations_sha256"] != manifest["seed_relations_sha256"]:
+            self.skipTest("Seed input changed; historical preview needs independent re-review")
+        result = preview_seed_retargets(snapshot, manifest)
+        self.assertEqual(result["proposal_count"], 18)
+        self.assertFalse(result["applied"])
+        self.assertEqual(
+            sum(x["proposed_candidate_id"] == "missing.fcb5ab865c6d9dbb3d79"
+                for x in result["proposals"]), 16)
+        self.assertEqual(
+            sum(x["proposed_candidate_id"] == "missing.c5104821c3c70afa1f63"
+                for x in result["proposals"]), 2)
 
     def test_valid_seed_preview_never_modifies_snapshot_or_manifest(self):
         before = copy.deepcopy(self.snapshot)
