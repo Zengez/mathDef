@@ -109,6 +109,10 @@ def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = 
         # Source membership is indexed in the canonical missing registry.
         # Unknown source IDs are a visible risk, never silently fabricated.
         sources = []
+        # A canonical candidate may combine context-reviewed aliases. Preserve
+        # the actual source-specific phrases and original IDs in the read-only
+        # bundle instead of treating the canonical query as universal wording.
+        source_candidate_ids = {candidate["id"], *candidate.get("alias_ids", [])}
         for fid in source_ids[:max_formulations]:
             source = inv["formulations"].get(fid)
             node = nodes.get(fid)
@@ -125,6 +129,15 @@ def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = 
                 "effective_node_sha256": digest(node) if node else None,
                 "complete_scan": bool(node and node.get("scan_status") == "complete"),
                 "all_effective_references": node.get("references", []) if node else [],
+                "matching_source_references": [
+                    {"reference_index": i, "phrase": ref.get("phrase", ""),
+                     "context": ref.get("context", ""),
+                     "observed_candidate_id": ref.get("missing_candidate_id"),
+                     "occurrence_id": ref.get("occurrence_id")}
+                    for i, ref in enumerate(node.get("references", []) if node else [])
+                    if ref.get("state") == "missing"
+                    and ref.get("missing_candidate_id") in source_candidate_ids
+                ],
             })
         items.append({
             "candidate_id": candidate["id"], "query": candidate.get("query", ""),
