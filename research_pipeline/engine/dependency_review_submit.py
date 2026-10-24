@@ -27,7 +27,9 @@ import tempfile
 
 from research_pipeline.engine.core import PipelineError
 from research_pipeline.engine.dependency_graph import graph_path
-from research_pipeline.engine.dependency_review_preflight import review_preflight
+from research_pipeline.engine.dependency_review_preflight import (
+    prepare_review_context, review_preflight,
+)
 
 
 def _run_git(root: Path, *args: str) -> str:
@@ -53,6 +55,7 @@ def review_packet_collection(workspace: Path, packet_dir: Path,
     fids, event_ids, package_ids = set(), set(), set()
     summaries = []
     inbox = graph / "inbox"
+    prepared = None
     for file in paths:
         package = json.loads(file.read_text(encoding="utf-8"))
         if package.get("mode") != "amend":
@@ -71,7 +74,13 @@ def review_packet_collection(workspace: Path, packet_dir: Path,
             event_ids.add(eid)
         if (inbox / file.name).exists():
             raise PipelineError("Refusing to overwrite a graph inbox package")
-        report = review_preflight(workspace, file)
+        # Replaying all source amendments is expensive. Every packet in
+        # this collection is validated against ONE unchanged live graph.
+        # The helper rejects repeated formulations, so no cross-packet
+        # sequential edits are silently permitted.
+        if prepared is None:
+            prepared = prepare_review_context(workspace)
+        report = review_preflight(workspace, file, prepared_context=prepared)
         if report["status"] != "mechanically_valid_not_applied":
             raise PipelineError("Every staged packet must be un-applied and valid")
         summaries.append({
