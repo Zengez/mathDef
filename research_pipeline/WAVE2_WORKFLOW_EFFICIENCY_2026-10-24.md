@@ -42,3 +42,20 @@ In the precise Round178 pattern, a correctly pre-reviewed target can be used **w
 ## Resume contract
 
 Start with the short handoff, then current live graph state. Use source-complete effective-node context and prioritize substantive mathematics. If correcting an existing-target link into an already-registered missing prerequisite, use the explicit reviewed reuse option and preflight it. Preserve original source formulations, append-only provenance, zero premature external research, and separate mathematical/citation/human certification. Do not open consolidation gate or freeze based on these efficiency changes.
+
+
+## Additional implemented improvement: amortized multi-packet preflight (October 24)
+
+The previous `review_packet_collection` invoked `review_preflight` once per package. Every invocation independently loaded the complete inventory and candidate registry, replayed **all** effective-node amendment history (currently 766 events over 659 formulations), and reloaded the append-only amendment ID ledger. Thus checking `k` independent packets cost approximately `k` effective-graph replays even though all packets used the **same unchanged graph** and repeated formulation IDs were already forbidden.
+
+**Implemented:** `dependency_review_preflight.prepare_review_context()` prepares the inventory, effective version-pinned nodes, registered and reusable candidate IDs, and known amendment IDs in a single read-only snapshot. `review_packet_collection` lazily prepares it only for a packet that survives initial independent-package checks and passes it to subsequent `review_preflight` calls. Each packet creates a separate shallow dictionary of effective nodes before simulating amendments; validation of one packet cannot contaminate another. Ordinary standalone preflight remains supported, with fresh authoritative loading by default. No new mutable cache, filesystem cache, relaxed review contract, automatic alias, or graph write is introduced.
+
+**Regression test:** `research_pipeline/tests/test_review_preflight_cache.py` creates two distinct version-anchored amendment packets and asserts that `live_nodes` is invoked exactly once for the batch, that both receive valid read-only mechanical validation, and that the live graph files and event ledgers remain unchanged. It also tests default standalone preflight independently.
+
+**Expected operation-count benefit:** for a single same-state review of `k` disjoint packets, full effective-node replays fall from `k` to **one**. For example, 5 reviewed packets avoid 4 redundant full graph replays (**80% reduction in this suboperation**); this is not a measured 80% wall-clock improvement. The end-to-end action still performs mandatory separate graph processing when approved amendments are actually applied.
+
+**Verification boundary:** Code and tests are committed. This connector session still does not expose successful current Actions conclusions or a runnable repository checkout, so neither the new batch regression nor the full suite is claimed to have passed. Verify via the automatic `Research pipeline isolated tests` workflow before treating the optimization as production-proven.
+
+### New operational default
+
+For a batch of independently source-reviewed corrections: construct complete version-pinned packets off-line, use the existing `review_packet_collection` validation with one shared in-memory context, stage them **once** after approval, commit together, and confirm the unique receipts and authoritative `STATE.json` after processing. Repeating ad hoc one-packet GitHub commits defeats the already implemented same-mode graph-rebuild coalescing.
