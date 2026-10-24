@@ -32,8 +32,17 @@ For compatibility with the existing protected CI configuration, old
 `summary.cycle_components`, `graph_cycle_components` and legacy edge counts
 retain their restricted semantics. Explicit scope fields and
 `graph_cycle_includes_candidate_resolutions=false` label that limitation.
-Consumers needing full coverage must use `summary.effective_cycle_components`,
+Consumers needing full cycle coverage must use `summary.effective_cycle_components`,
 `summary.effective_existing_dependency_edges` and `cycle_analysis.components`.
+Normal `scan` output is now deliberately compact: it retains all cyclic-component
+`internal_edges` and their provenance, plus `cycle_analysis.edge_count`,
+but omits the complete `cycle_analysis.edges` array. For all individual effective
+edges, use `scan --include-cycle-edges`; `scan --snapshot-output /tmp/...`
+also writes the complete edge list to the explicitly requested exhaustive
+snapshot (while ordinary stdout stays compact). Programmatically, use
+`analyze_snapshot(snapshot, include_cycle_edges=True)` or
+`analyze_cycles(snapshot, include_all_edges=True)`. The flag
+`cycle_analysis.all_effective_edges_included` identifies the response form.
 New summary counts distinguish avoidable, unavoidable and undetermined SCCs.
 No integrity check was removed or suppressed; cycles are structural diagnostics,
 not automatic integrity failures or instructions to remove links.
@@ -91,6 +100,16 @@ requiring C; B and C each require A. Every selection cycles despite the lack of
 a single obligatory outgoing edge from A. The algorithm correctly reports an
 unavoidable core `{A,B,C}`. A missing scan of an alternative instead yields an
 undetermined result, not a false primitive escape.
+
+## Post-Codex ChatGPT follow-up: concise diagnostics (2026-10-24)
+
+A subsequent efficiency review found that including all 2,647 current effective
+edges in every global audit JSON response was unnecessary. The routine result
+now reports the full edge count but includes only the edges inside cyclic
+strongly connected components; callers can explicitly request every edge.
+This is **presentation-only**: the algorithm still processes every effective
+edge, cycle classifications are unchanged, and historical CI fields remain.
+Added tests for compact, expanded, and exhaustive-snapshot results.
 
 ## Validation and boundaries
 
