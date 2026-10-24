@@ -125,7 +125,8 @@ class GlobalAuditTests(unittest.TestCase):
 
         self.assertIn("stale_missing_identity", integrity_codes())
         ref["reviewed_existing_candidate_id"] = candidate
-        ref["reviewed_by"] = "source-free mathematical reviewer"
+        # Reviewer provenance is validated in the amendment ledger, not in
+        # every serialized effective reference.
         ref["candidate_identity_review_rationale"] = "insufficient"
         self.assertIn("stale_missing_identity", integrity_codes())
         ref["candidate_identity_review_rationale"] = (
