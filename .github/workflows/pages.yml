@@ -2,6 +2,28 @@ name: Publish mathDef
 on:
   push:
     branches: [main]
+    # Deploy only when published definitions or independent preview inputs
+    # change. Internal dependency graph indexes and audit reports are not
+    # published site content and should not initiate a Pages deployment.
+    paths:
+      - 'definitions/**'
+      - 'variants/**'
+      - 'data/**'
+      - 'web/**'
+      - 'scripts/**'
+      - 'research_pipeline/adapters/mathdef/preview*.py'
+      - 'research_pipeline/adapters/mathdef/preview.js'
+      - 'research_pipeline/adapters/mathdef/ui_branding.json'
+      - 'research_pipeline/adapters/mathdef/resume.json'
+      - 'research_pipeline/ui/**'
+      - 'research_pipeline/engine/core.py'
+      - 'research_pipeline/engine/population.py'
+      - 'research_pipeline/engine/resume_checkpoint.py'
+      - 'research_pipeline/experiments/**'
+      - '!research_pipeline/experiments/**/dependency_graph/**'
+      - '!research_pipeline/experiments/**/*.md'
+      - '!research_pipeline/experiments/**/population/QUEUE.json'
+      - '.github/workflows/pages.yml'
   workflow_dispatch:
 permissions:
   contents: read

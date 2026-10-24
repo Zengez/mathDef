@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - 'research_pipeline/**'
+      # Audit prose/checkpoints cannot change executable behaviour.
+      # Exclude documentation-only pushes without skipping source/graph tests.
+      - '!research_pipeline/**/*.md'
       - '.github/workflows/research-pipeline-ci.yml'
   workflow_dispatch:
 permissions:

@@ -54,6 +54,49 @@ class DependencyGraphTests(unittest.TestCase):
                 "target_meaning_id": "meaning." + name.casefold()}
 
 
+    def test_propose_noop_reuses_complete_version_pinned_checkpoint(self):
+        self.add("A", "An already fully reviewed simple mathematical definition.")
+        self.write_fixture()
+        store(self.root, [self.entry("form.a", [])])
+        graph = graph_path(self.root)
+        before = {(graph / name).read_bytes() for name in
+                  ("STATE.json", "CHECKPOINT.json", "occurrences.jsonl",
+                   "missing_candidates.jsonl")}
+        with (patch.object(graph_module, "live_nodes",
+                           side_effect=AssertionError("Unnecessary replay")),
+              patch.object(graph_module, "rebuild",
+                           side_effect=AssertionError("Unnecessary rebuild"))):
+            result = propose(self.root, "research_pipeline.adapters.mathdef.dependency_scan",
+                             limit=50)
+        self.assertTrue(result["reused_fully_scanned_checkpoint"])
+        self.assertEqual(result["proposed_this_run"], 0)
+        after = {(graph / name).read_bytes() for name in
+                 ("STATE.json", "CHECKPOINT.json", "occurrences.jsonl",
+                  "missing_candidates.jsonl")}
+        self.assertEqual(before, after)
+
+    def test_propose_does_not_skip_incomplete_or_stale_checkpoint(self):
+        self.add("A", "Definition in an unscanned formulation.")
+        self.write_fixture()
+        with patch.object(graph_module, "live_nodes",
+                          wraps=graph_module.live_nodes) as observed:
+            result = propose(self.root, "research_pipeline.adapters.mathdef.dependency_scan",
+                             limit=0)
+        self.assertTrue(observed.called)
+        self.assertNotIn("reused_fully_scanned_checkpoint", result)
+        store(self.root, [self.entry("form.a", [])])
+        checkpoint = graph_path(self.root) / "CHECKPOINT.json"
+        before = read(checkpoint)
+        invalid = dict(before)
+        invalid["state_sha256"] = "stale-checkpoint"
+        checkpoint.write_text(json.dumps(invalid), encoding="utf-8")
+        with patch.object(graph_module, "live_nodes",
+                          wraps=graph_module.live_nodes) as observed:
+            result = propose(self.root, "research_pipeline.adapters.mathdef.dependency_scan",
+                             limit=0)
+        self.assertTrue(observed.called)
+        self.assertNotIn("reused_fully_scanned_checkpoint", result)
+
     def test_occurrence_first_scanning_never_assigns_premature_missing_meaning(self):
         self.add("A", "an unusual notion related to B")
         self.add("B", "a basic example")

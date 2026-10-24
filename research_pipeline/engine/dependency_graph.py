@@ -663,6 +663,25 @@ def propose(workspace, adapter, limit=30):
     inv = read(graph / "INVENTORY.json")
     if not inv:
         raise PipelineError("Generate inventory first")
+    # All formulations are already fully reviewed: no lexical proposal is
+    # possible. Reuse the version-matched, validated checkpoint instead of
+    # replaying 659 nodes and hundreds of amendments and rebuilding indexes.
+    state = read(graph / "STATE.json", {})
+    summary = state.get("summary", {})
+    checkpoint = read(graph / "CHECKPOINT.json", {})
+    if (summary.get("inventory_sha256") == inv["source_inventory_sha256"]
+            and checkpoint.get("inventory_sha256") == inv["source_inventory_sha256"]
+            and summary.get("total_formulations") == len(inv["formulations"])
+            and summary.get("scan_complete") == len(inv["formulations"])
+            and summary.get("unscanned") == 0
+            and summary.get("scan_incomplete") == 0
+            and checkpoint.get("valid_node_snapshot_count") == len(inv["formulations"])
+            and checkpoint.get("scan_amendment_event_count") ==
+                summary.get("scan_amendment_event_count")
+            and checkpoint.get("state_sha256") ==
+                digest(state.get("formulations", {}))):
+        return {**summary, "proposed_this_run": 0,
+                "reused_fully_scanned_checkpoint": True}
     nodes = live_nodes(graph, inv)
     module = importlib.import_module(adapter)
     # The source digest is an explicit adapter-version invalidation key.
