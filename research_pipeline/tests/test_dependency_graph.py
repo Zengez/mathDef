@@ -400,6 +400,8 @@ class DependencyGraphTests(unittest.TestCase):
             result = apply_inbox(self.root)
             self.assertEqual(rebuild.call_count, 1)
         self.assertEqual(result["applied"], ["aliases-group-b", "aliases-group-c"])
+        self.assertEqual(result["batched_rebuilds"], [
+            {"mode": "alias", "packet_count": 2, "event_count": 2}])
         self.assertEqual(read(graph / "STATE.json")["summary"]
                          ["unresolved_missing_candidates"], 1)
         self.assertEqual(read(graph / "STATE.json")["summary"]
@@ -480,6 +482,8 @@ class DependencyGraphTests(unittest.TestCase):
             self.assertEqual(rebuild.call_count, 1)
         self.assertEqual(result["applied"],
                          ["resolutions-group-a", "resolutions-group-b"])
+        self.assertEqual(result["batched_rebuilds"], [
+            {"mode": "resolve", "packet_count": 2, "event_count": 2}])
         self.assertEqual(read(graph / "STATE.json")["summary"]
                          ["unresolved_missing_candidates"], 0)
         self.assertEqual(read(graph / "STATE.json")["summary"]
@@ -563,6 +567,9 @@ class DependencyGraphTests(unittest.TestCase):
             result = apply_inbox(self.root)
             self.assertEqual(rebuild.call_count, 2)
         self.assertEqual(result["applied"], ["mixed-01-alias", "mixed-02-resolve"])
+        self.assertEqual(result["batched_rebuilds"], [
+            {"mode": "alias", "packet_count": 1, "event_count": 1},
+            {"mode": "resolve", "packet_count": 1, "event_count": 1}])
         self.assertEqual(read(graph / "STATE.json")["summary"]
                          ["unresolved_missing_candidates"], 0)
 
