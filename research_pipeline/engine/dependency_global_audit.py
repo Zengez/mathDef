@@ -35,6 +35,10 @@ from research_pipeline.engine.dependency_graph import (
     KEY_RE, graph_path, live_nodes, make_snapshot, missing_key, norm, read,
 )
 from research_pipeline.engine.dependency_review_preflight import review_preflight
+from research_pipeline.engine.dependency_seed_overrides import (
+    read_events as read_seed_override_events, replay_seed_overrides,
+    scan_missing_sources,
+)
 from research_pipeline.engine.dependency_audit_acceleration import (
     notation_aware_leads, rank_findings,
 )
@@ -65,6 +69,9 @@ def load_live_snapshot(workspace: Path) -> dict:
         "inventory": inv, "state": state, "nodes": nodes,
         "candidates": jsonl(graph / "missing_candidates.jsonl"),
         "aliases": jsonl(graph / "candidate_aliases.jsonl"),
+        "seed_override_events": read_seed_override_events(graph),
+        "resolved_candidate_ids": [x["missing_candidate_id"] for x in
+                                  jsonl(graph / "resolutions.jsonl")],
         "review_ledger": jsonl(graph / "audit_review_decisions.jsonl"),
     }
 
@@ -327,6 +334,13 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
                      "Reference still requires contextual adjudication.",
                      index=i, reference=ref)
 
+    # Reviewed historical seed overrides hide their original restricted target
+    # from effective adjacency, but never mutate immutable seed evidence.
+    seed_overrides = replay_seed_overrides(
+        inv, snapshot.get("seed_override_events", []), scan_missing_sources(nodes),
+        aliased={x["alias_candidate_id"] for x in snapshot.get("aliases", [])},
+        resolved=set(snapshot.get("resolved_candidate_ids", [])))
+    counts["effective_seed_override_count"] = len(seed_overrides)
     # Combine authoritative seed relations with the effective append-only scan
     # graph. Never infer completeness from scan edges alone; deferred legacy
     # seed targets are missing placeholders, not asserted dependencies.
@@ -334,6 +348,8 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
         if not seed.get("target_meaning_id"):
             continue
         fid, target = seed.get("from_formulation"), seed["target_meaning_id"]
+        if seed["relation_id"] in seed_overrides:
+            continue  # This historical link is replaced by a reviewed missing seed.
         if fid not in form or target not in meanings:
             counts["invalid_seed_relations"] += 1
             continue
