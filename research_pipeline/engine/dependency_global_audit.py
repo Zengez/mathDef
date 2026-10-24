@@ -330,9 +330,10 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
                 # otherwise redundant raw ID. The review packet must preserve
                 # the original phrase and supply explicit evidence of that
                 # choice. Never accept an unexplained ID/phrase mismatch.
+                # The reviewer's identity is retained by the validated
+                # append-only amendment event, not necessarily the reference.
                 reviewed_reuse = (
                     ref.get("reviewed_existing_candidate_id") == cid
-                    and bool(str(ref.get("reviewed_by", "")).strip())
                     and len(str(ref.get(
                         "candidate_identity_review_rationale", "")).strip()) >= 40
                 )
