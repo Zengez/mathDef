@@ -245,6 +245,21 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
         if node["version_sha256"] != source["version_sha256"]:
             flag("integrity", "stale_source_anchor", fid, node,
                  "Node version does not match independent source inventory.")
+        # An open-preimage biconditional does not itself imply surjectivity:
+        # a non-onto inclusion of discrete spaces is a counterexample.
+        # This is a *scope lead*, not a finding that the full, explicitly
+        # surjective submersive definition is false.
+        source_words = norm(source["text"])
+        if ("submersive" in source_words and "surjective" in source_words
+                and "equivalently" in source_words
+                and ("open exactly when" in source_words
+                     or "open if and only if" in source_words)
+                and ("f^{-1}" in source_words or "preimage" in source_words)):
+            flag("review", "submersive_iff_surjectivity_scope", fid, node,
+                 "The open-preimage biconditional alone does not imply "
+                 "surjectivity. Confirm that the equivalence is asserted "
+                 "only for surjective maps; this is a wording/scope lead "
+                 "rather than a certified mathematical error.")
         for i, ref in enumerate(node["references"]):
             phrase = norm(ref.get("phrase", ""))
             target = ref.get("target_meaning_id")
