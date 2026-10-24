@@ -550,7 +550,9 @@ def build_review_packages(snapshot: dict, manifest: dict,
             if new.get("state") == "missing":
                 if not str(new.get("context", "")).strip():
                     raise PipelineError("Missing references require mathematical context")
-                if missing_key(new.get("phrase", ""), new.get("context", "")) not in existing_candidates:
+                reviewed = new.get("reviewed_existing_candidate_id")
+                target_id = reviewed or missing_key(new.get("phrase", ""), new.get("context", ""))
+                if target_id not in existing_candidates:
                     raise PipelineError("Cannot silently invent missing-candidate identities")
             if new == refs[index]:
                 raise PipelineError("No-op edit: " + fid)
@@ -564,7 +566,12 @@ def build_review_packages(snapshot: dict, manifest: dict,
                           f"'{source['display_term']}' and the complete effective "
                           f"predecessor reference list; {len(modified)} references changed.")
         # Validate an entire regenerated snapshot, *before writing any files*.
-        make_snapshot(inv, fid, refs, "complete", full_rationale)
+        reusable = {row["id"] for row in snapshot.get("candidates", [])
+                    if row.get("status") == "unresearched"
+                    and not row.get("alias_of")
+                    and not row.get("resolved_target_meaning_id")}
+        make_snapshot(inv, fid, refs, "complete", full_rationale,
+                      reusable_missing_candidate_ids=reusable)
         pending.append({
             "amendment_id": f"amend.{label}.{len(pending)+1:04d}",
             "formulation_id": fid, "version_sha256": source["version_sha256"],
