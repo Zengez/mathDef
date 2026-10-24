@@ -325,10 +325,23 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
                     flag("integrity", "unregistered_missing_candidate", fid, node,
                          "Missing reference does not match the saved shared "
                          "candidate registry.", index=i, reference=ref)
-                if missing_key(ref["phrase"], ref["context"]) != cid:
+                # A full-node reviewer may deliberately reuse a previously
+                # registered contextual candidate instead of minting an
+                # otherwise redundant raw ID. The review packet must preserve
+                # the original phrase and supply explicit evidence of that
+                # choice. Never accept an unexplained ID/phrase mismatch.
+                reviewed_reuse = (
+                    ref.get("reviewed_existing_candidate_id") == cid
+                    and bool(str(ref.get("reviewed_by", "")).strip())
+                    and len(str(ref.get(
+                        "candidate_identity_review_rationale", "")).strip()) >= 40
+                )
+                if (missing_key(ref["phrase"], ref["context"]) != cid
+                        and not reviewed_reuse):
                     flag("integrity", "stale_missing_identity", fid, node,
                          "Phrase + context do not hash to the persisted missing "
-                         "candidate identity.", index=i, reference=ref)
+                         "candidate identity, nor is this explicitly reviewed "
+                         "candidate identity reuse.", index=i, reference=ref)
             elif ref["state"] in ("unassigned", "ambiguous", "deferred"):
                 flag("review", "unresolved_occurrence", fid, node,
                      "Reference still requires contextual adjudication.",
