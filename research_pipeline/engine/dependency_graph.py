@@ -230,7 +230,7 @@ def alias_map(graph, available, events=None):
     events = (events if events is not None else
               [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()
                if line.strip()] if path.exists() else [])
-    aliases = {}
+    direct = {}
     seen = set()
     for event in events:
         key = event.get("alias_candidate_id")
@@ -240,13 +240,30 @@ def alias_map(graph, available, events=None):
             raise PipelineError("Repeated/invalid missing alias event ID")
         seen.add(eid)
         if key not in available or target not in available:
-            continue  # Historical aliases are retained if sources are removed.
-        if key == target or key in aliases or target in aliases:
-            raise PipelineError("Conflicting or chained missing alias (use canonical target)")
+            continue  # Keep stale historical aliases without activating them.
+        if key == target or key in direct:
+            raise PipelineError("Conflicting missing alias identity")
         if not event.get("reviewed_by") or len(event.get("reason", "").strip()) < 40:
             raise PipelineError("Missing alias requires substantive contextual review")
-        aliases[key] = target
-    return aliases
+        direct[key] = target
+    # Older append-only ledgers already contain legitimate two-step aliases:
+    # A->B was recorded before B->C. The former implementation treated A->B
+    # as still canonical B while reporting C separately. Flatten only the
+    # EFFECTIVE map to the final target, retaining every original event and
+    # observed occurrence. Reject genuine cycles instead of silently looping.
+    flattened = {}
+    for key in sorted(direct):
+        path = {key}
+        current = direct[key]
+        while current in direct:
+            if current in path:
+                raise PipelineError("Cycle in append-only missing alias ledger")
+            path.add(current)
+            current = direct[current]
+        if current in path:
+            raise PipelineError("Cycle in append-only missing alias ledger")
+        flattened[key] = current
+    return flattened
 
 
 def rebuild(workspace, inventory=None):
