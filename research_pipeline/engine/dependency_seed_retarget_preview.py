@@ -47,7 +47,12 @@ def preview_seed_retargets(snapshot: dict, manifest: dict) -> dict:
         seed = seeds[rid]
         fid = seed["from_formulation"]
         source = inv["formulations"][fid]
-        if (edit.get("expected_seed_sha256") != digest(seed)
+        # Either a canonical seed digest or the exact complete original
+        # seed record may pin the relation. The latter keeps proposals
+        # self-contained and lets reviewers inspect every original field.
+        seed_matches = (edit.get("expected_seed_sha256") == digest(seed)
+                        or edit.get("expected_seed_record") == seed)
+        if (not seed_matches
                 or edit.get("expected_from_formulation") != fid
                 or edit.get("expected_version_sha256") != source["version_sha256"]
                 or edit.get("expected_seed_target_meaning_id") != seed["target_meaning_id"]):
