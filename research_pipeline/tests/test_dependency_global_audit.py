@@ -125,6 +125,38 @@ class GlobalAuditTests(unittest.TestCase):
         self.assertTrue(report["automatic_aliases_or_edits"] is False)
         self.assertFalse(report["mathematics_certified"])
 
+    def test_small_groupoid_scope_checks_respect_explicit_size(self):
+        # A generic groupoid has invertible arrows but does not require
+        # smallness; the only existing groupoid meaning in this fixture is
+        # explicitly small. Review leads must honor both size declarations
+        # and the typed Groupoids target category, not escaped regex text.
+        snapshot = self.snapshot()
+        small_id = "meaning.wave2.foundation.small-groupoid"
+        snapshot["inventory"]["meanings"][small_id] = {
+            "display_term": "Small groupoid"}
+        ref = snapshot["nodes"]["form.alpha"]["references"][0]
+        ref["phrase"] = "groupoid G"
+        ref["target_meaning_id"] = small_id
+        source = snapshot["inventory"]["formulations"]["form.alpha"]
+
+        source["text"] = "For a groupoid G, every arrow has an inverse."
+        flags = analyze_snapshot(snapshot)["flags"]
+        self.assertEqual(
+            sum(f["code"] == "groupoid_size_scope" for f in flags), 1)
+
+        source["text"] = "For a small groupoid G, every arrow has an inverse."
+        flags = analyze_snapshot(snapshot)["flags"]
+        self.assertFalse(any(f["code"] == "groupoid_size_scope" for f in flags))
+
+        source["text"] = "A functor F:C→Groupoids assigns a groupoid to each C-object."
+        flags = analyze_snapshot(snapshot)["flags"]
+        self.assertFalse(any(f["code"] == "groupoid_size_scope" for f in flags))
+
+        source["text"] = "The functor assigns a groupoid via preGroupoids data."
+        flags = analyze_snapshot(snapshot)["flags"]
+        self.assertEqual(
+            sum(f["code"] == "groupoid_size_scope" for f in flags), 1)
+
     def test_candidate_surface_suggestion_never_merges(self):
         registry = [
             {"id": "missing.first", "query": "parallel arrows",
