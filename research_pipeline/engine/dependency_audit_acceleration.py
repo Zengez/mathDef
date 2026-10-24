@@ -83,13 +83,16 @@ def notation_aware_leads(candidates: list[dict], limit: int = 40) -> dict:
 
 def audit_fingerprint(finding: dict) -> dict:
     """Strictly anchored evidence for an accepted, non-integrity review lead."""
-    return {
+    fingerprint = {
         "code": finding["code"],
         "formulation_id": finding["formulation_id"],
         "source_version_sha256": finding["version_sha256"],
         "effective_node_sha256": finding["effective_node_sha256"],
         "occurrence_id": finding.get("occurrence_id"),
     }
+    if "evidence_sha256" in finding:
+        fingerprint["evidence_sha256"] = finding["evidence_sha256"]
+    return fingerprint
 
 
 def validate_review_ledger(rows: list[dict]) -> dict:
@@ -110,6 +113,8 @@ def validate_review_ledger(rows: list[dict]) -> dict:
                                "stale_missing_identity", "self_dependency"):
             raise PipelineError("Structural integrity alerts cannot be accepted")
         fingerprint = {k: row[k] for k in _FINGERPRINT_FIELDS}
+        if "evidence_sha256" in row:
+            fingerprint["evidence_sha256"] = row["evidence_sha256"]
         key = digest(fingerprint)
         if key in verified:
             raise PipelineError("Duplicate audit review fingerprint")
