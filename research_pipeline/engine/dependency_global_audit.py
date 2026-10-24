@@ -345,7 +345,7 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
         # for proof that all historical seed targets are appropriate.
         words = norm(form[fid]["text"])
         has_small_category = bool(re.search(
-            r"\bsmall\s+categor(?:y|ies)\b", words))
+            r"\b(small|finite)\s+categor(?:y|ies)\b", words))
         has_small_groupoid = bool(re.search(
             r"\b(small|finite)\s+groupoids?\b", words))
         typed_groupoids = bool(re.search(
