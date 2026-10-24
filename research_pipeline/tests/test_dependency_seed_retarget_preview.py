@@ -91,6 +91,16 @@ class SeedRetargetPreviewTests(unittest.TestCase):
         self.assertEqual(self.snapshot, before)
         self.assertEqual(self.manifest, manifest_before)
 
+    def test_complete_seed_record_can_anchor_a_portable_proposal(self):
+        manifest = copy.deepcopy(self.manifest)
+        manifest["changes"][0].pop("expected_seed_sha256")
+        manifest["changes"][0]["expected_seed_record"] = copy.deepcopy(self.seed)
+        out = preview_seed_retargets(self.snapshot, manifest)
+        self.assertEqual(out["proposal_count"], 1)
+        manifest["changes"][0]["expected_seed_record"]["phrase"] = "wrong context"
+        with self.assertRaises(PipelineError):
+            preview_seed_retargets(self.snapshot, manifest)
+
     def test_stale_inventory_or_seed_fingerprint_rejected(self):
         for field in ("inventory_sha256", "seed_relations_sha256",
                       "unresolved_fingerprint"):
