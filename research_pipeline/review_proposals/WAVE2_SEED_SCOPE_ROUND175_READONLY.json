@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "id": "wave2-seed-scope-round175-readonly",
+  "inventory_sha256": "3759cab60c5fce7287492724fc2ed433ac6001c8a242b66f9bbc887e92294492",
+  "seed_relations_sha256": "e39a19f0366494d8a1d19c6dbcede6e949c48f4104c857dd690c2c062b24698f",
+  "unresolved_fingerprint": "f740c264e171ba568241e8925c32efd5e53d8f528f8976fd7e9f9308a7300554",
+  "reviewed_by": "assistant source-free contextual audit Round175 (not human certification)",
+  "changes": [
+    {
+      "relation_id": "rel.wave2.batch03.categorical-epimorphism.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch03.categorical-epimorphism.to.small-category",
+        "from_formulation": "form.eed0c34725956bb5.categorical-epimorphism",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "category C",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.eed0c34725956bb5.categorical-epimorphism",
+      "expected_version_sha256": "b8156cfd0e99b85a6470b7b0fbec0d66c1d41dd32d9335499a60aab7fefe95e2",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "Right-cancellability of a morphism is defined by equality of composites for arbitrary test objects in the ambient category, without a global set of objects or arrows."
+    },
+    {
+      "relation_id": "rel.wave2.batch03.categorical-monomorphism.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch03.categorical-monomorphism.to.small-category",
+        "from_formulation": "form.eed0c34725956bb5.categorical-monomorphism",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "category C",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.eed0c34725956bb5.categorical-monomorphism",
+      "expected_version_sha256": "b096542c7e9230bb2194681c3e1bdf4ab56924d42b39c977ca3c1df4ed8da7d7",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "Left-cancellability uses arbitrary test arrows in the ambient category; requiring that category itself to be small changes the quantified context without mathematical justification."
+    },
+    {
+      "relation_id": "rel.wave2.batch03.category-colimit.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch03.category-colimit.to.small-category",
+        "from_formulation": "form.8f7683667fac9d28.category-colimit",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "diagram F:I→C",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.8f7683667fac9d28.category-colimit",
+      "expected_version_sha256": "2ea47a3ea54397ebe3be84c01729658a09390b637e20bc824e99aaf2db608913",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "Universal cocones into objects of an ambient category do not presuppose that the ambient category is small; indexing data and the universal factorization remain in the source formulation."
+    },
+    {
+      "relation_id": "rel.wave2.batch03.connected-category.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch03.connected-category.to.small-category",
+        "from_formulation": "form.daec56e6a2a51cae.connected-category",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "category I",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.daec56e6a2a51cae.connected-category",
+      "expected_version_sha256": "f6bf27520105f9d94575bb0075e29ad87844d541a321ed39efde3490bb24c737",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "Morphisms linking any pair of objects by finite zigzags do not imply that the complete object collection is set-sized; connectivity is independent of smallness."
+    },
+    {
+      "relation_id": "rel.wave2.batch03.discrete-category.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch03.discrete-category.to.small-category",
+        "from_formulation": "form.3653fa0ad844d187.discrete-category",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "category C",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.3653fa0ad844d187.discrete-category",
+      "expected_version_sha256": "2618d200b753039d7952b6042df235ebd245c5c18b468a77e3b03fe04c53ee38",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "The condition that every arrow is an identity is compatible with an arbitrarily large collection of objects, so discreteness does not give smallness."
+    },
+    {
+      "relation_id": "rel.wave2.batch03.filtered-category.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch03.filtered-category.to.small-category",
+        "from_formulation": "form.9d27e470d02eae69.filtered-category",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "category I",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.9d27e470d02eae69.filtered-category",
+      "expected_version_sha256": "c76575141609755d07170796fa16f1752020d92b7e7ce42762c095bcbeb82be1",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "Filteredness involves nonemptiness, common successors and equalization of parallel arrows; none forces the collection of all objects or morphisms to be a set."
+    },
+    {
+      "relation_id": "rel.wave2.batch03.final-object.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch03.final-object.to.small-category",
+        "from_formulation": "form.141c0f3fd90dc7b4.final-object",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "category C",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.141c0f3fd90dc7b4.final-object",
+      "expected_version_sha256": "8a00984d0f12393e6fa6f0710d4a51c679c6b7a131354186a50434a99491ff63",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "The unique-arrow-to-terminal-object property is meaningful in large locally small categories, so terminality does not constrain the ambient category to be small."
+    },
+    {
+      "relation_id": "rel.wave2.batch03.initial-object.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch03.initial-object.to.small-category",
+        "from_formulation": "form.141c0f3fd90dc7b4.initial-object",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "category C",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.141c0f3fd90dc7b4.initial-object",
+      "expected_version_sha256": "1699f2a019f6a05f21f3e950cafb09bd505406f28e44247b5c923cfe22a53524",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "The unique-arrow-from-initial-object property also applies to large locally small categories, independent of the total object-class size."
+    },
+    {
+      "relation_id": "rel.wave2.batch03.monoidal-category.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch03.monoidal-category.to.small-category",
+        "from_formulation": "form.2ec41283717d02b0.monoidal-category",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "category C",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.2ec41283717d02b0.monoidal-category",
+      "expected_version_sha256": "5ed82660b797dcaded2b7e38c624f0d6b8535c5e3b3b4fec4b46ca5d37b6cfbd",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "A bifunctor, associator and unit satisfying coherence can exist in a large category such as Set; monoidal structure does not require smallness."
+    },
+    {
+      "relation_id": "rel.wave2.batch03.opposite-category.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch03.opposite-category.to.small-category",
+        "from_formulation": "form.fef4e69e96c25bfa.opposite-category",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "category C",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.fef4e69e96c25bfa.opposite-category",
+      "expected_version_sha256": "d8af2750ae6aa6f457b4a72205d96630af221b7bff62cdd56f0115aecae9576c",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "Reversing arrows and composition can be performed on an arbitrary category at the same size/universe level; the opposite construction adds no smallness hypothesis."
+    },
+    {
+      "relation_id": "rel.wave2.batch03.representable-covariant-functor.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch03.representable-covariant-functor.to.small-category",
+        "from_formulation": "form.0e1768811a8dab34.representable-covariant-functor",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "functor F:C",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.0e1768811a8dab34.representable-covariant-functor",
+      "expected_version_sha256": "cb3c237913b7aef9bcef730230c117848ccff2c9d3466ae1f5c9311926124568",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "Representability by Hom_C(X,-) and naturality does not require C to be small; what matters is the meaning of the Hom sets and any explicit universe constraints, not a silent restriction."
+    },
+    {
+      "relation_id": "rel.wave2.batch04.category-multiplicative-system.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch04.category-multiplicative-system.to.small-category",
+        "from_formulation": "form.e3f74861fea6f59a.category-multiplicative-system",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "a category",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.e3f74861fea6f59a.category-multiplicative-system",
+      "expected_version_sha256": "0b35e3f34024034b3ff5d4748c43bd5f8dbc99eeb8d850df38aae5875a2958c7",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "The closure, Ore-square and cancellation conditions are axioms on a collection of arrows in an ambient category; these conditions do not make the ambient category small."
+    },
+    {
+      "relation_id": "rel.wave2.batch04.strongly-cartesian-morphism.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch04.strongly-cartesian-morphism.to.small-category",
+        "from_formulation": "form.6775f8b2e6e1cceb.strongly-cartesian-morphism",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "functor p:E→C",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.6775f8b2e6e1cceb.strongly-cartesian-morphism",
+      "expected_version_sha256": "a8d4ac2d91f249443dec3f937b977b411ea2ebcc60c76ac29bce805e389e73f6",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "The lifting-factorization property of a cartesian arrow over p:E→C is valid without the entire source and base categories being small."
+    },
+    {
+      "relation_id": "rel.wave2.batch06.left-adjoint.to.category-functor",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch06.left-adjoint.to.category-functor",
+        "from_formulation": "form.5b6d4a7f88629b12.left-adjoint",
+        "target_meaning_id": "meaning.wave2.foundation.category-functor",
+        "target_query": null,
+        "phrase": "functors L",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.5b6d4a7f88629b12.left-adjoint",
+      "expected_version_sha256": "6fc095cf637677eab8191015c530ca925c199731423231f3df7b4aa59617cc8c",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.c5104821c3c70afa1f63"
+      },
+      "review_rationale": "A natural bijection of hom-sets for an adjunction can hold between non-small locally small categories; an explicitly small-functor target overrestricts the adjunction definition."
+    },
+    {
+      "relation_id": "rel.wave2.batch06.pseudofunctor-to-strict-2category.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch06.pseudofunctor-to-strict-2category.to.small-category",
+        "from_formulation": "form.wave2.foundation.pseudofunctor-to-strict-2category",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "ordinary category A",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.wave2.foundation.pseudofunctor-to-strict-2category",
+      "expected_version_sha256": "fb27823749c22cef6243ebcdb8ec48fd956396dcf66923f56d81d5b032228e98",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "Weakly functorial assignment of objects, 1-cells and coherent invertible 2-cells does not impose a set-sized object universe on its ordinary domain category."
+    },
+    {
+      "relation_id": "rel.wave2.batch06.representable-covariant-functor.to.category-functor",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch06.representable-covariant-functor.to.category-functor",
+        "from_formulation": "form.0e1768811a8dab34.representable-covariant-functor",
+        "target_meaning_id": "meaning.wave2.foundation.category-functor",
+        "target_query": null,
+        "phrase": "covariant functor F",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.0e1768811a8dab34.representable-covariant-functor",
+      "expected_version_sha256": "cb3c237913b7aef9bcef730230c117848ccff2c9d3466ae1f5c9311926124568",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.category-functor",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.c5104821c3c70afa1f63"
+      },
+      "review_rationale": "Representability by Hom_C(X,-) and naturality does not require C to be small; what matters is the meaning of the Hom sets and any explicit universe constraints, not a silent restriction."
+    },
+    {
+      "relation_id": "rel.wave2.batch06.strict-two-category.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch06.strict-two-category.to.small-category",
+        "from_formulation": "form.ec5e3a0d13f85f3a.strict-two-category",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "hom-categories",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.ec5e3a0d13f85f3a.strict-two-category",
+      "expected_version_sha256": "4e2deb9844a42cc5b92d5475b51333b80013c813e887cd0933c21ef9756b523a",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "A strict 2-category may have hom-categories without a globally set-sized object collection; strict associativity and interchange impose no such cardinality bound."
+    },
+    {
+      "relation_id": "rel.wave2.batch17.01.preadditive-category.to.small-category",
+      "expected_seed_record": {
+        "relation_id": "rel.wave2.batch17.01.preadditive-category.to.small-category",
+        "from_formulation": "form.wave2.foundation15.preadditive-category",
+        "target_meaning_id": "meaning.wave2.foundation.small-category",
+        "target_query": null,
+        "phrase": "category",
+        "provenance": "screened",
+        "relation_state": "screened"
+      },
+      "expected_from_formulation": "form.wave2.foundation15.preadditive-category",
+      "expected_version_sha256": "8672ea717e558c2258b989f93c79d59915d908f14f230394077d816435f12df7",
+      "expected_seed_target_meaning_id": "meaning.wave2.foundation.small-category",
+      "replacement": {
+        "state": "missing",
+        "missing_candidate_id": "missing.fcb5ab865c6d9dbb3d79"
+      },
+      "review_rationale": "Abelian group structures on Hom collections and bilinear composition imply enrichment, not smallness of the overall category."
+    }
+  ],
+  "explicitly_deferred": [
+    {
+      "relation_id": "rel.wave2.batch03.category-limit.to.small-category",
+      "reason": "No candidate occurrence from this particular source formulation; require explicit contextual review before proposing this redirect."
+    },
+    {
+      "relation_id": "rel.wave2.batch06.setoid-category.to.small-groupoid",
+      "reason": "Setoid's groupoid size convention is not explicit; do not silently replace with generic category or erase invertibility."
+    }
+  ]
+}
