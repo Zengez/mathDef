@@ -807,7 +807,8 @@ def apply_inbox(workspace, limit=20):
     }
     grouped_fields = {"amend": "amendments", "alias": "aliases",
                       "resolve": "resolutions"}
-    result = {"applied": [], "already_applied": [], "max_packages": limit}
+    result = {"applied": [], "already_applied": [], "max_packages": limit,
+              "batched_rebuilds": []}
     remaining = max(0, limit)
     pending = []
     pending_mode = None
@@ -830,6 +831,10 @@ def apply_inbox(workspace, limit=20):
         # Each append-only API validates all new events before writing its
         # ledger. Never issue a receipt if group-level validation fails.
         valid_modes[mode]({grouped_fields[mode]: combined})
+        result["batched_rebuilds"].append({
+            "mode": mode, "packet_count": len(pending),
+            "event_count": len(combined),
+        })
         for file, pkg, receipt_sha in pending:
             receipt(file, pkg, receipt_sha)
         pending.clear()
