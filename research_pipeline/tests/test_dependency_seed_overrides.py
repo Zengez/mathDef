@@ -7,7 +7,7 @@ from pathlib import Path
 
 from research_pipeline.engine.core import PipelineError, Workspace, digest
 from research_pipeline.engine.dependency_graph import (
-    apply_inbox, graph_path, inventory_sync, missing_key, read, store,
+    alias_map, apply_inbox, graph_path, inventory_sync, missing_key, read, store,
 )
 from research_pipeline.engine.dependency_seed_overrides import (
     replay_seed_overrides, scan_missing_sources,
@@ -107,6 +107,28 @@ class SeedOverrideReplayTests(unittest.TestCase):
         (directory / (name + ".json")).write_text(
             json.dumps(packet, ensure_ascii=False) + "\n", encoding="utf-8")
         return packet
+
+    def test_historical_alias_chain_flattens_to_final_canonical_target(self):
+        a, b, c = "missing.chain.a", "missing.chain.b", "missing.chain.c"
+        available = {a, b, c}
+        def event(eid, src, target):
+            return {
+                "alias_id": eid, "alias_candidate_id": src,
+                "canonical_candidate_id": target,
+                "reviewed_by": "source-free context reviewer",
+                "reason": ("The original source uses this exact underlying "
+                           "mathematical operation, and the contextual requirements "
+                           "remain separately encoded in its parent formulation."),
+            }
+        originals = [event("alias.old.a-b", a, b),
+                     event("alias.old.b-c", b, c)]
+        replay = alias_map(self.graph, available, originals)
+        self.assertEqual(replay[a], c)
+        self.assertEqual(replay[b], c)
+        self.assertEqual(len(replay), 2)
+        with self.assertRaises(PipelineError):
+            alias_map(self.graph, available,
+                      originals + [event("alias.cycle.c-a", c, a)])
 
     def test_override_replaces_only_effective_historical_reference(self):
         prior = read(self.graph / "STATE.json")["summary"]
