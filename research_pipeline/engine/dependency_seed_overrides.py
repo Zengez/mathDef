@@ -98,3 +98,55 @@ def effective_seed_reference(seed: dict, override: dict | None,
         return {**base, "state": "existing",
                 "target_meaning_id": seed["target_meaning_id"]}
     return base
+
+def append_seed_overrides(workspace: Path, proposed: list[dict]) -> dict:
+    """Version-valid, append-only seed events; no mutation of original seeds.
+
+    Validation completes before any ledger write. Inbox commits and rebuilt
+    indexes are subsequently committed as one Git transaction by the workflow.
+    """
+    from research_pipeline.engine.dependency_graph import live_nodes, rebuild
+    graph = Path(workspace) / "dependency_graph"
+    inv = json.loads((graph / "INVENTORY.json").read_text(encoding="utf-8"))
+    current = read_events(graph)
+    current_by_id = {x["seed_override_id"]: x for x in current}
+    if len(current_by_id) != len(current):
+        raise PipelineError("Duplicate historical seed override event IDs")
+    proposed_rows = list(current)
+    seeds = {x["relation_id"]: x for x in inv["seed_relations"]}
+    for event in proposed:
+        eid, rid = event.get("seed_override_id"), event.get("relation_id")
+        if not isinstance(eid, str) or not eid or not all(
+                c.isalnum() or c in "._-" for c in eid):
+            raise PipelineError("Invalid historical seed event ID")
+        if eid in current_by_id:
+            if current_by_id[eid] != event:
+                raise PipelineError("Historical seed event ID reused with changed data")
+            continue
+        if rid not in seeds:
+            raise PipelineError("Unknown seed relation")
+        old = seeds[rid]
+        if (event.get("expected_seed_sha256") != digest(old)
+                or event.get("expected_version_sha256") !=
+                inv["formulations"][old["from_formulation"]]["version_sha256"]):
+            raise PipelineError("New seed overrides must use current source and seed")
+        proposed_rows.append(event)
+        current_by_id[eid] = event
+    nodes = live_nodes(graph, inv)
+    alias_file = graph / "candidate_aliases.jsonl"
+    resolution_file = graph / "resolutions.jsonl"
+    aliased = ({json.loads(line)["alias_candidate_id"]
+                for line in alias_file.read_text(encoding="utf-8").splitlines()
+                if line.strip()} if alias_file.exists() else set())
+    resolved = ({json.loads(line)["missing_candidate_id"]
+                 for line in resolution_file.read_text(encoding="utf-8").splitlines()
+                 if line.strip()} if resolution_file.exists() else set())
+    replay_seed_overrides(inv, proposed_rows, scan_missing_sources(nodes),
+                          aliased=aliased, resolved=resolved)
+    if proposed_rows != current:
+        from research_pipeline.engine.population import write_atomic
+        path = graph / EVENT_FILE
+        write_atomic(path, "".join(
+            json.dumps(e, sort_keys=True, ensure_ascii=False) + "\n"
+            for e in proposed_rows))
+    return rebuild(workspace, inv)
