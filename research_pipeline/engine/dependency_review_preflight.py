@@ -60,6 +60,13 @@ def review_preflight(workspace: Path, batch_path: Path) -> dict:
                 "checked_events": 0, "new_candidate_preview": []}
 
     nodes = live_nodes(graph, inv)
+    candidates_path = graph / "missing_candidates.jsonl"
+    known_reusable = {
+        row["id"] for line in candidates_path.read_text(encoding="utf-8").splitlines()
+        if line.strip() for row in [json.loads(line)]
+        if row.get("status") == "unresearched" and not row.get("alias_of")
+        and not row.get("resolved_target_meaning_id")
+    } if candidates_path.is_file() else set()
     preview = []
     seen_events = set()
     if mode == "amend":
@@ -88,6 +95,7 @@ def review_preflight(workspace: Path, batch_path: Path) -> dict:
                 inv, fid, item.get("references", []),
                 "complete" if item.get("complete") is True else "scan_incomplete",
                 item.get("review_rationale", ""),
+                reusable_missing_candidate_ids=known_reusable,
             )
             if prior.get("scan_status") == "complete" and next_node["scan_status"] != "complete":
                 raise PipelineError("Cannot silently demote a reviewed complete scan")
@@ -96,7 +104,9 @@ def review_preflight(workspace: Path, batch_path: Path) -> dict:
                 if ref["state"] == "missing":
                     preview.append({
                         "formulation_id": fid, "phrase": ref["phrase"],
-                        "candidate_id": missing_key(ref["phrase"], ref["context"]),
+                        "candidate_id": ref["missing_candidate_id"],
+                        "explicit_reviewed_reuse": bool(ref.get("reviewed_existing_candidate_id")),
+                        "new_candidate_identity": ref["missing_candidate_id"] not in known_reusable,
                     })
         checked = len(proposed)
     else:
