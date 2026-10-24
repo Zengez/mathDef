@@ -185,6 +185,71 @@ class GlobalAuditTests(unittest.TestCase):
             x["code"] == "submersive_iff_surjectivity_scope"
             for x in report["flags"]))
 
+    def test_legacy_seed_scope_warnings_are_provenance_anchored(self):
+        snapshot = self.snapshot()
+        inv = snapshot["inventory"]
+        small_category = "meaning.wave2.foundation.small-category"
+        small_groupoid = "meaning.wave2.foundation.small-groupoid"
+        small_functor = "meaning.wave2.foundation.category-functor"
+        for mid in (small_category, small_groupoid, small_functor):
+            inv["meanings"][mid] = {
+                "display_term": "Size-restricted prerequisite",
+                "formulation_ids": [],
+            }
+        source = inv["formulations"]["form.alpha"]
+
+        def test_seed(target, wording, expected_code, relation_id):
+            source["text"] = wording
+            inv["seed_relations"] = [{
+                "relation_id": relation_id,
+                "from_formulation": "form.alpha",
+                "target_meaning_id": target,
+                "phrase": "category or functor",
+            }]
+            return [x for x in analyze_snapshot(snapshot)["flags"]
+                    if x["code"] == expected_code]
+
+        bad = test_seed(
+            small_category,
+            "A terminal object is defined in a category C.",
+            "legacy_seed_category_size_scope", "rel.scope.category")
+        self.assertEqual(len(bad), 1)
+        self.assertIn("rel.scope.category", bad[0]["description"])
+        self.assertEqual(
+            bad[0]["reference"]["origin"], "preexisting_seed_relation")
+        self.assertEqual(
+            bad[0]["reference"]["occurrence_id"],
+            "legacy-seed:rel.scope.category")
+        self.assertEqual(bad[0]["severity"], "review")
+
+        self.assertFalse(test_seed(
+            small_category, "Let C be a small category.",
+            "legacy_seed_category_size_scope", "rel.scope.small"))
+        self.assertFalse(test_seed(
+            small_category, "Let C be a finite category.",
+            "legacy_seed_category_size_scope", "rel.scope.finite"))
+
+        self.assertEqual(len(test_seed(
+            small_groupoid, "Each hom-category is a groupoid.",
+            "legacy_seed_groupoid_size_scope",
+            "rel.scope.groupoid")), 1)
+        self.assertFalse(test_seed(
+            small_groupoid, "Consider a functor into Groupoids.",
+            "legacy_seed_groupoid_size_scope", "rel.scope.typed"))
+        self.assertFalse(test_seed(
+            small_groupoid, "Consider a small groupoid G.",
+            "legacy_seed_groupoid_size_scope", "rel.scope.smallgroup"))
+
+        self.assertEqual(len(test_seed(
+            small_functor, "A left adjoint functor L:C to D.",
+            "legacy_seed_functor_size_scope",
+            "rel.scope.functor")), 1)
+        self.assertFalse(test_seed(
+            small_functor,
+            "A functor L between small categories C and D.",
+            "legacy_seed_functor_size_scope",
+            "rel.scope.smallfunctor"))
+
     def test_candidate_surface_suggestion_never_merges(self):
         registry = [
             {"id": "missing.first", "query": "parallel arrows",
