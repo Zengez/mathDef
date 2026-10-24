@@ -130,6 +130,27 @@ class SeedOverrideReplayTests(unittest.TestCase):
             alias_map(self.graph, available,
                       originals + [event("alias.cycle.c-a", c, a)])
 
+    def test_real_ledger_two_hop_alias_replays_to_final_canonical(self):
+        project_root = Path(__file__).resolve().parents[1]
+        live_graph = (project_root / "experiments" /
+                      "reconstruction-v2-independent" / "dependency_graph")
+        records = live_graph / "missing_candidates.jsonl"
+        alias_records = live_graph / "candidate_aliases.jsonl"
+        if not records.is_file() or not alias_records.is_file():
+            self.skipTest("Independent live Wave2 graph is not installed")
+        candidates = {json.loads(x)["id"] for x in
+                      records.read_text(encoding="utf-8").splitlines()
+                      if x.strip()}
+        aliases = alias_map(live_graph, candidates)
+        self.assertEqual(
+            aliases["missing.74e6fe8f36dca77abf73"],
+            "missing.fcb5ab865c6d9dbb3d79")
+        self.assertEqual(
+            aliases["missing.f938e96ba80a0225bcee"],
+            "missing.c5104821c3c70afa1f63")
+        self.assertNotIn("missing.fcb5ab865c6d9dbb3d79", aliases)
+        self.assertNotIn("missing.c5104821c3c70afa1f63", aliases)
+
     def test_override_replaces_only_effective_historical_reference(self):
         prior = read(self.graph / "STATE.json")["summary"]
         baseline = next(x for x in self.rows("occurrences.jsonl")
