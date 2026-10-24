@@ -221,6 +221,43 @@ class GlobalAuditTests(unittest.TestCase):
         with self.assertRaises(PipelineError):
             candidate_review_bundle(snapshot, max_formulations=0)
 
+    def test_focus_bundle_retains_context_specific_alias_source_phrases(self):
+        # Canonical query labels must not replace a source's different
+        # mathematical predicate (e.g., closed versus convex supersets).
+        snapshot = self.snapshot()
+        node = snapshot["nodes"]["form.alpha"]
+        node["references"][0] = {
+            "phrase": "intersection of convex supersets",
+            "state": "missing",
+            "context": "Set theory: intersection over all convex supersets.",
+            "missing_candidate_id": "missing.convex",
+            "occurrence_id": "occ.context.1",
+        }
+        snapshot["candidates"] = [{
+            "id": "missing.closed",
+            "query": "intersection of all closed supersets",
+            "context": "Set theory: arbitrary family intersection",
+            "status": "unresearched",
+            "alias_ids": ["missing.convex"],
+            "incoming_formulation_ids": ["form.alpha"],
+            "occurrence_count": 1,
+        }]
+        result = candidate_review_bundle(
+            snapshot, candidate_ids=("missing.closed",),
+            max_formulations=4)
+        item = result["candidates"][0]
+        self.assertEqual(item["query"],
+                         "intersection of all closed supersets")
+        observed = item["source_formulations"][0]["matching_source_references"]
+        self.assertEqual(len(observed), 1)
+        self.assertEqual(observed[0]["reference_index"], 0)
+        self.assertEqual(observed[0]["phrase"],
+                         "intersection of convex supersets")
+        self.assertEqual(observed[0]["observed_candidate_id"], "missing.convex")
+        self.assertEqual(observed[0]["occurrence_id"], "occ.context.1")
+        self.assertNotIn("matching_source_references",
+                         snapshot["nodes"]["form.alpha"]["references"][0])
+
     def test_focus_queue_term_filter_and_fingerprint(self):
         snapshot = self.snapshot()
         snapshot["candidates"] = [
