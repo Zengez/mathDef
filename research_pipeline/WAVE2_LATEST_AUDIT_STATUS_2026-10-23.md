@@ -1,3 +1,5 @@
+> **Efficiency-only update, October 23 (NO graph-count changes):** Grouped same-mode alias/resolve/amend inbox dispatch, new read-only recurrence-ranked `dependency_global_audit focus` worklist, and new regression tests are committed. See [complete efficiency review](WAVE2_AUDIT_EFFICIENCY_REVIEW_2026-10-23.md) and updated [workflow](DEPENDENCY_FIRST_WORKFLOW.md). Exact current graph counts below remain from packet 167; source data/citations/consolidation gate unchanged. CI execution and wall-time performance improvements have NOT been verified here.
+
 # Wave2 — latest verified audit handoff, October 23, 2026
 
 This compact handoff supersedes historical counts in `WORK_CHECKPOINT.md` and prior packet reports. The independent graph's live `dependency_graph/STATE.json` is authoritative whenever later packets are applied.
