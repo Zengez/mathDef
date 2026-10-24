@@ -157,6 +157,34 @@ class GlobalAuditTests(unittest.TestCase):
         self.assertEqual(
             sum(f["code"] == "groupoid_size_scope" for f in flags), 1)
 
+    def test_submersive_equivalence_requires_surjectivity_scope_review(self):
+        snapshot = self.snapshot()
+        source = snapshot["inventory"]["formulations"]["form.alpha"]
+        source["text"] = (
+            "A continuous map f:X→Y is submersive when it is surjective "
+            "and Y carries the quotient topology; equivalently U⊆Y is "
+            "open exactly when f^{-1}(U) is open in X."
+        )
+        report = analyze_snapshot(snapshot)
+        flagged = [x for x in report["flags"]
+                   if x["code"] == "submersive_iff_surjectivity_scope"]
+        self.assertEqual(len(flagged), 1)
+        self.assertEqual(flagged[0]["severity"], "review")
+        self.assertFalse(report["mathematics_certified"])
+        self.assertFalse(report["automatic_aliases_or_edits"])
+
+        # The graph does not automatically impose a surjectivity condition
+        # on every inverse-image test, nor flag ordinary quotient wording
+        # without an equivalence-claim ambiguity.
+        source["text"] = (
+            "A continuous surjective map f:X→Y has the quotient "
+            "topology when U is open exactly when f^{-1}(U) is open."
+        )
+        report = analyze_snapshot(snapshot)
+        self.assertFalse(any(
+            x["code"] == "submersive_iff_surjectivity_scope"
+            for x in report["flags"]))
+
     def test_candidate_surface_suggestion_never_merges(self):
         registry = [
             {"id": "missing.first", "query": "parallel arrows",
