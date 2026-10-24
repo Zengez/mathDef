@@ -1,6 +1,7 @@
 """Replay and provenance tests for independent Wave2 historical seed overrides."""
 import copy
 import json
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -107,6 +108,85 @@ class SeedOverrideReplayTests(unittest.TestCase):
         (directory / (name + ".json")).write_text(
             json.dumps(packet, ensure_ascii=False) + "\n", encoding="utf-8")
         return packet
+
+    def test_live_round177_packet_full_copy_replay_and_invariants(self):
+        """Real 19-event proposal must survive complete isolated graph rebuild."""
+        from research_pipeline.engine.dependency_seed_overrides import append_seed_overrides
+        from research_pipeline.engine.dependency_global_audit import (
+            analyze_snapshot, load_live_snapshot,
+        )
+        root = Path(__file__).resolve().parents[1]
+        original = root / "experiments" / "reconstruction-v2-independent" / "dependency_graph"
+        source_packet = root / "review_proposals" / "WAVE2_SEED_SCOPE_ROUND177_PACKET_READONLY.json"
+        if not original.is_dir() or not source_packet.is_file():
+            self.skipTest("Independent graph and reviewed packet not installed")
+        packet = json.loads(source_packet.read_text(encoding="utf-8"))
+        self.assertEqual(packet["mode"], "seed_override")
+        self.assertEqual(len(packet["seed_overrides"]), 19)
+        self.assertEqual(
+            {e["replacement"]["missing_candidate_id"] for e in packet["seed_overrides"]},
+            {"missing.fcb5ab865c6d9dbb3d79",
+             "missing.c5104821c3c70afa1f63"},
+        )
+        self.assertEqual(len({e["relation_id"] for e in packet["seed_overrides"]}), 19)
+        with tempfile.TemporaryDirectory() as tmp:
+            graph_copy = Path(tmp) / "dependency_graph"
+            shutil.copytree(original, graph_copy)
+            historical_bytes = (graph_copy / "INVENTORY.json").read_bytes()
+            old = read(graph_copy / "STATE.json")["summary"]
+            self.assertEqual(old["unresolved_missing_candidates"], 420)
+            result = append_seed_overrides(Path(tmp), packet["seed_overrides"])
+            self.assertEqual((graph_copy / "INVENTORY.json").read_bytes(),
+                             historical_bytes)
+            self.assertEqual(result["seed_relations"], old["seed_relations"])
+            self.assertEqual(result["total_meanings"], old["total_meanings"])
+            self.assertEqual(result["scan_complete"], old["scan_complete"])
+            self.assertEqual(result["scan_amendment_event_count"],
+                             old["scan_amendment_event_count"])
+            self.assertEqual(result["alias_candidate_records"],
+                             old["alias_candidate_records"])
+            self.assertEqual(result["unresolved_missing_candidates"],
+                             old["unresolved_missing_candidates"])
+            self.assertEqual(result["missing_occurrences"],
+                             old["missing_occurrences"] + 19)
+            self.assertEqual(result["scan_occurrences"], old["scan_occurrences"])
+            self.assertNotEqual(result["unresolved_fingerprint"],
+                                old["unresolved_fingerprint"])
+            self.assertFalse(result["consolidation_gate_valid"])
+            ledger = [json.loads(x) for x in
+                      (graph_copy / "seed_overrides.jsonl")
+                      .read_text(encoding="utf-8").splitlines() if x.strip()]
+            self.assertEqual(len(ledger), 19)
+            occurrences = [json.loads(x) for x in
+                           (graph_copy / "occurrences.jsonl")
+                           .read_text(encoding="utf-8").splitlines() if x.strip()]
+            effective = {
+                x["relation_id"]: x for x in occurrences
+                if x.get("seed_override_id")
+            }
+            self.assertEqual(set(effective),
+                             {e["relation_id"] for e in packet["seed_overrides"]})
+            self.assertTrue(all(x["state"] == "missing" and
+                                x["original_target_meaning_id"] in (
+                                    "meaning.wave2.foundation.small-category",
+                                    "meaning.wave2.foundation.category-functor")
+                                for x in effective.values()))
+            self.assertTrue(all(
+                x["origin"] == "preexisting_relation:seed_override"
+                for x in effective.values()))
+            self.assertEqual(
+                len({x["occurrence_id"] for x in effective.values()}), 19)
+            findings = analyze_snapshot(load_live_snapshot(Path(tmp)),
+                                        limit=100000)["summary"]["flags_by_code"]
+            self.assertEqual(findings.get("legacy_seed_category_size_scope", 0), 0)
+            self.assertEqual(findings.get("legacy_seed_functor_size_scope", 0), 0)
+            self.assertEqual(findings.get("legacy_seed_groupoid_size_scope", 0), 1)
+            after = (graph_copy / "seed_overrides.jsonl").read_bytes()
+            rerun = append_seed_overrides(Path(tmp), packet["seed_overrides"])
+            self.assertEqual((graph_copy / "seed_overrides.jsonl").read_bytes(), after)
+            self.assertEqual(rerun["unresolved_fingerprint"],
+                             result["unresolved_fingerprint"])
+        self.assertFalse((original / "seed_overrides.jsonl").exists())
 
     def test_historical_alias_chain_flattens_to_final_canonical_target(self):
         a, b, c = "missing.chain.a", "missing.chain.b", "missing.chain.c"
