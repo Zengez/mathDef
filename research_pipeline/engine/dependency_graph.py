@@ -507,7 +507,7 @@ def rebuild(workspace, inventory=None):
     return summary
 
 
-def make_snapshot(inv, fid, references, status, rationale=""):
+def make_snapshot(inv, fid, references, status, rationale="", *, reusable_missing_candidate_ids=None):
     if fid not in inv["formulations"]:
         raise PipelineError("Unknown formulation " + fid)
     if status not in ("complete", "scan_incomplete"):
@@ -528,7 +528,16 @@ def make_snapshot(inv, fid, references, status, rationale=""):
             # Default to owning mathematical context; a missing object without
             # context must not be globally deduplicated across homonyms.
             ref.setdefault("context", inv["formulations"][fid]["context"])
-            ref["missing_candidate_id"] = missing_key(ref["phrase"], ref["context"])
+            reviewed_id = ref.get("reviewed_existing_candidate_id")
+            if reviewed_id is not None:
+                if (reusable_missing_candidate_ids is None
+                        or reviewed_id not in reusable_missing_candidate_ids):
+                    raise PipelineError("Reviewed candidate ID is not in current canonical registry")
+                if len(str(ref.get("candidate_identity_review_rationale", "")).strip()) < 40:
+                    raise PipelineError("Reviewed candidate reuse requires a full contextual rationale")
+                ref["missing_candidate_id"] = reviewed_id
+            else:
+                ref["missing_candidate_id"] = missing_key(ref["phrase"], ref["context"])
         if ref.get("state") == "unassigned":
             ref.setdefault("context", inv["formulations"][fid]["context"])
             if not str(ref.get("context", "")).strip():
@@ -613,6 +622,13 @@ def amend(workspace, items):
     seen = {e["amendment_id"]: e for e in history}
     if len(seen) != len(history):
         raise PipelineError("Duplicate historical amendment")
+    candidates_path = graph / "missing_candidates.jsonl"
+    known_reusable = {
+        row["id"] for line in candidates_path.read_text(encoding="utf-8").splitlines()
+        if line.strip() for row in [json.loads(line)]
+        if row.get("status") == "unresearched" and not row.get("alias_of")
+        and not row.get("resolved_target_meaning_id")
+    } if candidates_path.is_file() else set()
     new_events = []
     batch_seen = set()
     for item in items:
@@ -633,7 +649,8 @@ def amend(workspace, items):
             raise PipelineError("Amendment needs a substantive reason and reviewer")
         node = make_snapshot(inv, fid, item.get("references", []),
                              "complete" if item.get("complete") is True else "scan_incomplete",
-                             item.get("review_rationale", ""))
+                             item.get("review_rationale", ""),
+                             reusable_missing_candidate_ids=known_reusable)
         event = {
             "amendment_id": eid, "formulation_id": fid,
             "version_sha256": version,
