@@ -78,7 +78,7 @@ def effective_references(snapshot):
     return effective
 
 
-def analyze_cycles(snapshot):
+def analyze_cycles(snapshot, *, include_all_edges=False):
     """Analyze union SCCs and decide acyclic selection within each SCC exactly.
 
     Least fixed point: remove a meaning when one complete, version-valid
@@ -162,8 +162,15 @@ def analyze_cycles(snapshot):
             'internal_edges': [e for e in edges if e['source_meaning_id'] in member_set
                                and e['target_meaning_id'] in member_set],
             'requires_mathematical_review': True})
-    return {'graph_kind': 'union_of_all_effective_existing_meaning_dependencies',
+    report = {'graph_kind': 'union_of_all_effective_existing_meaning_dependencies',
         'includes_candidate_resolutions': True, 'includes_historical_seed_overrides': True,
         'choice_model': 'one complete stored formulation per meaning; all its scan and seed edges retained',
         'scope': 'Existing-meaning projection only. Missing, ambiguous, deferred and unassigned prerequisites are not assumed closed. Stored alternatives are not certified interchangeable.',
-        'mathematics_certified': False, 'components': components, 'edges': edges}
+        'mathematics_certified': False, 'components': components,
+        'edge_count': len(edges),
+        'all_effective_edges_included': bool(include_all_edges)}
+    # SCCs retain their exact internal-edge provenance in the concise report.
+    # The complete edge list is large and is only useful on explicit request.
+    if include_all_edges:
+        report['edges'] = edges
+    return report
