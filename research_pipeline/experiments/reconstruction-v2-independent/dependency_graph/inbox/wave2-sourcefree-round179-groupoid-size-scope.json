@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "id": "wave2-sourcefree-round179-groupoid-size-scope",
+  "mode": "amend",
+  "amendments": [
+    {
+      "amendment_id": "amend.round179.groupoid_size_scope.74cd6dc48e0606fc.setoid-category",
+      "formulation_id": "form.74cd6dc48e0606fc.setoid-category",
+      "version_sha256": "b1d3b44e48b1260cce3bea331a63b47ead854c5b7e62449eb69e3c3d4a688b6a",
+      "expected_node_sha256": "0e4a1c014cee3141288ccbd6f401a7aae049674ae83cb7d88f147cf3e473c3e2",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit_round179",
+      "reason": "Whole-source/complete-effective-node mathematical audit: link to existing small-groupoid concept imposed unjustified object-size assumptions on an unrestricted groupoid condition. Keep every other original prerequisite, mathematical formulation, occurrence provenance and immutable event history unchanged.",
+      "review_rationale": "Read the full independent statement, the source context, every current effective dependency and the definition of the sole existing small-groupoid meaning. A groupoid only requires all arrows invertible; smallness is an independent requirement. In this formulation no set-valued restriction on objects of the groupoid or on hom-categories is asserted. This changes only the groupoid dependency to a clearly scoped provisional prerequisite, pending later missing-definition review.",
+      "references": [
+        {
+          "phrase": "groupoid C",
+          "state": "missing",
+          "context": "Category theory: ordinary (size-unrestricted) groupoid G, a category in which every morphism has a two-sided inverse; no requirement that the object collection be a set or that hom-categories be small. Distinct from an explicitly small groupoid.",
+          "reason": "The parent states only the invertibility/groupoid condition, without the additional smallness condition built into the sole existing groupoid meaning. This is an independently reusable groupoid prerequisite, not a new populated definition.",
+          "matching_note": "Reviewed the full source and effective predecessor graph. Source phrase preserved; the size-unrestricted prerequisite is explicitly distinct from 'small groupoid' and from mere size-unrestricted category."
+        },
+        {
+          "disposition": "The assertion that every object has only its identity automorphism is a defining axiom of this setoid groupoid, not a dependency on the notion of a small category; the separate missing Aut_C(x) prerequisite is preserved.",
+          "phrase": "identity automorphism",
+          "state": "external"
+        },
+        {
+          "context": "Category theory: automorphism group Aut_C(x) of an object x, consisting of all invertible endomorphisms x→x with composition and identity; in a groupoid all arrows are invertible. This is distinct from a field-automorphism group or a subgroup of vertical automorphisms unless context requires it.",
+          "matching_note": "Do not link to the existing field-extension automorphism group or equate trivial automorphism groups with disconnectedness.",
+          "missing_candidate_id": "missing.591b9f9ee5edc9ff8963",
+          "phrase": "automorphism group of an object",
+          "reason": "The general object automorphism group is a reusable categorical construction; setoidness demands that this group be trivial for every object.",
+          "state": "missing"
+        },
+        {
+          "matching_note": "Verified ordinary set-theoretic equivalence relation, equivalence class or quotient set is precisely applicable to this source's objects. The source's additional generating-pair conditions, group-action laws, Cauchy relation, or concrete integer-model equations remain as defining data and are not replaced by the general target.",
+          "phrase": "equivalence relation on objects by existence of an arrow",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive"
+        },
+        {
+          "disposition": "For a groupoid with trivial automorphisms, this follows by cancellation of invertible arrows; no skeletal assumption is present.",
+          "phrase": "at most one arrow between objects",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.round179.groupoid_size_scope.0bf601085c1029d4.two-one-category",
+      "formulation_id": "form.0bf601085c1029d4.two-one-category",
+      "version_sha256": "a17222333b9ba9f02c917e353fe1682ecb128865e03fd3e1cf9df5c92d5d81a5",
+      "expected_node_sha256": "3a2ef063bdb1d04b3e30023e4ab334bdd1cd40b33317aa3abc490d43082511f3",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit_round179",
+      "reason": "Whole-source/complete-effective-node mathematical audit: link to existing small-groupoid concept imposed unjustified object-size assumptions on an unrestricted groupoid condition. Keep every other original prerequisite, mathematical formulation, occurrence provenance and immutable event history unchanged.",
+      "review_rationale": "Read the full independent statement, the source context, every current effective dependency and the definition of the sole existing small-groupoid meaning. A groupoid only requires all arrows invertible; smallness is an independent requirement. In this formulation no set-valued restriction on objects of the groupoid or on hom-categories is asserted. This changes only the groupoid dependency to a clearly scoped provisional prerequisite, pending later missing-definition review.",
+      "references": [
+        {
+          "matching_note": "Explicit same higher-category context and strict composition axioms.",
+          "phrase": "strict 2-category",
+          "state": "existing",
+          "target_meaning_id": "meaning.ec5e3a0d13f85f3a.strict-two-category"
+        },
+        {
+          "matching_note": "The 2-morphisms are part of the strict 2-category data.",
+          "phrase": "2-morphism",
+          "state": "existing",
+          "target_meaning_id": "meaning.ec5e3a0d13f85f3a.strict-two-category"
+        },
+        {
+          "matching_note": "Reviewed the full source and effective predecessor graph. Source phrase preserved; the size-unrestricted prerequisite is explicitly distinct from 'small groupoid' and from mere size-unrestricted category.",
+          "phrase": "groupoid",
+          "state": "missing",
+          "context": "Category theory: ordinary (size-unrestricted) groupoid G, a category in which every morphism has a two-sided inverse; no requirement that the object collection be a set or that hom-categories be small. Distinct from an explicitly small groupoid.",
+          "reason": "The parent states only the invertibility/groupoid condition, without the additional smallness condition built into the sole existing groupoid meaning. This is an independently reusable groupoid prerequisite, not a new populated definition."
+        },
+        {
+          "disposition": "Vertical composition of composable 2-morphisms is already part of the linked strict 2-category's hom-category structure. The defining (2,1)-condition requires invertibility under that given composition, not a new independent construction.",
+          "phrase": "vertical composition",
+          "state": "external"
+        }
+      ]
+    },
+    {
+      "amendment_id": "amend.round179.groupoid_size_scope.5e4b8f6efeda6522.category-fibred-in-groupoids",
+      "formulation_id": "form.5e4b8f6efeda6522.category-fibred-in-groupoids",
+      "version_sha256": "bc3935c534a078e3071134e855a3b80051326ebbd59dee260b5cd6712a7f3300",
+      "expected_node_sha256": "c77ced9bb94c430fae55d96dcf5b65d01ad8595ff2ed46a43a3324d6b689d637",
+      "complete": true,
+      "reviewed_by": "assistant_source_free_contextual_mathematics_audit_round179",
+      "reason": "Whole-source/complete-effective-node mathematical audit: link to existing small-groupoid concept imposed unjustified object-size assumptions on an unrestricted groupoid condition. Keep every other original prerequisite, mathematical formulation, occurrence provenance and immutable event history unchanged.",
+      "review_rationale": "Read the full independent statement, the source context, every current effective dependency and the definition of the sole existing small-groupoid meaning. A groupoid only requires all arrows invertible; smallness is an independent requirement. In this formulation no set-valued restriction on objects of the groupoid or on hom-categories is asserted. This changes only the groupoid dependency to a clearly scoped provisional prerequisite, pending later missing-definition review.",
+      "references": [
+        {
+          "context": "Category theory: ordinary functor between arbitrary categories C and D without assuming smallness; object/arrow assignments preserve identities and compositions.",
+          "matching_note": "Original independently audited occurrence 'functor p:E→C' for 'category fibred in groupoids'. The source requires a diagram, category-valued functor or ordinary functor, but neither its source nor its target is assumed to be a small category. The original screened functor meaning specifically requires two small categories and thus adds an unsupported size hypothesis. Reuse the already registered contextual unrestricted functor candidate without adding meanings or modifying other references.",
+          "missing_candidate_id": "missing.c5104821c3c70afa1f63",
+          "phrase": "functor F:C→D",
+          "state": "missing"
+        },
+        {
+          "disposition": "The arrow f:V→U is structural morphism data of the ambient category in the quantified lifting condition. Its existence and domain/codomain do not assert that the ambient category is small; the functor and cartesian-arrow occurrences remain independently recorded.",
+          "phrase": "morphism f:V→U in C",
+          "state": "external"
+        },
+        {
+          "phrase": "lifts to a morphism y→x above f",
+          "state": "existing",
+          "target_meaning_id": "meaning.6775f8b2e6e1cceb.strongly-cartesian-morphism"
+        },
+        {
+          "phrase": "groupoids",
+          "state": "missing",
+          "context": "Category theory: ordinary (size-unrestricted) groupoid G, a category in which every morphism has a two-sided inverse; no requirement that the object collection be a set or that hom-categories be small. Distinct from an explicitly small groupoid.",
+          "reason": "The parent states only the invertibility/groupoid condition, without the additional smallness condition built into the sole existing groupoid meaning. This is an independently reusable groupoid prerequisite, not a new populated definition.",
+          "matching_note": "Reviewed the full source and effective predecessor graph. Source phrase preserved; the size-unrestricted prerequisite is explicitly distinct from 'small groupoid' and from mere size-unrestricted category."
+        },
+        {
+          "disposition": "This unique cartesian lifting/factorization condition is part of the defining property of a category fibred in groupoids, using existing cartesian-arrow and groupoid references. Scope and vertical invertibility remain later mathematical audit questions.",
+          "phrase": "compatible base morphism between the sources of two arrows into x lifts uniquely",
+          "state": "external"
+        },
+        {
+          "disposition": "Universal lifting quantification on arrows into objects of C; this is not an existence claim for arbitrary discrete fibres.",
+          "phrase": "every morphism f:V→U",
+          "state": "external"
+        }
+      ]
+    }
+  ]
+}
