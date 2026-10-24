@@ -16,6 +16,10 @@ from pathlib import Path
 
 from .core import PipelineError, Workspace, digest, atomic_json
 from .population import snapshot, write_atomic
+from .dependency_seed_overrides import (
+    read_events as seed_override_events, replay_seed_overrides,
+    scan_missing_sources, effective_seed_reference,
+)
 
 SCHEMA = 1
 GRAPH_DIR = "dependency_graph"
