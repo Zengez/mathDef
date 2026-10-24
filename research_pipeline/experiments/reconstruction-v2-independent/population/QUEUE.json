@@ -536,6 +536,18 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.fa5932b42daa1a3e0307",
+      "context": "Polynomial algebra over fields: a root (zero) α∈K of a univariate polynomial f∈F[x] in a field extension K/F means f(α)=0_K using coefficient inclusion F→K and polynomial evaluation; includes the residue class of x in K=F[x]/(f) for nonconstant f.",
+      "surface_phrase": "roots of a polynomial in a field",
+      "observed_in_formulations": [
+        "form.1fd51873f9f0afbd.field-from-irreducible-polynomial",
+        "form.39488f3e396a1c77.algebraically-closed",
+        "form.471f985f2fbe7b49.splitting-field",
+        "form.720eaae9156f6f4e.separable-degree-polynomial"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.2ca12da5425144816e3c",
       "context": "General topology: open neighborhood of a point x∈X, an open subset U of X containing x.",
       "surface_phrase": "open neighborhood of x",
@@ -756,23 +768,22 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.fa5932b42daa1a3e0307",
-      "context": "Polynomial algebra over fields: a root (zero) α∈K of a univariate polynomial f∈F[x] in a field extension K/F means f(α)=0_K using coefficient inclusion F→K and polynomial evaluation; includes the residue class of x in K=F[x]/(f) for nonconstant f.",
-      "surface_phrase": "roots of a polynomial in a field",
-      "observed_in_formulations": [
-        "form.1fd51873f9f0afbd.field-from-irreducible-polynomial",
-        "form.471f985f2fbe7b49.splitting-field",
-        "form.720eaae9156f6f4e.separable-degree-polynomial"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.fbe845b2e6ab78c9890f",
       "context": "Set theory: arbitrary indexed intersection ⋂_{F∈𝔽}F of subsets of X, here 𝔽 comprises the closed F containing A; identifying this intersection with cl_X(A) is the definition of closure.",
       "surface_phrase": "intersection of all closed supersets of A",
       "observed_in_formulations": [
         "form.wave2.cross107.topological-closure.1",
         "form.wave2.cross133.convex-hull-real.2",
+        "form.wave2.pop140.affine-hull-intersection"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.63acc9193a56ae7003b9",
+      "context": "Affine geometry: finite affine combination ∑_{i=1}^k α_i x_i of vectors or points with real coefficients ∑α_i=1, without positivity required.",
+      "surface_phrase": "finite affine combination sum alpha_i*x_i",
+      "observed_in_formulations": [
+        "form.wave2.pop140.affine-hull-combinations",
         "form.wave2.pop140.affine-hull-intersection"
       ],
       "actionable": false
@@ -1018,22 +1029,22 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.63acc9193a56ae7003b9",
-      "context": "Affine geometry: finite affine combination ∑_{i=1}^k α_i x_i of vectors or points with real coefficients ∑α_i=1, without positivity required.",
-      "surface_phrase": "finite affine combination sum alpha_i*x_i",
-      "observed_in_formulations": [
-        "form.wave2.pop140.affine-hull-combinations",
-        "form.wave2.pop140.affine-hull-intersection"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.63d9809ad2eb842deb92",
       "context": "Strict 2-category theory: invertible 2-cell α:f⇒g in the hom-category C(X,Y), admitting a vertical inverse β:g⇒f satisfying vertical identity composites.",
       "surface_phrase": "invertible 2-morphisms between 1-arrows",
       "observed_in_formulations": [
         "form.42730c7ef758df2a.two-fibre-product",
         "form.ec5e3a0d13f85f3a.equivalence-objects-two-category"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.65d334caa51c845ea335",
+      "context": "Stochastic process theory: increasing σ-algebra family (𝔽_t) indexed by all t∈[0,+∞) with 𝔽_s⊆𝔽_t whenever s≤t.",
+      "surface_phrase": "continuous-time filtration (F_t)",
+      "observed_in_formulations": [
+        "form.wave2.found85.adapted-continuous",
+        "form.wave2.research81.martingale-continuous-index.01"
       ],
       "actionable": false
     },
@@ -1218,6 +1229,16 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.a60aa43eed2b99b5d184",
+      "context": "Category theory: zero object of a category, an object that is both initial and terminal, yielding distinguished zero morphisms in a preadditive setting.",
+      "surface_phrase": "zero object",
+      "observed_in_formulations": [
+        "form.wave2.foundation13.exact-sequence-abelian-category",
+        "form.wave2.foundation15.additive-category"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.a66bc0c6846ac92c6394",
       "context": "Homological algebra: quasi-isomorphism between chain complexes, a chain map inducing isomorphisms in every homology degree; comparisons in the derived category can also be mediated by zigzags of quasi-isomorphisms.",
       "surface_phrase": "quasi-isomorphic",
@@ -1264,6 +1285,16 @@
       "observed_in_formulations": [
         "form.521431d12a6a6ea2.representable-fibred-groupoid",
         "form.ac92b309b6aae7a4.representable-one-morphism-fibred-groupoids"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.afee26ad5b8d0d34952a",
+      "context": "Discrete mathematics: integer label set {1,2,…,k} for a positive integer k, used as a finite k-element codomain with distinct labels.",
+      "surface_phrase": "finite set of k color labels",
+      "observed_in_formulations": [
+        "form.wave2.found85.proper-coloring",
+        "form.wave2.pop142.proper-vertex-k-color"
       ],
       "actionable": false
     },
@@ -1348,6 +1379,16 @@
       "actionable": false
     },
     {
+      "missing_candidate_id": "missing.cf55f62008d08ce2df84",
+      "context": "Algebraic geometry: isomorphism of S-schemes X and Y for a fixed base scheme S, consisting of mutually inverse scheme morphisms commuting with their structure morphisms to S; in this source S=Spec(R).",
+      "surface_phrase": "isomorphic over Spec(R)",
+      "observed_in_formulations": [
+        "form.6676171d9e5698af.affine-closed-subscheme",
+        "form.c31e56dc023fcbcc.affine-scheme-fibre-product"
+      ],
+      "actionable": false
+    },
+    {
       "missing_candidate_id": "missing.cf59d9cb388b3999576d",
       "context": "Ring theory: element e in an associative ring, not necessarily commutative or unital, satisfying e·e=e; the Boolean-ring definition requires every element to have this property. Distinguish the property of e from the universal Boolean condition.",
       "surface_phrase": "every element idempotent x²=x",
@@ -1374,6 +1415,16 @@
       "observed_in_formulations": [
         "form.wave2.rational55.rational-absolute-value",
         "form.wave2.rational55.strictly-positive-rational"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.de1b7a5e3717e67b42a7",
+      "context": "Category theory: contravariant Hom operation α:T'→T sends a morphism h:T→X to h∘α:T'→X and respects compositions/identity.",
+      "surface_phrase": "precomposition",
+      "observed_in_formulations": [
+        "form.23afebc5bde9e408.functor-of-points",
+        "form.fef4e69e96c25bfa.representable-presheaf"
       ],
       "actionable": false
     },
@@ -1462,6 +1513,15 @@
       "surface_phrase": "integer divisibility of a-b by m",
       "observed_in_formulations": [
         "form.wave2.pop139.congruence-multiple"
+      ],
+      "actionable": false
+    },
+    {
+      "missing_candidate_id": "missing.c84405a9f915b0897178",
+      "context": "Finite-dimensional linear algebra: n-by-n square matrices over a field K, n≥1",
+      "surface_phrase": "Square matrix of finite order over a field",
+      "observed_in_formulations": [
+        "form.wave2.pop139.matrix-trace"
       ],
       "actionable": false
     },
@@ -1619,15 +1679,6 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.137c56b4f420dfc55ef9",
-      "context": "Category theory: zero object in an additive or abelian category, an object both initial and terminal, serving as endpoint of short exact sequences.",
-      "surface_phrase": "zero object in short exact sequence",
-      "observed_in_formulations": [
-        "form.wave2.foundation13.exact-sequence-abelian-category"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.137cc84619d0fc68bf3b",
       "context": "Commutative algebra: apply ring homomorphism φ:R→S coefficientwise to polynomial P∈R[T], evaluate φ(P) at g∈S, and test whether result is zero.",
       "surface_phrase": "evaluated polynomial phi(P)(g)=0",
@@ -1642,24 +1693,6 @@
       "surface_phrase": "finite partial sum s_N",
       "observed_in_formulations": [
         "form.wave2.prereq122.real-series-convergent"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.162c8a146060e41fc577",
-      "context": "Finite-dimensional real affine geometry: subsets of R^d, integer d≥1, with empty hull allowed",
-      "surface_phrase": "Affine combination of finitely many vectors in a real vector space",
-      "observed_in_formulations": [
-        "form.wave2.pop140.affine-hull-combinations"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.165ffe7c25768d23c1ab",
-      "context": "Algebraic geometry: isomorphism of schemes over Spec(A), compatible with both structural maps to the base, here identifying an affine fibre product with Spec(B⊗_A C).",
-      "surface_phrase": "canonical A-scheme isomorphism",
-      "observed_in_formulations": [
-        "form.c31e56dc023fcbcc.affine-scheme-fibre-product"
       ],
       "actionable": false
     },
@@ -1988,15 +2021,6 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.327c59bce72768b1faac",
-      "context": "Probability theory: increasing family (F_t)_{t≥0} of sigma-algebras indexed by nonnegative real time, with F_s⊆F_t for s≤t; distinct from exclusively discrete-time filtration.",
-      "surface_phrase": "filtration indexed by real times t>=0",
-      "observed_in_formulations": [
-        "form.wave2.research81.martingale-continuous-index.01"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.33295ddbc642096ac085",
       "context": "Sheaf theory: morphism from inverse-image sheaf f^{-1}O_Y on X to O_X, adjoint to O_Y→f_*O_X; not an ordinary preimage of subsets.",
       "surface_phrase": "induced morphism f^{-1}O_Y→O_X",
@@ -2074,15 +2098,6 @@
       "surface_phrase": "left and right Ore-square completion",
       "observed_in_formulations": [
         "form.e3f74861fea6f59a.category-multiplicative-system"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.37b0713211a5069fde53",
-      "context": "Category theory: for g:Y→X, precomposition sends Hom_C(X,U)→Hom_C(Y,U), f↦f∘g, respecting identity arrows and composition.",
-      "surface_phrase": "precomposition restriction on Hom sets",
-      "observed_in_formulations": [
-        "form.fef4e69e96c25bfa.representable-presheaf"
       ],
       "actionable": false
     },
@@ -2609,15 +2624,6 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.65d334caa51c845ea335",
-      "context": "Stochastic process theory: increasing σ-algebra family (𝔽_t) indexed by all t∈[0,+∞) with 𝔽_s⊆𝔽_t whenever s≤t.",
-      "surface_phrase": "continuous-time filtration (F_t)",
-      "observed_in_formulations": [
-        "form.wave2.found85.adapted-continuous"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.6761326c179c108a8d73",
       "context": "Ring theory: subring T of a commutative unital ring S that contains the image of a specified ring homomorphism R→S and inherits addition, multiplication and 1 from S; the subring is not assumed integrally closed.",
       "surface_phrase": "subring of S",
@@ -2749,15 +2755,6 @@
       "surface_phrase": "continuous at limit ordinals",
       "observed_in_formulations": [
         "form.2ab2c62d4a9bd0a6.direct-sum-devissage"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.72d70ff235732c7f0318",
-      "context": "Combinatorics: finite initial segment {1,...,k} of the positive integers, used as a palette of k distinct color labels.",
-      "surface_phrase": "finite color palette {1,...,k}",
-      "observed_in_formulations": [
-        "form.wave2.pop142.proper-vertex-k-color"
       ],
       "actionable": false
     },
@@ -2938,15 +2935,6 @@
       "surface_phrase": "integrable X_n for every n",
       "observed_in_formulations": [
         "form.wave2.research81.martingale-discrete.02"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.85d3921d2aa075f7883a",
-      "context": "Linear algebra: n by n square matrix over field K, an array A=(a_ij) indexed by ordered pairs 1≤i,j≤n.",
-      "surface_phrase": "square matrix A in M_n(K)",
-      "observed_in_formulations": [
-        "form.wave2.pop139.matrix-trace"
       ],
       "actionable": false
     },
@@ -3338,29 +3326,11 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.a3e41c65d6b3f8114fb7",
-      "context": "Polynomial algebra over field K: an element a∈K is a root of a polynomial f∈K[x] exactly if f(a)=0; keep polynomial roots distinct from roots of unity or radicals.",
-      "surface_phrase": "root in K",
-      "observed_in_formulations": [
-        "form.39488f3e396a1c77.algebraically-closed"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.a53971a78b449b0edc86",
       "context": "Graph theory: finite sequence of vertices (v_0,…,v_n) with each consecutive pair adjacent and specified endpoints u=v_0, v=v_n; n=0 is permitted.",
       "surface_phrase": "finite walk from u to v",
       "observed_in_formulations": [
         "form.wave2.branch129.nonempty-connected-graph"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.a60aa43eed2b99b5d184",
-      "context": "Category theory: zero object of a category, an object that is both initial and terminal, yielding distinguished zero morphisms in a preadditive setting.",
-      "surface_phrase": "zero object",
-      "observed_in_formulations": [
-        "form.wave2.foundation15.additive-category"
       ],
       "actionable": false
     },
@@ -3487,15 +3457,6 @@
       "surface_phrase": "inverse morphism g:y to x",
       "observed_in_formulations": [
         "form.wave2.foundation.small-groupoid"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.afee26ad5b8d0d34952a",
-      "context": "Discrete mathematics: integer label set {1,2,…,k} for a positive integer k, used as a finite k-element codomain with distinct labels.",
-      "surface_phrase": "finite set of k color labels",
-      "observed_in_formulations": [
-        "form.wave2.found85.proper-coloring"
       ],
       "actionable": false
     },
@@ -3707,15 +3668,6 @@
       "actionable": false
     },
     {
-      "missing_candidate_id": "missing.c84405a9f915b0897178",
-      "context": "Finite-dimensional linear algebra: n-by-n square matrices over a field K, n≥1",
-      "surface_phrase": "Square matrix of finite order over a field",
-      "observed_in_formulations": [
-        "form.wave2.pop139.matrix-trace"
-      ],
-      "actionable": false
-    },
-    {
       "missing_candidate_id": "missing.c965da3057632b140d9c",
       "context": "Real analysis: mesh or norm of a finite partition of [a,b], the maximum of the lengths of its constituent subintervals.",
       "surface_phrase": "mesh of tagged partition",
@@ -3766,15 +3718,6 @@
       "surface_phrase": "transition isomorphisms over D(f_i f_j)",
       "observed_in_formulations": [
         "form.d8201788fcb507c5.module-gluing-data-standard-cover"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.cf55f62008d08ce2df84",
-      "context": "Algebraic geometry: isomorphism of S-schemes X and Y for a fixed base scheme S, consisting of mutually inverse scheme morphisms commuting with their structure morphisms to S; in this source S=Spec(R).",
-      "surface_phrase": "isomorphic over Spec(R)",
-      "observed_in_formulations": [
-        "form.6676171d9e5698af.affine-closed-subscheme"
       ],
       "actionable": false
     },
@@ -3991,15 +3934,6 @@
       "surface_phrase": "cocone morphisms F(i)→Q compatible with the diagram",
       "observed_in_formulations": [
         "form.8f7683667fac9d28.category-colimit"
-      ],
-      "actionable": false
-    },
-    {
-      "missing_candidate_id": "missing.de1b7a5e3717e67b42a7",
-      "context": "Category theory: contravariant Hom operation α:T'→T sends a morphism h:T→X to h∘α:T'→X and respects compositions/identity.",
-      "surface_phrase": "precomposition",
-      "observed_in_formulations": [
-        "form.23afebc5bde9e408.functor-of-points"
       ],
       "actionable": false
     },
