@@ -524,6 +524,8 @@ def make_snapshot(inv, fid, references, status, rationale="", *, reusable_missin
             raise PipelineError("Reference needs a supported state")
         if ref.get("state") == "existing" and ref.get("target_meaning_id") not in inv["meanings"]:
             raise PipelineError("Unknown existing meaning")
+        if ref.get("state") != "missing" and "reviewed_existing_candidate_id" in ref:
+            raise PipelineError("Reviewed missing-candidate reuse is invalid for non-missing references")
         if ref.get("state") == "missing":
             # Default to owning mathematical context; a missing object without
             # context must not be globally deduplicated across homonyms.
