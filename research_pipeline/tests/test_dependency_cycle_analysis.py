@@ -73,7 +73,16 @@ class CycleAnalysisTests(unittest.TestCase):
             report = analyze_snapshot(snapshot)
             analysis = report['cycle_analysis']
             actual = [json.loads(x) for x in (root/'dependency_graph/edges.jsonl').read_text().splitlines()]
-            self.assertEqual([{k: e[k] for k in actual[0]} for e in analysis['edges']], actual)
+            self.assertEqual(analysis['edge_count'], len(actual))
+            self.assertFalse(analysis['all_effective_edges_included'])
+            self.assertNotIn('edges', analysis)
+            detailed = analyze_snapshot(snapshot, include_cycle_edges=True)['cycle_analysis']
+            self.assertTrue(detailed['all_effective_edges_included'])
+            self.assertEqual([{k: e[k] for k in actual[0]} for e in detailed['edges']], actual)
+            self.assertEqual(detailed['components'], analysis['components'])
+            exhaustive = analyze_snapshot(
+                snapshot, include_effective_snapshot=True)['cycle_analysis']
+            self.assertEqual(exhaustive['edges'], detailed['edges'])
             component = analysis['components'][0]
             self.assertEqual(component['classification'], 'avoidable_by_formulation_choice')
             self.assertIn({'meaning_id': 'meaning.metric', 'formulation_id': 'form.metric.primitive'},
@@ -100,6 +109,20 @@ class CycleAnalysisTests(unittest.TestCase):
                              'unavoidable_under_stored_formulations')
             original = json.loads((root/'dependency_graph/nodes'/f'{fid}.json').read_text())
             self.assertEqual(original['references'], [])
+
+    def test_concise_cycle_report_preserves_internal_edge_provenance(self):
+        s = fixture({'a': [['b']], 'b': [['a']], 'c': [[], ['a']]})
+        compact = analyze_cycles(s)
+        complete = analyze_cycles(s, include_all_edges=True)
+        self.assertEqual(compact['edge_count'], 3)
+        self.assertNotIn('edges', compact)
+        self.assertFalse(compact['all_effective_edges_included'])
+        self.assertEqual(len(compact['components']), 1)
+        self.assertEqual(len(compact['components'][0]['internal_edges']), 2)
+        self.assertEqual(complete['edge_count'], 3)
+        self.assertEqual(len(complete['edges']), 3)
+        self.assertEqual(compact['components'], complete['components'])
+        self.assertTrue(complete['all_effective_edges_included'])
 
     def test_unavoidable_disjunctive_core_has_no_common_required_edge(self):
         s = fixture({'a': [['b'], ['c']], 'b': [['a']], 'c': [['a']]})
@@ -132,7 +155,7 @@ class CycleAnalysisTests(unittest.TestCase):
         row = {'missing_candidate_id': final, 'target_meaning_id': 'b',
                'target_version_sha256': meaning_version(s['inventory'], 'b')}
         s['resolutions'] = [row]
-        analysis = analyze_cycles(s)
+        analysis = analyze_cycles(s, include_all_edges=True)
         self.assertEqual(len(analysis['components']), 1)
         e = analysis['edges'][0]
         self.assertEqual(e['observed_missing_candidate_id'], first)
