@@ -286,8 +286,10 @@ def rebuild(workspace, inventory=None):
         previously_resolved = ({json.loads(line)["missing_candidate_id"]
             for line in resolution_file.read_text(encoding="utf-8").splitlines()
             if line.strip()} if resolution_file.exists() else set())
+        observed_sources = scan_missing_sources(nodes)
+        canonical = alias_map(graph, set(observed_sources))
         overrides = replay_seed_overrides(
-            inv, events, scan_missing_sources(nodes),
+            inv, events, scan_missing_sources(nodes, canonical),
             aliased=previously_aliased, resolved=previously_resolved)
     else:
         overrides = {}
