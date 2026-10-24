@@ -44,9 +44,33 @@ Reviewed original texts and effective reference contexts of:
 
 These checks did not identify grounds for a second safe source-free graph amendment in this round. Previously fixed current effective links remain fixed, and known source-level mathematical questions stay documented for later controlled source review.
 
-## 4. Handoff
+## 4. Verified application, candidate reconciliation and handoff
 
-1. Verify the **exact** `applied/wave2-sourcefree-round178-compact-closed-subset.json` receipt, associated isolated graph CI result and new `STATE.json`/fingerprint. Until verified, use the Round177 numeric state and describe Round178 as **submitted**, not applied.
-2. If the packet fails, investigate stale expected hash, source version or complete-node preflight and reconcile without overwriting source history. If it applies, expect one more effective missing occurrence, **not** a reduction in the canonical candidate count; the candidate was registered already.
-3. Continue high-impact **effective** reference type, object/size, variance and source-mathematics audits; explicitly prefer a defensible nonmerge to artificial reduction of the 420 unresolved identities. Update compact `WAVE2_CURRENT_HANDOFF.md` after verifying this round.
-4. Source-free phase remains intact: NO new mathematical meanings, missing-definition external research, Batch143 breadth, Wave1/production edits, certification, consolidation gate opening or freeze.
+**Both Round 178 independent-only review packets are applied**, with exact immutable receipts and `human_certified=false`. The first version-pinned, complete-node amendment is `applied/wave2-sourcefree-round178-compact-closed-subset.json`, receipt SHA256 `6e5d428544264e48d416f450d7a5118a2e131ecc9ced2cdebe8816c87ce4b2d6`, from commit [`a9b2813d4f55`](https://github.com/Zengez/mathDef/commit/a9b2813d4f55c2686b62044023db4529c707ec1b). Its graph rebuild correctly added one effective missing occurrence, but also indexed that exact source phrase and new contextual description as a distinct raw candidate `missing.622459998fd4b876125d`, rather than silently reusing the reviewer-suggested registered candidate ID `missing.c4ed408b10943e9c0f8e`. The rebuild also assigned the new observed occurrence ID `occ.2fb4cd2d7de4fa4994e4`; original source formulation text and underlying inventory were unchanged. **Do not mistake the brief rise to 421 unresolved candidate classes for new mathematical knowledge.**
+
+The follow-up source-reviewed append-only alias packet `applied/wave2-sourcefree-round178-closed-subset-alias.json` (commit [`cdab1a84710b`](https://github.com/Zengez/mathDef/commit/cdab1a84710b2d704a86b29433c6decf1d589ab6)) has exact receipt SHA256 `0defe2dbf3d9141ee3f78ced8d3f7c06f0a381318bcbc0b5edf080a289f3869b`. It explicitly establishes `missing.622459998fd4b876125d` → `missing.c4ed408b10943e9c0f8e` as the **same generic closed-subset predicate in its specified ambient topology**, not as a new mathematical meaning. Both original observations and contexts remain stored.
+
+### Final authoritative live graph after the two packets
+
+| Measure | Final verified |
+| --- | ---: |
+| Independent meanings | **611** |
+| Source formulations fully scanned | **659 / 659** (639 screened, 20 provisional) |
+| Raw candidate IDs (including historical aliases) | **725** |
+| Reviewed candidate aliases | **298** |
+| Candidate-to-existing-meaning resolutions | **7** |
+| Unresolved canonical candidate classes | **420** |
+| Effective missing occurrences | **839** |
+| Append-only source-scan amendments | **766** |
+| Historical seed overrides | **19** (original 891 relations intact) |
+| Ambiguous / unassigned | **0 / 0** |
+| Structurally open / closed | **651 / 8** |
+| Consolidation gate | **FALSE** |
+
+Inventory SHA256 is unchanged: `3759cab60c5fce7287492724fc2ed433ac6001c8a242b66f9bbc887e92294492`; new unresolved fingerprint: `b40bf721311cef8d66971984c799bb8f5833e0447475ab766a97a4a3b9d0cf0b`. The source-free independent constraints, source formulations, production corpus, frozen Wave1, citation/human certification, Batch143 and external missing-definition research remain unchanged.
+
+### Next work
+
+Continue targeted mathematical **effective-reference** checking (not stale original node snapshots), emphasizing real object-type mismatch, groupoid/universe size conventions, source-variant correctness and high-dependency-count candidates. Keep FIP empty-family convention, strict versus pseudofunctorial groupoid conditions, submersive surjectivity and qualified quasi-finite local-dimension language as explicit outstanding reviews. Do not force candidate count reductions, rewrite source texts or open the consolidation gate without the existing separate review/approval process.
+
+**Workflow observation:** When a complete-node amendment changes `existing` to `missing`, the graph indexes the source occurrence by its phrase and context; an explicitly supplied missing-candidate ID can therefore yield a fresh raw record if that identity key differs. Account for a separately justified append-only alias after verifying the effective occurrence. This round confirmed correct recovery without touching original source text or erasing provenance.
