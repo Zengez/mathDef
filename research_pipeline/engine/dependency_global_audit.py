@@ -267,10 +267,10 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
                     # denotes small groupoids in this independent corpus.
                     source_text = source["text"]
                     explicitly_small = bool(re.search(
-                        r"\\b(small|finite)\\s+groupoids?\\b",
+                        r"\b(small|finite)\s+groupoids?\b",
                         norm(source_text)))
                     typed_groupoids = bool(re.search(
-                        r"\\bGroupoids\\b", source_text))
+                        r"\bGroupoids\b", source_text))
                     if not explicitly_small and not typed_groupoids:
                         flag("review", "groupoid_size_scope", fid, node,
                              "The only existing groupoid meaning explicitly "
