@@ -488,6 +488,42 @@ class DependencyGraphTests(unittest.TestCase):
             self.assertFalse(read(graph / "applied" / (name + ".json"))
                              ["human_certified"])
 
+    def test_grouped_resolution_rejects_conflict_without_partial_receipts(self):
+        self.add("A", "first independent source")
+        self.add("B", "first potential target")
+        self.add("C", "second potential target")
+        self.write_fixture()
+        context = "Independent algebraic target"
+        store(self.root, [
+            self.entry("form.a", [{"phrase": "candidate X", "context": context,
+                                   "state": "missing"}]),
+            self.entry("form.b", []), self.entry("form.c", []),
+        ])
+        graph = graph_path(self.root)
+        inv = read(graph / "INVENTORY.json")
+        inbox = graph / "inbox"
+        inbox.mkdir(exist_ok=True)
+        for name, target in (("a", "meaning.b"), ("b", "meaning.c")):
+            packet_id = "bad-resolve-" + name
+            (inbox / (packet_id + ".json")).write_text(json.dumps({
+                "schema_version": 1, "id": packet_id, "mode": "resolve",
+                "resolutions": [{
+                    "missing_candidate_id": missing_key("candidate X", context),
+                    "target_meaning_id": target,
+                    "target_version_sha256": meaning_version(inv, target),
+                    "review_rationale": "This conflicting candidate assignment is "
+                                        "included to verify append-only atomic "
+                                        "rejection before any ledger write.",
+                }],
+            }))
+        with self.assertRaises(PipelineError):
+            apply_inbox(self.root)
+        self.assertFalse((graph / "resolutions.jsonl").exists())
+        self.assertFalse((graph / "applied/bad-resolve-a.json").exists())
+        self.assertFalse((graph / "applied/bad-resolve-b.json").exists())
+        self.assertEqual(read(graph / "STATE.json")["summary"]
+                         ["unresolved_missing_candidates"], 1)
+
     def test_grouped_inbox_preserves_order_across_alias_resolve_boundaries(self):
         for name in ("A", "B", "C"):
             self.add(name, "independent source")
