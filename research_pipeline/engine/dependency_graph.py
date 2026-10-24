@@ -259,9 +259,28 @@ def rebuild(workspace, inventory=None):
     meanings = inv["meanings"]
     candidate_map = {}
     refs_by_form = defaultdict(list)
+    events = seed_override_events(graph)
+    if events:
+        alias_file = graph / "candidate_aliases.jsonl"
+        resolution_file = graph / "resolutions.jsonl"
+        previously_aliased = ({json.loads(line)["alias_candidate_id"]
+            for line in alias_file.read_text(encoding="utf-8").splitlines()
+            if line.strip()} if alias_file.exists() else set())
+        previously_resolved = ({json.loads(line)["missing_candidate_id"]
+            for line in resolution_file.read_text(encoding="utf-8").splitlines()
+            if line.strip()} if resolution_file.exists() else set())
+        overrides = replay_seed_overrides(
+            inv, events, scan_missing_sources(nodes),
+            aliased=previously_aliased, resolved=previously_resolved)
+    else:
+        overrides = {}
     for seed in inv["seed_relations"]:
         fid = seed["from_formulation"]
-        if seed.get("target_query") and not seed.get("target_meaning_id"):
+        if seed["relation_id"] in overrides:
+            refs_by_form[fid].append(effective_seed_reference(
+                seed, overrides[seed["relation_id"]],
+                stable_id("seed", seed["relation_id"])))
+        elif seed.get("target_query") and not seed.get("target_meaning_id"):
             k = missing_key(seed["target_query"], inv["formulations"][fid]["context"])
             candidate_map[k] = {
                 "id": k, "query": seed["target_query"],
