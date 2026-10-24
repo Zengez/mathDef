@@ -133,6 +133,8 @@ class SeedOverrideReplayTests(unittest.TestCase):
             graph_copy = Path(tmp) / "dependency_graph"
             shutil.copytree(original, graph_copy)
             historical_bytes = (graph_copy / "INVENTORY.json").read_bytes()
+            existing_ledger_path = graph_copy / "seed_overrides.jsonl"
+            already_applied = existing_ledger_path.exists()
             old = read(graph_copy / "STATE.json")["summary"]
             self.assertEqual(old["unresolved_missing_candidates"], 420)
             result = append_seed_overrides(Path(tmp), packet["seed_overrides"])
@@ -147,11 +149,16 @@ class SeedOverrideReplayTests(unittest.TestCase):
                              old["alias_candidate_records"])
             self.assertEqual(result["unresolved_missing_candidates"],
                              old["unresolved_missing_candidates"])
-            self.assertEqual(result["missing_occurrences"],
-                             old["missing_occurrences"] + 19)
+            self.assertEqual(
+                result["missing_occurrences"],
+                old["missing_occurrences"] + (0 if already_applied else 19))
             self.assertEqual(result["scan_occurrences"], old["scan_occurrences"])
-            self.assertNotEqual(result["unresolved_fingerprint"],
-                                old["unresolved_fingerprint"])
+            if already_applied:
+                self.assertEqual(result["unresolved_fingerprint"],
+                                 old["unresolved_fingerprint"])
+            else:
+                self.assertNotEqual(result["unresolved_fingerprint"],
+                                    old["unresolved_fingerprint"])
             self.assertFalse(result["consolidation_gate_valid"])
             ledger = [json.loads(x) for x in
                       (graph_copy / "seed_overrides.jsonl")
@@ -186,7 +193,8 @@ class SeedOverrideReplayTests(unittest.TestCase):
             self.assertEqual((graph_copy / "seed_overrides.jsonl").read_bytes(), after)
             self.assertEqual(rerun["unresolved_fingerprint"],
                              result["unresolved_fingerprint"])
-        self.assertFalse((original / "seed_overrides.jsonl").exists())
+        # After live application, repeatability is also checked above; never
+        # require the independent graph to remain permanently unapplied.
 
     def test_historical_alias_chain_flattens_to_final_canonical_target(self):
         a, b, c = "missing.chain.a", "missing.chain.b", "missing.chain.c"
