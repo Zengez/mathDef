@@ -336,8 +336,12 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
 
     # Reviewed historical seed overrides hide their original restricted target
     # from effective adjacency, but never mutate immutable seed evidence.
+    canonical_candidates = {
+        c["id"]: c["alias_of"] for c in snapshot.get("candidates", [])
+        if c.get("alias_of")}
     seed_overrides = replay_seed_overrides(
-        inv, snapshot.get("seed_override_events", []), scan_missing_sources(nodes),
+        inv, snapshot.get("seed_override_events", []),
+        scan_missing_sources(nodes, canonical_candidates),
         aliased={x["alias_candidate_id"] for x in snapshot.get("aliases", [])},
         resolved=set(snapshot.get("resolved_candidate_ids", [])))
     counts["effective_seed_override_count"] = len(seed_overrides)
