@@ -105,8 +105,9 @@ def preview_seed_retargets(snapshot: dict, manifest: dict) -> dict:
         "proposal_count": len(previews),
         "proposals": previews,
         "warning": ("Preflight checks exact provenance and canonical identity only. "
-                    "No engine support for applying seed overrides is implemented; "
-                    "these remain mathematical review proposals."),
+                    "This preview never applies overrides; any application requires "
+                    "a separately reviewed seed_override inbox packet and "
+                    "the independent graph workflow. Passing does not certify mathematics."),
     }
 
 
