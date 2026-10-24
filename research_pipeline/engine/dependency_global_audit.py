@@ -210,7 +210,8 @@ def candidate_leads(candidates: list[dict], limit: int = 40) -> dict:
 
 def analyze_snapshot(snapshot: dict, *, limit: int = 60,
                      candidate_limit: int = 40,
-                     include_effective_snapshot: bool = False) -> dict:
+                     include_effective_snapshot: bool = False,
+                     include_cycle_edges: bool = False) -> dict:
     inv, nodes = snapshot["inventory"], snapshot["nodes"]
     form = inv["formulations"]
     meanings = inv["meanings"]
@@ -416,7 +417,8 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
                      "occurrence_id": "legacy-seed:" + seed["relation_id"],
                  })
     from research_pipeline.engine.dependency_cycle_analysis import analyze_cycles
-    cycle_analysis = analyze_cycles(snapshot)
+    cycle_analysis = analyze_cycles(
+        snapshot, include_all_edges=(include_cycle_edges or include_effective_snapshot))
     # Preserve the old restricted fields for existing CI consumers; the
     # separately scoped cycle_analysis is the full effective graph.
     cycles = strongly_connected(adjacency)
@@ -453,7 +455,7 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
         "undetermined_cycle_components": sum(
             c["classification"] == "undetermined_incomplete_formulations"
             for c in cycle_analysis["components"]),
-        "effective_existing_dependency_edges": len(cycle_analysis["edges"]),
+        "effective_existing_dependency_edges": cycle_analysis["edge_count"],
         "unassigned_occurrences": state.get("unassigned_occurrences"),
         "ambiguous_occurrences": state.get("ambiguous_occurrences"),
         "total_flags": len(findings),
@@ -662,6 +664,9 @@ def main() -> None:
     scan = sub.add_parser("scan", help="Whole-graph diagnostic read-only review leads")
     scan.add_argument("--limit", type=int, default=60)
     scan.add_argument("--candidate-limit", type=int, default=40)
+    scan.add_argument("--include-cycle-edges", action="store_true",
+                      help="Include every effective existing-meaning edge in the JSON report; "
+                           "normally only cyclic-component edges are returned")
     scan.add_argument("--snapshot-output", type=Path,
                       help="Optional TEMPORARY exhaustive snapshot outside the repository")
     focus = sub.add_parser("focus", help="Compact source-complete unresolved-candidate worklist")
@@ -679,7 +684,8 @@ def main() -> None:
     if args.mode == "scan":
         snapshot = load_live_snapshot(args.workspace)
         report = analyze_snapshot(snapshot, limit=args.limit,
-                                  candidate_limit=args.candidate_limit)
+                                  candidate_limit=args.candidate_limit,
+                                  include_cycle_edges=args.include_cycle_edges)
         if args.snapshot_output:
             complete_report = analyze_snapshot(
                 snapshot, limit=10**9, candidate_limit=10**9,
