@@ -807,6 +807,11 @@ def resolve(workspace, resolutions):
     return rebuild(workspace, inv)
 
 
+def apply_seed_overrides(workspace, proposed):
+    from .dependency_seed_overrides import append_seed_overrides
+    return append_seed_overrides(workspace, proposed)
+
+
 def apply_inbox(workspace, limit=20):
     """Replay-safe, grouped append-only ingestion with one rebuild per mode run.
 
@@ -826,10 +831,11 @@ def apply_inbox(workspace, limit=20):
         "amend": lambda pkg: amend(workspace, pkg["amendments"]),
         "resolve": lambda pkg: resolve(workspace, pkg["resolutions"]),
         "alias": lambda pkg: alias_candidates(workspace, pkg["aliases"]),
+        "seed_override": lambda pkg: apply_seed_overrides(workspace, pkg["seed_overrides"]),
         "consolidate": lambda pkg: seal_consolidation(workspace, pkg["gate"]),
     }
     grouped_fields = {"amend": "amendments", "alias": "aliases",
-                      "resolve": "resolutions"}
+                      "resolve": "resolutions", "seed_override": "seed_overrides"}
     result = {"applied": [], "already_applied": [], "max_packages": limit,
               "batched_rebuilds": []}
     remaining = max(0, limit)
@@ -990,7 +996,7 @@ def seal_consolidation(workspace, event):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--workspace", type=Path, required=True)
-    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "amend", "resolve", "alias", "consolidate", "apply_inbox", "worklist", "consolidation_worklist", "status", "tree", "queue"),
+    p.add_argument("--mode", choices=("inventory", "propose", "ingest", "amend", "resolve", "alias", "seed_override", "consolidate", "apply_inbox", "worklist", "consolidation_worklist", "status", "tree", "queue"),
                    required=True)
     p.add_argument("--adapter", default="research_pipeline.adapters.mathdef.dependency_scan")
     p.add_argument("--limit", type=int, default=30)
@@ -1034,6 +1040,14 @@ def main():
         if batch.get("schema_version") != SCHEMA:
             raise PipelineError("Unsupported alias batch")
         result = alias_candidates(args.workspace, batch["aliases"])
+    elif args.mode == "seed_override":
+        inbox = (graph / "inbox").resolve()
+        if not args.batch or not args.batch.resolve().is_relative_to(inbox):
+            raise PipelineError("Seed override packet must be in graph inbox")
+        batch = read(args.batch)
+        if batch.get("schema_version") != SCHEMA or batch.get("mode") != "seed_override":
+            raise PipelineError("Unsupported historical seed override packet")
+        result = apply_seed_overrides(args.workspace, batch["seed_overrides"])
     elif args.mode == "consolidate":
         inbox = (graph / "inbox").resolve()
         if not args.batch or not args.batch.resolve().is_relative_to(inbox):
