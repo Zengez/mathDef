@@ -6,7 +6,7 @@ from pathlib import Path
 
 from research_pipeline.engine.core import PipelineError, Workspace, digest
 from research_pipeline.engine.dependency_graph import (
-    graph_path, inventory_sync, live_nodes, read, store,
+    graph_path, inventory_sync, live_nodes, missing_key, read, store,
 )
 from research_pipeline.engine.dependency_audit_acceleration import (
     audit_fingerprint, math_signature, rank_findings, validate_review_ledger,
@@ -105,6 +105,40 @@ class GlobalAuditTests(unittest.TestCase):
                          digest(live_nodes(self.graph, self.inv)["form.alpha"]))
         self.assertEqual(before, {p.name: p.read_bytes()
                                   for p in self.graph.iterdir() if p.is_file()})
+
+    def test_reviewed_candidate_reuse_requires_explicit_identity_evidence(self):
+        """Allow provenance-reviewed reuse, but keep unexplained mismatches fatal."""
+        snapshot = self.snapshot()
+        candidate = missing_key("canonical clopen subset", "general topology")
+        snapshot["candidates"] = [{"id": candidate}]
+        ref = snapshot["nodes"]["form.alpha"]["references"][0]
+        ref.pop("target_meaning_id")
+        ref.update({
+            "phrase": "simultaneously open and closed",
+            "state": "missing",
+            "context": "subset of a specific topological space",
+            "missing_candidate_id": candidate,
+        })
+        def integrity_codes():
+            return [f["code"] for f in analyze_snapshot(snapshot)["flags"]
+                    if f["severity"] == "integrity"]
+
+        self.assertIn("stale_missing_identity", integrity_codes())
+        ref["reviewed_existing_candidate_id"] = candidate
+        ref["reviewed_by"] = "source-free mathematical reviewer"
+        ref["candidate_identity_review_rationale"] = "insufficient"
+        self.assertIn("stale_missing_identity", integrity_codes())
+        ref["candidate_identity_review_rationale"] = (
+            "The observed clopen-subset phrase and the registered candidate "
+            "express the same predicate with no ambient-space identification "
+            "or idempotent correspondence added as a hidden hypothesis."
+        )
+        self.assertNotIn("stale_missing_identity", integrity_codes())
+        ref["reviewed_existing_candidate_id"] = "missing.other"
+        self.assertIn("stale_missing_identity", integrity_codes())
+        ref["reviewed_existing_candidate_id"] = candidate
+        ref["missing_candidate_id"] = "missing.unregistered"
+        self.assertIn("unregistered_missing_candidate", integrity_codes())
 
     def test_cycles_include_self_and_mutual(self):
         self.assertEqual(strongly_connected({"a": {"a"}, "b": {"c"},
