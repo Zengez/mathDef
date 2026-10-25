@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE3.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**80 additional COMPLETE; cumulative 168 COMPLETE, 0 PARTIAL, 253 untouched.**
+**90 additional COMPLETE; cumulative 178 COMPLETE, 0 PARTIAL, 243 untouched.**
 
 ## 89. isomorphism class — `missing.6bb87052ec8a81464ddd`
 
@@ -484,4 +484,64 @@ Remaining: No external citation verification or whole-parent theorem certificati
 
 Remaining: Conventional finite-L1 reading is explicit in the candidate; later verify any source alternative using extended moments rather than silently broadening it.
 
-Next: `missing.23c297a4a1c27fe4ec73`, first parent `form.wave2.analysis98.metric-space.compatible`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 169. metric-induced topology tau_d — `missing.23c297a4a1c27fe4ec73`
+
+**retain_distinct_missing**, 1/1 parents. τ_d consists of unions of positive-radius d-balls, not just the ball collection. If z belongs to B(x,r)∩B(y,s), a radius smaller than both r−d(x,z) and s−d(y,z) gives a ball about z contained in the intersection, proving the basis property. The topology is uniquely determined by d, but not conversely: d and 2d on a nontrivial metric space give the same opens and different distances. The parent retains the specified metric in its compatible triple and excludes empty X under its source convention. The candidate-resolved ball edge legitimately creates a structural effective cycle through this alternative metric formulation; no mathematical link is removed to break it.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 170. boundedness of real-valued f — `missing.23f5062d098be96c786a`
+
+**retain_distinct_missing**, 1/1 parents. Boundedness is one M≥0 working for every x in the fixed interval. Pointwise finite values or compactness of the domain alone do not imply it: define f(a)=0 and f(x)=1/(x−a) for x>a. Conversely the Dirichlet indicator of rational inputs is bounded by 1 but not Riemann integrable on a nondegenerate interval: arbitrary tags allow all-rational and all-irrational sums of b−a and 0. Thus boundedness is not integrability, continuity, or bounded-linearity of an operator. A bounded-above range alone is weaker than a two-sided absolute bound; f(x)=−1/(x−a) with f(a)=0 is bounded above but not bounded.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 171. Hermitian sesquilinear form V×V→C — `missing.23ff9207e591fcd879d9`
+
+**retain_distinct_missing**, 1/1 parents. Hermitian first-linear means h(αv+βw,z)=αh(v,z)+βh(w,z), h(v,αw)=conjugate(α)h(v,w), and h(v,w)=conjugate(h(w,v)). Consequently h(v,v) is real, but need not be positive: h(z,w)=z_1 conjugate(w_1)−z_2 conjugate(w_2) is Hermitian indefinite. A zero form is degenerate. Positive definiteness is the extra inner-product axiom, not part of the general Hermitian-form identity. A real symmetric bilinear form has another scalar field and no nontrivial conjugation. Switching which slot is linear is a labelled convention related by conjugation/transposition, not equality of the same function under unchanged arguments.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 172. degree-zero subring — `missing.244d6cfceb0dd22abbca`
+
+**contextual_ambiguity_or_variant**, 1/1 parents. The zero-degree part consists of homogeneous fractions with degree(a)−n degree(f)=0; addition is closed by taking common denominator and multiplication adds zero degrees. For S=k[x], deg x=1,f=x, the whole S_f=k[x,x^−1] has many degrees while its degree-zero subring is k. Thus it is not full localization or a homogeneous component chosen as a scalar element. A granularity overlap remains: the existing parent meaning degree-zero homogeneous localization DEFINES S_(f) as this exact subring for positive-degree f. The candidate wording can also describe the degree-zero component for degree-zero denominators or more general localized gradings, whereas that existing meaning explicitly fixes positive degree. Do not assert an unrestricted existing-target resolution or silently keep a redundant self-definition as an independently justified prerequisite.
+
+Remaining: Later adjudicate component-operation versus full existing S_(f) construction, positive-degree scope and zero homogeneous elements; no resolution/removal or source edit applied.
+
+## 173. naturally identified representing module — `missing.24b750917f64c00ee6ee`
+
+**potential_candidate_alias**, 1/1 parents. The canonical candidate explicitly denotes a natural isomorphism of COVARIANT set-valued functors in N, not the module P itself. This is the generic natural-isomorphism prerequisite missing.718fa3e492d42c0ced8e (complete review rank 93), instantiated at Hom_S(P,−) and Diff^k(M,−). For an S-linear h:N→N′, Hom sends u to h u and Diff sends D to hD. The latter preserves order by induction because [hD,s]=h[D,s]. Naturality requires η_(N′)(h u)=hη_N(u) for every h, stronger than unrelated bijections for each N. A chosen P and representing correspondence remain additional whole data; no alias of a module with a transformation is proposed. Unit/commutative coefficient source conventions remain under existing deferrals.
+
+Remaining: Proposal only for the natural-isomorphism prerequisite, not a representing-module identity or certified principal-parts existence theorem. Preserve prior source module-convention cautions.
+
+## 174. radical ideal I — `missing.2592ffd1f6be0b4d46bf`
+
+**retain_distinct_missing**, 1/1 parents. A radical ideal satisfies x^n∈I⇒x∈I for every positive n, equivalently sqrt(I)=I. The radical OPERATION takes any ideal to a new ideal, whereas this is a property of an ideal already given. For example (4) in Z is not radical since 2²∈(4) but 2∉(4), and sqrt((4))=(2). The Jacobson radical is the intersection of maximal ideals of a ring; a Jacobson R requires a relation between all radical ideals and containing maximal ideals, not equality of the predicate radical with that distinguished ideal. In k[t]_(t), (0) is radical and Jac(R)=(t), separating them. I=R is allowed as a radical ideal unless properness is separately imposed; empty intersection then gives R.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 175. induced exterior-power map ∧^rφ — `missing.25dac0c185025e52a26a`
+
+**source_convention_deferral**, 1/1 parents. For commutative unital R, apply φ to each wedge factor: v_1∧…∧v_r↦φv_1∧…∧φv_r. The multilinear map is alternating, hence descends through the exterior-power quotient and is R-linear. Exterior MODULE and induced MAP are different; r=0 gives id_R, r=1 gives φ. Nonzero wedge is not invertible wedge or constant fibre rank: over Z/4, φ=multiplication by 2 has nonzero ∧¹φ but becomes zero over the residue field Z/2. The parent merely says finite free modules over R, while this ordinary exterior-power construction needs the commutative coefficient convention (or additional bimodule machinery in other contexts). No such generalization is invented. Keep a precise source-convention deferral instead of certifying coefficient commutativity from the unital-module scan target.
+
+Remaining: Later verify commutative/unital coefficient convention and exterior indexing (especially r=0 and zero ring) in this exact source; no rank-theorem or ring-scope correction applied.
+
+## 176. finite moments Σ|x|^k w_x — `missing.265e6df46207937dc94a`
+
+**retain_distinct_missing**, 1/1 parents. The discrete all-moment condition is Σ_(x∈X)|x|^k w_x<∞ for every k≥0, so k=0 includes total weight finiteness. With atomic measure μ=Σ w_xδ_x it equals all absolute μ-moments, but the stored discrete prerequisite retains support and weights whereas general Stieltjes measures need not be atomic. Positive summability alone does not imply higher moments: X={1,2,…},w_n=1/n² has finite total mass and infinite first moment. Conversely n^k2^−n sums finitely for each fixed k, showing a valid infinite-support example. Different k may have different finite bounds; no single bound uniformly over all k is required.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 177. pro-object — `missing.278d73133c80cdd539f3`
+
+**retain_distinct_missing**, 1/1 parents. A pro-object is a formal cofiltered inverse diagram, with its formal morphism structure, not an actual limit object in C or a single inverse-sequence arrow. Actual limits need not exist in C: finite sets Z/2^n with reduction maps give a pro-finite-set object, but their inverse limit has arbitrarily many distinct compatible residues and is not finite. Ind-objects reverse the formal direction; saying Pro(C) is related to Ind(C^op)^op does not identify objects of the two completions of C without opposites. Essential constancy adds a condition making the formal object isomorphic to a constant one; a cone alone does not establish it.
+
+Remaining: Formal completion morphism sets require small-index/universe conventions not specified in this abbreviated source; no unrestricted proper-class limit formed.
+
+## 178. restriction of ambient group operation — `missing.293cecfee8aa9184332d`
+
+**retain_distinct_missing**, 1/1 parents. Restricting ⋆:G×G→G to H×H first gives values in G; closure is needed to corestrict the codomain to H. Thus an arbitrary subset does not carry an INTERNAL operation by mere restriction. For H={1}⊂(Z,+), 1+1=2∉H. Even a closed nonempty subset such as nonnegative integers under addition need not be a subgroup because inverses can fail. The subgroup definition requires the inherited law to form a group, not an unrelated chosen group law on H. Generic function restriction keeps the codomain G, whereas this construction includes closure and codomain corestriction; do not erase that distinction.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+Next: `missing.2b4bf1ddae7c8d62e393`, first parent `form.wave2.cross110.finite-image-rank`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
