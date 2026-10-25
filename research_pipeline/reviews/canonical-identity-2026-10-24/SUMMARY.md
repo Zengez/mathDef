@@ -1,3 +1,42 @@
+# Canonical identity audit — 188-candidate checkpoint
+
+**100 additional COMPLETE reviews**, exact ranks **89–188**, in ten checkpoint groups of ten. Cumulative **188 COMPLETE / 0 PARTIAL / 233 untouched**, out of 421 inventoried. COMPLETE means full identity-focused parent-context coverage, not resolution, external citation verification or approval of Pass 2.
+
+Evidence contains **393 distinct parent formulations**, **580 candidate/parent visits**, **611 candidate occurrences** and **192 append-only review events**. This tranche reviewed 127 distinct parents across 141 visits and 143 occurrences; it adds 78 full source-evidence records, reusing unchanged prior anchors. It compared 166 existing meanings and 82 candidate contexts; comparison-only candidates do not gain coverage. The original two partial events remain, plus two explicit superseding events this tranche (one withdrawn counterexample and one scope clarification).
+
+Current dispositions: **166 retain-distinct missing, 11 contextual ambiguities, 8 source-convention deferrals, 2 potential candidate aliases, 1 potential existing-meaning resolution, 0 needs-recheck**. New reviews contribute **90 / 3 / 4 / 2 / 1** respectively. No mathematical proposal was applied.
+
+See [TRANCHE_4.md](TRANCHE_4.md) for every new candidate's mathematical argument, exact parent/occurrence IDs and residual questions, plus the separately reviewed real-time filtration edge. Full original source text, observations, locators, source/node hashes, all effective references (including overrides/resolutions), historical aliases and comparison definitions remain in `reviews.jsonl` and `source-contexts.jsonl`. `checkpoint.json` lists exact current IDs and ledger hashes. No external mathematical source was fetched.
+
+## Proposals and questions for Chat
+
+- **Rank 115, `missing.b963edbe734f35266d3a`**: potential existing resolution to `meaning.b9defeff446a0526.ideal-of-definition-local-ring`. Under the conventional commutative unital Noetherian local reading, radical m is equivalent to m-primary; preserve the preexisting local-ring source-convention deferral and review the target's self-reference before any application.
+- **Rank 159, `missing.1c3a3131528cfb0d72af`**: potential alias to quotient-module `missing.6baca7285e379e18e82b`, using N=m^nM,L=m^(n+1)M. Residue action is induced, while grading/length context is retained. This does not equate graded-piece and cumulative Hilbert–Samuel functions.
+- **Rank 173, `missing.24b750917f64c00ee6ee`**: potential alias of the natural-isomorphism prerequisite to `missing.718fa3e492d42c0ced8e`. Naturality is in target N; the representing module and its existence theorem are extra data.
+- **New ambiguities, ranks 95/172/181**: integer versus nonnegative grading in the additive direct-sum candidate; general degree-zero component versus the already stored positive-degree localization construction; and the word *doubleton* in a pair constructor allowing equal arguments. Exact scopes and counterexamples are recorded. No source/candidate correction applied.
+- **New source deferrals, ranks 133/154/166/175**: common identity of a ring inclusion; finite versus potentially infinite pair multiplicity in an unspecified multiset convention; admissibility/one-sided Stieltjes convention; commutative/unital scope of the exterior-power functor. Earlier adjudicated ambiguities and source exceptions stay open, unchanged.
+
+## Existing-edge review and gate relevance
+
+Read-only review of `occ.4dc2044654482ca4b966` in `form.wave2.found85.adapted-continuous` supports **probable wrong target for the ambient filtration**: its target `meaning.wave2.found85.discrete-filtration` is integer-indexed, while source and observation explicitly quantify all real t≥0 and contain no sampled-time construction. Two two-point-space filtrations with jumps at 1/2 and 3/4 share integer restrictions but differ at 0.6. A derived sampled filtration is legitimate, but is not the ambient family. Preserve the already correct real-time missing occurrence `occ.3cee100f060f105c219b`. Full versions/node hashes and an unapplied reconciliation proposal are in the report and `validation.json`. This exact edge remains an adjudication item before unconditional global consolidation approval.
+
+The Ext parent `form.788671763be693df.ext-group` also has an independent coefficient-scope question at `occ.321952d7b781466d1856`: its existing internal-Hom MODULE target assumes commutative coefficients. Hom cochains over an arbitrary associative ring are naturally abelian groups, with no automatic output R-action. Ranks 157/183 preserve this distinction without changing the candidate cohomology/complex prerequisites. Relative-inertia verticality, in contrast, follows from strict over-base functoriality and F(α)=id; no convention decision is needed under that recorded hypothesis.
+
+The identity audit is still incomplete (233 untouched). A mechanical pass does not establish these semantic decisions or justify the gate. No consolidation packet was created; gate remains FALSE and Pass 3 is unauthorized.
+
+## Validation and resume
+
+The unchanged coverage validator passed. **60 regression tests passed** (0 failures/errors). The read-only global scan exited 0 with **nine retained existing leads**; exhaustive readiness passed **19/19 mechanical checks**, with no integrity failures and status `mechanical_checks_passed_review_decision_required`; Pass 2 remains `not_determined`.
+
+All **2,281** protected independent-workspace files have identical before/after SHA-256 values. Both original JSONL prefixes from input commit `040b369fe6d681e0f2cd97d939e924098d61e724` are preserved. No production/frozen Wave 1 mathematical input, source/graph/candidate change, gate opening, or Pass 3 research occurred. The approved FIP nonempty-family repair remains intact. Active inventory is `34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113`; unresolved fingerprint is `eb9beb4199a99b1dc3fc18b57daa1f1d4cc9c66051caa558acb7a48396242cee`.
+
+**Next rank 189:** `missing.33bd557af9c1505ff986`, maximal finite chain connecting primes; first parent `form.829f95eb2dfbf360.catenary-commutative-ring`. Stop here for Chat review. Both the 80-new minimum and 100-new stretch target are met.
+
+Exactly six audit-only files changed this tranche: `SUMMARY.md`, `TRANCHE_4.md`, `checkpoint.json`, `reviews.jsonl`, `source-contexts.jsonl`, `validation.json`. Manifest, validator, all prior tranche reports, Chat instructions and mathematical data are unchanged. Ten checkpoint commits and the final evidence commit are pushed to the existing PR #10 branch. GitHub's API returned Forbidden for PR metadata access; Git pushes succeeded.
+
+<details>
+<summary>Historical narratives through the 88-candidate checkpoint</summary>
+
 # Canonical identity audit — 88-candidate checkpoint
 
 **50 additional COMPLETE reviews**, exact manifest ranks **39–88**, completed in five groups of ten. Cumulative **88 COMPLETE / 0 PARTIAL / 333 untouched**, of 421 inventoried. COMPLETE denotes identity-focused parent-context coverage, not resolution, citation verification or approval of Pass 2.
@@ -335,6 +374,4 @@ All **2,281** independent-workspace files matched before/after SHA-256 values at
 
 </details>
 
-## Tranche 4 current coverage
-
-**Current: 188 COMPLETE / 0 PARTIAL / 233 untouched. 100 new complete this pass.** 393 distinct source formulations; 580 candidate/parent visits; 611 occurrences. Earlier narrative is historical; see TRANCHE_4.md and checkpoint.json for current progress. Next `missing.33bd557af9c1505ff986`.
+</details>

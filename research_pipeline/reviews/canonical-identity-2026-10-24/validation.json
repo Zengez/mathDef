@@ -2,7 +2,7 @@
   "scope": "Read-only audit evidence; no mathematical certification",
   "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
   "unresolved_fingerprint": "eb9beb4199a99b1dc3fc18b57daa1f1d4cc9c66051caa558acb7a48396242cee",
-  "continuation_input_commit": "040b369f",
+  "continuation_input_commit": "040b369fe6d681e0f2cd97d939e924098d61e724",
   "total_canonical": 421,
   "complete": 188,
   "partial": 0,
@@ -11,7 +11,7 @@
   "distinct_parent_formulations": 393,
   "candidate_parent_visits": 580,
   "candidate_occurrences": 611,
-  "review_events": 191,
+  "review_events": 192,
   "current_dispositions": {
     "retain_distinct_missing": 166,
     "contextual_ambiguity_or_variant": 11,
@@ -41,7 +41,8 @@
         "test_dependency_cycle_analysis",
         "test_dependency_consistency_worklist",
         "test_dependency_consolidation_readiness"
-      ]
+      ],
+      "elapsed_seconds_reported": 0.256
     },
     "global_scan": {
       "exit_code": 0,
@@ -97,28 +98,130 @@
       "mechanical_integrity_failures": [],
       "assessment_evidence_sha256": "89b238fe3fdcb60ace4e84d1c417b2235616909a6b4e8fc1852646c65fd825b4",
       "pass2_complete": "not_determined",
-      "pass3_authorized": false
+      "pass3_authorized": false,
+      "mechanical_check_results": {
+        "inventory_matches_current_sources": true,
+        "inventory_digest_valid": true,
+        "all_scans_complete": true,
+        "zero_unassigned": true,
+        "zero_ambiguous": true,
+        "unique_occurrence_identities": true,
+        "occurrence_index_matches_replay": true,
+        "unresolved_index_matches_replay": true,
+        "edge_index_matches_replay": true,
+        "state_counts_match_replay": true,
+        "state_fingerprint_matches_replay": true,
+        "checkpoint_matches_state": true,
+        "reverse_index_matches_replay": true,
+        "registry_identity_set_matches_replay": true,
+        "registry_metadata_matches_replay": true,
+        "reference_dispositions_valid": true,
+        "canonical_and_alias_counts_match_state": true,
+        "existing_integrity_audit_passed": true,
+        "provenance_record_links_exist": true
+      }
     },
     "protected_workspace": {
       "files_hashed_before_and_after": 2281,
-      "changed": []
+      "changed": [],
+      "baseline_file_hash_map_digest": "ef5384f4bedc809553001becec8576d29eff580432be29ace69294d96736143c",
+      "final_file_hash_map_digest": "ef5384f4bedc809553001becec8576d29eff580432be29ace69294d96736143c"
     },
     "git_diff_check": {
       "exit_code": 0
     },
     "append_only_evidence": {
-      "original_prefix_commit": "63524d12e022287c87a17272f33eca6a8acfd7bd",
+      "original_prefix_commit": "040b369fe6d681e0f2cd97d939e924098d61e724",
       "reviews_prefix_preserved": true,
-      "source_contexts_prefix_preserved": true
+      "source_contexts_prefix_preserved": true,
+      "superseding_events_added": [
+        {
+          "review_id": "canonical-review.2026-10-24.161",
+          "rank": 153,
+          "supersedes": "canonical-review.2026-10-24.155",
+          "reason": "Withdraw the proposed infinite-discrete-space counterexample: every subset of a discrete space is retrocompact open, since every quasi-compact open is finite. The generic local restriction identity is unchanged; no proof of local/global nonequivalence is claimed."
+        },
+        {
+          "review_id": "canonical-review.2026-10-24.192",
+          "rank": 115,
+          "supersedes": "canonical-review.2026-10-24.117",
+          "reason": "Make the unital local hypothesis of the unit-based proof explicit and carry forward the existing local-ring source-convention deferral; preserve the proposal-only disposition."
+        }
+      ]
+    },
+    "github_pr_metadata": {
+      "attempted_command": "gh pr view 10 --repo Zengez/mathDef --json url,state,isDraft,headRefName,title,body",
+      "exit_code": 1,
+      "result": "GitHub GraphQL Forbidden; Git pushes to the existing PR branch succeeded. No PR metadata changed."
     }
   },
   "external_mathematical_research": false,
   "graph_changes_applied": false,
   "gate_opened": false,
   "next_candidate_id": "missing.33bd557af9c1505ff986",
-  "checks_scope_note": "Coverage/protected hashes refreshed at each group; regression/scan/readiness results retained from previous boundary until final rerun.",
-  "previous_boundary_commit": "bd07629e010d9554633200fd215cf30daaac5322",
-  "new_distinct_parent_formulations_reviewed": 114,
-  "new_source_evidence_records": 77,
-  "minimum_and_stretch_targets_achieved": true
+  "checks_scope_note": "Final boundary for ranks 89-188: unchanged coverage validator, actual 60 regressions, read-only global scan, exhaustive readiness, append-only prefix checks and 2281 protected-file digest comparisons. These checks do not establish mathematical correctness or consolidation approval.",
+  "previous_boundary_commit": "82afdfc2c44dcd83d33496f6c7734b0df9230180",
+  "new_distinct_parent_formulations_reviewed": 127,
+  "new_source_evidence_records": 78,
+  "minimum_and_stretch_targets_achieved": true,
+  "new_review_events": 102,
+  "new_existing_meaning_comparisons": 166,
+  "new_candidate_context_comparisons": 82,
+  "proposed_candidate_aliases": 2,
+  "proposed_existing_meaning_resolutions": 1,
+  "separate_exact_edge_review": {
+    "scope": "separate read-only exact-edge review; no additional candidate coverage",
+    "source_formulation": {
+      "formulation_id": "form.wave2.found85.adapted-continuous",
+      "meaning_id": "meaning.wave2.found85.adapted-continuous",
+      "display_term": "adapted stochastic process",
+      "context": "Real-time indexed stochastic process adapted to a filtration indexed by t≥0",
+      "origin": "screened",
+      "version_sha256": "48b208ec4f94d6e18403dd1c39b4948a79f85b0d06470bb2c897f8660c4a4650",
+      "source_snapshot_sha256": "261800ec342f517f5fa41bb23bfd1897d186ce93bc8c5d5a947feb2bb712652e",
+      "evidence_ids": [
+        "obs.wave2.found84.adapted-stochastic-process.02"
+      ],
+      "text": "A real-valued process (X_t)_{t≥0} adapted to a filtration (F_t)_{t≥0} satisfies that X_t is F_t-measurable for every real t≥0."
+    },
+    "source_effective_node_sha256": "c9620ad31916c4847819ce84edae793209445401fb29d81e794d52ba1f37e678",
+    "source_context_record_sha256": "372b64c60408ac2cba423efd0fe04ec6da0662723e265c8e8a1ffae39a9404a8",
+    "effective_reference": {
+      "from_formulation": "form.wave2.found85.adapted-continuous",
+      "occurrence_id": "occ.4dc2044654482ca4b966",
+      "phrase": "sigma-algebra filtration",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.found85.discrete-filtration"
+    },
+    "target_formulation": {
+      "formulation_id": "form.wave2.found85.discrete-filtration",
+      "meaning_id": "meaning.wave2.found85.discrete-filtration",
+      "display_term": "filtration of sigma-algebras",
+      "context": "Discrete time: increasing sub-sigma-algebras indexed by n≥0",
+      "origin": "screened",
+      "version_sha256": "8b78c7b55abf6e03fea01ce940241ff10e2d48647edf53fef9318f37c2aad9a8",
+      "source_snapshot_sha256": "2e98be434b5610265fa4d11a5904504c0e8c5c9c37d4c806a01b949c395b4934",
+      "evidence_ids": [
+        "obs.wave2.found84.discrete-filtration.01"
+      ],
+      "text": "For a measurable space (Ω,F), a discrete-time filtration is a family (F_n)_{n≥0} of sub-σ-algebras of F such that F_n⊆F_m whenever n≤m."
+    },
+    "target_effective_node_sha256": "2b07f67ff347b72b39a835619e8771cb5934c72d8e8683fc24800ac80729342a",
+    "existing_real_time_occurrence_id": "occ.3cee100f060f105c219b",
+    "existing_real_time_candidate_id": "missing.65d334caa51c845ea335",
+    "disposition": "probable_wrong_target_for_ambient_filtration_review_required",
+    "mathematical_argument": "The source quantifies all real t>=0 and supplies no sampled or integer-restriction construction. The target fixes integer indices. On Ω={0,1}, take trivial sigma-algebra before a jump and full power set afterwards; jumps at 1/2 and 3/4 have identical integer samples and different F_0.6. Thus integer restriction is a legitimate derived construction but cannot replace the ambient real-index family. Generic stochastic-process seed and measurable-real-variable edge do not supply a missing sampling intention.",
+    "proposed_correction_not_applied": "In a separately authorized complete-node review, reconcile the old occurrence as a real-index ambient filtration prerequisite or explicitly document a sampled derived construction if justified. Preserve the already correct continuous-time candidate occurrence and all provenance. No unlink, retype, deduplication or packet staged now.",
+    "gate_relevance": "Exact-context adjudication/remediation remains required before unconditional global consolidation approval; no gate opened.",
+    "external_source_verification_performed": false,
+    "semantic_graph_changes_applied": false
+  },
+  "changed_files": [
+    "research_pipeline/reviews/canonical-identity-2026-10-24/SUMMARY.md",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/TRANCHE_4.md",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/checkpoint.json",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/reviews.jsonl",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/source-contexts.jsonl",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/validation.json"
+  ]
 }
