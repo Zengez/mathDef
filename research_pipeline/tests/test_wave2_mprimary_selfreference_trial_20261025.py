@@ -81,6 +81,9 @@ class MPrimaryResolutionTrial(unittest.TestCase):
                 "formulation_id": fid,
                 "expected_node_sha256": digest(old),
                 "expected_occurrence_id": affected[0]["occurrence_id"],
+                # main still requires numeric index; it is independently
+                # checked against the exact live occurrence identity.
+                "reference_index": old["references"].index(affected[0]),
                 "reason": (
                     "Within a commutative unital local ring (R,m), an ideal "
                     "with radical m is m-primary: if ab is in I and a is not "
