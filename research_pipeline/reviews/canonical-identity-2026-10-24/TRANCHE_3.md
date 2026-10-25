@@ -305,3 +305,7 @@ Remaining: No external citation or complete host-theorem certification; no seman
 Remaining: Review exact existing edge occ.4dc2044654482ca4b966 in form.wave2.found85.adapted-continuous for discrete-versus-real-time scope; no graph correction applied and no assumption that the earlier integrability deferral resolves this edge.
 
 Next: `missing.6bb87052ec8a81464ddd`, first parent `form.b85b64499f3fb523.grothendieck-group-finite-modules`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+
+## Final verification
+
+60 tests passed; coverage/occurrence validator passed; global scan completed with nine retained leads; exhaustive readiness passed 19 mechanical checks with no integrity failures and no consolidation decision. All 2,281 protected workspace file hashes are unchanged. Source and review ledgers retain exact original prefixes. See SUMMARY.md for the three new candidate ambiguities, source-scope deferrals and rank-88 discrete-target edge; see validation.json for result details.

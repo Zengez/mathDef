@@ -1,3 +1,36 @@
+# Canonical identity audit — 88-candidate checkpoint
+
+**50 additional COMPLETE reviews**, exact manifest ranks **39–88**, completed in five groups of ten. Cumulative **88 COMPLETE / 0 PARTIAL / 333 untouched**, of 421 inventoried. COMPLETE denotes identity-focused parent-context coverage, not resolution, citation verification or approval of Pass 2.
+
+Evidence now contains **315 distinct parent formulations**, **439 candidate/parent visits**, **468 candidate occurrences**, and **90 append-only review events** (the two original partial events and their supersessions remain). This pass adds **123 visits**, **129 occurrences**, **77 new full source-evidence records** and considers 114 distinct parent formulations, reusing unchanged anchored evidence where applicable. It compares 118 existing meanings and 53 candidate contexts; comparison-only identities remain untouched for coverage.
+
+Current dispositions: **76 retain-distinct missing**, **8 contextual ambiguities**, **4 source-convention deferrals**, **0 needs-recheck**. New reviews contribute 45 / 3 / 2 respectively. **No new aliases or resolutions are proposed or applied.**
+
+[TRANCHE_3.md](TRANCHE_3.md) contains the new per-candidate arguments and residual questions. `reviews.jsonl` records every parent, exact occurrences, original alias records/reasons, full compared definitions, source/node/reference hashes and per-occurrence component assessments. `source-contexts.jsonl` preserves full independent source text, context, original observations/locators and effective references including seed overrides and candidate resolutions. No external source was fetched.
+
+## New questions for Chat review
+
+- **Rank 40, `missing.fa5932b42daa1a3e0307`**: the canonical field-root example describes `F[x]/(f)` for nonconstant `f` but needs irreducibility to guarantee a field. Actual quotient-field parent `form.1fd51873f9f0afbd.field-from-irreducible-polynomial` and occurrence `occ.29b820e470569d95f584` DO retain irreducibility; `F[T]/(T²)` separates the stronger and weaker conditions. Clarify the candidate example, not the correctly qualified parent. **Not applied.**
+- **Rank 54, `missing.beea674f8fcd201a1af5`**: the formula for a generated submodule as finite R-linear combinations requires the intended unital-action scope; a zero-action nonzero C₂ module over F₂ refutes the broader wording. Review canonical scope against `form.91ebb3796458d5bb.finite-generated-module`, `occ.03e7f2690d2d1f77a190`, and the other two anchored parents; preserve the already-adjudicated general/unital distinctions. **Not applied.**
+- **Rank 62, `missing.a8c70a2a13320680c54c`**: `occ.099ea4270d9cbdccf52b` in `form.a570f5bed277bd8b.representable-presheaf-morphism` uses the Yoneda correspondence through former candidate `missing.7863e36c979e91435854`. The distinguished natural transformation is a legitimate component; the whole correspondence is extra data/theorem. Keep the alias granularity question open. **Not applied.**
+
+Ranks **43** (multiplicative denominators) and **56** (ideal action IM) retain exact ring/module source-convention questions. Rank **88** preserves a further existing-edge scope lead: `occ.4dc2044654482ca4b966` in `form.wave2.found85.adapted-continuous` targets an explicitly discrete filtration while the source uses real times. The continuous-time missing candidate is retained distinctly; determine whether that older edge meant only a derived discrete component or imposes the wrong whole-filtration type before proposing a version-bound correction. The rank-36 integrability deferral is separate and remains open.
+
+Secondary recorded limits include fixed-neighborhood/generator-cardinality quantifiers in local ideal-sheaf generation (rank 86), the unaugmented F_i-complex interpretation of Tor shorthand (rank 83), and the component-only status of compound sheaf-surjectivity phrases, cone/sequence arities and zero-weight convex representations. These are bounded review obligations, not newly applied corrections or a declaration that all block consolidation. Earlier Chat adjudications remain unchanged.
+
+## Validation and resume
+
+The unchanged coverage validator passed. **60 regression tests passed**; global read-only scan exited 0 with **9 existing review leads**; exhaustive readiness exited 0 with **19 mechanical checks and no integrity failures**, retaining `mechanical_checks_passed_review_decision_required` and Pass 2 `not_determined`. Detailed current outputs and scope are summarized in `validation.json`; scan/readiness success is not mathematical certification.
+
+All **2,281** independent-workspace file digests match before/after. Original review/source evidence prefixes from `63524d12` are unchanged. Inventory `34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113` and unresolved fingerprint `eb9beb4199a99b1dc3fc18b57daa1f1d4cc9c66051caa558acb7a48396242cee` remain current. No production/frozen Wave 1 inputs, source edits, graph mutations, candidate changes, gate opening, or Pass 3 research occurred. The approved FIP nonempty-family correction remains intact.
+
+**Next rank 89:** `missing.6bb87052ec8a81464ddd` (module isomorphism class), first parent `form.b85b64499f3fb523.grothendieck-group-finite-modules`. Start by validating `checkpoint.json` against the current graph. This handoff meets both the 30-new minimum and the 50-new stretch target; it does not claim the full 421-identity audit is complete.
+
+Six files changed in this pass: `SUMMARY.md`, `TRANCHE_3.md`, `checkpoint.json`, `reviews.jsonl`, `source-contexts.jsonl`, `validation.json`. The manifest, validator, Chat notes and task instructions are unchanged.
+
+<details>
+<summary>Historical narratives through the 38-candidate checkpoint</summary>
+
 # Canonical identity audit — 38-candidate checkpoint
 
 Base `cd1c774b4a44f25416890513dcfe98030c948091`; post-FIP repair and adopted unitality adjudication respected. The active graph matches both preparing hashes; no drift.
@@ -300,6 +333,4 @@ The strengthened `validate.py` passed after validating all new per-occurrence fl
 
 All **2,281** independent-workspace files matched before/after SHA-256 values at checkpoints and at completion. No production or frozen Wave 1 mathematical records were read. Compared candidates outside ranks 1–38 remain untouched for coverage even when their stored context was compared. Forty append-only events represent 38 current reviews, preserving the two original partial events and their supersessions. The manifest and Chat/task instruction files are unchanged. Only `SUMMARY.md`, `checkpoint.json`, `reviews.jsonl`, `source-contexts.jsonl`, `validate.py` and the new `validation.json` changed in this continuation.
 
-## Tranche 3 current coverage
-
-**Current: 88 COMPLETE / 0 PARTIAL / 333 untouched. 50 new complete this pass.** 315 distinct source formulations; 439 candidate/parent visits; 468 occurrences. Earlier narrative is historical; see TRANCHE_3.md and checkpoint.json for current progress. Next `missing.6bb87052ec8a81464ddd`.
+</details>
