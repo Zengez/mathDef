@@ -1,0 +1,104 @@
+{
+  "amendments": [
+    {
+      "amendment_id": "amend.amend-mprimary-selfreference-20261025.0001",
+      "complete": true,
+      "expected_node_sha256": "f541fc1a1fd7897bacf093ac6acea115c5605da135f08cc786879eb2816b0cc9",
+      "formulation_id": "form.22c049b8eee93897.system-of-parameters",
+      "reason": "The complete source's m-primary condition for the generated ideal in a Noetherian local ring refers to the reviewed canonical m-primary ideal predicate. Preserve the original source phrase, context, provenance and separate ideal-of-definition edge while explicitly re-anchoring the active missing candidate from the earlier observed alias to the canonical ID. This does not equate the entire system-of-parameters construction with an ideal of definition.",
+      "references": [
+        {
+          "matching_note": "The ring is local.",
+          "phrase": "Noetherian local ring",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "matching_note": "The ambient ring is Noetherian.",
+          "phrase": "Noetherian",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "matching_note": "d is the Krull dimension of the local ring.",
+          "phrase": "dimension d",
+          "state": "existing",
+          "target_meaning_id": "meaning.22c049b8eee93897.krull-dimension-ring"
+        },
+        {
+          "matching_note": "The formulation supplies this contextual equivalent description.",
+          "phrase": "ideal of definition",
+          "state": "existing",
+          "target_meaning_id": "meaning.b9defeff446a0526.ideal-of-definition-local-ring"
+        },
+        {
+          "candidate_identity_review_rationale": "The observed m-primary ideal in a Noetherian local ring is already the complete canonical m-primary candidate, with identical radical and primaryness conditions; preserve its provenance and full source-specific parameter context.",
+          "context": "Commutative algebra: m-primary ideal I of a Noetherian local ring (R,m), with radical sqrt(I)=m and the primary-ideal condition; under Noetherian-local hypotheses these two tests are equivalent.",
+          "matching_note": "Compare missing.b963edbe734f35266d3a. Flag preexisting 'generated ideal of d elements' link to finite-generated module as potentially mismatched.",
+          "phrase": "m-primary",
+          "reason": "The m-primary condition is reusable independently of a system of parameters; do not conflate primary, prime and maximal ideals.",
+          "reviewed_existing_candidate_id": "missing.b963edbe734f35266d3a",
+          "state": "missing"
+        },
+        {
+          "matching_note": "An ideal of a commutative unital ring is an R-submodule of its regular module R. Finite ideal generation by listed elements is precisely finite generation of that R-module, without asserting finite presentation, principality or a noncommutative two-sided ideal condition.",
+          "phrase": "generated ideal of d elements",
+          "state": "existing",
+          "target_meaning_id": "meaning.91ebb3796458d5bb.finite-generated-module"
+        }
+      ],
+      "review_rationale": "Entire locally Noetherian definition and current effective reference list reviewed. The source itself defines ideal of definition by radical(I)=m and states an equivalent m-primary characterization; that equivalent restatement must not be a dependency of the definition on itself. The independent system-of-parameters usage retains the real missing prerequisite and direct ideal-of-definition reference. All source formulations and unrelated links unchanged. Reviewed entire source formulation 'system of parameters of a Noetherian local ring' and the complete effective predecessor reference list; 1 references changed.",
+      "reviewed_by": "assistant-contextual-mathematical-review",
+      "version_sha256": "a34467a372c4876bca9bb1148afe207b348dce3d952f1288eb9dd5472b06ead1"
+    },
+    {
+      "amendment_id": "amend.amend-mprimary-selfreference-20261025.0002",
+      "complete": true,
+      "expected_node_sha256": "da684fcc2a24f8c8ce41274f04317b7f8ffb50a44e99c2c4c9c0db47b89a22a7",
+      "formulation_id": "form.b9defeff446a0526.ideal-of-definition-local-ring",
+      "reason": "Within a commutative unital local ring (R,m), an ideal with radical m is m-primary: if ab is in I and a is not in I, b outside m would be a unit and force a in I; hence b is in radical I. Therefore the target's own phrase 'equivalently I is m-primary' is an equivalent characterization already supplied in the parent source, not a separate missing prerequisite. Retire only the self-defining missing edge while preserving its historical phrase and the external equivalence justification.",
+      "references": [
+        {
+          "phrase": "Noetherian local ring R",
+          "state": "existing",
+          "target_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+        },
+        {
+          "phrase": "local ring with maximal ideal m",
+          "state": "existing",
+          "target_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+        },
+        {
+          "phrase": "ideal I of R",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.foundation.two-sided-ideal"
+        },
+        {
+          "context": "Commutative algebra: radical sqrt(I)={r∈R:r^n∈I for some positive integer n} of an ideal I in a commutative ring R.",
+          "matching_note": "Provisional source-free contextual prerequisite, pending deduplication and source verification.",
+          "missing_candidate_id": "missing.393011a6247b68c99dfd",
+          "phrase": "radical of an ideal I",
+          "reason": "The radical is a reusable ideal operation, distinct from the specific local-ring condition sqrt(I)=m.",
+          "state": "missing"
+        },
+        {
+          "disposition": "This phrase is the source definition's equivalent m-primary characterization of radical(I)=m in a commutative unital Noetherian local ring. Retain as explicit provenance/explanatory equivalence, not a self-referential missing prerequisite. The separate system-of-parameters source still uses the candidate.",
+          "phrase": "m-primary ideal",
+          "state": "external"
+        },
+        {
+          "disposition": "The two criteria refer to the same ideal I, without claiming every proper ideal has radical m.",
+          "phrase": "equivalently",
+          "state": "external"
+        }
+      ],
+      "review_rationale": "Entire locally Noetherian definition and current effective reference list reviewed. The source itself defines ideal of definition by radical(I)=m and states an equivalent m-primary characterization; that equivalent restatement must not be a dependency of the definition on itself. The independent system-of-parameters usage retains the real missing prerequisite and direct ideal-of-definition reference. All source formulations and unrelated links unchanged. Reviewed entire source formulation 'ideal of definition of a local ring' and the complete effective predecessor reference list; 1 references changed.",
+      "reviewed_by": "assistant-contextual-mathematical-review",
+      "version_sha256": "3fb9913ad250771266c5b4cc520056fed2ce4032b1659f4afab34ee40a408a50"
+    }
+  ],
+  "id": "amend-mprimary-selfreference-20261025-001",
+  "mode": "amend",
+  "research_scope": "Explicitly reviewed, source-free contextual audit. No meanings added; not automatically certified.",
+  "schema_version": 1
+}
