@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE4.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**80 additional COMPLETE; cumulative 268 COMPLETE, 0 PARTIAL, 153 untouched.**
+**100 additional COMPLETE; cumulative 288 COMPLETE, 0 PARTIAL, 133 untouched.**
 
 ## 189. maximal finite chain connecting primes — `missing.33bd557af9c1505ff986`
 
@@ -484,4 +484,124 @@ Remaining: No external citation or whole-parent theorem certification; source/gr
 
 Remaining: No presentation split, new candidate or self-resolution applied; any future segmentation must preserve the exact chosen maps and finite lists.
 
-Next: `missing.7913d8a82788b1402bf9`, first parent `form.wave2.prereq122.real-series-convergent`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 269. limit of partial sums as N to infinity — `missing.7913d8a82788b1402bf9`
+
+**retain_distinct_missing**, 1/1 parents. Sequence convergence means ∀ε>0∃N∀n≥N |s_n−s|<ε, with finite real s. It is not an accumulation point (which only requires infinitely many visits), the real-variable punctured limit, or series convergence before forming partial sums. The alternating sequence 0,1,0,1 has cluster points but no limit. In the source s_N is the partial-sum sequence, so its convergence defines the sum of the original series; termwise convergence a_n→0 is only necessary and not sufficient (harmonic terms).
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 270. positive-definite form — `missing.799b17605ab4e630d099`
+
+**retain_distinct_missing**, 1/1 parents. Positive definiteness is a property of a given symmetric REAL bilinear form: B(v,v)>0 for every nonzero v. It is stronger than semidefiniteness and different from mere nondegeneracy. On R², v_1w_1 is semidefinite with a nonzero null vector, while v_1w_1−v_2w_2 is nondegenerate but indefinite. The zero-dimensional space satisfies positivity vacuously. The form and its positivity predicate are not the full vector-space-plus-inner-product structure or a complex Hermitian convention.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 271. I-indexed family (X_i) of E-valued mappings — `missing.7a22de41c9ed49aaebd0`
+
+**retain_distinct_missing**, 1/1 parents. The family is a function i↦X_i with values in appropriately measurable Ω→E maps; an arbitrary set I need not be ordered or countable. It is not a family of events, since events are subsets and variables are maps (indicators supply a related construction, not equality). Measurability is part of each member’s admissibility. No independence, adaptedness, joint measurability in (i,ω), or sample-path regularity follows from separate measurability of all X_i. These are additional process conditions, not implicit indexed-family data.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 272. well-defined coset product — `missing.7ba2e387d06fd2055387`
+
+**retain_distinct_missing**, 1/1 parents. Well-definedness asks that changing representatives not change the output coset. If a′=an_1,b′=bn_2 with n_i∈N, then a′b′=ab(b^−1n_1b)n_2, whose extra factor lies in N by normality, proving equality of cosets. This is a property/proof obligation of the induced operation, not the quotient set or a preexisting quotient group. Without normality representatives can change the product. The underlying generic notion of representative independence is broader than groups; none of these facts make arbitrary equivalence-class sets inherit multiplication.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 273. pentagon — `missing.7e6b376ff494cabd784c`
+
+**retain_distinct_missing**, 1/1 parents. The pentagon equates the two paths from (((W⊗X)⊗Y)⊗Z) to W⊗(X⊗(Y⊗Z)): two associators versus three with the appropriate tensor identities. Naturality of an associator alone does not imply this: over Q, multiply the usual vector-space associator by 2; it stays natural and invertible, while the paths scale by 4 and 8. Thus pentagon is a real coherence condition, not associativity of a binary set operation or the unit triangle. The full monoidal structure imposes it in addition to its component isomorphisms.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 274. compatible pairs of arrows — `missing.7ee2ac6c4f2250fdff67`
+
+**retain_distinct_missing**, 1/1 parents. For triples (a,b,α) and (a′,b′,α′), the pair (u,v) must satisfy G(v)α=α′F(u), a typed commuting square. It is not an arbitrary pair or a demand that u,v be invertible; only α,α′ are isomorphisms in the iso-comma object data. Identities and composition preserve the equation by functoriality and pasting. The pair is a morphism IN the constructed category, not a functor between ambient categories or the category itself.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 275. isomorphism of sheaves of rings — `missing.7f0861ac620a2bb61635`
+
+**retain_distinct_missing**, 1/1 parents. A ring-sheaf isomorphism is an ACTUAL morphism with inverse compatible with restrictions. A sheaf morphism is an isomorphism iff its induced stalk maps are isomorphisms: local injectivity identifies sections, local lifts glue uniquely. Merely knowing source/target stalk rings are abstractly isomorphic, with no compatible morphism, is insufficient. Both sheaves here live on X after inverse image, so this differs from an isomorphism of locally ringed spaces with a varying underlying homeomorphism. Keep the source ring-unit convention question separate.
+
+Remaining: Unital ring-sheaf scope remains under the exact source deferral; no source convention certified by the stalk criterion alone.
+
+## 276. power series sum a_n*z^n — `missing.7fc844540e743bba1069`
+
+**retain_distinct_missing**, 1/1 parents. At a specified real z, Σa_nz^n is a numerical series; a finite sum exists only on the convergence domain. The formal centered expression is defined without assuming convergence, and the ordinary generating FUNCTION also includes its domain and assignment for every allowed z. These are different levels of data. For a_n=1, z=0 gives 1 while z=1 diverges, so the same formal expression does not define an all-real function. Exponential rescaling a_n/n! changes the evaluated series rather than merely its name.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 277. support X of N+1 distinct real points — `missing.80331c9862c1a0dec146`
+
+**retain_distinct_missing**, 1/1 parents. X has exactly N+1 distinct real points, with N≥0, not an arbitrary sequence with repetitions or countably infinite support. The vector space of real FUNCTIONS on X has dimension N+1. Positive weights make its weighted form positive definite; polynomials of degree≤N inject into these functions since a nonzero such polynomial cannot vanish at all N+1 points. Higher-degree polynomials can vanish on X and have zero weighted norm, so do not infer an infinite nonzero-norm orthogonal system from this finite support. N=0 permits one point.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 278. associated graded module ⊕J^nM/J^{n+1}M — `missing.80c845b8cb05d7f4b6ae`
+
+**retain_distinct_missing**, 1/1 parents. gr_J(M) is the direct SUM of all ideal-power quotients, not one graded piece, a product of compatible tuples, or the completion. The multiplication (J^a/J^(a+1))·(J^bM/J^(b+1)M) lands well-definedly in J^(a+b)M/J^(a+b+1)M, giving its gr_J(R) action. Each element has finite degree support. The quasi-regularity comparison map is a separate arrow required to be an isomorphism, not automatic from forming gr. The n=0 convention uses the intended unital module filtration.
+
+Remaining: Carry forward ring/module convention deferrals; no equivalence of whole associated graded module with a single quotient or completion.
+
+## 279. triple-overlap cocycle constraint — `missing.8105d2b908512d66af80`
+
+**retain_distinct_missing**, 1/1 parents. With convention φ_ij:M_j|_(ij)→M_i|_(ij), the cocycle says φ_ij φ_jk=φ_ik after restriction to triple overlaps; identity conditions supply the corresponding diagonal data. Pairwise isomorphisms alone are insufficient: on a one-point triple cover of Q-modules take φ_12=φ_23=id,φ_13=2id. This violates the triple condition despite invertibility. The condition is not a new module object, arbitrary isomorphism family or monoidal pentagon; it synchronizes these specified restrictions. Direction and repeated-index conventions must be explicit when expanding shorthand.
+
+Remaining: Later source population should give transition orientation and all cocycle equations, including how identity/inverse constraints follow; no new gluing packet submitted.
+
+## 280. associated ordered value group of a valuation ring — `missing.826a6ac763625e129cf7`
+
+**retain_distinct_missing**, 1/1 parents. The group Γ=K×/V× forgets multiplication by valuation units, with valuation order such that v(a)≥v(b) iff a/b∈V. This is well-defined on cosets, and the valuation-ring ratio test makes the order total. It is not V’s additive group, a chosen valuation map or an unnormalized abstract group with order forgotten. If V=K, Γ is trivial, so the source Z-valued criterion excludes fields from this DVR convention. Order-isomorphism to Z is additional, not automatic for a valuation ring.
+
+Remaining: Later source-supported formulation must fix order orientation and universe conventions; no Noetherian/uniformizer theorem inferred from the label alone.
+
+## 281. local subring inclusion A⊆B — `missing.8270eec9d7801be60879`
+
+**source_convention_deferral**, 1/1 parents. An inclusion of conventional nonzero UNITAL subrings of a field shares its identity: their identities are nonzero idempotents of the field and hence 1. It does not imply domination. For A=Z_(p)⊂B=Q, B is a local field with maximal ideal 0, whose contraction is not pA. The canonical inclusion requires those unital local-ring conventions, while the stored source only says local subrings and the existing local-ring source issue remains. Do not broaden the common-identity candidate to arbitrary nonunital rng subrings silently.
+
+Remaining: Resolve the already-known local-ring unital convention for this exact source before unconditional identity acceptance; no new convention imposed.
+
+## 282. multiplication map from their tensor product over k to their compositum KL — `missing.844dd763468a61243ea1`
+
+**retain_distinct_missing**, 1/1 parents. Bilinearity of multiplication inside the common overfield gives μ(Σx_i⊗y_i)=Σx_iy_i, a k-algebra map. Injectivity is an additional condition, and surjectivity onto KL is not automatic either. For independent s,t, K=k(s),L=k(t), its image has denominators p(s)q(t); 1/(s+t) is not in it, since (s+t)A=p(s)q(t) would give 0=p(s)q(−s) after t=−s, impossible. KL is the FIELD generated by that image, while the image is only a subring in general.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 283. locally closed subset X_i — `missing.84636cb6f3dd33fc5b6e`
+
+**retain_distinct_missing**, 1/1 parents. A=O∩F with O open,F closed implies cl(A)⊆F and A=O∩cl(A), so A is open in its closure. Conversely that expression proves local closedness. It is not merely closed: (0,1)⊂R is open and locally closed but not closed. Nor is every subset locally closed: Q is dense in R and not open in its closure. Empty set is allowed. Local closedness of each partition piece adds topology to the set partition and must not be confused with the sheaf-level locally closed immersion.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 284. affine-closed subset C — `missing.85dcc7f7445e61c66023`
+
+**retain_distinct_missing**, 1/1 parents. Affine closure means stability under all finite REAL affine combinations with coefficients summing to one, allowing negative coefficients. It is stronger than convexity: a bounded interval is convex but not closed under extrapolation. A nonempty such set is an affine translate of a vector subspace; the empty set is additionally allowed by the source convention. The word closed is algebraic closure under combinations, not a topological closure operation. The affine hull is the intersection of all such supersets, rather than any one affine-closed set or one affine combination.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 285. matrix representing φ — `missing.85e8278fdfb9ce8351da`
+
+**retain_distinct_missing**, 1/1 parents. A represents φ only after ordered bases: column j is the coordinate vector of φ(e_j). It is generally n×m, not necessarily square or field-valued. Base changes multiply the matrix by invertible coordinate-change matrices, changing individual entries/minors while leaving the underlying homomorphism. It is not φ itself as an unbased abstract arrow, nor its rank or ideal of minors. Zero ranks and empty bases need their stated conventions; no source-implied positive dimensions or noncommutative matrix extension is invented.
+
+Remaining: Preserve the rank175 coefficient/rank-zero source questions; no basis-invariance theorem is substituted for a definition.
+
+## 286. triples (a,b,α:F(a)≅G(b)) — `missing.86b08c15e2860f8e83bc`
+
+**potential_candidate_alias**, 1/1 parents. The canonical context explicitly isolates the isomorphism α:F(a)→G(b) with a two-sided inverse, so its underlying prerequisite matches missing.15bb96cb26d587868bbe by instantiating source/target objects. This supports a POTENTIAL alias for that component only. The original phrase names the entire triple (a,b,α), which contains the selected a,b and their functors; that whole triple is not one categorical isomorphism. Preserve this occurrence-specific caveat and all source data. No Set-bijection, natural transformation or ordinary-comma arrow without invertibility is substituted.
+
+Remaining: Requires Chat adjudication of the explicit component-only scope before any ledger action; original triple phrase and parameters must remain anchored.
+
+## 287. natural in both X and Y — `missing.86de1f4ff698bbdaae0e`
+
+**retain_distinct_missing**, 1/1 parents. For η_XY:Hom_D(LX,Y)→Hom_C(X,RY), naturality means η_(X′,Y′)(v h L(u))=R(v)η_(X,Y)(h)u for u:X′→X,v:Y→Y′. Thus X is contravariant and Y covariant in BOTH Hom bifunctors. This condition is stronger than unrelated pointwise bijections, but does not say LX and RY are isomorphic objects. A natural isomorphism on C^op×D packages the compatible family; its naturality PROPERTY is not the entire family or the adjoint pair with its existence assertion. Neither L nor R itself is contravariant.
+
+Remaining: Hom-set universe/local-smallness conditions remain exact source obligations, not a reason to impose a small object set.
+
+## 288. additive constant C∈R — `missing.875f8fb9b54b2a4a79de`
+
+**retain_distinct_missing**, 1/1 parents. A real scalar C gives a constant function on I, and F+C adds it pointwise. The derivative of the constant function is zero by the difference quotient, so every such translate has the same derivative. On a connected interval the converse follows with the usual differentiability hypotheses; on disconnected domains constants can vary by component. For nonempty I distinct constants give distinct constant functions; for I=∅ they all give the empty map. The scalar parameter, constant function and selected antiderivative are different types.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+Next: `missing.8ad6f2df92b13442d87d`, first parent `form.2ed79f667742de34.essentially-constant-ind-diagram`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
