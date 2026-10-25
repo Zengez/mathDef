@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE3.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**20 additional COMPLETE; cumulative 108 COMPLETE, 0 PARTIAL, 313 untouched.**
+**30 additional COMPLETE; cumulative 118 COMPLETE, 0 PARTIAL, 303 untouched.**
 
 ## 89. isomorphism class — `missing.6bb87052ec8a81464ddd`
 
@@ -124,4 +124,64 @@ Remaining: The statement uses quasi-isomorphic as a comparison relation rather t
 
 Remaining: Size/universe for Cat and Groupoids stays explicit source scope; no pseudofunctor strictification theorem certified.
 
-Next: `missing.aba129fc5f7d346b2d0f`, first parent `form.de2c8164874ee4a9.cofinal-category-functor`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 109. comma category (j↓H) — `missing.aba129fc5f7d346b2d0f`
+
+**retain_distinct_missing**, 2/2 parents. For F:A→C,G:B→C the comma objects include an arbitrary arrow u:F(a)→G(b), with morphisms (r:a→a′,s:b→b′) satisfying G(s)u=u′F(r). Iso-comma additionally requires u invertible, excluding e.g. the sole nonidentity arrow 0→1 in the ordered category {0<1}. Fixing an object on the left gives j↓H; fixing it on the right gives H↓j. These need not agree: take H selecting 1 in {0<1} and j=0; j↓H is nonempty, H↓j empty. Shared construction does not identify initiality and cofinality. Nonempty finite-zigzag connectedness is an additional test, not part of the comma definition.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 110. finite absolute moments ∫|x|^k dμ — `missing.ad3eb2f701d26ae8c206`
+
+**retain_distinct_missing**, 2/2 parents. With dμ=w(x)1_(a,b)(x)dx, weighted absolute moments become precisely ∫|x|^k dμ. The interval parent separately assumes finite zeroth mass and all positive moments, hence all nonnegative moments as in the measure parent. These are integrability predicates, not the scalar raw moment ∫x^k dμ; for odd k a principal-value cancellation is not Lebesgue absolute integrability. A finite measure can lack a first absolute moment: density x^−2 on [1,∞) has mass 1 and ∫x·x^−2 dx=∞. Each finite polynomial product is bounded by a finite combination of |x|^k, so all absolute moments justify the orthogonality integrals. No density representation is asserted for every Lebesgue–Stieltjes measure.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 111. slice category C/U — `missing.ad87c8a94e71b0501e7a`
+
+**retain_distinct_missing**, 2/2 parents. C/U has objects a:V→U and arrows h:V→W with b h=a. It is id_C↓U, a particular oriented comma category, with projection to V. The identity U→U is terminal in this slice. It is not the coslice: in {0<1}, C/0 has one object whereas 0/C has two, and not iso-comma, which would exclude noninvertible arrows into U. Over the base C, the fibre of C/U at V is the discrete set Hom_C(V,U); this underlies representable fibred groupoids without identifying C/U with a scheme or a single Hom set.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 112. finite set of k color labels — `missing.afee26ad5b8d0d34952a`
+
+**retain_distinct_missing**, 2/2 parents. The palette is the finite initial segment {1,…,k}, not the coloring function, adjacency relation or chromatic minimum. For k≥1 it has k distinct elements, but no surjectivity is required: an edgeless graph may be colored constantly even with k=5. Renaming labels by a bijection preserves properness without making label set, map and graph identical. The provisional parent explicitly requires k≥1; the older parent does not state it literally, so positive-palette scope needs that source annotation rather than a silent theorem about k=0. The empty palette is a distinct boundary: a map V→∅ exists iff V=∅.
+
+Remaining: Later verify whether the older source permits k=0 for the empty graph; current positive-palette identity does not settle that convention.
+
+## 113. (Sigma,Tau)-measurable mapping — `missing.b458f6a3824dab19725b`
+
+**retain_distinct_missing**, 2/2 parents. A measurable map f:(X,Σ)→(Y,Τ) has f^−1(B)∈Σ for every B∈Τ. It needs neither measure nor probability nor real-valued target; those are additional random-variable/pushforward contexts. A set map may fail: the identity from {0,1} with trivial sigma-algebra to the full power-set sigma-algebra has nonmeasurable singleton preimages. It is not the preimage operation itself, which exists for every map. The measurable condition makes μ∘f^−1 well-defined on Τ, with disjoint countable preimages proving pushforward countable additivity. No inverse function or surjectivity is needed.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 114. weighted discrete orthogonality Σp_n(x)p_m(x)w_x=0 — `missing.b86dc7cff186ed11337b`
+
+**retain_distinct_missing**, 2/2 parents. Both parents impose the discrete weighted bilinear equation Σ_x p_n(x)p_m(x)w_x=0. Finite support is countable support and makes convergence automatic; for the infinite source all absolute moments bound every polynomial product and give absolute convergence, so ordering of summation does not matter. Positivity gives a norm on polynomial restrictions, but on N+1 points every polynomial divisible by ∏_(x∈X)(T−x) has zero seminorm; thus infinitely many independent orthogonal degrees cannot be inferred from a finite system. The continuous/measure integral candidate has wider support/integration data and is not literally this discrete-sum construction, though atomic integration represents it.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 115. m-primary ideal — `missing.b963edbe734f35266d3a`
+
+**potential_existing_meaning_resolution**, 2/2 parents. Within the exact stated Noetherian local scope, the existing ideal-of-definition meaning says sqrt(I)=m, equivalently I is m-primary, matching the candidate predicate on the same ideals. For proof, if ab∈I and a∉I, then b cannot lie outside m: b would be a unit in the local ring and force a∈I. Hence b∈m=sqrt(I), so b^n∈I for some n≥1; I is proper since its radical is the proper maximal ideal. Conversely m-primary includes radical m. A system of parameters additionally selects d generators from m and is not identical to the ideal predicate. This supports a potential existing-meaning resolution to meaning.b9defeff446a0526.ideal-of-definition-local-ring, NOT APPLIED. The target currently has the same missing prerequisite edge; its independent radical formulation grounds the comparison, but any later resolution must handle the resulting self-reference deliberately, not suppress a legitimate dependency automatically.
+
+Remaining: Proposal only: later version-bound resolution and target self-reference/formulation handling need explicit authorization; no gate decision follows.
+
+## 116. nilpotent element r — `missing.bb72b275ee79b161d9b8`
+
+**retain_distinct_missing**, 2/2 parents. The positive-power element predicate x^n=0 for some n≥1 works in every associative ring without an identity; it does not require an exponent-zero convention. In the commutative nil-ideal parent, n may depend on x; a uniform ideal power I^n=0 is stronger. In k[x_1,x_2,…]/(x_i²), each element of I=(x_i) involves finitely many generators and is nilpotent, but x_1…x_n≠0 for every n, so I is not nilpotent. The matrix E_12 in M_2(k) is nilpotent although the ring is noncommutative. Reducedness is the exclusion of nonzero instances, not identity with the element predicate or with being a domain.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 117. two-element subset {u,v} — `missing.bffc2ea0e8bb5da1d41b`
+
+**retain_distinct_missing**, 2/2 parents. A doubleton {u,v} has u≠v and forgets order, whereas Kuratowski (u,v) retains order and exists also when u=v. A general subset may have 0,1 or many elements. These two graph parents use identical possible edges; multiplicities distinguish their edge collections, not the individual doubleton. The singleton {u} cannot represent a loop under these conventions. If V has fewer than two elements there are no such edges, but both graph definitions still permit the vertex set; no finite-vertex or nonempty condition is inferred.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 118. associative ring with multiplicative identity 1_R — `missing.ca9ba1e0fc16e5162ef7`
+
+**retain_distinct_missing**, 2/2 parents. An associative unital ring is the ring object with a two-sided multiplicative identity, not a homomorphism preserving identities or a single invertible element. It need not be commutative: M_2(k) separates it from the commutative-unital candidate. The identity-optional ring meaning is broader: 2Z with inherited operations is a ring with no identity. Two-sided identity, if present, is unique, but being a unit of a ring applies to many elements, not just that identity. The Boolean parent adds all-element idempotence; the homomorphism parent needs two such ring objects and the further preservation equation. No rule 1≠0 is invented: the zero-ring convention must remain source-specific.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+Next: `missing.cf55f62008d08ce2df84`, first parent `form.6676171d9e5698af.affine-closed-subscheme`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
