@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE4.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**120 additional COMPLETE; cumulative 308 COMPLETE, 0 PARTIAL, 113 untouched.**
+**135 additional COMPLETE; cumulative 323 COMPLETE, 0 PARTIAL, 98 untouched.**
 
 ## 189. maximal finite chain connecting primes — `missing.33bd557af9c1505ff986`
 
@@ -724,4 +724,94 @@ Remaining: No external citation or whole-parent theorem certification; source/gr
 
 Remaining: Later source reconciliation should clarify zero/nilpotent denominator and grading conventions; do not silently require f nonzero beyond the original text.
 
-Next: `missing.960bd927c204df58bb49`, first parent `form.wave2.alternative39.adjacency-matrix-simple-undirected`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 309. n-by-n matrix over entries 0,1 — `missing.960bd927c204df58bb49`
+
+**retain_distinct_missing**, 1/1 parents. This is a binary-valued ARRAY, not necessarily symmetric, zero-diagonal or supplied by a graph. A 1×1 array [1] is allowed by the candidate but cannot be the adjacency matrix of a loopless simple graph. The graph source adds symmetry and zero diagonal through its incidence rule and a chosen vertex enumeration. General field/ring matrices allow more coefficients, and a numeric 0/1 array need not specify matrix arithmetic over a chosen ring. Empty-vertex conventions require separate n=0 scope, not an automatic positive-size assumption.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 310. coimage Coim(f) of categorical morphism — `missing.96a469cb715e650e82f0`
+
+**retain_distinct_missing**, 1/1 parents. Coim(f) is the cokernel of the kernel ARROW into X, with its quotient map from X; it is not ker(f), Im(f) or f itself. For Z --2→ Z the coimage is Z/0, while a concrete image is 2Z. They are canonically isomorphic through the comparison, not literally the same underlying subgroup presentation. Mere additivity/kernel-cokernel availability does not force that comparison to be an isomorphism; the parent imposes the abelian condition.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 311. symmetry x~y implies y~x — `missing.972ae1e91200fae874aa`
+
+**retain_distinct_missing**, 1/1 parents. Symmetry means R=R^op, a property of the binary relation independent of reflexivity and transitivity. On a nonempty set the empty relation is symmetric but not reflexive. On {a,b,c}, the relation with only aRb,bRa,bRc,cRb is symmetric but not transitive, since aRc fails. Antisymmetry instead forbids distinct mutual pairs and need not supply the reverse arrow. The parent equivalence relation requires all three properties; no source theorem equates symmetry alone with an equivalence relation.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 312. rational embedding q maps to {r:r<q} — `missing.973624633db2f6611c19`
+
+**retain_distinct_missing**, 1/1 parents. q↦A_q={r∈Q:r<q} maps into the strict lower-cut carrier: nonempty/properness and absence of a greatest element follow from rational order/density. If q<q′, q belongs to A_(q′) but not A_q, while A_q⊂A_(q′), proving strict order preservation and injectivity. It is not an identity of rational numbers with subsets, an arbitrary field embedding or the constant-Cauchy-class embedding. Preserving field operations requires the separately defined cut arithmetic; no complete ordered-field proof follows from this map alone.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 313. finite partition a=x_0<...<x_n=b — `missing.97b60028264b0b85a6af`
+
+**retain_distinct_missing**, 1/1 parents. A finite ordered endpoint list includes a,b and strict intermediate inequalities, so a<b implies at least one positive-width interval. The partition does not choose sample tags or a function f. Closed adjacent subintervals meet at their shared endpoint, so this is not literally the pairwise-disjoint subset partition of candidate228. Equal spacing is optional, not required. The mesh and Riemann sum are derived from the endpoint/tag data and carry additional scalar/function inputs. Infinite partitions and a=b are outside this parent’s stated scope.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 314. restriction from M_{f_i} to M_{f_i f_j} — `missing.98b86874c2c07243f63a`
+
+**retain_distinct_missing**, 1/1 parents. Since D(f_if_j)⊆D(f_i), the restriction goes M_(f_i)→M_(f_if_j), opposite to inclusion of open sets. Concretely m/f_i^n maps to mf_j^n/(f_if_j)^n; this uses commutative localization and is compatible with further restrictions. It need not be injective: for M=Z/2,f_i=1,f_j=2, the target is zero and the nonzero source is killed. Module localization OBJECT, induced restriction arrow and overlap compatibility of a tuple are different data. This is not ordinary domain restriction of a set function.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 315. determinant over K — `missing.997a7843836432a6ada2`
+
+**retain_distinct_missing**, 1/1 parents. The determinant is a scalar attached to a finite-dimensional K-linear ENDOMORPHISM. A basis matrix changes by similarity P^−1AP, and multiplicativity gives the same determinant. It is not a field norm without the chosen extension/multiplication map, nor trace, eigenvalue, or the matrix itself. For scalar multiplication on a degree-d extension, the operator matrix is αI when α∈K, giving norm α^d, not generally α. Infinite-dimensional operators have no such unrestricted determinant here. The polynomial-ring matrix determinant candidate has broader coefficient scope.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 316. difference A−λI_V — `missing.99d02928227cf7d5004d`
+
+**retain_distinct_missing**, 1/1 parents. Pointwise difference (A−λI)(v)=A(v)−λv is K-linear because both terms are endomorphisms of the SAME V. It is an operator, not an eigenvalue λ or nonzero vector witnessing a kernel. For A:V→W with unrelated W the subtraction has no such type without an identification. No basis or finite dimension is required; a determinant expression would narrow the source. On V=0 every shifted operator has zero kernel object and gives no eigenvalues, preserving the nonzero-kernel criterion.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 317. Iverson bracket indicator [P] — `missing.9a669bd30949842fab00`
+
+**retain_distinct_missing**, 1/1 parents. The Iverson bracket assigns numeric 1 or 0 to an arbitrary proposition P. Kronecker delta is the equality-predicate instance P=(a=b); it does not define brackets for all propositions. This is not a Dirac distribution or arithmetic difference of the inputs. Numeric outputs remain distinct even if a ring-valued delta would send them into a zero ring where 0_R=1_R. An empty Γ gives no equality-input pairs, but the generic logical notation itself is not an empty-domain function tied to Γ.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 318. antisymmetry of a binary relation — `missing.9a71afd4a344322c1d26`
+
+**retain_distinct_missing**, 1/1 parents. Antisymmetry says mutual relatedness forces equality; it does not say reverse pairs never occur (that is asymmetry), nor that every pair is comparable. The diagonal relation on a two-element set is both symmetric and antisymmetric but not total. The empty relation is antisymmetric without being reflexive on a nonempty set. A partial order combines antisymmetry with the preordered reflexive/transitive structure; the isolated property is not the entire order or well-ordering. Empty-domain cases hold vacuously.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 319. inverse diagram M_i — `missing.9bac816086ae0ec5b075`
+
+**retain_distinct_missing**, 1/1 parents. The canonical record includes a cofiltered diagram WITH compatible arrows X→M_i; it is a cone, not necessarily a limit or a formal pro-object’s entire morphism structure. A one-object diagram at singleton in Sets has a cone from a two-element X, but X is not its limit. Existing inverse systems over a preorder are a restricted indexing presentation; a general cofiltered category need not be supplied as that preorder. The pro essential-constancy parent further adds splitting and eventual factorization, which cone data alone do not establish.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 320. embedding rational q as constant sequence — `missing.9d90e2f74ca22a19cb8a`
+
+**retain_distinct_missing**, 1/1 parents. The constant rational sequence q is Cauchy, so q↦[(q,q,…)] is defined. If q≠r, choosing ε=|q−r|/2 shows the constant sequences are not equivalent, proving injectivity. Termwise arithmetic identifies sums/products of constants with their rational counterparts once quotient operations are well-defined. This is not the cut embedding, an arbitrary map into a complete ordered field, or one selected representative sequence considered as the quotient CLASS itself. Completeness and inverse construction for all nonzero classes remain separate proof obligations.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 321. neighbor set of vertex v — `missing.9e1b000eff0431817f3a`
+
+**retain_distinct_missing**, 1/1 parents. N_G(v) is a set of neighboring VERTICES, not the collection of incident edges or their cardinality. In a loopless simple graph, u↦{u,v} is a bijection onto incident edges, which justifies equality of counts only in that scope. Parallel edges break the bijection (two copies, one neighbor), and loops need a separate convention. Infinite graphs can have infinite-cardinality neighbor sets, and isolated vertices have the empty set. No graph-theoretic neighborhood topology is supplied or needed.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 322. infinite set of visiting indices — `missing.9f4c16f7de397aa27498`
+
+**retain_distinct_missing**, 1/1 parents. For a subset of natural indices, infinitude means unboundedly many indices: after every N there exists a later visiting n. It does not require every late index to visit or infinitely many DISTINCT spatial values. A constant sequence has infinitely many visits at its single value; an alternating two-value sequence can have two cluster points without converging. In a general topological space the neighborhood test does not automatically supply a convergent subsequence without additional countability conditions. The quantifier applies to every neighborhood of the proposed point.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 323. maximal ideal mR^h and residue field R/m — `missing.a115a0258bce647cea2b`
+
+**contextual_ambiguity_or_variant**, 1/1 parents. This compound datum includes a local R-map, equality of the target maximal ideal with mR^h, and the specified induced residue-field isomorphism. A local map with residue isomorphism alone does not imply that ideal equality: k→k[t]_(t) is local with residue k, yet m_k·k[t]_(t)=0 differs from (t). These components are not the residue FIELD alone, a generic local homomorphism, or the entire henselization universal object. The source’s initial/colimit clauses impose further compatible-map conditions.
+
+Remaining: Later source-aware segmentation must retain all three component conditions and the known local-ring convention deferral; no automatic residue-field/local-map alias or self-resolution.
+
+Next: `missing.a128ec6b5c7fae2074c2`, first parent `form.wave2.group116.set-partition.2`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
