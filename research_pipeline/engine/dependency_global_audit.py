@@ -542,12 +542,33 @@ def build_review_packages(snapshot: dict, manifest: dict,
         modified = set()
         reasons = []
         for edit in by_form[fid]:
-            index = edit.get("reference_index")
-            if not isinstance(index, int) or isinstance(index, bool) or not 0 <= index < len(refs):
-                raise PipelineError("Invalid reference_index for " + fid)
+            # Prefer the stable, live-node occurrence identity over an index
+            # derived from a mixed scan/seed audit view. Legacy manifests that
+            # include a numeric index stay valid but MUST agree with this ID.
+            occurrence_id = edit.get("expected_occurrence_id")
+            if not isinstance(occurrence_id, str) or not occurrence_id:
+                raise PipelineError("Missing expected_occurrence_id for " + fid)
+            matching = [
+                i for i, ref in enumerate(prior["references"])
+                if ref.get("occurrence_id") == occurrence_id
+            ]
+            if len(matching) != 1:
+                raise PipelineError(
+                    "Missing or nonunique live occurrence identity for " + fid
+                    + ": " + occurrence_id
+                )
+            index = matching[0]
+            supplied_index = edit.get("reference_index")
+            if supplied_index is not None and (
+                    not isinstance(supplied_index, int)
+                    or isinstance(supplied_index, bool)
+                    or supplied_index != index):
+                raise PipelineError(
+                    "reference_index conflicts with live occurrence identity for "
+                    + fid + ": " + occurrence_id
+                )
             original = prior["references"][index]
-            if (index in modified or edit.get("expected_node_sha256") != old_hash
-                    or edit.get("expected_occurrence_id") != original.get("occurrence_id")):
+            if (index in modified or edit.get("expected_node_sha256") != old_hash):
                 raise PipelineError("Duplicate edit or stale effective occurrence: " + fid)
             # Prefer an explicitly reviewed *delta*: leave untouched metadata
             # and unrelated context identical, instead of manually retyping
