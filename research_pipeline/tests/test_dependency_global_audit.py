@@ -386,6 +386,44 @@ class GlobalAuditTests(unittest.TestCase):
         self.assertNotIn("matching_source_references",
                          snapshot["nodes"]["form.alpha"]["references"][0])
 
+
+    def test_focus_reference_views_keep_seed_outside_live_index(self):
+        """No historic seed may shift the actual editable reference index."""
+        snapshot = self.snapshot()
+        snapshot["inventory"]["seed_relations"] = [{
+            "relation_id": "rel.fixture.legacy",
+            "from_formulation": "form.alpha",
+            "phrase": "preexisting concept",
+            "target_meaning_id": "meaning.beta",
+            "relation_state": "candidate",
+        }]
+        snapshot["candidates"] = [{
+            "id": "missing.fixture", "status": "unresearched",
+            "query": "separate construction", "context": "Fixture",
+            "incoming_formulation_ids": ["form.alpha"],
+            "occurrence_count": 1,
+        }]
+        before = snapshot["nodes"]["form.alpha"]["references"]
+        report = candidate_review_bundle(
+            snapshot, candidate_ids=("missing.fixture",))
+        source = report["candidates"][0]["source_formulations"][0]
+        live = source["effective_live_reference_rows"]
+        seed = source["historical_seed_references"]
+        self.assertEqual(len(live), 2)
+        self.assertEqual([r["live_reference_index"] for r in live], [0, 1])
+        self.assertEqual([r["expected_occurrence_id"] for r in live],
+                         [r["occurrence_id"] for r in before])
+        self.assertEqual([r["reference"] for r in live], before)
+        self.assertEqual(len(seed), 1)
+        self.assertEqual(seed[0]["relation_id"], "rel.fixture.legacy")
+        self.assertEqual(seed[0]["origin"], "historical_seed_relation")
+        self.assertFalse(seed[0]["editable_in_live_node"])
+        self.assertNotIn("live_reference_index", seed[0])
+        self.assertIn("expected_occurrence_id",
+                      report["reference_view_warning"])
+        self.assertEqual(source["all_effective_references"], before)
+        self.assertNotIn("historical_seed_references", before[0])
+
     def test_focus_queue_term_filter_and_fingerprint(self):
         snapshot = self.snapshot()
         snapshot["candidates"] = [
@@ -436,6 +474,37 @@ class GlobalAuditTests(unittest.TestCase):
         })
         with self.assertRaisesRegex(PipelineError, "invent missing"):
             build_review_packages(self.snapshot(), self.manifest([new_missing]))
+
+    def test_review_manifest_finds_exact_live_occurrence_without_index(self):
+        # An audit view may inject separate historical seed references, so its
+        # list position must never be used as the effective scan-node index.
+        edit = self.change(1)
+        edit.pop("reference_index")
+        packages = build_review_packages(self.snapshot(), self.manifest([edit]))
+        refs = packages[0]["amendments"][0]["references"]
+        self.assertEqual(refs[0]["target_meaning_id"], "meaning.beta")
+        self.assertEqual(refs[1]["target_meaning_id"], "meaning.alpha")
+
+    def test_occurrence_lookup_rejects_wrong_index_or_stale_id(self):
+        edit = self.change(1)
+        edit["reference_index"] = 0  # audit order, not live-node order
+        with self.assertRaisesRegex(PipelineError, "conflicts with live"):
+            build_review_packages(self.snapshot(), self.manifest([edit]))
+        edit.pop("reference_index")
+        edit["expected_occurrence_id"] = "occ.not-current"
+        with self.assertRaisesRegex(PipelineError, "Missing or nonunique"):
+            build_review_packages(self.snapshot(), self.manifest([edit]))
+
+    def test_occurrence_lookup_requires_unique_live_match(self):
+        edit = self.change(1)
+        edit.pop("reference_index")
+        snapshot = self.snapshot()
+        # Deliberately malformed snapshot: duplicated occurrence identity.
+        snapshot["nodes"]["form.alpha"]["references"][0]["occurrence_id"] = (
+            edit["expected_occurrence_id"]
+        )
+        with self.assertRaisesRegex(PipelineError, "Missing or nonunique"):
+            build_review_packages(snapshot, self.manifest([edit]))
 
     def test_notation_conflicts_do_not_count_as_equivalence(self):
         from research_pipeline.engine.dependency_global_audit import candidate_leads

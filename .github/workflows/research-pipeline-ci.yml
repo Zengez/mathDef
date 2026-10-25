@@ -59,6 +59,29 @@ jobs:
           name: wave2-global-dependency-review
           path: /tmp/wave2-global-dependency-audit.json
           retention-days: 14
+      - name: Publish read-only, receipt-backed reconciliation status
+        run: |
+          python -m research_pipeline.engine.dependency_reconciliation_status \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --queue research_pipeline/reviews/canonical-identity-2026-10-24/LIVE_RECONCILIATION_QUEUE.json \
+            > /tmp/wave2-reconciliation-status.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path("/tmp/wave2-reconciliation-status.json").read_text())
+          assert report["read_only"] and not report["graph_changes_applied"]
+          assert not report["authorizes_gate_change"]
+          assert report["current_phase"] == "consolidate_occurrences"
+          assert report["current_consolidation_gate_valid"] is False
+          print("Receipt-backed reconciliation:", json.dumps({
+              c["id"]: c["status"] for c in report["cases"]
+          }, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wave2-reconciliation-status
+          path: /tmp/wave2-reconciliation-status.json
+          retention-days: 14
       - name: Validate live independent research checkpoint against protected lineage
         run: |
           python -m research_pipeline.engine.resume_checkpoint \
