@@ -9,7 +9,7 @@ import unittest
 from unittest.mock import patch
 
 from research_pipeline.engine.core import PipelineError, Workspace, digest
-from research_pipeline.engine.dependency_graph import graph_path, inventory_sync, read, store
+from research_pipeline.engine.dependency_graph import apply_inbox, graph_path, inventory_sync, read, store
 from research_pipeline.engine.dependency_global_audit import load_live_snapshot, write_offline_packets
 from research_pipeline.engine.dependency_review_export import export_review, workspace_files
 
@@ -194,6 +194,21 @@ class ReviewExportTests(unittest.TestCase):
         again = subprocess.run(command, capture_output=True, text=True)
         self.assertNotEqual(again.returncode, 0)
         self.assertIn("overwrite", again.stderr)
+
+    def test_applied_receipt_is_historical_evidence_not_a_new_proposal(self):
+        # Apply only inside the disposable fixture, then export an unchanged
+        # receipt-backed historical input. Production/live data is never used.
+        inbox = self.graph / "inbox" / self.alias_file.name
+        inbox.parent.mkdir(exist_ok=True)
+        inbox.write_bytes(self.alias_file.read_bytes())
+        apply_inbox(self.w)
+        before = workspace_files(self.w)
+        report = export_review(self.repo, "workspace", self.output,
+                               alias_packet=self.alias_file.relative_to(self.repo).as_posix())
+        self.assertEqual(report["status"], "already_applied_no_new_proposals")
+        self.assertEqual(report["already_applied_packet_ids"], ["fixture-alias"])
+        self.assertEqual(report["new_proposal_packet_ids"], [])
+        self.assertEqual(before, workspace_files(self.w))
 
     def test_requires_explicit_request_and_correct_checkout_anchor(self):
         with self.assertRaisesRegex(PipelineError, "at least one"):

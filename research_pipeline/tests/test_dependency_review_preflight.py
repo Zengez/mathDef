@@ -131,7 +131,7 @@ class DependencyReviewPreflightTests(unittest.TestCase):
         applied = self.graph / "applied"
         applied.mkdir(exist_ok=True)
         (applied / path.name).write_text(json.dumps({
-            "sha256": digest(data), "mode": "amend",
+            "id": "reviewed-amend", "sha256": digest(data), "mode": "amend",
             "status": "applied_in_independent_graph_only",
         }), encoding="utf-8")
         result = review_preflight(self.root, path)
@@ -142,6 +142,22 @@ class DependencyReviewPreflightTests(unittest.TestCase):
         with self.assertRaises(PipelineError):
             review_preflight(self.root, wrong_path)
 
+
+    def test_partial_wrong_identity_and_nonobject_receipts_fail_closed(self):
+        path = self.write_batch("receipt-fixture", "amend", [self.amendment()])
+        data = json.loads(path.read_text())
+        applied = self.graph / "applied"
+        applied.mkdir(exist_ok=True)
+        valid = {"id": "receipt-fixture", "mode": "amend", "sha256": digest(data),
+                 "status": "applied_in_independent_graph_only"}
+        invalid = [[], {k: v for k, v in valid.items() if k != "id"},
+                   {**valid, "id": "another-packet"}, {**valid, "status": "pending"}]
+        for receipt in invalid:
+            (applied / path.name).write_text(json.dumps(receipt))
+            with self.assertRaisesRegex(PipelineError, "immutable receipt"):
+                review_preflight(self.root, path)
+        (applied / path.name).write_text(json.dumps(valid))
+        self.assertEqual(review_preflight(self.root, path)["status"], "already_applied")
 
 if __name__ == "__main__":
     unittest.main()

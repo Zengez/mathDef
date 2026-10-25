@@ -113,7 +113,16 @@ def export_review(repo: Path, workspace: str, output_dir: Path, *,
             destination.parent.mkdir(parents=True, exist_ok=True)
             destination.write_bytes(raw)
         report["artifacts"] = workspace_files(output)
-        report["status"] = "mechanically_preflighted_not_applied"
+        checks = (report["amendment"] or {}).get("preflight", [])
+        checks = [*checks, *([report["alias"]] if report["alias"] else [])]
+        report["already_applied_packet_ids"] = [
+            check["batch_id"] for check in checks if check["status"] == "already_applied"]
+        report["new_proposal_packet_ids"] = [
+            check["batch_id"] for check in checks
+            if check["status"] == "mechanically_valid_not_applied"]
+        report["status"] = ("mechanically_preflighted_not_applied"
+                            if report["new_proposal_packet_ids"]
+                            else "already_applied_no_new_proposals")
     except Exception as exc:
         # Keep an unambiguously failed report, never reusable half-packets.
         for child in output.iterdir():
