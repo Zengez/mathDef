@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "reviewed-wave2-ext-hom-and-locally-connected-20261025",
+  "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "unresolved_fingerprint": "04110f247c45f7f97313b802303fa257aea5504fdc0b89203a91be21812185fa",
+  "reviewed_by": "assistant-contextual-mathematical-reconciliation",
+  "review_rationale": "Reviewed both complete independent source formulations, exact live effective occurrence identities, target formulations and all unrelated effective references. The Ext source permits associative unital R and requires an R-linear-map component without an unsupported commutative-R internal Hom module structure. The locally connected source uses pointwise potentially nonopen connected neighborhood systems, not the global open-family datum, whose valid equivalent characterization remains documented separately. Preserve source text, other references, correct missing candidates, full provenance and the unopened consolidation gate.",
+  "changes": [
+    {
+      "formulation_id": "form.788671763be693df.ext-group",
+      "expected_node_sha256": "8ffbb188345e54307d2810a0ae2c4c31cff89b47b5f3a068ebd221219e6d7813",
+      "expected_occurrence_id": "occ.321952d7b781466d1856",
+      "reason": "The current existing target defines Hom_R as an R-module via scalar action only when R is commutative, but the Ext source does not assume commutativity. For associative unital R, Hom_R(F_i,N) consists of R-linear maps and forms an abelian group under pointwise addition, without a canonical left R-module scalar action. The existing general module-linear meaning correctly supplies only the element-level prerequisite, not the entire Hom group. Retain the distinct missing cochain-complex candidate and all other dependencies.",
+      "updates": {
+        "phrase": "R-linear maps F_i→N (elements of Hom_R(F_i,N))",
+        "target_meaning_id": "meaning.wave2.cross110.module-linear",
+        "context": "Underlying component prerequisite only: R-linear homomorphisms of left modules over an associative unital ring R. The Hom_R(F_i,N) collection is an abelian group by pointwise addition; no commutative-R internal-Hom R-module structure is asserted."
+      }
+    },
+    {
+      "formulation_id": "form.ab260940ea9c523d.locally-connected-space",
+      "expected_node_sha256": "db80cd24148a8a93ca6c6857cdb2d9729760b3e65272baa95c2baedcde9958c6",
+      "expected_occurrence_id": "occ.cdc96f16a3e31332ec7d",
+      "reason": "The source's fundamental system at each point is a cofinal system of connected neighborhoods, whose members need not be open. The stored global topology-basis meaning instead requires a family of open subsets covering all points. A locally connected space does admit a derived connected-open global basis, by connected components of open sets being open, but the individual pointwise neighborhood-system occurrence is not that global datum. Preserve the exact independent missing local connected-neighborhood-system candidate and the separate source links.",
+      "updates": {
+        "state": "external",
+        "disposition": "The specific pointwise neighborhood system is already represented by the separate missing candidate missing.eb8e1a62d06acf7c487c. A system of connected neighborhoods may contain nonopen neighborhoods and is not literally a global topology basis. Local connectedness at all points yields a connected-open basis as a derived equivalent characterization (components of opens are open), but no direct global-basis prerequisite is asserted by this occurrence."
+      },
+      "remove_fields": [
+        "target_meaning_id"
+      ]
+    }
+  ]
+}
