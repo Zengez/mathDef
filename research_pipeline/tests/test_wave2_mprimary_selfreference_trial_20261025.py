@@ -109,8 +109,45 @@ class MPrimaryResolutionTrial(unittest.TestCase):
                 },
             }],
         }
+        # The historic system-of-parameters occurrence uses the observed
+        # pre-alias candidate ID. Re-anchor explicitly to its reviewed
+        # canonical candidate BEFORE retiring the canonical owning occurrence.
+        # Immutable history still retains the original observed occurrence.
+        old_system_ref = next(ref for ref in system["references"]
+                              if ref.get("missing_candidate_id") == "missing.2a4c23153be5ee32b75f")
+        old_system_index = system["references"].index(old_system_ref)
+        new_system_ref = {
+            k: v for k, v in old_system_ref.items()
+            if k not in ("occurrence_id", "missing_candidate_id")
+        }
+        new_system_ref.update({
+            "reviewed_existing_candidate_id": candidate,
+            "candidate_identity_review_rationale": (
+                "The observed m-primary ideal in a Noetherian local ring is "
+                "already the complete canonical m-primary candidate, with "
+                "identical radical and primaryness conditions; preserve its "
+                "provenance and full source-specific parameter context."
+            ),
+        })
+        manifest["changes"].append({
+            "formulation_id": other,
+            "reference_index": old_system_index,
+            "expected_node_sha256": digest(system),
+            "expected_occurrence_id": old_system_ref["occurrence_id"],
+            "reason": (
+                "The complete source's m-primary condition for the generated "
+                "ideal in a Noetherian local ring refers to the reviewed "
+                "canonical m-primary ideal predicate. Preserve the original "
+                "source phrase, context, provenance and separate ideal-of-"
+                "definition edge while explicitly re-anchoring the active "
+                "missing candidate from the earlier observed alias to the "
+                "canonical ID. This does not equate the entire system-of-"
+                "parameters construction with an ideal of definition."
+            ),
+            "replacement": new_system_ref,
+        })
         packet_list = build_review_packages(snapshot, manifest)
-        self.assertEqual(len(packet_list), 1)
+        self.assertEqual(len(packet_list), 1)\n        self.assertEqual(len(packet_list[0]["amendments"]), 2)
         amend = packet_list[0]
         self.assertEqual(amend["id"], "amend-mprimary-selfreference-20261025-001")
         self.assertEqual(len(amend["amendments"]), 1)
@@ -149,7 +186,7 @@ class MPrimaryResolutionTrial(unittest.TestCase):
             trial_amend.write_text(json.dumps(amend, indent=2, ensure_ascii=False)+"\n")
             pre = review_preflight(trial, trial_amend)
             self.assertEqual(pre["status"], "mechanically_valid_not_applied")
-            self.assertEqual(pre["checked_events"], 1)
+            self.assertEqual(pre["checked_events"], 2)
             trial_resolve = graph / "inbox" / (resolution["id"] + ".json")
             trial_resolve.write_text(json.dumps(resolution, indent=2, ensure_ascii=False)+"\n")
             applied = apply_inbox(trial, limit=20)
@@ -161,7 +198,7 @@ class MPrimaryResolutionTrial(unittest.TestCase):
             status = read(graph / "STATE.json")["summary"]
             self.assertEqual(status["unresolved_missing_candidates"], 418)
             self.assertEqual(status["missing_occurrences"], 841)
-            self.assertEqual(status["scan_amendment_event_count"], 774)
+            self.assertEqual(status["scan_amendment_event_count"], 775)
             self.assertFalse(status["consolidation_gate_valid"])
             new_snap = load_live_snapshot(trial)
             target_refs = new_snap["nodes"][fid]["references"]
