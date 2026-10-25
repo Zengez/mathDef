@@ -92,9 +92,9 @@ All **2,281** independent-workspace files have identical before/after SHA-256 va
 
 ## Continuation progress (PR #10)
 
-**Current cumulative coverage: 33 COMPLETE / 0 PARTIAL / 388 untouched; 421 inventoried.** 25 new complete reviews in this continuation. The first-tranche counts and narrative above are historical; the append-only ledger and this current section give current coverage.
+**Current cumulative coverage: 38 COMPLETE / 0 PARTIAL / 383 untouched; 421 inventoried.** 30 new complete reviews in this continuation. The first-tranche counts and narrative above are historical; the append-only ledger and this current section give current coverage.
 
-Dispositions: contextual_ambiguity_or_variant: **3**, retain_distinct_missing: **28**, source_convention_deferral: **2**. New aliases/resolutions proposed: **0/0**. Complete means all parent contexts considered for identity, not resolution or source certification.
+Dispositions: contextual_ambiguity_or_variant: **5**, retain_distinct_missing: **31**, source_convention_deferral: **2**. New aliases/resolutions proposed: **0/0**. Complete means all parent contexts considered for identity, not resolution or source certification.
 
 ### 9. quotient R-module by a submodule — `missing.6baca7285e379e18e82b`
 
@@ -246,4 +246,34 @@ Uncertainty: No existence proof or set-theoretic choice principle for every host
 
 Uncertainty: No smallness or existence of limits is inferred from the parallel-pair input; ambient category and source-specific universal properties remain explicit.
 
-Current totals: **227 distinct source formulations**, **296 candidate/parent visits**, **319 candidate occurrences**. Next: `missing.5499c18bddb8831536d6`, beginning with `form.29edcdafba2cae3d.standard-etale-ring-map`. All per-occurrence component flags are in the new ledger events; no whole-data identity is inferred from a component prerequisite.
+### 34. R-algebra isomorphism from the quotient to S — `missing.5499c18bddb8831536d6`
+
+**retain_distinct_missing; 4 / 4 parents.** All four parents require an invertible unital ring map f:A→B with f∘ι_A=ι_B for their chosen R-actions. If f is bijective, its ring inverse g preserves operations, and applying g to that equality gives g∘ι_B=ι_A, so both arrows are R-algebra maps. Abstract ring or module isomorphisms need not satisfy this: with R=k[T] and A=B=k, structure maps T↦0 and T↦1 give abstractly identical rings but no R-algebra isomorphism (it would send 0 to 1). The generic categorical-isomorphism candidate can express invertibility AFTER the ambient category of R-algebras and its morphism type is supplied; it alone does not define the structure-map compatibility missing here. The existing unital ring-map and module-linear meanings also omit part of that package. Polynomial quotients, localizations and filtered colimits select particular source/target objects, not different isomorphism predicates. No exact existing R-algebra-morphism definition was found in the checked inventory, and no alias that would lose R-compatibility is proposed.
+
+Uncertainty: A future prerequisite-granularity decision could separate R-algebra morphism compatibility from generic invertibility, but no such split/alias is applied or assumed here.
+
+### 35. evaluation homomorphism k[X_i:i∈I]→K — `missing.60dd364a1927126e153d`
+
+**retain_distinct_missing; 4 / 4 parents.** A polynomial has finitely many monomials, so sending X_i↦a_i and coefficients via R→A gives ev(Σ r_αX^α)=Σ ι(r_α)∏a_i^α_i. Commutativity of A makes this a unital R-algebra homomorphism, and preservation of sums/products forces this formula, proving uniqueness for arbitrary index sets. The four parents use this construction with different targets or variable families. In P=R[X_s:s∈S], every s is the image of X_s, giving surjectivity; this is not automatic for general evaluation, e.g. Q[T]→R at 0 has image Q. Evaluation may fail injectivity: over nonzero R, T and 0 have equal values at 0. The algebraic-element phrase f(α) is a value obtained by applying the map, not the map object itself; its historical alias is defensible only as the evaluation-construction prerequisite explicitly stated in its rationale. Neither bare polynomial algebra, general ring homomorphism, evaluation of a field automorphism, nor a formal polynomial is the same needed construction.
+
+Uncertainty: The strong-transcendence compound polynomial/value occurrence remains the previously adjudicated separate ambiguity; it is not silently added as a parent of this candidate or resolved by evaluation existence.
+
+### 36. integrability E|X_t|<infinity — `missing.826fb5c503bdaf25ce7f`
+
+**contextual_ambiguity_or_variant; 4 / 4 parents.** All four sources legitimately need L¹-integrability of each indicated real random variable, ∫|X|dP<∞. Measurability alone is insufficient: on Ω={1,2,...} with P({k})=2^(−k), Z(k)=2^k is real-valued and measurable but E|Z|=Σ1=∞. Individual integrability imposes no common bound: deterministic X_n=n has E|X_n|=n finite for each n. However the canonical stored context literally says for every REAL time t≥0 in a stochastic process, whereas the conditional-expectation parent has two individual variables X,Z and the other two parents have integer-time sequences. The historical alias reasons intend the common single-variable L¹ prerequisite, but their whole predicates are not equivalent: set Y_t=0 at integer times and Y_t=Z above at noninteger times; all integer coordinates are integrable but not all real coordinates. Thus sharing the local predicate is justified, while identifying the full real-index process requirement with the other inputs is not. A candidate-context granularity/quantifier clarification is needed; no generalization or split is applied.
+
+Uncertainty: Adjudicate whether the canonical missing identity is intended to be single-real-variable L¹-integrability, as the alias rationales say, or the literal all-real-time condition. Later source/context remediation must preserve all four actual quantifiers; no source or candidate edit is authorized.
+
+### 37. closed sets V(I) — `missing.9720508883754c995559`
+
+**retain_distinct_missing; 4 / 4 parents.** Every parent uses V(I)={p prime:I⊆p}; V(g_1,...,g_m)=V((g_1,...,g_m)) because a prime contains all generators iff it contains their ideal. V(p) is a specialization, with minimality of p supplying the separate irreducible-component statement. V(I) can be defined on the underlying set of prime ideals BEFORE a topology: intersections correspond to sums of ideals and V(I)∪V(J)=V(IJ) by primality, providing the closed-set axioms. Thus the spectrum/V(I) dependency can be understood without presupposing a topology; this is a mathematical formulation strategy, not permission to remove graph edges. For a finite module, finite generators show Supp(M)=V(Ann M): if M_p=0, multiply finitely many denominators outside p killing those generators to get an annihilator outside p, and the converse follows by inverting such an annihilator. Noetherianity is not needed for that particular finite-module consequence. Closed subschemes retain more data: V((2))=V((4)) in Spec(Z), but Z/2 and Z/4 have different rings. No whole closed subscheme is identified with its underlying subset.
+
+Uncertainty: This explains a source-independent primitive construction, not automatic removal of any structural graph cycle or certification of all spectrum/source conventions.
+
+### 38. simultaneously open and closed — `missing.b599bdc9343a25050226`
+
+**contextual_ambiguity_or_variant; 4 / 4 parents.** In every source the needed local predicate is U open in X AND X\U open in X. It is meaningful for arbitrary spaces, including empty X, where ∅=X is the only clopen. A nonempty space is connected iff no nontrivial clopen occurs: such a clopen gives the two disjoint nonempty opens U and X\U, and a separation makes either half clopen. This shared predicate does not decide whether the parent convention excludes empty spaces. The existing clopen-spectrum meaning is the idempotent correspondence, not the bare predicate: in Spec(R), idempotent e gives D(e)=V(1−e), but generic topology supplies no ring element. The canonical candidate context explicitly fixes U⊆Spec(R) while calling it an instance of the generic clopen predicate; its two aliased contexts and three connectedness parents instead use arbitrary X. Hence the common underlying predicate is mathematically justified, but the canonical ambient restriction versus polymorphic intent needs clarification. No arbitrary topological X is assumed to be a prime spectrum, and no idempotent data are transferred to it.
+
+Uncertainty: Adjudicate the canonical context: retain a generic clopen prerequisite with spectrum specialization, or keep separately typed variants if the identity rule requires it. Existing aliases document generic intent but do not themselves rewrite the canonical context. No edit or split applied.
+
+Current totals: **238 distinct source formulations**, **316 candidate/parent visits**, **339 candidate occurrences**. Next: `missing.c4ed408b10943e9c0f8e`, beginning with `form.e0dd0b0cffcfff0b.irreducible-topological-space`. All per-occurrence component flags are in the new ledger events; no whole-data identity is inferred from a component prerequisite.
