@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "phase": "baseline_captured",
+  "phase": "software_integrated_status_queue_validated",
   "base_main": "a7ce2ba3cdd07e6d0b9809d4e39014fb8533228c",
   "pr11_head": "e978ae4d2b8572e532b57fcbacd56333c8ac4d32",
   "pr12_head": "0767fb1e933d59451361b4cf11d9a76ca058b80c",
@@ -35,5 +35,26 @@
     "breadth_expansion": "on_hold"
   },
   "finished": false,
-  "next": "Run baseline tests, cherry-pick reviewed software-only range, extend current transaction status without rewriting historical review anchors."
+  "next": "Run exhaustive readiness, consistency/cycle/provenance audits, previews/frontend tests; write final integrated report and push draft PR.",
+  "imported_original_commits": [
+    "e978ae4d",
+    "966fcbe6",
+    "43939232",
+    "6ab10338",
+    "7f4b231a",
+    "1aa0a82b",
+    "5a649e46",
+    "0767fb1e"
+  ],
+  "tests": {
+    "baseline_run": 207,
+    "imported_run": 246,
+    "updated_run": 256,
+    "expected_skips": 2,
+    "failures": 0
+  },
+  "status_counts": {
+    "applied_receipt_verified": 6,
+    "superseded_by_verified_transaction": 2
+  }
 }

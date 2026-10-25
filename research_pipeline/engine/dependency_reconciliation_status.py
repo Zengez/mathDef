@@ -19,7 +19,7 @@ from pathlib import Path
 import re
 
 from research_pipeline.engine.core import PipelineError, digest
-from research_pipeline.engine.dependency_graph import KEY_RE, graph_path, read
+from research_pipeline.engine.dependency_graph import KEY_RE, graph_path, meaning_version, read
 from research_pipeline.engine.dependency_global_audit import load_live_snapshot
 
 SHA256_RE = re.compile(r"[0-9a-f]{64}\Z")
@@ -44,6 +44,7 @@ def reconciliation_status(workspace: Path, queue: dict,
     graph = graph_path(workspace)
     seen_case_ids = set()
     entries = []
+    packets_by_case = {}
     for case in cases:
         if not isinstance(case, dict):
             raise PipelineError("Every reconciliation case must be an object")
@@ -60,7 +61,7 @@ def reconciliation_status(workspace: Path, queue: dict,
                 case.get("packet_sha256"))
             if (not isinstance(packet_id, str)
                     or not KEY_RE.fullmatch(packet_id)
-                    or mode not in ("alias", "amend")
+                    or mode not in ("alias", "amend", "resolve")
                     or not isinstance(expected_sha, str)
                     or not SHA256_RE.fullmatch(expected_sha)):
                 raise PipelineError("Transaction needs safe ID, mode and SHA256")
@@ -93,6 +94,7 @@ def reconciliation_status(workspace: Path, queue: dict,
                     else "inbox_packet_conflict")
             else:
                 row["status"] = "not_submitted"
+            packets_by_case[case_id] = packet
             row.update({
                 "packet_id": packet_id, "mode": mode,
                 "expected_packet_sha256": expected_sha,
@@ -101,6 +103,35 @@ def reconciliation_status(workspace: Path, queue: dict,
                 "inbox_digest_matches": packet_matches,
                 "receipt_matches": receipt_matches,
             })
+            if mode == "resolve" and packet_matches:
+                decisions = packet.get("resolutions")
+                if not isinstance(decisions, list) or any(not isinstance(d, dict) for d in decisions):
+                    raise PipelineError("Resolution packet needs a resolutions list")
+                registry = {c["id"]: c for c in snapshot.get("candidates", [])}
+                effects = []
+                for decision in decisions:
+                    cid = decision.get("missing_candidate_id")
+                    mid = decision.get("target_meaning_id")
+                    version = decision.get("target_version_sha256")
+                    if (not isinstance(cid, str) or not KEY_RE.fullmatch(cid)
+                            or not isinstance(mid, str) or not KEY_RE.fullmatch(mid)
+                            or not isinstance(version, str) or not SHA256_RE.fullmatch(version)):
+                        raise PipelineError("Resolution needs candidate, target and version SHA256")
+                    effects.append({
+                        "missing_candidate_id": cid, "target_meaning_id": mid,
+                        "recorded_target_version_sha256": version,
+                        "target_version_matches_current_meaning": bool(
+                            mid in inv.get("meanings", {})
+                            and version == meaning_version(inv, mid)),
+                        "registry_target_matches": bool(
+                            cid in registry and registry[cid].get("resolved_target_meaning_id") == mid),
+                        "resolution_ledger_matches": any(
+                            event.get("missing_candidate_id") == cid
+                            and event.get("target_meaning_id") == mid
+                            and event.get("target_version_sha256") == version
+                            for event in snapshot.get("resolutions", [])),
+                    })
+                row["current_resolution_effects"] = effects
         elif kind == "review":
             fid, occurrence_id, prior_hash = (
                 case.get("formulation_id"),
@@ -135,10 +166,57 @@ def reconciliation_status(workspace: Path, queue: dict,
                     else:
                         row["status"] = "mathematical_review_required"
             row.update({"formulation_id": fid,
-                        "expected_occurrence_id": occurrence_id})
+                        "expected_occurrence_id": occurrence_id,
+                        "expected_node_sha256": prior_hash,
+                        "current_effective_node_sha256": digest(snapshot["nodes"][fid])
+                            if fid in snapshot["nodes"] else None})
         else:
             raise PipelineError("Unknown reconciliation kind: " + str(kind))
         entries.append(row)
+
+    # Historical review anchors are retained, not silently re-anchored to a
+    # newer source. Only verified amendments of the exact predecessor can
+    # supersede one. Resolve after reading every case so queue order is inert.
+    by_id = {row["id"]: row for row in entries}
+    for case, row in zip(cases, entries):
+        if "superseded_by_case_ids" not in case:
+            continue
+        links = case["superseded_by_case_ids"]
+        if (case["kind"] != "review" or not isinstance(links, list) or not links
+                or any(not isinstance(key, str) for key in links)
+                or len(set(links)) != len(links)
+                or any(key not in by_id or by_id[key]["kind"] != "transaction"
+                       or by_id[key].get("mode") != "amend" for key in links)):
+            raise PipelineError("Supersession requires unique amendment transaction case IDs")
+        row["supersession_is_mathematical_certification"] = False
+        row["historical_anchor_status"] = row["status"]
+        row["superseded_by_case_ids"] = links
+        if any(by_id[key]["status"] != "applied_receipt_verified" for key in links):
+            row["status"] = "supersession_requires_receipt_verification"
+            continue
+        fid, prior_hash = case["formulation_id"], case["expected_node_sha256"]
+        if any(not isinstance(packets_by_case[key].get("amendments"), list) for key in links):
+            raise PipelineError("Superseding packet needs an amendments list")
+        if not all(any(isinstance(event, dict)
+                       and event.get("formulation_id") == fid
+                       and event.get("expected_node_sha256") == prior_hash
+                       for event in packets_by_case[key].get("amendments", []))
+                   for key in links):
+            row["status"] = "supersession_anchor_mismatch"
+            continue
+        node = snapshot["nodes"].get(fid)
+        unchanged_reference = bool(node and any(
+            ref.get("occurrence_id") == case["expected_occurrence_id"]
+            and (case.get("expected_state") is None
+                 or ref.get("state") == case["expected_state"])
+            and (case.get("expected_target_meaning_id") is None
+                 or ref.get("target_meaning_id") == case["expected_target_meaning_id"])
+            for ref in node.get("references", [])))
+        if node is None or digest(node) == prior_hash or unchanged_reference:
+            row["status"] = "supersession_effect_not_visible"
+        else:
+            row["status"] = "superseded_by_verified_transaction"
+        row["supersession_is_mathematical_certification"] = False
 
     return {
         "schema_version": 1,
@@ -155,6 +233,13 @@ def reconciliation_status(workspace: Path, queue: dict,
         "current_phase": summary.get("phase"),
         "current_consolidation_gate_valid": summary.get("consolidation_gate_valid"),
         "case_count": len(entries),
+        "active_review_case_count": sum(row["kind"] == "review" and
+            row["status"] != "superseded_by_verified_transaction" for row in entries),
+        "superseded_review_case_count": sum(
+            row["status"] == "superseded_by_verified_transaction" for row in entries),
+        "current_registry_candidates": summary.get("missing_candidates"),
+        "current_active_aliases": summary.get("alias_candidate_records"),
+        "historical_alias_event_count": len(snapshot.get("aliases", [])),
         "status_counts": dict(sorted(Counter(x["status"] for x in entries).items())),
         "cases": entries,
         "warning": "Receipt verification proves a recorded graph transaction, "
