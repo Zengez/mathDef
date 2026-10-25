@@ -82,3 +82,27 @@ A pure-read-only on-demand GitHub workflow was committed to PR #10 at \`.github/
 A dedicated portable regression test verifies that adding an extra historical seed relation **does not shift** the two live-node reference positions or occurrence IDs. The full branch CI [run 40230947230](https://github.com/Zengez/mathDef/actions/runs/40230947230) completed successfully: **211 tests (2 expected skips)**, read-only graph audit, protected-lineage checks, both preview builds and JavaScript checks. This is code/CI validation on the **historical PR branch**; it is not an independent new run against current `main`'s later alias/amendment state. No graph, ledger, source records, consolidation gate or Pass 3 state was modified by this engineering commit.
 
 **Important branch provenance:** after the actual two Stage 1 transactions on `main`, its live state is 420 canonical unresolved, 301 aliases, 771 amendments; this open draft PR branch retains historical graph state 421 / 300 / 770. Do not replay the old staged packets. Before merge, reconcile the branch with current `main` and run the isolated CI on the integrated tree. This audit branch's 421/421 completed contextual review record is a snapshot, not a request to reset the current graph.
+
+
+## 8. Receipt-derived reconciliation and posttransaction integration — executed
+
+**Separation of concerns:** Historical contextual audit remains in [draft PR #10](https://github.com/Zengez/mathDef/pull/10). A deliberately small, independently integrable code/CI change is now in [draft PR #11](https://github.com/Zengez/mathDef/pull/11), based on current `main` after the two Stage 1 graph corrections. Do not merge the stale graph snapshot from PR #10 over newer `main` graph records.
+
+**Implemented portable read-only command** (new `dependency_reconciliation_status.py`):
+
+```bash
+python -m research_pipeline.engine.dependency_reconciliation_status \
+  --workspace research_pipeline/experiments/reconstruction-v2-independent \
+  --queue research_pipeline/reviews/canonical-identity-2026-10-24/LIVE_RECONCILIATION_QUEUE.json
+```
+
+The core status tool is subject-neutral. The queue is an adapter/project-specific set of immutable historical transaction identities and currently reviewable semantic occurrence anchors; it does not contain decisions to automatically submit. Applied status requires **both the committed inbox package** and **the matching immutable applied receipt**, including matching exact id, mode and package SHA256. It emits explicit status for absent receipt, conflicting hashes, newly stale effective node anchor or changed source-target reference. It never modifies any semantic graph files.
+
+**Verified against two distinct checkouts and real GitHub Python**, not merely argued from static source:
+
+- Draft audit branch: [run 40232312720](https://github.com/Zengez/mathDef/actions/runs/40232312720) passed.
+- Posttransaction `main`-based integration commit [`e978ae4`](https://github.com/Zengez/mathDef/commit/e978ae4d2b8572e532b57fcbacd56333c8ac4d32), [run 40232348780](https://github.com/Zengez/mathDef/actions/runs/40232348780) passed **218 Python tests, 2 expected skips**, graph integrity audit, protected-lineage checks and previews. Published `wave2-reconciliation-status` CI artifact. Actual printed statuses: both prior graph transactions `applied_receipt_verified`; Ext/internal-Hom and local-connectedness/global-basis `mathematical_review_required`. Graph edges 2639, formulations 659/659 complete, gate false.
+
+**New mathematical review insight (not an amendment):** The generic existing `meaning.wave2.cross110.module-linear` definition is explicitly valid for left modules over **associative** R, unlike `meaning.3a0545450d7a5285.internal-hom-module`, which constructs an R-module only when R commutative. It may be a sound *component prerequisite* for `Hom_R(F_i,N)`, but the concept of one R-linear map is NOT the whole abelian group of all R-linear maps with pointwise addition. Do not silently replace the latter with the former as an identity. Preserve Ext's cohomology and cochain structure, require a precise source convention or additional properly typed Hom-group representation before an approved edge transaction. Similarly retain the distinction between local systems of connected neighborhoods (possibly nonopen) and global open-basis data; the equivalence of locally connected spaces with existence of a connected-open basis does not identify individual local data with the global basis.
+
+**Recommended next safe work:** Review/integrate PR #11 first (code only); keep PR #10's original 421/421 ledger immutable. Then reconcile the Ext/Hom and local-connectedness cases explicitly with full source/effective-node context, using the existing occurrence-ID preparer, offline full-node preflight, controlled inbox, receipt verification and 19 readiness checks. No gate opening until a separately authorized consolidation review. The preflight `workflow_dispatch` in PR #10 still needs an actual dispatch test after it is made available on the default branch.
