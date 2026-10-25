@@ -92,9 +92,9 @@ All **2,281** independent-workspace files have identical before/after SHA-256 va
 
 ## Continuation progress (PR #10)
 
-**Current cumulative coverage: 28 COMPLETE / 0 PARTIAL / 393 untouched; 421 inventoried.** 20 new complete reviews in this continuation. The first-tranche counts and narrative above are historical; the append-only ledger and this current section give current coverage.
+**Current cumulative coverage: 33 COMPLETE / 0 PARTIAL / 388 untouched; 421 inventoried.** 25 new complete reviews in this continuation. The first-tranche counts and narrative above are historical; the append-only ledger and this current section give current coverage.
 
-Dispositions: contextual_ambiguity_or_variant: **3**, retain_distinct_missing: **23**, source_convention_deferral: **2**. New aliases/resolutions proposed: **0/0**. Complete means all parent contexts considered for identity, not resolution or source certification.
+Dispositions: contextual_ambiguity_or_variant: **3**, retain_distinct_missing: **28**, source_convention_deferral: **2**. New aliases/resolutions proposed: **0/0**. Complete means all parent contexts considered for identity, not resolution or source certification.
 
 ### 9. quotient R-module by a submodule — `missing.6baca7285e379e18e82b`
 
@@ -216,4 +216,34 @@ Uncertainty: The provisional outer-measure domain/source issue remains a later r
 
 Uncertainty: The formally-smooth compound occurrence already adjudicated in tranche one remains open at its own granularity; these four source lists do not silently add it as a fifth reviewed parent.
 
-Current totals: **215 distinct source formulations**, **276 candidate/parent visits**, **298 candidate occurrences**. Next: `missing.2ca12da5425144816e3c`, beginning with `form.b1c99b8dae7a6bde.locally-finite-collection`. All per-occurrence component flags are in the new ledger events; no whole-data identity is inferred from a component prerequisite.
+### 29. open neighborhood of x — `missing.2ca12da5425144816e3c`
+
+**retain_distinct_missing; 4 / 4 parents.** All four parents need x∈U with U open in the stated ambient topology. A general neighborhood may merely contain such a U and need not itself be open: [−1,1] is a neighborhood of 0 in R but is not open. Conversely an open set not containing x is not a neighborhood of x. The existing topology defines open subsets, not this pointed condition; no topological-space object is identical to an open neighborhood. In the continuity source the domain and codomain instances share the predicate with different ambient spaces and points, and ∀x∀V∃U must remain intact. Hausdorffness adds disjoint choices for distinct points, while local finiteness only limits the indices met by a selected U, not the number of family members globally. The local-dimension parent equips each U with its subspace topology; that extra dimension/minimum is not part of being an open neighborhood.
+
+Uncertainty: The source-attributed local-dimension minimum convention is not certified by merely identifying its indexing neighborhoods.
+
+### 30. contracted prime p=q∩R — `missing.08a2969d79ad1ddc1922`
+
+**retain_distinct_missing; 4 / 4 parents.** For unital φ:R→S and prime q⊊S, p=φ^−1(q) is an ideal and proper because φ(1)=1∉q. If ab∈p then φ(a)φ(b)∈q, so a∈p or b∈p; hence it is prime. For an inclusion this is q∩R; for a general map use preimage, not an assumed embedding. Z→Z/2 with q=0 gives p=(2), illustrating that injectivity is unnecessary. Saying q lies over a specified p is the equality p=φ^−1(q), not a new existence theorem or the extension ideal pS. Prime extension need not even be proper: (2)Q=Q under Z→Q. The general inverse-image candidate provides an underlying set operation but not this typed prime operation/equality. Going-up and going-down impose different chain-lifting existence quantifiers; relative dimension and assassin use the contracted prime to choose the residue field and fibre, not to assert an inclusion R⊆S.
+
+Uncertainty: The relative-assassin fibre-module assertion is not independently proved here; preserve its stored source scope and the correctly typed contraction prerequisite.
+
+### 31. prime integer p — `missing.16d2c0615065e12050a2`
+
+**retain_distinct_missing; 4 / 4 parents.** All four contexts use a positive integer p>1 with no positive divisors other than 1,p. Positive-natural versus integer terminology yields the same selected values; it does not include 0,1 or negative associates. The generic prime-element meaning in an integral domain is not identical: −2 is a prime element of Z but is not a positive prime integer, and arbitrary domains have different elements. A prime ideal such as (2) is a subset, not the integer 2. A prime power is not necessarily prime (4=2²). Field characteristic is an invariant that may be zero, not this integer predicate: if its least positive n were composite ab with 1<a,b<n then (a1)(b1)=0 with both factors nonzero, contradicting field axioms. This justifies why positive characteristics use integer primes, without declaring all fields finite. In a Cohen ring the prime is interpreted via p↦p1_R and ideal generation is separate.
+
+Uncertainty: No source-wide assertion about characteristic, completeness or finite-field classification is certified beyond these contextual distinctions.
+
+### 32. maximal element of a collection under inclusion — `missing.3a244864ffa7450b328d`
+
+**retain_distinct_missing; 4 / 4 parents.** All four parents require an admissible member with no strictly larger admissible member in a specified family. This does not mean a greatest member: in the family {{0},{1}} both are maximal and neither contains the other. In the family of ideals {(2),(3)} of Z both are inclusion-maximal, even though a larger ideal (1) exists outside that chosen family. Thus the existing maximal-ideal meaning, which requires properness and maximality among all proper ideals, is not the generic family-relative predicate. Connected and irreducible components restrict admissibility to connected/irreducible subsets; in a discrete two-point space both singleton connected components are maximal, with no greatest connected subset. Noetherian formulations assert existence in EVERY nonempty family, a quantified property stronger than merely defining maximality; an empty family has no member. The subset and poset meanings supply the order but not the generic maximal-member predicate.
+
+Uncertainty: No existence proof or set-theoretic choice principle for every host characterization is supplied; the existing ACC/choice caveat remains source-scoped.
+
+### 33. parallel arrows f,g:X⇉Y — `missing.4322a8c550c42b8391a2`
+
+**retain_distinct_missing; 4 / 4 parents.** All four parents require two arrows in the same category with exactly the same source and target; the arrows are not required distinct or equal. Equalizers precompose e into their common source; coequalizers and filteredness postcompose out of their common target. These different directions do not alter the parallel-pair type. A composable pair f:X→Y,g:Y→Z is generally not parallel, and a bare ordered pair carries no equal-source/target constraints. Parallelism does not assert the equalizing equation: in Sets the two distinct maps from a singleton to a two-element set are parallel but unequal. Monicity universally tests cancellation on every such pair a,b:W→X; the pair itself is not monicity or an equalizer, and filteredness need not supply a universal coequalizer. Existing category, ordered-pair, limit and colimit meanings package different data or properties rather than this typed diagram prerequisite.
+
+Uncertainty: No smallness or existence of limits is inferred from the parallel-pair input; ambient category and source-specific universal properties remain explicit.
+
+Current totals: **227 distinct source formulations**, **296 candidate/parent visits**, **319 candidate occurrences**. Next: `missing.5499c18bddb8831536d6`, beginning with `form.29edcdafba2cae3d.standard-etale-ring-map`. All per-occurrence component flags are in the new ledger events; no whole-data identity is inferred from a component prerequisite.
