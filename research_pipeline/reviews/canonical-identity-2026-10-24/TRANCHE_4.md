@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE3.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**90 additional COMPLETE; cumulative 178 COMPLETE, 0 PARTIAL, 243 untouched.**
+**100 additional COMPLETE; cumulative 188 COMPLETE, 0 PARTIAL, 233 untouched.**
 
 ## 89. isomorphism class — `missing.6bb87052ec8a81464ddd`
 
@@ -544,4 +544,64 @@ Remaining: Formal completion morphism sets require small-index/universe conventi
 
 Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
 
-Next: `missing.2b4bf1ddae7c8d62e393`, first parent `form.wave2.cross110.finite-image-rank`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 179. finite-dimensional image subspace im(T) — `missing.2b4bf1ddae7c8d62e393`
+
+**retain_distinct_missing**, 1/1 parents. K-linearity makes im(T) a subspace: aT(v)+bT(w)=T(av+bw). Finite-dimensionality means a finite basis, not finitely many attained values; id_Q has one-dimensional but infinite underlying image. It need not force V or W finite-dimensional: a coordinate projection from an infinite direct sum onto K has rank 1. The full mapping-image meaning supplies a set but no vector operations or basis finiteness. Dimension gives a number/cardinal; the source rank meaning uses its finite value after this predicate, so neither numerical rank nor arbitrary module rank defines the missing subspace condition. Zero image has empty basis and dimension 0.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 180. diagonal subset Δ_X={(x,x):x∈X} — `missing.2c93b5604c8145ef1af4`
+
+**retain_distinct_missing**, 1/1 parents. Δ_X is a subset of X×X consisting of ordered equal-coordinate pairs, not the map x↦(x,x) or its relative scheme analogue. It exists for every set; topology is needed only to ask closedness. If x≠y and X is Hausdorff, disjoint neighborhoods U,V give (x,y)∈U×V disjoint from Δ; conversely an open product neighborhood of (x,y) outside closed Δ gives disjoint U,V. Hence the stored diagonal criterion agrees with the other Hausdorff formulation without making diagonals automatically closed. The indiscrete two-point space has nonclosed diagonal, and Δ_∅=∅. A relative topological diagonal map has a different codomain X×_Y X, whose image is related but not the same typed datum.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 181. singleton {a} and unordered pair {a,b} — `missing.2d4e4af6f3b83da929a6`
+
+**contextual_ambiguity_or_variant**, 1/1 parents. The source uses arbitrary a,b. The singleton {a} has one element and the unordered pair {a,b} has at MOST two; it is a doubleton only when a≠b. The canonical wording unordered doubleton is therefore overrestrictive if read literally: for a=b, {a,b}={a} and the Kuratowski pair is {{a}}, still valid. For a≠b the nested sets preserve order even though each inner brace is unordered. The candidate packages two constructors, so it cannot as whole equal the previously reviewed singleton-only or distinct-vertex-doubleton candidate. Proposed clarification NOT APPLIED: say unordered pair, possibly singleton when arguments coincide, and separate the two component constructors if later authorized.
+
+Remaining: Later reconcile the literal doubleton wording and compound-constructor granularity without restricting ordered pairs to distinct coordinates. No edit or alias applied.
+
+## 182. least element a of A — `missing.300b43878b10cb827d6f`
+
+**retain_distinct_missing**, 1/1 parents. A least element lies IN A and is ≤ every member. Antisymmetry gives uniqueness; a merely minimal element only has no smaller different member, so two incomparable points in a poset are both minimal with neither least. A lower bound outside A is not a least element: 0 is infimum of (0,1)⊆R but is not a member. In a total order minimal implies least, yet well-ordering additionally requires existence in every NONEMPTY subset. The empty subset has no least element; a well-order on an empty S is vacuous. The source-provenance warning about the missing nonempty qualifier in an external displayed formula remains a later citation obligation.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 183. cochain complex Hom_R(F_•,N) — `missing.3093c306593220970d2c`
+
+**retain_distinct_missing**, 1/1 parents. Applying Hom_R(−,N) reverses d_(i+1):F_(i+1)→F_i into δ^i:Hom(F_i,N)→Hom(F_(i+1),N), δ^i(f)=f d_(i+1). Because d_(i+1)d_(i+2)=0, δ^(i+1)δ^i=0. This creates the WHOLE cochain complex, not a single Hom module or the cohomology Ext value. For resolution 0→Z --2→ Z→Z/2→0 and N=Z, the unaugmented Hom complex is Z --2→ Z with H^1=Z/2; including Hom(Z/2,Z) as a new degree term would be a different indexing datum. Over arbitrary associative R the Hom groups and differentials form a cochain complex of ABELIAN GROUPS; R-module structure needs commutative/central action scope, as already flagged at rank157. Do not reverse arrows again because F itself was homologically indexed.
+
+Remaining: Existing edge occ.321952d7b781466d1856 needs later coefficient-scope reconciliation from rank157; no replacement or theorem certification.
+
+## 184. tagged Riemann sum S — `missing.321f1c1041b950cab75b`
+
+**retain_distinct_missing**, 1/1 parents. A tagged Riemann sum is the FINITE scalar Σ f(ξ_i)(x_i−x_(i−1)) for an actual tagged partition. It depends on f, partition and tags; it is not the partition, mesh, or integral L. For f(x)=x on [0,1] and partition {0,1}, tag 0 gives 0 while tag 1 gives 1. Integrability asks all sufficiently fine choices to approach a common L, not that every finite sum equals L. Rational/irrational tags for the bounded Dirichlet function separate universal tagged convergence from a selected summation rule. All widths are positive under strict partition inequalities; no improper endpoint/infinite-interval convention or Stieltjes increment is substituted.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 185. induced morphism f^{-1}O_Y→O_X — `missing.33295ddbc642096ac085`
+
+**retain_distinct_missing**, 1/1 parents. The morphism f^−1 O_Y→O_X lives on X, while its adjoint O_Y→f_*O_X lives on Y. For a point x it induces the stalk homomorphism O_(Y,f(x))→O_(X,x), not ordinary subset preimage or an inverse function for f. The parent locally-ringed-space map supplies this sheaf arrow; open immersion additionally requires it invertible and the underlying map a homeomorphism onto an OPEN image. A homeomorphism of underlying one-point spaces does not force a sheaf isomorphism: the local quotient k[ε]/(ε²)→k induces such a continuous map and local stalk map with nonzero kernel. Thus topological and sheaf conditions are independently material.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 186. irrelevant ideal S_+ — `missing.3348be9820f51883da75`
+
+**retain_distinct_missing**, 1/1 parents. S_+ is the additive direct sum of all positive-degree pieces in a NONNEGATIVE grading. If a∈S_i for i>0 and b∈S_j for j≥0, then ab∈S_(i+j) remains positive degree, proving ideal stability (and homogeneity). This fails for an arbitrary Z-grading: t·t^−1=1 in k[t,t^−1] brings a positive-degree element into degree zero. The irrelevant ideal is not one homogeneous piece, all of S, or the set of homogeneous prime ideals not containing it. It need not be generated by degree 1: k[u] with deg u=2 has S_1=0 but S_+=(u). If S is concentrated in degree 0 then S_+=0 and Proj(S)=∅, so no nonempty-space convention is inferred.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 187. natural exchange isomorphism X⊗Y→Y⊗X — `missing.334b13fc23fb76467dce`
+
+**retain_distinct_missing**, 1/1 parents. The exchange is a natural isomorphism between the two C-valued bifunctors (X,Y)↦X⊗Y and (X,Y)↦Y⊗X. Naturality says (g⊗f)c_(X,Y)=c_(X′,Y′)(f⊗g). It differs from Set-valued natural-isomorphism candidate93 and from an arbitrary presheaf transformation. Involutivity requires c_(Y,X)c_(X,Y)=id, additional to invertibility, while coherent braiding needs compatibility with the associator (hexagon), not merely component isomorphisms. The source explicitly imposes both conditions; the component exchange prerequisite must not be aliased to the whole symmetric-monoidal structure or to commutativity as equality of tensor objects. Even where swapping tensor factors is canonical, it is a specified arrow, not a literal equation X⊗Y=Y⊗X.
+
+Remaining: Later population must distinguish bare natural exchange, coherent braiding and symmetric braiding explicitly; no unsupported coherence theorem is supplied by the candidate name.
+
+## 188. integer multiplication — `missing.3396c3b269e655e09f1a`
+
+**retain_distinct_missing**, 1/1 parents. For natural difference classes define [(a,b)]·[(c,d)]=[(ac+bd,ad+bc)], encoding (a−b)(c−d). Well-definedness need not presuppose integer subtraction: if a+b′=b+a′, then (ac+bd)+(a′d+b′c)=(a+b′)c+(b+a′)d=(b+a′)c+(a+b′)d=(ad+bc)+(a′c+b′d), so the product pairs are equivalent for the first representative; exchanging the factors proves the second. In the independently stored zero-inclusive model, [(1,0)] is the multiplicative identity and [(0,0)] zero. The operation is not the natural-number product on raw representatives or the entire integer ring; addition, associativity and distributivity remain separate laws (provable by natural expansion), not new assumed graph identities.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+Next: `missing.33bd557af9c1505ff986`, first parent `form.829f95eb2dfbf360.catenary-commutative-ring`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
