@@ -92,9 +92,9 @@ All **2,281** independent-workspace files have identical before/after SHA-256 va
 
 ## Continuation progress (PR #10)
 
-**Current cumulative coverage: 18 COMPLETE / 0 PARTIAL / 403 untouched; 421 inventoried.** 10 new complete reviews in this continuation. The first-tranche counts and narrative above are historical; the append-only ledger and this current section give current coverage.
+**Current cumulative coverage: 23 COMPLETE / 0 PARTIAL / 398 untouched; 421 inventoried.** 15 new complete reviews in this continuation. The first-tranche counts and narrative above are historical; the append-only ledger and this current section give current coverage.
 
-Dispositions: contextual_ambiguity_or_variant: **3**, retain_distinct_missing: **14**, source_convention_deferral: **1**. New aliases/resolutions proposed: **0/0**. Complete means all parent contexts considered for identity, not resolution or source certification.
+Dispositions: contextual_ambiguity_or_variant: **3**, retain_distinct_missing: **18**, source_convention_deferral: **2**. New aliases/resolutions proposed: **0/0**. Complete means all parent contexts considered for identity, not resolution or source certification.
 
 ### 9. quotient R-module by a submodule — `missing.6baca7285e379e18e82b`
 
@@ -156,4 +156,34 @@ Uncertainty: Commutative-ring source conventions follow the existing scope defer
 
 Uncertainty: Later source verification may establish a commutative-unital intended scope for the nilpotent source, or a separate review may justify broadening/splitting the candidate. Stored information alone does not choose either correction.; No existing alias is reversed; the exact general-vs-specialized scope question remains open.
 
-Current totals: **184 distinct source formulations**, **226 candidate/parent visits**, **247 candidate occurrences**. Next: `missing.fb78af5e23099cc8d59b`, beginning with `form.138b13bf27c037c1.naive-cotangent-complex`. All per-occurrence component flags are in the new ledger events; no whole-data identity is inferred from a component prerequisite.
+### 19. I=ker(P→S) — `missing.fb78af5e23099cc8d59b`
+
+**retain_distinct_missing; 6 / 6 parents.** All six parents take φ^−1({0}) for a commutative unital ring map. If a,b map to zero, so does a−b, and φ(ra)=φ(r)φ(a)=0; hence this subset is an ideal. This specializes generic set preimage, but the ideal structure and ring-map type are additional. A ring map is A-linear when B is viewed by restriction of scalars; its module kernel gives the underlying A-submodule, not a separately stored general kernel-ideal definition. The preadditive categorical-kernel meaning is an arrow with a universal property in an additive setting, not an ideal subset of a ring. Polynomial kernels need not be principal in general; only the minimal-polynomial parent imposes the field/univariate algebraic conditions making it monic-generated. A kernel need not be square-zero: ker(Z→Z/2)=(2), whose square contains 4≠0. Thus neither nilpotence nor a whole extension datum is included. For symbolic powers n=0 the quotient is the zero ring, making the kernel R if that quotient is permitted; it is not automatically proper.
+
+Uncertainty: Commutative-unital source scope and whether zero targets are allowed remain explicit future source questions; no related candidate parents are counted reviewed merely by comparison.
+
+### 20. direct sum ⊕_i M_i of a family of modules — `missing.134e1c9f45dd933fdc36`
+
+**retain_distinct_missing; 5 / 5 parents.** The five sources use finite-support tuples with coordinatewise R-action. Given maps f_i:M_i→N, the formula (m_i)↦Σ_i f_i(m_i) is defined because the support is finite and uniquely extends the summand maps, proving the module-coproduct property. The existing general categorical coproduct gives a universal specification but not this stored concrete module construction; no identity with a whole diagram or graded algebra is inferred. For infinitely many nonzero summands, a tuple of nonzero entries lies in the product but not the direct sum. In a binary family sum and product coincide canonically, which does not justify an arbitrary-family merge. Tensor/Rees multiplications are additional; summands I^n are not required free, nor does countable generation of each summand make the whole index set countable. Free modules are the special case of copies of R; arbitrary modules can have torsion.
+
+Uncertainty: A future population may relate this to the existing generic coproduct via a proven module instance, but that is not an automatic candidate-to-meaning identity resolution. Tensor side/unital conventions remain parent-specific.
+
+### 21. intersection A cap U — `missing.170fcdda487b9180137e`
+
+**retain_distinct_missing; 5 / 5 parents.** Four contexts directly use binary intersection: x∈A∩B iff x∈A and x∈B, independent of topology or probability. The fifth uses finite indexed intersection, obtained by iterating the binary operation; associativity follows from conjunction associativity. Its empty case is separately stipulated to be Ω, not recoverable from a binary operation without a chosen ambient set. Thus historical alias.global-audit.20261023.143 is legitimate only for the shared binary-operation prerequisite, not identity of a whole indexed family (including its empty case) with one binary pair. The stored parent explicitly supplies Ω and finite indexing, so these data need not be invented or dropped. The operation differs from subset relation (a truth value rather than an output set), Cartesian product (ordered pairs), and ideal product ((2)∩(2)=(2) but (2)^2=(4)). Nonempty subspace conventions do not prohibit empty intersections; disjoint nonempty subsets illustrate that distinction. No exact existing intersection construction was found in the checked set-theory meanings.
+
+Uncertainty: Future occurrence-granularity documentation should preserve the explicit finite-index and empty-Ω data if the indexed-intersection alias is used; no mathematical equality of whole input packages is asserted.
+
+### 22. difference A minus B — `missing.189a1049986dd4f651f4`
+
+**retain_distinct_missing; 5 / 5 parents.** All five sources use A\B={x∈A:x∉B}; choosing first argument X gives the ambient complement. Changing X changes that complement, so there is no ambient-free absolute complement here. A\B need not equal B\A or symmetric difference: {0,1}\{1}={0}, while reversing gives ∅. Differences of open sets need not be open; their topology/measurability conditions stay in the constructible or sigma-algebra parents. Boundary uses closure minus interior, not A minus interior: in R, A=Q has closure R and empty interior, so its boundary R is larger than A. The second boundary formula instead takes closure of X\A before intersection; complement and closure are distinct operations. Existing nonstrict subset, interior, closure and sigma-algebra meanings do not define the generic binary difference operation as their needed meaning.
+
+Uncertainty: Recorded excluded boundary source wording is not rehabilitated or externally checked; the stored independent formulas alone are reviewed.
+
+### 23. commutative unital algebra over a field — `missing.3b37131115a06556c3e4`
+
+**source_convention_deferral; 5 / 5 parents.** All five parents need a k-algebra input with a specified structure map, not just an abstract ring or a scalar-extended output. For a commutative unital algebra the chosen map k→A gives scalar multiplication c·a=φ(c)a and compatibility with multiplication; this extra data is not present in a bare commutative ring. A=k[T] is a k-algebra but not a field, and A=k[ε]/(ε²) is a k-algebra but is not reduced or a domain, separating the underlying type from the geometric tests. A field extension is narrower (A must itself be a field), while finite-presentation algebra imposes finite generators and relations. The existing unital ring-map meaning describes the structure arrow rather than the whole algebra object. However all five actual source texts say k-algebra, without independently spelling out commutativity and the unit axiom. Their commutative-algebra/ring-spectrum context supports the intended reading but does not independently certify external conventions. Retain the missing structured type and document precise source verification instead of declaring the specialized assumptions proved.
+
+Uncertainty: Later reconcile for each of these five exact sources whether algebras are commutative and unital and whether zero algebra is allowed; this is a bounded source-scope deferral, not authorization for external lookup now.; The existing base-change-arrow links in geometric-normality parents provide a related construction; object/arrow granularity is not automatically resolved by this review.
+
+Current totals: **199 distinct source formulations**, **252 candidate/parent visits**, **273 candidate occurrences**. Next: `missing.45359d317b7e3aba73da`, beginning with `form.05531f966e3a206f.prime-element`. All per-occurrence component flags are in the new ledger events; no whole-data identity is inferred from a component prerequisite.
