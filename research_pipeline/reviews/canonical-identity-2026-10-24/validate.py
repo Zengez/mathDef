@@ -104,10 +104,14 @@ def main():
     assert checkpoint['reviewed_parent_formulation_ids'] == sorted(contexts)
     unfinished = [m['candidate_id'] for m in manifest if m['candidate_id'] not in latest
                   or latest[m['candidate_id']]['coverage_status'] == 'PARTIAL']
-    assert checkpoint['next_unfinished_candidate_id'] == unfinished[0]
-    next_parents = (latest[unfinished[0]]['parent_formulations_remaining'] if unfinished[0] in latest
-                    else by_id[unfinished[0]]['incoming_formulation_ids'])
-    assert checkpoint['next_parent_formulation_id'] == next_parents[0]
+    if unfinished:
+        assert checkpoint['next_unfinished_candidate_id'] == unfinished[0]
+        next_parents = (latest[unfinished[0]]['parent_formulations_remaining'] if unfinished[0] in latest
+                        else by_id[unfinished[0]]['incoming_formulation_ids'])
+        assert checkpoint['next_parent_formulation_id'] == next_parents[0]
+    else:
+        assert checkpoint['next_unfinished_candidate_id'] is None
+        assert checkpoint['next_parent_formulation_id'] is None
     if 'latest_tranche' in checkpoint:
         tranche = checkpoint['latest_tranche']
         start, end = tranche['manifest_ranks']
