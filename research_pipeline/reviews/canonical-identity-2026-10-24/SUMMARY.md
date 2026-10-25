@@ -334,3 +334,7 @@ The strengthened `validate.py` passed after validating all new per-occurrence fl
 All **2,281** independent-workspace files matched before/after SHA-256 values at checkpoints and at completion. No production or frozen Wave 1 mathematical records were read. Compared candidates outside ranks 1–38 remain untouched for coverage even when their stored context was compared. Forty append-only events represent 38 current reviews, preserving the two original partial events and their supersessions. The manifest and Chat/task instruction files are unchanged. Only `SUMMARY.md`, `checkpoint.json`, `reviews.jsonl`, `source-contexts.jsonl`, `validate.py` and the new `validation.json` changed in this continuation.
 
 </details>
+
+## Tranche 4 current coverage
+
+**Current: 98 COMPLETE / 0 PARTIAL / 323 untouched. 10 new complete this pass.** 326 distinct source formulations; 459 candidate/parent visits; 488 occurrences. Earlier narrative is historical; see TRANCHE_4.md and checkpoint.json for current progress. Next `missing.8d23b7ba80f9f5e74420`.
