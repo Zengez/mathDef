@@ -35,7 +35,7 @@
     "breadth_expansion": "on_hold"
   },
   "finished": true,
-  "next": "Normal engineering code review; separately decide PR11 integration and eventual read-only workflow dispatch. No mathematical or phase action authorized.",
+  "next": "Engineering review via pushed branch/comparison; GitHub API denied draft PR creation. No mathematical or phase action authorized.",
   "protected_data_mutations_authorized": false,
   "registry_fixture_identical_publication_sha256": "4754c55ec24a7560e3e874309132bcf6b740529d8b5d2db89b20c752205a6a2b",
   "tests": {
@@ -51,5 +51,14 @@
   "validation_report": "VALIDATION.json",
   "measurements": "MEASUREMENTS.json",
   "results": "RESULTS.md",
-  "runbook": "RUNBOOK.md"
+  "runbook": "RUNBOOK.md",
+  "github": {
+    "branch": "codex/independent-pipeline-engineering-audit",
+    "pushed": true,
+    "pull_request_creation_attempted": true,
+    "pull_request_creation_exit_code": 1,
+    "result": "GitHub GraphQL API returned Forbidden; no new PR URL returned.",
+    "comparison_url": "https://github.com/Zengez/mathDef/compare/main...codex/independent-pipeline-engineering-audit?expand=1",
+    "no_merge_performed": true
+  }
 }
