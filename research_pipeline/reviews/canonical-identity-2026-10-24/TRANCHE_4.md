@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE3.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**60 additional COMPLETE; cumulative 148 COMPLETE, 0 PARTIAL, 273 untouched.**
+**70 additional COMPLETE; cumulative 158 COMPLETE, 0 PARTIAL, 263 untouched.**
 
 ## 89. isomorphism class — `missing.6bb87052ec8a81464ddd`
 
@@ -364,4 +364,64 @@ Remaining: No external citation verification or whole-parent theorem certificati
 
 Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
 
-Next: `missing.137cc84619d0fc68bf3b`, first parent `form.wave2.foundation.integral-over-ideal`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 149. evaluated polynomial phi(P)(g)=0 — `missing.137cc84619d0fc68bf3b`
+
+**retain_distinct_missing**, 1/1 parents. For φ:R→S define φ_*(Σa_jT^j)=Σφ(a_j)T^j and ev_g(φ_*P)=Σφ(a_j)g^j. The source requires this evaluated ELEMENT to equal zero; neither the formal P, coefficient map, evaluation homomorphism nor zero equation alone is the whole datum. A nonzero polynomial may evaluate to zero (P=T at g=0), and a noninjective coefficient map may already kill nonzero coefficients. The earlier evaluation-map candidate supplies the underlying map construction but does not impose the vanishing condition; the roots-in-a-FIELD candidate is too narrow because S may have zero divisors. Ideal-power coefficient restrictions and monicity belong separately to integrality over I.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 150. finite partial sum s_N — `missing.14fb2e2c8ee691a830d3`
+
+**retain_distinct_missing**, 1/1 parents. s_N is a FINITE sum with N+1 real terms and exists for every real sequence even if no infinite sum exists. Recurrence s_0=a_0 and s_(N+1)=s_N+a_(N+1) fixes the indexing. For a_n=1, s_N=N+1 is defined for all N but has no finite limit; thus the partial-sum operation is not series convergence or its limit. The original sequence and the partial-sum sequence are different (recover a_n by differences, not equality). Order and multiplicity are retained; this is not an unordered sum of the set of distinct coefficient values.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 151. support Z of quotient sheaf O_X/I — `missing.16dd13db42779fad9a84`
+
+**retain_distinct_missing**, 1/1 parents. Support here is {x:(O_X/I)_x≠0}, a subset of the given locally ringed space, not the quotient sheaf or its closed-space structure. For a sheaf ideal in a unital ring sheaf, outside support means I_x=O_x, so germ 1 lies in I_x; it is represented by an ideal section equal to 1 on a smaller neighborhood. The quotient vanishes throughout that neighborhood, proving support is closed. The finite-module support on Spec(R) is a related affine special case, not an arbitrary-sheaf definition. Different quotient rings k[ε]/(ε²) and k on the same point have the same support but different structure sheaves, so support cannot recover the closed subspace datum.
+
+Remaining: The exact locally section-generated hypothesis remains under the rank-86 source-scope question; no finite-generation/coherence assumption inferred.
+
+## 152. left and right cancellation — `missing.16eb7002116042616e29`
+
+**retain_distinct_missing**, 1/1 parents. This is cancellation AFTER an allowed denominator composition, not ordinary monic/epic cancellation. In a two-sided calculus one typical direction says if s f=s g with s∈S then some t∈S on the other side satisfies f t=g t; the dual exchanges sides. It does not demand f=g before such a composition. For a one-object category from a commutative monoid with absorbing zero, S={1,0} illustrates the distinction: 0f=0g always, and choosing t=0 equalizes on the other side without making 0 monic or epic. The full multiplicative system also includes identities, composition and Ore squares, so cannot replace this component axiom. The stored parent abbreviates rather than writes the exact arrow variables/quantifiers.
+
+Remaining: Before future population/source certification, recover the exact two directional cancellation formulas and S-placement from this source; current shorthand identifies the calculus component but is not a full axiom statement.
+
+## 153. local restriction E∩V_i — `missing.16fdb955076446c83a6f`
+
+**retain_distinct_missing**, 1/1 parents. E∩V_i is the binary restriction of a subset to the open subspace V_i; its topology is relative to V_i. It is not a section restriction map, a locally closed set predicate, or the open-cover datum. Underlying membership is the general binary-intersection operation, but the contextual construction additionally records the open ambient subspace in which constructibility is tested. Constructible here means finite unions of U\V with retrocompact opens; a locally constructible cover need not supply a single globally finite presentation. The local finite presentations and their potential global gluing require their own argument; no counterexample to global constructibility is asserted by this prerequisite review.
+
+Remaining: Generic binary intersection covers the underlying set component; any future identity compression must retain the specified relative-topology/constructibility context.
+
+## 154. edge multiplicity — `missing.17fcbd3c3e67f2b21f6b`
+
+**source_convention_deferral**, 1/1 parents. An edge multiplicity counts copies of a fixed unordered doubleton; it is not the doubleton, the whole edge multiset, or vertex degree (which sums incident multiplicities). Two vertices joined by three copies have pair multiplicity 3, whereas simple-graph existence only records present/absent. The candidate explicitly makes multiplicity a NONNEGATIVE INTEGER; the source merely calls E a multiset without specifying whether each pair has finitely many copies. Infinitely many vertices do not by themselves force infinite pair multiplicity, but neither do they settle the multiset convention. Retain a bounded source-convention deferral rather than silently equating cardinal-valued infinite multiplicity with N-valued multiplicity.
+
+Remaining: Later verify whether this exact multiset source restricts multiplicity per pair to finite integers; preserve its loopless and parallel-edge conventions.
+
+## 155. two-sided inverse element b for each a — `missing.18f9db0195dad8f9cb4e`
+
+**retain_distinct_missing**, 1/1 parents. For an associative operation with identity e, b is a two-sided inverse of a when ab=e=ba. If b and c are both inverses, b=b(ac)=(ba)c=c. A one-sided inverse need not be two-sided: on N, shift s(n)=n+1 and p(0)=0,p(n+1)=n satisfy p∘s=id but s∘p≠id. The group parent requires such inverse for EVERY a, stronger than a monoid having one invertible element. An inverse element is not an inverse function of a set map; a ring unit is the analogous multiplication predicate in a richer ambient ring and does not force all ring elements invertible.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 156. canonical summand inclusions ι_i:M_i→⊕_i M_i — `missing.1a60248259f8ac73fd6f`
+
+**retain_distinct_missing**, 1/1 parents. ι_i sends m to the finitely supported family with its i-coordinate m and all others zero, hence is R-linear and injective since projection π_iι_i=id. It is not a generic module injection, an inclusion into the colimit, or the direct-sum object. After quotienting by transition relations its composite need NOT be injective: the directed diagram M_0=Z→M_1=0 has zero colimit and kills M_0, although its direct-sum injection was injective. Thus the displayed relations use the genuine summand maps before quotienting; neither transition injectivity nor colimit injectivity follows.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 157. ith cohomology of a cochain complex — `missing.1bd554e6f230b14c5f9b`
+
+**retain_distinct_missing**, 1/1 parents. For cochains d^i:C^i→C^(i+1), H^i=ker d^i/im d^(i−1) is defined because d^i d^(i−1)=0. A Hom applied to a homological resolution reverses arrows: δ^i(f)=f∘d_(i+1); δ^(i+1)δ^i=0. For the unaugmented F_•, H^0 Hom(F_•,N) identifies Hom(M,N) via augmentation, rather than including Hom(M,N) as a preceding term that would change the computation. Chain homology has opposite degree direction and is not literally cohomology with indices erased. There is an additional existing-edge scope question: the stored internal-Hom MODULE target requires commutative R, while this parent says only R-modules. Over arbitrary associative R, Hom_R is naturally an abelian group; output scalar multiplication need not preserve R-linearity (for M=N=R and noncentral r, r·id fails). This does not invalidate the generic cohomology prerequisite.
+
+Remaining: Later exact source reconciliation should state commutative R if internal Hom is an R-module, or use abelian-group Hom for general R. Existing edge occ.321952d7b781466d1856 remains untouched; prior unit-action deferrals remain distinct.
+
+## 158. finite direct sums or biproducts — `missing.1bf45a51e32fe839d4c5`
+
+**retain_distinct_missing**, 1/1 parents. In a preadditive category a finite biproduct has p_iι_j=δ_ij and Σι_i p_i=id, simultaneously realizing product and coproduct. From a finite product, define ι_j by projection components δ_ij; the sum equation follows by testing every projection, and for arrows f_i:X_i→Y the universal coproduct map is Σ f_i p_i. This proof uses bilinear composition, not a general identity of products and coproducts in arbitrary categories (Sets has |A×B|=1 and |A⊔B|=2 for two singletons). Nullary biproduct is a zero object. Arbitrary module direct sums use finite SUPPORT of elements, but need not be products for infinite families.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+Next: `missing.1c3a3131528cfb0d72af`, first parent `form.b9defeff446a0526.hilbert-polynomial-local-module`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
