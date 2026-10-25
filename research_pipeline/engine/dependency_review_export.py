@@ -16,6 +16,7 @@ import subprocess
 
 from .core import PipelineError, digest
 from .dependency_global_audit import load_live_snapshot, write_offline_packets
+from .dependency_graph import collect
 from .dependency_review_preflight import review_preflight
 
 
@@ -74,6 +75,19 @@ def export_review(repo: Path, workspace: str, output_dir: Path, *,
         raise PipelineError("Refusing to overwrite an existing artifact directory")
     before = workspace_files(w)
     snapshot = load_live_snapshot(w)
+    # Byte stability alone cannot prove the stored inventory was fresh before
+    # this run. Recollect current records read-only, never inventory_sync/apply.
+    entries, meanings, seeds, revisions = collect(w)
+    descriptors = {mid: {"display_term": value["display_term"], "context": value["context"],
+                         "formulation_ids": [f["id"] for f in value.get("formulations", [])]}
+                   for mid, value in meanings.items()}
+    inventory = snapshot["inventory"]
+    if (entries != inventory["formulations"] or descriptors != inventory["meanings"]
+            or seeds != inventory["seed_relations"]
+            or digest(entries) != inventory["source_inventory_sha256"]
+            or digest(seeds) != inventory["seed_relations_sha256"]
+            or len(revisions) != inventory["revision_count"]):
+        raise PipelineError("Graph inventory is stale against current source records")
     result = subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"],
                             capture_output=True, text=True, check=False)
     actual_commit = result.stdout.strip() if result.returncode == 0 else ""
@@ -83,6 +97,7 @@ def export_review(repo: Path, workspace: str, output_dir: Path, *,
     report = {
         "schema_version": 1, "status": "running", "read_only": True,
         "mathematics_certified": False, "automatic_submission_performed": False,
+        "graph_changes_applied": False, "inventory_matches_current_sources": True,
         "authorizes_gate_change": False, "commit": commit or None,
         "workspace": w.relative_to(repo).as_posix(),
         "inventory_sha256": snapshot["inventory"]["source_inventory_sha256"],

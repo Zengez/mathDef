@@ -6,6 +6,9 @@ on:
       # Audit prose/checkpoints cannot change executable behaviour.
       # Exclude documentation-only pushes without skipping source/graph tests.
       - '!research_pipeline/**/*.md'
+      # Engineering measurements/checkpoints are outputs, not test inputs.
+      # The receipt decision queue under canonical-identity remains included.
+      - '!research_pipeline/reviews/engineering-*/*.json'
       - '.github/workflows/research-pipeline-ci.yml'
       - '.github/workflows/reviewed-dependency-preflight.yml'
   workflow_dispatch:

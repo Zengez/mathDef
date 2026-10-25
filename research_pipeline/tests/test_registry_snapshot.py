@@ -92,6 +92,18 @@ class RegistrySnapshotTests(unittest.TestCase):
         self.assertEqual(review.call_count, 2)
         self.assertEqual(set(self.w.records("terms")), {"term.0"})
 
+    def test_checkpoint_failure_after_flush_resumes_from_exact_persisted_rows(self):
+        rows = [self.term(i) for i in range(5)]
+        with patch.object(self.w, "_ingest_checkpoint", side_effect=OSError("checkpoint interruption")):
+            with self.assertRaisesRegex(OSError, "checkpoint interruption"):
+                self.push("terms", rows, batch_size=2)
+        self.assertEqual(set(self.w.records("terms")), {"term.0", "term.1"})
+        report = self.push("terms", rows, batch_size=2)
+        self.assertEqual((report["added"], report["already_present"]), (3, 2))
+        records = self.w.records("terms")
+        self.assertEqual(self.w.state("terms")["record_digest"], core.digest(list(records.values())))
+        self.assertEqual(len(records), 5)
+
     def test_end_to_end_output_unchanged_and_reads_bounded(self):
         result = measure(size=12, repeats=1)
         run = result["runs"][0]

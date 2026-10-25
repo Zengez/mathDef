@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "phase": "D_final_verification_passed",
+  "phase": "E_completed_validated_handoff",
   "branch": "codex/independent-pipeline-engineering-audit",
   "base_main": "0c682bfd",
   "integrated_pr11_base": "e978ae4d2b8572e532b57fcbacd56333c8ac4d32",
@@ -34,17 +34,22 @@
     "automatic_completion_is_not_certification": true,
     "breadth_expansion": "on_hold"
   },
-  "finished": false,
-  "next": "Write final results and usage runbook, verify protected hashes, push draft PR.",
+  "finished": true,
+  "next": "Normal engineering code review; separately decide PR11 integration and eventual read-only workflow dispatch. No mathematical or phase action authorized.",
   "protected_data_mutations_authorized": false,
   "registry_fixture_identical_publication_sha256": "4754c55ec24a7560e3e874309132bcf6b740529d8b5d2db89b20c752205a6a2b",
   "tests": {
-    "suite": "python -m unittest discover -s research_pipeline/tests -v",
-    "run": 243,
+    "command": "python -m unittest discover -s research_pipeline/tests -v",
+    "run": 246,
     "skipped": 2,
     "failures": 0,
-    "elapsed_seconds": 2.541
+    "errors": 0,
+    "elapsed_seconds": 2.527
   },
   "receipt_guard": "Requires matching receipt ID, applied status, mode and digest; already-applied artifacts cannot be mislabeled as new proposals.",
-  "ui_verification": "Both synthetic stage UIs passed system-Chromium browser smoke; current Wave2-only draft and portable renderer built to /tmp. No frozen data was loaded."
+  "ui_verification": "Both synthetic stage UIs passed system-Chromium browser smoke; current Wave2-only draft and portable renderer built to /tmp. No frozen data was loaded.",
+  "validation_report": "VALIDATION.json",
+  "measurements": "MEASUREMENTS.json",
+  "results": "RESULTS.md",
+  "runbook": "RUNBOOK.md"
 }
