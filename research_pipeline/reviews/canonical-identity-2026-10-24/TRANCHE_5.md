@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE4.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**150 additional COMPLETE; cumulative 338 COMPLETE, 0 PARTIAL, 83 untouched.**
+**170 additional COMPLETE; cumulative 358 COMPLETE, 0 PARTIAL, 63 untouched.**
 
 ## 189. maximal finite chain connecting primes — `missing.33bd557af9c1505ff986`
 
@@ -904,4 +904,124 @@ Remaining: Finite-per-pair versus arbitrary-cardinal multiplicity remains an exp
 
 Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
 
-Next: `missing.b176356d17d415e8f588`, first parent `form.aa975a3ff4883909.locally-quasicompact-space`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 339. neighborhood basis at x — `missing.b176356d17d415e8f588`
+
+**retain_distinct_missing**, 1/1 parents. A neighborhood basis is cofinal under reverse inclusion among neighborhoods of x; every member must contain an open set containing x, but need not itself be open. In R the intervals [x−1/n,x+1/n] form a compact neighborhood basis, while open intervals are not compact. Thus this is not merely a topology basis consisting of open sets, nor one arbitrary neighborhood. The source requires a quasi-compact neighborhood INSIDE EACH given neighborhood and assumes no Hausdorff condition. Empty X satisfies its all-points condition vacuously.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 340. downward-closed subset under rational order — `missing.b1e0a8b58dda986e68d9`
+
+**retain_distinct_missing**, 1/1 parents. For a∈A the strict q<a clause plus the already known a∈A gives the usual nonstrict q≤a lower-set property in Q, and conversely the nonstrict property implies the strict one. Downsets may be empty, all Q, or have a greatest element, unlike the recorded cut. Both subset targets are legitimate components: nonstrict subset is the ambient relation, while the historical proper-subset seed expresses the additional explicit A≠Q hypothesis. In arbitrary partial orders, no greatest is not no maximal, as recorded at rank259; this source has total rational order.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 341. morphisms B to A and B to C — `missing.b1e7a10547ec65e37f00`
+
+**retain_distinct_missing**, 1/1 parents. The span consists of two arrows OUT OF B, which need not be composable with one another. Its pushout cocone instead consists of arrows from A,C to P with agreement after composition from B. Reversing arrows gives the pullback cospan rather than this diagram. Merely supplying a span neither chooses a cocone nor guarantees a pushout exists in the category. The historical general-colimit relation is a valid universal-construction prerequisite rather than identity with a pair of arrows.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 342. commutative lifting diagram for schemes — `missing.b234c3c56c247169bee2`
+
+**retain_distinct_missing**, 1/1 parents. The square uses the specific inclusion Spec(K)→Spec(V) and base f:X→S; a lift has both required composites fixed. The parent asks AT MOST ONE lift and permits no lift, whereas existence or a unique lift is stronger. For a discrete valuation ring V with uniformizer pi and fraction field K, the open immersion Spec(K)=D(pi)→Spec(V) satisfies uniqueness, but the diagram with identity bottom map Spec(V)→Spec(V) and identity top map Spec(K)→Spec(K) has no lift: it would require inverting pi in V. Thus no existence assumption should be inserted. Generic strict commutative diagrams are an underlying prerequisite, but the candidate also packages valuation-ring geometry and a typed completion. It is not a 2-commutative square or the whole separatedness predicate.
+
+Remaining: No automatic generic-diagram alias or assertion of the entire valuative separatedness theorem; its hypotheses and diagram segmentation remain explicit.
+
+## 343. additive group homomorphism — `missing.b265aa5bcc1bd7e4d539`
+
+**retain_distinct_missing**, 1/1 parents. An additive homomorphism between abelian groups obeys f(0)=f(0)+f(0), hence f(0)=0 by cancellation, and f(−a)=−f(a). Its kernel is a subgroup, but the MAP is not that kernel subset or its inclusion. An additive map need not be R-linear for a specified larger scalar ring: conjugation C→C is additive but not C-linear. A ring homomorphism imposes multiplication and perhaps unity; those are additional conditions. This source specializes the generic group language to abelian groups, with no scalar structure.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 344. finite zigzag of arrows between objects — `missing.b35a892cf232bbd9d723`
+
+**retain_distinct_missing**, 1/1 parents. The finite zigzag uses underlying undirected incidence of arrows; each arrow may face either direction and need not be invertible. A category on x→y only is connected in this sense although y has no arrow to x and x,y are not isomorphic. The zero-length zigzag joins an object to itself. A witness zigzag is not the all-pairs connectedness property, and the nonempty condition prevents the empty category being declared connected vacuously. No smallness or directed-path condition follows.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 345. nonconstant polynomial — `missing.b4aa15446fdc10566dca`
+
+**retain_distinct_missing**, 1/1 parents. Over the nonzero field K, a polynomial is nonconstant exactly when it has positive degree; the zero polynomial is constant and excluded, not an example with an arbitrary assigned degree. This is a predicate on formal polynomials, not on polynomial FUNCTIONS: over F2, T²−T is a nonconstant polynomial inducing the zero function. The existence of roots for all such polynomials is the algebraically-closed property of K, while algebraic closure additionally concerns K/F algebraic. Generic polynomial-algebra data alone assert neither.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 346. isolated point of the fibre — `missing.b7715941d4e866b5133d`
+
+**retain_distinct_missing**, 1/1 parents. Isolated in the fibre means that the singleton of the specified fibre point is open IN THAT FIBRE, not necessarily in Spec(S). For the identity k[t]→k[t], every fibre is a single point and hence isolated there, whereas (t) is not an open singleton of Spec(k[t]). The whole fibre Spec(S⊗_R kappa(p)) differs from its local ring at q. The finite-type hypothesis is material to the parent equivalence with local dimension zero; a generic topological isolated-point predicate alone supplies no such algebraic theorem.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 347. projective resolution of an R-module — `missing.b782397ee09b076f758f`
+
+**retain_distinct_missing**, 1/1 parents. A projective resolution is an augmented EXACT chain complex of projective modules ending at M, not a projective module or arbitrary exact sequence alone. M need not be projective: 0→Z --2→Z→Z/2→0 is a length1 projective resolution, while Z/2 is not projective over Z. Its length is not automatically the least possible length defining pd. The parent takes n≥0, so even for the zero module its literal minimum convention gives0 if the zero resolution is admitted; a −infinity convention is not inserted. Infinite resolutions are permitted by the candidate even when the parent searches finite ones.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 348. shifted endomorphism A−lambda I — `missing.bc0a34bcacc0fd814981`
+
+**potential_candidate_alias**, 1/1 parents. Both this candidate and rank316 explicitly define the SAME K-linear endomorphism v↦A(v)−lambda*v for A:V→V, without finite-dimensional or basis requirements. In the eigenvector parent the additional predicate v≠0 and kernel membership is imposed on a VECTOR; the shifted operator itself is precisely the shared prerequisite. The equation (A−lambda I)v=0 iff Av=lambda v follows by subtracting lambda v, but zero is excluded as an eigenvector. This supports a typed operator-only alias, not identity with the eigenspace, eigenvalue or vector.
+
+Remaining: Exact shifted-operator prerequisite alias PROPOSED NOT APPLIED; no eigenvalue/eigenvector or whole-parent merger.
+
+## 349. homomorphism from G to the multiplicative monoid of L — `missing.bc89c3b016673f824b11`
+
+**retain_distinct_missing**, 1/1 parents. An identity-preserving monoid map may send a nonunit to zero in L. For the multiplicative monoid {1,0}, its inclusion into L sends0 to0 and is a valid character; an identically zero map is excluded by preservation of1. If G happens to be a group, phi(g)phi(g^−1)=1 forces all images nonzero, but this argument does not apply to arbitrary monoids. Thus the generic monoid-homomorphism prerequisite is neither a group homomorphism into L× in all cases nor the field itself.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 350. map M_i→X splitting X→M_i — `missing.bcb94585c240d6354060`
+
+**retain_distinct_missing**, 1/1 parents. This is the RETRACTION r:M_i→X of a specified section s:X→M_i, satisfying rs=id_X. Rank160 instead isolates a section of a specified cocone map, so the arrows have complementary roles even when the same pair of maps can be described. In Sets, embed a singleton into a two-element set and retract it: rs=id but sr is not identity. Thus no stage isomorphism follows. The eventual common-stage factorization in the parent is extra, not a consequence of one split arrow.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 351. image Im(f) of categorical morphism — `missing.bee72226a091890e8ea0`
+
+**retain_distinct_missing**, 1/1 parents. Im(f) is the kernel ARROW of the cokernel of f, carrying its monomorphism into the codomain; it is not the elementwise image of an arbitrary function unless an appropriate concrete realization is supplied. In Ab for multiplication by2 on Z, it is represented by subgroup2Z↪Z; Coim(f) is Z/0, and their canonical comparison is an isomorphism without literal equality of these presentations. Availability of kernels and cokernels alone does not prove this comparison invertible in every additive category.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 352. alpha∪{alpha} — `missing.bfcb0543265f0a0f99cf`
+
+**retain_distinct_missing**, 1/1 parents. The candidate explicitly chooses binary SET UNION as prerequisite: x∈alpha∪{alpha} iff x∈alpha or x=alpha. The singleton {alpha} is not alpha, and for alpha=empty the successor is {empty}, not empty. On ordinal inputs this yields the successor construction, but arbitrary binary union is broader and not an ordinal successor without those inputs. Resolving the entire expression to the successor meaning would make a defining self-reference; the generic union operation is a defensible component reading only. Arbitrary unions of OPEN sets have a topology condition absent here.
+
+Remaining: No self-resolution; future segmentation must retain the singleton construction and ordinal input, not erase them by an operation-only identity.
+
+## 353. unit interval t in [0,1] — `missing.c014e3a54ec42dcbe486`
+
+**retain_distinct_missing**, 1/1 parents. The permissible parameter set is the CLOSED real interval {t:0≤t≤1}; endpoints yield y and x. This is neither all real scalars nor open (0,1), and it is not the convex subset C itself. Endpoint cases add no constraint beyond x,y∈C, so some convexity predicates using only0<t<1 are extensionally equivalent, but the parameter SETS remain different. Empty C satisfies convexity vacuously. Complex scalars are not ordered by this interval; a complex vector space would first need real scalar restriction.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 354. complex number field C — `missing.c1c39d573d410c3ccdb6`
+
+**retain_distinct_missing**, 1/1 parents. The complex coefficient field with conjugation is a particular field, not identical to the generic field predicate or R. The first-slot-linear convention gives <lambda v,w>=lambda<v,w> and <v,lambda w>=conj(lambda)<v,w>. Over real scalars conjugation disappears, but real restriction loses complex-linear structure; on C, multiplication by i has no real eigenvalue while it is a complex scalar operator. Positivity uses real values <v,v>, and neither the complex field nor an inner product alone supplies completeness. Zero-dimensional V is allowed.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 355. measurable subset A∈Σ — `missing.c36ffffef12f06dc84c7`
+
+**retain_distinct_missing**, 1/1 parents. Measurability of A is membership A∈Sigma for a SPECIFIED sigma-algebra. On X={0,1} with Sigma={empty,X}, singleton{0} is a subset but not measurable; with the full power set it is measurable. No measure, probability function or topology is required. The family Sigma is not one member A, and measurability of a function tests preimages against two such families. The original parent phrase names only the sigma-algebra, so the missing occurrence is a derived explanatory prerequisite rather than extra supplied measurable-set data.
+
+Remaining: Possible dependency-necessity/editorial segmentation review: measurable-subset terminology is explanatory rather than literal in the parent; no deletion or reclassification applied.
+
+## 356. set G/N of all N-cosets — `missing.c417b771ae34189771ee`
+
+**retain_distinct_missing**, 1/1 parents. The quotient CARRIER is the collection of all gN; it differs from an individual coset and from the group operation on that collection. The relation a~b iff a^−1b∈N yields these left-coset classes. Normality is unnecessary for the carrier as a coset set, but necessary to the source product: replacing representatives must preserve (ab)N. In general N=G gives a singleton carrier even when G is nontrivial. A generic quotient-set is a legitimate weaker prerequisite but lacks group inputs and the normal-subgroup scope.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 357. finite sum of n diagonal entries — `missing.c4602d674cca1ee0141b`
+
+**retain_distinct_missing**, 1/1 parents. The candidate isolates the additive finite-sum operation applied to the diagonal entries. Its field inputs are ordered/indexed by i=1,…,n; commutativity makes the sum order-independent. It is not matrix trace as an entire matrix invariant without the prior diagonal extraction and square-matrix data. Over F2, trace of I2 is0, so trace need not be positive or count dimension as an ordinary integer. This parent explicitly requires n≥1; a generic empty sum convention must not silently broaden that source. Field-extension trace requires a separate multiplication endomorphism.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 358. graded associative R-algebra — `missing.c5a7afab433a3e7d30ed`
+
+**source_convention_deferral**, 1/1 parents. A nonnegative graded associative R-algebra includes an R-algebra action and multiplication compatible with degrees, beyond an additive graded module or bare graded ring. Even over commutative R the tensor algebra need not be commutative: for a free rank2 module the words ef and fe are distinct degree2 basis tensors. More basically tensor powers of two arbitrary LEFT R-modules and an R-module-valued bilinear universal property require the commutative-unital framework or suitable bimodule data. The bare source R-module wording and stored tensor-product formulation do not explicitly settle that framework.
+
+Remaining: Later reconcile coefficient commutativity/unit or explicit bimodule tensor conventions; no automatic identity with a commutative graded-ring meaning or tensor construction correction.
+
+Next: `missing.c7ae8735835f1c21e801`, first parent `form.a54f6089c72fdd84.smooth-at-prime-noetherian-lifting`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
