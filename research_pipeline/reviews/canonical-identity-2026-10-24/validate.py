@@ -47,6 +47,7 @@ def main():
         assert context['effective_node_sha256'] == digest(snapshot['nodes'][fid]), fid
         assert context['effective_references'] == [r for r in refs if r['from_formulation'] == fid], fid
     by_id = {m['candidate_id']: m for m in manifest}
+    live_candidates = {c['id']: c for c in snapshot['candidates']}
     latest, event_ids = {}, set()
     for event in rows('reviews.jsonl'):
         cid = event['candidate_id']
@@ -74,6 +75,23 @@ def main():
             assert evidence['descriptor'] == snapshot['inventory']['meanings'][mid]
             for fid, source in evidence['formulations'].items():
                 assert source == snapshot['inventory']['formulations'][fid]
+        for candidate in event['compared_candidate_contexts'] + event['observed_identity_records']:
+            assert candidate == live_candidates[candidate['id']]
+        if event['rank'] > 8:
+            expected = {(fid, ref['occurrence_id']): ref
+                        for fid, evidence in event['parent_evidence'].items()
+                        for ref in evidence['candidate_occurrences']}
+            assessments = event['occurrence_identity_assessments']
+            assert len(assessments) == len(expected)
+            assert {(a['formulation_id'], a['occurrence_id']) for a in assessments} == set(expected)
+            for assessment in assessments:
+                ref = expected[assessment['formulation_id'], assessment['occurrence_id']]
+                assert assessment['original_phrase'] == ref['phrase']
+                assert assessment['observed_candidate_id'] == ref.get('observed_missing_candidate_id', cid)
+                assert assessment['whole_phrase_vs_component']
+                assert assessment['mathematical_context_assessment']
+                assert assessment['whole_data_identity_claimed'] is False
+            assert all(e['contextual_identity_justification'] for e in event['parent_evidence'].values())
         assert not event['semantic_graph_changes_applied']
         latest[cid] = event
     for status, key in [('COMPLETE', 'complete_candidate_ids'), ('PARTIAL', 'partial_candidate_ids')]:
@@ -90,6 +108,22 @@ def main():
     next_parents = (latest[unfinished[0]]['parent_formulations_remaining'] if unfinished[0] in latest
                     else by_id[unfinished[0]]['incoming_formulation_ids'])
     assert checkpoint['next_parent_formulation_id'] == next_parents[0]
+    if 'latest_tranche' in checkpoint:
+        tranche = checkpoint['latest_tranche']
+        start, end = tranche['manifest_ranks']
+        targets = manifest[start - 1:end]
+        assert tranche['new_complete_candidate_ids'] == [m['candidate_id'] for m in targets]
+        assert all(latest[m['candidate_id']]['coverage_status'] == 'COMPLETE' for m in targets)
+        assert tranche['new_candidate_parent_visits'] == sum(m['incoming_formulation_count'] for m in targets)
+        assert tranche['new_candidate_occurrences'] == sum(m['occurrence_count'] for m in targets)
+        validation = json.loads((here / 'validation.json').read_text())
+        assert validation['complete'] == len(checkpoint['complete_candidate_ids'])
+        assert validation['partial'] == len(checkpoint['partial_candidate_ids'])
+        assert validation['untouched'] == len(untouched)
+        assert validation['new_complete'] == len(targets)
+        assert validation['distinct_parent_formulations'] == len(contexts)
+        assert validation['candidate_parent_visits'] == sum(len(e['parent_formulations_reviewed'])
+                                                          for e in latest.values())
     assert not checkpoint['semantic_graph_changed'] and not checkpoint['gate_opened']
     print(f'PASS: {len(manifest)} inventoried; {len(latest)} contextual records; '
           f'{len(contexts)} source anchors; {len(untouched)} untouched. Mathematical judgments require review.')

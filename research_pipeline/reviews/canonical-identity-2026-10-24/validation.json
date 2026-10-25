@@ -1,0 +1,110 @@
+{
+  "scope": "Read-only audit evidence; no mathematical certification",
+  "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "unresolved_fingerprint": "eb9beb4199a99b1dc3fc18b57daa1f1d4cc9c66051caa558acb7a48396242cee",
+  "continuation_input_commit": "7f600f55",
+  "total_canonical": 421,
+  "complete": 38,
+  "partial": 0,
+  "untouched": 383,
+  "new_complete": 30,
+  "distinct_parent_formulations": 238,
+  "candidate_parent_visits": 316,
+  "candidate_occurrences": 339,
+  "review_events": 40,
+  "current_dispositions": {
+    "retain_distinct_missing": 31,
+    "contextual_ambiguity_or_variant": 5,
+    "source_convention_deferral": 2
+  },
+  "new_dispositions": {
+    "retain_distinct_missing": 26,
+    "contextual_ambiguity_or_variant": 3,
+    "source_convention_deferral": 1
+  },
+  "checks": {
+    "coverage_validator": {
+      "exit_code": 0,
+      "scope": "manifest, scope and event hashes, exact parent/occurrence coverage, source/node/ref anchors, compared contexts"
+    },
+    "unittest": {
+      "exit_code": 0,
+      "tests_run": 60,
+      "failures": 0,
+      "errors": 0,
+      "modules": [
+        "test_dependency_global_audit",
+        "test_dependency_cycle_analysis",
+        "test_dependency_consistency_worklist",
+        "test_dependency_consolidation_readiness"
+      ]
+    },
+    "global_scan": {
+      "exit_code": 0,
+      "arguments": [
+        "scan",
+        "--limit",
+        "80",
+        "--candidate-limit",
+        "80"
+      ],
+      "read_only": true,
+      "summary": {
+        "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+        "state_unresolved_fingerprint": "eb9beb4199a99b1dc3fc18b57daa1f1d4cc9c66051caa558acb7a48396242cee",
+        "phase": "consolidate_occurrences",
+        "consolidation_gate_valid": false,
+        "meaning_count": 611,
+        "formulation_count": 659,
+        "complete_effective_formulations": 659,
+        "existing_dependency_edges": 2640,
+        "scan_dependency_edges": 1774,
+        "seed_dependency_edges": 866,
+        "distinct_existing_dependency_pairs": 1763,
+        "cycle_components": 0,
+        "cycle_components_scope": "legacy_direct_scan_and_unoverridden_existing_seeds",
+        "effective_cycle_components": 1,
+        "formulation_avoidable_cycle_components": 1,
+        "unavoidable_cycle_components": 0,
+        "undetermined_cycle_components": 0,
+        "effective_existing_dependency_edges": 2647,
+        "unassigned_occurrences": 0,
+        "ambiguous_occurrences": 0,
+        "total_flags": 9,
+        "review_queue_count": 9,
+        "accepted_review_count": 0,
+        "stale_review_count": 0,
+        "flags_by_code": {
+          "cycle_edges_review_required": 0,
+          "effective_seed_override_count": 20,
+          "ideal_vs_module_generation": 8,
+          "submersive_iff_surjectivity_scope": 1
+        }
+      },
+      "returned_flags": 9
+    },
+    "readiness": {
+      "exit_code": 0,
+      "arguments": [
+        "--exhaustive"
+      ],
+      "status": "mechanical_checks_passed_review_decision_required",
+      "mechanical_checks": 19,
+      "mechanical_integrity_failures": [],
+      "assessment_evidence_sha256": "89b238fe3fdcb60ace4e84d1c417b2235616909a6b4e8fc1852646c65fd825b4",
+      "pass2_complete": "not_determined",
+      "pass3_authorized": false
+    },
+    "protected_workspace": {
+      "files_hashed_before_and_after": 2281,
+      "changed": []
+    },
+    "git_diff_check": {
+      "exit_code": 0
+    }
+  },
+  "external_mathematical_research": false,
+  "graph_changes_applied": false,
+  "gate_opened": false,
+  "next_candidate_id": "missing.c4ed408b10943e9c0f8e"
+}

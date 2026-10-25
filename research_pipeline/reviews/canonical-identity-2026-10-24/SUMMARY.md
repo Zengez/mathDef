@@ -1,8 +1,24 @@
-# Canonical identity audit — first substantial tranche
+# Canonical identity audit — 38-candidate checkpoint
 
 Base `cd1c774b4a44f25416890513dcfe98030c948091`; post-FIP repair and adopted unitality adjudication respected. The active graph matches both preparing hashes; no drift.
 
-**421 inventoried; 8 complete parent-context reviews; 0 partial; 413 untouched.** 134 distinct original source formulations reviewed, across 156 candidate/parent visits and 177 candidate occurrences. COMPLETE is coverage, not mathematical resolution or source certification.
+**421 inventoried; 38 COMPLETE; 0 PARTIAL; 383 untouched.** This continuation adds **30 complete identities**, manifest ranks **9–38**, in six committed groups of five. Cumulative evidence covers **238 distinct source formulations**, **316 candidate/parent visits**, and **339 candidate occurrences**. New work accounts for 160 visits, 162 occurrences and 104 newly captured source formulations. COMPLETE means identity-focused coverage of all parents, not mathematical resolution or source certification.
+
+Current dispositions: **31 retain distinct missing**, **5 contextual ambiguities**, **2 source-convention deferrals**, **0 needs-recheck**, **0 candidate aliases proposed**, **0 existing-meaning resolutions proposed**. This pass contributes 26 retain-distinct, three ambiguity and one deferral reviews. The first eight judgments and Chat adjudication remain preserved.
+
+The three new questions for Chat are:
+
+- Rank 18, `missing.e43d4f1922e210cc373a`: the nilpotent-ideal occurrence `occ.6382ae14011d622d9352` uses a general identity-optional ring, but the canonical ideal-product context requires commutative unital rings. Positive powers work in the nonunital zero-product C₂ rng too; the stored scope does not establish the narrower interpretation.
+- Rank 36, `missing.826fb5c503bdaf25ce7f`: the canonical context quantifies all real times, while other parents use two individual variables or integer-time sequences. The common single-variable L¹ prerequisite is valid; the whole quantified conditions are different.
+- Rank 38, `missing.b599bdc9343a25050226`: the canonical context fixes `Spec(R)` but mentions generic intent, while three parents use arbitrary spaces. Clarify the generic-predicate versus specialized-ambient identity rule without inventing a spectrum presentation.
+
+Rank 23 additionally defers exact commutative/unit/zero-algebra source conventions for five bare `k-algebra` formulations. Other component-prerequisite flags (structured surjections/isomorphisms, finite intersection with empty value Ω, evaluated value versus evaluation map) do not assert equality of their whole data packages. All exact occurrences, full formulations, source metadata, references, proofs, nonmerges and residual questions are in `reviews.jsonl` and `source-contexts.jsonl`.
+
+Next is rank **39**, `missing.c4ed408b10943e9c0f8e` (closed subset of a topological space), starting at `form.e0dd0b0cffcfff0b.irreducible-topological-space`. The graph hashes remain unchanged. No mathematical/graph data, aliases, resolutions, gate or phase changes were made. This is a coverage checkpoint for later adjudication, not a global consolidation rationale.
+
+## Initial eight reviews (historical first-tranche narrative)
+
+The initial tranche covered 134 distinct sources, 156 visits and 177 occurrences; its narrative below remains historical evidence.
 
 Manifest rows remain initially UNREVIEWED permanently. The append-only review event ledger supplies current status; two initial partial events are retained and superseded explicitly by complete events. Checkpoint lists exact IDs and latest events, not just counts.
 
@@ -17,7 +33,7 @@ Manifest rows remain initially UNREVIEWED permanently. The append-only review ev
 | 7 | `missing.5645554e6bee6b40edda` | 11/11 | source_convention_deferral |
 | 8 | `missing.7462fa5f90275b34779a` | 11/11 | retain_distinct_missing |
 
-Counts: confidently retain-distinct missing **5** (category, functor, preimage, residue field, free module); contextual ambiguities **2** (quotient, polynomial); source-convention deferral **1** (commutative-unital ring); needs-recheck disposition **0**; new candidate aliases proposed **0**; new existing-meaning resolutions proposed **0**. Mathematical questions remain in complete records. No reduction of the canonical registry is attempted.
+First-tranche counts: confidently retain-distinct missing **5** (category, functor, preimage, residue field, free module); contextual ambiguities **2** (quotient, polynomial); source-convention deferral **1** (commutative-unital ring); needs-recheck disposition **0**; new candidate aliases proposed **0**; new existing-meaning resolutions proposed **0**. Mathematical questions remain in complete records. No reduction of the canonical registry is attempted.
 
 ## 1. category (size-unrestricted)
 
@@ -67,9 +83,9 @@ All 11 parents were read. Finite free R^n in presentations and Lazard diagrams, 
 
 Residual uncertainty: Rank zero and zero-ring conventions must remain explicit in future population; the separating infinite-rank argument uses a nonzero field.; This review checks the free-module prerequisite, not all claims about global rank of maps or finite locally free/projective equivalences in the host formulations.
 
-## Resume
+## First-tranche resume point (superseded by the current checkpoint)
 
-First unfinished rank **9**, `missing.6baca7285e379e18e82b` (quotient R-module), beginning with `form.138b13bf27c037c1.naive-cotangent-complex`. Ranks 9–30 remain inventory priorities, not reviewed records. Compared candidate contexts (e.g. contraction, polynomial evaluation and generic direct sums) do not count as deep reviews of those identities. Re-run the validator before continuing; invalidate or re-anchor the tranche if the active inventory/pool or a reviewed source/node differs.
+At that checkpoint the first unfinished rank was **9**, `missing.6baca7285e379e18e82b` (quotient R-module), beginning with `form.138b13bf27c037c1.naive-cotangent-complex`. Ranks 9–30 remain inventory priorities, not reviewed records. Compared candidate contexts (e.g. contraction, polynomial evaluation and generic direct sums) do not count as deep reviews of those identities. Re-run the validator before continuing; invalidate or re-anchor the tranche if the active inventory/pool or a reviewed source/node differs.
 
 ## Evidence and boundaries
 
@@ -92,7 +108,7 @@ All **2,281** independent-workspace files have identical before/after SHA-256 va
 
 ## Continuation progress (PR #10)
 
-**Current cumulative coverage: 38 COMPLETE / 0 PARTIAL / 383 untouched; 421 inventoried.** 30 new complete reviews in this continuation. The first-tranche counts and narrative above are historical; the append-only ledger and this current section give current coverage.
+**Current cumulative coverage: 38 COMPLETE / 0 PARTIAL / 383 untouched; 421 inventoried.** 30 new complete reviews in this continuation. The initial eight-review narrative is historical; the append-only ledger, current headline and this section agree on current coverage.
 
 Dispositions: contextual_ambiguity_or_variant: **5**, retain_distinct_missing: **31**, source_convention_deferral: **2**. New aliases/resolutions proposed: **0/0**. Complete means all parent contexts considered for identity, not resolution or source certification.
 
@@ -277,3 +293,9 @@ Uncertainty: This explains a source-independent primitive construction, not auto
 Uncertainty: Adjudicate the canonical context: retain a generic clopen prerequisite with spectrum specialization, or keep separately typed variants if the identity rule requires it. Existing aliases document generic intent but do not themselves rewrite the canonical context. No edit or split applied.
 
 Current totals: **238 distinct source formulations**, **316 candidate/parent visits**, **339 candidate occurrences**. Next: `missing.c4ed408b10943e9c0f8e`, beginning with `form.e0dd0b0cffcfff0b.irreducible-topological-space`. All per-occurrence component flags are in the new ledger events; no whole-data identity is inferred from a component prerequisite.
+
+## Final continuation verification
+
+The strengthened `validate.py` passed after validating all new per-occurrence flags and complete parent-specific assessments, plus the unchanged initial records and exact source/node/reference and compared-definition anchors. **60 regression tests passed**. Global read-only scan (`--limit 80 --candidate-limit 80`) exited 0; exhaustive readiness exited 0 with **19 mechanical checks and no integrity failures**, retaining `mechanical_checks_passed_review_decision_required` and Pass 2 `not_determined`. The scan still emits mathematical/structural review leads; successful execution does not mean no warnings. See `validation.json` for exact results and the readiness evidence digest.
+
+All **2,281** independent-workspace files matched before/after SHA-256 values at checkpoints and at completion. No production or frozen Wave 1 mathematical records were read. Compared candidates outside ranks 1–38 remain untouched for coverage even when their stored context was compared. Forty append-only events represent 38 current reviews, preserving the two original partial events and their supersessions. The manifest and Chat/task instruction files are unchanged. Only `SUMMARY.md`, `checkpoint.json`, `reviews.jsonl`, `source-contexts.jsonl`, `validate.py` and the new `validation.json` changed in this continuation.
