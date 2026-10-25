@@ -42,7 +42,7 @@
         "test_dependency_consistency_worklist",
         "test_dependency_consolidation_readiness"
       ],
-      "elapsed_seconds_reported": 0.254
+      "elapsed_seconds_reported": 0.212
     },
     "global_scan": {
       "exit_code": 0,
@@ -139,13 +139,56 @@
       "attempted_command": "gh pr view 10 --repo Zengez/mathDef --json url,state,isDraft,headRefName,title,body",
       "exit_code": 1,
       "result": "GitHub GraphQL Forbidden; Git pushes to the existing PR branch succeeded. No PR metadata changed."
+    },
+    "consistency_worklist": {
+      "exit_code": 0,
+      "arguments": [
+        "--exhaustive"
+      ],
+      "summary": {
+        "total_review_candidates": 20,
+        "returned": 20,
+        "omitted": 0,
+        "exhaustive": true,
+        "accepted_count": 0,
+        "stale_review_count": 0,
+        "by_code": {
+          "same_phrase_multiple_targets": 3,
+          "seed_scan_target_disagreement": 15,
+          "submersive_iff_surjectivity_scope": 1,
+          "subset_predicate_to_ambient_space": 1
+        },
+        "mechanical_integrity_count": 0,
+        "effective_reference_count": 4489
+      },
+      "effective_evidence_sha256": "e940d15c7e0c986db5dfcdf478a7f50442af33e06f72efd2a0bc0f5aa226abad",
+      "mechanical_integrity_count": 0
+    },
+    "terminal_checkpoint": {
+      "valid_completed_checkpoint": "PASS",
+      "non_null_next_candidate_rejected": "PASS",
+      "non_null_next_parent_rejected": "PASS",
+      "scope": "Disposable audit-evidence copies; validator reads unchanged live snapshot. In-progress398 checkpoint also passed the modified validator before the final batch."
+    },
+    "changed_path_isolation": {
+      "exit_code": 0,
+      "start_commit": "54c5c00ca81cc21fea111cea4ed0f2468bcbf8a2",
+      "all_changed_paths_in_dated_audit_directory": true,
+      "changed_file_count": 9
+    },
+    "postcoverage_inventory": {
+      "exit_code": 0,
+      "flagged_latest_review_anchors": 51,
+      "candidate_alias_proposals": 9,
+      "existing_meaning_proposals": 2,
+      "evidence_sha256": "f78e7bc472a50460ea0959aaa8c995867e36dba980b33f5785d23708cad123cc"
     }
   },
   "external_mathematical_research": false,
   "graph_changes_applied": false,
   "gate_opened": false,
   "next_candidate_id": null,
-  "checks_scope_note": "Coverage and protected hashes refreshed at each group; test/scan/readiness results refer to the explicit last_mechanical_check_complete_count, or previous boundary until rerun.",
+  "checks_scope_note": "All final coverage, protected-state and mechanical checks rerun after421 complete; no mathematical or external-source certification.",
   "previous_boundary_commit": "5efda1ca70eeca2ec15d18e236079d658a8f73c3",
   "new_distinct_parent_formulations_reviewed": 184,
   "new_source_evidence_records": 75,
@@ -203,13 +246,27 @@
     "semantic_graph_changes_applied": false
   },
   "changed_files": [
+    "research_pipeline/reviews/canonical-identity-2026-10-24/POSTCOVERAGE_RECONCILIATION.json",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/POSTCOVERAGE_RECONCILIATION.md",
     "research_pipeline/reviews/canonical-identity-2026-10-24/SUMMARY.md",
     "research_pipeline/reviews/canonical-identity-2026-10-24/TRANCHE_5.md",
     "research_pipeline/reviews/canonical-identity-2026-10-24/checkpoint.json",
     "research_pipeline/reviews/canonical-identity-2026-10-24/reviews.jsonl",
     "research_pipeline/reviews/canonical-identity-2026-10-24/source-contexts.jsonl",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/validate.py",
     "research_pipeline/reviews/canonical-identity-2026-10-24/validation.json"
   ],
-  "last_mechanical_check_complete_count": 338,
-  "minimum_milestone_achieved": true
+  "last_mechanical_check_complete_count": 421,
+  "minimum_milestone_achieved": true,
+  "cumulative_proposed_candidate_aliases": 9,
+  "cumulative_proposed_existing_meaning_resolutions": 2,
+  "all_proposal_status": "PROPOSED_NOT_APPLIED",
+  "postcoverage_reconciliation_sha256": "6916aea338a867f0ff5d75074c1814eaed2804dd17c3a9badb424edbcf5bb6ec",
+  "postcoverage_reconciliation_evidence_sha256": "f78e7bc472a50460ea0959aaa8c995867e36dba980b33f5785d23708cad123cc",
+  "read_completeness_followup": {
+    "new_parent_observation_text_variants_examined": 37,
+    "secondary_reference_reasons_examined": 212,
+    "additional_compared_formulations_outside_source_anchors_and_prior_comparisons_examined": 9,
+    "note": "All these exact extra fields remain in anchored ledger evidence; no comparison-only candidate coverage was claimed."
+  }
 }
