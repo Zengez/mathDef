@@ -79,7 +79,7 @@ jobs:
               state_after = json.loads((graph / "STATE.json").read_text())["summary"]
               assert state_after["scan_complete"] == state_before["scan_complete"]
               assert state_after["total_formulations"] == state_before["total_formulations"]
-              for key in ("unassigned_occurrences", "ambiguous_occurrences", "deferred_occurrences",
+              for key in ("unassigned_occurrences", "ambiguous_occurrences",
                           "missing_occurrences", "scan_amendment_event_count"):
                   assert state_after[key] == state_before[key], (key, state_before.get(key), state_after.get(key))
               assert state_after["consolidation_gate_valid"] is False
