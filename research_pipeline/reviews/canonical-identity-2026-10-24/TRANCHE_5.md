@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE4.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**100 additional COMPLETE; cumulative 288 COMPLETE, 0 PARTIAL, 133 untouched.**
+**120 additional COMPLETE; cumulative 308 COMPLETE, 0 PARTIAL, 113 untouched.**
 
 ## 189. maximal finite chain connecting primes — `missing.33bd557af9c1505ff986`
 
@@ -604,4 +604,124 @@ Remaining: Hom-set universe/local-smallness conditions remain exact source oblig
 
 Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
 
-Next: `missing.8ad6f2df92b13442d87d`, first parent `form.2ed79f667742de34.essentially-constant-ind-diagram`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 289. ind-object — `missing.8ad6f2df92b13442d87d`
+
+**retain_distinct_missing**, 1/1 parents. An ind-object is a formal filtered diagram in the ind-completion, not necessarily an existing colimit of C. In finite sets the increasing diagram {1}⊂{1,2}⊂… is a valid formal ind-object although no finite set is its colimit with those injections. A compatible cocone to X alone need not be universal or prove essential constancy; the source separately imposes splitting and eventual equality. Pro-objects reverse the formal direction and are not synonyms. The construction needs small indexing/universe conventions, not an unrestricted proper-class union.
+
+Remaining: Later population needs the formal morphism construction and exact universe scope; current identity coverage is not an ind-completion theorem certificate.
+
+## 290. identity operator I_V — `missing.8b1220e9e892f96886bf`
+
+**retain_distinct_missing**, 1/1 parents. I_V(v)=v is the distinguished K-linear endomorphism on V, defined without a basis or finite dimension. It becomes an identity matrix only after choosing a finite basis; the operator itself also exists on infinite-dimensional V. For V=0 identity and zero map coincide, explaining absence of eigenvalues there. λI_V has the same domain/codomain as A, making their difference meaningful. A generic category identity supplies the abstract unit law but does not retain the vector/scalar context by itself.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 291. Lebesgue–Stieltjes integral of x^n — `missing.8b4a695691c7d8e62f73`
+
+**contextual_ambiguity_or_variant**, 1/1 parents. The Lebesgue integral is a construction using a measurable integrand and measure, not a raw-moment name alone or a Riemann integral under arbitrary tags. Here the integrand is specifically x^n and finite L1 integrability is supplied, so its value is exactly the parent raw moment. The candidate wording fixes that special integrand and interval, leaving generic integration prerequisite versus the already stored moment-value construction unclear. For measures with atoms, endpoint inclusion can change the value; those conventions are not erased by writing ∫_a^b.
+
+Remaining: Later adjudicate generic Lebesgue integration versus the particular raw-moment value and the Stieltjes endpoint convention; no moment self-resolution or source edit applied.
+
+## 292. compositum KL — `missing.8ba90699ab870d76cbca`
+
+**retain_distinct_missing**, 1/1 parents. KL is the least SUBFIELD of the fixed common overfield containing K and L. It need not be their union (unions of incomparable subfields need not be closed) or the image of K⊗L as a ring. The finite-sum product image generates KL as a field, but with K=k(s),L=k(t) it misses 1/(s+t), as shown at rank282. The overfield embeddings matter; abstract fields without specified common embeddings do not determine this concrete subfield. If K⊆L, the compositum is L, a special containment case.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 293. homogeneous component — `missing.8cc6a7cb971d28b697a1`
+
+**retain_distinct_missing**, 1/1 parents. a_d is an ELEMENT in the degree-d piece of a finite-support decomposition, not the whole subgroup/ring component S_d. Direct-sum uniqueness gives additive projection maps, but these generally are not ring homomorphisms. For k[t], degree-zero projection kills t and all positive terms; in a Z-graded Laurent ring projecting degree zero does not preserve t·t^−1=1. An ideal is homogeneous when every such a_d from each a∈I stays in I; the condition is additional to being an ideal or possessing a decomposition in S.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 294. quotient ring R/J and quotient module M/JM — `missing.8d90dbc484b53274e726`
+
+**contextual_ambiguity_or_variant**, 1/1 parents. R/J is a ring, M/JM a module; J kills M/JM so scalar action descends by (r+J)(m+JM)=rm+JM. They are generally different objects: with M=R² the quotient module has two coordinates and no prescribed multiplication. This is a compound prerequisite containing the ideal action, ring quotient and module quotient, not one aliasable quotient construction. The quasi-regular comparison additionally uses a polynomial algebra and grading. Preserve the stored warning to segment only in a future authorized record, with both legitimate dependencies retained.
+
+Remaining: Later authorized segmentation must preserve the induced R/J action and source occurrence; no split/new candidate or graph change applied.
+
+## 295. ascending chain of submodules — `missing.8d9fdc1b1763aba61b63`
+
+**retain_distinct_missing**, 1/1 parents. An ascending chain is a sequence of submodules of the SAME M with nonstrict inclusions. It need not stabilize by its own definition, be strictly increasing, or have endpoints 0 and M. In ⊕_(n≥1) k, spans of the first n basis vectors give a strictly increasing chain. Noetherianity requires every such sequence to stabilize, not just one or a uniform common N. Ideals are submodules of the regular ring module, a specialized instance rather than submodules of an unrelated module.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 296. retrocompact open subset U of X — `missing.8e10ca4c4067ac5928f8`
+
+**retain_distinct_missing**, 1/1 parents. Retrocompactness is relative to X: each quasi-compact OPEN V has U∩V quasi-compact. It does not assert U itself is quasi-compact; U=X is always retrocompact even when X=R is not quasi-compact. In a discrete space every open subset is retrocompact, since quasi-compact opens are finite, preserving the correction of the earlier invalid discrete-space example. The relative condition is not generic openness, local closedness, or arbitrary constructibility. The source forms finite unions of differences of such opens with these exact restrictions.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 297. repeated root in algebraic closure — `missing.8e7388ef8958ac46b761`
+
+**retain_distinct_missing**, 1/1 parents. For nonzero f over a field, α is repeated iff (T−α)^2 divides f in the extension polynomial ring. Writing f=(T−α)g gives f′(α)=g(α), proving equivalence with f(α)=f′(α)=0 in any characteristic. An ordinary root need not be repeated: T has simple root 0, while T² has repeated 0. In characteristic p, derivative zero can occur for nonconstant polynomials and signals possible inseparability, not constancy. The source restricts irreducible f and asks absence of repeated roots in an algebraic closure.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 298. zero-divisor phenomena in S — `missing.8f2dea7e2bd1211c0cf6`
+
+**contextual_ambiguity_or_variant**, 1/1 parents. The canonical zero-divisor context REQUIRES the element itself nonzero, whereas the existing zerodivisor meaning only requires a nonzero annihilating partner, and hence includes 0 in every nonzero ring. These variants are not identical. Moreover the source strong-transcendence implication allows arbitrary u, including 0, and does not assert either u or P(x) is a nonzero zero divisor. The phrase zero-divisor phenomena is an explanatory scan phrase, not literal source wording selecting one convention. Preserve a contextual variant/necessity question instead of resolving to the existing broader predicate automatically.
+
+Remaining: Adjudicate zero-inclusion convention and whether this explanatory dependency should represent a named prerequisite or source-local caution; no reclassification or deletion applied.
+
+## 299. interchange law — `missing.90939810d7d17605bf00`
+
+**retain_distinct_missing**, 1/1 parents. Interchange expresses functoriality of horizontal composition with respect to vertical composition: (β₂∘β₁)⋆(α₂∘α₁)=(β₂⋆α₂)∘(β₁⋆α₁), for appropriately composable cells. It is not general commutativity of all 2-cells or associativity of either composition separately. The parent already calls horizontal composition a FUNCTOR, so restating interchange may be redundant but correct, not evidence of a circular or inconsistent dependency. Strict associativity/unitality concerns 1-cell composition constraints and does not remove this typed compatibility law.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 300. graded isomorphism of the displayed canonical map — `missing.90e938272e1caec9155e`
+
+**retain_distinct_missing**, 1/1 parents. A degree-zero graded-module map is a graded isomorphism when bijective; its inverse preserves degree because a homogeneous target has only its matching-degree preimage component by injectivity and the direct sum decomposition. An ungraded module isomorphism can fail degree preservation: swapping two equal modules placed in degrees 0 and 1 is bijective but not graded. The particular quasi-regularity canonical map must have this property; existence of some unrelated graded isomorphism is not enough. The module target, whole comparison data and isomorphism predicate remain different roles.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 301. distance |a−b| on real line — `missing.91383b9c137b0e359967`
+
+**retain_distinct_missing**, 1/1 parents. d(a,b)=|a−b| is a TWO-variable function built from real subtraction and absolute value, not the one-variable absolute-value function. It is nonnegative, symmetric, vanishes exactly when a=b, and satisfies the triangle inequality by |a−c|≤|a−b|+|b−c|. These properties make the real metric a consequence of the source formula; they do not redefine absolute value via an already assumed metric. The norm-displacement construction specializes to the same real expression under its real norm context but has broader vector-space/scalar input data.
+
+Remaining: Later occurrence triage may treat the distance statement as an application/consequence rather than an independent prerequisite; no automatic reclassification.
+
+## 302. triangle or snake composites — `missing.92bfb3c3771716e14196`
+
+**retain_distinct_missing**, 1/1 parents. With the stated η:1→X⊗Y and ε:Y⊗X→1, the X-snake inserts η on the left, associates, evaluates the Y⊗X pair, then removes the unit; the Y-snake does the opposite ordered insertion/evaluation. Both composites must be the respective identities. These use chosen duality maps, unlike Mac Lane’s unit triangle, which involves only associator and unitors. Tensor order determines the author’s left-dual convention; reversing factors or keeping only one snake changes the data. No dual existence is asserted for every object.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 303. strictly increasing finite chain of submodules — `missing.92cfee91b51a427877ff`
+
+**retain_distinct_missing**, 1/1 parents. This finite chain has STRICT inclusions and fixed endpoints 0,M; its length counts inclusions, not objects or generators. It need not be saturated or have simple successive quotients: 0⊊Z is a valid chain although Z is not simple. Arbitrary ascending submodule sequences allow equality and do not fix endpoints. For M=0 the length-zero chain is valid; unbounded attainable finite lengths give infinite module length. The existing bare-module action convention deferral remains separate from this order-theoretic chain identity.
+
+Remaining: No claim that all maximal chains are composition series or that the host source unit convention is independently verified.
+
+## 304. triangle coherence identity — `missing.93b0382cbfcc0a76a69b`
+
+**retain_distinct_missing**, 1/1 parents. The monoidal unit triangle says (id_X⊗λ_Y)∘α_(X,1,Y)=ρ_X⊗id_Y as arrows (X⊗1)⊗Y→X⊗Y. It uses associator and unitors of the tensor structure, not evaluation/coevaluation of a dual pair. Naturality of individual maps does not by itself certify this equality, and the pentagon involves four tensor variables with no chosen unit. Although both kinds are called triangle identities, their inputs, arrows and quantifiers differ. The parent imposes this as its defining coherence condition.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 305. successor inclusion splits as a direct summand — `missing.952e94af9b62565431b7`
+
+**retain_distinct_missing**, 1/1 parents. A split inclusion i:A→B has a linear r:B→A with ri=id_A. Then B=i(A)⊕ker r by b=ir(b)+(b−ir(b)), with zero intersection. An inclusion alone need not split: 2Z↪Z has no retraction, since r(1)=2k would imply r(2)=4k≠2. In the filtration this is required at every successor step; it does not impose the separate limit-union condition. A selected complement/retraction can be nonunique, unlike merely asserting direct-summand existence.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 306. sections of ~M on D(f) — `missing.95993fb9eaa92086c477`
+
+**retain_distinct_missing**, 1/1 parents. For the associated module sheaf, sections over D(f) are canonically isomorphic to M_f, with compatible further-localization restriction maps. This is not a stalk at a point or the ring O_X(D(f)) unless M=R with its extra ring structure. M=R² gives module sections with no specified ring multiplication. The module localization meaning is a legitimate reusable component, while the sheaf, its section assignment and canonical comparison add context. The equality on principal opens does not alone certify every claimed sheaf/gluing theorem without compatible restrictions.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 307. compatible iterated p-power roots of elements of k — `missing.95b3b43b35ef7f6f817b`
+
+**retain_distinct_missing**, 1/1 parents. In characteristic p the p^n-root of a fixed a inside a field algebraic closure is UNIQUE: if u^(p^n)=v^(p^n), then (u−v)^(p^n)=0 and u=v. Thus compatible iterated roots do not require arbitrary choices among distinct roots; compatibility follows from uniqueness in the fixed closure. Their adjunction is purely inseparable, unlike separable closure. For perfect k all roots already lie in k, so the construction can be trivial. Roots for each a,n, their generated field and the minimal perfect-extension property are different data.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 308. homogeneous element f — `missing.95eafc984a7460aa06f8`
+
+**retain_distinct_missing**, 1/1 parents. A homogeneous f lies in one specified S_d with d>0; this is not any element of S, a homogeneous ideal or an ordinary polynomial degree relative to an unrelated grading. In k[t] the element 1+t is not homogeneous, and 1 is homogeneous of degree 0 but excluded by the positive-degree source scope. The zero element lies in every graded piece, so a unique numerical degree for zero must not be assumed; localization at zero/nilpotents may yield the zero ring under allowed conventions. Keep those edge conventions separate from homogeneity.
+
+Remaining: Later source reconciliation should clarify zero/nilpotent denominator and grading conventions; do not silently require f nonzero beyond the original text.
+
+Next: `missing.960bd927c204df58bb49`, first parent `form.wave2.alternative39.adjacency-matrix-simple-undirected`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
