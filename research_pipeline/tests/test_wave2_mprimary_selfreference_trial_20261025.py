@@ -147,7 +147,8 @@ class MPrimaryResolutionTrial(unittest.TestCase):
             "replacement": new_system_ref,
         })
         packet_list = build_review_packages(snapshot, manifest)
-        self.assertEqual(len(packet_list), 1)\n        self.assertEqual(len(packet_list[0]["amendments"]), 2)
+        self.assertEqual(len(packet_list), 1)
+        self.assertEqual(len(packet_list[0]["amendments"]), 2)
         amend = packet_list[0]
         self.assertEqual(amend["id"], "amend-mprimary-selfreference-20261025-001")
         self.assertEqual(len(amend["amendments"]), 1)
