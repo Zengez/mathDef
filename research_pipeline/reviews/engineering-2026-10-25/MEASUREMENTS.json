@@ -87,5 +87,100 @@
     "identical_publication": true,
     "timing_scope": "Local synthetic 300 rows per non-source stage, three runs per version; not a prediction of research or remote CI speed.",
     "speedup_ratio": 36.559502000392605
+  },
+  "focus_bundle": {
+    "full_utf8_json_bytes": 5448694,
+    "compact_utf8_json_bytes": 3214620,
+    "default_bundle_identical_to_baseline": true,
+    "all_compact_contexts_expand_exactly": true,
+    "workload": {
+      "candidate_parent_visits": 813,
+      "distinct_parent_formulations": 468,
+      "repeated_parent_visits": 345,
+      "parent_visit_budget": null,
+      "budget_exceeded_by_first_candidate": false,
+      "candidates_omitted_by_budget": 0,
+      "source_contexts_emitted": 468,
+      "warning": "Counts describe context visits, not mathematical difficulty, completed review, source certification or permission to merge."
+    }
+  },
+  "preflight_export": {
+    "synthetic_only": true,
+    "formulations": 80,
+    "historical_amendments": 800,
+    "exported_formulations": 20,
+    "packets": 4,
+    "repeats": 3,
+    "before": {
+      "median_seconds": 0.08779629800119437,
+      "runs": [
+        {
+          "elapsed_seconds": 0.08779629800119437,
+          "graph_replays": 5,
+          "packet_digests": [
+            "ff5aa81ed0b86625ddb866e4ac670f31e4cca1db4d56291d2fb179ca36a0f445",
+            "c50eac8e43b0a2fcac7efdd1173a180423f319de6133c1b235ba6f3a69ab311e",
+            "dc2566062daffc83cea22d4fc714017bff2b20fb32feb509210c0eea1f2a5135",
+            "bb086b2bb29d75c172e5d785acdffaf8a42feee1908f412da81e475b8c7dcf18"
+          ]
+        },
+        {
+          "elapsed_seconds": 0.0897198639868293,
+          "graph_replays": 5,
+          "packet_digests": [
+            "ff5aa81ed0b86625ddb866e4ac670f31e4cca1db4d56291d2fb179ca36a0f445",
+            "c50eac8e43b0a2fcac7efdd1173a180423f319de6133c1b235ba6f3a69ab311e",
+            "dc2566062daffc83cea22d4fc714017bff2b20fb32feb509210c0eea1f2a5135",
+            "bb086b2bb29d75c172e5d785acdffaf8a42feee1908f412da81e475b8c7dcf18"
+          ]
+        },
+        {
+          "elapsed_seconds": 0.0836590060062008,
+          "graph_replays": 5,
+          "packet_digests": [
+            "ff5aa81ed0b86625ddb866e4ac670f31e4cca1db4d56291d2fb179ca36a0f445",
+            "c50eac8e43b0a2fcac7efdd1173a180423f319de6133c1b235ba6f3a69ab311e",
+            "dc2566062daffc83cea22d4fc714017bff2b20fb32feb509210c0eea1f2a5135",
+            "bb086b2bb29d75c172e5d785acdffaf8a42feee1908f412da81e475b8c7dcf18"
+          ]
+        }
+      ]
+    },
+    "after": {
+      "median_seconds": 0.033342772992909886,
+      "runs": [
+        {
+          "elapsed_seconds": 0.03239228199527133,
+          "graph_replays": 2,
+          "packet_digests": [
+            "ff5aa81ed0b86625ddb866e4ac670f31e4cca1db4d56291d2fb179ca36a0f445",
+            "c50eac8e43b0a2fcac7efdd1173a180423f319de6133c1b235ba6f3a69ab311e",
+            "dc2566062daffc83cea22d4fc714017bff2b20fb32feb509210c0eea1f2a5135",
+            "bb086b2bb29d75c172e5d785acdffaf8a42feee1908f412da81e475b8c7dcf18"
+          ]
+        },
+        {
+          "elapsed_seconds": 0.033342772992909886,
+          "graph_replays": 2,
+          "packet_digests": [
+            "ff5aa81ed0b86625ddb866e4ac670f31e4cca1db4d56291d2fb179ca36a0f445",
+            "c50eac8e43b0a2fcac7efdd1173a180423f319de6133c1b235ba6f3a69ab311e",
+            "dc2566062daffc83cea22d4fc714017bff2b20fb32feb509210c0eea1f2a5135",
+            "bb086b2bb29d75c172e5d785acdffaf8a42feee1908f412da81e475b8c7dcf18"
+          ]
+        },
+        {
+          "elapsed_seconds": 0.035806781001156196,
+          "graph_replays": 2,
+          "packet_digests": [
+            "ff5aa81ed0b86625ddb866e4ac670f31e4cca1db4d56291d2fb179ca36a0f445",
+            "c50eac8e43b0a2fcac7efdd1173a180423f319de6133c1b235ba6f3a69ab311e",
+            "dc2566062daffc83cea22d4fc714017bff2b20fb32feb509210c0eea1f2a5135",
+            "bb086b2bb29d75c172e5d785acdffaf8a42feee1908f412da81e475b8c7dcf18"
+          ]
+        }
+      ]
+    },
+    "all_packet_digests_identical": true
   }
 }
