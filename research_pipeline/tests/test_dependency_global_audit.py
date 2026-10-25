@@ -386,6 +386,44 @@ class GlobalAuditTests(unittest.TestCase):
         self.assertNotIn("matching_source_references",
                          snapshot["nodes"]["form.alpha"]["references"][0])
 
+
+    def test_focus_reference_views_keep_seed_outside_live_index(self):
+        """No historic seed may shift the actual editable reference index."""
+        snapshot = self.snapshot()
+        snapshot["inventory"]["seed_relations"] = [{
+            "relation_id": "rel.fixture.legacy",
+            "from_formulation": "form.alpha",
+            "phrase": "preexisting concept",
+            "target_meaning_id": "meaning.beta",
+            "relation_state": "candidate",
+        }]
+        snapshot["candidates"] = [{
+            "id": "missing.fixture", "status": "unresearched",
+            "query": "separate construction", "context": "Fixture",
+            "incoming_formulation_ids": ["form.alpha"],
+            "occurrence_count": 1,
+        }]
+        before = snapshot["nodes"]["form.alpha"]["references"]
+        report = candidate_review_bundle(
+            snapshot, candidate_ids=("missing.fixture",))
+        source = report["candidates"][0]["source_formulations"][0]
+        live = source["effective_live_reference_rows"]
+        seed = source["historical_seed_references"]
+        self.assertEqual(len(live), 2)
+        self.assertEqual([r["live_reference_index"] for r in live], [0, 1])
+        self.assertEqual([r["expected_occurrence_id"] for r in live],
+                         [r["occurrence_id"] for r in before])
+        self.assertEqual([r["reference"] for r in live], before)
+        self.assertEqual(len(seed), 1)
+        self.assertEqual(seed[0]["relation_id"], "rel.fixture.legacy")
+        self.assertEqual(seed[0]["origin"], "historical_seed_relation")
+        self.assertFalse(seed[0]["editable_in_live_node"])
+        self.assertNotIn("live_reference_index", seed[0])
+        self.assertIn("expected_occurrence_id",
+                      report["reference_view_warning"])
+        self.assertEqual(source["all_effective_references"], before)
+        self.assertNotIn("historical_seed_references", before[0])
+
     def test_focus_queue_term_filter_and_fingerprint(self):
         snapshot = self.snapshot()
         snapshot["candidates"] = [
