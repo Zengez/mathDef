@@ -133,10 +133,7 @@
     "missing.eeaf8a205d5ed2ed6eeb",
     "missing.eeb1ff5cf448091c3d57",
     "missing.ef28497e9dc38c5b82e5",
-    "missing.f112efe448973069bae2"
-  ],
-  "partial_candidate_ids": [],
-  "untouched_candidate_ids": [
+    "missing.f112efe448973069bae2",
     "missing.fbd11071cfe5ca8ef6e2",
     "missing.9f6f3ee9e141231a54d4",
     "missing.c84405a9f915b0897178",
@@ -146,7 +143,10 @@
     "missing.03b976f9393f9c4191f4",
     "missing.03f1f6a4d6b405f4f3e3",
     "missing.0423a519b1e84ca6d41c",
-    "missing.06d3b29d2fa8ad998a3d",
+    "missing.06d3b29d2fa8ad998a3d"
+  ],
+  "partial_candidate_ids": [],
+  "untouched_candidate_ids": [
     "missing.07e25eec2547df68421c",
     "missing.087c8c78478b26335f01",
     "missing.08ca647ed43622178944",
@@ -431,11 +431,11 @@
     "missing.fe199606757d4b449fee",
     "missing.ff581a4908e803e3f0e0"
   ],
-  "next_unfinished_candidate_id": "missing.fbd11071cfe5ca8ef6e2",
+  "next_unfinished_candidate_id": "missing.07e25eec2547df68421c",
   "semantic_graph_changed": false,
   "gate_opened": false,
-  "reviews_sha256": "c6c2e033910b4f1056117195221bf18b68f84f16fc9bf84c51548f0bf4558ab5",
-  "source_contexts_sha256": "8f04118676597d70d5a0d6378ae0bb7622abf583d38c3f5806d3613c96c67810",
+  "reviews_sha256": "6f0fc669943cbd44750444a35889d4b6e5e9fe4c694f70bff811aa46061ef7f0",
+  "source_contexts_sha256": "9327d0dd1637c2aca4288a0cf5ebfa5ebecb71cbed036b762df2d82807128c0c",
   "reviewed_parent_formulation_ids": [
     "form.003cb1cc70cf5a2c.locally-nilpotent-ideal",
     "form.003cb1cc70cf5a2c.nilpotent-ideal",
@@ -499,6 +499,7 @@
     "form.3fcd082413a6b2eb.relative-dimension-at-prime",
     "form.3fe40ac4fb74bff2.pure-ideal",
     "form.3fe40ac4fb74bff2.pure-ideal-intersection-test",
+    "form.415a1503ae7ed97d.finitely-presented-algebra",
     "form.415a1503ae7ed97d.finitely-presented-module",
     "form.41e3aea7f356bae3.rank-of-map-finite-free",
     "form.42730c7ef758df2a.iso-comma-category",
@@ -606,9 +607,11 @@
     "form.aacbc297769cc94a.formally-smooth-ring-map",
     "form.ab260940ea9c523d.connected-component-space",
     "form.ab260940ea9c523d.connected-topological-space",
+    "form.ab260940ea9c523d.totally-disconnected-space",
     "form.ac17dab9530c0b80.normal-algebraic-field-extension",
     "form.ac92b309b6aae7a4.representable-one-morphism-fibred-groupoids",
     "form.af6115a1e1deaad3.coequalizer-topological-spaces",
+    "form.af6115a1e1deaad3.coproduct-topological-spaces",
     "form.b0ca759b4a7e7bfb.relative-assassin-module",
     "form.b1c99b8dae7a6bde.locally-finite-collection",
     "form.b1d6371a257864cf.quasiseparated-scheme-morphism",
@@ -755,6 +758,7 @@
     "form.wave2.foundation.uniformizer-dvr",
     "form.wave2.foundation.unit-of-ring",
     "form.wave2.foundation.well-ordered-set",
+    "form.wave2.foundation13.abelian-group-homomorphism-kernel",
     "form.wave2.foundation13.exact-sequence-abelian-category",
     "form.wave2.foundation13.preadditive-category-cokernel",
     "form.wave2.foundation13.preadditive-category-kernel",
@@ -770,6 +774,8 @@
     "form.wave2.graph42.simple-undirected",
     "form.wave2.group116.measure-pushforward",
     "form.wave2.integer59.fraction-field-universal",
+    "form.wave2.pop139.congruence-multiple",
+    "form.wave2.pop139.matrix-trace",
     "form.wave2.pop140.affine-hull-combinations",
     "form.wave2.pop140.affine-hull-intersection",
     "form.wave2.pop140.independent-pair",
@@ -783,6 +789,8 @@
     "form.wave2.prereq122.real-series-convergent",
     "form.wave2.prob90.random-variable-general",
     "form.wave2.prob90.random-variable-real",
+    "form.wave2.quot119.normal-subgroup.2",
+    "form.wave2.quot119.normal-subgroup.3",
     "form.wave2.quot119.ordinary-real-ogf",
     "form.wave2.quot119.simple-graph-isomorphism",
     "form.wave2.rational55.rational-absolute-value",
@@ -790,6 +798,7 @@
     "form.wave2.real45.complete-ordered-real-field",
     "form.wave2.real45.dedekind-supremum",
     "form.wave2.real45.totally-ordered-field",
+    "form.wave2.real52.positive-cauchy-class",
     "form.wave2.research81.martingale-continuous-index.01",
     "form.wave2.research81.martingale-discrete.01",
     "form.wave2.research81.martingale-discrete.02",
@@ -799,7 +808,7 @@
     "form.wave2.variant71.connected.03",
     "form.wave2.variant71.noetherian.maximal-condition"
   ],
-  "next_parent_formulation_id": "form.wave2.quot119.normal-subgroup.2",
+  "next_parent_formulation_id": "form.wave2.alternative39.adjacency-matrix-simple-undirected",
   "latest_review_ids": {
     "missing.fcb5ab865c6d9dbb3d79": "canonical-review.2026-10-24.007",
     "missing.c5104821c3c70afa1f63": "canonical-review.2026-10-24.008",
@@ -928,13 +937,23 @@
     "missing.eeaf8a205d5ed2ed6eeb": "canonical-review.2026-10-24.127",
     "missing.eeb1ff5cf448091c3d57": "canonical-review.2026-10-24.128",
     "missing.ef28497e9dc38c5b82e5": "canonical-review.2026-10-24.129",
-    "missing.f112efe448973069bae2": "canonical-review.2026-10-24.130"
+    "missing.f112efe448973069bae2": "canonical-review.2026-10-24.130",
+    "missing.fbd11071cfe5ca8ef6e2": "canonical-review.2026-10-24.131",
+    "missing.9f6f3ee9e141231a54d4": "canonical-review.2026-10-24.132",
+    "missing.c84405a9f915b0897178": "canonical-review.2026-10-24.133",
+    "missing.00f05f23cf310f438561": "canonical-review.2026-10-24.134",
+    "missing.0113342523b02aece2fb": "canonical-review.2026-10-24.135",
+    "missing.01941cf7d698abe9cfcc": "canonical-review.2026-10-24.136",
+    "missing.03b976f9393f9c4191f4": "canonical-review.2026-10-24.137",
+    "missing.03f1f6a4d6b405f4f3e3": "canonical-review.2026-10-24.138",
+    "missing.0423a519b1e84ca6d41c": "canonical-review.2026-10-24.139",
+    "missing.06d3b29d2fa8ad998a3d": "canonical-review.2026-10-24.140"
   },
   "latest_tranche": {
     "start_commit": "040b369f",
     "manifest_ranks": [
       89,
-      128
+      138
     ],
     "new_complete_candidate_ids": [
       "missing.6bb87052ec8a81464ddd",
@@ -976,11 +995,21 @@
       "missing.eeaf8a205d5ed2ed6eeb",
       "missing.eeb1ff5cf448091c3d57",
       "missing.ef28497e9dc38c5b82e5",
-      "missing.f112efe448973069bae2"
+      "missing.f112efe448973069bae2",
+      "missing.fbd11071cfe5ca8ef6e2",
+      "missing.9f6f3ee9e141231a54d4",
+      "missing.c84405a9f915b0897178",
+      "missing.00f05f23cf310f438561",
+      "missing.0113342523b02aece2fb",
+      "missing.01941cf7d698abe9cfcc",
+      "missing.03b976f9393f9c4191f4",
+      "missing.03f1f6a4d6b405f4f3e3",
+      "missing.0423a519b1e84ca6d41c",
+      "missing.06d3b29d2fa8ad998a3d"
     ],
-    "new_candidate_parent_visits": 80,
-    "new_candidate_occurrences": 80,
-    "new_distinct_source_formulations": 46,
+    "new_candidate_parent_visits": 91,
+    "new_candidate_occurrences": 93,
+    "new_distinct_source_formulations": 55,
     "protected_workspace_files_unchanged": 2281
   }
 }

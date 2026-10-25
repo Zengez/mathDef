@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE3.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**40 additional COMPLETE; cumulative 128 COMPLETE, 0 PARTIAL, 293 untouched.**
+**50 additional COMPLETE; cumulative 138 COMPLETE, 0 PARTIAL, 283 untouched.**
 
 ## 89. isomorphism class — `missing.6bb87052ec8a81464ddd`
 
@@ -244,4 +244,64 @@ Remaining: No external citation verification or whole-parent theorem certificati
 
 Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
 
-Next: `missing.fbd11071cfe5ca8ef6e2`, first parent `form.wave2.quot119.normal-subgroup.2`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 129. conjugate subset gNg^{-1} — `missing.fbd11071cfe5ca8ef6e2`
+
+**retain_distinct_missing**, 2/2 parents. Conjugate subset is the IMAGE of N under the automorphism c_g(n)=gng^−1, not one conjugated element or the conjugacy class varying g. For subgroup N it is a subgroup: products and inverses are conjugates of products and inverses in N. In S_3, conjugating N={1,(12)} by (123) gives {1,(23)}, so subgroup status alone does not imply invariance. If gNg^−1⊆N for every g, apply it to g^−1 and conjugate to get N⊆gNg^−1; equality follows. A fixed single g does not supply normality.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 130. integer divisibility of a-b by m — `missing.9f6f3ee9e141231a54d4`
+
+**retain_distinct_missing**, 1/1 parents. Integer divisibility is the existential integer-multiple predicate m|(a−b) iff ∃k∈Z a−b=km; it is not real division, a chosen quotient k, or a least remainder. For m>0 it defines the stored congruence relation, but the candidate allows nonzero m more generally and the existing congruence meaning fixes positive modulus and two-argument relation. Replacing m by −m negates k and preserves divisibility, without identifying signed parameter conventions. Congruence is an equivalence: witnesses 0, −k and k+ℓ prove reflexivity, symmetry and transitivity. The seed and scan occurrences in this same parent use exactly the same predicate, not two separately reviewed source parents.
+
+Remaining: The historical alias reason mentions a nonzero-modulus variant, but the current single parent explicitly requires positive m; do not invent an extra parent or zero-modulus convention.
+
+## 131. Square matrix of finite order over a field — `missing.c84405a9f915b0897178`
+
+**retain_distinct_missing**, 1/1 parents. A square matrix over K is an array/function {1,…,n}²→K for finite n≥1, distinct from its diagonal, trace, associated linear endomorphism or characteristic polynomial. A linear map acquires a matrix only after bases are chosen. General commutative-ring matrices include coefficients such as Z/4 and therefore have broader coefficient scope; adjacency matrices impose 0/1 values and graph constraints, so they are narrower in a different direction. Matrix [[0,1],[0,0]] and the zero matrix both have trace zero but differ, proving the trace cannot recover the matrix. Both seed and scan identify the same square-array prerequisite of the one source.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 132. polynomial relations f_j — `missing.00f05f23cf310f438561`
+
+**retain_distinct_missing**, 1/1 parents. The f_j are a finite chosen family of polynomial elements mapped to zero by a presentation, not the generated ideal as a set, the equality predicate alone, or the entire presented algebra. (T)=(T,T²) in R[T] supplies two different relation lists yielding the same ideal/quotient; generators need not be independent, minimal, nonzero, or a regular sequence. The finite-presentation property asserts existence of some such finite family and a finite generator list, not a canonical choice. Empty relation family gives the polynomial algebra itself. The polynomial-ring and quotient prerequisites in the compound presentation remain additional; no relation-list/ideal/presentation alias is inferred.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 133. commutative unital ring and common identity — `missing.0113342523b02aece2fb`
+
+**source_convention_deferral**, 1/1 parents. The candidate specifies a commutative unital inclusion with COMMON identity, strictly more than two individually unital rings related by a multiplicative additive inclusion. For example R=k×{0}⊂S=k×k has identities (1,0) and (1,1); both rings are commutative unital but the inclusion is not unital. The source says inclusion of commutative rings with identity without spelling 1_R=1_S; the historical ring-map-unital seed supports an intended convention but is not independent proof of it. Thus retain a source-scope deferral for common identity rather than weakening the candidate or certifying the seed. Strong transcendence and the prior formal-polynomial/evaluated-value granularity caution remain separate; one cannot infer an inclusion convention from the displayed annihilator implication alone.
+
+Remaining: Later verify whether this exact source uses common-identity subrings; no external lookup, source edit or seed override authorized. This is separate from the nine already adopted convention deferrals.
+
+## 134. zero element 0_B — `missing.01941cf7d698abe9cfcc`
+
+**retain_distinct_missing**, 1/1 parents. 0_B is the additive identity of the specified abelian group B. Its uniqueness follows from 0+0′=0′ and 0+0′=0. It is an element, not the zero object B=0, a zero morphism, or the entire kernel subset. Every additive group homomorphism preserves it: f(0)=f(0)+f(0), then cancel. The generic two-sided identity candidate abstracts the same law for arbitrary operations, while this typed additive abelian-group context and specified codomain identify which element the kernel equation uses; do not equate identity of an arbitrary multiplication with additive zero. For a nonzero ring, 0 and 1 separate those operations.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 135. factorial n! of nonnegative integer — `missing.03b976f9393f9c4191f4`
+
+**retain_distinct_missing**, 1/1 parents. Factorial is the integer-valued finite product of all positive integers up to n, with 0!=1. It differs from falling factorial x-underlined-n as a function of two parameters: only specialization x=n gives n!, whereas e.g. 5-underlined-2=20 and 2!=2. In characteristic zero n! embeds as a nonzero real, so a_n/n! in this real EGF is defined for all n≥0. The same division in characteristic p need not exist once n≥p, a scope not allowed to leak into this real construction. Factorial does not encode the infinite-series convergence condition.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 136. disjoint union of sets X_i — `missing.03f1f6a4d6b405f4f3e3`
+
+**retain_distinct_missing**, 1/1 parents. The tagged disjoint union is {(i,x):i∈I,x∈X_i}; component injections have disjoint images even when the original X_i overlap. If X_1=X_2={a}, ordinary union has one element but tagged union has two. It is the coproduct in Sets with its canonical injections, but the generic coproduct meaning ranges over categories and does not define this set construction. The topological parent adds U open iff every injection preimage is open; U∩X_i is shorthand after identifying each component with its tagged image. Empty index gives ∅. A set-sized I and set components are needed to form a set; no proper-class coproduct is asserted.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 137. singleton {x} — `missing.0423a519b1e84ca6d41c`
+
+**retain_distinct_missing**, 1/1 parents. A singleton {x} has exactly one element and exists for each specified x, whereas its member x need not itself be a one-element set. The compound Kuratowski-constructor candidate includes a singleton AND an unordered pair, so the singleton component does not identify that whole construction. Components are maximal connected subsets, not automatically open sets. The rationals with their usual topology have singleton connected components (an irrational between two rational points separates any purported two-point connected subset) but are not discrete, since every neighborhood contains other rationals. Empty space has no components and satisfies the displayed condition vacuously; no phantom singleton is created.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 138. eventual uniform lower bound a_n>=delta — `missing.06d3b29d2fa8ad998a3d`
+
+**retain_distinct_missing**, 1/1 parents. The predicate is ∃δ∈Q_{>0}∃N∀n≥N a_n≥δ, a UNIFORM positive margin in the tail, not ∃N∀n≥N a_n>0. Sequence a_n=1/(n+1) is positive termwise but tends to zero and has no such margin. If b∼a and a_n≥δ eventually, choose the difference threshold δ/2; eventually b_n>a_n−δ/2≥δ/2. Hence the predicate is representative-invariant on rational Cauchy classes. It requires no previously constructed real limit, and it is not merely a lower bound (negative/zero bound would not characterize positive classes) or a property of δ alone.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+Next: `missing.07e25eec2547df68421c`, first parent `form.wave2.alternative39.adjacency-matrix-simple-undirected`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
