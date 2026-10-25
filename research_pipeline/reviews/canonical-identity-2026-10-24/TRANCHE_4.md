@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE3.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**10 additional COMPLETE; cumulative 98 COMPLETE, 0 PARTIAL, 323 untouched.**
+**20 additional COMPLETE; cumulative 108 COMPLETE, 0 PARTIAL, 313 untouched.**
 
 ## 89. isomorphism class — `missing.6bb87052ec8a81464ddd`
 
@@ -64,4 +64,64 @@ Remaining: No external citation verification or whole-parent theorem certificati
 
 Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
 
-Next: `missing.8d23b7ba80f9f5e74420`, first parent `form.wave2.analysis.antiderivative-on-interval`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 99. open real interval I — `missing.8d23b7ba80f9f5e74420`
+
+**retain_distinct_missing**, 2/2 parents. Both parents require an open order-convex subset of R, with endpoints possibly infinite, not an arbitrary open subset or an interval with endpoints included. The local δ condition proves openness, while the word interval separately requires all points between any two members. The disconnected set (0,1)∪(2,3) satisfies that local condition but is not an interval. This matters for the antiderivative constant-difference conclusion; derivative zero permits different constants on different components. The weight parent additionally imposes positive finite total mass and all moments, which exclude an empty domain there; the candidate alone must not silently acquire that positivity condition.
+
+Remaining: The displayed local-neighborhood clause is not by itself a definition of interval; retain order convexity explicitly in future source reconciliation and keep empty-domain conventions source-specific.
+
+## 100. field of rational functions in an arbitrary set of indeterminates over k — `missing.92c051047df5e5a34ba3`
+
+**retain_distinct_missing**, 2/2 parents. For a set I, k[X_i:i∈I] consists of finite sums of monomials, each using finitely many indices and finite exponents. It is a domain: any proposed product of two nonzero polynomials lies in one finite-variable polynomial subring, where the product is nonzero. Its fraction field contains quotients p/q using finitely many indeterminates per element, although the field may have infinitely many generators in total. Algebraic independence of B makes evaluation injective and extends to a k-field isomorphism Frac(k[X_b])→k(B); its image is exactly the least subfield containing k and B. This does not require finite transcendence degree, and neither polynomial algebra alone nor the general fraction-field construction is the specifically generated rational-function field. I=∅ gives k.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 101. fibre category E_U of p — `missing.9583e5aa27671c66640e`
+
+**retain_distinct_missing**, 2/2 parents. The strict fibre has objects p(x)=U and only arrows mapped to id_U. It is not generally the full subcategory on those objects: if p is the identity on a nontrivial one-object group category, the full subcategory has all group arrows, but the strict fibre has only the identity. In the groupoid-fibred parents these fibres are groupoids, and discreteness or trivial automorphisms are further restrictions. A setoid can have two distinct isomorphic objects joined uniquely, hence need not be discrete. Fibres at every U being setoids does not imply the whole total category is a setoid; base arrows need not be invertible.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 102. relative diagonal — `missing.96df95f71d6a919f6c57`
+
+**retain_distinct_missing**, 2/2 parents. Δ_{X/S} is the unique scheme arrow induced by the compatible pair (id_X,id_X), since f id_X=f id_X. This distinguishes a particular arrow from the fibre-product object, a set diagonal or a property such as closed immersion. For an affine S-scheme Spec(A), its coordinate description comes from multiplication A⊗_R A→A, so sheaf/ring data matter as well as points. Separatedness and quasi-separatedness apply different predicates to this identical arrow; neither predicate is included in constructing it. No condition that every diagonal be closed is inferred.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 103. two-sided identity e∈M — `missing.9b25d5ea4962f66e4ade`
+
+**retain_distinct_missing**, 2/2 parents. The common prerequisite is an element e with e*x=x=x*e for every x, without separately requiring associativity or inverses. If e and f are two such elements, e=e*f=f, proving uniqueness. A one-sided identity is insufficient: on a set with x*y=y, every element is a left identity but there is no right identity when at least two elements exist. Both group and monoid parents require two-sided identity; a monoid does not require every element invertible. The historical group→monoid seed is a legitimate consequence, not an identity between arbitrary binary operations and monoids.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 104. norm displacement ∥v−a∥ — `missing.9c6846ccbcf16c917251`
+
+**retain_distinct_missing**, 2/2 parents. For a chosen norm and centre a, v↦∥v−a∥ is norm evaluated on an additive difference, not the norm function v↦∥v∥ with centre erased. The triangle inequality implies the induced d(v,a)=∥v−a∥ is a metric; an arbitrary metric need not arise from any vector norm. The two parents evaluate the identical scalar expression then use ≤r versus <r. No completeness, inner product, or equality between closed ball and closure of open ball is required. In the discrete norm |x|=1 for x≠0 on a field with trivial absolute value, the open radius-one ball is {0} and the closed one is the whole nontrivial space; the provenance warning about closure therefore remains relevant in the permitted normed-division-ring scope.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 105. formal derivative f′ — `missing.a42c73c7effdb6ac0764`
+
+**retain_distinct_missing**, 2/2 parents. Formal differentiation is the coefficientwise algebraic map D(Σa_iX^i)=Σ(i a_i)X^(i−1), with integer multiplication interpreted in the coefficient ring. It needs no limits and is not the real analytic derivative meaning. In characteristic p, D(X^p)=0 although X^p is nonconstant; zero derivative does not mean constant there. For standard étale presentations invertibility is required of the IMAGE of f′ in the localized quotient, not of f′ in R[X]. The separability source instead tests coprimality of f and f′ over a field; irreducibility of f does not require irreducibility of f′.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 106. zero object — `missing.a60aa43eed2b99b5d184`
+
+**retain_distinct_missing**, 2/2 parents. A zero object is one object both initial and terminal. Initial ∅ and terminal singleton in Sets show neither condition alone suffices. Factoring X→0→Y yields a distinguished zero arrow; this works in any pointed category, not only a preadditive one. In a preadditive category a terminal object is also initial: its unique endomorphism is zero and identity, so every arrow out is zero by bilinearity, and each Hom group supplies that arrow. Thus the empty product in the additive-category source supplies a zero object. Object 0, zero morphism, zero composite and exactness are distinct data/conditions.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 107. quasi-isomorphic — `missing.a66bc0c6846ac92c6394`
+
+**retain_distinct_missing**, 2/2 parents. A quasi-isomorphism is a chain map inducing homology isomorphisms in every degree; quasi-isomorphic objects can be compared through zigzags. This is weaker than chain isomorphism or chain-homotopy equivalence. The acyclic complex 0→Z --2→ Z →Z/2→0 is quasi-isomorphic to zero, but not contractible: a contracting homotopy would split Z→Z/2, impossible since every group map Z/2→Z is zero. For the stored two-term NL in degrees 1,0, having H_1=0 and H_0=P gives the canonical quotient chain map NL→H_0[0] as a quasi-isomorphism; choosing H_0≅P then supplies the source comparison. Finite projectivity is additional; homology alone does not select a canonical identification with a named P.
+
+Remaining: The statement uses quasi-isomorphic as a comparison relation rather than naming a map; preserve zigzag allowance and degree placement. No derived-category foundational conventions externally verified.
+
+## 108. Grothendieck construction of a category-valued functor — `missing.a6a017ccc98fac71121d`
+
+**retain_distinct_missing**, 2/2 parents. For strict F:C^op→Cat, objects are (U,x); an arrow (V,y)→(U,x) consists of f:V→U and h:y→F(f)x in F(V). If followed backwards by (g:W→V,k:z→F(g)y), composition is (fg,F(g)(h)∘k); strict F(g)F(f)=F(fg) gives associativity and strict identities. Projection sends this arrow to f. Groupoid-valued F is an instance with invertible fibre arrows, but total arrows over noninvertible base arrows need not be invertible. The functor F, its construction ∫F, its fibre category and over-base isomorphism are different data. Weak pseudofunctors require coherence inserted into composition, absent from this stored strict context.
+
+Remaining: Size/universe for Cat and Groupoids stays explicit source scope; no pseudofunctor strictification theorem certified.
+
+Next: `missing.aba129fc5f7d346b2d0f`, first parent `form.de2c8164874ee4a9.cofinal-category-functor`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.

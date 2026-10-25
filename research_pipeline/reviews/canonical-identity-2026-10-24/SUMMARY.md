@@ -337,4 +337,4 @@ All **2,281** independent-workspace files matched before/after SHA-256 values at
 
 ## Tranche 4 current coverage
 
-**Current: 98 COMPLETE / 0 PARTIAL / 323 untouched. 10 new complete this pass.** 326 distinct source formulations; 459 candidate/parent visits; 488 occurrences. Earlier narrative is historical; see TRANCHE_4.md and checkpoint.json for current progress. Next `missing.8d23b7ba80f9f5e74420`.
+**Current: 108 COMPLETE / 0 PARTIAL / 313 untouched. 20 new complete this pass.** 340 distinct source formulations; 479 candidate/parent visits; 508 occurrences. Earlier narrative is historical; see TRANCHE_4.md and checkpoint.json for current progress. Next `missing.aba129fc5f7d346b2d0f`.
