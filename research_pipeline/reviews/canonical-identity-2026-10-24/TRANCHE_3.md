@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE2.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**20 additional COMPLETE; cumulative 58 COMPLETE, 0 PARTIAL, 363 untouched.**
+**30 additional COMPLETE; cumulative 68 COMPLETE, 0 PARTIAL, 353 untouched.**
 
 ## 39. closed subset of a topological space — `missing.c4ed408b10943e9c0f8e`
 
@@ -124,4 +124,64 @@ Remaining: No external citation or complete host-theorem certification; no seman
 
 Remaining: No external citation or complete host-theorem certification; no semantic change proposed.
 
-Next: `missing.de3c256ab9b24566d9a4`, first parent `form.wave2.research81.martingale-continuous-index.01`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 59. almost-sure equality E[X_{n+1}|F_n]=X_n — `missing.de3c256ab9b24566d9a4`
+
+**retain_distinct_missing**, 3/3 parents. All three sources use equality of two real random variables outside a null event, P(X≠Y)=0, for each stated pair of indices. This is weaker than pointwise equality and does not automatically supply one common exceptional event for uncountably many pairs. On Ω=[0,1] with uniform probability, Y_t(ω)=1_{ω=t} equals zero almost surely for every fixed t, but no ω has Y_t(ω)=0 for all t. For countably many integer pairs the union of the exceptional null sets is null, so a common event can be formed. The canonical context explicitly calls the notion reusable and the adjacent-time formula source-specific; that wording does not replace the real-time or all-future quantifiers. Conditional expectation is an object/version construction, not the equality predicate.
+
+Remaining: No stronger indistinguishability or universal common-null-set claim is made.
+
+## 60. intersection of all closed supersets of A — `missing.fbe845b2e6ab78c9890f`
+
+**retain_distinct_missing**, 3/3 parents. The three parents use the same arbitrary intersection operation x∈⋂F iff x belongs to every member, but select different families: closed, convex or affine-closed supersets. Each actual family is nonempty because the ambient space belongs. For empty input, ∅ belongs to the convex/affine families and the resulting hull is ∅; topological closure of ∅ is also ∅. Arbitrary intersections are not finite intersections (⋂_{n≥1}(−1/n,1/n)={0}, though every finite intersection is an interval). The operation alone is not any particular hull: for U=(0,1) in R, convex hull is U, topological closure [0,1], and affine hull R. The canonical context first defines arbitrary intersection and says HERE closed supersets; preserve generic operation versus these special input families, rather than equating all hulls.
+
+Remaining: If a future candidate-schema interpretation treats HERE as a restrictive type rather than an instance, preserve the generic-intersection/component distinction explicitly; no whole-hull alias is proposed.
+
+## 61. finite affine combination sum alpha_i*x_i — `missing.63acc9193a56ae7003b9`
+
+**retain_distinct_missing**, 2/2 parents. Both parents use a finite sum with real coefficients adding to 1 and no positivity. Translation by v changes the sum by (Σα_i)v=v, so the construction is independent of an affine choice of origin. Convex combinations additionally restrict coefficients: 2·1−1·0=2 is an affine combination of {0,1}, outside its convex hull [0,1]. A general linear combination lacks the normalization; the affine hull is the SET of all eligible outputs, not one combination. Source k≥1 and coefficient normalization exclude a nullary sum (whose coefficient sum is 0), hence empty input produces no combinations and empty affine hull. The historical seed and scans name the same construction; finite-dimensional/positive d are parent restrictions, not convergence conditions.
+
+Remaining: No external citation or complete host-theorem certification; no semantic change proposed.
+
+## 62. natural transformation a:F→G — `missing.a8c70a2a13320680c54c`
+
+**contextual_ambiguity_or_variant**, 2/2 parents. Both sources need component functions η_X:F(X)→G(X) satisfying G(u)η_X=η_YF(u) for every u:Y→X. Such a compatible family is more than unrelated component functions and need not be an isomorphism or representable map. For ξ∈G(U), the Yoneda instance sends h:X→U to G(h)(ξ); functoriality proves naturality, and η↦η_U(id_U) recovers ξ, proving the correspondence. However observed candidate missing.7863e36c979e91435854 explicitly describes the WHOLE Yoneda bijection Nat(h_U,G)≅G(U), whereas the canonical candidate defines a general natural transformation. An ordinary transformation is a justified component prerequisite; its definition alone does not identify a distinguished element/correspondence with an arbitrary transformation. Keep this granularity uncertainty separate from the valid formula and no automatic alias reversal.
+
+Remaining: Adjudicate whole Yoneda correspondence versus a source-specific transformation component at occ.099ea4270d9cbdccf52b; preserve historical prerequisite-only rationale.
+
+## 63. extended nonnegative real values — `missing.c89d1fba0e09e7e6fb3b`
+
+**retain_distinct_missing**, 2/2 parents. Both sources require nonnegative extended values with +∞ available; finite nonnegative reals alone do not cover them. Counting measure on N has total mass ∞, and countable sums of nonnegative terms are interpreted as suprema of finite partial sums. This is not an ordinary ordered field: +∞ has no additive inverse in this codomain and expressions ∞−∞ are not thereby defined. The historical outer-measure seed uses an entire typed function phrase; the original candidate QUERY names its extended-real CODOMAIN, and only that component is shared. Measure additivity and outer-measure subadditivity, and Σ versus P(X) domains, remain distinct. Neither an extended-real value nor the value system is itself a measure.
+
+Remaining: Future formal arithmetic must specify operation domains and conventions such as 0·∞ where needed; no unsupported subtraction/inverse rule is inferred.
+
+## 64. divides — `missing.908934f4b8323f2ba8a0`
+
+**retain_distinct_missing**, 1/1 parents. The sole parent has THREE occurrences of the same relation: a divides b iff b=ac for some c in the given integral domain. Thus p|ab⇒p|a or p|b uses the same relation at three argument pairs, not three meanings. In a commutative unital ring, a|b iff b∈(a), and hence (b)⊆(a), which reverses the element-divisibility versus principal-ideal inclusion direction. Divisibility alone is not primality: 4|8 but 4 is not prime in Z; 0|0 while 0∤1. The source nonzero nonunit conditions restrict p, not the domain of the generic divisibility relation. Existing prime-element/principal-ideal meanings impose extra predicates or construct subsets rather than define this binary relation.
+
+Remaining: No external citation or complete host-theorem certification; no semantic change proposed.
+
+## 65. countably generated module — `missing.0573d17c9b55504f064f`
+
+**retain_distinct_missing**, 2/2 parents. Both parents require a generating set of cardinality at most countable, allowing finite and empty generator sets in the intended unital setting. The module ⊕_{n≥1}Z is countably generated but not finitely generated: finitely many finite-support vectors cannot span all standard coordinate vectors. Z/2 is finitely, hence countably, generated over Z but is not projective, since a splitting of Z→Z/2 would embed a nonzero torsion element in Z. Thus neither existing finite-generation nor projectivity/flat-Mittag-Leffler criterion is the general predicate. Kaplansky dévissage constrains each successive quotient separately and does not require the whole transfinite filtration or module to have countably many generators.
+
+Remaining: The unit-action qualification of the finite-linear-combination formula is the rank-54 scope issue; no blanket nonunital generation identity is inferred here.
+
+## 66. vector-space dimension — `missing.0bde42f1d35a47cbb46e`
+
+**retain_distinct_missing**, 2/2 parents. Both parents use basis cardinality over a specified field. If V is finite-dimensional, exchange shows every independent set has size at most any finite spanning set, so bases have equal finite size; infinite dimensions use the usual basis-cardinality framework and its ambient choice assumptions. Rank(T) is dimension of its IMAGE under an extra finite-image hypothesis, not dimension of its domain: the zero map R²→R has rank 0 but domain dimension 2. Field degree is dimension of E as an F-space, a specialization, not a definition for all vector spaces. Existing cardinality gives a set invariant but does not define which bases to take; vector space specifies operations, not dimension.
+
+Remaining: No new constructive/set-theoretic choice convention for arbitrary bases is supplied; the actual parents only use finite-dimensional cases or a finite-degree test.
+
+## 67. transitivity x~y and y~z imply x~z — `missing.11276cd4f561922a8529`
+
+**retain_distinct_missing**, 2/2 parents. Both parents use ∀x,y,z, (xRy and yRz)⇒xRz. Variable names and symbols ≤ versus ∼ do not change it. Transitivity does not force reflexivity: the empty relation on a nonempty set is transitive but not reflexive. It does not force symmetry: the usual ≤ on {0,1} is transitive but 0≤1 while 1≤0 fails. Conversely reflexive symmetric relations may fail transitivity (loops plus edges 0↔1↔2 without 0↔2). Hence existing preorder and equivalence-relation meanings add independent axioms, while a binary relation is only underlying data. This is not an orbit-transitivity property of a group action.
+
+Remaining: No external citation or complete host-theorem certification; no semantic change proposed.
+
+## 68. positive weights w_x — `missing.19205fdc52a9c5cc6eb4`
+
+**retain_distinct_missing**, 2/2 parents. Both sources use strictly positive real weights assigned to DISTINCT real support points, with finite or countably infinite support kept explicit. Weights need not sum to 1: on {0,1}, weights 2,3 are valid. On infinite N, weights 1 are positive but not summable, so positivity alone does not imply even the zeroth moment condition; the countable source imposes all absolute moments separately. A nonnegative continuous weight density on an interval is a different input type and may vanish, whereas this candidate excludes zero point weights. A function or a measure object does not supply the strict pointwise condition or the discrete support. Finite source limits degrees to 0,...,N; no infinite orthogonal basis on N+1 points is inferred.
+
+Remaining: No external citation or complete host-theorem certification; no semantic change proposed.
+
+Next: `missing.21dbe26f26478a5abe77`, first parent `form.097db25e2f156689.clopen-subset-of-spectrum`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
