@@ -18,6 +18,14 @@ from .source_intake import extract, fetch_index
 def run(workspace, manifest, output, checkpoint, stage, *, network=False,
         batch_pages=5, limit_pages=None, licensed_excerpts=False):
     w = Workspace(workspace)
+    with w._record_snapshot():
+        return _run(w, manifest, output, checkpoint, stage, network=network,
+                    batch_pages=batch_pages, limit_pages=limit_pages,
+                    licensed_excerpts=licensed_excerpts)
+
+
+def _run(w, manifest, output, checkpoint, stage, *, network=False,
+         batch_pages=5, limit_pages=None, licensed_excerpts=False):
     w.config()
     if stage not in ("terms", "observations") or batch_pages < 1:
         raise PipelineError("Unsupported batch stage or batch size")
@@ -44,6 +52,7 @@ def run(workspace, manifest, output, checkpoint, stage, *, network=False,
     stop_after = limit_pages if limit_pages is not None else batch_pages
     if stop_after < 1:
         raise PipelineError("limit_pages must be positive")
+    robots_cache = {}  # One bounded fetch session; never reused across runs.
     for task in rows:
         if task["id"] in processed_ids:
             continue
@@ -59,8 +68,8 @@ def run(workspace, manifest, output, checkpoint, stage, *, network=False,
                 raise PipelineError("Offline HTML exceeds size limit")
             page = data.decode("utf-8")
         else:
-            page = fetch_index(task["url"], source)
-        findings = extract(w.root, task["source_id"], task["url"], page,
+            page = fetch_index(task["url"], source, robots_cache=robots_cache)
+        findings = extract(w, task["source_id"], task["url"], page,
                            stage=stage, profile=task.get("profile", "headings"),
                            allow_excerpts=licensed_excerpts)
         new = []
