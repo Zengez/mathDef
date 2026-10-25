@@ -1,0 +1,52 @@
+name: Reviewed independent dependency preflight (read only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      manifest_path:
+        description: 'Reviewed JSON manifest under research_pipeline/reviews (optional)'
+        required: false
+        default: ''
+        type: string
+      alias_packet_path:
+        description: 'Reviewed alias JSON under research_pipeline/reviews (optional)'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Export mechanically checked packets and exact evidence
+        env:
+          REVIEW_MANIFEST: ${{ inputs.manifest_path }}
+          REVIEW_ALIAS: ${{ inputs.alias_packet_path }}
+        run: |
+          python -m research_pipeline.engine.dependency_review_export \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --manifest "$REVIEW_MANIFEST" --alias-packet "$REVIEW_ALIAS" \
+            --output-dir "$RUNNER_TEMP/reviewed-dependency-preflight" \
+            --commit "$GITHUB_SHA"
+      - name: Assert repository remains unchanged
+        if: always()
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reviewed-dependency-preflight
+          path: ${{ runner.temp }}/reviewed-dependency-preflight
+          retention-days: 14
+          if-no-files-found: warn

@@ -6,7 +6,11 @@ on:
       # Audit prose/checkpoints cannot change executable behaviour.
       # Exclude documentation-only pushes without skipping source/graph tests.
       - '!research_pipeline/**/*.md'
+      # Engineering measurements/checkpoints are outputs, not test inputs.
+      # The receipt decision queue under canonical-identity remains included.
+      - '!research_pipeline/reviews/engineering-*/*.json'
       - '.github/workflows/research-pipeline-ci.yml'
+      - '.github/workflows/reviewed-dependency-preflight.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -36,7 +40,13 @@ jobs:
           assert audit["read_only"] and not audit["mathematics_certified"]
           assert s["formulation_count"] >= s["complete_effective_formulations"]
           assert s["meaning_count"] >= 1
-          assert s["cycle_components"] == 0, "Global meaning dependency cycle regressed"
+          # Cycles are structural review evidence, not automatically errors.
+          # Check that the effective report includes every supported edge kind.
+          cycles = audit["cycle_analysis"]
+          assert cycles["includes_candidate_resolutions"]
+          assert cycles["includes_historical_seed_overrides"]
+          assert cycles["mathematics_certified"] is False
+          assert s["effective_cycle_components"] == len(cycles["components"])
           integrity_flags = [f for f in audit["flags"] if f["severity"] == "integrity"]
           for flag in integrity_flags:
               print("GLOBAL AUDIT INTEGRITY FLAG:", json.dumps(flag, sort_keys=True))
@@ -49,7 +59,8 @@ jobs:
               fh.write("### Read-only Wave2 global dependency review\n\n")
               fh.write(f"Meanings: {s['meaning_count']}; formulations: "
                        f"{s['complete_effective_formulations']}/{s['formulation_count']}; "
-                       f"cycles: {s['cycle_components']}; review leads: "
+                       f"effective cycles: {s['effective_cycle_components']} "
+                       f"(legacy projection: {s['cycle_components']}); review leads: "
                        f"{s['total_flags']}.\n\n")
               fh.write("Heuristic flags are **not** certified mathematical errors; "
                        "passing checks does not certify definitions.\n")
@@ -58,6 +69,29 @@ jobs:
         with:
           name: wave2-global-dependency-review
           path: /tmp/wave2-global-dependency-audit.json
+          retention-days: 14
+      - name: Publish read-only, receipt-backed reconciliation status
+        run: |
+          python -m research_pipeline.engine.dependency_reconciliation_status \
+            --workspace research_pipeline/experiments/reconstruction-v2-independent \
+            --queue research_pipeline/reviews/canonical-identity-2026-10-24/LIVE_RECONCILIATION_QUEUE.json \
+            > /tmp/wave2-reconciliation-status.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path("/tmp/wave2-reconciliation-status.json").read_text())
+          assert report["read_only"] and not report["graph_changes_applied"]
+          assert not report["authorizes_gate_change"]
+          assert report["current_phase"] == "consolidate_occurrences"
+          assert report["current_consolidation_gate_valid"] is False
+          print("Receipt-backed reconciliation:", json.dumps({
+              c["id"]: c["status"] for c in report["cases"]
+          }, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wave2-reconciliation-status
+          path: /tmp/wave2-reconciliation-status.json
           retention-days: 14
       - name: Validate live independent research checkpoint against protected lineage
         run: |

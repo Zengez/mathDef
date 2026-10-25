@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "base_main": "a7ce2ba3cdd07e6d0b9809d4e39014fb8533228c",
+  "tested_code_commit": "0df71c381e12179e3627396d1dfa4b1a7e1f1290",
+  "read_only": true,
+  "mathematics_certified": false,
+  "pass3_authorized": false,
+  "protected": {
+    "file_count": 2293,
+    "all_paths_and_bytes_identical": true,
+    "file_map_canonical_sha256": "b14aa5eced27ec6b82d6c723191fed3266e8115c06b428cd9be8bfcacaf61d17",
+    "manifest_bytes_sha256": "b17fc5a8ba51a23b7f84c589ce8a9c7f8a7abb0ec0b2690400832baf2f957438",
+    "frozen_wave1_git_tree_before_after": "00d52a5fbb31827f80bf7683ae8347e6d652e569",
+    "frozen_data_read": false,
+    "branch_diff_contains_protected_paths": false
+  },
+  "python_suite": {
+    "tests_run": 256,
+    "passed": 254,
+    "expected_skips": 2,
+    "failures": 0,
+    "errors": 0,
+    "elapsed_seconds": 3.388,
+    "skipped_reason": "Round175/176 historical proposal fixtures intentionally stale"
+  },
+  "readiness": {
+    "status": "mechanical_checks_passed_review_decision_required",
+    "pass2_complete": "not_determined",
+    "pass3_authorized_by_this_assessment": false,
+    "mechanical_checks": {
+      "inventory_matches_current_sources": true,
+      "inventory_digest_valid": true,
+      "all_scans_complete": true,
+      "zero_unassigned": true,
+      "zero_ambiguous": true,
+      "unique_occurrence_identities": true,
+      "occurrence_index_matches_replay": true,
+      "unresolved_index_matches_replay": true,
+      "edge_index_matches_replay": true,
+      "state_counts_match_replay": true,
+      "state_fingerprint_matches_replay": true,
+      "checkpoint_matches_state": true,
+      "reverse_index_matches_replay": true,
+      "registry_identity_set_matches_replay": true,
+      "registry_metadata_matches_replay": true,
+      "reference_dispositions_valid": true,
+      "canonical_and_alias_counts_match_state": true,
+      "existing_integrity_audit_passed": true,
+      "provenance_record_links_exist": true
+    },
+    "mechanical_integrity_failures": [],
+    "unmet_gate_prerequisites": []
+  },
+  "consistency_summary": {
+    "total_review_candidates": 20,
+    "returned": 20,
+    "omitted": 0,
+    "exhaustive": true,
+    "accepted_count": 0,
+    "stale_review_count": 0,
+    "by_code": {
+      "same_phrase_multiple_targets": 3,
+      "seed_scan_target_disagreement": 15,
+      "submersive_iff_surjectivity_scope": 1,
+      "subset_predicate_to_ambient_space": 1
+    },
+    "mechanical_integrity_count": 0,
+    "effective_reference_count": 4489
+  },
+  "cycle_and_global_summary": {
+    "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+    "state_unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+    "phase": "consolidate_occurrences",
+    "consolidation_gate_valid": false,
+    "meaning_count": 611,
+    "formulation_count": 659,
+    "complete_effective_formulations": 659,
+    "existing_dependency_edges": 2638,
+    "scan_dependency_edges": 1772,
+    "seed_dependency_edges": 866,
+    "distinct_existing_dependency_pairs": 1761,
+    "cycle_components": 0,
+    "cycle_components_scope": "legacy_direct_scan_and_unoverridden_existing_seeds",
+    "effective_cycle_components": 1,
+    "formulation_avoidable_cycle_components": 1,
+    "unavoidable_cycle_components": 0,
+    "undetermined_cycle_components": 0,
+    "effective_existing_dependency_edges": 2647,
+    "unassigned_occurrences": 0,
+    "ambiguous_occurrences": 0,
+    "total_flags": 9,
+    "review_queue_count": 9,
+    "accepted_review_count": 0,
+    "stale_review_count": 0,
+    "flags_by_code": {
+      "cycle_edges_review_required": 0,
+      "effective_seed_override_count": 20,
+      "ideal_vs_module_generation": 8,
+      "submersive_iff_surjectivity_scope": 1
+    }
+  },
+  "provenance": {
+    "formulations": 659,
+    "meanings": 611,
+    "source_record_count": 15,
+    "observation_record_count": 973,
+    "evidence_links": 659,
+    "unique_observation_ids_used": 646,
+    "zero_evidence_formulations": 0,
+    "missing_evidence_records": 0,
+    "missing_source_records": 0,
+    "missing_locator_fields": 0,
+    "structural_provenance_complete": true,
+    "external_content_verified_by_this_command": false,
+    "human_certified": false,
+    "record_kind_counts": {
+      "paraphrase": 659
+    },
+    "explicit_verification_state_counts": {
+      "unspecified": 659
+    }
+  },
+  "reconciliation_status_counts": {
+    "applied_receipt_verified": 6,
+    "superseded_by_verified_transaction": 2
+  },
+  "preview": {
+    "adapter": {
+      "groups": 559,
+      "meanings": 595,
+      "path": "/tmp/integration-live-wave2-preview/index.html"
+    },
+    "renderer": {
+      "terms": 559,
+      "formulations": 639,
+      "relations": 887,
+      "stage": "Wave 2 \u2014 evolving research draft"
+    }
+  },
+  "browser": "PASS: both synthetic stage previews; searches, contexts, sources, nested/inline, feedback and mobile. External requests blocked.",
+  "frontend_feedback_tests_passed": 1,
+  "generated_and_source_js_syntax": "passed",
+  "python_compileall": "passed",
+  "workflow_yaml_parse": "passed",
+  "exact_local_ci_steps": [
+    "Run read-only global Wave2 dependency audit on live independent graph",
+    "Publish read-only, receipt-backed reconciliation status"
+  ],
+  "workflow_dispatch_performed": false,
+  "live_combined_preview_and_resume": "Not run: reads frozen Wave1, forbidden by AGENTS.md; live Wave2-only and two synthetic stages tested.",
+  "export_smoke": {
+    "exit_code": 0,
+    "scope": "Read-only CLI on a disposable byte-identical copy of the authorized live Wave2 workspace; no apply/rebuild/submission performed.",
+    "status": "already_applied_no_new_proposals",
+    "already_applied_packet_ids": [
+      "alias.chat-postcoverage.20261025.shifted-operator"
+    ],
+    "new_proposal_packet_ids": [],
+    "workspace_file_count": 2293,
+    "before_sha256": "b14aa5eced27ec6b82d6c723191fed3266e8115c06b428cd9be8bfcacaf61d17",
+    "after_sha256": "b14aa5eced27ec6b82d6c723191fed3266e8115c06b428cd9be8bfcacaf61d17",
+    "source_inventory_matches_current_records": true,
+    "artifact_hashes": {
+      "reviewed-inputs/alias/alias.chat-postcoverage.20261025.shifted-operator.json": "ee874cac464d941f2bac161dea1b9f91424bddef6720aab7f6e7e4d92e652c70"
+    }
+  },
+  "changed_paths": [
+    ".github/workflows/research-pipeline-ci.yml",
+    ".github/workflows/reviewed-dependency-preflight.yml",
+    "research_pipeline/benchmarks/preflight_export.py",
+    "research_pipeline/benchmarks/registry_throughput.py",
+    "research_pipeline/engine/batch_intake.py",
+    "research_pipeline/engine/core.py",
+    "research_pipeline/engine/dependency_global_audit.py",
+    "research_pipeline/engine/dependency_reconciliation_status.py",
+    "research_pipeline/engine/dependency_review_export.py",
+    "research_pipeline/engine/dependency_review_preflight.py",
+    "research_pipeline/engine/source_intake.py",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/LIVE_RECONCILIATION_QUEUE.json",
+    "research_pipeline/reviews/engineering-2026-10-25/ARCHITECTURE.md",
+    "research_pipeline/reviews/engineering-2026-10-25/CHECKPOINT.json",
+    "research_pipeline/reviews/engineering-2026-10-25/MEASUREMENTS.json",
+    "research_pipeline/reviews/engineering-2026-10-25/MODULE_INVENTORY.json",
+    "research_pipeline/reviews/engineering-2026-10-25/RESULTS.md",
+    "research_pipeline/reviews/engineering-2026-10-25/RUNBOOK.md",
+    "research_pipeline/reviews/engineering-2026-10-25/VALIDATION.json",
+    "research_pipeline/reviews/engineering-integration-2026-10-25/CHECKPOINT.json",
+    "research_pipeline/reviews/engineering-integration-2026-10-25/MEASUREMENTS.json",
+    "research_pipeline/reviews/engineering-integration-2026-10-25/PROTECTED_FILE_HASHES.json",
+    "research_pipeline/reviews/engineering-integration-2026-10-25/RECONCILIATION_STATUS.json",
+    "research_pipeline/reviews/engineering-integration-2026-10-25/REPORT.md",
+    "research_pipeline/reviews/engineering-integration-2026-10-25/VALIDATION.json",
+    "research_pipeline/tests/test_batch_intake.py",
+    "research_pipeline/tests/test_dependency_engineering_integration.py",
+    "research_pipeline/tests/test_dependency_global_audit.py",
+    "research_pipeline/tests/test_dependency_reconciliation_status.py",
+    "research_pipeline/tests/test_dependency_review_export.py",
+    "research_pipeline/tests/test_dependency_review_preflight.py",
+    "research_pipeline/tests/test_reference_ui_browser.cjs",
+    "research_pipeline/tests/test_registry_snapshot.py"
+  ],
+  "raw_audit_output_sha256": {
+    "readiness": "bd7f5327236f1acaded2f87701b5f22c74f642de4e06ef9cac54a3d8f2c62160",
+    "consistency": "71a4271031c836f623b684f723564b6c2b805bd978e834b82c549e0b65ef032e",
+    "global": "53f979d1487548195d98d24f5d6843c4877de58c0a2c9708359dfc2c7ae95192",
+    "provenance": "c898b159b1236a3d9defd16ec12c72882207c56f76a683e14fcc7a0f0bedabc3",
+    "status": "18688a8378e116e84efb097ac12ff2d09e64543cb4ef7b26d2cc56413930ba8f"
+  },
+  "delivery": {
+    "draft_pr_created": false,
+    "graphql": "Forbidden",
+    "rest": "Forbidden",
+    "branch": "codex/wave2-engineering-integration",
+    "validated_commit": "8036662b"
+  }
+}

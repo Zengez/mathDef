@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "scope": "Engineering verification, not mathematical or external-source certification",
+  "base_main": "0c682bfdb6ba9b5a64a174cb4ea1f0e8094afd9d",
+  "integrated_pr11_base": "e978ae4d2b8572e532b57fcbacd56333c8ac4d32",
+  "code_checkpoint_before_final_docs": "1aa0a82b45d0646d097f115aa5d0e2ca5ac03cf8",
+  "pr10_merged": false,
+  "protected_live_workspace": {
+    "file_count": 2285,
+    "before_sha256": "156cef3860a466a2e51e39303065e8431042109daa0fdeec41158d0b6f723425",
+    "after_sha256": "156cef3860a466a2e51e39303065e8431042109daa0fdeec41158d0b6f723425",
+    "changed_files": [],
+    "effective_snapshot_identical": true
+  },
+  "frozen_wave1": {
+    "git_tree_unchanged": true,
+    "git_tree": "00d52a5fbb31827f80bf7683ae8347e6d652e569",
+    "mathematical_records_read": false,
+    "live_frozen_catalog_regenerated": false
+  },
+  "tests": {
+    "baseline": {
+      "run": 218,
+      "skipped": 2,
+      "failures": 0
+    },
+    "final": {
+      "command": "python -m unittest discover -s research_pipeline/tests -v",
+      "run": 246,
+      "skipped": 2,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_seconds": 2.527
+    },
+    "expected_skips": [
+      "Round 175 manifest is intentionally stale for the current graph",
+      "Round 176 proposal is intentionally version-bound and now stale"
+    ],
+    "compileall_exit_code": 0,
+    "javascript_syntax_exit_code": 0,
+    "feedback_node_tests": {
+      "run": 1,
+      "passed": 1
+    },
+    "workflow_yaml_parse_exit_code": 0,
+    "exact_ci_global_and_reconciliation_shell_steps_exit_code": 0,
+    "synthetic_browser_smoke": {
+      "status": "passed",
+      "browser": "/usr/bin/chromium",
+      "stages": 2,
+      "external_requests": "blocked",
+      "checks": [
+        "term search",
+        "text search",
+        "multiple contexts",
+        "sources",
+        "inline/nested correct-target expansion",
+        "focus/split",
+        "feedback dialog",
+        "mobile overflow",
+        "runtime errors"
+      ]
+    },
+    "bundled_browser_attempt": "Bundled executable absent; CDN download returned403. Installed system Chromium then passed; no repo dependency added.",
+    "live_wave2_preview": {
+      "adapter": {
+        "groups": 559,
+        "meanings": 595,
+        "path": "/tmp/engineering-live-wave2/index.html"
+      },
+      "renderer": {
+        "terms": 559,
+        "formulations": 639,
+        "relations": 887,
+        "stage": "Wave 2 \u2014 evolving research draft"
+      }
+    },
+    "full_two_live_stage_preview": "Not run: would read frozen Wave1 mathematical records; two synthetic stages and authorized Wave2-only generation tested."
+  },
+  "read_only_checks": {
+    "global_summary": {
+      "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+      "state_unresolved_fingerprint": "04110f247c45f7f97313b802303fa257aea5504fdc0b89203a91be21812185fa",
+      "phase": "consolidate_occurrences",
+      "consolidation_gate_valid": false,
+      "meaning_count": 611,
+      "formulation_count": 659,
+      "complete_effective_formulations": 659,
+      "existing_dependency_edges": 2639,
+      "scan_dependency_edges": 1773,
+      "seed_dependency_edges": 866,
+      "distinct_existing_dependency_pairs": 1762,
+      "cycle_components": 0,
+      "cycle_components_scope": "legacy_direct_scan_and_unoverridden_existing_seeds",
+      "effective_cycle_components": 1,
+      "formulation_avoidable_cycle_components": 1,
+      "unavoidable_cycle_components": 0,
+      "undetermined_cycle_components": 0,
+      "effective_existing_dependency_edges": 2646,
+      "unassigned_occurrences": 0,
+      "ambiguous_occurrences": 0,
+      "total_flags": 9,
+      "review_queue_count": 9,
+      "accepted_review_count": 0,
+      "stale_review_count": 0,
+      "flags_by_code": {
+        "cycle_edges_review_required": 0,
+        "effective_seed_override_count": 20,
+        "ideal_vs_module_generation": 8,
+        "submersive_iff_surjectivity_scope": 1
+      }
+    },
+    "consistency_summary": {
+      "total_review_candidates": 20,
+      "returned": 20,
+      "omitted": 0,
+      "exhaustive": true,
+      "accepted_count": 0,
+      "stale_review_count": 0,
+      "by_code": {
+        "same_phrase_multiple_targets": 3,
+        "seed_scan_target_disagreement": 15,
+        "submersive_iff_surjectivity_scope": 1,
+        "subset_predicate_to_ambient_space": 1
+      },
+      "mechanical_integrity_count": 0,
+      "effective_reference_count": 4489
+    },
+    "readiness_status": "mechanical_checks_passed_review_decision_required",
+    "mechanical_checks": {
+      "inventory_matches_current_sources": true,
+      "inventory_digest_valid": true,
+      "all_scans_complete": true,
+      "zero_unassigned": true,
+      "zero_ambiguous": true,
+      "unique_occurrence_identities": true,
+      "occurrence_index_matches_replay": true,
+      "unresolved_index_matches_replay": true,
+      "edge_index_matches_replay": true,
+      "state_counts_match_replay": true,
+      "state_fingerprint_matches_replay": true,
+      "checkpoint_matches_state": true,
+      "reverse_index_matches_replay": true,
+      "registry_identity_set_matches_replay": true,
+      "registry_metadata_matches_replay": true,
+      "reference_dispositions_valid": true,
+      "canonical_and_alias_counts_match_state": true,
+      "existing_integrity_audit_passed": true,
+      "provenance_record_links_exist": true
+    },
+    "readiness_evidence_sha256": "a9b9833a42ed9c6931ffdc00ba5a98deb463af6179c56a302fdc62522fbcb75c",
+    "reconciliation_status_counts": {
+      "applied_receipt_verified": 2,
+      "mathematical_review_required": 2
+    },
+    "reconciliation_cases": [
+      {
+        "id": "shifted-operator-alias",
+        "kind": "transaction",
+        "status": "applied_receipt_verified",
+        "mathematically_certified": false,
+        "packet_id": "alias.chat-postcoverage.20261025.shifted-operator",
+        "mode": "alias",
+        "expected_packet_sha256": "b3574ca780c053c6df1392a414df7eb86e5be1dab124dbf25f6fafe606883c11",
+        "inbox_packet_present": true,
+        "receipt_present": true,
+        "inbox_digest_matches": true,
+        "receipt_matches": true
+      },
+      {
+        "id": "realtime-filtration-amendment",
+        "kind": "transaction",
+        "status": "applied_receipt_verified",
+        "mathematically_certified": false,
+        "packet_id": "chat-postcoverage-realtime-filtration-edge-20261025-001",
+        "mode": "amend",
+        "expected_packet_sha256": "1517ea4b426f4dcf0fdec00dfc385b9d84fe125768c21b955526537c7cfa215f",
+        "inbox_packet_present": true,
+        "receipt_present": true,
+        "inbox_digest_matches": true,
+        "receipt_matches": true
+      },
+      {
+        "id": "ext-internal-hom-scope",
+        "kind": "review",
+        "status": "mathematical_review_required",
+        "mathematically_certified": false,
+        "formulation_id": "form.788671763be693df.ext-group",
+        "expected_occurrence_id": "occ.321952d7b781466d1856"
+      },
+      {
+        "id": "local-neighborhood-vs-global-basis",
+        "kind": "review",
+        "status": "mathematical_review_required",
+        "mathematically_certified": false,
+        "formulation_id": "form.ab260940ea9c523d.locally-connected-space",
+        "expected_occurrence_id": "occ.cdc96f16a3e31332ec7d"
+      }
+    ],
+    "gate_opened": false,
+    "pass3_authorized": false
+  },
+  "changed_files_own_optimization": [
+    ".github/workflows/research-pipeline-ci.yml",
+    ".github/workflows/reviewed-dependency-preflight.yml",
+    "research_pipeline/benchmarks/preflight_export.py",
+    "research_pipeline/benchmarks/registry_throughput.py",
+    "research_pipeline/engine/batch_intake.py",
+    "research_pipeline/engine/core.py",
+    "research_pipeline/engine/dependency_global_audit.py",
+    "research_pipeline/engine/dependency_review_export.py",
+    "research_pipeline/engine/dependency_review_preflight.py",
+    "research_pipeline/engine/source_intake.py",
+    "research_pipeline/reviews/engineering-2026-10-25/ARCHITECTURE.md",
+    "research_pipeline/reviews/engineering-2026-10-25/CHECKPOINT.json",
+    "research_pipeline/reviews/engineering-2026-10-25/MEASUREMENTS.json",
+    "research_pipeline/reviews/engineering-2026-10-25/MODULE_INVENTORY.json",
+    "research_pipeline/reviews/engineering-2026-10-25/RESULTS.md",
+    "research_pipeline/reviews/engineering-2026-10-25/RUNBOOK.md",
+    "research_pipeline/reviews/engineering-2026-10-25/VALIDATION.json",
+    "research_pipeline/tests/test_batch_intake.py",
+    "research_pipeline/tests/test_dependency_global_audit.py",
+    "research_pipeline/tests/test_dependency_review_export.py",
+    "research_pipeline/tests/test_dependency_review_preflight.py",
+    "research_pipeline/tests/test_registry_snapshot.py"
+  ],
+  "changed_files_including_pr11_integration": [
+    ".github/workflows/research-pipeline-ci.yml",
+    ".github/workflows/reviewed-dependency-preflight.yml",
+    "research_pipeline/benchmarks/preflight_export.py",
+    "research_pipeline/benchmarks/registry_throughput.py",
+    "research_pipeline/engine/batch_intake.py",
+    "research_pipeline/engine/core.py",
+    "research_pipeline/engine/dependency_global_audit.py",
+    "research_pipeline/engine/dependency_reconciliation_status.py",
+    "research_pipeline/engine/dependency_review_export.py",
+    "research_pipeline/engine/dependency_review_preflight.py",
+    "research_pipeline/engine/source_intake.py",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/LIVE_RECONCILIATION_QUEUE.json",
+    "research_pipeline/reviews/engineering-2026-10-25/ARCHITECTURE.md",
+    "research_pipeline/reviews/engineering-2026-10-25/CHECKPOINT.json",
+    "research_pipeline/reviews/engineering-2026-10-25/MEASUREMENTS.json",
+    "research_pipeline/reviews/engineering-2026-10-25/MODULE_INVENTORY.json",
+    "research_pipeline/reviews/engineering-2026-10-25/RESULTS.md",
+    "research_pipeline/reviews/engineering-2026-10-25/RUNBOOK.md",
+    "research_pipeline/reviews/engineering-2026-10-25/VALIDATION.json",
+    "research_pipeline/tests/test_batch_intake.py",
+    "research_pipeline/tests/test_dependency_global_audit.py",
+    "research_pipeline/tests/test_dependency_reconciliation_status.py",
+    "research_pipeline/tests/test_dependency_review_export.py",
+    "research_pipeline/tests/test_dependency_review_preflight.py",
+    "research_pipeline/tests/test_registry_snapshot.py"
+  ],
+  "git_diff_check_exit_code": 0,
+  "remote_manual_workflow_dispatched": false,
+  "production_data_read": false,
+  "mathematical_data_changes": false,
+  "academic_source_research": false,
+  "source_inventory_freshness": "Read-only collect verifies current formulations, meaning descriptors, seeds, revision count and inventory digests before export; stale source records rejected without rebuilding.",
+  "github": {
+    "branch": "codex/independent-pipeline-engineering-audit",
+    "pushed": true,
+    "pull_request_creation_attempted": true,
+    "pull_request_creation_exit_code": 1,
+    "result": "GitHub GraphQL API returned Forbidden; no new PR URL returned.",
+    "comparison_url": "https://github.com/Zengez/mathDef/compare/main...codex/independent-pipeline-engineering-audit?expand=1",
+    "no_merge_performed": true
+  }
+}

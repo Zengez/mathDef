@@ -1,0 +1,3685 @@
+{
+  "scope": "Static software inventory only; no historical/frozen mathematical dataset read",
+  "modules": [
+    {
+      "path": "research_pipeline/engine/__init__.py",
+      "lines": 1,
+      "sha256": "9a75503900458ade5eee399d89a28b3a74e19872539748882db9a41648884cdf",
+      "classes": [],
+      "functions": [],
+      "imports": []
+    },
+    {
+      "path": "research_pipeline/engine/batch_intake.py",
+      "lines": 118,
+      "sha256": "7a48de4c93a87e379b91e66f39634b9f394bb613242e4299a96a8ff98c741cb1",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".source_intake",
+        "__future__",
+        "argparse",
+        "json",
+        "os",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/cli.py",
+      "lines": 61,
+      "sha256": "91a082155211a5eefe4ad002b2cd930972d835b513fbbfd4e5bc4de2acea4f3f",
+      "classes": [],
+      "functions": [
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".queues",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/core.py",
+      "lines": 429,
+      "sha256": "b823293c4b6e0d12530ca1cffed8dab018f6699a17554f055dc2aa0c28aeaac4",
+      "classes": [
+        "PipelineError",
+        "Workspace"
+      ],
+      "functions": [
+        "canonical",
+        "digest",
+        "atomic_json",
+        "jsonl",
+        "required",
+        "require_id"
+      ],
+      "imports": [
+        ".stage3_attempts",
+        ".stage3_review_gate",
+        ".stage5_review_gate",
+        ".wave2_term_coverage",
+        "__future__",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "shutil"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_audit_acceleration.py",
+      "lines": 178,
+      "sha256": "2e25c6fbfb480ebabd18a206562737b48fb176bcaef5e9598de4f244ea85b39e",
+      "classes": [],
+      "functions": [
+        "math_signature",
+        "notation_aware_leads",
+        "audit_fingerprint",
+        "validate_review_ledger",
+        "rank_findings"
+      ],
+      "imports": [
+        "__future__",
+        "collections",
+        "itertools",
+        "re",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.dependency_graph"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_consistency_worklist.py",
+      "lines": 262,
+      "sha256": "df95ec8212cc5917fb6b77abf33c420a9d32e83c3e92d63e3db4f0901183a812",
+      "classes": [],
+      "functions": [
+        "_has",
+        "_object_words",
+        "build_worklist",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".dependency_audit_acceleration",
+        ".dependency_cycle_analysis",
+        ".dependency_global_audit",
+        ".dependency_graph",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib",
+        "re"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_consolidation_readiness.py",
+      "lines": 345,
+      "sha256": "4a6ad08f5804e4c1db5ae09b95217bc38c4138f8626f74e1fd53d463be97f2a1",
+      "classes": [],
+      "functions": [
+        "load_inputs",
+        "assess",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".dependency_audit_acceleration",
+        ".dependency_consistency_worklist",
+        ".dependency_cycle_analysis",
+        ".dependency_global_audit",
+        ".dependency_graph",
+        ".dependency_provenance_audit",
+        ".population",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_context_worklist.py",
+      "lines": 114,
+      "sha256": "1b439cc521c73f346cd0f7149fd80d4b04b91d23774a95dd7b66393fb082175a",
+      "classes": [],
+      "functions": [
+        "build_review_bundle",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.dependency_graph"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_cycle_analysis.py",
+      "lines": 176,
+      "sha256": "e2c74c85d7c348e0c673647e8fb947ac55dc13520f0244725eef0311893cb3d0",
+      "classes": [],
+      "functions": [
+        "effective_references",
+        "analyze_cycles"
+      ],
+      "imports": [
+        ".core",
+        ".dependency_global_audit",
+        ".dependency_graph",
+        ".dependency_seed_overrides",
+        "collections",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_global_audit.py",
+      "lines": 763,
+      "sha256": "1f440628300ab0357c3defa652d2e1e8da678b3d59a557c7840b56a6d79c5576",
+      "classes": [],
+      "functions": [
+        "jsonl",
+        "load_live_snapshot",
+        "candidate_review_bundle",
+        "strongly_connected",
+        "candidate_leads",
+        "analyze_snapshot",
+        "build_review_packages",
+        "write_offline_packets",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "itertools",
+        "json",
+        "pathlib",
+        "re",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.dependency_audit_acceleration",
+        "research_pipeline.engine.dependency_cycle_analysis",
+        "research_pipeline.engine.dependency_graph",
+        "research_pipeline.engine.dependency_review_preflight",
+        "research_pipeline.engine.dependency_seed_overrides"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_graph.py",
+      "lines": 1131,
+      "sha256": "dead5093ba997834b0bc1cdb03931d69b8ffbc73cae2fd3c2c9d877541d269ea",
+      "classes": [],
+      "functions": [
+        "norm",
+        "graph_path",
+        "read",
+        "read_node",
+        "stable_id",
+        "collect",
+        "inventory_sync",
+        "node_file",
+        "amendment_events",
+        "live_nodes",
+        "_reference_state",
+        "meaning_version",
+        "unresolved_fingerprint",
+        "missing_key",
+        "alias_map",
+        "rebuild",
+        "make_snapshot",
+        "store",
+        "amend",
+        "propose",
+        "tree",
+        "alias_candidates",
+        "research_queue",
+        "resolve",
+        "apply_seed_overrides",
+        "apply_inbox",
+        "scan_worklist",
+        "consolidation_worklist",
+        "seal_consolidation",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".dependency_seed_overrides",
+        ".population",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "importlib",
+        "json",
+        "pathlib",
+        "re"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_provenance_audit.py",
+      "lines": 124,
+      "sha256": "11dc595a48d5d81b1261f7dc9d51994e0a720ad5d095bff084207df1ffcfb099",
+      "classes": [],
+      "functions": [
+        "summarize_provenance",
+        "audit_workspace",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".dependency_graph",
+        ".population",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_reconciliation_status.py",
+      "lines": 177,
+      "sha256": "a496b1c33c6cf28707aa8f8e7d7a09c4d8e72d770bf1058a3bdaca993c57d531",
+      "classes": [],
+      "functions": [
+        "reconciliation_status",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib",
+        "re",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.dependency_global_audit",
+        "research_pipeline.engine.dependency_graph"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_review_preflight.py",
+      "lines": 183,
+      "sha256": "dc935491b557094c71b81ea79838fdc2918cf12df5b2bcaacb1619ec80b556bf",
+      "classes": [],
+      "functions": [
+        "prepare_review_context",
+        "review_preflight",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.dependency_graph"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_review_submit.py",
+      "lines": 194,
+      "sha256": "2a9e1db4819b9a23e022d69bca173de9066b2ec2d46a3a895b6d59bc1cc46562",
+      "classes": [],
+      "functions": [
+        "_run_git",
+        "review_packet_collection",
+        "stage_reviewed_packets",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "os",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.dependency_graph",
+        "research_pipeline.engine.dependency_review_preflight",
+        "shutil",
+        "subprocess",
+        "tempfile"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_seed_overrides.py",
+      "lines": 166,
+      "sha256": "2508c9ce98f9eeffcbbfb1b60fa4dd303e856a9296b498caf17b4782e5fe56d5",
+      "classes": [],
+      "functions": [
+        "read_events",
+        "scan_missing_sources",
+        "replay_seed_overrides",
+        "effective_seed_reference",
+        "append_seed_overrides"
+      ],
+      "imports": [
+        "__future__",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.dependency_graph",
+        "research_pipeline.engine.population"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/dependency_seed_retarget_preview.py",
+      "lines": 125,
+      "sha256": "2ea8953e306d4ef2b3ecef8a5943ab92c7c9456bc3ad00c9e52374bb5fb7165b",
+      "classes": [],
+      "functions": [
+        "preview_seed_retargets",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.dependency_global_audit"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/effort.py",
+      "lines": 71,
+      "sha256": "6faafc14a2c2252b22ff1e3cddb1ed25379a8794913520710c68ed9de1ad5bfb",
+      "classes": [],
+      "functions": [
+        "log_effort",
+        "summarize",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "argparse",
+        "datetime",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/population.py",
+      "lines": 383,
+      "sha256": "e1b60e8d8ca0d6c01c2611d6c30a36106f97c79d3176da8d69e6aab1b91d16df",
+      "classes": [],
+      "functions": [
+        "digest",
+        "read_json",
+        "read_jsonl",
+        "write_atomic",
+        "parent_records",
+        "snapshot",
+        "validate_package",
+        "apply",
+        "audit",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "importlib",
+        "json",
+        "os",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/population_queue.py",
+      "lines": 152,
+      "sha256": "b384230009a927c3a86def3176f8f5a143b92302489ea753e7f67f9ce537a44e",
+      "classes": [],
+      "functions": [
+        "normalized",
+        "plan",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".dependency_graph",
+        ".population",
+        "__future__",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib",
+        "re"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/queues.py",
+      "lines": 82,
+      "sha256": "101ef592f878aa485cd8014a371b0be6d615473f9db3eb29563f226824d89a9a",
+      "classes": [],
+      "functions": [
+        "normalized",
+        "make_queue"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "json",
+        "pathlib",
+        "re"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/resume_checkpoint.py",
+      "lines": 286,
+      "sha256": "2634cf1fd2b32e2f38bbcdce5de87f7bccc05520ee70e2da3ad51bf93207a86b",
+      "classes": [
+        "ResumeError"
+      ],
+      "functions": [
+        "canonical",
+        "digest_file",
+        "inside",
+        "read_json",
+        "scan_jsonl",
+        "supporting_inputs",
+        "active_commit",
+        "snapshot",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "importlib",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "typing"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/revision_cli.py",
+      "lines": 22,
+      "sha256": "ccaff25d9e0e480e02e94ccbf27b7068adf5173fdb827036ffe3f6b599575cae",
+      "classes": [],
+      "functions": [
+        "main"
+      ],
+      "imports": [
+        ".revisions",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/revisions.py",
+      "lines": 118,
+      "sha256": "00256fea925087881d47bb5c5a59e82b73c360a778a42b46ccf9ef07ee029a88",
+      "classes": [],
+      "functions": [
+        "_append_fsync",
+        "apply_revision",
+        "recover_pending"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "json",
+        "os",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/source_intake.py",
+      "lines": 352,
+      "sha256": "c59cb7ecdf8b32797ad36595617c2a2aff6c73e21d204d52c05d793ffe5b42ab",
+      "classes": [
+        "IndexReader",
+        "StacksSectionsReader"
+      ],
+      "functions": [
+        "fingerprint",
+        "safe_url",
+        "reviewed_hosts",
+        "safe_source_url",
+        "fetch_index",
+        "extract",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "html",
+        "html.parser",
+        "ipaddress",
+        "json",
+        "pathlib",
+        "re",
+        "time",
+        "urllib.parse",
+        "urllib.request",
+        "urllib.robotparser"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/source_manifest.py",
+      "lines": 107,
+      "sha256": "5e19b6c1cd474d37d5a2b333ed7174c93c1ba1f37b5613d268d42969315ff119",
+      "classes": [],
+      "functions": [
+        "generate",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".source_intake",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib",
+        "urllib.parse",
+        "xml.etree.ElementTree"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage2_actions.py",
+      "lines": 159,
+      "sha256": "9ecfc38069e0f94a00f0a82a11a479aedaa774d0f8f19eb7954b11dfa8325b82",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".source_intake",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "sys"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage2_finalize.py",
+      "lines": 134,
+      "sha256": "ec1d5fefe254752e61ffba05a7a2f7a782251fefd72666484d35984b596cd362",
+      "classes": [],
+      "functions": [
+        "finalize",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".source_intake",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "urllib.parse"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage3_apply_review.py",
+      "lines": 173,
+      "sha256": "951454c33d8b04105623a00473d434f08d1c5fa4f7f9107da161d4e4b9b91710",
+      "classes": [],
+      "functions": [
+        "apply",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".source_intake",
+        ".stage3_attempts",
+        ".stage3_review_gate",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "re"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage3_attempts.py",
+      "lines": 320,
+      "sha256": "5b515e2f8abc618cc6ce6a1bf7fe7cd48ca3357a86c82a67f965fa0d51d60d27",
+      "classes": [
+        "StacksDefinitionIndex"
+      ],
+      "functions": [
+        "utc_now",
+        "sha256_text",
+        "inspect_stacks_page",
+        "catalog_digest",
+        "validate_ledger",
+        "summarize",
+        "require_full_attempt_coverage",
+        "atomic_jsonl",
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".source_intake",
+        "__future__",
+        "argparse",
+        "collections",
+        "datetime",
+        "hashlib",
+        "html.parser",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "urllib.parse"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage3_finalize.py",
+      "lines": 125,
+      "sha256": "cf565ed0516e572f81910313f3cad5ebcfe2323752c8b19d8d57e08d05ed38c5",
+      "classes": [],
+      "functions": [
+        "finalize",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".source_intake",
+        ".stage3_attempts",
+        ".stage3_review_gate",
+        "__future__",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage3_locators.py",
+      "lines": 91,
+      "sha256": "c8bc3d0d27ad77cc2313bb577817e1887fafd061e2d2027c7c08bcd19737248a",
+      "classes": [],
+      "functions": [
+        "collect",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".source_intake",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage3_recovery_fork.py",
+      "lines": 96,
+      "sha256": "417f324f3b40f289668c82614c2f3bd16c606a1d759034879fe0e660923c9e8f",
+      "classes": [],
+      "functions": [
+        "fork",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".stage3_attempts",
+        ".stage3_review_gate",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "shutil"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage3_review_gate.py",
+      "lines": 142,
+      "sha256": "e144b3706224e60e0fcec22695afc8f82dae920d04aa2ebb533d79b7e55a350c",
+      "classes": [],
+      "functions": [
+        "build_review_queue",
+        "require_reviewed_term_dispositions",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".stage3_attempts",
+        "__future__",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage4_finalize.py",
+      "lines": 149,
+      "sha256": "d05c2bd28d193bbb6b84331d8ccd05bf39e2fa9bd9239bb2d5231f6610ffae35",
+      "classes": [],
+      "functions": [
+        "audit",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".stage4_recovery_finalize",
+        "__future__",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage4_recovery_build.py",
+      "lines": 189,
+      "sha256": "5d751f9d0221b15f2fb1fbcd50207965bba68b5a176de145edc30929df9798cc",
+      "classes": [],
+      "functions": [
+        "identifier_suffix",
+        "context_label",
+        "build",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".stage3_attempts",
+        ".stage3_review_gate",
+        "__future__",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage4_recovery_finalize.py",
+      "lines": 96,
+      "sha256": "32aeac82170c40c2e17247a12bff68ad9481ca2fd61a4f0cb2b3f084243b043f",
+      "classes": [],
+      "functions": [
+        "audit_corrected"
+      ],
+      "imports": [
+        ".core",
+        ".stage3_attempts",
+        ".stage3_review_gate",
+        "__future__",
+        "collections",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/stage5_review_gate.py",
+      "lines": 314,
+      "sha256": "fa3e56e2566f74a5844322c27379ddf4fac6d7f38931f4be503ced6b48a30f96",
+      "classes": [],
+      "functions": [
+        "atomic_jsonl",
+        "validate_screened_edge",
+        "inventory",
+        "prepare",
+        "apply_batch",
+        "apply_dispositions",
+        "audit",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".queues",
+        "__future__",
+        "argparse",
+        "collections",
+        "json",
+        "os",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_apply_links.py",
+      "lines": 443,
+      "sha256": "5fee7b6bc3a132cb58c80188ba418d40b211ad9596d49e6ac4d06f357ada731e",
+      "classes": [],
+      "functions": [
+        "locator",
+        "check_cycles",
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".stage5_review_gate",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_complete_foundation_reviews.py",
+      "lines": 119,
+      "sha256": "388a1a92c45527ec93f49454535b4fcdce9add98f90e5de04612ec9e41262dc9",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_correct_presheaves.py",
+      "lines": 203,
+      "sha256": "6aafea1d6bd8c98d47fb027d427b038c786fff2875b692a8dce655737958a72a",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_correct_purely_inseparable_scope.py",
+      "lines": 134,
+      "sha256": "f3d384f708c06e14094947f798c524251a1acb4a7f2594c820b69096bce2fb89",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_correct_strict2category_equivalence.py",
+      "lines": 144,
+      "sha256": "b0ca17f9eff1f2ae6292d9fc882a5339809ccc27bb462b71c4f8ae37c7ae76a2",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_cross_source_variant_review.py",
+      "lines": 90,
+      "sha256": "f05ba780d28d02a1a492a127b1428f768ef49e40b9d133688216ce15f0c9e70d",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_expand_screen_meanings.py",
+      "lines": 244,
+      "sha256": "eba821d7033b9c14a1f6ab2e0fc6e8c8f6566a66a3a1f3afa45c2fad1abc2060",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations.py",
+      "lines": 130,
+      "sha256": "e6d3e20223b3792048a6b395057b68b8e29402b5ed2d2e8efc8bc5b42e01346a",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch11_site.py",
+      "lines": 78,
+      "sha256": "20286167476c728d039b378103aeca87b12638df2cb6e33c2419b32fa9e27866",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch13_homological.py",
+      "lines": 87,
+      "sha256": "b6ce5752d56aa85d7afb06e58fa7109407c10bb01058e8f45cfef942f6c7d4f5",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch15_category_axioms.py",
+      "lines": 81,
+      "sha256": "27d5c920291b8cdee853888f6afc4a606c9066c37b37e2d47aef75a660cad981",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch19_dlmf_openstax.py",
+      "lines": 96,
+      "sha256": "ab647503635c92be1a25ab6e587a91bd4efbc766fccca0f31aaae4441c9946b8",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch21_real_analysis.py",
+      "lines": 86,
+      "sha256": "54f6e26ffaedaf3ac4de43dd9c2a73da6e2d140504d792b2d29ed155f1da732d",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch23_polynomial_integral.py",
+      "lines": 96,
+      "sha256": "0b9614033df5f8c994f3da6c4c6b273c2c5763be96ed13d81dd57dcfac1722ab",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch26_measure.py",
+      "lines": 92,
+      "sha256": "9f212793ff36ef9f317a12d18bf60ba48617f9545b6dd609397952e2793c68f7",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch3.py",
+      "lines": 102,
+      "sha256": "cb17bcfd66207aea11975d3e9a4678477fbb48d43ec8a7e6ee49c31beb33af2e",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch30_uniformizer.py",
+      "lines": 78,
+      "sha256": "c9a70a276c747766266a546879332a4d81977dd2fcc792edce465b307fd37d12",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch33_embedded.py",
+      "lines": 94,
+      "sha256": "fb1796e21f9f4ad0bf28eab8a74d239f368e61b892c800013e737a7239df5ca9",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch36_strong_transcendence.py",
+      "lines": 90,
+      "sha256": "711b410e1b522fd44672a8eef2fa9b87a1a5f5c950dcb9fede3432b16de6341f",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch39_alt_sources.py",
+      "lines": 110,
+      "sha256": "ad2c2368c63bb4a5ee7c62e533d24034e96e4b35899377d11ca58f32b0e7549d",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch4.py",
+      "lines": 119,
+      "sha256": "25a676a48c88561a1175565fc1f4fabfc0089c824247f910752af3602bfbf76f",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch5.py",
+      "lines": 96,
+      "sha256": "4fe9b624f57bb26134dc50694fdbf5b88cc5ecd90983faa0c46c739be9e315a3",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch6_settheory.py",
+      "lines": 122,
+      "sha256": "cf01d66f248cfb9719cd97b55470438c4b3f1c7e6ecfdae196ef168efe364cc4",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch8_mapping.py",
+      "lines": 114,
+      "sha256": "cf6a8e5fa6461870e00ccc6bb8fbeebdc68223020d9615ae6ff9fd14fb575be3",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_batch9_more.py",
+      "lines": 104,
+      "sha256": "2c46a42effe55a5d0ffda83012d60a835cdb53a68357a891fe9e75f2e400e385",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_foundations_proofwiki.py",
+      "lines": 125,
+      "sha256": "dd2fd5eace825d1478df9c265bd4d13530795b76b49e61b877bbb910408613cc",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_graph_source_batch42.py",
+      "lines": 103,
+      "sha256": "f4cffd9783319e18bc56df261a707d007dd77e8e5af7337a1cf41785a5a07d39",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_meaning_candidates.py",
+      "lines": 129,
+      "sha256": "b991709c0b782f015cea280250800689dae24632e081036d34fabf4141ff21e9",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_meaning_candidates_batch2.py",
+      "lines": 92,
+      "sha256": "6fe24ad0d449cc85708be3416d91c65d63aaf4c28488251e5105c8115b27feb0",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_priorities.py",
+      "lines": 147,
+      "sha256": "8703bf40695daef9c82ea5ba4b3416e463e8ccde530aab20e546d586c2328598",
+      "classes": [],
+      "functions": [
+        "task_id",
+        "build",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_priority_progress.py",
+      "lines": 116,
+      "sha256": "e1f0e3c8509f6d0fa234ee58fc3cca0c9bffd819799d17dd2aa05e3d6fb96790",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".stage5_review_gate",
+        "__future__",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_real_source_batch45.py",
+      "lines": 91,
+      "sha256": "bb500f7d04d581bc8ff9b9d6fce1616951bd76309c38853bd205c690afe2ad14",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_relation_review_seed.py",
+      "lines": 102,
+      "sha256": "32e7db30f8eca0e67380ab79774f31b19d0bea27b8ceed4ee19b36d9571d8119",
+      "classes": [],
+      "functions": [
+        "build",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_review_analysis20_missing_foundations.py",
+      "lines": 142,
+      "sha256": "6efe9e0efee067f0110fe9c0e8ceb303a9de6cb32c3f5edac67e7b2f71b47810",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_review_foundation_no_targets.py",
+      "lines": 141,
+      "sha256": "33c6975935fd343b1927e2c87c5afdc74b659e86178845ad2ff7535d87d170f9",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_review_real_absolute_value_foundation.py",
+      "lines": 124,
+      "sha256": "1e0a10f31e07094ec8b8d6d4d0133995f6a64eb8aeea8715e3e2f723979a38b2",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_alt_sources40.py",
+      "lines": 210,
+      "sha256": "8fe340485c573c8e0fdfdec6177f64cf6ff6d02b941d394259c6eb44ddf4898d",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_category_axioms_batch16.py",
+      "lines": 161,
+      "sha256": "4663a0305ae36d480083880ff01e629b54b73598839368f2ffcc0474d6c4ba08",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_dlmf_openstax.py",
+      "lines": 197,
+      "sha256": "8a3af83fef181be93c24e11a3f0132a60ab684b2c5a08df6f74f10e5403b6025",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_elementary_foundations.py",
+      "lines": 210,
+      "sha256": "72f184ca8ff8058a2276adcbde53222bf3bf1486442f7c792529300f1745e8b8",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_embedded34.py",
+      "lines": 154,
+      "sha256": "812cf4bd4a2aafd2a096b52e60624fd325026de91d8efb2e51db650a239ca51b",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_foundations.py",
+      "lines": 145,
+      "sha256": "f44f39419954bddf9429db2a902ee7c8ca72ca17f3ea026a567124b027e212d0",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_foundations_batch10.py",
+      "lines": 192,
+      "sha256": "16bb01249531a37cdad820129dc38bb6ceeb3501ed8c1c98a7202744ebddca02",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_graph_meanings43.py",
+      "lines": 181,
+      "sha256": "7359eaa79ab4c4be81837dacd147ffaf92275e59372a5405e0dbdd6de19ee720",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_homological_foundations_batch14.py",
+      "lines": 183,
+      "sha256": "a46d15fe73ea40e4d81ae9b9834c9c71c5068f6524f2663d29561f06edac6b56",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_mapping_variants.py",
+      "lines": 203,
+      "sha256": "285cc8aca818a6b256d69b8f89999a83e12e7b43c63919a541d7f5067575a1a3",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_measure27.py",
+      "lines": 183,
+      "sha256": "9ea509688007f16d80c0da72ef559c258a5d2e2f5f912950b209a7380e3fff02",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_more_foundations.py",
+      "lines": 207,
+      "sha256": "986a23a34574b017cc39bd17c398352c7d549fd20cce65ead1290039ab104a7b",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_polynomial_integral_moment24.py",
+      "lines": 171,
+      "sha256": "a053edada01d1d6664e3f142379aa362b546705e6d4d9b1b50988604a94c44f1",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_real_analysis_foundations22.py",
+      "lines": 170,
+      "sha256": "7882ad7f4e4b93e915e19c6497ae6015154d9f9538e2c3ae6294ec67a3223109",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_real_meanings46.py",
+      "lines": 182,
+      "sha256": "1952ae79af560cc86617f6f79cb4e485c506fb6c51fb2a4d2d192ff471522efb",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_site_foundations_batch12.py",
+      "lines": 141,
+      "sha256": "74ca8a93ddf1b4079ff85fd77974afb6b5bf71f7926c288a58ed98aa5182d3a1",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_strong_transcendence37.py",
+      "lines": 135,
+      "sha256": "14b326f7dce00952490ebe11aa49e41ce36d914ffd659b37331552acd9c4c213",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_screen_uniformizer31.py",
+      "lines": 157,
+      "sha256": "848798a018eab43e20ddf8ae03513bee9b5e8d75bb43f3f733f96b1e597eb84c",
+      "classes": [],
+      "functions": [
+        "run",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".revisions",
+        ".stage5_review_gate",
+        ".wave2_apply_links",
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/engine/wave2_term_coverage.py",
+      "lines": 324,
+      "sha256": "9e1a75f3fc277d1903164ea87158ab565960d063cf66427321c3b7db3ed4fccb",
+      "classes": [],
+      "functions": [
+        "build",
+        "require_wave2_review_complete",
+        "main"
+      ],
+      "imports": [
+        ".core",
+        ".stage3_review_gate",
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/__init__.py",
+      "lines": 1,
+      "sha256": "e6e239535d4d126678a4c3c9620b62b19fc50b5fa9c3efb57033d74619241b9b",
+      "classes": [],
+      "functions": [],
+      "imports": []
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/__init__.py",
+      "lines": 1,
+      "sha256": "88d88f8e99c457b7125a4c6cead6a7f7c0afa2da29c1f01d2cd7f50a9c7b21ca",
+      "classes": [],
+      "functions": [],
+      "imports": []
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/dependency_scan.py",
+      "lines": 77,
+      "sha256": "a4ecddc29a29f1be4ba5b18af264e2766ff856d1d95d8542499c2e669b9ecae7",
+      "classes": [],
+      "functions": [
+        "_domain",
+        "propose"
+      ],
+      "imports": [
+        "__future__",
+        "collections",
+        "re"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/population_policy.py",
+      "lines": 19,
+      "sha256": "f9e2efb50a6f563cee19cd32524701c1610489495ef8efc1eafd0c8666a117b7",
+      "classes": [],
+      "functions": [
+        "validate_package"
+      ],
+      "imports": [
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/population_promotion.py",
+      "lines": 204,
+      "sha256": "9614cecddd978aec6625cc820d7019f607b9f734bb69f89665d6b20af18fc4c6",
+      "classes": [],
+      "functions": [
+        "prepare",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.population",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/preview.py",
+      "lines": 208,
+      "sha256": "8908eae82e52cae0dd4ae7252b554937428ebc3c0a90d7b29d99db0fcc1213cb",
+      "classes": [],
+      "functions": [
+        "read_working_draft",
+        "build",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "shutil"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/preview_site.py",
+      "lines": 114,
+      "sha256": "066edd151162849a5aa1a9563a6fd821e56830872f7ddfcc660845f9fff995ab",
+      "classes": [],
+      "functions": [
+        "render",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "html",
+        "json",
+        "pathlib",
+        "research_pipeline.adapters.mathdef.preview",
+        "research_pipeline.engine.resume_checkpoint",
+        "research_pipeline.ui.renderer"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/resume_validation.py",
+      "lines": 178,
+      "sha256": "e4f27da1c6934628f7b458519ca88850b264484599c400de272a08821082f4f9",
+      "classes": [],
+      "functions": [
+        "_validate_meaning_catalog_review_bridge",
+        "inspect"
+      ],
+      "imports": [
+        "__future__",
+        "collections",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.resume_checkpoint",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_branch_backfill_batch131.py",
+      "lines": 132,
+      "sha256": "02d9950ceffdc5164ef433de3719422e15aa20a96f72e8409a42806d89b26158",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_branch_links_batch130.py",
+      "lines": 156,
+      "sha256": "73fb21cd5ba6a98c5697a5303b684b432a56d3fb5a09339692589e0f2d2ef52c",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_branch_meanings_batch129.py",
+      "lines": 148,
+      "sha256": "ef21cdb84524e741cabaca1500593371ff3b834d0c37c636d49a12bf7aec0746",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_branch_source_batch128.py",
+      "lines": 95,
+      "sha256": "00fc95915b37f94f1213d5f55f38bf94dba69ff9ec6cfcd3c542988e91610574",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_bridge_backfill_batch138.py",
+      "lines": 143,
+      "sha256": "dea52a4a9992195d5ead31b045b8b8860a74d87f8e06c939d87be47720d7c52d",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_bridge_links_batch137.py",
+      "lines": 160,
+      "sha256": "3eb6e1d8cb2e5a38c20329b5fe3d461cbfb8e707a3620ddda85f32cfadaacd17",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_bridge_meanings_batch136.py",
+      "lines": 151,
+      "sha256": "44f84259f02ff75072cc980d3aeac321c6a15097ebde521095f740833a03c5ed",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_bridge_source_batch135.py",
+      "lines": 90,
+      "sha256": "cd0cddeac447c1ed20025c2c57db6c74b0ee515a3bbbdfad9829e25def70f55c",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_broad_variant_links_batch68.py",
+      "lines": 178,
+      "sha256": "405ade542f10bc8073d14dee4521255ae190a3cd7f00f12bdd91d1019d8174a5",
+      "classes": [],
+      "functions": [
+        "store",
+        "form_locator",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_broad_variant_meanings_batch67.py",
+      "lines": 228,
+      "sha256": "c2604decb83db1ff9b11bdd81b93abfaa45c341571939291ea791b0dec50c3cc",
+      "classes": [],
+      "functions": [
+        "store",
+        "source_form",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_broad_variants_source_batch66.py",
+      "lines": 102,
+      "sha256": "24bbdda1da8f673a2de02549f64bb60b02a7e841b874ee4aa4532bb969344d73",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cauchy_meanings_batch51.py",
+      "lines": 191,
+      "sha256": "0dce5688e7b8233a9c85c415ce968833032396988af5ce54e0578bab21fd0fda",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cauchy_models_batch52.py",
+      "lines": 184,
+      "sha256": "29d6986d2b6dc6a7be437aeba04f43240ecbc3f7cb3c42dc45a2ec0aa11bd13f",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_connected_noetherian_links_batch72.py",
+      "lines": 178,
+      "sha256": "e72992010e0171cace3c3c73ed53d3d99b4119e648067429cea030cc1816e0ab",
+      "classes": [],
+      "functions": [
+        "store",
+        "form_url",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_connected_noetherian_meanings_batch71.py",
+      "lines": 240,
+      "sha256": "7a1940faec2a788286cf24116eaba9b9b379c2e80df59bb560d009dda4c59005",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_connected_noetherian_source_batch70.py",
+      "lines": 109,
+      "sha256": "b88452f796881039947e31ec6605e86c9c65e5e214693d17136809457beb4b00",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_conv_links_batch127.py",
+      "lines": 173,
+      "sha256": "f5b681baaa1df4f2635db4a5122ee5f7e29f16af9423fd7124c47e3add2417b5",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_conv_meanings_batch126.py",
+      "lines": 144,
+      "sha256": "84734a3cfabbaec2883c3ce6317fcd959a47fff4e41900f8c42566baceeb65f8",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_conv_source_batch125.py",
+      "lines": 91,
+      "sha256": "3ffc724ab7aebaa22ff65e1fffcb4c0743efb34016aaff96678d7aa62bef2ce6",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_branch_links_batch108.py",
+      "lines": 171,
+      "sha256": "d71552e0d31c999169d4b3a6e4ae0922363fdff2a8a308a3dc4302e538d84754",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_branch_meanings_batch107.py",
+      "lines": 182,
+      "sha256": "a9fc326fd9b7484fa5610b20d1387c4daeb94798f418ae0f5dd7e6d5432a22d6",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_branch_source_batch106.py",
+      "lines": 115,
+      "sha256": "cbd32269bed9c3c0046eb998d50f81ab396234488c7b24e4fb65648c285926c6",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_domain_links_batch111.py",
+      "lines": 175,
+      "sha256": "a38717a0b016cc4b509dd2e2dd8e3159356308da5d4b61cbc46a49c8e336037b",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_domain_meanings_batch110.py",
+      "lines": 172,
+      "sha256": "5599114e0c53531fc6fb98a6a35327e819f7048f2e12fefbc0548f346673e361",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_domain_source_batch109.py",
+      "lines": 118,
+      "sha256": "c181b32596a2e3c7b7afd358c4f715693e31223d2fe5a0c1a59bd2dd2f31b834",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_field_links_batch105.py",
+      "lines": 181,
+      "sha256": "78dc9ab69439712f444dd86fdbd8a4c288efbb28ff81f1a678d26b9dbb8641d4",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_field_meanings_batch104.py",
+      "lines": 184,
+      "sha256": "7790066520e8e2b4bdbdf63b568741e8838f75aad5115d14581f8ed1829db1d9",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_field_source_batch103.py",
+      "lines": 115,
+      "sha256": "adfaeac3a5118605b33aa2a3ff9b7e0f51f9c3a8e9000b64cf2797894e7f83a5",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_links_batch134.py",
+      "lines": 164,
+      "sha256": "ca5e228c00627f1d35b90cdafbfbfa4faa2b95054dbacb6b421aad99185fbecc",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_meanings_batch133.py",
+      "lines": 147,
+      "sha256": "9bd49bcf80aae337f5262f1cb1c08991445e6fe41ade0fb573391b1ca4901cf9",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_cross_source_batch132.py",
+      "lines": 97,
+      "sha256": "f7cd02f88e9d03b13ad5ec6c6db9a8b8fc720ffbc8d43b0fffceac9d091c23a8",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_dedekind_meanings_batch50.py",
+      "lines": 202,
+      "sha256": "faffbb5d5862cbda590e826e44c07462038491efd9874d1eefb660edb2925d9a",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_directional_metric_links_batch114.py",
+      "lines": 162,
+      "sha256": "52e9bf506cbeb0b6f1f26b0dce40aff4a49852c2429b89b76812974d9d260c34",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_directional_metric_meanings_batch113.py",
+      "lines": 172,
+      "sha256": "b34bba3d4bde9b9f19de31d7d3757f9be06a5bf8dfc611adde14903c5dbaade5",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_directional_metric_source_batch112.py",
+      "lines": 105,
+      "sha256": "5b1928c556889fc68ebce6868f68baa7bc279fb30c0172ebb505f6673b472343",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_foundation_research_source_batch84.py",
+      "lines": 101,
+      "sha256": "c3595d1372df4713d9bbe6622c3eab77b1963c7c342efb35a6a22131429550c1",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_foundations_links_batch77.py",
+      "lines": 204,
+      "sha256": "142107a7075f72e85604b15961d4b2ef47e7540d82a4cb121af0d72b198791d2",
+      "classes": [],
+      "functions": [
+        "store",
+        "form_url",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_foundations_meanings_batch76.py",
+      "lines": 153,
+      "sha256": "662bdff88c2ab48aae37dc599ec4e1ac1c3c81b1466662b67587d3127a3c8679",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_foundations_source_batch75.py",
+      "lines": 95,
+      "sha256": "7df90320101f7da3dcc7393102d9f137e4f79780faefd99ad6391d3bdea391ee",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_functional_analysis_source_batch97.py",
+      "lines": 101,
+      "sha256": "cc5c9ecb541871490275c8c5ce151432d3700a5d4fd8360b0baf23f5c270f4be",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_group_measure_links_batch117.py",
+      "lines": 169,
+      "sha256": "1c4afa85c40d957130dc92ef5a13127ef3b626f36f8e5c39737b83092f88aff2",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_group_measure_meanings_batch116.py",
+      "lines": 163,
+      "sha256": "1147e1f0a231b680eb2e8daf0ef33a6e3bec722443c35e55eeec49ea2deb9224",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_group_measure_source_batch115.py",
+      "lines": 107,
+      "sha256": "b9ce984ca000e79bc0a80b655ba7e185ef21d88bab710cf995c51d7ad796b97e",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_integer_field_links_batch60.py",
+      "lines": 212,
+      "sha256": "28f044a0defe634bb03dd685c8d8b3df655eb33bc4aa8495087b2bbba7a88cf6",
+      "classes": [],
+      "functions": [
+        "store",
+        "formulation_locator",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_integer_field_meanings_batch59.py",
+      "lines": 198,
+      "sha256": "23aea4c9c84f2036dc2918d4178f43743c692c7f562322d4dccf1efeebb0ebd2",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_integer_fields_source_batch58.py",
+      "lines": 128,
+      "sha256": "8f89faf5542b6430e02c2dd66405731ff26b9bdf58dd199993e62bd3dc4a3bf0",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_martingale_chromatic_links_batch82.py",
+      "lines": 173,
+      "sha256": "73a85e53ab7e550d7eaed47c31a234f74a7205da217675c442d198b075bfb902",
+      "classes": [],
+      "functions": [
+        "store",
+        "form_source",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_martingale_chromatic_meanings_batch81.py",
+      "lines": 156,
+      "sha256": "e75508d9df6e4e262d25165f7089ee9a9fbdf73cdb2a81f0e906df04f98ec95c",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_martingale_chromatic_source_batch80.py",
+      "lines": 103,
+      "sha256": "0707329b61982123e3eab7e29a650b6c692cc49016711a4869932a813977c073",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_martingale_foundations_links_batch86.py",
+      "lines": 253,
+      "sha256": "0b99627a26a3d3f118b3ed3c6e48c3faa5ecc565d53d5be2e417f0055522999e",
+      "classes": [],
+      "functions": [
+        "store",
+        "exact_source",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_martingale_foundations_meanings_batch85.py",
+      "lines": 172,
+      "sha256": "817a2023134d676dde3d7202dc5322b0cafc81dfca5080b8412a4f4c6b437b87",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_metric_functional_links_batch99.py",
+      "lines": 182,
+      "sha256": "c01f0747dd6dbecd2540d647666adf9c161cbf765d56bedec17af1453d790246",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_metric_functional_meanings_batch98.py",
+      "lines": 189,
+      "sha256": "bab881c05c727e004833989cdb955767a65f66ba8b43a709f82ba30663e0c5a3",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_module_variants_links_batch95.py",
+      "lines": 186,
+      "sha256": "d0bde27971e741a8b591b38802d9c04a6dc6bcf113c66a5e6787aea58bf5211e",
+      "classes": [],
+      "functions": [
+        "store",
+        "source",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_module_variants_meanings_batch94.py",
+      "lines": 172,
+      "sha256": "e485e7e4be8ed8dcd562653642c3219a86fbc1a9f02c15719b9d27b55277fe61",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_module_variants_source_batch93.py",
+      "lines": 99,
+      "sha256": "8bfc76b98e1a8f80caca1b2dd2020943ff43376f54aa43e2941574b3b7b6d32d",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_prereq_backfill_batch124.py",
+      "lines": 146,
+      "sha256": "f3716b1e9bb660b7e728e44e46111a3bd1eac6694771f0fc78bc8ac06a8cac5f",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_prereq_links_batch123.py",
+      "lines": 155,
+      "sha256": "8df8724f1c90d4b26b5dc934efda2a79835a6bf7183e032daa9bc7ccbe2ef2a3",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_prereq_meanings_batch122.py",
+      "lines": 137,
+      "sha256": "f41c8f1a3cdf4f3cc44faf1363cbe02a35916020fc432c6fab36444a13c9f8a3",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_prereq_source_batch121.py",
+      "lines": 94,
+      "sha256": "2cf48aae8ad54bd16c40f9ff5b6d68aac8a4529ba53f148be4af0bb64337f23b",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_probability_links_batch91.py",
+      "lines": 226,
+      "sha256": "e3e0dd4a82531226cdb2e0ace8aa546c03f9cec174c20161c66464fca7420f2d",
+      "classes": [],
+      "functions": [
+        "store",
+        "form_url",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_probability_meanings_batch90.py",
+      "lines": 157,
+      "sha256": "b607402429cecf6735786e00a2bb9a21679ff4ee66bebdc062780f7e40a65429",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_probability_measurable_source_batch89.py",
+      "lines": 110,
+      "sha256": "9db7ed12ed8afcd0cf4fd6f6ba338743c516b3767a31d29dc8740664f7ba0e63",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_quotient_graph_links_batch120.py",
+      "lines": 160,
+      "sha256": "52d9ea1ba1e118489f3a1cafeccf4cc98155298c3824532d6e117a6f1d30a284",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_quotient_graph_meanings_batch119.py",
+      "lines": 153,
+      "sha256": "95944ea80d16ed2b7a92ac1dd5d877e8298ae71867c33e21d77a2018a3ac35b8",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_quotient_graph_source_batch118.py",
+      "lines": 100,
+      "sha256": "a2079d374c1871bc9e1d04a9abab636db768afbc23e22d235a55678c2d08c4bf",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_rational_foundations_source_batch54.py",
+      "lines": 107,
+      "sha256": "00580ebd45b50aab239ba8838bf756d6de3bcc3f30285eb7e31bac81f045938c",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_rational_prerequisite_links_batch56.py",
+      "lines": 223,
+      "sha256": "3fa33d2db76eb45654e5b8c47abc7f371a02589bf67956bb964c9ce6f89dfb00",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_real_construction_links_batch53.py",
+      "lines": 207,
+      "sha256": "b3de851bef12f19d0e5f23dd5cbd13e2f4847b43d29de4fd16fedf540829eebb",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_real_constructions_batch49.py",
+      "lines": 137,
+      "sha256": "d34d9bf2ebb93d8aa7d9942ce3b2238c75b79b5a14f1f3a92d07fd026a30447c",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_scalar_division_ring_links_batch102.py",
+      "lines": 223,
+      "sha256": "a013418422e3da9c37e39c19e86c20c5122bc52714b290f4b632113e9dc0f40d",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_scalar_division_ring_meanings_batch101.py",
+      "lines": 184,
+      "sha256": "9cec961c69fd8a8db9c4ffa31b7a7482f3c3b902d74cdf57cdf5b56aaa1646a8",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_scalar_division_ring_source_batch100.py",
+      "lines": 114,
+      "sha256": "57a0782610566ba173a46408478c34dc7e0d16c2cf15826571cd15a5d5dd1302",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_screen_rational_foundations_batch55.py",
+      "lines": 169,
+      "sha256": "03a686fe65ad22f27f06297f5d3d7bc570cfe13880f3be53cad5297c876e39fb",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_set_foundations_source_batch62.py",
+      "lines": 107,
+      "sha256": "76d77b5fef1a0bba847cbb3ff568a6ea2cd88edd5d732850273ca11ef8d1d890",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_set_links_batch64.py",
+      "lines": 217,
+      "sha256": "70a0a52e06c6158dc26e4e1fabfe3a95203768c1c66613085707002a4d846f1c",
+      "classes": [],
+      "functions": [
+        "store",
+        "source_of_form",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/adapters/mathdef/wave2_set_meanings_batch63.py",
+      "lines": 169,
+      "sha256": "3dc99fb7e5338fd72c7abd988133e1831877b32efea5579c1782603e005fa96d",
+      "classes": [],
+      "functions": [
+        "store",
+        "run",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.stage5_review_gate",
+        "research_pipeline.engine.wave2_apply_links"
+      ]
+    },
+    {
+      "path": "research_pipeline/ui/__init__.py",
+      "lines": 1,
+      "sha256": "ec307b918e1161eee4ac767a5201d30938845fd00b3ebdeae65ed16ea0cd1634",
+      "classes": [],
+      "functions": [],
+      "imports": []
+    },
+    {
+      "path": "research_pipeline/ui/renderer.py",
+      "lines": 161,
+      "sha256": "7e0721d15e41bdda741cdc6b0d7fcb22b781a7b75ad74745f1bdc39cc77d0202",
+      "classes": [
+        "ViewError"
+      ],
+      "functions": [
+        "read_json",
+        "to_index",
+        "render"
+      ],
+      "imports": [
+        "__future__",
+        "collections",
+        "html",
+        "json",
+        "pathlib",
+        "shutil"
+      ]
+    },
+    {
+      "path": "research_pipeline/evaluation/__init__.py",
+      "lines": 1,
+      "sha256": "d8dbe70ccaa9d66737fd254325075cb83209eca0cb9a9407cb6a8a7e59efe263",
+      "classes": [],
+      "functions": [],
+      "imports": []
+    },
+    {
+      "path": "research_pipeline/evaluation/compare.py",
+      "lines": 226,
+      "sha256": "7245227a8918696f754a42935a21e27163a5734b0ff7e73e33d793b75d7b776e",
+      "classes": [],
+      "functions": [
+        "normalize",
+        "clean_url",
+        "parse_tex_header",
+        "original_mathdef",
+        "frozen_catalog",
+        "candidates",
+        "collect_links",
+        "wave_score",
+        "compare",
+        "main"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "json",
+        "pathlib",
+        "re",
+        "research_pipeline.engine.core",
+        "research_pipeline.engine.effort",
+        "urllib.parse"
+      ]
+    }
+  ]
+}

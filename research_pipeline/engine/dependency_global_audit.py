@@ -34,7 +34,9 @@ from research_pipeline.engine.core import PipelineError, digest
 from research_pipeline.engine.dependency_graph import (
     KEY_RE, graph_path, live_nodes, make_snapshot, missing_key, norm, read,
 )
-from research_pipeline.engine.dependency_review_preflight import review_preflight
+from research_pipeline.engine.dependency_review_preflight import (
+    prepare_review_context, review_preflight,
+)
 from research_pipeline.engine.dependency_seed_overrides import (
     read_events as read_seed_override_events, replay_seed_overrides,
     scan_missing_sources,
@@ -79,7 +81,8 @@ def load_live_snapshot(workspace: Path) -> dict:
 
 def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = (),
                             limit: int = 8, max_formulations: int = 3,
-                            contains: str = "") -> dict:
+                            contains: str = "", parent_budget: int | None = None,
+                            compact_sources: bool = False) -> dict:
     """Small, impact-ordered, context-complete read-only mathematical review queue.
 
     Defaults to only unresolved CANONICAL candidate identities; applied
@@ -90,7 +93,28 @@ def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = 
     """
     if limit < 0 or max_formulations < 1:
         raise PipelineError("Review limits must be nonnegative, with >=1 source per candidate")
+    if parent_budget is not None and (
+            not isinstance(parent_budget, int) or isinstance(parent_budget, bool)
+            or parent_budget < 1):
+        raise PipelineError("Parent budget must be a positive integer")
+    if parent_budget is not None and candidate_ids:
+        raise PipelineError("Parent budget cannot truncate explicit candidate IDs")
     inv, nodes = snapshot["inventory"], snapshot["nodes"]
+    # Historical relations can appear in augmented audit evidence but do not
+    # occupy live-node reference indices. Index them once for all candidates.
+    seeds_by_form = defaultdict(list)
+    for seed in inv.get("seed_relations", []):
+        fid = seed.get("from_formulation")
+        if fid in inv["formulations"]:
+            seeds_by_form[fid].append({
+                "relation_id": seed.get("relation_id"),
+                "phrase": seed.get("phrase", ""),
+                "target_meaning_id": seed.get("target_meaning_id"),
+                "target_query": seed.get("target_query"),
+                "relation_state": seed.get("relation_state"),
+                "origin": "historical_seed_relation",
+                "editable_in_live_node": False,
+            })
     active = {c["id"]: c for c in snapshot.get("candidates", [])
               if c.get("status") == "unresearched"
               and not c.get("alias_of")
@@ -111,6 +135,21 @@ def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = 
             chosen = [c for c in chosen if needle in norm(
                 c.get("query", "") + " " + c.get("context", ""))]
         chosen = chosen[:limit]
+    omitted_by_budget = 0
+    if parent_budget is not None:
+        planned, visits = [], 0
+        for candidate in chosen:
+            cost = len(candidate.get("incoming_formulation_ids", []))
+            # Keep priority order and never starve an oversized first item.
+            if planned and visits + cost > parent_budget:
+                break
+            planned.append(candidate)
+            visits += cost
+            if visits >= parent_budget:
+                break
+        omitted_by_budget = len(chosen) - len(planned)
+        chosen = planned
+    shared_sources = {}
     items = []
     for candidate in chosen:
         source_ids = candidate.get("incoming_formulation_ids", [])
@@ -128,15 +167,28 @@ def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = 
                 sources.append({"formulation_id": fid,
                                 "integrity_warning": "missing_source_formulation"})
                 continue
-            sources.append({
-                "formulation_id": fid, "source_meaning_id": source["meaning_id"],
-                "display_term": source["display_term"],
-                "full_source_text": source["text"],
-                "source_context": source.get("context", ""),
-                "source_version_sha256": source["version_sha256"],
-                "effective_node_sha256": digest(node) if node else None,
-                "complete_scan": bool(node and node.get("scan_status") == "complete"),
-                "all_effective_references": node.get("references", []) if node else [],
+            if fid not in shared_sources:
+                shared_sources[fid] = {
+                    "formulation_id": fid, "source_meaning_id": source["meaning_id"],
+                    "display_term": source["display_term"],
+                    "full_source_text": source["text"],
+                    "source_context": source.get("context", ""),
+                    "source_version_sha256": source["version_sha256"],
+                    "effective_node_sha256": digest(node) if node else None,
+                    "complete_scan": bool(node and node.get("scan_status") == "complete"),
+                    "all_effective_references": node.get("references", []) if node else [],
+                    # These positions belong EXCLUSIVELY to replayed live_nodes.
+                    # Reviewer manifests should use the stable occurrence ID.
+                    "effective_live_reference_rows": [
+                        {"live_reference_index": i,
+                         "expected_occurrence_id": ref.get("occurrence_id"),
+                         "reference": ref}
+                        for i, ref in enumerate(node.get("references", []) if node else [])
+                    ],
+                    # Never splice historical seed rows into the indexed live list.
+                    "historical_seed_references": seeds_by_form.get(fid, []),
+                }
+            sources.append({**shared_sources[fid],
                 "matching_source_references": [
                     {"reference_index": i, "phrase": ref.get("phrase", ""),
                      "context": ref.get("context", ""),
@@ -156,7 +208,7 @@ def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = 
             "sources_truncated": max(0, len(source_ids) - len(sources)),
             "source_formulations": sources,
         })
-    return {
+    report = {
         "schema_version": 1, "read_only": True, "mathematics_certified": False,
         "automatic_aliases_or_edits": False,
         "inventory_sha256": inv["source_inventory_sha256"],
@@ -165,10 +217,42 @@ def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = 
         "active_canonical_candidates": len(active),
         "reviewed_candidate_count": len(items),
         "candidates": items,
+        "reference_view_warning": (
+            "Historical seed references are distinct provenance evidence, "
+            "not live-node list entries. Prepare edits against the effective "
+            "node hash and exact expected_occurrence_id, not a mixed index."
+        ),
         "warning": "Review entire source and effective references before "
                    "any human-authored alias or version-bound resolution; "
                    "recurrence ranks priority, never establishes equivalence.",
     }
+
+    if parent_budget is not None or compact_sources:
+        all_parents = [fid for candidate in chosen
+                       for fid in candidate.get("incoming_formulation_ids", [])]
+        report["workload"] = {
+            "candidate_parent_visits": len(all_parents),
+            "distinct_parent_formulations": len(set(all_parents)),
+            "repeated_parent_visits": len(all_parents) - len(set(all_parents)),
+            "parent_visit_budget": parent_budget,
+            "budget_exceeded_by_first_candidate": bool(
+                parent_budget is not None and len(all_parents) > parent_budget),
+            "candidates_omitted_by_budget": omitted_by_budget,
+            "source_contexts_emitted": len(shared_sources),
+            "warning": "Counts describe context visits, not mathematical difficulty, "
+                       "completed review, source certification or permission to merge.",
+        }
+    if compact_sources:
+        report["schema_version"] = 2
+        report["source_contexts"] = shared_sources
+        report["source_contexts_deduplicated"] = True
+        for item in items:
+            item["source_formulations"] = [
+                {"formulation_id": source["formulation_id"],
+                 "matching_source_references": source["matching_source_references"]}
+                if "matching_source_references" in source else source
+                for source in item["source_formulations"]]
+    return report
 
 
 def strongly_connected(adjacency: dict[str, set[str]]) -> list[list[str]]:
@@ -531,6 +615,10 @@ def build_review_packages(snapshot: dict, manifest: dict,
     by_form = defaultdict(list)
     for edit in changes:
         by_form[edit.get("formulation_id")].append(edit)
+    reusable = {row["id"] for row in snapshot.get("candidates", [])
+                if row.get("status") == "unresearched"
+                and not row.get("alias_of")
+                and not row.get("resolved_target_meaning_id")}
     packets, pending = [], []
     for fid in sorted(by_form):
         source, prior = inv["formulations"].get(fid), nodes.get(fid)
@@ -542,12 +630,33 @@ def build_review_packages(snapshot: dict, manifest: dict,
         modified = set()
         reasons = []
         for edit in by_form[fid]:
-            index = edit.get("reference_index")
-            if not isinstance(index, int) or isinstance(index, bool) or not 0 <= index < len(refs):
-                raise PipelineError("Invalid reference_index for " + fid)
+            # Prefer the stable, live-node occurrence identity over an index
+            # derived from a mixed scan/seed audit view. Legacy manifests that
+            # include a numeric index stay valid but MUST agree with this ID.
+            occurrence_id = edit.get("expected_occurrence_id")
+            if not isinstance(occurrence_id, str) or not occurrence_id:
+                raise PipelineError("Missing expected_occurrence_id for " + fid)
+            matching = [
+                i for i, ref in enumerate(prior["references"])
+                if ref.get("occurrence_id") == occurrence_id
+            ]
+            if len(matching) != 1:
+                raise PipelineError(
+                    "Missing or nonunique live occurrence identity for " + fid
+                    + ": " + occurrence_id
+                )
+            index = matching[0]
+            supplied_index = edit.get("reference_index")
+            if supplied_index is not None and (
+                    not isinstance(supplied_index, int)
+                    or isinstance(supplied_index, bool)
+                    or supplied_index != index):
+                raise PipelineError(
+                    "reference_index conflicts with live occurrence identity for "
+                    + fid + ": " + occurrence_id
+                )
             original = prior["references"][index]
-            if (index in modified or edit.get("expected_node_sha256") != old_hash
-                    or edit.get("expected_occurrence_id") != original.get("occurrence_id")):
+            if (index in modified or edit.get("expected_node_sha256") != old_hash):
                 raise PipelineError("Duplicate edit or stale effective occurrence: " + fid)
             # Prefer an explicitly reviewed *delta*: leave untouched metadata
             # and unrelated context identical, instead of manually retyping
@@ -602,10 +711,6 @@ def build_review_packages(snapshot: dict, manifest: dict,
                           f"'{source['display_term']}' and the complete effective "
                           f"predecessor reference list; {len(modified)} references changed.")
         # Validate an entire regenerated snapshot, *before writing any files*.
-        reusable = {row["id"] for row in snapshot.get("candidates", [])
-                    if row.get("status") == "unresearched"
-                    and not row.get("alias_of")
-                    and not row.get("resolved_target_meaning_id")}
         make_snapshot(inv, fid, refs, "complete", full_rationale,
                       reusable_missing_candidate_ids=reusable)
         pending.append({
@@ -630,6 +735,9 @@ def build_review_packages(snapshot: dict, manifest: dict,
 def write_offline_packets(workspace: Path, manifest_path: Path,
                           output_dir: Path, max_per_batch: int = 5) -> dict:
     """Offline preparation only: validate ALL decisions, then write preflights."""
+    output_dir = Path(output_dir).resolve()
+    if output_dir.is_relative_to(graph_path(workspace).resolve()):
+        raise PipelineError("Offline output must stay outside the dependency graph")
     snapshot = load_live_snapshot(workspace)
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     packets = build_review_packages(snapshot, manifest, max_per_batch)
@@ -641,7 +749,12 @@ def write_offline_packets(workspace: Path, manifest_path: Path,
         for path, packet in zip(paths, packets):
             path.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n",
                             encoding="utf-8")
-        preflight = [review_preflight(workspace, path) for path in paths]
+        # The builder groups all changes to a formulation into one amendment;
+        # packets are therefore disjoint. Each preflight still simulates its
+        # own node dictionary, with unchanged authoritative preconditions.
+        prepared = prepare_review_context(workspace)
+        preflight = [review_preflight(workspace, path, prepared_context=prepared)
+                     for path in paths]
     except Exception:
         for path in paths:
             path.unlink(missing_ok=True)
@@ -676,6 +789,12 @@ def main() -> None:
     focus.add_argument("--max-formulations", type=int, default=3)
     focus.add_argument("--contains", default="",
                        help="Filter candidate query/context when no IDs supplied")
+    focus.add_argument("--parent-budget", type=int,
+                       help="Bound full candidate/parent visits in priority order; "
+                            "an oversized first candidate is emitted with a warning")
+    focus.add_argument("--compact-sources", action="store_true",
+                       help="Schema v2: emit full contexts once in source_contexts; "
+                            "candidate rows keep exact occurrence matches")
     prep = sub.add_parser("prepare", help="Offline anchored full-node amendment packets")
     prep.add_argument("--manifest", type=Path, required=True)
     prep.add_argument("--output-dir", type=Path, required=True)
@@ -700,7 +819,8 @@ def main() -> None:
         print(json.dumps(candidate_review_bundle(
             load_live_snapshot(args.workspace),
             candidate_ids=tuple(args.candidate_id), limit=args.limit,
-            max_formulations=args.max_formulations, contains=args.contains),
+            max_formulations=args.max_formulations, contains=args.contains,
+            parent_budget=args.parent_budget, compact_sources=args.compact_sources),
             ensure_ascii=False, indent=2))
     else:
         print(json.dumps(write_offline_packets(
