@@ -10,6 +10,8 @@ import hashlib
 import json
 import os
 import re
+from contextlib import contextmanager
+from functools import wraps
 from pathlib import Path
 
 STAGES = ("sources", "terms", "observations", "meanings", "relations")
@@ -72,10 +74,38 @@ def require_id(value):
         raise PipelineError(f"Invalid stable ID: {value!r}")
 
 
+def _with_record_snapshot(method):
+    """Reuse parsing only during one synchronous, single-writer operation."""
+    @wraps(method)
+    def call(self, *args, **kwargs):
+        with self._record_snapshot():
+            return method(self, *args, **kwargs)
+    return call
+
+
 class Workspace:
     def __init__(self, root):
         self.root = Path(root).resolve()
         self.config_path = self.root / "project.json"
+        self._record_cache = None
+        self._record_indexes = None
+
+    @contextmanager
+    def _record_snapshot(self):
+        """Private bounded read view, never a persistent or cross-run cache.
+
+        Bulk methods already require a single writer. Ingest updates the same
+        target mapping after each append, so checkpoints include durable rows.
+        Exceptions and nested calls restore the previous view unconditionally.
+        Public reads outside this scope always reload and validate the files.
+        """
+        previous = self._record_cache, self._record_indexes
+        if self._record_cache is None:
+            self._record_cache, self._record_indexes = {}, {}
+        try:
+            yield
+        finally:
+            self._record_cache, self._record_indexes = previous
 
     def init(self, config):
         if self.config_path.exists():
@@ -99,6 +129,8 @@ class Workspace:
     def records(self, stage):
         if stage not in STAGES:
             raise PipelineError(f"Unknown stage: {stage}")
+        if self._record_cache is not None and stage in self._record_cache:
+            return self._record_cache[stage]
         values = jsonl(self.root / "records" / (stage + ".jsonl"))
         seen = {}
         for item in values:
@@ -107,6 +139,8 @@ class Workspace:
             if key in seen:
                 raise PipelineError(f"Duplicate record ID in {stage}: {key}")
             seen[key] = item
+        if self._record_cache is not None:
+            self._record_cache[stage] = seen
         return seen
 
     def state(self, stage):
@@ -182,12 +216,19 @@ class Workspace:
         elif stage == "relations":
             required(row, "from_formulation", "target_meaning", "relation_type", "review_state")
             meanings = self.records("meanings")
-            forms = {f["id"] for m in meanings.values() for f in m["formulations"]}
+            if self._record_indexes is None:
+                forms = {f["id"] for m in meanings.values() for f in m["formulations"]}
+            else:
+                if "formulation_ids" not in self._record_indexes:
+                    self._record_indexes["formulation_ids"] = {
+                        f["id"] for m in meanings.values() for f in m["formulations"]}
+                forms = self._record_indexes["formulation_ids"]
             if row["from_formulation"] not in forms or row["target_meaning"] not in meanings:
                 raise PipelineError("Unresolved relation endpoint")
             if row["review_state"] not in ("candidate", "screened", "blocked"):
                 raise PipelineError("Invalid relation review state")
 
+    @_with_record_snapshot
     def ingest(self, stage, input_path, batch_size=10, limit=None):
         self.config()
         if stage not in STAGES:
@@ -228,15 +269,17 @@ class Workspace:
 
     def _ingest_checkpoint(self, stage, target, added, skipped, input_path):
         state = self.state(stage)
+        records = self.records(stage)
         state.update({
-            "sealed": False, "total": len(self.records(stage)),
+            "sealed": False, "total": len(records),
             "last_input": str(input_path), "last_added": added,
             "last_skipped": skipped,
-            "record_digest": digest(list(self.records(stage).values())),
+            "record_digest": digest(list(records.values())),
         })
         atomic_json(self.root / "state" / (stage + ".json"), state)
         self.checkpoint(stage, state)
 
+    @_with_record_snapshot
     def seal(self, stage):
         config = self.config()
         if stage not in STAGES:
@@ -310,6 +353,7 @@ class Workspace:
         }
         return result
 
+    @_with_record_snapshot
     def publication(self):
         self.config()
         for stage in STAGES:

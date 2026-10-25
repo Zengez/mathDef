@@ -81,7 +81,10 @@ def review_preflight(workspace: Path, batch_path: Path, *,
     receipt = read(graph / "applied" / (batch_id + ".json"))
     package_hash = digest(package)
     if receipt is not None:
-        if receipt.get("sha256") != package_hash or receipt.get("mode") != mode:
+        if (not isinstance(receipt, dict)
+                or receipt.get("id") != batch_id
+                or receipt.get("status") != "applied_in_independent_graph_only"
+                or receipt.get("sha256") != package_hash or receipt.get("mode") != mode):
             raise PipelineError("Previously applied package differs from its immutable receipt")
         return {"schema_version": SCHEMA, "read_only": True,
                 "mathematical_certification": False, "batch_id": batch_id,

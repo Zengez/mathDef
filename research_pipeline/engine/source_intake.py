@@ -259,7 +259,8 @@ class StacksSectionsReader(HTMLParser):
 
 def extract(workspace, source_id, url, content, *, stage, profile="headings",
             allow_excerpts=False, limit=MAX_ENTRIES):
-    w = Workspace(workspace)
+    # A batch may supply its bounded registry view; standalone calls stay fresh.
+    w = workspace if isinstance(workspace, Workspace) else Workspace(workspace)
     source = w.records("sources").get(source_id)
     if not source:
         raise PipelineError("Unknown source ID")

@@ -3,10 +3,11 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from research_pipeline.engine.core import PipelineError, Workspace, digest
 from research_pipeline.engine.dependency_graph import (
-    graph_path, inventory_sync, live_nodes, missing_key, read, store,
+    amend, graph_path, inventory_sync, live_nodes, missing_key, read, store,
 )
 from research_pipeline.engine.dependency_audit_acceleration import (
     audit_fingerprint, math_signature, rank_findings, validate_review_ledger,
@@ -645,6 +646,125 @@ class GlobalAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(PipelineError, "overwrit"):
             write_offline_packets(self.root, manifest_path, out)
 
+
+    def test_export_reuses_one_preflight_context_and_keeps_complete_nodes(self):
+        changes = [self.change()]
+        # The second synthetic node has no references, so add one before taking
+        # the review snapshot; all writes stay in this disposable fixture.
+        inv = read(self.graph / "INVENTORY.json")
+        amend(self.root, [{
+            "amendment_id": "amend.fixture.beta-baseline",
+            "formulation_id": "form.beta",
+            "version_sha256": inv["formulations"]["form.beta"]["version_sha256"],
+            "expected_node_sha256": digest(self.snapshot()["nodes"]["form.beta"]),
+            "reviewed_by": "Fixture reviewer",
+            "reason": "This fixture adds a reviewed local notation reference using append-only amendment.",
+            "complete": True,
+            "references": [{"phrase": "local notation", "state": "external",
+                            "disposition": "Only local notation in this fixture statement."}],
+            "review_rationale": "Reviewed the entire fixture source and its local notation."}])
+        snapshot = self.snapshot()
+        changes[0]["expected_node_sha256"] = digest(snapshot["nodes"]["form.alpha"])
+        node = snapshot["nodes"]["form.beta"]
+        changes.append({"formulation_id": "form.beta",
+                        "expected_node_sha256": digest(node),
+                        "expected_occurrence_id": node["references"][0]["occurrence_id"],
+                        "updates": {"disposition": "Reviewed this whole source; local notation remains external."},
+                        "reason": "Read the complete fixture and preserve the source-local notation classification."})
+        manifest = self.manifest(changes)
+        path = self.root / "manifest.json"
+        path.write_text(json.dumps(manifest))
+        before = {str(f.relative_to(self.graph)): f.read_bytes()
+                  for f in self.graph.rglob("*") if f.is_file()}
+        with patch("research_pipeline.engine.dependency_review_preflight.live_nodes",
+                   wraps=live_nodes) as replay:
+            report = write_offline_packets(self.root, path, self.root / "export", max_per_batch=1)
+        self.assertEqual(replay.call_count, 1)
+        self.assertEqual(report["packet_count"], 2)
+        self.assertTrue(all(x["status"] == "mechanically_valid_not_applied"
+                            for x in report["preflight"]))
+        self.assertEqual(before, {str(f.relative_to(self.graph)): f.read_bytes()
+                                  for f in self.graph.rglob("*") if f.is_file()})
+
+    def test_offline_export_rejects_graph_and_symlink_destinations(self):
+        manifest_path = self.root / "manifest.json"
+        manifest_path.write_text(json.dumps(self.manifest([self.change()])))
+        for destination in [self.graph, self.graph / "inbox", self.graph / "other"]:
+            with self.assertRaisesRegex(PipelineError, "outside the dependency graph"):
+                write_offline_packets(self.root, manifest_path, destination)
+        linked = self.root / "linked-graph"
+        linked.symlink_to(self.graph, target_is_directory=True)
+        with self.assertRaisesRegex(PipelineError, "outside the dependency graph"):
+            write_offline_packets(self.root, manifest_path, linked / "inbox")
+
+    def focused_fixture(self):
+        snapshot = self.snapshot()
+        snapshot["candidates"] = [
+            {"id": "missing.first", "status": "unresearched", "query": "First",
+             "context": "Synthetic", "occurrence_count": 3,
+             "incoming_formulation_ids": ["form.alpha", "form.beta"]},
+            {"id": "missing.second", "status": "unresearched", "query": "Second",
+             "context": "Synthetic", "occurrence_count": 2,
+             "incoming_formulation_ids": ["form.alpha"]},
+            {"id": "missing.third", "status": "unresearched", "query": "Third",
+             "context": "Synthetic", "occurrence_count": 1,
+             "incoming_formulation_ids": ["form.beta"]},
+        ]
+        snapshot["nodes"]["form.alpha"]["references"].extend([
+            {"state": "missing", "missing_candidate_id": "missing.first",
+             "occurrence_id": "occ.first", "phrase": "first"},
+            {"state": "missing", "missing_candidate_id": "missing.second",
+             "occurrence_id": "occ.second", "phrase": "second"}])
+        return snapshot
+
+    def test_compact_source_pool_preserves_each_candidates_distinct_occurrences(self):
+        snapshot = self.focused_fixture()
+        full = candidate_review_bundle(snapshot, limit=3, max_formulations=10)
+        compact = candidate_review_bundle(snapshot, limit=3, max_formulations=10,
+                                          compact_sources=True)
+        self.assertEqual(full["schema_version"], 1)
+        self.assertEqual(compact["schema_version"], 2)
+        self.assertEqual(set(compact["source_contexts"]), {"form.alpha", "form.beta"})
+        self.assertEqual(compact["workload"]["candidate_parent_visits"], 4)
+        self.assertEqual(compact["workload"]["repeated_parent_visits"], 2)
+        for original, pooled in zip(full["candidates"], compact["candidates"]):
+            for a, b in zip(original["source_formulations"], pooled["source_formulations"]):
+                expanded = {**compact["source_contexts"][b["formulation_id"]],
+                            "matching_source_references": b["matching_source_references"]}
+                self.assertEqual(a, expanded)
+        matches = [x["source_formulations"][0]["matching_source_references"][0]["occurrence_id"]
+                   for x in compact["candidates"][:2]]
+        self.assertEqual(matches, ["occ.first", "occ.second"])
+
+    def test_parent_budget_counts_full_sources_even_when_output_truncated(self):
+        report = candidate_review_bundle(self.focused_fixture(), limit=3,
+                                         max_formulations=1, parent_budget=3,
+                                         compact_sources=True)
+        self.assertEqual([c["candidate_id"] for c in report["candidates"]],
+                         ["missing.first", "missing.second"])
+        self.assertEqual(report["workload"]["candidate_parent_visits"], 3)
+        self.assertEqual(report["workload"]["distinct_parent_formulations"], 2)
+        self.assertEqual(report["workload"]["source_contexts_emitted"], 1)
+        self.assertEqual(report["workload"]["candidates_omitted_by_budget"], 1)
+        self.assertEqual(report["candidates"][0]["sources_truncated"], 1)
+        self.assertFalse(report["mathematics_certified"])
+
+    def test_oversized_priority_candidate_is_flagged_not_silently_skipped(self):
+        report = candidate_review_bundle(self.focused_fixture(), limit=3, parent_budget=1)
+        self.assertEqual(len(report["candidates"]), 1)
+        self.assertEqual(report["candidates"][0]["candidate_id"], "missing.first")
+        self.assertTrue(report["workload"]["budget_exceeded_by_first_candidate"])
+        self.assertEqual(report["workload"]["candidate_parent_visits"], 2)
+        self.assertEqual(candidate_review_bundle(self.focused_fixture(), limit=0,
+                                                parent_budget=1)["candidates"], [])
+
+    def test_parent_budget_rejects_invalid_values_and_explicit_id_truncation(self):
+        for value in [0, -1, True, 1.5]:
+            with self.assertRaisesRegex(PipelineError, "positive integer"):
+                candidate_review_bundle(self.focused_fixture(), parent_budget=value)
+        with self.assertRaisesRegex(PipelineError, "explicit candidate"):
+            candidate_review_bundle(self.focused_fixture(), candidate_ids=("missing.first",),
+                                    parent_budget=1)
 
 if __name__ == "__main__":
     unittest.main()
