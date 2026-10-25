@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "chat-postcoverage-realtime-filtration-edge-20261025",
+  "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "unresolved_fingerprint": "eb9beb4199a99b1dc3fc18b57daa1f1d4cc9c66051caa558acb7a48396242cee",
+  "reviewed_by": "assistant-contextual-mathematics-reviewer",
+  "review_rationale": "The complete real-indexed adapted stochastic-process source and all seven effective references have been reviewed. The direct legacy target requires integer-indexed filtration and no sampled-time construction is present. A separate intact missing-reference occurrence already records the correct all-real-time filtration; therefore the redundant wrong-type occurrence is proposed for explicit external-disposition retirement without discarding provenance or changing the source formulation. This requires offline prepare preflight and later explicit semantic-graph approval.",
+  "changes": [
+    {
+      "formulation_id": "form.wave2.found85.adapted-continuous",
+      "expected_node_sha256": "c9620ad31916c4847819ce84edae793209445401fb29d81e794d52ba1f37e678",
+      "expected_occurrence_id": "occ.4dc2044654482ca4b966",
+      "reason": "The phrase denotes the ambient family indexed by all real t>=0, whereas the linked discrete meaning is indexed only by n>=0. Filtrations jumping at t=1/2 and t=3/4 agree on the integers but differ at t=0.6; the source contains no restriction/sampling datum and already separately references the exact real-time missing candidate at occ.3cee100f060f105c219b. Replace the false direct existing edge by a justified external/provenance-only state until the real-time candidate is populated, preserving all other references.",
+      "updates": {
+        "state": "external",
+        "disposition": "Existing discrete-filtration target was incorrect for this ambient real-time filtration. Preserve this occurrence as historical provenance with no direct existing-meaning dependency: the correct real-index filtration prerequisite remains separately captured by occ.3cee100f060f105c219b -> missing.65d334caa51c845ea335. No sampled-time construction is asserted."
+      },
+      "remove_fields": [
+        "target_meaning_id"
+      ]
+    }
+  ]
+}

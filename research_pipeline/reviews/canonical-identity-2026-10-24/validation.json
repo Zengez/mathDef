@@ -1,0 +1,272 @@
+{
+  "scope": "Read-only audit evidence; no mathematical certification",
+  "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "unresolved_fingerprint": "eb9beb4199a99b1dc3fc18b57daa1f1d4cc9c66051caa558acb7a48396242cee",
+  "continuation_input_commit": "54c5c00ca81cc21fea111cea4ed0f2468bcbf8a2",
+  "total_canonical": 421,
+  "complete": 421,
+  "partial": 0,
+  "untouched": 0,
+  "new_complete": 233,
+  "distinct_parent_formulations": 468,
+  "candidate_parent_visits": 813,
+  "candidate_occurrences": 844,
+  "review_events": 427,
+  "current_dispositions": {
+    "retain_distinct_missing": 370,
+    "contextual_ambiguity_or_variant": 27,
+    "source_convention_deferral": 13,
+    "potential_existing_meaning_resolution": 2,
+    "potential_candidate_alias": 9
+  },
+  "new_dispositions": {
+    "retain_distinct_missing": 204,
+    "source_convention_deferral": 5,
+    "contextual_ambiguity_or_variant": 16,
+    "potential_candidate_alias": 7,
+    "potential_existing_meaning_resolution": 1
+  },
+  "checks": {
+    "coverage_validator": {
+      "exit_code": 0,
+      "scope": "manifest, scope and event hashes, exact parent/occurrence coverage, source/node/ref anchors, compared contexts"
+    },
+    "unittest": {
+      "exit_code": 0,
+      "tests_run": 60,
+      "failures": 0,
+      "errors": 0,
+      "modules": [
+        "test_dependency_global_audit",
+        "test_dependency_cycle_analysis",
+        "test_dependency_consistency_worklist",
+        "test_dependency_consolidation_readiness"
+      ],
+      "elapsed_seconds_reported": 0.212
+    },
+    "global_scan": {
+      "exit_code": 0,
+      "arguments": [
+        "scan",
+        "--limit",
+        "80",
+        "--candidate-limit",
+        "80"
+      ],
+      "read_only": true,
+      "summary": {
+        "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+        "state_unresolved_fingerprint": "eb9beb4199a99b1dc3fc18b57daa1f1d4cc9c66051caa558acb7a48396242cee",
+        "phase": "consolidate_occurrences",
+        "consolidation_gate_valid": false,
+        "meaning_count": 611,
+        "formulation_count": 659,
+        "complete_effective_formulations": 659,
+        "existing_dependency_edges": 2640,
+        "scan_dependency_edges": 1774,
+        "seed_dependency_edges": 866,
+        "distinct_existing_dependency_pairs": 1763,
+        "cycle_components": 0,
+        "cycle_components_scope": "legacy_direct_scan_and_unoverridden_existing_seeds",
+        "effective_cycle_components": 1,
+        "formulation_avoidable_cycle_components": 1,
+        "unavoidable_cycle_components": 0,
+        "undetermined_cycle_components": 0,
+        "effective_existing_dependency_edges": 2647,
+        "unassigned_occurrences": 0,
+        "ambiguous_occurrences": 0,
+        "total_flags": 9,
+        "review_queue_count": 9,
+        "accepted_review_count": 0,
+        "stale_review_count": 0,
+        "flags_by_code": {
+          "cycle_edges_review_required": 0,
+          "effective_seed_override_count": 20,
+          "ideal_vs_module_generation": 8,
+          "submersive_iff_surjectivity_scope": 1
+        }
+      },
+      "returned_flags": 9
+    },
+    "readiness": {
+      "exit_code": 0,
+      "arguments": [
+        "--exhaustive"
+      ],
+      "status": "mechanical_checks_passed_review_decision_required",
+      "mechanical_checks": 19,
+      "mechanical_integrity_failures": [],
+      "assessment_evidence_sha256": "89b238fe3fdcb60ace4e84d1c417b2235616909a6b4e8fc1852646c65fd825b4",
+      "pass2_complete": "not_determined",
+      "pass3_authorized": false,
+      "mechanical_check_results": {
+        "inventory_matches_current_sources": true,
+        "inventory_digest_valid": true,
+        "all_scans_complete": true,
+        "zero_unassigned": true,
+        "zero_ambiguous": true,
+        "unique_occurrence_identities": true,
+        "occurrence_index_matches_replay": true,
+        "unresolved_index_matches_replay": true,
+        "edge_index_matches_replay": true,
+        "state_counts_match_replay": true,
+        "state_fingerprint_matches_replay": true,
+        "checkpoint_matches_state": true,
+        "reverse_index_matches_replay": true,
+        "registry_identity_set_matches_replay": true,
+        "registry_metadata_matches_replay": true,
+        "reference_dispositions_valid": true,
+        "canonical_and_alias_counts_match_state": true,
+        "existing_integrity_audit_passed": true,
+        "provenance_record_links_exist": true
+      }
+    },
+    "protected_workspace": {
+      "files_hashed_before_and_after": 2281,
+      "changed": [],
+      "baseline_file_hash_map_digest": "ef5384f4bedc809553001becec8576d29eff580432be29ace69294d96736143c",
+      "final_file_hash_map_digest": "ef5384f4bedc809553001becec8576d29eff580432be29ace69294d96736143c"
+    },
+    "git_diff_check": {
+      "exit_code": 0
+    },
+    "append_only_evidence": {
+      "original_prefix_commit": "54c5c00ca81cc21fea111cea4ed0f2468bcbf8a2",
+      "reviews_prefix_preserved": true,
+      "source_contexts_prefix_preserved": true
+    },
+    "github_pr_metadata": {
+      "attempted_command": "gh pr view 10 --repo Zengez/mathDef --json url,state,isDraft,headRefName,title,body",
+      "exit_code": 1,
+      "result": "GitHub GraphQL Forbidden; Git pushes to the existing PR branch succeeded. No PR metadata changed."
+    },
+    "consistency_worklist": {
+      "exit_code": 0,
+      "arguments": [
+        "--exhaustive"
+      ],
+      "summary": {
+        "total_review_candidates": 20,
+        "returned": 20,
+        "omitted": 0,
+        "exhaustive": true,
+        "accepted_count": 0,
+        "stale_review_count": 0,
+        "by_code": {
+          "same_phrase_multiple_targets": 3,
+          "seed_scan_target_disagreement": 15,
+          "submersive_iff_surjectivity_scope": 1,
+          "subset_predicate_to_ambient_space": 1
+        },
+        "mechanical_integrity_count": 0,
+        "effective_reference_count": 4489
+      },
+      "effective_evidence_sha256": "e940d15c7e0c986db5dfcdf478a7f50442af33e06f72efd2a0bc0f5aa226abad",
+      "mechanical_integrity_count": 0
+    },
+    "terminal_checkpoint": {
+      "valid_completed_checkpoint": "PASS",
+      "non_null_next_candidate_rejected": "PASS",
+      "non_null_next_parent_rejected": "PASS",
+      "scope": "Disposable audit-evidence copies; validator reads unchanged live snapshot. In-progress398 checkpoint also passed the modified validator before the final batch."
+    },
+    "changed_path_isolation": {
+      "exit_code": 0,
+      "start_commit": "54c5c00ca81cc21fea111cea4ed0f2468bcbf8a2",
+      "all_changed_paths_in_dated_audit_directory": true,
+      "changed_file_count": 9
+    },
+    "postcoverage_inventory": {
+      "exit_code": 0,
+      "flagged_latest_review_anchors": 51,
+      "candidate_alias_proposals": 9,
+      "existing_meaning_proposals": 2,
+      "evidence_sha256": "f78e7bc472a50460ea0959aaa8c995867e36dba980b33f5785d23708cad123cc"
+    }
+  },
+  "external_mathematical_research": false,
+  "graph_changes_applied": false,
+  "gate_opened": false,
+  "next_candidate_id": null,
+  "checks_scope_note": "All final coverage, protected-state and mechanical checks rerun after421 complete; no mathematical or external-source certification.",
+  "previous_boundary_commit": "5efda1ca70eeca2ec15d18e236079d658a8f73c3",
+  "new_distinct_parent_formulations_reviewed": 184,
+  "new_source_evidence_records": 75,
+  "minimum_and_stretch_targets_achieved": true,
+  "new_review_events": 235,
+  "new_existing_meaning_comparisons": 267,
+  "new_candidate_context_comparisons": 270,
+  "proposed_candidate_aliases": 7,
+  "proposed_existing_meaning_resolutions": 1,
+  "separate_exact_edge_review": {
+    "scope": "separate read-only exact-edge review; no additional candidate coverage",
+    "source_formulation": {
+      "formulation_id": "form.wave2.found85.adapted-continuous",
+      "meaning_id": "meaning.wave2.found85.adapted-continuous",
+      "display_term": "adapted stochastic process",
+      "context": "Real-time indexed stochastic process adapted to a filtration indexed by t\u22650",
+      "origin": "screened",
+      "version_sha256": "48b208ec4f94d6e18403dd1c39b4948a79f85b0d06470bb2c897f8660c4a4650",
+      "source_snapshot_sha256": "261800ec342f517f5fa41bb23bfd1897d186ce93bc8c5d5a947feb2bb712652e",
+      "evidence_ids": [
+        "obs.wave2.found84.adapted-stochastic-process.02"
+      ],
+      "text": "A real-valued process (X_t)_{t\u22650} adapted to a filtration (F_t)_{t\u22650} satisfies that X_t is F_t-measurable for every real t\u22650."
+    },
+    "source_effective_node_sha256": "c9620ad31916c4847819ce84edae793209445401fb29d81e794d52ba1f37e678",
+    "source_context_record_sha256": "372b64c60408ac2cba423efd0fe04ec6da0662723e265c8e8a1ffae39a9404a8",
+    "effective_reference": {
+      "from_formulation": "form.wave2.found85.adapted-continuous",
+      "occurrence_id": "occ.4dc2044654482ca4b966",
+      "phrase": "sigma-algebra filtration",
+      "state": "existing",
+      "target_meaning_id": "meaning.wave2.found85.discrete-filtration"
+    },
+    "target_formulation": {
+      "formulation_id": "form.wave2.found85.discrete-filtration",
+      "meaning_id": "meaning.wave2.found85.discrete-filtration",
+      "display_term": "filtration of sigma-algebras",
+      "context": "Discrete time: increasing sub-sigma-algebras indexed by n\u22650",
+      "origin": "screened",
+      "version_sha256": "8b78c7b55abf6e03fea01ce940241ff10e2d48647edf53fef9318f37c2aad9a8",
+      "source_snapshot_sha256": "2e98be434b5610265fa4d11a5904504c0e8c5c9c37d4c806a01b949c395b4934",
+      "evidence_ids": [
+        "obs.wave2.found84.discrete-filtration.01"
+      ],
+      "text": "For a measurable space (\u03a9,F), a discrete-time filtration is a family (F_n)_{n\u22650} of sub-\u03c3-algebras of F such that F_n\u2286F_m whenever n\u2264m."
+    },
+    "target_effective_node_sha256": "2b07f67ff347b72b39a835619e8771cb5934c72d8e8683fc24800ac80729342a",
+    "existing_real_time_occurrence_id": "occ.3cee100f060f105c219b",
+    "existing_real_time_candidate_id": "missing.65d334caa51c845ea335",
+    "disposition": "probable_wrong_target_for_ambient_filtration_review_required",
+    "mathematical_argument": "The source quantifies all real t>=0 and supplies no sampled or integer-restriction construction. The target fixes integer indices. On \u03a9={0,1}, take trivial sigma-algebra before a jump and full power set afterwards; jumps at 1/2 and 3/4 have identical integer samples and different F_0.6. Thus integer restriction is a legitimate derived construction but cannot replace the ambient real-index family. Generic stochastic-process seed and measurable-real-variable edge do not supply a missing sampling intention.",
+    "proposed_correction_not_applied": "In a separately authorized complete-node review, reconcile the old occurrence as a real-index ambient filtration prerequisite or explicitly document a sampled derived construction if justified. Preserve the already correct continuous-time candidate occurrence and all provenance. No unlink, retype, deduplication or packet staged now.",
+    "gate_relevance": "Exact-context adjudication/remediation remains required before unconditional global consolidation approval; no gate opened.",
+    "external_source_verification_performed": false,
+    "semantic_graph_changes_applied": false
+  },
+  "changed_files": [
+    "research_pipeline/reviews/canonical-identity-2026-10-24/POSTCOVERAGE_RECONCILIATION.json",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/POSTCOVERAGE_RECONCILIATION.md",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/SUMMARY.md",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/TRANCHE_5.md",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/checkpoint.json",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/reviews.jsonl",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/source-contexts.jsonl",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/validate.py",
+    "research_pipeline/reviews/canonical-identity-2026-10-24/validation.json"
+  ],
+  "last_mechanical_check_complete_count": 421,
+  "minimum_milestone_achieved": true,
+  "cumulative_proposed_candidate_aliases": 9,
+  "cumulative_proposed_existing_meaning_resolutions": 2,
+  "all_proposal_status": "PROPOSED_NOT_APPLIED",
+  "postcoverage_reconciliation_sha256": "6916aea338a867f0ff5d75074c1814eaed2804dd17c3a9badb424edbcf5bb6ec",
+  "postcoverage_reconciliation_evidence_sha256": "f78e7bc472a50460ea0959aaa8c995867e36dba980b33f5785d23708cad123cc",
+  "read_completeness_followup": {
+    "new_parent_observation_text_variants_examined": 37,
+    "secondary_reference_reasons_examined": 212,
+    "additional_compared_formulations_outside_source_anchors_and_prior_comparisons_examined": 9,
+    "note": "All these exact extra fields remain in anchored ledger evidence; no comparison-only candidate coverage was claimed."
+  }
+}

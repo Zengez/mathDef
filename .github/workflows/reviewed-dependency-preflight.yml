@@ -1,0 +1,132 @@
+name: Reviewed dependency preflight (read only)
+on:
+  workflow_dispatch:
+    inputs:
+      workspace_path:
+        description: 'Repository-relative independent workspace'
+        required: true
+        default: 'research_pipeline/experiments/reconstruction-v2-independent'
+        type: string
+      manifest_path:
+        description: 'Optional reviewed prepare manifest (.json); leave blank for alias-only'
+        required: false
+        default: ''
+        type: string
+      alias_packet_path:
+        description: 'Optional pre-reviewed alias packet (.json); leave blank for amendment-only'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dependency-review-preflight-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  reviewed-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out selected source snapshot without write credentials
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build and check explicitly reviewed packets — offline only
+        env:
+          REVIEW_WORKSPACE: ${{ inputs.workspace_path }}
+          REVIEW_MANIFEST: ${{ inputs.manifest_path }}
+          REVIEW_ALIAS_PACKET: ${{ inputs.alias_packet_path }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          from research_pipeline.engine.dependency_global_audit import (
+              load_live_snapshot, write_offline_packets,
+          )
+          from research_pipeline.engine.dependency_review_preflight import review_preflight
+
+          root = Path.cwd().resolve()
+          output = Path(os.environ["RUNNER_TEMP"]).resolve() / "reviewed-dependency-preflight"
+          output.mkdir(parents=True, exist_ok=True)
+
+          def project_file(raw: str, base: str, *, optional: bool = False):
+              raw = raw.strip()
+              if optional and not raw:
+                  return None
+              if not raw or Path(raw).is_absolute():
+                  raise ValueError("Select a nonempty repo-relative path")
+              candidate = (root / raw).resolve()
+              allowed = (root / base).resolve()
+              if not candidate.is_relative_to(allowed):
+                  raise ValueError("Path must stay under " + base)
+              if not candidate.exists():
+                  raise ValueError("Reviewed path does not exist: " + raw)
+              return candidate
+
+          workspace = project_file(os.environ["REVIEW_WORKSPACE"], "research_pipeline/experiments")
+          manifest = project_file(os.environ["REVIEW_MANIFEST"], "research_pipeline/reviews",
+                                  optional=True)
+          alias = project_file(os.environ["REVIEW_ALIAS_PACKET"], "research_pipeline/reviews",
+                               optional=True)
+          if manifest is None and alias is None:
+              raise ValueError("Choose at least one reviewed manifest or alias packet")
+          if manifest is not None and manifest.suffix != ".json":
+              raise ValueError("Manifest must be JSON")
+          if alias is not None and alias.suffix != ".json":
+              raise ValueError("Alias packet must be JSON")
+
+          before = load_live_snapshot(workspace)
+          results = {
+              "schema_version": 1,
+              "mode": "read_only_reviewed_dependency_preflight",
+              "graph_changes_applied": False,
+              "commit": os.environ["GITHUB_SHA"],
+              "workspace": str(workspace.relative_to(root)),
+              "inventory_sha256": before["inventory"]["source_inventory_sha256"],
+              "unresolved_fingerprint": before["state"]["summary"]["unresolved_fingerprint"],
+              "amendment": None,
+              "alias": None,
+          }
+          if manifest is not None:
+              results["amendment"] = write_offline_packets(
+                  workspace, manifest, output / "generated-amendments", max_per_batch=5
+              )
+          if alias is not None:
+              results["alias"] = review_preflight(workspace, alias)
+              if results["alias"]["mode"] != "alias":
+                  raise ValueError("Expected an alias packet")
+          after = load_live_snapshot(workspace)
+          if (before["state"] != after["state"]
+                  or before["inventory"] != after["inventory"]
+                  or before["nodes"] != after["nodes"]):
+              raise RuntimeError("Read-only preflight unexpectedly mutated workspace")
+          (output / "report.json").write_text(
+              json.dumps(results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+          )
+          print(json.dumps({
+              "state": "mechanically_preflighted_not_applied",
+              "packet_count": (results["amendment"] or {}).get("packet_count", 0),
+              "alias_events": (results["alias"] or {}).get("checked_events", 0),
+              "report": str(output / "report.json"),
+          }))
+          PY
+      - name: Assert repository remains unchanged
+        run: |
+          set -euo pipefail
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
+      - name: Upload preflight evidence and generated full-node packets
+        uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-dependency-preflight
+          path: ${{ runner.temp }}/reviewed-dependency-preflight
+          retention-days: 14
+          if-no-files-found: error

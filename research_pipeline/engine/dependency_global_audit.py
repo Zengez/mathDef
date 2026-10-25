@@ -91,6 +91,21 @@ def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = 
     if limit < 0 or max_formulations < 1:
         raise PipelineError("Review limits must be nonnegative, with >=1 source per candidate")
     inv, nodes = snapshot["inventory"], snapshot["nodes"]
+    # Historical relations can appear in augmented audit evidence but do not
+    # occupy live-node reference indices. Index them once for all candidates.
+    seeds_by_form = defaultdict(list)
+    for seed in inv.get("seed_relations", []):
+        fid = seed.get("from_formulation")
+        if fid in inv["formulations"]:
+            seeds_by_form[fid].append({
+                "relation_id": seed.get("relation_id"),
+                "phrase": seed.get("phrase", ""),
+                "target_meaning_id": seed.get("target_meaning_id"),
+                "target_query": seed.get("target_query"),
+                "relation_state": seed.get("relation_state"),
+                "origin": "historical_seed_relation",
+                "editable_in_live_node": False,
+            })
     active = {c["id"]: c for c in snapshot.get("candidates", [])
               if c.get("status") == "unresearched"
               and not c.get("alias_of")
@@ -137,6 +152,16 @@ def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = 
                 "effective_node_sha256": digest(node) if node else None,
                 "complete_scan": bool(node and node.get("scan_status") == "complete"),
                 "all_effective_references": node.get("references", []) if node else [],
+                # These positions belong EXCLUSIVELY to replayed live_nodes.
+                # Reviewer manifests should use the stable occurrence ID.
+                "effective_live_reference_rows": [
+                    {"live_reference_index": i,
+                     "expected_occurrence_id": ref.get("occurrence_id"),
+                     "reference": ref}
+                    for i, ref in enumerate(node.get("references", []) if node else [])
+                ],
+                # Never splice historical seed rows into the indexed live list.
+                "historical_seed_references": seeds_by_form.get(fid, []),
                 "matching_source_references": [
                     {"reference_index": i, "phrase": ref.get("phrase", ""),
                      "context": ref.get("context", ""),
@@ -165,6 +190,11 @@ def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = 
         "active_canonical_candidates": len(active),
         "reviewed_candidate_count": len(items),
         "candidates": items,
+        "reference_view_warning": (
+            "Historical seed references are distinct provenance evidence, "
+            "not live-node list entries. Prepare edits against the effective "
+            "node hash and exact expected_occurrence_id, not a mixed index."
+        ),
         "warning": "Review entire source and effective references before "
                    "any human-authored alias or version-bound resolution; "
                    "recurrence ranks priority, never establishes equivalence.",
@@ -542,12 +572,33 @@ def build_review_packages(snapshot: dict, manifest: dict,
         modified = set()
         reasons = []
         for edit in by_form[fid]:
-            index = edit.get("reference_index")
-            if not isinstance(index, int) or isinstance(index, bool) or not 0 <= index < len(refs):
-                raise PipelineError("Invalid reference_index for " + fid)
+            # Prefer the stable, live-node occurrence identity over an index
+            # derived from a mixed scan/seed audit view. Legacy manifests that
+            # include a numeric index stay valid but MUST agree with this ID.
+            occurrence_id = edit.get("expected_occurrence_id")
+            if not isinstance(occurrence_id, str) or not occurrence_id:
+                raise PipelineError("Missing expected_occurrence_id for " + fid)
+            matching = [
+                i for i, ref in enumerate(prior["references"])
+                if ref.get("occurrence_id") == occurrence_id
+            ]
+            if len(matching) != 1:
+                raise PipelineError(
+                    "Missing or nonunique live occurrence identity for " + fid
+                    + ": " + occurrence_id
+                )
+            index = matching[0]
+            supplied_index = edit.get("reference_index")
+            if supplied_index is not None and (
+                    not isinstance(supplied_index, int)
+                    or isinstance(supplied_index, bool)
+                    or supplied_index != index):
+                raise PipelineError(
+                    "reference_index conflicts with live occurrence identity for "
+                    + fid + ": " + occurrence_id
+                )
             original = prior["references"][index]
-            if (index in modified or edit.get("expected_node_sha256") != old_hash
-                    or edit.get("expected_occurrence_id") != original.get("occurrence_id")):
+            if (index in modified or edit.get("expected_node_sha256") != old_hash):
                 raise PipelineError("Duplicate edit or stale effective occurrence: " + fid)
             # Prefer an explicitly reviewed *delta*: leave untouched metadata
             # and unrelated context identical, instead of manually retyping
