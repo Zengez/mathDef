@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "phase": "software_integrated_status_queue_validated",
+  "phase": "validation_complete_delivery_pending",
   "base_main": "a7ce2ba3cdd07e6d0b9809d4e39014fb8533228c",
   "pr11_head": "e978ae4d2b8572e532b57fcbacd56333c8ac4d32",
   "pr12_head": "0767fb1e933d59451361b4cf11d9a76ca058b80c",
@@ -35,7 +35,7 @@
     "breadth_expansion": "on_hold"
   },
   "finished": false,
-  "next": "Run exhaustive readiness, consistency/cycle/provenance audits, previews/frontend tests; write final integrated report and push draft PR.",
+  "next": "Commit reports and frontend smoke; push; attempt draft PR. No graph action authorized.",
   "imported_original_commits": [
     "e978ae4d",
     "966fcbe6",
@@ -56,5 +56,8 @@
   "status_counts": {
     "applied_receipt_verified": 6,
     "superseded_by_verified_transaction": 2
-  }
+  },
+  "protected_final_file_map_sha256": "b14aa5eced27ec6b82d6c723191fed3266e8115c06b428cd9be8bfcacaf61d17",
+  "validation_file": "VALIDATION.json",
+  "report": "REPORT.md"
 }
