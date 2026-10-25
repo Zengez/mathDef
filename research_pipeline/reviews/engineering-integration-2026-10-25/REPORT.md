@@ -163,3 +163,10 @@ mathematical judgments and any gate decision remain explicitly deferred.
 
 Delivery status is recorded durably in `CHECKPOINT.json`. Review this unmerged
 branch; PRs #11/#12 should not subsequently be merged as duplicate implementations.
+
+The branch was pushed successfully through validation commit `8036662b` and
+this final delivery checkpoint. Draft PR creation was attempted using both
+`gh pr create --draft` (GraphQL) and `gh api --method POST repos/Zengez/mathDef/pulls`
+(REST with `draft: true`); both returned **Forbidden**. No PR was created or merged.
+[Review the pushed branch](https://github.com/Zengez/mathDef/tree/codex/wave2-engineering-integration)
+or [open its comparison](https://github.com/Zengez/mathDef/compare/main...codex/wave2-engineering-integration?expand=1).
