@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE3.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**30 additional COMPLETE; cumulative 118 COMPLETE, 0 PARTIAL, 303 untouched.**
+**40 additional COMPLETE; cumulative 128 COMPLETE, 0 PARTIAL, 293 untouched.**
 
 ## 89. isomorphism class — `missing.6bb87052ec8a81464ddd`
 
@@ -184,4 +184,64 @@ Remaining: No external citation verification or whole-parent theorem certificati
 
 Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
 
-Next: `missing.cf55f62008d08ce2df84`, first parent `form.6676171d9e5698af.affine-closed-subscheme`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 119. isomorphic over Spec(R) — `missing.cf55f62008d08ce2df84`
+
+**retain_distinct_missing**, 2/2 parents. An S-scheme isomorphism h:X→Y is an invertible scheme morphism with s_Y h=s_X; its inverse automatically commutes with the base by composing this equation. Ordinary isomorphism of abstract schemes is weaker. Over S=Spec(k[t]), the two k-valued points t↦0 and t↦1 have isomorphic underlying Spec(k), but no S-isomorphism: the only possible commuting identity would equate the two t-values. Both parents fix their affine base and preserve the scheme sheaves; neither is merely a ring isomorphism without A/R-algebra compatibility or an isomorphism of categories over a base.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 120. every element idempotent x²=x — `missing.cf59d9cb388b3999576d`
+
+**retain_distinct_missing**, 2/2 parents. The canonical context explicitly distinguishes an element satisfying e²=e from the universal condition ∀x x²=x used by Boolean-ring parents. A single idempotent does not make a ring Boolean: 0 and 1 in Z are idempotent but 2 is not. Universal idempotence does not supply identity: finite subsets of an infinite set, with symmetric difference and intersection, form a Boolean ring whose multiplicative identity would have to be the unavailable entire infinite set. The same element predicate is a legitimate component of both parent conditions; no identity of an individual element with the whole Boolean ring or its all-element property is claimed.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 121. topological fibre product with subspace topology — `missing.cf69ce1240520995df04`
+
+**retain_distinct_missing**, 2/2 parents. The subset P={(x,z):f(x)=g(z)} of X×Z, with its product-subspace topology, is a pullback in Top: a compatible pair of continuous maps from T gives the continuous product map T→X×Z with image in P, which factors uniquely and continuously through the subspace. The generic categorical pullback meaning specifies universality but not this concrete topology; the scheme fibre product adds sheaf data and its underlying space need not be the pointwise set pullback. The self-pullback Z=X uses the same topological construction. No Hausdorff assumption is needed for formation; diagonal-image closedness and universal closedness are extra.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 122. usual total order on Q — `missing.d2189c6f07c197ca9bcb`
+
+**retain_distinct_missing**, 2/2 parents. The usual order on Q is a specific compatible total relation, not the rational field object alone, a generic partial order, or the positive subset. Normalize fractions p/q,r/s to q,s>0; then p/q≤r/s iff ps≤rq. Replacing a fraction by an equal one preserves this cross-product comparison, so it is well-defined independently of any real embedding. The comparison supplies the cases in rational absolute value and q>0 in epsilon positivity. Reversing a total order still gives an abstract total order but is not this usual ordered-field structure (1>0 must hold). Strict >0 excludes 0; ≥0 permits it.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 123. cocone morphisms F(i)→Q compatible with the diagram — `missing.ddc9befb080e8d7146db`
+
+**retain_distinct_missing**, 2/2 parents. A cocone is a family λ_i:F(i)→Q satisfying λ_j F(u)=λ_i for u:i→j, equivalently F⇒ΔQ. It is not a cone ΔL⇒F, nor necessarily universal. For a one-object identity diagram at singleton in Sets, its map into a two-element set is a cocone but not a colimit (the colimit is singleton). A filtered domain in the ind-parent specializes the same compatibility equations. Eventual agreement and a selected splitting are extra and are not inferred from the existence of a cocone. Historical category seed on a diagram phrase supplies ambient categories only.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 124. countable union of members A_n — `missing.dfb06f7328573e269bb5`
+
+**retain_distinct_missing**, 2/2 parents. Countable union of A_n consists of elements belonging to at least one n≥1; repeating or empty terms changes no result. It is the countable-index specialization of arbitrary union, not a disjoint tagged coproduct. Pairwise disjointness adds a condition on inputs, not a different operation. In the alternative sigma axioms, finite unions follow from complements and differences; disjointify A_n as B_n=A_n\(A_1∪…∪A_{n−1}), giving pairwise disjoint B_n with the same union. Thus the restricted closure axiom implies general countable-union closure without changing the candidate operation. Arbitrary-union closure is stronger: countable/cocountable sets on an uncountable X form a sigma-algebra but need not contain an arbitrary union of singletons.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 125. equivalence relation generated by x∼F(u)(x) — `missing.eeaf8a205d5ed2ed6eeb`
+
+**retain_distinct_missing**, 2/2 parents. For P⊆S×S, intersect all equivalence relations containing P (a nonempty collection since S×S qualifies), or use finite zigzags in P and P^op with length-zero paths. This is reflexive, symmetric, transitive and least. It is not merely transitive closure: P={(a,b)} lacks (b,a) under transitive closure alone. A generated relation is not the quotient set or its quotient topology. For set-colimits pairs relate tagged (i,x) to (j,F(u)x), so accidental equality of untagged elements cannot identify components prematurely; for topological coequalizers pairs are (f(x),g(x)) in Y. The same abstract construction handles both inputs without identifying their outputs or topologies.
+
+Remaining: The explicit set-colimit construction requires a set-sized disjoint union (small diagram or adequate universe); the unrestricted functor prerequisite alone does not guarantee that size condition.
+
+## 126. convergence domain D⊆R — `missing.eeb1ff5cf448091c3d57`
+
+**retain_distinct_missing**, 2/2 parents. D is a set of inputs for which a specified real power series converges to a finite real value, not the series expression, its sum function or a radius number. Since n starts at zero, 0∈D always. Changing a_n to a_n/n! changes the series: for a_n=n!, the EGF is Σz^n with D=(−1,1), whereas its OGF diverges at every nonzero z since n!|z|^n fails to tend to zero, giving D={0}. Thus both sources use the same construction but not identical resulting domains for the same a_n. A radius alone does not decide boundary endpoints: Σz^n/n² converges at ±1 while Σz^n does not. Formal generating functions do not require D.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 127. strict finite chain of irreducible closed subsets — `missing.ef28497e9dc38c5b82e5`
+
+**retain_distinct_missing**, 2/2 parents. The underlying chain has strict inclusions between irreducible CLOSED subsets, with length n for n+1 terms; n=0 is allowed for a single irreducible closed subset. Catenarity further fixes endpoints and maximality under insertion, not necessarily greatest cardinality among chains. In a poset with two branches a<b<d and a<c<e<d, both saturated endpoint chains are maximal but lengths differ, illustrating the equal-length condition rather than deriving it from maximality. On Spec(R), p⊊q gives V(q)⊊V(p), reversing orientation; prime-ideal chains are related algebraic instances, not identical topological input data. Supremum in dimension need not be attained and the empty-space −∞ convention remains separate.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 128. finite intersections of open subsets — `missing.f112efe448973069bae2`
+
+**retain_distinct_missing**, 2/2 parents. Finite indexed intersection means simultaneous membership in every U_i, with empty-index intersection the ambient X. It is a set operation; openness and subbasis generation are additional topology statements. Binary A∩B is the two-index instance but does not on its own encode the nullary X convention; arbitrary intersections may be infinite and need not be open (∩_n(−1/n,1/n)={0} in R). Both sources agree exactly on empty and nonempty finite families, including X=∅, preserving the repaired NONEMPTY-family convention of the earlier compactness/FIP audit rather than importing it into all intersections.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+Next: `missing.fbd11071cfe5ca8ef6e2`, first parent `form.wave2.quot119.normal-subgroup.2`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
