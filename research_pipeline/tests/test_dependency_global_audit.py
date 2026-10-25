@@ -437,6 +437,37 @@ class GlobalAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(PipelineError, "invent missing"):
             build_review_packages(self.snapshot(), self.manifest([new_missing]))
 
+    def test_review_manifest_finds_exact_live_occurrence_without_index(self):
+        # An audit view may inject separate historical seed references, so its
+        # list position must never be used as the effective scan-node index.
+        edit = self.change(1)
+        edit.pop("reference_index")
+        packages = build_review_packages(self.snapshot(), self.manifest([edit]))
+        refs = packages[0]["amendments"][0]["references"]
+        self.assertEqual(refs[0]["target_meaning_id"], "meaning.beta")
+        self.assertEqual(refs[1]["target_meaning_id"], "meaning.alpha")
+
+    def test_occurrence_lookup_rejects_wrong_index_or_stale_id(self):
+        edit = self.change(1)
+        edit["reference_index"] = 0  # audit order, not live-node order
+        with self.assertRaisesRegex(PipelineError, "conflicts with live"):
+            build_review_packages(self.snapshot(), self.manifest([edit]))
+        edit.pop("reference_index")
+        edit["expected_occurrence_id"] = "occ.not-current"
+        with self.assertRaisesRegex(PipelineError, "Missing or nonunique"):
+            build_review_packages(self.snapshot(), self.manifest([edit]))
+
+    def test_occurrence_lookup_requires_unique_live_match(self):
+        edit = self.change(1)
+        edit.pop("reference_index")
+        snapshot = self.snapshot()
+        # Deliberately malformed snapshot: duplicated occurrence identity.
+        snapshot["nodes"]["form.alpha"]["references"][0]["occurrence_id"] = (
+            edit["expected_occurrence_id"]
+        )
+        with self.assertRaisesRegex(PipelineError, "Missing or nonunique"):
+            build_review_packages(snapshot, self.manifest([edit]))
+
     def test_notation_conflicts_do_not_count_as_equivalence(self):
         from research_pipeline.engine.dependency_global_audit import candidate_leads
         candidates = [
