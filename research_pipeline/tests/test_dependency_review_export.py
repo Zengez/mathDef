@@ -210,6 +210,28 @@ class ReviewExportTests(unittest.TestCase):
         self.assertEqual(report["new_proposal_packet_ids"], [])
         self.assertEqual(before, workspace_files(self.w))
 
+    def test_stale_inventory_against_actual_source_records_is_rejected(self):
+        file = self.w / "records/meanings.jsonl"
+        rows = [json.loads(x) for x in file.read_text().splitlines()]
+        rows[0]["formulations"][0]["text"] = "A changed source, not synchronized into the inventory."
+        file.write_text("".join(json.dumps(x) + "\n" for x in rows))
+        before = workspace_files(self.w)
+        with self.assertRaisesRegex(PipelineError, "stale against current source"):
+            self.export()
+        self.assertEqual(before, workspace_files(self.w))
+        self.assertFalse(self.output.exists())
+
+    def test_inventory_digest_is_checked_without_rebuilding(self):
+        file = self.graph / "INVENTORY.json"
+        inventory = json.loads(file.read_text())
+        inventory["source_inventory_sha256"] = "0" * 64
+        file.write_text(json.dumps(inventory))
+        before = workspace_files(self.w)
+        with self.assertRaisesRegex(PipelineError, "stale against current source"):
+            self.export()
+        self.assertEqual(before, workspace_files(self.w))
+        self.assertFalse(self.output.exists())
+
     def test_requires_explicit_request_and_correct_checkout_anchor(self):
         with self.assertRaisesRegex(PipelineError, "at least one"):
             export_review(self.repo, "workspace", self.output)

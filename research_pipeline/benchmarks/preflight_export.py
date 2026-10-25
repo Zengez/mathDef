@@ -17,6 +17,8 @@ from research_pipeline.engine.dependency_graph import (
 
 
 def measure(baseline_file: Path, *, repeats=3):
+    if repeats < 1:
+        raise ValueError("repeats must be positive")
     spec = importlib.util.spec_from_file_location("prior_audit", baseline_file)
     prior = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(prior)
