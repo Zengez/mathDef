@@ -24,6 +24,10 @@ jobs:
           python-version: '3.12'
       - name: Check independent graph unit regressions
         run: python -m unittest research_pipeline.tests.test_dependency_graph -q
+      - name: Verify original link reviews against exact approved text revision
+        run: |
+          python -m research_pipeline.engine.resume_checkpoint --config research_pipeline/adapters/mathdef/resume.json --check > /tmp/fip-revision-resume-check.json
+          python -m unittest research_pipeline.tests.test_resume_meaning_catalog_bridge -q
       - name: Simulate one-formulation inventory and review migration in disposable copy
         run: |
           python - <<'PY'
