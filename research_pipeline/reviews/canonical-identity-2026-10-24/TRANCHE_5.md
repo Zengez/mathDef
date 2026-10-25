@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE4.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**40 additional COMPLETE; cumulative 228 COMPLETE, 0 PARTIAL, 193 untouched.**
+**60 additional COMPLETE; cumulative 248 COMPLETE, 0 PARTIAL, 173 untouched.**
 
 ## 189. maximal finite chain connecting primes — `missing.33bd557af9c1505ff986`
 
@@ -244,4 +244,124 @@ Remaining: No external citation or whole-parent theorem certification; source/gr
 
 Remaining: If later partition research requires each block nonempty, verify that convention explicitly; current original wording is retained.
 
-Next: `missing.552398ca3c51ac4200f7`, first parent `form.1fd51873f9f0afbd.prime-field-finite`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 229. integer residue classes modulo p — `missing.552398ca3c51ac4200f7`
+
+**retain_distinct_missing**, 1/1 parents. Residue classes are equivalence classes of integers under p-divisibility of differences. A class is not the congruence predicate or a chosen representative: [0]=[p], although 0≠p. For composite positive p the quotient is generally only a ring (in Z/4, [2] is nonzero and squares to zero); primality in this parent makes it a field. The generic quotient-ring and quotient-set meanings supply components, not the specified integer-modulus structure or the prime-field theorem.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 230. graded ring S=⊕_d S_d — `missing.552479b3d126bda9a36a`
+
+**retain_distinct_missing**, 1/1 parents. The parent has no nonnegative restriction, so negative-degree pieces must remain possible. Laurent polynomials k[t,t^−1] with degree(t)=1 are Z-graded and have nonzero degree −1, separating the existing N-graded meaning. Each element still has finite homogeneous support, unlike a formal infinite product of components. Multiplication compatibility and the chosen grading index structure are extra beyond additive direct-sum decomposition; degree-zero ring elements do not determine the entire grading. The source does not independently justify every possible grading group.
+
+Remaining: Later confirm the source index group (normally Z here); preserve the canonical broader wording without certifying every G-graded variant.
+
+## 231. right translation by g — `missing.5582bdce2a3ccc90c0f5`
+
+**retain_distinct_missing**, 1/1 parents. R_g(h)=hg is bijective with inverse R_(g^−1), and Hg is its image on H. It is not left translation unless g is central: for noncommuting h,g, hg≠gh. Like left translation it is not a group homomorphism for g≠e, since it sends e to g. Left/right cosets can differ unless H is normal; matching notation alone cannot reverse the operation. Conjugation composes left translation with right translation by the inverse, not by the same g.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 232. countable additivity for disjoint sequence — `missing.55a8438fccd6541b9c58`
+
+**retain_distinct_missing**, 1/1 parents. Countable additivity quantifies disjoint MEASURABLE sequences and equates the union value to a nonnegative extended sum. It is stronger than finite additivity; finite additivity follows by padding with empty terms using μ(∅)=0. Dropping disjointness is wrong even for a point mass: repeating its mass-one singleton gives union measure 1 but sum +∞. This is a property of the specified set function, not the measure object with domain/codomain and zero normalization, nor probability mass one. No subtraction of infinities is used.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 233. Frobenius map x↦x^p — `missing.56eda10bbf573c3100d4`
+
+**retain_distinct_missing**, 1/1 parents. In characteristic prime p, (a+b)^p=a^p+b^p since intermediate binomial coefficients vanish, and (ab)^p=a^pb^p, so Frobenius is a unital endomorphism. It is injective on a field; surjectivity is the extra perfectness criterion. On F_p(t), t has no pth root, so Frobenius is not onto. It is not an arbitrary field automorphism or the assertion that every element is a pth power. No analogous p=0 map is imposed in characteristic zero.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 234. coordinate projection pi_i — `missing.580d76c9d98b74d1be9b`
+
+**retain_distinct_missing**, 1/1 parents. π_i takes a tuple to its i-coordinate and is a specific map, not the product object or cylinder preimage. It need not be onto without conditions on other factors: one empty factor makes the product empty while another factor may be nonempty. With empty index set there is a singleton product and no coordinate projection to specify. Continuity follows in the generated product topology because inverse images of factor opens are subbasic cylinders; continuity does not define the underlying set map.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 235. symmetric bilinear form — `missing.582417b404fba5a4dfa2`
+
+**retain_distinct_missing**, 1/1 parents. A symmetric R-bilinear form is linear separately and has B(v,w)=B(w,v). Symmetry and bilinearity do not imply positivity: on R², B(v,w)=v_1w_1−v_2w_2 is symmetric indefinite. A zero form is degenerate. The existing module-bilinear meaning gives a general operation but imposes neither real coefficients nor symmetry; a complex Hermitian form conjugates one slot instead. The parent adds positive definiteness to obtain an inner product, and completeness is still separate.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 236. 2-commutative solid square — `missing.586a47e017a7e19932fb`
+
+**retain_distinct_missing**, 1/1 parents. A 2-commutative square has a specified invertible comparison between its two composite 1-cells, rather than equality of those composites. Even when composites coincide, different automorphism 2-cells can yield different square data. Such a solid square is the input to the filler category; it does not supply a diagonal filler, much less its uniqueness. In a locally discrete 2-category the comparison reduces to equality, a special case rather than the general construction.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 237. automorphism group of an object — `missing.591b9f9ee5edc9ff8963`
+
+**retain_distinct_missing**, 1/1 parents. Aut_C(x) contains invertible endomorphisms, with identity, composition and inverse making a group when this collection is a set. It is not one automorphism, End_C(x), or the automorphism group of a field extension. In the source setoid all automorphisms are identities, and for u,v:x→y, v^−1u=id forces u=v. This proves the at-most-one-arrow condition without requiring a skeletal category: distinct objects may be uniquely isomorphic. These singleton/empty hom-sets do not force the whole object collection small.
+
+Remaining: For general Aut outside this source, retain local-smallness/universe requirements; the setoid singleton case itself is set-sized.
+
+## 238. zero ideal — `missing.598915c4e9e889d2218b`
+
+**retain_distinct_missing**, 1/1 parents. The zero ideal is {0_R} with inherited additive subgroup structure, stable on both sides since r0=0=0r. It is a subset, not the element 0, zero module without its ambient ring, or the zero RING. It exists even in nonunital rings. A nonzero ring has a zero ideal without being reduced or having no other nilpotents. In the zero ring it is also the whole ring, so properness must not be added. Nilpotent-ideal definition demands one exponent killing the entire ideal, not an elementwise exponent choice.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 239. finite index subset J — `missing.5bc4d59c4af87cb4310c`
+
+**retain_distinct_missing**, 1/1 parents. J is a finite SUBSET of the index set, so each index occurs at most once and the empty J is allowed. It is not an ordered tuple with repetitions, the event family itself or a restriction to pairs only. The empty case yields P(Ω)=1 with product 1, imposing no additional independence condition. Repeated event values at distinct indices are still separate indices and can make independence fail. Finiteness of J does not make the whole index set finite or countable.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 240. family of all two-element vertex subsets — `missing.5df90bcf9334337a3fc6`
+
+**retain_distinct_missing**, 1/1 parents. [V]^2 is a collection of all doubletons, not one edge and not the chosen subset E. For |V|<2 it is empty, while V can still be a valid vertex set. For finite |V|=n it has n(n−1)/2 elements; unrestricted V is also allowed. E=[V]^2 specifies the complete graph, not every simple graph. Ordered pairs include loops and order, and multiset copies add multiplicity; neither matches the set of unordered distinct-vertex doubletons.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 241. polynomial f or g over k — `missing.5e454359f09ae02c3724`
+
+**retain_distinct_missing**, 1/1 parents. The inputs are polynomial ELEMENTS of k[T], allowing constants and zero, not the polynomial algebra as an object or their evaluated values. A nonzero constant has no root, while zero vanishes at every element; these cases agree with the coprimality/no-common-root criterion. Formal T and zero are distinct although evaluation at 0 identifies their values. The generic polynomial-algebra candidate provides the ambient construction; a pair of elements and their comparison are extra, so no whole-data alias is asserted.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 242. real variable x and shifted powers — `missing.5ffbe645365000af7490`
+
+**retain_distinct_missing**, 1/1 parents. The centered monomial (x−ξ)^n is finite algebraic syntax before choosing a real x; n=0 is the constant polynomial 1, including evaluation at x=ξ. Changing ξ changes that expression and the coefficient representation of a given analytic function. A centered monomial, its evaluated value and an infinite series are distinct. The source explicitly does not claim a formal power-series algebra R[[X]] has been defined. At the center only the constant term survives, but no all-real convergence follows.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 243. K-span of R-submodule M equals V — `missing.5ffef993c8c63d01835c`
+
+**retain_distinct_missing**, 1/1 parents. The K-span uses FINITE K-linear combinations and is a subspace; it differs from R-linear generation of the lattice. With R=Z_(p), K=Q,V=Q,M=R, K-span(M)=Q but M≠Q as an R-submodule. Finite generation of M over R and finite dimension of V over K are distinct finiteness claims. The condition that the span equal V is additional to forming the span, and neither makes every lattice free or chooses a basis. Scalar field K is unital, so the earlier general nonunital-module span issue does not change this field-span formula.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 244. cyclic group of degree dividing n — `missing.602b9e26912423f849ca`
+
+**retain_distinct_missing**, 1/1 parents. Cyclicity says the finite Galois group is generated by one element; the order divides n, rather than necessarily equaling n. Taking a=1 with a chosen nth root already in K gives the trivial extension and order 1, a proper divisor for n≥2. If α=0 then a=0 and L=K, so treat the trivial group separately. For α≠0 under the source root-of-unity and prime-to-characteristic hypotheses, σ↦σ(α)/α embeds the group into μ_n(K); its multiplicative law explains cyclicity/order control. This group prerequisite is not the entire root-adjunction field or the exact-order-p Artin–Schreier group.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 245. inverse limit of the quotient rings — `missing.6149b958a6aa818d4806`
+
+**contextual_ambiguity_or_variant**, 1/1 parents. Compatible tuples in ∏_(n≥1)R/I^n have componentwise addition, multiplication and unit; reduction homomorphisms ensure closure. The generic categorical limit supplies a universal property, while a module limit forgets multiplication. However the canonical context fixes THIS exact ideal-power system, whose limit is already the existing I-adic-completion meaning. The reusable generic ring-limit construction and that whole specific completion are not clearly separated in the candidate record. A naive self-resolution or alias to a module-limit object would lose structure.
+
+Remaining: Adjudicate generic inverse-limit-of-rings prerequisite versus the already named I-adic completion, with existing unit convention deferrals; no resolution applied.
+
+## 246. associativity (a*b)*c=a*(b*c) — `missing.620ec26c7c3c9ef14865`
+
+**retain_distinct_missing**, 1/1 parents. Associativity universally equates the two triple bracketings of an internal binary operation. It does not imply commutativity, identity or inverses: positive integers under addition are associative without an internal identity. Conversely a binary operation need not be associative (integer subtraction). Category composition is defined only on suitably typed arrow triples, not a globally internal operation on every pair of all arrows. The group parent additionally imposes identity/inverse laws; its monoid seed is a legitimate related structure, not identity of the bare axiom with a monoid.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 247. transition maps factor through X — `missing.64b19cbc53e9c33849a4`
+
+**retain_distinct_missing**, 1/1 parents. For each test stage a suitable common refining stage and factorization through X are required; this is an eventual, diagram-mediated condition, not equality of original transition arrows or existence of an inverse limit. The source also requires a split cone map at a chosen stage. A constant inverse system has such factorizations, but an arbitrary inverse system need not. The filtered ind counterpart uses later-stage equality with opposite variance, so its candidate cannot be substituted by removing the words earlier/later.
+
+Remaining: The source abbreviates the factorization diagram; later population must specify all arrow equations and coherence, without treating shorthand as a theorem of stabilization.
+
+## 248. arithmetic on Dedekind cuts — `missing.65047bc1cb43a4da3792`
+
+**retain_distinct_missing**, 1/1 parents. Cut arithmetic acts on lower subsets of Q, not on Cauchy-equivalence classes or a choice of rational representative for a real number. Addition may be constructed using sums of cut MEMBERS, but multiplication needs sign/zero handling: multiplying arbitrary members of two lower cuts includes arbitrarily large positive products from negative members and does not directly give the intended lower cut. The source states arithmetic and field/completeness as proof obligations, supplying no complete formulas here. The pair of operations is therefore genuinely additional to the carrier, order and abstract complete ordered field.
+
+Remaining: Later source-supported population needs exact addition, negatives, positive multiplication and zero conventions; no naive product formula or field certificate is invented.
+
+Next: `missing.6558ed2ce51a90e6ea76`, first parent `form.fa3b484c09596cfd.graded-module`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
