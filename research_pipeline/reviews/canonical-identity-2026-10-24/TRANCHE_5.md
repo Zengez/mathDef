@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE4.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**60 additional COMPLETE; cumulative 248 COMPLETE, 0 PARTIAL, 173 untouched.**
+**80 additional COMPLETE; cumulative 268 COMPLETE, 0 PARTIAL, 153 untouched.**
 
 ## 189. maximal finite chain connecting primes — `missing.33bd557af9c1505ff986`
 
@@ -364,4 +364,124 @@ Remaining: The source abbreviates the factorization diagram; later population mu
 
 Remaining: Later source-supported population needs exact addition, negatives, positive multiplication and zero conventions; no naive product formula or field certificate is invented.
 
-Next: `missing.6558ed2ce51a90e6ea76`, first parent `form.fa3b484c09596cfd.graded-module`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 249. homogeneous components M_j — `missing.6558ed2ce51a90e6ea76`
+
+**retain_distinct_missing**, 1/1 parents. M_j is one ADDITIVE subgroup in the specified integer grading, not a homogeneous element, an S-submodule, or the whole decomposition. In M=S=k[t] with its usual grading, t maps M_0=k into M_1=kt, so M_0 is not an S-submodule. It is a direct summand of the underlying additive group through the homogeneous projections. The nonnegative grading on S does not forbid negative module degrees, e.g. shifts. Its inherited S_0 action is different from an action by all S.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 250. n prime to characteristic — `missing.659b5d5ed37a38428987`
+
+**contextual_ambiguity_or_variant**, 1/1 parents. For positive characteristic p, the intended condition is p not dividing n, equivalently n·1_K is nonzero and hence invertible. In characteristic zero every positive n has that property. Literal arithmetic gcd(n,char K)=1 would instead give gcd(n,0)=n and wrongly exclude every n≥2 in characteristic zero. The candidate already says the zero-characteristic condition is automatic, so its coprime wording requires this qualified field-theoretic interpretation. It is not a claim that n is itself prime. For a=0 the polynomial can have repeated zero roots despite p∤n, so do not infer blanket separability.
+
+Remaining: Proposed clarification NOT APPLIED: specify n invertible in K, or char zero OR positive p not dividing n; do not require literal gcd(n,0)=1.
+
+## 251. n×n matrix A over a commutative ring R — `missing.65a140522402d26766df`
+
+**retain_distinct_missing**, 1/1 parents. An n×n matrix over a commutative unital ring is an indexed array; its entries need not lie in a field or be 0/1. Z/4 supplies coefficients not allowed by the field-matrix candidate. Its determinant, identity matrix and characteristic polynomial are different objects; n and a chosen ordering of coordinates matter. The source says commutative ring but the identity matrix/polynomial construction uses a unit convention; its generic identity-optional ring seed does not establish that convention by itself. No characteristic-polynomial theorem is being certified.
+
+Remaining: Later verify unit and possible n=0 conventions for this exact source; keep the existing commutative/unital source deferral family rather than silently requiring positive dimension.
+
+## 252. subring of S — `missing.6761326c179c108a8d73`
+
+**source_convention_deferral**, 1/1 parents. The subring inherits operations from S and contains the image of R→S, which need not be an injective copy of R. For Z→Z/2 the image is F_2, so rewriting as Z⊆Z/2 is false. A subring containing coefficients need not be integrally closed; the integral-elements selection is a further condition defining this particular closure. The canonical candidate explicitly adds commutative, unital and inherited-identity scope, while the stored sentence says ring homomorphism/subring without literal conventions. Preserve a source-scope deferral, not an automatic alias to general subset or relative integral closure.
+
+Remaining: Later establish exact commutative/unit/inclusion conventions of this source; no assumption that R→S is injective or that its image is integrally closed.
+
+## 253. descending chain condition on ideals — `missing.6779016ceb757c93ca4c`
+
+**retain_distinct_missing**, 1/1 parents. DCC says every descending sequence has its own eventual constant tail, not a uniform length bound or finitely many ideals. Finite-dimensional k[x,y]/(x,y)^2 is Artinian but over infinite k has infinitely many ideals k(x+λy). ACC is another direction: k[t] is Noetherian while (t)⊋(t²)⊋… does not stabilize. The generic DCC property on posets is distinct from the typed Artinian-ring object. Equality steps in a chain are permitted; they do not mean stabilization until all later steps agree.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 254. minimal under inclusion among associated primes — `missing.688181fe64998624664d`
+
+**retain_distinct_missing**, 1/1 parents. Minimality is relative to Ass_R(M), not all primes or primes over an unrelated ideal. For R=Z,M=Z/2, Ass(M)={(2)}; (2) is minimal there but not minimal in Spec(Z), since (0) lies below it. In Ass(Z/6), (2) and (3) are incomparable minima, so minimal need not mean a unique least element. The embedded-prime criterion negates this relative minimality while retaining membership in Ass. A global minimal-prime candidate or least-element predicate would alter the comparison set or quantifier.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 255. category Groupoids of groupoids and functors — `missing.68d081846c512f3ae38a`
+
+**retain_distinct_missing**, 1/1 parents. Groupoids_U is the ordinary category with U-small groupoids as objects and functors as arrows. It is not one small groupoid, nor generally itself a groupoid: the functor from the empty groupoid to the one-object terminal groupoid is not invertible. Object-smallness does not make the entire category of all U-small groupoids U-small, and it does not force the source base C small. Strict presheaf functoriality is an equality of pullback functors; pseudofunctor comparison cells are extra data.
+
+Remaining: Keep the universe used by Groupoids explicit in later source reconciliation; no size collapse or pseudofunctor strictification is assumed.
+
+## 256. ascending chain condition on a poset of ideals — `missing.6a3712193d375d1cebac`
+
+**retain_distinct_missing**, 1/1 parents. ACC on a poset quantifies every nondecreasing sequence, allowing equalities, and requires eventual constancy separately for each sequence. It is not the sequence itself, DCC, or a single maximal element. Applied to ideals of a commutative unital ring it matches the stored Noetherian characterization, but the candidate generic poset property carries no ring operations. The equivalence with finite generation or maximal elements requires its proof/context, not a lexical replacement. Finite stabilization index for one chain says nothing about all other chains.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 257. maps into a later common stage eventually agree — `missing.6a3fca2bdce507838692`
+
+**retain_distinct_missing**, 1/1 parents. Two diagram-mediated maps can become equal only after applying a suitable transition map; that does not imply equality at their original stage. In Z→0, two distinct maps into Z have equal composites into the later zero object. The common later stage depends on the tested data, and source essential constancy also requires a chosen section and comparisons factoring through X. The pro version reverses arrows and asks appropriate earlier-stage factorizations, not the same typed equality statement. No pointwise or single uniform-stage substitute is inferred.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 258. nonnegative rational codomain — `missing.6cb0441a08c98c8d720b`
+
+**retain_distinct_missing**, 1/1 parents. Q_≥0 is a SUBSET of Q including zero, not the strict positive rationals used for epsilon. Since |0|=0, deleting zero would make the source codomain false. It is not R_≥0: the rational-only construction needs no real embedding or square root. The modulus map is onto this subset because |q|=q for nonnegative rational q, but the subset is not that function. Neither the usual order relation nor positive-integer indexing specifies this rational codomain alone.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 259. no largest element — `missing.6e286e5d25f8e80fa9f6`
+
+**contextual_ambiguity_or_variant**, 1/1 parents. For a subset of a TOTAL order, having no greatest element is equivalent to every a admitting a strictly larger b. The canonical context states this equivalence while contrasting it with no maximal element in partial orders; that contrast is inaccurate at its stated generality: ∀a∃b>a means no maximal element. A two-point antichain has no greatest element yet both elements are maximal. In the actual source Q is totally ordered, so the cut condition itself is sound; preserve that qualification rather than change cut endpoints or nonemptiness.
+
+Remaining: Proposed clarification NOT APPLIED: restrict the equivalence to total orders or distinguish no greatest from no maximal explicitly; maintain the approved rational lower-cut convention.
+
+## 260. group presentation — `missing.6e79f03b3e61fe04fabc`
+
+**retain_distinct_missing**, 1/1 parents. An abelian presentation starts with the free abelian group on a SET of generators and quotients by the subgroup generated by specified formal relations. It is not a general nonabelian group presentation (free group/normal closure) or one relation alone. In K′_0 the generators are finite-module isomorphism types and relations come from all exact sequences, while K_0 restricts finite projectives and split sums. The generic operation is reusable, but those relation sets cannot be exchanged without proof. A set of representative types avoids a proper class of labelled module copies.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 261. pairwise disjoint members — `missing.6e9f40397260239679d4`
+
+**retain_distinct_missing**, 1/1 parents. Pairwise disjointness is A_i∩A_j=∅ for DISTINCT i,j. Requiring this also for i=j would force all sets empty. Repetition of a nonempty set at two indices violates disjointness, whereas empty members can repeat. It is not pairwise independence: disjoint positive-probability events have intersection probability zero but product positive. A tagged disjoint union forces disjoint tagged images even if original sets overlap; it does not prove this property of the original family. Countability belongs to this sigma-closure application, not the generic property.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 262. natural associativity isomorphism — `missing.6f547b2d10b1402ea1c3`
+
+**retain_distinct_missing**, 1/1 parents. The associator is a natural isomorphism (X⊗Y)⊗Z→X⊗(Y⊗Z), not literal associativity of an internal binary operation. Cartesian products realized as nested ordered pairs illustrate canonically isomorphic but differently encoded bracketings. Naturality in all three objects does not supply the pentagon coherence by itself, and the unitors/triangle remain additional data. Its functors are C-valued on C³, not the Set-valued natural-isomorphism candidate. A strict monoidal category has identity associator as a specialization, not the universal convention.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 263. multiplicative order of ζ — `missing.6fbe5c318aee10f6742d`
+
+**retain_distinct_missing**, 1/1 parents. Element order is the least positive exponent giving identity, or infinite when none exists; it is not the cardinality of the ambient group or merely an exponent that annihilates the element. If ζ^n=1 its order divides n, but primitiveness requires equality. For ζ=1 and n>1 the root equation holds with order 1. In characteristic p, X^p−1=(X−1)^p, so no primitive pth root exists in a field, despite the equation having a root. This differs from exact order of an entire cyclic Galois group.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 264. nonzero map — `missing.70304da281d96dc2721e`
+
+**retain_distinct_missing**, 1/1 parents. A nonzero linear map is one different from the zero map, equivalently there exists an input with nonzero output. It does NOT mean every output is nonzero: every linear map sends 0 to 0. It need not be injective or onto; projection R²→R is a nonzero map with nontrivial kernel. From a zero module only the zero map exists. The parent tests exterior-power MAPS for nonzeroness, not their domain modules or determinants being units; the earlier coefficient/rank conventions remain separate.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 265. continuous at limit ordinals — `missing.7259d65d3d9276de8322`
+
+**retain_distinct_missing**, 1/1 parents. Continuity at a nonzero limit ordinal λ means M_λ equals the union of all prior submodules, not topological continuity or a successor splitting. Directedness makes the union a submodule. An increasing family with M_n=0 for finite n and M_ω=Z is not continuous, even though each finite successor inclusion splits. Starting at zero is a separate axiom; the stored limit-ordinal meaning excludes 0. Set-sized ordinal bounds/universe scope are needed for actual indexing, not a silent union over every ordinal class.
+
+Remaining: Later source certification should name the ordinal index range and exact endpoint conventions; no proper-class union is constructed.
+
+## 266. r×r minors of a matrix — `missing.73975fdc5df6de661a76`
+
+**retain_distinct_missing**, 1/1 parents. An r×r minor is a SCALAR determinant from selected r rows and r columns, not that submatrix, its ideal of all minors, or the rank integer. Individual minors depend on bases, while the appropriate generated determinantal ideal has its separate invariance theorem. Finitely many rows/columns give finitely many such generators. For r=0 the empty determinant is conventionally 1, consistent with the stated unit ideal; preserve this stipulated case rather than infer an empty generator ideal. General commutative-ring determinants are broader than field determinants.
+
+Remaining: Keep rank175 coefficient-convention questions open; no basis-invariance theorem or field restriction silently imposed.
+
+## 267. diagonal map X→X×_Y X — `missing.747494bf73b248c60f78`
+
+**retain_distinct_missing**, 1/1 parents. Δ_f:x↦(x,x) lands in the equal-image fibre product and is continuous by its two identity projections. It is a topological embedding with inverse first projection on the image, but its image need not be closed. It is an arrow, not the absolute diagonal subset in X×X or the sheaf-level scheme diagonal. For f=id_X its image is the whole self-pullback, hence closed even for non-Hausdorff X; relative separatedness does not require absolute Hausdorffness. The parent tests this relative image.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 268. presentation S≅R[x_1,…,x_n]/(f_1,…,f_m) — `missing.76cef49793a8851de7db`
+
+**contextual_ambiguity_or_variant**, 1/1 parents. A presentation is CHOSEN data: polynomial variables, relations and an R-algebra isomorphism of the quotient to S. Finite presentability is existence of some presentation, not that datum. R has presentations with no variables or as R[T]/(T), demonstrating nonuniqueness. A polynomial algebra alone, relation list alone, quotient ring alone or abstract ring isomorphism omits parts. The effective matching note already identifies this compound phrase; retain a granularity ambiguity for later decomposition rather than resolve the entire datum to one ingredient or the finite-presentation property.
+
+Remaining: No presentation split, new candidate or self-resolution applied; any future segmentation must preserve the exact chosen maps and finite lists.
+
+Next: `missing.7913d8a82788b1402bf9`, first parent `form.wave2.prereq122.real-series-convergent`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
