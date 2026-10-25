@@ -92,9 +92,9 @@ All **2,281** independent-workspace files have identical before/after SHA-256 va
 
 ## Continuation progress (PR #10)
 
-**Current cumulative coverage: 13 COMPLETE / 0 PARTIAL / 408 untouched; 421 inventoried.** 5 new complete reviews in this continuation. The first-tranche counts and narrative above are historical; the append-only ledger and this current section give current coverage.
+**Current cumulative coverage: 18 COMPLETE / 0 PARTIAL / 403 untouched; 421 inventoried.** 10 new complete reviews in this continuation. The first-tranche counts and narrative above are historical; the append-only ledger and this current section give current coverage.
 
-Dispositions: contextual_ambiguity_or_variant: **2**, retain_distinct_missing: **10**, source_convention_deferral: **1**. New aliases/resolutions proposed: **0/0**. Complete means all parent contexts considered for identity, not resolution or source certification.
+Dispositions: contextual_ambiguity_or_variant: **3**, retain_distinct_missing: **14**, source_convention_deferral: **1**. New aliases/resolutions proposed: **0/0**. Complete means all parent contexts considered for identity, not resolution or source certification.
 
 ### 9. quotient R-module by a submodule — `missing.6baca7285e379e18e82b`
 
@@ -126,4 +126,34 @@ Uncertainty: For compound structured isomorphism phrases the category/morphism d
 
 Uncertainty: Recorded equivalences of finite/perfect/algebraic-closure tests are not proved by this identity review. Source convention and zero-algebra scope remain source-scoped.
 
-Current totals: **162 distinct source formulations**, **196 candidate/parent visits**, **217 candidate occurrences**. Next: `missing.066b1d1b9032a2e86bdd`, beginning with `form.0f0d38aaaffaa719.stacks-scheme-size`. All per-occurrence component flags are in the new ledger events; no whole-data identity is inferred from a component prerequisite.
+### 14. least upper bound sup(A) — `missing.066b1d1b9032a2e86bdd`
+
+**retain_distinct_missing; 6 / 6 parents.** In all six parents the common operation is least upper bound in a specified order, not its existence for every subset. If u and v both satisfy the upper-bound/least conditions then u≤v and v≤u, so antisymmetry gives u=v. The existing Dedekind completeness meaning is a quantified existence property of an ordered set, not the supremum of an individual subset. In the real-field and operator-norm sources, nonempty bounded real sets are used (the norm ball contains zero and boundedness gives a finite bound); cardinal supremum is taken in cardinal order, not real order. Depth and module dimension use extended nonnegative integers, with infinity for unbounded length sets. A supremum need not be attained: (0,1) in R has supremum 1 without a maximum. Thus maximum, completeness and metric completion are not generic resolutions. The depth convention IM=M⇒∞ is separately stipulated, not derived as a finite maximum.
+
+Uncertainty: Exact empty-support/zero-module dimension conventions and the depth empty-sequence boundary need later source reconciliation; the order operation does not choose them.
+
+### 15. morphism set Hom_C(X,Y) — `missing.6614c6b7c105cc0e6415`
+
+**retain_distinct_missing; 6 / 6 parents.** All six sources collect arrows with fixed endpoints; varying one endpoint then composing defines a Hom functor, which is extra data. Small categories make every such collection a set; preadditivity makes it an abelian group, which also forces a set under the recorded convention, without making the object collection small. The compact-object and representable sources explicitly use set-valued comparisons and therefore need local size/universe scope; a generic unrestricted category alone does not imply every Hom collection is a set. Hom_Sch(T,X) consists of scheme morphisms, not all functions on underlying point sets. Existing internal Hom is the R-module of R-linear maps with pointwise operations, a specialization of a Hom collection and not the general categorical construction. Existing small-category meaning packages objects, composition and identities rather than defining only this collection. A one-object category has one object but its Hom can contain many arrows, separating objects from morphism collections.
+
+Uncertainty: Set-valued Hom in an otherwise unrestricted category still needs an explicit local-smallness/universe convention; no global size assumption is invented.
+
+### 16. monic polynomial — `missing.87eab2bf93382f4b93d6`
+
+**retain_distinct_missing; 6 / 6 parents.** All six sources require leading coefficient 1 in the commutative univariate polynomial algebra. Monicity does not imply irreducibility: T² is monic and reducible over a field; 2T+1 over Q is degree one and irreducible but not monic as written. Degree is a number attached to a nonzero polynomial, while monicity constrains a coefficient. A minimal polynomial additionally generates an evaluation kernel; étale presentation and Henselian lifting add derivative or root conditions; ideal integrality imposes d≥1 and prescribed ideal-power coefficients. For a unital coefficient map with nonzero target, a monic polynomial keeps its leading coefficient after mapping, and finitely many image coefficients may be lifted to coefficients in R; no injectivity of R→S is needed. The generic monic candidate includes constant 1, but a vanishing integrality witness in a nonzero algebra cannot be that constant; its positive-degree restriction must stay visible.
+
+Uncertainty: The canonical nonzero-polynomial leading-coefficient convention needs explicit handling if zero coefficient rings are allowed; no zero-ring convention or source repair is chosen here.
+
+### 17. standard open D(f) inside Spec(R) — `missing.8e961cb57c3f60513be8`
+
+**retain_distinct_missing; 6 / 6 parents.** All six contexts use D(f)={p:f∉p}; D(f) is the complement of V((f)) in the prime spectrum. For a prime p, fg∉p iff f∉p and g∉p, so D(fg)=D(f)∩D(g), explaining localized overlap contexts. An idempotent e gives e(1−e)=0, forcing every prime to contain e or 1−e but not both, hence D(e)=V(1−e) is also closed. This special clopen case does not make arbitrary principal opens clopen: D(2) in Spec(Z) excludes the prime (2), and its complement V(2) is not open (every basic neighborhood D(f) of (2), f odd, contains (0)). Existing Spec defines the ambient topological space, not the distinguished subset indexed by f. The associated affine scheme Spec(R_f), sections M_f, an open covering and constructible Boolean combinations are related additional constructions, not identical needed meanings.
+
+Uncertainty: Commutative-ring source conventions follow the existing scope deferrals; no theorem about source-attributed sheaf equivalences is certified.
+
+### 18. ideal product IJ — `missing.e43d4f1922e210cc373a`
+
+**contextual_ambiguity_or_variant; 6 / 6 parents.** Products are additive finite sums of factors ij with i∈I,j∈J; closure under left/right ring multiplication follows from the two-sided ideal axioms. Iterating gives positive powers, while I^0=R is an extra convention in the unital commutative contexts. IJ need not equal I∩J: in Z, (2)(2)=(4) whereas (2)∩(2)=(2); the purity parent imposes that equality as an extra test. Symbolic p^(n) is localization and contraction and is not ordinary p^n by definition. Five parents explicitly work in commutative-algebra/domain settings. However form.003cb1cc70cf5a2c.nilpotent-ideal, occ.6382ae14011d622d9352, has an identity-optional ring target and former candidate missing.28c2bfd6be87e9099167 with only Ring theory scope, whereas the canonical product requires commutative unital rings. Positive ideal powers also exist for nonunital rings: the nonzero zero-product C2 rng has I=R and I²=0. Thus the broader source reading is meaningful and is not covered as stated by the narrower canonical context. The construction is legitimate, but its alias scope needs adjudication; no generalization or split applied.
+
+Uncertainty: Later source verification may establish a commutative-unital intended scope for the nilpotent source, or a separate review may justify broadening/splitting the candidate. Stored information alone does not choose either correction.; No existing alias is reversed; the exact general-vs-specialized scope question remains open.
+
+Current totals: **184 distinct source formulations**, **226 candidate/parent visits**, **247 candidate occurrences**. Next: `missing.fb78af5e23099cc8d59b`, beginning with `form.138b13bf27c037c1.naive-cotangent-complex`. All per-occurrence component flags are in the new ledger events; no whole-data identity is inferred from a component prerequisite.
