@@ -51,8 +51,17 @@ class MPrimaryResolutionTrial(unittest.TestCase):
                          "occ.a4b38514f6ebe94712d0")
         system = snapshot["nodes"][other]
         self.assertTrue(any(ref.get("target_meaning_id") == mid for ref in system["references"]))
-        self.assertTrue(any(ref.get("missing_candidate_id") == candidate
+        self.assertTrue(any(ref.get("missing_candidate_id") == "missing.2a4c23153be5ee32b75f"
                             for ref in system["references"]))
+        # The canonical ID is derived by the alias registry, not written into
+        # the immutable originally observed node occurrence.
+        from research_pipeline.engine.dependency_graph import graph_path
+        effective_rows = [json.loads(line) for line in
+                          (graph_path(live)/"occurrences.jsonl").read_text().splitlines()
+                          if line.strip()]
+        self.assertTrue(any(ref.get("missing_candidate_id") == candidate and
+                            ref.get("observed_missing_candidate_id") == "missing.2a4c23153be5ee32b75f"
+                            for ref in effective_rows))
         manifest = {
             "schema_version": 1,
             "id": "amend-mprimary-selfreference-20261025",
