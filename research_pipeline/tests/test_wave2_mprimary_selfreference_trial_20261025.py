@@ -151,7 +151,7 @@ class MPrimaryResolutionTrial(unittest.TestCase):
         self.assertEqual(len(packet_list[0]["amendments"]), 2)
         amend = packet_list[0]
         self.assertEqual(amend["id"], "amend-mprimary-selfreference-20261025-001")
-        self.assertEqual(len(amend["amendments"]), 1)
+        self.assertEqual(len(amend["amendments"]), 2)
         resolution = {
             "schema_version": 1,
             "id": "resolve-wave2-mprimary-noetherianlocal-20261025-001",
