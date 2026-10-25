@@ -138,3 +138,8 @@ The authorized engineering phases have produced reviewable code, measurements,
 regressions and operational documentation. No mathematical transaction, source
 research, population expansion, consolidation packet or gate transition follows
 from this work.
+
+GitHub handoff: branch pushed successfully. Draft PR creation was attempted with
+`gh pr create --draft`, but the GraphQL API returned **Forbidden**. No new PR
+URL was returned and nothing was merged. Use the [branch comparison](https://github.com/Zengez/mathDef/compare/main...codex/independent-pipeline-engineering-audit?expand=1)
+for review or manual draft PR creation.
