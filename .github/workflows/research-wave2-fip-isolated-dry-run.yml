@@ -6,6 +6,9 @@ on:
     paths:
       - '.github/workflows/research-wave2-fip-isolated-dry-run.yml'
       - 'research_pipeline/WAVE2_FIP_NONEMPTY_FAMILY_OFFLINE_RESCAN_PROPOSAL.json'
+      - 'research_pipeline/tests/test_resume_meaning_catalog_bridge.py'
+      - 'research_pipeline/adapters/mathdef/resume_validation.py'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/events/meaning_text_revision_attestations.jsonl'
       - 'research_pipeline/experiments/reconstruction-v2-independent/records/meanings.jsonl'
   workflow_dispatch:
 
