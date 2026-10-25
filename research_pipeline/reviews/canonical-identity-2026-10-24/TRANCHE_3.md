@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE2.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**40 additional COMPLETE; cumulative 78 COMPLETE, 0 PARTIAL, 343 untouched.**
+**50 additional COMPLETE; cumulative 88 COMPLETE, 0 PARTIAL, 333 untouched.**
 
 ## 39. closed subset of a topological space — `missing.c4ed408b10943e9c0f8e`
 
@@ -244,4 +244,64 @@ Remaining: The ordinary commutative/bimodule typing of the host tensor construct
 
 Remaining: Historical alias equates the needed combination operation up to redundant-zero representation, not full coefficient/index data.
 
-Next: `missing.5201cd2732d7b14502ad`, first parent `form.wave2.foundation13.preadditive-category-cokernel`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 79. zero morphism and equation p composed with f equals zero — `missing.5201cd2732d7b14502ad`
+
+**retain_distinct_missing**, 2/2 parents. Each zero arrow is the additive identity of its PARTICULAR Hom group. Bilinearity implies f0=f(0+0)=f0+f0 and hence f0=0, and similarly 0f=0. This does not require a zero object: the one-object preadditive category with endomorphism ring Z has a zero arrow but its sole object is not zero (its endomorphism set has many elements). Nor is a zero arrow an identity in general. Kernel and cokernel parents require specific composites to equal that zero; the equation is a defining condition, not part of every zero morphism or a guarantee that the universal arrow exists. Existing preadditive-category meaning packages the additive Hom structures, not a standalone typed zero-arrow prerequisite.
+
+Remaining: No external citation or complete host-theorem certification; no semantic change proposed.
+
+## 80. directional difference quotient — `missing.53a329590803a0850dc6`
+
+**retain_distinct_missing**, 2/2 parents. Both expressions are functions of a NONZERO scalar increment: Q_u(t)=[f(a+tu)−f(a)]/t where the points lie in the domain. The scalar ordinary quotient is the n=1,u=1 instance on a neighborhood, not division by a vector. A quotient exists at every eligible nonzero increment even when its limit fails: for f(x)=|x| at 0 it is sign(t), with no finite two-sided limit. Thus existing derivative and punctured-limit meanings impose additional existence/value conditions. A unit vector and total differentiability are explicit extra premises of the directional parent; ordinary partial-derivative/gradient existence alone cannot replace them. No endpoint one-sided or complex variant is merged.
+
+Remaining: The held gradient-only source alternative stays excluded; no broader differentiability claim is inferred.
+
+## 81. sections O_X(U) over open U — `missing.551582b06af996cd7836`
+
+**retain_distinct_missing**, 2/2 parents. Both sources use the sheaf section ring on a specified open U. Restricting a sheaf to U gives Γ(U,O_X|U)=O_X(U), explaining global sections of each AFFINE OPEN in the size formula; this is not necessarily global sections of all X. Stalk O_{X,x} is a colimit over neighborhoods, not the section ring on a fixed U. On a discrete two-point space with locally constant real-function sheaf, sections over both points form R×R but either stalk is R; they are not the same ring construction. Ring operations and restriction compatibility belong to the sheaf, with operations interpretable germwise, not an assumption that every abstract section is literally a scalar-valued function. Reducedness for every U and cardinal suprema are separate predicates.
+
+Remaining: No external citation or complete host-theorem certification; no semantic change proposed.
+
+## 82. indexed Cartesian product — `missing.5896e9304ebced2e5ea7`
+
+**retain_distinct_missing**, 2/2 parents. Both occurrences are sets of tuples/functions choosing a coordinate in every factor. A constant family X_d=T identifies its product exactly with functions D→T by f↦(f(d))_d; this is not the topology on that set or convergence of sequences in it. The zero-index product has one element, the empty function; a nonempty family with an empty factor has no tuple. No general nonemptiness of arbitrary products of nonempty sets is asserted without an ambient choice principle. Existing binary Cartesian product covers only two factors; categorical product packages projections/universality in a specified category, while module product has additional operations. Product topology uses FINITE coordinate restrictions, not finite-support tuples or box topology.
+
+Remaining: No external citation or complete host-theorem certification; no semantic change proposed.
+
+## 83. ith homology module — `missing.5d07d9e2d8a2e83a53a1`
+
+**retain_distinct_missing**, 2/2 parents. For a chain complex d_i d_{i+1}=0, every boundary is a cycle, so im(d_{i+1})⊆ker(d_i) and the displayed quotient is a module. A kernel alone is not general homology: in Z --2→ Z --0→0 the degree-zero cycles are Z but homology is Z/2. In a two-term complex C_1→C_0, C_2=0 makes H_1=ker(d_1); saying H_1=0 is an extra vanishing test, not the definition of homology. Cochain indices instead use kernels and images with arrows increasing degree, so no silent homology/cohomology merge. Tor is an instance using a resolution and tensor, while the naïve cotangent case is another complex; neither whole parent is a homology module definition.
+
+Remaining: The stored free-resolution meaning is augmented; the conventional underlying F_i complex must remain explicit in later source reconciliation of the Tor shorthand, especially at degree zero. No host theorem or index rewrite is applied.
+
+## 84. generated sigma-algebra from open family tau — `missing.60b81b3c7a42f7c2b9ee`
+
+**retain_distinct_missing**, 2/2 parents. For A⊆P(X), the family of sigma-algebras containing A is nonempty because P(X) is one; their intersection is a sigma-algebra and is contained in every candidate, proving leastness and uniqueness. A topology as generating family gives the Borel specialization, not a requirement on all generators. For a measurable-space-valued X_n, the family of preimages X_n^−1(B), B∈Σ_S, is ALREADY a sigma-algebra: preimages preserve complement, countable union and whole set. Thus it equals the sigma-algebra it generates and is the least one making X_n measurable. No real-valued target, full power-set equality, or independence follows from this operation. Existing sigma-algebra defines axioms, Borel meaning fixes topology, and generic intersection alone does not choose the family.
+
+Remaining: No external citation or complete host-theorem certification; no semantic change proposed.
+
+## 85. open cover (V_i) of X — `missing.62983821c35d185a119d`
+
+**retain_distinct_missing**, 2/2 parents. Both parents use open V_i in the specified X with union X, with arbitrary indexing. The cover of the discrete space N by singletons has no finite subcover, so having a cover does not imply compactness or its finite-subcover property. The empty index family covers exactly ∅; empty finite subcovers must remain allowed there. A standard-open affine cover has additional ambient and principal-open constraints and is not the general predicate. Local constructibility asks for a suitable covering of X on which E∩V_i is constructible relative to V_i, not a cover only of E or global constructibility of E. Existing topology supplies which sets are open but no chosen covering family.
+
+Remaining: No external citation or complete host-theorem certification; no semantic change proposed.
+
+## 86. locally section-generated sheaf of ideals I⊆O_X — `missing.631a3a4cfb8cabd25148`
+
+**retain_distinct_missing**, 2/2 parents. The two parents require an IDEAL SUBSHEAF with the stated local-section-generation qualification. One chooses such I as input; the other obtains a kernel ideal sheaf from a structure-sheaf map and requires the same qualification. Ring-map kernels are ideals sectionwise and restrictions preserve them, but this alone does not prove a particular uniform local-generation condition. A precise intended reading needs neighborhoods U and families of sections on U whose germs generate the restricted ideal; no finite list is stipulated, so neither finite generation nor coherence/quasi-coherence may be inferred. This is distinct from a single ring ideal, from its sheaf quotient/support and from a locally ringed closed subspace. Shared words here justify the same qualified prerequisite under a fixed reading; they do not certify an unstated finiteness theorem.
+
+Remaining: Later source reconciliation must specify local-generation quantifiers and allowed generator cardinality; the paraphrases do not justify replacing this condition by finite generation or declaring it automatic for every ideal subsheaf.
+
+## 87. invertible 2-morphisms between 1-arrows — `missing.63d9809ad2eb842deb92`
+
+**retain_distinct_missing**, 2/2 parents. Both sources require an isomorphism in a hom-CATEGORY: α:f⇒g has vertical β:g⇒f with βα=id_f and αβ=id_g. Horizontal composition and invertibility of the 1-arrows f,g are different notions. In Cat, a natural isomorphism between functors need not make either functor an equivalence (e.g. the identity natural transformation of a constant functor from a nontrivial category). In a (2,1)-category every 2-cell is invertible, but a specified comparison between the two composites is still extra pseudocone data, not strict equality of those composites. Equivalence of objects needs 1-arrows and two invertible comparisons, not one arbitrary invertible 2-cell. Existing generic categorical-isomorphism candidate supplies the common predicate only after the hom-category and vertical composition have been explicitly provided.
+
+Remaining: No external citation or complete host-theorem certification; no semantic change proposed.
+
+## 88. continuous-time filtration (F_t) — `missing.65d334caa51c845ea335`
+
+**retain_distinct_missing**, 2/2 parents. Both missing occurrences require increasing sub-sigma-algebras on the common probability/measurable space at EVERY real t≥0. Restricting to integer times produces a discrete filtration but loses information: on a two-point probability space, a jump from trivial to full sigma-algebra at time 1/2 and a jump at 3/4 give the same integer samples and different F_{0.6}. Thus the existing discrete-filtration meaning is not an exact resolution of the real-index candidate. The adapted-continuous parent ALSO has existing edge occ.4dc2044654482ca4b966 to that explicitly discrete target; preserve it and flag whether it is an intended underlying/discretized component or an overrestrictive whole-filtration target. Filtration alone implies no integrability, adaptation of a given process, sample continuity, completeness or right-continuity. The adjudicated rank-36 L¹/time-quantifier deferral remains separate.
+
+Remaining: Review exact existing edge occ.4dc2044654482ca4b966 in form.wave2.found85.adapted-continuous for discrete-versus-real-time scope; no graph correction applied and no assumption that the earlier integrability deferral resolves this edge.
+
+Next: `missing.6bb87052ec8a81464ddd`, first parent `form.b85b64499f3fb523.grothendieck-group-finite-modules`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
