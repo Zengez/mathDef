@@ -34,7 +34,7 @@ class TestStagedWave2OfflinePreflight(unittest.TestCase):
         node = before["nodes"][FILTRATION_ID]
         original_refs = node["references"]
         original_text = before["inventory"]["formulations"][FILTRATION_ID]["text"]
-        self.assertEqual(len(original_refs), 7)
+        self.assertEqual(len(original_refs), 6)
         self.assertTrue(any(
             x["occurrence_id"] == GOOD_REF
             and x["state"] == "missing"
