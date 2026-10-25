@@ -1,40 +1,46 @@
 {
   "schema_version": 1,
   "formulation_id": "form.wave2.broad67.compact-closed-fip",
-  "version_sha256": "e6a0aa44634543ff92c50272643e6d7a42152bc50827bbbd925d745849f036bb",
+  "version_sha256": "844fa46b00ce7ef7960240f19be908bf46ae0985f5f45de1195b8137d61ed213",
   "scan_status": "complete",
   "references": [
     {
+      "disposition": "The open-cover formulation is another characterization of the very same compact topological space, so the equivalent finite-intersection-property source must not link recursively to its own target meaning. Retain the finite intersection property as a distinct prerequisite and preserve the source's general topology/non-Hausdorff scope.",
       "phrase": "compact topological space via open covers",
-      "state": "existing",
-      "target_meaning_id": "meaning.wave2.broad67.compact-topological-space",
-      "occurrence_id": "occ.981db9ef8d25cc58b062"
+      "state": "external",
+      "occurrence_id": "occ.eca4fa3191e60b4509b7"
     },
     {
+      "context": "General topology: F⊆X is closed in a specified topological space precisely when X\\F is open; the F_i in the finite-intersection-property characterization are closed subsets, not independent ambient topological spaces.",
+      "matching_note": "The source quantifies over closed subsets of X. A topological space is the ambient structure, but is not itself the definition of a closed subset. Reuse the preexisting generic closed-subset candidate; no new meaning is added.",
       "phrase": "closed subset of topological space",
-      "state": "existing",
-      "target_meaning_id": "meaning.wave2.foundation.topological-space",
-      "occurrence_id": "occ.c0fe2b325190d98e7246"
+      "reason": "Correct the mathematical object type of this prerequisite without changing the parent compactness formulation or its other four effective reference dispositions.",
+      "state": "missing",
+      "missing_candidate_id": "missing.622459998fd4b876125d",
+      "occurrence_id": "occ.ecc50ed2eed656a8e728"
     },
     {
+      "context": "General set theory/topology: family (F_i) of subsets of X with ⋂_{i∈E}F_i nonempty for every nonempty finite E of indices; specify the empty-family convention separately.",
+      "matching_note": "The source now explicitly quantifies over nonempty families of closed sets. The standalone FIP candidate still tests intersections of all nonempty finite subfamilies, including the empty-index edge case only via this separate source restriction.",
       "phrase": "finite intersection property of family",
-      "state": "unassigned",
-      "context": "Every finite subfamily has a nonempty intersection, including all finite subcollections.",
-      "occurrence_id": "occ.ea24725a4dfbf7b62986"
+      "reason": "The finite-intersection property is a standalone family property used in the closed-set compactness characterization.",
+      "state": "missing",
+      "missing_candidate_id": "missing.ded806b239b007c8af8c",
+      "occurrence_id": "occ.9d50e1e491b616085715"
     },
     {
+      "disposition": "The consequence ⋂_iF_i≠∅ is precisely the defining compactness characterization under the finite-intersection-property hypothesis, not an independently presupposed named construction. Set intersection itself is addressed by other references.",
       "phrase": "nonempty total intersection",
-      "state": "unassigned",
-      "context": "Intersection of all closed sets in the entire family contains at least one point.",
-      "occurrence_id": "occ.4d01c591d27c5cbbc3e1"
+      "state": "external",
+      "occurrence_id": "occ.fd3fcfada1a731042f94"
     },
     {
+      "disposition": "Complementation of covers gives the equivalent criterion with no Hausdorff assumption.",
       "phrase": "equivalent to open cover compactness",
       "state": "external",
-      "disposition": "Complementation of covers gives the equivalent criterion with no Hausdorff assumption.",
-      "occurrence_id": "occ.6a4bd77e2974b5d6fbac"
+      "occurrence_id": "occ.f5e10e1ef00575cc8a64"
     }
   ],
-  "snapshot_sha256": "915222a2e706580e40b7ae445344ebfd25d69b5ae4d5657eff2e1abde0bd5bfa",
-  "review_rationale": "Reviewed closed-set finite-intersection-property characterization of compactness, including nonempty intersection of each finite selection and total intersection conclusion."
+  "snapshot_sha256": "e4cc919d4ffa05fb3bd5fcc371686e1e4ce13bec13865fdddb5105882387003d",
+  "review_rationale": "Source-free reviewed re-scan of the exact user-approved nonempty-family compactness formulation: the restriction repairs the empty-space counterexample without changing the distinct closed-subset or FIP candidate identities. All five effective prerequisite dispositions from the final old-version reviewed amendment were checked and retained; source observation and historical amendment lineage remain untouched."
 }
