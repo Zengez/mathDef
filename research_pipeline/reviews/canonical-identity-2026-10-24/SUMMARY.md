@@ -89,3 +89,41 @@ python -m unittest research_pipeline.tests.test_dependency_global_audit research
 Actual results: coverage/anchor validator **PASS**; **60 tests passed**. The validator compares every manifest identity/context, all reviewed source versions and effective references, event digests, supersession and exact parent coverage with the current independent snapshot. It does not certify mathematical judgments. The existing focus (`--limit 30 --max-formulations 1000`), scan (`--limit 80 --candidate-limit 80`) and readiness (`--exhaustive`) commands all exited successfully; readiness returned `mechanical_checks_passed_review_decision_required`, with 19 checks and no mechanical integrity failures.
 
 All **2,281** independent-workspace files have identical before/after SHA-256 values. The branch-to-base changed paths are confined to this audit directory: `SUMMARY.md`, `manifest.jsonl`, `reviews.jsonl`, `source-contexts.jsonl`, `checkpoint.json`, `validate.py`. No engine behavior changed. Earlier checkpoints preserve the inventory and partial coverage; later review events supersede rather than erase those judgments.
+
+## Continuation progress (PR #10)
+
+**Current cumulative coverage: 13 COMPLETE / 0 PARTIAL / 408 untouched; 421 inventoried.** 5 new complete reviews in this continuation. The first-tranche counts and narrative above are historical; the append-only ledger and this current section give current coverage.
+
+Dispositions: contextual_ambiguity_or_variant: **2**, retain_distinct_missing: **10**, source_convention_deferral: **1**. New aliases/resolutions proposed: **0/0**. Complete means all parent contexts considered for identity, not resolution or source certification.
+
+### 9. quotient R-module by a submodule — `missing.6baca7285e379e18e82b`
+
+**retain_distinct_missing; 10 / 10 parents.** All ten contexts use cosets of an R-submodule, with r(m+N)=rm+N well-defined because rN⊆N. I/I² and m/m² also acquire scalar actions through P/I and R/m because the ideal acts trivially on the quotient; that extra action is not a generic quotient ring or vector-space definition. Completion stages, filtration factors, and R/(a) for module length use the same module construction; a colimit additionally chooses a direct sum and relation submodule. A quotient set forgets both addition and scalar action, and the quotient-group meaning supplies no R-action. A generic quotient module has no required multiplication: for example the Z-module Z/2⊕Z/3 has no multiplication specified by its module data. Existing quotient-ring candidate requires an ideal in a parent ring, whereas M and N here need only be modules. The regular-sequence unitality exception remains governed by the adopted Chat policy. No checked existing meaning defines general module cosets with induced scalar action.
+
+Uncertainty: Ambient unitality of bare module/ring sources remains under the existing scoped convention deferral; no theorem of the host formulas is certified.
+
+### 10. injective mapping — `missing.4ba0cfe171bbe93d0c9a`
+
+**retain_distinct_missing; 8 / 8 parents.** The eight occurrences test f(x)=f(y)⇒x=y for specified maps: evaluation, field-tensor multiplication, scalar multiplication, tensor comparisons and fibre maps. For additive maps this is equivalent to zero kernel, since f(x)=f(y) iff f(x−y)=0, but the module-kernel construction is not the general predicate. Ordinary injectivity is weaker than universal tensor injectivity: multiplication by 2 on Z is injective, while tensoring with Z/2 yields the zero map on Z/2. Thus the existing pure-monomorphism meaning is not a resolution. A map can be injective without surjectivity (inclusion {0}→{0,1}); no bijection, inverse function or categorical isomorphism follows. Field embeddings retain their ring axioms separately, and no default algebraic independence is inferred without the appropriate quantified evaluation map. No checked mapping definition supplies the missing predicate.
+
+Uncertainty: Tensor-product module-side and unital conventions belong to the host source; injectivity alone does not settle them.
+
+### 11. surjective R-linear map R^n→M — `missing.c8a3e68d130a4f68d108`
+
+**retain_distinct_missing; 8 / 8 parents.** All eight parents require every element of a fixed codomain to be attained. This is exactly im(f)=Y using the existing image construction, but image as an object is not the predicate equating it with Y. The canonical query mentions R^n→M, yet its stored context explicitly abstracts the onto-condition; free domain, R-linearity, algebra structure, localization, localness and continuity are separately retained. A constant two-element-to-singleton map is surjective without injectivity. Onto f(X) is automatic for any function and cannot replace onto Y: {0}→{0,1} separates them. The finite-generation criterion requires a linear surjection for some finite rank; projectivity quantifies lifting across all linear surjections. The empty space has no surjection onto two points, preserving the stated connectedness convention. None of the checked map/image or specialized locus meanings defines the generic onto-condition.
+
+Uncertainty: The submersive biconditional issue is an adopted source-wording deferral; no source edit is applied. Bare module unitality remains source-scoped.
+
+### 12. categorical isomorphism — `missing.15bb96cb26d587868bbe`
+
+**retain_distinct_missing; 7 / 7 parents.** Each of the seven contexts requires an arrow with a two-sided inverse in its stated category: locally ringed spaces, topological groups, commutative rings, a localization, a small groupoid, or an abelian category. If g and h are both inverses, g=g(fh)=(gf)h=h, so the inverse is unique, but all structure in the ambient morphisms must remain. A bijective continuous map need not be a homeomorphism: the identity from a discrete two-point space to its indiscrete topology has no continuous inverse. Consequently a set bijection, a plain homeomorphism without group/sheaf data, and an isomorphism of graphs cannot resolve generic categorical invertibility. In the abelian-category sentence the phrase isomorphism of categorical morphisms means the comparison arrow Coim(f)→Im(f) is invertible, not an isomorphism between arrows in an arrow category. Specialized aliases are justified only as instances of this predicate with ambient category retained.
+
+Uncertainty: For compound structured isomorphism phrases the category/morphism definition must stay explicit. No claim is made that generic invertibility defines those categories.
+
+### 13. scalar extension of k-algebra — `missing.ad976486b1e3635e60d2`
+
+**retain_distinct_missing; 7 / 7 parents.** The seven sources form the same commutative K-algebra A⊗_kK, with (a⊗u)(b⊗v)=ab⊗uv, unit 1⊗1 and K-map u↦1⊗u. These operations are balanced over k and distribute, so they extend from pure tensors. The existing tensor-module meaning supplies the additive universal object, not multiplication or its chosen K-structure. The existing base-change ring-map meaning instead defines the arrow K→A⊗K; its codomain is a legitimate related construction, not an identity of that arrow with the algebra object. The module base-change meaning presupposes the coefficient algebra, and tensor algebra is a sum of tensor powers with concatenation, not this two-factor scalar extension. Choosing perfect or algebraic closure specializes K without replacing a parent quantifier over all or finite extensions. Connectedness/reducedness/domain/regularity are different tests on the result, not consequences of forming a tensor product. Compound k-algebra A AND extended K-algebra phrases refer only to this component prerequisite; they do not identify the input and output algebras.
+
+Uncertainty: Recorded equivalences of finite/perfect/algebraic-closure tests are not proved by this identity review. Source convention and zero-algebra scope remain source-scoped.
+
+Current totals: **162 distinct source formulations**, **196 candidate/parent visits**, **217 candidate occurrences**. Next: `missing.066b1d1b9032a2e86bdd`, beginning with `form.0f0d38aaaffaa719.stacks-scheme-size`. All per-occurrence component flags are in the new ledger events; no whole-data identity is inferred from a component prerequisite.
