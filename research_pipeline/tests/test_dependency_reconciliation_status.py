@@ -118,6 +118,35 @@ class ReconciliationStatusTests(unittest.TestCase):
         with self.assertRaisesRegex(PipelineError, "SHA256"):
             self.report()
 
+
+    def test_repository_queue_matches_current_graph_receipts(self):
+        """The current checkout, not an audit narrative, determines application."""
+        repo = Path(__file__).resolve().parents[2]
+        workspace = repo / "research_pipeline/experiments/reconstruction-v2-independent"
+        queue_path = (repo / "research_pipeline/reviews/"
+                      "canonical-identity-2026-10-24/LIVE_RECONCILIATION_QUEUE.json")
+        queue = json.loads(queue_path.read_text(encoding="utf-8"))
+        report = reconciliation_status(workspace, queue)
+        self.assertEqual(report["case_count"], 4)
+        self.assertFalse(report["graph_changes_applied"])
+        self.assertFalse(report["current_consolidation_gate_valid"])
+        self.assertEqual(report["current_phase"], "consolidate_occurrences")
+        self.assertTrue(report["historical_review_scope"]
+                        ["canonical_reviews_complete"] == 421)
+        for case in report["cases"]:
+            self.assertFalse(case["mathematically_certified"])
+            if case["kind"] == "transaction":
+                receipt = (workspace / "dependency_graph/applied"
+                           / (case["packet_id"] + ".json"))
+                expected = ("applied_receipt_verified" if receipt.exists()
+                            else "not_submitted")
+                self.assertEqual(case["status"], expected)
+            else:
+                self.assertIn(case["status"], (
+                    "mathematical_review_required", "needs_effective_node_reanchor",
+                    "reference_target_changed", "reference_disposition_changed",
+                    "occurrence_changed_or_ambiguous"))
+
     def test_no_file_write(self):
         self.write("inbox", self.packet)
         files = [p for p in self.graph.rglob("*") if p.is_file()]
