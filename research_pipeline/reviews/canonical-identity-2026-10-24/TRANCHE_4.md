@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE3.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**50 additional COMPLETE; cumulative 138 COMPLETE, 0 PARTIAL, 283 untouched.**
+**60 additional COMPLETE; cumulative 148 COMPLETE, 0 PARTIAL, 273 untouched.**
 
 ## 89. isomorphism class — `missing.6bb87052ec8a81464ddd`
 
@@ -304,4 +304,64 @@ Remaining: No external citation verification or whole-parent theorem certificati
 
 Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
 
-Next: `missing.07e25eec2547df68421c`, first parent `form.wave2.alternative39.adjacency-matrix-simple-undirected`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 139. chosen ordering V={v_1,…,v_n} — `missing.07e25eec2547df68421c`
+
+**retain_distinct_missing**, 1/1 parents. Choosing an enumeration is choosing a bijection {1,…,n}→V, more than finiteness or a surjective list allowing repeats. It is not adjacency, an intrinsic order on an abstract graph, or the matrix itself. A new enumeration permutes rows and columns simultaneously: if v′_i=v_{π(i)}, then A′_ij=A_{π(i),π(j)}. The same graph can therefore have different displayed arrays, e.g. moving the centre of a three-vertex path from index 2 to index 1 changes its entries. No infinite enumeration is supplied by this finite source.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 140. morphisms A to P and C to P agreeing on B — `missing.087c8c78478b26335f01`
+
+**retain_distinct_missing**, 1/1 parents. For a span B→A,B→C, a compatible pair i:A→P,j:C→P satisfies i f=j g. This is the span-shaped cocone, whose B-component is forced by that equality. It is an instance of a generic cocone but retains a specific input diagram and pair of arrows, not an arbitrary diagram shape, and is not automatically a pushout. In Sets with B=∅ and A=C={*}, two maps to a singleton form such a pair while the pushout is a two-element set; universality fails for that chosen vertex. Do not reverse it into a cone over a cospan or infer that the structure arrows are injective in every category.
+
+Remaining: Generic cocone is a reusable construction covering this span instance; any future identity compression must explicitly retain the diagram-shape data rather than claim arbitrary cocones are just pairs. No alias proposed.
+
+## 141. zero R-module — `missing.08ca647ed43622178944`
+
+**retain_distinct_missing**, 1/1 parents. The zero R-module is the singleton additive group with its forced zero action. There is exactly one R-linear map to and from it in either general or unital module conventions, making it a zero object of the corresponding module category. This does not identify it with a chosen zero submodule inside M or with the zero element of an arbitrary M. The final quotient in a regular sequence must not be this object; otherwise injectivity on zero successive terms would make trivial sequences misleading. Rank-9 source convention deferrals remain: an empty sequence need not force 1m=m, and no unital R is inferred from this zero object.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 142. field automorphism σ:E→E — `missing.08fcaa9f26323a9c3d56`
+
+**retain_distinct_missing**, 1/1 parents. A field automorphism is a bijective unital ring map E→E; its inverse preserves operations by applying the forward bijection to sums/products. An injective endomorphism is not enough: k(t)→k(t), t↦t², is injective but not onto. Fixing F pointwise is an additional condition defining the subgroup Aut(E/F); a general E-automorphism need not fix a chosen subfield pointwise. On Q(t), t↦−t does not fix Q(t) pointwise if that whole field is chosen as F. An automorphism group is a set/group of such arrows, not one automorphism. No finite or Galois hypothesis is required for Aut(E/F).
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 143. circuit as nontrivial closed edge-trail — `missing.0b7317d52bc5113b3520`
+
+**retain_distinct_missing**, 1/1 parents. A circuit here is a positive-length finite closed TRAIL, no undirected edge repeated, whereas a simple cycle forbids repeated vertices except its closing one. Traversing two triangles sharing one vertex in succession is a circuit with that shared vertex repeated, not a simple cycle. Every finite closed trail contains a simple cycle: take a shortest closed subwalk between repeated vertices, whose interior vertices cannot repeat. Thus absence of circuits and cycles agrees in simple undirected graphs even when the ambient vertex set is infinite. This is equality of existence/absence predicates, not identity of the individual circuit and cycle objects, nor a rooted-tree or directed/matroid convention.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 144. two-term complex I/I²→Ω_{P/R}⊗_P S — `missing.0cef0a8e358745284bfe`
+
+**retain_distinct_missing**, 1/1 parents. A two-term homological complex C_1→C_0 has zeros elsewhere, so consecutive differentials compose to zero automatically. The specified arrow is data; its kernel and cokernel are H_1 and H_0 and need not vanish. It is not an exact sequence, a cochain complex in degrees 0,1 with the same numeric degree placement, or the full cotangent object with chosen polynomial presentation. Here d(i mod I²)=di⊗1 is well-defined: d(ab)=a db+b da maps to zero after tensoring with S for a,b∈I, so I² is killed. The general two-term prerequisite and its source-specific I/I², differential-module and scalar-extension terms stay separate.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 145. set of all rational lower cuts R_D — `missing.0f9ce4837c92ff02c397`
+
+**retain_distinct_missing**, 1/1 parents. The carrier R_D is a subset of P(Q), consisting of all NONEMPTY PROPER downward closed subsets without greatest rational. It is not a single cut, a pair (cut,complement), Q itself, or already a field with operations. Separation from P(Q) is strict: ∅ and Q are subsets but not cuts. The rational example A_q={r:r<q} is nonempty/proper and has no greatest member by rational density. Abstract complete ordered fields are isomorphic to an eventual cut field but not literally the same sets. The source explicitly treats arithmetic and completeness as proof obligations; merely collecting cuts supplies none of them.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 146. cyclic group of order p — `missing.11eb8dbe559b544a000a`
+
+**retain_distinct_missing**, 1/1 parents. Cyclic order p means a generator g with exact least positive period p; g^p=e alone is insufficient since the identity also satisfies it. Its elements are e,g,…,g^(p−1), distinct by minimality. The source p is prime characteristic, and a nontrivial Artin–Schreier extension has the additional Galois interpretation: roots differ by c∈F_p and translations compose by addition; a nontrivial subgroup of the order-p translation group is the whole group. This does not turn field characteristic into a group-order definition. The Kummer candidate allows degree merely dividing n, hence may have order 1 or a proper divisor; not an exact-order-p identity.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 147. zero composite of consecutive maps — `missing.12cbff3823a07d544a1e`
+
+**retain_distinct_missing**, 1/1 parents. A chain complex requires d_n d_(n+1)=0 for all adjacent maps, not just a sequence of composable arrows and not exactness. The complex 0→Z --0→ Z→0 has zero composites but nonzero homology at both Z terms. Thus existing exact-sequence meaning, although its opening sentence describes complexes, cannot replace the whole generic complex prerequisite without imposing extra image=kernel conditions. In an additive category zero arrows exist independently of a zero OBJECT choice. Two-term complexes automatically meet this condition because the neighboring terms are zero, whereas a three-term arbitrary sequence need not.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 148. structure morphism X→Spec(Z) — `missing.131212604e1e2155bd93`
+
+**retain_distinct_missing**, 1/1 parents. Every scheme has a canonical morphism to Spec(Z), unlike an arbitrary chosen base map X→S. On an affine Spec(A), the unique unital ring map Z→A sends n↦n1_A; these maps agree under restrictions and glue. Uniqueness on affine charts proves Spec(Z) is terminal in schemes, dual to Z being initial in unital commutative rings. Merely having the prime-spectrum space Spec(Z) does not specify this arrow. Separatedness and quasi-separatedness of this canonical map are the absolute properties; their distinction remains and no chosen S-structure is substituted.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+Next: `missing.137cc84619d0fc68bf3b`, first parent `form.wave2.foundation.integral-over-ideal`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
