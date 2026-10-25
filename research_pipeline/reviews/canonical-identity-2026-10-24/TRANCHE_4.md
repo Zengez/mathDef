@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE3.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**70 additional COMPLETE; cumulative 158 COMPLETE, 0 PARTIAL, 263 untouched.**
+**80 additional COMPLETE; cumulative 168 COMPLETE, 0 PARTIAL, 253 untouched.**
 
 ## 89. isomorphism class — `missing.6bb87052ec8a81464ddd`
 
@@ -424,4 +424,64 @@ Remaining: Later exact source reconciliation should state commutative R if inter
 
 Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
 
-Next: `missing.1c3a3131528cfb0d72af`, first parent `form.b9defeff446a0526.hilbert-polynomial-local-module`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 159. graded quotients m^nM/m^{n+1}M — `missing.1c3a3131528cfb0d72af`
+
+**potential_candidate_alias**, 1/1 parents. This degree-n object is exactly the module quotient N/L with N=m^nM and L=m^(n+1)M. Its induced residue-field action is determined by the R-action since mN⊆L, hence it adds no independently chosen scalar datum or multiplication. The previously fully reviewed generic quotient-module candidate explicitly includes successive filtration factors and the same induced-scalar-action construction (review canonical-review.2026-10-24.011). This supports a POTENTIAL candidate alias for the quotient prerequisite only, with m,n,M and associated-graded role retained in the source; it is not an alias of a whole graded module. In R=k[t]_(t), M=R, each m^n/m^(n+1) has length 1 while R/m^(n+1) has length n+1, so graded-piece and cumulative Hilbert–Samuel functions remain distinct. No alias is applied.
+
+Remaining: Proposal only, anchored to prior complete generic quotient review and unchanged source snapshots. Later authorization must preserve the exact associated-graded source role, residue action and n=0 unitality convention.
+
+## 160. map X→M_i splitting M_i→X — `missing.1c6af723b751472f1aba`
+
+**retain_distinct_missing**, 1/1 parents. A splitting here has r:M_i→X and s:X→M_i with r s=id_X. It makes X a retract, r a split epimorphism and s a split monomorphism, but does not require s r=id_(M_i). The projection X⊕Y→X with the standard inclusion splits and is not an isomorphism for nonzero Y. It differs from the dual pro-object orientation, and having this one splitting does not by itself establish all eventual-agreement conditions of essential constancy. Generic injectivity/surjectivity are set notions and cannot substitute for these universal arrow equations in an arbitrary category.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 161. Minkowski set sum tC+(1−t)C — `missing.1d1e6d6708183b231518`
+
+**retain_distinct_missing**, 1/1 parents. tC+(1−t)C is a SET of all tx+(1−t)y with independent x,y∈C. It is not one pointwise convex combination or merely scalar multiplication of C. For C={0,2}⊆R and t=1/2, this set is {0,1,2}, larger than C; allowing only x=y would falsely yield C for every subset. At t=0 or 1 it equals C for nonempty C, and for C=∅ it is ∅ because there are no input pairs (the image 0∅ is also ∅, not {0}). Inclusion for every t∈[0,1] exactly matches the two-point convexity predicate, with no norm, dimension, closedness or arbitrary-real-scalar stability.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 162. prime ideals minimal over its annihilator Ann_R(m) — `missing.1d331e8d364b026c50d5`
+
+**retain_distinct_missing**, 1/1 parents. Minimal over I means minimal in the poset of primes CONTAINING I, not among all primes of R. With R=Z and I=(6), primes (2) and (3) are minimal over I but neither is a minimal prime of Z, whose (0) does not contain (6). Weak association existentially chooses m and a minimal-over-Ann(m) prime, whereas association requires equality p=Ann(m); the predicates must not be merged by replacing minimality with equality. It corresponds to minimal primes of R/I via inverse image, but the quotient-ring/base-change data are necessary for that translation. Unit/module source conventions remain independently deferred.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 163. Cat as category of small categories — `missing.1e57f82e00af556806fa`
+
+**retain_distinct_missing**, 1/1 parents. For a fixed universe U, Cat_U has U-small categories as objects and functors as arrows; functor composition/identities define the ordinary category. It is generally larger than a U-small category itself. A presheaf F:C^op→Cat_U need not have U-small DOMAIN C merely because each value is small. A category object, the category OF such objects and a Cat-valued functor are different types. Groupoids_U is the subcategory with all value-category arrows invertible, not all of Cat_U. The source strictness is equality of pullback functors, not extra 2-cells of a pseudofunctor; the ordinary Cat role suffices here.
+
+Remaining: The stored source does not spell out its universe for Cat. Keep this a later size-convention obligation, without shrinking the already reviewed unrestricted-domain category candidate.
+
+## 164. kernel of automorphism mapping F on an object — `missing.1f1fd9a269f9c46bb515`
+
+**retain_distinct_missing**, 1/1 parents. F induces a group homomorphism Aut_S(x)→Aut_(S′)(Fx): it preserves composition, identity and inverses. Its kernel consists exactly of α with Fα=id. If F is strictly over C, verticality is AUTOMATIC for kernel elements: pα=p′Fα=p′id=id_(p x). Thus no extra verticality gap remains under the recorded over-base hypothesis. In contrast, merely preserving automorphisms does not put them in the kernel; for F=id the kernel is trivial, while for the map of a group category to terminal every automorphism is killed. The kernel group at x is not the entire relative-inertia category of pairs and intertwining arrows.
+
+Remaining: If a later variant uses commuting projections only up to isomorphism, transport data must be specified separately; current strict over-base reading supplies the proof.
+
+## 165. restriction of functions to U_x — `missing.1faaa3731208d18704c8`
+
+**retain_distinct_missing**, 1/1 parents. Restricting f:X→M to U⊆X keeps each value f(u) and changes its domain to U; it is f composed with inclusion U→X. It is neither inverse image of a subset, a sheaf-restriction map as extra sheaf data, nor a new choice of values. Restrictions to the same U preserve pairwise metric errors; uniform convergence there means one N for every y∈U, possibly depending on ε and the chosen neighborhood, not on y. For f_n(x)=x/n on R, every bounded neighborhood has uniform convergence to zero but the whole line does not. The restriction construction itself requires no continuity or neighborhood hypothesis; those belong to the parent.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 166. Lebesgue–Stieltjes measure from nondecreasing function — `missing.2216f1dfe187a7af152c`
+
+**source_convention_deferral**, 1/1 parents. A Lebesgue–Stieltjes measure is not just an arbitrary nonnegative measure or a weight-density measure: bounded monotone functions may have jumps giving atoms, whereas w(x)dx assigns every singleton zero. For the common right-continuous convention μ((a,b])=α(b)−α(a), one-sided continuity matters. The monotone α(t)=0 for t≤0, 1 for t>0 would give μ((0,1/n])=1 although those intervals decrease to ∅, contradicting finite-measure continuity from above. Thus the word admissible must include a normalization/one-sided convention or a construction using one-sided limits. The stored source does not specify which. Preserve a source-convention deferral, not an invented right-continuity hypothesis or an alias to density integration.
+
+Remaining: Later verify the source meaning of admissible, endpoint atom assignment, one-sided normalization and integration interval; no formula or source correction applied.
+
+## 167. automorphism α of x over identity of p(x) — `missing.229af74a7a716a68dd9e`
+
+**retain_distinct_missing**, 1/1 parents. A vertical automorphism is an invertible x→x with pα=id_(p x), not merely an arbitrary endomorphism or an automorphism over a nonidentity base loop. For p=id on a nontrivial one-object group category, every group element is an automorphism, but only identity is vertical; this separates the predicates. A fibration does not force verticality of all total automorphisms. The inertia object additionally pairs x with α, and an arrow β between two pairs must satisfy βα=α′β; that whole category is not one automorphism or its group. Relative-inertia kernel elements are vertical for the separate reason F is over C.
+
+Remaining: No external citation verification or whole-parent theorem certification; no semantic correction applied.
+
+## 168. μ-integrability of power function — `missing.22e38bfed03405a51af2`
+
+**retain_distinct_missing**, 1/1 parents. For nonnegative integer n, conventional μ-integrability of x^n means measurability and finite ∫|x|^n dμ. The moment value is then a finite scalar; the source sentence finite only when integral finite is redundant under this assumption, not a second extended-integrability convention. At n=0 the condition is finite mass using the constant polynomial 1, including at x=0. For odd n, a symmetric principal-value cancellation does not supply absolute integrability. This single-power predicate is an instance of the all-absolute-moments prerequisite, but does not assert all orders at once, nor probability normalization or stochastic-time quantifiers. On density x^−2 over [1,∞), n=0 is integrable and n=1 is not.
+
+Remaining: Conventional finite-L1 reading is explicit in the candidate; later verify any source alternative using extended moments rather than silently broadening it.
+
+Next: `missing.23c297a4a1c27fe4ec73`, first parent `form.wave2.analysis98.metric-space.compatible`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
