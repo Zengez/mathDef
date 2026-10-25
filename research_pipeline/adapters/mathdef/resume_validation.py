@@ -15,6 +15,82 @@ from research_pipeline.engine.resume_checkpoint import ResumeError, inside
 from research_pipeline.engine.wave2_apply_links import check_cycles
 
 
+def _validate_meaning_catalog_review_bridge(meanings: dict, reviews: list, workspace: Path) -> dict:
+    """Recognize one explicitly approved, text-only source revision without
+    rewriting old individual review evidence as though it were reviewed anew.
+
+    Fail closed if any other mathematical meaning content changes. The
+    predecessor catalog is reconstructed by reversing only the recorded text
+    edit; its digest MUST exactly match all historical review anchors.
+    """
+    historical_digests = {r.get("meaning_catalog_digest") for r in reviews}
+    if len(historical_digests) != 1 or None in historical_digests:
+        raise ResumeError("Individual meaning reviews lack one coherent catalog anchor")
+    previous_digest = next(iter(historical_digests))
+    current_digest = digest(list(meanings.values()))
+    event_path = workspace / "events" / "meaning_text_revision_attestations.jsonl"
+    events = jsonl(event_path) if event_path.is_file() else []
+    if current_digest == previous_digest:
+        if events:
+            raise ResumeError("Unexpected source revision event for unchanged reviewed catalog")
+        return {"historical_catalog_digest_matched": True, "authorized_text_revisions": 0}
+    if len(events) != 1:
+        raise ResumeError("Changed meaning catalog requires exactly one reviewed, source-only bridge")
+    event = events[0]
+    expected = {
+        "schema_version": 1,
+        "event_id": "wave2.fip-compactness-nonempty-family.2026-10-24",
+        "stage": "meanings",
+        "meaning_id": "meaning.wave2.broad67.compact-topological-space",
+        "formulation_id": "form.wave2.broad67.compact-closed-fip",
+        "before_text": (
+            "Equivalently, X is compact if every family of closed subsets of X "
+            "that has the finite intersection property has nonempty total intersection."
+        ),
+        "after_text": (
+            "Equivalently, X is compact if every nonempty family of closed subsets "
+            "of X that has the finite intersection property has nonempty total intersection."
+        ),
+    }
+    if any(event.get(key) != value for key, value in expected.items()):
+        raise ResumeError("Attested source correction does not match approved FIP edit")
+    if event.get("prior_reviewed_meaning_catalog_digest") != previous_digest:
+        raise ResumeError("Source correction is not anchored to the original reviews")
+    if (len(str(event.get("reason", "")).strip()) < 40 or
+            not str(event.get("reviewed_by", "")).strip() or
+            not str(event.get("authorization", "")).startswith("User explicitly approved")):
+        raise ResumeError("Source revision lacks substantive review and approval scope")
+    old_catalog = []
+    replacement_count = 0
+    for mid, live in meanings.items():
+        if mid != expected["meaning_id"]:
+            old_catalog.append(live)
+            continue
+        restored = dict(live)
+        restored_forms = []
+        for form in live["formulations"]:
+            if form["id"] == expected["formulation_id"]:
+                if form["text"] != expected["after_text"]:
+                    raise ResumeError("Current FIP wording differs from reviewed revision")
+                restored_forms.append({**form, "text": expected["before_text"]})
+                replacement_count += 1
+            else:
+                restored_forms.append(form)
+        restored["formulations"] = restored_forms
+        old_catalog.append(restored)
+    if replacement_count != 1 or digest(old_catalog) != previous_digest:
+        raise ResumeError("Unreviewed mathematical source changes beyond approved FIP correction")
+    return {
+        "historical_catalog_digest_matched_after_exact_reversal": True,
+        "authorized_text_revisions": 1,
+        "revised_formulation": expected["formulation_id"],
+        "original_individual_reviews_preserved": True,
+        "external_source_certification": False,
+    }
+
+
+
+
 def inspect(repo: Path, config: dict) -> dict:
     domain = config["domain"]
     original = Workspace(inside(repo, domain["frozen_workspace"]))
@@ -62,9 +138,9 @@ def inspect(repo: Path, config: dict) -> dict:
     if len(reviews) != len(forms) or set(reviewed) != set(forms):
         raise ResumeError("Incomplete or repeated individual formulation decisions")
     catalog_digest = digest(list(meanings.values()))
-    if any(r["meaning_id"] != forms[r["formulation_id"]] or
-           r.get("meaning_catalog_digest") != catalog_digest for r in reviews):
-        raise ResumeError("Stale formulation meaning context or catalog digest")
+    if any(r["meaning_id"] != forms[r["formulation_id"]] for r in reviews):
+        raise ResumeError("Stale formulation to meaning assignment")
+    catalog_review = _validate_meaning_catalog_review_bridge(meanings, reviews, current.root)
     link_ids = [link for r in reviews for link in r["relation_ids"]]
     if len(set(link_ids)) != len(link_ids) or set(link_ids) != set(relations):
         raise ResumeError("Screened links and review coverage differ")
@@ -92,6 +168,7 @@ def inspect(repo: Path, config: dict) -> dict:
         "source_observations": counts["observations"],
         "screened_contextual_meanings": counts["meanings"],
         "reviewed_formulations": len(reviews),
+        "review_catalog_version_evidence": catalog_review,
         "screened_relationships": counts["relations"],
         "review_dispositions": dict(sorted(Counter(r["decision"] for r in reviews).items())),
         "original_priority_firstpass_records": len(firstpass),
