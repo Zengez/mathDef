@@ -34,7 +34,9 @@ from research_pipeline.engine.core import PipelineError, digest
 from research_pipeline.engine.dependency_graph import (
     KEY_RE, graph_path, live_nodes, make_snapshot, missing_key, norm, read,
 )
-from research_pipeline.engine.dependency_review_preflight import review_preflight
+from research_pipeline.engine.dependency_review_preflight import (
+    prepare_review_context, review_preflight,
+)
 from research_pipeline.engine.dependency_seed_overrides import (
     read_events as read_seed_override_events, replay_seed_overrides,
     scan_missing_sources,
@@ -561,6 +563,10 @@ def build_review_packages(snapshot: dict, manifest: dict,
     by_form = defaultdict(list)
     for edit in changes:
         by_form[edit.get("formulation_id")].append(edit)
+    reusable = {row["id"] for row in snapshot.get("candidates", [])
+                if row.get("status") == "unresearched"
+                and not row.get("alias_of")
+                and not row.get("resolved_target_meaning_id")}
     packets, pending = [], []
     for fid in sorted(by_form):
         source, prior = inv["formulations"].get(fid), nodes.get(fid)
@@ -653,10 +659,6 @@ def build_review_packages(snapshot: dict, manifest: dict,
                           f"'{source['display_term']}' and the complete effective "
                           f"predecessor reference list; {len(modified)} references changed.")
         # Validate an entire regenerated snapshot, *before writing any files*.
-        reusable = {row["id"] for row in snapshot.get("candidates", [])
-                    if row.get("status") == "unresearched"
-                    and not row.get("alias_of")
-                    and not row.get("resolved_target_meaning_id")}
         make_snapshot(inv, fid, refs, "complete", full_rationale,
                       reusable_missing_candidate_ids=reusable)
         pending.append({
@@ -681,6 +683,9 @@ def build_review_packages(snapshot: dict, manifest: dict,
 def write_offline_packets(workspace: Path, manifest_path: Path,
                           output_dir: Path, max_per_batch: int = 5) -> dict:
     """Offline preparation only: validate ALL decisions, then write preflights."""
+    output_dir = Path(output_dir).resolve()
+    if output_dir.is_relative_to(graph_path(workspace).resolve()):
+        raise PipelineError("Offline output must stay outside the dependency graph")
     snapshot = load_live_snapshot(workspace)
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     packets = build_review_packages(snapshot, manifest, max_per_batch)
@@ -692,7 +697,12 @@ def write_offline_packets(workspace: Path, manifest_path: Path,
         for path, packet in zip(paths, packets):
             path.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n",
                             encoding="utf-8")
-        preflight = [review_preflight(workspace, path) for path in paths]
+        # The builder groups all changes to a formulation into one amendment;
+        # packets are therefore disjoint. Each preflight still simulates its
+        # own node dictionary, with unchanged authoritative preconditions.
+        prepared = prepare_review_context(workspace)
+        preflight = [review_preflight(workspace, path, prepared_context=prepared)
+                     for path in paths]
     except Exception:
         for path in paths:
             path.unlink(missing_ok=True)

@@ -3,10 +3,11 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from research_pipeline.engine.core import PipelineError, Workspace, digest
 from research_pipeline.engine.dependency_graph import (
-    graph_path, inventory_sync, live_nodes, missing_key, read, store,
+    amend, graph_path, inventory_sync, live_nodes, missing_key, read, store,
 )
 from research_pipeline.engine.dependency_audit_acceleration import (
     audit_fingerprint, math_signature, rank_findings, validate_review_ledger,
@@ -645,6 +646,56 @@ class GlobalAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(PipelineError, "overwrit"):
             write_offline_packets(self.root, manifest_path, out)
 
+
+    def test_export_reuses_one_preflight_context_and_keeps_complete_nodes(self):
+        changes = [self.change()]
+        # The second synthetic node has no references, so add one before taking
+        # the review snapshot; all writes stay in this disposable fixture.
+        inv = read(self.graph / "INVENTORY.json")
+        amend(self.root, [{
+            "amendment_id": "amend.fixture.beta-baseline",
+            "formulation_id": "form.beta",
+            "version_sha256": inv["formulations"]["form.beta"]["version_sha256"],
+            "expected_node_sha256": digest(self.snapshot()["nodes"]["form.beta"]),
+            "reviewed_by": "Fixture reviewer",
+            "reason": "This fixture adds a reviewed local notation reference using append-only amendment.",
+            "complete": True,
+            "references": [{"phrase": "local notation", "state": "external",
+                            "disposition": "Only local notation in this fixture statement."}],
+            "review_rationale": "Reviewed the entire fixture source and its local notation."}])
+        snapshot = self.snapshot()
+        changes[0]["expected_node_sha256"] = digest(snapshot["nodes"]["form.alpha"])
+        node = snapshot["nodes"]["form.beta"]
+        changes.append({"formulation_id": "form.beta",
+                        "expected_node_sha256": digest(node),
+                        "expected_occurrence_id": node["references"][0]["occurrence_id"],
+                        "updates": {"disposition": "Reviewed this whole source; local notation remains external."},
+                        "reason": "Read the complete fixture and preserve the source-local notation classification."})
+        manifest = self.manifest(changes)
+        path = self.root / "manifest.json"
+        path.write_text(json.dumps(manifest))
+        before = {str(f.relative_to(self.graph)): f.read_bytes()
+                  for f in self.graph.rglob("*") if f.is_file()}
+        with patch("research_pipeline.engine.dependency_review_preflight.live_nodes",
+                   wraps=live_nodes) as replay:
+            report = write_offline_packets(self.root, path, self.root / "export", max_per_batch=1)
+        self.assertEqual(replay.call_count, 1)
+        self.assertEqual(report["packet_count"], 2)
+        self.assertTrue(all(x["status"] == "mechanically_valid_not_applied"
+                            for x in report["preflight"]))
+        self.assertEqual(before, {str(f.relative_to(self.graph)): f.read_bytes()
+                                  for f in self.graph.rglob("*") if f.is_file()})
+
+    def test_offline_export_rejects_graph_and_symlink_destinations(self):
+        manifest_path = self.root / "manifest.json"
+        manifest_path.write_text(json.dumps(self.manifest([self.change()])))
+        for destination in [self.graph, self.graph / "inbox", self.graph / "other"]:
+            with self.assertRaisesRegex(PipelineError, "outside the dependency graph"):
+                write_offline_packets(self.root, manifest_path, destination)
+        linked = self.root / "linked-graph"
+        linked.symlink_to(self.graph, target_is_directory=True)
+        with self.assertRaisesRegex(PipelineError, "outside the dependency graph"):
+            write_offline_packets(self.root, manifest_path, linked / "inbox")
 
 if __name__ == "__main__":
     unittest.main()

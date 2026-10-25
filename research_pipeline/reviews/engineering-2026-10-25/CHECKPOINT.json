@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "phase": "C_registry_optimization_validated",
+  "phase": "C_readonly_preflight_runner_validated",
   "branch": "codex/independent-pipeline-engineering-audit",
   "base_main": "0c682bfd",
   "integrated_pr11_base": "e978ae4d2b8572e532b57fcbacd56333c8ac4d32",
@@ -35,7 +35,13 @@
     "breadth_expansion": "on_hold"
   },
   "finished": false,
-  "next": "Integrate offline preflight context reuse and reusable CI runner; run broader regression suite.",
+  "next": "Measure multi-packet export and review bundle reuse, document CLI and complete final validation.",
   "protected_data_mutations_authorized": false,
-  "registry_fixture_identical_publication_sha256": "4754c55ec24a7560e3e874309132bcf6b740529d8b5d2db89b20c752205a6a2b"
+  "registry_fixture_identical_publication_sha256": "4754c55ec24a7560e3e874309132bcf6b740529d8b5d2db89b20c752205a6a2b",
+  "tests": {
+    "suite": "python -m unittest discover -s research_pipeline/tests",
+    "run": 237,
+    "skipped": 2,
+    "failures": 0
+  }
 }
