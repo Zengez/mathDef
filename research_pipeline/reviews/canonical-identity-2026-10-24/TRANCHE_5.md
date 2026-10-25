@@ -2,7 +2,7 @@
 
 Source-free review under CHAT_ADJUDICATION_TRANCHE4.md; no graph changes. COMPLETE denotes contextual parent coverage, not identity resolution or external-source certification.
 
-**190 additional COMPLETE; cumulative 378 COMPLETE, 0 PARTIAL, 43 untouched.**
+**210 additional COMPLETE; cumulative 398 COMPLETE, 0 PARTIAL, 23 untouched.**
 
 ## 189. maximal finite chain connecting primes — `missing.33bd557af9c1505ff986`
 
@@ -1144,4 +1144,124 @@ Remaining: No external citation or whole-parent theorem certification; source/gr
 
 Remaining: No external certification of DLMF locator/admissibility or automatic conversion of source variants; zero-weight and finite-support degeneracies remain explicitly excluded.
 
-Next: `missing.d617d5cccdce63cce9b6`, first parent `form.wave2.foundation15.abelian-category`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
+## 379. canonical comparison Coim(f) to Im(f) — `missing.d617d5cccdce63cce9b6`
+
+**retain_distinct_missing**, 1/1 parents. The comparison is a specified ARROW, not either object Coim(f), Im(f) or an arbitrary isomorphism between them. Factor f through the kernel of its cokernel; that factor kills ker(f), because the image embedding is monic, so it descends uniquely through coker(ker(f)) to Im(f). This constructs the canonical arrow when the required kernels/cokernels exist. Its invertibility is the extra abelian condition, not a consequence of its construction. In Ab, multiplication2 on Z gives [n]↦2n from Z/0 to2Z with both kernel/quotient maps retained.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 380. finite subcover — `missing.d62283c65bcb9a2492c3`
+
+**retain_distinct_missing**, 1/1 parents. A finite subcover is a finite choice of indices from a SPECIFIED open cover which still covers X. One cover can have a finite subcover on a noncompact space (the cover {X}); compactness quantifies EVERY open cover. Empty X admits the empty finite subcover even if the original cover is empty. A singleton cover is therefore not a test of compactness, and Hausdorffness is not part of this parent. The closed-FIP formulation is complementary data, not identity with a finite subcover itself.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 381. adjacent vertices connected by edge {u,v} — `missing.d6c06597f8ca65e951f2`
+
+**retain_distinct_missing**, 1/1 parents. Adjacency is a symmetric relation on DISTINCT vertices in this loopless undirected graph, given by edge membership {u,v}∈E. Incidence instead relates a vertex to an edge; a neighbor set collects all vertices adjacent to a fixed v. The proper-color condition is the further inequality of endpoint colors, not part of adjacency. With k=1 every edgeless graph admits a coloring irrespective of its size, and empty V has the empty map; surjectivity is not required. Loops or directed edges would change the scope.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 382. least nonnegative remainder upon division by m — `missing.d745ad3ce1da1b107f4c`
+
+**retain_distinct_missing**, 1/1 parents. The least nonnegative remainder r is the unique r with a=qm+r and0≤r<m for the fixed positive m. Uniqueness follows because a difference of two such remainders has absolute value<m yet is divisible by m. Negative dividends still give nonnegative remainders: −1 has remainder m−1 when m>1. Equal remainders imply m divides a−b, and conversely divisibility forces their equal bounded representatives. Thus the source equivalence is justified, but a remainder VALUE/construction is not the congruence relation itself. m=1 gives0; m=0 is excluded.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 383. O_X-module — `missing.d7667a9dfe1a62c4108e`
+
+**retain_distinct_missing**, 1/1 parents. An O_X-module is a sheaf of abelian groups with sectionwise O_X(U)-actions compatible with restrictions. It is not one fixed R-module, the sheaf of rings O_X alone, or the property of quasi-coherence. On affine Spec(R), ~M gives examples and the source defines its quasi-coherent subclass by isomorphism to such an associated sheaf. Sections on D(f) form localized modules; the collection of those sections does not equal the sheaf as an object. The affine identification does not remove sheaf/restriction structure.
+
+Remaining: Structure-sheaf/unit conventions remain recorded; no automatic O_X-module-to-R-module or quasi-coherent-property identity.
+
+## 384. unit vector u∈R^n — `missing.d7c607e0f20a0ae9a83c`
+
+**retain_distinct_missing**, 1/1 parents. A unit vector satisfies Euclidean norm1, so it is nonzero and chooses normalized direction, not the scalar1 or an arbitrary vector-space element. Replacing u by c*u for real c rescales the line-restriction derivative when it exists, so an unnormalized direction changes the parametrization. For n=0 no unit vector exists, and any use of one implicitly requires a nonzero Euclidean space. The source differentiability assumption is stronger than merely existing coordinate partials; the held gradient alternative remains unadmitted, exactly as the observation documents.
+
+Remaining: No promotion of the known suspect gradient-existence alternative; existing derivative-target scope is a separate reconciliation lead, not resolved by this unit-vector review.
+
+## 385. infimum of admissible bounds — `missing.d90bc393eeba8fd1be9e`
+
+**retain_distinct_missing**, 1/1 parents. An infimum is a greatest lower bound, not necessarily a member of the set or a minimum. For the zero operator every M>0 is admissible but the infimum is0, unattained by that set. Boundedness assures some admissible bound, and the displayed extended nonnegative order has an infimum; for X=0 all positive bounds again work. Supremum is the dual notion and cannot be substituted with the same order. This is neither an operator nor the inequality predicate itself. The known printed wrong-codomain norm is excluded from this accepted formula.
+
+Remaining: Later cite the corrected codomain formula only; no endorsement of the held wrong-subscript source alternative.
+
+## 386. isomorphism of ordered groups with Z — `missing.dd5496ed1d723a534bec`
+
+**retain_distinct_missing**, 1/1 parents. An ordered-group isomorphism to Z is a bijective homomorphism preserving and reflecting order, stronger than an abstract group bijection or group isomorphism. On Z, n↦−n is a group automorphism but reverses the usual order and is inadmissible. The value group being trivial is not this condition, so valuation fields are excluded by this recorded DVR convention. A chosen uniformizer or Noetherian presentation is not part of this candidate; equivalences to those criteria need their hypotheses rather than an automatic identity.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 387. countably infinite discrete support X⊆R — `missing.dd62440daef1ff9237d5`
+
+**retain_distinct_missing**, 1/1 parents. The canonical scope is a countably ATOMIC sum over distinct real points, not necessarily a discrete subspace topology. For X={0} union {1/n:n≥1}, assign w_0=1/2 and w_(1/n)=2^(−n−1); all weights are positive and all absolute moments finite since |x|≤1, yet0 is not isolated in X. Thus imposing topological discreteness would strengthen the source. Infinite support prevents a nonzero polynomial vanishing at every support point, unlike finite support. It is not the support SET of a measure in the closed-support sense, which may include additional accumulation points.
+
+Remaining: No new topological-discreteness or closed-support assertion; external citation/admissibility validation remains later.
+
+## 388. restriction of the structure sheaf O_X|_U — `missing.dd82e10b4c02824d8ab9`
+
+**retain_distinct_missing**, 1/1 parents. For open U⊆X, every open V of U is open in X, so O_X|_U(V)=O_X(V) with inherited restrictions defines the restricted sheaf. Its stalk at u is canonically O_(X,u), preserving locality of the stalk ring. This is not merely restricting a function or one section; it produces a sheaf on a different base. For nonopen inclusions the simple formula on all subspace opens fails without an inverse-image sheaf construction, so openness matters. Nor is it the same as direct image to X.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 389. finite intersection property of family — `missing.ded806b239b007c8af8c`
+
+**retain_distinct_missing**, 1/1 parents. Use the already corrected NONEMPTY family of closed sets. FIP tests all nonempty finite subfamilies; a nonempty closed family with empty total intersection yields by complements an open cover. Compactness supplies a finite subcover, hence a finite subfamily with empty intersection, contradicting FIP. Conversely a noncompact space has an open cover with no finite subcover; its complements are a nonempty closed FIP family with empty total intersection. On X=empty no nonempty family of its closed subsets can have FIP, so the criterion holds vacuously, agreeing with compactness. The empty family is explicitly outside this source quantifier; do not reintroduce the previously corrected error.
+
+Remaining: FIP convention follows the accepted stored correction; no Hausdorff requirement or compactness self-resolution added.
+
+## 390. evaluation map sigma ↦ sigma(a) — `missing.e329000e6f01aaf3d31b`
+
+**retain_distinct_missing**, 1/1 parents. For a fixed a∈E, evaluation takes an automorphism sigma to its value sigma(a) in E. It is generally not a group homomorphism into the field’s additive or multiplicative group: evaluation at0 is constantly0 and cannot preserve the multiplicative identity. With E discrete, the inverse image of {b} consists of automorphisms carrying a to b; the initial topology makes these fibres open. Polynomial evaluation instead takes a polynomial as input and applies a ring-map substitution. The maps for all a collectively separate automorphisms, but one evaluation need not be injective.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 391. distance between sets inf d(a,b) — `missing.e50c8e4250f586e7f28e`
+
+**retain_distinct_missing**, 1/1 parents. The set distance is an infimum of pointwise distances, with inf(empty)=+infinity explicitly chosen. It is symmetric but is not a metric on all subsets: disjoint (0,1),(1,2) have distance0, and A={0},B={0,2},C={2} give distances0,0,2, violating a triangle inequality on subsets. If one set is empty, outer-measure additivity reduces to mu*(B)=0+mu*(B), so the infinite-distance convention is consistent with the outer-measure axiom mu*(empty)=0. Positive separation is stronger than disjointness and is the source’s restricted additivity antecedent.
+
+Remaining: No Hausdorff distance substitution or full countable-additivity claim.
+
+## 392. diagonal entries a_ii — `missing.e800fa4f698affae8100`
+
+**retain_distinct_missing**, 1/1 parents. The diagonal extraction selects a_ii for matching row/column indices, producing entries or their indexed list, not their sum, determinant or the diagonal MATRIX with off-diagonal entries killed. For [[1,9],[8,2]] the main diagonal entries are1,2 while trace is3. This is coordinate-dependent matrix data; an arbitrary endomorphism has no specified diagonal until a basis is chosen, even though trace becomes basis-invariant. Positive n is explicit in this parent. Kronecker delta instead tests equality of indices to construct identity-matrix entries.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 393. bijections between the morphisms L(X) to Y in D and X to R(Y) in C — `missing.e834133a2cdc7390f1de`
+
+**source_convention_deferral**, 1/1 parents. The displayed bijections pair ARROWS LX→Y with ARROWS X→RY, not objects LX with RY (which lie in different categories). Naturality in both variables is separately required; arbitrary equal cardinalities of hom-sets do not establish an adjunction. The candidate labels these as SET-valued hom families, whereas the bare source gives no explicit local-smallness or universe convention. Ordinary unrestricted categories may have proper-class hom collections, so this candidate scope needs a bounded size deferral rather than narrowing all categories to small ones. The X-variable is contravariant on both hom functors.
+
+Remaining: Later settle local-smallness/universe or class-valued adjunction convention before a Set-valued natural-isomorphism alias; no object-level or small-category resolution.
+
+## 394. sheaf ~M associated with some R-module M — `missing.e86ff089d9c0949b7dbc`
+
+**retain_distinct_missing**, 1/1 parents. The tilde construction takes an R-module M to a sheaf on Spec(R) with principal-open sections M_f and localization restrictions. It is not an arbitrary O_X-module, its global section module alone, or the existence predicate of quasi-coherence. A quasi-coherent sheaf may be isomorphic to ~M without being literally its chosen construction. Resolving this prerequisite to the whole quasi-coherent-sheaf parent would conflate construction and property and create a self-dependency. The coefficient unital/commutative affine scope and gluing compatibility remain substantive inputs.
+
+Remaining: No circular self-resolution to quasi-coherent sheaf; source citations and construction existence are not externally certified.
+
+## 395. order isomorphism between well-ordered sets — `missing.e892b9d8b91c184b0801`
+
+**retain_distinct_missing**, 1/1 parents. An order isomorphism is a bijection preserving and reflecting the order. Equal underlying cardinality does not suffice: omega and omega+1 are countably infinite well-orders, but the latter has a largest element and the former does not. For well-orders the isomorphism identifies order type, not necessarily literally identical underlying sets. Cofinality minimizes order type of a cofinal subset; it is neither the order-isomorphism map itself nor categorical cofinal functor terminology. Group/field isomorphisms impose additional algebraic operations. The empty ordinal has empty cofinal subset and cofinality0 under the literal convention.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 396. simple zero of reduced polynomial f-bar over κ — `missing.e8c6173a1007856e7c96`
+
+**retain_distinct_missing**, 1/1 parents. At a root alpha write f=(T−alpha)g; differentiation gives f′(alpha)=g(alpha). Thus f′(alpha)≠0 means (T−alpha) does not divide g and the root is simple, while both values0 mean multiplicity at least2. This works in every characteristic with the FORMAL derivative; f(T)=T^p−a can have zero derivative in characteristic p. In the source the operations occur after coefficient reduction to the residue FIELD, and only such simple residue roots are covered by the lifting criterion. A root of f in R and its residue are different typed data.
+
+Remaining: No arbitrary multiple-root lifting or automatic ring-level multiplicity equivalence; existing local-ring convention remains.
+
+## 397. sequential convergence in product topology — `missing.e99038d8cfc4d6d977a8`
+
+**retain_distinct_missing**, 1/1 parents. Product convergence implies coordinate convergence by continuous projections. Conversely a basic product neighborhood restricts finitely many coordinates; take the maximum of their eventual cutoffs to obtain eventual membership, giving product convergence for arbitrary D. This uses no countability of D or Hausdorffness of T, and empty D gives the unique empty function. It differs from uniform convergence, whose cutoff works for every coordinate at once; x^n on [0,1) converges pointwise to0 but not uniformly. Infinitely-often neighborhood visits are also weaker than eventual containment.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+## 398. zero ordinal 0=∅ — `missing.ea82fcbc6bf970ca5459`
+
+**retain_distinct_missing**, 1/1 parents. The zero von Neumann ordinal is literally empty, hence has no elements and is least. Every successor alpha union {alpha} contains alpha and is nonempty, so0 is not a successor. The parent nevertheless excludes0 by an explicit NONZERO clause from limit ordinals; dropping that clause changes the convention. Empty set as a generic set, the zero integer difference class, zero vector and additive identity of an arbitrary group have different typed roles and must not be silently identified as mathematical meanings.
+
+Remaining: No external citation or whole-parent theorem certification; source/graph unchanged.
+
+Next: `missing.eb8e1a62d06acf7c487c`, first parent `form.ab260940ea9c523d.locally-connected-space`. Full source/node hashes, provenance, effective references and occurrence-specific assessments are in the JSONL evidence.
