@@ -1354,6 +1354,864 @@
       "research_status": "independent mathematical research draft; initial source lead; not human certified",
       "original_research_priority": 415,
       "mathematical_scope_note": "Real topology: deleted δ-neighborhood {x∈ℝ:0<|x−a|<δ} of a, intersected with the function domain; the center a itself is excluded."
+    },
+    {
+      "id": "meaning.wave2.direct.50fc57153b93520a247a",
+      "candidate_id": "missing.50fc57153b93520a247a",
+      "term": "quotient ring",
+      "context": "Commutative algebra · quotient of a commutative unital ring by an ideal",
+      "aliases": [
+        "factor ring",
+        "residue class ring"
+      ],
+      "definition": "Let R be a commutative ring with identity and I an ideal of R. The quotient ring R/I consists of cosets r+I, with (r+I)+(s+I)=(r+s)+I and (r+I)(s+I)=rs+I. Its identity is 1_R+I. The canonical surjective ring homomorphism R→R/I has kernel I; I may equal R, giving the zero ring.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.two-sided-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.ring-map-unital",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 3
+    },
+    {
+      "id": "meaning.wave2.direct.b86257b3cce62907e97e",
+      "candidate_id": "missing.b86257b3cce62907e97e",
+      "term": "inverse image of a subset",
+      "context": "Set theory · preimage under an arbitrary mapping",
+      "aliases": [
+        "preimage",
+        "inverse image"
+      ],
+      "definition": "For a mapping f:X→Y and a subset B⊆Y, the inverse image (or preimage) is f⁻¹[B]={x∈X : f(x)∈B}. It is defined for every function, whether or not f is invertible; the notation f⁻¹[B] does not assert an inverse function exists.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://math.libretexts.org/Bookshelves/Analysis/Introduction_to_Mathematical_Analysis_I_%28Lafferriere_Lafferriere_and_Nguyen%29/01%3A_Tools_for_Analysis/1.2%3A_Functions",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.mapping-element-assignment",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 4
+    },
+    {
+      "id": "meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+      "candidate_id": "missing.9db64b2f9cdb8258e3d8",
+      "term": "polynomial ring",
+      "context": "Commutative algebra · polynomial algebra in finitely or arbitrarily many indeterminates",
+      "aliases": [
+        "ring of polynomials",
+        "polynomial algebra"
+      ],
+      "definition": "For a commutative unital ring R and a set I of commuting indeterminates (X_i)_{i∈I}, the polynomial ring R[X_i : i∈I] consists of finite R-linear combinations of formal monomials ∏_{i∈I}X_i^{α_i}, where each exponent family α:I→ℕ has finite support. Addition is coefficientwise and multiplication distributes using exponent addition. A polynomial depends on only finitely many variables, even when I is infinite; it is not identified with its evaluation function.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Polynomial ring",
+          "url": "https://encyclopediaofmath.org/wiki/Polynomial_ring",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly checked: finite and infinite indeterminate conventions."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 5
+    },
+    {
+      "id": "meaning.wave2.direct.38969d113c4ee1db6e98",
+      "candidate_id": "missing.38969d113c4ee1db6e98",
+      "term": "residue field of a local ring",
+      "context": "Commutative algebra · residue field and residue field at a prime",
+      "aliases": [
+        "residue field",
+        "kappa of a prime"
+      ],
+      "definition": "If (A,𝔪) is a nonzero commutative local ring with its unique maximal ideal 𝔪, its residue field is A/𝔪. For a prime ideal 𝔭 of a commutative ring R, κ(𝔭)=R_𝔭/𝔭R_𝔭, canonically isomorphic to the fraction field of the integral domain R/𝔭. The same construction applies to the local stalk at a scheme point.",
+      "sources": [
+        {
+          "title": "Stacks Project — Local rings, Definition 10.18.1",
+          "url": "https://stacks.math.columbia.edu/tag/07BH",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly checked: residue field of local ring and of prime localization."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.50fc57153b93520a247a",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.commutative-prime-ideal",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 6
+    },
+    {
+      "id": "meaning.wave2.direct.5645554e6bee6b40edda",
+      "candidate_id": "missing.5645554e6bee6b40edda",
+      "term": "commutative unital ring",
+      "context": "Abstract algebra · commutative associative ring with specified multiplicative identity",
+      "aliases": [
+        "commutative ring with identity",
+        "commutative ring with one"
+      ],
+      "definition": "A commutative unital ring R has an abelian group (R,+,0), an associative commutative multiplication, a specified element 1_R satisfying 1_Ra=a=a1_R for all a∈R, and both distributive laws. Unless a nonzero or nontrivial ring is explicitly required, the one-element zero ring with 0=1 is permitted.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.associative-ring-identity-optional",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 7
+    },
+    {
+      "id": "meaning.wave2.direct.7462fa5f90275b34779a",
+      "candidate_id": "missing.7462fa5f90275b34779a",
+      "term": "free left module",
+      "context": "Module theory · free unital left R-module of arbitrary rank",
+      "aliases": [
+        "free R-module",
+        "free module"
+      ],
+      "definition": "Let R be an associative unital ring and F a unital left R-module. The module F is free if it has a basis B such that every element of F has a unique finite expression ∑_{b∈B} r_b b with coefficients r_b∈R. Equivalently F≅⊕_{b∈B}R as a left R-module. The empty basis gives the zero module; no finite-rank assumption is made.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://math.ucla.edu/~sharifi/notes/algebra-ch05.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.134e1c9f45dd933fdc36",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 8
+    },
+    {
+      "id": "meaning.wave2.direct.6baca7285e379e18e82b",
+      "candidate_id": "missing.6baca7285e379e18e82b",
+      "term": "quotient module",
+      "context": "Module theory · quotient by a left submodule",
+      "aliases": [
+        "factor module",
+        "quotient R-module"
+      ],
+      "definition": "Let R be a unital ring, M a left R-module, and N≤M an R-submodule. The quotient M/N is the set of additive cosets m+N, with (m+N)+(m′+N)=(m+m′)+N and r(m+N)=rm+N. The natural projection M→M/N is surjective and R-linear with kernel N.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://crypto.stanford.edu/pbc/notes/commalg/submodule.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation76.submodule",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.c8a3e68d130a4f68d108",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 9
+    },
+    {
+      "id": "meaning.wave2.direct.4ba0cfe171bbe93d0c9a",
+      "candidate_id": "missing.4ba0cfe171bbe93d0c9a",
+      "term": "injective function",
+      "context": "Set theory · one-to-one function",
+      "aliases": [
+        "injective mapping",
+        "one-to-one function",
+        "injection"
+      ],
+      "definition": "A function f:X→Y is injective if f(x)=f(x′) implies x=x′ for all x,x′∈X. Equivalently, distinct inputs never have the same output. This is a property of the underlying mapping and does not impose additional algebraic or topological structure.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Applied_Discrete_Structures_%28Doerr_and_Levasseur%29/07%253A_Functions/7.02%253A_Properties_of_Functions",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.mapping-element-assignment",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 10
+    },
+    {
+      "id": "meaning.wave2.direct.c8a3e68d130a4f68d108",
+      "candidate_id": "missing.c8a3e68d130a4f68d108",
+      "term": "surjective function",
+      "context": "Set theory · onto the specified codomain",
+      "aliases": [
+        "surjective mapping",
+        "onto function",
+        "surjective R-linear map"
+      ],
+      "definition": "A function f:X→Y is surjective if for every y∈Y there exists x∈X with f(x)=y; equivalently f(X)=Y. For an R-linear map, surjectivity still means this underlying-set condition together with separately specified R-linearity.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/An_Introduction_to_Proof_via_Inquiry-Based_Learning_%28Ernst%29/08%3A_New_Page/8.02%3A_New_Page",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.mapping-element-assignment",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 11
+    },
+    {
+      "id": "meaning.wave2.direct.15bb96cb26d587868bbe",
+      "candidate_id": "missing.15bb96cb26d587868bbe",
+      "term": "categorical isomorphism",
+      "context": "Category theory · invertible morphism",
+      "aliases": [
+        "isomorphism of a category",
+        "invertible morphism"
+      ],
+      "definition": "A morphism f:X→Y in a category C is an isomorphism if there exists a morphism g:Y→X such that g∘f=id_X and f∘g=id_Y. Such g is uniquely determined and is called the inverse of f. No underlying-set description or bijectivity hypothesis is assumed.",
+      "sources": [
+        {
+          "title": "Stacks Project — Definition 4.2.4",
+          "url": "https://stacks.math.columbia.edu/tag/0017",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly checked: two-sided inverse for a morphism."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 12
+    },
+    {
+      "id": "meaning.wave2.direct.066b1d1b9032a2e86bdd",
+      "candidate_id": "missing.066b1d1b9032a2e86bdd",
+      "term": "supremum",
+      "context": "Order theory · least upper bound in a partially ordered set",
+      "aliases": [
+        "least upper bound",
+        "sup(A)"
+      ],
+      "definition": "For a subset A of a partially ordered set (P,≤), an element u∈P is the supremum sup(A) if a≤u for every a∈A and u≤v for every upper bound v∈P of A. If it exists, it is unique. A supremum need not be an element of A, and arbitrary partially ordered sets need not contain one for every subset.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Upper and lower bounds",
+          "url": "https://encyclopediaofmath.org/wiki/Least_upper_bound",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly checked least-upper-bound condition; formulation generalized to a poset."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.709d3d2f82950c5b.partially-ordered-set",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 14
+    },
+    {
+      "id": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+      "candidate_id": "missing.6614c6b7c105cc0e6415",
+      "term": "hom-set",
+      "context": "Category theory · morphisms between two fixed objects",
+      "aliases": [
+        "morphism set",
+        "Hom_C(X,Y)",
+        "hom-collection"
+      ],
+      "definition": "For objects X and Y in a category C, Hom_C(X,Y) (also written Mor_C(X,Y)) is the collection of all morphisms X→Y. In a locally small category it is a set; for a size-unrestricted category it may be a proper class, depending on the foundations.",
+      "sources": [
+        {
+          "title": "Stacks Project — Definition 4.2.1",
+          "url": "https://stacks.math.columbia.edu/tag/0014",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly checked small-category hom-set formulation; larger-category size caveat supplied separately."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 15
+    },
+    {
+      "id": "meaning.wave2.direct.87eab2bf93382f4b93d6",
+      "candidate_id": "missing.87eab2bf93382f4b93d6",
+      "term": "monic polynomial",
+      "context": "Polynomial algebra · univariate monic polynomial over a commutative unital ring",
+      "aliases": [
+        "monic",
+        "monic univariate polynomial"
+      ],
+      "definition": "A polynomial f(T)=a_nT^n+⋯+a_0∈R[T] of degree n over a nonzero commutative unital ring R is monic if its leading coefficient a_n is 1_R. The constant polynomial 1_R is monic of degree zero; the zero polynomial is not monic under this convention.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://math.libretexts.org/Bookshelves/Abstract_and_Geometric_Algebra/Abstract_Algebra%3A_Theory_and_Applications_%28Judson%29/17%3A_Polynomials/17.01%3A_Polynomial_Rings",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.nonzero-polynomial-degree",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 16
+    },
+    {
+      "id": "meaning.wave2.direct.8e961cb57c3f60513be8",
+      "candidate_id": "missing.8e961cb57c3f60513be8",
+      "term": "distinguished principal open subset",
+      "context": "Algebraic geometry · basic open D(f) of an affine spectrum",
+      "aliases": [
+        "basic open D(f)",
+        "standard open D(f)",
+        "principal open subset"
+      ],
+      "definition": "Let R be a commutative unital ring and f∈R. The distinguished (or basic principal) open subset D(f) of Spec(R) is {𝔭∈Spec(R) : f∉𝔭}. It is the complement of V((f)), and such subsets form a basis for the Zariski topology on Spec(R).",
+      "sources": [
+        {
+          "title": "Stacks Project — Definition 10.17.1",
+          "url": "https://stacks.math.columbia.edu/tag/00DZ",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly checked D(f) as primes not containing f."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.21c2ca138324d040.spectrum-ring",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.commutative-prime-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.45359d317b7e3aba73da",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 17
+    },
+    {
+      "id": "meaning.wave2.direct.e43d4f1922e210cc373a",
+      "candidate_id": "missing.e43d4f1922e210cc373a",
+      "term": "product of ideals",
+      "context": "Commutative algebra · product IJ and powers of ideals",
+      "aliases": [
+        "ideal product",
+        "IJ",
+        "ideal power"
+      ],
+      "definition": "For ideals I,J of a commutative ring R, their product IJ is the ideal consisting of all finite sums ∑_k a_kb_k with a_k∈I and b_k∈J. This is generally smaller than I∩J. For n≥1, I^n is the n-fold product; in a unital ring one sets I⁰=R by the usual convention.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.two-sided-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 18
+    },
+    {
+      "id": "meaning.wave2.direct.fb78af5e23099cc8d59b",
+      "candidate_id": "missing.fb78af5e23099cc8d59b",
+      "term": "kernel of a ring homomorphism",
+      "context": "Commutative algebra · kernel ideal of a unital ring map",
+      "aliases": [
+        "kernel ideal",
+        "ker(φ) of a ring map"
+      ],
+      "definition": "For a unital ring homomorphism φ:R→S, its kernel ker(φ)={r∈R : φ(r)=0_S} is a two-sided ideal of R. If φ is surjective, the map R/ker(φ)→S sending r+ker(φ) to φ(r) is a well-defined ring isomorphism.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.ring-map-unital",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.two-sided-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.50fc57153b93520a247a",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 19
+    },
+    {
+      "id": "meaning.wave2.direct.134e1c9f45dd933fdc36",
+      "candidate_id": "missing.134e1c9f45dd933fdc36",
+      "term": "direct sum of modules",
+      "context": "Module theory · external direct sum of an indexed family",
+      "aliases": [
+        "external direct sum",
+        "direct sum ⊕ M_i"
+      ],
+      "definition": "For a family (M_i)_{i∈I} of left modules over the same ring R, the direct sum ⊕_{i∈I}M_i consists of tuples (m_i)∈∏_{i∈I}M_i whose support {i∈I : m_i≠0} is finite, with operations componentwise. The empty direct sum is the zero module. Unlike the direct product, an infinite direct sum permits only finitely many nonzero components.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://math.ucla.edu/~sharifi/notes/algebra-ch05.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 20
+    },
+    {
+      "id": "meaning.wave2.direct.170fcdda487b9180137e",
+      "candidate_id": "missing.170fcdda487b9180137e",
+      "term": "intersection of sets",
+      "context": "Set theory · binary intersection",
+      "aliases": [
+        "set intersection",
+        "A∩B"
+      ],
+      "definition": "For sets A and B, their intersection is A∩B={x : x∈A and x∈B}. It contains exactly those elements common to both sets; no nonemptiness assumption is needed.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://math.libretexts.org/Courses/Monroe_Community_College/MTH_220_Discrete_Math/4%3A_Sets/4.3%3A_Unions_and_Intersections",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 21
+    },
+    {
+      "id": "meaning.wave2.direct.189a1049986dd4f651f4",
+      "candidate_id": "missing.189a1049986dd4f651f4",
+      "term": "set difference",
+      "context": "Set theory · relative complement",
+      "aliases": [
+        "relative complement",
+        "A minus B"
+      ],
+      "definition": "For sets A and B, the set difference (relative complement) is A∖B={x∈A : x∉B}. If A,B⊆X, then A∖B=A∩(X∖B). The notation does not refer to numerical subtraction.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Transition_to_Higher_Mathematics_%28Dumas_and_McCarthy%29/01%3A_New_Page/1.02%3A_New_Page",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.170fcdda487b9180137e",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 22
+    },
+    {
+      "id": "meaning.wave2.direct.45359d317b7e3aba73da",
+      "candidate_id": "missing.45359d317b7e3aba73da",
+      "term": "principal ideal",
+      "context": "Commutative algebra · ideal generated by one element",
+      "aliases": [
+        "principal ideal (a)",
+        "ideal generated by one element"
+      ],
+      "definition": "For a commutative unital ring R and a∈R, the principal ideal generated by a is (a)=aR={ar:r∈R}. It is the smallest ideal of R containing a. In particular (0)={0} and (1)=R, including the zero-ring convention.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.two-sided-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 24
+    },
+    {
+      "id": "meaning.wave2.direct.55e6dc72d6d3bc1d5669",
+      "candidate_id": "missing.55e6dc72d6d3bc1d5669",
+      "term": "bijection",
+      "context": "Set theory · one-to-one correspondence",
+      "aliases": [
+        "bijective mapping",
+        "one-to-one correspondence"
+      ],
+      "definition": "A function f:X→Y is bijective if it is both injective and surjective. Equivalently, it admits a unique two-sided inverse function f⁻¹:Y→X with f⁻¹∘f=id_X and f∘f⁻¹=id_Y. A bijection of underlying sets need not be an isomorphism for additional mathematical structures.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Applied_Discrete_Structures_%28Doerr_and_Levasseur%29/07%253A_Functions/7.02%253A_Properties_of_Functions",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.4ba0cfe171bbe93d0c9a",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.c8a3e68d130a4f68d108",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.mapping-element-assignment",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 25
+    },
+    {
+      "id": "meaning.wave2.direct.dd36779bc0facafd958e",
+      "candidate_id": "missing.dd36779bc0facafd958e",
+      "term": "power set",
+      "context": "Set theory · collection of all subsets",
+      "aliases": [
+        "powerset",
+        "𝒫(X)"
+      ],
+      "definition": "For any set X, its power set 𝒫(X)={A : A⊆X} is the set of all subsets of X. The empty set and X belong to 𝒫(X); in particular 𝒫(∅)={∅}.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Applied_Discrete_Structures_%28Doerr_and_Levasseur%29/01%3A_Set_Theory/1.03%3A_Cartesian_Products_and_Power_Sets",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 27
+    },
+    {
+      "id": "meaning.wave2.direct.16a17500cd760e24ed49",
+      "candidate_id": "missing.16a17500cd760e24ed49",
+      "term": "square-zero ideal",
+      "context": "Commutative algebra · ideal whose square is zero",
+      "aliases": [
+        "ideal with I²=0"
+      ],
+      "definition": "An ideal I of a commutative ring R is square-zero if I²=(0). Equivalently ab=0 for all a,b∈I. Every square-zero ideal is nilpotent, but not every nilpotent ideal is square-zero.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://stacks.math.columbia.edu/tag/04EA",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.e43d4f1922e210cc373a",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.two-sided-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.003cb1cc70cf5a2c.nilpotent-ideal",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 28
+    },
+    {
+      "id": "meaning.wave2.direct.2ca12da5425144816e3c",
+      "candidate_id": "missing.2ca12da5425144816e3c",
+      "term": "open neighborhood of a point",
+      "context": "General topology · open set containing a point",
+      "aliases": [
+        "open neighborhood",
+        "open neighbourhood"
+      ],
+      "definition": "Let (X,τ) be a topological space and x∈X. An open neighborhood of x is a set U∈τ with x∈U. More generally, a neighborhood of x need only contain some such open neighborhood, so it need not itself be open.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://proofwiki.org/wiki/Definition%3AOpen_Neighborhood",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 29
+    },
+    {
+      "id": "meaning.wave2.direct.08a2969d79ad1ddc1922",
+      "candidate_id": "missing.08a2969d79ad1ddc1922",
+      "term": "contraction of a prime ideal",
+      "context": "Commutative algebra · inverse-image prime along a ring homomorphism",
+      "aliases": [
+        "contracted prime",
+        "contraction of ideals"
+      ],
+      "definition": "Let φ:R→S be a unital homomorphism of commutative unital rings and let 𝔮 be a prime ideal of S. Its contraction to R is the prime ideal φ⁻¹(𝔮)={r∈R:φ(r)∈𝔮}. When φ is an inclusion R⊆S, this is 𝔮∩R.",
+      "sources": [
+        {
+          "title": "Stacks Project — Basic notions, item 41",
+          "url": "https://stacks.math.columbia.edu/tag/00AR",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly checked inverse image of a prime under a ring map."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.commutative-prime-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.ring-map-unital",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.b86257b3cce62907e97e",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 30
+    },
+    {
+      "id": "meaning.wave2.direct.16d2c0615065e12050a2",
+      "candidate_id": "missing.16d2c0615065e12050a2",
+      "term": "prime number",
+      "context": "Elementary number theory · positive prime integer",
+      "aliases": [
+        "prime integer",
+        "prime positive integer"
+      ],
+      "definition": "A positive integer p is prime if p>1 and its only positive divisors are 1 and p. The integer 1 is not prime. This elementary notion is distinct in definition from a prime ideal, although they are related algebraically.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Retained source locator from the earlier tentative candidate research; not represented as a newly checked passage."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.integer59.integer-ring",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
+      ],
+      "original_priority": 31
     }
   ]
 }
