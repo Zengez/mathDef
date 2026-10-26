@@ -3977,6 +3977,111 @@
         "The empty space is allowed, and completeness/sequential compactness are interpreted vacuously where appropriate."
       ],
       "research_status": "assistant-researched candidate incorporation; mathematical conventions explicitly reviewed; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-extended-real-function-20261026",
+      "candidate_id": "postwave-scan:rank-63",
+      "term": "extended-real-valued function",
+      "context": "Convex analysis · function with values in the extended real line",
+      "aliases": [
+        "extended real-valued function"
+      ],
+      "definition": "Let X be a set. An extended-real-valued function on X is a function f:X→ℝ∪{−∞,+∞}. Unlike an ordinary real-valued function, it may attain positive or negative infinity. In convex analysis a proper extended-real-valued function is one that never equals −∞ and is finite somewhere; properness is an additional assumption and is not part of this definition.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Epigraph / Supergraph (extended-real-valued function)",
+          "url": "https://encyclopediaofmath.org/wiki/Epigraph",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-real-vector-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The codomain includes BOTH −∞ and +∞.",
+        "No measurability, semicontinuity, convexity or properness is assumed."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-integrable-adapted-sequence-20261026",
+      "candidate_id": "postwave-scan:rank-70",
+      "term": "integrable adapted sequence",
+      "context": "Discrete stochastic processes · adapted real-valued process integrable at every time",
+      "aliases": [
+        "integrable adapted process"
+      ],
+      "definition": "Let (Ω,ℱ,P) be a probability space and (ℱ_n)_{n≥0} a filtration of sub-σ-algebras. A sequence of real-valued random variables (X_n)_{n≥0} is integrable and adapted to (ℱ_n) if X_n is ℱ_n-measurable and E[|X_n|]<∞ for every n≥0. No uniform bound on E[|X_n|] is required. Martingales and submartingales additionally impose conditional-expectation identities or inequalities.",
+      "sources": [
+        {
+          "title": "University of California, Berkeley — Advanced Probability lecture notes, discrete martingale preliminaries",
+          "url": "https://math.berkeley.edu/~ltomczak/notes/Mich2022/AdvProb_Notes.pdf",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        },
+        {
+          "title": "Durham University — Mathematical Finance lecture notes, Filtrations and Martingales",
+          "url": "https://maths.dur.ac.uk/users/clare.wallace/MF/Chapter4.html",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.prob90.probability-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-measure-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Each X_n is REAL-VALUED, not an arbitrary Banach-valued random variable.",
+        "Integrability is pointwise in n, not uniform integrability and not a martingale condition."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-quasi-norm-20261026",
+      "candidate_id": "postwave-scan:rank-82",
+      "term": "quasi-norm on a real or complex vector space",
+      "context": "Functional analysis · absolutely homogeneous positive definite functional with relaxed triangle inequality",
+      "aliases": [
+        "quasi norm",
+        "quasinorm"
+      ],
+      "definition": "Let V be a vector space over K=ℝ or ℂ. A quasi-norm on V is a function q:V→[0,∞) such that q(v)=0 exactly when v=0, q(av)=|a|q(v) for every scalar a and vector v, and there is a fixed constant C≥1 with q(u+v)≤C(q(u)+q(v)) for all u,v∈V. With C=1 this is an ordinary norm. For 0<p<1, the ℓ^p expression on finite-dimensional coordinate spaces is a standard quasi-norm and need not satisfy the usual triangle inequality.",
+      "sources": [
+        {
+          "title": "ETH Zurich — Functional Analysis II notes, §6 Quasi-normed vector spaces",
+          "url": "https://people.math.ethz.ch/~riviere/pdf/books/functional-analysis-2-2025.pdf",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        },
+        {
+          "title": "Wolfram MathWorld — Quasi-Norm",
+          "url": "https://mathworld.wolfram.com/Quasi-Norm.html",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.analysis98.normed-vector-space",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-real-vector-space-20261026",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-complex-vector-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "K is ℝ or ℂ with usual absolute value.",
+        "C is a SINGLE constant working for all vectors.",
+        "No completeness assumption; quasi-Banach is a further notion."
+      ]
     }
   ]
 }
