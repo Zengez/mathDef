@@ -252,6 +252,9 @@ def candidate_review_bundle(snapshot: dict, *, candidate_ids: tuple[str, ...] = 
                  "matching_source_references": source["matching_source_references"]}
                 if "matching_source_references" in source else source
                 for source in item["source_formulations"]]
+    if "candidate_context_reviews" in snapshot:
+        from .dependency_context_reviews import validated_view
+        report["candidate_context_reviews"] = validated_view(snapshot)
     return report
 
 
@@ -582,6 +585,9 @@ def analyze_snapshot(snapshot: dict, *, limit: int = 60,
                 ] if fid in nodes else [],
             } for fid in sorted(form)
         }
+    if "candidate_context_reviews" in snapshot:
+        from .dependency_context_reviews import validated_view
+        report["candidate_context_reviews"] = validated_view(snapshot)
     return report
 
 
@@ -773,6 +779,9 @@ def write_offline_packets(workspace: Path, manifest_path: Path,
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--workspace", type=Path, required=True)
+    parser.add_argument("--context-review-log", type=Path)
+    parser.add_argument("--context-review-checkpoint", type=Path)
+    parser.add_argument("--qualification-ledger", type=Path)
     sub = parser.add_subparsers(dest="mode", required=True)
     scan = sub.add_parser("scan", help="Whole-graph diagnostic read-only review leads")
     scan.add_argument("--limit", type=int, default=60)
@@ -800,8 +809,21 @@ def main() -> None:
     prep.add_argument("--output-dir", type=Path, required=True)
     prep.add_argument("--max-per-batch", type=int, default=5)
     args = parser.parse_args()
+    if bool(args.context_review_log) != bool(args.context_review_checkpoint):
+        parser.error("Context review log and trusted checkpoint must be supplied together")
+    if args.qualification_ledger and not args.context_review_log:
+        parser.error("Qualification ledger requires an explicit context review log")
+    if args.mode == "prepare" and args.context_review_log:
+        parser.error("Context metadata is analysis-only; graph preparation does not consume it")
+    snapshot = None
+    if args.mode in ("scan", "focus"):
+        if args.context_review_log:
+            from .dependency_context_reviews import attach_review_files, load_context_snapshot
+            snapshot = attach_review_files(load_context_snapshot(args.workspace), args.context_review_log,
+                args.context_review_checkpoint, qualification_ledger_path=args.qualification_ledger)
+        else:
+            snapshot = load_live_snapshot(args.workspace)
     if args.mode == "scan":
-        snapshot = load_live_snapshot(args.workspace)
         report = analyze_snapshot(snapshot, limit=args.limit,
                                   candidate_limit=args.candidate_limit,
                                   include_cycle_edges=args.include_cycle_edges)
@@ -817,7 +839,7 @@ def main() -> None:
         print(json.dumps(report, ensure_ascii=False, indent=2))
     elif args.mode == "focus":
         print(json.dumps(candidate_review_bundle(
-            load_live_snapshot(args.workspace),
+            snapshot,
             candidate_ids=tuple(args.candidate_id), limit=args.limit,
             max_formulations=args.max_formulations, contains=args.contains,
             parent_budget=args.parent_budget, compact_sources=args.compact_sources),
