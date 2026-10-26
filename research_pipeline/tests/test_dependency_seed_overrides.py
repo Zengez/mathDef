@@ -162,7 +162,16 @@ class SeedOverrideReplayTests(unittest.TestCase):
             else:
                 self.assertNotEqual(result["unresolved_fingerprint"],
                                     old["unresolved_fingerprint"])
-            self.assertFalse(result["consolidation_gate_valid"])
+            if already_applied:
+                # Replaying unchanged accepted seed overrides must preserve the
+                # already-open reviewed consolidation gate, not invalidate it.
+                self.assertEqual(
+                    result["consolidation_gate_valid"],
+                    old["consolidation_gate_valid"])
+            else:
+                # First-time seed overrides change the unresolved fingerprint
+                # and therefore invalidate the previous gate.
+                self.assertFalse(result["consolidation_gate_valid"])
             ledger = [json.loads(x) for x in
                       (graph_copy / "seed_overrides.jsonl")
                       .read_text(encoding="utf-8").splitlines() if x.strip()]
