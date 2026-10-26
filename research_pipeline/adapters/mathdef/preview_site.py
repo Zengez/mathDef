@@ -12,6 +12,9 @@ import json
 from pathlib import Path
 
 from research_pipeline.adapters.mathdef.preview import build
+from research_pipeline.adapters.mathdef.original_merge import (
+    read_original, merge_original, fast_scan, scan_report_html,
+)
 from research_pipeline.ui.renderer import render as render_reference_ui
 
 WAVE1 = Path("research_pipeline/experiments/reconstruction-v1-recovery")
@@ -49,6 +52,35 @@ def render(repo: Path, site: Path) -> dict:
         "Initial independently reconstructed research corpus complete; mathematical drafts and citations are not human certified."
     )
 
+    # New explicit post-reconstruction comparison: the original .tex corpus
+    # is merged into a SEPARATE browsing view; neither frozen Wave 1 nor the
+    # independently completed 958-meaning Wave 2 is modified.
+    originals = read_original(repo)
+    direct_file = repo / WAVE2 / "direct_research" / "terms.json"
+    direct_entries = json.loads(direct_file.read_text(encoding="utf-8"))["entries"]
+    independent = json.loads((site / "wave2" / "catalog.json").read_text(encoding="utf-8"))
+    merged, merge_counts = merge_original(independent, originals)
+    combined_folder = site / "merged"
+    combined_folder.mkdir(parents=True, exist_ok=True)
+    (combined_folder / "catalog.json").write_text(
+        json.dumps(merged, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    ui_combined = render_reference_ui(
+        combined_folder / "catalog.json", brand, combined_folder,
+        "mathDef · Combined research and original collection",
+        "All independent Wave 2 meanings plus original mathDef source definitions; "
+        "exact term-name matches share search headings, not automatic mathematical equivalence. "
+        "Research drafts, with original sources retained.",
+    )
+    scan = fast_scan(direct_entries, originals, merged)
+    (combined_folder / "scan-report.json").write_text(
+        json.dumps(scan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    (combined_folder / "scan-report.html").write_text(
+        scan_report_html(scan, merge_counts), encoding="utf-8"
+    )
+    print(json.dumps({"combined_merge": merge_counts, "rapid_scan": scan["counts"]}))
+
     def card(href, title, description, count):
         return ('<a class="stage" href="' + href + '/"><h2>' +
                 html.escape(title) + '</h2><p>' + html.escape(description) +
@@ -59,10 +91,15 @@ def render(repo: Path, site: Path) -> dict:
         "The initial independent reconstruction, preserved as our baseline.",
         str(wave1["meanings"]) + " contextual meanings"
     ) + card(
-        "wave2", "Wave 2 · Initial reconstruction complete",
+        "wave2", "Wave 2 · Independent reconstruction",
         "Initial research pass complete: original 418 leads considered and new meanings integrated. "
         "New terminology discovery and further source verification remain future work.",
         str(wave2["meanings"]) + " contextual meanings"
+    ) + card(
+        "merged", "Combined mathDef · Original + Wave 2",
+        "Original mathDef source definitions and independently reconstructed meanings "
+        "in one searchable view. Includes a rough new-terminology scan.",
+        str(merge_counts["combined_meanings"]) + " source-provenanced meanings"
     )
     page = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
@@ -83,20 +120,20 @@ border-radius:13px;background:white;padding:24px}
 <p class="small"><a href="../">Original mathDef site</a> · Independent research experiment</p>
 <h1>Independent mathematical definitions reconstruction</h1>
 <p>Explore the second, independently researched version of mathDef at two stages.
-The original mathDef content is <strong>not</strong> used to construct these previews.</p>
+Wave 1 and the completed independent Wave 2 remain source-independent and frozen for comparison.\nThe new combined view explicitly includes the original mathDef content, as authorized for this expansion.</p>
 <div class="stages">___CARDS___</div>
 <div class="notice"><strong>Research previews, not a certified reference.</strong>
 Definitions, citations, and relationships remain assistant-screened research drafts,
 not formally peer-reviewed mathematical facts. Initial Wave 2 reconstruction is complete;
-new-term discovery and further validation have not yet been undertaken.</div>
+A rapid lexical discovery scan of the newly researched and original definitions is now available in the combined view; independent mathematical verification remains ongoing.</div>
 <p class="small">Wave 1 is frozen. Wave 2 is the completed initial reconstruction snapshot built directly from
 its independent research records, without relying on the abandoned research stage gates.
 Both are presented separately from the original mathDef content.</p>
 </body></html>""".replace("___CARDS___", cards)
     site.mkdir(parents=True, exist_ok=True)
     (site / "index.html").write_text(page, encoding="utf-8")
-    return {"wave1": wave1, "wave2": wave2,
-            "reference_ui": {"wave1": ui1, "wave2": ui2},
+    return {"wave1": wave1, "wave2": wave2, "merged": merge_counts, "rapid_scan": scan["counts"],
+            "reference_ui": {"wave1": ui1, "wave2": ui2, "merged": ui_combined},
             "validation": {"independent_research_inputs_only": True,
                            "no_dependency_graph_gate": True},
             "site": str(site)}
