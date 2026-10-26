@@ -3767,6 +3767,216 @@
         "Commutativity convention v∘f=g∘u fixes the square orientation."
       ],
       "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.scan.real-vector-space-20261026",
+      "candidate_id": "postwave-scan:rank-2",
+      "term": "real vector space",
+      "context": "Linear algebra · vector space with scalar field ℝ",
+      "aliases": [],
+      "definition": "A real vector space is an abelian group (V,+,0) with scalar multiplication ℝ×V→V, (a,v)↦av, satisfying a(u+v)=au+av, (a+b)v=av+bv, (ab)v=a(bv), and 1v=v for all a,b∈ℝ and u,v∈V. Equivalently it is a unital module over the field ℝ. No finite-dimensionality, topology, norm, or inner product is required.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Vector space (real/complex scalar-field specializations)",
+          "url": "https://encyclopediaofmath.org/wiki/Vector_space",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.b64bc15f46fe0245.vector-space-over-field",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "The scalar field is exactly ℝ, not ℂ or an arbitrary division ring.",
+        "The zero vector space is permitted; no basis size is prescribed."
+      ],
+      "research_status": "assistant-researched candidate incorporation; mathematical conventions explicitly reviewed; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.scan.complex-vector-space-20261026",
+      "candidate_id": "postwave-scan:rank-20",
+      "term": "complex vector space",
+      "context": "Linear algebra · vector space with scalar field ℂ",
+      "aliases": [],
+      "definition": "A complex vector space is an abelian group (V,+,0) with an action ℂ×V→V satisfying the vector-space scalar-distributivity, vector-distributivity, associativity, and unit axioms over the field ℂ. Equivalently V is a unital ℂ-module. Restricting scalars along ℝ↪ℂ makes every complex vector space an underlying real vector space, but not every real vector space has a chosen compatible complex-vector-space structure.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Vector space (real/complex scalar-field specializations)",
+          "url": "https://encyclopediaofmath.org/wiki/Vector_space",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.b64bc15f46fe0245.vector-space-over-field",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.scan.real-vector-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Scalar multiplication by arbitrary complex numbers is part of the structure.",
+        "No Hermitian form, complex topology, norm or finite-dimensionality is assumed."
+      ],
+      "research_status": "assistant-researched candidate incorporation; mathematical conventions explicitly reviewed; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.scan.measure-space-20261026",
+      "candidate_id": "postwave-scan:rank-4",
+      "term": "measure space",
+      "context": "Measure theory · measurable space with nonnegative countably additive measure",
+      "aliases": [],
+      "definition": "A measure space is a triple (X,Σ,μ), where X is a set, Σ⊆P(X) is a σ-algebra, and μ:Σ→[0,∞] is a measure: μ(∅)=0 and for every sequence of pairwise disjoint sets (A_n) in Σ, μ(⋃_{n≥1}A_n)=∑_{n≥1}μ(A_n). The measure need not be finite, σ-finite, complete or a probability measure.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Measure space",
+          "url": "https://encyclopediaofmath.org/wiki/Measure_space",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.nonnegative-measure",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.prob90.probability-space",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Here measure means NONNEGATIVE extended-real-valued, not a signed or complex measure.",
+        "X=∅ is allowed, with its unique measure space structure."
+      ],
+      "research_status": "assistant-researched candidate incorporation; mathematical conventions explicitly reviewed; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.scan.borel-measure-basic-20261026",
+      "candidate_id": "postwave-scan:rank-53",
+      "term": "Borel measure",
+      "context": "Measure theory · Borel measure on an arbitrary topological space (broad convention A)",
+      "aliases": [],
+      "definition": "Let X be a topological space and B(X) the σ-algebra generated by its open sets. A Borel measure in the broad convention is a measure μ:B(X)→[0,∞], with μ(∅)=0 and countable additivity on pairwise disjoint Borel sets. This definition imposes no local finiteness, compact finiteness, inner or outer regularity, or Hausdorff hypothesis. Some sources impose additional conditions; those conventions are separate meanings.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Borel measure (three source-specific meanings)",
+          "url": "https://encyclopediaofmath.org/wiki/Borel_measure",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.alternative39.borel-sigma-algebra-topological",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.scan.measure-space-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Source-specific convention A is used, explicitly broader than compact-finite Borel measures.",
+        "No Radon regularity or finiteness assumption is implicit."
+      ],
+      "research_status": "assistant-researched candidate incorporation; mathematical conventions explicitly reviewed; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.scan.borel-measure-compact-finite-20261026",
+      "candidate_id": "postwave-scan:rank-53",
+      "term": "Borel measure",
+      "context": "Measure theory · Borel measure finite on every compact set (convention B)",
+      "aliases": [],
+      "definition": "In a common stricter convention, a Borel measure on a locally compact topological space X is a countably additive μ:B(X)→[0,∞] such that μ(K)<∞ for every compact subset K⊆X. This compact-finiteness condition is additional to the general Borel-measure definition and by itself does not require inner or outer regularity.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Borel measure (three source-specific meanings)",
+          "url": "https://encyclopediaofmath.org/wiki/Borel_measure",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.scan.borel-measure-basic-20261026",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.locally-finite-borel-measure-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The source adopts local compactness; the definition does not additionally impose Hausdorffness.",
+        "Compact finite is a stronger qualification, not silently bundled into every meaning of Borel measure."
+      ],
+      "research_status": "assistant-researched candidate incorporation; mathematical conventions explicitly reviewed; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.scan.borel-outer-measure-20261026",
+      "candidate_id": "postwave-scan:rank-53",
+      "term": "Borel measure",
+      "context": "Measure theory · Borel outer measure convention (convention C)",
+      "aliases": [],
+      "definition": "In the Borel-outer-measure convention, a Borel measure on a topological space X means an outer measure μ*:P(X)→[0,∞] for which every Borel subset of X is Carathéodory μ*-measurable: μ*(A)=μ*(A∩B)+μ*(A∖B) for every A⊆X and B∈B(X). Its restriction to B(X) is countably additive, but μ* is defined on all subsets.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Borel measure (three source-specific meanings)",
+          "url": "https://encyclopediaofmath.org/wiki/Borel_measure",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.pop141.outer-measure",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.scan.borel-measure-basic-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The outer measure's domain is P(X), unlike the broad Borel measure defined only on B(X).",
+        "This follows the third convention distinguished in the cited source."
+      ],
+      "research_status": "assistant-researched candidate incorporation; mathematical conventions explicitly reviewed; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.scan.compact-metric-space-20261026",
+      "candidate_id": "postwave-scan:rank-56",
+      "term": "compact metric space",
+      "context": "Metric geometry · metric topology compactness and equivalent metric characterizations",
+      "aliases": [],
+      "definition": "A metric space (X,d) is compact if every cover of X by sets open in the d-induced topology admits a finite subcover. Equivalently, every sequence in X has a convergent subsequence with limit in X; equivalently, (X,d) is complete and totally bounded. The empty metric space is compact under the open-cover convention. These equivalences are specific to metric spaces, not arbitrary topological spaces.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Metric space (compactness and completeness equivalences)",
+          "url": "https://encyclopediaofmath.org/wiki/Metric_space",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.analysis98.metric-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.broad67.compact-topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.totally-bounded-metric-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The metric is ordinary finite-valued and induces the topology used for compactness.",
+        "The empty space is allowed, and completeness/sequential compactness are interpreted vacuously where appropriate."
+      ],
+      "research_status": "assistant-researched candidate incorporation; mathematical conventions explicitly reviewed; not peer certified"
     }
   ]
 }
