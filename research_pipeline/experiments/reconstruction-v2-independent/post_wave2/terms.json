@@ -4628,6 +4628,186 @@
         "Changing the underlying space needs a different formulation."
       ],
       "research_status": "assistant-reviewed source-attributed original scan meaning; not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-free-abelian-group-20261026",
+      "candidate_id": "postwave-scan:rank-223",
+      "term": "free abelian group",
+      "context": "Group theory · free abelian group on a possibly infinite set of generators",
+      "aliases": [
+        "free ℤ-module"
+      ],
+      "definition": "An abelian group A is free abelian if it admits a subset B⊆A such that every a∈A can be written uniquely as a FINITE integer linear combination ∑_{b∈B}n_b b, n_b∈ℤ. Equivalently A≅⊕_{b∈B}ℤ. The empty basis gives the trivial abelian group. A torsion-free abelian group need not be free abelian: the additive group ℚ is torsion-free but not free.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Abelian group",
+          "url": "https://encyclopediaofmath.org/wiki/Abelian_group",
+          "verification_status": "direct_research_source_checked_2026-10-26"
+        },
+        {
+          "title": "Wolfram MathWorld — Free Abelian Group",
+          "url": "https://mathworld.wolfram.com/FreeAbelianGroup.html",
+          "verification_status": "direct_research_source_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.free-group-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "All generator expansions have finite support even if B is infinite.",
+        "The zero group is admitted as a rank-zero free abelian group.",
+        "Torsion-free is NOT equivalent to free for infinitely generated abelian groups."
+      ],
+      "research_status": "assistant-researched frozen quick-scan incorporation; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-spherical-chordal-metric-20261026",
+      "candidate_id": "postwave-scan:rank-244",
+      "term": "spherical (chordal) metric on the Riemann sphere",
+      "context": "Complex analysis and holomorphic dynamics · stereographic chordal distance",
+      "aliases": [
+        "spherical metric on the extended complex plane",
+        "chordal metric"
+      ],
+      "definition": "Identify the extended complex plane Ĉ=ℂ∪{∞} with the unit sphere S²⊂ℝ³ by stereographic projection. The chordal (spherical) metric χ is the ordinary Euclidean distance between images on S². For z,w∈ℂ, χ(z,w)=2|z−w|/(√(1+|z|²)√(1+|w|²)); and χ(z,∞)=2/√(1+|z|²), with χ(∞,∞)=0. Other texts normalize χ by a factor 1/2. The chordal metric is distinct from the intrinsic great-circle geodesic metric, though they induce the same topology.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Riemann sphere (chordal spherical distance)",
+          "url": "https://encyclopediaofmath.org/wiki/Riemann_sphere",
+          "verification_status": "direct_research_source_checked_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Stereographic identification uses a unit sphere; the maximum chordal distance is 2.",
+        "Authors also call the Riemannian great-circle metric spherical; chordal convention is explicit.",
+        "The point ∞ is included; ordinary Euclidean distance on ℂ is not the same metric."
+      ],
+      "research_status": "assistant-researched frozen quick-scan incorporation; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-zero-polynomial-20261026",
+      "candidate_id": "postwave-scan:rank-251",
+      "term": "zero polynomial",
+      "context": "Algebra · additive zero in a polynomial ring",
+      "aliases": [
+        "identically zero polynomial"
+      ],
+      "definition": "For a (commutative unital) ring R, the zero polynomial in R[x] is the formal polynomial all of whose coefficients are 0_R. It is the additive identity of R[x], denoted 0, and evaluates to 0_R at every input in any R-algebra. Over an arbitrary nonzero ring, the zero polynomial is the unique polynomial with all zero coefficients. Its degree is conventionally left undefined or assigned −∞, and should not be assigned 0 without an explicit convention. Over rings with zero divisors, the zero polynomial is still coefficientwise zero regardless of its evaluated function.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Polynomial ring",
+          "url": "https://encyclopediaofmath.org/wiki/Polynomial_ring",
+          "verification_status": "direct_research_source_checked_2026-10-26"
+        },
+        {
+          "title": "Original mathDef — Complex polynomial",
+          "url": "https://github.com/Zengez/mathDef/blob/main/definitions/complex/polynomial.tex",
+          "verification_status": "direct_research_source_checked_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Polynomial means formal polynomial, not an equivalence class of polynomial functions.",
+        "The degree convention for zero is explicitly left undefined unless declared.",
+        "Zero ring is permitted; uniqueness of the formal zero polynomial persists."
+      ],
+      "research_status": "assistant-researched frozen quick-scan incorporation; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-zero-ring-20261026",
+      "candidate_id": "postwave-scan:rank-252",
+      "term": "zero ring",
+      "context": "Ring theory · the one-element ring with 0=1",
+      "aliases": [
+        "trivial ring",
+        "one-element ring"
+      ],
+      "definition": "The zero ring is the ring whose underlying set has a single element, usually denoted 0, with 0+0=0 and 0·0=0. If a multiplicative identity is part of the ring structure, it satisfies 0=1. Every ring in which 0=1 is the zero ring, because any r satisfies r=r·1=r·0=0. Some authors require 0≠1 in their definition of a unital ring and therefore exclude the zero ring; Stacks Project conventions include it.",
+      "sources": [
+        {
+          "title": "The Stacks Project — Algebra, §10.2 Conventions",
+          "url": "https://stacks.math.columbia.edu/tag/00AQ",
+          "verification_status": "direct_research_source_checked_2026-10-26"
+        },
+        {
+          "title": "The Stacks Project — Localization criterion for the zero ring",
+          "url": "https://stacks.math.columbia.edu/tag/00CQ",
+          "verification_status": "direct_research_source_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.unital-ring-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The ring is associative; in the unital convention its unique element is both 0 and 1.",
+        "Conventions excluding the zero ring from 'ring' must be stated.",
+        "The one-element set with unique operations is the zero ring up to unique isomorphism."
+      ],
+      "research_status": "assistant-researched frozen quick-scan incorporation; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-affine-open-subscheme-20261026",
+      "candidate_id": "postwave-scan:rank-279",
+      "term": "affine open subscheme",
+      "context": "Algebraic geometry · affine open of a scheme",
+      "aliases": [
+        "affine open subset (of a scheme)",
+        "affine open"
+      ],
+      "definition": "Let X be a scheme and U⊆X an open subset. Then U is an affine open of X if the induced open subscheme (U,𝒪_X|_U) is an affine scheme, i.e., isomorphic as a locally ringed space to Spec(A) for some commutative ring A. Every point of a scheme has an affine open neighborhood. In general, an arbitrary open subset of an affine scheme need not itself be affine. If zero rings are allowed, the empty open subset is affine as Spec(0).",
+      "sources": [
+        {
+          "title": "The Stacks Project — Schemes, §26.9, Definition 26.9.1 and discussion",
+          "url": "https://stacks.math.columbia.edu/tag/01II",
+          "verification_status": "direct_research_source_checked_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Scheme structure is induced as an open subscheme; topological openness alone is insufficient.",
+        "Commutative rings with identity may include the zero ring.",
+        "An open of an affine scheme is not automatically affine."
+      ],
+      "research_status": "assistant-researched frozen quick-scan incorporation; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-complex-analytic-subset-20261026",
+      "candidate_id": "postwave-scan:rank-318",
+      "term": "complex analytic subset",
+      "context": "Several complex variables · locally common zero loci of holomorphic functions",
+      "aliases": [
+        "complex analytic set",
+        "analytic subset of a complex manifold",
+        "complex-analytic set"
+      ],
+      "definition": "Let X be a complex manifold and A⊆X. The subset A is a (closed) complex analytic subset if each point x∈X has an open neighborhood U and finitely many holomorphic functions f₁,…,f_r:U→ℂ such that A∩U={z∈U:f₁(z)=⋯=f_r(z)=0}. This allows A=∅ (for example by f≡1) and A=X (an empty family or f≡0). Complex-analytic subsets are locally closed zero sets in their ambient complex manifold and are distinct from 'analytic sets' in descriptive set theory (continuous images of Polish spaces). A germ of an analytic set at x records only its local equivalence class, not the global subset A.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Analytic set, complex-analytic sense (part 6)",
+          "url": "https://encyclopediaofmath.org/wiki/Analytic_set",
+          "verification_status": "direct_research_source_checked_2026-10-26"
+        },
+        {
+          "title": "Original mathDef — Germ of a complex analytic set",
+          "url": "https://github.com/Zengez/mathDef/blob/main/definitions/scv/analytic-set-germ.tex",
+          "verification_status": "direct_research_source_checked_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "The ambient X is a complex manifold (locally modeled on ℂ^n).",
+        "Empty and whole-space analytic subsets are permitted.",
+        "Not the analytic/Souslin set convention in descriptive set theory.",
+        "Local finite tuples of holomorphic defining functions are used."
+      ],
+      "research_status": "assistant-researched frozen quick-scan incorporation; not peer certified"
     }
   ]
 }
