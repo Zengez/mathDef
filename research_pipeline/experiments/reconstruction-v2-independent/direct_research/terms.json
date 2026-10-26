@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "description": "Directly researched independent Wave2 definitions. Editable content: not a gated stage or a population import.",
+  "entries": [
+    {
+      "id": "meaning.wave2.direct.8e10ca4c4067ac5928f8",
+      "candidate_id": "missing.8e10ca4c4067ac5928f8",
+      "term": "retrocompact open subset",
+      "context": "Topology · retrocompact open subset",
+      "aliases": [
+        "retrocompact subset"
+      ],
+      "definition": "Let X be a topological space. An open subset U⊆X is retrocompact in X if, for every quasi-compact open V⊆X, the intersection U∩V is quasi-compact. Equivalently, the inclusion U↪X is a quasi-compact map.",
+      "sources": [
+        {
+          "title": "Stacks Project — Definition 5.12.1(2)-(3)",
+          "url": "https://stacks.math.columbia.edu/tag/005A",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly checked primary source: quasi-compact map tests preimages of quasi-compact opens, and a subset is retrocompact exactly when its inclusion is quasi-compact; this gives the intersection formulation."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.27eb121021fd989d.quasicompact-map",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.27eb121021fd989d.quasicompact-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "U is open in X in this occurrence; retrocompactness of general subsets is also definable.",
+        "Quasi-compact is open-cover finite subcover without assuming Hausdorff.",
+        "U∩V is quasi-compact relative to subspace topology for each quasi-compact open V."
+      ],
+      "original_disposition": "specialization"
+    },
+    {
+      "id": "meaning.wave2.direct.8e7388ef8958ac46b761",
+      "candidate_id": "missing.8e7388ef8958ac46b761",
+      "term": "repeated root",
+      "context": "Algebra · multiplicity of polynomial root",
+      "aliases": [
+        "multiple root"
+      ],
+      "definition": "Let F be a field, let f∈F[T] be a nonzero polynomial, and let α belong to a field extension E/F. The element α is a repeated (multiple) root of f if (T−α)² divides f in E[T]; equivalently, f(α)=f′(α)=0.",
+      "sources": [
+        {
+          "title": "Stacks Project — Lemma 9.12.4 and proof",
+          "url": "https://stacks.math.columbia.edu/tag/09GZ",
+          "verification_status": "direct_primary_passage_checked_with_general_algebraic_deduction",
+          "source_relevance": "Direct passage links a double linear factor and simultaneous vanishing of polynomial and derivative. Lemma states separability for irreducible polynomials; the proof's algebraic repeated-root criterion extends to arbitrary nonzero polynomials over a field."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.720eaae9156f6f4e.separable-irreducible-polynomial",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "f is nonzero so individual root multiplicity is defined.",
+        "E is a field extension of F containing α; comparison occurs in E[T].",
+        "Formal derivative is used, including positive characteristic and possibly identically vanishing derivative."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.91383b9c137b0e359967",
+      "candidate_id": "missing.91383b9c137b0e359967",
+      "term": "Euclidean metric on the real line",
+      "context": "Real analysis · usual distance on R",
+      "aliases": [
+        "usual distance on R",
+        "real-line distance"
+      ],
+      "definition": "The usual Euclidean metric on the real line ℝ is d:ℝ×ℝ→[0,∞), defined by d(a,b)=|a−b| for every a,b∈ℝ.",
+      "sources": [
+        {
+          "title": "MathWorld — Distance, Euclidean space ℝ^n formula (3), restricted to n=1",
+          "url": "https://mathworld.wolfram.com/Distance.html",
+          "verification_status": "verified_mathematical_specialization",
+          "source_relevance": "Directly checked Euclidean metric formula sqrt(sum_i|x_i-y_i|²); specializing n=1 gives |a−b|, with this specialization explicitly distinguished from verbatim source text."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.analysis98.metric-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.analysis.real-absolute-value",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "The ordinary real absolute value is available.",
+        "The codomain is [0,∞) with standard order.",
+        "The metric is on ℝ, not on an arbitrary ordered field without additional structure."
+      ],
+      "original_disposition": "specialization"
+    },
+    {
+      "id": "meaning.wave2.direct.960bd927c204df58bb49",
+      "candidate_id": "missing.960bd927c204df58bb49",
+      "term": "binary square matrix",
+      "context": "Linear algebra · n-by-n (0,1) matrix",
+      "aliases": [
+        "0–1 square matrix",
+        "(0,1)-matrix"
+      ],
+      "definition": "For n≥0, an n×n (0,1)-matrix, or binary square matrix, is an array A=(a_{ij})_{1≤i,j≤n} with every entry a_{ij}∈{0,1}. Its entries may be regarded as integers unless a different coefficient structure is explicitly specified.",
+      "sources": [
+        {
+          "title": "MathWorld — (0,1)-Matrix",
+          "url": "https://mathworld.wolfram.com/01-Matrix.html",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly checked the definition that each entry is zero or one, and the synonyms binary/logical matrix, with n×n as a square special case."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.alternative39.adjacency-matrix-simple-undirected",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Entries form a set {0,1}; matrix addition/multiplication requires a separately chosen ring or semiring.",
+        "For n=0 the empty 0×0 matrix can be included by convention.",
+        "No graph is assumed and no symmetry or diagonal restrictions are imposed."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.972ae1e91200fae874aa",
+      "candidate_id": "missing.972ae1e91200fae874aa",
+      "term": "symmetric relation",
+      "context": "Set theory · symmetry axiom for binary relation",
+      "aliases": [
+        "symmetry of a relation"
+      ],
+      "definition": "A binary relation R⊆S×S on a set S is symmetric if, for every x,y∈S, xRy implies yRx.",
+      "sources": [
+        {
+          "title": "Wikipedia — Definition",
+          "url": "https://en.wikipedia.org/wiki/Symmetric_relation",
+          "verification_status": "direct_source_passage_checked",
+          "source_relevance": "Directly reviewed standard condition xRy⇒yRx, with no reflexivity or transitivity requirement."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.binary-relation-subset",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.set63.relation-reflexive-symmetric-transitive",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "S may be empty.",
+        "R may be empty; symmetry is then vacuous.",
+        "No implicit reflexivity, antisymmetry, or transitivity assumptions."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.9a669bd30949842fab00",
+      "candidate_id": "missing.9a669bd30949842fab00",
+      "term": "Iverson bracket",
+      "context": "Mathematical notation · truth-value indicator",
+      "aliases": [
+        "Iverson indicator"
+      ],
+      "definition": "For a mathematical proposition P, the Iverson bracket [P] is the numerical value 1 when P is true and 0 when P is false. This is a general indicator notation for the truth value of P.",
+      "sources": [
+        {
+          "title": "MathWorld — Iverson Bracket, displayed defining equation (1)",
+          "url": "https://mathworld.wolfram.com/IversonBracket.html",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly verified general statement-truth-value notation and its numeric 0/1 values."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.bridge136.numeric-delta",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Values are ordinary integers 0 and 1, not an identification inside a zero ring.",
+        "The proposition has a determinate truth value in the ambient logic.",
+        "Floor-function brackets use a distinct convention and should be disambiguated by context."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.9a71afd4a344322c1d26",
+      "candidate_id": "missing.9a71afd4a344322c1d26",
+      "term": "antisymmetric relation",
+      "context": "Set theory · antisymmetry axiom for binary relation",
+      "aliases": [
+        "antisymmetry of a relation"
+      ],
+      "definition": "A binary relation R⊆S×S is antisymmetric if for all x,y∈S, the conjunction xRy and yRx implies x=y.",
+      "sources": [
+        {
+          "title": "Wikipedia — Definition",
+          "url": "https://en.wikipedia.org/wiki/Antisymmetric_relation",
+          "verification_status": "direct_source_passage_checked",
+          "source_relevance": "Directly reviewed the mutual-relatedness implies equality criterion for antisymmetric relations, distinct from asymmetry."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.binary-relation-subset",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.709d3d2f82950c5b.partially-ordered-set",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "S may be empty and R may be empty.",
+        "Loops (x,x) are compatible with antisymmetry, unlike with asymmetry.",
+        "Comparability, reflexivity and transitivity are not required."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.9e1b000eff0431817f3a",
+      "candidate_id": "missing.9e1b000eff0431817f3a",
+      "term": "open graph neighborhood",
+      "context": "Graph theory · open neighborhood of a vertex",
+      "aliases": [
+        "neighbor set of a vertex",
+        "open neighborhood (graph)"
+      ],
+      "definition": "For a simple loopless undirected graph G=(V,E) and a vertex v∈V, the open neighborhood N_G(v) is the set {u∈V:{u,v}∈E} of all vertices adjacent to v. It excludes v itself.",
+      "sources": [
+        {
+          "title": "MathWorld — Open Graph Neighborhood",
+          "url": "https://mathworld.wolfram.com/OpenGraphNeighborhood.html",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly verified the set of adjacent vertices excluding the base vertex and the distinction from the closed neighborhood."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.cross133.vertex-degree-simple",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "G is a simple undirected loopless graph.",
+        "v belongs to the vertex set, including isolated vertices whose neighborhood is empty.",
+        "The set excludes v; closed neighborhood differs and directed-graph variants are not implicitly included."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.a257d0bad58dcfbd2fa7",
+      "candidate_id": "missing.a257d0bad58dcfbd2fa7",
+      "term": "initial topology",
+      "context": "General topology · initial topology from maps",
+      "aliases": [
+        "weak topology induced by maps"
+      ],
+      "definition": "Let X be a set and (f_i:X→Y_i)_{i∈I} be maps to topological spaces (Y_i,τ_i). The initial topology on X generated by these maps is the coarsest topology on X making every f_i continuous; a subbase is {f_i^{-1}(U):i∈I,U∈τ_i}.",
+      "sources": [
+        {
+          "title": "Wikipedia — Definition, family of maps and subbase",
+          "url": "https://en.wikipedia.org/wiki/Initial_topology",
+          "verification_status": "direct_passage_checked",
+          "source_relevance": "Directly reviewed the coarsest-topology universal property and preimage subbase for general maps into topological spaces."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.branch129.indexed-product-topology",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.03c6dc1e9f953f76.krull-topology",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "No injectivity or jointly separating points required.",
+        "When I is empty, the initial topology is indiscrete {∅,X}.",
+        "If X is empty the indiscrete topology has only the empty set."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.a53971a78b449b0edc86",
+      "candidate_id": "missing.a53971a78b449b0edc86",
+      "term": "finite graph walk",
+      "context": "Graph theory · finite walk in a simple graph",
+      "aliases": [
+        "walk (graph theory)"
+      ],
+      "definition": "For a simple undirected graph G=(V,E) and u,v∈V, a finite walk from u to v is a sequence v_0=u,v_1,…,v_n=v for some n≥0 such that {v_{i−1},v_i}∈E for 1≤i≤n. Its length is n.",
+      "sources": [
+        {
+          "title": "MathWorld — Walk definition and simple-graph vertex-only description",
+          "url": "https://mathworld.wolfram.com/Walk.html",
+          "verification_status": "direct_simple_graph_specialization_checked",
+          "source_relevance": "Directly checked the vertices/edges incidence definition and vertex-sequence specialization for simple graphs. Length-zero walk is retained as an explicit convention for matching a screened connectedness formulation."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.branch129.nonempty-connected-graph",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Graph is loopless simple undirected for vertex-sequence representation.",
+        "Vertices and edges may repeat; length zero is allowed for u=v.",
+        "Not a directed walk nor the strict graph-theoretic path definition."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.ab52c0b907fcd5ccf04f",
+      "candidate_id": "missing.ab52c0b907fcd5ccf04f",
+      "term": "sober space",
+      "context": "General topology · unique generic points",
+      "aliases": [
+        "sober topological space"
+      ],
+      "definition": "A topological space X is sober if every nonempty irreducible closed subset Z⊆X has a unique generic point ξ∈Z, meaning cl_X({ξ})=Z.",
+      "sources": [
+        {
+          "title": "Stacks Project — Stacks Definition 5.8.6 items (1),(4)",
+          "url": "https://stacks.math.columbia.edu/tag/004X",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Directly checked primary definition of generic point and sober space; Stacks defines irreducible closed subsets using its nonempty irreducible convention."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.e0dd0b0cffcfff0b.generic-point",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.d7087bb79cf848fa.spectral-topological-space",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Irreducible closed sets are nonempty, as in the cited source.",
+        "Generic point is defined by closure of the singleton.",
+        "The empty topological space qualifies vacuously under the usual convention; no Hausdorff axiom required."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.b176356d17d415e8f588",
+      "candidate_id": "missing.b176356d17d415e8f588",
+      "term": "neighborhood basis",
+      "context": "General topology · local neighborhood basis",
+      "aliases": [
+        "fundamental system of neighborhoods"
+      ],
+      "definition": "For a point x in a topological space X, a neighborhood basis (or fundamental system of neighborhoods) at x is a family B_x of neighborhoods of x such that every neighborhood N of x contains at least one B∈B_x.",
+      "sources": [
+        {
+          "title": "Wikipedia — Neighborhood bases and neighborhood systems",
+          "url": "https://en.wikipedia.org/wiki/Neighbourhood_(mathematics)",
+          "verification_status": "source_lead_exact_subsection_pending",
+          "source_relevance": "Reputable mathematical source lead for neighborhood basis; exact full paragraph not independently certified here. Under general neighborhood convention basis members may be nonopen."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.aa975a3ff4883909.locally-quasicompact-space",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Every basis member is a neighborhood in the general sense: contains an open set around x, not necessarily open itself.",
+        "Every neighborhood N contains some B from the basis.",
+        "If X is nonempty, a basis at x cannot be empty."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.b1e0a8b58dda986e68d9",
+      "candidate_id": "missing.b1e0a8b58dda986e68d9",
+      "term": "lower set",
+      "context": "Order theory · downward-closed subset of a poset",
+      "aliases": [
+        "down-set",
+        "downward-closed set"
+      ],
+      "definition": "For a partially ordered set (P,≤), a subset A⊆P is a lower (downward-closed) set if whenever a∈A and p∈P with p≤a, then p∈A.",
+      "sources": [
+        {
+          "title": "Wikipedia — Definition of lower sets",
+          "url": "https://en.wikipedia.org/wiki/Lower_set",
+          "verification_status": "direct_source_passage_checked",
+          "source_relevance": "Directly checked order-theoretic downward-closure criterion; no ring or cut completeness assumptions."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.709d3d2f82950c5b.partially-ordered-set",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.real50.dedekind-rational-lower-cut",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "An empty set is lower by vacuity.",
+        "The underlying ordering is a partial order; the same predicate generalizes to preorders if typed separately.",
+        "No demand for directedness (order-theoretic ideals) or lack of maximal element (Dedekind cuts)."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.b1e7a10547ec65e37f00",
+      "candidate_id": "missing.b1e7a10547ec65e37f00",
+      "term": "span (category theory)",
+      "context": "Category theory · diagram of common-source arrows",
+      "aliases": [
+        "span of morphisms"
+      ],
+      "definition": "In a category C, a span from A to D is a diagram A←B→D consisting of an object B and two morphisms B→A and B→D with common domain B. The object B is its apex.",
+      "sources": [
+        {
+          "title": "nLab — Span of morphisms, common-source arrows",
+          "url": "https://ncatlab.org/nlab/show/span",
+          "verification_status": "indexed_source_lead_full_page_unavailable",
+          "source_relevance": "Standard mathematical reference found in indexed text; complete exact web passage was not accessible, so this remains an honestly labeled source lead. Mathematical arrow typing follows directly from the screened pushout source."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.26b6764e3ef7a953.pushout",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "A,D,B are objects of a suitably founded category; no smallness is added absent source context.",
+        "No pushout existence assumption.",
+        "Arrow directions are B→A and B→D; the opposite is a cospan."
+      ],
+      "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.direct.b265aa5bcc1bd7e4d539",
+      "candidate_id": "missing.b265aa5bcc1bd7e4d539",
+      "term": "additive group homomorphism",
+      "context": "Group theory · homomorphism in additive notation",
+      "aliases": [
+        "homomorphism of additive groups"
+      ],
+      "definition": "For groups (A,+) and (B,+) written additively, a group homomorphism f:A→B is a function satisfying f(a+a′)=f(a)+f(a′) for every a,a′∈A. Consequently f(0_A)=0_B and f(−a)=−f(a).",
+      "sources": [
+        {
+          "title": "MathWorld — Group Homomorphism, operation preservation and identity/inverse properties",
+          "url": "https://mathworld.wolfram.com/GroupHomomorphism.html",
+          "verification_status": "direct_primary_specialization_checked",
+          "source_relevance": "Directly checked group-operation preservation and deductions for identities and inverses; this candidate specializes general notation to groups written additively."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation13.abelian-group-homomorphism-kernel",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "A and B are groups expressed with additive operation, not necessarily abelian unless an application states so.",
+        "Identity and inverses are consequences, not independent optional axioms.",
+        "No preservation of scalar multiplication is assumed."
+      ],
+      "original_disposition": "new_meaning"
+    }
+  ]
+}

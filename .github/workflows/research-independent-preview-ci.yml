@@ -38,6 +38,21 @@ jobs:
           node --test tests/test_feedback.cjs tests/test_feedback_ui.cjs
           python -m unittest discover -s tests
           python scripts/build_index.py
+      - name: Check direct research terms are visible and searchable
+        run: |
+          python -m unittest research_pipeline.tests.test_direct_additions -v
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('/tmp/mathdef-independent-site/wave2/definitions-index.json')
+          index=json.loads(p.read_text(encoding='utf-8'))
+          by_term={entry['term']: entry for entry in index}
+          for term in ('Iverson bracket', 'initial topology', 'sober space', 'symmetric relation', 'finite graph walk'):
+              assert term in by_term, f'Missing searchable direct research term: {term}'
+              assert by_term[term]['formulations'] and by_term[term]['formulations'][0]['sources']
+          assert len(index) >= 15
+          print(f'Wave2 searchable indexed terms: {len(index)}')
+          PY
       - name: Validate reusable reference UI
         run: |
           python -m unittest research_pipeline.tests.test_reference_ui -v
