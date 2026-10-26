@@ -16,22 +16,34 @@ mathDef definitions (+5 variants). The merged site has 1,972 original-plus-Wave2
 baseline meanings, and the initial scan yielded 2,019 intentionally rough
 phrase leads plus 473 known-term mention patterns.
 
-**Current work is direct research and publication in the combined reference.**
-Put new researched meanings in
+**ACTIVE OWNER DIRECTIVE (2026-10-26): Process the ACTUAL 2,019
+quick-scan terminology candidates now. Do NOT independently hunt for new terms
+while this existing candidate collection is pending.** New-term discovery is a
+different, separately authorized phase. Review the existing candidate's source
+examples; compare against the independent + original + post-Wave2 catalog;
+record a quick disposition (new meaning, existing/duplicate/synonym,
+mathematically distinct variant, context ambiguity or lexical false positive).
+Incorporate useful mathematical content DIRECTLY. Do not reintroduce
+mandatory dependency graphs, slow gates, arbitrary verification packet stages,
+or a new external vocabulary hunt.
+
+The first actual scan-driven batch has processed ranked candidates **1–60**
+in `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/scan_candidate_dispositions.json`.
+It added **7 source-attributed meanings** (four new-term headings and three
+alternative Borel-measure meanings), bringing the post-Wave2 overlay from 118
+to **125** meanings. Candidate rank **61** is the next unprocessed position.
+Keep per-candidate source examples, concise outcome and target mapping in this
+same lightweight ledger; it is a resumption log, not a mathematical
+admission gate. The original report is `/reconstruction/merged/scan-report.json`
+and its lexical leads may include false positives.
+
+For new meanings, use
 `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/terms.json`
 and render them ONLY in `/reconstruction/merged/`, not the completed 958-meaning
-independent Wave 2 or original production source. The first nine batches add **118**
-source-attributed mathematical drafts to the combined view, targeting
-new concepts in algebra, topology, homology, geometry, measure and category
-theory. The first eight batches have been merged and published; the
-ninth adds 19 category-theoretic meanings with source passages retrieved
-directly and must pass combined-preview CI and Pages deployment.
-The completed initial scan remains 2,019 unverified *phrase leads*, NOT a
-requirement to resolve 2,019 terms. Work from practical research opportunities,
-not a strict candidate-closure workflow. See
-`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/README.md`.
-Continue in selective practical batches; the 2,019 scan leads are suggestions,
-NOT a queue that must all be resolved. No global gates or prerequisite closure.
+independent Wave 2 or original production source. The preceding nine general
+research batches added 118 meanings; the current scan-driven batch is a
+DIFFERENT focus, not a restart of those unrelated expansions.
+See `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/README.md`.
 
 ## New explicit authorization: original-content merger and rapid scan (2026-10-26)
 
