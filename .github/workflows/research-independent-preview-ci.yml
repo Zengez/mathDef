@@ -7,6 +7,7 @@ on:
       - 'research_pipeline/ui/**'
       - 'research_pipeline/experiments/reconstruction-v2-independent/records/**'
       - 'research_pipeline/experiments/reconstruction-v2-independent/population/records/**'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/direct_research/**'
       - '.github/workflows/research-independent-preview-ci.yml'
   pull_request:
     paths:
@@ -14,6 +15,7 @@ on:
       - 'research_pipeline/ui/**'
       - 'research_pipeline/experiments/reconstruction-v2-independent/records/**'
       - 'research_pipeline/experiments/reconstruction-v2-independent/population/records/**'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/direct_research/**'
       - '.github/workflows/research-independent-preview-ci.yml'
 permissions:
   contents: read

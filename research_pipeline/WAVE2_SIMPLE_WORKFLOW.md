@@ -10,7 +10,7 @@ Independently research mathematical meanings and make them visible on the Wave 2
 
 **Research queue:** [the one-file 418-candidate TSV](reviews/wave2-salvage-2026-10-26/CANDIDATE_WORKLIST_418.tsv). These are leads, **not 418 guaranteed distinct or verified terms**. The 16 earlier guarded mathematical dispositions can inform later decisions but impose no workflow dependencies.
 
-**Working site implementation:** `research_pipeline/adapters/mathdef/preview_site.py`, `preview.py`, `research_pipeline/ui/`, and independent screened `experiments/reconstruction-v2-independent/records/`. Do not rebuild the website; make independently researched new definitions/variants/links visible through this existing viewer. Its current screened-record reader does not yet include the separately provisional 16 meanings or candidate drafts. That *display gap*, not a graph gate, is the next software task.
+**Working site implementation:** `research_pipeline/adapters/mathdef/preview_site.py`, `preview.py`, `research_pipeline/ui/`, and independent screened `experiments/reconstruction-v2-independent/records/`. Do not rebuild the website; make independently researched new definitions/variants/links visible through this existing viewer. The display gap is now partly closed: 15 directly researched meanings and 22 links have been added to the searchable Wave 2 preview. New content goes in `experiments/reconstruction-v2-independent/direct_research/terms.json` (see its README). The other 16 provisional meanings remain in `population/records/` and are not automatically displayed. No graph stages or gates are required.
 
 ### One efficient term pass
 
