@@ -50,10 +50,28 @@ def create(workspace):
     manifest_file = _snapshot_path(root)
     if manifest_file.exists():
         current = _active(root)
-        if current.get("unresolved_fingerprint") == state.get("unresolved_fingerprint"):
+        if (current.get("unresolved_fingerprint") == state.get("unresolved_fingerprint")
+                and current.get("inventory_sha256") == state.get("inventory_sha256")):
             return {"status": "already_exists", "count": current["candidate_count"],
                     "manifest": str(manifest_file)}
-        raise PipelineError("A generation already exists; archive/integrate it before opening another")
+        receipt = read(_staging(root) / "INTEGRATION_RECEIPT.json", {})
+        if (receipt.get("status") != "integration_complete"
+                or receipt.get("prior_gate_inventory_sha256") != current.get("inventory_sha256")
+                or receipt.get("prior_gate_unresolved_fingerprint") !=
+                current.get("unresolved_fingerprint")):
+            raise PipelineError("The prior generation must be reviewed and integrated before a new one")
+        archive = _staging(root) / "history" / (
+            current["inventory_sha256"][:16] + "-" +
+            current["unresolved_fingerprint"][:16])
+        if archive.exists():
+            raise PipelineError("Immutable generation archive already exists")
+        archive.mkdir(parents=True)
+        manifest_file.rename(archive / "MANIFEST.json")
+        if _record_dir(root).exists():
+            _record_dir(root).rename(archive / "records")
+        # Preserve the prior integration receipt beside its archived inputs.
+        (_staging(root) / "INTEGRATION_RECEIPT.json").rename(
+            archive / "INTEGRATION_RECEIPT.json")
     if not state.get("consolidation_gate_valid") or state.get("phase") != "research_missing_dependencies":
         raise PipelineError("First-generation external research requires valid phase gate")
     if state.get("scan_complete") != state.get("total_formulations"):
