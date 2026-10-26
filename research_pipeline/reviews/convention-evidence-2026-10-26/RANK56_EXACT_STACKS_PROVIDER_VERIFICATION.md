@@ -13,8 +13,8 @@ with current Stacks official text:
 
 1. `form.1be2fa074ef447b0.i-adic-completeness`,
    source version
-   `fba6555f511b0388d83a3b90453c47470404837010e76e9b62f64f1128941da8`
-   (verify exact version from EVIDENCE), records
+   `a374648a4acf14117a98135079658cf2a521bdbb5abd3c37b954b406e92cc73f`
+   (confirmed against EVIDENCE.json), records
    [Stacks Definition 10.96.2, tag 00M9](https://stacks.math.columbia.edu/tag/00M9).
    The actual provider defines completeness via
    `M→lim_n M/I^nM`, with no asserted exotic nonunital
