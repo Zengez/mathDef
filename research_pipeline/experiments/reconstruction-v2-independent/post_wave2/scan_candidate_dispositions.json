@@ -5,7 +5,7 @@
     "possible_new_terminology": 2019,
     "known_title_mentions": 473
   },
-  "scope": "Exact original scan ranks 1–180, strictly matched to the unchanged frozen 2,019-phrase report",
+  "scope": "Original frozen scan ranks 1–220 researched in strict sequence, from 2,019 lead records",
   "conventions": "Research actual frozen scan records in strict rank order; direct post-Wave2 merge additions, known equivalent or specialization targets, unresolvable context flags, and false-positive phrases; never start a new candidate hunt. No dependency graph or gate.",
   "dispositions": [
     {
@@ -4340,6 +4340,864 @@
       "reason": "Nonempty is an ordinary restriction on a topological space, not a separate new space structure; no blanket exclusion of empty spaces is introduced.",
       "targets": [
         "definitions/topology/topological-space.tex"
+      ]
+    },
+    {
+      "rank": 181,
+      "phrase": "nonempty undirected graph",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "graph.connected-graph:0",
+          "term": "Connected graph"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "graph.tree:0",
+          "term": "Tree"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "An undirected graph with at least one vertex is a simple nonemptiness specialization of existing graph structure.",
+      "targets": [
+        "definitions/graph/graph.tex"
+      ]
+    },
+    {
+      "rank": 182,
+      "phrase": "noninvertible map",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.alpha-limit-set:0",
+          "term": "Alpha-limit set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.orbit:0",
+          "term": "Forward orbit"
+        }
+      ],
+      "disposition": "ambiguous",
+      "reason": "A map may be noninvertible as a set-function (non-bijective) or as a continuous/dynamical map (not a homeomorphism). These examples do not select a universal interpretation.",
+      "targets": []
+    },
+    {
+      "rank": 183,
+      "phrase": "nonzero limit",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.7259d65d3d9276de8322",
+          "term": "continuity of a transfinite module filtration"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "sets.cofinality:0",
+          "term": "Cofinality of an ordinal"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Nonzero modifies a limit value; the lead lacks a named convergence object or new specialized limit definition.",
+      "targets": []
+    },
+    {
+      "rank": 184,
+      "phrase": "nonzero nilpotent elements",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "commalg.reduced-ring:0",
+          "term": "Reduced ring"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.reduced-scheme:0",
+          "term": "Reduced scheme"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing reduced-ring and nilpotence definitions already characterize the presence/absence of nonzero nilpotents.",
+      "targets": [
+        "definitions/commalg/nilpotent-element.tex",
+        "definitions/commalg/reduced-ring.tex"
+      ]
+    },
+    {
+      "rank": 185,
+      "phrase": "open interval",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "real.derivative:0",
+          "term": "Derivative"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "real.differentiability:0",
+          "term": "Differentiability"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added bounded real open interval (a,b), explicit excluded endpoints and related ray conventions.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-open-real-interval-20261026"
+      ]
+    },
+    {
+      "rank": 186,
+      "phrase": "open subsets",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.62983821c35d185a119d",
+          "term": "open cover"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.open-cover:0",
+          "term": "Open cover"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Plural of original definition of an open subset of a topological space.",
+      "targets": [
+        "definitions/topology/open-set.tex"
+      ]
+    },
+    {
+      "rank": 187,
+      "phrase": "orthonormal basis",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.hilbert-schmidt-operator:0",
+          "term": "Hilbert--Schmidt operator"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.bergman-kernel:0",
+          "term": "Bergman kernel"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added Hilbert-space orthonormal basis as orthonormal family with dense linear span; distinguished from finite-combination Hamel basis.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-orthonormal-basis-hilbert-20261026"
+      ]
+    },
+    {
+      "rank": 188,
+      "phrase": "over the same field",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.pop142.bounded-linear",
+          "term": "bounded linear transformation"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "linear.linear-map:0",
+          "term": "Linear map"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Scalar-field qualifier for linear maps, not a named concept.",
+      "targets": []
+    },
+    {
+      "rank": 189,
+      "phrase": "peak point",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.peak-function:0",
+          "term": "Peak function for a uniform algebra"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.peak-point:0",
+          "term": "Peak point of a uniform algebra"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original production mathDef already includes a definition for peak point of a uniform algebra.",
+      "targets": [
+        "definitions/functional/peak-point.tex"
+      ]
+    },
+    {
+      "rank": 190,
+      "phrase": "pointed space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.based-space:0",
+          "term": "Pointed topological space"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.suspension:0",
+          "term": "Reduced suspension"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original production mathDef already defines a pointed topological space (space plus basepoint).",
+      "targets": [
+        "definitions/alg-topology/based-space.tex"
+      ]
+    },
+    {
+      "rank": 191,
+      "phrase": "positive definite inner product",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "geometry.euclidean-plane:0",
+          "term": "Euclidean plane"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.riemannian-manifold:0",
+          "term": "Riemannian manifold"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Positive definiteness is part of the inner product axioms for real Euclidean and Riemannian contexts.",
+      "targets": [
+        "definitions/linear/inner-product.tex"
+      ]
+    },
+    {
+      "rank": 192,
+      "phrase": "radon measure",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.inner-regular:0",
+          "term": "Inner regular Borel measure"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.radon-measure:0",
+          "term": "Radon measure (regularity convention)"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original mathDef explicitly defines Radon measure and records convention choices.",
+      "targets": [
+        "definitions/measure/radon-measure.tex"
+      ]
+    },
+    {
+      "rank": 193,
+      "phrase": "sheaf morphism",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.7f0861ac620a2bb61635",
+          "term": "isomorphism of sheaves of rings"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.morphism-schemes:0",
+          "term": "Morphism of schemes"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added the set-valued fixed-space sheaf morphism (natural transformation preserving restrictions) distinct from additional ring-structure constraints.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-morphism-sheaves-sets-20261026"
+      ]
+    },
+    {
+      "rank": 194,
+      "phrase": "simple loopless undirected graph",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.9e1b000eff0431817f3a",
+          "term": "open graph neighborhood"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.pop140.simple-undirected-cycle",
+          "term": "cycle in a simple undirected graph"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Independent Wave2 has the simple undirected-graph convention, excluding loops and multiple edges.",
+      "targets": [
+        "meaning.wave2.graph42.simple-undirected"
+      ]
+    },
+    {
+      "rank": 195,
+      "phrase": "smooth differential",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.ebf92c196007c438f394",
+          "term": "de Rham complex"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.symplectic-form:0",
+          "term": "Symplectic form"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Truncated 'smooth differential' fails to specify form, map, differential or operator; source uses distinct objects.",
+      "targets": []
+    },
+    {
+      "rank": 196,
+      "phrase": "smooth real manifold",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.riemannian-manifold:0",
+          "term": "Riemannian manifold"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "scv.cr-structure:0",
+          "term": "Integrable CR structure"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The original smooth real manifold definition already covers the phrase.",
+      "targets": [
+        "definitions/manifold/smooth-manifold.tex"
+      ]
+    },
+    {
+      "rank": 197,
+      "phrase": "some points",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.reproducing-kernel-hilbert-space:0",
+          "term": "Reproducing-kernel Hilbert space"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.subdifferential:0",
+          "term": "Convex subdifferential"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Unqualified existential choice of points, not standalone mathematical terminology.",
+      "targets": []
+    },
+    {
+      "rank": 198,
+      "phrase": "specified element",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "term": "commutative unital ring"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.polynomial-ring:0",
+          "term": "Polynomial ring"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'Specified element' is contextual reference to a chosen element, not a separate construction.",
+      "targets": []
+    },
+    {
+      "rank": 199,
+      "phrase": "specified interval",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.argument:0",
+          "term": "Argument of a complex number"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.ordinary-differential-equation:0",
+          "term": "Ordinary differential equation"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "An interval picked by context, without a distinct property or convention.",
+      "targets": []
+    },
+    {
+      "rank": 200,
+      "phrase": "state space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.discrete-dynamical-system:0",
+          "term": "Discrete dynamical system"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.phase-space:0",
+          "term": "Phase space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Dynamical state space in these examples coincides with the phase/state space already recorded.",
+      "targets": [
+        "definitions/dynamics/phase-space.tex"
+      ]
+    },
+    {
+      "rank": 201,
+      "phrase": "sub sigma algebra",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "graphwalks.walk-proximity:0",
+          "term": "Proximity functional on graph walks"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "prob.conditional-expectation:0",
+          "term": "Conditional expectation"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added sub-σ-algebra on the same Ω; distinguished from a trace σ-algebra and from measure-complete conventions.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-sub-sigma-algebra-20261026"
+      ]
+    },
+    {
+      "rank": 202,
+      "phrase": "sub sigma algebras",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.65d334caa51c845ea335",
+          "term": "continuous-time filtration"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "stochastic.filtration:0",
+          "term": "Filtration of sigma-algebras"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Plural spelling of the new scanned sub-σ-algebra definition; no extra meaning.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-sub-sigma-algebra-20261026"
+      ]
+    },
+    {
+      "rank": 203,
+      "phrase": "test function",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.test-function:0",
+          "term": "Compactly supported smooth test function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "pde.viscosity-solution:0",
+          "term": "Viscosity solution of a degenerate elliptic PDE"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing test-function definition covers smooth compactly supported distribution-theory functions.",
+      "targets": [
+        "definitions/pde/test-function.tex"
+      ]
+    },
+    {
+      "rank": 204,
+      "phrase": "test functions",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.dirac-delta:0",
+          "term": "Dirac delta distribution"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "pde.smoothing-operator:0",
+          "term": "Smoothing operator with smooth kernel"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Plural of existing test-function entry.",
+      "targets": [
+        "definitions/pde/test-function.tex"
+      ]
+    },
+    {
+      "rank": 205,
+      "phrase": "that every nonempty subset",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.simplicial-complex:0",
+          "term": "Abstract simplicial complex"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "relations.well-order:0",
+          "term": "Well-order"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Universal quantifier fragment over nonempty subsets is not a named mathematical object.",
+      "targets": []
+    },
+    {
+      "rank": 206,
+      "phrase": "the abelian group",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6e79f03b3e61fe04fabc",
+          "term": "presentation of an abelian group"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.ideal-class-group:0",
+          "term": "Ideal class group"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Already-covered algebraic definition of an abelian group, merely with an article.",
+      "targets": [
+        "definitions/algebra/abelian-group.tex"
+      ]
+    },
+    {
+      "rank": 207,
+      "phrase": "the ambient space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.b7715941d4e866b5133d",
+          "term": "isolated point of a topological space"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "geometry.polytope:0",
+          "term": "Convex polytope"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The ambient space is the contextually chosen space; may be topological, vector, normed or other, and is not one term here.",
+      "targets": []
+    },
+    {
+      "rank": 208,
+      "phrase": "the analytic dirichlet space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.analytic-dirichlet-space:0",
+          "term": "Analytic Dirichlet space on the disk"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.dirichlet-reproducing-kernel:0",
+          "term": "Reproducing kernel of the Dirichlet space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original definition names analytic Dirichlet space on the disk.",
+      "targets": [
+        "definitions/functionspaces/analytic-dirichlet-space.tex"
+      ]
+    },
+    {
+      "rank": 209,
+      "phrase": "the associated graded module",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.1c3a3131528cfb0d72af",
+          "term": "degree-n associated graded quotient"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.80c845b8cb05d7f4b6ae",
+          "term": "associated graded module"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The independent Wave2 definition already covers associated graded modules.",
+      "targets": [
+        "meaning.wave2.direct.80c845b8cb05d7f4b6ae"
+      ]
+    },
+    {
+      "rank": 210,
+      "phrase": "the bergman projection",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.bergman-projection:0",
+          "term": "Bergman projection"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.hankel-operator:0",
+          "term": "Hankel operator on a Bergman space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The original Bergman projection definition covers this exact noun phrase.",
+      "targets": [
+        "definitions/functionspaces/bergman-projection.tex"
+      ]
+    },
+    {
+      "rank": 211,
+      "phrase": "the borel sigma algebra",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.60b81b3c7a42f7c2b9ee",
+          "term": "sigma-algebra generated by a family"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.radon-measure:0",
+          "term": "Radon measure (regularity convention)"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Already-defined Borel σ-algebra with definite article.",
+      "targets": [
+        "definitions/measure/borel-sigma-algebra.tex"
+      ]
+    },
+    {
+      "rank": 212,
+      "phrase": "the canonical map",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.538464c3e54edac0b891",
+          "term": "canonical inclusion into the fraction field"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.nuclear-operator:0",
+          "term": "Nuclear operator between Banach spaces"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Canonical maps depend on a construction; the two examples do not identify one single universal canonical map.",
+      "targets": []
+    },
+    {
+      "rank": 213,
+      "phrase": "the derivative",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.analytic-dirichlet-space:0",
+          "term": "Analytic Dirichlet space on the disk"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.critical-point:0",
+          "term": "Critical point of a holomorphic map"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Derivative already has a dedicated original real-analysis meaning.",
+      "targets": [
+        "definitions/real/derivative.tex"
+      ]
+    },
+    {
+      "rank": 214,
+      "phrase": "the direct sum",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.134e1c9f45dd933fdc36",
+          "term": "direct sum of modules"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.stable-manifold:0",
+          "term": "Stable manifold of a hyperbolic fixed point"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Independent Wave2 directly defines a direct sum of modules.",
+      "targets": [
+        "meaning.wave2.direct.134e1c9f45dd933fdc36"
+      ]
+    },
+    {
+      "rank": 215,
+      "phrase": "the element",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.8e7388ef8958ac46b761",
+          "term": "repeated root"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "commalg.integral-extension:0",
+          "term": "Integral element over a ring"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Definite article with context-specific element; not a new mathematical term.",
+      "targets": []
+    },
+    {
+      "rank": 216,
+      "phrase": "the empty product",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.f709867827c73e690cfc",
+          "term": "finite categorical product"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "combin.factorial:0",
+          "term": "Factorial"
+        }
+      ],
+      "disposition": "existing_variants",
+      "reason": "Empty product means the multiplicative identity in algebra/arithmetic but a terminal object as nullary categorical product; both senses already occur in source definitions and should not be conflated.",
+      "targets": [
+        "meaning.wave2.direct.f709867827c73e690cfc",
+        "definitions/combin/factorial.tex"
+      ]
+    },
+    {
+      "rank": 217,
+      "phrase": "the empty space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.62983821c35d185a119d",
+          "term": "open cover"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.connected-space:0",
+          "term": "Connected space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The empty topological space is allowed by original topological-space axioms, not necessarily a new separate definition.",
+      "targets": [
+        "definitions/topology/topological-space.tex"
+      ]
+    },
+    {
+      "rank": 218,
+      "phrase": "the extension",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.research394",
+          "term": "simple root of a polynomial"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.field-extension:0",
+          "term": "Field extension"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'The extension' references a prior object and changes meaning across algebra, analysis and field settings; no uniform separate definition.",
+      "targets": []
+    },
+    {
+      "rank": 219,
+      "phrase": "the exterior derivative",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.de-rham-cohomology:0",
+          "term": "de Rham cohomology"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.exterior-derivative:0",
+          "term": "Exterior derivative"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The original exterior derivative of differential forms is defined in its own entry.",
+      "targets": [
+        "definitions/manifold/exterior-derivative.tex"
+      ]
+    },
+    {
+      "rank": 220,
+      "phrase": "the field norm",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.85c65a55076fda1a7e63",
+          "term": "multiplication by a field element"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.field-norm:0",
+          "term": "Field norm"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The original field norm entry covers this exact number-field notion.",
+      "targets": [
+        "definitions/arithmetic/field-norm.tex"
       ]
     }
   ]
