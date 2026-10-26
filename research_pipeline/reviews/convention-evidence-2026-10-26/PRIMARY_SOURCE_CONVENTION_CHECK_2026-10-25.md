@@ -239,3 +239,166 @@ graph amendment, missing-candidate
 resolution, source rewrite, consolidation
 gate transition or Pass 3 action follows
 automatically.
+
+
+---
+
+## Second source check — exact recorded locators and clarified statuses
+
+This section supersedes the earlier "not yet source-verified" list **for the
+specific questions directly answered below**. The earlier section remains a
+chronological record of what had been checked at that point. All links below
+are **official source pages at their recorded tags/locators**, independently
+consulted this round, not authority inferred from the repo's provider metadata.
+
+### Rank 154 — multigraph finite-per-pair multiplicity: convention verified
+
+The exact archived observation points to
+[ProofWiki Definition:Multigraph](https://proofwiki.org/wiki/Definition:Multigraph).
+Its multigraph `(V,E)` uses a **multiset of two-element subsets** of V
+and says loop conventions vary between sources. In the provider's linked
+[Definition:Multiset](https://proofwiki.org/wiki/Definition:Multiset),
+a multiset is `(S,μ)` with **μ:S→positive integers** and an explicit
+exclusion of infinite multiplicity for any *one* element; S may be infinite.
+Thus the provider's selected construction allows an infinite number of
+vertices or distinct edges but **only finite multiplicity of each edge pair**.
+This directly settles the original rank-154 per-pair multiplicity ambiguity
+under this provider's own definitions. The multiset page bears an editorial
+refactoring notice, so its status as an authoritative general mathematical
+convention should **not** be broadened outside this specific ProofWiki chain.
+Do not infer that every mathematical definition of multigraph forbids loops
+or infinite multiplicities.
+
+### Rank 358 — tensor algebra: coefficient scope and multiplication verified
+
+[Stacks §10.13, tag 00DM](https://stacks.math.columbia.edu/tag/00DM)
+defines `T_R(M)=⊕_{n≥0}M^{⊗_R n}`, with **T⁰(M)=R** and
+concatenation, explicitly describing it as a
+**noncommutative R-algebra**. Combined with the commutative
+unital coefficient-ring convention at
+[Stacks §10.2, tag 00AQ](https://stacks.math.columbia.edu/tag/00AQ),
+this confirms that **R is commutative/unital but the constructed tensor
+algebra need not be commutative** in this cited scope.
+This settles the parent source's ordinary coefficient-ring/module typing
+without inventing noncommutative ring-left-module tensor powers.
+No generic assertion about bimodule tensor algebras follows.
+
+### Rank 281 — domination of local subrings: recorded source directly verified
+
+[Stacks §10.50, tag 00I8](https://stacks.math.columbia.edu/tag/00I8),
+Definition 10.50.1, explicitly takes local rings A,B **contained
+in a common field K** and defines B dominating A by
+A⊆B plus maximal-ideal contraction. In a field, a nonzero
+unital subring's identity is necessarily the ambient
+field's identity, so the common-unit property is supported
+in this exact scope. **Inclusion alone does not imply domination**;
+the maximal-ideal condition is separate. The stored parent
+formulation correctly preserves that condition.
+
+### Rank 202 — locally ringed space: source verified within provider conventions
+
+[Stacks §26.2, tag 01HA](https://stacks.math.columbia.edu/tag/01HA)
+recalls that a ringed space is `(X,𝒪_X)` with a **sheaf of rings** and
+requires each stalk to be a local ring for a locally ringed space.
+Its cited [§6.25](https://stacks.math.columbia.edu/tag/0081) treats
+ringed spaces more generally. Read the ring-sheaf restriction
+maps in the usual ring-homomorphism sense, coupled with the
+provider's explicitly commutative/unital conventions; do
+**not** collapse stalks, global sections, quotient sheaves or
+the full locally ringed object. The source-specific
+ringed-space/local-stalk criterion is checked, while
+any editorial decision about how many typed prerequisite
+nodes to link remains separate.
+
+### Rank 133 — strong transcendence: defining formula verified, units contextual
+
+The exact archived locator,
+[Stacks Definition 10.123.7, tag 00PZ](https://stacks.math.columbia.edu/tag/00PZ),
+requires an **inclusion of rings** R⊂S and uses arbitrary
+u∈S in the annihilator-sensitive polynomial implication.
+With §10.2 provider convention the rings are commutative
+and unital; for an inclusion explicitly understood as a
+**unital ring map**, the identity is shared. The tag's
+one-line definition does not itself assert the source
+inclusion is unital, so keep the identity-preservation
+justification attributed to the project's ring-map
+convention rather than to a textual `1_R=1_S`
+assertion at tag 00PZ. Do **not** replace
+strong transcendence with ordinary algebraic
+independence in arbitrary rings. The formula also does
+not require nonzero annihilating factors, corroborating
+the rank-298 possible explanatory-overlink caution.
+
+### Rank 393 — category-size convention: provider default verified with exceptions
+
+[Stacks §4.2, tag 0013](https://stacks.math.columbia.edu/tag/0013)
+actually **defines a category with a set of objects and sets
+of morphisms** and explicitly states that this is its default
+unless listed exceptions allow large categories. This is
+stronger than the generic condition that Hom collections be
+sets while the object collection might be a proper class.
+The exact source [§4.24, tag 0036](https://stacks.math.columbia.edu/tag/0036)
+and [Definition 4.24.1, tag 0037](https://stacks.math.columbia.edu/tag/0037)
+give natural bijections between Hom sets for adjunctions.
+
+**Correction to earlier research deferral:** for a plain
+"category" in the Stacks defaults, the set-of-objects
+convention **is directly documented**; for its explicitly
+named large categories, or general category theory elsewhere,
+one must respect the exceptions and any chosen universe.
+Do **not** use provider defaults to force all mathDef
+category meanings to denote only small categories.
+
+### Rank 175 — exterior-power rank: source verified, zero-ring boundary remains
+
+[Stacks Definition 10.102.5, tag 00MR](https://stacks.math.columbia.edu/tag/00MR)
+defines rank φ as the **maximal r for which ∧^rφ is nonzero**
+and adds "rank φ=0 iff φ=0". Its coefficient ring inherits
+Stacks §10.2's commutative/unital convention, including
+the **zero ring**.
+
+**Remaining precise boundary:** when R is the zero ring,
+every R-linear map and `id_R` are zero maps, including
+`∧⁰φ=id_R`; hence no r necessarily satisfies the
+published "∧^rφ nonzero" predicate. Unless a convention
+for the empty maximum or a nonzero-ring hypothesis is
+made explicit, the literal formula does not alone yield
+rank zero for zero maps over the zero ring. This is a
+genuine mathematical/source edge case, **not** a license
+to edit the published source or declare a universal
+counterexample to the usual nonzero-ring theorem.
+Retain as a bounded qualification lead pending
+source-specific convention reconciliation.
+
+### Rank 56 — completion formula checked; action/index convention not fully closed
+
+[Stacks §10.96, tag 00M9](https://stacks.math.columbia.edu/tag/00M9)
+directly gives ring and module I-adic completions as
+`lim_n R/I^n` and `lim_n M/I^nM`.
+[Stacks §10.72, tag 00LE](https://stacks.math.columbia.edu/tag/00LE)
+gives the separate depth-module context.
+This confirms the actual quotient/module completion
+operations and their ordinary Stacks ring convention,
+but a reviewer should still independently check
+**whether each parent specifies I⁰M=M or begins at n=1**
+and the unital module action in any non-Stacks
+variants. No unitality inference should be exported
+to the repository's explicitly identity-optional
+module formulations.
+
+## Current evidence-versus-graph status
+
+The original 13 historical deferral identities are still
+**unresolved in the independent dependency graph**,
+even where some particular provider/source convention
+questions have now been answered directly from exact
+archived locators. In particular, ranks 154, 281, 358
+and the Stacks default size component of 393 no longer
+need the same provider-convention research repeated,
+while 166's measure sidedness and 175's zero-ring
+rank edge case require more precise disposition.
+
+No original provider page or GitHub source event was
+silently rewritten. This report constitutes review
+evidence, **not an applied graph transaction, blanket
+source certification, gate transition or Pass 3 approval**.
