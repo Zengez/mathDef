@@ -58,6 +58,12 @@ jobs:
           assert (root/"merged/index.html").is_file()
           assert (root/"merged/definitions-index.json").is_file()
           assert (root/"wave1/index.html").is_file()
+          # Read-only candidate visibility for scan-driven incorporation:
+          # each record is from the original unchanged scan-report.json.
+          # Not an admission gate or an automatically approved term queue.
+          print("ORIGINAL_SCAN_CANDIDATES_JSON="+json.dumps(
+              scan["possible_new_terminology"][:100], ensure_ascii=False,
+              separators=(",", ":")))
           print("Merged-preview smoke passed:", {
               "independent":base_n,
               "original":original_n,
