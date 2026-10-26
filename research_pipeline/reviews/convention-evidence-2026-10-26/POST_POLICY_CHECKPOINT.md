@@ -176,3 +176,57 @@ This is a proposed tool improvement, **not authorization**
 to apply the six corrected graph identities. Source and
 mathematical reviews of remaining provider-specific
 exceptions may continue independently.
+
+## Additional specialized-meaning / source-edge round (2026-10-25)
+
+This continuation added **review-only documents**, not graph state:
+
+- [SPECIALIZED_SELF_REFERENCE_AND_SOURCE_EDGE_REVIEW.json](SPECIALIZED_SELF_REFERENCE_AND_SOURCE_EDGE_REVIEW.json):
+  five fully version-anchored mathematical case notes (historical
+  ranks **172, 175, 223, 245, 298**) with original source text,
+  exact missing occurrence, source SHA and effective predecessor
+  node SHA; zero mathematical transactions authorized.
+- [SPECIALIZED_SELF_REFERENCE_AND_SOURCE_EDGE_FINDINGS.md](SPECIALIZED_SELF_REFERENCE_AND_SOURCE_EDGE_FINDINGS.md):
+  proof that ranks **172/223/245** must not be resolved
+  to their own owning meanings; rank **298** is likely an
+  explanatory rather than required zero-divisor dependency;
+  rank **175** exposes a literal empty-maximum case for
+  zero-ring exterior-power rank despite Stacks' general
+  zero-ring allowance.
+- [RANK298_OPTIONAL_EXPLANATORY_LINK_PROPOSAL.json](RANK298_OPTIONAL_EXPLANATORY_LINK_PROPOSAL.json):
+  non-executable, individually scoped suggestion to reclassify
+  the exact added phrase `occ.6414b479b47d231c54a8`
+  as explanatory external context, retaining original source,
+  aliases, all other references, and the original Stacks locator.
+  **No apply-eligible reviewed manifest** is created.
+- [AMBIENT_CATEGORY_SIZE_SCOPE_LEAD.md](AMBIENT_CATEGORY_SIZE_SCOPE_LEAD.md):
+  an **additional, not previously counted** audit lead:
+  generic limit and colimit definitions link both their
+  indexing and ambient category to the specialized
+  `small-category` meaning and to a functor between
+  small categories; the ambient category of rings may be
+  large even for small-indexed limits. Source texts do
+  not explicitly require ambient smallness.
+
+Current official Stacks pages [tag 00MR](https://stacks.math.columbia.edu/tag/00MR),
+[tag 00AQ](https://stacks.math.columbia.edu/tag/00AQ), and
+[tag 00PZ](https://stacks.math.columbia.edu/tag/00PZ)
+were independently checked for the bounded statements
+above. Original stored source evidence and versions
+were **not** amended or recertified. Cases 172,
+223 and 245 are **not** three additional independent
+mathematical errors; the risk is future self-reference
+from an improperly scoped resolution. The original
+historical **40-case partition remains unchanged**.
+
+**Next:** complete the source-specific five partial
+convention qualifications, or pass the existing
+[CODEX_CONTEXT_ADJUDICATION_HANDOFF.md](CODEX_CONTEXT_ADJUDICATION_HANDOFF.md)
+to Codex to build a guarded reviewer-context overlay
+with tests and zero graph mutation. A separate explicit
+mathematical authorization would still be needed
+to apply any candidate recontextualization.
+
+No current suite rerun is claimed, no protected mathematical
+files changed, both draft PRs remain review-only,
+and the consolidation gate remains closed.
