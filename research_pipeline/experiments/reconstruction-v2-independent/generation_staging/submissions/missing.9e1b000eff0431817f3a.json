@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.9e1b000eff0431817f3a",
+  "original_query": "neighbor set of vertex v",
+  "original_context": "Graph theory: neighborhood N_G(v)={u∈V:{u,v}∈E} in a simple undirected graph G=(V,E).",
+  "original_incoming_occurrence_ids": [
+    "occ.9366f9c62da2a8cc5d54"
+  ],
+  "disposition": "new_meaning",
+  "definition": "For a simple loopless undirected graph G=(V,E) and a vertex v∈V, the open neighborhood N_G(v) is the set {u∈V:{u,v}∈E} of all vertices adjacent to v. It excludes v itself.",
+  "reasoning": "Existing screened definitions give vertex degree through the cardinality of the neighbor set, but do not separately define the underlying set-valued graph-neighborhood construction. The definition must use the open-neighborhood convention; the closed neighborhood N_G[v]=N_G(v)∪{v} is a different operation. Avoid confusion with topological neighborhoods and directed-graph in/out neighbors.",
+  "sources": [
+    {
+      "url": "https://mathworld.wolfram.com/OpenGraphNeighborhood.html",
+      "section": "Open Graph Neighborhood",
+      "relevance": "Directly verified the set of adjacent vertices excluding the base vertex and the distinction from the closed neighborhood.",
+      "verification_status": "direct_primary_passage_checked"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.9a669bd30949842fab00"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.wave2.cross133.vertex-degree-simple",
+        "relation": "Vertex degree counts the members of this set, but is a cardinal rather than the neighbor set"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Checked the full 595 screened and 16 provisional independent meaning index and inspected graph-related formulations, especially simple vertex degree. No standalone open-neighborhood meaning matches this construction. Source text directly fixes the open-neighborhood convention. Also compared with the already staged first-generation candidate identities: missing.8e10ca4c4067ac5928f8, missing.8e7388ef8958ac46b761, missing.9a669bd30949842fab00; none has this same mathematical object or proposition."
+  },
+  "mathematical_assumptions": [
+    "G is a simple undirected loopless graph.",
+    "v belongs to the vertex set, including isolated vertices whose neighborhood is empty.",
+    "The set excludes v; closed neighborhood differs and directed-graph variants are not implicitly included."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
