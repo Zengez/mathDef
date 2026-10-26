@@ -4778,38 +4778,6 @@
       "research_status": "assistant-researched frozen quick-scan incorporation; not peer certified"
     },
     {
-      "id": "meaning.mathdef.postwave.scan-complex-analytic-subset-20261026",
-      "candidate_id": "postwave-scan:rank-318",
-      "term": "complex analytic subset",
-      "context": "Several complex variables · locally common zero loci of holomorphic functions",
-      "aliases": [
-        "complex analytic set",
-        "analytic subset of a complex manifold",
-        "complex-analytic set"
-      ],
-      "definition": "Let X be a complex manifold and A⊆X. The subset A is a (closed) complex analytic subset if each point x∈X has an open neighborhood U and finitely many holomorphic functions f₁,…,f_r:U→ℂ such that A∩U={z∈U:f₁(z)=⋯=f_r(z)=0}. This allows A=∅ (for example by f≡1) and A=X (an empty family or f≡0). Complex-analytic subsets are locally closed zero sets in their ambient complex manifold and are distinct from 'analytic sets' in descriptive set theory (continuous images of Polish spaces). A germ of an analytic set at x records only its local equivalence class, not the global subset A.",
-      "sources": [
-        {
-          "title": "Encyclopedia of Mathematics — Analytic set, complex-analytic sense (part 6)",
-          "url": "https://encyclopediaofmath.org/wiki/Analytic_set",
-          "verification_status": "direct_research_source_checked_2026-10-26"
-        },
-        {
-          "title": "Original mathDef — Germ of a complex analytic set",
-          "url": "https://github.com/Zengez/mathDef/blob/main/definitions/scv/analytic-set-germ.tex",
-          "verification_status": "direct_research_source_checked_2026-10-26"
-        }
-      ],
-      "links": [],
-      "assumptions": [
-        "The ambient X is a complex manifold (locally modeled on ℂ^n).",
-        "Empty and whole-space analytic subsets are permitted.",
-        "Not the analytic/Souslin set convention in descriptive set theory.",
-        "Local finite tuples of holomorphic defining functions are used."
-      ],
-      "research_status": "assistant-researched frozen quick-scan incorporation; not peer certified"
-    },
-    {
       "id": "meaning.mathdef.postwave.scan-banach-valued-simple-function-20261026",
       "candidate_id": "postwave-scan:rank-259",
       "term": "Banach-space-valued simple measurable function",
@@ -4843,6 +4811,196 @@
         "A finite partition may include a zero-valued part, even on an infinite-measure domain."
       ],
       "research_status": "assistant-researched from frozen original scan; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-associative-algebra-over-field-20261026",
+      "candidate_id": "postwave-scan:rank-413",
+      "term": "associative algebra over a field",
+      "context": "Abstract algebra · algebra over a specified field, not necessarily unital",
+      "aliases": [
+        "associative F-algebra",
+        "associative algebra"
+      ],
+      "definition": "Let F be a field. An associative F-algebra is an F-vector space A equipped with an F-bilinear multiplication A×A→A, written (a,b)↦ab, satisfying (ab)c=a(bc) for every a,b,c∈A. Neither commutativity nor the existence of a multiplicative identity is assumed. A unital associative F-algebra additionally has an element 1_A satisfying 1_Aa=a1_A=a for every a∈A (and some authors build unitality into the unqualified term 'algebra'). The zero vector space with its unique multiplication is an associative F-algebra under this convention.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Associative rings and algebras",
+          "url": "https://encyclopediaofmath.org/wiki/Associative_rings_and_algebras",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Algebra",
+          "url": "https://encyclopediaofmath.org/wiki/Algebra",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.unital-ring-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Scalar field F is fixed and multiplication F-bilinear.",
+        "Associativity is required; an identity and commutativity are not.",
+        "The zero algebra is admitted; conventions excluding it are separate."
+      ],
+      "research_status": "assistant-reviewed mathematical source retrieval; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-bounded-continuous-real-function-20261026",
+      "candidate_id": "postwave-scan:rank-470",
+      "term": "bounded continuous real-valued function",
+      "context": "Real-valued functions · C_b(X,ℝ) for a topological space X",
+      "aliases": [
+        "bounded continuous real function",
+        "element of C_b(X,ℝ)"
+      ],
+      "definition": "For a topological space X, a function f:X→ℝ is bounded and continuous if it is continuous for the topology on X and there exists a constant M<∞ with |f(x)|≤M for every x∈X. Such functions form the real vector space C_b(X,ℝ), which is complete in the supremum norm ∥f∥∞=sup_{x∈X}|f(x)| (for the empty X, take the unique function's norm to be 0). No compactness, local compactness, or Hausdorff assumption on X is necessary for this definition. On compact X, every continuous real-valued function is bounded.",
+      "sources": [
+        {
+          "title": "Stephen Semmes (Rice University) — Bounded continuous functions, §100",
+          "url": "https://math.rice.edu/~semmes/fun2.pdf",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        },
+        {
+          "title": "Stephen Semmes — Continuous mappings, §4.8",
+          "url": "https://math.rice.edu/~semmes/math331.pdf",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "X is arbitrary topological space; f real-valued.",
+        "Uniform boundedness is across all points of X, not only locally.",
+        "Empty-space supremum convention is explicitly zero."
+      ],
+      "research_status": "assistant-reviewed mathematical source retrieval; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-cantor-space-20261026",
+      "candidate_id": "postwave-scan:rank-482",
+      "term": "Cantor space",
+      "context": "General topology · countable product of a two-point discrete space",
+      "aliases": [
+        "binary Cantor space",
+        "2^ω with product topology",
+        "Cantor set (up to homeomorphism)"
+      ],
+      "definition": "Cantor space is the product space 2^ℕ={0,1}^ℕ, where {0,1} has the discrete topology and the product has the product topology. Basic clopen sets specify finitely many binary coordinates. This space is nonempty, compact, metrizable, zero-dimensional and has no isolated points; it is homeomorphic to the usual middle-thirds Cantor subset of [0,1]. More generally, every nonempty compact perfect totally disconnected metrizable space is homeomorphic to Cantor space. The countably infinite index set is essential: a finite binary product is discrete and has isolated points.",
+      "sources": [
+        {
+          "title": "UT Austin — The Cantor Set, topology notes",
+          "url": "https://web.ma.utexas.edu/users/vandyke/notes/orderability/orderability.pdf",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Cantor set",
+          "url": "https://encyclopediaofmath.org/wiki/Cantor_set",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "The product is over countably INFINITELY many coordinates.",
+        "{0,1} has the discrete topology.",
+        "The characterization requires nonempty compactness and no isolated points; 'totally disconnected' is sufficient in compact metrizable spaces."
+      ],
+      "research_status": "assistant-reviewed mathematical source retrieval; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-cofinal-subset-poset-20261026",
+      "candidate_id": "postwave-scan:rank-506",
+      "term": "cofinal subset of a partially ordered set",
+      "context": "Order theory · subset meeting every upper cone",
+      "aliases": [
+        "cofinal subset of a poset",
+        "upward cofinal subset"
+      ],
+      "definition": "Let (P,≤) be a partially ordered set. A subset C⊆P is cofinal in P if for every p∈P there exists c∈C such that p≤c. No total-order or directedness assumption is needed. If P has a greatest element, any subset containing that element is cofinal; if P=∅ then the empty subset is cofinal by vacuity. For a nonempty P, a cofinal C must be nonempty. In an ordinal ordered by membership this specializes to the usual cofinal subset of an ordinal, and the minimum size/order type of a cofinal subset relates to cofinality.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Partially ordered set (cofinal subsets and types)",
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        },
+        {
+          "title": "Original mathDef — Cofinality of an ordinal",
+          "url": "https://github.com/Zengez/mathDef/blob/main/definitions/sets/cofinality.tex",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "C is a subset of P under the SAME order, not an arbitrary poset mapping.",
+        "No requirement P be directed or linearly ordered.",
+        "The empty P case is admitted."
+      ],
+      "research_status": "assistant-reviewed mathematical source retrieval; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-complete-discrete-valuation-ring-20261026",
+      "candidate_id": "postwave-scan:rank-532",
+      "term": "complete discrete valuation ring",
+      "context": "Commutative algebra · discrete valuation ring complete for maximal-ideal topology",
+      "aliases": [
+        "complete DVR"
+      ],
+      "definition": "Let R be a discrete valuation ring with maximal ideal 𝔪=(π), where π is a uniformizer. The ring R is complete if the canonical map R→lim_{n≥1}R/𝔪^n is an isomorphism; equivalently, every Cauchy sequence for the π-adic topology converges in R. Here R is a nonfield discrete valuation domain, and the maximal-ideal topology is separated. The p-adic integers ℤ_p form an example with π=p, whereas a localization ℤ_(p) is generally not p-adically complete. Completeness is a topological property of R, not the assertion that its fraction field is algebraically closed.",
+      "sources": [
+        {
+          "title": "Stacks Project — Valuation rings, Definition 10.50.13",
+          "url": "https://stacks.math.columbia.edu/tag/00I8",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        },
+        {
+          "title": "Stacks Project — Cohen structure theorem, complete DVRs",
+          "url": "https://stacks.math.columbia.edu/tag/0323",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        },
+        {
+          "title": "Wolfram MathWorld — Discrete Valuation Ring",
+          "url": "https://mathworld.wolfram.com/DiscreteValuationRing.html",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Discrete valuation ring excludes fields under this convention.",
+        "The completion is with respect to the maximal ideal 𝔪, not an arbitrary ideal.",
+        "The inverse-limit index n starts at 1."
+      ],
+      "research_status": "assistant-reviewed mathematical source retrieval; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-completely-multiplicative-function-20261026",
+      "candidate_id": "postwave-scan:rank-537",
+      "term": "completely multiplicative arithmetic function",
+      "context": "Multiplicative number theory · unrestricted multiplicativity on positive integers",
+      "aliases": [
+        "completely multiplicative function",
+        "totally multiplicative function"
+      ],
+      "definition": "A completely multiplicative arithmetic function is a function f:ℕ_{>0}→ℂ with f(1)=1 and f(mn)=f(m)f(n) for ALL positive integers m,n, without a coprimality restriction. Consequently f(p^k)=f(p)^k for each prime p and k≥1; more generally f(n)=∏_{p^k∥n}f(p)^k. Every completely multiplicative function is multiplicative in the usual number-theoretic coprime-only sense, but the converse need not hold (for example Euler's totient function). Requiring f(1)=1 excludes the identically zero function, which otherwise satisfies the product identity.",
+      "sources": [
+        {
+          "title": "NIST Digital Library of Mathematical Functions — §27.3.9–10",
+          "url": "https://dlmf.nist.gov/27.3",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Multiplicative arithmetic function",
+          "url": "https://encyclopediaofmath.org/wiki/Totally_multiplicative_function",
+          "verification_status": "source_mathematical_convention_checked_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Domain consists of positive integers including 1; codomain ℂ.",
+        "Unrestricted factorization holds for all m,n, not just relatively prime pairs.",
+        "Normalize f(1)=1 to exclude the identically-zero degenerate case."
+      ],
+      "research_status": "assistant-reviewed mathematical source retrieval; not formally certified"
     }
   ]
 }
