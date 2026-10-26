@@ -275,3 +275,28 @@ overlay totals **128** new post-Wave2 meanings. Next candidate is rank
 **101**, not a new term-crawling pass. All 958 independent Wave2 meanings,
 1,014 original mathDef definitions, and the full frozen original scan
 remain unaffected.
+
+
+## Original quick-scan research and disposition, ranks 101–140
+
+This batch used only literal candidates from the original frozen 2,019-phrase
+scan, with exact example origins and IDs carried into the existing
+`post_wave2/scan_candidate_dispositions.json`. Decisions: 8 new, 18 already
+covered, 14 nonterminological phrases. No additional candidates were
+harvested. Eight source-attributed, mathematically scoped new meanings were
+added to the **merged-only** overlay: absolute convergence for ordinary
+Dirichlet series, R-algebra homomorphism, norm-closed linear subspace,
+compact Hausdorff space, complex-valued function, real-C¹ complex-valued
+function, positive-radius convergent complex power series, and at-most-
+countable subset.
+
+Definitions explicitly distinguish algebra-map unital conventions,
+norm-closed versus topologically closed subspaces, real versus complex
+differentiability, positive radius versus mere center convergence, and
+finite-or-countably-infinite versus denumerable-only terminology. Sources
+are saved for each meaning; no blanket claims of source certification.
+
+**Checkpoint: 140/2,019 original scan leads processed; next rank 141.**
+Merged-only overlay has 136 meanings, expected total merged content 2,108
+(958+1,014+136). The independent Wave 2 and original source files remain
+unchanged; original scan content/count is not altered.
