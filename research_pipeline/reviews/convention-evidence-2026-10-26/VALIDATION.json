@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "base_engineering_commit": "51696c08b1e5e8b7964ad4f1599e61acc9301ff9",
+  "main_mathematical_checkpoint": "a7ce2ba3cdd07e6d0b9809d4e39014fb8533228c",
+  "historical_audit_commit": "978db08b2fe736638237c6967f934dbfe96894a3",
+  "read_only_mathematical_review": true,
+  "external_verification_performed": false,
+  "graph_transactions_submitted": false,
+  "gate_authorized": false,
+  "evidence_anchor_validation": {
+    "validation": "passed",
+    "cases": 40,
+    "parent_visits": 104,
+    "primary_parent_formulations": 93,
+    "complete_current_contexts": 222,
+    "decision_cards": 13,
+    "verified_transactions": 6,
+    "superseded_historical_reviews": 2,
+    "protected_files_unchanged": 2293,
+    "protected_file_map_sha256": "b14aa5eced27ec6b82d6c723191fed3266e8115c06b428cd9be8bfcacaf61d17",
+    "gate_closed": true,
+    "external_source_verification_performed": false
+  },
+  "protected_file_count": 2293,
+  "protected_manifest_all_paths_and_raw_bytes_identical": true,
+  "protected_map_canonical_sha256": "b14aa5eced27ec6b82d6c723191fed3266e8115c06b428cd9be8bfcacaf61d17",
+  "frozen_wave1_git_tree_before_after": "00d52a5fbb31827f80bf7683ae8347e6d652e569",
+  "frozen_mathematical_files_read": false,
+  "current_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "current_unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "reconciliation_status_counts": {
+    "applied_receipt_verified": 6,
+    "superseded_by_verified_transaction": 2
+  },
+  "readiness": {
+    "status": "mechanical_checks_passed_review_decision_required",
+    "pass2_complete": "not_determined",
+    "pass3_authorized_by_this_assessment": false,
+    "mechanical_checks": {
+      "inventory_matches_current_sources": true,
+      "inventory_digest_valid": true,
+      "all_scans_complete": true,
+      "zero_unassigned": true,
+      "zero_ambiguous": true,
+      "unique_occurrence_identities": true,
+      "occurrence_index_matches_replay": true,
+      "unresolved_index_matches_replay": true,
+      "edge_index_matches_replay": true,
+      "state_counts_match_replay": true,
+      "state_fingerprint_matches_replay": true,
+      "checkpoint_matches_state": true,
+      "reverse_index_matches_replay": true,
+      "registry_identity_set_matches_replay": true,
+      "registry_metadata_matches_replay": true,
+      "reference_dispositions_valid": true,
+      "canonical_and_alias_counts_match_state": true,
+      "existing_integrity_audit_passed": true,
+      "provenance_record_links_exist": true
+    },
+    "mechanical_integrity_failures": []
+  },
+  "consistency_summary": {
+    "total_review_candidates": 20,
+    "returned": 20,
+    "omitted": 0,
+    "exhaustive": true,
+    "accepted_count": 0,
+    "stale_review_count": 0,
+    "by_code": {
+      "same_phrase_multiple_targets": 3,
+      "seed_scan_target_disagreement": 15,
+      "submersive_iff_surjectivity_scope": 1,
+      "subset_predicate_to_ambient_space": 1
+    },
+    "mechanical_integrity_count": 0,
+    "effective_reference_count": 4489
+  },
+  "global_summary": {
+    "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+    "state_unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+    "phase": "consolidate_occurrences",
+    "consolidation_gate_valid": false,
+    "meaning_count": 611,
+    "formulation_count": 659,
+    "complete_effective_formulations": 659,
+    "existing_dependency_edges": 2638,
+    "scan_dependency_edges": 1772,
+    "seed_dependency_edges": 866,
+    "distinct_existing_dependency_pairs": 1761,
+    "cycle_components": 0,
+    "cycle_components_scope": "legacy_direct_scan_and_unoverridden_existing_seeds",
+    "effective_cycle_components": 1,
+    "formulation_avoidable_cycle_components": 1,
+    "unavoidable_cycle_components": 0,
+    "undetermined_cycle_components": 0,
+    "effective_existing_dependency_edges": 2647,
+    "unassigned_occurrences": 0,
+    "ambiguous_occurrences": 0,
+    "total_flags": 9,
+    "review_queue_count": 9,
+    "accepted_review_count": 0,
+    "stale_review_count": 0,
+    "flags_by_code": {
+      "cycle_edges_review_required": 0,
+      "effective_seed_override_count": 20,
+      "ideal_vs_module_generation": 8,
+      "submersive_iff_surjectivity_scope": 1
+    }
+  },
+  "provenance": {
+    "meanings": 611,
+    "formulations": 659,
+    "source_record_count": 15,
+    "observation_record_count": 973,
+    "evidence_links": 659,
+    "missing_evidence_records": 0,
+    "missing_source_records": 0,
+    "missing_locator_fields": 0,
+    "structural_provenance_complete": true,
+    "record_kind_counts": {
+      "paraphrase": 659
+    },
+    "explicit_verification_state_counts": {
+      "unspecified": 659
+    },
+    "external_content_verified_by_this_command": false
+  },
+  "python_tests": {
+    "run": 256,
+    "passed": 254,
+    "skipped": 2,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 3.17,
+    "expected_skip_reasons": [
+      "Round 175 manifest is intentionally stale for the current graph",
+      "Round 176 proposal is intentionally version-bound and now stale"
+    ]
+  },
+  "deterministic_recapture": "passed; byte-identical EVIDENCE.json after rerun",
+  "document_links": "passed; 147 local links (before README) checked with fenced/inline code excluded; preliminary naive scan mistook [D,s](m) math for link, formatting fixed",
+  "git_diff_check": "passed",
+  "exact_changed_paths_relative_to_engineering_base": [
+    "research_pipeline/reviews/convention-evidence-2026-10-26/ADJUDICATION_QUEUE.json",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/ADJUDICATION_QUEUE.md",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/ANALYSES.json",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/CHECKPOINT.json",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/CONTEXTS.md",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/EVIDENCE.json",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/PROTECTED_FILE_HASHES.json",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/README.md",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/REVIEW.md",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/SOURCE_DEFERRALS.md",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/SUPPLEMENTARY.json",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/TRANSACTION_STATUS.json",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/VALIDATION.json",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/capture.py",
+    "research_pipeline/reviews/convention-evidence-2026-10-26/validate.py"
+  ],
+  "read_only_commands_executed": [
+    "python -m research_pipeline.reviews.convention-evidence-2026-10-26.validate",
+    "python -m research_pipeline.engine.dependency_consistency_worklist --workspace research_pipeline/experiments/reconstruction-v2-independent --exhaustive",
+    "python -m research_pipeline.engine.dependency_consolidation_readiness --workspace research_pipeline/experiments/reconstruction-v2-independent --exhaustive",
+    "python -m research_pipeline.engine.dependency_reconciliation_status --workspace research_pipeline/experiments/reconstruction-v2-independent --queue research_pipeline/reviews/canonical-identity-2026-10-24/LIVE_RECONCILIATION_QUEUE.json",
+    "python -m research_pipeline.engine.dependency_provenance_audit --workspace research_pipeline/experiments/reconstruction-v2-independent",
+    "python -m research_pipeline.engine.dependency_global_audit --workspace research_pipeline/experiments/reconstruction-v2-independent scan --limit 80 --candidate-limit 80 --include-cycle-edges",
+    "python -m unittest discover -s research_pipeline/tests -v",
+    "git diff --check"
+  ],
+  "raw_cli_output_sha256": {
+    "readiness": "bd7f5327236f1acaded2f87701b5f22c74f642de4e06ef9cac54a3d8f2c62160",
+    "consistency": "71a4271031c836f623b684f723564b6c2b805bd978e834b82c549e0b65ef032e",
+    "status": "18688a8378e116e84efb097ac12ff2d09e64543cb4ef7b26d2cc56413930ba8f",
+    "provenance": "c898b159b1236a3d9defd16ec12c72882207c56f76a683e14fcc7a0f0bedabc3",
+    "global": "53f979d1487548195d98d24f5d6843c4877de58c0a2c9708359dfc2c7ae95192"
+  },
+  "evidence_bytes_sha256": "f9a5f7a364247447fd27c9699bc650a7e0c4f25567209b30043d03d7417a5e0b",
+  "not_executed": [
+    "external subject research or source verification",
+    "any graph apply/rebuild/ingest/alias/resolve/submission",
+    "remote workflow dispatch",
+    "frontend builds/tests (documentation-only task)",
+    "consolidation acceptance, gate opening or Pass 3"
+  ],
+  "delivery": {
+    "branch": "codex/wave2-convention-evidence-2026-10-26",
+    "proposed_pr_base": "codex/wave2-engineering-integration",
+    "draft_pr_status": "not_yet_attempted"
+  }
+}

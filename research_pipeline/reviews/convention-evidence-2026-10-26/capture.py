@@ -73,6 +73,9 @@ def capture():
                 'current_effective_node_sha256':digest(node),
                 'source_version_changed':current['version_sha256']!=anchor['source_version_sha256'],
                 'node_changed':digest(node)!=anchor['effective_node_sha256'],
+                'source_text_changed':historic['source']['text']!=current['text'],
+                'observation_records_changed':historic['observations']!={oid:observations[oid] for oid in current.get('evidence_ids',[])},
+                'provider_records_changed':historic['sources']!={observations[oid]['source_id']:sources[observations[oid]['source_id']] for oid in current.get('evidence_ids',[])},
                 'current_candidate_occurrences':current_occ,
                 'historical_occurrences_still_present':[r for r in allrefs if r['occurrence_id'] in oldids],
                 'historical_occurrences_no_longer_present':sorted(oldids-{r['occurrence_id'] for r in allrefs})})
@@ -83,6 +86,8 @@ def capture():
             'historical_review':review,'current_registry_record':candidates.get(item['candidate_id']),
             'current_effective_status':{'unresearched':'unresolved_canonical','resolved':'resolved_to_existing_meaning','alias':'aliased_to_canonical'}.get(candidates.get(item['candidate_id'],{}).get('status'),'inspect_registry'),
             'parents':parents,'current_compared_candidate_records':{c['id']:candidates.get(c['id']) for c in review.get('compared_candidate_contexts',[])},
+            'existing_target_changes':{mid:{'descriptor_changed':old['descriptor']!=inv['meanings'][mid],
+                'formulation_version_set_changed':{fid:f['version_sha256'] for fid,f in old['formulations'].items()}!={fid:inv['formulations'][fid]['version_sha256'] for fid in inv['meanings'][mid]['formulation_ids']}} for mid,old in compared.items()},
             'historical_compared_meaning_ids':sorted(compared)})
     related_cases=cases[40:];cases=cases[:40]
     # Supplementary applied items and remaining source issues, not extra members
