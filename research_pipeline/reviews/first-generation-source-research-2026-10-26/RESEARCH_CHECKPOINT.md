@@ -23,9 +23,11 @@
 | 101–120 | `BATCH06_SOURCE_EVIDENCE_101_120.json` | 20 | 40 |
 | 121–160 | `BATCH07_SOURCE_EVIDENCE_121_160.json` | 40 | 52 |
 | 161–200 | `BATCH08_SOURCE_EVIDENCE_161_200.json` | 40 | 40 |
-| **Total** | **9 committed review documents** | **200 / 418** | **623 / 841** |
+| 201–230 | `BATCH09_SOURCE_EVIDENCE_201_230.json` | 30 | 30 |
+| 231–260 | `BATCH10_SOURCE_EVIDENCE_231_260.json` | 30 | 30 |
+| **Total** | **11 committed review documents** | **260 / 418** | **683 / 841** |
 
-Checked all nine committed files for stable, unique candidate IDs, matching original counts and nonempty source evidence: exactly **200 distinct IDs** and **623** represented original references. The source evidence ranges from directly supported definitions to explicitly labeled partial or context-dependent source verifications. No claim that all 200 are mathematically certified or that all locators are fully independently checked.
+Checked all eleven committed files for stable, unique candidate IDs, matching original counts and nonempty source evidence: exactly **260 distinct IDs** and **683** represented original references. The source evidence ranges from directly supported definitions to explicitly labeled partial or context-dependent source verifications. No claim that all 260 are mathematically certified or that all locators are fully independently checked.
 
 ## Important mathematical holds and typing boundaries
 
@@ -41,8 +43,8 @@ Checked all nine committed files for stable, unique candidate IDs, matching orig
 
 ## Precisely what remains
 
-- **218 original candidate identities** have not yet received this first-generation source-evidence pass. They represent **218 effective incoming references** from the original frozen cohort.
-- Begin next with original priorities 201–240 from the frozen `MANIFEST.json`. Reuse the concise per-candidate representation, compare source assumptions and context, and defer new dependencies. Do **not** return to broad source-free alias cycles.
+- **158 original candidate identities** have not yet received this first-generation source-evidence pass. They represent **158 effective incoming references** from the original frozen cohort.
+- Begin next with original priorities 261–320 from the frozen `MANIFEST.json`. Reuse the concise per-candidate representation, compare source assumptions and context, and defer new dependencies. Do **not** return to broad source-free alias cycles.
 - Continue creating immutable evidence files with exact original IDs, full original context, occurrence IDs and provenance, source URLs+sections, proof/counterexample where mathematical relevance depends on edge cases, accepted/provisional comparison outcomes, and uncertainty statuses.
 - **Separate next workstream:** translate genuinely source-supported, context-reviewed records into `generation_staging/records/` using `research_pipeline.engine.dependency_generation` and its strict version/previous-staged comparison preflight. The four evidence files **are not themselves stage submissions**. Validate the full accepted and provisional independent corpora and every previously staged candidate before an actual provisional intake.
 - After one full 418-candidate source-research generation, do the deeper global variant/equivalence/source audit and reviewed integration; new prerequisites belong to the *next* generation, not this one.
@@ -51,7 +53,7 @@ Checked all nine committed files for stable, unique candidate IDs, matching orig
 
 ## Operational checks at this checkpoint
 
-- Initial source review artifacts: all nine saved to draft PR #19, **200 unique canonical candidate IDs**.
+- Initial source review artifacts: all eleven saved to draft PR #19, **260 unique canonical candidate IDs**.
 - Graph gate: was previously verified open on main; revalidate state before any intake action.
 - Existing mathematical population / resolution applied: **none by these review commits**.
 - No claim of continuing to run after this response; resume from this checkpoint in a later conversation.
@@ -81,7 +83,7 @@ Two more exact cohort-anchored source-review documents were committed:
 6. **Grothendieck construction:** strict contravariant functor orientation and variance differ from covariant/pseudofunctor conventions; manual source-context check still needed.
 7. **Quasi-isomorphism:** induces isomorphisms on each homology group; this is weaker than a chain homotopy equivalence.
 
-**Next:** continue original priorities 201–240 in the same bounded generation, then complete remaining candidates before the post-pass global mathematical consolidation and source-verification audit. Compare with existing independent accepted/provisional meanings and all newly staged research before a staged provisional entry; none was admitted through these evidence-only commits. No production/frozen Wave1 inspected and no Codex credits used.
+**Next:** continue original priorities 261–320 in the same bounded generation, then complete remaining candidates before the post-pass global mathematical consolidation and source-verification audit. Compare with existing independent accepted/provisional meanings and all newly staged research before a staged provisional entry; none was admitted through these evidence-only commits. No production/frozen Wave1 inspected and no Codex credits used.
 
 ## Latest 2026-10-26 continuation: one-reference throughput experiment (authoritative latest totals)
 
@@ -115,3 +117,29 @@ New cumulative tally: **200/418** candidates and **623/841** original missing-re
 Directly inspected [Stacks Remark 4.14.5](https://stacks.math.columbia.edu/tag/0G2U) for cocones and span cocones (122, 140); [Definition 5.10.1](https://stacks.math.columbia.edu/tag/0055) for irreducible chains (126); [MathWorld factorial](https://mathworld.wolfram.com/Factorial.html) (135); [Stacks Lemma 29.5.3](https://stacks.math.columbia.edu/tag/056J) for scope-restricted closed support (151); [Stacks Remark 4.22.5](https://stacks.math.columbia.edu/tag/05PT) for pro-objects (177); [Stacks Section 111.18](https://stacks.math.columbia.edu/tag/027N) for catenary/chain context (189); [Stacks Section 5.12](https://stacks.math.columbia.edu/tag/0059) for closed points (200). The corresponding reviewed source entries have been upgraded explicitly; remaining source leads were not implicitly verified.
 
 **Next:** continue first-generation 201–240 with qualified 40–60 candidate batching, preserving source-status precision and no recursive research. In parallel or in a dedicated later pass, validate preliminary source locators and perform complete accepted/provisional/staged-meaning comparison before using the guarded stage intake. No new source records have been committed to `generation_staging/records/`; the gate and original graph are unchanged. No Codex use.
+
+## 2026-10-26 latest — 60-singleton enlarged source pass (authoritative checkpoint)
+
+### Verified progress against frozen cohort
+
+- The original first-generation research universe remains **418** canonical missing candidates and **841** missing occurrences. Original inventory hash `34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113`, unresolved fingerprint `7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773`.
+- **260 / 418 original canonical IDs (683 / 841 original references)** have preliminary typed, externally referenced research evidence files. Checked all **11** files sequentially against the exact frozen `generation_staging/MANIFEST.json`: all **260 unique IDs**, correct order, and correct incoming occurrence counts. The last 60 candidates are all singletons.
+- Still awaiting first-generation research: **158 candidates and 158 originating references**, all singletons. Source evidence is **not** accepted/provisional population admission; `generation_staging/records` remains unaffected by these research commits.
+- Two new bounded evidence artifacts: `BATCH09_SOURCE_EVIDENCE_201_230.json` (30/30) and `BATCH10_SOURCE_EVIDENCE_231_260.json` (30/30). Larger preliminary batches remain practical for provenance and mathematical drafting.
+
+### Source confidence stays per record
+
+Web-checked primary sources include Stacks [Definition 4.35.6](https://stacks.math.columbia.edu/tag/02XS) (1-morphisms in fibred categories), [Artin–Schreier extensions](https://stacks.math.columbia.edu/tag/09I7), [I-adic completion](https://stacks.math.columbia.edu/tag/00M9), [2-fibre products](https://stacks.math.columbia.edu/tag/003O), [closed immersions of locally ringed spaces](https://stacks.math.columbia.edu/tag/01HJ), and [Frobenii](https://stacks.math.columbia.edu/tag/0CC6). Others remain mathematically motivated source leads, some with uncertain exact locators. **No source-lead status should be silently upgraded to 'verified'.** The initial 60-candidate pass is a research-evidence pass, not full primary-source textual certification for every definition.
+
+### Newly detected exact mathematical issues
+
+- **Candidate 259: no greatest vs no maximal.** The phrase 'no greatest element' is **not** equivalent to `∀a∈A ∃b∈A:a<b` in a general partial order. The latter is 'no maximal element'; equivalence requires comparability such as total order. Add correct hypotheses or distinguish the variants before publication.
+- **Candidate 222: quotient sheaf and pushforward.** `O_X/I` and `i_*O_Z` are distinct constructions, related under specified closed-immersion/ideal-sheaf assumptions. Retain the original compound reference but separate meanings during global consolidation.
+- **Candidate 230: arbitrary graded-ring scope.** Stacks Section 10.56's default assumes nonnegative grading; the candidate uses general `G`-grading, so the source is only a specialization, not full source verification.
+- **Candidate 244: Kummer degree.** Degree dividing n follows from specific field/roots-of-unity/Kummer hypotheses; a generic cyclic extension does not imply the bound.
+- **Candidate 248: arithmetic on Dedekind cuts.** Multiplication of signed lower cuts needs separate sign conventions and a well-definedness check, not raw pairwise multiplication.
+- **Candidate 211: separably closed vs algebraically closed.** A separably closed field need not be perfect in positive characteristic; preserve the context-specific distinction.
+- **Candidate 207: Artin–Schreier adjunction.** Adjoining a root of T^p−T−a can give a trivial extension as well as a degree-p extension; don't imply degree p without irreducibility/non-root hypothesis.
+- **Candidate 245: I-adic completion.** The inverse limit exists as specified and its natural map R→lim R/I^n need not be an isomorphism; do not conflate object and canonical comparison morphism.
+
+**Next step:** priorities **261–320** as another 60-singleton preliminary source batch, retaining honest source-verification status. The slower subsequent review must compare **all existing screened/provisional meanings** and previous staged candidates and directly verify passage/section before submitting any formally admitted provisional record. No recursion to second-generation dependencies, graph mutation, frozen Wave1, production reads, or Codex credits.
