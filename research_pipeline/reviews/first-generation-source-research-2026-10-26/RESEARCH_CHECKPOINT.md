@@ -21,9 +21,11 @@
 | 061–080 | `BATCH04_SOURCE_EVIDENCE_061_080.json` | 20 | 43 |
 | 081–100 | `BATCH05_SOURCE_EVIDENCE_081_100.json` | 20 | 40 |
 | 101–120 | `BATCH06_SOURCE_EVIDENCE_101_120.json` | 20 | 40 |
-| **Total** | **7 committed review documents** | **120 / 418** | **531 / 841** |
+| 121–160 | `BATCH07_SOURCE_EVIDENCE_121_160.json` | 40 | 52 |
+| 161–200 | `BATCH08_SOURCE_EVIDENCE_161_200.json` | 40 | 40 |
+| **Total** | **9 committed review documents** | **200 / 418** | **623 / 841** |
 
-Checked all seven committed files for stable, unique candidate IDs, matching original counts and nonempty source evidence: exactly **120 distinct IDs** and **531** represented original references. The source evidence ranges from directly supported definitions to explicitly labeled partial or context-dependent source verifications. No claim that all 120 are mathematically certified or that all locators are fully independently checked.
+Checked all nine committed files for stable, unique candidate IDs, matching original counts and nonempty source evidence: exactly **200 distinct IDs** and **623** represented original references. The source evidence ranges from directly supported definitions to explicitly labeled partial or context-dependent source verifications. No claim that all 200 are mathematically certified or that all locators are fully independently checked.
 
 ## Important mathematical holds and typing boundaries
 
@@ -39,8 +41,8 @@ Checked all seven committed files for stable, unique candidate IDs, matching ori
 
 ## Precisely what remains
 
-- **298 original candidate identities** have not yet received this first-generation source-evidence pass. They represent **310 effective incoming references** from the original frozen cohort.
-- Begin next with original priorities 121–140 from the frozen `MANIFEST.json`. Reuse the concise per-candidate representation, compare source assumptions and context, and defer new dependencies. Do **not** return to broad source-free alias cycles.
+- **218 original candidate identities** have not yet received this first-generation source-evidence pass. They represent **218 effective incoming references** from the original frozen cohort.
+- Begin next with original priorities 201–240 from the frozen `MANIFEST.json`. Reuse the concise per-candidate representation, compare source assumptions and context, and defer new dependencies. Do **not** return to broad source-free alias cycles.
 - Continue creating immutable evidence files with exact original IDs, full original context, occurrence IDs and provenance, source URLs+sections, proof/counterexample where mathematical relevance depends on edge cases, accepted/provisional comparison outcomes, and uncertainty statuses.
 - **Separate next workstream:** translate genuinely source-supported, context-reviewed records into `generation_staging/records/` using `research_pipeline.engine.dependency_generation` and its strict version/previous-staged comparison preflight. The four evidence files **are not themselves stage submissions**. Validate the full accepted and provisional independent corpora and every previously staged candidate before an actual provisional intake.
 - After one full 418-candidate source-research generation, do the deeper global variant/equivalence/source audit and reviewed integration; new prerequisites belong to the *next* generation, not this one.
@@ -49,7 +51,7 @@ Checked all seven committed files for stable, unique candidate IDs, matching ori
 
 ## Operational checks at this checkpoint
 
-- Initial source review artifacts: all seven saved to draft PR #19, **120 unique canonical candidate IDs**.
+- Initial source review artifacts: all nine saved to draft PR #19, **200 unique canonical candidate IDs**.
 - Graph gate: was previously verified open on main; revalidate state before any intake action.
 - Existing mathematical population / resolution applied: **none by these review commits**.
 - No claim of continuing to run after this response; resume from this checkpoint in a later conversation.
@@ -79,4 +81,37 @@ Two more exact cohort-anchored source-review documents were committed:
 6. **Grothendieck construction:** strict contravariant functor orientation and variance differ from covariant/pseudofunctor conventions; manual source-context check still needed.
 7. **Quasi-isomorphism:** induces isomorphisms on each homology group; this is weaker than a chain homotopy equivalence.
 
-**Next:** continue original priorities 121–140 in the same bounded generation, then complete remaining candidates before the post-pass global mathematical consolidation and source-verification audit. Compare with existing independent accepted/provisional meanings and all newly staged research before a staged provisional entry; none was admitted through these evidence-only commits. No production/frozen Wave1 inspected and no Codex credits used.
+**Next:** continue original priorities 201–240 in the same bounded generation, then complete remaining candidates before the post-pass global mathematical consolidation and source-verification audit. Compare with existing independent accepted/provisional meanings and all newly staged research before a staged provisional entry; none was admitted through these evidence-only commits. No production/frozen Wave1 inspected and no Codex credits used.
+
+## Latest 2026-10-26 continuation: one-reference throughput experiment (authoritative latest totals)
+
+### Frozen queue shape
+
+Of the 298 candidates remaining at the previous checkpoint, 287 had **one** originating reference, ten had **two**, and one had **three**. All 218 candidates remaining **after rank 200 are exactly single-reference**. Initial ranks 1–120 had 531 references among 120 candidates (4.425 references/candidate); the new ranks 121–200 have 92 references among 80 candidates (1.15 references/candidate). The reduction in contextual inspection is real; mathematical source discovery and source scope verification remain candidate-by-candidate.
+
+### Larger-batch pilot
+
+Two 40-candidate source-evidence files have been committed and individually manifest checked:
+
+- `BATCH07_SOURCE_EVIDENCE_121_160.json`: **40 distinct original candidates**, 52 original references; source leads are separately labeled, several exact Stacks/MathWorld passages directly verified.
+- `BATCH08_SOURCE_EVIDENCE_161_200.json`: **40 distinct original candidates**, 40 original references; full original context, reference occurrence ID, preliminary meaning, source locator/qualification, assumptions and relation flags retained.
+
+New cumulative tally: **200/418** candidates and **623/841** original missing-reference occurrences have preliminary source-research review records. **218 candidates and 218 references remain, all singletons.** All 200 reviewed canonical IDs were checked in exact order against the frozen `generation_staging/MANIFEST.json` with no duplicates or missing ranks.
+
+**Practical result:** Batches of about 40 are feasible for the initial typed mathematical/contextual-source-lead pass and reduce bookkeeping/interaction overhead, but it would be misleading to call this a doubling of *fully source-verified* research throughput. A verified reference still needs actual passage and scope checking for each candidate; a substantial proportion of the new records are explicitly marked `source_lead`, `exact_locator_pending` or `context_review`. Never silently promote them to source-verified or accepted definitions. Prefer batching **40–60 singletons** for first-pass collection with individual source-grade statuses, and reserve a separate slower direct-source-verification/consolidation pass before stage admission.
+
+### Newly detected mathematical issues to resolve before integration
+
+- **Sheaf support (priority 151):** Support of `O_X/I` means nonzero stalks; arbitrary sheaf support need not be closed. Stacks [Lemma 29.5.3](https://stacks.math.columbia.edu/tag/056J) directly proves closed support for *finite-type quasi-coherent* modules. Review the exact ideal-sheaf hypotheses before claiming support gives a closed subspace.
+- **Lebesgue–Stieltjes measure (priority 166):** A bare bounded nondecreasing function need not be right-continuous; the standard assignment `μ((a,b])=F(b)-F(a)` requires appropriate right-continuity, or a different interval convention. Record as substantive convention, not a harmless spelling difference.
+- **Residue-field inclusion (priority 191):** An injection `Λ/(Λ∩m)→R/m` need not be surjective. Calling it an isomorphism requires an additional assumption (and `Λ∩m` maximal to ensure source is a field).
+- **Braiding (priority 187):** Natural exchange isomorphisms must satisfy hexagon/coherence conditions to make a braiding. Symmetry further requires double exchange to equal the identity.
+- **Finite multigraph multiplicity (priority 154):** Pairwise edge-copy multiplicities are finite integers only under local finiteness of parallel edges; unrestricted multigraphs can have infinite multiplicities.
+- **Ore/cancellation conventions (priorities 152,193):** Two-sided localization axioms have typed left/right arrow direction conventions, not generic categorical cancellation.
+- **Zero-ring/division-ring degenerate case (priority 197):** Retain specified `1≠0` where needed to avoid vacuous field/division-ring characterizations, and append to owner-approved edge-case-assumption review ledger when actual mathematical population is edited.
+
+### Direct source verification spot checks
+
+Directly inspected [Stacks Remark 4.14.5](https://stacks.math.columbia.edu/tag/0G2U) for cocones and span cocones (122, 140); [Definition 5.10.1](https://stacks.math.columbia.edu/tag/0055) for irreducible chains (126); [MathWorld factorial](https://mathworld.wolfram.com/Factorial.html) (135); [Stacks Lemma 29.5.3](https://stacks.math.columbia.edu/tag/056J) for scope-restricted closed support (151); [Stacks Remark 4.22.5](https://stacks.math.columbia.edu/tag/05PT) for pro-objects (177); [Stacks Section 111.18](https://stacks.math.columbia.edu/tag/027N) for catenary/chain context (189); [Stacks Section 5.12](https://stacks.math.columbia.edu/tag/0059) for closed points (200). The corresponding reviewed source entries have been upgraded explicitly; remaining source leads were not implicitly verified.
+
+**Next:** continue first-generation 201–240 with qualified 40–60 candidate batching, preserving source-status precision and no recursive research. In parallel or in a dedicated later pass, validate preliminary source locators and perform complete accepted/provisional/staged-meaning comparison before using the guarded stage intake. No new source records have been committed to `generation_staging/records/`; the gate and original graph are unchanged. No Codex use.
