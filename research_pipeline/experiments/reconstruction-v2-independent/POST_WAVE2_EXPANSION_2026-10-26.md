@@ -256,3 +256,22 @@ separate collection-building phase. Completed independent Wave2 remains 958
 meanings and original mathDef source 1,014 definitions; expected current
 combined count after validation is 2,097 meanings. This is an
 assistant-reviewed, source-attributed content merge, not a peer-certified audit.
+
+
+## Scan-driven follow-up ranks 61–100 (2026-10-26)
+
+Processed an additional 40 ranked phrases from the original 2,019-lead
+report. The real scan-ranked examples and decisions were APPENDED to the
+existing ledger rather than creating any replacement candidate list.
+Added three genuinely useful meanings for ranks 63, 70 and 82, with
+explicit research sources. Existing uses and malformed text fragments are
+mapped or discarded, while ambiguous Euclidean-space and first-return-map
+contexts were noted without silently choosing a potentially incorrect
+sense.
+
+**First 100 scan candidates now processed.** Ten researched meanings
+incorporated (including three distinct Borel measure contexts); combined-only
+overlay totals **128** new post-Wave2 meanings. Next candidate is rank
+**101**, not a new term-crawling pass. All 958 independent Wave2 meanings,
+1,014 original mathDef definitions, and the full frozen original scan
+remain unaffected.
