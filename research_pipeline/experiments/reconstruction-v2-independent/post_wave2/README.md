@@ -203,3 +203,39 @@ new) for an expected **2,051** combined meanings. The independent 958-meaning
 Wave2, 1,014 original definitions and first rough 2,019-lead scan stay
 untouched. Continue by adding directly useful mathematical content,
 never restarting old dependency graphs, staging, or exhaustive gates.
+
+
+## Eighth direct research batch (2026-10-26)
+
+Twenty new mathematical meanings were added directly to the **combined-only**
+post-Wave2 research overlay, after title checks against the original corpus,
+958 independent Wave2 entries and 79 prior post-Wave2 meanings.
+
+- Separation axioms: T₀, T₁, regular (without T₁), normal (without T₁),
+  completely regular (without T₁), and Tychonoff (completely regular plus T₁)
+- Metrizable topological space
+- Filters: proper filter, filter base, neighborhood filter, neighborhood base,
+  and convergence of a filter
+- Nets: directed-index net and Moore–Smith convergence
+- One-point compactification of a locally compact, noncompact Hausdorff space
+- Partition of unity and the stronger subordinate-to-cover variant
+- Compact-open topology, box product topology and Sierpiński topological space
+
+References were retrieved directly from Encyclopedia of Mathematics
+(separation, filters, nets, neighborhoods, compactification and paracompactness),
+Wolfram MathWorld (separation and function-space topology), ProofWiki
+(filter convergence), PlanetMath (box topology) and PLS Lab (Sierpiński).
+The individual source records identify the retrieved passages; mathematical
+statements are still assistant-reviewed drafts, not independent peer review.
+
+**Important conventions:** Regular/normal/completely regular mean WITHOUT
+T₁ unless explicitly included; Tychonoff includes T₁. Filters are proper,
+so their underlying set is nonempty. Nets have nonempty directed preorders.
+One-point compactification is restricted to the locally compact noncompact
+Hausdorff case. A subordinate partition of unity has supports inside the
+specified open cover, not merely its nonzero loci.
+
+Expected results: **99** researched post-Wave2 meanings (79 prior + 20 here),
+**2,071** combined contextual meanings. Preserve the frozen independent
+958-meaning Wave2, original 1,014-definition corpus and historical initial
+2,019 rough phrase leads. No restarted dependency graph or candidate gate.
