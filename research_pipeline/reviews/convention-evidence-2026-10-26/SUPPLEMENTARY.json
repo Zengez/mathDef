@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "read_only": true,
+  "edge_corrections": [
+    {
+      "formulation_id": "form.wave2.found85.adapted-continuous",
+      "historical_classification": "gate_blocker_probable_wrong_target_chat_adjudicated",
+      "historical_source_version_sha256": "48b208ec4f94d6e18403dd1c39b4948a79f85b0d06470bb2c897f8660c4a4650",
+      "current_source_version_sha256": "48b208ec4f94d6e18403dd1c39b4948a79f85b0d06470bb2c897f8660c4a4650",
+      "historical_effective_node_sha256": "c9620ad31916c4847819ce84edae793209445401fb29d81e794d52ba1f37e678",
+      "current_effective_node_sha256": "1abc03528803f6e16dcad3e27f24b5030edf0428d30ee66860ff323c01e39f90",
+      "historical_reference": {
+        "from_formulation": "form.wave2.found85.adapted-continuous",
+        "occurrence_id": "occ.4dc2044654482ca4b966",
+        "phrase": "sigma-algebra filtration",
+        "state": "existing",
+        "target_meaning_id": "meaning.wave2.found85.discrete-filtration"
+      },
+      "current_same_occurrence": [],
+      "current_replacement_or_retained_phrase": [
+        {
+          "from_formulation": "form.wave2.found85.adapted-continuous",
+          "disposition": "Existing discrete-filtration target was incorrect for this ambient real-time filtration. Preserve this occurrence as historical provenance with no direct existing-meaning dependency: the correct real-index filtration prerequisite remains separately captured by occ.3cee100f060f105c219b -> missing.65d334caa51c845ea335. No sampled-time construction is asserted.",
+          "occurrence_id": "occ.8ef4e6c6854387c6b1a8",
+          "phrase": "sigma-algebra filtration",
+          "state": "external"
+        }
+      ],
+      "status": "applied_correction_historical_warning_superseded",
+      "source_text_changed": false
+    },
+    {
+      "formulation_id": "form.788671763be693df.ext-group",
+      "historical_classification": "gate_scope_reconciliation_required_chat_retained",
+      "historical_source_version_sha256": "fa8adfb0f893348f71089e3e7327faa0ae57fc2e627f3e52e7be3e1218fbbd27",
+      "current_source_version_sha256": "fa8adfb0f893348f71089e3e7327faa0ae57fc2e627f3e52e7be3e1218fbbd27",
+      "historical_effective_node_sha256": "8ffbb188345e54307d2810a0ae2c4c31cff89b47b5f3a068ebd221219e6d7813",
+      "current_effective_node_sha256": "6ae9d70c8055d779f783b6070914765e15a24376de6ef0c6f6f4209a648e68c3",
+      "historical_reference": {
+        "from_formulation": "form.788671763be693df.ext-group",
+        "occurrence_id": "occ.321952d7b781466d1856",
+        "phrase": "Hom_R(F_i,N)",
+        "state": "existing",
+        "target_meaning_id": "meaning.3a0545450d7a5285.internal-hom-module"
+      },
+      "current_same_occurrence": [],
+      "current_replacement_or_retained_phrase": [
+        {
+          "from_formulation": "form.788671763be693df.ext-group",
+          "context": "Underlying component prerequisite only: R-linear homomorphisms of left modules over an associative unital ring R. The Hom_R(F_i,N) collection is an abelian group by pointwise addition; no commutative-R internal-Hom R-module structure is asserted.",
+          "occurrence_id": "occ.333a6d30e056b2bc98a0",
+          "phrase": "R-linear maps F_i→N (elements of Hom_R(F_i,N))",
+          "state": "existing",
+          "target_meaning_id": "meaning.wave2.cross110.module-linear"
+        }
+      ],
+      "status": "applied_correction_historical_warning_superseded",
+      "source_text_changed": false
+    },
+    {
+      "formulation_id": "form.ab260940ea9c523d.locally-connected-space",
+      "historical_classification": "contextual_edge_review_not_automatically_wrong_or_gate_blocker",
+      "historical_source_version_sha256": "67e0cc00105f0276659d7efd0cc39e3d62cf9ba7595d895939a9ba62079f33cb",
+      "current_source_version_sha256": "67e0cc00105f0276659d7efd0cc39e3d62cf9ba7595d895939a9ba62079f33cb",
+      "historical_effective_node_sha256": "db80cd24148a8a93ca6c6857cdb2d9729760b3e65272baa95c2baedcde9958c6",
+      "current_effective_node_sha256": "34c46bcf7d37b5e4284052bbf04ee3a2016a16ab388c03650099ce9c195b89b9",
+      "historical_reference": {
+        "from_formulation": "form.ab260940ea9c523d.locally-connected-space",
+        "occurrence_id": "occ.cdc96f16a3e31332ec7d",
+        "phrase": "neighborhood basis",
+        "state": "existing",
+        "target_meaning_id": "meaning.6a3376e5ecb82bfb.topology-basis"
+      },
+      "current_same_occurrence": [],
+      "current_replacement_or_retained_phrase": [
+        {
+          "from_formulation": "form.ab260940ea9c523d.locally-connected-space",
+          "disposition": "The specific pointwise neighborhood system is already represented by the separate missing candidate missing.eb8e1a62d06acf7c487c. A system of connected neighborhoods may contain nonopen neighborhoods and is not literally a global topology basis. Local connectedness at all points yields a connected-open basis as a derived equivalent characterization (components of opens are open), but no direct global-basis prerequisite is asserted by this occurrence.",
+          "occurrence_id": "occ.37c025a95505dc305dad",
+          "phrase": "neighborhood basis",
+          "state": "external"
+        }
+      ],
+      "status": "applied_correction_historical_warning_superseded",
+      "source_text_changed": false
+    }
+  ],
+  "applied_identity_ranks": [
+    115,
+    348,
+    413
+  ],
+  "verified_transaction_status_file": "TRANSACTION_STATUS.json",
+  "source_issues": [
+    {
+      "issue_id": "issue.wave2.pop140.pairwise-proofwiki-quantifier",
+      "historical_record": {
+        "human_verified": false,
+        "id": "issue.wave2.pop140.pairwise-proofwiki-quantifier",
+        "reason": "ProofWiki pairwise independent events displayed symbolic quantifier appears to omit i≠j, contradicted by the same page's cardinality-two-subset characterization. Preserve corrected distinct-index formula and verify the source defect in the reconciliation audit.",
+        "related_formulation_id": "form.wave2.pop140.pairwise-independent",
+        "severity": "source_quality",
+        "source_locator": "https://proofwiki.org/wiki/Definition:Pairwise_Independent_Events",
+        "status": "open"
+      },
+      "current_record": {
+        "human_verified": false,
+        "id": "issue.wave2.pop140.pairwise-proofwiki-quantifier",
+        "reason": "ProofWiki pairwise independent events displayed symbolic quantifier appears to omit i≠j, contradicted by the same page's cardinality-two-subset characterization. Preserve corrected distinct-index formula and verify the source defect in the reconciliation audit.",
+        "related_formulation_id": "form.wave2.pop140.pairwise-independent",
+        "severity": "source_quality",
+        "source_locator": "https://proofwiki.org/wiki/Definition:Pairwise_Independent_Events",
+        "status": "open"
+      },
+      "historical_record_sha256": "d8e11834c5d81a95bc30ebfb4e4ccc6bdddddfeb00ad88027550889d5753592f",
+      "current_record_sha256": "d8e11834c5d81a95bc30ebfb4e4ccc6bdddddfeb00ad88027550889d5753592f",
+      "record_unchanged": true,
+      "current_formulation_ids": [
+        "form.wave2.pop140.pairwise-independent"
+      ],
+      "status": "open_later_source_reconciliation_not_automatically_pass2_blocker",
+      "source_claim_independently_verified_here": false
+    },
+    {
+      "issue_id": "issue.wave2.pop141.eom-outer-measure-convention",
+      "historical_record": {
+        "comparison_locator": "https://proofwiki.org/wiki/Definition%3AOuter_Measure",
+        "human_verified": false,
+        "id": "issue.wave2.pop141.eom-outer-measure-convention",
+        "reason": "Encyclopedia of Mathematics article Outer measure admits hereditary σ-ring domains, in contrast with the full-power-set ProofWiki convention, and its opening definition does not separately state monotonicity. Verify intended convention and whether monotonicity is assumed elsewhere before adding any alternative EOM-based formulation. Do NOT silently merge these axiom/domain variants.",
+        "related_meaning_id": "meaning.wave2.pop141.outer-measure",
+        "severity": "source_scope_discrepancy",
+        "source_locator": "https://encyclopediaofmath.org/wiki/Outer_measure",
+        "status": "open"
+      },
+      "current_record": {
+        "comparison_locator": "https://proofwiki.org/wiki/Definition%3AOuter_Measure",
+        "human_verified": false,
+        "id": "issue.wave2.pop141.eom-outer-measure-convention",
+        "reason": "Encyclopedia of Mathematics article Outer measure admits hereditary σ-ring domains, in contrast with the full-power-set ProofWiki convention, and its opening definition does not separately state monotonicity. Verify intended convention and whether monotonicity is assumed elsewhere before adding any alternative EOM-based formulation. Do NOT silently merge these axiom/domain variants.",
+        "related_meaning_id": "meaning.wave2.pop141.outer-measure",
+        "severity": "source_scope_discrepancy",
+        "source_locator": "https://encyclopediaofmath.org/wiki/Outer_measure",
+        "status": "open"
+      },
+      "historical_record_sha256": "7ef60c4411734a5d0ce9c111b7327f56b292b7d6d16a287fb4c8ae407b7ff1d6",
+      "current_record_sha256": "7ef60c4411734a5d0ce9c111b7327f56b292b7d6d16a287fb4c8ae407b7ff1d6",
+      "record_unchanged": true,
+      "current_formulation_ids": [
+        "form.wave2.pop141.outer-measure-full"
+      ],
+      "status": "open_later_source_reconciliation_not_automatically_pass2_blocker",
+      "source_claim_independently_verified_here": false
+    },
+    {
+      "issue_id": "issue.wave2.pop142.bounded-quantifier",
+      "historical_record": {
+        "comparison_locator": "https://proofwiki.org/wiki/Definition%3ASpace_of_Bounded_Linear_Transformations",
+        "human_verified": false,
+        "id": "issue.wave2.pop142.bounded-quantifier",
+        "reason": "ProofWiki Definition:Bounded Linear Transformation (Normed Vector Space section) displays ∀v∃c>0 rather than the required ∃c>0∀v, which wrongly allows nonuniform bounds. The separately sourced bounded-transformation-space definition correctly uses a uniform M, so this draft follows that version.",
+        "related_formulation_id": "form.wave2.pop142.bounded-linear",
+        "severity": "source_quality",
+        "source_locator": "https://proofwiki.org/wiki/Definition%3ABounded_Linear_Transformation",
+        "status": "open"
+      },
+      "current_record": {
+        "comparison_locator": "https://proofwiki.org/wiki/Definition%3ASpace_of_Bounded_Linear_Transformations",
+        "human_verified": false,
+        "id": "issue.wave2.pop142.bounded-quantifier",
+        "reason": "ProofWiki Definition:Bounded Linear Transformation (Normed Vector Space section) displays ∀v∃c>0 rather than the required ∃c>0∀v, which wrongly allows nonuniform bounds. The separately sourced bounded-transformation-space definition correctly uses a uniform M, so this draft follows that version.",
+        "related_formulation_id": "form.wave2.pop142.bounded-linear",
+        "severity": "source_quality",
+        "source_locator": "https://proofwiki.org/wiki/Definition%3ABounded_Linear_Transformation",
+        "status": "open"
+      },
+      "historical_record_sha256": "460155feeea600160eeda62bd22f39ff5b10861edc36c648ecec0432b4551eda",
+      "current_record_sha256": "460155feeea600160eeda62bd22f39ff5b10861edc36c648ecec0432b4551eda",
+      "record_unchanged": true,
+      "current_formulation_ids": [
+        "form.wave2.pop142.bounded-linear"
+      ],
+      "status": "open_later_source_reconciliation_not_automatically_pass2_blocker",
+      "source_claim_independently_verified_here": false
+    },
+    {
+      "issue_id": "issue.wave2.pop142.operator-norm-codomain",
+      "historical_record": {
+        "human_verified": false,
+        "id": "issue.wave2.pop142.operator-norm-codomain",
+        "reason": "ProofWiki Norm on Bounded Linear Transformation Definition 3 writes ||Ax||_X for general A:X→Y although Ax lies in Y; its Definitions 1,2,4 use the typed codomain correctly. The independent population adopts Definitions 1 and 4 and quarantines the inconsistent variant pending audit.",
+        "related_formulation_id": "form.wave2.pop142.operator-norm-inf",
+        "severity": "source_quality",
+        "source_locator": "https://proofwiki.org/wiki/Definition%3ANorm_on_Bounded_Linear_Transformation",
+        "status": "open"
+      },
+      "current_record": {
+        "human_verified": false,
+        "id": "issue.wave2.pop142.operator-norm-codomain",
+        "reason": "ProofWiki Norm on Bounded Linear Transformation Definition 3 writes ||Ax||_X for general A:X→Y although Ax lies in Y; its Definitions 1,2,4 use the typed codomain correctly. The independent population adopts Definitions 1 and 4 and quarantines the inconsistent variant pending audit.",
+        "related_formulation_id": "form.wave2.pop142.operator-norm-inf",
+        "severity": "source_quality",
+        "source_locator": "https://proofwiki.org/wiki/Definition%3ANorm_on_Bounded_Linear_Transformation",
+        "status": "open"
+      },
+      "historical_record_sha256": "2ddcb37b919934b307733b286bbf48cbe1959ed117638749a6e9b8ec5c01de5d",
+      "current_record_sha256": "2ddcb37b919934b307733b286bbf48cbe1959ed117638749a6e9b8ec5c01de5d",
+      "record_unchanged": true,
+      "current_formulation_ids": [
+        "form.wave2.pop142.operator-norm-inf"
+      ],
+      "status": "open_later_source_reconciliation_not_automatically_pass2_blocker",
+      "source_claim_independently_verified_here": false
+    }
+  ],
+  "historical_topological_algebra_evidence": {
+    "source_contexts": [
+      {
+        "source": {
+          "formulation_id": "form.646e4dcbd9b6f1e1.topological-ring",
+          "meaning_id": "meaning.646e4dcbd9b6f1e1.topological-ring",
+          "display_term": "topological ring",
+          "context": "Topology: topological ring",
+          "origin": "screened",
+          "version_sha256": "03f497391324c755234793649bde87ad83ea94dc581a2ee3637168e25e5fa14d",
+          "source_snapshot_sha256": "b7e0fbaffb2b4c97f5c04cdeae4267dc5d6b1de67ae922f6a2ba5a25c0d7a9a7",
+          "evidence_ids": [
+            "obs.recovery.646e4dcbd9b6f1e1.topological-ring"
+          ],
+          "text": "A topological ring is a ring R with a topology for which its addition R×R→R and multiplication R×R→R are continuous maps."
+        },
+        "effective_node_sha256": "19a9859a9ad8569712edaf656a2950c3aefc09f46aebb1b9f0f52fa1a70a9df8",
+        "effective_references": [
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-ring",
+            "occurrence_id": "seed.1705408a9c11e767a8fc",
+            "phrase": "ring R",
+            "relation_id": "rel.wave2.topological-ring.to.associative-ring-identity-optional",
+            "origin": "preexisting_relation",
+            "state": "existing",
+            "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional"
+          },
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-ring",
+            "occurrence_id": "seed.93cf9b6cefc16036c820",
+            "phrase": "topology",
+            "relation_id": "rel.wave2.topological-ring.to.topological-space",
+            "origin": "preexisting_relation",
+            "state": "existing",
+            "target_meaning_id": "meaning.wave2.foundation.topological-space"
+          },
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-ring",
+            "phrase": "ring R",
+            "state": "existing",
+            "target_meaning_id": "meaning.wave2.foundation.associative-ring-identity-optional",
+            "occurrence_id": "occ.833660ecb99c1dd64abd"
+          },
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-ring",
+            "phrase": "topology",
+            "state": "existing",
+            "target_meaning_id": "meaning.wave2.foundation.topological-space",
+            "occurrence_id": "occ.7aa664b181e2476a00d9"
+          },
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-ring",
+            "phrase": "continuous maps",
+            "state": "existing",
+            "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+            "occurrence_id": "occ.8b8c37ae8a50e47fc49c"
+          },
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-ring",
+            "phrase": "R×R",
+            "state": "existing",
+            "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology",
+            "occurrence_id": "occ.6fa5cf69494fdab12e9d"
+          }
+        ],
+        "observations": {
+          "obs.recovery.646e4dcbd9b6f1e1.topological-ring": {
+            "confidence": "source_checked",
+            "context_hint": "Topology: topological ring",
+            "discovery_method": "independent.source_reading.recovery",
+            "human_verified": false,
+            "id": "obs.recovery.646e4dcbd9b6f1e1.topological-ring",
+            "locator": "https://stacks.math.columbia.edu/tag/0B1Y",
+            "record_kind": "paraphrase",
+            "reproduction_policy": "independently authored paraphrase; no source passage copied",
+            "review_state": "candidate",
+            "reviewed_by": "assistant_source_review_20261018",
+            "source_id": "src.stacks",
+            "source_section": "Definition 5.30.7",
+            "term_id": "term.646e4dcbd9b6f1e1",
+            "text": "A topological ring is a ring R with a topology for which its addition R×R→R and multiplication R×R→R are continuous maps."
+          }
+        }
+      },
+      {
+        "source": {
+          "formulation_id": "form.646e4dcbd9b6f1e1.topological-module",
+          "meaning_id": "meaning.646e4dcbd9b6f1e1.topological-module",
+          "display_term": "module over a topological ring",
+          "context": "Topology: module over a topological ring",
+          "origin": "screened",
+          "version_sha256": "0760928492e0ac3367e6d3c68783c325a204a8da9f76c4d167973eb79934ba7d",
+          "source_snapshot_sha256": "fd66c31a31411963d1d8d9e43f13bd73d99b8463ef8dfb0d033eac9437dba976",
+          "evidence_ids": [
+            "obs.recovery.646e4dcbd9b6f1e1.topological-module"
+          ],
+          "text": "Given a topological ring R, a topological R-module is an R-module M endowed with a topology such that addition M×M→M and scalar multiplication R×M→M are continuous."
+        },
+        "effective_node_sha256": "fe08819042c9d6879af14becfd4de6853429f6b9766e6ce13fd9d44ed84f414f",
+        "effective_references": [
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-module",
+            "occurrence_id": "seed.409101c842bd95bc1c91",
+            "phrase": "topological ring",
+            "relation_id": "rel.stage5.topological-module.to.topological-ring",
+            "origin": "preexisting_relation",
+            "state": "existing",
+            "target_meaning_id": "meaning.646e4dcbd9b6f1e1.topological-ring"
+          },
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-module",
+            "phrase": "topological ring R",
+            "state": "existing",
+            "target_meaning_id": "meaning.646e4dcbd9b6f1e1.topological-ring",
+            "occurrence_id": "occ.53d71cdc34c406a12eaf"
+          },
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-module",
+            "phrase": "R-module M",
+            "state": "existing",
+            "target_meaning_id": "meaning.wave2.foundation.left-module-nonunital",
+            "occurrence_id": "occ.a6cd56d6fd9f20b4c8ec"
+          },
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-module",
+            "phrase": "topology on M",
+            "state": "existing",
+            "target_meaning_id": "meaning.wave2.foundation.topological-space",
+            "occurrence_id": "occ.d04eb119cbc16dc4bcdb"
+          },
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-module",
+            "phrase": "continuous addition and scalar multiplication",
+            "state": "existing",
+            "target_meaning_id": "meaning.wave2.foundation76.continuous-topological-map",
+            "occurrence_id": "occ.f5bba3b2231ed695f87b"
+          },
+          {
+            "from_formulation": "form.646e4dcbd9b6f1e1.topological-module",
+            "phrase": "M×M and R×M",
+            "state": "existing",
+            "target_meaning_id": "meaning.wave2.branch129.indexed-product-topology",
+            "occurrence_id": "occ.6a189298e54bb11e5d6b"
+          }
+        ],
+        "observations": {
+          "obs.recovery.646e4dcbd9b6f1e1.topological-module": {
+            "confidence": "source_checked",
+            "context_hint": "Topology: module over a topological ring",
+            "discovery_method": "independent.source_reading.recovery",
+            "human_verified": false,
+            "id": "obs.recovery.646e4dcbd9b6f1e1.topological-module",
+            "locator": "https://stacks.math.columbia.edu/tag/0B1Y",
+            "record_kind": "paraphrase",
+            "reproduction_policy": "independently authored paraphrase; no source passage copied",
+            "review_state": "candidate",
+            "reviewed_by": "assistant_source_review_20261018",
+            "source_id": "src.stacks",
+            "source_section": "Definition 5.30.10",
+            "term_id": "term.646e4dcbd9b6f1e1",
+            "text": "Given a topological ring R, a topological R-module is an R-module M endowed with a topology such that addition M×M→M and scalar multiplication R×M→M are continuous."
+          }
+        }
+      }
+    ],
+    "mathematical_argument": "On Z with upper-set topology and zero multiplication, addition and multiplication are continuous but negation is not. Zero scalar action gives the module analogue. Multiplication by -1 recovers continuity under appropriate unital action, but current broad optional-unit targets do not ensure it.",
+    "proposed_correction_not_applied": "Document bounded later source/variant disposition; separately justify unit hypotheses or require additive topological-group structure if later authorized.",
+    "automatic_gate_blocker": false
+  },
+  "gate_authorized": false,
+  "source_verification_performed": false
+}
