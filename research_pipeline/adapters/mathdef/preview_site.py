@@ -45,8 +45,8 @@ def render(repo: Path, site: Path) -> dict:
     )
     ui2 = render_reference_ui(
         site / "wave2/catalog.json", brand, site / "wave2",
-        "Wave 2 — evolving research draft",
-        "Independently sourced work in progress. Unsealed, incomplete, and not human verified."
+        "Wave 2 — initial reconstruction complete",
+        "Initial independently reconstructed research corpus complete; mathematical drafts and citations are not human certified."
     )
 
     def card(href, title, description, count):
@@ -59,9 +59,9 @@ def render(repo: Path, site: Path) -> dict:
         "The initial independent reconstruction, preserved as our baseline.",
         str(wave1["meanings"]) + " contextual meanings"
     ) + card(
-        "wave2", "Wave 2 · Living research draft",
-        "New independently sourced and screened work, unsealed and incomplete. "
-        "Updated when research is committed and the site rebuilds.",
+        "wave2", "Wave 2 · Initial reconstruction complete",
+        "Initial research pass complete: original 418 leads considered and new meanings integrated. "
+        "New terminology discovery and further source verification remain future work.",
         str(wave2["meanings"]) + " contextual meanings"
     )
     page = """<!doctype html>
@@ -86,10 +86,11 @@ border-radius:13px;background:white;padding:24px}
 The original mathDef content is <strong>not</strong> used to construct these previews.</p>
 <div class="stages">___CARDS___</div>
 <div class="notice"><strong>Research previews, not a certified reference.</strong>
-Definitions, citations, and relationships are research-screened drafts,
-not human-refereed mathematical facts. Wave 2 is still undergoing research.</div>
-<p class="small">Wave 1 is frozen. Wave 2 is a working snapshot built directly from
-its independent research records, without sealing or publishing its research stages.
+Definitions, citations, and relationships remain assistant-screened research drafts,
+not formally peer-reviewed mathematical facts. Initial Wave 2 reconstruction is complete;
+new-term discovery and further validation have not yet been undertaken.</div>
+<p class="small">Wave 1 is frozen. Wave 2 is the completed initial reconstruction snapshot built directly from
+its independent research records, without relying on the abandoned research stage gates.
 Both are presented separately from the original mathDef content.</p>
 </body></html>""".replace("___CARDS___", cards)
     site.mkdir(parents=True, exist_ok=True)

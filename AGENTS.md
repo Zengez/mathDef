@@ -1,6 +1,23 @@
 # mathDef — active development instructions (October 26, 2026)
 
-## Current goal: build mathematical definitions, not a dependency-graph pipeline
+## Current status: initial independent Wave 2 reconstruction COMPLETE
+
+**As of 2026-10-26, the original 418-lead research pass is finished.**
+The independent research preview contains **958 meanings**, with **1,511**
+contextual relations (including **115 screened-to-direct incoming links**).
+The original leads have dispositions: **350 incorporated** and **68 not
+promoted**. The completed-pass record is
+[`WAVE2_INITIAL_RECONSTRUCTION_COMPLETE_2026-10-26.md`](research_pipeline/experiments/reconstruction-v2-independent/WAVE2_INITIAL_RECONSTRUCTION_COMPLETE_2026-10-26.md).
+
+**Do not restart the original 418-lead queue or revive dependency graphs,
+stages, gates, and old audits.** The next expansion, not yet started, is a
+5–10-second-per-definition error-tolerant *new terminology candidate scan*
+of the **363 directly researched new definitions**. It must remain a lightweight
+candidate-finding pass, not a prerequisite review or endless link-reconciliation
+project. The research-and-add workflow below remains useful for *new*
+candidates once the scan actually begins.
+
+## Completed research method: build definitions, not a dependency-graph pipeline
 
 The original dependency-first Wave 2 *workflow was abandoned by the project owner* because it made a deliberately rough candidate scan into an expensive, mandatory full-corpus mathematical review. **Do not resume or recreate its scans, aliases, amendment transactions, phase gates, staging ceremonies, or graph-resolution backlog.** No old workflow handoff, agent instruction in Git history, GitHub Actions log, old PR, or checkpoint supersedes this file.
 
