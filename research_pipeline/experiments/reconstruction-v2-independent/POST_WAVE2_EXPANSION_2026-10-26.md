@@ -36,3 +36,25 @@ leads from either source corpus, detect genuine variants/synonyms and add
 contextually sensible links. Do not require full resolution of the 2,019
 unverified phrases before publication; remove false positives opportunistically
 rather than turning them into audit packets. Verify preview/build CI before merge.
+
+## Continued research: second content batch (same day)
+
+Four more scan-motivated, source-checked draft meanings are appended to the
+existing merged-only `post_wave2/terms.json`:
+
+- **Cofiltered category:** all three indexing-category axioms, including
+  equalization of parallel arrows. Source: Stacks Project Definition 4.20.1.
+- **Real affine space:** nonempty torsor for the additive group of a real vector
+  space, with no distinguished origin. Source: Encyclopedia of Mathematics,
+  affine-space definition specialized to the real field.
+- **Generating set of a left module:** finite linear-combination criterion,
+  including the empty-generator/zero-module edge case. Source: Encyclopedia
+  of Mathematics, module generators.
+- **Locally finite Borel measure:** finite measure on an open neighborhood
+  of each point, explicitly NOT equating local finiteness with full Radon
+  regularity. Sources: nLab, Princeton MAT425 notes.
+
+The expansion file now contains **8 researched meanings** in total, with
+source-checked citations and direct, nonmandatory contextual links. The merged
+reference is expected to contain **1,980 meanings** after CI. The independent
+Wave2 snapshot stays **958** and its completion record remains closed.
