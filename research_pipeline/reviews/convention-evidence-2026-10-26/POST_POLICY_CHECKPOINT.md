@@ -230,3 +230,49 @@ to apply any candidate recontextualization.
 No current suite rerun is claimed, no protected mathematical
 files changed, both draft PRs remain review-only,
 and the consolidation gate remains closed.
+
+## Further provider-specific review: ranks 56 and 23 (2026-10-25)
+
+The following report files were added after the 5-case self-reference review:
+
+- [RANK56_EXACT_STACKS_PROVIDER_VERIFICATION.md](RANK56_EXACT_STACKS_PROVIDER_VERIFICATION.md):
+  all three recorded Stacks parents matched to
+  current [tag 00M9](https://stacks.math.columbia.edu/tag/00M9)
+  and [tag 00LE](https://stacks.math.columbia.edu/tag/00LE).
+  The three sources use `I^nM`/ `IM` in the
+  unital Stacks module setting. None depends on the
+  zeroth-power extension `I^0M=M`.
+- [RANK23_EXACT_K_ALGEBRA_PROVIDER_CHECK.md](RANK23_EXACT_K_ALGEBRA_PROVIDER_CHECK.md):
+  all five recorded Stacks parents checked at tags
+  [037Y](https://stacks.math.columbia.edu/tag/037Y),
+  [00I2](https://stacks.math.columbia.edu/tag/00I2),
+  [05DS](https://stacks.math.columbia.edu/tag/05DS)
+  and [045K](https://stacks.math.columbia.edu/tag/045K).
+  Their base `k`-algebra prerequisite uses the
+  commutative-unital Stacks Algebra convention.
+  **Separate caution:** the geometric-regularity
+  formulation has an imprecise extra phrase
+  about all extension fields, while tag 045K
+  defines the Noetherian property through
+  finitely generated or finite purely inseparable
+  field-extension tests. This remains a
+  *source-paraphrase review lead*, not a certified
+  mathematical correction.
+
+The updated [PRIMARY_SOURCE_STATUS.json](PRIMARY_SOURCE_STATUS.json)
+now records **10 of the 13** historical deferral cards with
+the relevant provider convention checked, and **3**
+with significant outstanding qualifications:
+**133** (common identity under an inclusion),
+**166** (DLMF Stieltjes normalization/endpoints)
+and **175** (zero-ring exterior-power rank
+interpretation). There are still **zero** graph
+candidate resolutions made by these source checks.
+
+No new Python suite or mechanical-readiness run was
+performed for these documentation-only additions.
+Keep the existing immutable observations and
+source-version hashes untouched. Provider current
+page verification does not automatically certify
+archived source snapshots, mathematical variants
+or consolidation readiness.
