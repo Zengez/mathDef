@@ -6615,11 +6615,9 @@
           "term": "Linear closure"
         }
       ],
-      "disposition": "existing",
-      "reason": "Newly researched norm-closed linear subspace meaning already covers closed vector subspaces.",
-      "targets": [
-        "meaning.mathdef.postwave.scan-closed-linear-subspace-20261026"
-      ]
+      "disposition": "nonterm",
+      "reason": "'All closed vector subspaces' is a quantifier over subspaces; no specified norm topology is present in the cited linear-closure example, so it must NOT be mapped to the separate norm-closed subspace meaning.",
+      "targets": []
     },
     {
       "rank": 295,
@@ -6934,11 +6932,9 @@
           "term": "order isomorphism"
         }
       ],
-      "disposition": "existing",
-      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
-      "targets": [
-        "meaning.wave2.direct.e892b9d8b91c184b0801"
-      ]
+      "disposition": "nonterm",
+      "reason": "'Also order' is a broken text fragment extracted near the definition of order isomorphism, not a synonym for that term.",
+      "targets": []
     },
     {
       "rank": 316,
@@ -6951,11 +6947,9 @@
           "term": "CR function"
         }
       ],
-      "disposition": "existing",
-      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
-      "targets": [
-        "definitions/scv/cr-function.tex"
-      ]
+      "disposition": "nonterm",
+      "reason": "'Ambient holomorphic functions' is descriptive context in CR geometry, not another name for a CR function.",
+      "targets": []
     },
     {
       "rank": 317,
@@ -7000,11 +6994,9 @@
           "term": "Schwartz distribution"
         }
       ],
-      "disposition": "existing",
-      "reason": "Original distributions in Schwartz's sense cover the context.",
-      "targets": [
-        "definitions/pde/distribution.tex"
-      ]
+      "disposition": "nonterm",
+      "reason": "'And all derivatives' is a grammatical fragment in a distribution definition, not the name of a distribution or any new class.",
+      "targets": []
     },
     {
       "rank": 320,
@@ -7047,11 +7039,9 @@
           "term": "Clopen set"
         }
       ],
-      "disposition": "existing",
-      "reason": "The original clopen-set entry explicitly describes simultaneously open and closed subsets.",
-      "targets": [
-        "definitions/topology/clopen-set.tex"
-      ]
+      "disposition": "nonterm",
+      "reason": "'And closed the sets' is a damaged conjunction referring to clopen sets, not a new or synonymous term.",
+      "targets": []
     },
     {
       "rank": 323,
@@ -7139,12 +7129,9 @@
           "term": "mutually independent events"
         }
       ],
-      "disposition": "existing_variants",
-      "reason": "The empty product inherits either the identity or terminal-object convention; both are already present.",
-      "targets": [
-        "meaning.wave2.direct.f709867827c73e690cfc",
-        "definitions/combin/factorial.tex"
-      ]
+      "disposition": "nonterm",
+      "reason": "'And empty product' is a sentence fragment from a mutual-independence definition, not an additional variant. Empty-product conventions are already handled by the earlier rank-216 disposition.",
+      "targets": []
     },
     {
       "rank": 329,
