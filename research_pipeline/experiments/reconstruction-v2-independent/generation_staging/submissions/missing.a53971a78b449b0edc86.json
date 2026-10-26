@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.a53971a78b449b0edc86",
+  "original_query": "finite walk from u to v",
+  "original_context": "Graph theory: finite sequence of vertices (v_0,…,v_n) with each consecutive pair adjacent and specified endpoints u=v_0, v=v_n; n=0 is permitted.",
+  "original_incoming_occurrence_ids": [
+    "occ.8031b68785ef07fdbd0c"
+  ],
+  "disposition": "new_meaning",
+  "definition": "For a simple undirected graph G=(V,E) and u,v∈V, a finite walk from u to v is a sequence v_0=u,v_1,…,v_n=v for some n≥0 such that {v_{i−1},v_i}∈E for 1≤i≤n. Its length is n.",
+  "reasoning": "The independently screened connected-graph definition requires finite walks but does not provide a standalone walk definition. Walks may repeat vertices and edges; a path or trail imposes extra distinctness restrictions. Because the graph is simple, consecutive vertices uniquely specify the intervening edge, matching the independent context.",
+  "sources": [
+    {
+      "url": "https://mathworld.wolfram.com/Walk.html",
+      "section": "Walk definition and simple-graph vertex-only description",
+      "relevance": "Directly checked the vertices/edges incidence definition and vertex-sequence specialization for simple graphs. Length-zero walk is retained as an explicit convention for matching a screened connectedness formulation.",
+      "verification_status": "direct_simple_graph_specialization_checked"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.91383b9c137b0e359967",
+      "missing.960bd927c204df58bb49",
+      "missing.972ae1e91200fae874aa",
+      "missing.9a669bd30949842fab00",
+      "missing.9a71afd4a344322c1d26",
+      "missing.9e1b000eff0431817f3a",
+      "missing.a257d0bad58dcfbd2fa7"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.wave2.branch129.nonempty-connected-graph",
+        "relation": "uses finite walks as its connectivity criterion, different property"
+      },
+      {
+        "id": "meaning.wave2.cross104.tree-unrooted",
+        "relation": "tree and cycles concern stronger path/trail structure"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Reviewed the full independent screened/provisional meaning population, especially connected simple graphs, tree, and graph cycle. None defines arbitrary finite walks as distinct objects; repeated vertices/edges and n=0 are explicitly covered. Prior staged graph-neighborhood candidate is a vertex-set construction, not a walk. All 9 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate."
+  },
+  "mathematical_assumptions": [
+    "Graph is loopless simple undirected for vertex-sequence representation.",
+    "Vertices and edges may repeat; length zero is allowed for u=v.",
+    "Not a directed walk nor the strict graph-theoretic path definition."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
