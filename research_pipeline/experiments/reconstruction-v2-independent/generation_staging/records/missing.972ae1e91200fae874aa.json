@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.972ae1e91200fae874aa",
+  "original_query": "symmetry x~y implies y~x",
+  "original_context": "Set theory: symmetry property of a binary relation R⊆S×S, namely (x,y)∈R implies (y,x)∈R for all x,y∈S.",
+  "original_incoming_occurrence_ids": [
+    "occ.fb4be3286563a739cbe0"
+  ],
+  "disposition": "new_meaning",
+  "definition": "A binary relation R⊆S×S on a set S is symmetric if, for every x,y∈S, xRy implies yRx.",
+  "reasoning": "The independently screened equivalence-relation meaning invokes symmetry together with reflexivity and transitivity; the separate symmetry predicate on an arbitrary relation does not impose either extra axiom. It is meaningful for the empty relation or empty underlying set and is not the unrelated braiding/symmetry of monoidal categories.",
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Symmetric_relation",
+      "section": "Definition",
+      "relevance": "Directly reviewed standard condition xRy⇒yRx, with no reflexivity or transitivity requirement.",
+      "verification_status": "direct_source_passage_checked"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.91383b9c137b0e359967",
+      "missing.960bd927c204df58bb49",
+      "missing.9a669bd30949842fab00",
+      "missing.9e1b000eff0431817f3a"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive",
+        "relation": "Equivalence relation imposes symmetry plus two additional axioms"
+      },
+      {
+        "id": "meaning.wave2.foundation.binary-relation-subset",
+        "relation": "Provides the general binary-relation object but not symmetry property"
+      },
+      {
+        "id": "meaning.709d3d2f82950c5b.partially-ordered-set",
+        "relation": "Uses antisymmetry, which is logically different"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Reviewed complete screened and provisional indexed meanings (595+16) and the concrete relation formulations. No standalone symmetric-relation meaning exists; equivalence relations combine symmetry with other axioms, and categorical symmetries are distinct homonyms. The earlier reviewed first-generation stage records (6 identities) were also compared for overlap; no identical full meaning is being staged twice."
+  },
+  "mathematical_assumptions": [
+    "S may be empty.",
+    "R may be empty; symmetry is then vacuous.",
+    "No implicit reflexivity, antisymmetry, or transitivity assumptions."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}

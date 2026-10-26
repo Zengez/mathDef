@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.960bd927c204df58bb49",
+  "original_query": "n-by-n matrix over entries 0,1",
+  "original_context": "Linear algebra: n×n square matrix indexed by row and column pairs with entries drawn from {0,1}, independent of graph incidence.",
+  "original_incoming_occurrence_ids": [
+    "occ.896ecc57df8d4dc72d7c"
+  ],
+  "disposition": "new_meaning",
+  "definition": "For n≥0, an n×n (0,1)-matrix, or binary square matrix, is an array A=(a_{ij})_{1≤i,j≤n} with every entry a_{ij}∈{0,1}. Its entries may be regarded as integers unless a different coefficient structure is explicitly specified.",
+  "reasoning": "The screened adjacency matrix of a finite simple undirected graph is a particular symmetric (0,1)-matrix with zero diagonal, but arbitrary (0,1)-matrices need not be symmetric, diagonal-zero, or arise from any undirected graph. The generic entrywise construction is therefore a separate useful meaning, and not equivalent to that graph-theoretic specialization.",
+  "sources": [
+    {
+      "url": "https://mathworld.wolfram.com/01-Matrix.html",
+      "section": "(0,1)-Matrix",
+      "relevance": "Directly checked the definition that each entry is zero or one, and the synonyms binary/logical matrix, with n×n as a square special case.",
+      "verification_status": "direct_primary_passage_checked"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.91383b9c137b0e359967",
+      "missing.9a669bd30949842fab00",
+      "missing.9e1b000eff0431817f3a"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.wave2.alternative39.adjacency-matrix-simple-undirected",
+        "relation": "Graph adjacency matrix requires symmetry and zero diagonal, so is a stricter specialization"
+      },
+      {
+        "id": "meaning.wave2.pop139.matrix-trace",
+        "relation": "Trace is an operation on square matrices, not a binary-entry condition"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Reviewed all 595 screened and 16 provisional independent meanings, focusing on square, adjacency and characteristic matrices. None defines arbitrary (0,1) square matrices without graph conditions. The n×n binary matrix is distinct as a mathematical object with exact typed entries. The earlier reviewed first-generation stage records (5 identities) were also compared for overlap; no identical full meaning is being staged twice."
+  },
+  "mathematical_assumptions": [
+    "Entries form a set {0,1}; matrix addition/multiplication requires a separately chosen ring or semiring.",
+    "For n=0 the empty 0×0 matrix can be included by convention.",
+    "No graph is assumed and no symmetry or diagonal restrictions are imposed."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.91383b9c137b0e359967",
+  "original_query": "distance |a−b| on real line",
+  "original_context": "Real analysis: Euclidean distance between two real numbers a,b defined as d(a,b)=|a−b|, as an application of real absolute value, not its definition.",
+  "original_incoming_occurrence_ids": [
+    "occ.652c7e49e198a7fa6a88"
+  ],
+  "disposition": "specialization",
+  "definition": "The usual Euclidean metric on the real line ℝ is d:ℝ×ℝ→[0,∞), defined by d(a,b)=|a−b| for every a,b∈ℝ.",
+  "reasoning": "The existing screened real-absolute-value meaning includes the consequent expression |a−b| for usual real-line distance. This proposal records that already implied construction as a named metric on ℝ, not a new absolute-value operation or an unrelated metric. It is a useful contextual specialization rather than a strictly new independent primitive.",
+  "sources": [
+    {
+      "url": "https://mathworld.wolfram.com/Distance.html",
+      "section": "Distance, Euclidean space ℝ^n formula (3), restricted to n=1",
+      "relevance": "Directly checked Euclidean metric formula sqrt(sum_i|x_i-y_i|²); specializing n=1 gives |a−b|, with this specialization explicitly distinguished from verbatim source text.",
+      "verification_status": "verified_mathematical_specialization"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.9a669bd30949842fab00",
+      "missing.9e1b000eff0431817f3a"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.wave2.analysis.real-absolute-value",
+        "relation": "Contains the same usual-distance identity as an application of absolute value"
+      },
+      {
+        "id": "meaning.wave2.analysis98.metric-space",
+        "relation": "General metric-space axioms; does not by itself fix the metric on ℝ"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Reviewed 595 screened and 16 provisional independent meanings; the real absolute-value meaning explicitly gives |a−b| as distance, so this metric is a labeled specialization rather than a genuinely different notion. No provisional record overrides that metric on ℝ. The earlier reviewed first-generation stage records (4 identities) were also compared for overlap; no identical full meaning is being staged twice."
+  },
+  "mathematical_assumptions": [
+    "The ordinary real absolute value is available.",
+    "The codomain is [0,∞) with standard order.",
+    "The metric is on ℝ, not on an arbitrary ordered field without additional structure."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
