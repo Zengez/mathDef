@@ -410,3 +410,33 @@ sourced meanings** from those ranks, combined-only overlay now **141**
 meaning records, expected combined catalog **2,113** (958 independent +
 1,014 original + 141 post-Wave2). Independent Wave2 and original
 production definitions are frozen. No new candidate-finding step happened.
+
+
+## Frozen quick-scan candidate research — ranks 181–220 (2026-10-26)
+
+Processed exactly the next 40 of the original 2,019 frozen phrase leads,
+recording literal source IDs, occurrence counts, and dispositions in the
+existing ledger: **4 new meanings**, **23 existing**, **11 lexical
+nonterms**, **1 context ambiguity**, and **1 covered by existing variants**.
+No candidates were collected outside the original scan.
+
+New merged-only meanings are:
+- Rank 185: open bounded interval in ℝ; endpoints excluded
+- Rank 187: Hilbert-space orthonormal basis; dense linear span rather than
+  a necessarily Hamel basis
+- Rank 193: fixed-space morphism of sheaves of sets; compatibility with
+  restrictions, independently of ring or module structure
+- Rank 201: sub-σ-algebra on the same underlying set, allowing both trivial
+  and whole σ-algebras without assuming measure-completeness
+
+Existing-reference cases include pointed space, peak point, Radon measure,
+test function, associated graded module, Bergman projection, field norm and
+exterior derivative. The empty product (216) has categorical versus
+multiplicative-identity meanings already present, not to be merged. The
+noninvertible-map lead (182) is context ambiguous.
+
+**Next cursor: rank 221.** Processed **220/2,019** of original leads.
+**27 added mathematical meanings** from these leads, **145 total
+post-Wave2 merged-only meanings** and expected **2,117** combined
+(958 independent + 1,014 original + 145 overlay). Original and
+independent historical content remain frozen.

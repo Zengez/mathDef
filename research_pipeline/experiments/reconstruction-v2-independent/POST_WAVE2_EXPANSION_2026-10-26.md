@@ -320,3 +320,19 @@ processed and **23** new sourced meanings incorporated from them.
 New post-Wave2 overlay total **141**; expected merged total **2,113**.
 Persistent next candidate rank **181**; independent 958 and original 1,014
 remain unchanged.
+
+
+## Original frozen quick-scan ranks 181–220
+
+Research directly incorporated four mathematical meanings from actual scan
+candidates (open interval, Hilbert orthonormal basis, morphism of sheaves
+of sets, sub-σ-algebra) with exact context, explicit assumptions, research
+sources, and links in the post-Wave2 merged-only overlay. The same persistent
+ledger now contains **220** literal source-matched dispositions; this
+40-candidate batch yielded 23 existing, 11 lexical nonterm, 1 ambiguous,
+1 existing multiple-variant and 4 new dispositions.
+
+**Next original candidate rank 221**, source collection unchanged at
+2,019 leads, overlay now **145** sourced meanings, expected combined
+**2,117** meanings. Independent Wave 2 remains 958 meanings and original
+production source remains 1,014 definitions.
