@@ -5,8 +5,8 @@
     "possible_new_terminology": 2019,
     "known_title_mentions": 473
   },
-  "scope": "Original ranks 1–100 reviewed directly against the unchanged 2,019-candidate scan",
-  "conventions": "Quick source-grounded decisions: new meanings inserted in post_wave2/terms.json; synonymous/existing senses mapped rather than duplicated; genuine ambiguities remain explicitly flagged; grammatical fragments rejected. No new-term search or dependency graph.",
+  "scope": "Original ranks 1–140 reviewed directly against unchanged 2,019-candidate original scan",
+  "conventions": "Research actual frozen scan records in strict rank order; direct post-Wave2 merge additions, known equivalent or specialization targets, unresolvable context flags, and false-positive phrases; never start a new candidate hunt. No dependency graph or gate.",
   "dispositions": [
     {
       "rank": 1,
@@ -2622,6 +2622,883 @@
       ],
       "disposition": "nonterm",
       "reason": "The underlying sets are just the forgetful set components in several constructions; no particular term requires a new meaning.",
+      "targets": []
+    },
+    {
+      "rank": 101,
+      "phrase": "unital ring homomorphism",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.fb78af5e23099cc8d59b",
+          "term": "kernel of a ring homomorphism"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.4336d7e825e3fd33578e",
+          "term": "restriction of scalars"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.ring-homomorphism:0",
+          "term": "Ring homomorphism"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Unital ring homomorphism is already an independently sourced post-Wave2 meaning; phrase is not a distinct object.",
+      "targets": [
+        "meaning.mathdef.postwave.unital-homomorphism-20261026"
+      ]
+    },
+    {
+      "rank": 102,
+      "phrase": "unital ring map",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.b05a1814a9da0d01922a",
+          "term": "local homomorphism of local rings"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.bf9f155d15473da985d2",
+          "term": "morphism of sheaves of rings"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.137cc84619d0fc68bf3b",
+          "term": "coefficientwise polynomial image and evaluation"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Unital ring map is a synonymous expression for the existing identity-preserving ring homomorphism.",
+      "targets": [
+        "meaning.mathdef.postwave.unital-homomorphism-20261026"
+      ]
+    },
+    {
+      "rank": 103,
+      "phrase": "unital rings",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.bf9f155d15473da985d2",
+          "term": "morphism of sheaves of rings"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.42dd118d20d40e57e2b9",
+          "term": "sheaf of rings"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.7f0861ac620a2bb61635",
+          "term": "isomorphism of sheaves of rings"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Plural of the existing unital ring heading; preserve one canonical meaning.",
+      "targets": [
+        "meaning.mathdef.postwave.unital-ring-20261026"
+      ]
+    },
+    {
+      "rank": 104,
+      "phrase": "vertex set",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.5df90bcf9334337a3fc6",
+          "term": "complete simple graph on a vertex set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.simplicial-complex:0",
+          "term": "Abstract simplicial complex"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "graph.graph:0",
+          "term": "Graph"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Vertex set is the V component in the existing graph definition; no incompatible distinct mathematical object appears in these examples.",
+      "targets": [
+        "definitions/graph/graph.tex"
+      ]
+    },
+    {
+      "rank": 105,
+      "phrase": "with group",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.366fd59d8e50c00508ab",
+          "term": "multiplicative group of a field"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.fundamental-group:0",
+          "term": "Fundamental group"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.homotopy-group:0",
+          "term": "Higher homotopy group"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Truncated phrase 'with group' is not a mathematically named construction.",
+      "targets": []
+    },
+    {
+      "rank": 106,
+      "phrase": "absolutely convergent dirichlet series",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.dirichlet-l-function:0",
+          "term": "Dirichlet L-function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.riemann-zeta:0",
+          "term": "Riemann zeta function"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added ordinary Dirichlet series absolute convergence at s, with the half-plane/boundary distinction.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-absolutely-convergent-dirichlet-20261026"
+      ]
+    },
+    {
+      "rank": 107,
+      "phrase": "algebra map",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.60dd364a1927126e153d",
+          "term": "polynomial evaluation homomorphism"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.5499c18bddb8831536d6",
+          "term": "isomorphism of R-algebras"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added the R-algebra homomorphism convention as a genuine specialization beyond an arbitrary ring map; 'algebra map' elsewhere may use different conventions.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-r-algebra-homomorphism-20261026"
+      ]
+    },
+    {
+      "rank": 108,
+      "phrase": "all finite sums",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.e43d4f1922e210cc373a",
+          "term": "product of ideals"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.d066de85583ac1b1a7d4",
+          "term": "ideal times a module"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Quantifier phrase describing an ideal/module product, not a separately named term.",
+      "targets": []
+    },
+    {
+      "rank": 109,
+      "phrase": "all nilpotent elements",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "commalg.nilpotent-element:0",
+          "term": "Nilpotent element"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "commalg.nilradical:0",
+          "term": "Nilradical"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "All nilpotent elements already constitute the nilradical in commutative ring context.",
+      "targets": [
+        "definitions/commalg/nilradical.tex"
+      ]
+    },
+    {
+      "rank": 110,
+      "phrase": "and coefficient abelian group",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.boundary:0",
+          "term": "Singular boundary"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.cycle:0",
+          "term": "Singular cycle"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Grammatical fragment naming a coefficient abelian group parameter, not a standalone additional construction.",
+      "targets": []
+    },
+    {
+      "rank": 111,
+      "phrase": "and polynomial",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.fa5932b42daa1a3e0307",
+          "term": "root of a polynomial"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.a42c73c7effdb6ac0764",
+          "term": "formal derivative of a polynomial"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Connective phrase 'and polynomial' with missing noun/context.",
+      "targets": []
+    },
+    {
+      "rank": 112,
+      "phrase": "arbitrary subsets",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.fbd11071cfe5ca8ef6e2",
+          "term": "conjugate of a group subset"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.null-set:0",
+          "term": "Null set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'Arbitrary subsets' is a quantifier choice, not a distinct subset notion.",
+      "targets": []
+    },
+    {
+      "rank": 113,
+      "phrase": "are finite measures",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.finite-measure:0",
+          "term": "Finite measure"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.probability-measure:0",
+          "term": "Probability measure"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The explicit finite-measure definition already covers this adjective and plural.",
+      "targets": [
+        "definitions/measure/finite-measure.tex"
+      ]
+    },
+    {
+      "rank": 114,
+      "phrase": "attracting fixed point",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.basin-attraction:0",
+          "term": "Basin of attraction"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.immediate-basin:0",
+          "term": "Immediate attracting basin"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "An attracting fixed point is the period-one case of the existing attracting periodic point definition; record specialization without duplicating formula.",
+      "targets": [
+        "definitions/holodynamics/attracting-periodic-point.tex"
+      ]
+    },
+    {
+      "rank": 115,
+      "phrase": "between banach spaces",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.fredholm-operator:0",
+          "term": "Fredholm operator"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.nuclear-operator:0",
+          "term": "Nuclear operator between Banach spaces"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'Between Banach spaces' specifies a domain/codomain for other operator notions, not one named term.",
+      "targets": []
+    },
+    {
+      "rank": 116,
+      "phrase": "between functors",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.718fa3e492d42c0ced8e",
+          "term": "natural isomorphism"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "category.natural-isomorphism:0",
+          "term": "Natural isomorphism"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'Between functors' identifies the source/target context for natural transformations or isomorphisms; no new standalone term.",
+      "targets": []
+    },
+    {
+      "rank": 117,
+      "phrase": "between topological spaces",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.continuity:0",
+          "term": "Continuous function (topological)"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.continuous-open-map:0",
+          "term": "Open map"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'Between topological spaces' is a domain-codomain qualifier for maps, not a new mathematical entity.",
+      "targets": []
+    },
+    {
+      "rank": 118,
+      "phrase": "bijective group homomorphism",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.dd5496ed1d723a534bec",
+          "term": "isomorphism of ordered groups"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.group-isomorphism:0",
+          "term": "Group isomorphism"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "A bijective group homomorphism is already a group isomorphism.",
+      "targets": [
+        "definitions/algebra/group-isomorphism.tex"
+      ]
+    },
+    {
+      "rank": 119,
+      "phrase": "borel sets",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.inner-regular:0",
+          "term": "Inner regular Borel measure"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.radon-measure:0",
+          "term": "Radon measure (regularity convention)"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Borel sets are precisely members of the Borel σ-algebra; the existing σ-algebra definition covers the usage.",
+      "targets": [
+        "definitions/measure/borel-sigma-algebra.tex"
+      ]
+    },
+    {
+      "rank": 120,
+      "phrase": "chosen set",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6bb87052ec8a81464ddd",
+          "term": "isomorphism class of an R-module"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.1e57f82e00af556806fa",
+          "term": "category of small categories"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'Chosen set' is a referential phrase with no uniform mathematical definition.",
+      "targets": []
+    },
+    {
+      "rank": 121,
+      "phrase": "closed sets",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.adb2077ebeba9905f9a9",
+          "term": "descending chain of closed sets"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.closed-set:0",
+          "term": "Closed set"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Plural closed sets covered by existing closed-set definition.",
+      "targets": [
+        "definitions/topology/closed-set.tex"
+      ]
+    },
+    {
+      "rank": 122,
+      "phrase": "closed subsets",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.zariski-topology:0",
+          "term": "Zariski topology on a spectrum"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.continuity:0",
+          "term": "Continuous function (topological)"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "A closed subset is a closed set of the ambient topological space.",
+      "targets": [
+        "definitions/topology/closed-set.tex"
+      ]
+    },
+    {
+      "rank": 123,
+      "phrase": "closed subspace",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.hilbert-bergman-space:0",
+          "term": "Hilbert Bergman space"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.little-bloch-space:0",
+          "term": "Little Bloch space"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added a norm-closed linear subspace, explicitly distinguishing its functional-analysis meaning from arbitrary closed topological subspaces.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-closed-linear-subspace-20261026"
+      ]
+    },
+    {
+      "rank": 124,
+      "phrase": "compact hausdorff space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.peak-function:0",
+          "term": "Peak function for a uniform algebra"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.shilov-boundary:0",
+          "term": "Shilov boundary of a uniform algebra"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added the common joint compact-and-Hausdorff topological condition; compactness alone was already documented without assuming Hausdorff.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-compact-hausdorff-space-20261026"
+      ]
+    },
+    {
+      "rank": 125,
+      "phrase": "compact sets",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.radon-measure:0",
+          "term": "Radon measure (regularity convention)"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "scv.stein-manifold:0",
+          "term": "Stein manifold"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Compact sets correspond to compact subspaces under the existing compactness definition.",
+      "targets": [
+        "definitions/topology/compactness.tex"
+      ]
+    },
+    {
+      "rank": 126,
+      "phrase": "complex hilbert space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.normal-operator:0",
+          "term": "Normal bounded operator"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.unitary-operator:0",
+          "term": "Unitary operator"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing Hilbert-space definition permits real or complex scalar fields; 'complex' specifies a scalar-field specialization without a new axiom.",
+      "targets": [
+        "definitions/functional/hilbert-space.tex"
+      ]
+    },
+    {
+      "rank": 127,
+      "phrase": "complex valued function",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.integrable-function:0",
+          "term": "Integrable function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "real.supremum-norm:0",
+          "term": "Supremum norm"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added unrestricted ℂ-valued functions and distinguished codomain from complex differentiability, measurability and integrability.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-complex-valued-function-20261026"
+      ]
+    },
+    {
+      "rank": 128,
+      "phrase": "continuous function",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.viscosity-solution:0",
+          "term": "Viscosity solution of a degenerate elliptic PDE"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "scv.exhaustion-function:0",
+          "term": "Exhaustion function on a topological space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Topological continuity already has a precise function definition.",
+      "targets": [
+        "definitions/topology/continuity.tex"
+      ]
+    },
+    {
+      "rank": 129,
+      "phrase": "continuously real differentiable function",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.antiholomorphic-function:0",
+          "term": "Antiholomorphic function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "complex.wirtinger-derivatives:0",
+          "term": "Wirtinger derivatives"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added real-C¹ differentiability for ℂ^n→ℂ functions, distinguished from holomorphy; matches Wirtinger contexts.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-continuously-real-differentiable-20261026"
+      ]
+    },
+    {
+      "rank": 130,
+      "phrase": "convergent power series",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.antiholomorphic-function:0",
+          "term": "Antiholomorphic function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "scv.several-variable-holomorphic-function:0",
+          "term": "Holomorphic function of several complex variables"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added the local-positive-radius sense of convergent complex power series; noted trivial convergence at its center and boundary ambiguity.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-convergent-power-series-20261026"
+      ]
+    },
+    {
+      "rank": 131,
+      "phrase": "countable subset",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.265e6df46207937dc94a",
+          "term": "finite absolute moments of a discrete weight"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.separable-space:0",
+          "term": "Separable space"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added at-most-countable subset including finite and empty sets, expressly distinguishing convention from countably infinite.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-countable-subset-20261026"
+      ]
+    },
+    {
+      "rank": 132,
+      "phrase": "countably infinite subset",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.0573d17c9b55504f064f",
+          "term": "countably generated module"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "sets.infinite-set:0",
+          "term": "Infinite set"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Countably infinite subsets are covered by the existing countably infinite set notion; no extra meaning required.",
+      "targets": [
+        "definitions/sets/countably-infinite-set.tex"
+      ]
+    },
+    {
+      "rank": 133,
+      "phrase": "critical point",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.critical-point:0",
+          "term": "Critical point of a holomorphic map"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.superattracting-periodic-point:0",
+          "term": "Superattracting periodic point"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Critical points in the cited holomorphic-dynamics sense have an original definition.",
+      "targets": [
+        "definitions/holodynamics/critical-point.tex"
+      ]
+    },
+    {
+      "rank": 134,
+      "phrase": "empty subset",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "logic.existential-quantifier:0",
+          "term": "Existential quantifier"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "logic.universal-quantifier:0",
+          "term": "Universal quantifier"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Empty subset is the empty set as a subset of an ambient set.",
+      "targets": [
+        "definitions/sets/empty-set.tex"
+      ]
+    },
+    {
+      "rank": 135,
+      "phrase": "entire functions",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.fock-reproducing-kernel:0",
+          "term": "Bargmann–Fock reproducing kernel"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.segal-bargmann-space:0",
+          "term": "Segal–Bargmann space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Entire functions are already explicitly defined as holomorphic on all ℂ.",
+      "targets": [
+        "definitions/complex/entire-function.tex"
+      ]
+    },
+    {
+      "rank": 136,
+      "phrase": "every morphism",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.431551548bd74bda58b6",
+          "term": "morphism of categories fibred in groupoids over a base"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "category.full-functor:0",
+          "term": "Full functor"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Generic quantified phrase 'every morphism' without a specified property.",
+      "targets": []
+    },
+    {
+      "rank": 137,
+      "phrase": "every nonempty open subset",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.dense-subset:0",
+          "term": "Dense subset"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.nowhere-dense:0",
+          "term": "Nowhere dense set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Generic quantified phrase; dense/nowhere-dense conditions should retain their existing full definitions.",
+      "targets": []
+    },
+    {
+      "rank": 138,
+      "phrase": "every open cover",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.quasi-compact-scheme:0",
+          "term": "Quasi-compact scheme"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.compactness:0",
+          "term": "Compact space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Quantifier over open covers, used in compactness definitions; not a separate named object.",
+      "targets": []
+    },
+    {
+      "rank": 139,
+      "phrase": "every sequence",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6779016ceb757c93ca4c",
+          "term": "descending chain condition"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6a3712193d375d1cebac",
+          "term": "ascending chain condition"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Unqualified 'every sequence' is a logical quantifier, not a new sequence type.",
+      "targets": []
+    },
+    {
+      "rank": 140,
+      "phrase": "every subset",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "combin.matroid-rank:0",
+          "term": "Matroid rank function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.discrete-topology:0",
+          "term": "Discrete topology"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Unqualified 'every subset' is a logical quantifier, not a specialized set notion.",
       "targets": []
     }
   ]

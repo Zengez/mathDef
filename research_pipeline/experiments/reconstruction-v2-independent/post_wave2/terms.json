@@ -4082,6 +4082,257 @@
         "C is a SINGLE constant working for all vectors.",
         "No completeness assumption; quasi-Banach is a further notion."
       ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-absolutely-convergent-dirichlet-20261026",
+      "candidate_id": "postwave-scan:rank-106",
+      "term": "absolutely convergent Dirichlet series",
+      "context": "Analytic number theory · ordinary Dirichlet series with absolute convergence at a specified complex argument",
+      "aliases": [
+        "absolute convergence of a Dirichlet series"
+      ],
+      "definition": "Let (a_n)_{n≥1} be complex numbers. The ordinary Dirichlet series ∑_{n=1}^∞ a_n n^{-s} is absolutely convergent at s∈ℂ when ∑_{n=1}^∞ |a_n|n^{-Re(s)} is finite. For fixed coefficients the interior of its absolute-convergence set, when nonempty, is a right half-plane Re(s)>σ_a, where σ_a is the abscissa of absolute convergence; behavior on the boundary Re(s)=σ_a requires separate analysis. Absolute convergence refers to the series at s, not to its analytic continuation.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Dirichlet series",
+          "url": "https://encyclopediaofmath.org/wiki/Dirichlet_series",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Ordinary Dirichlet series with n^{-s}; generalized Dirichlet series allow more general exponents.",
+        "Do not infer convergence on the boundary from an abscissa alone."
+      ],
+      "research_status": "assistant-researched incorporation of original frozen scan 2026-10-26; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-r-algebra-homomorphism-20261026",
+      "candidate_id": "postwave-scan:rank-107",
+      "term": "homomorphism of R-algebras",
+      "context": "Algebra · unital associative algebras over a commutative base ring",
+      "aliases": [
+        "R-algebra map",
+        "R-algebra homomorphism",
+        "algebra map (unital R-algebra convention)"
+      ],
+      "definition": "Fix a commutative unital ring R, and let A,B be unital associative R-algebras with structure homomorphisms i_A:R→Z(A) and i_B:R→Z(B). An R-algebra homomorphism f:A→B is a unital ring homomorphism satisfying f(i_A(r))=i_B(r) for every r∈R; equivalently it is R-linear, multiplicative and identity-preserving. For algebras over a field this is a linear multiplicative map preserving 1. The unqualified phrase 'algebra map' may use different unital or associative conventions and must be interpreted in context.",
+      "sources": [
+        {
+          "title": "Notes on Gelfand duality — Homomorphisms and ideals, Definition 2.2.1",
+          "url": "https://ncatlab.org/nlab/files/Vats-GelfandDuality.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "nLab — Unitalization (R-algebra conventions)",
+          "url": "https://ncatlab.org/nlab/show/unitalization",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.unital-homomorphism-20261026",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.unital-ring-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "R is commutative with identity and scalar structure maps land in the centers.",
+        "A and B need not be commutative, but are associative and unital.",
+        "Other meanings of 'algebra map' remain context-specific."
+      ],
+      "research_status": "assistant-researched incorporation of original frozen scan 2026-10-26; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-closed-linear-subspace-20261026",
+      "candidate_id": "postwave-scan:rank-123",
+      "term": "closed linear subspace",
+      "context": "Functional analysis · norm-topologically closed linear subspace",
+      "aliases": [
+        "closed vector subspace",
+        "closed subspace (normed-linear context)"
+      ],
+      "definition": "Let (V,∥·∥) be a normed vector space. A closed linear subspace is a subset W⊆V that is a linear subspace and closed in the topology induced by the norm; equivalently, every norm-convergent sequence of elements of W has its limit in W. If V is Banach, W is closed if and only if W is complete under the restricted norm. The zero subspace and V itself are allowed. 'Closed subspace' in general topology need not be linear.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Hilbert space",
+          "url": "https://encyclopediaofmath.org/wiki/Hilbert_space",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.analysis98.normed-vector-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "The norm topology is specified; no requirement of finite dimension or nonzero subspace.",
+        "The completeness equivalence requires the ambient space to be complete."
+      ],
+      "research_status": "assistant-researched incorporation of original frozen scan 2026-10-26; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-compact-hausdorff-space-20261026",
+      "candidate_id": "postwave-scan:rank-124",
+      "term": "compact Hausdorff space",
+      "context": "General topology · jointly compact and Hausdorff",
+      "aliases": [
+        "compact T2 space"
+      ],
+      "definition": "A topological space X is a compact Hausdorff space if (i) every open cover of X admits a finite subcover and (ii) for any distinct x,y∈X there exist disjoint open neighborhoods of x and y. Compactness alone does not imply Hausdorffness. Every compact metric space is compact Hausdorff, but compact Hausdorff spaces need not be metrizable. The empty space is permitted.",
+      "sources": [
+        {
+          "title": "nLab — compact Hausdorff space",
+          "url": "https://ncatlab.org/nlab/show/compact%2BHausdorff%2Bspace",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-compact-metric-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Compact means open-cover compactness without a built-in separation axiom.",
+        "The empty topological space is not excluded.",
+        "Do not automatically equate 'compactum' with this notion; some authors use it for compact metrizable spaces."
+      ],
+      "research_status": "assistant-researched incorporation of original frozen scan 2026-10-26; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-continuously-real-differentiable-20261026",
+      "candidate_id": "postwave-scan:rank-129",
+      "term": "continuously real differentiable complex-valued function",
+      "context": "Complex analysis · C¹ differentiability after identifying ℂ^n with ℝ^{2n}",
+      "aliases": [
+        "C1 real-differentiable complex function",
+        "continuously real differentiable function"
+      ],
+      "definition": "Let U⊆ℂ^n be open and f:U→ℂ. Regard U as an open subset of ℝ^{2n} and f as the real map (Re f,Im f):U→ℝ². The function is continuously real differentiable (of class C¹ over ℝ) when this real map is differentiable at every point and its real Fréchet derivative depends continuously on the point; equivalently all first real-coordinate partial derivatives exist and are continuous. This alone does not imply complex differentiability or holomorphy.",
+      "sources": [
+        {
+          "title": "Mathematics LibreTexts — Tasty Bits of Several Complex Variables, §1.1",
+          "url": "https://math.libretexts.org/Bookshelves/Analysis/Tasty_Bits_of_Several_Complex_Variables_%28Lebl%29/01%3A_Holomorphic_Functions_in_Several_Variables/1.01%3A_Onto_Several_Variables",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Cambridge University Press — Complex differential calculus (Wirtinger calculus)",
+          "url": "https://www.cambridge.org/core/books/abs/statistical-signal-processing-of-complexvalued-data/complex-differential-calculus-wirtinger-calculus/2FC26C0F2ED3B716905387C555ECB01A",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-complex-vector-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "U is open and finite-dimensional over ℂ.",
+        "The derivative is REAL-linear and is not assumed complex-linear.",
+        "C¹ is interpreted over ℝ, not as a holomorphic regularity claim."
+      ],
+      "research_status": "assistant-researched incorporation of original frozen scan 2026-10-26; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-convergent-power-series-20261026",
+      "candidate_id": "postwave-scan:rank-130",
+      "term": "convergent complex power series",
+      "context": "Complex analysis · power series with positive radius of convergence",
+      "aliases": [
+        "convergent power series (positive-radius convention)"
+      ],
+      "definition": "A formal complex power series ∑_{n=0}^∞ a_n(z−z₀)^n is called convergent in a neighborhood of z₀ when its radius of convergence R is strictly positive, equivalently when it converges for every z with |z−z₀|<R for some R>0. By the Cauchy–Hadamard formula R^{-1}=limsup_{n→∞}|a_n|^{1/n}, with 1/0=∞. Every power series converges at its center, even when R=0; hence 'convergent' without an argument can be ambiguous, and the positive-radius convention is made explicit here.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Radius of Convergence",
+          "url": "https://mathworld.wolfram.com/RadiusofConvergence.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "University of Toronto — Power series",
+          "url": "https://www.utm.utoronto.ca/rgasc/student-resource-hub/math-resources/power-series",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.formal-power-series-ring-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "One complex variable, complex coefficients, positive-radius rather than merely pointwise-at-the-center convergence.",
+        "The radius may be infinite.",
+        "This is not the statement that a series converges at some specific boundary point."
+      ],
+      "research_status": "assistant-researched incorporation of original frozen scan 2026-10-26; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-complex-valued-function-20261026",
+      "candidate_id": "postwave-scan:rank-127",
+      "term": "complex-valued function",
+      "context": "Functions · arbitrary domain and values in ℂ",
+      "aliases": [
+        "complex valued function"
+      ],
+      "definition": "A complex-valued function on a set X is a function f:X→ℂ (or a function into an ambient codomain whose values lie in ℂ). Equivalently f can be written uniquely as f=u+iv with real-valued functions u,v:X→ℝ, where u=Re f and v=Im f. No complex domain, continuity, measurability, integrability or holomorphy is assumed merely by the phrase 'complex-valued'.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Function, functions on numbers",
+          "url": "https://encyclopediaofmath.org/wiki/Function",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "ProofWiki — Definitions/Complex-Valued Functions",
+          "url": "https://proofwiki.org/wiki/Category%3ADefinitions/Complex-Valued_Functions",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-complex-vector-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "X is any set, not necessarily a subset of ℂ.",
+        "The designation concerns the values, not analyticity or regularity."
+      ],
+      "research_status": "assistant-researched incorporation of original frozen scan 2026-10-26; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-countable-subset-20261026",
+      "candidate_id": "postwave-scan:rank-131",
+      "term": "at most countable subset",
+      "context": "Set theory · finite-or-countably-infinite convention",
+      "aliases": [
+        "countable subset (at most countable convention)"
+      ],
+      "definition": "A subset A⊆X is at most countable if there is an injective map A→ℕ; equivalently, A is finite (possibly empty) or is in bijection with ℕ. Some authors call such subsets 'countable' and reserve 'countably infinite' for sets in bijection with ℕ, while other authors use 'countable' for only the latter. Saying 'at most countable' removes this ambiguity.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Countable set, definition and comments",
+          "url": "https://encyclopediaofmath.org/wiki/Countable_set",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Wolfram MathWorld — Countable Set",
+          "url": "https://mathworld.wolfram.com/CountableSet.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "The empty set and every finite set count as at most countable.",
+        "The ambient X is arbitrary; no topology or measurable structure is required."
+      ],
+      "research_status": "assistant-researched incorporation of original frozen scan 2026-10-26; not peer certified"
     }
   ]
 }

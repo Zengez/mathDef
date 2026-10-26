@@ -344,3 +344,37 @@ overlay: **128 meanings** (118 pre-scan + 10 incorporated scan-derived);
 expected combined count **2,100**. Do not begin a new terminology search
 while the original candidate set is the owner's chosen input. Preserve
 independent Wave2's 958 meanings and the original 1,014 mathDef definitions.
+
+
+## Scan-driven candidate incorporation — ranks 101–140 (2026-10-26)
+
+Processed **exactly the next 40 ranked phrases** in the frozen original
+`/reconstruction/merged/scan-report.json`, with the phrase, count, and
+source examples copied literally to the same verified disposition ledger.
+This batch produced **8 new researched meanings**, **18 existing/synonymous
+matches or specializations**, and **14 lexical nonterms**. No new candidate
+collection was built.
+
+New searchable meanings:
+- 106: absolutely convergent ordinary Dirichlet series (at a specified s)
+- 107: homomorphism of unital R-algebras (the scoped sense of algebra map)
+- 123: closed linear subspace (norm topology, Banach completeness caveat)
+- 124: compact Hausdorff space
+- 127: complex-valued function (arbitrary set as domain)
+- 129: continuously real-differentiable complex-valued function (real C¹,
+  not holomorphy)
+- 130: convergent complex power series (positive-radius convention)
+- 131: at most countable subset (includes finite/empty, with countability
+  convention explicitly distinguished)
+
+Useful no-new-entry decisions include rank 114 (attracting fixed point is
+period-one attracting periodic point), rank 126 (complex Hilbert spaces
+are covered by Hilbert-space scalar-field conventions), and ranks 101–103
+(existing unital ring/ring-map content). The source locators and convention
+choices are stored in the new `terms.json` records.
+
+**Next original-scan rank: 141.** Current combined-only overlay **136**
+meanings; expected combined **2,108** (958 independent + 1,014 original +
+136 researched post-Wave2). Both completed historical previews and original
+production source remain unchanged. The 2,019 scanned phrases are neither
+newly collected nor automatically accepted as definitions.
