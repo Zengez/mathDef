@@ -4496,6 +4496,103 @@
         "Open refers to ambient X; isolated-in-subset is not equivalent to isolated-in-ambient."
       ],
       "research_status": "assistant-researched from original frozen scan; draft not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-open-real-interval-20261026",
+      "candidate_id": "postwave-scan:rank-185",
+      "term": "open interval in the real line",
+      "context": "Real analysis · open bounded interval (a,b)",
+      "aliases": [
+        "open real interval",
+        "open interval"
+      ],
+      "definition": "For real numbers a<b, the open interval (a,b) is the subset {x∈ℝ:a<x<b}. Its endpoints a and b are excluded, and (a,b) is open in the usual topology on ℝ. Authors also call (−∞,b), (a,∞) and ℝ unbounded open intervals; those sets exclude any finite endpoint, while infinity is not an endpoint belonging to ℝ. The present bounded-interval definition requires a<b and is therefore nonempty.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Interval, open",
+          "url": "https://encyclopediaofmath.org/wiki/Interval%2C_open",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "University of Kentucky — Open and closed intervals of the real line",
+          "url": "https://clp.math.uky.edu/clp1/sec_0_3.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "a,b are finite real numbers with a<b, so (a,b) is nonempty.",
+        "The metric/topology is the usual one on ℝ; other ordered fields require their own order topology.",
+        "Unbounded open intervals/rays have related but broader notation conventions."
+      ],
+      "research_status": "source-attributed assistant-reviewed original scan incorporation; not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-orthonormal-basis-hilbert-20261026",
+      "candidate_id": "postwave-scan:rank-187",
+      "term": "orthonormal basis of a Hilbert space",
+      "context": "Functional analysis · complete orthonormal family with dense linear span",
+      "aliases": [
+        "complete orthonormal system",
+        "Hilbert orthonormal basis",
+        "orthonormal basis"
+      ],
+      "definition": "Let H be a real or complex Hilbert space. An orthonormal basis is a family (e_i)_{i∈I}⊆H such that ⟨e_i,e_j⟩=0 for i≠j, ∥e_i∥=1 for every i, and the closure of span{e_i:i∈I} equals H. Equivalently, any vector orthogonal to every e_i is zero. Every x∈H has a norm-convergent expansion x=∑_{i∈I}⟨x,e_i⟩e_i (with the inner-product convention linear in the first argument). When H is infinite-dimensional, an orthonormal basis need not be an algebraic (Hamel) basis, whose span uses only finite sums. The zero Hilbert space has the empty orthonormal basis.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Hilbert space",
+          "url": "https://encyclopediaofmath.org/wiki/Hilbert_space",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Orthogonal system",
+          "url": "https://encyclopediaofmath.org/wiki/Orthogonal_system",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "H is a Hilbert space; completeness matters in general infinite dimension.",
+        "Inner product is linear in the first argument; alternative conventions conjugate Fourier coefficients.",
+        "A basis can be uncountable, though each vector has at most countably many nonzero coefficients."
+      ],
+      "research_status": "source-attributed assistant-reviewed original scan incorporation; not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-sub-sigma-algebra-20261026",
+      "candidate_id": "postwave-scan:rank-201",
+      "term": "sub-σ-algebra of a σ-algebra",
+      "context": "Measure theory and probability · smaller σ-algebra on the same sample space",
+      "aliases": [
+        "sub sigma algebra",
+        "sub-σ-field",
+        "sub-sigma algebra"
+      ],
+      "definition": "Let ℱ be a σ-algebra of subsets of a fixed set Ω. A sub-σ-algebra of ℱ is a family 𝒢⊆ℱ that is itself a σ-algebra on Ω: Ω∈𝒢, and 𝒢 is closed under complements relative to Ω and countable unions. Both {∅,Ω} and ℱ itself are sub-σ-algebras. In probability theory 𝒢 represents a restricted collection of events or information, and no assumption of completeness under a measure is required unless stated separately.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Measure space (sub-σ-algebras section)",
+          "url": "https://encyclopediaofmath.org/wiki/Measure_space",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Humboldt-Universität Berlin — Stochastic Processes notes, conditional probability given a sub-σ-algebra",
+          "url": "https://www.mathematik.hu-berlin.de/de/forschung/forschungsgebiete/stochastik/stoch-employees/mreiss/teaching/skriptws23-1.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-measure-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The ground set Ω is unchanged; traces {A∩Y} are a different construction on Y.",
+        "Completeness with respect to a measure is NOT required by this generic definition; some sources adopt a stronger specialized convention.",
+        "Ω can be empty; then {∅,Ω} consists of one set."
+      ],
+      "research_status": "source-attributed assistant-reviewed original scan incorporation; not peer-certified"
     }
   ]
 }
