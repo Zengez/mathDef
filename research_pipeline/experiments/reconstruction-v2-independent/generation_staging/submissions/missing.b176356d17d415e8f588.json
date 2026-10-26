@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.b176356d17d415e8f588",
+  "original_query": "neighborhood basis at x",
+  "original_context": "General topology: family 𝒩_x of neighborhoods of x such that for every neighborhood U of x there exists B∈𝒩_x with B⊆U; B need not itself be open.",
+  "original_incoming_occurrence_ids": [
+    "occ.cf87fcb3cc31bbb988c8"
+  ],
+  "disposition": "new_meaning",
+  "definition": "For a point x in a topological space X, a neighborhood basis (or fundamental system of neighborhoods) at x is a family B_x of neighborhoods of x such that every neighborhood N of x contains at least one B∈B_x.",
+  "reasoning": "The independently screened locally quasi-compact-space definition requires a neighborhood basis all of whose members are quasi-compact. The abstract neighborhood-basis construction places no such restriction and should not be merged with local quasi-compactness or an open-set basis for the entire topology.",
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Neighbourhood_(mathematics)",
+      "section": "Neighborhood bases and neighborhood systems",
+      "relevance": "Reputable mathematical source lead for neighborhood basis; exact full paragraph not independently certified here. Under general neighborhood convention basis members may be nonopen.",
+      "verification_status": "source_lead_exact_subsection_pending"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.91383b9c137b0e359967",
+      "missing.960bd927c204df58bb49",
+      "missing.972ae1e91200fae874aa",
+      "missing.9a669bd30949842fab00",
+      "missing.9a71afd4a344322c1d26",
+      "missing.9e1b000eff0431817f3a",
+      "missing.a257d0bad58dcfbd2fa7",
+      "missing.a53971a78b449b0edc86",
+      "missing.ab52c0b907fcd5ccf04f"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.aa975a3ff4883909.locally-quasicompact-space",
+        "relation": "uses a quasi-compact neighborhood basis as specialized property"
+      },
+      {
+        "id": "meaning.ab260940ea9c523d.locally-connected-space",
+        "relation": "requires a fundamental connected-neighborhood system, a separate specialization"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Reviewed the independent 595-screened and 16-provisional meaning index, focusing on topology and local properties. Several screened concepts use neighborhood bases but none supplies an unrestricted standalone definition. Previous staged topology definitions concern retrocompactness and initial topology, not a pointwise neighborhood-filter base. All 11 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate."
+  },
+  "mathematical_assumptions": [
+    "Every basis member is a neighborhood in the general sense: contains an open set around x, not necessarily open itself.",
+    "Every neighborhood N contains some B from the basis.",
+    "If X is nonempty, a basis at x cannot be empty."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
