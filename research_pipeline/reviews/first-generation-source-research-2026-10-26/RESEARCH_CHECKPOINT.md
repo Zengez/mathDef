@@ -190,3 +190,16 @@ Web-checked primary sources include Stacks [Definition 4.35.6](https://stacks.ma
 5. After completing first-generation research, run global rigor, source and variant consistency audit; review integration and only then open a subsequent generation. No reads of production/frozen Wave1 and no Codex consumption unless a substantial engineering time multiplier is clear.
 
 **All recent file edits were review-only on draft PR #19. The site population has not received 388 new definitions, and the first generation has not been certified or integrated.**
+
+## 2026-10-26 primary-source verification continuation — committed BATCH13 corrections
+
+- On draft PR #19 research branch, commit `f20165f0616a12bef114d0f6a6d4b03e193a8929` updates the **existing, already committed** `BATCH13_SOURCE_EVIDENCE_321_350.json` with a focused direct-source audit of ranks **322, 329, 331, 332, 341, 343, 346, 349**. The blocked BATCH12 ranks 291–320 have **not** been written or rerouted. Full original candidate IDs, occurrence provenance and preliminary draft texts remain in place. The 30 BATCH13 IDs are still unique and ordered.
+- **322:** Previously cited Stacks tag `04GH` refers to a different lemma; replaced with directly inspected Stacks [Section 10.155](https://stacks.math.columbia.edu/tag/0BSK), Lemma 10.155.1 and Definition 10.155.3, for the henselization maximal-ideal and residue-field equalities.
+- **341:** Previous tag `01KF` is a valuative criterion proposition, not the basic lifting diagram definition. Replaced with directly inspected [Definition 26.20.3](https://stacks.math.columbia.edu/tag/01KA).
+- **343:** Old tag `0E1V` actually concerns derived Hom, so invalid for zigzags. A connected-category reference from nLab is only **indexed-excerpt checked** (full page unavailable); no fabricated primary verification.
+- **346:** Previous tag `06XP` covers Ext groups, not a standalone definition of projective resolution. Directly inspected [Stacks §10.109](https://stacks.math.columbia.edu/tag/00O2) as **relevant context**; still need a precise source for the fully unbounded definition.
+- **329:** Stacks category axioms alone do **not** directly certify general commutative diagrams; record is downgraded and a commutative-square specialization given separately. General source remains pending.
+- **331/332:** Directly inspected [Stacks §4.43](https://stacks.math.columbia.edu/tag/0FFJ) for monoidal units, natural tensor comparisons and coherence. Record notes Stacks' associator points opposite to one widely used convention.
+- **349:** [Stacks Definition 12.3.9](https://stacks.math.columbia.edu/tag/0106) directly defines image as kernel of cokernel and coimage as cokernel of kernel; [Definition 12.5.1](https://stacks.math.columbia.edu/tag/00ZX) separately provides the abelian comparison-isomorphism axiom.
+
+**Coverage unchanged:** 388/418 original candidates, 811/841 original references; 30 blocked singleton candidates (291–320), no population staging, no graph changes, no source-certification claim for all items. Frozen manifest and graph fingerprints remain the baseline; continue source-grade audit of already committed records and full independent meaning comparisons before any guarded staging. This audit does not resolve all remaining citation and mathematical rigor issues.
