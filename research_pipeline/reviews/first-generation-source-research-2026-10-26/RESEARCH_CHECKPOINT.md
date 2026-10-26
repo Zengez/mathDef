@@ -25,9 +25,14 @@
 | 161–200 | `BATCH08_SOURCE_EVIDENCE_161_200.json` | 40 | 40 |
 | 201–230 | `BATCH09_SOURCE_EVIDENCE_201_230.json` | 30 | 30 |
 | 231–260 | `BATCH10_SOURCE_EVIDENCE_231_260.json` | 30 | 30 |
-| **Total** | **11 committed review documents** | **260 / 418** | **683 / 841** |
+| 261–290 | `BATCH11_SOURCE_EVIDENCE_261_290.json` | 30 | 30 |
+| 291–320 | **BLOCKED—NO FILE** | 0 | 0 |
+| 321–350 | `BATCH13_SOURCE_EVIDENCE_321_350.json` | 30 | 30 |
+| 351–380 | `BATCH14_SOURCE_EVIDENCE_351_380.json` | 30 | 30 |
+| 381–418 | `BATCH15_SOURCE_EVIDENCE_381_418.json` | 38 | 38 |
+| **Total** | **15 committed review documents** | **388 / 418** | **811 / 841** |
 
-Checked all eleven committed files for stable, unique candidate IDs, matching original counts and nonempty source evidence: exactly **260 distinct IDs** and **683** represented original references. The source evidence ranges from directly supported definitions to explicitly labeled partial or context-dependent source verifications. No claim that all 260 are mathematically certified or that all locators are fully independently checked.
+Checked all fifteen committed files for stable, unique candidate IDs, matching original counts and nonempty source evidence: exactly **388 distinct IDs** and **811** represented original references. The source evidence ranges from directly supported definitions to explicitly labeled partial or context-dependent source verifications. No claim that all 388 are mathematically certified or that all locators are fully independently checked.
 
 ## Important mathematical holds and typing boundaries
 
@@ -154,3 +159,34 @@ Web-checked primary sources include Stacks [Definition 4.35.6](https://stacks.ma
 - Research PR: https://github.com/Zengez/mathDef/pull/19 , branch `research/wave2-firstgen-b01-source-evidence-2026-10-26`. Keep draft. Main's authoritative state remains unchanged. No Codex credits required or used.
 
 **Next permitted action:** First verify the PR branch and whether a pending file actually exists. Resume at rank 291, making no assumptions about the blocked write. Preserve exactly one candidate per original ID and no added dependencies. Mark source locators as leads until direct source scope is verified. Update this checkpoint and PR only for successfully persisted changes. If a GitHub safety check still blocks the file operation, honor the restriction and report that blocker rather than trying alternate disguised write routes.
+
+## Latest confirmed checkpoint — original 388/418 preliminary research files, 2026-10-26
+
+**Authoritative latest progress counts supersede historical intermediate counts elsewhere in this document.** As verified from all persisted GitHub source-evidence JSON files against `generation_staging/MANIFEST.json`:
+
+- **388 distinct original candidate IDs / 418** have saved preliminary research records (**811 of 841 originating references**), with no duplicates and no candidate-to-manifest mismatches.
+- **Exactly 30 candidates are missing: original ranks 291–320**, each one reference. All ranks 1–290 and 321–418 have saved research-evidence records. The attempted create of `BATCH12_SOURCE_EVIDENCE_291_320.json` was blocked by GitHub connection safety checks; that file was not saved. Do not retry through a disguised write, protected-path work-around, or alternate unguarded route. Permission/blocker can be reviewed separately if appropriate.
+- New saved artifacts: `BATCH13_SOURCE_EVIDENCE_321_350.json` (30), `BATCH14_SOURCE_EVIDENCE_351_380.json` (30), and `BATCH15_SOURCE_EVIDENCE_381_418.json` (38), all on draft PR #19, the research branch `research/wave2-firstgen-b01-source-evidence-2026-10-26`. The files record exact manifest candidate IDs, original phrase/context and occurrence IDs, typed mathematical draft and edge cases, and **per-source verification status**, which is often *lead* rather than checked. They are NOT source-certified formulations and are NOT staging admissions.
+- Independent graph on `main`: initial Phase 2 consolidation gate previously reverified `consolidation_gate_valid=true` in phase `research_missing_dependencies`. Graph population, unresolved identities and original candidate manifest remain unchanged by these review-only commits.
+- The final 38 originals (ranks 381–418) are now represented. A particularly strong direct source is [Stacks Lemma 10.107.1](https://stacks.math.columbia.edu/tag/04VN), establishing the equivalence of categorical ring epimorphism with invertibility of multiplication `S⊗_R S→S`. Ring epimorphism **does not** imply surjectivity. Another is [Stacks Section 6.26](https://stacks.math.columbia.edu/tag/0094), for induced stalk maps. These were directly inspected rather than inferred from matching title text.
+
+### High-impact open mathematical assumptions identified in newest records
+
+- **Sober (rank 330):** irreducible closed sets have unique generic points, not Hausdorffness. Stacks Section 26.11 directly addresses schemes' sober spaces.
+- **Group-to-monoid homomorphism (rank 347):** a group homomorphism to the multiplicative monoid of a nonzero field must land in units; zero cannot occur in its image.
+- **Connected neighborhood basis (rank 397):** 'neighborhood' may include nonopen sets, and this convention must match the source.
+- **Countable atomic support (rank 385):** a countable subset of R can be an atomic support without being discrete in its *subspace topology*.
+- **Distance of subsets (rank 389):** disjoint sets may have distance zero; empty-set behavior needs an explicit convention.
+- **Finite categorical product (rank 407):** empty categorical product is terminal object, requiring more than binary products.
+- **Ring epimorphism criterion (rank 417):** multiplication comparison iso does not mean the original ring map is surjective.
+- **Duality data (rank 418):** evaluation and coevaluation arrows alone do not guarantee duality; snake identities are additional conditions.
+
+### Next work sequence
+
+1. Preserve the GitHub safety restriction on the blocked rank-291–320 artifact. Only **30 original single-reference candidates lack saved preliminary source-evidence records**; if this is to be resolved, do so through approved workflow or permission changes, not by concealing or rerouting the same blocked request. Continue improving other legitimately committed research instead of stalling on these 30.
+2. Perform direct citation/source-location checks on the saved candidate records marked as leads. Each external reference must actually support the **whole mathematical type, hypotheses and context**; downgrade bad/inaccessible source claims and record substantive corrections in review data.
+3. Compare all meanings comprehensively against the independent source-screened corpus, initial provisional corpus, and any newly staged provisional submissions. No automatic lexical aliases.
+4. Admit only fully version-anchored provisional records through `research_pipeline.engine.dependency_generation` once conditions and evidence are met. Continue to defer newly discovered missing prerequisites for later generation.
+5. After completing first-generation research, run global rigor, source and variant consistency audit; review integration and only then open a subsequent generation. No reads of production/frozen Wave1 and no Codex consumption unless a substantial engineering time multiplier is clear.
+
+**All recent file edits were review-only on draft PR #19. The site population has not received 388 new definitions, and the first generation has not been certified or integrated.**
