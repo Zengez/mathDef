@@ -133,3 +133,26 @@ successful rendering. The first rapid candidate report happened to produce
 objects**; do not conflate them, and do not infer candidate completion.
 
 Maintain efficient direct content work, not candidate-approval gates.
+
+
+## Sixth expansion batch — 18 mathematical meanings, no stage gate
+
+Another 18 source-attributed meanings have been added directly to the
+post-completion combined-only `post_wave2/terms.json` overlay. They address
+module length/composition series/socle; several distinct topological
+compactness and covering properties; Baire category and equicontinuity; and
+convex geometric interior, extremality, exposed faces and barycentric coordinates.
+
+This research specifically avoids a major potential error: **countably
+compact** means every countable open cover has a finite subcover, whereas
+**Lindelöf** means every arbitrary open cover has a countable subcover.
+Neither should be conflated with sequential compactness outside metric
+spaces. The empty cases, Hausdorff convention, module zero-length case and
+non-exposed faces are recorded explicitly in each entry.
+
+Total after this content batch: **65** post-Wave2 meanings and expected
+**2,037** combined meanings, while the original 958-meaning independently
+reconstructed Wave2 and original 1,014-entry corpus are preserved. Initial
+scan still has 2,019 noisy new-phrase leads and 473 known-title patterns.
+CI validation and deployment determine whether these expected numbers
+are published; never claim publication before successful Pages delivery.
