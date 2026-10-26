@@ -84,6 +84,11 @@ jobs:
           print("ORIGINAL_SCAN_CANDIDATES_JSON="+json.dumps(
               scan["possible_new_terminology"][:100], ensure_ascii=False,
               separators=(",", ":")))
+          # Read-only next frozen-scan window for the active incorporation pass;
+          # no new lexical scan, candidate hunt, or file changes to the report.
+          for rank, scanned in enumerate(scan["possible_new_terminology"][100:140], start=101):
+            print("ORIGINAL_SCAN_NEXT_RANK_JSON="+json.dumps(
+                {"rank":rank, **scanned}, ensure_ascii=False, separators=(",", ":")))
           print("Merged-preview smoke passed:", {
               "independent":base_n,
               "original":original_n,
