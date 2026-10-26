@@ -119,7 +119,7 @@ border-radius:13px;background:white;padding:24px}
 </style></head><body>
 <p class="small"><a href="../">Original mathDef site</a> · Independent research experiment</p>
 <h1>Independent mathematical definitions reconstruction</h1>
-<p>Explore the second, independently researched version of mathDef at two stages.
+<p>Compare the frozen independent Wave 1, completed independent Wave 2, and an explicitly original-inclusive merged reference.
 Wave 1 and the completed independent Wave 2 remain source-independent and frozen for comparison.\nThe new combined view explicitly includes the original mathDef content, as authorized for this expansion.</p>
 <div class="stages">___CARDS___</div>
 <div class="notice"><strong>Research previews, not a certified reference.</strong>
