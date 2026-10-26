@@ -1,0 +1,557 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "status": "BOUNDED_GENERATION_SOURCE_REVIEW_NONCERTIFIED",
+  "original_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "original_unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "priority_range": [
+    61,
+    80
+  ],
+  "records": 20,
+  "original_incoming_occurrences": 43,
+  "items": [
+    {
+      "priority": 61,
+      "original_canonical_candidate_id": "missing.63acc9193a56ae7003b9",
+      "original_query": "finite affine combination sum alpha_i*x_i",
+      "original_context": "Affine geometry: finite affine combination ∑_{i=1}^k α_i x_i of vectors or points with real coefficients ∑α_i=1, without positivity required.",
+      "original_occurrence_count": 3,
+      "original_occurrence_ids": [
+        "occ.93d115158f2051ca5880",
+        "occ.bdcbd2033cc6558e6d64",
+        "seed.2b6d455ff3db8fa2cf98"
+      ],
+      "aliases": [
+        "missing.162c8a146060e41fc577",
+        "missing.30c1c32a0c618c43d3de"
+      ],
+      "preliminary_definition": "An affine combination is a finite sum Σᵢαᵢxᵢ with real coefficients Σᵢαᵢ=1, without requiring αᵢ≥0.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/AffineCombination.html",
+          "section": "Affine combination definition",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 62,
+      "original_canonical_candidate_id": "missing.a8c70a2a13320680c54c",
+      "original_query": "natural transformation a:F→G",
+      "original_context": "Category theory: natural transformation a:F⇒G of functors C^op→Sets, with components a_U:F(U)→G(U) commuting with every restriction map.",
+      "original_occurrence_count": 3,
+      "original_occurrence_ids": [
+        "occ.099ea4270d9cbdccf52b",
+        "occ.294c2ee49c6e374c14f7",
+        "occ.fec3a03198f7fee73ecf"
+      ],
+      "aliases": [
+        "missing.7863e36c979e91435854",
+        "missing.99ed82d968323ff940b1"
+      ],
+      "preliminary_definition": "A natural transformation η:F⇒G between contravariant set-valued functors consists of functions η_U:F(U)→G(U) commuting with every contravariant restriction map.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00ZG",
+          "section": "Sheafification: transformations of functors and restriction maps",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "partial_exact_naturality_locator",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 63,
+      "original_canonical_candidate_id": "missing.c89d1fba0e09e7e6fb3b",
+      "original_query": "extended nonnegative real values",
+      "original_context": "Measure theory: extended nonnegative real numbers [0,+∞], adjoining +∞ to the set of ordinary nonnegative real numbers with usual extended arithmetic/order conventions.",
+      "original_occurrence_count": 3,
+      "original_occurrence_ids": [
+        "occ.200c4c52903b233ce190",
+        "occ.30d704c44bd81f45a7ad",
+        "seed.0a507845e410fe4facff"
+      ],
+      "aliases": [
+        "missing.4bbc5d13f2e44d4f0e46",
+        "missing.5c6ace116141c043d3c0"
+      ],
+      "preliminary_definition": "The extended nonnegative real line [0,+∞] adjoins a new greatest element +∞ to the nonnegative reals with an extension of order and specified arithmetic conventions.",
+      "sources": [
+        {
+          "url": "https://web.stanford.edu/~montanar/TEACHING/Stat310B/NOTES/amir_notes.pdf",
+          "section": "Chapter 1 measure and integration, extended expectations",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "partial_arithmetic_conventions",
+      "reviewed_distinction": "Extended-real 0·∞ convention must be stated when it matters.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 64,
+      "original_canonical_candidate_id": "missing.0573d17c9b55504f064f",
+      "original_query": "countably generated module",
+      "original_context": "Module theory: an R-module admitting a finite or countably infinite set of generators under R-linear combinations; no projectivity, flatness, or finitely-generated-only condition.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.04c2d003c958d0288f2d",
+        "occ.8bd160eab4f78379de50"
+      ],
+      "aliases": [],
+      "preliminary_definition": "An R-module is countably generated if it has a finite or countably infinite generating subset whose finite R-linear combinations give every element.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html",
+          "section": "Module generation, Chapter 5",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "partial_countability_source",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 65,
+      "original_canonical_candidate_id": "missing.0bde42f1d35a47cbb46e",
+      "original_query": "vector-space dimension",
+      "original_context": "Linear algebra: dimension dim_F(V) of a vector space V over field F, the cardinality of any F-basis of V; for finite-dimensional V this is a nonnegative finite integer.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.12b482d7fd68b8770a36",
+        "occ.8af85990dd9d34a2077a"
+      ],
+      "aliases": [
+        "missing.4fc96604ce0cd63bfbe1"
+      ],
+      "preliminary_definition": "The dimension dim_F(V) is the cardinality of a basis of the F-vector space V; in the finite case it is a nonnegative integer.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/VectorSpace.html",
+          "section": "Basis and vector-space dimension",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "definition_supported",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 66,
+      "original_canonical_candidate_id": "missing.11276cd4f561922a8529",
+      "original_query": "transitivity x~y and y~z imply x~z",
+      "original_context": "Set theory: transitivity property of a binary relation R⊆S×S, namely (x,y),(y,z)∈R imply (x,z)∈R for all x,y,z∈S.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.0d49d108c280d1a5531d",
+        "occ.ae9a10a19c89ba87ca95"
+      ],
+      "aliases": [
+        "missing.8935c9439ad08cf80a1b"
+      ],
+      "preliminary_definition": "A binary relation ~ on S is transitive if x~y and y~z together imply x~z for all x,y,z∈S.",
+      "sources": [
+        {
+          "url": "https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Transition_to_Higher_Mathematics_%28Dumas_and_McCarthy%29/01%3A_New_Page/1.02%3A_New_Page",
+          "section": "Relations and logic",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "partial_locator",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 67,
+      "original_canonical_candidate_id": "missing.19205fdc52a9c5cc6eb4",
+      "original_query": "positive weights w_x",
+      "original_context": "Analysis/orthogonal polynomial systems: a positive discrete weight function x↦w_x from a set X of distinct real support points to strictly positive reals, either finite or countable.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.0a4f1ae37261e550c784",
+        "occ.f5556e594e0faee8e536"
+      ],
+      "aliases": [],
+      "preliminary_definition": "A strictly positive discrete weight is a function w:X→(0,∞), with each w_x>0, without an assumed normalization Σw_x=1.",
+      "sources": [
+        {
+          "url": "https://www.mathematik.uni-kassel.de/~koepf/Diplome/PatrickNjionou-Dissertation.pdf",
+          "section": "Section 2.4 orthogonal polynomials and discrete weights",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "partial_weight_source",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 68,
+      "original_canonical_candidate_id": "missing.21dbe26f26478a5abe77",
+      "original_query": "idempotent e of R (so e²=e)",
+      "original_context": "Commutative algebra: idempotent ring element e∈R satisfying e²=e, in a commutative unital ring; e=0 and e=1 allowed.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.30f04ff7218978116188",
+        "occ.4fa282a7761131d0c586"
+      ],
+      "aliases": [
+        "missing.0b6d65cadb2a0c0c74af"
+      ],
+      "preliminary_definition": "An element e of a ring is idempotent if e²=e; both 0 and 1 qualify.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/04PN",
+          "section": "Section 10.21 idempotents and clopen spectra",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 69,
+      "original_canonical_candidate_id": "missing.22a110eb8988efe59f29",
+      "original_query": "total order on S",
+      "original_context": "Order theory: total or linear order on S, a partial order for which every pair x,y is comparable (x≤y or y≤x).",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.c0659996bd174fd452a4",
+        "occ.f9cf0ad171f83e6fa644"
+      ],
+      "aliases": [
+        "missing.744d32c2cb99dfb0c599"
+      ],
+      "preliminary_definition": "A total order is a reflexive, antisymmetric, transitive relation ≤ in which every pair of elements is comparable.",
+      "sources": [
+        {
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "section": "Total and partially ordered sets",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 70,
+      "original_canonical_candidate_id": "missing.252a4827aa3c22c404ef",
+      "original_query": "composable arrows f:X→Y and a,b:Y→W",
+      "original_context": "Category theory: composition of arrows with matching codomain and domain, so a,b:Y→W may follow f:X→Y.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.62741115190995499ac2",
+        "occ.e50b5fdaa442e17f315a"
+      ],
+      "aliases": [
+        "missing.020413ed1eabeda5e3e2"
+      ],
+      "preliminary_definition": "Arrows f:X→Y and a:Y→W are composable, producing a∘f:X→W; likewise b:Y→W may be composed with f.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "section": "Category composition axioms",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 71,
+      "original_canonical_candidate_id": "missing.2a57a4bcdc8b7937c52e",
+      "original_query": "unit ideal equals k[x]",
+      "original_context": "Commutative algebra: the unit ideal (1)=R of a unital ring R, containing 1_R and hence every element; here R=k[X].",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.a1f32015d9cc13b35037",
+        "occ.c3a0860f4339a6bccb9a"
+      ],
+      "aliases": [
+        "missing.1bc737c9f2d261a2de5b"
+      ],
+      "preliminary_definition": "The unit ideal in a unital ring R is (1_R)=R; for R=k[x] it is all of k[x].",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.8 principal ideals",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 72,
+      "original_canonical_candidate_id": "missing.2e90e090541bb3b84623",
+      "original_query": "orthogonality ∫p_np_m dμ=0 for n≠m",
+      "original_context": "Measure-theoretic polynomial orthogonality of distinct degrees, with zero mixed integral ∫p_n(x)p_m(x)dμ(x) under a specified nonnegative measure.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.d5a1b4106c8f33afad38",
+        "occ.d88c3886302dc75f4467"
+      ],
+      "aliases": [
+        "missing.2940257ef7ae0b2135c7"
+      ],
+      "preliminary_definition": "Polynomials p_n and p_m are orthogonal relative to μ when their mixed integral ∫p_np_m dμ vanishes for n≠m, assuming integrability.",
+      "sources": [
+        {
+          "url": "https://www.mathematik.uni-kassel.de/~koepf/Diplome/PatrickNjionou-Dissertation.pdf",
+          "section": "Section 2.4, Definition 17",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct_with_nonzero_norm_convention",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 73,
+      "original_canonical_candidate_id": "missing.3b722d1bc0df2b9a4a1a",
+      "original_query": "neighborhood of a point in a topological space",
+      "original_context": "General topology: neighborhood N of point x if there exists an open U with x∈U⊆N, without requiring N to be open.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.c8da692b33d6e71f9a3a",
+        "occ.fa340ee444d5e3be82f1"
+      ],
+      "aliases": [
+        "missing.49539557333974b809f2"
+      ],
+      "preliminary_definition": "A neighborhood of x is a subset N of X containing some open U with x∈U⊆N; N need not be open.",
+      "sources": [
+        {
+          "url": "https://ncatlab.org/nlab/show/neighborhood",
+          "section": "Neighborhood and open neighborhood definitions",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct_with_convention",
+      "reviewed_distinction": "Neighborhood need not be open, unlike explicitly open neighborhood.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 74,
+      "original_canonical_candidate_id": "missing.40d0b2c0719cd5e63e08",
+      "original_query": "specified multiplicative identity 1_R",
+      "original_context": "Ring theory: specified two-sided multiplicative identity 1_R in an associative ring R, satisfying 1_Rr=r1_R=r for all r∈R, with no commutativity requirement.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.77df6e74575a527177a4",
+        "occ.e32dc784afafb49750a8"
+      ],
+      "aliases": [
+        "missing.cada73fbf03ab8dc7722"
+      ],
+      "preliminary_definition": "A two-sided multiplicative identity 1_R in an associative ring satisfies 1_Rr=r=r1_R for all r∈R.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.1 ring axioms and identities",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 75,
+      "original_canonical_candidate_id": "missing.4336d7e825e3fd33578e",
+      "original_query": "R-module structure on S induced by R→S",
+      "original_context": "Algebra and module theory: restriction of scalars along unital ring homomorphism φ:R→S, giving the codomain S an R-module structure via r·s=φ(r)s; changing φ may change the action.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.569d5b0b5c60e620be1d",
+        "occ.e53e6a0282213d040b9a"
+      ],
+      "aliases": [
+        "missing.3038c2a81d800718043d"
+      ],
+      "preliminary_definition": "Under a unital homomorphism φ:R→S, restriction of scalars gives S an R-module structure r·s=φ(r)s.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00CM",
+          "section": "Section 10.9 ring maps and restriction of scalar modules",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "construction_supported",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 76,
+      "original_canonical_candidate_id": "missing.4bd32ffdc3c3bd475c93",
+      "original_query": "canonical comparison M⊗_R∏ Q_i→∏(M⊗_R Q_i)",
+      "original_context": "Module theory: canonical R-linear map M⊗_R(∏_iQ_i)→∏_i(M⊗_R Q_i) induced by projection π_i:∏_iQ_i→Q_i; injectivity for all families defines Mittag-Leffler property.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.275fe70dd375a2668617",
+        "occ.5c2b3f257c69f0b50a52"
+      ],
+      "aliases": [
+        "missing.dc8193dadfb92f16725c"
+      ],
+      "preliminary_definition": "The canonical map θ:M⊗_R(∏Q_i)→∏(M⊗_RQ_i) sends m⊗(q_i) to (m⊗q_i). Its injectivity for all families is the Mittag-Leffler condition.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/059H",
+          "section": "Section 10.89, canonical map, examples and Proposition 10.89.5",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct",
+      "reviewed_distinction": "Canonical tensor-product-to-product comparison is not generally injective or surjective.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 77,
+      "original_canonical_candidate_id": "missing.4da14726d0530cefe078",
+      "original_query": "finite convex combination with strictly positive coefficients",
+      "original_context": "Real affine geometry: finite sum ∑_{j=1}^m λ_j u_j with m≥1, λ_j>0 and ∑ λ_j=1; zero weights can be omitted.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.2c73034c3b2f45845b71",
+        "occ.c7916510d26488c015e8"
+      ],
+      "aliases": [
+        "missing.159a619d623a223ddc24"
+      ],
+      "preliminary_definition": "A strictly positive finite convex combination is Σⱼλⱼuⱼ with λⱼ>0 and Σⱼλⱼ=1; standard convex combinations permit zero coefficients.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/AffineCombination.html",
+          "section": "Affine vs convex combinations; strict positivity is extra",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct_specialization",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 78,
+      "original_canonical_candidate_id": "missing.5201cd2732d7b14502ad",
+      "original_query": "zero morphism and equation p composed with f equals zero",
+      "original_context": "Category theory: zero morphism 0_{X,C} in an additive Hom-set of a preadditive category; here the composite p∘f equals this zero arrow.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.5b85c5e825c5cf0661e8",
+        "occ.f33b45d5d0cc68d62d54"
+      ],
+      "aliases": [
+        "missing.a9d2bb44d2efb1920aeb"
+      ],
+      "preliminary_definition": "In a preadditive category, each Hom_C(X,Y) is an abelian group whose additive identity 0_{X,Y} is the zero morphism; an equation p∘f=0 uses that zero arrow.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09SE",
+          "section": "Definition 12.3.1; existence of zero maps",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct",
+      "reviewed_distinction": "Zero morphisms exist in preadditive Hom groups without requiring a zero object.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 79,
+      "original_canonical_candidate_id": "missing.53a329590803a0850dc6",
+      "original_query": "directional difference quotient",
+      "original_context": "Multivariable real analysis: quotient [f(a+tu)−f(a)]/t for nonzero scalar t→0 and fixed vector direction u, with domain defined near a.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.429b5dfda92b4fcfc203",
+        "occ.b6e238e52aa1eecae93d"
+      ],
+      "aliases": [
+        "missing.2106a88ad739774ddc41"
+      ],
+      "preliminary_definition": "For t≠0 the directional difference quotient is [f(a+tu)−f(a)]/t. Its limit as t→0 defines the directional derivative if it exists.",
+      "sources": [
+        {
+          "url": "https://mathbooks.unl.edu/MultiVarCalc/S-10-6-Directional-Derivative.html",
+          "section": "Definition 2.5.2 and preceding difference quotient",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    },
+    {
+      "priority": 80,
+      "original_canonical_candidate_id": "missing.551582b06af996cd7836",
+      "original_query": "sections O_X(U) over open U",
+      "original_context": "Sheaf theory and algebraic geometry: ring O_X(U) of sections of a sheaf of commutative unital rings O_X over an open subset U of X, with pointwise ring operations and restriction homomorphisms for inclusions V⊆U; distinct from a stalk O_{X,x}.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.39cc04c2694ed400d2fd",
+        "occ.de62c7e178bf9fb7e0b3"
+      ],
+      "aliases": [
+        "missing.0c1f3f8a0434bc153489"
+      ],
+      "preliminary_definition": "For sheaf O_X of rings and open U⊆X, O_X(U) is the ring of sections over U, with restriction homomorphisms O_X(U)→O_X(V) for V⊆U.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01HA",
+          "section": "Section 26.2 structure sheaf and sections on opens",
+          "relevance": "Supports core construction or a documented special case; status records any missing exact generality."
+        }
+      ],
+      "source_status": "direct",
+      "reviewed_distinction": "Preserve object type, hypotheses and source convention; do not auto-alias or certify.",
+      "existing_independent_and_provisional_comparison": "Full content-context comparison required before version-pinned population admission; no automatic equivalence inferred.",
+      "status": "PRELIMINARY_EXTERNAL_SOURCE_EVIDENCE_NOT_PROVISIONAL_ADMITTED",
+      "newly_discovered_dependencies": "deferred_to_later_generation"
+    }
+  ]
+}
