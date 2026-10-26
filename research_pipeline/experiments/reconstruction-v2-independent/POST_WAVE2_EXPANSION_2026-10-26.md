@@ -1,0 +1,38 @@
+# Post-Wave2 expansion — first content batch, 2026-10-26
+
+**Purpose.** Continue after the completed original-inclusive merge and rapid
+terminology scan, with real searchable definitions rather than another
+dependency-graph process.
+
+**Frozen checkpoints.** Wave 1 is preserved; independent Wave 2 remains 958
+meanings / 1,002 formulations / 1,511 relations. The original-inclusive
+combined baseline was 1,972 meanings in 1,831 headings from the independent
+958 plus original 1,014 definitions. The completed scanner input remains
+363 direct definitions and 1,014 original definitions (+5 original variants),
+with its initial 2,019 loose new phrases and 473 known mentions; its scan is
+deliberately unchanged by this additional admission.
+
+**This batch.** Add four source-attributed draft meanings exclusively to
+`post_wave2/terms.json` and the combined searchable site:
+- `unital ring`: associative ring with identity, not assuming commutativity,
+  zero-ring convention explicit. Source: Encyclopedia of Mathematics.
+- `unital ring homomorphism`: preserves the multiplicative identity, alongside
+  addition and multiplication. Source: Encyclopedia of Mathematics.
+- `locally small category`: each Hom collection is a set, object collection
+  need not be small. Source: nLab.
+- `nonnegatively graded ring`: nonnegative-integer grading of a commutative
+  unital ring, rather than conflating it with arbitrary group gradings.
+  Source: Stacks Project tag 00JL.
+
+Each record stores scope, source-verification status and existing-target
+relationships. The combined view should now have **1,976 meanings**; independent
+Wave 2 and original production mathematical text remain untouched. Exact
+search-heading count comes from the site build; it is not assumed all additions
+create new headings.
+
+**Method/next:** Favor correct direct content with realistic provenance and
+limited candidate checking. Later batches may address further worthwhile rough
+leads from either source corpus, detect genuine variants/synonyms and add
+contextually sensible links. Do not require full resolution of the 2,019
+unverified phrases before publication; remove false positives opportunistically
+rather than turning them into audit packets. Verify preview/build CI before merge.
