@@ -44,7 +44,7 @@ These need eventual independently reviewed **source-formulation** correction, no
 - **Recorded text:** “A continuous map f:X→Y is submersive if it is surjective and Y has the quotient topology for f; equivalently, U⊆Y is open exactly when f^{-1}(U) is open in X.”
 - **Effective prerequisite graph:** latest `amend.pass2.preimages_topology.20261022.03` already retains surjectivity, quotient-topology and ordinary preimage prerequisites separately. No edge correction needed.
 
-**Proof the last iff statement alone is false:** take (X={x}), (Y={a,b}), both discrete, (f(x)=a). Every (Usubseteq Y) is open and every (f^{-1}(U)subseteq X) is open; thus the claimed biconditional holds for all (U), but (f) is not surjective.
+**Proof the last iff statement alone is false:** take `X={x}`, `Y={a,b}`, both discrete, and `f(x)=a`. Every `U⊆Y` is open and every preimage `f⁻¹(U)⊆X` is open; thus the claimed biconditional holds for all `U`, but `f` is not surjective.
 
 **Narrow correction option:** “A continuous map `f:X→Y` is submersive if and only if **(i)** `f` is surjective and **(ii)** for every `U⊆Y`, `U` is open in `Y` exactly when `f⁻¹(U)` is open in `X`.” If a quotient-map convention is invoked, confirm it already requires surjectivity. Do not silently replace submersive with “open map.”
 
@@ -54,7 +54,7 @@ These need eventual independently reviewed **source-formulation** correction, no
 
 ### 3.1 Perfect closure: char-zero scope gap
 
-- Positive-characteristic source `form.f77b42c1adb38c56.perfect-closure`, version `1a879075ce5896d96acafcb3985438f7ac31fe91f4abb8443c8358d6f200dc76`, defines the usual (p)-power-root construction only for `p>0`, and **does not** claim to cover characteristic zero.
+- Positive-characteristic source `form.f77b42c1adb38c56.perfect-closure`, version `1a879075ce5896d96acafcb3985438f7ac31fe91f4abb8443c8358d6f200dc76`, defines the usual `p`-power-root construction only for `p>0`, and **does not** claim to cover characteristic zero.
 - `form.2a93c6a662a51d67.geometrically-normal-perfect-closure-test`, version `cc46546e3bbe29636cddb3895177f1f87106af1791dea524f036dc7c5b495e1d`, and `form.6c51aeb904a0fe74.geometric-reducedness-perfect-test`, version `cd57cb4cc434771d2c5d005e0220fd1bc2a7bd8800ba426019fdb7e2a12a95b9`, invoke `k^perf` without explicitly restricting the base field to `p>0`.
 
 **Mathematical interpretation:** In characteristic zero, `k` is already perfect; adopt the harmless piecewise convention `k^perf=k` there. In positive characteristic, retain the original smallest perfect purely inseparable extension construction. An explicit char-zero **variant/qualification** resolves the interface without inserting a false positive-characteristic premise into the geometric-normality/reducedness statements.
