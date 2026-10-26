@@ -612,6 +612,439 @@
         "Underlying relation is a partial order, not merely an arbitrary relation.",
         "Empty and whole-poset upper sets are allowed."
       ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.chain-homotopy-20261026",
+      "term": "chain homotopy",
+      "context": "Homological algebra · degree +1 homotopy between chain maps",
+      "definition": "Let f,g:C_•→D_• be chain maps between complexes in an additive category, with differentials lowering degree. A chain homotopy from f to g is a family of morphisms h_n:C_n→D_{n+1} satisfying f_n−g_n=d^D_{n+1}∘h_n+h_{n−1}∘d^C_n for every integer n. If such h exists then f and g are chain-homotopic.",
+      "sources": [
+        {
+          "title": "Stacks Project — Homological Algebra, Section 12.13 (010V)",
+          "url": "https://stacks.math.columbia.edu/tag/010V",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.chain-map-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.12cbff3823a07d544a1e",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Works in any additive category; objects need not be modules.",
+        "In homological grading h raises degree by one; in cohomological grading a homotopy lowers degree by one."
+      ],
+      "aliases": [
+        "homotopy between chain maps"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.acyclic-chain-complex-20261026",
+      "term": "acyclic chain complex",
+      "context": "Homological algebra · vanishing homology in all degrees",
+      "definition": "A chain complex C_• in an abelian category is acyclic if H_n(C_•)=ker(d_n)/im(d_{n+1}) is the zero object for every n∈ℤ. Equivalently the sequence of differentials is exact at every degree: im(d_{n+1})=ker(d_n). Acyclicity alone does not imply that the complex is contractible.",
+      "sources": [
+        {
+          "title": "Stacks Project — Homological Algebra, Section 12.13 (010V)",
+          "url": "https://stacks.math.columbia.edu/tag/010V",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.12cbff3823a07d544a1e",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.5d07d9e2d8a2e83a53a1",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Acyclicity means ALL homology vanishes, including H_0 when that degree is present.",
+        "Abelian category provides kernels, images and homology objects."
+      ],
+      "aliases": [
+        "exact chain complex"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.cochain-map-20261026",
+      "term": "cochain map",
+      "context": "Homological algebra · degree-zero morphism of cochain complexes",
+      "definition": "Let (C^n,d_C^n) and (D^n,d_D^n) be cochain complexes in an additive category, with d_C^n:C^n→C^{n+1} and similarly for D. A cochain map f:C^•→D^• consists of morphisms f^n:C^n→D^n for all n∈ℤ such that d_D^n∘f^n=f^{n+1}∘d_C^n. Thus the maps commute with the degree-raising differentials.",
+      "sources": [
+        {
+          "title": "Stacks Project — Homological Algebra, Section 12.13 (010V)",
+          "url": "https://stacks.math.columbia.edu/tag/010V",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.1bd554e6f230b14c5f9b",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.chain-map-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Cochain differentials raise degree; this contrasts with the chain convention in the linked chain-map meaning."
+      ],
+      "aliases": [
+        "morphism of cochain complexes"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.injective-hull-20261026",
+      "term": "injective hull of a module",
+      "context": "Module theory · essential extension into an injective module",
+      "definition": "Let R be a unital ring and M a unital left R-module. An injective hull (or injective envelope) of M is an injective homomorphism i:M→E where E is an injective left R-module and i(M) is essential in E: every nonzero submodule N⊆E satisfies N∩i(M)≠0. Injective hulls exist and are unique up to an isomorphism compatible with the inclusion of M.",
+      "sources": [
+        {
+          "title": "Stacks Project — Injective hulls, Definition 47.5.1 (08Y1)",
+          "url": "https://stacks.math.columbia.edu/tag/08Y1",
+          "verification_status": "direct_primary_passage_checked"
+        },
+        {
+          "title": "Stacks Project — Essential surjections and injections, Definition 47.2.1 (08XI)",
+          "url": "https://stacks.math.columbia.edu/tag/08XI",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.injective-left-module-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.essential-submodule-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Left-module convention stated explicitly, including for noncommutative R.",
+        "The hull is an embedding together with its target, not merely an unspecified injective module."
+      ],
+      "aliases": [
+        "injective envelope of a module"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.essential-submodule-20261026",
+      "term": "essential submodule",
+      "context": "Module theory · intersection condition defining an essential extension",
+      "definition": "Let M be a submodule of a left R-module E. Then M is essential in E, written M⊆ₑE, if M∩N≠{0} for every nonzero submodule N of E. Equivalently every nonzero x∈E has some r∈R with 0≠rx∈M. The zero submodule is essential in the zero module, vacuously.",
+      "sources": [
+        {
+          "title": "Stacks Project — Essential surjections and injections, Definition 47.2.1 (08XI)",
+          "url": "https://stacks.math.columbia.edu/tag/08XI",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.injective-hull-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "R is an associative unital ring and modules are unital left modules.",
+        "The element criterion applies to left multiplication rx (not the right action)."
+      ],
+      "aliases": [
+        "essential extension of modules"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.cyclic-left-module-20261026",
+      "term": "cyclic left module",
+      "context": "Module theory · module with a single generator",
+      "definition": "A unital left R-module M is cyclic if there exists m∈M with M=Rm={rm:r∈R}. The zero module is cyclic, generated by 0. For a unital ring R, any cyclic left R-module is isomorphic to R/I for some left ideal I of R. For right modules the analogous condition is M=mR.",
+      "sources": [
+        {
+          "title": "Wikipedia — Cyclic module, single-generator characterization",
+          "url": "https://en.wikipedia.org/wiki/Cyclic_module",
+          "verification_status": "direct_reference_definition_checked_wikipedia"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.generating-set-module-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Assume R is unital, M is a unital left module, and Rx denotes the set of scalar multiples.",
+        "For noncommutative rings the annihilator defining R/I is a LEFT ideal; the quotient is a module, not necessarily a quotient ring."
+      ],
+      "aliases": [
+        "monogenous left module"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.semisimple-left-module-20261026",
+      "term": "semisimple left module",
+      "context": "Module theory · direct sum of simple submodules",
+      "definition": "A unital left R-module M is semisimple if it is isomorphic to a direct sum ⊕_{i∈I} S_i of simple left R-modules S_i. Equivalently, every submodule of M is a direct summand. The zero module is semisimple (empty direct sum). No finite-generation or commutativity hypothesis is assumed.",
+      "sources": [
+        {
+          "title": "Wikipedia — Semisimple module, direct sum characterization",
+          "url": "https://en.wikipedia.org/wiki/Semisimple_module",
+          "verification_status": "direct_reference_definition_checked_wikipedia"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.a95feee56dc057ee.simple-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Simple modules are assumed nonzero; the empty direct sum accounts for M=0.",
+        "Semisimple MODULE does not imply the underlying ring is semisimple."
+      ],
+      "aliases": [
+        "completely reducible left module"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.full-subcategory-20261026",
+      "term": "full subcategory",
+      "context": "Category theory · all ambient morphisms between selected objects",
+      "definition": "A subcategory A of a category B is full if, for every pair of objects x,y of A, Hom_A(x,y)=Hom_B(x,y). Thus a full subcategory includes all arrows of B between its objects, with their ambient identities and compositions. Equivalently the inclusion functor A→B is fully faithful.",
+      "sources": [
+        {
+          "title": "Stacks Project — Categories, Definitions 4.2.9–10 (0013)",
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "The subcategory has the SAME objects as an explicitly selected subcollection of B, not necessarily all of B.",
+        "Being full does not require closure under isomorphisms to objects outside A; that extra property is 'strictly full'."
+      ],
+      "aliases": [
+        "full subcategory of a category"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.essentially-surjective-functor-20261026",
+      "term": "essentially surjective functor",
+      "context": "Category theory · every target object is isomorphic to an image",
+      "definition": "A functor F:A→B is essentially surjective if, for every object b of B, there exists an object a of A and an isomorphism F(a)≅b in B. Literal surjectivity on objects is not required. This condition does not imply that F is full or faithful.",
+      "sources": [
+        {
+          "title": "Stacks Project — Categories, Definitions 4.2.9–10 (0013)",
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Isomorphism is within the TARGET category B.",
+        "Assumes ordinary categories and a functor F:A→B; no equivalence is asserted without full faithfulness."
+      ],
+      "aliases": [
+        "essential surjection (functor on objects)"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.totally-bounded-metric-space-20261026",
+      "term": "totally bounded metric space",
+      "context": "Metric geometry · finite epsilon nets at every scale",
+      "definition": "A metric space (X,d) is totally bounded if, for every ε>0, there exist finitely many points x_1,…,x_n∈X such that X=⋃_{i=1}^n B_d(x_i,ε). For X=∅ one may take n=0. Equivalently, X admits a finite ε-net for every ε>0. Total boundedness implies boundedness, but not conversely.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Totally-bounded space",
+          "url": "https://encyclopediaofmath.org/wiki/Totally-bounded_space",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.analysis98.metric-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.bounded-metric-subset-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Balls in the finite cover are open with radius ε and centers in X.",
+        "The empty space satisfies the definition by the empty covering family."
+      ],
+      "aliases": [
+        "precompact metric space (completion sense)"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.compact-support-function-20261026",
+      "term": "compactly supported function",
+      "context": "Analysis · function with compact topological support",
+      "definition": "Let X be a topological space and f:X→V a function into an additive group V with identity 0. The function f has compact support if supp(f)=cl_X({x∈X:f(x)≠0}) is a compact subset of X. This does not require supp(f) to be finite; conversely a finite nonzero locus need not have compact closure in a non-Hausdorff space.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Support of a function",
+          "url": "https://encyclopediaofmath.org/wiki/Support_of_a_function",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.support-function-topological-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.finite-support-function-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Support uses the closure taken in X, not a larger ambient space.",
+        "Compact need not mean Hausdorff; no continuity is required for the definition."
+      ],
+      "aliases": [
+        "function with compact support"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.almost-everywhere-convergence-20261026",
+      "term": "almost-everywhere convergence of functions",
+      "context": "Measure theory · pointwise convergence outside a null set",
+      "definition": "Let (X,Σ,μ) be a measure space and let (Y,d) be a metric space. Functions f_n:X→Y converge μ-almost everywhere to f:X→Y if there exists a measurable null set N∈Σ, μ(N)=0, such that d(f_n(x),f(x))→0 for every x∈X∖N. This does not assert uniform convergence or convergence in measure on arbitrary infinite-measure spaces.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Convergence, types of",
+          "url": "https://encyclopediaofmath.org/wiki/Convergence%2C_types_of",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.nonnegative-measure",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.analysis98.metric-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "The exceptional set is measurable and μ-null; no completeness of μ is required.",
+        "Definitions allow nonmeasurable f_n if only pointwise-a.e. convergence is being described; typical measure-theoretic applications assume measurable functions."
+      ],
+      "aliases": [
+        "convergence almost everywhere",
+        "a.e. convergence"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.affinely-independent-family-20261026",
+      "term": "affinely independent finite family of points",
+      "context": "Affine geometry · independent displacement vectors",
+      "definition": "Let A be an affine space modeled on a real vector space V and let a_0,…,a_n∈A, with n≥0. The points are affinely independent if the displacement vectors a_1−a_0,…,a_n−a_0∈V are linearly independent. Equivalently, if real scalars λ_0,…,λ_n satisfy ∑λ_i=0 and ∑λ_i a_i=0 in affine-combination notation, then every λ_i=0. A single point is affinely independent.",
+      "sources": [
+        {
+          "title": "University of Pennsylvania — Basics of Affine Geometry, Definition 2.4.2",
+          "url": "https://www.cis.upenn.edu/~cis6100/cis61009sl2.pdf",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.real-affine-space-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.63acc9193a56ae7003b9",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The vector expression ∑λ_i a_i for coefficients summing to zero is interpreted as an origin-independent displacement vector.",
+        "This entry covers a finite family of at least one point; arbitrary infinite families require all finite subfamilies independent."
+      ],
+      "aliases": [
+        "affine independence of points"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.alexandrov-topology-20261026",
+      "term": "Alexandrov topological space",
+      "context": "General topology · topology closed under arbitrary intersections of opens",
+      "definition": "A topological space (X,τ) is an Alexandrov space (in the general-topology sense) if the intersection of ANY family of sets in τ is open, not only finite intersections. Equivalently, every point has a smallest open neighborhood; equivalently, τ consists of the upper sets of its specialization preorder (with x≤y when x belongs to cl({y})). This is not the same as an Alexandrov space in metric geometry defined by curvature bounds.",
+      "sources": [
+        {
+          "title": "Wikipedia — Alexandrov topology; mathematical characterization",
+          "url": "https://en.wikipedia.org/wiki/Alexandrov_topology",
+          "verification_status": "direct_reference_definition_checked_wikipedia"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.upper-set-poset-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Arbitrary intersections include the empty intersection, equal to X.",
+        "Preorder, not necessarily antisymmetric partial order, is used for the specialization relation.",
+        "Do not conflate this with curvature-bounded Alexandrov metric spaces."
+      ],
+      "aliases": [
+        "Alexandrov-discrete space",
+        "finitely generated topology (Alexandrov sense)"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
     }
   ]
 }
