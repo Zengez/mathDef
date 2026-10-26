@@ -119,6 +119,136 @@
         "Commutative, unital-ring convention as in the cited Stacks Project section.",
         "The grading is indexed by the nonnegative integers, not all integers or an arbitrary group."
       ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.cofiltered-category-20261026",
+      "term": "cofiltered category",
+      "context": "Post-Wave2 · category theory · cofiltered indexing category",
+      "aliases": [
+        "codirected category"
+      ],
+      "definition": "A category I is cofiltered if (1) it has at least one object; (2) for any objects x,y there is an object z with morphisms z→x and z→y; and (3) for any parallel morphisms a,b:x→y there are an object w and a morphism c:w→x such that a∘c=b∘c. Equivalently, the opposite category Iᵒᵖ is filtered.",
+      "sources": [
+        {
+          "title": "Stacks Project — Definition 4.20.1 (tag 04AZ)",
+          "url": "https://stacks.math.columbia.edu/tag/04AZ",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.278d73133c80cdd539f3",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "No smallness hypothesis is required for the abstract definition; small index categories are typical in use.",
+        "Condition (3) equalizes parallel arrows in the indexing category itself, not merely after applying an unrelated functor."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.real-affine-space-20261026",
+      "term": "real affine space",
+      "context": "Post-Wave2 · geometry · affine torsor for a real vector space",
+      "aliases": [
+        "affine space over the real numbers"
+      ],
+      "definition": "A real affine space consists of a nonempty set A and a real vector space V whose additive group acts freely and transitively on A: for every a,b∈A there exists exactly one v∈V with a+v=b. No point of A is distinguished as an origin; choosing an origin identifies A with V, but not canonically.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Affine space",
+          "url": "https://encyclopediaofmath.org/wiki/Affine_space",
+          "verification_status": "direct_primary_passage_checked_with_specialization_to_real_field"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.b64bc15f46fe0245.vector-space-over-field",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.63acc9193a56ae7003b9",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "A is required to be nonempty, which follows automatically from the usual torsor convention.",
+        "Scalars are real; a corresponding definition over any field uses a vector space over that field."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.generating-set-module-20261026",
+      "term": "generating set of a left module",
+      "context": "Post-Wave2 · module theory · finite linear combination spanning",
+      "aliases": [
+        "module generating set",
+        "system of generators of a module"
+      ],
+      "definition": "Let R be a unital ring and M a unital left R-module. A subset S⊆M generates M if every m∈M is a finite sum m=∑_{i=1}^n r_i s_i with r_i∈R and s_i∈S; equivalently, the smallest R-submodule containing S equals M. The empty subset generates precisely the zero module, using the empty sum 0.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Module, Generators and relations",
+          "url": "https://encyclopediaofmath.org/wiki/Module",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.0573d17c9b55504f064f",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "Unital left-module convention; the analogous right-module statement uses coefficients on the right.",
+        "Allow an empty generating set only for the zero module."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.locally-finite-borel-measure-20261026",
+      "term": "locally finite Borel measure",
+      "context": "Post-Wave2 · measure theory · finite measure in neighborhoods",
+      "aliases": [
+        "locally finite measure on a Hausdorff space"
+      ],
+      "definition": "Let X be a Hausdorff topological space and μ a nonnegative countably additive measure on the Borel σ-algebra B(X). The Borel measure μ is locally finite if every x∈X belongs to an open set U with μ(U)<∞. Then every compact K⊆X has finite μ-measure. Local finiteness alone does not imply inner or outer regularity.",
+      "sources": [
+        {
+          "title": "nLab — Radon measure (local finiteness of Borel measures)",
+          "url": "https://ncatlab.org/nlab/show/Radon+measure",
+          "verification_status": "direct_primary_passage_checked"
+        },
+        {
+          "title": "Princeton University MAT425 Lecture Notes — Definition 3.9",
+          "url": "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT425_spring_2025/MAT425_Lecture_Notes.pdf",
+          "verification_status": "independent_mathematical_corrob_source_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.alternative39.borel-sigma-algebra-topological",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.nonnegative-measure",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.2216f1dfe187a7af152c",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "Hausdorff assumption ensures compact subsets are Borel; the local definition also makes sense more generally.",
+        "Locally finite and Radon are not taken as synonymous."
+      ]
     }
   ]
 }
