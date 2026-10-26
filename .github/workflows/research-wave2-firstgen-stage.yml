@@ -1,0 +1,74 @@
+name: Wave2 guarded first-generation staging (research PR only)
+
+on:
+  push:
+    branches:
+      - research/wave2-firstgen-b01-source-evidence-2026-10-26
+    paths:
+      - 'research_pipeline/experiments/reconstruction-v2-independent/generation_staging/submissions/*.json'
+      - '.github/workflows/research-wave2-firstgen-stage.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathdef-wave2-first-generation-research-staging
+  cancel-in-progress: false
+
+jobs:
+  guarded-stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/wave2-firstgen-b01-source-evidence-2026-10-26
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check isolated generation-stage invariants
+        run: |
+          python -m unittest research_pipeline.tests.test_dependency_generation -v
+      - name: Run only the repository's guarded provisional-stage engine
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "mathDef Research Workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          W="research_pipeline/experiments/reconstruction-v2-independent"
+          ROOT="$W/generation_staging"
+          shopt -s nullglob
+          inputs=("$ROOT"/submissions/*.json)
+          if (( ${#inputs[@]} == 0 )); then
+            echo "No submitted candidate records; nothing to stage"
+            exit 0
+          fi
+          # Every submission has immutable original identity, full comparison
+          # anchors and explicit prior-stage cohort. Sorted lexical order is
+          # deterministic; stale submissions fail closed in dependency_generation.stage.
+          for submission in "${inputs[@]}"; do
+            cid="$(basename "$submission" .json)"
+            if [ -f "$ROOT/records/$cid.json" ]; then
+              cmp -s "$submission" "$ROOT/records/$cid.json" || {
+                echo "Previously staged candidate differs from submitted source: $cid" >&2
+                exit 1
+              }
+              continue
+            fi
+            python -m research_pipeline.engine.dependency_generation \
+              --workspace "$W" --mode stage --submission "$submission"
+          done
+          python -m research_pipeline.engine.dependency_generation \
+            --workspace "$W" --mode status
+          git add -- "$ROOT/records"
+          if git diff --cached --quiet; then
+            echo "No new provisional stage records"
+            exit 0
+          fi
+          if git diff --cached --name-only | grep -Ev "^$ROOT/records/missing[.][A-Za-z0-9]+[.]json$"; then
+            echo "Refusing any write outside isolated original-candidate stage records" >&2
+            exit 1
+          fi
+          git commit -m "Record guarded Wave2 first-generation provisional dispositions"
+          git push origin HEAD:research/wave2-firstgen-b01-source-evidence-2026-10-26
