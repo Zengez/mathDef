@@ -440,3 +440,42 @@ noninvertible-map lead (182) is context ambiguous.
 post-Wave2 merged-only meanings** and expected **2,117** combined
 (958 independent + 1,014 original + 145 overlay). Original and
 independent historical content remain frozen.
+
+
+## Frozen original terminology scan: ranks 221–340 (2026-10-26)
+
+In one larger pass, processed exactly **120 original ranked phrase leads**,
+using the already-frozen 2,019-candidate scan report. All literal phrases,
+occurrence counts, source-example IDs and decisions are appended to the
+**same** `scan_candidate_dispositions.json` ledger. No independent term
+collection, external vocabulary hunt, dependency graph, approval packets or
+new scan was undertaken.
+
+Research outcomes for this batch:
+- **7 new sourced meanings** from actual ranks 223 (free abelian group),
+  244 (spherical/chordal metric), 251 (zero polynomial), 252 (zero ring),
+  259 (Banach-valued simple measurable function), 279 (affine open
+  subscheme) and 318 (complex-analytic subset).
+- **33 already-defined terms** (e.g. filled Julia set, orthogonal projection,
+  measure pushforward, quotient topology, von Neumann ordinal, Young function,
+  Hardy H∞, algebraically closed field, I-adic completion map).
+- **78 lexical fragments**, quantifiers, and nonterminological references.
+- **1 contextual ambiguity**, rank 224, where a stripped "identically infty
+  function" does not determine the sign or allowed extended-valued convention.
+- **1 covered multi-variant expression**, rank 265 (empty product, with
+  algebraic and categorical interpretations retained separately).
+
+Important mathematical distinctions in the new meanings: free abelian
+does NOT mean every torsion-free abelian group; spherical metric is explicitly
+the stereographic **chordal** normalization, not geodesic distance; the
+formal zero polynomial's degree requires a declared convention; Stacks
+includes the zero ring (0=1); simple Banach-valued measurability need not
+mean finite-measure support; affine open means open *and affine as a
+scheme*; complex analytic subsets are not the descriptive-set-theoretic
+Souslin analytic sets nor merely their germs.
+
+**Next candidate rank 341.** Original candidates now **340/2,019**
+processed; original scan-derived mathematical meanings **34**.
+Post-Wave2 overlay **152**, expected combined **2,124** meanings
+(958 independent Wave2 + 1,014 original source + 152 post-Wave2).
+No changes to completed historical Wave2 or original production definitions.
