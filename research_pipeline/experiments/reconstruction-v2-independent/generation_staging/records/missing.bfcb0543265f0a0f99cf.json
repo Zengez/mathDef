@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.bfcb0543265f0a0f99cf",
+  "original_query": "alpha∪{alpha}",
+  "original_context": "Set theory: union A∪B of two arbitrary sets, with this instance A=α and B={α}; the singleton of the ordinal α is adjoined to all elements already in α.",
+  "original_incoming_occurrence_ids": [
+    "occ.6df25a58a9976e91554c"
+  ],
+  "disposition": "equivalent_to_existing",
+  "definition": "For a von Neumann ordinal α, its successor ordinal is α+1=α∪{α}. This is exactly the existing independently screened successor-ordinal construction.",
+  "reasoning": "The independently screened existing meaning meaning.f810d472f5a4d367.successor-ordinal explicitly states α+1=α∪{α}, including the same von Neumann ordinal context. Therefore this candidate is an exact duplicate mathematical meaning, not a new definition, and should map to that accepted meaning only after later reviewed graph integration.",
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Successor_ordinal",
+      "section": "In von Neumann's model",
+      "relevance": "Directly checked the formula for the successor of a von Neumann ordinal α. The existing independent meaning matches exactly.",
+      "verification_status": "direct_source_passage_checked"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.91383b9c137b0e359967",
+      "missing.960bd927c204df58bb49",
+      "missing.972ae1e91200fae874aa",
+      "missing.9a669bd30949842fab00",
+      "missing.9a71afd4a344322c1d26",
+      "missing.9e1b000eff0431817f3a",
+      "missing.a257d0bad58dcfbd2fa7",
+      "missing.a53971a78b449b0edc86",
+      "missing.ab52c0b907fcd5ccf04f",
+      "missing.b176356d17d415e8f588",
+      "missing.b1e0a8b58dda986e68d9",
+      "missing.b1e7a10547ec65e37f00",
+      "missing.b265aa5bcc1bd7e4d539"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.f810d472f5a4d367.successor-ordinal",
+        "relation": "exact whole-definition equivalent: α+1=α∪{α} for ordinal α"
+      },
+      {
+        "id": "meaning.f810d472f5a4d367.von-neumann-ordinal",
+        "relation": "provides the ambient ordinal object but not the same successor operation"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Reviewed all 595 independent screened and 16 provisional meanings and located the exact original screened successor-ordinal formulation, which literally defines α+1=α∪{α}. Same object α, same operation, and same foundational context. This is a justified mathematical equivalence, not similarity of labels; do not create a new meaning or alter graph before integration. All 15 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate."
+  },
+  "mathematical_assumptions": [
+    "α is a von Neumann ordinal, not an arbitrary set.",
+    "The successor of zero is {∅}.",
+    "A∪{A} for arbitrary A need not be an ordinal."
+  ],
+  "target_existing_meaning_id": "meaning.f810d472f5a4d367.successor-ordinal",
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}

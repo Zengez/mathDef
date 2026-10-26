@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.b1e0a8b58dda986e68d9",
+  "original_query": "downward-closed subset under rational order",
+  "original_context": "Order theory: downward-closed or lower set A of partially ordered S; whenever a∈A and q≤a then q∈A, here specializing to rational order.",
+  "original_incoming_occurrence_ids": [
+    "occ.da75648e3d958c101989"
+  ],
+  "disposition": "new_meaning",
+  "definition": "For a partially ordered set (P,≤), a subset A⊆P is a lower (downward-closed) set if whenever a∈A and p∈P with p≤a, then p∈A.",
+  "reasoning": "The independently screened Dedekind cut of rationals is an example of a lower set but also requires nonemptiness, properness, and no greatest element. The generic lower-set property on an arbitrary poset is not equivalent to a Dedekind cut or to a ring ideal.",
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Lower_set",
+      "section": "Definition of lower sets",
+      "relevance": "Directly checked order-theoretic downward-closure criterion; no ring or cut completeness assumptions.",
+      "verification_status": "direct_source_passage_checked"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.91383b9c137b0e359967",
+      "missing.960bd927c204df58bb49",
+      "missing.972ae1e91200fae874aa",
+      "missing.9a669bd30949842fab00",
+      "missing.9a71afd4a344322c1d26",
+      "missing.9e1b000eff0431817f3a",
+      "missing.a257d0bad58dcfbd2fa7",
+      "missing.a53971a78b449b0edc86",
+      "missing.ab52c0b907fcd5ccf04f",
+      "missing.b176356d17d415e8f588"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.wave2.real50.dedekind-rational-lower-cut",
+        "relation": "strict specialization to rational order with nonempty/proper/no-largest conditions"
+      },
+      {
+        "id": "meaning.wave2.real50.cut-model-reals",
+        "relation": "uses Dedekind cuts as elements, not general lower sets"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Compared all 595 screened and 16 provisional meanings, including Dedekind cuts, transfinite order notions, ideals and partially ordered sets. No whole-mathematical-meaning equivalent to an arbitrary downward-closed subset exists. Previous newly staged relation properties are predicates on binary relations, not downward-closed subsets. All 12 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate."
+  },
+  "mathematical_assumptions": [
+    "An empty set is lower by vacuity.",
+    "The underlying ordering is a partial order; the same predicate generalizes to preorders if typed separately.",
+    "No demand for directedness (order-theoretic ideals) or lack of maximal element (Dedekind cuts)."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
