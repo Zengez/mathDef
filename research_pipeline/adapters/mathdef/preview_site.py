@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 
 from research_pipeline.adapters.mathdef.preview import build
+from research_pipeline.adapters.mathdef.direct_additions import add_direct_research
 from research_pipeline.adapters.mathdef.original_merge import (
     read_original, merge_original, fast_scan, scan_report_html,
 )
@@ -60,6 +61,19 @@ def render(repo: Path, site: Path) -> dict:
     direct_entries = json.loads(direct_file.read_text(encoding="utf-8"))["entries"]
     independent = json.loads((site / "wave2" / "catalog.json").read_text(encoding="utf-8"))
     merged, merge_counts = merge_original(independent, originals)
+    # Preserve the original fast scan's exact historical input scope: 363
+    # independent direct texts and original mathDef texts, before admitting
+    # any further post-Wave2 research. It is a discovery report, not a gate.
+    scan = fast_scan(direct_entries, originals, merged)
+    merged_baseline_meanings = merge_counts["combined_meanings"]
+    post_wave2_added = add_direct_research(
+        merged["groups"], merged["relations"],
+        repo / WAVE2 / "post_wave2" / "terms.json",
+    )
+    merge_counts["original_plus_independent_meanings"] = merged_baseline_meanings
+    merge_counts["post_wave2_meanings"] = post_wave2_added
+    merge_counts["combined_meanings"] += post_wave2_added
+    merge_counts["combined_term_groups"] = len(merged["groups"])
     combined_folder = site / "merged"
     combined_folder.mkdir(parents=True, exist_ok=True)
     (combined_folder / "catalog.json").write_text(
@@ -67,12 +81,11 @@ def render(repo: Path, site: Path) -> dict:
     )
     ui_combined = render_reference_ui(
         combined_folder / "catalog.json", brand, combined_folder,
-        "mathDef · Combined research and original collection",
-        "All independent Wave 2 meanings plus original mathDef source definitions; "
-        "exact term-name matches share search headings, not automatic mathematical equivalence. "
-        "Research drafts, with original sources retained.",
+        "mathDef · Original, Wave 2, and subsequent research",
+        "All completed independent Wave 2 meanings, original mathDef source definitions, "
+        "and subsequent source-attributed research in one collection. "
+        "Exact term-name matches do not assert mathematical equivalence; drafts are not peer certified.",
     )
-    scan = fast_scan(direct_entries, originals, merged)
     (combined_folder / "scan-report.json").write_text(
         json.dumps(scan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
@@ -97,8 +110,8 @@ def render(repo: Path, site: Path) -> dict:
         str(wave2["meanings"]) + " contextual meanings"
     ) + card(
         "merged", "Combined mathDef · Original + Wave 2",
-        "Original mathDef source definitions and independently reconstructed meanings "
-        "in one searchable view. Includes a rough new-terminology scan.",
+        "Original mathDef definitions, independent Wave 2 meanings and new research "
+        "in one searchable view. Includes the original rough terminology scan.",
         str(merge_counts["combined_meanings"]) + " source-provenanced meanings"
     )
     page = """<!doctype html>
@@ -125,7 +138,7 @@ Wave 1 and the completed independent Wave 2 remain source-independent and frozen
 <div class="notice"><strong>Research previews, not a certified reference.</strong>
 Definitions, citations, and relationships remain assistant-screened research drafts,
 not formally peer-reviewed mathematical facts. Initial Wave 2 reconstruction is complete;
-A rapid lexical discovery scan of the newly researched and original definitions is now available in the combined view; independent mathematical verification remains ongoing.</div>
+The completed fast terminology scan is available in the combined view, which can now grow through subsequent direct research without changing the Wave 2 checkpoint.</div>
 <p class="small">Wave 1 is frozen. Wave 2 is the completed initial reconstruction snapshot built directly from
 its independent research records, without relying on the abandoned research stage gates.
 Both are presented separately from the original mathDef content.</p>
