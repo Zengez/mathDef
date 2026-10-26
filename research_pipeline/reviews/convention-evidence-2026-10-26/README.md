@@ -10,8 +10,11 @@ not read, copied or merged. PR #13's metadata could not be read through the
 available GitHub API (`Forbidden`); branch heads were verified through Git.
 
 Start with [the 13-card adjudication index](ADJUDICATION_QUEUE.md), then
-[the topic-based mathematical review](REVIEW.md). Every card is **pending
-ChatGPT/user adjudication**, not an accepted policy or a graph packet.
+[the topic-based mathematical review](REVIEW.md). The owner has **approved the default typed component-prerequisite policy**
+([decision record](APPROVED_DEPENDENCY_GRANULARITY_POLICY.md)); the 40 cards
+remain individually unmodified by that decision. Their distinct source
+conventions, exact graph dispositions and any other choices still require
+separate adjudication or verification. No graph packet is authorized.
 
 | File | Role |
 | --- | --- |
