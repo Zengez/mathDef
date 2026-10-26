@@ -176,3 +176,8 @@ supplies the exact proposed-qualification provenance; it cannot apply an entry.
 Delivery status and resume instructions are in `CHECKPOINT.json`. After code
 review, any actual adoption of the six mathematical clarifications still needs
 separate authorization; do not begin repairs or another audit round automatically.
+
+Branch pushed through validation checkpoint `457ef4ee4ce4f15f1435f965ae68b8508b188286` and this final delivery
+commit. Draft PR creation via `gh pr create --draft` (GraphQL) and REST POST
+with `draft: true` both returned **Forbidden**. No PR was created or merged.
+[Open the comparison against the engineering base](https://github.com/Zengez/mathDef/compare/codex/wave2-engineering-integration...codex/wave2-context-clarification?expand=1).
