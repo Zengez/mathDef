@@ -166,6 +166,29 @@ class PhaseGateGenerationTests(unittest.TestCase):
     def test_future_routine_gate_requires_prior_integration_receipt(self):
         run(self.root, self.policy, apply=True)
         create(self.root)
+        manifest = read(self.root / "generation_staging" / "MANIFEST.json")
+        submission = self.root / "generation_staging" / "source-reviewed.json"
+        submission.write_text(json.dumps({
+            "schema_version": 1,
+            "candidate_id": manifest["candidates"][0]["id"],
+            "original_query": manifest["candidates"][0]["query"],
+            "disposition": "new_meaning",
+            "definition": "A new independent mathematical object with a suitable definition.",
+            "reasoning": "Mathematical separation of the new object from all "
+                         "existing independent meanings in the synthetic fixture.",
+            "sources": [{"url": "https://example.org/math-reference",
+                         "section": "Definition 1", "relevance": "Defines object N"}],
+            "comparison": {
+                "accepted_meanings_sha256": manifest["accepted_meanings_file_sha256"],
+                "provisional_meanings_sha256": digest(snapshot(self.root)[0]["meanings"]),
+                "reviewed_accepted_independent_corpus": True,
+                "reviewed_provisional_independent_corpus": True,
+                "earlier_staged_candidate_ids": [],
+                "rationale": "The first generation in the synthetic test "
+                             "has been fully checked against all existing records."
+            }
+        }), encoding="utf-8")
+        stage(self.root, submission)
         self.meanings.append({
             "id": "meaning.b", "display_term": "B", "context": "Algebra",
             "formulations": [{"id": "form.b", "text": "The next independent definition."}]
@@ -178,7 +201,12 @@ class PhaseGateGenerationTests(unittest.TestCase):
         receipt.write_text(json.dumps({
             "status": "integration_complete",
             "prior_gate_inventory_sha256": self.gate["inventory_sha256"],
-            "prior_gate_unresolved_fingerprint": self.gate["unresolved_fingerprint"]
+            "prior_gate_unresolved_fingerprint": self.gate["unresolved_fingerprint"],
+            "global_mathematical_audit": "completed",
+            "source_verification_review": "completed",
+            "reviewed_by": "synthetic human review fixture",
+            "review_rationale": "All source-backed candidate dispositions were "
+                                "assessed and the complete first generation integrated."
         }), encoding="utf-8")
         self.assertEqual(evaluate(self.root, self.policy)["status"], "ready")
         self.assertEqual(run(self.root, self.policy, apply=True)["status"], "sealed")
