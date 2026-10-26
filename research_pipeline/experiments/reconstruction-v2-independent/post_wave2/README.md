@@ -74,3 +74,34 @@ The original 2,019-lead rough scan remains unchanged.
 
 Do not restart a graph-building, global citation audit or per-term staged
 workflow. Continue directly with useful substantive meanings in this file.
+
+
+## Fourth research batch (2026-10-26)
+
+Fourteen additional meanings added directly from research into mathematical
+gaps, without a dependency graph or mandatory clearing of lexical leads:
+
+- Homological algebra: chain homotopy, acyclic chain complex and cochain map
+- Module theory: injective hull, essential submodule, cyclic left module,
+  semisimple left module
+- Category theory: full subcategory and essentially surjective functor
+- Topology and analysis: totally bounded metric space, compactly supported
+  function, Alexandrov topological space
+- Measure theory: almost-everywhere convergence of functions
+- Affine geometry: affine independence of a finite family
+
+The precise conventions distinguish homological and cohomological grading,
+essential versus arbitrary embeddings, full versus essentially surjective
+functors, bounded versus totally bounded metric spaces, and Alexandrov
+topological spaces versus curvature-bounded Alexandrov metric spaces.
+Source locators were checked against the Stacks Project, Encyclopedia of
+Mathematics, University of Pennsylvania affine geometry notes and
+explicitly designated Wikipedia definition entries. The mathematical
+content is **assistant-reviewed research, not formally peer certified**.
+
+Post-Wave2 additions now total **34** source-attributed meanings. The
+expected merged-only site contains **2,006 meanings**, consisting of 958
+independent Wave 2 + 1,014 original mathDef + 34 post-completion.
+Do not revise the 958-meaning completion inventory or re-run the 418-lead
+queue. The first scan's 2,019 tentative new phrases remains a discovery
+snapshot; it is not an audit gate.
