@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-25",
+  "source": "Pinned live Wave2 graph evidence in EVIDENCE.json; additionally verified official current Stacks tags 00MR, 00AQ and 00PZ",
+  "status": "mathematical_decisions_proposed_not_applied",
+  "owner_approved_general_dependency_policy": true,
+  "graph_authorization": false,
+  "source_record_certified_historical_version": false,
+  "official_sources_for_selected_cases": [
+    "https://stacks.math.columbia.edu/tag/00MR",
+    "https://stacks.math.columbia.edu/tag/00AQ",
+    "https://stacks.math.columbia.edu/tag/00PZ"
+  ],
+  "reviewed_cases": [
+    {
+      "rank": 172,
+      "candidate_id": "missing.244d6cfceb0dd22abbca",
+      "current_effective_status": "unresolved_canonical",
+      "parent_formulations": [
+        {
+          "formulation_id": "form.29b2c34cc33d4b62.degree-zero-localization",
+          "source_version_sha256": "3c98bb07fd891dd8d982c0ac11d2910ec16fa8b564f6b13fdfeaac59a49c5f4d",
+          "effective_node_sha256": "f1d1284fbc51bd9614b7fbd465794f12b753f4d227b8df99dba12d2088b71b59",
+          "parent_meaning_id": "meaning.29b2c34cc33d4b62.degree-zero-localization",
+          "source_text": "For a positively graded ring S and homogeneous element f of positive degree, S_(f) denotes the degree-zero subring of the graded localization S_f, consisting of fractions a/f^n with deg(a)=n·deg(f).",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.e0d877766eb0e3095cab",
+              "phrase": "degree-zero subring",
+              "canonical_candidate_id": "missing.244d6cfceb0dd22abbca",
+              "observed_candidate_id": null
+            }
+          ]
+        }
+      ],
+      "candidate_context": "Graded algebra: degree-zero component of the localized graded ring S_f, closed under ring operations, with homogeneous fractions a/f^n satisfying deg(a)=n deg(f).",
+      "disposition": "preserve_missing_but_no_self_resolution",
+      "reason": "The source defines S_(f) itself as the degree-zero subring of S_f, while the candidate context repeats the specific homogeneous-fraction construction. Resolving this candidate to the source's own meaning would make its definition refer to itself.",
+      "allowed_next": "A generic degree-zero component of a graded ring can be a separate reusable prerequisite if sourced and modeled without the parent-specific localization; preexisting ordinary localization and graded-ring dependencies remain valid.",
+      "block": [
+        "meaning.29b2c34cc33d4b62.degree-zero-localization"
+      ],
+      "individual_graph_correction_approved": false,
+      "change_applied": false
+    },
+    {
+      "rank": 175,
+      "candidate_id": "missing.25dac0c185025e52a26a",
+      "current_effective_status": "unresolved_canonical",
+      "parent_formulations": [
+        {
+          "formulation_id": "form.41e3aea7f356bae3.rank-of-map-finite-free",
+          "source_version_sha256": "3f4fb3118efa02abefc7d1b7318bf9fb0947d7aa0ac024303ca6d0a0179450bf",
+          "effective_node_sha256": "21b16a8923552b9e4d7ee6992b11a7d6819003a519dd2ec3d68db856dc005c22",
+          "parent_meaning_id": "meaning.41e3aea7f356bae3.rank-of-map-finite-free",
+          "source_text": "For a homomorphism φ:R^m→R^n of finite free modules, its rank is the largest integer r for which the induced exterior-power map ∧^rφ is nonzero (and is zero when φ itself is zero).",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.36b73d7bd2a48315f0c7",
+              "phrase": "induced exterior-power map ∧^rφ",
+              "canonical_candidate_id": "missing.25dac0c185025e52a26a",
+              "observed_candidate_id": null
+            }
+          ]
+        }
+      ],
+      "candidate_context": "Multilinear algebra: induced R-linear map ∧^rφ:∧^rR^m→∧^rR^n obtained by applying φ to each factor before exterior multiplication.",
+      "disposition": "source_zero_ring_scope_exception_unsettled",
+      "reason": "Stacks §10.102 Definition 10.102.5 literally asks for the maximum r≥0 such that Λ^r φ is nonzero; §10.2 explicitly includes the zero ring. Over R=0 every free module is zero, and Λ^0 φ=id_R is the zero map, so that maximum is over the empty set. The following Stacks sentence declares rank zero when φ=0, implying an extra convention or tacit nonzero assumption for this edge case.",
+      "allowed_next": "Ask for a precise source/additional convention or annotate the boundary case in a later sourced variant: e.g. rank zero for zero maps as an explicit override, without silently excluding the zero ring from the entire corpus. Do not change ∧^r functor semantics.",
+      "block": [],
+      "individual_graph_correction_approved": false,
+      "change_applied": false
+    },
+    {
+      "rank": 223,
+      "candidate_id": "missing.50540c0ba5822a8df022",
+      "current_effective_status": "unresolved_canonical",
+      "parent_formulations": [
+        {
+          "formulation_id": "form.b85b64499f3fb523.grothendieck-group-finite-projectives",
+          "source_version_sha256": "f56825b09ac966ca7a453e61930ae4a152d044c1bb15e1bb2fa5689d26de1570",
+          "effective_node_sha256": "aad4a2e02acf9c02d44cc2bde7bca328378e97162de98bf73cb575ac603f4be3",
+          "parent_meaning_id": "meaning.b85b64499f3fb523.grothendieck-group-finite-projectives",
+          "source_text": "For a ring R, K_0(R) is the abelian group generated by finite projective R-modules up to isomorphism, modulo [P⊕Q]=[P]+[Q], equivalently modulo split short exact sequence relations among these modules.",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.01238cbe880164b64d91",
+              "phrase": "abelian group presentation by direct sums",
+              "canonical_candidate_id": "missing.50540c0ba5822a8df022",
+              "observed_candidate_id": null
+            }
+          ]
+        }
+      ],
+      "candidate_context": "Algebraic K-theory: group completion of the commutative monoid of isomorphism classes of finitely generated projective R-modules under direct sum, imposing [P⊕Q]=[P]+[Q] (equivalently split exact relations).",
+      "disposition": "preserve_missing_but_no_self_resolution",
+      "reason": "The parent defines K_0(R) using finite projective module classes modulo direct-sum relations; the candidate repeats this exact specialized group completion. Candidate-to-parent resolution introduces a defining self-edge.",
+      "allowed_next": "Model abstract group completion of a commutative monoid separately, with finite-projective classes instantiating that monoid; keep K'_0 constructions and their exact-sequence relations distinct.",
+      "block": [
+        "meaning.b85b64499f3fb523.grothendieck-group-finite-projectives"
+      ],
+      "individual_graph_correction_approved": false,
+      "change_applied": false
+    },
+    {
+      "rank": 245,
+      "candidate_id": "missing.6149b958a6aa818d4806",
+      "current_effective_status": "unresolved_canonical",
+      "parent_formulations": [
+        {
+          "formulation_id": "form.1be2fa074ef447b0.i-adic-ring-completion",
+          "source_version_sha256": "eacff749a736bec13dc4f4906ff8532b7fff4dd094822e982937c570d4fd2fa6",
+          "effective_node_sha256": "f9b7bade3eb536a206645c6bdd839f70ecc7f7faeec4d8ab22516eaf8793f008",
+          "parent_meaning_id": "meaning.1be2fa074ef447b0.i-adic-ring-completion",
+          "source_text": "For a commutative ring R and ideal I, its I-adic completion R^ is the inverse limit of the quotient rings R/I^n over positive integers n, with transition maps given by reduction modulo smaller powers.",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.7c2b770ad48fcc42b04d",
+              "phrase": "inverse limit of the quotient rings",
+              "canonical_candidate_id": "missing.6149b958a6aa818d4806",
+              "observed_candidate_id": null
+            }
+          ]
+        }
+      ],
+      "candidate_context": "Commutative algebra: inverse limit of the projective system of commutative quotient rings R/I^n with compatible quotient maps, consisting of tuples (r_n) satisfying r_{n+1} mod I^n=r_n and componentwise ring operations.",
+      "disposition": "review_redundancy_do_not_self_resolve",
+      "reason": "The I-adic ring completion is the ring inverse limit of the specific quotient system R/I^n. The missing candidate describes this same limit, so identity resolution to its own I-adic completion parent would yield self-dependence; the parent already has a generic category-limit existing link.",
+      "allowed_next": "If the existing generic category limit target is correctly typed for ring systems, its inherited ring structure and transition maps remain in the parent; an independent inverse-limit-of-rings reusable operation may still be useful but must not be resolved to the specialized completion meaning.",
+      "block": [
+        "meaning.1be2fa074ef447b0.i-adic-ring-completion"
+      ],
+      "individual_graph_correction_approved": false,
+      "change_applied": false
+    },
+    {
+      "rank": 298,
+      "candidate_id": "missing.8f2dea7e2bd1211c0cf6",
+      "current_effective_status": "unresolved_canonical",
+      "parent_formulations": [
+        {
+          "formulation_id": "form.wave2.foundation.strongly-transcendental-subring-element",
+          "source_version_sha256": "859a1eb9debbec8891450f681abaea71c4695f209ae34a56b731942b649e34fe",
+          "effective_node_sha256": "919f1ef7f152d3912b45756bb976a31595f1067388a730e4cd6e4f20c287a952",
+          "parent_meaning_id": "meaning.wave2.foundation.strongly-transcendental-subring-element",
+          "source_text": "Let R⊆S be an inclusion of commutative rings with identity, and let x∈S. The element x is strongly transcendental over R if for every integer n≥0, coefficients a_0,…,a_n∈R, and u∈S, the equation u(a_0+a_1x+⋯+a_nx^n)=0 implies ua_i=0 for every i=0,…,n.",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.6414b479b47d231c54a8",
+              "phrase": "zero-divisor phenomena in S",
+              "canonical_candidate_id": "missing.8f2dea7e2bd1211c0cf6",
+              "observed_candidate_id": null
+            }
+          ]
+        }
+      ],
+      "candidate_context": "Ring theory: zero divisor in a commutative ring S, a nonzero element participating in a product of two nonzero elements that equals 0; source's arbitrary multiplier u allows this context.",
+      "disposition": "candidate_for_optional_explanatory_nondependency",
+      "reason": "The exact Stacks 10.123.7 formula quantifies over arbitrary u and polynomial coefficients; it neither states the existence of two nonzero factors with zero product nor contains a named zero-divisor prerequisite. The scan-added 'zero-divisor phenomena' phrase is explanatory rather than mathematically required to parse the definition.",
+      "allowed_next": "Propose a guarded, version-bound replacement of this one missing reference by external with an explicit rationale, only after an individual decision and full predecessor review. Preserve ring and inclusion dependencies; never alias to either the zero-inclusive annihilator concept or the nonzero zero-divisor definition.",
+      "block": [
+        "meaning.wave2.foundation.strongly-transcendental-subring-element"
+      ],
+      "individual_graph_correction_approved": false,
+      "change_applied": false
+    }
+  ],
+  "validate": {
+    "case_count": 5,
+    "source_sha_present": true,
+    "unique_occurrences": 5
+  },
+  "explicit_nonactions": [
+    "Do not resolve specialized prerequisite to parent meaning",
+    "Do not infer zero-divisor nonzero witnesses from arbitrary u",
+    "Do not exclude zero ring globally",
+    "Do not edit derived missing-candidate registry or append aliases",
+    "Do not open consolidation gate or Pass 3"
+  ]
+}
