@@ -4593,6 +4593,41 @@
         "Ω can be empty; then {∅,Ω} consists of one set."
       ],
       "research_status": "source-attributed assistant-reviewed original scan incorporation; not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-morphism-sheaves-sets-20261026",
+      "candidate_id": "postwave-scan:rank-193",
+      "term": "morphism of sheaves of sets on a fixed space",
+      "context": "Sheaf theory · natural transformation commuting with restrictions",
+      "aliases": [
+        "sheaf morphism (fixed-space, set-valued)",
+        "morphism of sheaves"
+      ],
+      "definition": "Let ℱ and 𝒢 be sheaves of sets on the same topological space X. A morphism of sheaves φ:ℱ→𝒢 consists of a function φ_U:ℱ(U)→𝒢(U) for each open U⊆X such that, for every inclusion V⊆U, restriction is preserved: φ_V(s|_V)=φ_U(s)|_V for every s∈ℱ(U). Thus it is precisely a natural transformation of the underlying presheaves. Morphisms of sheaves of groups, rings or modules require the component maps to preserve the corresponding algebraic structure. Morphisms between sheaves on different spaces require additional pullback/direct-image data and are outside this fixed-space definition.",
+      "sources": [
+        {
+          "title": "Stacks Project — Sheaves, Definition 6.7.1(2)",
+          "url": "https://stacks.math.columbia.edu/tag/006S",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Stacks Project — Bases and sheaves, Definition 6.30.1(2)",
+          "url": "https://stacks.math.columbia.edu/tag/009H",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.bf9f155d15473da985d2",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Both sheaves are of sets on a common fixed topological space X.",
+        "Naturality here is restriction compatibility; no ring or module homomorphism requirement for mere set-valued sheaves.",
+        "Changing the underlying space needs a different formulation."
+      ],
+      "research_status": "assistant-reviewed source-attributed original scan meaning; not peer-certified"
     }
   ]
 }
