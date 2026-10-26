@@ -7,10 +7,11 @@ The three case-by-case mathematical adjudications are now available:
 - [A06–A09: compound prerequisites, categories, topology, measure — 14 cases](CHAT_ADJUDICATION_A06_A09.md)
 - [A10–A13: inverse limits, qualifications, sets, multigraphs — 10 cases](CHAT_ADJUDICATION_A10_A13.md)
 
-These reports establish mathematical distinctions and make **provisional recommendations only**.
-They do **not** certify original source conventions, constitute user approval of a
-modeling policy, settle every missing definition, apply graph changes, or
-open the Pass 2 consolidation gate. The original evidence inventory below
+These reports establish mathematical distinctions and make **provisional case-specific recommendations only**.
+The project owner **has approved the default typed component-prerequisite policy**;
+see [the approved dependency-granularity policy](APPROVED_DEPENDENCY_GRANULARITY_POLICY.md).
+That approval does **not** certify original source conventions, settle each
+missing definition, apply graph changes, or open the Pass 2 consolidation gate. The original evidence inventory below
 remains the authoritative reference for exact occurrence, version and
 provider provenance. Their case list was checked against the historical
 40-case inventory: 40 distinct ranks, none missing or duplicated.
