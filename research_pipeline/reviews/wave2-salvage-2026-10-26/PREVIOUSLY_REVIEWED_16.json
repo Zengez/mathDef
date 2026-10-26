@@ -1,0 +1,566 @@
+{
+  "purpose": "Mathematical research salvage ONLY. Not a stage ledger, source certification, or graph resolution.",
+  "original_count": 16,
+  "meaning_dispositions": [
+    {
+      "original_candidate_id": "missing.8e10ca4c4067ac5928f8",
+      "term_phrase": "retrocompact open subset U of X",
+      "mathematical_context": "Topology: retrocompact open subset U of X, whose intersections with each quasi-compact open subset V⊆X are quasi-compact; not equivalent to U itself being quasi-compact in arbitrary X.",
+      "disposition": "specialization",
+      "definition": "Let X be a topological space. An open subset U⊆X is retrocompact in X if, for every quasi-compact open V⊆X, the intersection U∩V is quasi-compact. Equivalently, the inclusion U↪X is a quasi-compact map.",
+      "mathematical_rationale": "This is a named, precisely typed property of an open subset relative to its ambient space, specializing the existing independently screened quasi-compact map meaning to an inclusion. It is not the same as requiring U itself be quasi-compact without assuming X quasi-compact. The existing constructible-subset meaning uses retrocompact opens as prerequisites, and neither that construction nor the general quasi-compact-space meaning is synonymous with this named subset property. Preserve it as a specialization/contextual entry rather than force an equivalence alias.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/005A",
+          "section": "Definition 5.12.1(2)-(3)",
+          "relevance": "Directly checked primary source: quasi-compact map tests preimages of quasi-compact opens, and a subset is retrocompact exactly when its inclusion is quasi-compact; this gives the intersection formulation.",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "U is open in X in this occurrence; retrocompactness of general subsets is also definable.",
+        "Quasi-compact is open-cover finite subcover without assuming Hausdorff.",
+        "U∩V is quasi-compact relative to subspace topology for each quasi-compact open V."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.27eb121021fd989d.quasicompact-map",
+          "relation": "specialization of quasi-compact map to subset inclusion"
+        },
+        {
+          "id": "meaning.27eb121021fd989d.quasicompact-space",
+          "relation": "different property; ambient-space qualification matters"
+        },
+        {
+          "id": "meaning.eea0cd4a31af555c.constructible-subset-stacks",
+          "relation": "uses retrocompact opens as input, not definition of retrocompactness"
+        },
+        {
+          "id": "meaning.d7087bb79cf848fa.constructible-topology-spectral",
+          "relation": "uses quasi-compact open subbasis, different construction"
+        }
+      ],
+      "comparison_rationale": "Reviewed the complete independent 595-screened/16-provisional meaning index and examined all topology and quasi-compactness overlaps. No equivalent standalone meaning was found. Existing quasi-compact maps give a broader property; the candidate is its subset-inclusion specialization, and constructible subsets are not the same concept. The provisional cohort has no retrocompact-subset meaning.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.8e7388ef8958ac46b761",
+      "term_phrase": "repeated root in algebraic closure",
+      "mathematical_context": "Polynomial algebra over a field: a multiple (repeated) root α of polynomial f in an extension field, meaning (x−α)^2 divides f after base extension, equivalently f(α)=f′(α)=0 when the formal derivative is used; distinct from the ordinary root concept.",
+      "disposition": "new_meaning",
+      "definition": "Let F be a field, let f∈F[T] be a nonzero polynomial, and let α belong to a field extension E/F. The element α is a repeated (multiple) root of f if (T−α)² divides f in E[T]; equivalently, f(α)=f′(α)=0.",
+      "mathematical_rationale": "The screened separable-irreducible-polynomial and separable algebraic-extension meanings use absence of repeated roots as part of their own property, but do not define the general distinguished-root multiplicity property. This object is a pair (polynomial, root) and does not require f irreducible or separable; it is therefore a separate useful prerequisite, not an alias for separability or for a simple root.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09GZ",
+          "section": "Lemma 9.12.4 and proof",
+          "relevance": "Direct passage links a double linear factor and simultaneous vanishing of polynomial and derivative. Lemma states separability for irreducible polynomials; the proof's algebraic repeated-root criterion extends to arbitrary nonzero polynomials over a field.",
+          "verification_status": "direct_primary_passage_checked_with_general_algebraic_deduction"
+        }
+      ],
+      "mathematical_assumptions": [
+        "f is nonzero so individual root multiplicity is defined.",
+        "E is a field extension of F containing α; comparison occurs in E[T].",
+        "Formal derivative is used, including positive characteristic and possibly identically vanishing derivative."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.720eaae9156f6f4e.separable-irreducible-polynomial",
+          "relation": "Uses no-repeated-root predicate on irreducible polynomials, not the general property itself"
+        },
+        {
+          "id": "meaning.50d335de00e5f11d.separable-algebraic-extension",
+          "relation": "Uses root multiplicity in minimal polynomials; no standalone repeated-root meaning"
+        },
+        {
+          "id": "meaning.720eaae9156f6f4e.separable-degree-polynomial",
+          "relation": "Counts distinct roots instead of assigning multiplicity to a distinguished root"
+        }
+      ],
+      "comparison_rationale": "Independently reviewed the 595 screened and 16 provisional meanings by their contexts, mathematical formulations and polynomial/separability overlap. No meaning gives the general nonzero-polynomial root-multiplicity predicate. The retained sources support this criterion; separability is a different global property. Also compared with the already staged first-generation candidate identities: missing.8e10ca4c4067ac5928f8; none has this same mathematical object or proposition.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.91383b9c137b0e359967",
+      "term_phrase": "distance |a−b| on real line",
+      "mathematical_context": "Real analysis: Euclidean distance between two real numbers a,b defined as d(a,b)=|a−b|, as an application of real absolute value, not its definition.",
+      "disposition": "specialization",
+      "definition": "The usual Euclidean metric on the real line ℝ is d:ℝ×ℝ→[0,∞), defined by d(a,b)=|a−b| for every a,b∈ℝ.",
+      "mathematical_rationale": "The existing screened real-absolute-value meaning includes the consequent expression |a−b| for usual real-line distance. This proposal records that already implied construction as a named metric on ℝ, not a new absolute-value operation or an unrelated metric. It is a useful contextual specialization rather than a strictly new independent primitive.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/Distance.html",
+          "section": "Distance, Euclidean space ℝ^n formula (3), restricted to n=1",
+          "relevance": "Directly checked Euclidean metric formula sqrt(sum_i|x_i-y_i|²); specializing n=1 gives |a−b|, with this specialization explicitly distinguished from verbatim source text.",
+          "verification_status": "verified_mathematical_specialization"
+        }
+      ],
+      "mathematical_assumptions": [
+        "The ordinary real absolute value is available.",
+        "The codomain is [0,∞) with standard order.",
+        "The metric is on ℝ, not on an arbitrary ordered field without additional structure."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.wave2.analysis.real-absolute-value",
+          "relation": "Contains the same usual-distance identity as an application of absolute value"
+        },
+        {
+          "id": "meaning.wave2.analysis98.metric-space",
+          "relation": "General metric-space axioms; does not by itself fix the metric on ℝ"
+        }
+      ],
+      "comparison_rationale": "Reviewed 595 screened and 16 provisional independent meanings; the real absolute-value meaning explicitly gives |a−b| as distance, so this metric is a labeled specialization rather than a genuinely different notion. No provisional record overrides that metric on ℝ. The earlier reviewed first-generation stage records (4 identities) were also compared for overlap; no identical full meaning is being staged twice.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.960bd927c204df58bb49",
+      "term_phrase": "n-by-n matrix over entries 0,1",
+      "mathematical_context": "Linear algebra: n×n square matrix indexed by row and column pairs with entries drawn from {0,1}, independent of graph incidence.",
+      "disposition": "new_meaning",
+      "definition": "For n≥0, an n×n (0,1)-matrix, or binary square matrix, is an array A=(a_{ij})_{1≤i,j≤n} with every entry a_{ij}∈{0,1}. Its entries may be regarded as integers unless a different coefficient structure is explicitly specified.",
+      "mathematical_rationale": "The screened adjacency matrix of a finite simple undirected graph is a particular symmetric (0,1)-matrix with zero diagonal, but arbitrary (0,1)-matrices need not be symmetric, diagonal-zero, or arise from any undirected graph. The generic entrywise construction is therefore a separate useful meaning, and not equivalent to that graph-theoretic specialization.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/01-Matrix.html",
+          "section": "(0,1)-Matrix",
+          "relevance": "Directly checked the definition that each entry is zero or one, and the synonyms binary/logical matrix, with n×n as a square special case.",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "Entries form a set {0,1}; matrix addition/multiplication requires a separately chosen ring or semiring.",
+        "For n=0 the empty 0×0 matrix can be included by convention.",
+        "No graph is assumed and no symmetry or diagonal restrictions are imposed."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.wave2.alternative39.adjacency-matrix-simple-undirected",
+          "relation": "Graph adjacency matrix requires symmetry and zero diagonal, so is a stricter specialization"
+        },
+        {
+          "id": "meaning.wave2.pop139.matrix-trace",
+          "relation": "Trace is an operation on square matrices, not a binary-entry condition"
+        }
+      ],
+      "comparison_rationale": "Reviewed all 595 screened and 16 provisional independent meanings, focusing on square, adjacency and characteristic matrices. None defines arbitrary (0,1) square matrices without graph conditions. The n×n binary matrix is distinct as a mathematical object with exact typed entries. The earlier reviewed first-generation stage records (5 identities) were also compared for overlap; no identical full meaning is being staged twice.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.972ae1e91200fae874aa",
+      "term_phrase": "symmetry x~y implies y~x",
+      "mathematical_context": "Set theory: symmetry property of a binary relation R⊆S×S, namely (x,y)∈R implies (y,x)∈R for all x,y∈S.",
+      "disposition": "new_meaning",
+      "definition": "A binary relation R⊆S×S on a set S is symmetric if, for every x,y∈S, xRy implies yRx.",
+      "mathematical_rationale": "The independently screened equivalence-relation meaning invokes symmetry together with reflexivity and transitivity; the separate symmetry predicate on an arbitrary relation does not impose either extra axiom. It is meaningful for the empty relation or empty underlying set and is not the unrelated braiding/symmetry of monoidal categories.",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Symmetric_relation",
+          "section": "Definition",
+          "relevance": "Directly reviewed standard condition xRy⇒yRx, with no reflexivity or transitivity requirement.",
+          "verification_status": "direct_source_passage_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "S may be empty.",
+        "R may be empty; symmetry is then vacuous.",
+        "No implicit reflexivity, antisymmetry, or transitivity assumptions."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive",
+          "relation": "Equivalence relation imposes symmetry plus two additional axioms"
+        },
+        {
+          "id": "meaning.wave2.foundation.binary-relation-subset",
+          "relation": "Provides the general binary-relation object but not symmetry property"
+        },
+        {
+          "id": "meaning.709d3d2f82950c5b.partially-ordered-set",
+          "relation": "Uses antisymmetry, which is logically different"
+        }
+      ],
+      "comparison_rationale": "Reviewed complete screened and provisional indexed meanings (595+16) and the concrete relation formulations. No standalone symmetric-relation meaning exists; equivalence relations combine symmetry with other axioms, and categorical symmetries are distinct homonyms. The earlier reviewed first-generation stage records (6 identities) were also compared for overlap; no identical full meaning is being staged twice.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.9a669bd30949842fab00",
+      "term_phrase": "Iverson bracket indicator [P]",
+      "mathematical_context": "Logic and notation: Iverson bracket [P] returns numeric 1 when proposition P is true and 0 otherwise. In the Kronecker delta definition P is the equality predicate a=b on Γ; the general Iverson notation applies to arbitrary propositions, not merely to equality.",
+      "disposition": "new_meaning",
+      "definition": "For a mathematical proposition P, the Iverson bracket [P] is the numerical value 1 when P is true and 0 when P is false. This is a general indicator notation for the truth value of P.",
+      "mathematical_rationale": "The independent population has the numeric Kronecker delta δ(a,b)=[a=b], but its equality-specific two-argument meaning does not define Iverson brackets for arbitrary propositions. Iverson brackets are a general named notation/construction, so retain this independent meaning rather than merging it into the Kronecker delta.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/IversonBracket.html",
+          "section": "Iverson Bracket, displayed defining equation (1)",
+          "relevance": "Directly verified general statement-truth-value notation and its numeric 0/1 values.",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "Values are ordinary integers 0 and 1, not an identification inside a zero ring.",
+        "The proposition has a determinate truth value in the ambient logic.",
+        "Floor-function brackets use a distinct convention and should be disambiguated by context."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.wave2.bridge136.numeric-delta",
+          "relation": "Equality-specific numerical Kronecker delta is a specialization [a=b] and cannot replace arbitrary P"
+        }
+      ],
+      "comparison_rationale": "Reviewed the indexed formulations of all 595 independently screened and 16 provisional meanings. Only the equality-specific numeric Kronecker delta refers to Iverson indicators; the general bracket is not already a meaning and is a standard named mathematical notation. Also compared with the already staged first-generation candidate identities: missing.8e10ca4c4067ac5928f8, missing.8e7388ef8958ac46b761; none has this same mathematical object or proposition.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.9a71afd4a344322c1d26",
+      "term_phrase": "antisymmetry of a binary relation",
+      "mathematical_context": "Order theory: antisymmetry of a binary relation ≤ on a set S, meaning for all x,y∈S, both x≤y and y≤x imply x=y. It is not asymmetry and does not require every pair to be comparable.",
+      "disposition": "new_meaning",
+      "definition": "A binary relation R⊆S×S is antisymmetric if for all x,y∈S, the conjunction xRy and yRx implies x=y.",
+      "mathematical_rationale": "The existing partially ordered set is a reflexive and transitive relation with antisymmetry; antisymmetry by itself is a separate relation property and does not imply comparability, reflexivity or asymmetry. It must not be collapsed into symmetry (311), asymmetric relations, or the combined partial-order definition.",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Antisymmetric_relation",
+          "section": "Definition",
+          "relevance": "Directly reviewed the mutual-relatedness implies equality criterion for antisymmetric relations, distinct from asymmetry.",
+          "verification_status": "direct_source_passage_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "S may be empty and R may be empty.",
+        "Loops (x,x) are compatible with antisymmetry, unlike with asymmetry.",
+        "Comparability, reflexivity and transitivity are not required."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.709d3d2f82950c5b.partially-ordered-set",
+          "relation": "Defines a partial order by adding antisymmetry to reflexive and transitive conditions"
+        },
+        {
+          "id": "meaning.709d3d2f82950c5b.preordered-set",
+          "relation": "Preorders need not be antisymmetric"
+        },
+        {
+          "id": "meaning.wave2.foundation.binary-relation-subset",
+          "relation": "General binary-relation data have no antisymmetry axiom"
+        }
+      ],
+      "comparison_rationale": "Reviewed complete independent screened and provisional meaning indices (595+16) and the full partial-order/preorder formulations. Antisymmetry has no independent existing meaning; it is a predicate distinct from a poset and from the relation symmetry candidate staged earlier in this intake. The earlier reviewed first-generation stage records (7 identities) were also compared for overlap; no identical full meaning is being staged twice.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.9e1b000eff0431817f3a",
+      "term_phrase": "neighbor set of vertex v",
+      "mathematical_context": "Graph theory: neighborhood N_G(v)={u∈V:{u,v}∈E} in a simple undirected graph G=(V,E).",
+      "disposition": "new_meaning",
+      "definition": "For a simple loopless undirected graph G=(V,E) and a vertex v∈V, the open neighborhood N_G(v) is the set {u∈V:{u,v}∈E} of all vertices adjacent to v. It excludes v itself.",
+      "mathematical_rationale": "Existing screened definitions give vertex degree through the cardinality of the neighbor set, but do not separately define the underlying set-valued graph-neighborhood construction. The definition must use the open-neighborhood convention; the closed neighborhood N_G[v]=N_G(v)∪{v} is a different operation. Avoid confusion with topological neighborhoods and directed-graph in/out neighbors.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/OpenGraphNeighborhood.html",
+          "section": "Open Graph Neighborhood",
+          "relevance": "Directly verified the set of adjacent vertices excluding the base vertex and the distinction from the closed neighborhood.",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "G is a simple undirected loopless graph.",
+        "v belongs to the vertex set, including isolated vertices whose neighborhood is empty.",
+        "The set excludes v; closed neighborhood differs and directed-graph variants are not implicitly included."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.wave2.cross133.vertex-degree-simple",
+          "relation": "Vertex degree counts the members of this set, but is a cardinal rather than the neighbor set"
+        }
+      ],
+      "comparison_rationale": "Checked the full 595 screened and 16 provisional independent meaning index and inspected graph-related formulations, especially simple vertex degree. No standalone open-neighborhood meaning matches this construction. Source text directly fixes the open-neighborhood convention. Also compared with the already staged first-generation candidate identities: missing.8e10ca4c4067ac5928f8, missing.8e7388ef8958ac46b761, missing.9a669bd30949842fab00; none has this same mathematical object or proposition.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.a257d0bad58dcfbd2fa7",
+      "term_phrase": "weakest topology making every evaluation map continuous",
+      "mathematical_context": "General topology: initial topology on a set X induced by maps f_i:X→(Y_i,τ_i) into topological spaces, namely the coarsest topology on X for which every f_i is continuous; it is generated by the family of all preimages f_i^{-1}[U] with U∈τ_i.",
+      "disposition": "new_meaning",
+      "definition": "Let X be a set and (f_i:X→Y_i)_{i∈I} be maps to topological spaces (Y_i,τ_i). The initial topology on X generated by these maps is the coarsest topology on X making every f_i continuous; a subbase is {f_i^{-1}(U):i∈I,U∈τ_i}.",
+      "mathematical_rationale": "This general initial-topology construction is not identical to the screened product topology: product topology is its specialization using coordinate projections; the screened Krull topology is another specialization by Galois evaluation maps. It provides a genuine independent general definition with no requirement of injectivity or surjectivity of the maps.",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Initial_topology",
+          "section": "Definition, family of maps and subbase",
+          "relevance": "Directly reviewed the coarsest-topology universal property and preimage subbase for general maps into topological spaces.",
+          "verification_status": "direct_passage_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "No injectivity or jointly separating points required.",
+        "When I is empty, the initial topology is indiscrete {∅,X}.",
+        "If X is empty the indiscrete topology has only the empty set."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.wave2.branch129.indexed-product-topology",
+          "relation": "special case induced by all product projections"
+        },
+        {
+          "id": "meaning.03c6dc1e9f953f76.krull-topology",
+          "relation": "specialization to evaluation maps with discrete targets"
+        }
+      ],
+      "comparison_rationale": "Reviewed the 595 screened and 16 provisional independent meanings and all significant topological topology-generation and evaluation-map formulations. Product/Krull topologies are special cases; neither already states the general initial-topology meaning. Existing staging items address different types. All 8 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.a53971a78b449b0edc86",
+      "term_phrase": "finite walk from u to v",
+      "mathematical_context": "Graph theory: finite sequence of vertices (v_0,…,v_n) with each consecutive pair adjacent and specified endpoints u=v_0, v=v_n; n=0 is permitted.",
+      "disposition": "new_meaning",
+      "definition": "For a simple undirected graph G=(V,E) and u,v∈V, a finite walk from u to v is a sequence v_0=u,v_1,…,v_n=v for some n≥0 such that {v_{i−1},v_i}∈E for 1≤i≤n. Its length is n.",
+      "mathematical_rationale": "The independently screened connected-graph definition requires finite walks but does not provide a standalone walk definition. Walks may repeat vertices and edges; a path or trail imposes extra distinctness restrictions. Because the graph is simple, consecutive vertices uniquely specify the intervening edge, matching the independent context.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/Walk.html",
+          "section": "Walk definition and simple-graph vertex-only description",
+          "relevance": "Directly checked the vertices/edges incidence definition and vertex-sequence specialization for simple graphs. Length-zero walk is retained as an explicit convention for matching a screened connectedness formulation.",
+          "verification_status": "direct_simple_graph_specialization_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "Graph is loopless simple undirected for vertex-sequence representation.",
+        "Vertices and edges may repeat; length zero is allowed for u=v.",
+        "Not a directed walk nor the strict graph-theoretic path definition."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.wave2.branch129.nonempty-connected-graph",
+          "relation": "uses finite walks as its connectivity criterion, different property"
+        },
+        {
+          "id": "meaning.wave2.cross104.tree-unrooted",
+          "relation": "tree and cycles concern stronger path/trail structure"
+        }
+      ],
+      "comparison_rationale": "Reviewed the full independent screened/provisional meaning population, especially connected simple graphs, tree, and graph cycle. None defines arbitrary finite walks as distinct objects; repeated vertices/edges and n=0 are explicitly covered. Prior staged graph-neighborhood candidate is a vertex-set construction, not a walk. All 9 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.ab52c0b907fcd5ccf04f",
+      "term_phrase": "sober topological space",
+      "mathematical_context": "General topology: sobriety of X, every nonempty irreducible closed subset has a unique generic point x whose closure equals that subset; not equivalent to Hausdorffness.",
+      "disposition": "new_meaning",
+      "definition": "A topological space X is sober if every nonempty irreducible closed subset Z⊆X has a unique generic point ξ∈Z, meaning cl_X({ξ})=Z.",
+      "mathematical_rationale": "Sobriety is a standalone separation/generic-point property, not identical to the independently screened spectral-space definition, which imposes additional quasi-compactness and basis axioms, or to the separate definition of a generic point. Neither the Hausdorff property nor an assumption of scheme structure is implied by this definition.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/004X",
+          "section": "Stacks Definition 5.8.6 items (1),(4)",
+          "relevance": "Directly checked primary definition of generic point and sober space; Stacks defines irreducible closed subsets using its nonempty irreducible convention.",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "Irreducible closed sets are nonempty, as in the cited source.",
+        "Generic point is defined by closure of the singleton.",
+        "The empty topological space qualifies vacuously under the usual convention; no Hausdorff axiom required."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.d7087bb79cf848fa.spectral-topological-space",
+          "relation": "spectral space additionally requires quasi-compactness and quasi-compact-open basis"
+        },
+        {
+          "id": "meaning.e0dd0b0cffcfff0b.generic-point",
+          "relation": "gives what a generic point is but not unique existence for all irreducible closed subsets"
+        },
+        {
+          "id": "meaning.e62923cd8ef99cd1.hausdorff-space",
+          "relation": "Hausdorff implies sober, converse fails"
+        }
+      ],
+      "comparison_rationale": "Compared all independently screened (595) and provisional (16) meanings and specifically inspected the sober condition inside spectral spaces, unique generic points, schemes and Hausdorff spaces. None provides sober space as the same standalone meaning. Direct Stacks Definition 5.8.6 supports the precise nonempty irreducible closed-set property. All 10 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.b176356d17d415e8f588",
+      "term_phrase": "neighborhood basis at x",
+      "mathematical_context": "General topology: family 𝒩_x of neighborhoods of x such that for every neighborhood U of x there exists B∈𝒩_x with B⊆U; B need not itself be open.",
+      "disposition": "new_meaning",
+      "definition": "For a point x in a topological space X, a neighborhood basis (or fundamental system of neighborhoods) at x is a family B_x of neighborhoods of x such that every neighborhood N of x contains at least one B∈B_x.",
+      "mathematical_rationale": "The independently screened locally quasi-compact-space definition requires a neighborhood basis all of whose members are quasi-compact. The abstract neighborhood-basis construction places no such restriction and should not be merged with local quasi-compactness or an open-set basis for the entire topology.",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Neighbourhood_(mathematics)",
+          "section": "Neighborhood bases and neighborhood systems",
+          "relevance": "Reputable mathematical source lead for neighborhood basis; exact full paragraph not independently certified here. Under general neighborhood convention basis members may be nonopen.",
+          "verification_status": "source_lead_exact_subsection_pending"
+        }
+      ],
+      "mathematical_assumptions": [
+        "Every basis member is a neighborhood in the general sense: contains an open set around x, not necessarily open itself.",
+        "Every neighborhood N contains some B from the basis.",
+        "If X is nonempty, a basis at x cannot be empty."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.aa975a3ff4883909.locally-quasicompact-space",
+          "relation": "uses a quasi-compact neighborhood basis as specialized property"
+        },
+        {
+          "id": "meaning.ab260940ea9c523d.locally-connected-space",
+          "relation": "requires a fundamental connected-neighborhood system, a separate specialization"
+        }
+      ],
+      "comparison_rationale": "Reviewed the independent 595-screened and 16-provisional meaning index, focusing on topology and local properties. Several screened concepts use neighborhood bases but none supplies an unrestricted standalone definition. Previous staged topology definitions concern retrocompactness and initial topology, not a pointwise neighborhood-filter base. All 11 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.b1e0a8b58dda986e68d9",
+      "term_phrase": "downward-closed subset under rational order",
+      "mathematical_context": "Order theory: downward-closed or lower set A of partially ordered S; whenever a∈A and q≤a then q∈A, here specializing to rational order.",
+      "disposition": "new_meaning",
+      "definition": "For a partially ordered set (P,≤), a subset A⊆P is a lower (downward-closed) set if whenever a∈A and p∈P with p≤a, then p∈A.",
+      "mathematical_rationale": "The independently screened Dedekind cut of rationals is an example of a lower set but also requires nonemptiness, properness, and no greatest element. The generic lower-set property on an arbitrary poset is not equivalent to a Dedekind cut or to a ring ideal.",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Lower_set",
+          "section": "Definition of lower sets",
+          "relevance": "Directly checked order-theoretic downward-closure criterion; no ring or cut completeness assumptions.",
+          "verification_status": "direct_source_passage_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "An empty set is lower by vacuity.",
+        "The underlying ordering is a partial order; the same predicate generalizes to preorders if typed separately.",
+        "No demand for directedness (order-theoretic ideals) or lack of maximal element (Dedekind cuts)."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.wave2.real50.dedekind-rational-lower-cut",
+          "relation": "strict specialization to rational order with nonempty/proper/no-largest conditions"
+        },
+        {
+          "id": "meaning.wave2.real50.cut-model-reals",
+          "relation": "uses Dedekind cuts as elements, not general lower sets"
+        }
+      ],
+      "comparison_rationale": "Compared all 595 screened and 16 provisional meanings, including Dedekind cuts, transfinite order notions, ideals and partially ordered sets. No whole-mathematical-meaning equivalent to an arbitrary downward-closed subset exists. Previous newly staged relation properties are predicates on binary relations, not downward-closed subsets. All 12 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.b1e7a10547ec65e37f00",
+      "term_phrase": "morphisms B to A and B to C",
+      "mathematical_context": "Category theory: a span or common-domain arrow diagram B→A and B→C in an arbitrary category, not a composable arrow pair and not the dual cospan.",
+      "disposition": "new_meaning",
+      "definition": "In a category C, a span from A to D is a diagram A←B→D consisting of an object B and two morphisms B→A and B→D with common domain B. The object B is its apex.",
+      "mathematical_rationale": "The independently screened pushout definition requires a span as input and then a universal compatible cocone. The span itself has neither a pushout object nor a universality condition, and is distinct from the opposite-variance cospan A→B←D.",
+      "sources": [
+        {
+          "url": "https://ncatlab.org/nlab/show/span",
+          "section": "Span of morphisms, common-source arrows",
+          "relevance": "Standard mathematical reference found in indexed text; complete exact web passage was not accessible, so this remains an honestly labeled source lead. Mathematical arrow typing follows directly from the screened pushout source.",
+          "verification_status": "indexed_source_lead_full_page_unavailable"
+        }
+      ],
+      "mathematical_assumptions": [
+        "A,D,B are objects of a suitably founded category; no smallness is added absent source context.",
+        "No pushout existence assumption.",
+        "Arrow directions are B→A and B→D; the opposite is a cospan."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.26b6764e3ef7a953.pushout",
+          "relation": "pushout requires a span plus universal cocone; not equivalent"
+        },
+        {
+          "id": "meaning.8f7683667fac9d28.category-limit",
+          "relation": "limits of diagrams are a different universal construction"
+        }
+      ],
+      "comparison_rationale": "Reviewed all 595 screened and 16 provisional independent meanings, including the full pushout and category limit/coproduct formulations. A pair of common-domain arrows is not already defined as a separate span meaning; staged generic initial topology and graph formulations do not overlap. Generic category size must be kept as a separate foundational condition. All 13 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.b265aa5bcc1bd7e4d539",
+      "term_phrase": "additive group homomorphism",
+      "mathematical_context": "Group theory: homomorphism f:A→B of abelian groups respecting addition, f(a+a')=f(a)+f(a'), necessarily preserving additive identities and inverses.",
+      "disposition": "new_meaning",
+      "definition": "For groups (A,+) and (B,+) written additively, a group homomorphism f:A→B is a function satisfying f(a+a′)=f(a)+f(a′) for every a,a′∈A. Consequently f(0_A)=0_B and f(−a)=−f(a).",
+      "mathematical_rationale": "The independent screened kernel-of-abelian-group-homomorphism definition uses an additive homomorphism as an input; it is not a standalone definition of the map. An additive group homomorphism imposes operation preservation but not module scalar-linearity, ring multiplication preservation, or injectivity.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/GroupHomomorphism.html",
+          "section": "Group Homomorphism, operation preservation and identity/inverse properties",
+          "relevance": "Directly checked group-operation preservation and deductions for identities and inverses; this candidate specializes general notation to groups written additively.",
+          "verification_status": "direct_primary_specialization_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "A and B are groups expressed with additive operation, not necessarily abelian unless an application states so.",
+        "Identity and inverses are consequences, not independent optional axioms.",
+        "No preservation of scalar multiplication is assumed."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.wave2.foundation13.abelian-group-homomorphism-kernel",
+          "relation": "uses additive group homomorphism in defining kernel, not equivalent"
+        },
+        {
+          "id": "meaning.709d3d2f82950c5b.preordered-set",
+          "relation": "unrelated relation structure"
+        }
+      ],
+      "comparison_rationale": "Reviewed all 595 independent screened and 16 provisional meanings for general homomorphisms, linear maps and additive groups. The corpus has group-homomorphism uses but no standalone exact meaning giving only additive group-operation preservation; no module or ring linearity is implied. Earlier staged items are topology, relation, matrix and graph meanings, not homomorphisms. All 14 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate.",
+      "existing_meaning_target": null,
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    },
+    {
+      "original_candidate_id": "missing.bfcb0543265f0a0f99cf",
+      "term_phrase": "alpha∪{alpha}",
+      "mathematical_context": "Set theory: union A∪B of two arbitrary sets, with this instance A=α and B={α}; the singleton of the ordinal α is adjoined to all elements already in α.",
+      "disposition": "equivalent_to_existing",
+      "definition": "For a von Neumann ordinal α, its successor ordinal is α+1=α∪{α}. This is exactly the existing independently screened successor-ordinal construction.",
+      "mathematical_rationale": "The independently screened existing meaning meaning.f810d472f5a4d367.successor-ordinal explicitly states α+1=α∪{α}, including the same von Neumann ordinal context. Therefore this candidate is an exact duplicate mathematical meaning, not a new definition, and should map to that accepted meaning only after later reviewed graph integration.",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Successor_ordinal",
+          "section": "In von Neumann's model",
+          "relevance": "Directly checked the formula for the successor of a von Neumann ordinal α. The existing independent meaning matches exactly.",
+          "verification_status": "direct_source_passage_checked"
+        }
+      ],
+      "mathematical_assumptions": [
+        "α is a von Neumann ordinal, not an arbitrary set.",
+        "The successor of zero is {∅}.",
+        "A∪{A} for arbitrary A need not be an ordinal."
+      ],
+      "nearby_independent_meanings": [
+        {
+          "id": "meaning.f810d472f5a4d367.successor-ordinal",
+          "relation": "exact whole-definition equivalent: α+1=α∪{α} for ordinal α"
+        },
+        {
+          "id": "meaning.f810d472f5a4d367.von-neumann-ordinal",
+          "relation": "provides the ambient ordinal object but not the same successor operation"
+        }
+      ],
+      "comparison_rationale": "Reviewed all 595 independent screened and 16 provisional meanings and located the exact original screened successor-ordinal formulation, which literally defines α+1=α∪{α}. Same object α, same operation, and same foundational context. This is a justified mathematical equivalence, not similarity of labels; do not create a new meaning or alter graph before integration. All 15 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate.",
+      "existing_meaning_target": "meaning.f810d472f5a4d367.successor-ordinal",
+      "review_level": "provisional assistant research; NOT automatically accepted/published"
+    }
+  ]
+}
