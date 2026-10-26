@@ -58,6 +58,26 @@ jobs:
           assert (root/"merged/index.html").is_file()
           assert (root/"merged/definitions-index.json").is_file()
           assert (root/"wave1/index.html").is_file()
+          # Confirm dispositions describe literal, ranked records from the
+          # completed original scan (rather than a newly generated term list).
+          ledger=json.loads((Path("research_pipeline/experiments/reconstruction-v2-independent/post_wave2")/
+                             "scan_candidate_dispositions.json").read_text())
+          decisions=ledger["dispositions"]
+          assert [d["rank"] for d in decisions]==list(range(1,len(decisions)+1))
+          meanings={m["id"] for g in merged["groups"] for m in g["meanings"]}
+          for decision in decisions:
+              scanned=scan["possible_new_terminology"][decision["rank"]-1]
+              assert decision["phrase"]==scanned["phrase"]
+              assert decision["occurrences"]==scanned["count"]
+              assert decision["examples"]==scanned["examples"]
+              for target in decision["targets"]:
+                  if target.startswith("meaning."):
+                      assert target in meanings, f"Unknown disposition target: {target}"
+                  elif target.startswith("definitions/"):
+                      assert Path(target).is_file(), f"Unknown source target: {target}"
+                  else:
+                      raise AssertionError(f"Malformed disposition target: {target}")
+          print(f"Initial-scan incorporation ledger validated: {len(decisions)} actual ranked candidates")
           # Read-only candidate visibility for scan-driven incorporation:
           # each record is from the original unchanged scan-report.json.
           # Not an admission gate or an automatically approved term queue.
