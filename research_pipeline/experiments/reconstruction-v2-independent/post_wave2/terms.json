@@ -3161,6 +3161,612 @@
         "The two distinguished points and the unique nontrivial OPEN singleton are specified."
       ],
       "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.subcategory-20261026",
+      "term": "subcategory of a category",
+      "context": "Category theory · selected objects and morphisms closed under identities and composition",
+      "aliases": [
+        "subcategory"
+      ],
+      "definition": "Let C be a category. A subcategory D⊆C has a subcollection of objects of C and, for each x,y∈Ob(D), a subcollection Hom_D(x,y)⊆Hom_C(x,y), including each identity 1_x and closed under ambient composition. Thus identities and composites in D agree with those in C, and the inclusion D→C is a faithful functor.",
+      "sources": [
+        {
+          "title": "nLab — Subcategory",
+          "url": "https://ncatlab.org/nlab/show/subcategory",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.full-subcategory-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Subcategory is NOT assumed full: morphisms between its objects may be omitted.",
+        "The use of 'subcollection' permits large ambient categories."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.wide-subcategory-20261026",
+      "term": "wide subcategory",
+      "context": "Category theory · subcategory containing all ambient objects",
+      "aliases": [
+        "wide subcategory of C"
+      ],
+      "definition": "A subcategory D of a category C is wide if Ob(D)=Ob(C). Its morphism collections may nevertheless be proper subsets of those of C, subject to containing all identities and being closed under composition. Wide and full are independent properties; a subcategory both wide and full equals C.",
+      "sources": [
+        {
+          "title": "nLab — Subcategory; wide property is specialization to all objects",
+          "url": "https://ncatlab.org/nlab/show/subcategory",
+          "verification_status": "source_retrieved_definition_specialized_to_all_objects"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.subcategory-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.full-subcategory-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Identities of every object must remain in D.",
+        "Wide means same OBJECTS, not all morphisms."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.replete-full-subcategory-20261026",
+      "term": "replete full subcategory",
+      "context": "Category theory · full subcategory stable under ambient isomorphisms",
+      "aliases": [
+        "strictly full subcategory"
+      ],
+      "definition": "A full subcategory D of C is replete (or strictly full) if whenever d∈Ob(D) and an object c∈Ob(C) is isomorphic to d in C, then c∈Ob(D). Since D is full, it then contains all ambient morphisms between any such selected objects, including the isomorphisms. This is stronger than fullness alone and differs from repleteness for non-full subcategories, which also imposes inclusion of isomorphisms.",
+      "sources": [
+        {
+          "title": "nLab — Replete subcategory",
+          "url": "https://ncatlab.org/nlab/show/replete%2Bsubcategory",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.full-subcategory-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.essential-image-functor-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "This meaning explicitly requires FULLNESS; general replete subcategories have additional morphism-closure conditions.",
+        "The empty full subcategory, when meaningful, is replete."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.thin-category-20261026",
+      "term": "thin category",
+      "context": "Category theory · at most one morphism between each ordered pair",
+      "aliases": [
+        "posetal category (thin sense)"
+      ],
+      "definition": "A category C is thin if |Hom_C(x,y)|≤1 for every ordered pair of objects x,y. Any preorder defines a thin category: there is one arrow x→y exactly when x≤y; conversely every small thin category gives a preorder on its objects by arrow existence. A thin category need not be skeletal, since distinct objects may be mutually isomorphic.",
+      "sources": [
+        {
+          "title": "nLab — Thin category",
+          "url": "https://ncatlab.org/nlab/show/thin%2Bcategory",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.skeletal-category-20261026",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Hom-sets may be empty, but no Hom-set has TWO distinct arrows.",
+        "Thin does not imply a poset: antisymmetry corresponds to the skeletal condition."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.skeletal-category-20261026",
+      "term": "skeletal category",
+      "context": "Category theory · isomorphic objects are literally equal",
+      "aliases": [
+        "skeletal category"
+      ],
+      "definition": "A category C is skeletal if whenever objects x and y of C are isomorphic, x=y as objects. A skeletal category may still have nonidentity automorphisms of an object; hence it need not be a poset or a gaunt category. Skeletal status depends on the strict identity of objects and is not invariant under arbitrary equivalence of categories.",
+      "sources": [
+        {
+          "title": "nLab — Skeletal category",
+          "url": "https://ncatlab.org/nlab/show/skeletal%2Bcategory",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.thin-category-20261026",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.skeleton-category-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Literal equality of objects rather than merely equivalence is intended.",
+        "Nontrivial automorphism groups are allowed."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.skeleton-category-20261026",
+      "term": "skeleton of a category",
+      "context": "Category theory · full subcategory selecting one representative of each isomorphism class",
+      "aliases": [
+        "category skeleton"
+      ],
+      "definition": "A skeleton of a category C is a full subcategory S⊆C containing exactly one object from each isomorphism class of objects of C. Equivalently it is a skeletal full subcategory whose inclusion into C is an equivalence. Under suitable choice principles one may form a skeleton by choosing one representative of each isomorphism class; its existence is not asserted without the relevant choices.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Skeleton of a category",
+          "url": "https://encyclopediaofmath.org/wiki/Skeleton_of_a_category",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "nLab — Skeletal category",
+          "url": "https://ncatlab.org/nlab/show/skeletal%2Bcategory",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.skeletal-category-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.full-subcategory-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Selecting representatives can require the axiom of choice, and large categories raise size issues.",
+        "Not unique as an actual subcategory; any two suitable skeletons are isomorphic under the usual set-level assumptions."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.identity-functor-20261026",
+      "term": "identity functor on a category",
+      "context": "Category theory · functor fixing all objects and morphisms",
+      "aliases": [
+        "Id_C"
+      ],
+      "definition": "For any category C, the identity functor Id_C:C→C sends each object x to x and each morphism f:x→y to that same morphism f. For any F:C→D, one has F∘Id_C=F=Id_D∘F, as strict equalities of functors in ordinary category theory.",
+      "sources": [
+        {
+          "title": "nLab — Identity functor",
+          "url": "https://ncatlab.org/nlab/show/identity%2Bfunctor",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.endofunctor-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The identity functor is different from an IDENTITY NATURAL TRANSFORMATION, although every functor also has the latter.",
+        "No smallness assumption on C is needed."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.endofunctor-20261026",
+      "term": "endofunctor on a category",
+      "context": "Category theory · functor from a category to itself",
+      "aliases": [
+        "endo-functor"
+      ],
+      "definition": "An endofunctor on a category C is a functor T:C→C. The identity functor and composites of endofunctors are endofunctors. Endofunctor means only that domain and codomain agree; no monad unit, multiplication, idempotence, or equivalence condition is implied.",
+      "sources": [
+        {
+          "title": "nLab — Endofunctor",
+          "url": "https://ncatlab.org/nlab/show/endofunctor",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.identity-functor-20261026",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.monad-category-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "C may be large; set-sized endofunctor categories need additional foundational care.",
+        "An arbitrary endofunctor is not automatically a monad."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.constant-functor-20261026",
+      "term": "constant functor at an object",
+      "context": "Category theory · sends every object to a fixed object and every arrow to its identity",
+      "aliases": [
+        "diagonal constant functor"
+      ],
+      "definition": "Given categories C,D and d∈Ob(D), the constant functor Δd:C→D assigns every object c∈C to d and every morphism of C to 1_d. It is a genuine functor, preserving compositions and identities. A functor naturally isomorphic to a constant functor is called essentially constant, but need not equal that constant functor strictly.",
+      "sources": [
+        {
+          "title": "nLab — Constant functor",
+          "url": "https://ncatlab.org/nlab/show/constant%2Bfunctor",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.identity-functor-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "No nonemptiness condition on C is needed for existence (for C empty, different choices of d induce the same unique empty functor).",
+        "The target object d is fixed."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.coslice-category-20261026",
+      "term": "coslice category under an object",
+      "context": "Category theory · objects are arrows emanating from a fixed object",
+      "aliases": [
+        "under category",
+        "c under C"
+      ],
+      "definition": "Given an object c of a category C, the coslice (undercategory) c↓C has as objects morphisms f:c→x in C. A morphism (f:c→x)→(g:c→y) is a morphism h:x→y in C with h∘f=g; composition is inherited from C. The identity arrow 1_c:c→c is an initial object of c↓C.",
+      "sources": [
+        {
+          "title": "nLab — Under category",
+          "url": "https://ncatlab.org/nlab/show/under%20category",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.ad87c8a94e71b0501e7a",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.141c0f3fd90dc7b4.initial-object",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Coslice is UNDER c, with all object arrows starting at c; slice C/c has arrows ending at c.",
+        "An initial object exists even when C otherwise has no initial object."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.right-adjoint-functor-20261026",
+      "term": "right adjoint functor",
+      "context": "Category theory · natural Hom-set adjunction",
+      "aliases": [
+        "right adjoint"
+      ],
+      "definition": "For functors L:C→D and R:D→C, the functor R is right adjoint to L, written L⊣R, if there are bijections Hom_D(Lc,d)≅Hom_C(c,Rd), natural in c∈C and d∈D. Equivalently there are unit η:Id_C→RL and counit ε:LR→Id_D satisfying the two triangle identities. Being a right adjoint is a property relative to a specified L.",
+      "sources": [
+        {
+          "title": "nLab — Adjunction (hom-set adjunction and unit/counit)",
+          "url": "https://ncatlab.org/nlab/show/adjunction",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.e834133a2cdc7390f1de",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.5b6d4a7f88629b12.left-adjoint",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.counit-of-adjunction-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "In potentially large categories, read Hom-bijections as appropriate hom-collection bijections.",
+        "The arrow orientations matter: L:C→D and R:D→C."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.counit-of-adjunction-20261026",
+      "term": "counit of an adjunction",
+      "context": "Category theory · natural transformation from LR to identity",
+      "aliases": [
+        "adjunction counit"
+      ],
+      "definition": "Given an adjunction L:C⇄D:R with L⊣R, the counit is the natural transformation ε:L∘R⇒Id_D whose component at d∈D is ε_d:LR(d)→d, corresponding to 1_{R(d)} under the adjunction bijection. Together with the unit η:Id_C⇒RL it satisfies ε_{L(c)}∘L(η_c)=1_{L(c)} and R(ε_d)∘η_{R(d)}=1_{R(d)}.",
+      "sources": [
+        {
+          "title": "nLab — Unit of an adjunction",
+          "url": "https://ncatlab.org/nlab/show/unit%2Bof%2Ban%2Badjunction",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "nLab — Adjunction (hom-set adjunction and unit/counit)",
+          "url": "https://ncatlab.org/nlab/show/adjunction",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.e834133a2cdc7390f1de",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.right-adjoint-functor-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "The counit is a NATURAL TRANSFORMATION, not just unrelated component maps.",
+        "Direction ε:LR→Id_D and both triangle equations are explicitly recorded."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.monad-category-20261026",
+      "term": "monad on a category",
+      "context": "Category theory · endofunctor with associative unital multiplication",
+      "aliases": [
+        "categorical monad",
+        "triple (category theory)"
+      ],
+      "definition": "A monad on a category C is an endofunctor T:C→C together with natural transformations η:Id_C⇒T (unit) and μ:T∘T⇒T (multiplication) satisfying μ∘(Tμ)=μ∘(μT) as transformations T³⇒T and μ∘(Tη)=Id_T=μ∘(ηT) as transformations T⇒T. Here Tμ, μT, Tη and ηT denote the indicated whiskerings.",
+      "sources": [
+        {
+          "title": "nLab — Monad",
+          "url": "https://ncatlab.org/nlab/show/monad",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.endofunctor-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.identity-functor-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.kleisli-category-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "These are NATURAL transformations with functorial whiskering, not ordinary multiplication of elements.",
+        "A bare endofunctor has no monad structure without η and μ."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.comonad-category-20261026",
+      "term": "comonad on a category",
+      "context": "Category theory · endofunctor with coassociative counital comultiplication",
+      "aliases": [
+        "categorical comonad",
+        "cotriple"
+      ],
+      "definition": "A comonad on a category C consists of an endofunctor G:C→C and natural transformations ε:G⇒Id_C (counit) and δ:G⇒G² (comultiplication) satisfying (Gδ)∘δ=(δG)∘δ as transformations G⇒G³ and (Gε)∘δ=Id_G=(εG)∘δ as transformations G⇒G. It is the categorical dual of a monad.",
+      "sources": [
+        {
+          "title": "nLab — Comonad",
+          "url": "https://ncatlab.org/nlab/show/comonad",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "nLab — Monad",
+          "url": "https://ncatlab.org/nlab/show/monad",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.endofunctor-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.monad-category-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Whiskering orientation is written explicitly; δ is G→G², not G²→G.",
+        "No coalgebra structure on an arbitrary object is implied by just having a comonad on C."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.algebra-over-monad-20261026",
+      "term": "algebra over a monad",
+      "context": "Category theory · object with monad action obeying unit and associativity",
+      "aliases": [
+        "Eilenberg–Moore algebra",
+        "T-algebra"
+      ],
+      "definition": "Let (T,η,μ) be a monad on a category C. A T-algebra is a pair (A,a) where A∈Ob(C) and a:T(A)→A satisfies a∘η_A=1_A and a∘T(a)=a∘μ_A as morphisms T²(A)→A. A homomorphism h:(A,a)→(B,b) is a morphism h:A→B satisfying h∘a=b∘T(h).",
+      "sources": [
+        {
+          "title": "nLab — Algebra over a monad",
+          "url": "https://ncatlab.org/nlab/show/algebra%2Bover%2Ba%2Bmonad",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.monad-category-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.eilenberg-moore-category-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "A is an OBJECT of C, not necessarily a set with operations.",
+        "The action conditions must hold in C and use all monad structure maps."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.eilenberg-moore-category-20261026",
+      "term": "Eilenberg–Moore category of a monad",
+      "context": "Category theory · category of all monad algebras",
+      "aliases": [
+        "category of T-algebras"
+      ],
+      "definition": "For a monad T on C, the Eilenberg–Moore category C^T has objects all T-algebras (A,a:T(A)→A), and arrows their algebra homomorphisms h:(A,a)→(B,b), i.e. arrows h:A→B in C with h∘a=b∘T(h). Identities and composition are inherited from C. The forgetful functor U:C^T→C sends each algebra to its carrier.",
+      "sources": [
+        {
+          "title": "nLab — Algebra over a monad",
+          "url": "https://ncatlab.org/nlab/show/algebra%2Bover%2Ba%2Bmonad",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "nLab — Kleisli category",
+          "url": "https://ncatlab.org/nlab/show/Kleisli%2Bcategory",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.algebra-over-monad-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.kleisli-category-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Size issues can arise for large C; work in a suitable universe or class framework.",
+        "Objects here are ALL T-algebras, unlike the Kleisli category which corresponds to free T-algebras."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.kleisli-category-20261026",
+      "term": "Kleisli category of a monad",
+      "context": "Category theory · composition of T-valued morphisms",
+      "aliases": [
+        "Kleisli construction"
+      ],
+      "definition": "For a monad (T,η,μ) on a category C, its Kleisli category Kl(T) has the same objects as C and Hom_Kl(T)(X,Y)=Hom_C(X,T(Y)). The identity on X is η_X:X→T(X). Given f:X→T(Y) and g:Y→T(Z), their Kleisli composite is μ_Z∘T(g)∘f:X→T(Z). The monad laws make this composition associative and unital.",
+      "sources": [
+        {
+          "title": "nLab — Kleisli category",
+          "url": "https://ncatlab.org/nlab/show/Kleisli%2Bcategory",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.monad-category-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.eilenberg-moore-category-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Kleisli morphisms X→Y are C-morphisms X→T(Y), NOT ordinary C-arrows X→Y.",
+        "The composition order and unit are explicitly given."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.elements-category-presheaf-20261026",
+      "term": "category of elements of a set-valued presheaf",
+      "context": "Category theory · Grothendieck construction on a contravariant Set-valued functor",
+      "aliases": [
+        "Grothendieck category of elements"
+      ],
+      "definition": "Let C be a small category and F:C^op→Set a presheaf. Its category of elements ∫_C F has objects (c,x) with c∈Ob(C), x∈F(c). A morphism (c,x)→(d,y) is a C-morphism f:c→d satisfying F(f)(y)=x. Identities and compositions are inherited from C; a projection ∫_C F→C sends (c,x)↦c.",
+      "sources": [
+        {
+          "title": "nLab — Category of elements",
+          "url": "https://ncatlab.org/nlab/show/category%20of%20elements",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.ad87c8a94e71b0501e7a",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.fef4e69e96c25bfa.representable-presheaf",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The presheaf is CONTRAVARIANT; covariant categories of elements have the opposite membership equation.",
+        "C is small so the Grothendieck construction has standard small-set behavior."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.arrow-category-20261026",
+      "term": "arrow category of a category",
+      "context": "Category theory · commutative-square morphisms between arrows",
+      "aliases": [
+        "category of arrows",
+        "morphism category"
+      ],
+      "definition": "For a category C, the arrow category Arr(C) has as objects arrows f:x→y of C. A morphism from f:x→y to g:x′→y′ is a pair (u:x→x′,v:y→y′) for which v∘f=g∘u. Composition is componentwise and identities are pairs of identities. Equivalently Arr(C) is the functor category [0→1,C] for the walking-arrow category.",
+      "sources": [
+        {
+          "title": "nLab — Arrow category",
+          "url": "https://ncatlab.org/nlab/show/arrow%2Bcategory",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.coslice-category-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Do not confuse Arr(C), a CATEGORY, with the underlying collection of arrows Mor(C).",
+        "Commutativity convention v∘f=g∘u fixes the square orientation."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passage retrieved; not formally peer certified"
     }
   ]
 }
