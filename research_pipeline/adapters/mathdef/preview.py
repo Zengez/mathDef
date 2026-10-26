@@ -10,6 +10,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from research_pipeline.engine.core import PipelineError, Workspace, STAGES, atomic_json, digest
+from research_pipeline.adapters.mathdef.direct_additions import add_direct_research
 
 
 
@@ -124,6 +125,13 @@ def build(workspace, *, draft=False, output=None):
             "meanings": result_meanings,
         })
     out_groups.sort(key=lambda group: (group["title"].casefold(), group["id"]))
+    # Direct mathematical research additions are ordinary website content.
+    # No publication stage, dependency graph, global audit, or intake gate.
+    added_direct = 0
+    if draft:
+        added_direct = add_direct_research(
+            out_groups, catalog["relations"], root / "direct_research" / "terms.json"
+        )
     output = Path(output).resolve() if output is not None else root / "preview"
     output.mkdir(parents=True, exist_ok=True)
     project = json.loads((root / "project.json").read_text(encoding="utf-8"))
@@ -142,7 +150,7 @@ def build(workspace, *, draft=False, output=None):
         status_notice = (
             "Unsealed Wave 2 working snapshot: %d contextual meanings, %d screened "
             "relationships. Research remains incomplete, and completeness is not established."
-            % (len(catalog["meanings"]), len(catalog["relations"]))
+            % (len(catalog["meanings"]) + added_direct, len(catalog["relations"]))
         )
     payload = {
         "groups": out_groups, "relations": catalog["relations"],
@@ -189,7 +197,8 @@ def build(workspace, *, draft=False, output=None):
     assets = Path(__file__).resolve().parent
     for asset in ("preview.js", "preview.css"):
         shutil.copy2(assets / asset, output / asset)
-    return {"groups": len(out_groups), "meanings": len(catalog["meanings"]),
+    return {"groups": len(out_groups), "meanings": len(catalog["meanings"]) + added_direct,
+            "direct_research_meanings": added_direct,
             "path": str(output / "index.html")}
 
 
