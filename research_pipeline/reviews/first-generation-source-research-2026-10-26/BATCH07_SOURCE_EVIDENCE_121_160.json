@@ -1,0 +1,1188 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "kind": "FIRST_GENERATION_SOURCE_EVIDENCE",
+  "status": "RESEARCH_REVIEW_ONLY_NOT_POPULATION_ADMISSION_OR_CERTIFICATION",
+  "scope": "independent Wave2 only; frozen first-generation candidate cohort",
+  "original_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "original_unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "priority_range": [
+    121,
+    160
+  ],
+  "candidate_count": 40,
+  "represented_original_occurrences": 52,
+  "verified_exact_source_count": 4,
+  "source_qualification": "The record distinguishes exact source-grounded definitions from mathematical source leads and unverified sections. Rigor is never inferred merely from URL presence; later manual/citation review is still required.",
+  "mathematical_flags": [
+    {
+      "candidate_id": "missing.16dd13db42779fad9a84",
+      "issue": "Support of a general quotient sheaf is not automatically closed without quasi-coherence/finite-type or other hypotheses",
+      "severity": "substantive_hypothesis"
+    },
+    {
+      "candidate_id": "missing.16fdb955076446c83a6f",
+      "issue": "Multigraph edge multiplicity need not be a finite integer in an unrestricted infinite multigraph",
+      "severity": "missing_finiteness"
+    },
+    {
+      "candidate_id": "missing.16eb7002116042616e29",
+      "issue": "Calculus of fractions 'cancellation' requires exact left/right Ore orientations; do not replace with ordinary cancellation",
+      "severity": "source_convention"
+    }
+  ],
+  "items": [
+    {
+      "priority": 121,
+      "original_canonical_candidate_id": "missing.d2189c6f07c197ca9bcb",
+      "original_query": "usual total order on Q",
+      "original_context": "Arithmetic: the usual total order on rational numbers as ordered fractions, enabling comparison q>0, independent of the strict-positive-subset being defined.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.2bed70bd20f79b936088",
+        "occ.d435955c43ed089efd3a"
+      ],
+      "original_alias_ids": [
+        "missing.0a6edbb8ca60f6c8d28b"
+      ],
+      "preliminary_definition": "The usual order on the rational field Q is the total order in which a/b<c/d for b,d positive integers iff ad<bc; each rational admits a representation with positive denominator.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/RationalNumber.html",
+          "section": "Rational numbers and ordered fractions",
+          "verification_status": "source_lead_requires_order_section",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "source_lead_requires_order_section",
+      "edge_cases": "The sign condition b,d>0 is essential to cross multiplication. The order is total and compatible with addition and multiplication by positives.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 122,
+      "original_canonical_candidate_id": "missing.ddc9befb080e8d7146db",
+      "original_query": "cocone morphisms F(i)→Q compatible with the diagram",
+      "original_context": "Category theory: cocone from a diagram F:I→C to vertex Q, a compatible natural transformation F⇒constant_Q with arrows F(i)→Q satisfying diagram commutativity.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.55b929f8671122da7c4e",
+        "occ.72a2dcda8c99448ac684"
+      ],
+      "original_alias_ids": [
+        "missing.d6860fab14d78960a770"
+      ],
+      "preliminary_definition": "For F:I→C, a cocone with apex Q is a family η_i:F(i)→Q such that η_j∘F(u)=η_i for every u:i→j.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0G2U",
+          "section": "Remark 4.14.5 cocones",
+          "verification_status": "definition_verified_primary",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "definition_verified_primary",
+      "edge_cases": "A cocone is not necessarily colimiting; universality would be extra.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 123,
+      "original_canonical_candidate_id": "missing.dfb06f7328573e269bb5",
+      "original_query": "countable union of members A_n",
+      "original_context": "Set theory: countable union ⋃_{n≥1}A_n={x:there exists positive integer n with x∈A_n} of an indexed sequence of subsets of X.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.4d78ac16b3753e614c40",
+        "occ.503be46eaa31e32c8ef5"
+      ],
+      "original_alias_ids": [
+        "missing.7e7d755025a1690c692c"
+      ],
+      "preliminary_definition": "For a sequence of sets (A_n)_{n≥1}, ⋃_{n≥1} A_n is {x:∃n≥1,x∈A_n}.",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Union_(set_theory)",
+          "section": "Arbitrary unions",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "elementary_source_lead",
+      "edge_cases": "The empty sequence union is ∅ if no indices; here n≥1 gives countably infinitely many indices, not necessarily distinct sets.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 124,
+      "original_canonical_candidate_id": "missing.eeaf8a205d5ed2ed6eeb",
+      "original_query": "equivalence relation generated by x∼F(u)(x)",
+      "original_context": "Set theory: equivalence relation generated by prescribed ordered pairs P⊆S×S, the smallest reflexive symmetric transitive relation containing P; here S is the disjoint union of F(i) and P identifies each x with F(u)(x).",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.09da4005ad43be48cf61",
+        "occ.3735cda7cb4e55e3a9f0"
+      ],
+      "original_alias_ids": [
+        "missing.b475e73aec4e6648f590"
+      ],
+      "preliminary_definition": "For a set S and P⊆S×S, the equivalence relation generated by P is the intersection of all equivalence relations on S containing P.",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Equivalence_relation",
+          "section": "Equivalence closure of binary relation",
+          "verification_status": "mathematical_construction_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "mathematical_construction_source_lead",
+      "edge_cases": "It is reflexive, symmetric and transitive; it is not generally merely P∪P^{-1}, since transitive closure may add many pairs.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 125,
+      "original_canonical_candidate_id": "missing.eeb1ff5cf448091c3d57",
+      "original_query": "convergence domain D⊆R",
+      "original_context": "Real analysis: convergence domain D={z∈ℝ:∑_{n≥0}c_nz^n converges} of a real power series with coefficients c_n, here c_n=a_n/n!.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.896803665a666e098a52",
+        "occ.d97ea5f771c3999534e4"
+      ],
+      "original_alias_ids": [
+        "missing.47682ea3b8f82e99c83b"
+      ],
+      "preliminary_definition": "For a real power series Σ_{n≥0}c_nz^n, its convergence domain is D={z∈R: partial sums converge in R}.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/RadiusofConvergence.html",
+          "section": "Radius and convergence of power series",
+          "verification_status": "source_supported_with_boundary_caution",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "source_supported_with_boundary_caution",
+      "edge_cases": "D is an interval centered at 0, with boundary endpoints potentially included independently; do not silently assume open interval or absolute convergence at endpoints.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 126,
+      "original_canonical_candidate_id": "missing.ef28497e9dc38c5b82e5",
+      "original_query": "strict finite chain of irreducible closed subsets",
+      "original_context": "Order theory and topology: finite chain Z₀⊊Z₁⊊⋯⊊Z_n of distinct irreducible closed subsets of space X ordered by strict inclusion; chain length n counts inclusions, not the number n+1 of subsets.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.142c44c926d17a9644f5",
+        "occ.1a681a07243650affd93"
+      ],
+      "original_alias_ids": [
+        "missing.42f6560f7237a67371f0"
+      ],
+      "preliminary_definition": "A chain of irreducible closed subsets is Z_0⊊Z_1⊊⋯⊊Z_n⊆X with each Z_i irreducible and closed; its length is n.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0055",
+          "section": "Definition 5.10.1(1)-(2)",
+          "verification_status": "definition_verified_primary",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "definition_verified_primary",
+      "edge_cases": "n counts inclusions, not n+1 members. If X=∅ there are no nonempty irreducible closed subsets in usual convention.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 127,
+      "original_canonical_candidate_id": "missing.f112efe448973069bae2",
+      "original_query": "finite intersections of open subsets",
+      "original_context": "Set theory: intersection ⋂_{i∈F}U_i of finitely many subsets of ambient X, including the empty-index intersection X; topology requires this intersection to lie in τ.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.13d7ffaf65b2d726b96c",
+        "occ.b3db019e9a0a486b522a"
+      ],
+      "original_alias_ids": [
+        "missing.3bc9c793050ced5e186f"
+      ],
+      "preliminary_definition": "For finite F⊆I and subsets U_i⊆X, ⋂_{i∈F}U_i={x∈X:∀i∈F,x∈U_i}.",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Intersection_(set_theory)",
+          "section": "Finite and empty intersections",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "elementary_source_lead",
+      "edge_cases": "For F=∅ the intersection relative to ambient X is X; every topology closes finite intersections, including the empty case.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 128,
+      "original_canonical_candidate_id": "missing.fbd11071cfe5ca8ef6e2",
+      "original_query": "conjugate subset gNg^{-1}",
+      "original_context": "Group theory: conjugate of subset N⊆G by g∈G, the subset {gng^{-1}:n∈N} obtained by conjugating every element.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.65335821a8864a891bc7",
+        "occ.e9b4a54ef34377d943f0"
+      ],
+      "original_alias_ids": [
+        "missing.abbeccae2b7cf4128cfd"
+      ],
+      "preliminary_definition": "For group G, subset N⊆G, and g∈G, gNg^{-1}={gng^{-1}:n∈N}.",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Conjugacy_class",
+          "section": "Conjugation of elements and subsets",
+          "verification_status": "source_lead_subset_conjugation_scope",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "source_lead_subset_conjugation_scope",
+      "edge_cases": "If N is a subgroup then gNg^{-1} is a subgroup. N normal iff gNg^{-1}=N for all g.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 129,
+      "original_canonical_candidate_id": "missing.908934f4b8323f2ba8a0",
+      "original_query": "divides",
+      "original_context": "Integral domains: divisibility relation between ring elements",
+      "original_occurrence_count": 3,
+      "original_occurrence_ids": [
+        "occ.49bc51dd9fc954a7a540",
+        "occ.9d6ad573c83af5db265a",
+        "occ.ec2701ae652d10f02134"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For elements a,b of an integral domain R, a divides b, written a|b, iff b=ac for some c∈R.",
+      "source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.3 divisibility and associates",
+          "verification_status": "source_lead_exact_section_check",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "source_lead_exact_section_check",
+      "edge_cases": "Even 0|0 holds under this existential definition, and 0|b requires b=0. Units divide every element. Domain assumptions matter for cancellation, not definition.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 130,
+      "original_canonical_candidate_id": "missing.9f6f3ee9e141231a54d4",
+      "original_query": "integer divisibility of a-b by m",
+      "original_context": "Number theory: integer divisibility m|(a-b), meaning there is an integer k such that a-b=km, with m nonzero here.",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.b9aac9b19638502d96bf",
+        "seed.3bf3e840cc18fde34efe"
+      ],
+      "original_alias_ids": [
+        "missing.3cad3880c2353eda8fd8"
+      ],
+      "preliminary_definition": "For integers a,b,m with m≠0, m|(a-b) means ∃k∈Z such that a-b=mk.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Divides.html",
+          "section": "Integer divisibility",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "elementary_source_lead",
+      "edge_cases": "Equivalent to congruence a≡b (mod m); divisibility is a relation, congruence is derived modulo condition.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 131,
+      "original_canonical_candidate_id": "missing.c84405a9f915b0897178",
+      "original_query": "Square matrix of finite order over a field",
+      "original_context": "Finite-dimensional linear algebra: n-by-n square matrices over a field K, n≥1",
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.edbdb2ba62aaeb5b294c",
+        "seed.9f02c23c822e6e22f7ec"
+      ],
+      "original_alias_ids": [
+        "missing.85d3921d2aa075f7883a"
+      ],
+      "preliminary_definition": "For n≥1 and field K, an n×n square matrix is a function A:{1,…,n}×{1,…,n}→K, conventionally displayed as entries a_{ij}.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/SquareMatrix.html",
+          "section": "Square matrix definition",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "elementary_source_lead",
+      "edge_cases": "Invertibility and determinant are additional structure/properties. n=0 may be allowed under separate empty-matrix convention, but original scope requires n≥1.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 132,
+      "original_canonical_candidate_id": "missing.00f05f23cf310f438561",
+      "original_query": "polynomial relations f_j",
+      "original_context": "Commutative algebra: finite collection of polynomial equations/relations f_j in a polynomial R-algebra, generating the ideal of relations used to present an R-algebra.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.c79911a56462df60950d"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For a commutative R-algebra presentation R[X_1,…,X_n]/(f_1,…,f_r), the finitely many polynomials f_j are relations and generate the kernel ideal of the quotient presentation.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00F4",
+          "section": "Finite presentation of algebras; relations as quotient ideal",
+          "verification_status": "typed_source_lead_verify_tag",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "typed_source_lead_verify_tag",
+      "edge_cases": "Relations are not necessarily algebraically independent or a minimal generating set. The polynomial ideal comprises all finite polynomial combinations of f_j.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 133,
+      "original_canonical_candidate_id": "missing.0113342523b02aece2fb",
+      "original_query": "commutative unital ring and common identity",
+      "original_context": "Commutative algebra: inclusion of commutative rings R⊆S both with multiplicative unit, with inclusion preserving the common identity 1_R=1_S.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.9c759e556ba18cc2058e"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "A unital subring inclusion R⊆S shares the multiplicative identity when 1_R=1_S and inclusion is a unital ring map.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00AQ",
+          "section": "Commutative-ring conventions",
+          "verification_status": "construction_from_ring_axioms",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "construction_from_ring_axioms",
+      "edge_cases": "A subring defined without requiring common 1 can have its own identity different from 1_S; state the convention explicitly.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 134,
+      "original_canonical_candidate_id": "missing.01941cf7d698abe9cfcc",
+      "original_query": "zero element 0_B",
+      "original_context": "Abstract algebra: additive identity 0_B of abelian group B, the unique element with b+0_B=0_B+b=b for all b∈B.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.c5cd5405920b5be920a4"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "An element 0_B of an additive abelian group (B,+) is its unique additive identity, satisfying b+0_B=b=0_B+b for every b∈B.",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Identity_element",
+          "section": "Identity element for binary operation",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "elementary_source_lead",
+      "edge_cases": "The identity exists by group axiom and is unique; it need not mean zero morphism in a category.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 135,
+      "original_canonical_candidate_id": "missing.03b976f9393f9c4191f4",
+      "original_query": "factorial n! of nonnegative integer",
+      "original_context": "Elementary arithmetic: n!=1·2·…·n for positive integer n, with 0!=1, a finite product in natural numbers.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.9fcbfd725a0af62165c9"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For n∈N_0, n!=∏_{k=1}^n k, with the empty product 0!=1.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Factorial.html",
+          "section": "Factorial, formula (1) and 0!",
+          "verification_status": "definition_verified_reference",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "definition_verified_reference",
+      "edge_cases": "The product is in natural numbers. This should not be confused with gamma-function continuation.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 136,
+      "original_canonical_candidate_id": "missing.03f1f6a4d6b405f4f3e3",
+      "original_query": "disjoint union of sets X_i",
+      "original_context": "Set theory: indexed disjoint union ⨆_{i∈I}X_i formed from tagged pairs (i,x) with x∈X_i, retaining which component each element belongs to even when the underlying X_i overlap.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.8ea89d96266e5ed0878a"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For a family (X_i)_{i∈I}, the disjoint union ⨆_{i∈I}X_i is {(i,x):i∈I,x∈X_i}, with the index retained as a tag.",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Disjoint_union",
+          "section": "Indexed disjoint union",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "elementary_source_lead",
+      "edge_cases": "Even if X_i and X_j overlap, their tagged elements differ when i≠j. Empty I yields ∅.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 137,
+      "original_canonical_candidate_id": "missing.0423a519b1e84ca6d41c",
+      "original_query": "singleton {x}",
+      "original_context": "Elementary set theory: singleton {x}, the set containing exactly the specified element x, viewed here as one connected component; its cardinality is one even when the ambient topological space is empty (then no such x exists).",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.f8fad79f1ea3bb4e0401"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "A singleton {x} is the set of elements y such that y=x; it has cardinality one.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Singleton.html",
+          "section": "Singleton",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "elementary_source_lead",
+      "edge_cases": "A singleton cannot be selected inside X=∅ because it has no points; topological connectedness of the singleton is a separate fact.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 138,
+      "original_canonical_candidate_id": "missing.06d3b29d2fa8ad998a3d",
+      "original_query": "eventual uniform lower bound a_n>=delta",
+      "original_context": "Real construction from rational Cauchy sequences: eventual strict positivity with a common positive rational margin δ>0, meaning ∃N ∀n≥N a_n≥δ, stronger than eventual pointwise positivity.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.2ff3086a0a12b0ea85fe"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "A real/rational sequence (a_n) is eventually bounded below by a common δ>0 iff ∃δ∈Q,δ>0,∃N,∀n≥N,a_n≥δ.",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Eventually_(mathematics)",
+          "section": "Eventually quantifier on sequences",
+          "verification_status": "contextual_quantifier_supported_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "contextual_quantifier_supported_source_lead",
+      "edge_cases": "This is stronger than a_n>0 eventually; e.g. 1/n is eventually positive but has no uniform δ>0 lower bound.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 139,
+      "original_canonical_candidate_id": "missing.07e25eec2547df68421c",
+      "original_query": "chosen ordering V={v_1,…,v_n}",
+      "original_context": "Graph/combinatorics: finite vertex enumeration as a bijection {1,…,n}→V, choosing an indexing order on V.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.096ad3222f24efc99759"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "A chosen ordering of an n-element set V is a bijection ι:{1,…,n}→V; its enumerated vertices are v_i=ι(i).",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Enumeration",
+          "section": "Enumeration of a finite set",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "elementary_source_lead",
+      "edge_cases": "The choice affects a labeled adjacency matrix but not graph isomorphism type. For V=∅ use n=0 empty enumeration under allowed convention.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 140,
+      "original_canonical_candidate_id": "missing.087c8c78478b26335f01",
+      "original_query": "morphisms A to P and C to P agreeing on B",
+      "original_context": "Category theory: cocone over the span B→A,B→C, namely arrows A→P,C→P whose composites from B agree.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.06a9d9f85a5d2dfbaabb"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For a span B→A,B→C, a cocone with vertex P is a pair a:A→P,c:C→P with a∘(B→A)=c∘(B→C).",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0G2U",
+          "section": "Remark 4.14.5, cocone specialization",
+          "verification_status": "definition_verified_primary_derived_instance",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "definition_verified_primary_derived_instance",
+      "edge_cases": "A cocone need not be a pushout; the latter adds a universal property.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 141,
+      "original_canonical_candidate_id": "missing.08ca647ed43622178944",
+      "original_query": "zero R-module",
+      "original_context": "Module theory: zero (trivial) R-module with one element 0 and zero addition and scalar action; nonzero final quotient M/(f_1,…,f_r)M means that quotient is not this module. Distinguish the zero module from the zero submodule before taking a quotient.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.9b9e95371a20b1490462"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "The zero R-module is the singleton {0} with 0+0=0 and r·0=0 for all r∈R.",
+      "source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html",
+          "section": "Module axioms and zero module",
+          "verification_status": "source_lead_requires_precise_locator",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "source_lead_requires_precise_locator",
+      "edge_cases": "It is both initial and terminal in R-Mod. Any module has a zero submodule, but the zero module as an object and zero submodule inclusion are different representations.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 142,
+      "original_canonical_candidate_id": "missing.08fcaa9f26323a9c3d56",
+      "original_query": "field automorphism σ:E→E",
+      "original_context": "Field theory: field automorphism of E, a bijective unital field homomorphism σ:E→E whose inverse is a field homomorphism; fixing a distinguished subfield F elementwise is a separate condition.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.413c7f01ce7685954e27"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "A field automorphism of E is a bijective unital field homomorphism σ:E→E.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09HL",
+          "section": "Field extension Galois automorphisms",
+          "verification_status": "source_supported_contextually",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "source_supported_contextually",
+      "edge_cases": "A field automorphism need not fix a chosen subfield F unless required; σ^{-1} is automatically a field homomorphism.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 143,
+      "original_canonical_candidate_id": "missing.0b7317d52bc5113b3520",
+      "original_query": "circuit as nontrivial closed edge-trail",
+      "original_context": "Graph theory on a loopless simple undirected graph: a circuit here is a nontrivial finite closed trail, namely a positive-length sequence of adjacent edges beginning and ending at the same vertex, traversing no undirected edge more than once. Unlike a simple cycle, other vertices may recur; distinguish graph circuits from matroid circuits and directed cycles.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.8adb94360bdb03c98e34"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "In a loopless undirected graph, a circuit (closed trail) is a positive-length closed walk traversing no undirected edge more than once.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Circuit.html",
+          "section": "Circuit versus closed trail definitions",
+          "verification_status": "source_convention_check_needed",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "source_convention_check_needed",
+      "edge_cases": "Circuit definitions vary: a simple cycle may disallow repeated interior vertices, whereas closed trail can revisit vertices. A nonempty closed trail in simple loopless graph has at least three edges.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 144,
+      "original_canonical_candidate_id": "missing.0cef0a8e358745284bfe",
+      "original_query": "two-term complex I/I²→Ω_{P/R}⊗_P S",
+      "original_context": "Homological algebra: a two-term chain complex of modules concentrated in homological degrees 1 and 0, with differential d_1:C_1→C_0 and zero modules in the other degrees. The single differential automatically has no nontrivial consecutive-composite condition.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.816eb7867cf94acddda8"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "A two-term chain complex concentrated in degrees 1 and 0 consists of modules C_1,C_0, a differential d:C_1→C_0, and zero modules elsewhere.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/010V",
+          "section": "Section 12.13 complexes and homology",
+          "verification_status": "direct_specialization_of_verified_complex_axioms",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "direct_specialization_of_verified_complex_axioms",
+      "edge_cases": "No possible composition of two nonzero consecutive maps exists, hence d²=0 automatically. Do not identify this data with the entire cotangent complex absent derived hypotheses.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 145,
+      "original_canonical_candidate_id": "missing.0f9ce4837c92ff02c397",
+      "original_query": "set of all rational lower cuts R_D",
+      "original_context": "Real construction: set R_D of all Dedekind lower cuts of rational numbers, used as carrier for cut-based real number model.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.06cedeb78e233dcae558"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "Let R_D be the set of all Dedekind lower cuts L⊊Q that are nonempty, downward closed and have no greatest element.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/DedekindCut.html",
+          "section": "Dedekind lower-cut construction of real numbers",
+          "verification_status": "definition_with_convention_note",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "definition_with_convention_note",
+      "edge_cases": "Some definitions choose upper cuts instead. These lower cuts are subsets of Q; the real model's operations are a separate construction.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 146,
+      "original_canonical_candidate_id": "missing.11eb8dbe559b544a000a",
+      "original_query": "cyclic group of order p",
+      "original_context": "Group theory: group generated by one element g with g^p=e and no smaller positive period, hence p elements; in this source it is the Galois automorphism group.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.21f716103b8ea9a0761a"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "A cyclic group of finite order p is a group G generated by g such that g^p=e and g^k≠e for 1≤k<p, hence G has p elements.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/CyclicGroup.html",
+          "section": "Finite cyclic group structure",
+          "verification_status": "elementary_definition_supported",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "elementary_definition_supported",
+      "edge_cases": "Primality of p is not necessary for cyclicity; prime order is additional context in this occurrence.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 147,
+      "original_canonical_candidate_id": "missing.12cbff3823a07d544a1e",
+      "original_query": "zero composite of consecutive maps",
+      "original_context": "Homological algebra: chain complex in an additive category, a sequence of composable arrows whose adjacent composite is the zero morphism.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.18b019949f4c99b1a97f"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "A chain complex (C_n,d_n) in an additive category satisfies d_{n−1}∘d_n=0 for every degree n, where the zero is the distinguished Hom-group zero morphism.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/010V",
+          "section": "Complex condition and homology",
+          "verification_status": "definition_verified_primary",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "definition_verified_primary",
+      "edge_cases": "Zero composites are necessary for quotient im⊆ker. Not every sequence of maps is a complex.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 148,
+      "original_canonical_candidate_id": "missing.131212604e1e2155bd93",
+      "original_query": "structure morphism X→Spec(Z)",
+      "original_context": "Algebraic geometry: canonical structure morphism of a scheme X to the terminal scheme Spec(ℤ), induced by the unique unital ring maps ℤ→Γ(U,O_X) on affine charts and compatible with restriction and gluing.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.1613c0f93bc393693c83"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "Every scheme X has a unique morphism X→Spec Z, called its canonical structure morphism, since Spec Z is terminal among schemes.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01HR",
+          "section": "Affine scheme morphisms and canonical Z-algebra structure",
+          "verification_status": "source_context_supported_terminal_property_exact_locator_pending",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "source_context_supported_terminal_property_exact_locator_pending",
+      "edge_cases": "No choice of base field is needed. Restricting to schemes over another base S adds an independently specified structure map X→S.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 149,
+      "original_canonical_candidate_id": "missing.137cc84619d0fc68bf3b",
+      "original_query": "evaluated polynomial phi(P)(g)=0",
+      "original_context": "Commutative algebra: apply ring homomorphism φ:R→S coefficientwise to polynomial P∈R[T], evaluate φ(P) at g∈S, and test whether result is zero.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.a361310f36f71f499e32"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For φ:R→S and P(T)=Σ_i a_i T^i∈R[T], the coefficientwise image is φ(P)(T)=Σ_i φ(a_i)T^i∈S[T]; evaluating at g∈S gives Σ_i φ(a_i)g^i.",
+      "source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Polynomial evaluation and ring homomorphisms",
+          "verification_status": "algebraic_construction_supported_source_locator_pending",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "algebraic_construction_supported_source_locator_pending",
+      "edge_cases": "The equality φ(P)(g)=0 means the evaluation vanishes, not that P=0 or φ(P) is zero polynomial.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 150,
+      "original_canonical_candidate_id": "missing.14fb2e2c8ee691a830d3",
+      "original_query": "finite partial sum s_N",
+      "original_context": "Real analysis: N-th finite partial sum of a real sequence, s_N=∑_{n=0}^{N}a_n, with an explicitly finite upper limit.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.9906bd7c8c4129b12da9"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For a sequence (a_n)_{n≥0}, the finite partial sum s_N is Σ_{n=0}^N a_n.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/PartialSum.html",
+          "section": "Partial sum of series",
+          "verification_status": "elementary_definition_supported",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "elementary_definition_supported",
+      "edge_cases": "No convergence assumed. A series sum, if it exists, is the limit of these partial sums, not an individual s_N.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 151,
+      "original_canonical_candidate_id": "missing.16dd13db42779fad9a84",
+      "original_query": "support Z of quotient sheaf O_X/I",
+      "original_context": "Sheaf theory: support of quotient sheaf O_X/I, set of points with nonzero stalk, determining associated closed subspace.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.24101f821a9362a63a72"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For a sheaf F of modules on a ringed space, support Supp(F) is {x:F_x≠0}; for F=O_X/I this is the locus of nonzero quotient stalks.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01AS",
+          "section": "Support of sheaves and module stalks",
+          "verification_status": "source_scope_requires_support_closedness_check",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "source_scope_requires_support_closedness_check",
+      "edge_cases": "Support of an arbitrary sheaf need NOT be closed; closedness for quasi-coherent finite-type/suitable ideals requires extra hypotheses. Do not claim an associated closed subscheme from an arbitrary non-quasi-coherent ideal sheaf.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 152,
+      "original_canonical_candidate_id": "missing.16eb7002116042616e29",
+      "original_query": "left and right cancellation",
+      "original_context": "Category theory: two-sided cancellation conditions of a calculus of fractions, permitting suitable equalized composites after composing with arrows in S.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.2b0cfbcf8722d48c4158"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "In a calculus of left/right fractions, cancellation axioms state that two arrows becoming equal after a denominator arrow may be equalized by a further denominator arrow of the appropriate direction.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/04VB",
+          "section": "Localization of categories and multiplicative systems",
+          "verification_status": "source_specific_axioms_must_be_verified",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "source_specific_axioms_must_be_verified",
+      "edge_cases": "This is not ordinary cancellation of an injective or invertible morphism. Left/right ore conditions and post/pre-composition orientations differ; hold exact formula pending source.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 153,
+      "original_canonical_candidate_id": "missing.16fdb955076446c83a6f",
+      "original_query": "local restriction E∩V_i",
+      "original_context": "General topology: intersection E∩V_i of a subset E⊆X with an open subspace V_i⊆X, considered with the induced topology on V_i.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.d95b2f051b36b6e6c4ba"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For E⊆X and an open subspace V_i⊆X, the local restriction E∩V_i is a subset of V_i with its subspace topology.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0057",
+          "section": "Topology: induced and subspace topologies",
+          "verification_status": "general_topology_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "general_topology_source_lead",
+      "edge_cases": "E∩V_i inherits the same topology whether viewed as subspace of X or of V_i. Closed/open statements must be relative to the specified ambient.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 154,
+      "original_canonical_candidate_id": "missing.17fcbd3c3e67f2b21f6b",
+      "original_query": "edge multiplicity",
+      "original_context": "Multigraph theory: edge multiplicity of unordered pair {u,v}, the nonnegative integer number of edge copies connecting u and v in E.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.744c033d856601736101"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "The multiplicity of an unordered pair {u,v} in a loopless undirected multigraph is the number of distinct edge copies whose endpoints are u and v.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Multigraph.html",
+          "section": "Multigraph and multiple edges",
+          "verification_status": "definition_with_graph_convention",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "definition_with_graph_convention",
+      "edge_cases": "If the edge set E is infinite, multiplicity may be cardinal rather than a finite integer; original candidate explicitly asks for nonnegative integer, so assume each pair has finitely many copies.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 155,
+      "original_canonical_candidate_id": "missing.18f9db0195dad8f9cb4e",
+      "original_query": "two-sided inverse element b for each a",
+      "original_context": "Algebra: two-sided inverse b of a under associative binary operation with identity e, satisfying a*b=e=b*a, for each a in a group.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.9e0d6c1e09d22c6c5ef5"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For an associative binary operation ⋆ with identity e, b is a two-sided inverse of a if a⋆b=e=b⋆a.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/InverseElement.html",
+          "section": "Two-sided inverse element",
+          "verification_status": "elementary_definition_supported",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "elementary_definition_supported",
+      "edge_cases": "Inverse is unique in a monoid. A group requires each element admit one; inverses are not merely left inverses in an arbitrary monoid.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 156,
+      "original_canonical_candidate_id": "missing.1a60248259f8ac73fd6f",
+      "original_query": "canonical summand inclusions ι_i:M_i→⊕_i M_i",
+      "original_context": "Module theory: the canonical R-linear injection of a summand M_i into ⊕_{j∈I} M_j, sending m∈M_i to the family with m in index i and zero elsewhere.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.4a58cbcd026fbec72dd8"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For modules M_i, the canonical injection ι_i:M_i→⊕_{j∈I}M_j sends m to the tuple with coordinate i equal m and all others zero.",
+      "source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html",
+          "section": "Direct sums and their canonical inclusions",
+          "verification_status": "definition_supported_by_direct_sum_axioms",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "definition_supported_by_direct_sum_axioms",
+      "edge_cases": "The map is injective and linear, including when M_i=0. A summand injection differs from the categorical coprojection universal property only in its canonical model, not its function.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 157,
+      "original_canonical_candidate_id": "missing.1bd554e6f230b14c5f9b",
+      "original_query": "ith cohomology of a cochain complex",
+      "original_context": "Homological algebra: ith cohomology H^i(C^•)=ker(d^i:C^i→C^{i+1})/im(d^{i−1}:C^{i−1}→C^i) for a cochain complex, with im contained in ker.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.89f573bdf67816397eec"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For a cochain complex (C^n,d^n) with d^n d^{n−1}=0, define H^i(C)=ker(d^i)/im(d^{i−1}).",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0114",
+          "section": "Cohomology of cochain complexes",
+          "verification_status": "definition_verified_primary_via_homology_reference",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "definition_verified_primary_via_homology_reference",
+      "edge_cases": "Cohomological degrees rise, unlike chain homology. The image is contained in kernel because of zero composites.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 158,
+      "original_canonical_candidate_id": "missing.1bf45a51e32fe839d4c5",
+      "original_query": "finite direct sums or biproducts",
+      "original_context": "Additive category theory: finite biproduct or direct sum of objects, simultaneously product and coproduct with compatible injection and projection maps.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.4505ad958cf84be23957"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "A finite biproduct of objects M_1,…,M_n in an additive category is an object M with maps i_j:M_j→M and p_j:M→M_j satisfying p_j i_k=δ_{jk} id_{M_j} and Σ_j i_j p_j=id_M.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09SE",
+          "section": "Preadditive/additive categories and biproduct properties",
+          "verification_status": "construction_supported",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "construction_supported",
+      "edge_cases": "The empty finite biproduct requires a zero object; in arbitrary preadditive categories finite biproducts need not exist.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 159,
+      "original_canonical_candidate_id": "missing.1c3a3131528cfb0d72af",
+      "original_query": "graded quotients m^nM/m^{n+1}M",
+      "original_context": "Commutative algebra: degree-n associated-graded module component m^nM/m^{n+1}M of the maximal-ideal filtration of a finite module M over a local ring (R,m), formed as a quotient module with induced residue-ring action.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.dfa8d80e76fecce53296"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For local ring (R,m), R-module M and n≥0, the graded quotient m^nM/m^{n+1}M is the nth component of associated graded module gr_m(M).",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00JL",
+          "section": "Graded modules and associated graded objects",
+          "verification_status": "construction_context_source_lead",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "construction_context_source_lead",
+      "edge_cases": "m annihilates this quotient, so it is an R/m-vector space if m maximal. Do not assume finite dimensionality absent suitable finiteness hypotheses.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    },
+    {
+      "priority": 160,
+      "original_canonical_candidate_id": "missing.1c6af723b751472f1aba",
+      "original_query": "map X→M_i splitting M_i→X",
+      "original_context": "Category theory: section s:X→M_i of the cocone map r:M_i→X such that r∘s=id_X; M_i need not be isomorphic to X.",
+      "original_occurrence_count": 1,
+      "original_occurrence_ids": [
+        "occ.8e1b3cabccb5b324a669"
+      ],
+      "original_alias_ids": [],
+      "preliminary_definition": "For r:M_i→X, a section s:X→M_i satisfies r∘s=id_X.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0017",
+          "section": "Split epimorphism/section as right inverse of morphism",
+          "verification_status": "definition_supported_by_categorical_isomorphism_axioms",
+          "relevance": "Mathematical definition or contextual source lead at the exact object type noted; partial statuses require later primary-source text verification."
+        }
+      ],
+      "source_verification_status": "definition_supported_by_categorical_isomorphism_axioms",
+      "edge_cases": "This makes X a retract of M_i, not necessarily isomorphic to M_i. For isomorphism also require s∘r=id_{M_i}.",
+      "accepted_and_provisional_comparison_status": "Source-context preliminary; complete screened (595 meanings), provisional (16 initial meanings), and all earlier staged cross-comparisons mandatory prior to admission.",
+      "research_generation": "first_bounded_only",
+      "new_dependencies": "do_not_recursively_research",
+      "actual_stage_admission": false,
+      "graph_resolution_applied": false,
+      "mathematical_certification": false
+    }
+  ]
+}
