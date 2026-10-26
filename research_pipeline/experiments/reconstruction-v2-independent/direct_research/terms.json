@@ -2212,6 +2212,803 @@
         "Specific structures, empty cases, and conventions are stated in the definition; source verification status refers to the cited locator, not a formal proof or peer review."
       ],
       "original_priority": 31
+    },
+    {
+      "id": "meaning.wave2.direct.3a244864ffa7450b328d",
+      "candidate_id": "missing.3a244864ffa7450b328d",
+      "term": "maximal element under inclusion",
+      "context": "Order theory · inclusion-maximal family member",
+      "aliases": [
+        "maximal subset"
+      ],
+      "definition": "Let F be a family of subsets of a set X. An element M∈F is maximal with respect to inclusion if there is no B∈F satisfying M⊊B; equivalently, M⊆B for B∈F forces B=M.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.709d3d2f82950c5b.partially-ordered-set",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 32,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.4322a8c550c42b8391a2",
+      "candidate_id": "missing.4322a8c550c42b8391a2",
+      "term": "parallel morphisms",
+      "context": "Category theory · common source and target",
+      "aliases": [
+        "parallel arrows"
+      ],
+      "definition": "In a category C, two morphisms f,g are parallel if they have the same domain X and codomain Y, so f,g:X→Y.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://stacks.math.columbia.edu/tag/0014",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 33,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.60dd364a1927126e153d",
+      "candidate_id": "missing.60dd364a1927126e153d",
+      "term": "polynomial evaluation homomorphism",
+      "context": "Commutative algebra · substitution in polynomial algebra",
+      "aliases": [
+        "evaluation map for polynomial ring"
+      ],
+      "definition": "Let R be a commutative ring with identity, let A be a commutative unital R-algebra, and let (a_i)_{i∈I} be elements of A. Evaluation is the unique unital R-algebra map ev_a:R[X_i:i∈I]→A sending X_i to a_i. Every polynomial contains finitely many variables, even when I is infinite.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.ring-map-unital",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 35,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.9720508883754c995559",
+      "candidate_id": "missing.9720508883754c995559",
+      "term": "Zariski closed subset V(I)",
+      "context": "Algebraic geometry · closed subset of prime spectrum",
+      "aliases": [
+        "V(I) in Spec(R)"
+      ],
+      "definition": "For a commutative ring R and ideal I⊆R, define V(I)={p∈Spec(R):I⊆p}, where Spec(R) is the set of prime ideals. The sets V(I) are exactly the closed sets of the Zariski topology on Spec(R).",
+      "sources": [
+        {
+          "title": "Stacks Project — Definition 10.17.1",
+          "url": "https://stacks.math.columbia.edu/tag/00DZ",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Primary source directly consulted for this mathematical construction."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.21c2ca138324d040.spectrum-ring",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.commutative-prime-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.two-sided-ideal",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 37,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.b599bdc9343a25050226",
+      "candidate_id": "missing.b599bdc9343a25050226",
+      "term": "clopen subset",
+      "context": "General topology · simultaneously closed and open",
+      "aliases": [
+        "open-and-closed subset"
+      ],
+      "definition": "A subset U of a topological space X is clopen if U is both open and closed in X, equivalently if U and X∖U are open. The empty set and X are always clopen.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://stacks.math.columbia.edu/tag/04PN",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.c4ed408b10943e9c0f8e",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 38,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.c4ed408b10943e9c0f8e",
+      "candidate_id": "missing.c4ed408b10943e9c0f8e",
+      "term": "closed subset of a topological space",
+      "context": "General topology · complement of an open set",
+      "aliases": [
+        "closed set"
+      ],
+      "definition": "Let (X,τ) be a topological space. A subset F⊆X is closed if its complement X\\F is a member of τ, i.e. is open in X.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://stacks.math.columbia.edu/tag/00DZ",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 39,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.fa5932b42daa1a3e0307",
+      "candidate_id": "missing.fa5932b42daa1a3e0307",
+      "term": "root of a polynomial",
+      "context": "Field theory · root in an extension field",
+      "aliases": [
+        "polynomial root"
+      ],
+      "definition": "For a field extension K/F and polynomial f(T)=∑_{j=0}^n a_jT^j∈F[T], an element α∈K is a root if f(α)=∑_j a_jα^j=0. The zero polynomial has every α as a root, while a nonzero polynomial has at most its degree many distinct roots.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch06.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.60dd364a1927126e153d",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 40,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.0c5a27f2980fc722cbb5",
+      "candidate_id": "missing.0c5a27f2980fc722cbb5",
+      "term": "quotient topology",
+      "context": "General topology · quotient under a surjective map",
+      "aliases": [
+        "identification topology"
+      ],
+      "definition": "Given a surjective function q:X→Q from a topological space X to a set Q, the quotient topology on Q consists of precisely those U⊆Q whose inverse images q⁻¹[U] are open in X. It is the finest topology on Q making q continuous.",
+      "sources": [
+        {
+          "title": "Stacks Project — Lemma 5.6.2",
+          "url": "https://stacks.math.columbia.edu/tag/08ZK",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Primary source directly consulted for this mathematical construction."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.c8a3e68d130a4f68d108",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.b86257b3cce62907e97e",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 42,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.0c99be984399f9134720",
+      "candidate_id": "missing.0c99be984399f9134720",
+      "term": "multiplicative subset of a ring",
+      "context": "Commutative algebra · multiplicatively closed subset containing one",
+      "aliases": [
+        "multiplicative set"
+      ],
+      "definition": "For a unital commutative ring R, a subset S⊆R is multiplicative if 1_R∈S and st∈S whenever s,t∈S. The definition does not require 0∉S; localizing at a set containing zero produces the zero ring.",
+      "sources": [
+        {
+          "title": "Stacks Project — Definition 10.9.1",
+          "url": "https://stacks.math.columbia.edu/tag/00CN",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Primary source directly consulted for this mathematical construction."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 43,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.2d82e7722cfbce9eca14",
+      "candidate_id": "missing.2d82e7722cfbce9eca14",
+      "term": "base change of a commutative algebra",
+      "context": "Commutative algebra · ring tensor product under change of base",
+      "aliases": [
+        "S⊗_R R′"
+      ],
+      "definition": "If R→S and R→R′ are maps of commutative unital rings, S⊗_R R′ is an R′-algebra via r′·(s⊗u)=s⊗r′u, with multiplication (s⊗a)(t⊗b)=st⊗ab and identity 1_S⊗1_{R′}.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://stacks.math.columbia.edu/tag/00TH",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 44,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.631bb780e939ffa2b71f",
+      "candidate_id": "missing.631bb780e939ffa2b71f",
+      "term": "subfield",
+      "context": "Field theory · field contained in a larger field",
+      "aliases": [
+        "subfield of E"
+      ],
+      "definition": "A subset F⊆E of a field E is a subfield if it contains 0_E and 1_E and is closed under addition, additive inverses, multiplication, and inverses of its nonzero elements. It is then a field under the operations inherited from E.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch06.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.field-commutative-unital",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 46,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.751471447065f0d756cd",
+      "candidate_id": "missing.751471447065f0d756cd",
+      "term": "closed map",
+      "context": "General topology · images of closed subsets remain closed",
+      "aliases": [
+        "closed mapping"
+      ],
+      "definition": "A map f:X→Y of topological spaces is closed if the image f(F) is closed in Y for each closed subset F⊆X.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://mathworld.wolfram.com/ClosedMap.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.c4ed408b10943e9c0f8e",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 47,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.a2b8dbc04d465756c102",
+      "candidate_id": "missing.a2b8dbc04d465756c102",
+      "term": "direct product of modules",
+      "context": "Module theory · all indexed tuples with coordinatewise operations",
+      "aliases": [
+        "product of R-modules"
+      ],
+      "definition": "For left R-modules (M_i)_{i∈I}, the direct product ∏_{i∈I}M_i consists of all indexed tuples (m_i), with componentwise addition and scalar multiplication. Unlike their direct sum, no finite-support condition is imposed. For empty I the product is the zero module.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.134e1c9f45dd933fdc36",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 50,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.ab1dee70553ea0ff2c1c",
+      "candidate_id": "missing.ab1dee70553ea0ff2c1c",
+      "term": "cone to a categorical diagram",
+      "context": "Category theory · compatible maps from a vertex",
+      "aliases": [
+        "cone over a diagram"
+      ],
+      "definition": "For a functor F:I→C with I small, a cone to F with vertex L is a family λ_i:L→F(i) satisfying F(u)∘λ_i=λ_j for every morphism u:i→j of I. Equivalently it is a natural transformation from the constant functor at L to F.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.a8c70a2a13320680c54c",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 51,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.b05a1814a9da0d01922a",
+      "candidate_id": "missing.b05a1814a9da0d01922a",
+      "term": "local homomorphism of local rings",
+      "context": "Commutative algebra · maximal ideal compatibility",
+      "aliases": [
+        "local ring map"
+      ],
+      "definition": "Let (R,𝔪_R) and (S,𝔪_S) be commutative local rings. A local homomorphism φ:R→S is a unital ring map such that φ(𝔪_R)⊆𝔪_S. Equivalently, φ⁻¹(𝔪_S)=𝔪_R.",
+      "sources": [
+        {
+          "title": "Stacks Project — Definition 10.18.1",
+          "url": "https://stacks.math.columbia.edu/tag/07BH",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Primary source directly consulted for this mathematical construction."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.ring-map-unital",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 52,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.beea674f8fcd201a1af5",
+      "candidate_id": "missing.beea674f8fcd201a1af5",
+      "term": "span of a subset of a module",
+      "context": "Module theory · finitely supported linear combinations",
+      "aliases": [
+        "R-linear span"
+      ],
+      "definition": "For an R-module M and S⊆M, span_R(S) is the submodule of all finite linear combinations Σ_{k=1}^n r_k s_k with r_k∈R and s_k∈S. The empty combination is 0.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://stacks.math.columbia.edu/tag/05G7",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation76.submodule",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 54,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.d066de85583ac1b1a7d4",
+      "candidate_id": "missing.d066de85583ac1b1a7d4",
+      "term": "ideal times a module",
+      "context": "Module theory · IM and I^n M",
+      "aliases": [
+        "I^nM"
+      ],
+      "definition": "For a commutative unital ring R, ideal I and R-module M, IM consists of all finite sums ∑_k a_km_k with a_k∈I and m_k∈M. For n≥0 define IⁿM=(Iⁿ)M; with I⁰=R this gives I⁰M=M.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://stacks.math.columbia.edu/tag/08Z0",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.two-sided-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.e43d4f1922e210cc373a",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 56,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.d0ca7fa93046fab7ab04",
+      "candidate_id": "missing.d0ca7fa93046fab7ab04",
+      "term": "polynomial splitting over a field",
+      "context": "Field theory · factorization into linear factors in an extension",
+      "aliases": [
+        "polynomial splits completely"
+      ],
+      "definition": "A nonconstant polynomial f(T) over a field F splits over a field extension E/F if f(T)=c∏_{j=1}^n(T−α_j) in E[T] with c∈E nonzero and α_j∈E, counting repeated roots with multiplicity.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://stacks.math.columbia.edu/tag/09HL",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.fa5932b42daa1a3e0307",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 57,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.63acc9193a56ae7003b9",
+      "candidate_id": "missing.63acc9193a56ae7003b9",
+      "term": "affine combination",
+      "context": "Affine geometry · coefficients sum to one",
+      "aliases": [
+        "finite affine combination"
+      ],
+      "definition": "For n≥1 points x_1,…,x_n in a real affine space, an affine combination is ∑_{i=1}^n α_ix_i where the real coefficients satisfy ∑_{i=1}^n α_i=1. The coefficients need not be nonnegative; that additional restriction gives a convex combination.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://mathworld.wolfram.com/AffineCombination.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.bridge136.convex-real",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 61,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.a8c70a2a13320680c54c",
+      "candidate_id": "missing.a8c70a2a13320680c54c",
+      "term": "natural transformation",
+      "context": "Category theory · natural family of maps between functors",
+      "aliases": [
+        "morphism of functors"
+      ],
+      "definition": "For functors F,G:C→D, a natural transformation η:F⇒G assigns to each object X a morphism η_X:F(X)→G(X), such that G(f)∘η_X=η_Y∘F(f) for every arrow f:X→Y. The same definition covers contravariant functors by viewing them as functors from Cᵒᵖ.",
+      "sources": [
+        {
+          "title": "Stacks Project — Definition 4.2.15",
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Primary source directly consulted for this mathematical construction."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.category-functor",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 62,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.0bde42f1d35a47cbb46e",
+      "candidate_id": "missing.0bde42f1d35a47cbb46e",
+      "term": "dimension of a vector space",
+      "context": "Linear algebra · cardinality of a basis",
+      "aliases": [
+        "vector space dimension"
+      ],
+      "definition": "The dimension dim_K V of a vector space V over a field K is the cardinality of a basis of V; any two bases have the same cardinality. An infinite-dimensional basis may require a choice principle. The zero vector space has dimension zero.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://mathworld.wolfram.com/VectorSpace.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.b64bc15f46fe0245.vector-space-over-field",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 65,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.21dbe26f26478a5abe77",
+      "candidate_id": "missing.21dbe26f26478a5abe77",
+      "term": "idempotent element",
+      "context": "Ring theory · multiplicative idempotence",
+      "aliases": [
+        "ring idempotent"
+      ],
+      "definition": "An element e of a ring R is idempotent if e²=e. In a unital ring, 0 and 1 are always idempotent. The definition concerns ring multiplication, not additive idempotence.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://stacks.math.columbia.edu/tag/04PN",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 68,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.22a110eb8988efe59f29",
+      "candidate_id": "missing.22a110eb8988efe59f29",
+      "term": "total order",
+      "context": "Order theory · linear ordering",
+      "aliases": [
+        "linear order"
+      ],
+      "definition": "A total order is a reflexive, antisymmetric, transitive relation ≤ in which every pair of elements is comparable.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.709d3d2f82950c5b.partially-ordered-set",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 69,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.5d07d9e2d8a2e83a53a1",
+      "candidate_id": "missing.5d07d9e2d8a2e83a53a1",
+      "term": "homology module of a chain complex",
+      "context": "Homological algebra · kernel modulo image",
+      "aliases": [
+        "nth homology module"
+      ],
+      "definition": "For a chain complex of R-modules …→C_{n+1}→C_n→C_{n−1}→… with d_n∘d_{n+1}=0, its nth homology module is H_n(C)=ker(d_n)/im(d_{n+1}). The quotient exists because im(d_{n+1})⊆ker(d_n).",
+      "sources": [
+        {
+          "title": "Stacks Project — Section 12.13",
+          "url": "https://stacks.math.columbia.edu/tag/010V",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Primary source directly consulted for this mathematical construction."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.6baca7285e379e18e82b",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 82,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.62983821c35d185a119d",
+      "candidate_id": "missing.62983821c35d185a119d",
+      "term": "open cover",
+      "context": "General topology · covering by open sets",
+      "aliases": [
+        "open covering"
+      ],
+      "definition": "An open cover of a topological space X is a family (U_i)_{i∈I} of open subsets of X whose union equals X. The index set may be infinite; the empty family covers the empty space.",
+      "sources": [
+        {
+          "title": "Original independent candidate source lead",
+          "url": "https://mathworld.wolfram.com/OpenCover.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Earlier source locator retained as a lead; not freshly verified for this batch."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 84,
+      "assumptions": [
+        "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
+      ]
     }
   ]
 }
