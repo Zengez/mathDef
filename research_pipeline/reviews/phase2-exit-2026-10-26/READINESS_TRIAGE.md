@@ -31,9 +31,9 @@ These need eventual independently reviewed **source-formulation** correction, no
 - **Recorded text:** “Let R→S be a finite-type ring homomorphism and q∈Spec(S) lying over p∈Spec(R). The map is quasi-finite at q if q is an isolated point of the fibre Spec(S⊗_R κ(p)); equivalently its local fibre has dimension zero.”
 - **Effective dependency provenance:** latest `amend.global-audit.affine-fibre-type.20261023.1` already corrected the **whole fibre** target to `meaning.8a65ad25b01e5104.scheme-theoretic-fibre`; retain that amendment.
 
-**Proof the equivalence as written is false:** let (R=k), (S=k[t]) and (q=(0)). The fibre is (operatorname{Spec} k[t]). Its generic point (q) is not isolated, but (mathcal O_{operatorname{Spec} k[t],q}=k(t)) is a field, so has Krull dimension zero. Thus local dimension zero by itself is not equivalent to quasi-finiteness at (q).
+**Proof the equivalence as written is false:** let `R=k`, `S=k[t]` and `q=(0)`. The fibre is `Spec(k[t])`. Its generic point `q` is not isolated, but the local ring `O_{Spec(k[t]),q}=k(t)` is a field, so has Krull dimension zero. Thus local dimension zero by itself is not equivalent to quasi-finiteness at `q`.
 
-**Narrow correction option:** keep the isolated-point criterion and qualify the second statement, e.g. “For this finite-type fibre, equivalently (q) is **closed in the fibre** and the local fibre ring at (q) has Krull dimension zero.” In the Noetherian finite-type (kappa(p))-scheme, the local dimension-zero condition makes (q) a minimal prime of its affine-fibre ring; closedness makes it maximal. A prime simultaneously minimal and maximal is an isolated point of the finite-minimal-prime Noetherian spectrum. Conversely an isolated point of a finite-type scheme over a field is closed (finite-type algebras are Jacobson), and its local ring has dimension zero. Do **not** extend this simplified equivalence to arbitrary non-finite-type schemes without new review.
+**Narrow correction option:** keep the isolated-point criterion and qualify the second statement, e.g. “For this finite-type fibre, equivalently `q` is **closed in the fibre** and the local fibre ring at `q` has Krull dimension zero.” In the Noetherian finite-type `κ(p)`-scheme, the local dimension-zero condition makes `q` a minimal prime of its affine-fibre ring; closedness makes it maximal. A prime simultaneously minimal and maximal is an isolated point of the finite-minimal-prime Noetherian spectrum. Conversely an isolated point of a finite-type scheme over a field is closed (finite-type algebras are Jacobson), and its local ring has dimension zero. Do **not** extend this simplified equivalence to arbitrary non-finite-type schemes without new review.
 
 **Production release disposition:** correct or temporarily hold **this formulation** before production import. Do not hold unrelated accepted definitions or rescan its already-fixed fibre dependency. Verify an exact source locator during the separate source-mathematics correction step.
 
@@ -46,7 +46,7 @@ These need eventual independently reviewed **source-formulation** correction, no
 
 **Proof the last iff statement alone is false:** take (X={x}), (Y={a,b}), both discrete, (f(x)=a). Every (Usubseteq Y) is open and every (f^{-1}(U)subseteq X) is open; thus the claimed biconditional holds for all (U), but (f) is not surjective.
 
-**Narrow correction option:** “A continuous map (f:X	o Y) is submersive if and only if **(i)** (f) is surjective and **(ii)** for each (Usubseteq Y), (U) is open in (Y) exactly when (f^{-1}(U)) is open in (X).” If a quotient-map convention is invoked, confirm it already requires surjectivity. Do not silently replace submersive with “open map.”
+**Narrow correction option:** “A continuous map `f:X→Y` is submersive if and only if **(i)** `f` is surjective and **(ii)** for every `U⊆Y`, `U` is open in `Y` exactly when `f⁻¹(U)` is open in `X`.” If a quotient-map convention is invoked, confirm it already requires surjectivity. Do not silently replace submersive with “open map.”
 
 **Production release disposition:** correct or hold this specific source formulation; preserve valid ordinary inverse-image links and other definition variants.
 
@@ -54,24 +54,21 @@ These need eventual independently reviewed **source-formulation** correction, no
 
 ### 3.1 Perfect closure: char-zero scope gap
 
-- Positive-characteristic source `form.f77b42c1adb38c56.perfect-closure`, version `1a879075ce5896d96acafcb3985438f7ac31fe91f4abb8443c8358d6f200dc76`, defines the usual (p)-power-root construction only for (p>0), and **does not** claim to cover characteristic zero.
-- `form.2a93c6a662a51d67.geometrically-normal-perfect-closure-test`, version `cc46546e3bbe29636cddb3895177f1f87106af1791dea524f036dc7c5b495e1d`, and `form.6c51aeb904a0fe74.geometric-reducedness-perfect-test`, version `cd57cb4cc434771d2c5d005e0220fd1bc2a7bd8800ba426019fdb7e2a12a95b9`, invoke (k^{\mathrm{perf}}) without explicitly restricting the base field to (p>0).
+- Positive-characteristic source `form.f77b42c1adb38c56.perfect-closure`, version `1a879075ce5896d96acafcb3985438f7ac31fe91f4abb8443c8358d6f200dc76`, defines the usual (p)-power-root construction only for `p>0`, and **does not** claim to cover characteristic zero.
+- `form.2a93c6a662a51d67.geometrically-normal-perfect-closure-test`, version `cc46546e3bbe29636cddb3895177f1f87106af1791dea524f036dc7c5b495e1d`, and `form.6c51aeb904a0fe74.geometric-reducedness-perfect-test`, version `cd57cb4cc434771d2c5d005e0220fd1bc2a7bd8800ba426019fdb7e2a12a95b9`, invoke `k^perf` without explicitly restricting the base field to `p>0`.
 
-**Mathematical interpretation:** In characteristic zero, (k) is already perfect; adopt the harmless piecewise convention (k^{\mathrm{perf}}=k) there. In positive characteristic, retain the original smallest perfect purely inseparable extension construction. An explicit char-zero **variant/qualification** resolves the interface without inserting a false positive-characteristic premise into the geometric-normality/reducedness statements.
+**Mathematical interpretation:** In characteristic zero, `k` is already perfect; adopt the harmless piecewise convention `k^perf=k` there. In positive characteristic, retain the original smallest perfect purely inseparable extension construction. An explicit char-zero **variant/qualification** resolves the interface without inserting a false positive-characteristic premise into the geometric-normality/reducedness statements.
 
 **Action:** record as a scoped definition/variant integration correction before publication. The geometric property equivalences and exact source attributions must still be independently checked; this is not blanket certification of those formulas. Do not rewrite the valid positive-characteristic version as an error.
 
 ### 3.2 Rank of a map on the zero ring: total-case interpretation
 
 - `form.41e3aea7f356bae3.rank-of-map-finite-free`, version `3f4fb3118efa02abefc7d1b7318bf9fb0947d7aa0ac024303ca6d0a0179450bf`, already appends “(and is zero when φ itself is zero)” to the maximum-nonzero-exterior-power criterion.
-- For (R=0), every map of finite-free (R)-modules is the zero homomorphism, and (igwedge^0arphi=mathrm{id}_R=0). Hence the unqualified maximum-of-nonzero-maps set is empty.
+- For `R=0`, every map of finite-free `R`-modules is the zero homomorphism, and `∧⁰φ = id_R = 0`. Hence the unqualified maximum-of-nonzero-maps set is empty.
 
-**Non-exclusionary mathematically consistent reading of the *existing* text:** give its explicit zero-map clause precedence: (operatorname{rank}(arphi)=0) when (arphi=0); otherwise (max{rge1:\bigwedge^rarphi
-e0}). In the nonzero-map case (igwedge^1arphi=arphi
-e0), so the maximum set is nonempty, and finite-freeness bounds it above. For (R
-e0) this agrees with the familiar (rge0) maximum formulation. For (R=0) it gives rank zero without falsely banning the zero ring.
+**Non-exclusionary mathematically consistent reading of the *existing* text:** give its explicit zero-map clause precedence: `rank(φ)=0` when `φ=0`; otherwise `rank(φ)=max{r≥1 : ∧^r φ ≠ 0}`. In the nonzero-map case `∧¹φ=φ≠0`, so the maximum set is nonempty, and finite-freeness bounds it above. For `R≠0` this agrees with the familiar `r≥0` maximum formulation. For `R=0` it gives rank zero without falsely banning the zero ring.
 
-**Disposition:** a documented zero-map-first convention is preferable to a global (R\ne0) assumption. Treat rank 175 as a *bounded editorial/source-convention qualification*, not evidence that the zero ring must be excluded from all Stacks-derived sources. Existing `EDGE_CASE_ASSUMPTION_LEDGER.json` keeps its one **unapplied** review candidate; nothing is promoted to the applied list here. Any eventual source text edit requires a version-guarded reviewed transaction and corresponding evidence.
+**Disposition:** a documented zero-map-first convention is preferable to a global `R≠0` assumption. Treat rank 175 as a *bounded editorial/source-convention qualification*, not evidence that the zero ring must be excluded from all Stacks-derived sources. Existing `EDGE_CASE_ASSUMPTION_LEDGER.json` keeps its one **unapplied** review candidate; nothing is promoted to the applied list here. Any eventual source text edit requires a version-guarded reviewed transaction and corresponding evidence.
 
 ### 3.3 Topological ring/module: continuity of additive inverse
 
@@ -95,7 +92,7 @@ Both require continuous addition and multiplication/action but omit continuous a
 ### High-value bounded work before the first-generation research transition
 
 1. Mathematically review and document a **non-applying corrective source-wording plan** for quasi-finiteness and submersivity; propose exact source revisions only through a separately authorized provenance-preserving source revision workflow.
-2. Decide explicitly how the characteristic-zero (k^{\mathrm{perf}}) convention is represented as a distinct scope/variant. Do not narrow generic geometric statements by mistake.
+2. Decide explicitly how the characteristic-zero `k^perf` convention is represented as a distinct scope/variant. Do not narrow generic geometric statements by mistake.
 3. Decide topological ring/module inverse-continuity source typing (nonunital allowed vs supported unital variant). Preserve both if genuinely sourced.
 4. Use the new review-only context metadata machinery (draft PR #15) to record typed generic integrability and clopen interpretations without replacing source or alias history. The six historic occurrences remain **unapplied**.
 5. Keep the three partial provider convention questions (133, 166, 175) and relevant other source/citation limitations specifically documented; distinguish a proved counterexample from a provider wording uncertainty. A source issue can be release-held **per formulation** without blocking other eligible meanings.
