@@ -58,3 +58,18 @@ The TSV is a **worklist, not an import of 418 mathematically verified terms**. I
 **Do not do more staging, graph consolidation, infrastructure tuning or source-wide verification merely because they are next on the old checkpoint.** The next useful activity after this salvage handoff is **directly making researched Wave 2 mathematical content render in the existing independent prototype**.
 
 This salvage operation created only the normalized research worklist and this assessment on the existing **draft research branch**, without changing the independent dataset on `main`, the protected production mathDef content, or Wave 1. Do not merge PR #19 in its present state merely because the salvage assessment was completed.
+
+
+## October 26 cleanup implementation — old workflow retired from the working tree
+
+This section supersedes any earlier statement in this assessment suggesting the dependency graph should be retained as an active in-tree reference or that graph resolution remains an outstanding workflow.
+
+The cleanup on [PR #20](https://github.com/Zengez/mathDef/pull/20) removes the rejected `dependency_graph/` subtree, `generation_staging/`, graph engine and gate actions, 178 obsolete automated workflows, and the former agent/hand-off instructions directing assistants back into source-free consolidation. Git history still contains the originals, but **they are no longer prerequisites or active instructions**.
+
+The immediately useful mathematical artifacts are retained in the repository:
+- [418-entry tentative worklist](CANDIDATE_WORKLIST_418.tsv) with 841 original occurrences and source pointers;
+- [16 full source-evidence JSON research batches](source_evidence/) (the original source-research detail, as source leads and qualified evidence);
+- [16 previously reviewed mathematical dispositions](PREVIOUSLY_REVIEWED_16.json), stripped of gate transaction mechanics;
+- the unchanged independently researched Wave 2 `records/`, provisional `population/records/`, earlier local `wave2/` mathematical notes, source evidence, original frozen Wave1, and functioning preview.
+
+**The single current execution instruction is [WAVE2_SIMPLE_WORKFLOW.md](../../WAVE2_SIMPLE_WORKFLOW.md) and the root [AGENTS.md](../../../AGENTS.md).** Work on independently researched definitions and links directly; do not resurrect former dependency graph machinery from Git history.
