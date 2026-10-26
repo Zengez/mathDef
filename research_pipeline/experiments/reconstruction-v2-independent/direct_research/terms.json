@@ -3009,6 +3009,1463 @@
       "assumptions": [
         "Context-specific and edge-case restrictions are given in the definition; unchecked source leads remain explicitly provisional."
       ]
+    },
+    {
+      "id": "meaning.wave2.direct.5499c18bddb8831536d6",
+      "candidate_id": "missing.5499c18bddb8831536d6",
+      "term": "isomorphism of R-algebras",
+      "context": "Commutative algebra · unital isomorphism respecting the base ring",
+      "aliases": [
+        "R-algebra isomorphism"
+      ],
+      "definition": "For unital commutative R-algebras (A,ι_A) and (B,ι_B), an R-algebra isomorphism f:A→B is a bijective unital ring homomorphism with f∘ι_A=ι_B. Its inverse is automatically an R-algebra map. In particular, a surjective R-algebra map A→B identifies B with A/ker(f).",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.ring-map-unital",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.50fc57153b93520a247a",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 34
+    },
+    {
+      "id": "meaning.wave2.direct.826fb5c503bdaf25ce7f",
+      "candidate_id": "missing.826fb5c503bdaf25ce7f",
+      "term": "integrable random variable",
+      "context": "Probability · absolute integrability",
+      "aliases": [
+        "integrable random process at each time",
+        "integrable stochastic variable"
+      ],
+      "definition": "A real-valued measurable random variable X on a probability space (Ω,𝓕,P) is integrable if E[|X|]=∫_Ω|X|dP is finite. A process (X_t) is pointwise integrable if this holds separately for each t; it need not satisfy sup_t E[|X_t|]<∞.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://web.stanford.edu/~montanar/TEACHING/Stat310B/NOTES/amir_notes.pdf",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.prob90.measurable-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 36
+    },
+    {
+      "id": "meaning.wave2.direct.5a53cd2d53ef5891adcb",
+      "candidate_id": "missing.5a53cd2d53ef5891adcb",
+      "term": "natural transformation over a base category",
+      "context": "Category theory · vertical natural transformation between functors over C",
+      "aliases": [
+        "natural transformation lying over identities"
+      ],
+      "definition": "Let p:E→C and p′:E′→C be functors and let H,K:E→E′ satisfy p′∘H=p=p′∘K. A natural transformation α:H⇒K is over C if p′(α_x)=id_{p(x)} for every x∈E. In addition to naturality, each component is thus a morphism lying over an identity of C.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/04S9",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.a8c70a2a13320680c54c",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.category-functor",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 45
+    },
+    {
+      "id": "meaning.wave2.direct.80fe89921faf5393a2c5",
+      "candidate_id": "missing.80fe89921faf5393a2c5",
+      "term": "real sequence",
+      "context": "Analysis · indexed sequence of real numbers",
+      "aliases": [
+        "coefficient sequence of real numbers"
+      ],
+      "definition": "A real sequence (a_n)_{n≥0} is a function a:ℕ₀→ℝ, with a_n=a(n). Being a sequence alone implies no boundedness, monotonicity, convergence, or summability.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.mapping-element-assignment",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 48
+    },
+    {
+      "id": "meaning.wave2.direct.9b77bf68dde01674ecf2",
+      "candidate_id": "missing.9b77bf68dde01674ecf2",
+      "term": "lift of an algebra homomorphism",
+      "context": "Commutative algebra · lifting through a surjective quotient map",
+      "aliases": [
+        "lift S→A/I to S→A",
+        "algebra-map lifting"
+      ],
+      "definition": "Let q:A→A/I be the canonical quotient of an R-algebra and let f:S→A/I be an R-algebra homomorphism. A lift of f through q is an R-algebra homomorphism g:S→A satisfying q∘g=f. A lift need not exist and, when it exists, need not be unique.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/00UM",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.50fc57153b93520a247a",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.ring-map-unital",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 49
+    },
+    {
+      "id": "meaning.wave2.direct.b3329d7bb30dc66927f6",
+      "candidate_id": "missing.b3329d7bb30dc66927f6",
+      "term": "cover by standard opens of an affine spectrum",
+      "context": "Algebraic geometry · principal-open covering criterion",
+      "aliases": [
+        "principal-open cover of Spec(R)",
+        "standard open cover"
+      ],
+      "definition": "For a commutative unital ring R and family (f_i)_{i∈I}⊆R, the principal opens D(f_i) cover Spec(R) if ⋃_{i∈I}D(f_i)=Spec(R). This is equivalent to (f_i:i∈I)=R, hence to some finite R-linear combination of the f_i equaling 1_R; consequently a finite subfamily covers.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/00DZ",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.21c2ca138324d040.spectrum-ring",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.8e961cb57c3f60513be8",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.two-sided-ideal",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 53
+    },
+    {
+      "id": "meaning.wave2.direct.bf9f155d15473da985d2",
+      "candidate_id": "missing.bf9f155d15473da985d2",
+      "term": "morphism of sheaves of rings",
+      "context": "Algebraic geometry · morphism 𝒪_Y→f_*𝒪_X",
+      "aliases": [
+        "sheaf ring homomorphism along a map"
+      ],
+      "definition": "For a continuous map f:X→Y and sheaves of unital rings 𝒪_X and 𝒪_Y, a morphism of sheaves of rings 𝒪_Y→f_*𝒪_X assigns to every open V⊆Y a unital ring map 𝒪_Y(V)→𝒪_X(f⁻¹V), compatible with restrictions. For morphisms of locally ringed spaces, the induced stalk maps are additionally local.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/01HA",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.b86257b3cce62907e97e",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.ring-map-unital",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 55
+    },
+    {
+      "id": "meaning.wave2.direct.de1b7a5e3717e67b42a7",
+      "candidate_id": "missing.de1b7a5e3717e67b42a7",
+      "term": "precomposition",
+      "context": "Category theory · composition on a Hom-collection",
+      "aliases": [
+        "precomposition map"
+      ],
+      "definition": "In a category C, let α:T′→T and h:T→X. Precomposition of h by α is h∘α:T′→X. Holding α fixed defines a function Hom_C(T,X)→Hom_C(T′,X), assuming the Hom-collections are sets (or using a suitable class-level framework).",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://proofwiki.org/wiki/Definition%3AHom_Functor",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 58
+    },
+    {
+      "id": "meaning.wave2.direct.de3c256ab9b24566d9a4",
+      "candidate_id": "missing.de3c256ab9b24566d9a4",
+      "term": "almost-sure equality",
+      "context": "Probability · equality outside an event of probability zero",
+      "aliases": [
+        "equal almost surely",
+        "a.s. equality"
+      ],
+      "definition": "Two measurable random variables X and Y on a common probability space are equal almost surely, written X=Y a.s., if P({ω∈Ω:X(ω)=Y(ω)})=1. For a sequence indexed by n, asserting X_n=Y_n a.s. for each n permits a common full-probability event because the intersection is countable.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://archive.nptel.ac.in/content/storage2/courses/111101004/modules/lec6/6.1.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.prob90.measurable-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 59
+    },
+    {
+      "id": "meaning.wave2.direct.c89d1fba0e09e7e6fb3b",
+      "candidate_id": "missing.c89d1fba0e09e7e6fb3b",
+      "term": "extended nonnegative real line",
+      "context": "Measure theory · nonnegative reals augmented by infinity",
+      "aliases": [
+        "extended nonnegative real values"
+      ],
+      "definition": "The extended nonnegative real line [0,∞] is the ordered set [0,∞)∪{∞}, where ∞ is a new element larger than every finite real number. Addition is extended by x+∞=∞ for x∈[0,∞], and measure-theoretic multiplication often uses 0·∞=0 as an explicit convention.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://web.stanford.edu/~montanar/TEACHING/Stat310B/NOTES/amir_notes.pdf",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.22a110eb8988efe59f29",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 63
+    },
+    {
+      "id": "meaning.wave2.direct.0573d17c9b55504f064f",
+      "candidate_id": "missing.0573d17c9b55504f064f",
+      "term": "countably generated module",
+      "context": "Module theory · finite or countable generating family",
+      "aliases": [
+        "countable generating set of a module"
+      ],
+      "definition": "A left R-module M is countably generated if there exists a finite or countably infinite subset S⊆M such that every m∈M is a finite R-linear combination of elements of S. A generating set may be empty only when M is the zero module.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation76.submodule",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 64
+    },
+    {
+      "id": "meaning.wave2.direct.11276cd4f561922a8529",
+      "candidate_id": "missing.11276cd4f561922a8529",
+      "term": "transitive binary relation",
+      "context": "Set theory · transitivity of a relation on one set",
+      "aliases": [
+        "transitivity of a relation"
+      ],
+      "definition": "A binary relation R⊆X×X is transitive if for all x,y,z∈X, xRy and yRz together imply xRz. Transitivity does not imply reflexivity or symmetry.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Transition_to_Higher_Mathematics_%28Dumas_and_McCarthy%29/01%3A_New_Page/1.02%3A_New_Page",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.set63.set-of-equivalence-classes",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 66
+    },
+    {
+      "id": "meaning.wave2.direct.19205fdc52a9c5cc6eb4",
+      "candidate_id": "missing.19205fdc52a9c5cc6eb4",
+      "term": "positive weight function",
+      "context": "Discrete measure and approximation · strictly positive indexed weights",
+      "aliases": [
+        "strictly positive weights"
+      ],
+      "definition": "For a set X, a strictly positive real weight function is a mapping w:X→(0,∞). Its values w_x=w(x) are positive; no normalization ∑_{x∈X}w_x=1, finite mass, or summability assumption follows merely from positivity.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://www.mathematik.uni-kassel.de/~koepf/Diplome/PatrickNjionou-Dissertation.pdf",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.mapping-element-assignment",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 67
+    },
+    {
+      "id": "meaning.wave2.direct.3b722d1bc0df2b9a4a1a",
+      "candidate_id": "missing.3b722d1bc0df2b9a4a1a",
+      "term": "neighborhood of a point",
+      "context": "General topology · subset containing an open neighborhood",
+      "aliases": [
+        "topological neighborhood",
+        "neighbourhood of a point"
+      ],
+      "definition": "A subset N of a topological space X is a neighborhood of x∈X if there exists an open set U such that x∈U⊆N. Thus a neighborhood need not itself be open; an open neighborhood is an open set containing x.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://ncatlab.org/nlab/show/neighborhood",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.2ca12da5425144816e3c",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 73
+    },
+    {
+      "id": "meaning.wave2.direct.4336d7e825e3fd33578e",
+      "candidate_id": "missing.4336d7e825e3fd33578e",
+      "term": "restriction of scalars",
+      "context": "Module theory · module structure induced by a ring homomorphism",
+      "aliases": [
+        "change of scalars by restriction",
+        "R-module structure induced by R→S"
+      ],
+      "definition": "Given a unital ring homomorphism φ:R→S and a left S-module M, restriction of scalars makes M a left R-module via r·m=φ(r)m. The underlying abelian group is unchanged. In particular S itself is an R-module by r·s=φ(r)s.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/00CM",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.ring-map-unital",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 75
+    },
+    {
+      "id": "meaning.wave2.direct.4bd32ffdc3c3bd475c93",
+      "candidate_id": "missing.4bd32ffdc3c3bd475c93",
+      "term": "tensor-product comparison map for a module product",
+      "context": "Commutative algebra · canonical map M⊗∏Q_i→∏(M⊗Q_i)",
+      "aliases": [
+        "canonical tensor-product-to-product comparison"
+      ],
+      "definition": "For a commutative ring R, an R-module M, and an indexed family of R-modules (Q_i)_{i∈I}, the canonical R-linear map θ:M⊗_R(∏_iQ_i)→∏_i(M⊗_RQ_i) sends each pure tensor m⊗(q_i)_i to (m⊗q_i)_i. It need not be injective or surjective without further assumptions on M.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/059H",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.74e36635b2776fe8.tensor-product-modules",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.a2b8dbc04d465756c102",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 76
+    },
+    {
+      "id": "meaning.wave2.direct.4da14726d0530cefe078",
+      "candidate_id": "missing.4da14726d0530cefe078",
+      "term": "strictly positive convex combination",
+      "context": "Convex geometry · convex combination with every displayed coefficient positive",
+      "aliases": [
+        "positive-coefficient convex combination"
+      ],
+      "definition": "For n≥1 points x_1,…,x_n of a real vector space, a strictly positive convex combination is ∑_{i=1}^n λ_ix_i where each λ_i>0 and ∑_iλ_i=1. Ordinary convex combinations permit zero coefficients, and repeating the same point does not alter positivity of the listed coefficients.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://mathworld.wolfram.com/AffineCombination.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.bridge136.convex-real",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.b64bc15f46fe0245.vector-space-over-field",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 77
+    },
+    {
+      "id": "meaning.wave2.direct.5201cd2732d7b14502ad",
+      "candidate_id": "missing.5201cd2732d7b14502ad",
+      "term": "zero morphism",
+      "context": "Preadditive categories · additive identity in a Hom-group",
+      "aliases": [
+        "zero arrow",
+        "zero map in a preadditive category"
+      ],
+      "definition": "In a preadditive category C, every Hom_C(X,Y) is an abelian group. Its additive identity is the zero morphism 0_{X,Y}:X→Y. Composition is bilinear, so composing a zero morphism with any compatible morphism yields a zero morphism.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/09SE",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation15.preadditive-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 78
+    },
+    {
+      "id": "meaning.wave2.direct.53a329590803a0850dc6",
+      "candidate_id": "missing.53a329590803a0850dc6",
+      "term": "directional difference quotient",
+      "context": "Multivariable calculus · difference quotient in a direction",
+      "aliases": [
+        "difference quotient along a vector"
+      ],
+      "definition": "For f:U→ℝ^m with U⊆ℝ^n open, a∈U, and direction v∈ℝ^n, the directional difference quotient at a is [f(a+tv)−f(a)]/t for nonzero real t with a+tv∈U. Its limit as t→0, if it exists, defines the directional derivative in direction v.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://mathbooks.unl.edu/MultiVarCalc/S-10-6-Directional-Derivative.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.mapping-element-assignment",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.b64bc15f46fe0245.vector-space-over-field",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 79
+    },
+    {
+      "id": "meaning.wave2.direct.551582b06af996cd7836",
+      "candidate_id": "missing.551582b06af996cd7836",
+      "term": "section of a sheaf over an open set",
+      "context": "Sheaf theory · sections and restrictions",
+      "aliases": [
+        "sections 𝒪_X(U)",
+        "sheaf section"
+      ],
+      "definition": "For a sheaf 𝓕 on a topological space X and an open U⊆X, an element s∈𝓕(U) is a section of 𝓕 over U. For V⊆U open, its restriction is s|_V∈𝓕(V), and sheaf restrictions compose compatibly. If 𝓕=𝒪_X is a sheaf of rings, 𝒪_X(U) is a ring of sections.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/01HA",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 80
+    },
+    {
+      "id": "meaning.wave2.direct.5896e9304ebced2e5ea7",
+      "candidate_id": "missing.5896e9304ebced2e5ea7",
+      "term": "indexed Cartesian product",
+      "context": "Set theory · families selecting one element from each indexed set",
+      "aliases": [
+        "product of an indexed family of sets"
+      ],
+      "definition": "For sets (X_i)_{i∈I}, the indexed Cartesian product ∏_{i∈I}X_i is the set of functions x with domain I such that x(i)∈X_i for all i∈I. For I=∅ the product is the singleton containing the empty function. If infinitely many X_i are nonempty, the assertion that the product is nonempty can depend on the axiom of choice.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://en.wikipedia.org/wiki/Cartesian_product",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.mapping-element-assignment",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 81
+    },
+    {
+      "id": "meaning.wave2.direct.60b81b3c7a42f7c2b9ee",
+      "candidate_id": "missing.60b81b3c7a42f7c2b9ee",
+      "term": "sigma-algebra generated by a family",
+      "context": "Measure theory · smallest sigma-algebra containing specified subsets",
+      "aliases": [
+        "generated σ-algebra",
+        "sigma algebra generated by subsets"
+      ],
+      "definition": "For a set X and a family 𝒜⊆𝒫(X), the sigma-algebra σ(𝒜) generated by 𝒜 is the intersection of all sigma-algebras on X containing 𝒜. If τ is a topology on X, the Borel sigma-algebra is σ(τ).",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://mathworld.wolfram.com/Sigma-Algebra.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.prob90.measurable-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.alternative39.borel-sigma-algebra-topological",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 83
+    },
+    {
+      "id": "meaning.wave2.direct.631a3a4cfb8cabd25148",
+      "candidate_id": "missing.631a3a4cfb8cabd25148",
+      "term": "locally generated sheaf of ideals",
+      "context": "Scheme theory · ideal subsheaf locally generated by sections",
+      "aliases": [
+        "locally section-generated ideal sheaf"
+      ],
+      "definition": "Let (X,𝒪_X) be a ringed space and 𝓘⊆𝒪_X a sheaf of ideals. The sheaf 𝓘 is locally generated by sections if each x∈X has an open neighborhood U and sections s_j∈𝓘(U), indexed by some set J, whose germs generate 𝓘_y as an ideal in 𝒪_{X,y} for every y∈U. No finite-generation condition is implied unless J can be chosen finite.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/01IN",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.two-sided-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.2ca12da5425144816e3c",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 85
+    },
+    {
+      "id": "meaning.wave2.direct.63d9809ad2eb842deb92",
+      "candidate_id": "missing.63d9809ad2eb842deb92",
+      "term": "invertible 2-morphism",
+      "context": "2-category theory · vertical inverse in a hom-category",
+      "aliases": [
+        "2-isomorphism between 1-morphisms"
+      ],
+      "definition": "For parallel 1-morphisms f,g:X→Y in a strict 2-category, a 2-morphism α:f⇒g is invertible if there exists β:g⇒f with β∘_vα=id_f and α∘_vβ=id_g, where ∘_v denotes vertical composition. This is isomorphism in the hom-category C(X,Y), not necessarily an equivalence of X and Y.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/003G",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.15bb96cb26d587868bbe",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 86
+    },
+    {
+      "id": "meaning.wave2.direct.65d334caa51c845ea335",
+      "candidate_id": "missing.65d334caa51c845ea335",
+      "term": "continuous-time filtration",
+      "context": "Probability · increasing family of sigma-algebras indexed by time",
+      "aliases": [
+        "filtration (𝓕_t)",
+        "increasing information filtration"
+      ],
+      "definition": "On (Ω,𝓕,P), a continuous-time filtration (𝓕_t)_{t≥0} consists of sub-sigma-algebras 𝓕_t⊆𝓕 with 𝓕_s⊆𝓕_t whenever 0≤s≤t. Right-continuity and completion are additional properties and are not part of this bare definition.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://mathworld.wolfram.com/Filtration.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.prob90.measurable-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.found85.discrete-filtration",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 87
+    },
+    {
+      "id": "meaning.wave2.direct.6bb87052ec8a81464ddd",
+      "candidate_id": "missing.6bb87052ec8a81464ddd",
+      "term": "isomorphism class of an R-module",
+      "context": "Module theory · equivalence under R-linear isomorphism",
+      "aliases": [
+        "module isomorphism class"
+      ],
+      "definition": "Fix a ring R and a chosen set-sized collection (or universe) of left R-modules. The isomorphism class [M] of a module M consists of all modules in that collection isomorphic to M by a bijective R-linear map. Without a size restriction, the collection of all isomorphic copies may be a proper class.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://arxiv.org/abs/1404.7264",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.15bb96cb26d587868bbe",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 88
+    },
+    {
+      "id": "meaning.wave2.direct.6e8236437269027131a5",
+      "candidate_id": "missing.6e8236437269027131a5",
+      "term": "minimal prime ideal",
+      "context": "Commutative algebra · minimal prime in Spec(R)",
+      "aliases": [
+        "minimal prime of a ring"
+      ],
+      "definition": "A prime ideal 𝔭 of a commutative ring R is a minimal prime if there is no prime ideal 𝔮 satisfying 𝔮⊊𝔭. Minimality is among the prime ideals ordered by inclusion; a minimal prime need not be the unique smallest prime.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/00DY",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.commutative-prime-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.21c2ca138324d040.spectrum-ring",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 90
+    },
+    {
+      "id": "meaning.wave2.direct.7176b5fd74d3e3e5dc95",
+      "candidate_id": "missing.7176b5fd74d3e3e5dc95",
+      "term": "reflexive binary relation",
+      "context": "Set theory · relation containing every diagonal pair",
+      "aliases": [
+        "reflexivity of a relation"
+      ],
+      "definition": "A binary relation R⊆X×X is reflexive if (x,x)∈R for every x∈X. On X=∅ this condition holds vacuously. Reflexivity alone does not imply symmetry or transitivity.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://mathworld.wolfram.com/ReflexiveRelation.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.set63.set-of-equivalence-classes",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 91
+    },
+    {
+      "id": "meaning.wave2.direct.718fa3e492d42c0ced8e",
+      "candidate_id": "missing.718fa3e492d42c0ced8e",
+      "term": "natural isomorphism",
+      "context": "Category theory · natural transformation with invertible components",
+      "aliases": [
+        "naturally isomorphic functors",
+        "invertible natural transformation"
+      ],
+      "definition": "A natural transformation η:F⇒G between functors F,G:C→D is a natural isomorphism if each component η_X:F(X)→G(X) is an isomorphism in D. Equivalently, η admits a natural transformation inverse η⁻¹:G⇒F.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.a8c70a2a13320680c54c",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.15bb96cb26d587868bbe",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.category-functor",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 92
+    },
+    {
+      "id": "meaning.wave2.direct.72b9f9bc4ac0e952e202",
+      "candidate_id": "missing.72b9f9bc4ac0e952e202",
+      "term": "internal direct sum decomposition",
+      "context": "Module theory · submodules with unique finite decomposition",
+      "aliases": [
+        "internal direct sum",
+        "direct sum decomposition of module"
+      ],
+      "definition": "For submodules (M_i)_{i∈I} of an R-module M, the statement M=⊕_{i∈I}M_i means every m∈M has a unique expression as a finite sum m=∑_i m_i, with m_i∈M_i. In particular the submodules collectively generate M and the sum is direct.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/00JL",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation76.submodule",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.134e1c9f45dd933fdc36",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 94
+    },
+    {
+      "id": "meaning.wave2.direct.7413d0506040cdeb60af",
+      "candidate_id": "missing.7413d0506040cdeb60af",
+      "term": "stalk of a sheaf",
+      "context": "Sheaf theory · germs at a point",
+      "aliases": [
+        "stalk 𝒪_{X,x}",
+        "sheaf germ at a point"
+      ],
+      "definition": "For a sheaf 𝓕 on a topological space X and x∈X, its stalk 𝓕_x is the colimit of 𝓕(U) over open neighborhoods U of x under restrictions. Its elements are germs [(U,s)] of sections near x, where (U,s) and (V,t) represent the same germ if s and t agree on some neighborhood of x contained in U∩V.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/0078",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.2ca12da5425144816e3c",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.551582b06af996cd7836",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 95
+    },
+    {
+      "id": "meaning.wave2.direct.77eacb7314c513d85c72",
+      "candidate_id": "missing.77eacb7314c513d85c72",
+      "term": "strict isomorphism of categories over a base",
+      "context": "Category theory · strict inverse over a specified category",
+      "aliases": [
+        "isomorphism over a base category"
+      ],
+      "definition": "Let p:E→C and p′:E′→C be functors. A strict isomorphism over C is a functor H:E→E′ such that p′H=p and with a strictly inverse functor H⁻¹:E′→E satisfying HH⁻¹=id_{E′} and H⁻¹H=id_E (hence pH⁻¹=p′). It is stronger than an equivalence of categories over C.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/02XJ",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.category-functor",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.15bb96cb26d587868bbe",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 96
+    },
+    {
+      "id": "meaning.wave2.direct.85c65a55076fda1a7e63",
+      "candidate_id": "missing.85c65a55076fda1a7e63",
+      "term": "multiplication by a field element",
+      "context": "Linear algebra · scalar multiplication map on a field extension",
+      "aliases": [
+        "linear map x↦αx"
+      ],
+      "definition": "Let L/K be a field extension and α∈L. Multiplication by α defines a K-linear endomorphism m_α:L→L by m_α(x)=αx. When L/K is finite, its determinant is the field norm N_{L/K}(α); without finite dimensionality this determinant is not generally defined.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/0BIE",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.field-commutative-unital",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.b64bc15f46fe0245.vector-space-over-field",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 97
+    },
+    {
+      "id": "meaning.wave2.direct.8d23b7ba80f9f5e74420",
+      "candidate_id": "missing.8d23b7ba80f9f5e74420",
+      "term": "open interval of real numbers",
+      "context": "Real analysis · interval between endpoints, possibly infinite",
+      "aliases": [
+        "open real interval",
+        "(a,b) in ℝ"
+      ],
+      "definition": "For extended-real endpoints −∞≤a<b≤+∞, the open interval (a,b) is the set {x∈ℝ:a<x<b}; infinite endpoints impose no finite upper or lower bound. With a<b it is nonempty, and (−∞,+∞)=ℝ. An empty interval may arise if the endpoint inequality is dropped, but is excluded by this stated convention.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://mathworld.wolfram.com/Interval.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.22a110eb8988efe59f29",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 98
+    },
+    {
+      "id": "meaning.wave2.direct.92c051047df5e5a34ba3",
+      "candidate_id": "missing.92c051047df5e5a34ba3",
+      "term": "rational function field",
+      "context": "Field theory · fractions of a polynomial ring in indeterminates",
+      "aliases": [
+        "field of rational functions",
+        "rational functions in arbitrary indeterminates"
+      ],
+      "definition": "For a field k and a set I of algebraically independent formal indeterminates (X_i)_{i∈I}, the rational function field k(X_i:i∈I) is the fraction field of the integral domain k[X_i:i∈I]. Every element can be represented by f/g with f,g polynomials and g≠0, and therefore depends on finitely many indeterminates.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/09FF",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.field-commutative-unital",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 99
+    },
+    {
+      "id": "meaning.wave2.direct.9583e5aa27671c66640e",
+      "candidate_id": "missing.9583e5aa27671c66640e",
+      "term": "fibre category over a base object",
+      "context": "Category theory · fibre of a functor over an object",
+      "aliases": [
+        "fiber category",
+        "fibre category E_U"
+      ],
+      "definition": "For a functor p:E→C and an object U of C, the fibre category E_U has as objects those e∈E with p(e)=U, and as morphisms e→e′ those arrows h of E with p(h)=id_U. Identities and composition are inherited from E.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/02XJ",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.category-functor",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 100
+    },
+    {
+      "id": "meaning.wave2.direct.96df95f71d6a919f6c57",
+      "candidate_id": "missing.96df95f71d6a919f6c57",
+      "term": "relative diagonal of a scheme morphism",
+      "context": "Algebraic geometry · diagonal X→X×_S X",
+      "aliases": [
+        "relative diagonal",
+        "scheme diagonal morphism"
+      ],
+      "definition": "For a morphism of schemes f:X→S, the relative diagonal Δ_{X/S}:X→X×_S X is the unique morphism with both compositions with the two projections equal to id_X. It is obtained from the universal property of the fibre product, and need not be a closed immersion unless the morphism is separated.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/01KH",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.c31e56dc023fcbcc.affine-scheme-fibre-product",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.4c7d59ba7058613b.affine-scheme",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 101
+    },
+    {
+      "id": "meaning.wave2.direct.a42c73c7effdb6ac0764",
+      "candidate_id": "missing.a42c73c7effdb6ac0764",
+      "term": "formal derivative of a polynomial",
+      "context": "Algebra · polynomial derivation without limits",
+      "aliases": [
+        "polynomial formal derivative"
+      ],
+      "definition": "For a commutative ring R and polynomial f(X)=∑_{i=0}^n a_iX^i∈R[X], its formal derivative is f′(X)=∑_{i=1}^n (i·1_R)a_iX^{i−1}. The operation is R-linear and satisfies (fg)′=f′g+fg′; it requires no analytic notion of limit.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://mathworld.wolfram.com/Polynomial.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 105
+    },
+    {
+      "id": "meaning.wave2.direct.a60aa43eed2b99b5d184",
+      "candidate_id": "missing.a60aa43eed2b99b5d184",
+      "term": "zero object of a category",
+      "context": "Category theory · both initial and terminal object",
+      "aliases": [
+        "zero object"
+      ],
+      "definition": "An object 0 of a category C is a zero object if it is both initial and terminal: for every X∈C there is exactly one arrow 0→X and exactly one arrow X→0. When a zero object exists, the composites X→0→Y define zero morphisms; the object is unique up to unique isomorphism.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/0100",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.15bb96cb26d587868bbe",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 106
+    },
+    {
+      "id": "meaning.wave2.direct.a66bc0c6846ac92c6394",
+      "candidate_id": "missing.a66bc0c6846ac92c6394",
+      "term": "quasi-isomorphism of chain complexes",
+      "context": "Homological algebra · chain map inducing all homology isomorphisms",
+      "aliases": [
+        "quasi-isomorphic chain complexes",
+        "quasi-isomorphism"
+      ],
+      "definition": "A chain map f:C_•→D_• of chain complexes of R-modules is a quasi-isomorphism if the induced homology map H_n(f):H_n(C_•)→H_n(D_•) is an isomorphism for every integer n. A quasi-isomorphism need not be an isomorphism of complexes in each degree.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/010Z",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5d07d9e2d8a2e83a53a1",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.15bb96cb26d587868bbe",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 107
+    },
+    {
+      "id": "meaning.wave2.direct.ad3eb2f701d26ae8c206",
+      "candidate_id": "missing.ad3eb2f701d26ae8c206",
+      "term": "finite absolute moment",
+      "context": "Probability · integrability of the kth absolute power",
+      "aliases": [
+        "absolute kth moment",
+        "integrable absolute power"
+      ],
+      "definition": "For a real-valued random variable X and real k>0, its kth absolute moment is E[|X|^k]=∫|X|^k dP, valued in [0,∞]. It is finite exactly when the absolute power is integrable. For k=0 the usual convention gives E[1]=1 on a probability space, including at X=0 by defining |X|⁰=1.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://mathworld.wolfram.com/Moment.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.826fb5c503bdaf25ce7f",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.c89d1fba0e09e7e6fb3b",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 110
+    },
+    {
+      "id": "meaning.wave2.direct.ad87c8a94e71b0501e7a",
+      "candidate_id": "missing.ad87c8a94e71b0501e7a",
+      "term": "slice category",
+      "context": "Category theory · objects mapping to a fixed base object",
+      "aliases": [
+        "category over U",
+        "overcategory C/U"
+      ],
+      "definition": "For a category C and object U∈C, the slice category C/U has objects arrows f:X→U and morphisms from f:X→U to g:Y→U given by arrows h:X→Y satisfying g∘h=f. Identities and composition are induced from C. The object id_U:U→U is terminal in C/U.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 111
+    },
+    {
+      "id": "meaning.wave2.direct.b458f6a3824dab19725b",
+      "candidate_id": "missing.b458f6a3824dab19725b",
+      "term": "measurable mapping",
+      "context": "Measure theory · inverse images preserve measurable sets",
+      "aliases": [
+        "(Σ,Τ)-measurable map",
+        "measurable function between measurable spaces"
+      ],
+      "definition": "For measurable spaces (X,Σ) and (Y,Τ), a map f:X→Y is (Σ,Τ)-measurable if f⁻¹[B]∈Σ for every B∈Τ. When Y carries a topology and Τ is its Borel sigma-algebra, this is Borel measurability with respect to that topology.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stats.libretexts.org/Bookshelves/Probability_Theory/Probability_Mathematical_Statistics_and_Stochastic_Processes_%28Siegrist%29/01%3A_Foundations/1.11%3A_Measurable_Spaces",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.prob90.measurable-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.b86257b3cce62907e97e",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.alternative39.borel-sigma-algebra-topological",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 113
+    },
+    {
+      "id": "meaning.wave2.direct.bb72b275ee79b161d9b8",
+      "candidate_id": "missing.bb72b275ee79b161d9b8",
+      "term": "nilpotent element of a ring",
+      "context": "Ring theory · element with a zero power",
+      "aliases": [
+        "nilpotent ring element"
+      ],
+      "definition": "An element x of an associative ring R is nilpotent if x^n=0 for some positive integer n. The exponent may depend on x. In a nonzero ring the multiplicative identity 1 is not nilpotent; in the zero ring it is, because 1=0.",
+      "sources": [
+        {
+          "title": "Source locator retained from prior independent mathematical candidate research",
+          "url": "https://stacks.math.columbia.edu/tag/00AQ",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Lead preserved from preliminary source work; not asserted to be a newly checked exact passage or mathematically certified reference."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.003cb1cc70cf5a2c.nilpotent-ideal",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "assumptions": [
+        "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
+      ],
+      "original_priority": 115
     }
   ]
 }
