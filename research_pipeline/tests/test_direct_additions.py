@@ -4,7 +4,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from research_pipeline.adapters.mathdef.direct_additions import add_direct_research
+from research_pipeline.adapters.mathdef.direct_additions import (
+    add_direct_research, add_incoming_direct_links,
+)
 from research_pipeline.engine.core import PipelineError
 from research_pipeline.ui.renderer import to_index
 
@@ -62,6 +64,42 @@ class DirectResearchTests(unittest.TestCase):
         with self.assertRaisesRegex(PipelineError, "Missing source"):
             add_direct_research(self.groups, self.links, self.file)
 
+
+    def test_curated_incoming_link_connects_screened_formulation_to_new_meaning(self):
+        self.write([self.one])
+        add_direct_research(self.groups, self.links, self.file)
+        incoming = Path(self.temp.name) / "incoming_links.json"
+        incoming.write_text(json.dumps({"schema_version": 1, "links": [{
+            "from_formulation": "form.existing",
+            "target_meaning": "meaning.direct.example",
+            "relation_type": "definition_uses",
+            "source_phrase": "Already known",
+        }]}), encoding="utf-8")
+        self.assertEqual(add_incoming_direct_links(self.groups, self.links, incoming), 1)
+        self.assertEqual(self.links[-1]["target_meaning"], "meaning.direct.example")
+        self.assertEqual(self.links[-1]["from_formulation"], "form.existing")
+        self.assertEqual(self.links[-1]["review_state"], "screened")
+
+    def test_incoming_link_requires_phrase_and_existing_screened_endpoint(self):
+        self.write([self.one])
+        add_direct_research(self.groups, self.links, self.file)
+        incoming = Path(self.temp.name) / "incoming_links.json"
+        proposal = {
+            "from_formulation": "form.existing",
+            "target_meaning": "meaning.direct.example",
+            "relation_type": "definition_uses",
+            "source_phrase": "Not in the original statement",
+        }
+        incoming.write_text(json.dumps({"schema_version": 1, "links": [proposal]}),
+                            encoding="utf-8")
+        with self.assertRaisesRegex(PipelineError, "phrase is not present"):
+            add_incoming_direct_links(self.groups, self.links, incoming)
+        proposal["source_phrase"] = "Already known"
+        proposal["target_meaning"] = "meaning.does-not-exist"
+        incoming.write_text(json.dumps({"schema_version": 1, "links": [proposal]}),
+                            encoding="utf-8")
+        with self.assertRaisesRegex(PipelineError, "not a direct researched meaning"):
+            add_incoming_direct_links(self.groups, self.links, incoming)
 
 if __name__ == "__main__":
     unittest.main()
