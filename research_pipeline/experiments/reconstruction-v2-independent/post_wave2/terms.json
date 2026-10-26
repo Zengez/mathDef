@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "description": "Post-completion research added ONLY to the original-inclusive merged reference; independent Wave2 958-meaning snapshot remains frozen.",
+  "entries": [
+    {
+      "id": "meaning.mathdef.postwave.unital-ring-20261026",
+      "term": "unital ring",
+      "context": "Post-Wave2 · algebra · associative ring with a multiplicative identity",
+      "aliases": [
+        "ring with identity",
+        "ring with one",
+        "unitary ring"
+      ],
+      "definition": "A unital ring is an associative ring (R,+,·,0) equipped with an element 1_R such that 1_R·r=r=r·1_R for every r∈R. Multiplication is not required to be commutative. The zero ring, where 0=1_R, is included unless a nonzero-ring convention is stated.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Unital ring",
+          "url": "https://encyclopediaofmath.org/wiki/Unital_ring",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "Associativity is assumed for the underlying ring.",
+        "The zero ring is not excluded by this definition."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.unital-homomorphism-20261026",
+      "term": "unital ring homomorphism",
+      "context": "Post-Wave2 · algebra · identity-preserving ring homomorphism",
+      "aliases": [
+        "unit-preserving ring homomorphism"
+      ],
+      "definition": "For unital rings R and S, a unital ring homomorphism f:R→S is an additive map satisfying f(ab)=f(a)f(b) for all a,b∈R and f(1_R)=1_S. In particular f preserves 0. Some authors include preservation of 1 in the unqualified term 'ring homomorphism'; others do not.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Unital ring",
+          "url": "https://encyclopediaofmath.org/wiki/Unital_ring",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.unital-ring-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "Both source and target have designated multiplicative identities.",
+        "Explicit identity preservation distinguishes this convention from a nonunital homomorphism."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.locally-small-category-20261026",
+      "term": "locally small category",
+      "context": "Post-Wave2 · category theory · smallness of morphism collections",
+      "aliases": [
+        "locally small categories"
+      ],
+      "definition": "A category C is locally small if, for every ordered pair of objects X,Y of C, the collection Hom_C(X,Y) of morphisms from X to Y is a set rather than a proper class (relative to the chosen foundational universe). Its collection of objects need not be a set. Every small category is locally small, but the converse need not hold.",
+      "sources": [
+        {
+          "title": "nLab — locally small category",
+          "url": "https://ncatlab.org/nlab/show/locally+small+category",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "The set-versus-proper-class distinction is interpreted relative to a fixed foundational universe."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.nonnegative-graded-ring-20261026",
+      "term": "nonnegatively graded ring",
+      "context": "Post-Wave2 · commutative algebra · nonnegative integer grading (Stacks convention)",
+      "aliases": [
+        "nonnegative integer-graded ring",
+        "N-graded ring"
+      ],
+      "definition": "A nonnegatively graded (commutative, unital) ring S is a commutative unital ring together with an additive-group direct-sum decomposition S=⊕_{d≥0} S_d such that S_d·S_e⊆S_{d+e} for all d,e≥0. Every element of S is a finite sum of homogeneous elements. This is a nonnegative-integer grading; more general grading groups are separate conventions.",
+      "sources": [
+        {
+          "title": "Stacks Project — Section 10.56, Graded rings (tag 00JL)",
+          "url": "https://stacks.math.columbia.edu/tag/00JL",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.552479b3d126bda9a36a",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "Commutative, unital-ring convention as in the cited Stacks Project section.",
+        "The grading is indexed by the nonnegative integers, not all integers or an arbitrary group."
+      ]
+    }
+  ]
+}

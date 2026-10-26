@@ -5,8 +5,10 @@ This document records the direct-content method used to complete it; it is **not
 an instruction to re-process the old candidates. The finished corpus has 958
 independent contextual meanings and 1,511 known curated relationships.
 The 418-lead list has been addressed (350 incorporated, 68 non-promoted with
-recorded dispositions). The remaining future expansion is a fast, approximate
-candidate scan of the *363 newly added definitions* — not yet performed.
+recorded dispositions). The fast candidate scan of the *363 newly added definitions* AND original
+mathDef corpus has now completed; further expansion is managed separately
+through `experiments/reconstruction-v2-independent/post_wave2/terms.json`,
+with content displayed exclusively in the original-inclusive merged view.
 See [the completion checkpoint](experiments/reconstruction-v2-independent/WAVE2_INITIAL_RECONSTRUCTION_COMPLETE_2026-10-26.md).
 
 **Supersedes and replaces all earlier dependency-first Wave 2 handoffs**, including the removed `DEPENDENCY_FIRST_WORKFLOW.md` and `TEMP_DEPENDENCY_FIRST_WAVE2_PLAN.md`. Those earlier methods were specifically rejected by the owner after substantial repeated process overhead. Do not resume them from Git history, an archived PR, a previous conversation or a generated checkpoint.

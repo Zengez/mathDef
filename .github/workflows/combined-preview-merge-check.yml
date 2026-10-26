@@ -1,4 +1,4 @@
-name: Combined original mathDef + Wave2 smoke checks
+name: Combined original mathDef + Wave2 + post-Wave2 smoke checks
 
 on:
   pull_request:
@@ -7,6 +7,7 @@ on:
       - "research_pipeline/adapters/mathdef/preview_site.py"
       - "research_pipeline/ui/renderer.py"
       - "research_pipeline/tests/test_original_merge.py"
+      - "research_pipeline/experiments/reconstruction-v2-independent/post_wave2/**"
       - ".github/workflows/combined-preview-merge-check.yml"
   push:
     branches: [main]
@@ -15,6 +16,7 @@ on:
       - "research_pipeline/adapters/mathdef/preview_site.py"
       - "research_pipeline/ui/renderer.py"
       - "research_pipeline/tests/test_original_merge.py"
+      - "research_pipeline/experiments/reconstruction-v2-independent/post_wave2/**"
       - "definitions/**"
       - "variants/**"
 
@@ -41,10 +43,14 @@ jobs:
           base_n=sum(len(g["meanings"]) for g in base["groups"])
           merged_n=sum(len(g["meanings"]) for g in merged["groups"])
           original_n=scan["scan_scope"]["original_mathdef_definitions"]
+          post_file=Path("research_pipeline/experiments/reconstruction-v2-independent/post_wave2/terms.json")
+          post_n=len(json.loads(post_file.read_text())["entries"])
           assert base_n==958, f"Independent Wave2 count changed: {base_n}"
           assert scan["scan_scope"]["wave2_direct_meanings"]==363
           assert original_n>=1007
-          assert merged_n==base_n+original_n
+          assert merged_n==base_n+original_n+post_n
+          assert sum(m["id"].startswith("meaning.mathdef.postwave.")
+                     for g in merged["groups"] for m in g["meanings"])==post_n
           assert sum(m.get("source_origin")=="original_mathdef"
                      for g in merged["groups"] for m in g["meanings"])==original_n
           assert scan["counts"]["new_phrase_leads"]>=1
@@ -55,6 +61,7 @@ jobs:
           print("Merged-preview smoke passed:", {
               "independent":base_n,
               "original":original_n,
+              "post_wave2_researched":post_n,
               "combined":merged_n,
               "rough_phrase_leads":scan["counts"]["new_phrase_leads"]
           })

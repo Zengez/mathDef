@@ -51,6 +51,9 @@ The new-to-existing links live in `terms.json`; the conservative original-to-new
 links live in `incoming_links.json`. Those links are ordinary curated preview
 content, not a dependency graph or a requirement for exhaustive closure.
 
-**Next, not yet started:** scan the 363 newly added definitions for *new*
-possible terminology. Continue to treat source leads honestly and preserve the
-independently researched corpus; no re-entry into removed staging workflows.
+**Subsequent work completed:** the 363 new definitions and original mathDef
+definition corpus have been rapidly scanned, and the original content is
+now browsable alongside independent Wave 2 in a separate combined view.
+Later newly researched definitions belong in `../post_wave2/terms.json`,
+not this historically independent completion file. The scan is deliberately
+rough, with no admission gates or graph-workflow resurrection.
