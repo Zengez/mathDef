@@ -113,3 +113,66 @@ reference necessity, rank-259 wording, and self-reference
 hazards. An approved general linking policy alone does not
 authorize making those edits. Keep all mathematical graph
 files protected and Pass 2 gate closed.
+
+## Additional review: safely handling generic scopes and direct provider checks
+
+**Completed after the 73-occurrence triage:**
+
+- [GENERIC_SCOPE_CORRECTION_DESIGN.md](GENERIC_SCOPE_CORRECTION_DESIGN.md):
+  the six rank-36/38 contexts arise from too-narrow **canonical
+  representative descriptions**, despite historically reviewed alias
+  rationales correctly intending generic component prerequisites.
+  Preserve historical aliases and specialized parent quantifiers.
+  The existing guarded reviewed-manifest exporter cannot simply
+  create/reverse missing aliases or rewrite the derived registry;
+  a reviewed versioned generic-context overlay or a carefully
+  governed split/reanchor capability would need engineering work.
+- [REANCHORING_OPTIONS.json](REANCHORING_OPTIONS.json):
+  exact six occurrence anchors, canonical/observed alias histories,
+  proposed generic L¹ and clopen wording, three explicit
+  **rank-172/223/245** self-link resolution exclusions,
+  plus separate possible rank-298 explanatory-overlink review.
+  All eight ranked parent source versions and original six
+  effective references were checked against the captured inventory;
+  no software patch or graph transaction was applied.
+- [PRIMARY_SOURCE_CONVENTION_CHECK_2026-10-25.md](PRIMARY_SOURCE_CONVENTION_CHECK_2026-10-25.md):
+  first independently consulted **official** Stacks, ProofWiki
+  and DLMF primary-source pages; an appended second round checks
+  exact recorded tag/locator definitions and corrects prior
+  source-status uncertainty.
+- [PRIMARY_SOURCE_STATUS.json](PRIMARY_SOURCE_STATUS.json):
+  tracks **all 13 historical source-convention deferrals**.
+  Eight have directly verified provider-specific convention
+  questions and five have significant partial/edge-case
+  questions remaining. All have at least some direct
+  provider evidence; this is NOT certification of entire
+  historical reconstructed source snapshots or 13 applied
+  graph resolutions.
+
+**New mathematical/source leads:** Stacks §4.2's category default
+has **sets of objects and Hom sets with listed big-category
+exceptions**; ProofWiki's selected multiset convention gives
+**finite natural multiplicity per edge pair**; Stacks tensor
+algebra uses **commutative-unital coefficients but possibly
+noncommutative tensor algebra**. Stacks' rank-of-a-finite-free-map
+definition has a precise **zero-ring / r=0** interpretation
+question, not silently settled by provider attribution.
+DLMF Stieltjes one-sided normalization/endpoints remain open.
+
+**Integrity:** all changes in this continuation are review
+documents on draft PR #14. Neither original 659 formulation
+sources, effective graph, missing-candidate registry, alias
+ledger, receipts, original frozen Wave 1, production nor
+consolidation gate were changed. The previous 254+2 and
+19/19 mechanical test results were not rerun during
+review-doc/source-verification writes.
+
+**Next operation needing Codex engineering:** develop and test
+an *append-only, canonical candidate context-adjudication
+metadata overlay* (or present a safer viable alternative)
+with guarded version/alias fingerprints and no graph
+mutation, then have the owner review the engineering PR.
+This is a proposed tool improvement, **not authorization**
+to apply the six corrected graph identities. Source and
+mathematical reviews of remaining provider-specific
+exceptions may continue independently.
