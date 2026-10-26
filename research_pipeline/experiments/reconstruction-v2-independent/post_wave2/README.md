@@ -47,3 +47,30 @@ reference should now show **1,980 meanings**, comprising 958 independent
 Wave 2 + 1,014 original mathDef + **8 post-Wave2 additions**. The fast scan's
 original 2,019 rough leads and 473 known-term mentions remain the starting
 discovery snapshot rather than mandatory approval tasks.
+
+## Third direct research batch (2026-10-26)
+
+Twelve mathematical meanings added after checking the original, screened
+independent, direct-research and prior post-Wave2 terms for likely duplicates:
+chain map; injective left module; basis for a topology; subbasis for a
+topology; final topology; topological support of a function; finitely
+supported function (algebraic); partial function; affine hyperplane;
+formal power series ring in one variable; bounded subset of a metric space;
+and upper set of a partially ordered set.
+
+The distinction between **topological support (closed nonzero locus)**
+and **algebraic finite support (nonzero locus, no closure)** is explicit.
+Likewise the formal ring `R[[T]]` is not confused with analytically
+convergent power series, and final topology is not conflated with initial
+topology. Nonempty/nontrivial conditions are only imposed when needed
+and recorded in each meaning's assumptions.
+
+These 12 entries contain source records checked against Stacks Project,
+Encyclopedia of Mathematics, university topology notes, Wolfram MathWorld
+and a mathematics handbook. Citations are **assistant-checked drafts,
+not independent formal peer review**. Total subsequent expansion is
+20 meanings. Expected merged count: 1,992; independent Wave 2: still 958.
+The original 2,019-lead rough scan remains unchanged.
+
+Do not restart a graph-building, global citation audit or per-term staged
+workflow. Continue directly with useful substantive meanings in this file.
