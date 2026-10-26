@@ -5,7 +5,7 @@
     "possible_new_terminology": 2019,
     "known_title_mentions": 473
   },
-  "scope": "Original ranks 1–140 reviewed directly against unchanged 2,019-candidate original scan",
+  "scope": "Exact original scan ranks 1–180, strictly matched to the unchanged frozen 2,019-phrase report",
   "conventions": "Research actual frozen scan records in strict rank order; direct post-Wave2 merge additions, known equivalent or specialization targets, unresolvable context flags, and false-positive phrases; never start a new candidate hunt. No dependency graph or gate.",
   "dispositions": [
     {
@@ -3500,6 +3500,847 @@
       "disposition": "nonterm",
       "reason": "Unqualified 'every subset' is a logical quantifier, not a specialized set notion.",
       "targets": []
+    },
+    {
+      "rank": 141,
+      "phrase": "exactly one element",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.0423a519b1e84ca6d41c",
+          "term": "singleton set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functions.function:0",
+          "term": "Function"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "This phrasing describes a singleton; the independent Wave2 singleton-set entry already formalizes exactly-one-element.",
+      "targets": [
+        "meaning.wave2.direct.0423a519b1e84ca6d41c"
+      ]
+    },
+    {
+      "rank": 142,
+      "phrase": "finite dimensional euclidean space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.projection-onto-convex:0",
+          "term": "Euclidean projection onto a convex set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.proximal-operator:0",
+          "term": "Proximal operator"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added finite-dimensional real Euclidean inner-product space, recording affine versus vector realizations and n=0.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-finite-dimensional-euclidean-space-20261026"
+      ]
+    },
+    {
+      "rank": 143,
+      "phrase": "finite dimensional vector space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.997a7843836432a6ada2",
+          "term": "determinant of a linear endomorphism"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "linear.diagonalizable-operator:0",
+          "term": "Diagonalizable operator"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added algebraically finite-dimensional K-vector spaces, allowing zero dimension and no implied norm or topology.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-finite-dimensional-vector-space-20261026"
+      ]
+    },
+    {
+      "rank": 144,
+      "phrase": "finite extension",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.degree-number-field:0",
+          "term": "Degree of a number field"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.galois-extension:0",
+          "term": "Galois extension"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added finite field extension measured by [L:K], not cardinality of the extension field.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-finite-field-extension-20261026"
+      ]
+    },
+    {
+      "rank": 145,
+      "phrase": "finite sum",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.72b9f9bc4ac0e952e202",
+          "term": "internal direct sum decomposition"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "complex.polynomial:0",
+          "term": "Complex polynomial"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "A finite sum is an ordinary sum indexed by a finite set; the examples use it compositionally, not as a distinct specialized term.",
+      "targets": []
+    },
+    {
+      "rank": 146,
+      "phrase": "finite sums",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.244d6cfceb0dd22abbca",
+          "term": "degree-zero subring of a graded ring"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.844dd763468a61243ea1",
+          "term": "tensor-product multiplication into a compositum"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Plural of ordinary finite-sum wording; source-specific sum constructions remain separately defined.",
+      "targets": []
+    },
+    {
+      "rank": 147,
+      "phrase": "for any set",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.dd36779bc0facafd958e",
+          "term": "power set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "sets.power-set:0",
+          "term": "Power set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Quantifier fragment 'for any set' is not standalone mathematical terminology.",
+      "targets": []
+    },
+    {
+      "rank": 148,
+      "phrase": "for continuous maps",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.cf69ce1240520995df04",
+          "term": "topological fibre product"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.homotopy:0",
+          "term": "Homotopy of maps"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "A domain phrase qualifying continuous maps, not a separately named class beyond existing continuous maps.",
+      "targets": []
+    },
+    {
+      "rank": 149,
+      "phrase": "for elements",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.908934f4b8323f2ba8a0",
+          "term": "divisibility in an integral domain"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.98b86874c2c07243f63a",
+          "term": "localization restriction map"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Prepositional context fragment without a mathematical noun.",
+      "targets": []
+    },
+    {
+      "rank": 150,
+      "phrase": "for eventually nonnegative functions",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.big-omega:0",
+          "term": "Big-Omega asymptotic notation"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "computability.big-theta:0",
+          "term": "Big-Theta asymptotic notation"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "A condition in specific asymptotic-notation comparisons, not a standalone term as scanned; retain the O/Ω/Θ meanings.",
+      "targets": []
+    },
+    {
+      "rank": 151,
+      "phrase": "for every morphism",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.ab1dee70553ea0ff2c1c",
+          "term": "cone to a categorical diagram"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.4af1a74c7bddaa981eff",
+          "term": "identity morphism"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Universal quantifier within a categorical definition; not a separate object.",
+      "targets": []
+    },
+    {
+      "rank": 152,
+      "phrase": "for every point",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.vector-field:0",
+          "term": "Smooth vector field"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.lebesgue-measure:0",
+          "term": "Lebesgue measure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Unqualified quantifier and point reference, not mathematical terminology.",
+      "targets": []
+    },
+    {
+      "rank": 153,
+      "phrase": "for functions",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.big-o:0",
+          "term": "Big-O asymptotic notation"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "pde.convolution:0",
+          "term": "Convolution"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Context qualifier for functions, not a new concept.",
+      "targets": []
+    },
+    {
+      "rank": 154,
+      "phrase": "for functor",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.1f1fd9a269f9c46bb515",
+          "term": "kernel of a functor-induced automorphism map"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.229af74a7a716a68dd9e",
+          "term": "vertical automorphism over a base category"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Incomplete prepositional expression depending on the intended functor.",
+      "targets": []
+    },
+    {
+      "rank": 155,
+      "phrase": "for groups",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.b265aa5bcc1bd7e4d539",
+          "term": "additive group homomorphism"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.group-homomorphism:0",
+          "term": "Group homomorphism"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Category qualifier for group examples rather than a concept distinct from group.",
+      "targets": []
+    },
+    {
+      "rank": 156,
+      "phrase": "for ideals",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.e43d4f1922e210cc373a",
+          "term": "product of ideals"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.zariski-topology:0",
+          "term": "Zariski topology on a spectrum"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Qualifier introducing an ideal-domain convention, not a named object.",
+      "targets": []
+    },
+    {
+      "rank": 157,
+      "phrase": "for module",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.4682f40ff8bf8cec8141",
+          "term": "diagonal localization map"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.4bfc8ce2f95edfcc014d",
+          "term": "exterior power of a module"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Context qualifier lacking the object being defined.",
+      "targets": []
+    },
+    {
+      "rank": 158,
+      "phrase": "for modules",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.1a60248259f8ac73fd6f",
+          "term": "canonical inclusion into a direct sum"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "commalg.tensor-product:0",
+          "term": "Tensor product of modules"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Plural context qualifier, not a standalone module construction.",
+      "targets": []
+    },
+    {
+      "rank": 159,
+      "phrase": "for real polynomials",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.2e90e090541bb3b84623",
+          "term": "orthogonality of polynomials with respect to a measure"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.b86dc7cff186ed11337b",
+          "term": "weighted discrete orthogonality"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Domain qualifier on orthogonality of polynomials, not a new term by itself.",
+      "targets": []
+    },
+    {
+      "rank": 160,
+      "phrase": "for some polynomial",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.class-pspace:0",
+          "term": "Complexity class PSPACE"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "computability.exponential-time:0",
+          "term": "Complexity class EXPTIME"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Quantifier fragment over polynomials used in complexity definitions, not standalone terminology.",
+      "targets": []
+    },
+    {
+      "rank": 161,
+      "phrase": "for spaces",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.composition-operator:0",
+          "term": "Composition operator"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.locally-compact:0",
+          "term": "Locally compact space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Generic contextual preposition plus noun, unrelated specialized objects in examples.",
+      "targets": []
+    },
+    {
+      "rank": 162,
+      "phrase": "group element",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6fbe5c318aee10f6742d",
+          "term": "order of a group element"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.orbit:0",
+          "term": "Orbit of a group action"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "An element of a group is an ordinary member of its underlying set, covered by the existing group and element definitions.",
+      "targets": [
+        "definitions/algebra/group.tex"
+      ]
+    },
+    {
+      "rank": 163,
+      "phrase": "hausdorff second countable space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.smooth-manifold:0",
+          "term": "Smooth manifold"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "scv.complex-manifold:0",
+          "term": "Complex manifold"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added explicit joint Hausdorff-and-second-countable condition; no local Euclidean manifold structure is assumed.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-hausdorff-second-countable-20261026"
+      ]
+    },
+    {
+      "rank": 164,
+      "phrase": "hausdorff topological space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.radon-measure:0",
+          "term": "Radon measure (regularity convention)"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.locally-compact:0",
+          "term": "Locally compact space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The ordinary Hausdorff/T2 topological-space definition already covers this wording.",
+      "targets": [
+        "definitions/topology/hausdorff-space.tex"
+      ]
+    },
+    {
+      "rank": 165,
+      "phrase": "holomorphic extension",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.isolated-singularity:0",
+          "term": "Isolated singularity"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "scv.domain-of-holomorphy:0",
+          "term": "Domain of holomorphy"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original analytic-continuation entry explicitly defines direct holomorphic extensions to a larger domain.",
+      "targets": [
+        "definitions/complex/analytic-continuation.tex"
+      ]
+    },
+    {
+      "rank": 166,
+      "phrase": "isolated point",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "real.continuity-at-point:0",
+          "term": "Continuity at a point"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.limit-point:0",
+          "term": "Limit point"
+        }
+      ],
+      "disposition": "variant",
+      "reason": "The independent entry defines an isolated point of X itself; added its mathematically broader subset-relative version with U∩A={a}, which must not be confused with ambient isolation.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-isolated-point-20261026",
+        "meaning.wave2.direct.b7715941d4e866b5133d"
+      ]
+    },
+    {
+      "rank": 167,
+      "phrase": "its borel sigma algebra",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.b458f6a3824dab19725b",
+          "term": "measurable mapping"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.borel-sigma-algebra:0",
+          "term": "Borel sigma-algebra"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The Borel σ-algebra of the specified space is already defined, and this possessive phrase refers to that object.",
+      "targets": [
+        "definitions/measure/borel-sigma-algebra.tex"
+      ]
+    },
+    {
+      "rank": 168,
+      "phrase": "its first return map",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.repelling-periodic-point:0",
+          "term": "Repelling periodic point"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.siegel-disk:0",
+          "term": "Siegel disk"
+        }
+      ],
+      "disposition": "ambiguous",
+      "reason": "First-return maps vary between Poincaré return maps and iterated maps in holomorphic dynamics; earlier rank 88 flagged the same context-sensitive expression. No new unchecked meaning is inferred.",
+      "targets": []
+    },
+    {
+      "rank": 169,
+      "phrase": "its fraction field",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.538464c3e54edac0b891",
+          "term": "canonical inclusion into the fraction field"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.dedekind-domain:0",
+          "term": "Dedekind domain"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The independent corpus already defines the fraction field of an integral domain explicitly; 'its' only adds a possessive reference.",
+      "targets": [
+        "meaning.wave2.integer59.fraction-field-integral-domain"
+      ]
+    },
+    {
+      "rank": 170,
+      "phrase": "its minimal polynomial",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.algebraic-number:0",
+          "term": "Algebraic number"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.minimal-polynomial:0",
+          "term": "Minimal polynomial"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Independent Wave2 already defines the minimal polynomial; possessive phrase is not a new type.",
+      "targets": [
+        "meaning.3aaa8d6f2195bb8e.minimal-polynomial"
+      ]
+    },
+    {
+      "rank": 171,
+      "phrase": "its power set",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.dd36779bc0facafd958e",
+          "term": "power set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "sets.power-set:0",
+          "term": "Power set"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing power-set definition covers this possessive phrase.",
+      "targets": [
+        "definitions/sets/power-set.tex"
+      ]
+    },
+    {
+      "rank": 172,
+      "phrase": "its residue field",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.38969d113c4ee1db6e98",
+          "term": "residue field of a local ring"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "commalg.local-ring:0",
+          "term": "Local ring"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing independently reconstructed residue-field meaning covers local-ring residue fields.",
+      "targets": [
+        "meaning.wave2.direct.38969d113c4ee1db6e98"
+      ]
+    },
+    {
+      "rank": 173,
+      "phrase": "its unique maximal ideal",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.38969d113c4ee1db6e98",
+          "term": "residue field of a local ring"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.uniformizer:0",
+          "term": "Uniformizer"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "A local ring's unique maximal ideal is specified by the original local-ring definition; no extra term or variant needed.",
+      "targets": [
+        "definitions/commalg/local-ring.tex"
+      ]
+    },
+    {
+      "rank": 174,
+      "phrase": "its vertex set",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "graph.bipartite-graph:0",
+          "term": "Bipartite graph"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "graph.vertex:0",
+          "term": "Vertex"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Graph vertex set is the existing graph's underlying vertex set, not a separate new mathematical object.",
+      "targets": [
+        "definitions/graph/graph.tex"
+      ]
+    },
+    {
+      "rank": 175,
+      "phrase": "local homomorphism",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.b05a1814a9da0d01922a",
+          "term": "local homomorphism of local rings"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.8270eec9d7801be60879",
+          "term": "domination of local rings"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The independent corpus already defines local homomorphisms of local rings, with maximal-ideal compatibility.",
+      "targets": [
+        "meaning.wave2.direct.b05a1814a9da0d01922a"
+      ]
+    },
+    {
+      "rank": 176,
+      "phrase": "lower order",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.elliptic-equation:0",
+          "term": "Uniformly elliptic second-order operator"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "pde.parabolic-equation:0",
+          "term": "Parabolic evolution equation"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'Lower order' is a comparative adjective requiring a specified operator order or other context. The scan phrase lacks a standalone mathematical noun.",
+      "targets": []
+    },
+    {
+      "rank": 177,
+      "phrase": "mathcal ctomathbf set",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.hom-functor:0",
+          "term": "Hom functor"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "category.representable-functor:0",
+          "term": "Representable functor"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Malformed TeX-stripped fragment of a functor type, not new terminology.",
+      "targets": []
+    },
+    {
+      "rank": 178,
+      "phrase": "negative set",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.negative-set-signed-measure:0",
+          "term": "Negative set for a signed measure"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.positive-set-signed-measure:0",
+          "term": "Positive set for a signed measure"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The original mathDef has a dedicated negative-set-for-a-signed-measure definition.",
+      "targets": [
+        "definitions/measure/negative-set-signed-measure.tex"
+      ]
+    },
+    {
+      "rank": 179,
+      "phrase": "nonconstant polynomial",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.d0ca7fa93046fab7ab04",
+          "term": "polynomial splitting over a field"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.splitting-field:0",
+          "term": "Splitting field"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Nonconstant is the ordinary property that a polynomial is not constant, already covered by polynomial vocabulary, not a separate mathematical construction.",
+      "targets": [
+        "definitions/algebra/polynomial-ring.tex"
+      ]
+    },
+    {
+      "rank": 180,
+      "phrase": "nonempty topological space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.reduced-homology:0",
+          "term": "Reduced homology"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.irreducible-space:0",
+          "term": "Irreducible topological space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Nonempty is an ordinary restriction on a topological space, not a separate new space structure; no blanket exclusion of empty spaces is introduced.",
+      "targets": [
+        "definitions/topology/compactness.tex"
+      ]
     }
   ]
 }
