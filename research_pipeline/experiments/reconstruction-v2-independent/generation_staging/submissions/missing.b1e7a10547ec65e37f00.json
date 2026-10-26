@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.b1e7a10547ec65e37f00",
+  "original_query": "morphisms B to A and B to C",
+  "original_context": "Category theory: a span or common-domain arrow diagram B→A and B→C in an arbitrary category, not a composable arrow pair and not the dual cospan.",
+  "original_incoming_occurrence_ids": [
+    "occ.2a5787d1984c6db39e60"
+  ],
+  "disposition": "new_meaning",
+  "definition": "In a category C, a span from A to D is a diagram A←B→D consisting of an object B and two morphisms B→A and B→D with common domain B. The object B is its apex.",
+  "reasoning": "The independently screened pushout definition requires a span as input and then a universal compatible cocone. The span itself has neither a pushout object nor a universality condition, and is distinct from the opposite-variance cospan A→B←D.",
+  "sources": [
+    {
+      "url": "https://ncatlab.org/nlab/show/span",
+      "section": "Span of morphisms, common-source arrows",
+      "relevance": "Standard mathematical reference found in indexed text; complete exact web passage was not accessible, so this remains an honestly labeled source lead. Mathematical arrow typing follows directly from the screened pushout source.",
+      "verification_status": "indexed_source_lead_full_page_unavailable"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.91383b9c137b0e359967",
+      "missing.960bd927c204df58bb49",
+      "missing.972ae1e91200fae874aa",
+      "missing.9a669bd30949842fab00",
+      "missing.9a71afd4a344322c1d26",
+      "missing.9e1b000eff0431817f3a",
+      "missing.a257d0bad58dcfbd2fa7",
+      "missing.a53971a78b449b0edc86",
+      "missing.ab52c0b907fcd5ccf04f",
+      "missing.b176356d17d415e8f588",
+      "missing.b1e0a8b58dda986e68d9"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.26b6764e3ef7a953.pushout",
+        "relation": "pushout requires a span plus universal cocone; not equivalent"
+      },
+      {
+        "id": "meaning.8f7683667fac9d28.category-limit",
+        "relation": "limits of diagrams are a different universal construction"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Reviewed all 595 screened and 16 provisional independent meanings, including the full pushout and category limit/coproduct formulations. A pair of common-domain arrows is not already defined as a separate span meaning; staged generic initial topology and graph formulations do not overlap. Generic category size must be kept as a separate foundational condition. All 13 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate."
+  },
+  "mathematical_assumptions": [
+    "A,D,B are objects of a suitably founded category; no smallness is added absent source context.",
+    "No pushout existence assumption.",
+    "Arrow directions are B→A and B→D; the opposite is a cospan."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
