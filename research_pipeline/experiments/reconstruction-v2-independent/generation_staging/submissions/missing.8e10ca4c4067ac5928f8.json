@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.8e10ca4c4067ac5928f8",
+  "original_query": "retrocompact open subset U of X",
+  "original_context": "Topology: retrocompact open subset U of X, whose intersections with each quasi-compact open subset V⊆X are quasi-compact; not equivalent to U itself being quasi-compact in arbitrary X.",
+  "original_incoming_occurrence_ids": [
+    "occ.9daaa2434c0182378674"
+  ],
+  "disposition": "specialization",
+  "definition": "Let X be a topological space. An open subset U⊆X is retrocompact in X if, for every quasi-compact open V⊆X, the intersection U∩V is quasi-compact. Equivalently, the inclusion U↪X is a quasi-compact map.",
+  "reasoning": "This is a named, precisely typed property of an open subset relative to its ambient space, specializing the existing independently screened quasi-compact map meaning to an inclusion. It is not the same as requiring U itself be quasi-compact without assuming X quasi-compact. The existing constructible-subset meaning uses retrocompact opens as prerequisites, and neither that construction nor the general quasi-compact-space meaning is synonymous with this named subset property. Preserve it as a specialization/contextual entry rather than force an equivalence alias.",
+  "sources": [
+    {
+      "url": "https://stacks.math.columbia.edu/tag/005A",
+      "section": "Definition 5.12.1(2)-(3)",
+      "relevance": "Directly checked primary source: quasi-compact map tests preimages of quasi-compact opens, and a subset is retrocompact exactly when its inclusion is quasi-compact; this gives the intersection formulation.",
+      "verification_status": "direct_primary_passage_checked"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.27eb121021fd989d.quasicompact-map",
+        "relation": "specialization of quasi-compact map to subset inclusion"
+      },
+      {
+        "id": "meaning.27eb121021fd989d.quasicompact-space",
+        "relation": "different property; ambient-space qualification matters"
+      },
+      {
+        "id": "meaning.eea0cd4a31af555c.constructible-subset-stacks",
+        "relation": "uses retrocompact opens as input, not definition of retrocompactness"
+      },
+      {
+        "id": "meaning.d7087bb79cf848fa.constructible-topology-spectral",
+        "relation": "uses quasi-compact open subbasis, different construction"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Reviewed the complete independent 595-screened/16-provisional meaning index and examined all topology and quasi-compactness overlaps. No equivalent standalone meaning was found. Existing quasi-compact maps give a broader property; the candidate is its subset-inclusion specialization, and constructible subsets are not the same concept. The provisional cohort has no retrocompact-subset meaning."
+  },
+  "mathematical_assumptions": [
+    "U is open in X in this occurrence; retrocompactness of general subsets is also definable.",
+    "Quasi-compact is open-cover finite subcover without assuming Hausdorff.",
+    "U∩V is quasi-compact relative to subspace topology for each quasi-compact open V."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
