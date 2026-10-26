@@ -249,6 +249,369 @@
         "Hausdorff assumption ensures compact subsets are Borel; the local definition also makes sense more generally.",
         "Locally finite and Radon are not taken as synonymous."
       ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.chain-map-20261026",
+      "term": "chain map",
+      "context": "Homological algebra · degree-zero morphism of chain complexes",
+      "aliases": [
+        "morphism of chain complexes"
+      ],
+      "definition": "Let (C_n,d^C_n) and (D_n,d^D_n) be chain complexes in an additive category, with differentials decreasing degree by one. A chain map f:C_•→D_• is a family of morphisms f_n:C_n→D_n, one for each integer n, satisfying d^D_n∘f_n=f_{n−1}∘d^C_n for every n. Thus every square formed by f and the differentials commutes.",
+      "sources": [
+        {
+          "title": "Stacks Project — Section 12.13, Complexes",
+          "url": "https://stacks.math.columbia.edu/tag/010V",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.12cbff3823a07d544a1e",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.a66bc0c6846ac92c6394",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "Chain convention: differentials lower degree. For cochain maps they raise degree, with analogous commutation.",
+        "No quasi-isomorphism condition is imposed on an arbitrary chain map."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.injective-left-module-20261026",
+      "term": "injective left module",
+      "context": "Homological algebra · extension of homomorphisms from submodules",
+      "aliases": [
+        "injective R-module",
+        "injective module (left-module convention)"
+      ],
+      "definition": "Let R be a unital ring and E a unital left R-module. The module E is injective if, whenever i:A→B is an injective homomorphism of left R-modules and f:A→E is R-linear, there exists an R-linear g:B→E with g∘i=f. Equivalently, the contravariant functor Hom_R(−,E) is exact on short exact sequences of left R-modules.",
+      "sources": [
+        {
+          "title": "Stacks Project — Injective modules, Definition 15.56.1",
+          "url": "https://stacks.math.columbia.edu/tag/01D8",
+          "verification_status": "direct_primary_passage_checked"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Injective module (right-module convention; left-right dual)",
+          "url": "https://encyclopediaofmath.org/wiki/Injective_module",
+          "verification_status": "independent_supporting_right_module_analogue_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.fc44c63c239e5c20.projective-module-hom",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "Explicitly a LEFT R-module for potentially noncommutative R.",
+        "Injectivity does not assert that E is projective, nor does it require R to be Noetherian."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.topology-basis-20261026",
+      "term": "basis for a topology",
+      "context": "General topology · open-set basis",
+      "aliases": [
+        "topological basis",
+        "base for a topology",
+        "basis of topology"
+      ],
+      "definition": "For a topological space X, a collection B of subsets of X is a basis for its topology if every B∈B is open and, for every open U⊆X and every x∈U, there exists B∈B with x∈B⊆U. Equivalently, every open subset is a union of basis elements (the empty union gives ∅). The empty family is a basis when X is empty.",
+      "sources": [
+        {
+          "title": "Stacks Project — Definition 5.5.1",
+          "url": "https://stacks.math.columbia.edu/tag/004P",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "Basis here means basis of open sets, not a basis of a vector space.",
+        "Empty topological space and empty unions are included."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.topology-subbasis-20261026",
+      "term": "subbasis for a topology",
+      "context": "General topology · open-set subbasis",
+      "aliases": [
+        "subbase for a topology",
+        "topological subbasis",
+        "topological subbase"
+      ],
+      "definition": "For a topological space X, a family S of subsets of X is a subbasis if the family of all finite intersections of members of S (including the empty intersection X) is a basis for the topology. Equivalently, every open set is a union of finite intersections of elements of S. An empty subbasis generates the indiscrete topology {∅,X}.",
+      "sources": [
+        {
+          "title": "Stacks Project — Definition 5.5.4 and Lemma 5.5.5",
+          "url": "https://stacks.math.columbia.edu/tag/004O",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.topology-basis-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "Finite intersections include the empty intersection, interpreted as X.",
+        "The family S need not itself be closed under finite intersections."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.final-topology-20261026",
+      "term": "final topology",
+      "context": "General topology · coinduced topology on a common target",
+      "aliases": [
+        "coinduced topology",
+        "strong topology induced by a family of maps"
+      ],
+      "definition": "Let {X_i}_{i∈I} be topological spaces, Y a set, and f_i:X_i→Y set maps. The final topology on Y consists of precisely those U⊆Y for which f_i⁻¹(U) is open in X_i for every i∈I. It is the finest topology on Y making all f_i continuous; equivalently, g:Y→Z is continuous exactly when every composite g∘f_i is continuous, for any topological space Z.",
+      "sources": [
+        {
+          "title": "University of Vienna — General Topology, §1.3 Final topology",
+          "url": "https://www.mat.univie.ac.at/~mike/teaching/ss16/general_topology.pdf",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.a257d0bad58dcfbd2fa7",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.0c5a27f2980fc722cbb5",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "No surjectivity assumption on the maps f_i; quotient topology is a special surjective one-map case.",
+        "For I empty the final topology is discrete, as the openness condition is vacuous."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.support-function-topological-20261026",
+      "term": "support of a function",
+      "context": "Analysis · topological support (closure of nonzero locus)",
+      "aliases": [
+        "topological support of a function",
+        "supp(f)"
+      ],
+      "definition": "Let X be a topological space and f:X→V a function into an additive group V with zero 0. The (topological) support of f is supp(f)=cl_X({x∈X:f(x)≠0}), the closure of the set on which f is nonzero. Equivalently it is the smallest closed subset F⊆X such that f is identically zero on X∖F.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Support of a function",
+          "url": "https://encyclopediaofmath.org/wiki/Support_of_a_function",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.cross107.topological-closure",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "The target has a distinguished zero; no continuity assumption on f is needed.",
+        "This closed support differs in general from the unclosed nonzero locus used in algebraic finite-support conventions."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.finite-support-function-20261026",
+      "term": "finitely supported function",
+      "context": "Set theory and algebra · finite nonzero locus",
+      "aliases": [
+        "function with finite support",
+        "finite support (algebraic function)"
+      ],
+      "definition": "Let X be a set and (V,0) a pointed set, for example an abelian group with its zero. A function f:X→V is finitely supported if the set {x∈X:f(x)≠0} is finite. The zero function has empty support. Here 'support' means the nonzero locus, without taking a topological closure; if X is a topological space with the discrete topology, its closure is the same set.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Basis (finitely supported coordinate functions)",
+          "url": "https://encyclopediaofmath.org/wiki/Basis",
+          "verification_status": "finite_support_explicitly_described_in_source"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Wreath product (functions nonidentity at finitely many positions)",
+          "url": "https://encyclopediaofmath.org/wiki/Wreath_product",
+          "verification_status": "supporting_group_analogue_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.support-function-topological-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "A pointed set suffices; vector-space or group operations are optional.",
+        "Distinguish algebraic finite support from compact topological support on a nondiscrete space."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.partial-function-20261026",
+      "term": "partial function",
+      "context": "Set theory · single-valued relation with possibly restricted domain",
+      "aliases": [
+        "partially defined function",
+        "partial map"
+      ],
+      "definition": "Given sets A and B, a partial function from A to B is a relation F⊆A×B such that for each a∈A there is at most one b∈B with (a,b)∈F. Its domain of definition is dom(F)={a∈A:∃b∈B,(a,b)∈F}; equivalently it is an ordinary function dom(F)→B, where dom(F)⊆A. It is total exactly when dom(F)=A.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Binary relation (functional relation and partial function)",
+          "url": "https://encyclopediaofmath.org/wiki/Transposed_relation",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "The empty relation is a partial function, including when A is nonempty.",
+        "At most one output is required, not existence of an output for every element of A."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.affine-hyperplane-20261026",
+      "term": "affine hyperplane",
+      "context": "Linear algebra and geometry · affine codimension-one subspace",
+      "aliases": [
+        "hyperplane in a real vector space"
+      ],
+      "definition": "Let V be a real vector space. An affine hyperplane in V is a subset H={v∈V:ℓ(v)=c}, where ℓ:V→ℝ is a nonzero linear functional and c∈ℝ. Equivalently H=v₀+ker(ℓ) for any v₀∈H; it is a nonempty affine subspace whose direction subspace has codimension one. If V={0}, no affine hyperplane exists.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Linear variety (codimension-one affine subspaces)",
+          "url": "https://encyclopediaofmath.org/wiki/Linear_variety",
+          "verification_status": "direct_primary_passage_checked"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Vector space (functional-level-set description)",
+          "url": "https://encyclopediaofmath.org/wiki/Vector_space",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.85dcc7f7445e61c66023",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "A hyperplane is not required to contain the origin; it is linear exactly when c=0.",
+        "Infinite-dimensional spaces are permitted: codimension one is an algebraic notion."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.formal-power-series-ring-20261026",
+      "term": "formal power series ring in one variable",
+      "context": "Commutative algebra · one-indeterminate formal series ring",
+      "aliases": [
+        "R[[T]]",
+        "one-variable formal power series ring"
+      ],
+      "definition": "For a commutative unital ring R, the formal power series ring R[[T]] consists of all coefficient sequences (a_n)_{n≥0}, written symbolically ∑_{n≥0}a_nT^n. Addition is coefficientwise, and multiplication is the Cauchy product: the coefficient of T^n in fg is ∑_{k=0}^n a_kb_{n−k}. No analytic convergence or evaluation of T is assumed. The constant series 1_R is the multiplicative identity.",
+      "sources": [
+        {
+          "title": "Stacks Project — Noetherian rings, Lemma 10.31.2 (formal power series ring)",
+          "url": "https://stacks.math.columbia.edu/tag/00FM",
+          "verification_status": "construction_and_ring_operations_verified_from_context"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.prereq122.real-centered-power-series",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "Exactly one formal variable; multivariable formal series constitute a natural generalization.",
+        "No convergence assumption; algebraic formal series should not be confused with a convergent analytic power series."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.bounded-metric-subset-20261026",
+      "term": "bounded subset of a metric space",
+      "context": "Metric geometry · finite diameter subset",
+      "aliases": [
+        "metric bounded set",
+        "bounded metric subset"
+      ],
+      "definition": "Let (X,d) be a metric space. A subset A⊆X is bounded if there exists a finite real M≥0 such that d(a,b)≤M for every a,b∈A. Equivalently, the diameter sup{d(a,b):a,b∈A} is finite when A is nonempty; boundedness also holds vacuously for A=∅. For nonempty X, this is equivalent to A lying in a ball of some finite radius about a point of X.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Bounded Set",
+          "url": "https://mathworld.wolfram.com/BoundedSet",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.analysis98.metric-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "A is permitted to be empty; the diameter of the empty set is left convention-dependent.",
+        "Boundedness depends on the specified metric, not only on the underlying topology."
+      ]
+    },
+    {
+      "id": "meaning.mathdef.postwave.upper-set-poset-20261026",
+      "term": "upper set of a partially ordered set",
+      "context": "Order theory · upward-closed subset",
+      "aliases": [
+        "up-set",
+        "upward-closed subset",
+        "increasing subset of a poset"
+      ],
+      "definition": "Let (P,≤) be a partially ordered set. A subset U⊆P is an upper set if, whenever x∈U and x≤y in P, it follows that y∈U. Both ∅ and P are upper sets. The principal upper set generated by p∈P is ↑p={y∈P:p≤y}. This is the order-dual notion to a lower set.",
+      "sources": [
+        {
+          "title": "Handbook of Mathematics — Definitions 86–87, Upper and Lower sets",
+          "url": "https://api.pageplace.de/preview/DT0400.9782322000821_A25587496/preview-9782322000821_A25587496.pdf",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.b1e0a8b58dda986e68d9",
+          "relation_type": "related"
+        }
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified",
+      "assumptions": [
+        "Underlying relation is a partial order, not merely an arbitrary relation.",
+        "Empty and whole-poset upper sets are allowed."
+      ]
     }
   ]
 }
