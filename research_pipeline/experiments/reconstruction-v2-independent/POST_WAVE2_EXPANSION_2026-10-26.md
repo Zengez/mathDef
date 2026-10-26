@@ -82,3 +82,33 @@ post-Wave2); the exact number of term headings is emitted by CI. Preserve
 the 2,019 original rough scan leads and 473 known mentions without
 claiming they are all mathematical terms. More definitions can be
 researched and added directly in further batches.
+
+
+## Fourth expansion batch — 14 directly researched new meanings
+
+Fourteen meanings with explicit assumptions and source locators were added
+directly to the `post_wave2/terms.json` combined-only overlay. The research
+concentrated on homological algebra, modules, category theory, measure
+theory, general topology and affine geometry. All 14 are new contextual
+meanings under distinct headings after comparing the independent screened
+and direct catalogs, the original production file list and previous
+post-Wave2 additions.
+
+Highlights include (1) injective hull / essential submodule interplay,
+(2) degree +1 chain homotopy / acyclic complexes / degree-raising cochain
+maps, (3) full subcategory versus essentially surjective functor,
+(4) finite epsilon-net total boundedness, (5) compact support as
+topological closure of the nonzero locus, (6) almost-everywhere convergence,
+(7) affinely independent points, and (8) arbitrary-intersection
+Alexandrov topology, which is NOT metric-curvature Alexandrov geometry.
+
+Sources include checked Stacks Project definitions (Sections 4.2, 12.13,
+47.2, 47.5), Encyclopedia of Mathematics entries, mathematical lecture
+notes and a small number of explicitly identified Wikipedia definitions.
+Retain their precise provenance statuses. These are assistant-reviewed
+drafts, not human mathematical certification.
+
+Combined counts expected after CI: **2,006 meanings**, while the independent
+958-meaning Wave 2 and original 1,014-definition corpus remain untouched;
+the post-Wave2 overlay has **34** meanings. This expansion is NOT
+a completion claim for the 2,019 intentionally noisy tentative scan leads.
