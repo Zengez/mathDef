@@ -10120,6 +10120,54 @@
       ],
       "research_status": "assistant-reviewed independent draft; not formally certified",
       "original_priority": 365
+    },
+    {
+      "id": "meaning.wave2.direct.16eb7002116042616e29",
+      "candidate_id": "missing.16eb7002116042616e29",
+      "term": "left and right cancellation axioms of a multiplicative system",
+      "context": "Category theory · cancellation axioms LMS3 and RMS3 for localization",
+      "aliases": [],
+      "definition": "Let C be a category and S a collection of arrows. Left cancellation (LMS3) says: for parallel f,g:X→Y and t:Z→X in S, f∘t=g∘t implies that some s:Y→W in S satisfies s∘f=s∘g. Right cancellation (RMS3) says: for parallel f,g:X→Y and s:Y→W in S, s∘f=s∘g implies that some t:Z→X in S satisfies f∘t=g∘t. A two-sided multiplicative system satisfies both, as well as closure and Ore-square conditions.",
+      "sources": [
+        {
+          "title": "Stacks Project — Localization in categories, Definition 4.27.1",
+          "url": "https://stacks.math.columbia.edu/tag/04VB",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Verified left and right square and cancellation axioms in Definition 4.27.1, including source and target orientations."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 152
+    },
+    {
+      "id": "meaning.wave2.direct.3710b4975d74d6cf4a18",
+      "candidate_id": "missing.3710b4975d74d6cf4a18",
+      "term": "left and right Ore-square completion axioms",
+      "context": "Category theory · existence of denominator-compatible commutative squares",
+      "aliases": [],
+      "definition": "Let C be a category and S a collection of morphisms. The left Ore-square condition (LMS2) requires that for arrows t:X→Z in S and g:X→Y, there exist f:Z→W and s:Y→W in S with f∘t=s∘g. The right Ore-square condition (RMS2) requires that for arrows s:Y→W in S and f:Z→W there exist g:X→Y and t:X→Z in S with s∘g=f∘t. These properties facilitate left and right categorical localization.",
+      "sources": [
+        {
+          "title": "Stacks Project — Localization in categories, Definition 4.27.1",
+          "url": "https://stacks.math.columbia.edu/tag/04VB",
+          "verification_status": "direct_primary_passage_checked",
+          "source_relevance": "Verified left and right square and cancellation axioms in Definition 4.27.1, including source and target orientations."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 193
     }
   ]
 }
