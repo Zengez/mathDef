@@ -112,3 +112,8 @@ the engineering baseline's results are historical, not claimed as rerun here.
 Delivery is recorded in `CHECKPOINT.json`. Review this branch against the
 engineering integration branch to see only this evidence directory; comparison
 against `main` also includes the still-unmerged engineering work from PR #13.
+
+The branch was pushed successfully through evidence checkpoint `5c87378fa46b75ebb3011c385469c77f1826e21b` and
+this final delivery note. Draft PR creation was attempted with `gh pr create
+--draft` and a REST POST with `draft: true`; both returned **Forbidden**. No PR
+was created or merged. [Open the evidence-only comparison](https://github.com/Zengez/mathDef/compare/codex/wave2-engineering-integration...codex/wave2-convention-evidence-2026-10-26?expand=1).

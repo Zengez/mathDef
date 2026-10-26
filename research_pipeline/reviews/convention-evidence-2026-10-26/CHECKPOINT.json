@@ -1,12 +1,12 @@
 {
-  "phase": "all_evidence_and_checks_complete_delivery_pending",
-  "finished": false,
+  "phase": "complete_pushed_for_chat_adjudication",
+  "finished": true,
   "base_engineering": "51696c08b1e5e8b7964ad4f1599e61acc9301ff9",
   "base_main": "a7ce2ba3cdd07e6d0b9809d4e39014fb8533228c",
   "historical_branch_head": "978db08b2fe736638237c6967f934dbfe96894a3",
   "protected_files": 2293,
   "reviewed_cases": 40,
-  "next": "Commit/push evidence-only branch; attempt draft PR stacked on PR13, then stop for ChatGPT/user adjudication.",
+  "next": "Stop. ChatGPT/user adjudication only; no graph correction, source research, consolidation acceptance or phase action authorized.",
   "restrictions": "Read-only; no external sources, transactions, policy acceptance or gate transition.",
   "source_convention_cases": 13,
   "ambiguity_cases": 27,
@@ -18,5 +18,21 @@
   "decision_cards": 13,
   "complete_current_contexts": 222,
   "source_verification_performed": false,
-  "gate_closed": true
+  "gate_closed": true,
+  "evidence_checkpoint_commit": "5c87378fa46b75ebb3011c385469c77f1826e21b",
+  "branch": "codex/wave2-convention-evidence-2026-10-26",
+  "draft_pr": {
+    "created": false,
+    "graphql": "Forbidden",
+    "rest": "Forbidden",
+    "base": "codex/wave2-engineering-integration",
+    "comparison_url": "https://github.com/Zengez/mathDef/compare/codex/wave2-engineering-integration...codex/wave2-convention-evidence-2026-10-26?expand=1"
+  },
+  "tests": {
+    "run": 256,
+    "passed": 254,
+    "expected_skips": 2,
+    "failures": 0,
+    "readiness_checks_passed": 19
+  }
 }
