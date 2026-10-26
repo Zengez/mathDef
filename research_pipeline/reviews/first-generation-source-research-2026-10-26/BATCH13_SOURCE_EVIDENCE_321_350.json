@@ -61,17 +61,18 @@
       "mathematical_definition_draft": "For local ring (R,m), its henselization R^h is a henselian local R-algebra with maximal ideal mR^h and residue field naturally R/m.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/04GH",
-          "section": "Section 10.155 henselization of local rings",
-          "review_status": "primary_reference_section_pending",
-          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+          "url": "https://stacks.math.columbia.edu/tag/0BSK",
+          "section": "Stacks Lemma 10.155.1, clauses (1)-(4), and Definition 10.155.3",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked: R→R^h is local, mR^h is maximal and R^h/mR^h=κ=R/m. Previous tag 04GH is unrelated Lemma 10.153.4."
         }
       ],
       "scope_and_edge_case": "The ring map is local and induces residue isomorphism; strict henselization instead has a chosen separably closed residue extension.",
       "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
       "no_recursive_research": true,
       "source_certified": false,
-      "staged": false
+      "staged": false,
+      "source_audit_note": "Verified primary replacement for earlier incorrect tag 04GH. R^sh has separable-closure residue field instead and is distinct."
     },
     {
       "priority": 323,
@@ -223,16 +224,23 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/0014",
-          "section": "Category composition and commutative diagrams",
-          "review_status": "primary_axiom_context",
-          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+          "section": "Definition 4.2.1 categorical composition",
+          "review_status": "direct_source_checked_but_not_sufficient_for_diagram_definition",
+          "relevance": "Only category axioms and composability; does not itself define arbitrary commutative diagrams."
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/08N0",
+          "section": "Definition 4.6.2 cartesian commutative square",
+          "review_status": "direct_specialization_checked_not_general_definition",
+          "relevance": "Confirms how a commutative square appears as one diagram in a category, but does not by itself prove the full generalized any-parallel-paths formulation."
         }
       ],
       "scope_and_edge_case": "Exact rows or diagram objects are additional source-specific structure.",
       "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
       "no_recursive_research": true,
       "source_certified": false,
-      "staged": false
+      "staged": false,
+      "source_audit_note": "No complete primary source verified for general-path statement. Treat broad claim as mathematical draft and seek general categorical-diagram source in deeper pass."
     },
     {
       "priority": 330,
@@ -269,16 +277,17 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/0FFJ",
-          "section": "Section 4.43 monoidal categories",
-          "review_status": "source_context_lead",
-          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+          "section": "Stacks Section 4.43, discussion of unit, displayed triangle 4.43.0.2 and Lemma 4.43.1",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked unit object 1 with left/right natural isomorphisms and triangle coherence. Stacks writes associator φ from X⊗(Y⊗Z) to (X⊗Y)⊗Z, inverse of other conventional orientation."
         }
       ],
       "scope_and_edge_case": "A unit object and natural unitors alone need triangle coherence to form monoidal structure.",
       "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
       "no_recursive_research": true,
       "source_certified": false,
-      "staged": false
+      "staged": false,
+      "source_audit_note": "Source directly checked and matching general monoidal-unit meaning; associator direction must be tracked explicitly when transferring formulas."
     },
     {
       "priority": 332,
@@ -291,17 +300,24 @@
       "mathematical_definition_draft": "A strong monoidal functor has natural invertible tensor comparisons F(X)⊗F(Y)→F(X⊗Y), a unit comparison, and compatibility with associators/unitors.",
       "external_source_evidence": [
         {
+          "url": "https://stacks.math.columbia.edu/tag/0FFJ",
+          "section": "Stacks Definition 4.43.5, monoidal functor",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked natural invertible F(X)⊗F(Y)→F(X⊗Y), associative diagram and unit-preservation requirement. Stacks unit formalism differs from arbitrary explicit unit-isomorphism presentation."
+        },
+        {
           "url": "https://ncatlab.org/nlab/show/monoidal+functor",
-          "section": "Strong monoidal functors",
-          "review_status": "source_lead",
-          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+          "section": "Strong monoidal functor conventions",
+          "review_status": "unverified_source_lead",
+          "relevance": "Additional terminology comparison pending passage verification."
         }
       ],
       "scope_and_edge_case": "Do not identify strong with strict preservation, and don't omit unit constraint.",
       "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
       "no_recursive_research": true,
       "source_certified": false,
-      "staged": false
+      "staged": false,
+      "source_audit_note": "Stacks verifies comparison isomorphisms and coherence; distinguishes a monoidal functor from strict preservation and warns unit must be included."
     },
     {
       "priority": 333,
@@ -498,17 +514,18 @@
       "mathematical_definition_draft": "A valuative lifting diagram for morphism f:X→S consists of Spec(K)→X, Spec(V)→S and canonical Spec(K)→Spec(V) with compatible compositions; a filler is Spec(V)→X over S.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/01KF",
-          "section": "Valuative criterion for separatedness/properness",
-          "review_status": "source_context_locator_pending",
-          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+          "url": "https://stacks.math.columbia.edu/tag/01KA",
+          "section": "Stacks Definition 26.20.3 (valuative diagram; existence and uniqueness)",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked Spec(K)→X above Spec(A)→S and optional dotted filler. Definition distinguishes existence and uniqueness from data of the solid diagram."
         }
       ],
       "scope_and_edge_case": "Existence/uniqueness of fillers is a property of f; not inherent in the square.",
       "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
       "no_recursive_research": true,
       "source_certified": false,
-      "staged": false
+      "staged": false,
+      "source_audit_note": "Replaced previous 01KF (Proposition 26.20.6), which is a theorem about universal closedness, not the first definition of the diagram. No property of lifting asserted by the diagram alone."
     },
     {
       "priority": 342,
@@ -544,17 +561,18 @@
       "mathematical_definition_draft": "A finite zigzag joins x to y if x=x_0,…,x_n=y and for every step at least one arrow exists in one direction between consecutive objects.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/0E1V",
-          "section": "Connected category via zigzags (exact tag pending)",
-          "review_status": "source_locator_pending",
-          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+          "url": "https://ncatlab.org/nlab/show/connected+category",
+          "section": "Connected category — Definition",
+          "review_status": "search_excerpt_checked_full_page_unavailable",
+          "relevance": "Retrieved indexed excerpt explicitly equates connectedness with zigzags, but full page was not accessible here. Distinguish underlying zigzag from additional nonemptiness requirement on connected category."
         }
       ],
       "scope_and_edge_case": "Arrows need not be invertible/composable as a directed path; n=0 allows reflexivity.",
       "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
       "no_recursive_research": true,
       "source_certified": false,
-      "staged": false
+      "staged": false,
+      "source_audit_note": "Previous Stacks tag 0E1V is actually Section 15.101 'Base change for derived hom' and is invalid here. Replacement is a lead supported by search excerpt, NOT full primary passage verification."
     },
     {
       "priority": 344,
@@ -613,17 +631,18 @@
       "mathematical_definition_draft": "A projective resolution of module M is an exact augmented chain complex ⋯→P_1→P_0→M→0 with each P_i projective.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/06XP",
-          "section": "Projective resolutions (section may need verification)",
-          "review_status": "source_locator_pending",
-          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+          "url": "https://stacks.math.columbia.edu/tag/00O2",
+          "section": "Stacks Section 10.109, Definition 10.109.2 and Lemma 10.109.4",
+          "review_status": "primary_context_checked_full_unbounded_definition_not_exactly_stated",
+          "relevance": "Directly checked projective resolutions, including exact finite and unbounded augmented projective complexes; section supplies context, not a singled-out formal definition matching all generality."
         }
       ],
       "scope_and_edge_case": "Finite-length resolution requires P_i=0 for all sufficiently large i.",
       "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
       "no_recursive_research": true,
       "source_certified": false,
-      "staged": false
+      "staged": false,
+      "source_audit_note": "Replaced tag 06XP (Section 13.27 Ext groups), which mentions projective resolutions but is not a definition. Generic unbounded resolution definition remains pending direct definitional citation."
     },
     {
       "priority": 347,
@@ -682,17 +701,24 @@
       "mathematical_definition_draft": "In an abelian category the image of f:X→Y is ker(coker f), considered as a subobject of Y.",
       "external_source_evidence": [
         {
+          "url": "https://stacks.math.columbia.edu/tag/0106",
+          "section": "Stacks Definition 12.3.9 (5)-(8), image and coimage",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked image of f as kernel of cokernel and coimage as cokernel of kernel in preadditive setting when these exist."
+        },
+        {
           "url": "https://stacks.math.columbia.edu/tag/00ZX",
-          "section": "Definition 12.5.1 and image/coimage comparison",
-          "review_status": "primary_verified",
-          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+          "section": "Stacks Definition 12.5.1, abelian categories",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked that canonical comparison Coim(f)→Im(f) is an isomorphism for morphisms in abelian categories."
         }
       ],
       "scope_and_edge_case": "Elementwise image of functions is a special case; image/coimage comparison is canonical isomorphism in abelian categories.",
       "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
       "no_recursive_research": true,
       "source_certified": false,
-      "staged": false
+      "staged": false,
+      "source_audit_note": "More precise primary source for definition is 0106; 00ZX separately supports the abelian-category comparison axiom. Image and coimage must not be identified as literal equal objects."
     },
     {
       "priority": 350,
@@ -717,5 +743,22 @@
       "source_certified": false,
       "staged": false
     }
-  ]
+  ],
+  "source_verification_audit": {
+    "review_date": "2026-10-26",
+    "verified_priorities": [
+      322,
+      329,
+      331,
+      332,
+      341,
+      343,
+      346,
+      349
+    ],
+    "method": "Directly inspect linked Stacks primary passages; distinguish checked mathematical content from partial source contexts, exact-definition insufficiencies and nLab indexed excerpts.",
+    "blocked_gap_291_320_untouched": true,
+    "graph_mutation": false,
+    "stage_admission": false
+  }
 }
