@@ -36,3 +36,14 @@ Run `python -m research_pipeline.adapters.mathdef.preview_site
 --site-root /tmp/mathdef-merged-preview` and
 `python -m unittest research_pipeline.tests.test_original_merge
 research_pipeline.tests.test_direct_additions -v` to check local rendering.
+
+## Second batch (2026-10-26)
+
+Four more direct researched meanings: cofiltered category, real affine space,
+generating set of a left module, and locally finite Borel measure. Each has a
+checked direct source locator and explicit convention/edge-case notes; their
+links point only to existing independently researched meanings. The combined
+reference should now show **1,980 meanings**, comprising 958 independent
+Wave 2 + 1,014 original mathDef + **8 post-Wave2 additions**. The fast scan's
+original 2,019 rough leads and 473 known-term mentions remain the starting
+discovery snapshot rather than mandatory approval tasks.
