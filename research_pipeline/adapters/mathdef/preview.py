@@ -10,7 +10,9 @@ from collections import defaultdict
 from pathlib import Path
 
 from research_pipeline.engine.core import PipelineError, Workspace, STAGES, atomic_json, digest
-from research_pipeline.adapters.mathdef.direct_additions import add_direct_research
+from research_pipeline.adapters.mathdef.direct_additions import (
+    add_direct_research, add_incoming_direct_links,
+)
 
 
 
@@ -131,6 +133,10 @@ def build(workspace, *, draft=False, output=None):
     if draft:
         added_direct = add_direct_research(
             out_groups, catalog["relations"], root / "direct_research" / "terms.json"
+        )
+        add_incoming_direct_links(
+            out_groups, catalog["relations"],
+            root / "direct_research" / "incoming_links.json"
         )
     output = Path(output).resolve() if output is not None else root / "preview"
     output.mkdir(parents=True, exist_ok=True)
