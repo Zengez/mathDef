@@ -144,12 +144,12 @@ def add_incoming_direct_links(groups: list, relations: list, file: Path) -> int:
     screened_forms = {
         f["id"]: f["text"]
         for g in groups for m in g["meanings"]
-        if not m["id"].startswith("meaning.wave2.direct.")
+        if not m.get("research_status")
         for f in m["formulations"]
     }
     direct_ids = {
         m["id"] for g in groups for m in g["meanings"]
-        if m["id"].startswith("meaning.wave2.direct.")
+        if m.get("research_status")
     }
     used = {(r["from_formulation"], r["target_meaning"]) for r in relations}
     for index, item in enumerate(data["links"]):
