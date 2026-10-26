@@ -4466,6 +4466,1044 @@
         "Mathematical context and material edge cases are expressed in this entry; source locator status does not imply independently verified passage."
       ],
       "original_priority": 115
+    },
+    {
+      "id": "meaning.wave2.direct.cf69ce1240520995df04",
+      "candidate_id": "missing.cf69ce1240520995df04",
+      "term": "topological fibre product",
+      "context": "topological fibre product · 120 contextual meaning",
+      "aliases": [
+        "topological pullback"
+      ],
+      "definition": "For continuous maps f:X→S and g:Y→S, the topological fibre product X×_S Y is {(x,y)∈X×Y:f(x)=g(y)}, with subspace topology inherited from the product X×Y. Its projections to X and Y satisfy the universal property of the pullback in topological spaces.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://suohyd.github.io/Topology-I/sec-fiber-product.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.branch129.indexed-product-topology",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 120,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.ddc9befb080e8d7146db",
+      "candidate_id": "missing.ddc9befb080e8d7146db",
+      "term": "cocone to a diagram",
+      "context": "cocone to a diagram · 122 contextual meaning",
+      "aliases": [
+        "cocone over a diagram"
+      ],
+      "definition": "For a small diagram F:I→C, a cocone with apex Q consists of morphisms η_i:F(i)→Q such that η_j∘F(u)=η_i for each arrow u:i→j in I. Equivalently, it is a natural transformation from F to the constant functor at Q.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/0G2U",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.category-functor",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.a8c70a2a13320680c54c",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 122,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.dfb06f7328573e269bb5",
+      "candidate_id": "missing.dfb06f7328573e269bb5",
+      "term": "countable union of sets",
+      "context": "countable union of sets · 123 contextual meaning",
+      "aliases": [
+        "countably infinite union"
+      ],
+      "definition": "For a sequence of sets (A_n)_{n≥1}, their countable union ⋃_{n≥1}A_n={x:there exists an n≥1 with x∈A_n}. A countable union may be empty if every member is empty.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://en.wikipedia.org/wiki/Union_(set_theory)",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.170fcdda487b9180137e",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 123,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.eeb1ff5cf448091c3d57",
+      "candidate_id": "missing.eeb1ff5cf448091c3d57",
+      "term": "domain of convergence of a real power series",
+      "context": "domain of convergence of a real power series · 125 contextual meaning",
+      "aliases": [
+        "convergence domain of a power series"
+      ],
+      "definition": "For a real power series ∑_{n=0}^∞c_nx^n, its convergence domain is D={x∈ℝ:the finite partial sums ∑_{n=0}^N c_nx^n converge in ℝ as N→∞}. The origin belongs to D, while behavior at boundary points may differ from the interior.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/RadiusofConvergence.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.14fb2e2c8ee691a830d3",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 125,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.ef28497e9dc38c5b82e5",
+      "candidate_id": "missing.ef28497e9dc38c5b82e5",
+      "term": "chain of irreducible closed subsets",
+      "context": "chain of irreducible closed subsets · 126 contextual meaning",
+      "aliases": [
+        "chain length of irreducible subsets"
+      ],
+      "definition": "A strict finite chain of irreducible closed subsets of a topological space X is Z₀⊊Z₁⊊⋯⊊Z_n, with each Z_i nonempty, irreducible and closed in X. Its length is n, the number of strict inclusions.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/0055",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.436a89a3c048eae81a6c",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 126,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.fbd11071cfe5ca8ef6e2",
+      "candidate_id": "missing.fbd11071cfe5ca8ef6e2",
+      "term": "conjugate of a group subset",
+      "context": "conjugate of a group subset · 128 contextual meaning",
+      "aliases": [
+        "conjugate subset gAg⁻¹"
+      ],
+      "definition": "For a group G, element g∈G and subset A⊆G, its conjugate by g is gAg⁻¹={gag⁻¹:a∈A}. The conjugate of a subgroup is again a subgroup; the construction also applies to arbitrary subsets.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://en.wikipedia.org/wiki/Conjugacy_class",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.research375",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 128,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.908934f4b8323f2ba8a0",
+      "candidate_id": "missing.908934f4b8323f2ba8a0",
+      "term": "divisibility in an integral domain",
+      "context": "divisibility in an integral domain · 129 contextual meaning",
+      "aliases": [
+        "divides",
+        "a divides b"
+      ],
+      "definition": "For elements a,b of an integral domain R, a divides b (written a∣b) if b=ac for some c∈R. In particular every a divides 0, and 0 divides only 0.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5645554e6bee6b40edda",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 129,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.03b976f9393f9c4191f4",
+      "candidate_id": "missing.03b976f9393f9c4191f4",
+      "term": "factorial of a nonnegative integer",
+      "context": "factorial of a nonnegative integer · 135 contextual meaning",
+      "aliases": [
+        "factorial n!",
+        "n factorial"
+      ],
+      "definition": "For an integer n≥0, n!=∏_{k=1}^n k, with the empty-product convention 0!=1. For n≥1, n!=n(n−1)!.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/Factorial.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 135,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.03f1f6a4d6b405f4f3e3",
+      "candidate_id": "missing.03f1f6a4d6b405f4f3e3",
+      "term": "indexed disjoint union",
+      "context": "indexed disjoint union · 136 contextual meaning",
+      "aliases": [
+        "disjoint union of sets"
+      ],
+      "definition": "For sets (X_i)_{i∈I}, their indexed disjoint union is ⨆_{i∈I}X_i={(i,x):i∈I and x∈X_i}. The first component tags which set x came from even when the underlying sets overlap.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://en.wikipedia.org/wiki/Disjoint_union",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 136,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.0423a519b1e84ca6d41c",
+      "candidate_id": "missing.0423a519b1e84ca6d41c",
+      "term": "singleton set",
+      "context": "singleton set · 137 contextual meaning",
+      "aliases": [
+        "singleton",
+        "one-element set"
+      ],
+      "definition": "For an object x, the singleton {x}={y:y=x} is the set consisting of exactly one element. This remains true when x=∅, so {∅} is nonempty.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/Singleton.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 137,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.08ca647ed43622178944",
+      "candidate_id": "missing.08ca647ed43622178944",
+      "term": "zero module",
+      "context": "zero module · 141 contextual meaning",
+      "aliases": [
+        "trivial R-module"
+      ],
+      "definition": "The zero R-module is the one-element module {0} with operations 0+0=0 and r·0=0 for every r∈R. It is both initial and terminal in the category of R-modules.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.a60aa43eed2b99b5d184",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 141,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.08fcaa9f26323a9c3d56",
+      "candidate_id": "missing.08fcaa9f26323a9c3d56",
+      "term": "field automorphism",
+      "context": "field automorphism · 142 contextual meaning",
+      "aliases": [
+        "automorphism of a field"
+      ],
+      "definition": "A field automorphism σ:E→E is a bijective field homomorphism. If an extension E/F is specified, an F-automorphism also fixes every element of F.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/09HL",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.field-commutative-unital",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.55e6dc72d6d3bc1d5669",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 142,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.0b7317d52bc5113b3520",
+      "candidate_id": "missing.0b7317d52bc5113b3520",
+      "term": "circuit in a simple undirected graph",
+      "context": "circuit in a simple undirected graph · 143 contextual meaning",
+      "aliases": [
+        "closed edge-trail",
+        "graph circuit"
+      ],
+      "definition": "In a loopless simple undirected graph, a circuit (under the closed-trail convention) is a positive-length closed walk traversing no undirected edge more than once. A circuit may repeat intermediate vertices; a simple cycle may not. Terminology varies by author.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/Circuit.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.a53971a78b449b0edc86",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.pop140.simple-undirected-cycle",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 143,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.11eb8dbe559b544a000a",
+      "candidate_id": "missing.11eb8dbe559b544a000a",
+      "term": "finite cyclic group",
+      "context": "finite cyclic group · 146 contextual meaning",
+      "aliases": [
+        "cyclic group of order n",
+        "cyclic group of order p"
+      ],
+      "definition": "A finite cyclic group of order n≥1 is a group G generated by some g of multiplicative order n, so G={e,g,g²,…,g^{n−1}} and gⁿ=e. The integer n need not be prime.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/CyclicGroup.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 146,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.14fb2e2c8ee691a830d3",
+      "candidate_id": "missing.14fb2e2c8ee691a830d3",
+      "term": "partial sum of a series",
+      "context": "partial sum of a series · 150 contextual meaning",
+      "aliases": [
+        "finite partial sum",
+        "Nth partial sum"
+      ],
+      "definition": "For a sequence (a_n)_{n≥0} in an additive group, its Nth partial sum is s_N=∑_{n=0}^N a_n for N≥0. For real sequences, an infinite series converges when the partial sums converge.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/PartialSum.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 150,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.17fcbd3c3e67f2b21f6b",
+      "candidate_id": "missing.17fcbd3c3e67f2b21f6b",
+      "term": "edge multiplicity in a multigraph",
+      "context": "edge multiplicity in a multigraph · 154 contextual meaning",
+      "aliases": [
+        "multiplicity of parallel edges"
+      ],
+      "definition": "In a loopless undirected multigraph, the multiplicity of two distinct vertices u,v is the number of distinct edge copies joining u and v. In a simple graph this number is at most one.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/Multigraph.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 154,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.1bd554e6f230b14c5f9b",
+      "candidate_id": "missing.1bd554e6f230b14c5f9b",
+      "term": "cohomology module of a cochain complex",
+      "context": "cohomology module of a cochain complex · 157 contextual meaning",
+      "aliases": [
+        "nth cohomology module",
+        "H^n(C)"
+      ],
+      "definition": "For a cochain complex of R-modules with d^n:C^n→C^{n+1} and d^n∘d^{n−1}=0, the nth cohomology module is H^n(C)=ker(d^n)/im(d^{n−1}). The quotient is defined because im(d^{n−1})⊆ker(d^n).",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/0114",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.5d07d9e2d8a2e83a53a1",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.6baca7285e379e18e82b",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 157,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.1bf45a51e32fe839d4c5",
+      "candidate_id": "missing.1bf45a51e32fe839d4c5",
+      "term": "finite biproduct",
+      "context": "finite biproduct · 158 contextual meaning",
+      "aliases": [
+        "finite direct sum in an additive category"
+      ],
+      "definition": "In an additive category, a biproduct of n≥1 objects A₁,…,A_n is an object B with inclusions i_j:A_j→B and projections p_j:B→A_j such that p_ji_k=δ_{jk}id_{A_j} (the zero map when j≠k) and ∑_ji_jp_j=id_B. It is both their product and coproduct.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/09SE",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation15.additive-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.5201cd2732d7b14502ad",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 158,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.23c297a4a1c27fe4ec73",
+      "candidate_id": "missing.23c297a4a1c27fe4ec73",
+      "term": "metric-induced topology",
+      "context": "metric-induced topology · 169 contextual meaning",
+      "aliases": [
+        "metric topology"
+      ],
+      "definition": "For a metric space (X,d), the induced topology τ_d comprises sets U⊆X such that for each x∈U there is ε>0 with B_d(x,ε)⊆U, where B_d(x,ε)={y∈X:d(x,y)<ε}. Open balls form a basis; metric topologies are Hausdorff.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/MetricTopology.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 169,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.23f5062d098be96c786a",
+      "candidate_id": "missing.23f5062d098be96c786a",
+      "term": "bounded real-valued function",
+      "context": "bounded real-valued function · 170 contextual meaning",
+      "aliases": [
+        "bounded function"
+      ],
+      "definition": "For a function f:A→ℝ, f is bounded if there exists M≥0 with |f(x)|≤M for all x∈A, equivalently f(A) is a bounded subset of ℝ. On an empty domain the condition is vacuously true.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/BoundedFunction.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.mapping-element-assignment",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 170,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.23ff9207e591fcd879d9",
+      "candidate_id": "missing.23ff9207e591fcd879d9",
+      "term": "Hermitian sesquilinear form",
+      "context": "Hermitian sesquilinear form · 171 contextual meaning",
+      "aliases": [
+        "Hermitian form"
+      ],
+      "definition": "For a complex vector space V, a Hermitian sesquilinear form h:V×V→ℂ is linear in its first argument, conjugate-linear in its second, and satisfies h(y,x)=overline{h(x,y)}. Positivity or positive definiteness is not assumed.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/HermitianForm.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.b64bc15f46fe0245.vector-space-over-field",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 171,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.2592ffd1f6be0b4d46bf",
+      "candidate_id": "missing.2592ffd1f6be0b4d46bf",
+      "term": "radical ideal",
+      "context": "radical ideal · 174 contextual meaning",
+      "aliases": [
+        "radical of an ideal"
+      ],
+      "definition": "An ideal I of a commutative ring R is radical if r^n∈I for some positive integer n implies r∈I. Equivalently I=√I, where √I={r∈R:∃n≥1,r^n∈I}. Radical ideals need not be prime.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/00DY",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.two-sided-ideal",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.commutative-prime-ideal",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 174,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.278d73133c80cdd539f3",
+      "candidate_id": "missing.278d73133c80cdd539f3",
+      "term": "pro-object of a category",
+      "context": "pro-object of a category · 177 contextual meaning",
+      "aliases": [
+        "pro-object",
+        "object of Pro(C)"
+      ],
+      "definition": "A pro-object of a category C is represented by a functor X:I→C indexed by a small, nonempty, cofiltered category I. It is a formal inverse system in Pro(C), not necessarily a diagram with an existing limit in C.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/05PT",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.small-category",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.category-functor",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.9f75052b1742ab3f.cofiltered-category",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 177,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.2c93b5604c8145ef1af4",
+      "candidate_id": "missing.2c93b5604c8145ef1af4",
+      "term": "diagonal subset",
+      "context": "diagonal subset · 180 contextual meaning",
+      "aliases": [
+        "diagonal Δ_X of X×X"
+      ],
+      "definition": "For a set X, its diagonal subset is Δ_X={(x,x):x∈X}⊆X×X. For a topological space X the diagonal is closed in X×X exactly when X is Hausdorff.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/0059",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.cartesian-product-binary",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 180,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.300b43878b10cb827d6f",
+      "candidate_id": "missing.300b43878b10cb827d6f",
+      "term": "least element",
+      "context": "least element · 182 contextual meaning",
+      "aliases": [
+        "smallest element"
+      ],
+      "definition": "For A⊆P in a partially ordered set (P,≤), a∈A is a least element if a≤x for every x∈A. A least element is unique when it exists; a minimal element need not be least.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.709d3d2f82950c5b.partially-ordered-set",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 182,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.321f1c1041b950cab75b",
+      "candidate_id": "missing.321f1c1041b950cab75b",
+      "term": "tagged Riemann sum",
+      "context": "tagged Riemann sum · 184 contextual meaning",
+      "aliases": [
+        "Riemann sum with tags"
+      ],
+      "definition": "For a function f:[a,b]→ℝ with a<b and a tagged partition a=x₀<⋯<x_n=b, ξ_i∈[x_{i−1},x_i], its Riemann sum is ∑_{i=1}^n f(ξ_i)(x_i−x_{i−1}). Different tags may produce different sums.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/RiemannSum.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.tagged-riemann-integral",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 184,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.33295ddbc642096ac085",
+      "candidate_id": "missing.33295ddbc642096ac085",
+      "term": "inverse-image sheaf morphism",
+      "context": "inverse-image sheaf morphism · 185 contextual meaning",
+      "aliases": [
+        "pullback morphism of sheaves"
+      ],
+      "definition": "For continuous f:X→Y and sheaves of rings 𝒪_X and 𝒪_Y, a morphism f⁻¹𝒪_Y→𝒪_X is a morphism of sheaves of rings on X. By adjunction, it corresponds to a morphism 𝒪_Y→f_*𝒪_X on Y, distinct from inverse images of ordinary subsets.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/01HA",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.42dd118d20d40e57e2b9",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.bf9f155d15473da985d2",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 185,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.3348be9820f51883da75",
+      "candidate_id": "missing.3348be9820f51883da75",
+      "term": "irrelevant ideal of a nonnegatively graded ring",
+      "context": "irrelevant ideal of a nonnegatively graded ring · 186 contextual meaning",
+      "aliases": [
+        "irrelevant ideal S_+"
+      ],
+      "definition": "For a nonnegatively graded commutative ring S=⊕_{n≥0}S_n, the irrelevant ideal S_+=⊕_{n>0}S_n consists of elements having zero homogeneous component of degree zero. Equivalently it is generated by homogeneous elements of positive degree.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/00JM",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.fa3b484c09596cfd.nonnegatively-graded-ring",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.two-sided-ideal",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 186,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.366fd59d8e50c00508ab",
+      "candidate_id": "missing.366fd59d8e50c00508ab",
+      "term": "multiplicative group of a field",
+      "context": "multiplicative group of a field · 192 contextual meaning",
+      "aliases": [
+        "group of units of a field",
+        "F×"
+      ],
+      "definition": "For a field F, its multiplicative group F×=F∖{0} consists of the nonzero elements with group operation multiplication, identity 1_F and multiplicative inverses from F. It is abelian and distinct from the additive group.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/MultiplicativeGroup.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.field-commutative-unital",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 192,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.3e301ed859563004e0bc",
+      "candidate_id": "missing.3e301ed859563004e0bc",
+      "term": "equipotent sets",
+      "context": "equipotent sets · 199 contextual meaning",
+      "aliases": [
+        "equinumerous sets"
+      ],
+      "definition": "Sets A and B are equipotent (equinumerous) if there exists a bijection A→B; equivalently |A|=|B|. This relation applies equally to finite and infinite sets.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://mathworld.wolfram.com/Equipotent.html",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.55e6dc72d6d3bc1d5669",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 199,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.3ee6d84a80479e5aff32",
+      "candidate_id": "missing.3ee6d84a80479e5aff32",
+      "term": "closed point",
+      "context": "closed point · 200 contextual meaning",
+      "aliases": [
+        "closed point of X"
+      ],
+      "definition": "A point x of a topological space X is a closed point if its singleton {x} is closed in X. The T₁ separation property means precisely that every point is closed.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/0059",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.0423a519b1e84ca6d41c",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.c4ed408b10943e9c0f8e",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 200,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.42dd118d20d40e57e2b9",
+      "candidate_id": "missing.42dd118d20d40e57e2b9",
+      "term": "sheaf of rings",
+      "context": "sheaf of rings · 202 contextual meaning",
+      "aliases": [
+        "ring-valued sheaf",
+        "𝒪_X sheaf of rings"
+      ],
+      "definition": "A sheaf of unital rings 𝒪 on a topological space X assigns a unital ring 𝒪(U) to every open U⊆X and a unital restriction homomorphism 𝒪(U)→𝒪(V) whenever V⊆U, satisfying identity, composition, locality and unique gluing for open covers. Its sections over the empty open set form the zero ring under the zero-ring convention.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/0091",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.ring-map-unital",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.551582b06af996cd7836",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 202,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.436a89a3c048eae81a6c",
+      "candidate_id": "missing.436a89a3c048eae81a6c",
+      "term": "irreducible closed subset",
+      "context": "irreducible closed subset · 204 contextual meaning",
+      "aliases": [
+        "closed irreducible subset"
+      ],
+      "definition": "A subset Z⊆X of a topological space is irreducible and closed if it is nonempty, closed in X and cannot be written as the union of two proper closed subsets of Z. It need not be maximal among irreducible subsets.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://stacks.math.columbia.edu/tag/0055",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.c4ed408b10943e9c0f8e",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 204,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
+    },
+    {
+      "id": "meaning.wave2.direct.45310cd338bc1b5a6685",
+      "candidate_id": "missing.45310cd338bc1b5a6685",
+      "term": "upper bound in a partially ordered set",
+      "context": "upper bound in a partially ordered set · 208 contextual meaning",
+      "aliases": [
+        "upper bound of A"
+      ],
+      "definition": "For A⊆P in a partially ordered set (P,≤), an element u∈P is an upper bound of A if a≤u for every a∈A. Every member of P is an upper bound for the empty subset.",
+      "sources": [
+        {
+          "title": "Original independent candidate research source lead",
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "verification_status": "original_research_lead_not_independently_rechecked",
+          "source_relevance": "Original candidate source lead retained. No claim of fresh primary-passage verification or formal certification."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.709d3d2f82950c5b.partially-ordered-set",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.066b1d1b9032a2e86bdd",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "research_status": "assistant-reviewed independent draft; not formally certified",
+      "original_priority": 208,
+      "assumptions": [
+        "Mathematical qualifications and special cases are given explicitly in the definition."
+      ]
     }
   ]
 }
