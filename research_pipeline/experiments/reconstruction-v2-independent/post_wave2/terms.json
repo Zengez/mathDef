@@ -1045,6 +1045,382 @@
         "finitely generated topology (Alexandrov sense)"
       ],
       "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.fully-faithful-functor-20261026",
+      "term": "fully faithful functor",
+      "context": "Category theory · bijective morphism maps for each pair of objects",
+      "definition": "Let F:C→D be a functor. It is fully faithful if for every x,y∈Ob(C), the induced function Hom_C(x,y)→Hom_D(Fx,Fy) is bijective. Equivalently it is both full (surjective on each hom-set map) and faithful (injective on each hom-set map). A fully faithful functor need not be essentially surjective.",
+      "sources": [
+        {
+          "title": "Stacks Project — Categories, Definition 4.2.9 (0013)",
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.essentially-surjective-functor-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Hom-sets are actual sets in a locally small category; the same hom-collection condition applies in a broader foundation.",
+        "This is a property of EACH morphism map, not surjectivity on objects."
+      ],
+      "aliases": [
+        "full and faithful functor"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.essential-image-functor-20261026",
+      "term": "essential image of a functor",
+      "context": "Category theory · replete image up to isomorphism",
+      "definition": "For a functor F:C→D, its essential image is the full subcategory of D on all objects d for which there is an object c of C and an isomorphism d≅F(c) in D. Thus the essential image is closed under isomorphism in D; F is essentially surjective exactly when its essential image is all of D (on objects).",
+      "sources": [
+        {
+          "title": "Stacks Project — Categories, definitions and essential surjectivity",
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "verification_status": "direct_definition_checked_with_standard_implied_construction"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.full-subcategory-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.essentially-surjective-functor-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "The essential image includes objects isomorphic to actual image objects, not just literal F(c) objects.",
+        "The FULL subcategory contains all morphisms in D between its objects."
+      ],
+      "aliases": [],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.torsion-element-domain-20261026",
+      "term": "torsion element of a module over a domain",
+      "context": "Commutative algebra · element killed by a nonzero scalar",
+      "definition": "Let R be a commutative integral domain and M an R-module. An element m∈M is torsion if there exists r∈R with r≠0 and rm=0. In particular 0∈M is torsion (it is annihilated by 1). The torsion elements form a submodule Tor_R(M), the kernel of the canonical map M→M⊗_R Frac(R).",
+      "sources": [
+        {
+          "title": "Stacks Project — Torsion free modules, Definition 15.22.1 (0549)",
+          "url": "https://stacks.math.columbia.edu/tag/0549",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "R is assumed an integral domain: not merely a commutative ring with zero divisors.",
+        "Torsion here means element torsion, not the derived functor Tor."
+      ],
+      "aliases": [],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.torsion-module-domain-20261026",
+      "term": "torsion module over an integral domain",
+      "context": "Commutative algebra · every element is torsion",
+      "definition": "Let R be a commutative integral domain and M an R-module. The module M is torsion if, for every m∈M, there exists some nonzero r∈R (which may depend on m) such that rm=0. Equivalently M⊗_R Frac(R)=0. The zero module is torsion.",
+      "sources": [
+        {
+          "title": "Stacks Project — Torsion free modules, Definition 15.22.1 (0549)",
+          "url": "https://stacks.math.columbia.edu/tag/0549",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.torsion-element-domain-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.torsion-free-module-domain-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "No single common nonzero annihilator is required for all elements of an arbitrary torsion module.",
+        "R is a commutative integral domain; the convention differs over rings with zero divisors."
+      ],
+      "aliases": [],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.torsion-free-module-domain-20261026",
+      "term": "torsion-free module over an integral domain",
+      "context": "Commutative algebra · only zero has nonzero scalar annihilator",
+      "definition": "Let R be a commutative integral domain and M an R-module. The module M is torsion-free if rm=0 for nonzero r∈R implies m=0. Equivalently, the natural homomorphism M→M⊗_R Frac(R) is injective. The zero module is torsion-free; a nonzero module may be neither torsion nor torsion-free.",
+      "sources": [
+        {
+          "title": "Stacks Project — Torsion free modules, Definition 15.22.1 (0549)",
+          "url": "https://stacks.math.columbia.edu/tag/0549",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.torsion-element-domain-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.torsion-module-domain-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Integral domain needed for this zero-divisor-free scalar criterion.",
+        "Do not conflate torsion-free with flat: over general domains torsion-free modules need not be flat."
+      ],
+      "aliases": [],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.injective-resolution-20261026",
+      "term": "injective resolution of an object",
+      "context": "Homological algebra · exact cochain resolution by injective objects",
+      "definition": "Let A be an object of an abelian category with enough injective objects. An injective resolution of A is an exact augmented cochain sequence 0→A→I^0→I^1→I^2→⋯ in which every I^n is injective. Equivalently it is a bounded-below cochain complex I^• of injective objects together with a quasi-isomorphism A[0]→I^•.",
+      "sources": [
+        {
+          "title": "Stacks Project — Injective resolutions, Definition 13.18.1 (013G)",
+          "url": "https://stacks.math.columbia.edu/tag/013G",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.cochain-map-20261026",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.injective-left-module-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "An abelian category with enough injectives ensures existence; the definition itself applies whenever such a resolution is supplied.",
+        "The whole AUGMENTED sequence is exact; unaugmented I^• has H^0≅A and H^i=0 for i>0."
+      ],
+      "aliases": [],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.symmetric-algebra-module-20261026",
+      "term": "symmetric algebra of a module",
+      "context": "Commutative algebra · commutative quotient of tensor algebra",
+      "definition": "Let R be a commutative unital ring and M an R-module. The symmetric algebra Sym_R(M)=⊕_{n≥0}Sym_R^n(M) is the quotient of the tensor algebra T_R(M)=⊕_{n≥0}M^{⊗_R n} by the two-sided ideal generated by m⊗n−n⊗m for all m,n∈M. It is a graded commutative R-algebra, with degree-zero part R and degree-one part M.",
+      "sources": [
+        {
+          "title": "Stacks Project — Tensor algebra, Section 10.13 (00DM)",
+          "url": "https://stacks.math.columbia.edu/tag/00DM",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.445e8dc5147c408d.tensor-algebra",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.module94.unital-left-module",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Commutative base ring makes ordinary tensor products and graded algebra structure unambiguous.",
+        "No finite generation or freeness of M required."
+      ],
+      "aliases": [
+        "Sym_R(M)"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.exterior-algebra-module-20261026",
+      "term": "exterior algebra of a module",
+      "context": "Commutative algebra · alternating quotient of tensor algebra",
+      "definition": "Let R be a commutative unital ring and M an R-module. Its exterior algebra Λ_R(M)=⊕_{n≥0}Λ_R^n(M) is T_R(M) modulo the two-sided ideal generated by m⊗m for every m∈M. The wedge product satisfies m∧m=0 and m∧n=−n∧m, including over rings of characteristic 2. Λ_R^0(M)=R and Λ_R^1(M)=M.",
+      "sources": [
+        {
+          "title": "Stacks Project — Tensor algebra, Section 10.13 (00DM)",
+          "url": "https://stacks.math.columbia.edu/tag/00DM",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.445e8dc5147c408d.tensor-algebra",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.symmetric-algebra-module-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Alternating relation m∧m=0 is required even when 2=0; antisymmetry alone is insufficient in characteristic 2.",
+        "No dimension or projectivity assumption on M."
+      ],
+      "aliases": [],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.supporting-hyperplane-real-20261026",
+      "term": "supporting hyperplane of a subset of a real vector space",
+      "context": "Convex geometry · hyperplane with set in a closed half-space",
+      "definition": "Let C⊆V be a nonempty subset of a real vector space V and H={v∈V:ℓ(v)=c} an affine hyperplane defined by a nonzero real linear functional ℓ and c∈ℝ. The hyperplane H supports C if C⊆{v:ℓ(v)≤c} or C⊆{v:ℓ(v)≥c}, and H intersects the closure of C in the specified topology. For V=ℝ^n take the usual Euclidean topology; contact points in C∩H are support points.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Supporting hyperplane",
+          "url": "https://encyclopediaofmath.org/wiki/Supporting_hyperplane",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.affine-hyperplane-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "For an arbitrary real vector space the topology needed for closure must be specified; the displayed finite-dimensional case uses Euclidean topology.",
+        "Requiring the hyperplane to meet closure(C) allows support at a boundary limit not belonging to C."
+      ],
+      "aliases": [
+        "supporting plane",
+        "supporting line (dimension two)"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.separable-metric-space-20261026",
+      "term": "separable metric space",
+      "context": "Metric geometry · existence of countable dense subset",
+      "definition": "A metric space (X,d) is separable if there exists a finite or countably infinite subset D⊆X such that for every x∈X and every ε>0 some y∈D satisfies d(x,y)<ε. Equivalently cl_X(D)=X. The empty metric space is separable with D=∅. Total boundedness implies separability, but the converse need not hold.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Metric space, separability paragraph",
+          "url": "https://encyclopediaofmath.org/wiki/Metric_space",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.analysis98.metric-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.totally-bounded-metric-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "A countable dense set may be finite or empty; separability is NOT a finite epsilon-net condition.",
+        "The metric topology is understood; for metric spaces separability also implies second countability."
+      ],
+      "aliases": [],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.specialization-preorder-20261026",
+      "term": "specialization preorder of a topological space",
+      "context": "General topology · closure relation on points",
+      "definition": "Given a topological space X, define x≤_sp y if x∈cl_X({y}). This is a preorder: reflexive and transitive, but not necessarily antisymmetric. In a T₀ space it is a partial order. Open sets are upper sets for this convention, and closed sets are lower sets. Other authors reverse the symbol ≤_sp, so its orientation must be stated.",
+      "sources": [
+        {
+          "title": "Stacks Project — Specialization, Definition 5.19.1 (0060)",
+          "url": "https://stacks.math.columbia.edu/tag/0060",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.alexandrov-topology-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The order convention x≤_sp y iff x belongs to closure of {y} is explicit.",
+        "T₀ separation is needed for antisymmetry; an arbitrary space yields only a preorder."
+      ],
+      "aliases": [],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.contractible-chain-complex-20261026",
+      "term": "contractible chain complex",
+      "context": "Homological algebra · identity chain map null-homotopic",
+      "definition": "A chain complex C_• in an additive category is contractible if its identity chain map id_C is chain-homotopic to the zero map. Equivalently there are morphisms h_n:C_n→C_{n+1} such that d_{n+1}h_n+h_{n−1}d_n=id_{C_n} for all n. Contractible complexes are acyclic when homology is defined, but the converse need not hold.",
+      "sources": [
+        {
+          "title": "nLab — contractible chain complex",
+          "url": "https://ncatlab.org/nlab/show/contractible%2Bchain%2Bcomplex",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.chain-homotopy-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.acyclic-chain-complex-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Uses homological grading, so the contracting homotopy raises degree by 1.",
+        "Acyclicity alone does not imply chain contraction in an arbitrary abelian category."
+      ],
+      "aliases": [],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.affine-map-real-20261026",
+      "term": "affine map between real affine spaces",
+      "context": "Affine geometry · map preserving displacement by a linear map",
+      "definition": "Let A and B be nonempty real affine spaces modeled on vector spaces V and W. A function f:A→B is affine if there is a linear map L:V→W such that f(a+v)=f(a)+L(v) for every a∈A and v∈V. After choosing origins, f has the coordinate form v↦L(v)+b. An affine map need not be injective or surjective; an affine automorphism requires L to be invertible.",
+      "sources": [
+        {
+          "title": "UCLA Math 149 — Affine transformations, Part I",
+          "url": "https://www.math.ucla.edu/~baker/149.1.02w/handouts/h_affine_I.pdf",
+          "verification_status": "direct_primary_passage_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.real-affine-space-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.63acc9193a56ae7003b9",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "General affine maps do not need invertible linear part; affine TRANSFORMATIONS are sometimes restricted to invertible maps.",
+        "The vector spaces are real and the affine spaces are nonempty, so choosing origins is possible."
+      ],
+      "aliases": [],
+      "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
     }
   ]
 }

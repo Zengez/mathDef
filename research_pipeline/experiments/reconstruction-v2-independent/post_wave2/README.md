@@ -105,3 +105,34 @@ independent Wave 2 + 1,014 original mathDef + 34 post-completion.
 Do not revise the 958-meaning completion inventory or re-run the 418-lead
 queue. The first scan's 2,019 tentative new phrases remains a discovery
 snapshot; it is not an audit gate.
+
+
+## Fifth direct research batch (2026-10-26)
+
+Thirteen more mathematical meanings added after initial original/independent/
+combined duplicate checks:
+
+- Category theory: fully faithful functor; essential image of a functor
+- Algebra: torsion element, torsion module and torsion-free module over an
+  integral domain; symmetric and exterior algebras of modules
+- Homological algebra: injective resolution; contractible chain complex
+- Geometry: supporting hyperplane and affine map (not necessarily bijective)
+- General topology: separable metric space; specialization preorder
+
+The torsion definitions use an explicitly stated **commutative integral
+domain** and distinguish element torsion from the Tor derived functor.
+The exterior algebra is defined by `m∧m=0`, not merely skew-commutativity,
+so its statement remains valid in characteristic two. The specialization
+preorder's orientation is stated to avoid conflicting conventions.
+
+Source references were checked against the Stacks Project, Encyclopedia
+of Mathematics, nLab and university affine transformation notes. Several
+formalizations are transparent specializations or generalizations of their
+source passages; they are **assistant-reviewed**, not peer-certified.
+
+Total post-Wave2 additions: **47 meanings** in the combined-only
+`post_wave2/terms.json`. Expected combined reference: **2,019 meanings**
+(958 independent Wave2 + 1,014 original mathDef + 47 post-Wave2). This
+coincidental equality to the **2,019 tentative phrase leads** from the
+earlier scan does not imply those leads were all researched or resolved.
+Preserve the 958-meaning frozen independent snapshot and initial scan.

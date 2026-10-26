@@ -112,3 +112,24 @@ Combined counts expected after CI: **2,006 meanings**, while the independent
 958-meaning Wave 2 and original 1,014-definition corpus remain untouched;
 the post-Wave2 overlay has **34** meanings. This expansion is NOT
 a completion claim for the 2,019 intentionally noisy tentative scan leads.
+
+
+## Fifth expansion batch — 13 more direct meanings
+
+The combined-only follow-up reference gained 13 researched meanings:
+fully faithful functor, essential image, torsion element/module/torsion-free
+module over an integral domain, injective resolution, symmetric algebra,
+exterior algebra, supporting hyperplane, separable metric space,
+specialization preorder, contractible chain complex and affine map.
+All source locators and edge-case assumptions are attached to the actual
+meaning entries. References include Stacks Project Sections 4.2, 10.13,
+13.18 and 15.22, Encyclopedia of Mathematics, nLab and university notes.
+
+**Snapshot protection:** The post-Wave2 overlay is now 47 meanings.
+Independent Wave2 remains exactly 958 and original production remains
+1,014 definitions; the combined view should contain 2,019 meanings upon
+successful rendering. The first rapid candidate report happened to produce
+2,019 rough *phrase leads*. Those **two equal numbers count unrelated
+objects**; do not conflate them, and do not infer candidate completion.
+
+Maintain efficient direct content work, not candidate-approval gates.
