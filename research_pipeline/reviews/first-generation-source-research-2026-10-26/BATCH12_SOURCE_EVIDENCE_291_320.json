@@ -121,16 +121,10 @@
       "mathematical_definition_draft": "For subfields K,L⊆Ω of a common overfield Ω, the compositum KL is their generated subfield, i.e. the intersection of all subfields of Ω containing K∪L.",
       "external_source_evidence": [
         {
-          "url": "https://en.wikipedia.org/wiki/Compositum_(field_theory)",
-          "section": "Compositum of fields",
-          "review_status": "source_lead_exact_passage_pending",
-          "relevance": "General field-theory source lead; exact passages not verified."
-        },
-        {
-          "url": "https://stacks.math.columbia.edu/tag/09FT",
-          "section": "Stacks Section 9.6 field extensions",
-          "review_status": "primary_specialization_or_partial_passage_checked",
-          "relevance": "Checked ambient field extension conventions; does not independently define the compositum."
+          "url": "https://en.wikipedia.org/wiki/Composite_field_(mathematics)",
+          "section": "Composite field (mathematics), Definition and properties",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checked the definition as intersection of all subfields of a common ambient field containing K and L."
         }
       ],
       "scope_and_edge_case": "Requires specified embeddings into one ambient Ω; KL can depend on the embeddings and does not mean the pointwise product set {kl}.",
@@ -138,7 +132,8 @@
       "source_certified": false,
       "staged": false,
       "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
-      "new_dependencies_policy": "record_for_later_generation_only"
+      "new_dependencies_policy": "record_for_later_generation_only",
+      "source_audit_note": "Replaced unverified likely incorrect Wikipedia URL 'Compositum_(field_theory)' with the actual compositum article; source explicitly specifies common ambient field."
     },
     {
       "priority": 293,
@@ -194,15 +189,15 @@
       "external_source_evidence": [
         {
           "url": "https://en.wikipedia.org/wiki/Quotient_ring",
-          "section": "Quotient ring",
-          "review_status": "source_lead_exact_passage_pending",
-          "relevance": "One half of compound reference; verify exact passage."
+          "section": "Quotient ring, Formal quotient ring construction",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checked ring cosets and multiplication from an ideal."
         },
         {
           "url": "https://en.wikipedia.org/wiki/Quotient_module",
-          "section": "Quotient module",
-          "review_status": "source_lead_exact_passage_pending",
-          "relevance": "Other half of compound reference; verify exact passage."
+          "section": "Quotient module, definition and module scalar multiplication",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checked quotient module of a submodule with induced scalar multiplication; R/J-action on M/JM is a standard additional deduction."
         }
       ],
       "scope_and_edge_case": "JM must be an R-submodule; action of R/J on M/JM is well-defined because J annihilates the quotient. Both ring and module may be zero.",
@@ -210,7 +205,8 @@
       "source_certified": false,
       "staged": false,
       "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
-      "new_dependencies_policy": "record_for_later_generation_only"
+      "new_dependencies_policy": "record_for_later_generation_only",
+      "source_audit_note": "This remains COMPOUND and must be split into ring and module constructions before generation admission."
     },
     {
       "priority": 295,
@@ -1003,16 +999,16 @@
       "mathematical_definition_draft": "An inverse diagram indexed by a cofiltered category I is a functor D:I→C (variance fixed by indexing convention); a compatible cone from X consists of arrows p_i:X→D(i) satisfying D(u)∘p_i=p_j for each arrow u:i→j in I.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/003G",
-          "section": "Stacks Section 4.29, 2-categories",
-          "review_status": "source_lead_exact_passage_pending",
-          "relevance": "Not sufficient for inverse diagrams; included only as a context lead and should not be presented as verification."
+          "url": "https://stacks.math.columbia.edu/tag/0030",
+          "section": "Stacks Definition 4.21.2, inverse systems over preordered sets",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checks direction M_i→M_i' for i'≤i, identities and transition-map compatibility. General cofiltered-category functor/cone formulation still needs exact categorical source comparison."
         },
         {
-          "url": "https://en.wikipedia.org/wiki/Inverse_limit",
-          "section": "Inverse systems, cones and limits",
-          "review_status": "source_lead_exact_passage_pending",
-          "relevance": "Standard context lead; exact diagram indexing convention pending."
+          "url": "https://stacks.math.columbia.edu/tag/02MY",
+          "section": "Stacks Section 12.31 inverse systems",
+          "review_status": "direct_passage_checked_specialized_index",
+          "relevance": "Directly describes inverse systems over the preordered set N, not arbitrary cofiltered categories."
         }
       ],
       "scope_and_edge_case": "An inverse system more commonly treats a directed poset with arrows j→i for i≤j or uses I^op. Existence of a cone does not imply universality or existence of inverse limit.",
@@ -1020,7 +1016,8 @@
       "source_certified": false,
       "staged": false,
       "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
-      "new_dependencies_policy": "record_for_later_generation_only"
+      "new_dependencies_policy": "record_for_later_generation_only",
+      "source_audit_note": "Removed irrelevant earlier 2-category source tag 003G; retain the categorical cone condition and index-variance review."
     },
     {
       "priority": 319,
@@ -1075,10 +1072,10 @@
       "mathematical_definition_draft": "In a simple undirected graph G=(V,E) with E⊆{{u,v}:u,v∈V,u≠v}, the (open) neighbor set of vertex v is N_G(v)={u∈V:{u,v}∈E}.",
       "external_source_evidence": [
         {
-          "url": "https://mathworld.wolfram.com/Neighborhood.html",
-          "section": "Graph neighborhood",
-          "review_status": "source_lead_exact_passage_pending",
-          "relevance": "Source lead; MathWorld URL needs confirmation as graph sense rather than topological neighborhood."
+          "url": "https://mathworld.wolfram.com/OpenGraphNeighborhood.html",
+          "section": "MathWorld Open Graph Neighborhood",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checked N(v) consists of vertices adjacent to v, excluding v; separately notes closed N[v]=N(v)∪{v}."
         }
       ],
       "scope_and_edge_case": "No loops allowed, hence v∉N_G(v); closed neighborhood includes v and differs. For directed graphs distinguish in/out neighbors.",
@@ -1086,7 +1083,18 @@
       "source_certified": false,
       "staged": false,
       "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
-      "new_dependencies_policy": "record_for_later_generation_only"
+      "new_dependencies_policy": "record_for_later_generation_only",
+      "source_audit_note": "Replaces ambiguous generic Neighborhood.html: that source describes graph neighborhoods commonly INCLUDING the vertex, incompatible with this candidate's open N_G(v) convention."
     }
-  ]
+  ],
+  "source_verification_followup": {
+    "review_date": "2026-10-26",
+    "reviewed_priorities": [
+      292,
+      294,
+      318,
+      320
+    ],
+    "note": "Direct source passage checks after first completed 418-cohort manifest audit; corrected incorrect and ambiguous source URLs, preserved mathematical types and unresolved comparison holds."
+  }
 }
