@@ -2476,6 +2476,691 @@
         "subgroup normalizer"
       ],
       "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.kolmogorov-t0-20261026",
+      "term": "T₀ topological space",
+      "context": "General topology · Kolmogorov separation axiom",
+      "aliases": [
+        "Kolmogorov space",
+        "T0 space"
+      ],
+      "definition": "A topological space X is T₀ (Kolmogorov) if for any distinct points x,y∈X there is an open subset U containing exactly one of x and y. Equivalently, x↦cl_X({x}) is injective, or the specialization preorder on X is antisymmetric. Every T₁ space is T₀, but a T₀ space need not be T₁.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Separation axiom",
+          "url": "https://encyclopediaofmath.org/wiki/Separation_axiom",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Wolfram MathWorld — Separation Axioms",
+          "url": "https://mathworld.wolfram.com/SeparationAxioms.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.specialization-preorder-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "No nonempty hypothesis: the empty space is T₀ vacuously.",
+        "The characterization using specialization order uses the declared convention x≤y iff x∈cl({y})."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.frechet-t1-20261026",
+      "term": "T₁ topological space",
+      "context": "General topology · closed singleton separation axiom",
+      "aliases": [
+        "T1 space",
+        "Fréchet topological space (T₁ sense)"
+      ],
+      "definition": "A topological space X is T₁ if for any distinct x,y∈X there is an open set containing x but not y. Equivalently, every singleton {x} is closed in X. The quantification over ordered pairs gives, for distinct x,y, separate open neighborhoods excluding the other point. Every Hausdorff space is T₁, and every T₁ space is T₀.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Separation axiom",
+          "url": "https://encyclopediaofmath.org/wiki/Separation_axiom",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Wolfram MathWorld — Separation Axioms",
+          "url": "https://mathworld.wolfram.com/SeparationAxioms.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.kolmogorov-t0-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.e62923cd8ef99cd1.hausdorff-space",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "No discreteness or Hausdorff separation is required.",
+        "The empty space is T₁ vacuously."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.regular-space-no-t1-20261026",
+      "term": "regular topological space (T₁ not assumed)",
+      "context": "General topology · separating a point from a disjoint closed set",
+      "aliases": [
+        "regular space (no T1 hypothesis)"
+      ],
+      "definition": "A topological space X is regular in the non-T₁ convention if for every closed F⊆X and every x∈X∖F, there are disjoint open sets U,V⊆X such that x∈U and F⊆V. Equivalently, every point and every open neighborhood of it admit a smaller open neighborhood whose closure lies in the original neighborhood. Some authors include T₁ in the word 'regular'; here they do not.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Separation axiom",
+          "url": "https://encyclopediaofmath.org/wiki/Separation_axiom",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Wolfram MathWorld — Separation Axioms",
+          "url": "https://mathworld.wolfram.com/SeparationAxioms.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.frechet-t1-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "T₁ is explicitly NOT assumed. The T₃ axiom usually means regular plus T₁.",
+        "The closure characterization holds under this non-T₁ convention."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.normal-space-no-t1-20261026",
+      "term": "normal topological space (T₁ not assumed)",
+      "context": "General topology · separating disjoint closed sets",
+      "aliases": [
+        "normal space (without T1)"
+      ],
+      "definition": "A topological space X is normal in the non-T₁ convention if for every two disjoint closed subsets F,G⊆X there exist disjoint open sets U,V⊆X with F⊆U and G⊆V. Some authors build T₁ into 'normal'; that extra assumption is NOT part of this meaning. The T₄ axiom is commonly defined as normal together with T₁.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Separation axiom",
+          "url": "https://encyclopediaofmath.org/wiki/Separation_axiom",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Wolfram MathWorld — Separation Axioms",
+          "url": "https://mathworld.wolfram.com/SeparationAxioms.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.frechet-t1-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "T₁ separation is not implied merely by the stated disjoint-closed-sets property.",
+        "The closed sets F,G may be empty."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.completely-regular-no-t1-20261026",
+      "term": "completely regular topological space (T₁ not assumed)",
+      "context": "General topology · continuous-function separation of points and closed sets",
+      "aliases": [
+        "complete regularity (without T1)"
+      ],
+      "definition": "A topological space X is completely regular in the non-T₁ convention if for every closed F⊆X and x∈X∖F there exists a continuous f:X→[0,1] with f(x)=0 and f(y)=1 for every y∈F. The space is then regular; it need not be T₁ without an additional assumption. Different authors sometimes require T₁ when saying 'completely regular'.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Completely Regular Space",
+          "url": "https://mathworld.wolfram.com/CompletelyRegularSpace.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Separation axiom",
+          "url": "https://encyclopediaofmath.org/wiki/Separation_axiom",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.regular-space-no-t1-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.tychonoff-t31half-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The function is defined on ALL of X, not merely the closed set.",
+        "When F is empty, the condition is satisfied by any continuous function taking 0 at x.",
+        "T₁ is explicitly NOT assumed."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.tychonoff-t31half-20261026",
+      "term": "Tychonoff topological space",
+      "context": "General topology · completely regular T₁ space",
+      "aliases": [
+        "Tikhonov topological space",
+        "T3½ space"
+      ],
+      "definition": "A topological space X is Tychonoff (or T₃½ under the stated convention) if it is completely regular and T₁: for every x outside a closed F⊆X, there exists a continuous f:X→[0,1] with f(x)=0 and f|_F=1, and every singleton of X is closed. In particular every Tychonoff space is Hausdorff, but need not be normal.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Separation axiom",
+          "url": "https://encyclopediaofmath.org/wiki/Separation_axiom",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Wolfram MathWorld — Completely Regular Space",
+          "url": "https://mathworld.wolfram.com/CompletelyRegularSpace.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.completely-regular-no-t1-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.frechet-t1-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "We require BOTH complete regularity and T₁.",
+        "Some sources use 'completely regular' itself to mean Tychonoff; the separately labeled non-T₁ entry avoids conflation."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.metrizable-topological-space-20261026",
+      "term": "metrizable topological space",
+      "context": "General topology · topology induced by some metric",
+      "aliases": [
+        "metrizable space"
+      ],
+      "definition": "A topological space (X,τ) is metrizable if there exists a metric d:X×X→[0,∞) such that U∈τ exactly when, for every x∈U, there is ε>0 with {y∈X:d(x,y)<ε}⊆U. The choice of metric is generally not unique. Every metrizable space is Hausdorff and paracompact; metrizability is a property of the topology, not the specification of one particular distance.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Metrizable space",
+          "url": "https://encyclopediaofmath.org/wiki/Metrizable_space",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.analysis98.metric-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.e62923cd8ef99cd1.hausdorff-space",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.paracompact-topological-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The metric is an ordinary finite nonnegative-real-valued metric.",
+        "The empty space is metrizable by the unique empty metric."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.proper-filter-subsets-20261026",
+      "term": "proper filter on a set",
+      "context": "Set theory and general topology · upward-closed finite-intersection family",
+      "aliases": [
+        "filter of subsets",
+        "proper set filter"
+      ],
+      "definition": "Let X be a nonempty set. A proper filter F on X is a family F⊆P(X) satisfying (i) F≠∅ and ∅∉F, (ii) if A,B∈F then A∩B∈F, and (iii) if A∈F and A⊆B⊆X then B∈F. Hence X∈F. The adjective 'proper' distinguishes it from conventions that also admit the improper filter P(X), which contains ∅.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Filter",
+          "url": "https://encyclopediaofmath.org/wiki/Filter",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.filter-base-on-set-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The underlying set X must be NONEMPTY for proper filters to exist.",
+        "A filter is a FAMILY OF SUBSETS, distinct from order-theoretic filters on general posets."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.filter-base-on-set-20261026",
+      "term": "filter base on a set",
+      "context": "Set theory · base generating a proper filter",
+      "aliases": [
+        "prefilter base"
+      ],
+      "definition": "Let X be a nonempty set. A filter base B is a nonempty family of nonempty subsets of X such that for any B₁,B₂∈B there exists B₃∈B with B₃⊆B₁∩B₂. It generates the proper filter {A⊆X: there exists B∈B with B⊆A}. A filter base need not itself be upward closed or closed under finite intersections.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Filter",
+          "url": "https://encyclopediaofmath.org/wiki/Filter",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.proper-filter-subsets-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "B must be nonempty and contain no empty set, ensuring the generated filter is proper.",
+        "The third-base-member condition is weaker than B₁∩B₂∈B."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.neighborhood-filter-point-20261026",
+      "term": "neighborhood filter of a point",
+      "context": "General topology · filter of all neighborhoods at a fixed point",
+      "aliases": [
+        "neighbourhood filter"
+      ],
+      "definition": "Let X be a topological space and x∈X. The neighborhood filter N_X(x) consists of all subsets A⊆X containing an open set U with x∈U⊆A. It is a proper filter on X. In particular it includes all open neighborhoods of x and all their supersets, not only the open neighborhoods themselves.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Neighbourhood",
+          "url": "https://encyclopediaofmath.org/wiki/Neighbourhood",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Filter",
+          "url": "https://encyclopediaofmath.org/wiki/Filter",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.proper-filter-subsets-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "The point x exists, so X is nonempty.",
+        "Neighborhood means a set containing an OPEN neighborhood, not necessarily an open set itself."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.neighborhood-base-point-20261026",
+      "term": "neighborhood base at a point",
+      "context": "General topology · local collection refining every neighborhood",
+      "aliases": [
+        "local base",
+        "neighborhood basis at a point"
+      ],
+      "definition": "Let X be a topological space and x∈X. A neighborhood base at x is a family B of neighborhoods of x such that for every neighborhood U of x some B∈B satisfies B⊆U. Equivalently, B generates N_X(x) as a filter. Its members need not be open, though one can replace them by suitable open neighborhoods. A space is first countable if every point has a countable neighborhood base.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Neighbourhood",
+          "url": "https://encyclopediaofmath.org/wiki/Neighbourhood",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Filter",
+          "url": "https://encyclopediaofmath.org/wiki/Filter",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.neighborhood-filter-point-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.filter-base-on-set-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Every member of B must itself contain an open neighborhood of x.",
+        "The empty space has no points at which such a local base must be specified."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.convergence-proper-filter-20261026",
+      "term": "convergence of a filter to a point",
+      "context": "General topology · inclusion of the neighborhood filter",
+      "aliases": [
+        "filter convergence"
+      ],
+      "definition": "Let F be a proper filter on a topological space X and x∈X. The filter F converges to x if N_X(x)⊆F; equivalently, every neighborhood of x belongs to F. A filter may converge to several points in a non-Hausdorff space, whereas in a Hausdorff space a proper filter has at most one limit.",
+      "sources": [
+        {
+          "title": "ProofWiki — Definition: Convergent Filter",
+          "url": "https://proofwiki.org/wiki/Definition:Convergent_Filter",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Neighbourhood",
+          "url": "https://encyclopediaofmath.org/wiki/Neighbourhood",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.neighborhood-filter-point-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.proper-filter-subsets-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "F is PROPER; using the improper filter would trivialize convergence.",
+        "Limit uniqueness requires Hausdorffness but existence does not."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.net-directed-set-20261026",
+      "term": "net in a topological space",
+      "context": "General topology · directed-index generalized sequence",
+      "aliases": [
+        "Moore–Smith net",
+        "generalized sequence"
+      ],
+      "definition": "Let (D,≤) be a nonempty directed preorder and X a topological space. A net in X indexed by D is a function x:D→X, conventionally written (x_d)_{d∈D}. The directedness requirement says every pair d,e∈D has a common upper bound. A sequence is the special case D=ℕ with its usual order.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Net (directed set)",
+          "url": "https://encyclopediaofmath.org/wiki/Net_%28directed_set%29",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.709d3d2f82950c5b.directed-preordered-set",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "D is NONEMPTY and directed; we permit preorders, not only antisymmetric directed posets.",
+        "If X is empty no net with nonempty directed index set exists."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.net-convergence-point-20261026",
+      "term": "convergence of a net to a point",
+      "context": "General topology · eventual membership in every neighborhood",
+      "aliases": [
+        "Moore–Smith convergence"
+      ],
+      "definition": "A net (x_d)_{d∈D} in a topological space X converges to x∈X when for every open neighborhood U of x there is d₀∈D such that x_d∈U for all d≥d₀. More generally, the same condition holds for every neighborhood, open or not. Nets may have multiple limits in non-Hausdorff spaces; Hausdorff spaces have unique limits of nets.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Net (directed set)",
+          "url": "https://encyclopediaofmath.org/wiki/Net_%28directed_set%29",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.net-directed-set-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.e62923cd8ef99cd1.hausdorff-space",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Index set is a NONEMPTY directed preorder.",
+        "'Eventually' means all indices above some index, not merely some arbitrarily late indices."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.alexandroff-one-point-compactification-20261026",
+      "term": "one-point compactification of a locally compact Hausdorff space",
+      "context": "General topology · adjoining a point at infinity",
+      "aliases": [
+        "Alexandroff compactification",
+        "Aleksandrov compactification"
+      ],
+      "definition": "Let X be a locally compact, noncompact Hausdorff space. Its one-point (Alexandroff) compactification X⁺=X∪{∞}, with ∞∉X, has all original open subsets of X as opens and neighborhoods of ∞ of the form {∞}∪(X∖K), where K ranges over compact subsets of X. This makes X⁺ a compact Hausdorff space in which X is a dense open subspace.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Aleksandrov compactification",
+          "url": "https://encyclopediaofmath.org/wiki/One-point_compactification",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.broad67.compact-topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.e62923cd8ef99cd1.hausdorff-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Assume X is locally compact, Hausdorff AND NONCOMPACT so that this really is a one-point Hausdorff COMPACTIFICATION with dense X.",
+        "Other one-point compact extensions for spaces not satisfying these conditions may fail to be Hausdorff."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.partition-of-unity-20261026",
+      "term": "partition of unity on a topological space",
+      "context": "General topology and geometry · locally finite weights summing to one",
+      "aliases": [
+        "continuous partition of unity"
+      ],
+      "definition": "Let X be a topological space. A partition of unity is an indexed family (φ_i:X→[0,1])_{i∈I} of continuous functions whose support family (supp φ_i)_{i∈I} is locally finite and such that ∑_{i∈I}φ_i(x)=1 for every x∈X. Local finiteness ensures only finitely many terms are nonzero near any given x. A subordinate partition additionally controls which covering sets contain the supports.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Paracompact space",
+          "url": "https://encyclopediaofmath.org/index.php?title=Paracompact_space",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Locally finite covering",
+          "url": "https://encyclopediaofmath.org/wiki/Locally_finite_covering",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.locally-finite-set-family-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.support-function-topological-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Support is the TOPOLOGICAL CLOSURE of the nonzero locus.",
+        "No differentiable structure is assumed, so functions are continuous rather than smooth.",
+        "When X=∅, the empty family is a valid partition vacuously."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.partition-of-unity-subordinate-20261026",
+      "term": "partition of unity subordinate to an open cover",
+      "context": "General topology · partition with each support inside a covering member",
+      "aliases": [
+        "subordinate partition of unity"
+      ],
+      "definition": "Let X be a topological space and (U_i)_{i∈I} an indexed open cover. A partition of unity subordinate to this cover is a family of continuous functions φ_i:X→[0,1] indexed by I such that (supp φ_i) is locally finite, supp φ_i⊆U_i for every i, and ∑_{i∈I}φ_i(x)=1 for all x∈X. Existence for every open cover is guaranteed, for example, on paracompact Hausdorff spaces.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Paracompact space",
+          "url": "https://encyclopediaofmath.org/index.php?title=Paracompact_space",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Locally finite covering",
+          "url": "https://encyclopediaofmath.org/wiki/Locally_finite_covering",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.partition-of-unity-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.62983821c35d185a119d",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.paracompact-topological-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Supports must lie INSIDE their indexed U_i, a stronger requirement than containment of the nonzero loci alone.",
+        "The cover may be infinite; locally finite supports make the pointwise sum finite locally."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.compact-open-topology-functions-20261026",
+      "term": "compact-open topology on a space of continuous maps",
+      "context": "General topology · function space topology from compact-source open-target conditions",
+      "aliases": [
+        "compact-open topology"
+      ],
+      "definition": "Let X,Y be topological spaces and C(X,Y) the set of continuous functions X→Y. The compact-open topology on C(X,Y) is generated by the subbasis [K,U]={f∈C(X,Y):f(K)⊆U}, where K⊆X ranges over compact subsets and U⊆Y ranges over open subsets. Finite intersections of these subbasic sets form a basis; the [K,U] themselves need not form a basis.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Compact-Open Topology",
+          "url": "https://mathworld.wolfram.com/Compact-OpenTopology.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.topology-subbasis-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.broad67.compact-topological-space",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "No Hausdorff assumption on X or Y in the definition.",
+        "The empty compact set K=∅ produces [∅,U]=C(X,Y)."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.box-product-topology-20261026",
+      "term": "box topology on a product of topological spaces",
+      "context": "General topology · unrestricted products of open coordinate sets",
+      "aliases": [
+        "box product topology"
+      ],
+      "definition": "Given topological spaces (X_i,τ_i) indexed by I, the box topology on ∏_{i∈I}X_i is the topology with a basis consisting of every product ∏_{i∈I}U_i where U_i∈τ_i for all i. In contrast, the ordinary product topology requires U_i=X_i for all but finitely many i. Thus the box topology is at least as fine, and coincides with the product topology for finite I.",
+      "sources": [
+        {
+          "title": "PlanetMath — box topology",
+          "url": "https://planetmath.org/boxtopology",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.branch129.indexed-product-topology",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.topology-basis-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "For an infinite index set, box and product topologies can differ substantially.",
+        "The index set I may be empty; then the underlying product is a singleton."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.sierpinski-space-20261026",
+      "term": "Sierpiński topological space",
+      "context": "General topology · two-point T₀, non-T₁ space",
+      "aliases": [
+        "Sierpinski space",
+        "Sierpiński two-point space"
+      ],
+      "definition": "The Sierpiński space Σ={⊥,⊤} has topology τ={∅,{⊤},Σ}; thus exactly one of its singleton subsets is open. It is T₀ but not T₁. For any topological space X, open subsets U⊆X correspond bijectively to continuous characteristic functions χ_U:X→Σ taking value ⊤ on U and ⊥ otherwise.",
+      "sources": [
+        {
+          "title": "PLS Lab — Sierpiński space",
+          "url": "https://www.pls-lab.org/Sierpinski_space",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.kolmogorov-t0-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.frechet-t1-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "This is a topological Sierpiński space, not a Sierpiński carpet, triangle or measure-theoretic construction.",
+        "The two distinguished points and the unique nontrivial OPEN singleton are specified."
+      ],
+      "research_status": "post-Wave2 assistant-reviewed draft; source passages retrieved; not formally peer-certified"
     }
   ]
 }
