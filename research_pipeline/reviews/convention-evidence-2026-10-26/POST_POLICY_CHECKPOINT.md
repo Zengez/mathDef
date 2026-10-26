@@ -78,3 +78,38 @@ preflight; policy approval is not a blanket apply command.
 
 No consolidation gate transition or Pass 3 authorization
 is granted by this checkpoint.
+
+## Subsequent exact-effective-occurrence audit (2026-10-25)
+
+**Completed after this checkpoint's original 40-case triage:**
+
+- [EXACT_EFFECTIVE_OCCURRENCE_REVIEW.json](EXACT_EFFECTIVE_OCCURRENCE_REVIEW.json):
+  a 73-occurrence, 72-parent-visit, 26-rank ledger with exact
+  observed/canonical IDs and full source-version and effective-node hashes.
+- [EXACT_EFFECTIVE_OCCURRENCE_FINDINGS.md](EXACT_EFFECTIVE_OCCURRENCE_FINDINGS.md):
+  source-free mathematical findings and next controlled proposals.
+
+All **73/73** referenced current missing-candidate occurrences agree
+with the pinned Codex effective-reference capture, and **72/72**
+source/node SHA pairs agree with their effective contexts. No
+meaning-target self-edge was found in the reviewed affected parents.
+The evidence branch is docs-only relative to the engineering base.
+This audit used existing captured evidence and targeted raw-node
+spot checks; it did not rerun a full graph replay or the Python
+test suite.
+
+**Six specific candidate-context mismatches** were identified
+(historical rank 36: 3, rank 38: 3), with exact IDs preserved in
+the JSON/Markdown report. Other noteworthy actions:
+candidate wording/logic ranks 40, 181, 250, 259, 400;
+rank 54 unital span/historical seed; rank 298 possible
+extraneous explanatory dependency; specialized self-link
+hazards ranks 172, 223, 245; the original 13 source conventions
+and secondary 18/291/364 remain source-verification tasks.
+
+**Next:** prepare **non-applying** version-bound correction
+options for six rank-36/38 occurrences, then audit rank-298
+reference necessity, rank-259 wording, and self-reference
+hazards. An approved general linking policy alone does not
+authorize making those edits. Keep all mathematical graph
+files protected and Pass 2 gate closed.
