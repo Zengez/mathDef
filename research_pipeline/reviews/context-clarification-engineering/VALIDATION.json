@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "base_engineering_commit": "51696c08b1e5e8b7964ad4f1599e61acc9301ff9",
+  "main_mathematical_checkpoint": "a7ce2ba3cdd07e6d0b9809d4e39014fb8533228c",
+  "supporting_review_head": "c1882af843cd0573356d780a28168f9ce1543a47",
+  "python_suite": {
+    "baseline_run": 256,
+    "final_run": 284,
+    "passed": 282,
+    "expected_skips": 2,
+    "failures": 0,
+    "errors": 0,
+    "elapsed_seconds": 5.669,
+    "new_tests": 28,
+    "expected_skips_reason": "Intentionally stale historical Round175/176 proposals"
+  },
+  "readiness": {
+    "status": "mechanical_checks_passed_review_decision_required",
+    "pass2_complete": "not_determined",
+    "pass3_authorized_by_this_assessment": false,
+    "mechanical_checks": {
+      "inventory_matches_current_sources": true,
+      "inventory_digest_valid": true,
+      "all_scans_complete": true,
+      "zero_unassigned": true,
+      "zero_ambiguous": true,
+      "unique_occurrence_identities": true,
+      "occurrence_index_matches_replay": true,
+      "unresolved_index_matches_replay": true,
+      "edge_index_matches_replay": true,
+      "state_counts_match_replay": true,
+      "state_fingerprint_matches_replay": true,
+      "checkpoint_matches_state": true,
+      "reverse_index_matches_replay": true,
+      "registry_identity_set_matches_replay": true,
+      "registry_metadata_matches_replay": true,
+      "reference_dispositions_valid": true,
+      "canonical_and_alias_counts_match_state": true,
+      "existing_integrity_audit_passed": true,
+      "provenance_record_links_exist": true
+    },
+    "mechanical_integrity_failures": []
+  },
+  "consistency_summary": {
+    "total_review_candidates": 20,
+    "returned": 20,
+    "omitted": 0,
+    "exhaustive": true,
+    "accepted_count": 0,
+    "stale_review_count": 0,
+    "by_code": {
+      "same_phrase_multiple_targets": 3,
+      "seed_scan_target_disagreement": 15,
+      "submersive_iff_surjectivity_scope": 1,
+      "subset_predicate_to_ambient_space": 1
+    },
+    "mechanical_integrity_count": 0,
+    "effective_reference_count": 4489
+  },
+  "global_summary": {
+    "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+    "state_unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+    "phase": "consolidate_occurrences",
+    "consolidation_gate_valid": false,
+    "meaning_count": 611,
+    "formulation_count": 659,
+    "complete_effective_formulations": 659,
+    "existing_dependency_edges": 2638,
+    "scan_dependency_edges": 1772,
+    "seed_dependency_edges": 866,
+    "distinct_existing_dependency_pairs": 1761,
+    "cycle_components": 0,
+    "cycle_components_scope": "legacy_direct_scan_and_unoverridden_existing_seeds",
+    "effective_cycle_components": 1,
+    "formulation_avoidable_cycle_components": 1,
+    "unavoidable_cycle_components": 0,
+    "undetermined_cycle_components": 0,
+    "effective_existing_dependency_edges": 2647,
+    "unassigned_occurrences": 0,
+    "ambiguous_occurrences": 0,
+    "total_flags": 9,
+    "review_queue_count": 9,
+    "accepted_review_count": 0,
+    "stale_review_count": 0,
+    "flags_by_code": {
+      "cycle_edges_review_required": 0,
+      "effective_seed_override_count": 20,
+      "ideal_vs_module_generation": 8,
+      "submersive_iff_surjectivity_scope": 1
+    }
+  },
+  "provenance": {
+    "meanings": 611,
+    "formulations": 659,
+    "source_record_count": 15,
+    "observation_record_count": 973,
+    "evidence_links": 659,
+    "missing_evidence_records": 0,
+    "missing_source_records": 0,
+    "missing_locator_fields": 0,
+    "structural_provenance_complete": true,
+    "external_content_verified_by_this_command": false,
+    "record_kind_counts": {
+      "paraphrase": 659
+    },
+    "explicit_verification_state_counts": {
+      "unspecified": 659
+    }
+  },
+  "reconciliation_status_counts": {
+    "applied_receipt_verified": 6,
+    "superseded_by_verified_transaction": 2
+  },
+  "default_compatibility_and_qualification_ledger": {
+    "analyze_snapshot": {
+      "unchanged": true,
+      "sha256": "9b80bcc2414540ab9ed9f86c94e7961ef3f20745087a8202788f7d742f5e16d8"
+    },
+    "candidate_review_bundle": {
+      "unchanged": true,
+      "sha256": "9a0907de8712738feb1588452b94c8f551fefa365e99751a3cc129fac7298f30"
+    },
+    "consistency_worklist": {
+      "unchanged": true,
+      "sha256": "6a4ba21fcb3b0610289a69442f43c5324980222dd4b8152a78be3213ab9affb9"
+    },
+    "owner_qualification_ledger": {
+      "review_candidates": 1,
+      "claimed_applied_qualifications": 0,
+      "application_evidence_verified": false
+    },
+    "owner_ledger_sha256": "5f89c4937ce8c033273fad4aebe21fd9fbe355c401c8138b96ab3053f5e49b08",
+    "protected_files_unchanged": 2293
+  },
+  "exact_case_smoke": "SMOKE.json",
+  "protected_files": {
+    "count": 2293,
+    "all_paths_and_bytes_unchanged": true,
+    "file_map_canonical_sha256": "b14aa5eced27ec6b82d6c723191fed3266e8115c06b428cd9be8bfcacaf61d17",
+    "manifest_file_sha256": "b17fc5a8ba51a23b7f84c589ce8a9c7f8a7abb0ec0b2690400832baf2f957438",
+    "frozen_wave1_git_tree_before_after": "00d52a5fbb31827f80bf7683ae8347e6d652e569",
+    "frozen_math_files_read": false
+  },
+  "source_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "gate_closed": true,
+  "graph_changes_applied": false,
+  "mathematical_certification": false,
+  "source_verification_performed": false,
+  "qualification_entries_applied": 0,
+  "compileall": "passed",
+  "git_diff_check": "passed",
+  "exact_changed_paths": [
+    "research_pipeline/engine/dependency_consistency_worklist.py",
+    "research_pipeline/engine/dependency_context_reviews.py",
+    "research_pipeline/engine/dependency_global_audit.py",
+    "research_pipeline/reviews/context-clarification-engineering/CHECKPOINT.json",
+    "research_pipeline/reviews/context-clarification-engineering/DESIGN.md",
+    "research_pipeline/reviews/context-clarification-engineering/PROTECTED_FILE_HASHES.json",
+    "research_pipeline/reviews/context-clarification-engineering/REPORT.md",
+    "research_pipeline/reviews/context-clarification-engineering/SMOKE.json",
+    "research_pipeline/reviews/context-clarification-engineering/VALIDATION.json",
+    "research_pipeline/tests/test_dependency_context_reviews.py"
+  ],
+  "raw_audit_output_sha256": {
+    "readiness": "bd7f5327236f1acaded2f87701b5f22c74f642de4e06ef9cac54a3d8f2c62160",
+    "consistency": "71a4271031c836f623b684f723564b6c2b805bd978e834b82c549e0b65ef032e",
+    "global": "53f979d1487548195d98d24f5d6843c4877de58c0a2c9708359dfc2c7ae95192",
+    "provenance": "c898b159b1236a3d9defd16ec12c72882207c56f76a683e14fcc7a0f0bedabc3",
+    "reconciliation": "18688a8378e116e84efb097ac12ff2d09e64543cb4ef7b26d2cc56413930ba8f"
+  },
+  "executed_commands": [
+    "python -m unittest discover -s research_pipeline/tests -v",
+    "python -m unittest research_pipeline.tests.test_dependency_context_reviews -v",
+    "python -m compileall -q research_pipeline/engine research_pipeline/tests",
+    "python -m research_pipeline.engine.dependency_consolidation_readiness --workspace research_pipeline/experiments/reconstruction-v2-independent --exhaustive",
+    "python -m research_pipeline.engine.dependency_consistency_worklist --workspace research_pipeline/experiments/reconstruction-v2-independent --exhaustive",
+    "python -m research_pipeline.engine.dependency_provenance_audit --workspace research_pipeline/experiments/reconstruction-v2-independent",
+    "python -m research_pipeline.engine.dependency_global_audit --workspace research_pipeline/experiments/reconstruction-v2-independent scan --limit 80 --candidate-limit 80 --include-cycle-edges",
+    "python -m research_pipeline.engine.dependency_reconciliation_status --workspace research_pipeline/experiments/reconstruction-v2-independent --queue research_pipeline/reviews/canonical-identity-2026-10-24/LIVE_RECONCILIATION_QUEUE.json",
+    "PYTHONPATH=. python /tmp/context-exact-smoke.py (ephemeral fixture generator, commands and result described in REPORT.md/SMOKE.json)",
+    "git diff --check"
+  ],
+  "not_executed": [
+    "graph apply/submit/rebuild against live workspace",
+    "source or candidate corrections",
+    "owner qualification ledger updates",
+    "workflow dispatch",
+    "frontend builds/tests",
+    "external subject research"
+  ],
+  "pr13_pr14_api_get_result": "Forbidden; branch ancestry and heads verified via Git",
+  "delivery_status": "pending_final_push_and_draft_pr_attempt",
+  "tested_base_commit": "6a961de5e451a9b45d0ef9dea3d3d2bb1b9a1245",
+  "tested_code_file_sha256": {
+    "research_pipeline/engine/dependency_consistency_worklist.py": "eccb78f3135bca76cf628eaecdf8af4e17077b7ed2c6935bcbb96c05ea2b0afb",
+    "research_pipeline/engine/dependency_context_reviews.py": "ad77afd43044a700df119ad1a962bcb95497b0517c3383d622c5f37709d4b75b",
+    "research_pipeline/engine/dependency_global_audit.py": "54805e59108a92bfbf7fad29fb536cee6722854b581f9fa5b21d5370110a1701",
+    "research_pipeline/tests/test_dependency_context_reviews.py": "7157f12e7c9375ac85e4818e6633ffe1f71d4ad47e35ef0aba32cada0cbc60c6"
+  }
+}

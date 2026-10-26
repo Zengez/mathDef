@@ -188,6 +188,40 @@ class ContextReviewTests(unittest.TestCase):
         p=deepcopy(self.p);p['payload']['occurrence_interpretations'][0]['retained_parent_conditions']=[]
         with self.assertRaises(PipelineError):self.replay([p])
 
+    def test_homogeneous_whole_process_property_cannot_claim_component_identity(self):
+        w=self.root/'homogeneous'
+        Workspace(w).init({'schema_version':1,'project':'Synthetic homogeneous quantified property',
+            'term_kind':'item','content_kind':'description','adapter':'fixture',
+            'external_reference_mode':True,'independent_second_wave':True})
+        row=deepcopy(self.rows[0]);row['formulations'][0]['text']='A whole process property requires P at every real coordinate, retaining the full universal quantifier.'
+        (w/'records/meanings.jsonl').write_text(json.dumps(row)+'\n')
+        (w/'records/relations.jsonl').write_text('')
+        inventory_sync(w);inv=read(graph_path(w)/'INVENTORY.json')
+        context='Entire process predicate requiring P at every real index, not the single-coordinate component.'
+        store(w,[{'formulation_id':'form.real','version_sha256':inv['formulations']['form.real']['version_sha256'],
+            'references':[{'phrase':'whole quantified property','context':context,'state':'missing'}],
+            'complete':True,'review_rationale':WHY}])
+        snapshot=load_context_snapshot(w)
+        original=proposal(snapshot,missing_key('whole quantified property',context))
+        self.assertEqual(len(original['payload']['basis']['occurrences']),1)
+        self.assertEqual(original['payload']['basis']['alias_history'],[])
+        for field in ['whole_scope','equivalence']:
+            p=deepcopy(original)
+            if field=='whole_scope':p['payload']['interpretation']['kind']='whole_parent_property'
+            else:p['payload']['occurrence_interpretations'][0]['relation']='equivalent_to_whole_parent'
+            with self.subTest(field=field),self.assertRaises(PipelineError):
+                replay_reviews(snapshot,[p],history_checkpoint([p]))
+        # We do not claim that arbitrary dishonest prose can be theorem-checked.
+
+    def test_missing_or_changed_occurrence_and_empty_candidate_fail_closed(self):
+        for how in ['missing','renamed','all_removed']:
+            changed=deepcopy(self.snapshot)
+            if how=='missing':changed['nodes']['form.integer']['references']=[]
+            elif how=='renamed':changed['nodes']['form.integer']['references'][0]['occurrence_id']='occ.changed'
+            else:
+                for node in changed['nodes'].values():node['references']=[]
+            with self.subTest(how=how),self.assertRaises(PipelineError):self.replay(snapshot=changed)
+
     def test_self_dependency_resolution_and_alias_fields_are_not_supported(self):
         for field,value in [('target_meaning_id','meaning.real'),('alias_of',self.ids['integer']),
                             ('new_dependencies',['meaning.real']),('change_applied',True)]:

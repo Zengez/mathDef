@@ -17,7 +17,7 @@ import tempfile
 
 from .core import PipelineError, digest
 from .dependency_cycle_analysis import effective_references
-from .dependency_graph import KEY_RE, collect, missing_key
+from .dependency_graph import KEY_RE, alias_map, collect
 
 GENESIS = digest(None)
 
@@ -106,25 +106,16 @@ def graph_fingerprints(snapshot):
 
 
 def _alias_history(snapshot):
-    # Validate even inactive historical events, without resurrecting them.
-    direct, seen = {}, set()
+    # Include inactive endpoints for HISTORY validation only. Effective replay
+    # below still uses its original availability rules and never revives them.
+    direct, available = {}, {c['id'] for c in snapshot['candidates']}
     for event in snapshot['aliases']:
-        eid = event.get('alias_id'); _id(eid)
+        _id(event.get('alias_id'))
         a, b = event.get('alias_candidate_id'), event.get('canonical_candidate_id')
         _id(a); _id(b)
-        if eid in seen or a in direct or a == b:
-            raise PipelineError('Duplicate/conflicting historical alias')
         _text(event.get('reviewed_by')); _text(event.get('reason'), 40)
-        seen.add(eid); direct[a] = b
-    finals = {}
-    for alias in direct:
-        current, visited = alias, set()
-        while current in direct:
-            if current in visited:
-                raise PipelineError('Cycle in historical alias ledger')
-            visited.add(current); current = direct[current]
-        finals[alias] = current
-    return direct, finals
+        available.update((a, b)); direct[a] = b
+    return direct, alias_map(Path('.'), available, events=snapshot['aliases'])
 
 
 def load_context_snapshot(workspace):
