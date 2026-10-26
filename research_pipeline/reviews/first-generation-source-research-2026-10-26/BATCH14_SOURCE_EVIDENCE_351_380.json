@@ -154,16 +154,17 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/00JL",
-          "section": "Graded algebra conventions",
-          "review_status": "source_nonnegative_scope",
-          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+          "section": "Stacks Section 10.56, graded rings and homogeneous components",
+          "review_status": "direct_primary_commutative_nonnegative_specialization_only",
+          "relevance": "Directly checked nonnegatively graded commutative ring convention and graded multiplication. Does not alone certify the full possibly noncommutative associative R-algebra structure: base R action and the unital associative axioms must also be specified."
         }
       ],
       "scope_and_edge_case": "Associativity and R-algebra structure must be stated, not implied by grading alone.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
       "source_certified": false,
       "staged": false,
-      "new_dependencies_deferred": true
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Correct Stacks section but narrower commutative N-graded convention than generic associative graded R-algebra. Retain separate scope certification."
     },
     {
       "priority": 357,
@@ -177,16 +178,17 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/00TH",
-          "section": "Definition 10.138.1 formally smooth lift",
-          "review_status": "primary_definition_context",
-          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+          "section": "Stacks Definition 10.138.1, formally smooth algebra",
+          "review_status": "direct_primary_special_case_checked",
+          "relevance": "Directly checks a commuting R-algebra lifting square where the surjective map has square-zero kernel; general compatible lifts exist as a definition without assuming square-zero kernel."
         }
       ],
       "scope_and_edge_case": "Existence and uniqueness are different properties; square-zero ideal of q is a separate hypothesis for formal smooth/étale/unramified testing.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
       "source_certified": false,
       "staged": false,
-      "new_dependencies_deferred": true
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Do not infer existence of a lift merely from a compatible square. Square-zero is an added restriction for formal smoothness, not part of the generic notion of lift."
     },
     {
       "priority": 358,
@@ -200,16 +202,17 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/00CM",
-          "section": "Localization and ideal extension",
-          "review_status": "source_context",
-          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+          "section": "Stacks Proposition 10.9.14, localization of ideals",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checks extended ideal S^{-1}I in S^{-1}R and generation under localization. Apply to I=p^n and S=R\\p to obtain p^nR_p; distinguish extension from contraction."
         }
       ],
       "scope_and_edge_case": "For φ:R→R_p, the extension p^nR_p is not inverse-image/contraction. Product powers commute with extension in this setting.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
       "source_certified": false,
       "staged": false,
-      "new_dependencies_deferred": true
+      "new_dependencies_deferred": true,
+      "source_audit_note": "The indicated source section actually supports the specialization of ideal extension to the local ring R_p."
     },
     {
       "priority": 359,
@@ -360,17 +363,18 @@
       "mathematical_definition_draft": "For local modules over principal opens D(f_i), overlap isomorphisms φ_ij:(M_i)_{f_j}→(M_j)_{f_i} are isomorphisms over R_{f_if_j}.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/01JA",
-          "section": "Sheaf/module gluing over overlaps",
-          "review_status": "source_context",
-          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+          "url": "https://stacks.math.columbia.edu/tag/00AK",
+          "section": "Stacks Section 6.33, Lemmas 6.33.1–6.33.3 on gluing sheaves and module sheaves",
+          "review_status": "direct_sheaf_level_context_only_localization_formula_pending",
+          "relevance": "Directly checked isomorphisms on overlaps and cocycle conditions, including module sheaves. Does not itself directly state the specific localized-module formula (M_i)_{f_j}≅(M_j)_{f_i} over R_{f_i f_j}."
         }
       ],
       "scope_and_edge_case": "Pairwise isomorphisms alone do not guarantee gluing; cocycle on triple overlaps required.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
       "source_certified": false,
       "staged": false,
-      "new_dependencies_deferred": true
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Previous URL 01JA instead treats scheme gluing and was an imprecise match for local MODULE sections. Exact localized module coordinate implementation remains to verify; pairwise isomorphisms alone do not provide descent absent cocycle."
     },
     {
       "priority": 366,
@@ -406,17 +410,24 @@
       "mathematical_definition_draft": "A separable closure κ^sep of κ is a separable algebraic extension that is separably closed, chosen within an algebraic closure.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/09H8",
-          "section": "Separable closure field extensions",
-          "review_status": "source_locator_pending",
-          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+          "url": "https://stacks.math.columbia.edu/tag/09GZ",
+          "section": "Stacks Definition 9.12.2: separable algebraic field extensions",
+          "review_status": "direct_primary_component_only",
+          "relevance": "Directly checks definition of separable algebraic field extension, a component of a separable closure; it does not alone prove existence or separably closedness of the chosen extension."
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0BNE",
+          "section": "Stacks Lemma 58.6.3 usage of K^sep inside an algebraic closure",
+          "review_status": "direct_primary_context_only",
+          "relevance": "Uses a separable algebraic closure in fixed algebraic closure context but not full explicit definitional proof."
         }
       ],
       "scope_and_edge_case": "Separable closure need not equal algebraic closure in characteristic p if κ imperfect.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
       "source_certified": false,
       "staged": false,
-      "new_dependencies_deferred": true
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Old tag 09H8 is Lemma 9.12.9 and not an exact separable-closure definition. Do not conflate separably closed and algebraically closed fields in imperfect positive characteristic; further exact primary definition needed."
     },
     {
       "priority": 368,
@@ -453,16 +464,17 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/00M9",
-          "section": "Section 10.96 completion",
-          "review_status": "primary_source_context",
-          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+          "section": "Stacks Section 10.96, completion of rings",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checks I-adic completion as inverse limit of R/I^n and canonical homomorphism R→lim R/I^n. Isomorphism is not automatic and its injectivity/surjectivity are separate issues."
         }
       ],
       "scope_and_edge_case": "Kernel is ∩_n m^n and may be nonzero; map may fail injectivity and surjectivity.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
       "source_certified": false,
       "staged": false,
-      "new_dependencies_deferred": true
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Use I=m for m-adic specialization. Map sends r to its compatible residue classes; its kernel equals the intersection of all m^n."
     },
     {
       "priority": 370,
@@ -475,17 +487,18 @@
       "mathematical_definition_draft": "A module M has a finite presentation if an exact sequence R^m→R^n→M→0 exists with m,n finite; kernel of R^n→M generated by finitely many relations.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/00CQ",
-          "section": "Finitely presented modules (source check needed)",
-          "review_status": "source_locator_pending",
-          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+          "url": "https://stacks.math.columbia.edu/tag/0G8M",
+          "section": "Stacks Section 10.11, Definition 10.11.2 and Lemmas 10.11.3–10.11.4",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked finite relations and finite presentation by finite free modules; finite generation alone does not guarantee finitely many relations."
         }
       ],
       "scope_and_edge_case": "Finite generation alone does not ensure finite relations, and projectivity is not required.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
       "source_certified": false,
       "staged": false,
-      "new_dependencies_deferred": true
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Replaced invalid old tag 00CQ (a localization lemma, not the finite-presentation source)."
     },
     {
       "priority": 371,
@@ -545,16 +558,17 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/01JA",
-          "section": "Gluing schemes",
-          "review_status": "source_context",
-          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+          "section": "Stacks Section 26.14, gluing schemes",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checks scheme open-subspace isomorphisms on pairwise overlaps with triple-overlap cocycle. Source is appropriate here, unlike for the module-localization record 365."
         }
       ],
       "scope_and_edge_case": "Triple-overlap cocycle must also hold to glue globally.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
       "source_certified": false,
       "staged": false,
-      "new_dependencies_deferred": true
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Correct source for SCHEME gluing; retain distinction from gluing module sheaves and localized algebraic modules."
     },
     {
       "priority": 374,
@@ -636,17 +650,24 @@
       "mathematical_definition_draft": "For f:X→Y in abelian category, canonical map Coim(f)→Im(f) is an isomorphism.",
       "external_source_evidence": [
         {
+          "url": "https://stacks.math.columbia.edu/tag/0106",
+          "section": "Stacks Definition 12.3.9, image and coimage of a morphism",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly defines Coim(f) as cokernel of ker(f) and Im(f) as kernel of coker(f)."
+        },
+        {
           "url": "https://stacks.math.columbia.edu/tag/00ZX",
-          "section": "Definition 12.5.1 and Lemma 12.3.12",
-          "review_status": "primary_verified",
-          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+          "section": "Stacks Definition 12.5.1, abelian category",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checks that the canonical comparison Coim(f)→Im(f) is an isomorphism in abelian categories; the objects are not literally identified by equality."
         }
       ],
       "scope_and_edge_case": "In merely preadditive category comparison need not exist or be iso; abelian axioms required.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
       "source_certified": false,
       "staged": false,
-      "new_dependencies_deferred": true
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Keep distinctions between the two categorical constructions and their canonical isomorphism in an abelian category."
     },
     {
       "priority": 378,
@@ -717,5 +738,23 @@
       "staged": false,
       "new_dependencies_deferred": true
     }
-  ]
+  ],
+  "source_verification_audit": {
+    "review_date": "2026-10-26",
+    "reviewed_priorities": [
+      356,
+      357,
+      358,
+      365,
+      367,
+      369,
+      370,
+      373,
+      377
+    ],
+    "method": "Read matching Stacks passages and distinguish full matches from specialization/context-only citations and incorrect locators.",
+    "blocked_gap_291_320_untouched": true,
+    "graph_mutation": false,
+    "stage_admission": false
+  }
 }
