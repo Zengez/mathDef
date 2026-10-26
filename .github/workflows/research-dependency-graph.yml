@@ -5,8 +5,14 @@ on:
     branches: [main]
     paths:
       - 'research_pipeline/engine/dependency_graph.py'
+      - 'research_pipeline/engine/dependency_phase_gate.py'
+      - 'research_pipeline/engine/dependency_generation.py'
       - 'research_pipeline/adapters/mathdef/dependency_scan.py'
+      - 'research_pipeline/adapters/mathdef/phase_gate_policy.json'
       - 'research_pipeline/tests/test_dependency_graph.py'
+      - 'research_pipeline/tests/test_dependency_generation.py'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/records/*.jsonl'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/population/records/*.jsonl'
       - 'research_pipeline/experiments/reconstruction-v2-independent/dependency_graph/inbox/*.json'
       - '.github/workflows/research-dependency-graph.yml'
   workflow_dispatch:
@@ -40,7 +46,7 @@ jobs:
       - name: Test crash recovery and contextual-linking invariants
         run: |
           python -m compileall -q research_pipeline/engine/dependency_graph.py research_pipeline/adapters/mathdef/dependency_scan.py
-          python -m unittest research_pipeline.tests.test_dependency_graph -v
+          python -m unittest research_pipeline.tests.test_dependency_graph research_pipeline.tests.test_dependency_generation -v
       - name: Generate and commit isolated inventory and bounded, nonauthoritative graph proposals
         env:
           PROPOSAL_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.proposal_limit || '75' }}
@@ -61,6 +67,26 @@ jobs:
             # independent graph; no promotion or certification occurs.
             python -m research_pipeline.engine.dependency_graph \
               --workspace "$WORKSPACE" --mode apply_inbox --limit 20
+            # A reviewed owner-approved phase policy eliminates repetitive manual
+            # gate packet uploads; it only seals a complete, version-pinned graph.
+            # It never approves mathematical definitions or production publication.
+            python -m research_pipeline.engine.dependency_phase_gate \
+              --workspace "$WORKSPACE" \
+              --policy research_pipeline/adapters/mathdef/phase_gate_policy.json \
+              --apply
+            # Freeze the original first-generation candidate list once, after the
+            # graph has a valid gate. Staged research does not alter this inventory.
+            python - <<'PY'
+          from pathlib import Path
+          from research_pipeline.engine.dependency_graph import read
+          from research_pipeline.engine.dependency_generation import create
+          root = Path("research_pipeline/experiments/reconstruction-v2-independent")
+          state = read(root / "dependency_graph" / "STATE.json")["summary"]
+          if state["consolidation_gate_valid"]:
+              print(create(root))
+          else:
+              print("Research milestone remains gated")
+          PY
             python -m research_pipeline.engine.dependency_graph \
               --workspace "$WORKSPACE" --mode propose --limit "$PROPOSAL_LIMIT"
             python -m research_pipeline.engine.dependency_graph \
@@ -70,8 +96,8 @@ jobs:
             python -m research_pipeline.engine.population_queue \
               --workspace "$WORKSPACE" \
               --profile research_pipeline/adapters/mathdef/population_topics.json --write
-            git add -- "$GRAPH" "$WORKSPACE/population/QUEUE.json"
-            if git diff --cached --name-only | grep -Ev "^($GRAPH/|$WORKSPACE/population/QUEUE[.]json$)"; then
+            git add -- "$GRAPH" "$WORKSPACE/population/QUEUE.json" "$WORKSPACE/generation_staging"
+            if git diff --cached --name-only | grep -Ev "^($GRAPH/|$WORKSPACE/population/QUEUE[.]json$|$WORKSPACE/generation_staging/)"; then
               echo "Write escaped isolated graph workspace" >&2; exit 1
             fi
             if git diff --cached --quiet; then echo "No new graph work"; exit 0; fi
