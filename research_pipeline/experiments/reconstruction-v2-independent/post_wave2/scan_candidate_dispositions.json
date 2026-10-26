@@ -5,8 +5,8 @@
     "possible_new_terminology": 2019,
     "known_title_mentions": 473
   },
-  "scope": "Original frozen scan ranks 1–220 researched in strict sequence, from 2,019 lead records",
-  "conventions": "Research actual frozen scan records in strict rank order; direct post-Wave2 merge additions, known equivalent or specialization targets, unresolvable context flags, and false-positive phrases; never start a new candidate hunt. No dependency graph or gate.",
+  "scope": "Original fixed 2,019 candidate scan, actual ranks 1–340 processed in order",
+  "conventions": "Only existing frozen quick-scan input. Research and add useful meanings directly; known senses mapped, nonterms rejected, ambiguities not asserted as equivalences. No additional candidate discovery or dependency closure.",
   "dispositions": [
     {
       "rank": 1,
@@ -5199,6 +5199,2119 @@
       "targets": [
         "definitions/arithmetic/field-norm.tex"
       ]
+    },
+    {
+      "rank": 221,
+      "phrase": "the filled julia set",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.escaping-set:0",
+          "term": "Escaping set of a polynomial"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.mandelbrot-set:0",
+          "term": "Mandelbrot set"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The filled Julia set already has an original mathematical definition; the definite article adds no variant.",
+      "targets": [
+        "definitions/holodynamics/filled-julia-set.tex"
+      ]
+    },
+    {
+      "rank": 222,
+      "phrase": "the finite limit",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "real.derivative:0",
+          "term": "Derivative"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "real.differentiability:0",
+          "term": "Differentiability"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 223,
+      "phrase": "the free abelian group",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6e79f03b3e61fe04fabc",
+          "term": "presentation of an abelian group"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.singular-chain:0",
+          "term": "Singular chain"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added free abelian group as direct sum of copies of ℤ with finite-support basis expansions; distinguished from arbitrary torsion-free groups.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-free-abelian-group-20261026"
+      ]
+    },
+    {
+      "rank": 224,
+      "phrase": "the identically infty function",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.plurisubharmonic-function:0",
+          "term": "Plurisubharmonic function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "scv.subharmonic-function:0",
+          "term": "Subharmonic function on a plane domain"
+        }
+      ],
+      "disposition": "ambiguous",
+      "reason": "The TeX-stripped phrase 'identically infty' does not identify whether the source permits a function identically −∞, +∞, or a different extended-value convention. No unsourced equivalence is made.",
+      "targets": []
+    },
+    {
+      "rank": 225,
+      "phrase": "the inner product",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.reproducing-kernel:0",
+          "term": "Reproducing kernel of a Hilbert function space"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "geometry.perpendicular-lines:0",
+          "term": "Perpendicular lines"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/linear/inner-product.tex"
+      ]
+    },
+    {
+      "rank": 226,
+      "phrase": "the julia set",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.fatou-set:0",
+          "term": "Fatou set of a rational map"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.repelling-periodic-point:0",
+          "term": "Repelling periodic point"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/holodynamics/julia-set.tex"
+      ]
+    },
+    {
+      "rank": 227,
+      "phrase": "the open set",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.cauchy-riemann-equations:0",
+          "term": "Cauchy–Riemann equations"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.smooth-map:0",
+          "term": "Smooth map between manifolds"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/topology/open-set.tex"
+      ]
+    },
+    {
+      "rank": 228,
+      "phrase": "the operator",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.composition-operator:0",
+          "term": "Composition operator"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "pde.green-function:0",
+          "term": "Green function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 229,
+      "phrase": "the orthogonal projection",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.bergman-projection:0",
+          "term": "Bergman projection"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.toeplitz-operator:0",
+          "term": "Toeplitz operator on a Bergman space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original Hilbert-space orthogonal projection is already defined via P²=P=P*.",
+      "targets": [
+        "definitions/functional/orthogonal-projection.tex"
+      ]
+    },
+    {
+      "rank": 230,
+      "phrase": "the orthonormal basis",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.hilbert-schmidt-operator:0",
+          "term": "Hilbert--Schmidt operator"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.trace-class-operator:0",
+          "term": "Trace-class operator"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Exact plural/reference to the post-Wave2 researched orthonormal basis of a Hilbert space.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-orthonormal-basis-hilbert-20261026"
+      ]
+    },
+    {
+      "rank": 231,
+      "phrase": "the polynomial",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.polynomial-hierarchy:0",
+          "term": "Polynomial-time hierarchy"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "scv.polynomial-hull:0",
+          "term": "Polynomial convex hull"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/complex/polynomial.tex"
+      ]
+    },
+    {
+      "rank": 232,
+      "phrase": "the polynomial ring",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+          "term": "polynomial ring"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.polynomial-ring:0",
+          "term": "Polynomial ring"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/algebra/polynomial-ring.tex"
+      ]
+    },
+    {
+      "rank": 233,
+      "phrase": "the power set",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "sets.power-set:0",
+          "term": "Power set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.discrete-topology:0",
+          "term": "Discrete topology"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/sets/power-set.tex"
+      ]
+    },
+    {
+      "rank": 234,
+      "phrase": "the pushforward measure",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.quasi-invariant-measure:0",
+          "term": "Quasi-invariant measure under a group action"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "prob.random-variable:0",
+          "term": "Random variable"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Independent Wave2 already defines the pushforward of a measure under a measurable map.",
+      "targets": [
+        "meaning.wave2.group116.measure-pushforward"
+      ]
+    },
+    {
+      "rank": 235,
+      "phrase": "the quotient group",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.826a6ac763625e129cf7",
+          "term": "value group of a valuation ring"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.quotient-group:0",
+          "term": "Quotient group"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/algebra/quotient-group.tex"
+      ]
+    },
+    {
+      "rank": 236,
+      "phrase": "the quotient topology",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.0c5a27f2980fc722cbb5",
+          "term": "quotient topology"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.quotient-topology:0",
+          "term": "Quotient topology"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/topology/quotient-topology.tex"
+      ]
+    },
+    {
+      "rank": 237,
+      "phrase": "the residue field",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.residue-field:0",
+          "term": "Residue field"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.scheme-fiber:0",
+          "term": "Fiber of a scheme morphism"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "meaning.wave2.direct.38969d113c4ee1db6e98"
+      ]
+    },
+    {
+      "rank": 238,
+      "phrase": "the ring map",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.fe199606757d4b449fee",
+          "term": "tensor multiplication criterion for ring epimorphisms"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "commalg.integral-extension:0",
+          "term": "Integral element over a ring"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/algebra/ring-homomorphism.tex"
+      ]
+    },
+    {
+      "rank": 239,
+      "phrase": "the same measurable space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.absolute-continuity-of-measures:0",
+          "term": "Absolute continuity of measures"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.mutually-singular-measures:0",
+          "term": "Mutually singular measures"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 240,
+      "phrase": "the same underlying set",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.completion-of-measure:0",
+          "term": "Completion of a measure space"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "scv.analytic-set-germ:0",
+          "term": "Germ of a complex analytic set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 241,
+      "phrase": "the sample space",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "prob.event:0",
+          "term": "Event"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "prob.sample-space:0",
+          "term": "Sample space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/prob/sample-space.tex"
+      ]
+    },
+    {
+      "rank": 242,
+      "phrase": "the sequence",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.9f4c16f7de397aa27498",
+          "term": "visiting infinitely often"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "analysis.convergence:0",
+          "term": "Convergent sequence"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This anaphoric phrase may refer to different sequences in a dynamical and convergence setting; it cannot be used as a new named concept.",
+      "targets": []
+    },
+    {
+      "rank": 243,
+      "phrase": "the smallest ideal",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.45359d317b7e3aba73da",
+          "term": "principal ideal"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.ec996d8fdc01d4735ac3",
+          "term": "ideal generated by two elements"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'Smallest ideal' is contextual: smallest ideal containing specified generators or other constraints. The noun phrase alone does not supply the object it is smallest among.",
+      "targets": []
+    },
+    {
+      "rank": 244,
+      "phrase": "the spherical metric",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.fatou-set:0",
+          "term": "Fatou set of a rational map"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.normal-family:0",
+          "term": "Normal family of meromorphic functions"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added the chordal metric on the Riemann sphere with explicit factor-two normalization and distance to ∞.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-spherical-chordal-metric-20261026"
+      ]
+    },
+    {
+      "rank": 245,
+      "phrase": "the subspace topology",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.submanifold:0",
+          "term": "Embedded submanifold"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.subspace-topology:0",
+          "term": "Subspace topology"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/topology/subspace-topology.tex"
+      ]
+    },
+    {
+      "rank": 246,
+      "phrase": "the topological closure",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "geometry.closed-convex-hull:0",
+          "term": "Closed convex hull"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.sequential-closure:0",
+          "term": "Sequential closure"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/topology/closure.tex"
+      ]
+    },
+    {
+      "rank": 247,
+      "phrase": "the topological fibre product",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.cf69ce1240520995df04",
+          "term": "topological fibre product"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.747494bf73b248c60f78",
+          "term": "diagonal map into a topological fibre product"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Independent Wave2 has the universal topological fibre product and its diagonal map.",
+      "targets": [
+        "meaning.wave2.direct.cf69ce1240520995df04"
+      ]
+    },
+    {
+      "rank": 248,
+      "phrase": "the von neumann representation",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.bfcb0543265f0a0f99cf",
+          "term": "successor ordinal"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "sets.limit-ordinal:0",
+          "term": "Limit ordinal"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original Von Neumann ordinal identifies an ordinal with its predecessors; this is the intended representation.",
+      "targets": [
+        "definitions/sets/ordinal.tex"
+      ]
+    },
+    {
+      "rank": 249,
+      "phrase": "the zariski topology",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.9720508883754c995559",
+          "term": "Zariski closed subset V(I)"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.zariski-topology:0",
+          "term": "Zariski topology on a spectrum"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/schemes/zariski-topology.tex"
+      ]
+    },
+    {
+      "rank": 250,
+      "phrase": "the zero ideal",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.598915c4e9e889d2218b",
+          "term": "zero ideal"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.principal-ideal-domain:0",
+          "term": "Principal ideal domain"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Independent Wave2 already has the zero ideal as a mathematical concept.",
+      "targets": [
+        "meaning.wave2.direct.598915c4e9e889d2218b"
+      ]
+    },
+    {
+      "rank": 251,
+      "phrase": "the zero polynomial",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.fa5932b42daa1a3e0307",
+          "term": "root of a polynomial"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "complex.polynomial:0",
+          "term": "Complex polynomial"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added formal zero polynomial, coefficientwise zero and separate degree convention.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-zero-polynomial-20261026"
+      ]
+    },
+    {
+      "rank": 252,
+      "phrase": "the zero ring",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.bb72b275ee79b161d9b8",
+          "term": "nilpotent element of a ring"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.598915c4e9e889d2218b",
+          "term": "zero ideal"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added one-element zero ring including the convention 0=1.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-zero-ring-20261026"
+      ]
+    },
+    {
+      "rank": 253,
+      "phrase": "their cartesian product",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functions.function:1",
+          "term": "Function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "sets.cartesian-product:0",
+          "term": "Cartesian product"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 254,
+      "phrase": "these maps",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.a257d0bad58dcfbd2fa7",
+          "term": "initial topology"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.boundary-operator:0",
+          "term": "Singular boundary operator"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 255,
+      "phrase": "this group",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.homotopy-group:0",
+          "term": "Higher homotopy group"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.class-number:0",
+          "term": "Class number"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'This group' is an anaphoric reference, not a new group-theoretic object.",
+      "targets": []
+    },
+    {
+      "rank": 256,
+      "phrase": "thus the group",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.boundary:0",
+          "term": "Singular boundary"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.cycle:0",
+          "term": "Singular cycle"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 257,
+      "phrase": "two proper closed subsets",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.436a89a3c048eae81a6c",
+          "term": "irreducible closed subset"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.irreducible-space:0",
+          "term": "Irreducible topological space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 258,
+      "phrase": "unique morphism",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.colimit:0",
+          "term": "Colimit of a diagram"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "category.limit:0",
+          "term": "Limit of a diagram"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The source uses this phrase descriptively or compositionally; the scan does not isolate a mathematically distinct definition beyond its existing component notions.",
+      "targets": []
+    },
+    {
+      "rank": 259,
+      "phrase": "valued simple functions",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.bochner-integrable:0",
+          "term": "Bochner integrable function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.strong-measurability:0",
+          "term": "Strong measurability of a Banach-valued function"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added Banach-valued simple measurable function, distinguishing finite-range measurability from finite-measure-support integration conventions.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-banach-valued-simple-function-20261026"
+      ]
+    },
+    {
+      "rank": 260,
+      "phrase": "which every morphism",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.abelian-category:0",
+          "term": "Abelian category"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "category.groupoid:0",
+          "term": "Groupoid"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 261,
+      "phrase": "which every nonzero element",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.3913df323abde5188991",
+          "term": "division ring"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.field:0",
+          "term": "Field"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 262,
+      "phrase": "with inner product",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.dirichlet-reproducing-kernel:0",
+          "term": "Reproducing kernel of the Dirichlet space"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.fock-reproducing-kernel:0",
+          "term": "Bargmann–Fock reproducing kernel"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 263,
+      "phrase": "with maximal ideal",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.p-adic-integers:0",
+          "term": "p-adic integers"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.residue-field:0",
+          "term": "Residue field"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 264,
+      "phrase": "with projections",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.f709867827c73e690cfc",
+          "term": "finite categorical product"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "category.product:0",
+          "term": "Categorical product"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 265,
+      "phrase": "with the empty product",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.03b976f9393f9c4191f4",
+          "term": "factorial of a nonnegative integer"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "complex.blaschke-product:0",
+          "term": "Blaschke product"
+        }
+      ],
+      "disposition": "existing_variants",
+      "reason": "The empty product has distinct arithmetic/algebraic identity and category-theoretic terminal-object interpretations, already represented.",
+      "targets": [
+        "meaning.wave2.direct.f709867827c73e690cfc",
+        "definitions/combin/factorial.tex"
+      ]
+    },
+    {
+      "rank": 266,
+      "phrase": "young function",
+      "occurrences": 2,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "weighted-analysis.orlicz-average:0",
+          "term": "Orlicz average (Luxemburg form)"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "weighted-analysis.young-function-paper:0",
+          "term": "Young function (Bergman-projection convention)"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original sourced Bergman-projection Young function convention already covers the phrase; no duplicate.",
+      "targets": [
+        "definitions/weighted-analysis/young-function-paper.tex"
+      ]
+    },
+    {
+      "rank": 267,
+      "phrase": "abelian coefficient group",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.singular-cohomology:0",
+          "term": "Singular cohomology group"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/algebra/abelian-group.tex"
+      ]
+    },
+    {
+      "rank": 268,
+      "phrase": "about any point",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.entire-function:0",
+          "term": "Entire function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 269,
+      "phrase": "actions two such maps",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "solenoids.dynamical-commensurator:0",
+          "term": "Dynamical commensurator group at a point"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The source uses this phrase descriptively or compositionally; the scan does not isolate a mathematically distinct definition beyond its existing component notions.",
+      "targets": []
+    },
+    {
+      "rank": 270,
+      "phrase": "actual scalar valued functions",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.reproducing-kernel-hilbert-space:0",
+          "term": "Reproducing-kernel Hilbert space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 271,
+      "phrase": "additionally require the topology",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.locally-convex-space:0",
+          "term": "Locally convex space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 272,
+      "phrase": "additive direct sum",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.552479b3d126bda9a36a",
+          "term": "ring graded by an abelian group"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "meaning.wave2.direct.552479b3d126bda9a36a"
+      ]
+    },
+    {
+      "rank": 273,
+      "phrase": "additive group",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.14fb2e2c8ee691a830d3",
+          "term": "partial sum of a series"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The source uses this phrase descriptively or compositionally; the scan does not isolate a mathematically distinct definition beyond its existing component notions.",
+      "targets": []
+    },
+    {
+      "rank": 274,
+      "phrase": "additive subgroup",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.ideal:0",
+          "term": "Ideal"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/algebra/subgroup.tex"
+      ]
+    },
+    {
+      "rank": 275,
+      "phrase": "additivity for every sequence",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.measure:0",
+          "term": "Measure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The source uses this phrase descriptively or compositionally; the scan does not isolate a mathematically distinct definition beyond its existing component notions.",
+      "targets": []
+    },
+    {
+      "rank": 276,
+      "phrase": "adic completion map",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.d253f2b37f0f2e8e5076",
+          "term": "canonical map to I-adic completion"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The canonical map to an I-adic completion is already explicitly defined in Wave2.",
+      "targets": [
+        "meaning.wave2.direct.d253f2b37f0f2e8e5076"
+      ]
+    },
+    {
+      "rank": 277,
+      "phrase": "adjoint and unitary operators",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.normal-operator:0",
+          "term": "Normal bounded operator"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The source uses this phrase descriptively or compositionally; the scan does not isolate a mathematically distinct definition beyond its existing component notions.",
+      "targets": []
+    },
+    {
+      "rank": 278,
+      "phrase": "affect membership under polynomial",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.class-p:0",
+          "term": "Complexity class P"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 279,
+      "phrase": "affine open subsets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.closed-subscheme:0",
+          "term": "Closed subscheme"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added affine open subscheme, open in a scheme AND affine as a scheme, with empty case convention.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-affine-open-subscheme-20261026"
+      ]
+    },
+    {
+      "rank": 280,
+      "phrase": "affine subspace",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.85dcc7f7445e61c66023",
+          "term": "affine subspace of a real vector space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "meaning.wave2.direct.85dcc7f7445e61c66023"
+      ]
+    },
+    {
+      "rank": 281,
+      "phrase": "after intersecting the set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.convergence-in-measure:0",
+          "term": "Global convergence in measure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 282,
+      "phrase": "after restricting all maps",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.8105d2b908512d66af80",
+          "term": "triple-overlap cocycle condition"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 283,
+      "phrase": "algebra homomorphism",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.9b77bf68dde01674ecf2",
+          "term": "lift of an algebra homomorphism"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "A specific unital R-algebra homomorphism sense is already defined in the post-Wave2 overlay; other conventions are not automatically synonymous.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-r-algebra-homomorphism-20261026"
+      ]
+    },
+    {
+      "rank": 284,
+      "phrase": "algebra the polynomials",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.00f05f23cf310f438561",
+          "term": "defining polynomial relation"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The source uses this phrase descriptively or compositionally; the scan does not isolate a mathematically distinct definition beyond its existing component notions.",
+      "targets": []
+    },
+    {
+      "rank": 285,
+      "phrase": "algebra with structure homomorphism",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6761326c179c108a8d73",
+          "term": "unital subalgebra"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The source uses this phrase descriptively or compositionally; the scan does not isolate a mathematically distinct definition beyond its existing component notions.",
+      "targets": []
+    },
+    {
+      "rank": 286,
+      "phrase": "algebraic closures",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "field.algebraic-closure:0",
+          "term": "Algebraic closure of a field"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original algebraic closure of a field already covers the plural.",
+      "targets": [
+        "definitions/field/algebraic-closure.tex"
+      ]
+    },
+    {
+      "rank": 287,
+      "phrase": "algebraically closed field",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "field.relative-algebraic-closure:0",
+          "term": "Relative algebraic closure"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Independent Wave2 includes the algebraically closed field meaning.",
+      "targets": [
+        "meaning.39488f3e396a1c77.algebraically-closed"
+      ]
+    },
+    {
+      "rank": 288,
+      "phrase": "all affine closed subsets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.pop140.affine-hull",
+          "term": "affine hull"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 289,
+      "phrase": "all bounded holomorphic functions",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.hardy-h-infinity:0",
+          "term": "Bounded analytic functions on the disk"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original Hardy H-infinity meaning covers bounded holomorphic functions on the disk.",
+      "targets": [
+        "definitions/functionspaces/hardy-h-infinity.tex"
+      ]
+    },
+    {
+      "rank": 290,
+      "phrase": "all bounded linear operators",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.bounded-operator-algebra:0",
+          "term": "Bounded-operator algebra"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing corpus meaning covers this mathematical usage; grammatical variants, plurals and definite articles do not justify duplicating it.",
+      "targets": [
+        "definitions/functional/bounded-operator-algebra.tex"
+      ]
+    },
+    {
+      "rank": 291,
+      "phrase": "all closed convex subsets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "geometry.closed-convex-hull:0",
+          "term": "Closed convex hull"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 292,
+      "phrase": "all closed sets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.borel-sigma-algebra:0",
+          "term": "Borel sigma-algebra"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 293,
+      "phrase": "all closed subsets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.closure:0",
+          "term": "Closure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 294,
+      "phrase": "all closed vector subspaces",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "linear.linear-closure:0",
+          "term": "Linear closure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'All closed vector subspaces' is a quantifier over subspaces; no specified norm topology is present in the cited linear-closure example, so it must NOT be mapped to the separate norm-closed subspace meaning.",
+      "targets": []
+    },
+    {
+      "rank": 295,
+      "phrase": "all convex subsets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "geometry.convex-hull:0",
+          "term": "Convex hull"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 296,
+      "phrase": "all equivalence relations",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.eeaf8a205d5ed2ed6eeb",
+          "term": "equivalence relation generated by pairs"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 297,
+      "phrase": "all intermediate fields",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6fd10a9c752cfa68d45b",
+          "term": "subfield generated by a base field and subset"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 298,
+      "phrase": "all invertible morphisms",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.591b9f9ee5edc9ff8963",
+          "term": "automorphism group of an object"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 299,
+      "phrase": "all its finite subsets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "linear.linear-independence:0",
+          "term": "Linear independence"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 300,
+      "phrase": "all linear maps",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "linear.dual-space:0",
+          "term": "Dual space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 301,
+      "phrase": "all modules",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6bb87052ec8a81464ddd",
+          "term": "isomorphism class of an R-module"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 302,
+      "phrase": "all morphisms",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+          "term": "hom-set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 303,
+      "phrase": "all morphisms are sets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.small-category:0",
+          "term": "Small category"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 304,
+      "phrase": "all open subsets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.interior:0",
+          "term": "Interior point"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 305,
+      "phrase": "all orders",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.holomorphic-function:0",
+          "term": "Holomorphic function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 306,
+      "phrase": "all sigma algebras",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.60b81b3c7a42f7c2b9ee",
+          "term": "sigma-algebra generated by a family"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 307,
+      "phrase": "allowed the product",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.blaschke-product:0",
+          "term": "Blaschke product"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The source uses this phrase descriptively or compositionally; the scan does not isolate a mathematically distinct definition beyond its existing component notions.",
+      "targets": []
+    },
+    {
+      "rank": 308,
+      "phrase": "allowing the zero algebra",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.3b37131115a06556c3e4",
+          "term": "commutative algebra over a field"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 309,
+      "phrase": "almost everywhere limit",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.strong-measurability:0",
+          "term": "Strong measurability of a Banach-valued function"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Strong measurability explicitly invokes an almost-everywhere limit of simple Banach-valued functions; this phrase alone is not a separate new object.",
+      "targets": [
+        "definitions/measure/strong-measurability.tex"
+      ]
+    },
+    {
+      "rank": 310,
+      "phrase": "along vector fields",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.affine-connection:0",
+          "term": "Affine connection"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 311,
+      "phrase": "alpha its distributional derivative",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.distributional-derivative:0",
+          "term": "Distributional derivative"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The source uses this phrase descriptively or compositionally; the scan does not isolate a mathematically distinct definition beyond its existing component notions.",
+      "targets": []
+    },
+    {
+      "rank": 312,
+      "phrase": "alpha its elements",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "sets.ordinal:0",
+          "term": "Von Neumann ordinal"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The source uses this phrase descriptively or compositionally; the scan does not isolate a mathematically distinct definition beyond its existing component notions.",
+      "targets": []
+    },
+    {
+      "rank": 313,
+      "phrase": "alpha the order",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.holomorphic-vanishing-order:0",
+          "term": "Vanishing order of a holomorphic germ"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The source uses this phrase descriptively or compositionally; the scan does not isolate a mathematically distinct definition beyond its existing component notions.",
+      "targets": []
+    },
+    {
+      "rank": 314,
+      "phrase": "also fixes every element",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.08fcaa9f26323a9c3d56",
+          "term": "field automorphism"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 315,
+      "phrase": "also order",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.e892b9d8b91c184b0801",
+          "term": "order isomorphism"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'Also order' is a broken text fragment extracted near the definition of order isomorphism, not a synonym for that term.",
+      "targets": []
+    },
+    {
+      "rank": 316,
+      "phrase": "ambient holomorphic functions",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.cr-function:0",
+          "term": "CR function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'Ambient holomorphic functions' is descriptive context in CR geometry, not another name for a CR function.",
+      "targets": []
+    },
+    {
+      "rank": 317,
+      "phrase": "among the prime ideals",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6e8236437269027131a5",
+          "term": "minimal prime ideal"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 318,
+      "phrase": "analytic set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.analytic-set-germ:0",
+          "term": "Germ of a complex analytic set"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added complex-analytic subsets, locally common zeros of finitely many holomorphic functions; distinguished from the germ and from descriptive-set-theoretic analytic sets.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-complex-analytic-subset-20261026"
+      ]
+    },
+    {
+      "rank": 319,
+      "phrase": "and all derivatives",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.distribution:0",
+          "term": "Schwartz distribution"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'And all derivatives' is a grammatical fragment in a distribution definition, not the name of a distribution or any new class.",
+      "targets": []
+    },
+    {
+      "rank": 320,
+      "phrase": "and arc set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "graph.directed-graph:0",
+          "term": "Directed graph"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 321,
+      "phrase": "and canonical inverse limit",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.p-adic-integers:0",
+          "term": "p-adic integers"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 322,
+      "phrase": "and closed the sets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.clopen-set:0",
+          "term": "Clopen set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'And closed the sets' is a damaged conjunction referring to clopen sets, not a new or synonymous term.",
+      "targets": []
+    },
+    {
+      "rank": 323,
+      "phrase": "and closure",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.dynkin-system:0",
+          "term": "Dynkin system (lambda-system)"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 324,
+      "phrase": "and composition the functor",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.c5104821c3c70afa1f63",
+          "term": "functor between possibly large categories"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 325,
+      "phrase": "and degeneracy maps",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.simplicial-set:0",
+          "term": "Simplicial set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 326,
+      "phrase": "and derivative",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.multi-index:0",
+          "term": "Multi-index"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 327,
+      "phrase": "and divides every polynomial",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.minimal-polynomial:0",
+          "term": "Minimal polynomial"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 328,
+      "phrase": "and empty product",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.pop140.mutual-event-independence",
+          "term": "mutually independent events"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'And empty product' is a sentence fragment from a mutual-independence definition, not an additional variant. Empty-product conventions are already handled by the earlier rank-216 disposition.",
+      "targets": []
+    },
+    {
+      "rank": 329,
+      "phrase": "and equals the closure",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.julia-set:0",
+          "term": "Julia set of a rational map"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 330,
+      "phrase": "and every finite matrix",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.reproducing-kernel:0",
+          "term": "Reproducing kernel of a Hilbert function space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 331,
+      "phrase": "and for higher order",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.initial-value-problem:0",
+          "term": "Initial-value problem for a PDE"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 332,
+      "phrase": "and global holomorphic functions",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.stein-manifold:0",
+          "term": "Stein manifold"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 333,
+      "phrase": "and identity morphisms",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.category:0",
+          "term": "Category"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 334,
+      "phrase": "and implies derivatives",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.holomorphic-function:0",
+          "term": "Holomorphic function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 335,
+      "phrase": "and incomplete compatible metrics",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.metric-completeness:0",
+          "term": "Complete metric space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 336,
+      "phrase": "and independent subsets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "combin.graphic-matroid:0",
+          "term": "Graphic matroid"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 337,
+      "phrase": "and index set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.729d8675c7fcafa797ef",
+          "term": "indexed family of measurable events"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 338,
+      "phrase": "and its bounded interior",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "geometry.polygon:0",
+          "term": "Polygon"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 339,
+      "phrase": "and its dual function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.dual-problem:0",
+          "term": "Lagrange dual problem"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 340,
+      "phrase": "and its ordinary derivatives",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.ordinary-differential-equation:0",
+          "term": "Ordinary differential equation"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This is a grammatical fragment, quantifier, reference, or context qualifier rather than a standalone mathematical term; the underlying construction retains its existing definition.",
+      "targets": []
     }
   ]
 }

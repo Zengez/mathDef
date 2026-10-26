@@ -336,3 +336,23 @@ ledger now contains **220** literal source-matched dispositions; this
 2,019 leads, overlay now **145** sourced meanings, expected combined
 **2,117** meanings. Independent Wave 2 remains 958 meanings and original
 production source remains 1,014 definitions.
+
+
+## Original frozen scan candidate research, ranks 221–340
+
+Processed **120** original quick-scan candidates using only the already
+frozen, ranked 2,019-lead scan. Seven mathematically scoped meanings were
+added to the merged-only overlay: free abelian group, spherical chordal
+metric, zero polynomial, zero ring, Banach-valued simple measurable
+function, affine open subscheme, and complex-analytic subset. Definitions
+have source attribution, assumptions and context-sensitive distinctions.
+
+Dispositioned 33 existing senses, 78 lexical nonterms, one ambiguous
+identically-infinity case, and one existing-multiple-variant empty-product
+case, each with verbatim original scan phrase/count/example identifiers.
+
+Persistent checkpoint: **340/2,019 processed**, next **341**. Scan-derived
+additions total **34** and merged-only post-Wave2 overlay is **152**
+meanings; expected merged content = 958+1,014+152 = **2,124**.
+No new candidates collected and no edits to frozen production originals
+or independent Wave2 snapshot.

@@ -27,15 +27,17 @@ Incorporate useful mathematical content DIRECTLY. Do not reintroduce
 mandatory dependency graphs, slow gates, arbitrary verification packet stages,
 or a new external vocabulary hunt.
 
-The first five scan-driven batches have processed ranked candidates **1–220**
-in `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/scan_candidate_dispositions.json`.
-Together they added **27 source-attributed meanings** (including legitimate
-contextual variants), bringing the post-Wave2 merged-only overlay from
-118 to **145** meanings. Latest ranks 181–220 yielded 4 new mathematical
-meanings, 23 already-covered leads, 11 nonterminological fragments,
-1 context ambiguity and 1 existing multi-variant expression.
-Candidate rank **221** is next. No new candidate collection is authorized
-while the original 2,019-lead frozen scan is being processed.
+The original frozen-scan incorporation now processed ranked candidates
+**1–340 of 2,019** in
+`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/scan_candidate_dispositions.json`.
+These yielded **34 source-attributed mathematical meanings** (new headings
+and legitimate contextual variants), bringing the merged-only post-Wave2
+overlay from its 118 pre-scan meanings to **152**. The latest **120**
+ranks 221–340 produced **7 researched new meanings**, 33 existing
+matches, 78 lexical nonterms, 1 contextual ambiguity, and 1 phrase already
+covered by existing alternative conventions.
+**Next candidate rank: 341.** The original scan is frozen and no new candidate
+discovery is authorized while this collection is pending.
 
 Keep per-candidate source examples, concise outcome and target mapping in this
 same lightweight ledger; it is a resumption log, not a mathematical

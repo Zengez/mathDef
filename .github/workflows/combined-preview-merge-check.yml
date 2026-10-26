@@ -87,7 +87,7 @@ jobs:
           # Read-only next frozen-scan window for the active incorporation pass;
           # no new lexical scan, candidate hunt, or file changes to the report.
           start_rank = len(decisions)
-          for rank, scanned in enumerate(scan["possible_new_terminology"][start_rank:start_rank+40], start=start_rank+1):
+          for rank, scanned in enumerate(scan["possible_new_terminology"][start_rank:start_rank+120], start=start_rank+1):
             print("ORIGINAL_SCAN_NEXT_RANK_JSON="+json.dumps(
                 {"rank":rank, **scanned}, ensure_ascii=False, separators=(",", ":")))
           print("Merged-preview smoke passed:", {
