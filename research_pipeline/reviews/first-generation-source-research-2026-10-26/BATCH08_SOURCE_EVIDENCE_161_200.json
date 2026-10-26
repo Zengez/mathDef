@@ -1,0 +1,1119 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "status": "PRELIMINARY_SOURCE_EVIDENCE_NOT_CERTIFIED_OR_ADMITTED",
+  "scope": "frozen original Wave2 first generation",
+  "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "priority_range": [
+    161,
+    200
+  ],
+  "original_candidate_count": 40,
+  "original_reference_count": 40,
+  "evidence_quality": "Each candidate has a mathematically typed preliminary definition and mathematical source or qualified source lead. Sources marked lead require exact verification before provisional staging; URLs alone are not proof of correctness.",
+  "high_priority_review_flags": [
+    {
+      "id": "missing.2216f1dfe187a7af152c",
+      "issue": "Lebesgue-Stieltjes measure convention requires right-continuity of distribution function for the interval (a,b] assignment; mere monotonicity insufficient.",
+      "status": "substantive_context_hold"
+    },
+    {
+      "id": "missing.35f080be8784ff208377",
+      "issue": "Residue-field inclusion Λ/(Λ∩m)→R/m need not be surjective without an explicit assumption; do not call it an isomorphism automatically.",
+      "status": "substantive_context_hold"
+    },
+    {
+      "id": "missing.334b13fc23fb76467dce",
+      "issue": "Braiding needs hexagon coherence, not only natural exchange isomorphisms.",
+      "status": "substantive_axiom_review"
+    },
+    {
+      "id": "missing.3913df323abde5188991",
+      "issue": "Division ring/field formulation may require 1≠0 rather than vacuous zero-ring interpretation.",
+      "status": "degenerate_ring_assumption_audit"
+    }
+  ],
+  "items": [
+    {
+      "priority": 161,
+      "original_canonical_candidate_id": "missing.1d1e6d6708183b231518",
+      "original_query": "Minkowski set sum tC+(1−t)C",
+      "original_context": "Real vector space: weighted Minkowski set sum tC+(1−t)C={tx+(1−t)y:x,y∈C}, with the two elements selected independently.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.d37c02547a0b7be3060d"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For C⊆V and scalar t∈R, the Minkowski set sum tC+(1−t)C is {tx+(1−t)y:x,y∈C}.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/MinkowskiSum.html",
+          "section": "Minkowski sum and scalar multiples of subsets",
+          "verification_status": "contextual_source_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "contextual_source_lead",
+      "mathematical_edge_case_or_comparison": "The two choices x and y are independent. For 0≤t≤1, convexity of C is equivalent to tC+(1−t)C⊆C for all such t; for t outside this interval the same set exists but not a convex combination.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 162,
+      "original_canonical_candidate_id": "missing.1d331e8d364b026c50d5",
+      "original_query": "prime ideals minimal over its annihilator Ann_R(m)",
+      "original_context": "Commutative algebra: prime ideal p minimal over an ideal I in a commutative unital ring R, meaning I⊆p and no prime ideal q satisfies I⊆q⊊p; the ideal here is Ann_R(m) for a module element m.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.99a8cb5eb4ab9a1d662c"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A prime ideal p is minimal over an ideal I⊆R when I⊆p and no prime q satisfies I⊆q⊊p.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00DY",
+          "section": "Existence of minimal primes over ideals",
+          "verification_status": "source_supported_specialization",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_supported_specialization",
+      "mathematical_edge_case_or_comparison": "Annihilator Ann_R(m) is a specific choice of I. Minimal over I differs from minimal prime of R unless I=0.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 163,
+      "original_canonical_candidate_id": "missing.1e57f82e00af556806fa",
+      "original_query": "Cat as category of small categories",
+      "original_context": "Category theory: category Cat with small categories as objects, functors as morphisms, and functor composition; set-theoretic universe issues must be handled explicitly.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.c9cf327cec80565dbe6a"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "The category Cat has small categories as objects and functors as its morphisms, composed as ordinary functors; the surrounding universe/category size must be specified.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0015",
+          "section": "Remark 4.2.2 on small and big categories",
+          "verification_status": "source_foundation_scope_needs_explicit_universe",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_foundation_scope_needs_explicit_universe",
+      "mathematical_edge_case_or_comparison": "Cat is generally large relative to the universe containing its small categories; do not identify it with the category of all unrestricted large categories.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 164,
+      "original_canonical_candidate_id": "missing.1f1fd9a269f9c46bb515",
+      "original_query": "kernel of automorphism mapping F on an object",
+      "original_context": "Category theory: kernel of the induced group homomorphism Aut_S(x)→Aut_{S′}(F(x)) given by a functor F of categories fibred over C, comprising automorphisms α of x with F(α)=id_{F(x)}; the arrows should be vertical when defining relative inertia over C.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.51b06d52ecefa0f91c35"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For an induced group map Aut_S(x)→Aut_{S′}(F(x)), its kernel consists of the automorphisms α of x mapped to the identity automorphism of F(x).",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0015",
+          "section": "Category, functor and Hom conventions",
+          "verification_status": "typed_functor_group_action_source_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "typed_functor_group_action_source_lead",
+      "mathematical_edge_case_or_comparison": "Relative inertia over base C restricts to vertical automorphisms p(α)=id; general Aut_S(x) need not consist only of vertical automorphisms.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 165,
+      "original_canonical_candidate_id": "missing.1faaa3731208d18704c8",
+      "original_query": "restriction of functions to U_x",
+      "original_context": "Restriction f|_U:U→M of map f:X→M to U⊆X, retaining the original values.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.c5b3147b16f61f08dc7f"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For f:X→Y and U⊆X, the restriction f|_U:U→Y sends u↦f(u).",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Restriction_(mathematics)",
+          "section": "Restriction of a function",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "elementary_source_lead",
+      "mathematical_edge_case_or_comparison": "No extension or recomputation of values. The codomain remains Y unless explicitly co-restricted to an image subspace.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 166,
+      "original_canonical_candidate_id": "missing.2216f1dfe187a7af152c",
+      "original_query": "Lebesgue–Stieltjes measure from nondecreasing function",
+      "original_context": "Measure theory: nonnegative Lebesgue–Stieltjes measure generated by admissible bounded nondecreasing function on real line, respecting its measure convention.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.a948cb2f41a2dba805f9"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A Lebesgue–Stieltjes measure from a monotone function F is a Borel measure assigning μ((a,b])=F(b)−F(a), when F satisfies the required right-continuity/measure-construction conventions.",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Lebesgue%E2%80%93Stieltjes_integration",
+          "section": "Lebesgue–Stieltjes measure",
+          "verification_status": "source_scope_requires_right_continuity",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_scope_requires_right_continuity",
+      "mathematical_edge_case_or_comparison": "Mere nondecreasing bounded F is not enough for the usual (a,b] convention: if F has a right-discontinuity, the interval assignment fails countable additivity. Replace by an appropriate right-continuous representative or use an alternative interval convention.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 167,
+      "original_canonical_candidate_id": "missing.229af74a7a716a68dd9e",
+      "original_query": "automorphism α of x over identity of p(x)",
+      "original_context": "Category theory of fibred categories: a vertical automorphism α:x→x in a category S over C, invertible in S and satisfying p(α)=id_{p(x)} in C. The base identity condition is part of verticality, not automatic for a general endomorphism of S.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.84476cab198f209ad08b"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A vertical automorphism of x over C is an invertible arrow α:x→x in S such that p(α)=id_{p(x)}.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/02XJ",
+          "section": "Fibred category arrows over identity",
+          "verification_status": "source_context_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_context_lead",
+      "mathematical_edge_case_or_comparison": "A general automorphism of x may project to nonidentity automorphism of p(x). The kernel-group condition belongs to a separate construction.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 168,
+      "original_canonical_candidate_id": "missing.22e38bfed03405a51af2",
+      "original_query": "μ-integrability of power function",
+      "original_context": "Measure theory: μ-integrability of x↦x^n means measurability and ∫_{(a,b)}|x|^n dμ(x)<∞, for n a nonnegative integer, under the conventional finite-L1 meaning of integrable.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.41d49c666d22806bb70c"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For measurable x↦x^n, μ-integrability means ∫|x|^n dμ<∞ for n≥0, measured on the stated domain.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/056H",
+          "section": "Finite integral and support in measure-theoretic applications",
+          "verification_status": "source_lead_exact_measure_locator_pending",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_lead_exact_measure_locator_pending",
+      "mathematical_edge_case_or_comparison": "At n=0 the integrand is conventionally 1 and integrability becomes finite total measure; 0^0 must not be handled by arbitrary pointwise exponent conventions.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 169,
+      "original_canonical_candidate_id": "missing.23c297a4a1c27fe4ec73",
+      "original_query": "metric-induced topology tau_d",
+      "original_context": "Metric topology: topology τ_d generated by all open metric balls as a basis, on the same underlying set X of metric d.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.292af439826230588389"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For metric space (X,d), τ_d consists of subsets U⊆X such that for each x∈U there exists ε>0 with B_d(x,ε)⊆U.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/MetricTopology.html",
+          "section": "Metric topology by open balls",
+          "verification_status": "definition_supported",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_supported",
+      "mathematical_edge_case_or_comparison": "The empty set and X are open; metric balls generate τ_d as a basis, and the underlying set is the same X.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 170,
+      "original_canonical_candidate_id": "missing.23f5062d098be96c786a",
+      "original_query": "boundedness of real-valued f",
+      "original_context": "Real analysis: bounded function on a fixed compact interval [a,b], meaning there exists M≥0 with |f(x)|≤M for all x in [a,b].",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.99a0a72f21b1c3bc6960"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For f:[a,b]→R, boundedness means ∃M≥0 such that |f(x)|≤M for all x∈[a,b].",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/BoundedFunction.html",
+          "section": "Bounded function definition",
+          "verification_status": "source_lead_exact_url_verify",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_lead_exact_url_verify",
+      "mathematical_edge_case_or_comparison": "Compactness alone does not make an arbitrary function bounded; continuity on the compact interval would imply boundedness.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 171,
+      "original_canonical_candidate_id": "missing.23ff9207e591fcd879d9",
+      "original_query": "Hermitian sesquilinear form V×V→C",
+      "original_context": "Complex linear algebra: Hermitian sesquilinear form on complex vector space V, linear in first argument, conjugate linear in second and conjugate symmetric.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.51ef55dce60c00225193"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A Hermitian sesquilinear form h:V×V→C is linear in its first argument, conjugate linear in its second and satisfies h(y,x)=conj(h(x,y)).",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/HermitianForm.html",
+          "section": "Hermitian form and sesquilinearity",
+          "verification_status": "definition_with_linearity_convention",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_with_linearity_convention",
+      "mathematical_edge_case_or_comparison": "Some sources choose linearity in second argument; preserve selected convention consistently. Positive definiteness is not part of Hermitian sesquilinear form.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 172,
+      "original_canonical_candidate_id": "missing.244d6cfceb0dd22abbca",
+      "original_query": "degree-zero subring",
+      "original_context": "Graded algebra: degree-zero component of the localized graded ring S_f, closed under ring operations, with homogeneous fractions a/f^n satisfying deg(a)=n deg(f).",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.e0d877766eb0e3095cab"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For graded ring S=⊕_{d∈Z}S_d, the degree-zero subring S_0 consists of homogeneous degree-zero elements; for homogeneous f, (S_f)_0 consists of a/f^n with deg(a)=n·deg(f).",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00JM",
+          "section": "Proj of graded rings and degree-zero localizations",
+          "verification_status": "source_context_supported_exact_locator_check",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_context_supported_exact_locator_check",
+      "mathematical_edge_case_or_comparison": "If f has positive degree, numerators are homogeneous of the specified matching degree. Arbitrary sum of nonhomogeneous numerators can be rewritten but needs correct grading.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 173,
+      "original_canonical_candidate_id": "missing.24b750917f64c00ee6ee",
+      "original_query": "naturally identified representing module",
+      "original_context": "Category and module theory: natural isomorphism of covariant functors in the target S-module N between Hom_S(P,N) and the sets of R-linear differential operators Diff^k_{S/R}(M,N), with components commuting with postcomposition along every S-linear map N→N′.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.5c1a8ed7d8554b6364d1"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A natural identification Hom_S(P,N)≅Diff^k_{S/R}(M,N) consists of bijections η_N natural in the S-module N, meaning η_{N′}(u∘h)=u∘η_N(h) for every S-linear u:N→N′.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0A06",
+          "section": "Modules of principal parts and representability of differential operators",
+          "verification_status": "source_lead_specific_representing_module_check",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_lead_specific_representing_module_check",
+      "mathematical_edge_case_or_comparison": "Do not confuse natural isomorphism of functors with a single set bijection. Existence of representing module P is a separate theorem requiring stated hypotheses.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 174,
+      "original_canonical_candidate_id": "missing.2592ffd1f6be0b4d46bf",
+      "original_query": "radical ideal I",
+      "original_context": "Commutative algebra: radical ideal of a commutative ring",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.bfe3293a2562bc6499a2"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "An ideal I in a commutative ring R is radical if whenever r^n∈I for an integer n≥1, then r∈I; equivalently I=√I.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00DY",
+          "section": "Prime ideals, radicals and nilpotence",
+          "verification_status": "algebraic_source_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "algebraic_source_lead",
+      "mathematical_edge_case_or_comparison": "The radical √I is an ideal. Every prime ideal is radical but not every radical ideal is prime.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 175,
+      "original_canonical_candidate_id": "missing.25dac0c185025e52a26a",
+      "original_query": "induced exterior-power map ∧^rφ",
+      "original_context": "Multilinear algebra: induced R-linear map ∧^rφ:∧^rR^m→∧^rR^n obtained by applying φ to each factor before exterior multiplication.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.36b73d7bd2a48315f0c7"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For R-linear φ:M→N, the induced exterior-power map ∧^rφ:∧^rM→∧^rN is determined by v_1∧⋯∧v_r↦φ(v_1)∧⋯∧φ(v_r).",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00DN",
+          "section": "Exterior powers of modules",
+          "verification_status": "source_context_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_context_lead",
+      "mathematical_edge_case_or_comparison": "r≥0. For r=0 it is the identity on R under the usual ∧^0M=R convention. It does not require φ invertible.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 176,
+      "original_canonical_candidate_id": "missing.265e6df46207937dc94a",
+      "original_query": "finite moments Σ|x|^k w_x",
+      "original_context": "Orthogonal-polynomial analysis: finiteness of every nonnegative integer weighted absolute moment Σ_{x∈X}|x|^k w_x over a countably supported positive weight.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.dcba26d2925c4165b19c"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For weights w_x>0 on countable support X, finiteness of every absolute moment means Σ_{x∈X}|x|^k w_x<∞ for all k∈N_0.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/Moment.html",
+          "section": "Discrete moments and absolute moments",
+          "verification_status": "source_lead_countable_sum_scope",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_lead_countable_sum_scope",
+      "mathematical_edge_case_or_comparison": "At k=0 this imposes Σ w_x<∞ (finite total mass), not merely positivity of individual weights. All summands are nonnegative, so convergence is unambiguous as a supremum of finite subsums.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 177,
+      "original_canonical_candidate_id": "missing.278d73133c80cdd539f3",
+      "original_query": "pro-object",
+      "original_context": "Category theory: pro-object of category C, a formal cofiltered inverse diagram representing a formal inverse limit in Pro(C), not necessarily an actual limit in C.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.4b2a70b69002d7900f62"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A pro-object of C can be represented by a functor I→C indexed by a small cofiltered category I, formally specifying an object in Pro(C), with morphisms defined by appropriate lim-colim formula.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/05PT",
+          "section": "Remark 4.22.5 pro-category",
+          "verification_status": "definition_verified_primary",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_verified_primary",
+      "mathematical_edge_case_or_comparison": "An actual inverse limit of the diagram in C need not exist. Specify index-size conditions and equivalence of pro-diagrams under the chosen foundation.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 178,
+      "original_canonical_candidate_id": "missing.293cecfee8aa9184332d",
+      "original_query": "restriction of ambient group operation",
+      "original_context": "Group theory: restriction of ambient binary operation ⋆:G×G→G to H×H, where H is closed under that operation and the restriction maps into H.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.e67351a875b346a97ce8"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "Given H⊆G closed under ⋆, the ambient group operation restricts to H×H→H via (x,y)↦x⋆y.",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Subgroup",
+          "section": "Subgroup closure under operation",
+          "verification_status": "source_context_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_context_lead",
+      "mathematical_edge_case_or_comparison": "Closure under multiplication alone need not make H a subgroup; identity and inverses also required.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 179,
+      "original_canonical_candidate_id": "missing.2b4bf1ddae7c8d62e393",
+      "original_query": "finite-dimensional image subspace im(T)",
+      "original_context": "Linear algebra: image of a K-linear transformation as a subspace of target W admitting a finite K-basis.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.f85f6c88eafdf5d9e238"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For K-linear T:V→W, im(T)={T(v):v∈V} is a K-vector subspace of W; it is finite-dimensional if it admits a finite basis.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/Image.html",
+          "section": "Image of a linear transformation",
+          "verification_status": "linear_algebra_source_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "linear_algebra_source_lead",
+      "mathematical_edge_case_or_comparison": "Finite dimension of im(T) is an added condition: it need not follow from T linear when V infinite-dimensional.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 180,
+      "original_canonical_candidate_id": "missing.2c93b5604c8145ef1af4",
+      "original_query": "diagonal subset Δ_X={(x,x):x∈X}",
+      "original_context": "Topology: diagonal subset Δ_X consisting of equal-coordinate ordered pairs in X×X.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.cfd41df28f8dfa2fcc44"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For any set X, its diagonal is Δ_X={(x,x):x∈X}⊆X×X.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0059",
+          "section": "Topological diagonal and closed points in separation discussions",
+          "verification_status": "general_set_construction_source_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "general_set_construction_source_lead",
+      "mathematical_edge_case_or_comparison": "For X=∅, Δ_X=∅. The diagonal is closed in X×X iff X is Hausdorff; do not include closedness as part of the definition.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 181,
+      "original_canonical_candidate_id": "missing.2d4e4af6f3b83da929a6",
+      "original_query": "singleton {a} and unordered pair {a,b}",
+      "original_context": "Set theory: singleton set {a} and unordered doubleton {a,b} used as finite set constructors in the Kuratowski pair {{a},{a,b}}; distinguish singleton from unordered pair in later missing-meaning research.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.af14da7f06b8c83e1cb0"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A singleton {a} has exactly element a, and an unordered pair {a,b} consists of the elements equal to a or b. The Kuratowski ordered pair is (a,b):={{a},{a,b}}.",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Ordered_pair",
+          "section": "Kuratowski ordered pair",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "elementary_source_lead",
+      "mathematical_edge_case_or_comparison": "If a=b then {a,b}={a}. The Kuratowski encoding still distinguishes ordered pairs through outer nested sets, not by treating {a,b} itself as ordered.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 182,
+      "original_canonical_candidate_id": "missing.300b43878b10cb827d6f",
+      "original_query": "least element a of A",
+      "original_context": "Order theory: least element a∈A of a subset A of a partially ordered set, such that a≤x for every x∈A; unlike a merely minimal element.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.f41c4438f9c96b1235d1"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A least element a of subset A in poset (P,≤) is an element a∈A with a≤x for every x∈A.",
+      "sources": [
+        {
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "section": "Least versus minimal elements",
+          "verification_status": "definition_supported",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_supported",
+      "mathematical_edge_case_or_comparison": "Least element is unique by antisymmetry; a merely minimal element need not be comparable to every other element.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 183,
+      "original_canonical_candidate_id": "missing.3093c306593220970d2c",
+      "original_query": "cochain complex Hom_R(F_•,N)",
+      "original_context": "Homological algebra: cochain complex induced by contravariant Hom_R(−,N) on a chain complex F_•, with coboundary maps induced by precomposition with the original differentials.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.67ef12cdedd693268e03"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For a chain complex F_• and R-module N, Hom_R(F_•,N) is a cochain complex with cochains Hom_R(F_n,N) and differential δ^n(h)=h∘d_{n+1}.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0114",
+          "section": "Hom complex and cohomology of complexes",
+          "verification_status": "construction_supported_convention_scope",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "construction_supported_convention_scope",
+      "mathematical_edge_case_or_comparison": "Variance reverses arrows. Some authors include signs in total complexes, but for this simple Hom into degree-zero N the precomposition formula is standard.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 184,
+      "original_canonical_candidate_id": "missing.321f1c1041b950cab75b",
+      "original_query": "tagged Riemann sum S",
+      "original_context": "Real analysis: Riemann sum associated to a bounded real-valued function and a tagged finite partition; sum of f(ξ_i)(x_i−x_{i−1}).",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.1269aaff9d9c823ca554"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "Given tagged partition a=x_0<⋯<x_n=b with ξ_i∈[x_{i−1},x_i], the Riemann sum is Σ_{i=1}^n f(ξ_i)(x_i−x_{i−1}).",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/RiemannSum.html",
+          "section": "Tagged Riemann sums",
+          "verification_status": "definition_supported",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_supported",
+      "mathematical_edge_case_or_comparison": "No convergence assumption needed to define one sum. A Riemann integral exists when tagged sums converge in the required mesh sense.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 185,
+      "original_canonical_candidate_id": "missing.33295ddbc642096ac085",
+      "original_query": "induced morphism f^{-1}O_Y→O_X",
+      "original_context": "Sheaf theory: morphism from inverse-image sheaf f^{-1}O_Y on X to O_X, adjoint to O_Y→f_*O_X; not an ordinary preimage of subsets.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.b08312603695db52aac7"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For continuous f:X→Y, a morphism f^{-1}O_Y→O_X of sheaves of rings on X is adjoint to O_Y→f_*O_X, by inverse-image/pushforward adjunction.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01HA",
+          "section": "Morphisms of ringed spaces and adjoint sheaf map",
+          "verification_status": "definition_supported_primary",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_supported_primary",
+      "mathematical_edge_case_or_comparison": "Inverse-image sheaf f^{-1}O_Y is a sheaf construction, not set-theoretic preimage f^{-1}(B). For locally ringed spaces additional stalk-locality required.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 186,
+      "original_canonical_candidate_id": "missing.3348be9820f51883da75",
+      "original_query": "irrelevant ideal S_+",
+      "original_context": "Graded algebra: irrelevant ideal S_+=⊕_{n>0} S_n, generated by positive-degree homogeneous elements of a nonnegatively graded ring.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.7e42fe2d250e4632caec"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For a nonnegatively graded ring S=⊕_{n≥0}S_n, the irrelevant ideal is S_+=⊕_{n>0}S_n.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00JM",
+          "section": "Irrelevant ideal in Proj of graded rings",
+          "verification_status": "source_context_supported",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_context_supported",
+      "mathematical_edge_case_or_comparison": "If grading has negative degrees, positive-degree sum need not be an ideal without extra grading conventions. Here nonnegative grading is required.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 187,
+      "original_canonical_candidate_id": "missing.334b13fc23fb76467dce",
+      "original_query": "natural exchange isomorphism X⊗Y→Y⊗X",
+      "original_context": "Category theory: natural braiding or symmetry c_{X,Y}:X⊗Y→Y⊗X in monoidal category, natural in X,Y; for symmetric structure the double exchange is the identity.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.df7dd6c8abbf2808acdc"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A braiding in monoidal C consists of natural isomorphisms c_{X,Y}:X⊗Y→Y⊗X satisfying hexagon axioms; symmetry requires c_{Y,X}∘c_{X,Y}=id.",
+      "sources": [
+        {
+          "url": "https://ncatlab.org/nlab/show/symmetric+monoidal+category",
+          "section": "Braided and symmetric monoidal categories",
+          "verification_status": "source_scope_requires_hexagon",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_scope_requires_hexagon",
+      "mathematical_edge_case_or_comparison": "A family of arbitrary 'exchange' maps alone is not a braiding; coherence axioms matter. No automatic symmetry unless double exchange identity specified.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 188,
+      "original_canonical_candidate_id": "missing.3396c3b269e655e09f1a",
+      "original_query": "integer multiplication",
+      "original_context": "Integer arithmetic: product on natural-number difference classes given by [(a,b)]·[(c,d)]=[(ac+bd,ad+bc)], requiring well-definedness on equivalence classes and yielding a distributive unital ring operation.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.b47c8f9b75d129cf4dcb"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "On equivalence classes of pairs (a,b) of natural numbers modeling a−b, multiplication is [(a,b)]·[(c,d)]=[(ac+bd,ad+bc)].",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Integer",
+          "section": "Integers via equivalence classes of natural pairs",
+          "verification_status": "source_context_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_context_lead",
+      "mathematical_edge_case_or_comparison": "Well-definedness modulo (a,b)∼(a′,b′) iff a+b′=a′+b must be proved; one formula alone is not a ring construction.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 189,
+      "original_canonical_candidate_id": "missing.33bd557af9c1505ff986",
+      "original_query": "maximal finite chain connecting primes",
+      "original_context": "Commutative algebra and order theory: saturated finite strict chain of primes p=p_0⊊p_1⊊⋯⊊p_n=q between fixed p⊆q, with no prime strictly between adjacent terms; maximal under refinement, not necessarily of greatest length.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.dc8bb31d64d8367d3290"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A finite saturated chain between prime ideals p⊆q is p=p_0⊊⋯⊊p_n=q where no prime lies strictly between adjacent p_i,p_{i+1}.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/027N",
+          "section": "Catenary rings and maximal saturated chains",
+          "verification_status": "source_supported",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_supported",
+      "mathematical_edge_case_or_comparison": "Saturated/maximal-by-refinement chain need not have maximum length in a noncatenary ring. Require existence of finite chain separately.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 190,
+      "original_canonical_candidate_id": "missing.34ce94b98a483565bed3",
+      "original_query": "additive multiple n·1_F",
+      "original_context": "Algebra: n-fold repeated addition of multiplicative identity 1_F in the additive abelian group of a field F, for positive integer n.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.56c6e3d85c38ac59c3b3"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For n∈N, n·1_F is the sum of n copies of the field unit 1_F in the additive group of F; 0·1_F=0_F.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Characteristic of rings and n·1",
+          "verification_status": "source_context_supported",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_context_supported",
+      "mathematical_edge_case_or_comparison": "In positive characteristic, n·1_F may be zero for n>0; this is not multiplication of two formal natural integers inside F without canonical map.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 191,
+      "original_canonical_candidate_id": "missing.35f080be8784ff208377",
+      "original_query": "induced isomorphism of residue fields",
+      "original_context": "Commutative local algebra: field isomorphism Λ/(Λ∩m)→R/m induced by inclusion Λ⊆R, preserving the chosen maps and residue-field structures.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.a76507a896cebffd8cde"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A ring inclusion Λ⊆R induces Λ/(Λ∩m)→R/m for ideal m of R. It is an isomorphism precisely when the induced residue map is both injective and surjective.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/07BH",
+          "section": "Residue-field maps of local rings",
+          "verification_status": "contextual_construction",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "contextual_construction",
+      "mathematical_edge_case_or_comparison": "Injectivity into R/m is automatic with kernel Λ∩m, but surjectivity is NOT automatic; do not claim an isomorphism without this added hypothesis. Λ∩m must be maximal to call source quotient a field.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 192,
+      "original_canonical_candidate_id": "missing.366fd59d8e50c00508ab",
+      "original_query": "multiplicative group F× of field units",
+      "original_context": "Field and group theory: F×=F\\{0} with group operation given by field multiplication, identity 1_F and multiplicative inverse of each nonzero element. This is the unit group of the field, distinct from the ambient additive group.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.ae03e9df9799943ddbc6"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For a field F, its multiplicative group of units F×=F\\{0} with field multiplication and identity 1_F.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/MultiplicativeGroup.html",
+          "section": "Nonzero field elements form multiplicative group",
+          "verification_status": "definition_supported",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_supported",
+      "mathematical_edge_case_or_comparison": "F× differs from additive group (F,+). Zero element is excluded; every remaining element invertible.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 193,
+      "original_canonical_candidate_id": "missing.3710b4975d74d6cf4a18",
+      "original_query": "left and right Ore-square completion",
+      "original_context": "Category theory: two-sided Ore completion properties for arrows in a category localized at S, involving commutative squares for eligible cospans and spans.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.e7654533a30958e8f143"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "Left and right Ore-square completion properties specify completion of eligible spans/cospans involving chosen denominators in S to commutative diagrams in a localization calculus.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/04VB",
+          "section": "Category localization and multiplicative systems",
+          "verification_status": "source_orientation_review_needed",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "source_orientation_review_needed",
+      "mathematical_edge_case_or_comparison": "The exact left/right orientations are source-convention dependent. Do not falsely replace with a statement that arbitrary squares can be completed.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 194,
+      "original_canonical_candidate_id": "missing.37f3dd1bcc4e4d93bbe3",
+      "original_query": "rational-coefficient polynomial P(n)",
+      "original_context": "Algebra: polynomial P(T) in the univariate polynomial algebra ℚ[T], evaluated at sufficiently large nonnegative integer n, with rational coefficients and finite degree.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.67b38aa8c8de93e88df4"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For P(T)=Σ_{i=0}^d a_i T^i∈Q[T], evaluation at n∈Z is P(n)=Σ_{i=0}^d a_i n^i∈Q.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Polynomial rings and evaluation",
+          "verification_status": "definition_supported",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_supported",
+      "mathematical_edge_case_or_comparison": "The qualifier 'sufficiently large n' applies to a property under study, not the existence of evaluation, which is defined for every integer n.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 195,
+      "original_canonical_candidate_id": "missing.3805a426422444ccd427",
+      "original_query": "intersection of all maximal ideals",
+      "original_context": "Set theory and commutative algebra: intersection ∩_{j∈J}I_j of an indexed family of ideals of a unital ring R, the elements belonging to every I_j; the empty-family intersection is R.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.85c8bc8af958f53a3552"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "The intersection of a family (I_j)_{j∈J} of ideals is {r∈R: r∈I_j for every j∈J}, itself an ideal; empty-family intersection equals R.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00AQ",
+          "section": "Rings and ideals; intersection as subobject",
+          "verification_status": "construction_source_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "construction_source_lead",
+      "mathematical_edge_case_or_comparison": "Intersection of all maximal ideals is the Jacobson radical of R, with unit-ring conventions; not the same as nilradical in general.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 196,
+      "original_canonical_candidate_id": "missing.388535dfa4c978e2cd14",
+      "original_query": "arbitrary unions of open subsets",
+      "original_context": "Set theory: union ⋃_{i∈I}U_i of a possibly infinite indexed family of subsets of X, including empty-index union ∅; the requirement that this union belong to τ is an axiom defining a topology.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.9396633d8604aa59af3f"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For subsets U_i⊆X, the indexed union ⋃_{i∈I}U_i is {x∈X:∃i∈I,x∈U_i}.",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Union_(set_theory)",
+          "section": "Arbitrary indexed union",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "elementary_source_lead",
+      "mathematical_edge_case_or_comparison": "When I=∅ the union is ∅. Every topology is closed under all such unions.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 197,
+      "original_canonical_candidate_id": "missing.3913df323abde5188991",
+      "original_query": "every nonzero element has two-sided inverse",
+      "original_context": "Ring theory: two-sided multiplicative inverse b for an element a≠0 in a unital ring, satisfying ab=ba=1_D; stronger than a one-sided inverse.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.5b253835b56aeabecb84"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For a nonzero element a in a unital ring D, b is a two-sided multiplicative inverse if ab=ba=1_D.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Units and invertible elements",
+          "verification_status": "definition_supported",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_supported",
+      "mathematical_edge_case_or_comparison": "For division rings every nonzero element has an inverse; commutativity is additionally needed to be a field. The zero ring needs a nontriviality convention to avoid vacuous division-ring claims.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 198,
+      "original_canonical_candidate_id": "missing.393011a6247b68c99dfd",
+      "original_query": "radical of an ideal I",
+      "original_context": "Commutative algebra: radical sqrt(I)={r∈R:r^n∈I for some positive integer n} of an ideal I in a commutative ring R.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.c1e88c8ca1e4b33160a0"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "For ideal I⊆R in a commutative ring, √I={r∈R: r^n∈I for some n≥1}.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00DY",
+          "section": "Radical ideals and prime ideals",
+          "verification_status": "definition_supported",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_supported",
+      "mathematical_edge_case_or_comparison": "I radical iff I=√I. Do not equate √I with the intersection of only maximal ideals containing I; in general use all prime ideals.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 199,
+      "original_canonical_candidate_id": "missing.3e301ed859563004e0bc",
+      "original_query": "equipotent to A",
+      "original_context": "Set theory: two sets A and B are equipotent (equinumerous) exactly when a bijection A→B exists; this is a relation between sets, not the witnessing bijective function itself.",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.b33c5684f51d9a45cb7c"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "Sets A and B are equipotent when there exists a bijective function f:A→B.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/Equipotent.html",
+          "section": "Equipotent sets and bijections",
+          "verification_status": "definition_supported",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_supported",
+      "mathematical_edge_case_or_comparison": "Equipotence relates sets; the witnessing bijection itself is a different mathematical object.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    },
+    {
+      "priority": 200,
+      "original_canonical_candidate_id": "missing.3ee6d84a80479e5aff32",
+      "original_query": "points closed in ambient X",
+      "original_context": "General topology: closed point x of a topological space X, meaning the singleton {x} is closed as a subset of X (not merely relatively closed in a closed subset Z⊆X).",
+      "original_incoming_occurrences": 1,
+      "original_occurrence_ids": [
+        "occ.22761fd258c0f841879a"
+      ],
+      "original_alias_ids": [],
+      "definition_paraphrase": "A point x∈X is closed when the singleton {x} is closed in X.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0059",
+          "section": "Closed points in topology",
+          "verification_status": "definition_verified_primary_context",
+          "relevance": "Evidence of definition or contextual mathematical lead; see scope and verification status, not automatically certified."
+        }
+      ],
+      "source_scope_status": "definition_verified_primary_context",
+      "mathematical_edge_case_or_comparison": "Closedness is relative to ambient X, not just a subspace. Every point is closed iff X is T1; the empty space has no points.",
+      "corpus_comparison_status": "PRELIMINARY_TYPED_ONLY_full_accepted_provisional_and_previous_staged_required",
+      "next_generation_dependencies": "record_but_do_not_research",
+      "staged_population": false,
+      "graph_resolved": false,
+      "certified": false
+    }
+  ]
+}
