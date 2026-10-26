@@ -20,8 +20,8 @@ phrase leads plus 473 known-term mention patterns.
 Put new researched meanings in
 `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/terms.json`
 and render them ONLY in `/reconstruction/merged/`, not the completed 958-meaning
-independent Wave 2 or original production source. The first two batches add eight
-source-checked mathematical drafts to the combined view. See
+independent Wave 2 or original production source. The first three batches add twenty
+source-attributed mathematical drafts to the combined view. See
 `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/README.md`.
 Continue in selective practical batches; the 2,019 scan leads are suggestions,
 NOT a queue that must all be resolved. No global gates or prerequisite closure.
