@@ -378,3 +378,35 @@ meanings; expected combined **2,108** (958 independent + 1,014 original +
 136 researched post-Wave2). Both completed historical previews and original
 production source remain unchanged. The 2,019 scanned phrases are neither
 newly collected nor automatically accepted as definitions.
+
+
+## Scan-driven candidate incorporation — ranks 141–180 (2026-10-26)
+
+Continued in **strict rank order** through the same frozen original quick-scan
+collection. Recorded all 40 literal candidates, counts, source examples,
+dispositions and canonical targets in `scan_candidate_dispositions.json`.
+Results: **4 new concepts**, **1 distinct contextual variant**, **15 already
+covered**, **19 grammatical/nonterm fragments**, **1 contextual ambiguity**.
+
+Five sourced merged-only meanings added:
+- Rank 142: finite-dimensional Euclidean space; both vector and affine
+  realizations, with a positive-definite real inner product
+- Rank 143: finite-dimensional vector space over a specified field;
+  dimension zero allowed
+- Rank 144: finite field extension, finite *degree*, not finite cardinality
+- Rank 163: Hausdorff second-countable topological space, without falsely
+  assuming local Euclidean/manifold structure
+- Rank 166: isolated point of a subset, related but more general than the
+  already reconstructed isolated point of the whole topological space
+
+Existing-reference decisions include fraction field (rank 169), minimal
+polynomial (170), residue field (172), local homomorphism (175), and negative
+set for a signed measure (178). 'Its first return map' (168) remains a
+contextual ambiguity, also noted earlier at rank 88, rather than forcing
+a possibly wrong sense.
+
+**Next rank: 181 / 2,019.** Exactly **180 ranks processed**, **23 added
+sourced meanings** from those ranks, combined-only overlay now **141**
+meaning records, expected combined catalog **2,113** (958 independent +
+1,014 original + 141 post-Wave2). Independent Wave2 and original
+production definitions are frozen. No new candidate-finding step happened.

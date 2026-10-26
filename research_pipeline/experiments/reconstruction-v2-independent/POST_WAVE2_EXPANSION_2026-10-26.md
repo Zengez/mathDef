@@ -300,3 +300,23 @@ are saved for each meaning; no blanket claims of source certification.
 Merged-only overlay has 136 meanings, expected total merged content 2,108
 (958+1,014+136). The independent Wave 2 and original source files remain
 unchanged; original scan content/count is not altered.
+
+
+## Original quick-scan candidates, ranks 141–180
+
+Processed exactly the next original 40 leads, reusing the **same** frozen
+original scan and mapping literal example/source IDs in the same disposition
+ledger. Four genuinely new concepts and one meaning variant were added:
+finite-dimensional Euclidean space, finite-dimensional vector space,
+finite field extension, Hausdorff second-countable space, and an
+isolated-point-of-subset variant linked to the existing isolated point
+of the whole space. Every meaning includes mathematical context,
+explicit assumptions, source references, and researched scope.
+
+Recorded 15 already-covered leads, 19 nonterminological fragments and one
+contextual first-return-map ambiguity. No unrelated terminology search,
+dependency-graph gate or exhaustive audit. **180 / 2,019** old candidates
+processed and **23** new sourced meanings incorporated from them.
+New post-Wave2 overlay total **141**; expected merged total **2,113**.
+Persistent next candidate rank **181**; independent 958 and original 1,014
+remain unchanged.
