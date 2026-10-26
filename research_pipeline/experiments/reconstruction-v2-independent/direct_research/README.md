@@ -37,3 +37,20 @@ Initial batch: 15 substantive new/specialized definitions recovered from
 [previous mathematical reviews](../../../reviews/wave2-salvage-2026-10-26/PREVIOUSLY_REVIEWED_16.json).
 The sixteenth reviewed reference (successor ordinal) already has an equivalent
 independent meaning and is intentionally *not* duplicated.
+
+## Initial independent Wave 2 reconstruction: complete
+
+The first-pass reconstruction completed on 2026-10-26. The independent preview now
+contains **958 contextual meanings** (595 screened + 363 direct). The initial
+418-lead list is fully accounted for (350 incorporated, 68 dispositioned).
+Relationships total **1,511** (887 screened + 509 new-to-known/new + 115 curated
+screened-to-new). See [the completion checkpoint](../WAVE2_INITIAL_RECONSTRUCTION_COMPLETE_2026-10-26.md)
+and the [candidate closeout](CANDIDATE_WORKLIST_CLOSEOUT_2026-10-26.md).
+
+The new-to-existing links live in `terms.json`; the conservative original-to-new
+links live in `incoming_links.json`. Those links are ordinary curated preview
+content, not a dependency graph or a requirement for exhaustive closure.
+
+**Next, not yet started:** scan the 363 newly added definitions for *new*
+possible terminology. Continue to treat source leads honestly and preserve the
+independently researched corpus; no re-entry into removed staging workflows.
