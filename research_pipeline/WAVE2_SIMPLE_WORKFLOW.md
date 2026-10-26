@@ -1,5 +1,14 @@
 # Independent Wave 2 — direct definition research (authoritative)
 
+**STATUS (2026-10-26): Initial independent Wave 2 reconstruction COMPLETE.**
+This document records the direct-content method used to complete it; it is **not**
+an instruction to re-process the old candidates. The finished corpus has 958
+independent contextual meanings and 1,511 known curated relationships.
+The 418-lead list has been addressed (350 incorporated, 68 non-promoted with
+recorded dispositions). The remaining future expansion is a fast, approximate
+candidate scan of the *363 newly added definitions* — not yet performed.
+See [the completion checkpoint](experiments/reconstruction-v2-independent/WAVE2_INITIAL_RECONSTRUCTION_COMPLETE_2026-10-26.md).
+
 **Supersedes and replaces all earlier dependency-first Wave 2 handoffs**, including the removed `DEPENDENCY_FIRST_WORKFLOW.md` and `TEMP_DEPENDENCY_FIRST_WAVE2_PLAN.md`. Those earlier methods were specifically rejected by the owner after substantial repeated process overhead. Do not resume them from Git history, an archived PR, a previous conversation or a generated checkpoint.
 
 ## The actual project
@@ -10,7 +19,7 @@ Independently research mathematical meanings and make them visible on the Wave 2
 
 **Research queue:** [the one-file 418-candidate TSV](reviews/wave2-salvage-2026-10-26/CANDIDATE_WORKLIST_418.tsv). These are leads, **not 418 guaranteed distinct or verified terms**. The 16 earlier guarded mathematical dispositions can inform later decisions but impose no workflow dependencies.
 
-**Working site implementation:** `research_pipeline/adapters/mathdef/preview_site.py`, `preview.py`, `research_pipeline/ui/`, and independent screened `experiments/reconstruction-v2-independent/records/`. Do not rebuild the website; make independently researched new definitions/variants/links visible through this existing viewer. The display gap is now partly closed: 15 directly researched meanings and 22 links have been added to the searchable Wave 2 preview. New content goes in `experiments/reconstruction-v2-independent/direct_research/terms.json` (see its README). The other 16 provisional meanings remain in `population/records/` and are not automatically displayed. No graph stages or gates are required.
+**Working site implementation:** `research_pipeline/adapters/mathdef/preview_site.py`, `preview.py`, `research_pipeline/ui/`, and independent screened `experiments/reconstruction-v2-independent/records/`. Do not rebuild the website; make independently researched new definitions/variants/links visible through this existing viewer. The original display gap was closed: 363 directly researched meanings are now searchable, with 509 outgoing links and 115 additional conservative links from screened meanings. New content goes in `experiments/reconstruction-v2-independent/direct_research/terms.json` (see its README). The other 16 provisional meanings remain in `population/records/` and are not automatically displayed. No graph stages or gates are required.
 
 ### One efficient term pass
 
