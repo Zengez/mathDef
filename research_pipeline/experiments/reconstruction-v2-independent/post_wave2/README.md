@@ -275,3 +275,41 @@ contextual meanings; the independent reconstructed Wave2 remains **958**,
 original source remains **1,014 definitions**, and initial **2,019**
 rough phrase-lead scan remains an untouched discovery snapshot.
 No dependency-graph gates or global review queues should be restored.
+
+
+## Active workflow correction — actual first-scan candidate incorporation (2026-10-26)
+
+**The owner explicitly clarified that new-vocabulary searching is NOT the current
+task.** We already have a 2,019-phrase discovery collection from the original
+quick scan of 363 Wave2 direct meanings and 1,014 original mathDef definitions.
+Work on THOSE existing phrases, in their recorded rank order. Only return to
+new-term discovery when that is a separately authorized phase.
+
+Initial scan-processing batch: ranks **1–60** have individually recorded
+outcomes in `scan_candidate_dispositions.json`. These records contain the
+exact phrase, occurrence count and source examples from the ORIGINAL
+`scan-report.json`, plus outcome, existing meaning/source matches,
+rationale and newly added target IDs. Totals:
+- 4 candidates became new headings: real vector space, measure space,
+  complex vector space, compact metric space
+- 1 candidate ('Borel measure') became 3 explicitly different
+  context-specific definitions, reflecting conventions A, B and C
+- 22 candidates were already covered by existing content
+- 1 ('graded ring') is covered by EXISTING distinct graded-ring variants
+- 30 were ordinary grammatical fragments or nontechnical qualifiers
+- 2 were marked genuinely ambiguous in context, rather than silently merged
+
+This added **7 meanings** (118 previous + 7 = **125** post-Wave2).
+The expected combined catalog is **2,097 meanings**.
+The previously reported 2,019 *scan candidate phrases* remain a
+different, unmodified number.
+
+**Next work:** continue candidate rank **61 onward**, obtaining the actual
+original scan records (not invented candidates) and recording quick
+dispositions. For new concepts research and add actual mathematical meaning
+records with source citations, context and related links; for duplicate
+or synonymous phrases point to existing definitions rather than adding
+redundant meanings; for distinct legitimate senses retain variants.
+Do not undertake unrelated gap-finding or reinstate dependency graphs,
+approval gates or an extensive manual-audit queue. Candidate dispositions
+are a lightweight resumption log, not a research stage gate.

@@ -228,3 +228,31 @@ Checkpoint expects **118** post-completion researched meanings and
 historical scan's 2,019 tentative phrase leads remains separate and
 unresolved leads are not a completion gate. CI and Pages publish
 runs provide actual build/deployment confirmation.
+
+
+## Owner-directed correction: original scan candidates are current input
+
+The owner clarified that the quick-scan TERMINOLOGY leads — not arbitrary new
+terms found by an independent search — must now be researched and incorporated.
+The prior seven-to-nine post-Wave2 direct research batches were useful but
+drifted into unrelated gap hunting. That stops here. The actual canonical
+initial fast-scan result remains frozen at **2,019 phrases** and **473 known
+title mentions**.
+
+First processing pass records exactly the original ranked scan candidates
+**1–60** with their source-document examples in the concise file
+`post_wave2/scan_candidate_dispositions.json`. We differentiated existing
+definitions (22), already-covered variants (1), contextual ambiguity (2),
+grammatical false positives (30), four new terms and one multi-variant term.
+Seven meanings were researched and inserted: real and complex vector spaces,
+measure space, three conventions for Borel measure, and compact metric space.
+The three Borel-measure senses follow the explicitly differentiated source
+conventions: measure on Borel σ-algebra, finite on compact sets, and Borel
+outer measure. These are NOT mathematical synonyms.
+
+Persistent next pointer: **scan rank 61**, using actual candidate records.
+Further active term hunting is deferred until explicitly designated a
+separate collection-building phase. Completed independent Wave2 remains 958
+meanings and original mathDef source 1,014 definitions; expected current
+combined count after validation is 2,097 meanings. This is an
+assistant-reviewed, source-attributed content merge, not a peer-certified audit.
