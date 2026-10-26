@@ -27,14 +27,15 @@ Incorporate useful mathematical content DIRECTLY. Do not reintroduce
 mandatory dependency graphs, slow gates, arbitrary verification packet stages,
 or a new external vocabulary hunt.
 
-The first three scan-driven batches have processed ranked candidates **1–140**
+The first four scan-driven batches have processed ranked candidates **1–180**
 in `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/scan_candidate_dispositions.json`.
-Together they added **18 source-attributed meanings** (including three
-alternative Borel-measure meanings), bringing the post-Wave2 overlay from
-118 to **136** meanings. In the newest ranks 101–140, 8 researched meanings
-were added, 18 candidates were mapped to existing concepts, and 14 were
-nonterminological fragments. Candidate rank **141** is the next unprocessed
-position. The initial 2,019-lead scan remains unchanged.
+They added **23 sourced new meanings** in total, including genuine contextual
+variants, bringing the merged-only post-Wave2 overlay from 118 to **141**
+meanings. Latest ranks 141–180 contributed 5 new records (4 new concepts and
+1 distinct isolated-point-of-a-subset variant), 15 existing matches, 19
+nonterminological fragments and 1 contextual ambiguity. Candidate rank
+**181** is next. The original 2,019-lead scan remains frozen.
+
 Keep per-candidate source examples, concise outcome and target mapping in this
 same lightweight ledger; it is a resumption log, not a mathematical
 admission gate. The original report is `/reconstruction/merged/scan-report.json`
