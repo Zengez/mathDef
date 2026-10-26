@@ -58,3 +58,27 @@ The expansion file now contains **8 researched meanings** in total, with
 source-checked citations and direct, nonmandatory contextual links. The merged
 reference is expected to contain **1,980 meanings** after CI. The independent
 Wave2 snapshot stays **958** and its completion record remains closed.
+
+## Third expansion batch — further original-inclusive vocabulary
+
+Twelve directly researched concepts from the previously identified
+mathematical vocabulary are now included in `post_wave2/terms.json`.
+New coverage spans homological algebra, module theory, general topology,
+topological and algebraic function support, partial functions, affine
+geometry, commutative algebra, metric geometry and order theory.
+
+**Boundary discipline.** This is the post-Wave2 *combined* reference only.
+New research is deliberately not written into the independent finished
+958-meaning Wave2 or the original `definitions/*.tex` files.
+Context-sensitive differences (topological versus algebraic support;
+analytic versus formal series; initial versus final topology; partial
+versus total functions) have been preserved rather than silently
+merged as equivalent. The added source locators and conventions are in
+the actual definition records, not separate gate/checklist paperwork.
+
+The post-Wave2 research overlay totals **20 meanings**, predicting
+**1,992 combined meanings** (958 independent + 1,014 original + 20
+post-Wave2); the exact number of term headings is emitted by CI. Preserve
+the 2,019 original rough scan leads and 473 known mentions without
+claiming they are all mathematical terms. More definitions can be
+researched and added directly in further batches.
