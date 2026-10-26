@@ -4808,6 +4808,41 @@
         "Local finite tuples of holomorphic defining functions are used."
       ],
       "research_status": "assistant-researched frozen quick-scan incorporation; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-banach-valued-simple-function-20261026",
+      "candidate_id": "postwave-scan:rank-259",
+      "term": "Banach-space-valued simple measurable function",
+      "context": "Vector-valued measure theory · finite-range measurable Banach-valued function",
+      "aliases": [
+        "Banach-valued simple function",
+        "simple measurable B-valued function"
+      ],
+      "definition": "Let (Ω,Σ) be a measurable space and B a real or complex Banach space. A B-valued function s:Ω→B is simple Σ-measurable if it has finite range {b₁,…,b_n}⊆B and each fibre s⁻¹({b_i}) belongs to Σ. Equivalently s=∑_{i=1}^n b_i·1_{E_i} for a finite measurable partition (E_i) of Ω. Some Bochner integration conventions additionally require the sets on which s is nonzero to have finite measure (when a measure μ is supplied); that condition is NOT imposed by the mere finite-range measurable definition.",
+      "sources": [
+        {
+          "title": "Marc A. Rieffel — Integration of Banach-space-valued functions, Ch. 3 §3.1 (UC Berkeley)",
+          "url": "https://math.berkeley.edu/~rieffel/measure-int/measint3.pdf",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Bochner integral",
+          "url": "https://encyclopediaofmath.org/wiki/Bochner_integral",
+          "verification_status": "direct_source_passage_checked_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-measure-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "B is real or complex Banach and Ω carries a σ-algebra.",
+        "Only finite range and measurable fibres are required; finite-measure-support conventions for integrable simple functions are recorded separately.",
+        "A finite partition may include a zero-valued part, even on an infinite-measure domain."
+      ],
+      "research_status": "assistant-researched from frozen original scan; not peer certified"
     }
   ]
 }
