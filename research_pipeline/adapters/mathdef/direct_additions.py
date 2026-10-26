@@ -7,6 +7,8 @@ One small JSON content file -> the already working searchable preview.
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 from pathlib import Path
 
 from research_pipeline.engine.core import PipelineError, digest
@@ -116,3 +118,70 @@ def add_direct_research(groups: list, relations: list, file: Path) -> int:
         group["aliases"].sort(key=str.casefold)
     groups.sort(key=lambda x: (x["title"].casefold(), x["id"]))
     return len(staged)
+
+
+def _match_key(value: str) -> str:
+    """Normalize a literal phrase for conservative, contextual link checks."""
+    value = unicodedata.normalize("NFKC", value).casefold()
+    value = re.sub(r"\\([a-z]+)\b", r"\1", value)
+    value = re.sub(r"[$^{}_\u2060]", " ", value)
+    return " ".join(re.sub(r"[^\w]+", " ", value).split())
+
+
+def add_incoming_direct_links(groups: list, relations: list, file: Path) -> int:
+    """Add existing-formulation links to directly researched Wave 2 meanings.
+
+    These are curated literal links from previously screened mathematical
+    formulations. They are not a new-term scan, research queue, graph traversal,
+    or requirement to exhaustively link every mathematical phrase.
+    """
+    file = Path(file)
+    if not file.is_file():
+        return 0
+    data = json.loads(file.read_text(encoding="utf-8"))
+    if data.get("schema_version") != 1 or not isinstance(data.get("links"), list):
+        raise PipelineError("Incoming research links need schema_version=1 and links[]")
+    screened_forms = {
+        f["id"]: f["text"]
+        for g in groups for m in g["meanings"]
+        if not m.get("research_status")
+        for f in m["formulations"]
+    }
+    direct_ids = {
+        m["id"] for g in groups for m in g["meanings"]
+        if m.get("research_status")
+    }
+    used = {(r["from_formulation"], r["target_meaning"]) for r in relations}
+    for index, item in enumerate(data["links"]):
+        if not isinstance(item, dict):
+            raise PipelineError("Incoming link must be an object")
+        source = _nonempty(item.get("from_formulation"), "from_formulation")
+        target = _nonempty(item.get("target_meaning"), "target_meaning")
+        phrase = _nonempty(item.get("source_phrase"), "source_phrase")
+        kind = item.get("relation_type")
+        if source not in screened_forms:
+            raise PipelineError(f"Incoming link has unknown screened formulation: {source}")
+        if target not in direct_ids:
+            raise PipelineError(f"Incoming link target is not a direct researched meaning: {target}")
+        if kind not in ("definition_uses", "related"):
+            raise PipelineError(f"Unknown incoming link relation type: {kind}")
+        if not _match_key(phrase) or (
+            " " + _match_key(phrase) + " " not in
+            " " + _match_key(screened_forms[source]) + " "
+        ):
+            raise PipelineError(f"Incoming link phrase is not present in {source}: {phrase}")
+        if (source, target) in used:
+            raise PipelineError(f"Duplicate incoming direct link: {source} to {target}")
+        used.add((source, target))
+        relations.append({
+            "id": f"rel.wave2.incoming.{index:04d}",
+            "from_formulation": source, "target_meaning": target,
+            "relation_type": kind,
+            "review_state": "screened",
+            "editorial_reason": item.get(
+                "editorial_reason",
+                "Selected occurrence in previously screened independent definition."
+            ),
+            "human_verified": False,
+        })
+    return len(data["links"])
