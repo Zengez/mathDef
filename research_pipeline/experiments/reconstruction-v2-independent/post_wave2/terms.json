@@ -4333,6 +4333,164 @@
         "The ambient X is arbitrary; no topology or measurable structure is required."
       ],
       "research_status": "assistant-researched incorporation of original frozen scan 2026-10-26; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-finite-dimensional-euclidean-space-20261026",
+      "candidate_id": "postwave-scan:rank-142",
+      "term": "finite-dimensional Euclidean space",
+      "context": "Euclidean geometry · finite-dimensional real inner-product space",
+      "aliases": [
+        "Euclidean n-space",
+        "finite dimensional euclidean space"
+      ],
+      "definition": "A (vector-model) finite-dimensional Euclidean space is a real vector space V of finite dimension n equipped with a positive-definite symmetric bilinear inner product ⟨·,·⟩. The induced norm is ∥v∥=√⟨v,v⟩ and distance is d(u,v)=∥u−v∥. Choosing an orthonormal basis identifies V isometrically with ℝⁿ with its standard dot product. Equivalently, in the affine-geometric model, the points form an affine space modeled on such a vector space, and distances are determined by displacement vectors, without choosing a preferred origin.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Euclidean space",
+          "url": "https://encyclopediaofmath.org/wiki/Euclidean_space",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Inner product",
+          "url": "https://encyclopediaofmath.org/wiki/Inner_product",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-real-vector-space-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "n may be zero; no n≥1 restriction was imposed.",
+        "The inner product is positive definite, not an arbitrary symmetric bilinear form.",
+        "Vector and affine Euclidean models are distinguished; orthonormal coordinates require choosing a basis and, in the affine model, an origin."
+      ],
+      "research_status": "assistant-researched from original frozen scan; draft not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-finite-dimensional-vector-space-20261026",
+      "candidate_id": "postwave-scan:rank-143",
+      "term": "finite-dimensional vector space",
+      "context": "Linear algebra · finite algebraic dimension over a specified field",
+      "aliases": [
+        "finite dimensional vector space"
+      ],
+      "definition": "A vector space V over a field K is finite-dimensional if there exists a finite spanning set; equivalently, V admits a basis consisting of n vectors for some integer n≥0. Its dimension dim_K(V)=n is uniquely determined, and every v∈V has a unique expansion in that basis. The zero vector space is finite-dimensional of dimension 0. No norm, topology, or inner product is implied, and the dimension depends on the scalar field.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Vector space",
+          "url": "https://encyclopediaofmath.org/wiki/Vector_space",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-real-vector-space-20261026",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-complex-vector-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Dimension is algebraic (Hamel) dimension over a fixed field K.",
+        "n=0 is allowed; do not assume a nontrivial vector space."
+      ],
+      "research_status": "assistant-researched from original frozen scan; draft not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-finite-field-extension-20261026",
+      "candidate_id": "postwave-scan:rank-144",
+      "term": "finite field extension",
+      "context": "Field theory · finite degree of a field extension",
+      "aliases": [
+        "finite extension of fields",
+        "finite extension (field-theoretic)"
+      ],
+      "definition": "An extension of fields L/K is finite if L, regarded as a vector space over K through the field inclusion K↪L, has finite dimension [L:K]<∞. A finite extension is algebraic, but an algebraic extension need not have finite degree. Here 'finite' refers to vector-space dimension, not the number of elements in L; for example ℂ/ℝ is finite of degree 2 although ℂ is an infinite set.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Extension of a field",
+          "url": "https://encyclopediaofmath.org/wiki/Extension_of_a_field",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Wolfram MathWorld — Finite Extension",
+          "url": "https://mathworld.wolfram.com/FiniteExtension.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-finite-dimensional-vector-space-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "The word extension refers to an inclusion or specified embedding of fields; ring extensions use a related but distinct module-finiteness convention.",
+        "The scalar field is K; degree [L:K] is positive (at least 1) for field extensions."
+      ],
+      "research_status": "assistant-researched from original frozen scan; draft not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-hausdorff-second-countable-20261026",
+      "candidate_id": "postwave-scan:rank-163",
+      "term": "Hausdorff second-countable topological space",
+      "context": "General topology · simultaneous T2 separation and countable topological base",
+      "aliases": [
+        "second-countable Hausdorff space",
+        "Hausdorff second countable space"
+      ],
+      "definition": "A topological space (X,τ) is Hausdorff and second-countable if (i) for distinct x,y∈X there are disjoint open neighborhoods of x and y, and (ii) τ has a countable basis ℬ, meaning every open set is a union of members of ℬ. These two properties alone do not require X to be locally Euclidean or a manifold. Empty spaces are allowed; the countable basis can be empty in that case.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Hausdorff space",
+          "url": "https://encyclopediaofmath.org/wiki/Hausdorff_space",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Second axiom of countability",
+          "url": "https://encyclopediaofmath.org/wiki/Countable_base",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Neither Hausdorff nor second-countable is taken to imply local Euclidean structure.",
+        "Empty space is not excluded."
+      ],
+      "research_status": "assistant-researched from original frozen scan; draft not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-isolated-point-20261026",
+      "candidate_id": "postwave-scan:rank-166",
+      "term": "isolated point of a subset",
+      "context": "General topology · isolated member in the subspace topology",
+      "aliases": [
+        "isolated point"
+      ],
+      "definition": "Let A be a subset of a topological space X. An isolated point of A is a point a∈A such that some open set U⊆X satisfies U∩A={a}. Equivalently {a} is open in the subspace topology on A. For A=X this says that {a} is an open subset of X. An isolated point of A need not be isolated in its ambient space X.",
+      "sources": [
+        {
+          "title": "ProofWiki — Definition: Isolated Point (Topology)",
+          "url": "https://proofwiki.org/wiki/Definition%3AIsolated_Point_%28Topology%29",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Newcastle University topology notes — Isolated points of a set",
+          "url": "https://www.mas.ncl.ac.uk/~nzal/MAS349.dir/topology_notes.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Membership a∈A is required.",
+        "Open refers to ambient X; isolated-in-subset is not equivalent to isolated-in-ambient."
+      ],
+      "research_status": "assistant-researched from original frozen scan; draft not peer-certified"
     }
   ]
 }
