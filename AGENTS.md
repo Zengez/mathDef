@@ -17,6 +17,28 @@ candidate-finding pass, not a prerequisite review or endless link-reconciliation
 project. The research-and-add workflow below remains useful for *new*
 candidates once the scan actually begins.
 
+## New explicit authorization: original-content merger and rapid scan (2026-10-26)
+
+**After completing the independent Wave 2 reconstruction, the user explicitly
+authorized scanning the 363 new definitions AND the original mathDef term
+list/definition contents, and incorporating the original content into the new
+searchable reference.** That changes the source-access rule *for the new
+post-Wave2 merged view only*.
+
+- Keep `/reconstruction/wave1/` frozen and `/reconstruction/wave2/` independently
+  reconstructed at **958 meanings**; do not silently import the original corpus
+  into that historical snapshot.
+- The explicitly authorized `/reconstruction/merged/` view combines all original
+  `definitions/*.tex`, `variants/*.tex` with independent Wave 2, preserving
+  source IDs, citations, contexts and text. Production source files remain
+  read-only. Match exact term labels under common search headings without
+  asserting that their definitions are automatically equivalent.
+- A fast lexical scan of new Wave 2 definitions and all original definition
+  bodies yields **rough possible terminology** and existing-term mentions.
+  These are error-tolerant starting leads only. **Do not turn the scan into
+  another prerequisite-completion gate, graph closure or global approval audit.**
+- See [post-Wave2 merge and scan record](research_pipeline/experiments/reconstruction-v2-independent/POST_WAVE2_ORIGINAL_MERGE_AND_SCAN_2026-10-26.md).
+
 ## Completed research method: build definitions, not a dependency-graph pipeline
 
 The original dependency-first Wave 2 *workflow was abandoned by the project owner* because it made a deliberately rough candidate scan into an expensive, mandatory full-corpus mathematical review. **Do not resume or recreate its scans, aliases, amendment transactions, phase gates, staging ceremonies, or graph-resolution backlog.** No old workflow handoff, agent instruction in Git history, GitHub Actions log, old PR, or checkpoint supersedes this file.
@@ -32,7 +54,7 @@ The original dependency-first Wave 2 *workflow was abandoned by the project owne
 
 ### Critical boundaries
 
-- Original production mathDef has 1007 entries and is out of scope as **mathematical input** for the independent reconstruction. **Do not read/copy/search/import mathematical definitions, variants, data or citation content from `definitions/`, `variants/`, `data/`, or the production index** into Wave 2. Likewise do not import the frozen Wave 1 mathematical catalog. Code, shared UI and web build plumbing are reusable.
+- Original production mathDef was excluded as **mathematical input** for the historically independent reconstruction. It is NOW explicitly authorized as input to the separate **post-Wave2 merged view**, but must never be retrospectively counted as independently reconstructed. **Do not read/copy/search/import mathematical definitions, variants, data or citation content from `definitions/`, `variants/`, `data/`, or the production index** into Wave 2. Likewise do not import the frozen Wave 1 mathematical catalog. Code, shared UI and web build plumbing are reusable.
 - Keep Wave 1 frozen. The independent Wave 2 draft and preview remain separate from production.
 - Do not knowingly publish false mathematics or describe an unchecked lead as a verified direct source passage. State hypotheses and convention choices clearly; flag significant uncertain cases for later review. **Do not require perfect exhaustive review of every entry before making useful progress.**
 - Do not add or re-enable graph-closure conditions, global first/second-pass review gates, or one-GitHub-Action-per-candidate submission workflows absent a new **explicit user request**.
