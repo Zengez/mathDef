@@ -276,3 +276,22 @@ source-version hashes untouched. Provider current
 page verification does not automatically certify
 archived source snapshots, mathematical variants
 or consolidation readiness.
+
+
+## Owner-approved degenerate-object qualification rule (2026-10-25)
+
+The project owner authorized narrow explicit nonempty/nonzero/nontrivial
+qualifications for otherwise valid mathematical statements that inadvertently
+fail on empty/zero/trivial objects, **provided they are justified in context
+and every actual added assumption is recorded for a later manual audit**.
+A dedicated [qualification policy](EDGE_CASE_QUALIFICATION_POLICY.md) and
+machine-readable [assumption ledger](EDGE_CASE_ASSUMPTION_LEDGER.json) now
+record this standing guidance. The ledger currently contains **zero newly
+applied qualifications under this policy** and one **unapplied** tracked
+mathematical repair candidate: historical rank 175 (exterior-power rank
+in the zero ring). The policy favors a minimal special-case convention when
+that avoids unnecessarily excluding degenerate objects intentionally allowed
+by sources. No graph, immutable source, candidate registry, protected file,
+Pass 2 gate, or Pass 3 state changed in this documentation-only addition.
+Future authorized corrections must retain version guards and application
+receipts (where applicable) and be entered into the ledger for owner review.
