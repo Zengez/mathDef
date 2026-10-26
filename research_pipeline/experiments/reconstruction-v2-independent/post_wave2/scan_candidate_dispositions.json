@@ -1,0 +1,1585 @@
+{
+  "schema_version": 1,
+  "scan_source": "first original-inclusive fast_scan report; 363 Wave2 direct definitions + 1014 original definitions and 5 variants; candidates ordered by (-occurrences,phrase)",
+  "scan_counts": {
+    "possible_new_terminology": 2019,
+    "known_title_mentions": 473
+  },
+  "scope": "Original top-60 ranked phrase candidates, exactly as returned by frozen scan-report.json",
+  "conventions": "Each candidate is processed once; grammatical fragments are not new terms, existing senses are not duplicated, legitimate alternative Borel measure variants are separate meanings. Ambiguous leads retain a note, not a blocking gate.",
+  "dispositions": [
+    {
+      "rank": 1,
+      "phrase": "rational map",
+      "occurrences": 11,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.fatou-component:0",
+          "term": "Fatou component"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.fatou-set:0",
+          "term": "Fatou set of a rational map"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.herman-ring:0",
+          "term": "Herman ring"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original definitions/holodynamics/rational-map.tex already defines the rational-map context appearing in scan examples; do not duplicate it.",
+      "targets": [
+        "definitions/holodynamics/rational-map.tex"
+      ]
+    },
+    {
+      "rank": 2,
+      "phrase": "real vector space",
+      "occurrences": 11,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.4da14726d0530cefe078",
+          "term": "strictly positive convex combination"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.1d1e6d6708183b231518",
+          "term": "Minkowski sum of subsets"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.582417b404fba5a4dfa2",
+          "term": "symmetric bilinear form"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added exact real-scalar-field specialization of vector-space structure, without implied topology or finite dimension.",
+      "targets": [
+        "meaning.mathdef.scan.real-vector-space-20261026"
+      ]
+    },
+    {
+      "rank": 3,
+      "phrase": "simple undirected graph",
+      "occurrences": 11,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.a53971a78b449b0edc86",
+          "term": "finite graph walk"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.research364",
+          "term": "incident edge"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.research379",
+          "term": "adjacent vertices"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Explicit loopless simple undirected graph meaning already exists in independently reconstructed Wave2.",
+      "targets": [
+        "meaning.wave2.graph42.simple-undirected"
+      ]
+    },
+    {
+      "rank": 4,
+      "phrase": "measure space",
+      "occurrences": 10,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.almost-everywhere:0",
+          "term": "Almost everywhere"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.bochner-integrable:0",
+          "term": "Bochner integrable function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.completion-of-measure:0",
+          "term": "Completion of a measure space"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added full measure-space triple, including σ-algebra and countable additivity; previously only component notions were covered.",
+      "targets": [
+        "meaning.mathdef.scan.measure-space-20261026"
+      ]
+    },
+    {
+      "rank": 5,
+      "phrase": "unital ring",
+      "occurrences": 9,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.research409",
+          "term": "identity matrix"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6baca7285e379e18e82b",
+          "term": "quotient module"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.21dbe26f26478a5abe77",
+          "term": "idempotent element"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Unital ring already added in the prior post-Wave2 research overlay.",
+      "targets": [
+        "meaning.mathdef.postwave.unital-ring-20261026"
+      ]
+    },
+    {
+      "rank": 6,
+      "phrase": "every point",
+      "occurrences": 8,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.d5318b3d0272f304dfb6",
+          "term": "integrable nonnegative weight"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "complex.complex-differentiability:0",
+          "term": "Complex differentiability"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "complex.harmonic-function:0",
+          "term": "Harmonic function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Quantifier fragment ('every point'), not a standalone mathematical concept.",
+      "targets": []
+    },
+    {
+      "rank": 7,
+      "phrase": "smooth map",
+      "occurrences": 8,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.differential:0",
+          "term": "Differential of a smooth map"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.embedding:0",
+          "term": "Smooth embedding"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.immersion:0",
+          "term": "Smooth immersion"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original smooth-map definition between manifolds exists; no distinct source context is established by this scan phrase.",
+      "targets": [
+        "definitions/manifold/smooth-map.tex"
+      ]
+    },
+    {
+      "rank": 8,
+      "phrase": "the category",
+      "occurrences": 8,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.08ca647ed43622178944",
+          "term": "zero module"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.131212604e1e2155bd93",
+          "term": "canonical structure morphism to Spec ℤ"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.1e57f82e00af556806fa",
+          "term": "category of small categories"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Determiner plus generic noun ('the category'); does not name a missing concept.",
+      "targets": []
+    },
+    {
+      "rank": 9,
+      "phrase": "the empty set",
+      "occurrences": 8,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.dd36779bc0facafd958e",
+          "term": "power set"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.ea82fcbc6bf970ca5459",
+          "term": "zero ordinal"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "combin.set-partition:0",
+          "term": "Set partition"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Definite article plus 'empty set'; no new term distinct from the existing empty-set concept.",
+      "targets": []
+    },
+    {
+      "rank": 10,
+      "phrase": "locally small category",
+      "occurrences": 7,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6614c6b7c105cc0e6415",
+          "term": "hom-set"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.591b9f9ee5edc9ff8963",
+          "term": "automorphism group of an object"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "category.functor-category:0",
+          "term": "Functor category"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Locally small category was already researched into the post-Wave2 overlay.",
+      "targets": [
+        "meaning.mathdef.postwave.locally-small-category-20261026"
+      ]
+    },
+    {
+      "rank": 11,
+      "phrase": "nonzero polynomial",
+      "occurrences": 7,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.8e7388ef8958ac46b761",
+          "term": "repeated root"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.research394",
+          "term": "simple root of a polynomial"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.fa5932b42daa1a3e0307",
+          "term": "root of a polynomial"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Nonzero polynomial is an ordinary nonzero-element qualification, not a distinct technical definition in these source contexts.",
+      "targets": []
+    },
+    {
+      "rank": 12,
+      "phrase": "normed space",
+      "occurrences": 7,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.bidual:0",
+          "term": "Bidual space"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.bounded-sequence:0",
+          "term": "Bounded sequence in a normed space"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.dense-linear-subspace:0",
+          "term": "Dense linear subspace"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Normed space is already defined in original functional analysis and corresponds to Wave2 normed-vector-space coverage.",
+      "targets": [
+        "definitions/functional/normed-space.tex",
+        "meaning.wave2.analysis98.normed-vector-space"
+      ]
+    },
+    {
+      "rank": 13,
+      "phrase": "bounded operator",
+      "occurrences": 6,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.adjoint-hilbert:0",
+          "term": "Hilbert-space adjoint"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.fredholm-operator:0",
+          "term": "Fredholm operator"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.orthogonal-projection:0",
+          "term": "Orthogonal projection"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Source contexts concern bounded linear operators; original functional analysis already defines them.",
+      "targets": [
+        "definitions/functional/bounded-linear-operator.tex"
+      ]
+    },
+    {
+      "rank": 14,
+      "phrase": "commutative rings",
+      "occurrences": 6,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.35f080be8784ff208377",
+          "term": "induced residue-field homomorphism"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.fe199606757d4b449fee",
+          "term": "tensor multiplication criterion for ring epimorphisms"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.24b750917f64c00ee6ee",
+          "term": "module of principal parts representing differential operators"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Pluralization of original commutative-ring terminology, not a separate mathematical meaning.",
+      "targets": [
+        "definitions/algebra/commutative-ring.tex"
+      ]
+    },
+    {
+      "rank": 15,
+      "phrase": "nonempty set",
+      "occurrences": 6,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.semigroup:0",
+          "term": "Semigroup"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.convex-cone:0",
+          "term": "Convex cone"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "real.infimum:0",
+          "term": "Infimum"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Nonempty set is a basic restriction on an existing set, not a separate technical term in these examples.",
+      "targets": []
+    },
+    {
+      "rank": 16,
+      "phrase": "real affine space",
+      "occurrences": 6,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.63acc9193a56ae7003b9",
+          "term": "affine combination"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "geometry.affine-combination:0",
+          "term": "Affine combination"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "geometry.affine-span:0",
+          "term": "Affine span"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Real affine space already added in prior research.",
+      "targets": [
+        "meaning.mathdef.postwave.real-affine-space-20261026"
+      ]
+    },
+    {
+      "rank": 17,
+      "phrase": "the coarsest topology",
+      "occurrences": 6,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.a257d0bad58dcfbd2fa7",
+          "term": "initial topology"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.weak-star-topology:0",
+          "term": "Weak-star topology"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.weak-topology:0",
+          "term": "Weak topology"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'the coarsest topology' is a superlative phrase within initial-topology constructions, not a standalone term.",
+      "targets": [
+        "meaning.wave2.direct.a257d0bad58dcfbd2fa7"
+      ]
+    },
+    {
+      "rank": 18,
+      "phrase": "the quotient",
+      "occurrences": 6,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.5d07d9e2d8a2e83a53a1",
+          "term": "homology module of a chain complex"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.1bd554e6f230b14c5f9b",
+          "term": "cohomology module of a cochain complex"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.4bfc8ce2f95edfcc014d",
+          "term": "exterior power of a module"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'the quotient' is an underspecified reference whose object depends on the definition being read.",
+      "targets": []
+    },
+    {
+      "rank": 19,
+      "phrase": "with fraction field",
+      "occurrences": 6,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.826a6ac763625e129cf7",
+          "term": "value group of a valuation ring"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.b234c3c56c247169bee2",
+          "term": "valuative lifting diagram"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.discrete-valuation-ring:0",
+          "term": "Discrete valuation ring"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'with fraction field' is a grammatical condition; the fraction-field notion is separate.",
+      "targets": []
+    },
+    {
+      "rank": 20,
+      "phrase": "complex vector space",
+      "occurrences": 5,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.23ff9207e591fcd879d9",
+          "term": "Hermitian sesquilinear form"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.normed-space:0",
+          "term": "Normed vector space"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.seminorm:0",
+          "term": "Seminorm"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added complex-scalar-field vector-space variant, with explicit scalar restriction to ℝ and no implied norm.",
+      "targets": [
+        "meaning.mathdef.scan.complex-vector-space-20261026"
+      ]
+    },
+    {
+      "rank": 21,
+      "phrase": "every element",
+      "occurrences": 5,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.research401",
+          "term": "transitive set"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.92c051047df5e5a34ba3",
+          "term": "rational function field"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.6fd10a9c752cfa68d45b",
+          "term": "subfield generated by a base field and subset"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Quantifier fragment 'every element', not mathematical terminology.",
+      "targets": []
+    },
+    {
+      "rank": 22,
+      "phrase": "holomorphic functions",
+      "occurrences": 5,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.analytic-continuation:0",
+          "term": "Analytic continuation"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "complex.meromorphic-function:0",
+          "term": "Meromorphic function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.analytic-dirichlet-space:0",
+          "term": "Analytic Dirichlet space on the disk"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The plural phrase refers to already defined holomorphic functions.",
+      "targets": [
+        "definitions/complex/holomorphic-function.tex"
+      ]
+    },
+    {
+      "rank": 23,
+      "phrase": "holomorphic map",
+      "occurrences": 5,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.meromorphic-function:0",
+          "term": "Meromorphic function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.bottcher-coordinate:0",
+          "term": "Böttcher coordinate"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.immediate-basin:0",
+          "term": "Immediate attracting basin"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original complex-analytic holomorphic-mapping definition already covers the term.",
+      "targets": [
+        "definitions/scv/holomorphic-mapping.tex"
+      ]
+    },
+    {
+      "rank": 24,
+      "phrase": "its closure",
+      "occurrences": 5,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.84636cb6f3dd33fc5b6e",
+          "term": "locally closed subset"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.dense-linear-subspace:0",
+          "term": "Dense linear subspace"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.closure:0",
+          "term": "Closure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'its closure' is a contextual pronoun phrase, not a separate variant of closure.",
+      "targets": []
+    },
+    {
+      "rank": 25,
+      "phrase": "real valued function",
+      "occurrences": 5,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.harmonic-conjugate:0",
+          "term": "Harmonic conjugate"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "complex.harmonic-function:0",
+          "term": "Harmonic function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.quasiconvex-function:0",
+          "term": "Quasiconvex function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Generic description of a function with codomain ℝ; no new context-specific property is identified by the examples.",
+      "targets": []
+    },
+    {
+      "rank": 26,
+      "phrase": "the hilbert space",
+      "occurrences": 5,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.analytic-dirichlet-space:0",
+          "term": "Analytic Dirichlet space on the disk"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.bergman-kernel:0",
+          "term": "Bergman kernel"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.segal-bargmann-space:0",
+          "term": "Segal–Bargmann space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "'the Hilbert space' refers to an existing Hilbert-space context, not a new term.",
+      "targets": [
+        "definitions/functional/hilbert-space.tex"
+      ]
+    },
+    {
+      "rank": 27,
+      "phrase": "the topology",
+      "occurrences": 5,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.d2c4123996357b11fa86",
+          "term": "topology generated by a subbasis"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.borel-sigma-algebra:0",
+          "term": "Borel sigma-algebra"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "topology.basis-topology:0",
+          "term": "Basis for a topology"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Generic definite article and 'topology' refers to locally specified topology; no new standalone meaning.",
+      "targets": []
+    },
+    {
+      "rank": 28,
+      "phrase": "topological spaces",
+      "occurrences": 5,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.a257d0bad58dcfbd2fa7",
+          "term": "initial topology"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.751471447065f0d756cd",
+          "term": "closed map"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.cf69ce1240520995df04",
+          "term": "topological fibre product"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Plural form of established topological space.",
+      "targets": [
+        "meaning.wave2.foundation.topological-space"
+      ]
+    },
+    {
+      "rank": 29,
+      "phrase": "undirected graph",
+      "occurrences": 5,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "combin.matching:0",
+          "term": "Graph matching"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "combin.perfect-matching:0",
+          "term": "Perfect matching"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "graph.bipartite-graph:0",
+          "term": "Bipartite graph"
+        }
+      ],
+      "disposition": "ambiguous",
+      "reason": "'Undirected graph' may include multigraphs, loops or simple graphs; scan examples do not settle a universal convention. Related existing meanings cover simple and loopless-multigraph variants.",
+      "targets": [
+        "meaning.wave2.graph42.simple-undirected",
+        "meaning.wave2.graph42.loopless-undirected-multigraph"
+      ]
+    },
+    {
+      "rank": 30,
+      "phrase": "unknown function",
+      "occurrences": 5,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.ordinary-differential-equation:0",
+          "term": "Ordinary differential equation"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.partial-differential-equation:0",
+          "term": "Partial differential equation"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "pde.dirichlet-boundary-condition:0",
+          "term": "Dirichlet boundary condition"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'unknown function' is a role in an equation, not a standard distinct function species in these source examples.",
+      "targets": []
+    },
+    {
+      "rank": 31,
+      "phrase": "all subsets",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.dd36779bc0facafd958e",
+          "term": "power set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.outer-measure:0",
+          "term": "Outer measure"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "relations.greatest-lower-bound-poset:0",
+          "term": "Meet of a subset"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Quantified phrase 'all subsets' does not designate a new term; power sets are already defined.",
+      "targets": [
+        "meaning.wave2.direct.dd36779bc0facafd958e"
+      ]
+    },
+    {
+      "rank": 32,
+      "phrase": "compact subsets",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.blaschke-product:0",
+          "term": "Blaschke product"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "complex.locally-uniform-convergence:0",
+          "term": "Locally uniform convergence of functions"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.normal-family:0",
+          "term": "Normal family of meromorphic functions"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Ordinary plural noun phrase: compactness of each subset is determined by the ambient topology, not a new contextual definition.",
+      "targets": []
+    },
+    {
+      "rank": 33,
+      "phrase": "each point",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "geometry.radius:0",
+          "term": "Radius"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.differential-form:0",
+          "term": "Differential k-form"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "scv.complex-analytic-subset:0",
+          "term": "Complex analytic subset"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Quantifier fragment 'each point'.",
+      "targets": []
+    },
+    {
+      "rank": 34,
+      "phrase": "for commutative ring",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.d253f2b37f0f2e8e5076",
+          "term": "canonical map to I-adic completion"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.688181fe64998624664d",
+          "term": "minimal associated prime"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.ec01a600fafafc1a6bb1",
+          "term": "localization of a module homomorphism"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Prepositional fragment 'for commutative ring', not an independent term.",
+      "targets": []
+    },
+    {
+      "rank": 35,
+      "phrase": "for functors",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.a8c70a2a13320680c54c",
+          "term": "natural transformation"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.86b08c15e2860f8e83bc",
+          "term": "iso-comma category"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.e834133a2cdc7390f1de",
+          "term": "adjunction between functors"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Prepositional fragment 'for functors'; adjunctions and natural transformations already carry their own definitions.",
+      "targets": []
+    },
+    {
+      "rank": 36,
+      "phrase": "for measurable spaces",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.b458f6a3824dab19725b",
+          "term": "measurable mapping"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.7a22de41c9ed49aaebd0",
+          "term": "indexed family of measurable maps"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.measurable-function:0",
+          "term": "Measurable function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Prepositional fragment 'for measurable spaces', not a term.",
+      "targets": []
+    },
+    {
+      "rank": 37,
+      "phrase": "graded ring",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.244d6cfceb0dd22abbca",
+          "term": "degree-zero subring of a graded ring"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.8cc6a7cb971d28b697a1",
+          "term": "homogeneous component of a graded element"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.95eafc984a7460aa06f8",
+          "term": "homogeneous element of a graded ring"
+        }
+      ],
+      "disposition": "existing_variants",
+      "reason": "Existing abelian-group graded ring and nonnegatively graded ring meanings represent distinct grading conventions; retain both rather than introduce a redundant generic formulation.",
+      "targets": [
+        "meaning.wave2.direct.552479b3d126bda9a36a",
+        "meaning.mathdef.postwave.nonnegative-graded-ring-20261026"
+      ]
+    },
+    {
+      "rank": 38,
+      "phrase": "positive measure",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.atom:0",
+          "term": "Atom of a measure"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.quasi-invariant-measure:0",
+          "term": "Quasi-invariant measure under a group action"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.radon-measure:0",
+          "term": "Radon measure (regularity convention)"
+        }
+      ],
+      "disposition": "ambiguous",
+      "reason": "'positive measure' may mean a nonnegative measure or a strictly positive measure of a particular set; examples do not justify silently treating those as the same object.",
+      "targets": [
+        "meaning.wave2.foundation.nonnegative-measure"
+      ]
+    },
+    {
+      "rank": 39,
+      "phrase": "specified norm",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "numerical.backward-error:0",
+          "term": "Backward error"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "numerical.convergence-order:0",
+          "term": "Order of convergence of an approximation"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "numerical.discretization-error:0",
+          "term": "Discretization error"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'specified norm' is a parameter-description fragment, not a name of a new mathematical structure.",
+      "targets": []
+    },
+    {
+      "rank": 40,
+      "phrase": "square integrable holomorphic functions",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.bergman-kernel-diagonal:0",
+          "term": "Diagonal Bergman kernel"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.bergman-kernel:0",
+          "term": "Bergman kernel"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.bergman-projection:0",
+          "term": "Bergman projection"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Square-integrable holomorphic-function families occur within original Bergman-space definitions; no distinct general standalone meaning is required from these examples.",
+      "targets": [
+        "definitions/functionspaces/bergman-space.tex"
+      ]
+    },
+    {
+      "rank": 41,
+      "phrase": "square matrix",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.c84405a9f915b0897178",
+          "term": "square matrix over a field"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "linear.determinant:0",
+          "term": "Determinant"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "linear.invertible-matrix:0",
+          "term": "Invertible matrix"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "A square matrix over a field was already defined in Wave2; ordinary dimensional wording is not a new variant here.",
+      "targets": [
+        "meaning.wave2.direct.c84405a9f915b0897178"
+      ]
+    },
+    {
+      "rank": 42,
+      "phrase": "the closure",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.postcritical-set:0",
+          "term": "Postcritical set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "linear.linear-closure:0",
+          "term": "Linear closure"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "pde.h10-space:0",
+          "term": "Sobolev space $H_0^1$"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Definite article plus previously specified closure, not a new definition.",
+      "targets": []
+    },
+    {
+      "rank": 43,
+      "phrase": "the empty subset",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "graph.independent-set:0",
+          "term": "Independent set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "relations.complete-lattice:0",
+          "term": "Complete lattice"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "relations.upper-bound-poset:0",
+          "term": "Upper bound in a poset"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'the empty subset' references the empty set, not an additional term.",
+      "targets": []
+    },
+    {
+      "rank": 44,
+      "phrase": "the index set",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.62983821c35d185a119d",
+          "term": "open cover"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.e99038d8cfc4d6d977a8",
+          "term": "sequential convergence in a product topology"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "graphwalks.walk-proximity:0",
+          "term": "Proximity functional on graph walks"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "An index set in the examples is simply the set indexing a family; no distinctive additional structure is established.",
+      "targets": []
+    },
+    {
+      "rank": 45,
+      "phrase": "the product",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.a2b8dbc04d465756c102",
+          "term": "direct product of modules"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.5896e9304ebced2e5ea7",
+          "term": "indexed Cartesian product"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.580d76c9d98b74d1be9b",
+          "term": "coordinate projection"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'the product' refers to differing existing products, and is not a specific standalone type.",
+      "targets": []
+    },
+    {
+      "rank": 46,
+      "phrase": "tomathbf set",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.hom-functor:0",
+          "term": "Hom functor"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "category.representable-functor:0",
+          "term": "Representable functor"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "category.simplicial-set:0",
+          "term": "Simplicial set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'tomathbf set' is a LaTeX normalization artifact (\\to\\mathbf{Set}), not mathematical terminology.",
+      "targets": []
+    },
+    {
+      "rank": 47,
+      "phrase": "two sided ideal",
+      "occurrences": 4,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.fb78af5e23099cc8d59b",
+          "term": "kernel of a ring homomorphism"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.598915c4e9e889d2218b",
+          "term": "zero ideal"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.ideal:0",
+          "term": "Ideal"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Two-sided ideals are already a specifically defined Wave2 meaning; spaced punctuation is not a variant.",
+      "targets": [
+        "meaning.wave2.foundation.two-sided-ideal"
+      ]
+    },
+    {
+      "rank": 48,
+      "phrase": "abelian groups",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.d7667a9dfe1a62c4108e",
+          "term": "sheaf of modules over a sheaf of rings"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.chain-complex:0",
+          "term": "Chain complex"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.cochain-complex:0",
+          "term": "Cochain complex"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Plural of the existing abelian-group concept.",
+      "targets": [
+        "meaning.wave2.foundation.abelian-group"
+      ]
+    },
+    {
+      "rank": 49,
+      "phrase": "all borel sets",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.inner-regular:0",
+          "term": "Inner regular Borel measure"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.outer-regular:0",
+          "term": "Outer regular Borel measure"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.radon-measure:0",
+          "term": "Radon measure (regularity convention)"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'all Borel sets' is a quantifier phrase, not a separately named mathematical object.",
+      "targets": []
+    },
+    {
+      "rank": 50,
+      "phrase": "associative ring",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.bb72b275ee79b161d9b8",
+          "term": "nilpotent element of a ring"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.cf59d9cb388b3999576d",
+          "term": "Boolean ring"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.module:0",
+          "term": "Module"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "General associative-ring terminology is already in original algebra/ring; unitality is a separately labeled variant.",
+      "targets": [
+        "definitions/algebra/ring.tex",
+        "meaning.mathdef.postwave.unital-ring-20261026"
+      ]
+    },
+    {
+      "rank": 51,
+      "phrase": "between normed spaces",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.bounded-linear-operator:0",
+          "term": "Bounded linear operator"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.compact-operator:0",
+          "term": "Compact linear operator"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.isometry:0",
+          "term": "Linear isometry"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Prepositional qualifier 'between normed spaces', not a mathematical term on its own.",
+      "targets": []
+    },
+    {
+      "rank": 52,
+      "phrase": "between smooth manifolds",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.immersion:0",
+          "term": "Smooth immersion"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.smooth-map:0",
+          "term": "Smooth map between manifolds"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.submersion:0",
+          "term": "Smooth submersion"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Prepositional qualifier 'between smooth manifolds', not a mathematical term on its own.",
+      "targets": []
+    },
+    {
+      "rank": 53,
+      "phrase": "borel measure",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.8b4a695691c7d8e62f73",
+          "term": "raw moment of a real measure"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.inner-regular:0",
+          "term": "Inner regular Borel measure"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "measure.outer-regular:0",
+          "term": "Outer regular Borel measure"
+        }
+      ],
+      "disposition": "variant",
+      "reason": "Borel measure has genuinely competing source conventions. Added three separately labeled meanings: Borel σ-algebra measure, compact-finite Borel measure, and Borel outer measure.",
+      "targets": [
+        "meaning.mathdef.scan.borel-measure-basic-20261026",
+        "meaning.mathdef.scan.borel-measure-compact-finite-20261026",
+        "meaning.mathdef.scan.borel-outer-measure-20261026"
+      ]
+    },
+    {
+      "rank": 54,
+      "phrase": "common probability space",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.de3c256ab9b24566d9a4",
+          "term": "almost-sure equality"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "prob.stochastic-process:0",
+          "term": "Stochastic process"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "stochastic.convergence-lp:0",
+          "term": "Convergence in Lp"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The example source context already has probability-space definitions; 'common' is a relation among variables on one probability space.",
+      "targets": [
+        "meaning.wave2.prob90.probability-space"
+      ]
+    },
+    {
+      "rank": 55,
+      "phrase": "commutative unital rings",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.08a2969d79ad1ddc1922",
+          "term": "contraction of a prime ideal"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.2d82e7722cfbce9eca14",
+          "term": "base change of a commutative algebra"
+        },
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.4fff53dd962546ca64ba",
+          "term": "quotient sheaf of rings"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The plural phrase matches the existing commutative unital ring meaning.",
+      "targets": [
+        "meaning.wave2.direct.5645554e6bee6b40edda"
+      ]
+    },
+    {
+      "rank": 56,
+      "phrase": "compact metric space",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.alpha-limit-set:0",
+          "term": "Alpha-limit set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.minimal-invariant-set:0",
+          "term": "Minimal invariant set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.omega-limit-set:0",
+          "term": "Omega-limit set"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added the compact metric-space specialization, including equivalent sequential and complete/totally-bounded criteria.",
+      "targets": [
+        "meaning.mathdef.scan.compact-metric-space-20261026"
+      ]
+    },
+    {
+      "rank": 57,
+      "phrase": "complex banach space",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.resolvent-set:0",
+          "term": "Resolvent set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.spectral-radius:0",
+          "term": "Spectral radius"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "functional.spectrum:0",
+          "term": "Spectrum of a bounded operator"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The complex Banach-space adjective specializes original Banach-space definitions. No distinct further mathematical structure was found in these source excerpts.",
+      "targets": [
+        "definitions/functional/banach-space.tex"
+      ]
+    },
+    {
+      "rank": 58,
+      "phrase": "continuous self map",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.minimal-invariant-set:0",
+          "term": "Minimal invariant set"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.nonwandering-point:0",
+          "term": "Nonwandering point"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.recurrent-point:0",
+          "term": "Recurrent point"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'continuous self map' is composition of continuous and self-map properties; the scan examples specify their ambient spaces separately.",
+      "targets": []
+    },
+    {
+      "rank": 59,
+      "phrase": "convex subset",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.strict-convexity:0",
+          "term": "Strictly convex function"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.strong-convexity:0",
+          "term": "Strong convexity"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "real.convex-function:0",
+          "term": "Convex function"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Convex subsets of real vector spaces are already explicitly defined in Wave2 and original mathDef.",
+      "targets": [
+        "meaning.wave2.bridge136.convex-real",
+        "definitions/real/convex-set.tex"
+      ]
+    },
+    {
+      "rank": 60,
+      "phrase": "countable state space",
+      "occurrences": 3,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "prob.markov-chain:0",
+          "term": "Markov chain"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "prob.stationary-distribution:0",
+          "term": "Stationary distribution"
+        },
+        {
+          "origin": "original_mathdef",
+          "source": "prob.transition-matrix:0",
+          "term": "Transition matrix"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'countable state space' is a cardinality restriction on a Markov-chain state space, not a separate abstract mathematical definition.",
+      "targets": [
+        "definitions/prob/markov-chain.tex"
+      ]
+    }
+  ]
+}
