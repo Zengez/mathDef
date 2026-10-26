@@ -313,3 +313,34 @@ redundant meanings; for distinct legitimate senses retain variants.
 Do not undertake unrelated gap-finding or reinstate dependency graphs,
 approval gates or an extensive manual-audit queue. Candidate dispositions
 are a lightweight resumption log, not a research stage gate.
+
+
+## Scan-driven candidate incorporation — ranks 61–100 (2026-10-26)
+
+Continued strictly through the **next 40 ranked candidates from the original
+frozen scan**, not unrelated vocabulary searches. The same
+`scan_candidate_dispositions.json` ledger now holds exactly ranks **1–100**,
+with literal scan phrase, occurrence count, source examples and disposition.
+The complete first 100 comprise 7 new-term candidates (7 new headings), 1
+multi-variant candidate (three Borel measure contexts), 39 already
+represented meanings, 1 covered by existing variants, 48 lexical nonterms
+and 4 contextual ambiguities. (These are candidate counts; the first 100
+generated 10 new meanings in total.)
+
+New definitions from this 40-candidate batch:
+- Rank 63: **extended-real-valued function** with codomain ℝ∪{−∞,+∞},
+  distinguishing the properness condition as a separate property.
+- Rank 70: **integrable adapted sequence** with filtration measurability
+  and per-time L¹ integrability, without a martingale condition.
+- Rank 82: **quasi-norm** on a real/complex vector space; C-relaxed
+  triangle inequality, not a norm unless C=1.
+
+Citations are directly checked Encyclopedia of Mathematics, Berkeley/Durham
+probability notes, ETH Zurich functional analysis notes and MathWorld.
+The source-specific distinctions and assumptions are stored in the entries.
+
+**Next cursor: scan rank 101**. Current post-Wave2 combined-only research
+overlay: **128 meanings** (118 pre-scan + 10 incorporated scan-derived);
+expected combined count **2,100**. Do not begin a new terminology search
+while the original candidate set is the owner's chosen input. Preserve
+independent Wave2's 958 meanings and the original 1,014 mathDef definitions.
