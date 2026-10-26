@@ -1,0 +1,522 @@
+{
+  "7": {
+    "topic": "01 Ring and algebra conventions",
+    "hypotheses_and_object_types": "Associative, commutative, specified unit are separate conditions. Zero ring is not excluded by the bare candidate; field/domain parents explicitly require 0≠1. Eleven sources: five explicit-unit, six bare commutative-ring formulations.",
+    "mathematical_argument": "The zero-product ring on C2 is commutative but has no identity; M2(Q) has an identity but is noncommutative. Z/4 is commutative unital but neither a field nor a domain. Thus none of the existing general ring, field or domain meanings equals this candidate. The six bare-ring paraphrases cannot acquire a unit axiom solely from their provider label. The three Noetherian-module variants must retain their explicit unital coefficient scope; the prime/maximal properness predicates do not exclude the zero ring from the generic coefficient type.",
+    "plausible_interpretations": {
+      "commutative_unital_type": "Valid distinct structured type, not general identity-optional ring.",
+      "bare_source_ring": "Unit and zero-ring convention not independently established by the text."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "Distinct types and exact explicit/implicit source partition can be decided. No blanket existing-meaning resolution follows.",
+    "requires_source_verification_or_user_judgment": "Later verify source conventions for the six listed bare sources, including 1=0; user may choose a documented deferral policy without claiming source verification.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "23": {
+    "topic": "01 Ring and algebra conventions",
+    "hypotheses_and_object_types": "Five k-algebra sources over a nonzero commutative field k. Candidate: commutative unital A plus a specified unital structure map k→A; zero algebra convention unstated.",
+    "mathematical_argument": "The map determines c·a=φ(c)a, so a bare ring forgets base-field structure. k[T] is an algebra without being a field; k[ε]/(ε²) is an algebra without being a domain or reduced. A ring homomorphism is the structure arrow, not the whole algebra datum. Each parent states k-algebra without independently spelling out commutativity/unit, so geometric spectrum context is evidence of intended specialization, not external convention certification.",
+    "plausible_interpretations": {
+      "algebra_object": "Preserve the chosen scalar structure.",
+      "field_or_ring_map": "Not an identity with either stricter object or structure arrow alone."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "Base field, algebra object, scalar-extension arrow and geometric predicate are distinct.",
+    "requires_source_verification_or_user_judgment": "Verify commutativity, unitality and zero-algebra allowance in all five source versions. Do not silently narrow their universes.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "43": {
+    "topic": "01 Ring and algebra conventions",
+    "hypotheses_and_object_types": "Localization denominators in three sources. Canonical S⊆R contains 1 and is multiplicatively closed; R commutative unital. No canonical exclusion of 0 is recorded.",
+    "mathematical_argument": "Multiplicative closure alone does not imply 1∈S: {0}⊆Z is closed. In a unital ring the regular elements contain 1 and are closed, since abx=0 implies bx=0 then x=0. Allowing 0 gives a degenerate localization under the usual unital construction; it is a convention question rather than permission to discard that input. A multiplicative subset is not the fraction ring or localized module. Existing generic ring targets do not settle the missing unit hypothesis.",
+    "plausible_interpretations": {
+      "unital_denominator_subset": "Valid prerequisite under recorded candidate scope.",
+      "any_closed_subset": "Broader convention; not identical without adding 1 or choosing a construction."
+    },
+    "recommended_disposition": "convention clarification",
+    "decidable_mathematically_now": "Closure, presence of 1, regularity and exclusion of 0 are different properties.",
+    "requires_source_verification_or_user_judgment": "Check source denominator/unit/zero conventions separately for total quotient ring, ring localization and module localization.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "133": {
+    "topic": "01 Ring and algebra conventions",
+    "hypotheses_and_object_types": "Strong transcendence: R⊆S commutative rings with identity; candidate additionally requires common identity. x∈S, all n≥0, a_i∈R and u∈S.",
+    "mathematical_argument": "R=k×{0}⊂S=k×k consists of individually unital commutative rings with identities (1,0) and (1,1), so common identity does not follow from individually having identities. The historical unital-map seed supports an intended reading but does not establish the cited source convention. Under common identity, taking u=1 in the strong-transcendence implication proves injectivity of evaluation; that consequence must not be used to assume the predicate before defining it.",
+    "plausible_interpretations": {
+      "common_identity_inclusion": "The canonical structured type.",
+      "individually_unital_inclusion": "Strictly broader; example separates them."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "The two inclusion conventions are different even for commutative rings.",
+    "requires_source_verification_or_user_judgment": "Verify whether this source means identity-preserving subring. Coordinate with ranks 5 and 298, without inferring conventions from the seed.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "252": {
+    "topic": "01 Ring and algebra conventions",
+    "hypotheses_and_object_types": "Integral closure of R in S via a ring homomorphism R→S; candidate subring has commutative, inherited-unit scope. The map need not be injective.",
+    "mathematical_argument": "For Z→Z/2 the coefficient image is F2, not an embedded copy of Z. Integral elements form a particular selected subring under the commutative convention, but a subring containing coefficients need not be the integral closure. A bare subset loses addition/multiplication, while a bare inclusion does not select the integral elements. The stored source sentence does not itself state all unit/commutativity conventions in the candidate.",
+    "plausible_interpretations": {
+      "coefficient_image_subring": "Valid component prerequisite, with image rather than domain inclusion.",
+      "integral_closure": "Extra integrality selection, not any subring."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "Do not rewrite a noninjective structure map as R⊆S.",
+    "requires_source_verification_or_user_judgment": "Check source commutativity and inherited-identity convention; retain integrality selection and map image in any future segmentation.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "281": {
+    "topic": "01 Ring and algebra conventions",
+    "hypotheses_and_object_types": "A⊆B local subrings of one field; domination additionally requires contraction m_B∩A=m_A. Nonzero conventional unital rings share the field identity.",
+    "mathematical_argument": "A nonzero idempotent of a field is 1, so the identity of any nonzero unital subring equals that of the field. This is a mathematical conditional result, not evidence that an unstated subring convention is adopted. Inclusion alone does not imply domination: Z_(p)⊂Q has m_Q=0 with contraction 0, not pZ_(p). Both stored local-ring variants need to retain their common nonzero/local hypotheses.",
+    "plausible_interpretations": {
+      "unital_local_subring_inclusion": "Common identity follows conditionally.",
+      "domination": "Strictly stronger maximal-ideal contraction datum."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "Shared field identity and failure of automatic domination are established under the stated conventional hypotheses.",
+    "requires_source_verification_or_user_judgment": "Verify local-ring/subring conventions of this exact source; no new generic alias to domination.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "18": {
+    "topic": "02 Ideal action and module grading",
+    "hypotheses_and_object_types": "Positive products of two-sided ideals make sense in associative rings without unit/commutativity. Canonical product uses commutative unital R and I^0=R when n≥0.",
+    "mathematical_argument": "Finite sums of ij define IJ; two-sided absorption proves closure. In Z, (2)(2)=(4) differs from (2)∩(2). In the nonzero zero-product C2 ring, I=R has I²=0 despite no multiplicative identity, so the broad nilpotent-ideal source is mathematically meaningful beyond the canonical scope. Symbolic powers use localization/contraction and must not be read as ordinary powers. Source-specific purity equalities and positive/nonnegative exponent choices remain separate.",
+    "plausible_interpretations": {
+      "positive_ideal_product": "Valid reusable operation in broader rng scope.",
+      "canonical_unital_specialization": "Covers the commutative-unital parents but not every broad-ring reading."
+    },
+    "recommended_disposition": "genuine policy decision",
+    "decidable_mathematically_now": "General versus specialized operations and the scope mismatch are demonstrable.",
+    "requires_source_verification_or_user_judgment": "User must decide whether underlying prerequisites may be recorded polymorphically or need distinct scoped identities; alternatively exact source verification may establish a narrower parent intent. No old alias is reversed.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "54": {
+    "topic": "02 Ideal action and module grading",
+    "hypotheses_and_object_types": "Span of a subset S of a left module; finite combinations, not infinite sums. Unit action is needed for the usual formula to contain S.",
+    "mathematical_argument": "In a unital module, s=1s and closure proves the finite-combination set is the least submodule containing S. For the zero action of F2 on C2 and S={m≠0}, all R-linear combinations vanish while the least submodule containing S is C2. For the general nonunital convention the generated submodule must also include additive integer combinations of S. Thus the candidate formula cannot be certified over every stored left-module type. The finite-generation source retains a broad historical seed and a unital effective module prerequisite, not two proved equivalent conventions.",
+    "plausible_interpretations": {
+      "unital_span": "Formula valid.",
+      "general_generated_submodule": "Formula without additive closure of original generators can fail."
+    },
+    "recommended_disposition": "convention clarification",
+    "decidable_mathematically_now": "The missing unit-action qualification has a concrete counterexample.",
+    "requires_source_verification_or_user_judgment": "Adjudicate candidate scope versus a broader generation formula and document historical seed specialization; no automatic source correction.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "56": {
+    "topic": "02 Ideal action and module grading",
+    "hypotheses_and_object_types": "IM or I^nM is a submodule of M, not an ideal power in R or a quotient. Canonical R commutative unital; three parents leave ring/action conventions implicit.",
+    "mathematical_argument": "Finite sums i_jm_j are closed under negatives, sums and scalar action, since r(i_jm_j)=(ri_j)m_j. For a unital action RM=M; for the zero F2-action on nonzero C2, RM=0 instead. Thus I^0M=M when I^0=R depends on unital action, even if the ring itself has a unit. The quotient M/I^nM and its inverse limit require separate constructions and indices.",
+    "plausible_interpretations": {
+      "ideal_action": "Valid component distinct from ideal multiplication and quotient.",
+      "zero_power_identity": "Conditional on unital action; not a general left-module theorem."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "The operation and conditional unit identity are proved; no equivalence with ideal multiplication.",
+    "requires_source_verification_or_user_judgment": "Check coefficient commutativity/unit, module unit action and index starting value in all three sources.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "95": {
+    "topic": "02 Ideal action and module grading",
+    "hypotheses_and_object_types": "Internal direct sum of additive subgroups; module uses j∈Z, ring uses n≥0. Scalar multiplication may shift degree.",
+    "mathematical_argument": "For S=k[t], each homogeneous subgroup kt^j is generally not an S-submodule, because multiplication by t changes degree. Direct sum means each element has finitely many nonzero components; product permits infinitely many. A nonnegative grading can be extended by zero in negative degrees, but Z-gradings with nonzero negative pieces are not nonnegative gradings. The common additive decomposition is a valid prerequisite; equality of whole indexed graded structures is not established.",
+    "plausible_interpretations": {
+      "additive_direct_sum": "Shared finite-support construction.",
+      "module_direct_sum_or_same_grading": "Adds scalar or index conditions absent from the common operation."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "Group/module distinction and embedding versus equivalence of index conventions are settled.",
+    "requires_source_verification_or_user_judgment": "Choose a generic index-set additive prerequisite or explicitly scoped variants; preserve each source grading and compatibility.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "175": {
+    "topic": "02 Ideal action and module grading",
+    "hypotheses_and_object_types": "Finite free R-modules R^m→R^n; ordinary exterior powers over commutative unital R. r≥0; ∧^0φ=id_R, ∧^1φ=φ.",
+    "mathematical_argument": "The alternating map (v_1,…,v_r)↦φ(v_1)∧…∧φ(v_r) descends to a linear induced map by the exterior-power universal construction. It is not the exterior module itself. Over Z/4, multiplication by 2 has nonzero ∧^1 but becomes zero after reduction modulo 2; the stored nonzero-exterior-map rank criterion therefore must not be silently replaced by constant fibre rank or an invertibility test. Zero rings require care at r=0, where id_R is the zero map.",
+    "plausible_interpretations": {
+      "ordinary_exterior_map": "Valid under the commutative coefficient framework.",
+      "arbitrary_left_modules": "No ordinary noncommutative construction follows without extra data."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "Induced-map formula and distinction from fibrewise rank are established conditionally.",
+    "requires_source_verification_or_user_judgment": "Verify coefficient commutativity/unit, r=0 and zero-ring conventions. No new noncommutative exterior construction or rank theorem proposed.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "358": {
+    "topic": "02 Ideal action and module grading",
+    "hypotheses_and_object_types": "Tensor algebra T_R(M)=⊕_{n≥0}M^{⊗n}, degree zero R, concatenation. Ordinary module tensor typing needs commutative coefficients or appropriate right-left/bimodule data.",
+    "mathematical_argument": "For free rank-two M over a field, ef and fe are distinct tensor words, so this algebra need not be commutative even though the scalar ring is. The generic tensor-product formulation says two R-modules and an R-module-valued bilinear universal property without stating the scalar convention. Arbitrary left modules over a noncommutative ring are not automatically composable tensor inputs of that type. A graded additive module or commutative graded ring cannot resolve the whole associative algebra datum.",
+    "plausible_interpretations": {
+      "commutative_base_associative_algebra": "Standard typed interpretation, still noncommutative multiplication allowed.",
+      "noncommutative_base": "Requires bimodule or other explicit tensor data, not supplied here."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "Base commutativity and algebra commutativity are different; module versus algebra data are different.",
+    "requires_source_verification_or_user_judgment": "Verify intended scalar/action framework and degree-zero unit. Do not repair the generic tensor definition implicitly.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "400": {
+    "topic": "02 Ideal action and module grading",
+    "hypotheses_and_object_types": "A→B, Ω^p=∧^p_BΩ^1, Ω^0=B; d increases degree, d²=0. Components B-modules, differential A-linear in the ordinary commutative setting.",
+    "mathematical_argument": "For A=k, B=k[t], d(t)=dt while t·d(1)=0; hence d is not B-linear. Restricting scalars gives a complex of A-modules or abelian groups. Wedge multiplication supplies differential graded algebra structure beyond a bare cochain complex. A chain complex with differential lowering degree is not the displayed cohomological grading. The existing derivation and Kähler meanings explain these types but do not license erasing the base ring.",
+    "plausible_interpretations": {
+      "A_linear_cochain_complex": "Mathematically supported underlying prerequisite.",
+      "B_linear_complex": "Rejected in general by k[t] counterexample."
+    },
+    "recommended_disposition": "convention clarification",
+    "decidable_mathematically_now": "Correct scalar scope and variance of d can be decided without fetching a source.",
+    "requires_source_verification_or_user_judgment": "User should confirm intended prerequisite granularity and later source convention for commutative coefficients; no B-linear interpretation accepted.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "3": {
+    "topic": "03 Algebraic objects and component prerequisites",
+    "hypotheses_and_object_types": "A commutative unital ring, ideal I; quotient A/I with induced operations. Formal-smoothness parent additionally has R→A, I²=0, quotient arrow q and lifting maps.",
+    "mathematical_argument": "Changing representatives changes products by elements of I, so the quotient ring prerequisite is legitimate in all 16 parents. But k[ε]/(ε²)→k and k→k have the same target quotient k with different square-zero kernels. The extension datum is not recoverable from the target ring. Z/4 is a quotient ring without being a field. Thus neither the existing irreducible-polynomial field nor a module quotient identifies the generic ring construction or whole extension.",
+    "plausible_interpretations": {
+      "underlying_quotient": "Justified common prerequisite.",
+      "whole_extension_equals_quotient": "Rejected; source-specific map, action and kernel are extra data."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "The component relation is defensible; whole-object equivalence is false.",
+    "requires_source_verification_or_user_judgment": "Adjudicate whether prerequisite-only historical alias rationales suffice or explicit occurrence segmentation is required; preserve all 16 hypotheses.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "5": {
+    "topic": "03 Algebraic objects and component prerequisites",
+    "hypotheses_and_object_types": "Formal polynomial algebra over commutative unital coefficients, arbitrary set-indexed variables with finite monomial support. Evaluation at x∈S has different domain/codomain.",
+    "mathematical_argument": "T≠0 in R[T] for nonzero R although ev_0(T)=ev_0(0). Finite support of each polynomial does not make the entire variable set finite, especially P=R[X_s:s∈S]. The strong-transcendence source uses P(x), an element of S, whereas formal P(T) is in R[T]. Under common identity and the defining strong-transcendence condition, u=1 implies injective evaluation; even then ring, polynomial and image value are different typed data. The characteristic-polynomial source also needs the identity matrix, so its broad-ring seed cannot certify nonunital scope.",
+    "plausible_interpretations": {
+      "polynomial_algebra_prerequisite": "Valid shared operation.",
+      "algebra_expression_evaluation_value": "Not one mathematical object even when evaluation happens to be injective."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "Formal/value distinction and arbitrary-index scope are clear.",
+    "requires_source_verification_or_user_judgment": "Clarify prerequisite-only alias semantics at the strong-transcendence occurrence; verify identity convention separately. No narrowing to finitely many variables.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "40": {
+    "topic": "03 Algebraic objects and component prerequisites",
+    "hypotheses_and_object_types": "Root α in a specified extension field with f(α)=0. The actual quotient-field parent requires irreducible f; canonical example only says nonconstant.",
+    "mathematical_argument": "For a field F, F[T]/(T²) contains nonzero nilpotent class T and is not a field. Its T-class solves the equation, but does not establish the canonical description as a field extension. The actual irreducible-polynomial source has the missing hypothesis and is not shown erroneous. A root is an element, not its evaluation map, root count, splitting field or root of unity; zero is a root of T and not a root of unity.",
+    "plausible_interpretations": {
+      "generic_field_root": "Valid prerequisite for the four parents.",
+      "arbitrary_nonconstant_quotient_is_field": "False without irreducibility."
+    },
+    "recommended_disposition": "convention clarification",
+    "decidable_mathematically_now": "The qualification error in the candidate example is mathematically demonstrable.",
+    "requires_source_verification_or_user_judgment": "Approve an eventual qualification of the candidate example, not a correction to the already-qualified parent. No edit applied.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "250": {
+    "topic": "03 Algebraic objects and component prerequisites",
+    "hypotheses_and_object_types": "Kummer n≥2, field K, nth roots of unity in K. Intended scalar n·1_K invertible; characteristic p>0 or 0.",
+    "mathematical_argument": "If char K=p>0, invertibility is equivalent to p∤n. In characteristic zero every positive n is invertible in K, whereas gcd(n,0)=n would exclude n≥2. Thus literal integer coprimality at zero is the wrong reading. This condition says nothing about n itself being prime. If a=0 then T^n has a repeated root even when p∤n, so separability of that polynomial cannot be inferred without a≠0; the full parent extension statement is not globally certified here.",
+    "plausible_interpretations": {
+      "n_invertible_in_K": "Correct field-theoretic reading of candidate qualifiers.",
+      "literal_gcd_in_char_zero": "Rejected."
+    },
+    "recommended_disposition": "convention clarification",
+    "decidable_mathematically_now": "The arithmetic interpretation and its limitation at a=0 are settled.",
+    "requires_source_verification_or_user_judgment": "Use explicit invertibility wording in a later authorized record; retain the parent hypotheses and do not certify every Kummer formulation by this local review.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "268": {
+    "topic": "03 Algebraic objects and component prerequisites",
+    "hypotheses_and_object_types": "Finite lists of variables and relations plus an R-algebra isomorphism R[X]/(f)→S. Finite presentability quantifies existence of such data.",
+    "mathematical_argument": "R has a presentation with no variables and another as R[T]/(T), demonstrating that chosen presentation is not the mere property. A polynomial algebra or quotient alone omits the relations and chosen isomorphism; an abstract ring isomorphism may omit scalar compatibility. Zero variables and an empty relation list should not be excluded without source evidence.",
+    "plausible_interpretations": {
+      "chosen_presentation": "Compound datum; preserve maps and finite lists.",
+      "finite_presentability": "Existential property, not the selected data."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "Chosen data versus existence is a real distinction.",
+    "requires_source_verification_or_user_judgment": "Choose whether later identity modeling isolates constituent constructions or keeps a typed presentation datum. No self-resolution to the parent property.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "294": {
+    "topic": "03 Algebraic objects and component prerequisites",
+    "hypotheses_and_object_types": "R/J a ring, M/JM an R/J-module, graded quasi-regular comparison additionally uses polynomial algebra and ideal powers.",
+    "mathematical_argument": "The scalar action (r+J)(m+JM)=rm+JM is well-defined since J kills the quotient. With M=R² and J=0 the quotient module has no specified multiplication, so it is not the ring quotient as a structured object. Separating components must retain ideal action JM, both quotient constructions and the induced scalar structure, rather than deleting an apparently redundant dependency.",
+    "plausible_interpretations": {
+      "ring_and_module_quotients": "Both legitimate prerequisite components.",
+      "single_quotient_identity": "Not an identity of the entire compound phrase."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "The two object types and descent of scalar action are proved.",
+    "requires_source_verification_or_user_judgment": "Adjudicate compound granularity and any later segmentation without losing links or inventing a new meaning now.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "298": {
+    "topic": "03 Algebraic objects and component prerequisites",
+    "hypotheses_and_object_types": "Strong-transcendence implication allows arbitrary u∈S, including 0. Candidate zero divisor requires a nonzero element; existing predicate only requires a nonzero annihilator.",
+    "mathematical_argument": "In a nonzero ring the existing annihilator-based predicate includes 0, since 0·s=0 for nonzero s; the canonical candidate excludes it. Moreover uP(x)=0 need not exhibit nonzero factors: u=0 always satisfies it. The scan phrase zero-divisor phenomena is explanatory and not a literal source definition, so the displayed formula does not select either named convention or prove that a separate zero-divisor prerequisite is necessary.",
+    "plausible_interpretations": {
+      "nonzero_zero_divisor": "Distinct from the stored zero-inclusive predicate.",
+      "explanatory_annihilation_warning": "Possible source-local caution rather than named prerequisite."
+    },
+    "recommended_disposition": "genuine policy decision",
+    "decidable_mathematically_now": "Nonidentity of the variants is proved; the formula does not force nonzero factors.",
+    "requires_source_verification_or_user_judgment": "Decide named-prerequisite versus explanatory reference policy and zero inclusion, preserving the annihilator equation and historical evidence.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "420": {
+    "topic": "05 Category-theoretic assumptions",
+    "hypotheses_and_object_types": "Category of commutative unital rings, unital f:R→S. μ:S⊗_R S→S, s⊗t↦st, is a ring map; categorical epi is right-cancellation.",
+    "mathematical_argument": "If f is epi, the two maps i1,i2:S→S⊗_R S agree on R and hence agree. Then s⊗t=i1(s)i2(t)=i1(st), so μ and i1 are inverse. Conversely μ invertible gives i1=i2; for g,h:S→T agreeing on R, commutativity gives the balanced map s⊗t↦g(s)h(t), forcing g=h. Z→Q is epi but not surjective: images of fractions are uniquely determined by images of integers and inverses. The proof does not establish the same tensor criterion in arbitrary noncommutative ring categories.",
+    "plausible_interpretations": {
+      "canonical_multiplication_map": "Valid typed component.",
+      "its_invertibility": "Equivalent epi criterion under the commutative category; not an arbitrary ring isomorphism."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "The stated equivalence and distinction from surjectivity can be proved.",
+    "requires_source_verification_or_user_judgment": "Choose whether the candidate represents a map or its predicate; retain commutative/unital category and do not resolve it to the whole parent.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "62": {
+    "topic": "05 Category-theoretic assumptions",
+    "hypotheses_and_object_types": "Set-valued presheaves on C, η:F⇒G with components functions and contravariant naturality. Yoneda instance has h_U(X)=Hom_C(X,U).",
+    "mathematical_argument": "For ξ∈G(U), define η_X(h)=G(h)(ξ); composition proves naturality. Conversely η_U(id_U) recovers ξ and naturality recovers all components. This constructs the Yoneda correspondence, a whole bijection involving an element and a family, not the definition of an arbitrary natural transformation. Components need not be bijective. Set-valued represented presheaves require the relevant Hom collections to be sets in an adopted universe, connecting rank 393.",
+    "plausible_interpretations": {
+      "natural_transformation": "Valid prerequisite component.",
+      "whole_Yoneda_bijection": "More data/proposition than one arbitrary transformation."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "The formula and nonidentity of whole correspondence with a component are established.",
+    "requires_source_verification_or_user_judgment": "Clarify prerequisite-only alias at the exact Yoneda occurrence and source size conventions; no automatic natural-isomorphism alias.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "393": {
+    "topic": "05 Category-theoretic assumptions",
+    "hypotheses_and_object_types": "L:C→D, R:D→C; Hom_D(LX,Y)≅Hom_C(X,RY), contravariant X and covariant Y, natural in both. Candidate additionally describes sets.",
+    "mathematical_argument": "Bijections are between morphism collections, not LX and RY, which live in different categories. Equal cardinalities alone do not choose a natural family. Smallness of the collection of all objects is stronger than local-smallness; a discrete category with a proper class of objects still has empty or singleton Hom collections. Conversely the bare source does not specify any universe or local-smallness rule. Thus neither a small-category restriction nor a Set-valued Hom convention may be inferred merely from the word category.",
+    "plausible_interpretations": {
+      "locally_small_or_fixed_universe": "Set-valued Hom interpretation is meaningful.",
+      "arbitrary_categories": "Set-valued Hom is additional scope, requiring convention verification."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "Arrow types, variance and naturality requirement are settled.",
+    "requires_source_verification_or_user_judgment": "Later verify local-smallness/universe or class-valued adjunction convention. User policy must not silently replace all categories with small ones.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "202": {
+    "topic": "04 Ringed-space conventions",
+    "hypotheses_and_object_types": "O_X sheaf of rings on opens; candidate uses unital rings and restriction maps. Locally ringed parent additionally requires local stalks.",
+    "mathematical_argument": "A one-point space with ring of sections Z is a ringed space but not locally ringed, because its sole stalk Z has distinct maximal ideals (2),(3). Stalk, section ring and whole sheaf are different objects. Sheaf gluing supplies neither a source convention on identities nor localness by itself. The two existing local-ring formulations leave the already-recorded unit question to source reconciliation.",
+    "plausible_interpretations": {
+      "unital_ring_sheaf": "Candidate scoped type.",
+      "locally_ringed_space": "Adds local stalks, not a generic sheaf resolution."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "Sheaf, stalk, section ring and local-stalk restriction are separated.",
+    "requires_source_verification_or_user_judgment": "Verify ring-sheaf unit/restriction conventions together with local-ring conventions; do not infer them from provider attribution.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "222": {
+    "topic": "04 Ringed-space conventions",
+    "hypotheses_and_object_types": "I ideal subsheaf on locally ringed X, quotient sheaf O_X/I, support inclusion i:Z↪X and comparison i_*O_Z≅O_X/I.",
+    "mathematical_argument": "A ring-sheaf quotient has stalks O_x/I_x; a sectionwise quotient presheaf can require sheafification. Pushforward is an operation between spaces, (i_*F)(U)=F(i^{-1}U), not quotienting one ring. The support, quotient sheaf, sheaf on Z and comparison are different typed ingredients. A single generic ring quotient cannot encode this entire package; local-generation requirements must not be silently strengthened to finite generation or quasi-coherence.",
+    "plausible_interpretations": {
+      "quotient_sheaf_and_pushforward": "Legitimate distinct components.",
+      "one_ring_or_entire_closed_subspace": "Not an equivalent replacement for the compound datum."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "The constructions and their spaces are clear; sectionwise quotient is not a general shortcut.",
+    "requires_source_verification_or_user_judgment": "Adjudicate segmentation while retaining comparison map and local-generation quantifiers; verify sheaf/local-ring conventions later.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "323": {
+    "topic": "04 Ringed-space conventions",
+    "hypotheses_and_object_types": "Local R-map R→R^h, target maximal ideal mR^h and induced residue isomorphism R/m→R^h/mR^h; henselian and initial/colimit clauses are additional.",
+    "mathematical_argument": "The local map k→k[t]_(t) induces residue isomorphism k→k, but 0·k[t]_(t)=0 is not its maximal ideal (t). Thus localness plus residue isomorphism does not imply the extension-ideal equality. A residue field alone cannot represent this datum or the whole henselization universal object. The exact source-selected maps and residue identification must survive any decomposition.",
+    "plausible_interpretations": {
+      "local_map_ideal_and_residue_data": "Compound component package.",
+      "residue_field_or_generic_local_map": "Insufficient by counterexample."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "The three conditions are not redundant under generic local-map hypotheses.",
+    "requires_source_verification_or_user_judgment": "Choose granularity while retaining all conditions; later verify local-ring/unit and universal-property source conventions. No henselization self-resolution.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "38": {
+    "topic": "06 Topology and local versus global predicates",
+    "hypotheses_and_object_types": "Clopen U in an arbitrary X versus canonical context U⊆Spec(R). Connected meanings include both empty-allowed and nonempty conventions.",
+    "mathematical_argument": "U is clopen iff U and X\\U are open. A nontrivial clopen gives a separation and conversely, including the vacuous empty-allowed case. This does not impose nonemptiness on X. In Spec(R), idempotents give D(e)=V(1−e), but a general space has no chosen ring/idempotent datum. Generic clopen is a valid shared predicate; its specialization to a spectrum is not the whole idempotent correspondence and does not turn every X into a spectrum.",
+    "plausible_interpretations": {
+      "generic_clopen": "Justified shared prerequisite.",
+      "spectrum_with_idempotent": "Specialized context plus additional algebraic correspondence."
+    },
+    "recommended_disposition": "valid specialization",
+    "decidable_mathematically_now": "The shared topological predicate and separation equivalence are established.",
+    "requires_source_verification_or_user_judgment": "Adjudicate canonical ambient scope versus polymorphic prerequisite modeling; preserve all connectedness conventions and sources.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "399": {
+    "topic": "06 Topology and local versus global predicates",
+    "hypotheses_and_object_types": "At each x, connected neighborhoods cofinal in all neighborhoods; individual members not necessarily open. Global topology basis consists of open sets.",
+    "mathematical_argument": "Fix open U and a connected component C of U. For each x∈C, choose connected neighborhood V_x⊆U; since it meets C it lies in C and contains an open neighborhood of x. Hence C is open. Such components give a connected-open basis. This derived characterization does not identify an arbitrary selected pointwise system with a global open basis. The offending historical global-basis occurrence was corrected by a receipt-verified amendment; the pointwise candidate remains missing and is not an unapplied repeat correction.",
+    "plausible_interpretations": {
+      "pointwise_connected_system": "Valid remaining prerequisite.",
+      "derived_global_basis": "Equivalent space property under all-point quantification, not identity of the systems."
+    },
+    "recommended_disposition": "preserve distinct",
+    "decidable_mathematically_now": "The theorem and distinction of data are proved; old target warning is superseded.",
+    "requires_source_verification_or_user_judgment": "No repeat amendment requested. User may later document a derived characterization; keep the unresolved pointwise type separate from global basis.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "36": {
+    "topic": "07 Measure and indexing conventions",
+    "hypotheses_and_object_types": "Finite absolute expectation of a real random variable on one probability space; four parents quantify two individual variables, integer sequences, or all real t≥0.",
+    "mathematical_argument": "On N_{>0} with P{k}=2^{-k}, Z(k)=2^k is measurable but E|Z|=∞. Set X_t=0 at integer times and Z otherwise: integer-time integrability does not imply all-real-time integrability. Deterministic X_n=n also shows pointwise finiteness is not a uniform expectation bound. The real-time filtration correction fixes a distinct reference and does not settle this integrability candidate quantifier scope.",
+    "plausible_interpretations": {
+      "single_variable_L1": "Legitimate common predicate instantiated at each source variable.",
+      "all_real_time_process_condition": "Strictly different quantified statement from integer or individual cases."
+    },
+    "recommended_disposition": "convention clarification",
+    "decidable_mathematically_now": "The local predicate is shared, but whole quantified requirements are not equivalent.",
+    "requires_source_verification_or_user_judgment": "Adjudicate generic L1 prerequisite versus indexed requirement in the canonical context; preserve each parent index set. No source edit or quantifier weakening.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "166": {
+    "topic": "07 Measure and indexing conventions",
+    "hypotheses_and_object_types": "Nonnegative Borel/Stieltjes measure from bounded nondecreasing admissible α; source does not define admissible or endpoint normalization.",
+    "mathematical_argument": "For right-continuous α the usual interval assignment is μ((a,b])=α(b)−α(a). If α(t)=0 for t≤0 and 1 for t>0, that raw assignment gives μ((0,1/n])=1 although these sets decrease to ∅, violating finite-measure continuity from above. Thus bare monotonicity cannot justify that interval formula. Atoms also exclude aliasing the construction with a density w(x)dx. A different one-sided normalization can be legitimate; no convention is selected here.",
+    "plausible_interpretations": {
+      "normalized_Stieltjes_construction": "Requires an explicit sided/endpoint convention.",
+      "bare_monotone_interval_formula": "Not valid in every sided convention."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "Need for a normalization and distinction from density measures are proved.",
+    "requires_source_verification_or_user_judgment": "Later source verification must determine admissible, one-sided limits, endpoint atoms and integration domain. Current evidence cannot choose right versus left.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "291": {
+    "topic": "07 Measure and indexing conventions",
+    "hypotheses_and_object_types": "Integrand x^n, n≥0, μ-integrability, interval (a,b) in the stored context, displayed ∫_a^b endpoint notation. Parent defines the nth raw moment.",
+    "mathematical_argument": "For μ=δ_a and n=0, including a gives integral 1 and excluding it gives 0. Thus unspecified endpoints are material for atomic measures. Once μ, interval, n and integrability are fixed, ∫x^n dμ is exactly the raw-moment value already defined by the parent. Generic integration as an operation is a prerequisite, not an identity of every integral with this moment or with a Riemann construction.",
+    "plausible_interpretations": {
+      "generic_Lebesgue_integral": "Reusable operation.",
+      "specified_raw_moment_value": "Exactly the parent construction after parameters fixed; self-resolution risk."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "The specialization and possible endpoint discrepancy are concrete.",
+    "requires_source_verification_or_user_judgment": "Adjudicate operation versus value granularity, and obtain endpoint convention through rank 166 source verification; no moment self-resolution.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "364": {
+    "topic": "07 Measure and indexing conventions",
+    "hypotheses_and_object_types": "Bounded nondecreasing generator with infinitely many points of increase, plus all absolute moments finite; source does not define point of increase.",
+    "mathematical_argument": "An atomic distribution with weights 2^{-n} at positive integers has infinitely many jumps but is constant between them; strict increase everywhere is therefore a different condition. If a measure is supported on finitely many a_i, the nonzero polynomial ∏(X−a_i) has zero L2 norm. This explains why infinite support is relevant to positive-norm orthogonal systems in unbounded degree, but does not establish which local/sided generator definition the source intends. Orthogonality alone in the short formulation must not be silently upgraded to a normalization theorem.",
+    "plausible_interpretations": {
+      "support_nondegeneracy_intent": "Mathematically motivated conditional explanation.",
+      "strict_monotonicity_or_derivative_positive": "Not equivalent to infinitely many jumps or increase points."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "Finite-support degeneracy and failure of strict-increase interpretation are established.",
+    "requires_source_verification_or_user_judgment": "Verify point-of-increase definition and its relation to normalized Stieltjes support; no derivative or normalization axiom invented.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "172": {
+    "topic": "08 Compound constructions and self-reference",
+    "hypotheses_and_object_types": "Positive grading, homogeneous f with deg f>0; S_f graded localization and its degree-zero part S_(f). Homogeneous numerator degree n deg f.",
+    "mathematical_argument": "In S=k[x], f=x, S_f=k[x,x^{-1}] while (S_f)_0=k, so full localization is not its zero-degree subring. Degree-zero extraction is a reusable operation, but in the exact positive-degree setting it is already the defining construction of the existing S_(f) parent. A candidate with more general denominator or grading scope cannot be identified with that parent without qualification. Graded zero elements belong to all components, so degree notation must not assign them a unique degree accidentally.",
+    "plausible_interpretations": {
+      "degree_zero_extraction": "Valid operation prerequisite.",
+      "same_specific_S_(f)": "Overlaps the parent definition and risks self-reference if resolved naively."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "Full localization versus degree-zero extraction and exact-specialization overlap are clear.",
+    "requires_source_verification_or_user_judgment": "Decide whether to retain a generic operation or a more specific datum; preserve deg f>0 and no self-resolution.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "223": {
+    "topic": "08 Compound constructions and self-reference",
+    "hypotheses_and_object_types": "Finite projective modules up to isomorphism, direct-sum monoid, abelian group presentation [P⊕Q]=[P]+[Q]. K′_0 uses finite modules and short exact sequences instead.",
+    "mathematical_argument": "Group completion supplies formal differences without assuming monoid cancellation; distinct monoid elements can acquire the same group image. Once the monoid is fixed as finite projective isomorphism types, this is precisely the stored K_0 construction. A generic abelian presentation/group-completion operation is a legitimate prerequisite, not the whole chosen K_0 datum. In a fixed universe, representatives of isomorphism types rather than all labeled copies are needed; finite unital modules can be represented as quotients of finite free modules.",
+    "plausible_interpretations": {
+      "generic_group_completion": "Reusable operation.",
+      "specified_K0_presentation": "Same specific construction as parent, not an automatic independent resolution."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "K0 versus K′0 inputs/relations and operation versus selected presentation are separated.",
+    "requires_source_verification_or_user_judgment": "Adjudicate generic prerequisite granularity and universe/skeleton convention; do not assume cancellation or identify K0 with K′0.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "245": {
+    "topic": "08 Compound constructions and self-reference",
+    "hypotheses_and_object_types": "Compatible tuples in ∏_{n≥1} R/I^n, reduction maps, componentwise ring operations and unit under the unital convention.",
+    "mathematical_argument": "Reduction maps preserve ring operations, so compatible tuples form a ring with the inverse-limit universal property. Forgetting multiplication gives a module/group limit, not the same structured object. For precisely this ideal-power system the limit is already the stored I-adic completion, so a candidate fixing the whole system cannot be resolved naively to its defining parent without checking self-reference. A degree-zero R/I^0=0 term, if used, is forced and does not change the positive-tail limit; it still must be recorded rather than silently changing indices.",
+    "plausible_interpretations": {
+      "generic_ring_inverse_limit": "Reusable prerequisite.",
+      "this_specific_limit": "The completion construction already named by the parent."
+    },
+    "recommended_disposition": "component prerequisite",
+    "decidable_mathematically_now": "Compatible-tuple construction, structured forgetfulness and exact specialization are proved.",
+    "requires_source_verification_or_user_judgment": "Choose generic operation versus whole completion identity; retain units, transition maps and original indices. No self-resolution.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "405": {
+    "topic": "08 Compound constructions and self-reference",
+    "hypotheses_and_object_types": "Prime proper ideal p of commutative unital R, S=R\\p containing 1 and closed under multiplication, M_p=S^{-1}M an R_p-module.",
+    "mathematical_argument": "If a,b∉p then ab∉p by primality, and 1∉p. Thus the denominator-set construction is valid. A generic multiplicative set need not be a prime complement: {1}⊆Z has complement Z\\{1}, not an ideal. Localization of a module is not localization of a ring alone, and the support predicate additionally tests M_p≠0. Retain these distinct operations instead of equating the entire compound phrase with S.",
+    "plausible_interpretations": {
+      "prime_complement_subset": "Valid component.",
+      "specialized_module_localization": "Uses that subset and module fractions; richer than a multiplicative set."
+    },
+    "recommended_disposition": "valid specialization",
+    "decidable_mathematically_now": "The specialization and nonidentity of subset, ring and module objects are proved.",
+    "requires_source_verification_or_user_judgment": "Choose candidate granularity; existing module-localization meaning is a possible construction target only with exact parameter/scalar scope, not automatic resolution.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "154": {
+    "topic": "09 Set, order and graph conventions",
+    "hypotheses_and_object_types": "Loopless undirected multigraph: multiset E of two-element subsets of vertex set V. Candidate multiplicity is a nonnegative integer for each unordered pair.",
+    "mathematical_argument": "Two vertices with three parallel copies have pair multiplicity 3; the simple-graph predicate keeps only 0/1. An infinite vertex set does not force infinite multiplicity per pair, while a cardinal-valued multiset with infinitely many copies of one pair need not have integer multiplicity. Loops are excluded by the two-element edge condition independently of multiplicity. The source has not specified which multiset convention it uses.",
+    "plausible_interpretations": {
+      "finite_per_pair_multiset": "Integer-valued multiplicity fits.",
+      "cardinal_valued_multiset": "Broader convention not identified with N-valued counts."
+    },
+    "recommended_disposition": "source-verification required",
+    "decidable_mathematically_now": "Parallel-edge count, degree, edge pair and whole multiset are different.",
+    "requires_source_verification_or_user_judgment": "Verify finite-per-pair convention without imposing finite V or finite E; preserve loopless scope.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "181": {
+    "topic": "09 Set, order and graph conventions",
+    "hypotheses_and_object_types": "Arbitrary sets a,b in Kuratowski (a,b)={{a},{a,b}}; no a≠b hypothesis.",
+    "mathematical_argument": "When a=b, {a,b}={a} and the outer pair is {{a}}, still a valid ordered pair. Thus unordered pair has at most two members, while doubleton has exactly two. The graph two-vertex edge prerequisite requires distinct arguments and is narrower. A singleton constructor alone does not provide the whole nested two-constructor datum.",
+    "plausible_interpretations": {
+      "unordered_pair_possibly_singleton": "Fits the actual arbitrary-coordinate source.",
+      "literal_doubleton": "Overrestrictive without a≠b."
+    },
+    "recommended_disposition": "convention clarification",
+    "decidable_mathematically_now": "The equal-coordinate counterexample settles the wording issue.",
+    "requires_source_verification_or_user_judgment": "Approve later wording/constructor segmentation if desired, retaining arbitrary coordinates. No candidate alias or source edit applied.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "259": {
+    "topic": "09 Set, order and graph conventions",
+    "hypotheses_and_object_types": "Dedekind lower cut A⊂Q: nonempty, proper, downward closed, no largest element. Q is totally ordered.",
+    "mathematical_argument": "In a total order, absence of greatest element implies for each a∈A some b∈A satisfies b>a; otherwise a would be greatest. In a two-point antichain there is no greatest element but each point is maximal, so the same equivalence fails in arbitrary partial orders. The actual rational-cut parent is correctly in the total-order setting. Properness and no largest element are separate; neither should be deleted or confused with ambient greatest elements.",
+    "plausible_interpretations": {
+      "total_order_no_largest": "Equivalent to no maximal element in the actual context.",
+      "partial_order_generalization": "False as an unqualified equivalence."
+    },
+    "recommended_disposition": "convention clarification",
+    "decidable_mathematically_now": "The candidate-context qualification can be decided mathematically.",
+    "requires_source_verification_or_user_judgment": "Later qualify total-order scope; do not change approved rational cut endpoints, nonemptiness or properness.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  },
+  "324": {
+    "topic": "09 Set, order and graph conventions",
+    "hypotheses_and_object_types": "Partition P is an unindexed collection of nonempty disjoint blocks covering S. Arbitrary indexed families retain indexing and multiplicities.",
+    "mathematical_argument": "Two equal subsets at two distinct indices become one member on forgetting indices, so indexed family and set of subsets are different data. P can be indexed by itself, but that encoding does not equate all indexed families to collections. For S=∅, P=∅ is the valid partition; {∅} violates nonempty blocks. Both stored partition variants preserve exactly these conditions.",
+    "plausible_interpretations": {
+      "collection_of_blocks": "Fits the parent.",
+      "arbitrary_indexed_family": "Adds index data not present in P."
+    },
+    "recommended_disposition": "convention clarification",
+    "decidable_mathematically_now": "Collection/indexed-family distinction and empty case are settled.",
+    "requires_source_verification_or_user_judgment": "Choose canonical scope or explicit encoding policy without aliases to unrelated event or map families.",
+    "operational_status": "Recommendation only; not applied. No alias, resolution, source edit or gate action authorized."
+  }
+}

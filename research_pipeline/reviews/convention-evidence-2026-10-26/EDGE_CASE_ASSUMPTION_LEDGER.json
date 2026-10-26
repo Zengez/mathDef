@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "purpose": "Persistent later-human-review inventory for owner-authorized narrow empty/zero/trivial-object qualifications in mathDef Wave 2. Proposals are NOT applied edits.",
+  "policy_file": "research_pipeline/reviews/convention-evidence-2026-10-26/EDGE_CASE_QUALIFICATION_POLICY.md",
+  "owner_policy_approved_local_date": "2026-10-25",
+  "requires_later_human_review": true,
+  "current_consolidation_gate_open": false,
+  "current_pass3_authorized": false,
+  "applied_qualifications": [],
+  "review_candidates": [
+    {
+      "id": "edgecase.wave2.historical-rank-175.zero-ring-rank-empty-maximum",
+      "historical_rank": 175,
+      "status": "review_candidate_not_applied",
+      "exception_kind": "zero_ring_empty_maximum",
+      "object_and_ambient_scope": "Finite free modules R^m,R^n over a commutative ring with identity, including R=0 under Stacks Algebra convention.",
+      "affected_formulation_id": "form.41e3aea7f356bae3.rank-of-map-finite-free",
+      "affected_meaning_id": "meaning.41e3aea7f356bae3.rank-of-map-finite-free",
+      "affected_candidate_id": "missing.25dac0c185025e52a26a",
+      "affected_occurrence_id": "occ.36b73d7bd2a48315f0c7",
+      "source_version_sha256": "3f4fb3118efa02abefc7d1b7318bf9fb0947d7aa0ac024303ca6d0a0179450bf",
+      "effective_node_sha256": "21b16a8923552b9e4d7ee6992b11a7d6819003a519dd2ec3d68db856dc005c22",
+      "existing_stored_formulation": "For a homomorphism φ:R^m→R^n of finite free modules, its rank is the largest integer r for which the induced exterior-power map ∧^rφ is nonzero (and is zero when φ itself is zero).",
+      "counterexample": "For R=0 all finite free R-modules and maps vanish. Even the zeroth exterior-power map id_R is the zero map, so the set of r≥0 with ∧^rφ nonzero is empty and its maximum is undefined.",
+      "minimal_qualification_to_review": "Explicitly treat a zero map, including every map over R=0, as having rank 0; use the maximal nonzero exterior-power characterization only when that set is nonempty. Preserve the zero ring in the ambient algebraic universe.",
+      "alternative_restriction_not_preferred": "Globally assume R≠0, which discards an otherwise permitted degenerate case.",
+      "source_attribution_limitation": "This is a mathematical repair proposal, not a claim that the current Stacks provider explicitly enacted this override in the printed maximum clause or that archived snapshots were certified.",
+      "provider_urls": [
+        "https://stacks.math.columbia.edu/tag/00MR",
+        "https://stacks.math.columbia.edu/tag/00AQ"
+      ],
+      "review_document": "research_pipeline/reviews/convention-evidence-2026-10-26/SPECIALIZED_SELF_REFERENCE_AND_SOURCE_EDGE_FINDINGS.md",
+      "change_applied": false,
+      "application_commit": null,
+      "transaction_receipt": null,
+      "manual_review_state": "pending"
+    }
+  ],
+  "future_applied_entry_required_fields": [
+    "id",
+    "exception_kind",
+    "affected_formulation_id",
+    "source_version_sha256",
+    "effective_node_sha256_before",
+    "original_wording",
+    "qualified_wording",
+    "counterexample",
+    "mathematical_rationale",
+    "source_convention_status",
+    "application_commit",
+    "transaction_receipt_or_reason_not_applicable",
+    "manual_review_state"
+  ]
+}
