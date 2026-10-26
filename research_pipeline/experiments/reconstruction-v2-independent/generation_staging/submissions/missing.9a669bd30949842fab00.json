@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.9a669bd30949842fab00",
+  "original_query": "Iverson bracket indicator [P]",
+  "original_context": "Logic and notation: Iverson bracket [P] returns numeric 1 when proposition P is true and 0 otherwise. In the Kronecker delta definition P is the equality predicate a=b on Γ; the general Iverson notation applies to arbitrary propositions, not merely to equality.",
+  "original_incoming_occurrence_ids": [
+    "occ.a06eed2e5f4c1bb96d2f"
+  ],
+  "disposition": "new_meaning",
+  "definition": "For a mathematical proposition P, the Iverson bracket [P] is the numerical value 1 when P is true and 0 when P is false. This is a general indicator notation for the truth value of P.",
+  "reasoning": "The independent population has the numeric Kronecker delta δ(a,b)=[a=b], but its equality-specific two-argument meaning does not define Iverson brackets for arbitrary propositions. Iverson brackets are a general named notation/construction, so retain this independent meaning rather than merging it into the Kronecker delta.",
+  "sources": [
+    {
+      "url": "https://mathworld.wolfram.com/IversonBracket.html",
+      "section": "Iverson Bracket, displayed defining equation (1)",
+      "relevance": "Directly verified general statement-truth-value notation and its numeric 0/1 values.",
+      "verification_status": "direct_primary_passage_checked"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.wave2.bridge136.numeric-delta",
+        "relation": "Equality-specific numerical Kronecker delta is a specialization [a=b] and cannot replace arbitrary P"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Reviewed the indexed formulations of all 595 independently screened and 16 provisional meanings. Only the equality-specific numeric Kronecker delta refers to Iverson indicators; the general bracket is not already a meaning and is a standard named mathematical notation. Also compared with the already staged first-generation candidate identities: missing.8e10ca4c4067ac5928f8, missing.8e7388ef8958ac46b761; none has this same mathematical object or proposition."
+  },
+  "mathematical_assumptions": [
+    "Values are ordinary integers 0 and 1, not an identification inside a zero ring.",
+    "The proposition has a determinate truth value in the ambient logic.",
+    "Floor-function brackets use a distinct convention and should be disambiguated by context."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
