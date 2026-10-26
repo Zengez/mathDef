@@ -136,3 +136,38 @@ Total post-Wave2 additions: **47 meanings** in the combined-only
 coincidental equality to the **2,019 tentative phrase leads** from the
 earlier scan does not imply those leads were all researched or resolved.
 Preserve the 958-meaning frozen independent snapshot and initial scan.
+
+
+## Sixth direct research batch (2026-10-26)
+
+Eighteen new contextual mathematical meanings researched directly into the
+combined-only reference, retaining the independently completed Wave2 at 958:
+
+- Algebra: finite-length module, composition series of a module and module socle.
+- Covering properties and general topology: Lindelöf, σ-compact,
+  countably compact, sequentially compact and paracompact spaces, with a
+  separate definition of a locally finite family of subsets.
+- Baire category and analysis: meagre, comeagre, Baire topological spaces,
+  equicontinuity of a family of maps between metric spaces.
+- Convex geometry: relative interior, extreme point, face, exposed face and
+  barycentric coordinates relative to an affine frame.
+
+Mathematical scope and comparisons are included in the definitions:
+countable-cover vs countable-subcover vs convergent-subsequence properties;
+the Hausdorff convention for paracompactness; empty/zero-module cases;
+meagre vs measure-zero; exposed vs general convex faces; Euclidean rather
+than infinite-dimensional assertions about relative interior; and unique
+barycentric coordinates only within an independent affine frame.
+
+Primary or directly checked references: Stacks Project Section 10.52,
+Encyclopedia of Mathematics (Socle, Compactness, Lindelöf, Paracompact,
+Baire/Category, Equicontinuity, Barycentric Coordinates), the convex-geometry
+reference chapter hosted by Harvard, and PlanetMath's face definition.
+All source locators and local assumptions are inside individual records.
+These are source-attributed, assistant-reviewed drafts, not human certification.
+
+**Checkpoint:** the post-Wave2-only overlay now holds **65 meanings** (47
+earlier + 18 newly researched). The combined reference is expected to have
+**2,037 contextual meanings** (958 independent Wave2 + 1,014 original mathDef +
+65 post-completion). The 2,019 earlier loose scan leads are neither fully
+checked nor a required queue, and they remain unchanged by this batch.
