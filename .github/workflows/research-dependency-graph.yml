@@ -96,7 +96,10 @@ jobs:
             python -m research_pipeline.engine.population_queue \
               --workspace "$WORKSPACE" \
               --profile research_pipeline/adapters/mathdef/population_topics.json --write
-            git add -- "$GRAPH" "$WORKSPACE/population/QUEUE.json" "$WORKSPACE/generation_staging"
+            git add -- "$GRAPH" "$WORKSPACE/population/QUEUE.json"
+            if [ -d "$WORKSPACE/generation_staging" ]; then
+              git add -A -- "$WORKSPACE/generation_staging"
+            fi
             if git diff --cached --name-only | grep -Ev "^($GRAPH/|$WORKSPACE/population/QUEUE[.]json$|$WORKSPACE/generation_staging/)"; then
               echo "Write escaped isolated graph workspace" >&2; exit 1
             fi
