@@ -4,6 +4,10 @@
 **Status:** owner-requested direction, implementation proposal; documentation only. **Not a publication, phase-gate transition, source certification, or approval of individual mathematical changes.**  
 **Scope:** Zengez/mathDef independent reconstruction and future incremental updates.
 
+## Complementary efficiency improvement: opportunistic provisional completion
+
+Keep the dependency-first screening sequence, but when contextual/identity review has already established most of a trustworthy definition or other final content item, finish and save it as a **provisional, origin-linked comparison anchor** instead of making later research repeat the same work. Compare future candidates against both accepted and provisional meanings, with trust tiers and no automatic equivalence. The trigger, phase restrictions, reusable record requirements and clustering safeguards are documented in [OPPORTUNISTIC_PROVISIONAL_COMPLETION_PROPOSAL.md](OPPORTUNISTIC_PROVISIONAL_COMPLETION_PROPOSAL.md). This remains a proposal and **does not authorize new source research during the currently closed source-free Phase 2**.
+
 ## New objective and stop rule
 
 Deliver a searchable **production** mathDef update containing the mathematically eligible additions of the current independent Wave 2 collection and a **single first-generation, bounded research pass** over the currently unresolved missing-candidate pool. Do this **before** recursive research into dependencies newly discovered inside those additions.
