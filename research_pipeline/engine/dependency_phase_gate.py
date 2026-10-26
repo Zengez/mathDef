@@ -82,7 +82,20 @@ def evaluate(workspace: Path, policy_file: Path):
                 or completed.get("prior_gate_inventory_sha256") !=
                 prior.get("inventory_sha256")
                 or completed.get("prior_gate_unresolved_fingerprint") !=
-                prior.get("unresolved_fingerprint")):
+                prior.get("unresolved_fingerprint")
+                or completed.get("global_mathematical_audit") != "completed"
+                or completed.get("source_verification_review") != "completed"
+                or not str(completed.get("reviewed_by", "")).strip()
+                or len(str(completed.get("review_rationale", "")).strip()) < 40):
+            return {"status": "prior_generation_not_integrated",
+                    "gate_valid": False, "event": None}
+        from .dependency_generation import status as generation_status
+        try:
+            previous_generation = generation_status(root)
+        except (PipelineError, KeyError, ValueError):
+            return {"status": "prior_generation_not_integrated",
+                    "gate_valid": False, "event": None}
+        if not previous_generation["ready_for_reviewed_integration"]:
             return {"status": "prior_generation_not_integrated",
                     "gate_valid": False, "event": None}
         event = {
