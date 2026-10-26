@@ -1,0 +1,931 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "kind": "FIRST_GENERATION_RESEARCH_EVIDENCE",
+  "status": "PRELIMINARY_NOT_ADMITTED",
+  "original_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "original_unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "priority_range": [
+    381,
+    418
+  ],
+  "original_candidate_count": 38,
+  "original_reference_count": 38,
+  "flags": [
+    {
+      "priority": 385,
+      "issue": "Countable discrete atomic support does not require the support to be topologically discrete."
+    },
+    {
+      "priority": 389,
+      "issue": "Distance between two disjoint sets can be zero; empty-set definition needs explicit convention."
+    },
+    {
+      "priority": 417,
+      "issue": "Ring epimorphism is categorical and not equivalent to surjective ring map."
+    }
+  ],
+  "items": [
+    {
+      "priority": 381,
+      "original_canonical_candidate_id": "missing.d7667a9dfe1a62c4108e",
+      "original_query": "O_X-module",
+      "original_context": "Sheaf of modules over the structure sheaf O_X on a locally ringed space, with compatible restriction maps.",
+      "original_occurrence_ids": [
+        "occ.895ad4c7b9fa1ff9549c"
+      ],
+      "mathematical_definition_draft": "An O_X-module is a sheaf F of abelian groups with each F(U) an O_X(U)-module and restriction maps compatible with scalar restriction.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0076",
+          "section": "Stacks Definition 6.10.1, sheaves of modules",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Direct definition of a sheaf of O-modules as a presheaf of O-modules whose underlying abelian-group presheaf is a sheaf."
+        }
+      ],
+      "scope_and_edge_case": "Local ring structure on stalks isn't needed merely to define sheaf-module.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Replaced wrong prior tag 01B3 (Lemma 17.8.2, preservation of local generation by pullbacks), which did not define O_X-modules. No local-stalk hypothesis is needed at this stage."
+    },
+    {
+      "priority": 382,
+      "original_canonical_candidate_id": "missing.d7c607e0f20a0ae9a83c",
+      "original_query": "unit vector u∈R^n",
+      "original_context": "Euclidean vector u∈ℝ^n with Euclidean norm ∥u∥₂=1, a normalized direction.",
+      "original_occurrence_ids": [
+        "occ.7142a1d39cf4886726b9"
+      ],
+      "mathematical_definition_draft": "A unit vector u∈R^n satisfies ||u||_2=(Σu_i²)^{1/2}=1.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/UnitVector.html",
+          "section": "Unit vector",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Requires norm structure; in zero-dimensional R^0 there is no unit vector.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 383,
+      "original_canonical_candidate_id": "missing.d90bc393eeba8fd1be9e",
+      "original_query": "infimum of admissible bounds",
+      "original_context": "Order theory: infimum inf(A) of a subset A of a partially ordered set, a lower bound greater than or equal to every other lower bound, when one exists; here the set consists of admissible positive real bounds and may have infimum zero.",
+      "original_occurrence_ids": [
+        "occ.0370034c8a15bdec7126"
+      ],
+      "mathematical_definition_draft": "The infimum of A in poset P is lower bound l≤a for every a∈A with l≥z for all other lower bounds z.",
+      "external_source_evidence": [
+        {
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "section": "Infima and bounds",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "May fail to exist in arbitrary poset; empty A has infimum iff P has greatest element.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 384,
+      "original_canonical_candidate_id": "missing.dd5496ed1d723a534bec",
+      "original_query": "isomorphism of ordered groups with Z",
+      "original_context": "Ordered group theory: a bijective group homomorphism φ:Γ→(ℤ,+) that preserves and reflects the group order, where Γ is the value group and ℤ has its usual total order.",
+      "original_occurrence_ids": [
+        "occ.e0817ce54c2fa4b53a9e"
+      ],
+      "mathematical_definition_draft": "An ordered-group isomorphism Γ→Z is a bijective group homomorphism preserving and reflecting the total order.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Ordered_group",
+          "section": "Ordered groups and morphisms",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Orientation must respect order; abstract group isomorphism may reverse the order.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 385,
+      "original_canonical_candidate_id": "missing.dd62440daef1ff9237d5",
+      "original_query": "countably infinite discrete support X⊆R",
+      "original_context": "Orthogonal-polynomial analysis: countably infinite set X of distinct real support points for a countably atomic weighted sum; the word discrete concerns the sum, not necessarily discrete topology of X.",
+      "original_occurrence_ids": [
+        "occ.79255d4d40631682fdd4"
+      ],
+      "mathematical_definition_draft": "A countably infinite support X⊆R has a bijection with N and its elements are pairwise distinct; weights form an indexed atomic sum.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Countable_set",
+          "section": "Countably infinite sets",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Countable support need not be discrete in subspace topology; it can accumulate, e.g. {1/n}.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 386,
+      "original_canonical_candidate_id": "missing.dd82e10b4c02824d8ab9",
+      "original_query": "restriction of the structure sheaf O_X|_U",
+      "original_context": "Sheaf theory: restriction F|_U of a sheaf F of rings on X to an open subspace U, assigning F(V) to each open V in U with inherited restriction morphisms.",
+      "original_occurrence_ids": [
+        "occ.e9f58b84221519a4957b"
+      ],
+      "mathematical_definition_draft": "Restriction O_X|_U to open U⊆X has (O_X|_U)(V)=O_X(V) for every open V⊆U, with inherited restrictions.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00A1",
+          "section": "Stacks Definition 6.31.2, restriction of sheaves to open subspaces",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly defines F|_U=j^{-1}F and O_X|_U for open immersion j:U→X; under open V⊆U, sections are the inherited F(V)."
+        }
+      ],
+      "scope_and_edge_case": "A sheaf restriction is not ring localization unless local geometry specifies such an identification.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Previous general Section 6.21 (tag 008C) is about direct/inverse images; specialized Definition 6.31.2 states restriction directly."
+    },
+    {
+      "priority": 387,
+      "original_canonical_candidate_id": "missing.ded806b239b007c8af8c",
+      "original_query": "finite intersection property of family",
+      "original_context": "General set theory/topology: family (F_i) of subsets of X with ⋂_{i∈E}F_i nonempty for every nonempty finite E of indices; specify the empty-family convention separately.",
+      "original_occurrence_ids": [
+        "occ.9d50e1e491b616085715"
+      ],
+      "mathematical_definition_draft": "Family (F_i) has finite intersection property if every nonempty finite subfamily has nonempty intersection.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/FiniteIntersectionProperty.html",
+          "section": "Finite intersection property",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Empty family vacuously satisfies in common convention; empty intersection relative to X equals X, and convention may affect X=∅.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 388,
+      "original_canonical_candidate_id": "missing.e329000e6f01aaf3d31b",
+      "original_query": "evaluation map sigma ↦ sigma(a)",
+      "original_context": "Field theory: evaluation map of Galois-group automorphisms at a fixed element a∈E, ev_a:Gal(E/F)→E, σ↦σ(a), where its continuity is relative to the chosen topologies; distinct from polynomial evaluation homomorphisms.",
+      "original_occurrence_ids": [
+        "occ.4df09a9001669eed80ee"
+      ],
+      "mathematical_definition_draft": "For Galois E/F and a∈E, evaluation ev_a:Gal(E/F)→E maps σ↦σ(a).",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09DU",
+          "section": "Galois automorphisms and topology",
+          "review_status": "source_construction_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Not a field homomorphism as domain is group; continuity depends on group/codomain topologies.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 389,
+      "original_canonical_candidate_id": "missing.e50c8e4250f586e7f28e",
+      "original_query": "distance between sets inf d(a,b)",
+      "original_context": "Metric geometry: distance between two subsets A,B of a metric space, defined as inf{d(a,b):a∈A,b∈B}, with an explicit convention for empty subsets.",
+      "original_occurrence_ids": [
+        "occ.7e8fa1f0a8be7f78825f"
+      ],
+      "mathematical_definition_draft": "For nonempty subsets A,B of metric X, d(A,B)=inf{d(a,b):a∈A,b∈B}.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/SetDistance.html",
+          "section": "Distance between sets",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "May equal 0 even when A,B disjoint; empty-set convention often +∞ in extended reals.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 390,
+      "original_canonical_candidate_id": "missing.e800fa4f698affae8100",
+      "original_query": "diagonal entries a_ii",
+      "original_context": "Linear algebra: main diagonal entries a_{ii} of an n by n square matrix, with coincident row and column index.",
+      "original_occurrence_ids": [
+        "occ.3cce14504979ae1b3076"
+      ],
+      "mathematical_definition_draft": "The main diagonal of A=(a_ij) is (a_11,…,a_nn), entries with i=j.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Diagonal.html",
+          "section": "Matrix diagonal",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Trace is sum of diagonal entries, not the diagonal itself.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 391,
+      "original_canonical_candidate_id": "missing.e834133a2cdc7390f1de",
+      "original_query": "bijections between the morphisms L(X) to Y in D and X to R(Y) in C",
+      "original_context": "Category theory: family of hom-set bijections Hom_D(LX,Y)≅Hom_C(X,RY), indexed by X∈C,Y∈D, with each hom class set-valued under needed local-smallness conventions.",
+      "original_occurrence_ids": [
+        "occ.cdce74c80bf00e7432d2"
+      ],
+      "mathematical_definition_draft": "An adjunction L⊣R is natural bijections Hom_D(LX,Y)≅Hom_C(X,RY) in X∈C,Y∈D.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0036",
+          "section": "Stacks Definition 4.24.1, adjoint functors",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly states the hom-set bijections natural in both objects, with left u:C→D and right v:D→C. Naturality is essential."
+        }
+      ],
+      "scope_and_edge_case": "Pointwise hom-bijections without naturality do not determine adjunction. Locally small conventions needed.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Tag 0036 verified exact source section and definition. Do not mistake pointwise nonnatural bijections for an adjunction."
+    },
+    {
+      "priority": 392,
+      "original_canonical_candidate_id": "missing.e86ff089d9c0949b7dbc",
+      "original_query": "sheaf ~M associated with some R-module M",
+      "original_context": "Quasi-coherent tilde construction M↦~M on Spec(R) whose principal-open sections identify with localizations M_f.",
+      "original_occurrence_ids": [
+        "occ.7edfbe05b7500a348592"
+      ],
+      "mathematical_definition_draft": "For R-module M, its associated sheaf ~M on Spec R satisfies Γ(D(f),~M)≅M_f and compatible restrictions.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01HR",
+          "section": "Stacks Definition 26.5.3(3), Lemma 26.5.4(4)-(5), associated sheaf to R-module",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Direct construction of associated tilde M and equality Γ(D(f),tilde M)=M_f with restriction maps to smaller standard opens."
+        }
+      ],
+      "scope_and_edge_case": "~M is not constant sheaf unless special conditions.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Source exactly supports associated sheaf of an R-module on affine Spec R; quasi-coherent structure is context, not the claim that tilde M is constant."
+    },
+    {
+      "priority": 393,
+      "original_canonical_candidate_id": "missing.e892b9d8b91c184b0801",
+      "original_query": "order isomorphism between well-ordered sets",
+      "original_context": "Order theory: order isomorphism f:(A,≤_A)→(B,≤_B), a bijection preserving and reflecting order; for well-ordered sets this identifies equal ordinal order types.",
+      "original_occurrence_ids": [
+        "occ.164ee9706bd055806d82"
+      ],
+      "mathematical_definition_draft": "An order isomorphism f:A→B between well-orders is a bijection preserving and reflecting their orders.",
+      "external_source_evidence": [
+        {
+          "url": "https://encyclopediaofmath.org/wiki/Order_isomorphism",
+          "section": "Order isomorphism",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Uniqueness of isomorphism between given well-orders; ordinals classify order types.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 394,
+      "original_canonical_candidate_id": "missing.e8c6173a1007856e7c96",
+      "original_query": "simple zero of reduced polynomial f-bar over κ",
+      "original_context": "Polynomial algebra over a field: a simple root α of f in a field extension means f(α)=0 and f'(α)≠0, equivalently (x−α)^2 does not divide f over that extension field. For reduction modulo a maximal ideal the root and derivative are taken in the residue field.",
+      "original_occurrence_ids": [
+        "occ.ec370ce31837273c2a0a"
+      ],
+      "mathematical_definition_draft": "A root α of f over field is simple iff f(α)=0 and f′(α)≠0; equivalently α occurs with multiplicity one.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/SimpleRoot.html",
+          "section": "Simple root",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Exclude zero polynomial and evaluate formal derivative in extension or residue field.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 395,
+      "original_canonical_candidate_id": "missing.e99038d8cfc4d6d977a8",
+      "original_query": "sequential convergence in product topology",
+      "original_context": "General topological sequence convergence: eventual containment in every neighborhood of limit, here in T^D with product topology.",
+      "original_occurrence_ids": [
+        "occ.f9157112eb726a2aec2b"
+      ],
+      "mathematical_definition_draft": "A sequence x_n in product ∏X_i converges to x in product topology iff each coordinate π_i(x_n) converges to π_i(x).",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Product_topology",
+          "section": "Coordinatewise convergence",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Convergence in product topology, not uniform convergence over indices; neighborhood definition suffices.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 396,
+      "original_canonical_candidate_id": "missing.ea82fcbc6bf970ca5459",
+      "original_query": "zero ordinal 0=∅",
+      "original_context": "Von Neumann ordinals: the zero ordinal is the empty set ∅, the least ordinal under membership/order, and is excluded from the present definition of a limit ordinal even though it is not a successor ordinal.",
+      "original_occurrence_ids": [
+        "occ.f8ee2a7b47067ae27d88"
+      ],
+      "mathematical_definition_draft": "In von Neumann ordinals the least ordinal is 0=∅.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Ordinal_number",
+          "section": "Von Neumann zero ordinal",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Conventionally limit ordinals are nonzero ordinals not successors; 0 is excluded explicitly.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 397,
+      "original_canonical_candidate_id": "missing.eb8e1a62d06acf7c487c",
+      "original_query": "fundamental system of connected neighborhoods",
+      "original_context": "General topology: at a fixed point x of X, a neighborhood basis consisting of connected neighborhoods, such that for every neighborhood U of x some connected neighborhood V of x satisfies V⊆U; V need not be declared open unless the chosen convention explicitly requires it.",
+      "original_occurrence_ids": [
+        "occ.466d90b0de4bc627c881"
+      ],
+      "mathematical_definition_draft": "A fundamental system of connected neighborhoods at x is a neighborhood basis B_x with each B∈B_x connected.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Locally_connected_space",
+          "section": "Locally connected spaces",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Connected neighborhoods need not be open, while locally connected equivalent open connected neighborhood bases under standard topology.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 398,
+      "original_canonical_candidate_id": "missing.ebf92c196007c438f394",
+      "original_query": "graded differential complex Ω^•",
+      "original_context": "Homological algebra: nonnegatively graded cochain complex (C^p,d^p) of modules with d^{p+1}∘d^p=0, together with its degree-indexed structure; this de Rham instance also carries wedge multiplication.",
+      "original_occurrence_ids": [
+        "occ.2a3dca729eb03dce129c"
+      ],
+      "mathematical_definition_draft": "A nonnegatively graded cochain complex (C^p,d^p) has d^{p+1}d^p=0; a de Rham complex adds differential graded wedge algebra on Ω^p.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0FKF",
+          "section": "Stacks Section 10.132, de Rham complex of B over A",
+          "review_status": "direct_primary_specialization_only",
+          "relevance": "Directly defines the de Rham Ω^p_{B/A}=∧^p Ω_{B/A} and differential d:Ω^p→Ω^{p+1} with d²=0. Not a general source for arbitrary differential graded complexes or all differential graded algebras."
+        }
+      ],
+      "scope_and_edge_case": "Not every graded differential complex is de Rham; exterior product may have graded commutativity.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Distinguish general chain/cochain complex, DGA, and the de Rham specialization; no implicit equivalence."
+    },
+    {
+      "priority": 399,
+      "original_canonical_candidate_id": "missing.ec01a600fafafc1a6bb1",
+      "original_query": "localization of the module homomorphism φ_p:M_p→N_p",
+      "original_context": "Module theory: for R-linear φ:M→N and multiplicative S=R∖p, induced localized map S^{-1}φ:S^{-1}M→S^{-1}N defined by m/s↦φ(m)/s; the p-localized map φ_p is R_p-linear.",
+      "original_occurrence_ids": [
+        "occ.35df095875e8190862c7"
+      ],
+      "mathematical_definition_draft": "For φ:M→N and prime p, localized map φ_p:M_p→N_p sends m/s↦φ(m)/s (s∉p).",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00CM",
+          "section": "Stacks Definition 10.9.6 and Lemma 10.9.7, localization of modules",
+          "review_status": "direct_primary_construction_checked_formula_by_functoriality",
+          "relevance": "Directly constructs S^{-1}M from fractions and localization universal property. Localizing φ yields a map m/s↦φ(m)/s; exact explicit map formula is standard functorial deduction rather than independently quoted statement."
+        }
+      ],
+      "scope_and_edge_case": "R_p-linear; exactness of localization is theorem separate from formula.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Choose S=R\\p for prime p. Preserve R_p-linearity and distinction from the theorem that localization is exact."
+    },
+    {
+      "priority": 400,
+      "original_canonical_candidate_id": "missing.ec996d8fdc01d4735ac3",
+      "original_query": "ideal (f,g) generated by polynomials",
+      "original_context": "Commutative algebra: the ideal (f,g) of k[X] generated by two polynomials f,g is the set of all polynomial combinations af+bg with a,b∈k[X], an ideal of their common polynomial ring.",
+      "original_occurrence_ids": [
+        "occ.7ee10cd55b885249ea73"
+      ],
+      "mathematical_definition_draft": "For f,g∈k[T], (f,g)={af+bg:a,b∈k[T]}.",
+      "external_source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Ideal generated by elements",
+          "review_status": "algebra_source_context",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Not the ordered pair (f,g) or common zero locus; zero generators give zero ideal.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 401,
+      "original_canonical_candidate_id": "missing.f06a37e42f1c6684842f",
+      "original_query": "transitive set alpha",
+      "original_context": "Set theory: a set α is transitive when each of its elements is a subset of α; equivalently whenever x∈y∈α then x∈α. This property is independent of the separate well-ordering requirement.",
+      "original_occurrence_ids": [
+        "occ.f0dc30c1cb66ac40f288"
+      ],
+      "mathematical_definition_draft": "A set A is transitive if every y∈A satisfies y⊆A, equivalently x∈y∈A implies x∈A.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Transitive_set",
+          "section": "Transitive set",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "This is membership transitivity of set, not transitive binary relation.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 402,
+      "original_canonical_candidate_id": "missing.f0d1b4178e1d836452b8",
+      "original_query": "homeomorphism onto closed subset",
+      "original_context": "Homeomorphism from Z to its image as closed subset of X equipped with subspace topology.",
+      "original_occurrence_ids": [
+        "occ.95a60ba287c1dd5ea316"
+      ],
+      "mathematical_definition_draft": "A closed embedding i:Z→X is a homeomorphism from Z onto a closed subset i(Z)⊆X (with subspace topology).",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Embedding_(topology)",
+          "section": "Topological embedding",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Not necessarily a closed immersion of schemes; structure sheaf condition is additional.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 403,
+      "original_canonical_candidate_id": "missing.f179e2d20985ef5e88d5",
+      "original_query": "localization at complement R\\p",
+      "original_context": "Commutative algebra: for a prime ideal p of a commutative ring R, the complement S=R∖p is a multiplicatively closed subset containing 1, and localization M_p means S^{-1}M for an R-module M.",
+      "original_occurrence_ids": [
+        "occ.0fa8a4b36ea641c54e56"
+      ],
+      "mathematical_definition_draft": "For prime p⊆R, R\\p is multiplicative; M_p=(R\\p)^{-1}M is localization.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00CM",
+          "section": "Stacks Definition 10.9.1 and 10.9.6, localization at multiplicative sets",
+          "review_status": "direct_general_localization_plus_prime_specialization",
+          "relevance": "Directly defines S^{-1}R and S^{-1}M for multiplicative S; specialize to S=R\\p for a proper prime ideal. Local ring property needs independent contextual verification if asserted as additional result."
+        }
+      ],
+      "scope_and_edge_case": "1∈R\\p since prime is proper; R_p local ring with maximal pR_p.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Original context only needs complement localization; prime-properness ensures 1∈R\\p and multiplicativity follows from primality."
+    },
+    {
+      "priority": 404,
+      "original_canonical_candidate_id": "missing.f1844a69e5874eb294fd",
+      "original_query": "field isomorphism Q or F_p",
+      "original_context": "Field theory: bijective unital field homomorphism, here from prime subfield to ℚ in characteristic zero or 𝔽_p in characteristic p; distinguished from mere bijection of sets.",
+      "original_occurrence_ids": [
+        "occ.f653ebde4bbf55a33a3c"
+      ],
+      "mathematical_definition_draft": "A field isomorphism φ:F→K is a bijective unital field homomorphism, preserving 1,+,· and hence inverses.",
+      "external_source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch06.html",
+          "section": "Field extensions and isomorphisms",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Prime subfields characteristic zero ∼Q, characteristic p ∼F_p; do not infer every field itself equals one of these.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 405,
+      "original_canonical_candidate_id": "missing.f1d01f6dba61d6416dea",
+      "original_query": "complements of quasi-compact open subsets",
+      "original_context": "Set theory/topology: relative complements X\\U of quasi-compact open U⊆X; these need not be open in the original spectral topology.",
+      "original_occurrence_ids": [
+        "occ.04be28175952b3827cc9"
+      ],
+      "mathematical_definition_draft": "For U⊆X, relative complement X\\U consists of points not in U; for quasi-compact open U this complement needn't be open in original topology.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0059",
+          "section": "Quasi-compact opens and constructible topology",
+          "review_status": "source_context_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Complement is closed in original topology; it is open in constructible/patch topology under spectral assumptions.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 406,
+      "original_canonical_candidate_id": "missing.f29bbfee938d2f69fc5e",
+      "original_query": "basic product of open coordinate sets",
+      "original_context": "General topology: restricted Cartesian product ∏_{i∈I}U_i where each U_i is open in X_i and U_i=X_i except for finitely many i.",
+      "original_occurrence_ids": [
+        "occ.65c7a90454aad58f2188"
+      ],
+      "mathematical_definition_draft": "Basic product open set is ∏_{i∈I}U_i with U_i open in X_i and U_i=X_i for all but finitely many i.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Product_topology",
+          "section": "Basis for product topology",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Box topology allows unrestricted open coordinates; product topology restricts to finite support.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 407,
+      "original_canonical_candidate_id": "missing.f709867827c73e690cfc",
+      "original_query": "finite categorical products including empty product",
+      "original_context": "Category theory: categorical product of a finite family of objects, with the empty product convention giving a terminal object; binary products alone are not the full finite-family construction.",
+      "original_occurrence_ids": [
+        "occ.ed4529d1135b68a1f97e"
+      ],
+      "mathematical_definition_draft": "A finite categorical product has projections and universal map from each common cone; the empty product is terminal object.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09SE",
+          "section": "Stacks Definition 12.3.8 and surrounding note on finite products",
+          "review_status": "direct_primary_additive_category_specialization_only",
+          "relevance": "Directly states empty product is a final object and finite-product condition in ADDITIVE category context. Does not by itself provide a fully general arbitrary-category universal-cone construction."
+        }
+      ],
+      "scope_and_edge_case": "Finite products means binary products and terminal object; empty index set requires terminal object.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "General finite-products definition requires terminal object for empty index and products of pairs, without assuming additive structure; older tag 0014 was category composition axioms, not precise source."
+    },
+    {
+      "priority": 408,
+      "original_canonical_candidate_id": "missing.f740ae2b3c895a6f85e3",
+      "original_query": "aleph_0",
+      "original_context": "Set theory: ℵ₀, the least infinite cardinal, cardinality of the natural numbers; appears as a lower bound in the Stacks size convention.",
+      "original_occurrence_ids": [
+        "occ.187e56a07c9a5844ecd5"
+      ],
+      "mathematical_definition_draft": "Aleph-zero ℵ_0 is the cardinality of natural numbers, the least infinite cardinal.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Aleph-0.html",
+          "section": "Aleph-zero cardinal",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Countably infinite sets equipotent N; finite cardinalities smaller.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 409,
+      "original_canonical_candidate_id": "missing.f845a5dd80a089d3e9c6",
+      "original_query": "identity matrix I_n",
+      "original_context": "Linear algebra: n×n identity matrix over a unital commutative ring, entries δ_ij equal 1_R on the diagonal and 0_R elsewhere.",
+      "original_occurrence_ids": [
+        "occ.eddf7bcf469b04380727"
+      ],
+      "mathematical_definition_draft": "I_n is n×n identity matrix with (I_n)_{ij}=1 for i=j, 0 otherwise.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/IdentityMatrix.html",
+          "section": "Identity matrix",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Entries taken from unital ring R; zero ring yields 1_R=0_R.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 410,
+      "original_canonical_candidate_id": "missing.f87a69d5eab6d8d6fcca",
+      "original_query": "isomorphic as an extension of k",
+      "original_context": "Field theory: isomorphism φ:K→L of field extensions of k with φ∘ι_K=ι_L for the chosen embeddings of k into K,L; under identified k-subfields φ fixes every element of k.",
+      "original_occurrence_ids": [
+        "occ.f28e81b13408f0a01d5d"
+      ],
+      "mathematical_definition_draft": "A k-extension isomorphism φ:K→L is a field isomorphism with φ∘ι_K=ι_L for specified embeddings k→K,L.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Field_extension",
+          "section": "Isomorphism of field extensions",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "It fixes k pointwise when embeddings identify k as subfield.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 411,
+      "original_canonical_candidate_id": "missing.f989234e85c37bdbd3e1",
+      "original_query": "bounded-above subset A",
+      "original_context": "Order theory: a subset A of a partially ordered set S is bounded above if some u∈S satisfies a≤u for all a∈A; not a numerical finite-bound assumption only.",
+      "original_occurrence_ids": [
+        "occ.274762749db2ec46d7f3"
+      ],
+      "mathematical_definition_draft": "A subset A of poset P is bounded above if there exists u∈P with a≤u for every a∈A.",
+      "external_source_evidence": [
+        {
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "section": "Upper bounds in posets",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "For empty A every u is an upper bound if poset nonempty; does not imply supremum.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 412,
+      "original_canonical_candidate_id": "missing.f9c04a67d59c20cf752e",
+      "original_query": "induced maps on all stalks",
+      "original_context": "Stalkwise homomorphisms f_x^#:O_{Y,f(x)}→O_{X,x} induced by morphism of sheaves of rings.",
+      "original_occurrence_ids": [
+        "occ.865e6a6f8e441d8a4a6c"
+      ],
+      "mathematical_definition_draft": "For f:(X,O_X)→(Y,O_Y), the sheaf morphism induces ring maps f_x^#:O_{Y,f(x)}→O_{X,x} on stalks.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0094",
+          "section": "Section 6.26 morphisms ringed spaces",
+          "review_status": "primary_direct_web_checked",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Locally ringed morphism adds that these maps are local; not inherent for ringed spaces.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 413,
+      "original_canonical_candidate_id": "missing.fa145963eff366b05a7d",
+      "original_query": "complex modulus for complex scalars",
+      "original_context": "Complex analysis/algebra: modulus |z| of z∈ℂ, the nonnegative real sqrt((Re z)^2+(Im z)^2), used for absolute homogeneity over complex scalars.",
+      "original_occurrence_ids": [
+        "occ.13d5612579d0c32b67fd"
+      ],
+      "mathematical_definition_draft": "For z=a+bi∈C, |z|=sqrt(a²+b²)≥0.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/ComplexModulus.html",
+          "section": "Modulus of complex number",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Multiplicative modulus, |zw|=|z||w|; unlike order on complex numbers.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 414,
+      "original_canonical_candidate_id": "missing.fb02756cbb930b3da17b",
+      "original_query": "ordered-field isomorphism",
+      "original_context": "Algebra/order theory: bijective field homomorphism F→K whose map and inverse preserve field operations and the total order, not merely an ordered-set bijection.",
+      "original_occurrence_ids": [
+        "occ.f5ec49101fe3715de1b1"
+      ],
+      "mathematical_definition_draft": "An ordered-field isomorphism is a bijective field homomorphism preserving and reflecting the total order.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Ordered_field",
+          "section": "Ordered field morphisms",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "A field isomorphism between real closed ordered fields preserves positive squares automatically under suitable conditions, but define order explicitly.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 415,
+      "original_canonical_candidate_id": "missing.fb81813e7d0c4b810c87",
+      "original_query": "punctured neighborhood of a",
+      "original_context": "Real topology: deleted δ-neighborhood {x∈ℝ:0<|x−a|<δ} of a, intersected with the function domain; the center a itself is excluded.",
+      "original_occurrence_ids": [
+        "occ.3f762f1779882b9e3749"
+      ],
+      "mathematical_definition_draft": "For δ>0, a deleted neighborhood of a in R is {x:0<|x−a|<δ}.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/DeletedNeighborhood.html",
+          "section": "Deleted neighborhood",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Intersect with function domain for limits; excludes center point a.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 416,
+      "original_canonical_candidate_id": "missing.fc9d2d39de952e727a69",
+      "original_query": "R-algebra generated by finitely many elements",
+      "original_context": "Commutative algebra: R-subalgebra of unital R-algebra S generated by a finite family s_1,…,s_n, the smallest unital R-subalgebra containing their elements, equal to the image of evaluation R[X_1,…,X_n]→S; its being all of S is the finite-type condition.",
+      "original_occurrence_ids": [
+        "occ.c8ebd30c8b1a3a672de7"
+      ],
+      "mathematical_definition_draft": "The R-subalgebra generated by s_1,…,s_n in R-algebra S is image of evaluation R[T_1,…,T_n]→S sending T_i↦s_i.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00F2",
+          "section": "Stacks Definition 10.6.1 (finite-type ring map)",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly states finite-type R-algebra iff finite polynomial-algebra surjection R[x_1,...,x_n]→S. The R-subalgebra generated by chosen s_i is image of its polynomial evaluation map and equals S iff the chosen elements generate S."
+        }
+      ],
+      "scope_and_edge_case": "The image is smallest unital R-subalgebra containing s_i; finite type iff equals S.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Previous 00F4 is Lemma 10.6.2 on permanence, not the definition itself; replacement 00F2 gives exact construction and finite-type criterion. Distinguish image of polynomial evaluation from an isomorphism with polynomial algebra."
+    },
+    {
+      "priority": 417,
+      "original_canonical_candidate_id": "missing.fe199606757d4b449fee",
+      "original_query": "multiplication map S⊗_R S→S is ring isomorphism",
+      "original_context": "Commutative algebra: for a unital homomorphism f:R→S of commutative rings, the induced canonical R-algebra multiplication map μ:S⊗_R S→S, μ(s⊗t)=st; its being an isomorphism is the ring-epimorphism criterion.",
+      "original_occurrence_ids": [
+        "occ.f0134a4982504bbae736"
+      ],
+      "mathematical_definition_draft": "For commutative R→S, multiplication μ:S⊗_RS→S sends s⊗t↦st; it is isomorphism iff R→S is categorical epimorphism of rings.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/04VN",
+          "section": "Lemma 10.107.1, equivalence (4)",
+          "review_status": "primary_direct_web_checked",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Epimorphism of rings is not necessarily surjective; e.g. Z→Q is epi.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    },
+    {
+      "priority": 418,
+      "original_canonical_candidate_id": "missing.ff581a4908e803e3f0e0",
+      "original_query": "η:1→X⊗Y and ε:Y⊗X→1",
+      "original_context": "Monoidal category theory: coevaluation η:1→X⊗Y and evaluation ε:Y⊗X→1 forming unit/counit data for a left dual pair Y of X.",
+      "original_occurrence_ids": [
+        "occ.c4217e7d2e71df10a10d"
+      ],
+      "mathematical_definition_draft": "For monoidal tensor unit 1, coevaluation η:1→X⊗Y and evaluation ε:Y⊗X→1 are data of a candidate dual pair; snake identities are required to be duality.",
+      "external_source_evidence": [
+        {
+          "url": "https://ncatlab.org/nlab/show/dual+object",
+          "section": "Dual objects, evaluation and coevaluation",
+          "review_status": "source_lead",
+          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+        }
+      ],
+      "scope_and_edge_case": "Arrow-order conventions left/right dual may reverse; unit/counit alone don't certify duality.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
+      "source_certified": false,
+      "staged": false,
+      "recursive_dependencies_deferred": true
+    }
+  ],
+  "source_verification_audit": {
+    "review_date": "2026-10-26",
+    "reviewed_priorities": [
+      381,
+      386,
+      391,
+      392,
+      398,
+      399,
+      403,
+      407,
+      416
+    ],
+    "method": "Directly inspect Stacks definitions and sections, correct inaccurate tags, and retain distinctions between exact wording and mathematical specializations or functorial deductions.",
+    "blocked_gap_291_320_untouched": true,
+    "graph_mutation": false,
+    "stage_admission": false
+  }
+}

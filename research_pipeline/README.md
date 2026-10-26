@@ -1,102 +1,15 @@
-# Reusable scholarly acquisition engine — pre-reconstruction implementation
+# Scholarly reconstruction research (retained data, simple workflow)
 
-**Status (October 20, 2026):** The initial pre-reconstruction implementation is complete and independent reconstruction work is underway: the recovery first wave is frozen, while a separate independent second-wave workspace contains source-attributed research and mathematical review records but **remains unsealed**. Earlier sections of this document describe the original setup and historical plan. For current next steps use the [short resume protocol](RESUME_PROTOCOL.md), its generated `RESUME_STATE.json`, and the human-maintained adapter plan. The scripts do not autonomously call ChatGPT, determine exhaustive coverage, or certify mathematical accuracy.
+The **active** independent Wave 2 workflow is [WAVE2_SIMPLE_WORKFLOW.md](WAVE2_SIMPLE_WORKFLOW.md), not the obsolete dependency-first multi-pass research pipeline. The prior elaborate graph/gating machinery has been retired.
 
-## Public previews of the independent reconstruction
+The already independently researched Wave 2 corpus is stored in `experiments/reconstruction-v2-independent/records/` (595 screened contextual meanings, 639 formulations, 887 existing-target screened relations), plus `population/records/` (16 additional provisional meanings, 20 formulations). The [recovered 418-candidate worklist](reviews/wave2-salvage-2026-10-26/CANDIDATE_WORKLIST_418.tsv) is a tentative queue for direct research; use the [salvage assessment](reviews/wave2-salvage-2026-10-26/SALVAGE_ASSESSMENT.md) to locate other reusable mathematics and source material.
 
-The [reconstruction preview landing page](https://zengez.github.io/mathDef/reconstruction/)
-shows two separate, browser-accessible views: **frozen independent Wave 1**
-and an **unsealed, evolving Wave 2 draft**. Both are served under a separate
-path of the same GitHub Pages host as production mathDef. This is not a second
-GitHub repository, and no content from the original definitions, variants,
-or citations is imported into either preview.
+Run the existing independent preview builder:
 
-The adapter-only command
-`python -m research_pipeline.adapters.mathdef.preview_site --site-root _site/reconstruction`
-validates the independent lineage, renders Wave 1 from its frozen published
-catalog, and renders Wave 2 directly from its own screened records. It does
-not call the stage publication API, seal research stages, or rewrite either
-experiment workspace. GitHub Pages updates these previews when changes are
-committed to the default branch, after automated tests and validation.
+```bash
+python -m research_pipeline.adapters.mathdef.preview_site --site-root /tmp/mathdef-reconstruction
+```
 
-## Two bulk waves and targeted work
+It renders the frozen independent Wave 1 and the current **screened** Wave 2 draft without using the original production mathematical data. Its current Wave 2 input is the screened records; the extra provisional meanings and researched candidate drafts must be incorporated through a simple independent preview-content path before they appear in the website. Build on the existing `preview.py` and shared `ui/`, not a new frontend.
 
-1. A deliberately linear **first wave**, performing Stages 0–6 to get a coherent, inspectable prototype.
-2. Freeze first-wave findings and a comparison-independent evaluation snapshot. The **second wave** produces source discovery, synonym/variant and relationship research queues, followed by new acquisition and review in a *new* workspace or version. It must not overwrite the sealed first-wave output.
-3. **Targeted acquisition** will invoke the same stage APIs with more detailed context/variant exploration, after the initial infrastructure and adapters are ready.
-
-The scripts execute **mechanical validation**, file operations and work-list generation. They do not independently call ChatGPT or certify mathematical accuracy. Human/assistant reasoning in chat supplies Stage 1 source assessments and Stage 4/5 semantic decisions. Stage-specific recommended effort uses the available **Instant, Medium, High** settings; scripts only REPORT it, not change model settings.
-
-## Initial CLI usage (Python 3.10+, standard library)
-
-From repository root:
-
-    python -m research_pipeline.engine.cli --workspace research_pipeline/experiments/reconstruction-v1 init --config research_pipeline/project_profiles/mathdef_reconstruction.json
-    python -m research_pipeline.engine.cli --workspace research_pipeline/experiments/reconstruction-v1 status
-
-Create independent JSONL candidate records for Stage 1, then:
-
-    python -m research_pipeline.engine.cli --workspace research_pipeline/experiments/reconstruction-v1 ingest sources --input /path/to/independent-sources.jsonl --batch-size 5
-    python -m research_pipeline.engine.cli --workspace research_pipeline/experiments/reconstruction-v1 seal sources
-
-Repeat with stage names: terms, observations, meanings, relations, **in that order**. Source discovery must NOT import production mathDef source files or browse its definitions. A future crawler will feed the intake contract; until then, ChatGPT research/batches produce the intake files.
-
-After all five stages are sealed:
-
-    python -m research_pipeline.engine.cli --workspace research_pipeline/experiments/reconstruction-v1 publish
-    python -m research_pipeline.adapters.mathdef.preview --workspace research_pipeline/experiments/reconstruction-v1
-    python -m research_pipeline.engine.cli --workspace research_pipeline/experiments/reconstruction-v1 wave2-plan
-
-The preview is independent, local and **does not deploy to GitHub Pages**. Publication creates an eligible-draft catalog in the experiment directory, not a public production site. Separate staging/approval is needed before making it public.
-
-To test without web access:
-
-    python -m unittest discover -s research_pipeline/tests -v
-
-## Stage intake records (one JSON object per line)
-
-All rows require unique, stable lower-case IDs (letters, digits, dots, hyphens, underscores), except field values such as labels and URLs. The importer refuses content changes under an existing ID: corrections must be represented by a deliberate, versioned editorial update method (not implemented yet).
-
-- **sources:** id, title, https URL, authority_reviewed (bool), rights (permitted/locator_only/unknown/disallowed), access (free/paid/unknown); optional quality and licence notes. Paid sources may be **catalogued**, never silently purchased or copied.
-- **terms:** id, label, source_id, locator. One observed title per source occurrence; synonyms may later consolidate.
-- **observations:** id, term_id, source_id, locator, record_kind (locator/paraphrase/licensed_excerpt), text for the latter two. Paid/restricted material cannot be acquired as text. When in doubt use locator-only and independent original prose later.
-- **meanings:** id, term_group_id, display_term, context, term_ids (array), formulations (array). A formulation requires id, text, evidence_ids (nonempty) and review_state (candidate/screened/blocked). Several meanings can use the same term_group_id; alternative formulations live within each meaning.
-- **relations:** id, from_formulation, target_meaning, relation_type, review_state. A relation with review_state candidate is excluded from the published graph until screened.
-- **publication:** the engine requires sealed input stages and stable content digests; only screened formulations with reputable, permissible evidence pass the gate. It marks resulting content **Not yet manually verified**. Held candidates remain in the catalog with reasons; none is treated as peer reviewed.
-
-Stage seals prevent accidentally changing first-wave inputs after research decisions are finalized. A second wave should start from a separately versioned workspace/snapshot; migration utilities and merge decisions are future work.
-
-## Durable restart and checkpoints
-
-Each ingest writes append-only JSONL records, flushes/fsyncs every configurable batch (default 10), writes atomic state summaries and a top-level state/checkpoint.json. Replaying an unchanged batch safely skips preexisting records; a changed ID fails rather than silently overwriting work. Stage seals record content digests checked before publication. GitHub commits are still required for durability **across hosted chat sessions**, because generated local filesystem state may be ephemeral. The pipeline scripts do not automatically write GitHub commits.
-
-Stage handoff should state a concrete next command and recommended effort, and link the active workspace and current git commit. Testing interruption/replay is part of the included tests.
-
-## Data isolation, evaluation and safety
-
-The engine and mathDef adapter only read their supplied experiment workspace. They do NOT import production definition files, source catalogs, citation ledgers or link overrides. **Do not give the new source-discovery phase the original mathDef URLs as seeds.** Once a first-wave and second-wave snapshot is frozen, a separate evaluation process may compare recovery with the production corpus using source, term, meaning, variant, link and efficiency metrics. The production corpus is not unquestionable ground truth.
-
-Use public authoritative sources only where permitted, respect website access policies and rate limits, and preserve source locators. A citation alone cannot establish mathematical correctness. The experimental preview supports KaTeX through an optional CDN and contextual, branch-limited nested/inline expansion, but is not identical to the production client's paragraph-offset inline linking and needs separate browser-level visual review.
-
-See [the overarching design](../RESEARCH_PIPELINE_ENGINE_DESIGN.md), the [full runbook](RECONSTRUCTION_RUNBOOK.md), and [implementation checkpoint](IMPLEMENTATION_CHECKPOINT.md). The next operation is independent source research for the reconstruction, not importing the existing mathDef source files.
-
-## Freezing the prototype and starting the second wave
-
-After `publish` and `wave2-plan`, the first wave is sealed. Use:
-
-    python -m research_pipeline.engine.cli --workspace research_pipeline/experiments/reconstruction-v1 fork-wave2 --destination research_pipeline/experiments/reconstruction-v2
-
-This copies only the **isolated** first-wave source, term, observation, meaning, and relationship records into a new unsealed workspace. The first-wave output remains untouched for evaluation. Existing IDs cannot be silently rewritten; second-wave new discoveries may be appended, and accepted revisions to old records must use `python -m research_pipeline.engine.revision_cli` with an auditable predecessor-hash proposal.
-
-
-## Additional implemented command-line tools
-
-- `python -m research_pipeline.engine.source_manifest`: prepare a bounded index-page manifest from reviewed source records and optionally a saved sitemap.
-- `python -m research_pipeline.engine.source_intake`: extract Stage 2 titles or Stage 3 precise locators from one reviewed HTML page (offline by default).
-- `python -m research_pipeline.engine.batch_intake`: extract many vetted pages in resumable batches with a separate checkpoint (offline by default, `--network` opt-in).
-- `python -m research_pipeline.engine.revision_cli`: update or retire a second-wave record through an auditable, recoverable predecessor-hash event.
-- `python -m research_pipeline.engine.effort`: record measured batch effort or summarize recorded work without estimating unknown costs.
-- `python -m research_pipeline.evaluation.compare`: post-freeze lexical/source/link benchmark. This is the **only module** authorized to read production mathDef content.
-- `python -m research_pipeline.adapters.mathdef.preview`: produce isolated HTML/CSS/JS viewer with separate searches, context distinctions, sources modal, three exploration modes and prefilled GitHub verification/correction drafts.
-
-**Important limitations:** Automatic index/title discovery is source-dependent, not an exhaustive crawl; mathematical classification and equivalence review require High-effort chat research. Unlicensed content is not copied into the candidate corpus. The preview's "In-Line" expansion is currently anchored after a formulation rather than at exact matched-word offsets. GitHub Issue submission requires an account and is editorially reviewed. CI tests do not substitute for real-source and browser-level QA. No source or definition comparison has been performed yet.
+**Active rule:** Research candidates and add content/links in the same pass, allowing an imperfect queue and future user corrections. Do not resurrect global graph consolidation, serial phase gates or mass source-free re-audits. Continue to preserve original mathematical assumptions, source provenance, independence from the production 1007-term collection and frozen independent Wave 1. Historical scripts remain recoverable from Git history, but they are no longer the current workflow.

@@ -1,0 +1,760 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-26",
+  "phase": "first_generation_bounded_source_research",
+  "status": "PRELIMINARY_RESEARCH_EVIDENCE_NOT_CERTIFIED_NOT_STAGED",
+  "original_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "original_unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "priority_range": [
+    351,
+    380
+  ],
+  "original_candidate_count": 30,
+  "original_incoming_occurrences": 30,
+  "source_policy": "Directly checked primary citations and unverified locators are differentiated per item.",
+  "issues": [
+    {
+      "priority": 362,
+      "note": "Point of increase definition has competing jump-versus-support conventions. Require source-specific resolution."
+    },
+    {
+      "priority": 376,
+      "note": "Finite integral of weight does not imply higher absolute moments on unbounded intervals."
+    },
+    {
+      "priority": 377,
+      "note": "Coimage-image comparison iso depends on abelian category hypothesis."
+    }
+  ],
+  "items": [
+    {
+      "priority": 351,
+      "original_canonical_candidate_id": "missing.c014e3a54ec42dcbe486",
+      "original_query": "unit interval t in [0,1]",
+      "original_context": "Real analysis: the closed unit interval [0,1]⊆ℝ, including both endpoints, containing permissible convex-combination parameters.",
+      "original_occurrence_ids": [
+        "occ.1452823435db370e0c2a"
+      ],
+      "mathematical_definition_draft": "The unit interval [0,1]={t∈R:0≤t≤1} includes both endpoints.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/UnitInterval.html",
+          "section": "Closed unit interval",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "The interval is nonempty and compact in standard real topology.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 352,
+      "original_canonical_candidate_id": "missing.c1c39d573d410c3ccdb6",
+      "original_query": "complex number field C",
+      "original_context": "Algebra: complex number field ℂ, with conjugation and complex scalar operations, distinguished from real field ℝ.",
+      "original_occurrence_ids": [
+        "occ.9aca4a7bae89d6a7640e"
+      ],
+      "mathematical_definition_draft": "The field C consists of complex numbers a+bi (a,b∈R), with i²=−1, usual addition/multiplication and conjugation a+bi↦a−bi.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/ComplexNumber.html",
+          "section": "Complex numbers",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "Unlike R, C is algebraically closed; positivity/order does not extend to compatible field order.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 353,
+      "original_canonical_candidate_id": "missing.c36ffffef12f06dc84c7",
+      "original_query": "measurable subset A∈Σ",
+      "original_context": "Measure theory: given a measurable space (X,Σ), a subset A⊆X is called measurable exactly when A∈Σ. This is not all subsets of X unless Σ is the full power set, and does not presuppose a measure or probability function.",
+      "original_occurrence_ids": [
+        "occ.27ec94e75cab127e6731"
+      ],
+      "mathematical_definition_draft": "For measurable space (X,Σ), a subset A is measurable iff A∈Σ.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Sigma-Algebra.html",
+          "section": "Measurable sets",
+          "review_status": "source_scope_context",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "No measure μ is required to identify a measurable set; Σ may be smaller than P(X).",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 354,
+      "original_canonical_candidate_id": "missing.c417b771ae34189771ee",
+      "original_query": "set G/N of all N-cosets",
+      "original_context": "Group theory: set of left cosets G/N={gN:g∈G} of a normal subgroup N≤G, serving as the quotient carrier.",
+      "original_occurrence_ids": [
+        "occ.71dcac506d6008518a91"
+      ],
+      "mathematical_definition_draft": "If N is a normal subgroup of G, quotient carrier G/N={gN:g∈G} is the set of left cosets, with (gN)(hN)=ghN.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/QuotientGroup.html",
+          "section": "Quotient group",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "As a set of cosets exists for any subgroup, but group product is well defined when N normal.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 355,
+      "original_canonical_candidate_id": "missing.c4602d674cca1ee0141b",
+      "original_query": "finite sum of n diagonal entries",
+      "original_context": "Algebra: finite sum of n specified elements of a field K, using its additive structure; trace is one particular application.",
+      "original_occurrence_ids": [
+        "occ.a8d4b13b33ff5ab22acd"
+      ],
+      "mathematical_definition_draft": "For a field K and a_1,…,a_n∈K, their finite sum is ∑_{i=1}^n a_i formed with associative commutative addition.",
+      "external_source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Field addition and sums",
+          "review_status": "algebra_axiom_reference",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "The trace of a matrix is one special finite sum. Empty sum n=0 is 0 if allowed.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 356,
+      "original_canonical_candidate_id": "missing.c5a7afab433a3e7d30ed",
+      "original_query": "graded associative R-algebra",
+      "original_context": "Commutative algebra: associative R-algebra graded by nonnegative integer degrees, with multiplication taking degree i and degree j into degree i+j.",
+      "original_occurrence_ids": [
+        "occ.9c4dc9f50f4a8f4893c7"
+      ],
+      "mathematical_definition_draft": "An N-graded associative R-algebra A is a direct sum ⊕_{n≥0}A_n of R-modules, with A_i A_j⊆A_{i+j} and compatible unit in A_0.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00JL",
+          "section": "Stacks Section 10.56, graded rings and homogeneous components",
+          "review_status": "direct_primary_commutative_nonnegative_specialization_only",
+          "relevance": "Directly checked nonnegatively graded commutative ring convention and graded multiplication. Does not alone certify the full possibly noncommutative associative R-algebra structure: base R action and the unital associative axioms must also be specified."
+        }
+      ],
+      "scope_and_edge_case": "Associativity and R-algebra structure must be stated, not implied by grading alone.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Correct Stacks section but narrower commutative N-graded convention than generic associative graded R-algebra. Retain separate scope certification."
+    },
+    {
+      "priority": 357,
+      "original_canonical_candidate_id": "missing.c7ae8735835f1c21e801",
+      "original_query": "compatibility of local lifting maps S→B′",
+      "original_context": "Category theory and commutative algebra: commutative diagram of unital R-algebra homomorphisms, where a candidate lift S→B′ makes its composition with the surjection B′→B equal the specified map S→B; subject to the source's local-ring and square-zero constraints.",
+      "original_occurrence_ids": [
+        "occ.f7d7da4f1c17ab2c77a2"
+      ],
+      "mathematical_definition_draft": "Given R-algebra surjection q:B′→B and f:S→B, a lift is an R-algebra map f′:S→B′ with q∘f′=f.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00TH",
+          "section": "Stacks Definition 10.138.1, formally smooth algebra",
+          "review_status": "direct_primary_special_case_checked",
+          "relevance": "Directly checks a commuting R-algebra lifting square where the surjective map has square-zero kernel; general compatible lifts exist as a definition without assuming square-zero kernel."
+        }
+      ],
+      "scope_and_edge_case": "Existence and uniqueness are different properties; square-zero ideal of q is a separate hypothesis for formal smooth/étale/unramified testing.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Do not infer existence of a lift merely from a compatible square. Square-zero is an added restriction for formal smoothness, not part of the generic notion of lift."
+    },
+    {
+      "priority": 358,
+      "original_canonical_candidate_id": "missing.c7af43259e1e3a875f6e",
+      "original_query": "extended ideal p^n R_p",
+      "original_context": "Commutative algebra: extension of an ideal I⊆R along a unital homomorphism φ:R→S of commutative rings, the ideal IS generated by φ(I) in S, consisting of all finite sums Σ_j s_jφ(i_j); includes extension to a localization R_p and is not the inverse-image/contraction of an ideal.",
+      "original_occurrence_ids": [
+        "occ.6532633e97d55001095b"
+      ],
+      "mathematical_definition_draft": "Given ring map φ:R→S and ideal I⊆R, its extension IS is ideal generated by φ(I): finite sums Σ_j s_jφ(i_j).",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00CM",
+          "section": "Stacks Proposition 10.9.14, localization of ideals",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checks extended ideal S^{-1}I in S^{-1}R and generation under localization. Apply to I=p^n and S=R\\p to obtain p^nR_p; distinguish extension from contraction."
+        }
+      ],
+      "scope_and_edge_case": "For φ:R→R_p, the extension p^nR_p is not inverse-image/contraction. Product powers commute with extension in this setting.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true,
+      "source_audit_note": "The indicated source section actually supports the specialization of ideal extension to the local ring R_p."
+    },
+    {
+      "priority": 359,
+      "original_canonical_candidate_id": "missing.c832a1797abe9e0db6b6",
+      "original_query": "finite product of event probabilities",
+      "original_context": "Algebra/probability: finite product ∏_{j∈J} P(A_j) of real probabilities indexed by a finite set J, with empty product 1.",
+      "original_occurrence_ids": [
+        "occ.19757eba0affc63e897b"
+      ],
+      "mathematical_definition_draft": "For finite index set J, ∏_{j∈J}p_j is repeated real multiplication with empty product 1.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Product.html",
+          "section": "Finite product",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "When p_j are probabilities 0≤p_j≤1, but independence cannot be inferred from defining the product.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 360,
+      "original_canonical_candidate_id": "missing.c965da3057632b140d9c",
+      "original_query": "mesh of tagged partition",
+      "original_context": "Real analysis: mesh or norm of a finite partition of [a,b], the maximum of the lengths of its constituent subintervals.",
+      "original_occurrence_ids": [
+        "occ.c4a4fe27bd61000a5abe"
+      ],
+      "mathematical_definition_draft": "For partition a=x_0<⋯<x_n=b, its mesh is max_{1≤j≤n}(x_j−x_{j−1}).",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Mesh.html",
+          "section": "Mesh of partition",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "n≥1, all lengths >0. Mesh tending 0 is used in integration limits but not defining individual mesh.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 361,
+      "original_canonical_candidate_id": "missing.c9b3ea00b8d62901ca85",
+      "original_query": "coefficient a_j belongs I^{d−j}",
+      "original_context": "Commutative algebra: ideal powers I^n formed by iterated ideal multiplication, used to constrain coefficient a_j to ideal power I^{d−j}.",
+      "original_occurrence_ids": [
+        "occ.4bed5146afbfc6c7b60f"
+      ],
+      "mathematical_definition_draft": "For ideal I of ring R and n≥0, I^n is product of n copies of I with I^0=R.",
+      "external_source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.8 products and powers of ideals",
+          "review_status": "algebra_source_context",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "Coefficient membership a_j∈I^{d−j} is separate predicate. For d<j exponents would be negative and undefined under this convention.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 362,
+      "original_canonical_candidate_id": "missing.ca3087282d7220fbe8f5",
+      "original_query": "infinitely many points of increase",
+      "original_context": "Real analysis: infinitely many points of increase of a nondecreasing generator function, ensuring nontrivial support for unbounded-degree orthogonal polynomial systems.",
+      "original_occurrence_ids": [
+        "occ.b8a1d1f5d00273fb043b"
+      ],
+      "mathematical_definition_draft": "A point x of increase of nondecreasing F can be defined by F(x−ε)<F(x+ε) for every ε>0 where arguments are in the domain.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Support_(measure_theory)",
+          "section": "Support of Lebesgue–Stieltjes measure",
+          "review_status": "exact_definition_convention_pending",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "Different sources mean jump point versus support/increase point; cannot infer infinite support from infinitely many discontinuities alone. Must resolve exact notion.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 363,
+      "original_canonical_candidate_id": "missing.cc0d04136d006dfd7fb9",
+      "original_query": "punctured set A\\{x}",
+      "original_context": "Set theory: deletion A\\{x} of singleton {x} from a set A, whether or not x belongs to A; a specialized relative set complement.",
+      "original_occurrence_ids": [
+        "occ.efbc79781a56aa80047f"
+      ],
+      "mathematical_definition_draft": "A\\{x} is the set {a∈A:a≠x}.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Complement_(set_theory)",
+          "section": "Relative complement",
+          "review_status": "elementary_source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "If x∉A, A\\{x}=A. If x∈A cardinality falls by one when finite.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 364,
+      "original_canonical_candidate_id": "missing.cd68c7ed432beaeabba9",
+      "original_query": "incident edge to vertex v",
+      "original_context": "Graph theory: an undirected edge e is incident with v when v is one of the edge's endpoints.",
+      "original_occurrence_ids": [
+        "occ.522cc8afd5ffe380b64e"
+      ],
+      "mathematical_definition_draft": "An undirected edge e with endpoints u,v is incident to vertex v if v is one of the edge's endpoints.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Incident.html",
+          "section": "Incidence in graph theory",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "In multigraph edge identity differs from its underlying endpoint pair.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 365,
+      "original_canonical_candidate_id": "missing.cf3c6fa5bf1f78b94d55",
+      "original_query": "transition isomorphisms over D(f_i f_j)",
+      "original_context": "Isomorphisms of localized modules over pairwise overlap ring R_{f_i f_j}, identifying local module data.",
+      "original_occurrence_ids": [
+        "occ.63ba77914274aca1baac"
+      ],
+      "mathematical_definition_draft": "For local modules over principal opens D(f_i), overlap isomorphisms φ_ij:(M_i)_{f_j}→(M_j)_{f_i} are isomorphisms over R_{f_if_j}.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00AK",
+          "section": "Stacks Section 6.33, Lemmas 6.33.1–6.33.3 on gluing sheaves and module sheaves",
+          "review_status": "direct_sheaf_level_context_only_localization_formula_pending",
+          "relevance": "Directly checked isomorphisms on overlaps and cocycle conditions, including module sheaves. Does not itself directly state the specific localized-module formula (M_i)_{f_j}≅(M_j)_{f_i} over R_{f_i f_j}."
+        }
+      ],
+      "scope_and_edge_case": "Pairwise isomorphisms alone do not guarantee gluing; cocycle on triple overlaps required.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Previous URL 01JA instead treats scheme gluing and was an imprecise match for local MODULE sections. Exact localized module coordinate implementation remains to verify; pairwise isomorphisms alone do not provide descent absent cocycle."
+    },
+    {
+      "priority": 366,
+      "original_canonical_candidate_id": "missing.d084962206b595450e8f",
+      "original_query": "union of pieces indexed i≤j",
+      "original_context": "Set theory: indexed union ⋃_{i≤j}X_i of a family of subsets over the lower set {i:i≤j} in a partially ordered index set, with an empty-index union interpreted as the empty set.",
+      "original_occurrence_ids": [
+        "occ.e499a1202091a6880e76"
+      ],
+      "mathematical_definition_draft": "Given poset I and subsets X_i, union up to j is ⋃_{i∈I,i≤j}X_i.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Union_(set_theory)",
+          "section": "Indexed unions",
+          "review_status": "elementary_source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "If lower index set empty, union empty; doesn't require chain or finiteness.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 367,
+      "original_canonical_candidate_id": "missing.d0ae7d6b124d230eb086",
+      "original_query": "separable closure κ^sep of residue field κ=R/m",
+      "original_context": "Field theory: chosen separable algebraic closure κ^sep of a field κ, a separable algebraic extension of κ that is separably closed, considered here for the residue field κ=R/m of a local ring.",
+      "original_occurrence_ids": [
+        "occ.fead6b4a7bf6c29a3465"
+      ],
+      "mathematical_definition_draft": "A separable closure κ^sep of κ is a separable algebraic extension that is separably closed, chosen within an algebraic closure.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09GZ",
+          "section": "Stacks Definition 9.12.2: separable algebraic field extensions",
+          "review_status": "direct_primary_component_only",
+          "relevance": "Directly checks definition of separable algebraic field extension, a component of a separable closure; it does not alone prove existence or separably closedness of the chosen extension."
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0BNE",
+          "section": "Stacks Lemma 58.6.3 usage of K^sep inside an algebraic closure",
+          "review_status": "direct_primary_context_only",
+          "relevance": "Uses a separable algebraic closure in fixed algebraic closure context but not full explicit definitional proof."
+        }
+      ],
+      "scope_and_edge_case": "Separable closure need not equal algebraic closure in characteristic p if κ imperfect.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Old tag 09H8 is Lemma 9.12.9 and not an exact separable-closure definition. Do not conflate separably closed and algebraically closed fields in imperfect positive characteristic; further exact primary definition needed."
+    },
+    {
+      "priority": 368,
+      "original_canonical_candidate_id": "missing.d204aa1050d39dce0011",
+      "original_query": "finite product from j=0 to n−1",
+      "original_context": "Elementary algebra: finite indexed product ∏_{j=0}^{n−1} a_j of n factors in a unital associative multiplicative structure, equal to the identity for n=0; here factors are real numbers x−j.",
+      "original_occurrence_ids": [
+        "occ.3b349bbce0732e23539e"
+      ],
+      "mathematical_definition_draft": "In a unital associative multiplicative structure, ∏_{j=0}^{n−1}a_j is n ordered factors; when n=0 it is identity.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Product.html",
+          "section": "Indexed products",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "If multiplication noncommutative ordering matters. Here factors x−j are real so commute.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 369,
+      "original_canonical_candidate_id": "missing.d253f2b37f0f2e8e5076",
+      "original_query": "canonical ring homomorphism R→lim R/m^n",
+      "original_context": "Commutative algebra: canonical unital comparison map R→lim_n R/m^n, r↦(r+m^n)_n into the m-adic completion of local ring (R,m).",
+      "original_occurrence_ids": [
+        "occ.66b84880a8116d95c189"
+      ],
+      "mathematical_definition_draft": "For local ring (R,m), canonical map R→lim_{n≥1}R/m^n takes r to coherent residues (r mod m^n)_n.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00M9",
+          "section": "Stacks Section 10.96, completion of rings",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checks I-adic completion as inverse limit of R/I^n and canonical homomorphism R→lim R/I^n. Isomorphism is not automatic and its injectivity/surjectivity are separate issues."
+        }
+      ],
+      "scope_and_edge_case": "Kernel is ∩_n m^n and may be nonzero; map may fail injectivity and surjectivity.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Use I=m for m-adic specialization. Map sends r to its compatible residue classes; its kernel equals the intersection of all m^n."
+    },
+    {
+      "priority": 370,
+      "original_canonical_candidate_id": "missing.d2ab1254675fefe96e64",
+      "original_query": "finitely many module defining relations",
+      "original_context": "Module theory: a finite family of relations generating the kernel of a surjection R^n→M; the image of R^m→R^n equals the kernel of presentation map.",
+      "original_occurrence_ids": [
+        "occ.6e295f4f0d0e56b2e0ea"
+      ],
+      "mathematical_definition_draft": "A module M has a finite presentation if an exact sequence R^m→R^n→M→0 exists with m,n finite; kernel of R^n→M generated by finitely many relations.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0G8M",
+          "section": "Stacks Section 10.11, Definition 10.11.2 and Lemmas 10.11.3–10.11.4",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked finite relations and finite presentation by finite free modules; finite generation alone does not guarantee finitely many relations."
+        }
+      ],
+      "scope_and_edge_case": "Finite generation alone does not ensure finite relations, and projectivity is not required.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Replaced invalid old tag 00CQ (a localization lemma, not the finite-presentation source)."
+    },
+    {
+      "priority": 371,
+      "original_canonical_candidate_id": "missing.d2c4123996357b11fa86",
+      "original_query": "topology generated by designated subsets",
+      "original_context": "General topology: smallest topology on X containing a designated subbasis 𝒮, generated by arbitrary unions of finite intersections of members of 𝒮.",
+      "original_occurrence_ids": [
+        "occ.8e9209e1d3cd7c2182d9"
+      ],
+      "mathematical_definition_draft": "For designated subbasis S⊆P(X), the topology it generates is all unions of finite intersections of S-members, including empty intersection X.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Subbase",
+          "section": "Topology generated from subbase",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "Empty union ∅; topology always contains X. Arbitrary S is permitted.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 372,
+      "original_canonical_candidate_id": "missing.d374cc27f565b52df3df",
+      "original_query": "integer addition +",
+      "original_context": "Integer arithmetic: binary addition on integers constructed from natural-number difference classes, inducing [(a,b)]+[(c,d)]=[(a+c,b+d)] and requiring independence from representatives; it gives an abelian group with zero and additive inverses.",
+      "original_occurrence_ids": [
+        "occ.708c03824cf33776e685"
+      ],
+      "mathematical_definition_draft": "On natural-pair integer construction, [(a,b)]+[(c,d)]=[(a+c,b+d)].",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Integer",
+          "section": "Construction of integers via equivalence classes",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "Representative-independence follows from pair equivalence a+d=b+c; operation yields abelian group with zero [(0,0)].",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 373,
+      "original_canonical_candidate_id": "missing.d391389d2c0d7583ea07",
+      "original_query": "isomorphisms φ_ij",
+      "original_context": "Algebraic geometry: scheme isomorphisms φ_ij:U_ij→U_ji between open overlap subschemes, compatible with local structure sheaves and invertible.",
+      "original_occurrence_ids": [
+        "occ.6bbb74d17ee2e7139dce"
+      ],
+      "mathematical_definition_draft": "Overlap isomorphism of schemes φ_ij:U_ij→U_ji is a scheme morphism with inverse, compatible with sheaves.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01JA",
+          "section": "Stacks Section 26.14, gluing schemes",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checks scheme open-subspace isomorphisms on pairwise overlaps with triple-overlap cocycle. Source is appropriate here, unlike for the module-localization record 365."
+        }
+      ],
+      "scope_and_edge_case": "Triple-overlap cocycle must also hold to glue globally.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Correct source for SCHEME gluing; retain distinction from gluing module sheaves and localized algebraic modules."
+    },
+    {
+      "priority": 374,
+      "original_canonical_candidate_id": "missing.d424e213c3d3796ff1fb",
+      "original_query": "satisfies polynomial equation",
+      "original_context": "Commutative algebra: polynomial evaluation at s∈S with f(s)=0_S, for a polynomial over the image of a ring map R→S; no division or field structure is required.",
+      "original_occurrence_ids": [
+        "occ.c77ebf6abaf2a935849e"
+      ],
+      "mathematical_definition_draft": "A polynomial f∈R[T] evaluated at s∈S under ring map φ:R→S gives Σ_iφ(a_i)s^i; s satisfies f if this is 0_S.",
+      "external_source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Polynomial evaluation",
+          "review_status": "algebra_context",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "No domain/field condition on S. A polynomial relation is not polynomial equality.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 375,
+      "original_canonical_candidate_id": "missing.d4465c439f68dccab222",
+      "original_query": "conjugation gng^{-1}",
+      "original_context": "Group theory: conjugation of group element n by g, the operation n↦gng^{-1} using the group inverse, distinct from conjugacy classes.",
+      "original_occurrence_ids": [
+        "occ.55069615cc14b534903c"
+      ],
+      "mathematical_definition_draft": "For group G and g,n∈G, conjugation of n by g is gng^{-1}.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Conjugation.html",
+          "section": "Group conjugation",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "Conjugation is automorphism of G for fixed g; element image is not its whole conjugacy class.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 376,
+      "original_canonical_candidate_id": "missing.d5318b3d0272f304dfb6",
+      "original_query": "nonnegative integrable weight w",
+      "original_context": "Orthogonal-polynomial analysis: nonnegative integrable weight function w on a real interval, of positive finite total integral and sufficient finite absolute moments.",
+      "original_occurrence_ids": [
+        "occ.4f19f95ac2ef256eaf1d"
+      ],
+      "mathematical_definition_draft": "A nonnegative integrable weight w on interval I is measurable with ∫_I w(x)dx finite and positive; finite moments additionally require ∫_I |x|^n w(x)dx<∞ for specified n.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/OrthogonalPolynomials.html",
+          "section": "Orthogonal polynomials and weight conditions",
+          "review_status": "source_scope_pending",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "Nonnegativity + finite total mass does not automatically ensure all higher moments on unbounded intervals.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 377,
+      "original_canonical_candidate_id": "missing.d617d5cccdce63cce9b6",
+      "original_query": "canonical comparison Coim(f) to Im(f)",
+      "original_context": "Abelian category theory: canonical morphism Coim(f)→Im(f) induced by factorization of f through its coimage and image, an isomorphism in an abelian category.",
+      "original_occurrence_ids": [
+        "occ.b2191a1851fe5cab4a0d"
+      ],
+      "mathematical_definition_draft": "For f:X→Y in abelian category, canonical map Coim(f)→Im(f) is an isomorphism.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0106",
+          "section": "Stacks Definition 12.3.9, image and coimage of a morphism",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly defines Coim(f) as cokernel of ker(f) and Im(f) as kernel of coker(f)."
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00ZX",
+          "section": "Stacks Definition 12.5.1, abelian category",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checks that the canonical comparison Coim(f)→Im(f) is an isomorphism in abelian categories; the objects are not literally identified by equality."
+        }
+      ],
+      "scope_and_edge_case": "In merely preadditive category comparison need not exist or be iso; abelian axioms required.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true,
+      "source_audit_note": "Keep distinctions between the two categorical constructions and their canonical isomorphism in an abelian category."
+    },
+    {
+      "priority": 378,
+      "original_canonical_candidate_id": "missing.d62283c65bcb9a2492c3",
+      "original_query": "finite subcover",
+      "original_context": "General topology: finite subfamily of a given open cover (U_i)_{i∈I} indexed by finite F⊆I such that ⋃_{i∈F}U_i=X; the existence of one for every cover defines compactness.",
+      "original_occurrence_ids": [
+        "occ.a1b2c4aeb1eab81e51fc"
+      ],
+      "mathematical_definition_draft": "A finite subcover of (U_i)_{i∈I} is a finite F⊆I with X=⋃_{i∈F}U_i.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/FiniteSubcover.html",
+          "section": "Finite subcover",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "Every open cover admitting a finite subcover is property of compact space, not of a single finite subfamily.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 379,
+      "original_canonical_candidate_id": "missing.d6c06597f8ca65e951f2",
+      "original_query": "adjacent vertices connected by edge {u,v}",
+      "original_context": "Graph theory: adjacency relation between distinct vertices u and v of a loopless undirected graph, holding exactly when {u,v}∈E.",
+      "original_occurrence_ids": [
+        "occ.eff64170716d641e8852"
+      ],
+      "mathematical_definition_draft": "In simple undirected graph G=(V,E), u,v distinct are adjacent iff {u,v}∈E.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/AdjacentVertices.html",
+          "section": "Adjacent vertices",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "Relation symmetric in undirected graph, irreflexive for loopless simple graph.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    },
+    {
+      "priority": 380,
+      "original_canonical_candidate_id": "missing.d745ad3ce1da1b107f4c",
+      "original_query": "least nonnegative remainder upon division by m",
+      "original_context": "Elementary number theory: Euclidean division remainder r of integer a by positive modulus m, uniquely satisfying a=qm+r and 0≤r<m.",
+      "original_occurrence_ids": [
+        "occ.dc044b01d8c20eac3dfc"
+      ],
+      "mathematical_definition_draft": "For integers a and m>0, Euclidean remainder is unique r with a=qm+r for q∈Z and 0≤r<m.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/DivisionAlgorithm.html",
+          "section": "Euclidean division algorithm",
+          "review_status": "source_lead",
+          "relevance": "Source locator or scoped reference; only primary_verified denotes checked primary meaning."
+        }
+      ],
+      "scope_and_edge_case": "Works also for negative a using floor-quotient convention; m=1 gives remainder 0.",
+      "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and previously staged comparisons required",
+      "source_certified": false,
+      "staged": false,
+      "new_dependencies_deferred": true
+    }
+  ],
+  "source_verification_audit": {
+    "review_date": "2026-10-26",
+    "reviewed_priorities": [
+      356,
+      357,
+      358,
+      365,
+      367,
+      369,
+      370,
+      373,
+      377
+    ],
+    "method": "Read matching Stacks passages and distinguish full matches from specialization/context-only citations and incorrect locators.",
+    "blocked_gap_291_320_untouched": true,
+    "graph_mutation": false,
+    "stage_admission": false
+  }
+}

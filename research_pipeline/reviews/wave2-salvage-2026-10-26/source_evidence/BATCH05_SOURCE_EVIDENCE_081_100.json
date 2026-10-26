@@ -1,0 +1,670 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "scope": "mathDef independent Wave2 exact first generation",
+  "status": "BOUNDED_SOURCE_RESEARCH_EVIDENCE_NOT_PROVISIONAL_ADMISSION",
+  "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "original_first_generation_size": 418,
+  "priority_range": [
+    81,
+    100
+  ],
+  "candidate_count": 20,
+  "original_incoming_occurrences": 40,
+  "source_quality_notes": "Primary Stacks Project references used for technical core. Other reputable math references used for elementary definitions. Source statuses explicitly mark missing exact scope or section verification; URLs are not mathematical certification.",
+  "edge_case_flags": [
+    {
+      "candidate_id": "missing.5896e9304ebced2e5ea7",
+      "issue": "Axiom of choice needed for product nonemptiness for arbitrary nonempty factors",
+      "status": "contextual_foundation_note_not_assumption_in_definition"
+    },
+    {
+      "candidate_id": "missing.6bb87052ec8a81464ddd",
+      "issue": "Unrestricted module isomorphism classes may be proper classes",
+      "status": "requires_size_scope_if_described_as_set"
+    },
+    {
+      "candidate_id": "missing.8d23b7ba80f9f5e74420",
+      "issue": "Being open alone does not make a subset of R an interval; order convexity needed",
+      "status": "correct_earlier_candidate_context_before_integration"
+    }
+  ],
+  "items": [
+    {
+      "priority": 81,
+      "original_canonical_candidate_id": "missing.5896e9304ebced2e5ea7",
+      "original_query": "indexed Cartesian product",
+      "original_mathematical_context": "Set theory: indexed Cartesian product ∏_{i∈I}X_i, the collection of functions/tuples selecting one x_i∈X_i for every index i.",
+      "original_alias_ids": [
+        "missing.80fe5c875ea2c62de22b"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.e8a8a73c2f73311e1000",
+        "occ.f0b2ea530c98256e1325"
+      ],
+      "source_backed_preliminary_definition": "Given a set I and sets X_i for i∈I, the indexed Cartesian product ∏_{i∈I}X_i is the set of all functions x with domain I such that x(i)∈X_i for every i∈I.",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Cartesian_product",
+          "section": "General indexed Cartesian product and choice function interpretation",
+          "role": "direct_definition"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Axiom_of_choice",
+          "section": "Nonemptiness of products and axiom of choice",
+          "role": "edge_case_confirmation"
+        }
+      ],
+      "source_scope_review_status": "source_supported_with_axiom_of_choice_scope",
+      "mathematical_edge_case_and_context_comparison": "For empty I the product is the singleton containing the empty function. If a factor is empty and I is nonempty the product is empty. Nonemptiness of an arbitrary product of nonempty sets is equivalent to the axiom of choice in ZF; do not silently assume it.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 82,
+      "original_canonical_candidate_id": "missing.5d07d9e2d8a2e83a53a1",
+      "original_query": "ith homology module",
+      "original_mathematical_context": "Homological algebra: ith homology H_i(C_•)=ker(d_i:C_i→C_{i−1})/im(d_{i+1}:C_{i+1}→C_i) of a chain complex of modules.",
+      "original_alias_ids": [
+        "missing.1f2f85812d16fbe90d37"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.68301a72d8e9918a453e",
+        "occ.84cdd713c57b93bbe5f5"
+      ],
+      "source_backed_preliminary_definition": "Let (C_i,d_i) be a chain complex of R-modules with d_i∘d_{i+1}=0. The ith homology is H_i(C)=ker(d_i)/im(d_{i+1}), an R-module because the image is contained in the kernel.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/010V",
+          "section": "Section 12.13, paragraph preceding Definition 12.13.4",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_verified_primary",
+      "mathematical_edge_case_and_context_comparison": "Differential index is homological, decreasing degrees. The quotient requires d_i d_{i+1}=0. For cochain complexes cohomology uses different indexing, not the same statement.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 83,
+      "original_canonical_candidate_id": "missing.60b81b3c7a42f7c2b9ee",
+      "original_query": "generated sigma-algebra from open family tau",
+      "original_mathematical_context": "Measure theory: σ-algebra σ(𝒜) generated by an arbitrary family 𝒜⊆P(X), the least σ-algebra on X containing 𝒜; Borel case specializes to 𝒜=τ.",
+      "original_alias_ids": [
+        "missing.9b13787cda328479954f"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.425f54d3ffb9797d79e8",
+        "occ.d16d7d59af7bce59605f"
+      ],
+      "source_backed_preliminary_definition": "For a set X and a family A⊆P(X), σ(A) is the intersection of all σ-algebras on X containing A. For the topology τ of X, the Borel σ-algebra is σ(τ).",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/Sigma-Algebra.html",
+          "section": "Sigma-algebra generated by a family",
+          "role": "direct_definition"
+        },
+        {
+          "url": "https://personalpages.manchester.ac.uk/staff/donald.robertson/teaching/24-25/41021/sigma_algebras.html",
+          "section": "Definition 3.2.4 generated σ-algebra",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_verified_multiple",
+      "mathematical_edge_case_and_context_comparison": "σ(∅)={∅,X} (identified as a one-element family if X=∅). Arbitrary generating family is allowed; not only open sets.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 84,
+      "original_canonical_candidate_id": "missing.62983821c35d185a119d",
+      "original_query": "open cover (V_i) of X",
+      "original_mathematical_context": "General topology: arbitrary indexed open cover (V_i) of X, with union X and no finite-subcover requirement.",
+      "original_alias_ids": [
+        "missing.9967e1f5f730979cd386"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.d7801ca8b64fd271149b",
+        "occ.f2705936ba1c85071da2"
+      ],
+      "source_backed_preliminary_definition": "A family (V_i)_{i∈I} of open subsets of a topological space X is an open cover of X when ⋃_{i∈I}V_i=X.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/OpenCover.html",
+          "section": "Definition of open cover",
+          "role": "direct_definition"
+        },
+        {
+          "url": "https://ncatlab.org/nlab/show/open%2Bcover",
+          "section": "Definition of open cover",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_verified_multiple",
+      "mathematical_edge_case_and_context_comparison": "No finite subcover is required for a cover. The empty family covers X exactly when X is empty. A cover of a subset A⊆X only needs A⊆⋃_i V_i.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 85,
+      "original_canonical_candidate_id": "missing.631a3a4cfb8cabd25148",
+      "original_query": "locally section-generated sheaf of ideals I⊆O_X",
+      "original_mathematical_context": "Algebraic geometry: subsheaf of ideals I of O_X locally generated by sections over neighborhoods of points.",
+      "original_alias_ids": [
+        "missing.9c003d75f21dbc1b5b32"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.2221a78d18342dfe327d",
+        "occ.873ed8fe5222bca0d876"
+      ],
+      "source_backed_preliminary_definition": "A locally section-generated ideal sheaf I⊆O_X on a scheme X is a subsheaf of ideals such that for every point x some open neighborhood U admits a family of sections s_j∈I(U) generating I|_U as an O_U-ideal sheaf.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01IN",
+          "section": "Lemma 26.10.1, paragraph on locally generated ideal sheaves",
+          "role": "direct_definition"
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01HJ",
+          "section": "Section 26.4 closed immersions and locally section-generated ideals",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_supported_local_generation_conditions",
+      "mathematical_edge_case_and_context_comparison": "Do not silently assume a *finite* local generating family. On schemes locally section-generated ideal sheaves are quasi-coherent, but quasi-coherence is a consequence/equivalence in this setting, not merely a synonym for local finite generation.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 86,
+      "original_canonical_candidate_id": "missing.63d9809ad2eb842deb92",
+      "original_query": "invertible 2-morphisms between 1-arrows",
+      "original_mathematical_context": "Strict 2-category theory: invertible 2-cell α:f⇒g in the hom-category C(X,Y), admitting a vertical inverse β:g⇒f satisfying vertical identity composites.",
+      "original_alias_ids": [
+        "missing.c63e2ce18cf8397bcdc0"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.0a02241809860c4e5e12",
+        "occ.75210a56ed510b56688e"
+      ],
+      "source_backed_preliminary_definition": "In a strict 2-category, a 2-morphism α:f⇒g between parallel 1-morphisms f,g:X→Y is vertically invertible if there exists β:g⇒f with β∘_vα=id_f and α∘_vβ=id_g in the hom-category C(X,Y).",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/003G",
+          "section": "Definition 4.29.1, 2-morphisms as arrows in a hom-category",
+          "role": "direct_definition"
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "section": "Definition 4.2.4, categorical isomorphism and inverse arrows",
+          "role": "criterion_in_hom_category"
+        }
+      ],
+      "source_scope_review_status": "definition_derived_from_verified_2_category_and_isomorphism_axioms",
+      "mathematical_edge_case_and_context_comparison": "Invertibility is VERTICAL in the Hom-category, distinct from horizontal composition and invertibility of a 1-morphism.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 87,
+      "original_canonical_candidate_id": "missing.65d334caa51c845ea335",
+      "original_query": "continuous-time filtration (F_t)",
+      "original_mathematical_context": "Stochastic process theory: increasing σ-algebra family (𝔽_t) indexed by all t∈[0,+∞) with 𝔽_s⊆𝔽_t whenever s≤t.",
+      "original_alias_ids": [
+        "missing.327c59bce72768b1faac"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.3cee100f060f105c219b",
+        "occ.d6b342a317ade34cba09"
+      ],
+      "source_backed_preliminary_definition": "On a probability space (Ω,F,P), a filtration (F_t)_{t≥0} is a family of sub-σ-algebras F_t⊆F such that F_s⊆F_t whenever 0≤s≤t.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/Filtration.html",
+          "section": "Probability-theory definition of filtration",
+          "role": "direct_definition"
+        },
+        {
+          "url": "https://www.randomservices.org/random/prob/Stop.html",
+          "section": "Filtrations: Basic Definitions",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_verified_multiple",
+      "mathematical_edge_case_and_context_comparison": "No right-continuity, completeness, or adaptation assumption follows merely from increasingness. Those 'usual conditions' are optional extras.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 88,
+      "original_canonical_candidate_id": "missing.6bb87052ec8a81464ddd",
+      "original_query": "isomorphism class",
+      "original_mathematical_context": "Module theory: isomorphism class of an R-module M under invertible R-linear homomorphisms, the equivalence class of all R-modules isomorphic to M; this source restricts representatives to finitely generated R-modules.",
+      "original_alias_ids": [
+        "missing.4400586c29389f069a68"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.0b974bf5829230f609b9",
+        "occ.426b8a97e4a96852679f"
+      ],
+      "source_backed_preliminary_definition": "Fix a ring R. Two R-modules M and N represent the same isomorphism class if there is a bijective R-linear map M→N; [M] denotes the corresponding equivalence class in a specified universe or collection of modules.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/1404.7264",
+          "section": "Abstract: isomorphism classes of modules in a small class and set of representatives",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "isomorphism_definition_supported_foundational_size_qualification",
+      "mathematical_edge_case_and_context_comparison": "Without a size/universe restriction the collection of all R-modules is generally a proper class, not a set. The source context concerns finitely generated R-modules; do not change that to all R-modules without a size framework. Isomorphism need not mean equality of underlying sets.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 89,
+      "original_canonical_candidate_id": "missing.6cf140295eca581eb7ae",
+      "original_query": "structure sheaf",
+      "original_mathematical_context": "Algebraic geometry: canonical structure sheaf O_Spec(R) of commutative rings on Spec(R), with O(D(f)) identified with R_f for distinguished opens and restrictions compatible with localization.",
+      "original_alias_ids": [
+        "missing.52e0a391575450b5ca2c"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.5cd21ae8928b61952b28",
+        "occ.98dc803f9e8de96e235c"
+      ],
+      "source_backed_preliminary_definition": "For a commutative ring R, the affine structure sheaf O_{Spec R} is the sheaf of rings whose sections over every principal open D(f) are naturally R_f, with the restriction maps induced by localization; its stalk at p is R_p.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01HR",
+          "section": "Section 26.5, Definition 26.5.3 structure sheaf and basis localizations",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_verified_primary",
+      "mathematical_edge_case_and_context_comparison": "Stalk R_p and sections R_f are different objects, even when at p∈D(f). The sheaf must glue consistently; it is not just the presheaf on all open sets defined by a naive assignment.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 90,
+      "original_canonical_candidate_id": "missing.6e8236437269027131a5",
+      "original_query": "minimal prime ideal",
+      "original_mathematical_context": "Commutative algebra: minimal prime of a commutative unital ring, a prime ideal minimal under set inclusion among all prime ideals, not simply a prime ideal of minimal positive height.",
+      "original_alias_ids": [
+        "missing.146795a2a9e89339c053"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.549d9eb3325551b8b003",
+        "occ.7d6d378ba79a8f21d8eb"
+      ],
+      "source_backed_preliminary_definition": "A prime ideal p of a commutative ring R is a minimal prime if there is no prime ideal q with q⊊p.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00DY",
+          "section": "Section 10.17, Lemma 10.17.2 on existence of minimal primes",
+          "role": "direct_definition"
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00ER",
+          "section": "Section 10.26 irreducible components and minimal primes",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_verified_primary",
+      "mathematical_edge_case_and_context_comparison": "A zero ring has no prime ideals, hence no minimal primes. Minimality is inclusion-theoretic; do not confuse with arbitrary smallest *positive* height.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 91,
+      "original_canonical_candidate_id": "missing.7176b5fd74d3e3e5dc95",
+      "original_query": "reflexivity x~x",
+      "original_mathematical_context": "Set theory: reflexivity property of a binary relation R⊆S×S, namely (x,x)∈R for every x∈S.",
+      "original_alias_ids": [
+        "missing.49460343f7d82627eabd"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.a2b96264d44fccccd72b",
+        "occ.da1198c707c2cd27b9d8"
+      ],
+      "source_backed_preliminary_definition": "A binary relation R⊆X×X is reflexive if (x,x)∈R for every x∈X.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/ReflexiveRelation.html",
+          "section": "Definition of reflexive binary relation",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_supported_url_further_check",
+      "mathematical_edge_case_and_context_comparison": "For X=∅ the empty relation is reflexive vacuously. Reflexivity does not imply transitivity or symmetry.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 92,
+      "original_canonical_candidate_id": "missing.718fa3e492d42c0ced8e",
+      "original_query": "natural isomorphism F(Y)≅Hom_C(X,Y)",
+      "original_mathematical_context": "Category theory: natural isomorphism between two covariant set-valued functors, a natural transformation with an inverse natural transformation; in particular its component bijections satisfy naturality in Y.",
+      "original_alias_ids": [
+        "missing.ce5fef2eb6870f406361"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.0dabd0caabb213138f8c",
+        "occ.e46dd5237c195719d0c9"
+      ],
+      "source_backed_preliminary_definition": "For covariant functors F,G:C→Set, a natural isomorphism η:F⇒G is a natural transformation for which each η_X:F(X)→G(X) is bijective, equivalently η has an inverse natural transformation. In particular η_Y:F(Y)≅Hom_C(A,Y) must satisfy naturality in Y.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "section": "Definitions 4.2.15 and 4.2.17, natural transformations and functor isomorphisms",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_verified_primary",
+      "mathematical_edge_case_and_context_comparison": "Only meaningful as Set-valued Hom when C is locally small or a specified universe is used. A pointwise set bijection chosen independently at each Y need not be natural.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 93,
+      "original_canonical_candidate_id": "missing.729d8675c7fcafa797ef",
+      "original_query": "indexed measurable-event family A_i",
+      "original_mathematical_context": "Probability theory: indexed family (A_i)_{i∈I} of measurable events A_i∈𝔽 in a common probability space.",
+      "original_alias_ids": [
+        "missing.60a357687f0e1c93d908"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.0fff21f1ea22c36efe11",
+        "occ.486ebf8b124129c29606"
+      ],
+      "source_backed_preliminary_definition": "An indexed family (A_i)_{i∈I} of measurable events in a probability space (Ω,F,P) is a function i↦A_i from I into F; no independence condition is implied.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/Filtration.html",
+          "section": "Probability families of events and sigma-algebras",
+          "role": "analogous_indexing"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Indexed_family",
+          "section": "Indexed family as function from index set",
+          "role": "set_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_supported_via_indexed_family_and_events_convention",
+      "mathematical_edge_case_and_context_comparison": "Individual measurability does not imply pairwise or mutual independence. The same event may appear at multiple indices; index distinctness is not event distinctness.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 94,
+      "original_canonical_candidate_id": "missing.72b9f9bc4ac0e952e202",
+      "original_query": "direct sum decomposition M=⊕_j M_j",
+      "original_mathematical_context": "Graded module theory: internal direct-sum decomposition M=⊕_{j∈ℤ}M_j into degree-indexed additive subgroups, so each element has finite homogeneous-component support.",
+      "original_alias_ids": [
+        "missing.2f8bed6dcf806b6f6fa4"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.3c4dbdc9d83b9ed70713",
+        "occ.9088747c6557b7874011"
+      ],
+      "source_backed_preliminary_definition": "An internal Z-graded additive-group decomposition M=⊕_{j∈Z}M_j means each m∈M has a unique expression m=Σ_{j∈F}m_j for some finite F⊆Z and elements m_j∈M_j. For an R-graded module the scalar multiplication must also respect degrees.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00JL",
+          "section": "Section 10.56 graded modules as direct sums of degree components",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_verified_primary",
+      "mathematical_edge_case_and_context_comparison": "Do not replace internal direct sum with unrestricted product. Degree-compatibility of an R-module is extra if R is graded.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 95,
+      "original_canonical_candidate_id": "missing.7413d0506040cdeb60af",
+      "original_query": "stalk O_{X,x}",
+      "original_mathematical_context": "Sheaf theory: stalk F_x of a sheaf F on a topological space X at x, the filtered colimit of sections F(U) over open neighborhoods U of x with restriction transition maps; for the structure sheaf O_X of a scheme the stalk is a local ring.",
+      "original_alias_ids": [
+        "missing.a7cbeca3e5f5d1ce1e33"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.989ce25fef7a89b205dd",
+        "occ.cb9e4889431acdd6de41"
+      ],
+      "source_backed_preliminary_definition": "For a sheaf F on X and x∈X, the stalk F_x is colim_{x∈U}F(U) over open neighborhoods U of x with restriction maps; a germ is an equivalence class of local sections. When F=O_X for a scheme X, this stalk is a local ring.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0078",
+          "section": "Section 6.11 Stalks, colimit formula",
+          "role": "direct_definition"
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01HR",
+          "section": "Section 26.5, affine structure sheaf stalk R_p",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_verified_primary",
+      "mathematical_edge_case_and_context_comparison": "A stalk is not the ring of sections on a chosen neighborhood. For general sheaves of sets the stalk need not be a ring; for O_X it is.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 96,
+      "original_canonical_candidate_id": "missing.77eacb7314c513d85c72",
+      "original_query": "isomorphism over base category C",
+      "original_mathematical_context": "Category theory: an isomorphism H:E→E' of categories equipped with projections p,p' to C, satisfying p'∘H=p and having an inverse over C.",
+      "original_alias_ids": [
+        "missing.e1eeea250fa81655407a"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.0ab161f89367f646d60b",
+        "occ.46041d961a4533041be0"
+      ],
+      "source_backed_preliminary_definition": "Let p:E→C and p′:E′→C be functors. An isomorphism of categories over C is a functor H:E→E′ with p′H=p and a strict inverse H^{−1}:E′→E also satisfying pH^{−1}=p′.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/02XJ",
+          "section": "Section 4.33 Categories over C and equivalence over C",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "strict_isomorphism_specialization_verified_equivalence_distinction",
+      "mathematical_edge_case_and_context_comparison": "A categorical equivalence over C has only quasi-inverse up to natural isomorphism and is weaker than strict isomorphism. Avoid promoting an equivalence theorem as an isomorphism definition.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 97,
+      "original_canonical_candidate_id": "missing.85c65a55076fda1a7e63",
+      "original_query": "multiplication x↦αx",
+      "original_mathematical_context": "Field extension algebra: K-linear multiplication map m_α:L→L given by x↦αx; same typed construction used for field norm.",
+      "original_alias_ids": [
+        "missing.9a1e93be2231be0d2bc4"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.933070f9749d6af1f9dc",
+        "occ.bd6d9a9250a038dd0ab8"
+      ],
+      "source_backed_preliminary_definition": "For a field extension L/K and α∈L, multiplication by α is the K-linear endomorphism m_α:L→L defined by m_α(x)=αx. For finite extensions its determinant is the norm N_{L/K}(α).",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0BIE",
+          "section": "Section 9.20, Definition 9.20.1 Trace and norm",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_verified_primary",
+      "mathematical_edge_case_and_context_comparison": "The K-linear map exists for any field extension, but norm as determinant needs finite-dimensionality unless another norm definition is specified. K-linearity uses commutativity of L.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 98,
+      "original_canonical_candidate_id": "missing.8d23b7ba80f9f5e74420",
+      "original_query": "open real interval I",
+      "original_mathematical_context": "Real analysis/topology: open interval I⊆ℝ, possibly unbounded, such that for each x∈I there exists δ>0 with (x−δ,x+δ)⊆I; each point is interior to the real domain.",
+      "original_alias_ids": [
+        "missing.ea6aabec6b469de08a9f"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.2b7382776748d805ca83",
+        "occ.713b53ea90f9b293cefb"
+      ],
+      "source_backed_preliminary_definition": "An open interval in the standard real line is a set (a,b)={x∈R:a<x<b} with endpoints a,b∈R∪{−∞,+∞} and a<b, where infinite endpoints are permitted, so (−∞,∞)=R.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/Interval.html",
+          "section": "Open intervals and infinite endpoints",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_supported_but_empty_interval_context_to_review",
+      "mathematical_edge_case_and_context_comparison": "The empty set is open and order-convex but some sources exclude it from the term 'open interval' unless degenerate intervals allowed; candidate context explicitly requires a<b, so empty interval not included. Their proposed 'each point has interior neighborhood' condition alone does NOT characterize intervals (disconnected open sets also satisfy it): order-convexity is essential.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 99,
+      "original_canonical_candidate_id": "missing.92c051047df5e5a34ba3",
+      "original_query": "field of rational functions in an arbitrary set of indeterminates over k",
+      "original_mathematical_context": "Field theory: rational function field k(X_i : i∈I), defined as the field of fractions of the polynomial algebra in an arbitrary set I of algebraically independent indeterminates over field k; polynomial elements have finite support.",
+      "original_alias_ids": [
+        "missing.a43d11982cf4eaf1dd00"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.8434f70aac19812bc4d6",
+        "occ.def60f0e47006875ccbd"
+      ],
+      "source_backed_preliminary_definition": "Let k be a field and I a set of formal indeterminates. The rational function field k(X_i:i∈I) is the field of fractions of the integral domain k[X_i:i∈I], whose elements are ratios f/g with f,g finite-support polynomials and g≠0.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09FF",
+          "section": "Example 9.3.5, one-variable rational function field",
+          "role": "direct_definition"
+        },
+        {
+          "url": "https://mathworld.wolfram.com/FieldofFractions.html",
+          "section": "Finite-variable rational functions as polynomial fraction field",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "finite_indeterminate_source_verified_arbitrary_set_scope_pending",
+      "mathematical_edge_case_and_context_comparison": "Arbitrary index set is mathematically well-defined as each polynomial uses finitely many variables, but indexed-variable source scope remains to be verified. If I=∅ this is k.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    },
+    {
+      "priority": 100,
+      "original_canonical_candidate_id": "missing.9583e5aa27671c66640e",
+      "original_query": "fibre category E_U of p",
+      "original_mathematical_context": "Category theory: fibre category E_U of a functor p:E→C over U∈C; objects are x∈E with p(x)=U and morphisms are arrows α:x→y in E whose image under p is id_U.",
+      "original_alias_ids": [
+        "missing.2736dd8ef54a06c79e42"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.5472de878a5e856b5d30",
+        "occ.a8976a8431b532fe0a0c"
+      ],
+      "source_backed_preliminary_definition": "For p:E→C and U∈Ob(C), the fibre category E_U has objects e∈E with p(e)=U and morphisms e→e′ in E mapping under p to id_U, with identities and composition inherited from E.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/02XJ",
+          "section": "Section 4.33 fibre categories and morphisms over identity",
+          "role": "direct_definition"
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/003S",
+          "section": "Section 4.35 fibre categories in groupoids",
+          "role": "direct_definition"
+        }
+      ],
+      "source_scope_review_status": "definition_verified_primary",
+      "mathematical_edge_case_and_context_comparison": "E_U exists for a functor over C without needing fibration/cartesian lift axioms. Those assumptions are required for related pullback functors, not for the fibre definition.",
+      "independent_source_corpus_comparison": "Typed existing-meaning comparison; complete accepted and evolving provisional corpus comparison required before staging. No lexical merge or automatic population admission.",
+      "future_new_missing_dependencies": "defer_to_next_generation",
+      "publication_verified": false,
+      "staging_applied": false,
+      "graph_mutated": false
+    }
+  ]
+}

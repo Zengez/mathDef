@@ -1,0 +1,750 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "kind": "FIRST_GENERATION_SOURCE_EVIDENCE_NOT_STAGED",
+  "scope": "independent Wave2",
+  "original_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "original_unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "priority_range": [
+    231,
+    260
+  ],
+  "candidate_count": 30,
+  "original_occurrence_count": 30,
+  "mathematical_holds": [
+    {
+      "original_candidate_id": "missing.602b9e26912423f849ca",
+      "issue": "Cyclicity alone does not bound extension degree by n; invoke Kummer hypotheses and a correct source."
+    },
+    {
+      "original_candidate_id": "missing.65047bc1cb43a4da3792",
+      "issue": "Dedekind cut multiplication needs case distinction for negative inputs."
+    },
+    {
+      "original_candidate_id": "missing.6e286e5d25f8e80fa9f6",
+      "issue": "No greatest is not equivalent to each element having a larger one in partial orders; linearly ordered scope or 'no maximal element' required."
+    }
+  ],
+  "items": [
+    {
+      "priority": 231,
+      "original_canonical_candidate_id": "missing.5582bdce2a3ccc90c0f5",
+      "original_query": "right translation by g",
+      "original_mathematical_context": "Group theory: right translation R_g:G→G sending h↦hg for fixed g∈G, using multiplication on the right.",
+      "original_occurrence_ids": [
+        "occ.f79ad4a762a353310d16"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For fixed g in group G, right translation R_g:G→G sends h↦hg, with inverse R_{g^{-1}}.",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Translation_(group_theory)",
+          "section": "Left and right translation maps",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "As a permutation of G, R_g is bijective; it is not generally a group homomorphism.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 232,
+      "original_canonical_candidate_id": "missing.55a8438fccd6541b9c58",
+      "original_query": "countable additivity for disjoint sequence",
+      "original_mathematical_context": "Measure theory: countable additivity of a set function on a sigma-algebra, μ(⋃ E_n)=Σ μ(E_n) for every pairwise disjoint sequence (E_n) of measurable sets.",
+      "original_occurrence_ids": [
+        "occ.acc50d1c4249748865f1"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "Countable additivity of μ on sigma-algebra Σ means μ(⋃_{n≥1}E_n)=Σ_{n≥1}μ(E_n) for every pairwise disjoint sequence E_n∈Σ.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/CountableAdditivity.html",
+          "section": "Countable additivity definition",
+          "verification_status": "source_locator_verify",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "The sum is in extended nonnegative reals for a measure; non-disjoint families require inclusion/exclusion or inequality, not this equality.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 233,
+      "original_canonical_candidate_id": "missing.56eda10bbf573c3100d4",
+      "original_query": "Frobenius map x↦x^p",
+      "original_mathematical_context": "Field theory in characteristic p>0: Frobenius endomorphism F:k→k, x↦x^p, preserving addition and multiplication; p must be a positive prime, not 0.",
+      "original_occurrence_ids": [
+        "occ.8eb418b1f553d1cf61ed"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For prime p=char(k)>0, Frobenius F:k→k is F(x)=x^p, a unital ring endomorphism.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0CC6",
+          "section": "Section 33.36 Frobenii",
+          "verification_status": "primary_direct_web_checked",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "In any characteristic-p field it is injective; surjective exactly when k is perfect. It does not automatically fix arbitrary subfields elementwise.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 234,
+      "original_canonical_candidate_id": "missing.580d76c9d98b74d1be9b",
+      "original_query": "coordinate projection pi_i",
+      "original_mathematical_context": "Set theory/topology: coordinate projection π_i:∏_{j∈I}X_j→X_i assigning a tuple its component with index i.",
+      "original_occurrence_ids": [
+        "occ.35e72f83a84d51917d99"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For indexed product X=∏_{j∈I}X_j and fixed i∈I, the coordinate projection π_i:X→X_i sends a tuple x to x(i).",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Cartesian_product",
+          "section": "Indexed products and projections",
+          "verification_status": "elementary_construction_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "This is well-defined even if X=∅; surjectivity needs nonemptiness of a compatible tuple for each desired coordinate and may use Choice.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 235,
+      "original_canonical_candidate_id": "missing.582417b404fba5a4dfa2",
+      "original_query": "symmetric bilinear form",
+      "original_mathematical_context": "Real linear algebra: bilinear map B:V×V→ℝ linear separately in each vector argument and symmetric B(u,v)=B(v,u); distinct from a complex Hermitian sesquilinear form.",
+      "original_occurrence_ids": [
+        "occ.5bfdbd277efe6822f61b"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "A symmetric bilinear form B:V×V→R is linear separately in each real-vector argument and satisfies B(u,v)=B(v,u).",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/SymmetricBilinearForm.html",
+          "section": "Symmetric bilinear form",
+          "verification_status": "reference_exact_url_check",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "No positivity or nondegeneracy implied. Complex Hermitian forms are sesquilinear and require conjugation, not ordinary bilinear symmetry.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 236,
+      "original_canonical_candidate_id": "missing.586a47e017a7e19932fb",
+      "original_query": "2-commutative solid square",
+      "original_mathematical_context": "(2,1)-category theory: square of 1-morphisms equipped with a specified invertible 2-cell identifying its two composites; not a strict equality of composites.",
+      "original_occurrence_ids": [
+        "occ.43835bdaeb683a9429a0"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "A 2-commutative square in a 2-category consists of four 1-cells in a square and a specified invertible 2-cell relating the two composites.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/003O",
+          "section": "Section 4.31 2-fibre products",
+          "verification_status": "primary_direct_web_checked",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "A 2-commuting diagram is different from strict equality of composites. The 2-cell orientation can be chosen consistently.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 237,
+      "original_canonical_candidate_id": "missing.591b9f9ee5edc9ff8963",
+      "original_query": "automorphism group of an object",
+      "original_mathematical_context": "Category theory: automorphism group Aut_C(x) of an object x, consisting of all invertible endomorphisms x→x with composition and identity; in a groupoid all arrows are invertible. This is distinct from a field-automorphism group or a subgroup of vertical automorphisms unless context requires it.",
+      "original_occurrence_ids": [
+        "occ.50529770686dc9c5f8d8"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "Aut_C(x) comprises invertible endomorphisms x→x with composition, identity id_x and inverses, forming a group.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0017",
+          "section": "Definition 4.2.4 isomorphisms of a category",
+          "verification_status": "categorical_axiom_source_supported",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "Vertical automorphism in a fibred category additionally projects to base identity; field automorphisms are a special separate context.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 238,
+      "original_canonical_candidate_id": "missing.598915c4e9e889d2218b",
+      "original_query": "zero ideal",
+      "original_mathematical_context": "Ring theory: zero ideal of a ring",
+      "original_occurrence_ids": [
+        "occ.de32b376c5e1804a1997"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "The zero ideal of a ring R is the set {0_R}, an additive subgroup stable under multiplication on both sides by elements of R.",
+      "source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.8 ideals and zero ideal",
+          "verification_status": "algebra_source_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "If R is the zero ring, the zero ideal equals the unit ideal; do not assume properness.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 239,
+      "original_canonical_candidate_id": "missing.5bc4d59c4af87cb4310c",
+      "original_query": "finite index subset J",
+      "original_mathematical_context": "Set theory: finite subset J of a given index set I, the indexing object in finite products and intersections including the empty finite subset.",
+      "original_occurrence_ids": [
+        "occ.66a2f450200fc92f6840"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "A finite subset J⊆I is a subset with |J| a nonnegative integer; J=∅ is permitted.",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Finite_set",
+          "section": "Definition of finite set",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "It does not imply the ambient I is finite.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 240,
+      "original_canonical_candidate_id": "missing.5df90bcf9334337a3fc6",
+      "original_query": "family of all two-element vertex subsets",
+      "original_mathematical_context": "Graph/set theory: collection [V]^2 of all subsets e⊆V having cardinality exactly 2, independently of any selected edge set E.",
+      "original_occurrence_ids": [
+        "occ.9c0109c0303babb4918d"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For a set V, [V]^2={e⊆V:|e|=2}, the collection of all two-element subsets of V.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/SimpleGraph.html",
+          "section": "Simple graph unordered edges as two-element subsets",
+          "verification_status": "typed_construction_source_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "This family exists irrespective of which edges E⊆[V]^2 are selected. For |V|<2 it is empty.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 241,
+      "original_canonical_candidate_id": "missing.5e454359f09ae02c3724",
+      "original_query": "polynomial f or g over k",
+      "original_mathematical_context": "Polynomial algebra: arbitrary elements f,g∈k[X] of the univariate polynomial ring over a field k, including zero and constant polynomials; each polynomial may be evaluated in an extension field of k.",
+      "original_occurrence_ids": [
+        "occ.0b7e61f757ce19d38b94"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "Each f∈k[T] is a finite coefficient expression f(T)=Σ_{i=0}^n a_iT^i, with a_i∈k; the zero and constant polynomials are allowed.",
+      "source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.2 polynomial rings",
+          "verification_status": "source_context_supported",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "Evaluation in any k-algebra is defined; a polynomial function and its formal polynomial are different in finite fields.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 242,
+      "original_canonical_candidate_id": "missing.5ffbe645365000af7490",
+      "original_query": "real variable x and shifted powers",
+      "original_mathematical_context": "Algebra: centered monomials (x−ξ)^n formed from real variable x, real center ξ, and nonnegative integer exponent n, constituting power-series terms.",
+      "original_occurrence_ids": [
+        "occ.d7a7f7084a590c79547c"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For x,ξ∈R and n∈N_0, the centered monomial is (x−ξ)^n, with n=0 interpreted as 1.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/TaylorSeries.html",
+          "section": "Centered power series and monomials",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "At x=ξ and n=0 use algebraic exponent-zero convention; power series convergence is additional.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 243,
+      "original_canonical_candidate_id": "missing.5ffef993c8c63d01835c",
+      "original_query": "K-span of R-submodule M equals V",
+      "original_mathematical_context": "Linear algebra: K-linear span span_K(M) of a subset M of a K-vector space V, the subspace of finite K-linear combinations of members of M; the lattice condition requires span_K(M)=V.",
+      "original_occurrence_ids": [
+        "occ.154baee9839df0e4a626"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For subset M of a K-vector space V, span_K(M) is the subspace of finite K-linear combinations of elements of M, and span_K(M)=V means M spans V.",
+      "source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html",
+          "section": "Span and generators",
+          "verification_status": "source_context_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "A spanning subset need not be K-linearly independent; empty M spans precisely zero subspace.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 244,
+      "original_canonical_candidate_id": "missing.602b9e26912423f849ca",
+      "original_query": "cyclic group of degree dividing n",
+      "original_mathematical_context": "Galois theory: cyclic Galois group Gal(L/K) of order [L:K] dividing n for finite Kummer extension under stipulated root-of-unity hypotheses.",
+      "original_occurrence_ids": [
+        "occ.a739e25b6910e471b4f5"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "A cyclic Galois extension L/K has Galois group generated by one automorphism. Under Kummer hypotheses with exponent n and requisite roots of unity, [L:K] is a divisor of n.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09I7",
+          "section": "Artin–Schreier and related field extension context",
+          "verification_status": "source_scope_requires_Kummer_primary",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "Do not infer degree divides n from cyclicity alone. A cyclic group can have order arbitrary relative to n unless a Kummer construction imposes the bound.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 245,
+      "original_canonical_candidate_id": "missing.6149b958a6aa818d4806",
+      "original_query": "inverse limit of the quotient rings",
+      "original_mathematical_context": "Commutative algebra: inverse limit of the projective system of commutative quotient rings R/I^n with compatible quotient maps, consisting of tuples (r_n) satisfying r_{n+1} mod I^n=r_n and componentwise ring operations.",
+      "original_occurrence_ids": [
+        "occ.7c2b770ad48fcc42b04d"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For ring R and ideal I, the inverse limit lim_n R/I^n consists of compatible tuples (r_n) with r_{n+1}↦r_n under quotient maps, with componentwise ring operations.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00M9",
+          "section": "Section 10.96 Completion",
+          "verification_status": "primary_direct_web_checked",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "This is the I-adic completion (when interpreted as ring). The canonical map R→completion need not be injective or surjective.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 246,
+      "original_canonical_candidate_id": "missing.620ec26c7c3c9ef14865",
+      "original_query": "associativity (a*b)*c=a*(b*c)",
+      "original_mathematical_context": "Algebra: associative binary operation on a set G, satisfying (a*b)*c=a*(b*c) for all triples a,b,c of G; distinguish from associativity of category composition.",
+      "original_occurrence_ids": [
+        "occ.a1985817eb0ec7bd07b8"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "A binary operation ⋆:G×G→G is associative if (a⋆b)⋆c=a⋆(b⋆c) for all a,b,c∈G.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Associative.html",
+          "section": "Associative law",
+          "verification_status": "source_locator_verify",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "Associativity alone does not give an identity, inverses, or commutativity. Empty carrier convention can be considered independently.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 247,
+      "original_canonical_candidate_id": "missing.64b19cbc53e9c33849a4",
+      "original_query": "transition maps factor through X",
+      "original_mathematical_context": "Category theory: eventual factorization in a cofiltered inverse system, where transition morphisms from a common earlier stage factor via selected object X.",
+      "original_occurrence_ids": [
+        "occ.dcae7b77b70893dad950"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For cofiltered diagram F:I→C, a transition morphism from another stage may factor through a specified object X of C or selected stage F(i), after passing to a common refinement in I.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/05PT",
+          "section": "Section 4.22 pro-objects, transition maps",
+          "verification_status": "contextual_pro_diagram_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "Candidate phrase is underdetermined without arrows/diagram indexing. Do not assert an unqualified universal factorization for every inverse system; defer typed exact comparison.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 248,
+      "original_canonical_candidate_id": "missing.65047bc1cb43a4da3792",
+      "original_query": "arithmetic on Dedekind cuts",
+      "original_mathematical_context": "Real analysis/field construction: addition and multiplication on rational Dedekind lower cuts, defined by operations on rational representatives and followed by well-definedness proofs.",
+      "original_occurrence_ids": [
+        "occ.2aa35271a7f92ffb22f4"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For rational Dedekind lower cuts A,B, addition A+B is the lower closure of {a+b:a∈A,b∈B}; multiplication for nonnegative cuts uses lower closure of suitable products of nonnegative rationals, with sign cases handled separately.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/DedekindCut.html",
+          "section": "Arithmetic of Dedekind cuts",
+          "verification_status": "partial_source_requires_sign_conventions",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "Products of arbitrary lower cuts cannot naively be defined by all pairwise products, especially negatives. Must verify positivity/sign cases and well-definedness before admission.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 249,
+      "original_canonical_candidate_id": "missing.6558ed2ce51a90e6ea76",
+      "original_query": "homogeneous components M_j",
+      "original_mathematical_context": "Graded module theory: additive subgroup M_j of degree-j homogeneous module elements, a direct summand in integer-indexed decomposition.",
+      "original_occurrence_ids": [
+        "occ.c4ae9385f11069955b1d"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For a graded module M=⊕_j M_j, the homogeneous degree-j component M_j is its specified additive subgroup (and direct summand) consisting of elements of degree j.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00JL",
+          "section": "Section 10.56 graded modules",
+          "verification_status": "primary_source_context_supported",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "Elements are finite sums of homogeneous components; 'homogeneous' excludes mixtures except the zero element, which belongs to each component.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 250,
+      "original_canonical_candidate_id": "missing.659b5d5ed37a38428987",
+      "original_query": "n prime to characteristic",
+      "original_mathematical_context": "Field theory: positive integer exponent n coprime to field characteristic p; when characteristic zero the coprimality condition is automatic under the source convention.",
+      "original_occurrence_ids": [
+        "occ.9dba5fb8c426cc4e73a3"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For field F of characteristic p>0 and n∈Z_{>0}, n is prime to the characteristic if gcd(n,p)=1; in characteristic zero this condition is automatic by convention.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09I7",
+          "section": "Characteristic p field conditions",
+          "verification_status": "number_theoretic_source_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "Here p is prime because it is the field characteristic. A zero characteristic is not an integer with usual gcd-convention for the phrase.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 251,
+      "original_canonical_candidate_id": "missing.65a140522402d26766df",
+      "original_query": "n×n matrix A over a commutative ring R",
+      "original_mathematical_context": "Linear algebra: n×n square matrix A=(a_ij) whose entries lie in a commutative unital coefficient ring R; unlike a graph-adjacency matrix and not restricted to fields.",
+      "original_occurrence_ids": [
+        "occ.d43e5b5a253fd6aec54e"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "An n×n matrix over commutative unital ring R is an array A=(a_{ij}) indexed by 1≤i,j≤n with every a_{ij}∈R.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/SquareMatrix.html",
+          "section": "Square matrix",
+          "verification_status": "elementary_definition_supported",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "The ring need not be a field; determinant polynomial is defined over any commutative unital ring. n=0 needs separate convention.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 252,
+      "original_canonical_candidate_id": "missing.6761326c179c108a8d73",
+      "original_query": "subring of S",
+      "original_mathematical_context": "Ring theory: subring T of a commutative unital ring S that contains the image of a specified ring homomorphism R→S and inherits addition, multiplication and 1 from S; the subring is not assumed integrally closed.",
+      "original_occurrence_ids": [
+        "occ.104c85e61c6f21eef305"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "Given φ:R→S, a unital R-subalgebra T⊆S contains φ(R), is closed under +, additive inverses and multiplication, and contains 1_S.",
+      "source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Subrings and ring maps",
+          "verification_status": "algebra_source_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "This is stronger than a nonunital subring. No integral-closure condition implied.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 253,
+      "original_canonical_candidate_id": "missing.6779016ceb757c93ca4c",
+      "original_query": "descending chain condition on ideals",
+      "original_mathematical_context": "Order theory: descending chain condition (DCC) on a partially ordered collection, applied here to the poset of ideals of a commutative ring ordered by inclusion; every sequence I_1⊇I_2⊇⋯ stabilizes.",
+      "original_occurrence_ids": [
+        "occ.30d503c42203d3ff9336"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "A poset satisfies the descending chain condition if every descending sequence x_1≥x_2≥⋯ eventually stabilizes; for ideals these are inclusions I_1⊇I_2⊇⋯.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00JK",
+          "section": "Artinian rings and descending chain condition",
+          "verification_status": "source_scope_review",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "An Artinian ring has DCC on ideals; arbitrary DCC poset need not be a ring.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 254,
+      "original_canonical_candidate_id": "missing.688181fe64998624664d",
+      "original_query": "minimal under inclusion among associated primes",
+      "original_mathematical_context": "Order theory: minimal element p of a subset A of a partially ordered set (P,≤), with p∈A and no distinct q∈A satisfying q<p. Here P is the prime ideals ordered by inclusion and A=Ass_R(M); minimality is relative to associated primes rather than all primes.",
+      "original_occurrence_ids": [
+        "occ.655b50aa45201fb7de09"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "An element p of A⊆P is minimal relative to A if no distinct q∈A has q<p. Here A is Ass_R(M), the associated prime ideals.",
+      "source_evidence": [
+        {
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "section": "Minimal elements in partial orders",
+          "verification_status": "definition_supported_generic",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "Minimal among associated primes differs from minimal among all primes or least element of A. A may have multiple incomparable minimal elements.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 255,
+      "original_canonical_candidate_id": "missing.68d081846c512f3ae38a",
+      "original_query": "category Groupoids of groupoids and functors",
+      "original_mathematical_context": "Category theory: category Groupoids with small groupoids as objects and ordinary functors as morphisms, with usual functor identities/composition; universe conventions for size apply.",
+      "original_occurrence_ids": [
+        "occ.fae7dea01666c602559e"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "Groupoids is the category whose objects are small groupoids and morphisms are ordinary functors, composed as functors, relative to a specified set-theoretic universe.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0018",
+          "section": "Small groupoids and functors",
+          "verification_status": "source_context_needs_size_foundations",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "This category may be large relative to the universe of objects; do not conflate with unrestricted groupoids.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 256,
+      "original_canonical_candidate_id": "missing.6a3712193d375d1cebac",
+      "original_query": "ascending chain condition on a poset of ideals",
+      "original_mathematical_context": "Order theory: the ascending chain condition (ACC) on a partially ordered collection means each nondecreasing sequence x₁≤x₂≤⋯ is eventually constant. Here the collection is the ideals of R ordered by inclusion, and equality at intermediate steps is allowed.",
+      "original_occurrence_ids": [
+        "occ.b2cff2271cada55104d3"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "A poset satisfies ascending chain condition if each sequence x_1≤x_2≤⋯ eventually stabilizes, allowing equality at intermediate terms.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00FM",
+          "section": "Noetherian rings and ACC ideals",
+          "verification_status": "source_scope_review",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "ACC on ideals defines Noetherian ring under usual conventions; it is not DCC. Stationary after finite stage, not necessarily a fixed bound on chain length.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 257,
+      "original_canonical_candidate_id": "missing.6a3fca2bdce507838692",
+      "original_query": "maps into a later common stage eventually agree",
+      "original_mathematical_context": "Category theory: eventual equality in a filtered diagram, where two maps into appropriate diagram stages become equal after passing to some later common stage.",
+      "original_occurrence_ids": [
+        "occ.ec3de59a421d44fbf42b"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "In a filtered index category, parallel arrows u,v:i→j can be equalized by a later morphism w:j→k with wu=wv.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/002V",
+          "section": "Definition of filtered categories",
+          "verification_status": "source_definition_context_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "Filteredness also requires cocones over finite diagrams; this equalization condition alone does not define a filtered category.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 258,
+      "original_canonical_candidate_id": "missing.6cb0441a08c98c8d720b",
+      "original_query": "nonnegative rational codomain",
+      "original_mathematical_context": "Arithmetic: subset ℚ_{≥0} of rational numbers consisting of zero together with rational q>0, serving as the codomain of rational modulus.",
+      "original_occurrence_ids": [
+        "occ.d449d06d64cc92a83a47"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "The nonnegative rationals Q_{≥0}={q∈Q:q≥0}, comprising 0 and all positive rational numbers.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/RationalNumber.html",
+          "section": "Rational numbers and ordering",
+          "verification_status": "elementary_source_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "It is closed under addition and multiplication but not additive inverses except for zero.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 259,
+      "original_canonical_candidate_id": "missing.6e286e5d25f8e80fa9f6",
+      "original_query": "no largest element",
+      "original_mathematical_context": "Order theory: property that subset A has no greatest element; for every a∈A there exists b∈A with a<b. Distinct from a set having no maximal element in partial orders.",
+      "original_occurrence_ids": [
+        "occ.5c59b3261c91e60cc9b8"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "A linearly ordered subset A has no greatest element iff for every a∈A there exists b∈A with a<b.",
+      "source_evidence": [
+        {
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "section": "Greatest vs maximal elements",
+          "verification_status": "requires_total_order_qualification",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "In a general *partial* order, 'no greatest element' does NOT imply every element has a larger one (e.g., two incomparable maximal elements). Candidate context lacks totality; preserve a substantive correction.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    },
+    {
+      "priority": 260,
+      "original_canonical_candidate_id": "missing.6e79f03b3e61fe04fabc",
+      "original_query": "group presentation",
+      "original_mathematical_context": "Abelian-group theory: abelian group presented by generators and relations, constructed as the free abelian group on the generator set modulo the subgroup generated by specified formal relations. Here a relation [M]-[M′]-[M″]=0 arises from a short exact module sequence.",
+      "original_occurrence_ids": [
+        "occ.1e984a34a7c2e9a4de53"
+      ],
+      "original_alias_ids": [],
+      "source_backed_preliminary_definition": "For an abelian group presentation with generators S and formal relations T, the presented abelian group is Z^{(S)}/<T>, the free abelian group on S modulo the subgroup generated by T.",
+      "source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Presentation_of_a_group",
+          "section": "Group presentations and abelian specialization",
+          "verification_status": "source_construction_lead",
+          "relevance": "Precisely scoped mathematical source or explicit locator for verification; leads are not source certification."
+        }
+      ],
+      "mathematical_scope_and_edge_case": "Exact-sequence K_0/G_0 relations must distinguish using finitely generated projective modules vs all coherent modules; presentation does not imply actual exact-sequence conditions without context.",
+      "comparison_status": "provisional; full source-typed crosscheck against existing accepted, provisional, and prior staged meanings required before admission",
+      "additional_dependencies": "defer_to_next_generation",
+      "certified": false,
+      "staged": false
+    }
+  ]
+}

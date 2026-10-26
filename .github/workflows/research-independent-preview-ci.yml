@@ -1,0 +1,44 @@
+name: Independent reference preview — lightweight checks
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research_pipeline/adapters/mathdef/preview*.py'
+      - 'research_pipeline/ui/**'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/records/**'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/population/records/**'
+      - '.github/workflows/research-independent-preview-ci.yml'
+  pull_request:
+    paths:
+      - 'research_pipeline/adapters/mathdef/preview*.py'
+      - 'research_pipeline/ui/**'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/records/**'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/population/records/**'
+      - '.github/workflows/research-independent-preview-ci.yml'
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Render independent research previews (no graph gate)
+        run: |
+          python -m research_pipeline.adapters.mathdef.preview_site --site-root /tmp/mathdef-independent-site
+          test -f /tmp/mathdef-independent-site/wave1/index.html
+          test -f /tmp/mathdef-independent-site/wave2/index.html
+          node --check /tmp/mathdef-independent-site/wave2/preview.js
+      - name: Verify original production mathDef builder remains functional
+        run: |
+          node --check web/app.js
+          node --check web/feedback.js
+          node --test tests/test_feedback.cjs tests/test_feedback_ui.cjs
+          python -m unittest discover -s tests
+          python scripts/build_index.py
+      - name: Validate reusable reference UI
+        run: |
+          python -m unittest research_pipeline.tests.test_reference_ui -v
+          node --test research_pipeline/tests/test_reference_ui_feedback.cjs
