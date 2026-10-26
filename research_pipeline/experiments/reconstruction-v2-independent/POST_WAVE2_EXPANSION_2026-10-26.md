@@ -179,3 +179,27 @@ and original mathDef 1,014 source definitions. The earlier fast scan
 reports 2,019 rough leads, unrelated to the current meanings count.
 The workflow stays immediate research, content and usable links, with
 no mandatory review queue or dependency graph.
+
+
+## Eighth expansion batch — 20 foundational topology meanings
+
+Twenty new definitions were written directly into the post-Wave2 combined-only
+JSON overlay: six separation/conventional regularity variants, metrizability,
+five filter/neighbor concepts, two net concepts, one-point compactification,
+two partition-of-unity variants, compact-open and box topologies, and the
+Sierpiński space.
+
+Source passages were retrieved directly from mathematical references and
+recorded with `source_passage_retrieved_2026-10-26`, rather than relying
+solely on suggested citations. Each record contains context, exact
+mathematical conditions, edge cases and links to existing or newly added
+meanings. Special care was taken with T₃/T₄ conventions, proper filters,
+nonempty directed index sets, topological support, and one-point Hausdorff
+compactification.
+
+Post-Wave2 additions after this batch total **99**. Expected combined
+catalog = 958 independent + 1,014 original + 99 post-Wave2 = **2,071**
+meanings. Counts should be treated as draft expectations until verified by
+CI and published Pages workflow; they are not claims of formal proof-level
+or human citation certification. The initial 2,019 tentative phrase scan
+was already completed and remains a discovery resource, not a queue.
