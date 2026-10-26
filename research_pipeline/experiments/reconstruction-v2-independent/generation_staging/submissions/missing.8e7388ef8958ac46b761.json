@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.8e7388ef8958ac46b761",
+  "original_query": "repeated root in algebraic closure",
+  "original_context": "Polynomial algebra over a field: a multiple (repeated) root α of polynomial f in an extension field, meaning (x−α)^2 divides f after base extension, equivalently f(α)=f′(α)=0 when the formal derivative is used; distinct from the ordinary root concept.",
+  "original_incoming_occurrence_ids": [
+    "occ.70e037587a2c39934e62"
+  ],
+  "disposition": "new_meaning",
+  "definition": "Let F be a field, let f∈F[T] be a nonzero polynomial, and let α belong to a field extension E/F. The element α is a repeated (multiple) root of f if (T−α)² divides f in E[T]; equivalently, f(α)=f′(α)=0.",
+  "reasoning": "The screened separable-irreducible-polynomial and separable algebraic-extension meanings use absence of repeated roots as part of their own property, but do not define the general distinguished-root multiplicity property. This object is a pair (polynomial, root) and does not require f irreducible or separable; it is therefore a separate useful prerequisite, not an alias for separability or for a simple root.",
+  "sources": [
+    {
+      "url": "https://stacks.math.columbia.edu/tag/09GZ",
+      "section": "Lemma 9.12.4 and proof",
+      "relevance": "Direct passage links a double linear factor and simultaneous vanishing of polynomial and derivative. Lemma states separability for irreducible polynomials; the proof's algebraic repeated-root criterion extends to arbitrary nonzero polynomials over a field.",
+      "verification_status": "direct_primary_passage_checked_with_general_algebraic_deduction"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.720eaae9156f6f4e.separable-irreducible-polynomial",
+        "relation": "Uses no-repeated-root predicate on irreducible polynomials, not the general property itself"
+      },
+      {
+        "id": "meaning.50d335de00e5f11d.separable-algebraic-extension",
+        "relation": "Uses root multiplicity in minimal polynomials; no standalone repeated-root meaning"
+      },
+      {
+        "id": "meaning.720eaae9156f6f4e.separable-degree-polynomial",
+        "relation": "Counts distinct roots instead of assigning multiplicity to a distinguished root"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Independently reviewed the 595 screened and 16 provisional meanings by their contexts, mathematical formulations and polynomial/separability overlap. No meaning gives the general nonzero-polynomial root-multiplicity predicate. The retained sources support this criterion; separability is a different global property. Also compared with the already staged first-generation candidate identities: missing.8e10ca4c4067ac5928f8; none has this same mathematical object or proposition."
+  },
+  "mathematical_assumptions": [
+    "f is nonzero so individual root multiplicity is defined.",
+    "E is a field extension of F containing α; comparison occurs in E[T].",
+    "Formal derivative is used, including positive characteristic and possibly identically vanishing derivative."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
