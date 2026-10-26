@@ -13,7 +13,7 @@
 
 ## Nine highly reused independent prerequisites: no safe existing-meaning substitution
 
-The following nine are **187 incoming occurrences** from their combined 187 distinct parent uses as counted in the current machine registry; this is not a claim that all 187 become published links. Context, object types and source conventions were compared to the currently populated independent meanings.
+The following nine are **187 incoming occurrences** across **166 per-candidate distinct-parent counts** (which may overlap between candidates) as counted in the current machine registry; this is not a claim that all 187 become published links. Context, object types and source conventions were compared to the currently populated independent meanings.
 
 | Canonical ID | Candidate | Uses (occurrences) | Closest populated notion; reason **not** to auto-resolve |
 | --- | --- | ---: | --- |
@@ -22,7 +22,7 @@ The following nine are **187 incoming occurrences** from their combined 187 dist
 | `missing.50fc57153b93520a247a` | Quotient ring A/I | 16 | `meaning.559efcb6f15ddc96.total-quotient-ring` is a localization, not the general ideal-coset quotient ring. Quotients by prime ideals add domain structure that arbitrary ideal quotients need not have. |
 | `missing.b86257b3cce62907e97e` | Set-theoretic inverse image f⁻¹[B] | 15 | A general mapping or inverse **function** does not supply the subset preimage operation; inverse images do not require bijectivity. No independent standalone matching meaning was found by exact name/context inspection. |
 | `missing.9db64b2f9cdb8258e3d8` | Polynomial algebra R[X_i] | 14 | Individual polynomial/construction applications in the corpus are not the general polynomial **ring** with independent indeterminates and finite monomial support. No exact matching standalone meaning found. |
-| `missing.38969d113c4ee6b98` | Residue field A/m, κ(p) | 11 | A field or local ring by itself does not define the specific maximal-ideal quotient and its point/localization instantiation. No exact matching standalone meaning found. |
+| `missing.38969d113c4ee1db6e98` | Residue field A/m, κ(p) | 11 | A field or local ring by itself does not define the specific maximal-ideal quotient and its point/localization instantiation. No exact matching standalone meaning found. |
 | `missing.5645554e6bee6b40edda` | Commutative unital ring | 11 | `meaning.wave2.foundation.integral-domain` additionally requires nonzero and no nonzero zero divisors. `meaning.wave2.foundation.commutative-prime-ideal` presupposes a commutative ring, rather than defining the general ring object. |
 | `missing.7462fa5f90275b34779a` | Free R-module | 11 | The existing finite **locally free** module meaning is restricted by finiteness/local triviality; freeness of arbitrary rank is a global basis property, not equivalent to local freeness. |
 | `missing.6baca7285e379e18e82b` | Quotient module M/N | 10 | Modules and module-theoretic relative constructions appear, but the general induced coset **R-module quotient** is a separate reusable algebraic object; arbitrary quotient modules must not be identified with quotient rings or scalar-restriction constructions. |
