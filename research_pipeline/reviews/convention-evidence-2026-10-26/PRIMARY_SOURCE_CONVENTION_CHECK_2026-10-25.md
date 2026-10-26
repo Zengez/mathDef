@@ -300,7 +300,7 @@ formulation correctly preserves that condition.
 [Stacks §26.2, tag 01HA](https://stacks.math.columbia.edu/tag/01HA)
 recalls that a ringed space is `(X,𝒪_X)` with a **sheaf of rings** and
 requires each stalk to be a local ring for a locally ringed space.
-Its cited [§6.25](https://stacks.math.columbia.edu/tag/0081) treats
+Its cited [§6.25](https://stacks.math.columbia.edu/tag/0090) treats
 ringed spaces more generally. Read the ring-sheaf restriction
 maps in the usual ring-homomorphism sense, coupled with the
 provider's explicitly commutative/unital conventions; do
