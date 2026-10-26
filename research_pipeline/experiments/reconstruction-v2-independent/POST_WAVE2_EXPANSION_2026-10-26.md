@@ -203,3 +203,28 @@ meanings. Counts should be treated as draft expectations until verified by
 CI and published Pages workflow; they are not claims of formal proof-level
 or human citation certification. The initial 2,019 tentative phrase scan
 was already completed and remains a discovery resource, not a queue.
+
+
+## Ninth expansion batch — 19 category-theory definitions
+
+Direct content batch adds 19 missing categorical meanings in the merged
+post-Wave2 research overlay. The definitions intentionally connect
+subcategory/fullness/wide/repletion and skeletal/skeleton variants to
+identity/constant/endofunctor constructions, coslice and arrow
+categories, right adjoints and counits, and the structure of monads,
+comonads, algebras, Eilenberg–Moore and Kleisli categories.
+
+Sources were retrieved from Encyclopedia of Mathematics and nLab.
+The mathematical assumptions and source-status records are attached
+to each definition rather than to a mandatory separate review packet.
+Especially important edge-case discipline: nontrivial automorphisms
+are allowed in a skeletal category; construction of skeletons may
+invoke choice; monads require η:Id→T and μ:T²→T with both identities;
+and for a contravariant presheaf F:C^op→Set the elements-category arrow
+(c,x)→(d,y) must satisfy F(f)(y)=x.
+
+Checkpoint expects **118** post-completion researched meanings and
+**2,090** meanings in combined catalog (958 + 1,014 + 118). The
+historical scan's 2,019 tentative phrase leads remains separate and
+unresolved leads are not a completion gate. CI and Pages publish
+runs provide actual build/deployment confirmation.

@@ -239,3 +239,39 @@ Expected results: **99** researched post-Wave2 meanings (79 prior + 20 here),
 **2,071** combined contextual meanings. Preserve the frozen independent
 958-meaning Wave2, original 1,014-definition corpus and historical initial
 2,019 rough phrase leads. No restarted dependency graph or candidate gate.
+
+
+## Ninth direct research batch (2026-10-26)
+
+Nineteen new meanings researched directly into the combined-only mathDef
+reference, following source review against Encyclopedia of Mathematics and
+nLab and duplicate checks against original and independent datasets:
+
+- Category variants: subcategory, wide subcategory, replete full
+  subcategory, thin category, skeletal category and skeleton
+- Functor variants: identity functor, endofunctor and constant functor
+- Elementary categorical constructions: coslice / under category,
+  right adjoint, counit of adjunction, arrow category
+- Monad theory: monad, comonad, algebra over a monad,
+  Eilenberg–Moore category and Kleisli category
+- Presheaf theory: category of elements of a contravariant
+  Set-valued presheaf
+
+Definitions include explicit equations for monad/comonad associativity
+and unit laws; precise direction of adjunction unit/counit; Kleisli
+composition; and contravariant category-of-elements arrows.
+A skeletal category may have nontrivial automorphisms. A skeleton
+requires representative choice under customary foundations; no claim of
+unconditional existence is made. Wide/full/replete are not conflated.
+
+Source passages were retrieved directly from nLab and Encyclopedia of
+Mathematics on 2026-10-26; these remain assistant-reviewed definitions,
+not peer-certified research. Preserve the per-entry reference locator
+and assumptions.
+
+Combined-only overlay now has **118** researched meanings
+(99 earlier + 19 here). Expected merged reference: **2,090**
+contextual meanings; the independent reconstructed Wave2 remains **958**,
+original source remains **1,014 definitions**, and initial **2,019**
+rough phrase-lead scan remains an untouched discovery snapshot.
+No dependency-graph gates or global review queues should be restored.

@@ -20,12 +20,12 @@ phrase leads plus 473 known-term mention patterns.
 Put new researched meanings in
 `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/terms.json`
 and render them ONLY in `/reconstruction/merged/`, not the completed 958-meaning
-independent Wave 2 or original production source. The first eight batches add **99**
+independent Wave 2 or original production source. The first nine batches add **118**
 source-attributed mathematical drafts to the combined view, targeting
 new concepts in algebra, topology, homology, geometry, measure and category
-theory. The first seven batches have been merged and published; the
-eighth batch adds 20 directly source-retrieved foundational topology meanings
-and must pass combined-preview CI and Pages deployment.
+theory. The first eight batches have been merged and published; the
+ninth adds 19 category-theoretic meanings with source passages retrieved
+directly and must pass combined-preview CI and Pages deployment.
 The completed initial scan remains 2,019 unverified *phrase leads*, NOT a
 requirement to resolve 2,019 terms. Work from practical research opportunities,
 not a strict candidate-closure workflow. See
