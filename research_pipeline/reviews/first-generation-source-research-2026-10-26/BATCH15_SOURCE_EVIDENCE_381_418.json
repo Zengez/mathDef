@@ -37,17 +37,18 @@
       "mathematical_definition_draft": "An O_X-module is a sheaf F of abelian groups with each F(U) an O_X(U)-module and restriction maps compatible with scalar restriction.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/01B3",
-          "section": "Sheaves of modules on ringed spaces",
-          "review_status": "primary_context_locator_pending",
-          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+          "url": "https://stacks.math.columbia.edu/tag/0076",
+          "section": "Stacks Definition 6.10.1, sheaves of modules",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Direct definition of a sheaf of O-modules as a presheaf of O-modules whose underlying abelian-group presheaf is a sheaf."
         }
       ],
       "scope_and_edge_case": "Local ring structure on stalks isn't needed merely to define sheaf-module.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
       "source_certified": false,
       "staged": false,
-      "recursive_dependencies_deferred": true
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Replaced wrong prior tag 01B3 (Lemma 17.8.2, preservation of local generation by pullbacks), which did not define O_X-modules. No local-stalk hypothesis is needed at this stage."
     },
     {
       "priority": 382,
@@ -152,17 +153,18 @@
       "mathematical_definition_draft": "Restriction O_X|_U to open U⊆X has (O_X|_U)(V)=O_X(V) for every open V⊆U, with inherited restrictions.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/008C",
-          "section": "Restrictions of sheaves to open subsets",
-          "review_status": "source_lead",
-          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+          "url": "https://stacks.math.columbia.edu/tag/00A1",
+          "section": "Stacks Definition 6.31.2, restriction of sheaves to open subspaces",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly defines F|_U=j^{-1}F and O_X|_U for open immersion j:U→X; under open V⊆U, sections are the inherited F(V)."
         }
       ],
       "scope_and_edge_case": "A sheaf restriction is not ring localization unless local geometry specifies such an identification.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
       "source_certified": false,
       "staged": false,
-      "recursive_dependencies_deferred": true
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Previous general Section 6.21 (tag 008C) is about direct/inverse images; specialized Definition 6.31.2 states restriction directly."
     },
     {
       "priority": 387,
@@ -268,16 +270,17 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/0036",
-          "section": "Adjoint functors and natural bijections",
-          "review_status": "source_scope_exact_locator_pending",
-          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+          "section": "Stacks Definition 4.24.1, adjoint functors",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly states the hom-set bijections natural in both objects, with left u:C→D and right v:D→C. Naturality is essential."
         }
       ],
       "scope_and_edge_case": "Pointwise hom-bijections without naturality do not determine adjunction. Locally small conventions needed.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
       "source_certified": false,
       "staged": false,
-      "recursive_dependencies_deferred": true
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Tag 0036 verified exact source section and definition. Do not mistake pointwise nonnatural bijections for an adjunction."
     },
     {
       "priority": 392,
@@ -291,16 +294,17 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/01HR",
-          "section": "Affine quasi-coherent sheaf sections",
-          "review_status": "source_primary_context",
-          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+          "section": "Stacks Definition 26.5.3(3), Lemma 26.5.4(4)-(5), associated sheaf to R-module",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Direct construction of associated tilde M and equality Γ(D(f),tilde M)=M_f with restriction maps to smaller standard opens."
         }
       ],
       "scope_and_edge_case": "~M is not constant sheaf unless special conditions.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
       "source_certified": false,
       "staged": false,
-      "recursive_dependencies_deferred": true
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Source exactly supports associated sheaf of an R-module on affine Spec R; quasi-coherent structure is context, not the claim that tilde M is constant."
     },
     {
       "priority": 393,
@@ -429,16 +433,17 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/0FKF",
-          "section": "Differential graded algebras and de Rham complex",
-          "review_status": "exact_provider_context_pending",
-          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+          "section": "Stacks Section 10.132, de Rham complex of B over A",
+          "review_status": "direct_primary_specialization_only",
+          "relevance": "Directly defines the de Rham Ω^p_{B/A}=∧^p Ω_{B/A} and differential d:Ω^p→Ω^{p+1} with d²=0. Not a general source for arbitrary differential graded complexes or all differential graded algebras."
         }
       ],
       "scope_and_edge_case": "Not every graded differential complex is de Rham; exterior product may have graded commutativity.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
       "source_certified": false,
       "staged": false,
-      "recursive_dependencies_deferred": true
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Distinguish general chain/cochain complex, DGA, and the de Rham specialization; no implicit equivalence."
     },
     {
       "priority": 399,
@@ -452,16 +457,17 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/00CM",
-          "section": "Localization of modules",
-          "review_status": "source_context",
-          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+          "section": "Stacks Definition 10.9.6 and Lemma 10.9.7, localization of modules",
+          "review_status": "direct_primary_construction_checked_formula_by_functoriality",
+          "relevance": "Directly constructs S^{-1}M from fractions and localization universal property. Localizing φ yields a map m/s↦φ(m)/s; exact explicit map formula is standard functorial deduction rather than independently quoted statement."
         }
       ],
       "scope_and_edge_case": "R_p-linear; exactness of localization is theorem separate from formula.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
       "source_certified": false,
       "staged": false,
-      "recursive_dependencies_deferred": true
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Choose S=R\\p for prime p. Preserve R_p-linearity and distinction from the theorem that localization is exact."
     },
     {
       "priority": 400,
@@ -544,16 +550,17 @@
       "external_source_evidence": [
         {
           "url": "https://stacks.math.columbia.edu/tag/00CM",
-          "section": "Localization at prime",
-          "review_status": "source_context",
-          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+          "section": "Stacks Definition 10.9.1 and 10.9.6, localization at multiplicative sets",
+          "review_status": "direct_general_localization_plus_prime_specialization",
+          "relevance": "Directly defines S^{-1}R and S^{-1}M for multiplicative S; specialize to S=R\\p for a proper prime ideal. Local ring property needs independent contextual verification if asserted as additional result."
         }
       ],
       "scope_and_edge_case": "1∈R\\p since prime is proper; R_p local ring with maximal pR_p.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
       "source_certified": false,
       "staged": false,
-      "recursive_dependencies_deferred": true
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Original context only needs complement localization; prime-properness ensures 1∈R\\p and multiplicativity follows from primality."
     },
     {
       "priority": 404,
@@ -635,17 +642,18 @@
       "mathematical_definition_draft": "A finite categorical product has projections and universal map from each common cone; the empty product is terminal object.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/0014",
-          "section": "Category products and terminal objects",
-          "review_status": "category_source_lead",
-          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+          "url": "https://stacks.math.columbia.edu/tag/09SE",
+          "section": "Stacks Definition 12.3.8 and surrounding note on finite products",
+          "review_status": "direct_primary_additive_category_specialization_only",
+          "relevance": "Directly states empty product is a final object and finite-product condition in ADDITIVE category context. Does not by itself provide a fully general arbitrary-category universal-cone construction."
         }
       ],
       "scope_and_edge_case": "Finite products means binary products and terminal object; empty index set requires terminal object.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
       "source_certified": false,
       "staged": false,
-      "recursive_dependencies_deferred": true
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "General finite-products definition requires terminal object for empty index and products of pairs, without assuming additive structure; older tag 0014 was category composition axioms, not precise source."
     },
     {
       "priority": 408,
@@ -842,17 +850,18 @@
       "mathematical_definition_draft": "The R-subalgebra generated by s_1,…,s_n in R-algebra S is image of evaluation R[T_1,…,T_n]→S sending T_i↦s_i.",
       "external_source_evidence": [
         {
-          "url": "https://stacks.math.columbia.edu/tag/00F4",
-          "section": "Finite type algebras and generators",
-          "review_status": "source_context_lead",
-          "relevance": "Exact primary verified only when status explicit. Otherwise qualified mathematical source lead."
+          "url": "https://stacks.math.columbia.edu/tag/00F2",
+          "section": "Stacks Definition 10.6.1 (finite-type ring map)",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly states finite-type R-algebra iff finite polynomial-algebra surjection R[x_1,...,x_n]→S. The R-subalgebra generated by chosen s_i is image of its polynomial evaluation map and equals S iff the chosen elements generate S."
         }
       ],
       "scope_and_edge_case": "The image is smallest unital R-subalgebra containing s_i; finite type iff equals S.",
       "comparison_status": "NOT_COMPLETE: accepted/provisional independent corpus and prior staged meaning comparison required",
       "source_certified": false,
       "staged": false,
-      "recursive_dependencies_deferred": true
+      "recursive_dependencies_deferred": true,
+      "source_audit_note": "Previous 00F4 is Lemma 10.6.2 on permanence, not the definition itself; replacement 00F2 gives exact construction and finite-type criterion. Distinguish image of polynomial evaluation from an isomorphism with polynomial algebra."
     },
     {
       "priority": 417,
@@ -900,5 +909,23 @@
       "staged": false,
       "recursive_dependencies_deferred": true
     }
-  ]
+  ],
+  "source_verification_audit": {
+    "review_date": "2026-10-26",
+    "reviewed_priorities": [
+      381,
+      386,
+      391,
+      392,
+      398,
+      399,
+      403,
+      407,
+      416
+    ],
+    "method": "Directly inspect Stacks definitions and sections, correct inaccurate tags, and retain distinctions between exact wording and mathematical specializations or functorial deductions.",
+    "blocked_gap_291_320_untouched": true,
+    "graph_mutation": false,
+    "stage_admission": false
+  }
 }
