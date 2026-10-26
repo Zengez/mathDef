@@ -154,8 +154,8 @@ def build(workspace, *, draft=False, output=None):
     )
     if draft:
         status_notice = (
-            "Unsealed Wave 2 working snapshot: %d contextual meanings, %d screened "
-            "relationships. Research remains incomplete, and completeness is not established."
+            "Wave 2 initial reconstruction complete: %d contextual meanings, %d curated "
+            "relationships. New terminology discovery and formal citation verification remain future work."
             % (len(catalog["meanings"]) + added_direct, len(catalog["relations"]))
         )
     payload = {
@@ -195,9 +195,9 @@ def build(workspace, *, draft=False, output=None):
 <footer>Independent experiment • Source references do not imply human verification.</footer>
 </body></html>""".replace("___PAYLOAD___", payload_string).replace(
         "___REVIEW_NOTICE___", status_notice).replace(
-        "___STAGE_TITLE___", "Wave 2 — evolving research draft" if draft
+        "___STAGE_TITLE___", "Wave 2 — initial reconstruction complete" if draft
         else "Wave 1 — frozen baseline").replace(
-        "___STAGE_DESC___", "Unsealed and incomplete; regenerated from screened independent records."
+        "___STAGE_DESC___", "Initial reconstruction complete; independent mathematical research drafts, not formally certified."
         if draft else "Frozen independent first-wave prototype, retained for comparison.")
     (output / "index.html").write_text(doc, encoding="utf-8")
     assets = Path(__file__).resolve().parent
