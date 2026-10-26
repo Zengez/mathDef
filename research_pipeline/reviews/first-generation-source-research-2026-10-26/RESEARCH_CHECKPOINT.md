@@ -18,9 +18,10 @@
 | 008–020 | `BATCH01_SOURCE_EVIDENCE_008_020.json` | 13 | 92 |
 | 021–040 | `BATCH02_SOURCE_EVIDENCE_021_040.json` | 20 | 89 |
 | 041–060 | `BATCH03_SOURCE_EVIDENCE_041_060.json` | 20 | 61 |
-| **Total** | **4 committed review documents** | **60 / 418** | **408 / 841** |
+| 061–080 | `BATCH04_SOURCE_EVIDENCE_061_080.json` | 20 | 43 |
+| **Total** | **5 committed review documents** | **80 / 418** | **451 / 841** |
 
-Checked all four committed files for stable, unique candidate IDs, matching original counts and nonempty source evidence: exactly **60 distinct IDs** and **408** represented original references. The source evidence ranges from directly supported definitions to explicitly labeled partial or context-dependent source verifications. No claim that all 60 are mathematically certified or that all locators are fully independently checked.
+Checked all five committed files for stable, unique candidate IDs, matching original counts and nonempty source evidence: exactly **80 distinct IDs** and **451** represented original references. The source evidence ranges from directly supported definitions to explicitly labeled partial or context-dependent source verifications. No claim that all 80 are mathematically certified or that all locators are fully independently checked.
 
 ## Important mathematical holds and typing boundaries
 
@@ -36,8 +37,8 @@ Checked all four committed files for stable, unique candidate IDs, matching orig
 
 ## Precisely what remains
 
-- **358 original candidate identities** have not yet received this first-generation source-evidence pass. They represent **433 effective incoming references** from the original frozen cohort.
-- Begin next with original priorities 61–80 from the frozen `MANIFEST.json`. Reuse the concise per-candidate representation, compare source assumptions and context, and defer new dependencies. Do **not** return to broad source-free alias cycles.
+- **338 original candidate identities** have not yet received this first-generation source-evidence pass. They represent **390 effective incoming references** from the original frozen cohort.
+- Begin next with original priorities 81–100 from the frozen `MANIFEST.json`. Reuse the concise per-candidate representation, compare source assumptions and context, and defer new dependencies. Do **not** return to broad source-free alias cycles.
 - Continue creating immutable evidence files with exact original IDs, full original context, occurrence IDs and provenance, source URLs+sections, proof/counterexample where mathematical relevance depends on edge cases, accepted/provisional comparison outcomes, and uncertainty statuses.
 - **Separate next workstream:** translate genuinely source-supported, context-reviewed records into `generation_staging/records/` using `research_pipeline.engine.dependency_generation` and its strict version/previous-staged comparison preflight. The four evidence files **are not themselves stage submissions**. Validate the full accepted and provisional independent corpora and every previously staged candidate before an actual provisional intake.
 - After one full 418-candidate source-research generation, do the deeper global variant/equivalence/source audit and reviewed integration; new prerequisites belong to the *next* generation, not this one.
@@ -46,7 +47,13 @@ Checked all four committed files for stable, unique candidate IDs, matching orig
 
 ## Operational checks at this checkpoint
 
-- Initial source review artifacts: all four saved to draft PR #19, **60 unique canonical candidate IDs**.
+- Initial source review artifacts: all five saved to draft PR #19, **80 unique canonical candidate IDs**.
 - Graph gate: was previously verified open on main; revalidate state before any intake action.
 - Existing mathematical population / resolution applied: **none by these review commits**.
 - No claim of continuing to run after this response; resume from this checkpoint in a later conversation.
+
+## Priority 61–80 addendum
+
+The fifth research artifact `BATCH04_SOURCE_EVIDENCE_061_080.json` records 20 further original candidates with 43 incoming references. Stacks Section 10.89 (`https://stacks.math.columbia.edu/tag/059H`) provides the tensor-product/direct-product canonical map and concrete examples where it fails injectivity or surjectivity; injectivity for every family is an additional Mittag-Leffler property. Stacks Section 12.3 (`https://stacks.math.columbia.edu/tag/09SE`) supplies preadditive zero morphisms without requiring a zero object. Distinguish general vs open neighborhoods, arbitrary affine vs strictly positive convex combinations, and nonzero polynomial norms vs merely vanishing mixed integrals.
+
+All five files compared with the frozen first-generation manifest yield **80 unique canonical IDs, exactly the first 80 in order, and 451 original occurrences**. Actual stage admissions remain separate, guarded and as yet unapplied. Next priorities: 81–100.
