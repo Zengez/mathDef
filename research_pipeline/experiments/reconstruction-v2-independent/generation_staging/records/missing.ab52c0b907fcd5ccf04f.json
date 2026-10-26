@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.ab52c0b907fcd5ccf04f",
+  "original_query": "sober topological space",
+  "original_context": "General topology: sobriety of X, every nonempty irreducible closed subset has a unique generic point x whose closure equals that subset; not equivalent to Hausdorffness.",
+  "original_incoming_occurrence_ids": [
+    "occ.bf9997ad185555be951c"
+  ],
+  "disposition": "new_meaning",
+  "definition": "A topological space X is sober if every nonempty irreducible closed subset Z⊆X has a unique generic point ξ∈Z, meaning cl_X({ξ})=Z.",
+  "reasoning": "Sobriety is a standalone separation/generic-point property, not identical to the independently screened spectral-space definition, which imposes additional quasi-compactness and basis axioms, or to the separate definition of a generic point. Neither the Hausdorff property nor an assumption of scheme structure is implied by this definition.",
+  "sources": [
+    {
+      "url": "https://stacks.math.columbia.edu/tag/004X",
+      "section": "Stacks Definition 5.8.6 items (1),(4)",
+      "relevance": "Directly checked primary definition of generic point and sober space; Stacks defines irreducible closed subsets using its nonempty irreducible convention.",
+      "verification_status": "direct_primary_passage_checked"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.91383b9c137b0e359967",
+      "missing.960bd927c204df58bb49",
+      "missing.972ae1e91200fae874aa",
+      "missing.9a669bd30949842fab00",
+      "missing.9a71afd4a344322c1d26",
+      "missing.9e1b000eff0431817f3a",
+      "missing.a257d0bad58dcfbd2fa7",
+      "missing.a53971a78b449b0edc86"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.d7087bb79cf848fa.spectral-topological-space",
+        "relation": "spectral space additionally requires quasi-compactness and quasi-compact-open basis"
+      },
+      {
+        "id": "meaning.e0dd0b0cffcfff0b.generic-point",
+        "relation": "gives what a generic point is but not unique existence for all irreducible closed subsets"
+      },
+      {
+        "id": "meaning.e62923cd8ef99cd1.hausdorff-space",
+        "relation": "Hausdorff implies sober, converse fails"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Compared all independently screened (595) and provisional (16) meanings and specifically inspected the sober condition inside spectral spaces, unique generic points, schemes and Hausdorff spaces. None provides sober space as the same standalone meaning. Direct Stacks Definition 5.8.6 supports the precise nonempty irreducible closed-set property. All 10 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate."
+  },
+  "mathematical_assumptions": [
+    "Irreducible closed sets are nonempty, as in the cited source.",
+    "Generic point is defined by closure of the singleton.",
+    "The empty topological space qualifies vacuously under the usual convention; no Hausdorff axiom required."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
