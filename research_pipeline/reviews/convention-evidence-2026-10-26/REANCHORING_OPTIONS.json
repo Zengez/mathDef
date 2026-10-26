@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "status": "mathematically_reviewed_non_applying_options",
+  "file_reference_source": "EVIDENCE.json and EXACT_EFFECTIVE_OCCURRENCE_REVIEW.json",
+  "project_owner_approved_general_dependency_policy": true,
+  "individual_graph_changes_approved": false,
+  "base_source_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "source_verification_done": false,
+  "engineering_capability_gap": {
+    "missing_context_override_support": false,
+    "review_export_new_missing_ids_rejected": true,
+    "alias_reversal_supported": false,
+    "mutating_generated_missing_candidates_permitted": false,
+    "neither_strategy_implemented": true
+  },
+  "preferred_candidate_scope_clarifications": [
+    {
+      "rank": 36,
+      "canonical_candidate_id": "missing.826fb5c503bdaf25ce7f",
+      "old_canonical_context": "Probability theory: finite absolute expectation E|X_t|<∞ of the real random variable X_t for every real time t≥0 in a stochastic process.",
+      "proposed_generic_context": "Probability theory: A real-valued random variable Y on a probability space is L1-integrable if E[|Y|]<infinity; a process or family may impose this predicate separately for every index in its own index set.",
+      "specialization": "Real-time case uses all t>=0, discrete cases all n>=0, conditional expectation uses X and Z separately. The parent supplies each quantifier; no uniform bound in index is inferred.",
+      "valid_parents": [
+        {
+          "formulation_id": "form.wave2.found85.conditional-expectation",
+          "source_version_sha256": "ca756e1ce9f0e619bd8367ce77b8d9ed65c9e4547f728506c195246d014fb847",
+          "effective_node_sha256": "cf7e07171bfbeafd33a646d8585a7aa738ef2ed284cd07916dab8df7dc39dfbb",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.3eda46790ce1c2aed5c5",
+              "observed_missing_candidate_id": "missing.e0654e8a4287aaa5bc7c",
+              "phrase": "integrability of real random variable X and Z",
+              "verified_effective_missing_candidate_id": "missing.826fb5c503bdaf25ce7f"
+            }
+          ]
+        },
+        {
+          "formulation_id": "form.wave2.research81.martingale-continuous-index.01",
+          "source_version_sha256": "09c9b79c7c09b70f3d273bc79d2680c73706d26bc71d344cf4b65b8a868a5328",
+          "effective_node_sha256": "ec35af61b92a06f7daae05538c95bf5da50dbdb660798078c3b85218c33ffe06",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.2cf87f7b73f5c5a33bb4",
+              "observed_missing_candidate_id": null,
+              "phrase": "integrability E|X_t|<infinity",
+              "verified_effective_missing_candidate_id": "missing.826fb5c503bdaf25ce7f"
+            }
+          ]
+        },
+        {
+          "formulation_id": "form.wave2.research81.martingale-discrete.01",
+          "source_version_sha256": "83a3cb6953cb2b545c2c6298e0c185199aa4f96e9f3f798a4dff10707d8ced10",
+          "effective_node_sha256": "3c0543238dcbf766737ca0a54b4e74d1b71f3f13e189e30efa9429383690da9f",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.b8df608b462159d8948d",
+              "observed_missing_candidate_id": "missing.2c590a5b733b54c5cb9f",
+              "phrase": "integrability E|X_n|<∞",
+              "verified_effective_missing_candidate_id": "missing.826fb5c503bdaf25ce7f"
+            }
+          ]
+        },
+        {
+          "formulation_id": "form.wave2.research81.martingale-discrete.02",
+          "source_version_sha256": "215d3340410bffedf91b40cf1e011289c47a71802ee1c069e1861486a711b649",
+          "effective_node_sha256": "263ceb572f179e43ad6f9376abc8b943aab69a15ae765108a0bdb46319f0f676",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.98619b3d2a58ee9006e9",
+              "observed_missing_candidate_id": "missing.85b92abd4a39651a191c",
+              "phrase": "integrable X_n for every n",
+              "verified_effective_missing_candidate_id": "missing.826fb5c503bdaf25ce7f"
+            }
+          ]
+        }
+      ],
+      "matching_alias_events": [
+        {
+          "alias_id": "alias.global-audit.20261023.128",
+          "from": "missing.2c590a5b733b54c5cb9f",
+          "to": "missing.826fb5c503bdaf25ce7f",
+          "review_rationale": "Discrete-time and real-time martingale definitions both use L^1 integrability of each real random variable, E|X_t|<∞; the index symbol and its range (natural vs nonnegative real time) do not alter the integrability predicate. Filtration and martingale equalities remain separate."
+        },
+        {
+          "alias_id": "alias.global-audit.20261023.141",
+          "from": "missing.e0654e8a4287aaa5bc7c",
+          "to": "missing.826fb5c503bdaf25ce7f",
+          "review_rationale": "Conditional expectation requires integrable real X and Z, namely E|X|<∞ and E|Z|<∞. Continuous-time and discrete-time martingale formulations require exactly the L¹ integrability predicate for each real random variable X_t. Time indexing and conditional-expectation criteria stay parent-specific."
+        },
+        {
+          "alias_id": "alias.global-audit.20261023.217",
+          "from": "missing.85b92abd4a39651a191c",
+          "to": "missing.826fb5c503bdaf25ce7f",
+          "review_rationale": "The original second discrete-time martingale variant states its process (X_n,F_n) is integrable, which means E|X_n|<∞ for each n≥0. The first discrete-time and continuous-time martingale formulations explicitly state E|X_t|<∞ at each index, without requiring a common bound, and the conditional-expectation source also uses integrability as finite absolute expectation. The sole shared prerequisite is coordinatewise L¹ integrability for a real random variable at each time parameter; specializing its index set T from nonnegative reals to nonnegative integers gives precisely the discrete-time condition. The process index set, adaptation, filtration, conditional expectation identities, and absence of a uniform L¹ bound remain specified in their respective full source formulations."
+        }
+      ],
+      "change_applied": false,
+      "source_certified": false
+    },
+    {
+      "rank": 38,
+      "canonical_candidate_id": "missing.b599bdc9343a25050226",
+      "old_canonical_context": "Topology: subset U⊆Spec(R) both Zariski-open and Zariski-closed, an instance of the generic clopen predicate, not the idempotent correspondence itself.",
+      "proposed_generic_context": "General topology: A subset U of a topological space X is clopen iff U is open and closed in X (equivalently U and X\\U are open).",
+      "specialization": "Spectrum instance X=Spec(R) additionally permits idempotent correspondence; connectedness parents use generic ambient X.",
+      "valid_parents": [
+        {
+          "formulation_id": "form.097db25e2f156689.clopen-subset-of-spectrum",
+          "source_version_sha256": "7d47c90a9aac6cfa2da71d348da436f571c8f1369b34e7a45ae326113bf59a3e",
+          "effective_node_sha256": "59c16df7613998d664439f75769c149c76b5d76b8fdb6ef6a0bc762fd92599cb",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.982109ad4faf2e20b72d",
+              "observed_missing_candidate_id": null,
+              "phrase": "simultaneously open and closed",
+              "verified_effective_missing_candidate_id": "missing.b599bdc9343a25050226"
+            }
+          ]
+        },
+        {
+          "formulation_id": "form.ab260940ea9c523d.connected-topological-space",
+          "source_version_sha256": "bcf746fc860bc9ef39a5e948b15dc8733dac3445193931a92701d51f77c1b047",
+          "effective_node_sha256": "6559b79c290c155da4faea0f262a3941a3b77c63ebd739f2cd3c921343a17335",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.417c86f577e85affc4cb",
+              "observed_missing_candidate_id": "missing.844794a0f96feb96e453",
+              "phrase": "clopen subset of X",
+              "verified_effective_missing_candidate_id": "missing.b599bdc9343a25050226"
+            }
+          ]
+        },
+        {
+          "formulation_id": "form.wave2.pop141.connected-clopen",
+          "source_version_sha256": "48652d488736a5358b164165eddf9c98e2236bd78ace55b7820ea9bfa27851e5",
+          "effective_node_sha256": "250c817c68cbc3ddd23f12ea289e0b6cb465c26a2c288d3ac72f1af6dab05ce5",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.00775f87f3c5601a0719",
+              "observed_missing_candidate_id": null,
+              "phrase": "open and closed subset C",
+              "verified_effective_missing_candidate_id": "missing.b599bdc9343a25050226"
+            }
+          ]
+        },
+        {
+          "formulation_id": "form.wave2.variant71.connected.02",
+          "source_version_sha256": "ed726671fb9f4a509d19ed210a2118c88a4e5766bc1bae410bd7618546036518",
+          "effective_node_sha256": "096150dc7b7426de7061a52fbcfaae889500b20153bf4ac0ba15064c653ba41e",
+          "occurrences": [
+            {
+              "occurrence_id": "occ.1612dec2b099f44c923b",
+              "observed_missing_candidate_id": "missing.6a86b97bca52a155841a",
+              "phrase": "clopen subset C",
+              "verified_effective_missing_candidate_id": "missing.b599bdc9343a25050226"
+            }
+          ]
+        }
+      ],
+      "matching_alias_events": [
+        {
+          "alias_id": "alias.global-audit.20261023.013",
+          "from": "missing.844794a0f96feb96e453",
+          "to": "missing.6a86b97bca52a155841a",
+          "review_rationale": "Two connected-space formulations both reference a clopen subset of X, meaning a subset of X simultaneously open and closed. The nonemptiness assumption in one connectedness variant is separate from this common subset property."
+        },
+        {
+          "alias_id": "alias.global-audit.20261023.121",
+          "from": "missing.6a86b97bca52a155841a",
+          "to": "missing.b599bdc9343a25050226",
+          "review_rationale": "The connected-space and connected-topological-space variants both refer to a subset of a fixed topological space simultaneously open and closed in that ambient topology. The parent connectedness statements differ on whether the empty space is admitted; clopen does not resolve that discrepancy."
+        }
+      ],
+      "change_applied": false,
+      "source_certified": false
+    }
+  ],
+  "self_reference_exclusions": [
+    {
+      "rank": 172,
+      "canonical_candidate_id": "missing.244d6cfceb0dd22abbca",
+      "owning_parent_formulation_id": "form.29b2c34cc33d4b62.degree-zero-localization",
+      "owning_parent_meaning_id": "meaning.29b2c34cc33d4b62.degree-zero-localization",
+      "source_version_sha256": "3c98bb07fd891dd8d982c0ac11d2910ec16fa8b564f6b13fdfeaac59a49c5f4d",
+      "effective_node_sha256": "f1d1284fbc51bd9614b7fbd465794f12b753f4d227b8df99dba12d2088b71b59",
+      "occurrence_id": "occ.e0d877766eb0e3095cab",
+      "forbid_resolution_to": "meaning.29b2c34cc33d4b62.degree-zero-localization",
+      "reason": "Canonical candidate currently specifies the same parent-specific full construction; resolving to the parent meaning would make a defining self-prerequisite. A generic operation/component must remain logically distinct.",
+      "existing_related_references": [
+        {
+          "phrase": "graded ring",
+          "target": "meaning.fa3b484c09596cfd.nonnegatively-graded-ring"
+        },
+        {
+          "phrase": "localization S_f",
+          "target": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "localization S_f",
+          "target": "meaning.70f44988651b76b5.ring-localization-at-multiplicative-set"
+        },
+        {
+          "phrase": "positively graded ring S",
+          "target": "meaning.fa3b484c09596cfd.nonnegatively-graded-ring"
+        }
+      ],
+      "change_applied": false
+    },
+    {
+      "rank": 223,
+      "canonical_candidate_id": "missing.50540c0ba5822a8df022",
+      "owning_parent_formulation_id": "form.b85b64499f3fb523.grothendieck-group-finite-projectives",
+      "owning_parent_meaning_id": "meaning.b85b64499f3fb523.grothendieck-group-finite-projectives",
+      "source_version_sha256": "f56825b09ac966ca7a453e61930ae4a152d044c1bb15e1bb2fa5689d26de1570",
+      "effective_node_sha256": "aad4a2e02acf9c02d44cc2bde7bca328378e97162de98bf73cb575ac603f4be3",
+      "occurrence_id": "occ.01238cbe880164b64d91",
+      "forbid_resolution_to": "meaning.b85b64499f3fb523.grothendieck-group-finite-projectives",
+      "reason": "Canonical candidate currently specifies the same parent-specific full construction; resolving to the parent meaning would make a defining self-prerequisite. A generic operation/component must remain logically distinct.",
+      "existing_related_references": [
+        {
+          "phrase": "finite projective",
+          "target": "meaning.fd99f695f227af4a.finite-projective-module"
+        },
+        {
+          "phrase": "finite projective R-modules",
+          "target": "meaning.fd99f695f227af4a.finite-projective-module"
+        },
+        {
+          "phrase": "short exact sequence",
+          "target": "meaning.wave2.foundation13.exact-sequence-abelian-category"
+        },
+        {
+          "phrase": "abelian group",
+          "target": "meaning.wave2.foundation.abelian-group"
+        }
+      ],
+      "change_applied": false
+    },
+    {
+      "rank": 245,
+      "canonical_candidate_id": "missing.6149b958a6aa818d4806",
+      "owning_parent_formulation_id": "form.1be2fa074ef447b0.i-adic-ring-completion",
+      "owning_parent_meaning_id": "meaning.1be2fa074ef447b0.i-adic-ring-completion",
+      "source_version_sha256": "eacff749a736bec13dc4f4906ff8532b7fff4dd094822e982937c570d4fd2fa6",
+      "effective_node_sha256": "f9b7bade3eb536a206645c6bdd839f70ecc7f7faeec4d8ab22516eaf8793f008",
+      "occurrence_id": "occ.7c2b770ad48fcc42b04d",
+      "forbid_resolution_to": "meaning.1be2fa074ef447b0.i-adic-ring-completion",
+      "reason": "Canonical candidate currently specifies the same parent-specific full construction; resolving to the parent meaning would make a defining self-prerequisite. A generic operation/component must remain logically distinct.",
+      "existing_related_references": [
+        {
+          "phrase": "inverse limit",
+          "target": "meaning.8f7683667fac9d28.category-limit"
+        },
+        {
+          "phrase": "ideal I",
+          "target": "meaning.wave2.foundation.two-sided-ideal"
+        }
+      ],
+      "change_applied": false
+    }
+  ],
+  "optional_explanatory_occurrence": {
+    "rank": 298,
+    "formulation_id": "form.wave2.foundation.strongly-transcendental-subring-element",
+    "source_version_sha256": "859a1eb9debbec8891450f681abaea71c4695f209ae34a56b731942b649e34fe",
+    "effective_node_sha256": "919f1ef7f152d3912b45756bb976a31595f1067388a730e4cd6e4f20c287a952",
+    "occurrence_id": "occ.6414b479b47d231c54a8",
+    "candidate": "missing.8f2dea7e2bd1211c0cf6",
+    "possible_later_disposition": "external explanation, but only after separate occurrence-level review; not preauthorized",
+    "proposal_applied": false
+  },
+  "validation": {
+    "case_count": 2,
+    "scope_mismatch_occurrence_count": 6,
+    "parent_formulation_visits": 8,
+    "self_reference_exclusions": 3,
+    "all_source_versions_match_captured_inventory": true,
+    "all_occurrences_are_effective_at_capture": true,
+    "software_patch_written": false,
+    "graph_changes_performed": false,
+    "gate_open": false
+  }
+}
