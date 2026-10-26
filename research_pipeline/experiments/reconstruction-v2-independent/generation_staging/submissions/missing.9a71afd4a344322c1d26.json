@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.9a71afd4a344322c1d26",
+  "original_query": "antisymmetry of a binary relation",
+  "original_context": "Order theory: antisymmetry of a binary relation ≤ on a set S, meaning for all x,y∈S, both x≤y and y≤x imply x=y. It is not asymmetry and does not require every pair to be comparable.",
+  "original_incoming_occurrence_ids": [
+    "occ.fc3f310eca2056c85101"
+  ],
+  "disposition": "new_meaning",
+  "definition": "A binary relation R⊆S×S is antisymmetric if for all x,y∈S, the conjunction xRy and yRx implies x=y.",
+  "reasoning": "The existing partially ordered set is a reflexive and transitive relation with antisymmetry; antisymmetry by itself is a separate relation property and does not imply comparability, reflexivity or asymmetry. It must not be collapsed into symmetry (311), asymmetric relations, or the combined partial-order definition.",
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Antisymmetric_relation",
+      "section": "Definition",
+      "relevance": "Directly reviewed the mutual-relatedness implies equality criterion for antisymmetric relations, distinct from asymmetry.",
+      "verification_status": "direct_source_passage_checked"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.91383b9c137b0e359967",
+      "missing.960bd927c204df58bb49",
+      "missing.972ae1e91200fae874aa",
+      "missing.9a669bd30949842fab00",
+      "missing.9e1b000eff0431817f3a"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.709d3d2f82950c5b.partially-ordered-set",
+        "relation": "Defines a partial order by adding antisymmetry to reflexive and transitive conditions"
+      },
+      {
+        "id": "meaning.709d3d2f82950c5b.preordered-set",
+        "relation": "Preorders need not be antisymmetric"
+      },
+      {
+        "id": "meaning.wave2.foundation.binary-relation-subset",
+        "relation": "General binary-relation data have no antisymmetry axiom"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Reviewed complete independent screened and provisional meaning indices (595+16) and the full partial-order/preorder formulations. Antisymmetry has no independent existing meaning; it is a predicate distinct from a poset and from the relation symmetry candidate staged earlier in this intake. The earlier reviewed first-generation stage records (7 identities) were also compared for overlap; no identical full meaning is being staged twice."
+  },
+  "mathematical_assumptions": [
+    "S may be empty and R may be empty.",
+    "Loops (x,x) are compatible with antisymmetry, unlike with asymmetry.",
+    "Comparability, reflexivity and transitivity are not required."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
