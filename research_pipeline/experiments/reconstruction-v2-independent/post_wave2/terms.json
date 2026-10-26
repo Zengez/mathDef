@@ -1421,6 +1421,602 @@
       ],
       "aliases": [],
       "research_status": "post-Wave2 assistant-reviewed draft; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.finite-length-module-20261026",
+      "term": "module of finite length",
+      "context": "Module theory · bounded length of proper-submodule chains",
+      "definition": "Let R be a commutative unital ring and M an R-module. The length ℓ_R(M) is the supremum of integers n for which there exists a strictly increasing chain 0=M_0⊊M_1⊊⋯⊊M_n=M of R-submodules; ℓ_R(0)=0. The module M has finite length when this supremum is finite. In this case there is a finite composition series, and all such series have exactly ℓ_R(M) nonzero simple factors.",
+      "sources": [
+        {
+          "title": "Stacks Project — Section 10.52, Length (00IU)",
+          "url": "https://stacks.math.columbia.edu/tag/00IU",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation76.submodule",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.a95feee56dc057ee.simple-module",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.module-composition-series-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The Stacks Project source uses a commutative ring; the same chain-length definition can be used for modules over arbitrary associative unital rings.",
+        "For M=0 the length is zero, and its composition series is the zero-step filtration."
+      ],
+      "aliases": [
+        "finite-length R-module",
+        "finite length of an R-module"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.module-composition-series-20261026",
+      "term": "composition series of a module",
+      "context": "Module theory · finite filtration with simple successive quotients",
+      "definition": "Let R be a commutative unital ring and M an R-module. A composition series of M is a finite chain of submodules 0=M_0⊊M_1⊊⋯⊊M_n=M such that each quotient M_i/M_{i−1} is a nonzero simple R-module. Equivalently the chain admits no insertion of another proper submodule. A composition series exists precisely when M has finite length; its length n is then independent of the chosen series.",
+      "sources": [
+        {
+          "title": "Stacks Project — Section 10.52, Length (00IU)",
+          "url": "https://stacks.math.columbia.edu/tag/00IU",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.a95feee56dc057ee.simple-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.foundation76.submodule",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.finite-length-module-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Strict inclusions prevent zero factors.",
+        "For the zero module, the filtration 0=M is permitted with n=0.",
+        "Finite length is essential for existence; an arbitrary module need not admit such a finite filtration."
+      ],
+      "aliases": [
+        "module composition series"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.socle-left-module-20261026",
+      "term": "socle of a left module",
+      "context": "Module theory · sum of all simple submodules",
+      "definition": "Let R be an associative unital ring and M a unital left R-module. The socle Soc_R(M) is the sum of all simple left R-submodules of M; when there are none, it is the zero submodule. The socle is semisimple, and it contains every semisimple submodule of M. In particular, M is semisimple if and only if Soc_R(M)=M.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Socle",
+          "url": "https://encyclopediaofmath.org/wiki/Socle",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.a95feee56dc057ee.simple-module",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.semisimple-left-module-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The zero socle is allowed.",
+        "The left-module convention matters over noncommutative rings; right-module socles are analogous."
+      ],
+      "aliases": [
+        "module socle"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.lindelof-topological-space-20261026",
+      "term": "Lindelöf topological space",
+      "context": "General topology · countable subcovers",
+      "definition": "A topological space X is Lindelöf if every open cover of X has a countable subcover; the selected subcover may be finite or empty. No Hausdorff or metrizability condition is assumed. Every compact space is Lindelöf, as is every σ-compact space, but a Lindelöf space need not be compact.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Lindelöf space",
+          "url": "https://encyclopediaofmath.org/wiki/Lindel%C3%B6f_space",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.62983821c35d185a119d",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.broad67.compact-topological-space",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.sigma-compact-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Countable includes finite and empty families.",
+        "Lindelöf is a countable-SUBCOVER condition, not countable compactness."
+      ],
+      "aliases": [
+        "Lindelof space",
+        "Lindelöf property"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.sigma-compact-space-20261026",
+      "term": "σ-compact topological space",
+      "context": "General topology · countable union of compact subspaces",
+      "definition": "A topological space X is σ-compact if X=⋃_{n∈ℕ}K_n for compact subspaces K_n⊆X (finite or empty collections may be accommodated by repeating sets or taking empty ones). It is not required that the K_n be open or that they form an increasing sequence; an increasing sequence can always be obtained by finite unions. Every σ-compact space is Lindelöf, but need not be compact.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Compact space",
+          "url": "https://encyclopediaofmath.org/wiki/Compact_space",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.broad67.compact-topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.lindelof-topological-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Compactness uses the open-cover convention without requiring Hausdorffness.",
+        "The empty space is σ-compact; each compact piece can be empty."
+      ],
+      "aliases": [
+        "sigma-compact space",
+        "countable union of compact subspaces"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.countably-compact-space-20261026",
+      "term": "countably compact topological space",
+      "context": "General topology · finite subcovers for countable open covers",
+      "definition": "A topological space X is countably compact if every countable open cover of X has a finite subcover. Equivalently, every decreasing sequence F_1⊇F_2⊇⋯ of nonempty closed subsets of X has nonempty intersection. Countable compactness is generally weaker than compactness; for metric spaces the two coincide.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Compactness, countable",
+          "url": "https://encyclopediaofmath.org/wiki/Compactness%2C_countable",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.62983821c35d185a119d",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.broad67.compact-topological-space",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.lindelof-topological-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "No separation axiom assumed.",
+        "Unlike Lindelöfness, the countability restriction is on the INPUT cover, and the conclusion requires a FINITE subcover."
+      ],
+      "aliases": [
+        "countable compactness"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.sequentially-compact-space-20261026",
+      "term": "sequentially compact topological space",
+      "context": "General topology · convergent subsequences",
+      "definition": "A topological space X is sequentially compact if every sequence (x_n)_{n≥0} in X has a subsequence (x_{n_k})_{k≥0} converging to some point of X. In metric spaces this is equivalent to compactness, but in general topological spaces sequential compactness and compactness are distinct properties. The empty space satisfies the condition vacuously.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Sequentially-compact space",
+          "url": "https://encyclopediaofmath.org/wiki/Sequentially-compact_space",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.countably-compact-space-20261026",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.wave2.broad67.compact-topological-space",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "A subsequence uses a strictly increasing sequence of indices.",
+        "Sequence convergence is with respect to X's given topology; no uniqueness of limits is assumed."
+      ],
+      "aliases": [
+        "sequential compactness"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.locally-finite-set-family-20261026",
+      "term": "locally finite family of subsets",
+      "context": "General topology · every point has a neighborhood meeting finitely many members",
+      "definition": "Let X be a topological space and (A_i)_{i∈I} an indexed family of subsets of X. The family is locally finite if for every x∈X there exists an open neighborhood U of x such that U∩A_i≠∅ for only finitely many indices i∈I. This is stronger than point-finiteness, which only requires each point to belong to finitely many A_i.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Paracompact space",
+          "url": "https://encyclopediaofmath.org/wiki/Paracompact_space",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.topological-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Indices, rather than distinct underlying sets, are counted; repeated members may affect local finiteness.",
+        "The empty family and families on the empty space are locally finite vacuously."
+      ],
+      "aliases": [
+        "locally finite collection of sets"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.paracompact-topological-space-20261026",
+      "term": "paracompact topological space",
+      "context": "General topology · locally finite open refinements",
+      "definition": "A topological space X is paracompact (without a Hausdorff condition in this definition) if every open cover U of X has an open refinement V that covers X and is locally finite: each point of X has a neighborhood meeting only finitely many members of V. Some authors build the Hausdorff assumption into the term 'paracompact'; it is not included here.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Paracompact space",
+          "url": "https://encyclopediaofmath.org/wiki/Paracompact_space",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.locally-finite-set-family-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.62983821c35d185a119d",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.lindelof-topological-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The refinement must consist of OPEN subsets and must itself cover X.",
+        "Hausdorff is optional here and explicitly excluded from the definition."
+      ],
+      "aliases": [
+        "paracompact space (Hausdorff not assumed)"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.meagre-subset-20261026",
+      "term": "meagre subset of a topological space",
+      "context": "Baire category · countable union of nowhere dense sets",
+      "definition": "Let X be a topological space. A subset A⊆X is meagre (of first category) in X if A=⋃_{n∈ℕ}N_n for some sequence of nowhere dense subsets N_n⊆X. Equivalently, A is contained in a countable union of nowhere dense subsets. The empty set is meagre; meagreness is a topological category property, not the same as having measure zero.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Category of a set / Meager set",
+          "url": "https://encyclopediaofmath.org/wiki/Meager_set",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.c15e2b26c207d87e.nowhere-dense-subset",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.comeagre-subset-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Nowhere dense is relative to the AMBIENT space X.",
+        "Meagre and null sets need not coincide under any measure."
+      ],
+      "aliases": [
+        "meager set",
+        "first-category subset"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.comeagre-subset-20261026",
+      "term": "comeagre subset of a topological space",
+      "context": "Baire category · complement of a meagre set",
+      "definition": "Let X be a topological space. A subset A⊆X is comeagre (also called residual in X) if its complement X∖A is meagre in X. Equivalently, A contains an intersection of countably many dense open subsets of X. In a Baire space every comeagre subset is dense, but this need not hold in an arbitrary topological space.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Category of a set / Meager set",
+          "url": "https://encyclopediaofmath.org/wiki/Meager_set",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.meagre-subset-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.baire-topological-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Residual is used specifically as 'complement of a meagre set'; some sources use other residual conventions.",
+        "A need not itself be a countable intersection of open sets."
+      ],
+      "aliases": [
+        "residual set",
+        "comeager set"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.baire-topological-space-20261026",
+      "term": "Baire topological space",
+      "context": "General topology · countable intersections of dense opens are dense",
+      "definition": "A topological space X is a Baire space if the intersection of every countable family of dense open subsets of X is dense in X. Equivalently every nonempty open subset is nonmeagre in X. Every complete metric space and every locally compact Hausdorff space is Baire; Baire need not mean that X is homeomorphic to ℕ^ℕ, which is ALSO called Baire space.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Baire space",
+          "url": "https://encyclopediaofmath.org/wiki/Baire_space",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.meagre-subset-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.comeagre-subset-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Countable intersections include the empty family whose intersection is X.",
+        "A Baire space may be empty.",
+        "The same name 'Baire space' has a distinct specific sequence-space meaning."
+      ],
+      "aliases": [
+        "Baire space (category property)"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.equicontinuous-metric-family-20261026",
+      "term": "equicontinuous family of maps between metric spaces",
+      "context": "Analysis · pointwise uniform modulus over a function family",
+      "definition": "Let (X,d_X) and (Y,d_Y) be metric spaces and F a family of functions X→Y. The family F is equicontinuous if for every x∈X and ε>0 there exists δ>0 (depending on x and ε but NOT on f∈F) such that d_Y(f(x),f(y))<ε for every f∈F whenever y∈X and d_X(x,y)<δ. This differs from uniform equicontinuity, where one δ works for every x as well.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Uniform space (equicontinuity)",
+          "url": "https://encyclopediaofmath.org/wiki/Uniform_space",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.analysis98.metric-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.cross104.lipschitz-global",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The empty family is equicontinuous vacuously.",
+        "Every f in an equicontinuous family is continuous, but δ must be uniform ACROSS f at each fixed x."
+      ],
+      "aliases": [
+        "equicontinuity of a family"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.relative-interior-convex-20261026",
+      "term": "relative interior of a convex subset of Euclidean space",
+      "context": "Convex geometry · interior in the affine hull",
+      "definition": "For a convex set C⊆ℝ^n, its relative interior ri(C) is the interior of C in the subspace topology on aff(C). Equivalently x∈ri(C) if and only if x∈C and there is ε>0 such that B(x,ε)∩aff(C)⊆C. By convention ri(∅)=∅. For a nonempty convex C in ℝ^n, ri(C) is nonempty, even when its ordinary interior in ℝ^n is empty.",
+      "sources": [
+        {
+          "title": "Harvard University — Semidefinite Optimization and Relaxation, Chapter 1: Convex Geometry",
+          "url": "https://hankyang.seas.harvard.edu/Semidefinite/background.html",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.direct.63acc9193a56ae7003b9",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.real-affine-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Affine hull is formed in finite-dimensional ℝ^n; in infinite-dimensional topological vector spaces relative interior may be empty for nonempty convex sets.",
+        "Balls are Euclidean; any equivalent norm on ℝ^n gives the same relative interior."
+      ],
+      "aliases": [
+        "relative interior",
+        "ri(C)"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.extreme-point-convex-20261026",
+      "term": "extreme point of a convex set",
+      "context": "Convex geometry · not in an open segment with distinct endpoints",
+      "definition": "Let C be a convex subset of a real vector space. A point p∈C is extreme if whenever p=ta+(1−t)b with a,b∈C and 0<t<1, one must have a=b=p. Equivalently the singleton {p} is a face of C. A set may have no extreme points; an extreme point need not be exposed by a supporting hyperplane.",
+      "sources": [
+        {
+          "title": "Harvard University — Semidefinite Optimization and Relaxation, Chapter 1: Convex Geometry",
+          "url": "https://hankyang.seas.harvard.edu/Semidefinite/background.html",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.cross133.convex-hull-real",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.face-of-convex-set-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "No closedness, boundedness, or compactness assumption on C.",
+        "A singleton convex set has its unique point extreme."
+      ],
+      "aliases": [
+        "extreme point"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.face-of-convex-set-20261026",
+      "term": "face of a convex set",
+      "context": "Convex geometry · convex subset containing segment endpoints",
+      "definition": "Let C be a convex subset of a real vector space. A subset F⊆C is a face of C if F is convex and whenever (1−t)a+tb∈F for a,b∈C and 0<t<1, both a and b lie in F. Both ∅ and C are faces (improper faces under one convention); a nonempty proper face is a face different from C.",
+      "sources": [
+        {
+          "title": "Harvard University — Semidefinite Optimization and Relaxation, Chapter 1: Convex Geometry",
+          "url": "https://hankyang.seas.harvard.edu/Semidefinite/background.html",
+          "verification_status": "direct_reference_checked"
+        },
+        {
+          "title": "PlanetMath — Face of a convex set",
+          "url": "https://planetmath.org/faceofaconvexset",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.extreme-point-convex-20261026",
+          "relation_type": "related"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.exposed-face-convex-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "The EMPTY face is admitted, unlike conventions that reserve 'face' for nonempty subsets.",
+        "A face need not be exposed by a hyperplane."
+      ],
+      "aliases": [
+        "convex face"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.exposed-face-convex-20261026",
+      "term": "exposed face of a convex set",
+      "context": "Convex geometry · intersection with a supporting hyperplane",
+      "definition": "Let C⊆ℝ^n be a nonempty convex set. A nonempty face F of C is exposed if there exists a nonzero linear functional ℓ:ℝ^n→ℝ and a real c such that ℓ(x)≤c for every x∈C, and F={x∈C:ℓ(x)=c}. This is the intersection of C with a supporting hyperplane. Every exposed face is a face, but not every face need be exposed.",
+      "sources": [
+        {
+          "title": "Harvard University — Semidefinite Optimization and Relaxation, Chapter 1: Convex Geometry",
+          "url": "https://hankyang.seas.harvard.edu/Semidefinite/background.html",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.face-of-convex-set-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.supporting-hyperplane-real-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Here exposed faces are required nonempty; some conventions allow the empty exposed face.",
+        "No closedness hypothesis on C; a supporting hyperplane must actually meet C for F to be nonempty."
+      ],
+      "aliases": [
+        "exposed face"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.barycentric-coordinates-affine-20261026",
+      "term": "barycentric coordinates relative to an affine frame",
+      "context": "Affine geometry · unique affine coefficients",
+      "definition": "Let a_0,…,a_n be affinely independent points of a real affine space A, and let p lie in their affine span. The barycentric coordinates of p relative to this ordered affine frame are the unique real scalars λ_0,…,λ_n such that p=∑_{i=0}^n λ_i a_i and ∑_{i=0}^n λ_i=1. The point p lies in the convex hull of the frame precisely when all λ_i≥0.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Barycentric coordinates",
+          "url": "https://encyclopediaofmath.org/wiki/Barycentric_coordinates",
+          "verification_status": "direct_reference_checked"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.affinely-independent-family-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.63acc9193a56ae7003b9",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.cross133.convex-hull-real",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Barycentric coordinates are unique ONLY when the frame is affinely independent, and exist for points in its affine span.",
+        "Negative barycentric coefficients are allowed outside the frame's convex hull.",
+        "The affine sum is origin-independent because the coefficients sum to one."
+      ],
+      "aliases": [
+        "affine barycentric coordinates"
+      ],
+      "research_status": "post-Wave2 assistant-reviewed research draft; not formally peer certified"
     }
   ]
 }
