@@ -269,3 +269,37 @@ Web-checked primary sources include Stacks [Definition 4.35.6](https://stacks.ma
 6. **Reliability threshold, not perfection:** no known substantive mathematical falsehood or unjustified merge, adequate plausible mathematical sourcing, appropriate conditions and notation, preserved uncertainty flags, and successful hard workflow validation. Minor wording, stylistic consistency, alternate sources, and additional related-term links can be corrected by future review and the planned community suggestion mechanism. **Known serious errors are never published deliberately.**
 
 **Operational next step:** Begin efficient candidate-specific semantic comparisons and guarded provisional staging of sound entries, with source checking *as needed* rather than requiring a second complete source-verification sweep before any intake. Continue maintaining accurate committed checkpoints and isolated math review holds. The 418/418 preliminary research coverage is unchanged by this instruction.
+
+## Latest 2026-10-26 staging handoff — eight guarded provisional dispositions applied
+
+**This is the latest and authoritative execution checkpoint for the first-generation guarded staging transition.** The prior 418/418 preliminary source-evidence coverage (841/841 source occurrences) is unchanged. The owner-directed risk-based approach remains controlling: reuse previous checks, make typed contextual decisions, stage mathematically sound candidates without another exhaustive audit, hold only substantive conflicts.
+
+### Working guarded staging process
+
+- Research branch: `research/wave2-firstgen-b01-source-evidence-2026-10-26`, draft PR #19, **do not merge**.
+- Added `.github/workflows/research-wave2-firstgen-stage.yml` on this **research branch only** (commit `d76a31ec425f31f1267517bb000529dd2e649ea8`). Review-authorized immutable input submissions go to `generation_staging/submissions/missing.ID.json`. The push Action uses the actual existing `python -m research_pipeline.engine.dependency_generation --mode stage` for each new input, preserving its accepted meanings digest, provisional meanings digest, original candidate/query/version identity and complete sorted `earlier_staged_candidate_ids`. It writes **only** original-candidate `generation_staging/records/`, never graph/population/production. Existing identical submissions are skipped and immutable; mismatches fail closed.
+- For this frozen graph, accepted source corpus SHA256 is `4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3`. Verified provisional independent cohort has 16 meanings; its canonical `population.snapshot()["meanings"]` digest is `e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481`, with no `population/revisions.jsonl` on main. Every submission contains the immutable original missing reference occurrence ID, relevant full-mathematical independent comparison rationale, source and verification status, assumptions, nonrecursive dependencies, and explicit `accepted=false`, `published=false`.
+- The Action successfully committed the first four staging dispositions and later another four. **Latest successful guarded workflow run: 40359571614**, which logged `completed_provisional_dispositions=8`, `remaining=410`, `ready_for_reviewed_integration=false`, `disposition_counts: specialization=2, new_meaning=6`, `graph_changed=false`, `production_accessed=false`. Its commit `b31844c` successfully pushed the latter four records. Verified all **8 files actually exist on the research branch**.
+- One earlier Action run failed on a normal non-fast-forward Git push as several submissions arrived during the execution (run 40359546952); the last full run succeeded and all eight staged records are saved. If future batches overlap Actions, prefer committing each sequential batch with enough validation/receipt space, and rely only on confirmed persisted `generation_staging/records/` for completion. No force push or override of validation.
+- The separate `research-pipeline-ci.yml` full-suite run on the research branch reported one old test failure: `test_dependency_seed_overrides.py` assumed the consolidation gate MUST be false after replaying seed overrides already present, even though the reviewed consolidation gate is currently valid. Corrected the test on research branch commit `798c041e989c9492fad6aaecfd9f26989b5cee32`: replay preserves previous gate validity; applying genuinely new overrides invalidates it. **Do not claim the full CI passes until a fresh run is explicitly verified.** No graph, mathematics, or production state was changed by this test fix.
+
+### Exact first eight staged original candidate identities
+
+| Original priority | Candidate ID | Preliminary stage disposition | Mathematical distinction |
+| --- | --- | --- | --- |
+| 296 | `missing.8e10ca4c4067ac5928f8` | `specialization` | Retrocompact open subset specializes quasi-compact subset inclusion, not absolute quasi-compactness |
+| 297 | `missing.8e7388ef8958ac46b761` | `new_meaning` | Repeated root of nonzero polynomial vs separability property |
+| 301 | `missing.91383b9c137b0e359967` | `specialization` | Real-line distance `|a-b|` from existing absolute-value meaning |
+| 309 | `missing.960bd927c204df58bb49` | `new_meaning` | General 0/1 square matrix vs graph adjacency matrix |
+| 311 | `missing.972ae1e91200fae874aa` | `new_meaning` | Symmetric binary relation, not the complete equivalence relation |
+| 316 | `missing.9a669bd30949842fab00` | `new_meaning` | General Iverson bracket, not equality-specific Kronecker delta |
+| 317 | `missing.9a71afd4a344322c1d26` | `new_meaning` | Antisymmetric relation, not the entire partial-order axioms |
+| 320 | `missing.9e1b000eff0431817f3a` | `new_meaning` | Open graph neighborhood as set, not cardinal degree or closed neighborhood |
+
+**Important distinction:** Each of these eight passed the guarded `stage` engine and exists as a provisional **disposition**, not an admitted independent population definition, graph resolution, human certification, or public website update. Do not assert eight new meanings actually joined the website. 410/418 original candidates still need appropriately compared guarded dispositions before the original first-generation integration status becomes ready.
+
+### Next practical work
+
+- Continue with batches of ~5–15 mathematically low-risk, typed source-backed candidate **dispositions**, referencing the exact currently staged **sorted 8-ID prior list**; include each newly staged ID for the next submission in that batch. Do not let documentation/audit alone substitute for stage writes. Verify successful Action and exact staged file count each time.
+- Useful next group: independently reviewed simple relation properties, elementary finite set/graph/algebra constructions, clear field/linear-algebra notation where source/context is already sound. Preserve distinctions for compound candidates and known mathematical edge cases; they can be deferred individually.
+- After several practical batches, assess need for a robust stage Action git-push retry loop (only if concurrent submissions keep causing failures); current latest run succeeded so do not preemptively overengineer. Keep draft PR and checkpoint current. No Codex credits necessary.
