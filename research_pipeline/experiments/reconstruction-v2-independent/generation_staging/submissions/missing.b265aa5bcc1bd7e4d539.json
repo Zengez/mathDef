@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "candidate_id": "missing.b265aa5bcc1bd7e4d539",
+  "original_query": "additive group homomorphism",
+  "original_context": "Group theory: homomorphism f:A→B of abelian groups respecting addition, f(a+a')=f(a)+f(a'), necessarily preserving additive identities and inverses.",
+  "original_incoming_occurrence_ids": [
+    "occ.0fa100e5e3f4894555b4"
+  ],
+  "disposition": "new_meaning",
+  "definition": "For groups (A,+) and (B,+) written additively, a group homomorphism f:A→B is a function satisfying f(a+a′)=f(a)+f(a′) for every a,a′∈A. Consequently f(0_A)=0_B and f(−a)=−f(a).",
+  "reasoning": "The independent screened kernel-of-abelian-group-homomorphism definition uses an additive homomorphism as an input; it is not a standalone definition of the map. An additive group homomorphism imposes operation preservation but not module scalar-linearity, ring multiplication preservation, or injectivity.",
+  "sources": [
+    {
+      "url": "https://mathworld.wolfram.com/GroupHomomorphism.html",
+      "section": "Group Homomorphism, operation preservation and identity/inverse properties",
+      "relevance": "Directly checked group-operation preservation and deductions for identities and inverses; this candidate specializes general notation to groups written additively.",
+      "verification_status": "direct_primary_specialization_checked"
+    }
+  ],
+  "comparison": {
+    "accepted_meanings_sha256": "4e72107a328956506e9650ecaf41029972841341fc659dedb4827fbd59063fb3",
+    "provisional_meanings_sha256": "e60c3ab8c35d41b6a969294da919f3b3461caa618468fc3c35b9d003fbb91481",
+    "reviewed_accepted_independent_corpus": true,
+    "reviewed_provisional_independent_corpus": true,
+    "earlier_staged_candidate_ids": [
+      "missing.8e10ca4c4067ac5928f8",
+      "missing.8e7388ef8958ac46b761",
+      "missing.91383b9c137b0e359967",
+      "missing.960bd927c204df58bb49",
+      "missing.972ae1e91200fae874aa",
+      "missing.9a669bd30949842fab00",
+      "missing.9a71afd4a344322c1d26",
+      "missing.9e1b000eff0431817f3a",
+      "missing.a257d0bad58dcfbd2fa7",
+      "missing.a53971a78b449b0edc86",
+      "missing.ab52c0b907fcd5ccf04f",
+      "missing.b176356d17d415e8f588",
+      "missing.b1e0a8b58dda986e68d9",
+      "missing.b1e7a10547ec65e37f00"
+    ],
+    "related_screened_meanings": [
+      {
+        "id": "meaning.wave2.foundation13.abelian-group-homomorphism-kernel",
+        "relation": "uses additive group homomorphism in defining kernel, not equivalent"
+      },
+      {
+        "id": "meaning.709d3d2f82950c5b.preordered-set",
+        "relation": "unrelated relation structure"
+      }
+    ],
+    "related_provisional_meanings": [],
+    "rationale": "Reviewed all 595 independent screened and 16 provisional meanings for general homomorphisms, linear maps and additive groups. The corpus has group-homomorphism uses but no standalone exact meaning giving only additive group-operation preservation; no module or ring linearity is implied. Earlier staged items are topology, relation, matrix and graph meanings, not homomorphisms. All 14 previously staged preliminary dispositions were also considered; none is an exact whole-meaning duplicate of this candidate."
+  },
+  "mathematical_assumptions": [
+    "A and B are groups expressed with additive operation, not necessarily abelian unless an application states so.",
+    "Identity and inverses are consequences, not independent optional axioms.",
+    "No preservation of scalar multiplication is assumed."
+  ],
+  "no_known_serious_error": true,
+  "new_missing_dependencies": [],
+  "defer_new_missing_dependencies": true,
+  "source_certified": false,
+  "accepted": false,
+  "published": false,
+  "original_graph_resolved": false,
+  "stage_review_policy": "risk_based_owner_2026_10_26",
+  "reviewed_on": "2026-10-26"
+}
