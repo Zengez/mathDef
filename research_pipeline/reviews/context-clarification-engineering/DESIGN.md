@@ -15,6 +15,7 @@ this log from the workspace. This is narrower than a candidate split/creation
 workflow and does not change the mathematical graph's semantics.
 
 Every proposal pins the complete current graph inputs, the canonical record,
+all workspace file bytes (including historical amendment/receipt provenance),
 all incoming effective occurrences (including specialized representative uses
 and seed references), exact observed/alias paths, full source/node/reference
 hashes, and the prior reviewed interpretation. Each occurrence must specify
@@ -34,7 +35,7 @@ text cannot be mechanically certified. No hidden unitality, size, zero-object
 or indexing assumptions are added. Metadata cannot add a self-edge because
 it cannot add any edge or resolve a candidate.
 
-Readers opt in explicitly and receive **parallel** original-observed,
+Global focus/scan and consistency readers opt in explicitly and receive **parallel** original-observed,
 recorded-canonical, proposed and reviewed descriptions, with exact occurrence
 coverage. No context is overwritten and proposals are never displayed as
 approved. Audit counts, closure, cycles and source-integrity hashes continue

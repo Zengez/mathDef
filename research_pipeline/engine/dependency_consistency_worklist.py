@@ -217,7 +217,7 @@ def build_worklist(snapshot, *, limit=12, exhaustive=False):
     # Context tables deduplicate source/target text shared by multiple leads.
     selected_fids = {fid for row in selected for fid in [row['formulation_id'], *row['related_formulation_ids']]}
     selected_targets = {mid for row in selected for mid in row['target_meaning_ids']}
-    return {'schema_version': 1, 'read_only': True, 'mathematics_certified': False,
+    report = {'schema_version': 1, 'read_only': True, 'mathematics_certified': False,
         'external_research_performed': False, 'automatic_edits': False,
         'graph_scope': 'All stored formulations and effective scan/seed dependencies; aliases, version-valid resolutions and seed overrides replayed. No formulation is silently selected.',
         'inventory_sha256': inv['source_inventory_sha256'],
@@ -246,15 +246,33 @@ def build_worklist(snapshot, *, limit=12, exhaustive=False):
             'Use evidence_sha256 with existing review-ledger fields for accepted reviews; legacy source-only reviews cannot suppress changed target/seed evidence.',
             'Formulation-choice cycles are separately summarized, never interpreted as automatic mathematical errors.']}
 
+    if 'candidate_context_reviews' in snapshot:
+        from .dependency_context_reviews import validated_view
+        report['candidate_context_reviews'] = validated_view(snapshot)
+    return report
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--workspace', type=Path, required=True)
+    parser.add_argument('--context-review-log', type=Path)
+    parser.add_argument('--context-review-checkpoint', type=Path)
+    parser.add_argument('--qualification-ledger', type=Path)
     group = parser.add_mutually_exclusive_group()
     group.add_argument('--limit', type=int, default=12)
     group.add_argument('--exhaustive', action='store_true')
     args = parser.parse_args()
-    print(json.dumps(build_worklist(load_live_snapshot(args.workspace), limit=args.limit,
+    if bool(args.context_review_log) != bool(args.context_review_checkpoint):
+        parser.error('Context review log and trusted checkpoint must be supplied together')
+    if args.qualification_ledger and not args.context_review_log:
+        parser.error('Qualification ledger requires an explicit context review log')
+    if args.context_review_log:
+        from .dependency_context_reviews import attach_review_files, load_context_snapshot
+        snapshot = attach_review_files(load_context_snapshot(args.workspace), args.context_review_log, args.context_review_checkpoint,
+                                       qualification_ledger_path=args.qualification_ledger)
+    else:
+        snapshot = load_live_snapshot(args.workspace)
+    print(json.dumps(build_worklist(snapshot, limit=args.limit,
                                     exhaustive=args.exhaustive), ensure_ascii=False, indent=2))
 
 
