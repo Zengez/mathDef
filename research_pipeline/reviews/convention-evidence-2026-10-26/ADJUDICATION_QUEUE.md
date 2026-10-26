@@ -1,5 +1,15 @@
 # Prioritized chat adjudication index
 
+**Post-policy triage now available.** The owner-approved general linking
+rule has been applied to classify the 40 historical cases into **13
+source-verification**, **6 candidate clarification**, **20 typed
+component-review**, and **1 previously corrected-edge** case. This is
+an *action plan, not 40 graph corrections*: see
+[the prioritized reconciliation plan](POST_POLICY_RECONCILIATION_PLAN.md),
+[40-case JSON triage](POST_POLICY_TRIAGE.json) and
+[continuation checkpoint](POST_POLICY_CHECKPOINT.md).
+No new graph action or source certification is implied.
+
 **Chat mathematical review completed for all 40 historical cases (2026-10-25, source-free).**
 The three case-by-case mathematical adjudications are now available:
 
