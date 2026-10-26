@@ -31,6 +31,13 @@ jobs:
           test -f /tmp/mathdef-independent-site/wave1/index.html
           test -f /tmp/mathdef-independent-site/wave2/index.html
           node --check /tmp/mathdef-independent-site/wave2/preview.js
+      - name: Verify original production mathDef builder remains functional
+        run: |
+          node --check web/app.js
+          node --check web/feedback.js
+          node --test tests/test_feedback.cjs tests/test_feedback_ui.cjs
+          python -m unittest discover -s tests
+          python scripts/build_index.py
       - name: Validate reusable reference UI
         run: |
           python -m unittest research_pipeline.tests.test_reference_ui -v
