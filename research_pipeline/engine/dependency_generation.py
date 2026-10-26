@@ -79,11 +79,30 @@ def create(workspace):
     candidates_file = graph / "missing_candidates.jsonl"
     candidates = [json.loads(line) for line in candidates_file.read_text(encoding="utf-8").splitlines()
                   if line.strip()]
+    occurrence_file = graph / "unresolved_occurrences.jsonl"
+    occurrences = [json.loads(line) for line in
+                   occurrence_file.read_text(encoding="utf-8").splitlines() if line.strip()]
+    grouped = {}
+    for entry in occurrences:
+        if entry.get("state") == "missing":
+            grouped.setdefault(entry["missing_candidate_id"], []).append({
+                "occurrence_id": entry["occurrence_id"],
+                "observed_missing_candidate_id": entry.get("observed_missing_candidate_id"),
+                "from_formulation": entry["from_formulation"],
+                "original_phrase": entry["phrase"],
+                "original_context": entry.get("context"),
+                "matching_note": entry.get("matching_note"),
+            })
     todo = [dict(id=c["id"], query=c["query"], context=c.get("context", ""),
                  occurrence_count=c["occurrence_count"],
                  upstream_formulation_count=c["upstream_formulation_count"],
-                 incoming_formulation_ids=c.get("incoming_formulation_ids", []))
+                 incoming_formulation_ids=c.get("incoming_formulation_ids", []),
+                 alias_candidate_ids=c.get("alias_ids", []),
+                 original_occurrences=sorted(grouped.get(c["id"], []),
+                                             key=lambda x: x["occurrence_id"]))
             for c in candidates if c.get("status") == "unresearched"]
+    if any(len(item["original_occurrences"]) != item["occurrence_count"] for item in todo):
+        raise PipelineError("Original occurrence provenance disagrees with candidate registry")
     todo.sort(key=lambda c: (-c["upstream_formulation_count"],
                              -c["occurrence_count"], c["id"]))
     if not todo:
