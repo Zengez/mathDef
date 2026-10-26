@@ -1,0 +1,764 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-26",
+  "phase": "first_generation_bounded_source_research",
+  "status": "PRELIMINARY_RESEARCH_EVIDENCE_NOT_CERTIFIED_NOT_STAGED",
+  "original_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "original_unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "priority_range": [
+    321,
+    350
+  ],
+  "original_candidate_count": 30,
+  "original_incoming_occurrences": 30,
+  "explicit_source_policy": "Review status distinguishes verified direct statements from plausible source leads. Do not promote or merge based on word similarity.",
+  "issues": [
+    {
+      "priority": 330,
+      "note": "Sober space unique generic point; not equivalent to Hausdorff."
+    },
+    {
+      "priority": 336,
+      "note": "Multiset can hide infinite edge multiplicity; use explicit edge identity mapping."
+    },
+    {
+      "priority": 347,
+      "note": "Group homomorphism into multiplicative monoid of field sends group elements to units, so excludes zero in a nonzero field."
+    }
+  ],
+  "items": [
+    {
+      "priority": 321,
+      "original_canonical_candidate_id": "missing.9f4c16f7de397aa27498",
+      "original_query": "infinite set of visiting indices",
+      "original_context": "Set theory: infinite subset {n∈ℕ:x_n∈U} of natural-number indices, containing infinitely many distinct indices even if only one value is repeated in U; required for each open U containing x.",
+      "original_occurrence_ids": [
+        "occ.30fc44e949fc1ec28b25"
+      ],
+      "mathematical_definition_draft": "The visiting-index set of sequence (x_n) in subset U⊆X is N_U={n∈N:x_n∈U}; it is infinite iff it contains infinitely many distinct indices.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Sequence",
+          "section": "Sequences indexed by natural numbers",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Infinite visits need not mean infinitely many different values; one value may recur.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 322,
+      "original_canonical_candidate_id": "missing.a115a0258bce647cea2b",
+      "original_query": "maximal ideal mR^h and residue field R/m",
+      "original_context": "Commutative local algebra: local homomorphism (R,m)→(R^h,mR^h) extending the maximal ideal, with induced residue-field isomorphism R/m→R^h/mR^h, preserving the specified base-field identification.",
+      "original_occurrence_ids": [
+        "occ.e0ee42722fb119a46552"
+      ],
+      "mathematical_definition_draft": "For local ring (R,m), its henselization R^h is a henselian local R-algebra with maximal ideal mR^h and residue field naturally R/m.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0BSK",
+          "section": "Stacks Lemma 10.155.1, clauses (1)-(4), and Definition 10.155.3",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked: R→R^h is local, mR^h is maximal and R^h/mR^h=κ=R/m. Previous tag 04GH is unrelated Lemma 10.153.4."
+        }
+      ],
+      "scope_and_edge_case": "The ring map is local and induces residue isomorphism; strict henselization instead has a chosen separably closed residue extension.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false,
+      "source_audit_note": "Verified primary replacement for earlier incorrect tag 04GH. R^sh has separable-closure residue field instead and is distinct."
+    },
+    {
+      "priority": 323,
+      "original_canonical_candidate_id": "missing.a128ec6b5c7fae2074c2",
+      "original_query": "set family P",
+      "original_context": "Set theory: a family or collection of subsets of S indexed by some set, viewed as a set of subsets; here P may be empty when S is empty.",
+      "original_occurrence_ids": [
+        "occ.c53e9755c2a9b738c722"
+      ],
+      "mathematical_definition_draft": "A collection P of subsets of S is a subset P⊆P(S); it may be empty, with any desired indexing represented by an index-to-subsets map.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Family_of_sets",
+          "section": "Family of sets",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "A family as indexed map preserves duplicate labels; a plain set of subsets loses multiplicity.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 324,
+      "original_canonical_candidate_id": "missing.a257d0bad58dcfbd2fa7",
+      "original_query": "weakest topology making every evaluation map continuous",
+      "original_context": "General topology: initial topology on a set X induced by maps f_i:X→(Y_i,τ_i) into topological spaces, namely the coarsest topology on X for which every f_i is continuous; it is generated by the family of all preimages f_i^{-1}[U] with U∈τ_i.",
+      "original_occurrence_ids": [
+        "occ.30c23aa916623a1fe0bf"
+      ],
+      "mathematical_definition_draft": "For maps f_i:X→Y_i, the initial topology on X is generated by sets f_i^{-1}(U), U open in Y_i; it is the coarsest making every f_i continuous.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Initial_topology",
+          "section": "Initial topology",
+          "review_status": "context_reference_pending",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "If no maps, topology is indiscrete {∅,X} (one element if X=∅).",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 325,
+      "original_canonical_candidate_id": "missing.a35924abc020a7a2dfab",
+      "original_query": "finite discrete topological groups",
+      "original_context": "Topology and group theory: finite abstract groups endowed with their discrete topology, where multiplication and inversion are continuous; morphisms of the inverse system are continuous group homomorphisms.",
+      "original_occurrence_ids": [
+        "occ.57e29b9fd29d5fb675e8"
+      ],
+      "mathematical_definition_draft": "Any finite group G with the discrete topology is a topological group; its multiplication and inversion are continuous.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Topological_group",
+          "section": "Discrete topological group",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Finiteness not needed for continuity under discrete topology. Every homomorphism between discrete groups is continuous.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 326,
+      "original_canonical_candidate_id": "missing.a53971a78b449b0edc86",
+      "original_query": "finite walk from u to v",
+      "original_context": "Graph theory: finite sequence of vertices (v_0,…,v_n) with each consecutive pair adjacent and specified endpoints u=v_0, v=v_n; n=0 is permitted.",
+      "original_occurrence_ids": [
+        "occ.8031b68785ef07fdbd0c"
+      ],
+      "mathematical_definition_draft": "A finite walk from u to v in graph G is a finite sequence v_0=u,…,v_n=v with adjacent successive vertices; its length is n.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Walk.html",
+          "section": "Walk in graph",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Length-zero walk u→u is allowed. Vertices and edges may repeat; not necessarily a path or trail.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 327,
+      "original_canonical_candidate_id": "missing.a62cab0ed414171ccbf6",
+      "original_query": "stratum intersection X_i∩cl(X_j)",
+      "original_context": "Set theory and topology: binary intersection of a stratum X_i with topological closure cl_X(X_j) as subsets of the same ambient space X, nonempty exactly when some point belongs to both.",
+      "original_occurrence_ids": [
+        "occ.9475449ff7dfedcf6dbb"
+      ],
+      "mathematical_definition_draft": "For X_i,X_j⊆X, their stratum/closure intersection is X_i∩cl_X(X_j), with membership belonging to both sets.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Closure_(topology)",
+          "section": "Closure and intersection",
+          "review_status": "set_operation_specialization",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Nonemptiness alone does not imply an ordering on strata absent frontier conditions.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 328,
+      "original_canonical_candidate_id": "missing.a67e1a13232aadb9c156",
+      "original_query": "subbasic cylinder pi_i inverse of U",
+      "original_context": "Product topology: subbasic cylinder set π_i^{-1}(U) in an indexed Cartesian product for open U⊆X_i, keeping all other coordinates unrestricted.",
+      "original_occurrence_ids": [
+        "occ.c19b6905427de7a16767"
+      ],
+      "mathematical_definition_draft": "In product X=∏_i X_i with coordinate projection π_i, the cylinder π_i^{-1}(U) for U open in X_i is a product-topology subbasic open set.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Product_topology",
+          "section": "Subbase via coordinate projections",
+          "review_status": "context_source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Other coordinates unconstrained; if product empty then every cylinder is empty.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 329,
+      "original_canonical_candidate_id": "missing.a818a24a52fd686234f7",
+      "original_query": "commutative diagram",
+      "original_context": "Category theory and homological algebra: a diagram of morphisms whose squares commute, meaning the two composable paths around each displayed square yield the same morphism; here the objects are abelian groups and the horizontal rows are exact.",
+      "original_occurrence_ids": [
+        "occ.8b1044c34f81c19f9197"
+      ],
+      "mathematical_definition_draft": "A commutative diagram is a family of morphisms in which any two directed composable paths sharing source and target have equal composites.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0014",
+          "section": "Definition 4.2.1 categorical composition",
+          "review_status": "direct_source_checked_but_not_sufficient_for_diagram_definition",
+          "relevance": "Only category axioms and composability; does not itself define arbitrary commutative diagrams."
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/08N0",
+          "section": "Definition 4.6.2 cartesian commutative square",
+          "review_status": "direct_specialization_checked_not_general_definition",
+          "relevance": "Confirms how a commutative square appears as one diagram in a category, but does not by itself prove the full generalized any-parallel-paths formulation."
+        }
+      ],
+      "scope_and_edge_case": "Exact rows or diagram objects are additional source-specific structure.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false,
+      "source_audit_note": "No complete primary source verified for general-path statement. Treat broad claim as mathematical draft and seek general categorical-diagram source in deeper pass."
+    },
+    {
+      "priority": 330,
+      "original_canonical_candidate_id": "missing.ab52c0b907fcd5ccf04f",
+      "original_query": "sober topological space",
+      "original_context": "General topology: sobriety of X, every nonempty irreducible closed subset has a unique generic point x whose closure equals that subset; not equivalent to Hausdorffness.",
+      "original_occurrence_ids": [
+        "occ.bf9997ad185555be951c"
+      ],
+      "mathematical_definition_draft": "A topological space X is sober if every nonempty irreducible closed subset is the closure of exactly one point.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01IR",
+          "section": "Lemma 26.11.1 and Topology Definition 5.8.6",
+          "review_status": "primary_verified_general_definition_referenced",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Hausdorff spaces are sober, but sober need not be Hausdorff; schemes' underlying topological spaces are sober.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 331,
+      "original_canonical_candidate_id": "missing.ab7bf29575a052ca8797",
+      "original_query": "unit object 1 with natural unit isomorphisms",
+      "original_context": "Monoidal category: distinguished tensor unit object 1 together with natural left unitor λ_X:1⊗X≅X and right unitor ρ_X:X⊗1≅X.",
+      "original_occurrence_ids": [
+        "occ.2e3040e24a6d65264c2b"
+      ],
+      "mathematical_definition_draft": "A monoidal unit consists of distinguished object 1 and natural isomorphisms λ_X:1⊗X→X, ρ_X:X⊗1→X satisfying coherence with associator.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0FFJ",
+          "section": "Stacks Section 4.43, discussion of unit, displayed triangle 4.43.0.2 and Lemma 4.43.1",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked unit object 1 with left/right natural isomorphisms and triangle coherence. Stacks writes associator φ from X⊗(Y⊗Z) to (X⊗Y)⊗Z, inverse of other conventional orientation."
+        }
+      ],
+      "scope_and_edge_case": "A unit object and natural unitors alone need triangle coherence to form monoidal structure.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false,
+      "source_audit_note": "Source directly checked and matching general monoidal-unit meaning; associator direction must be tracked explicitly when transferring formulas."
+    },
+    {
+      "priority": 332,
+      "original_canonical_candidate_id": "missing.abd21cf23005b15aad5c",
+      "original_query": "coherent natural isomorphisms F(X)⊗F(Y)≅F(X⊗Y)",
+      "original_context": "Monoidal category theory: tensor comparison natural isomorphisms for strong monoidal functor, natural in both objects with associator coherence; distinct from strict tensor preservation.",
+      "original_occurrence_ids": [
+        "occ.82c219626fb9b2ddd8f9"
+      ],
+      "mathematical_definition_draft": "A strong monoidal functor has natural invertible tensor comparisons F(X)⊗F(Y)→F(X⊗Y), a unit comparison, and compatibility with associators/unitors.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0FFJ",
+          "section": "Stacks Definition 4.43.5, monoidal functor",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked natural invertible F(X)⊗F(Y)→F(X⊗Y), associative diagram and unit-preservation requirement. Stacks unit formalism differs from arbitrary explicit unit-isomorphism presentation."
+        },
+        {
+          "url": "https://ncatlab.org/nlab/show/monoidal+functor",
+          "section": "Strong monoidal functor conventions",
+          "review_status": "unverified_source_lead",
+          "relevance": "Additional terminology comparison pending passage verification."
+        }
+      ],
+      "scope_and_edge_case": "Do not identify strong with strict preservation, and don't omit unit constraint.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false,
+      "source_audit_note": "Stacks verifies comparison isomorphisms and coherence; distinguishes a monoidal functor from strict preservation and warns unit must be included."
+    },
+    {
+      "priority": 333,
+      "original_canonical_candidate_id": "missing.abe50f5385ba16750968",
+      "original_query": "morphisms X→P and Y→P",
+      "original_context": "Category theory: pair of coproduct cocone legs i:X→P,j:Y→P from two specified objects to a common vertex P, independent of whether P satisfies universal coproduct property.",
+      "original_occurrence_ids": [
+        "occ.53c2627a21af8f7358e8"
+      ],
+      "mathematical_definition_draft": "Two arrows i:X→P and j:Y→P form a cocone over discrete two-object diagram; universality is extra if P is a coproduct.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0G2U",
+          "section": "Cocones and coproducts",
+          "review_status": "primary_construction_context",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "An arbitrary pair of legs is not necessarily coproduct injections.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 334,
+      "original_canonical_candidate_id": "missing.ad7de6dcfac982c1ff16",
+      "original_query": "det(t I_n−A)",
+      "original_context": "Commutative linear algebra: determinant of an n×n matrix with entries in the polynomial ring R[t], evaluated on tI_n−A; the determinant is defined over a commutative coefficient ring.",
+      "original_occurrence_ids": [
+        "occ.101dcf72ce110e124089"
+      ],
+      "mathematical_definition_draft": "For A∈Mat_n(R), the expression det(tI_n−A) is determinant computed over commutative polynomial ring R[t].",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/CharacteristicPolynomial.html",
+          "section": "Characteristic polynomial",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Yields characteristic polynomial; the determinant requires commutative coefficients, with n=0 convention separate.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 335,
+      "original_canonical_candidate_id": "missing.adb2077ebeba9905f9a9",
+      "original_query": "descending sequence of closed subsets",
+      "original_context": "Topology and order theory: a sequence (F_n) of closed subsets of a fixed space with F_{n+1}⊆F_n for every n; do not identify the sequence itself with the stabilization/Noetherian property.",
+      "original_occurrence_ids": [
+        "occ.71919e7ca7925c195232"
+      ],
+      "mathematical_definition_draft": "A descending sequence of closed subsets is F_0⊇F_1⊇⋯ with each F_n closed in a fixed space X.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0055",
+          "section": "Topology and Noetherian chains",
+          "review_status": "source_context_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Sequence need not stabilize; stabilization of every such sequence is an additional Noetherian-type condition.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 336,
+      "original_canonical_candidate_id": "missing.aea01d4283a9077d3e98",
+      "original_query": "undirected multigraph edge multiset E",
+      "original_context": "Graph theory: edge multiset of unordered two-element subsets of a vertex set V, allowing parallel copies but excluding loops.",
+      "original_occurrence_ids": [
+        "occ.c8dbaeb89b5322285d5f"
+      ],
+      "mathematical_definition_draft": "An undirected loopless multigraph has vertex set V and distinguishable edges each assigned an unordered two-element endpoint subset of V, possibly many edges per pair.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Multigraph.html",
+          "section": "Multigraph",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "A literal finite multiset cannot represent infinite parallel multiplicity; use edge-identity set with incidence map for full generality.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 337,
+      "original_canonical_candidate_id": "missing.aedccd5a93f29edb0db4",
+      "original_query": "inverse morphism g:y to x",
+      "original_context": "Category theory: inverse arrow g:Y→X of isomorphism f:X→Y satisfies gf=id_X and fg=id_Y, not ring multiplication.",
+      "original_occurrence_ids": [
+        "occ.8b05b79ccd477a5f4cd2"
+      ],
+      "mathematical_definition_draft": "An inverse arrow g:Y→X to f:X→Y satisfies g∘f=id_X and f∘g=id_Y.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0017",
+          "section": "Definition 4.2.4 isomorphisms",
+          "review_status": "primary_verified_context",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Unique inverse where it exists; arrow inverse is not scalar reciprocal.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 338,
+      "original_canonical_candidate_id": "missing.b176356d17d415e8f588",
+      "original_query": "neighborhood basis at x",
+      "original_context": "General topology: family 𝒩_x of neighborhoods of x such that for every neighborhood U of x there exists B∈𝒩_x with B⊆U; B need not itself be open.",
+      "original_occurrence_ids": [
+        "occ.cf87fcb3cc31bbb988c8"
+      ],
+      "mathematical_definition_draft": "A neighborhood basis at x is a family B_x of neighborhoods such that every neighborhood N of x contains some B∈B_x.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Neighbourhood_(mathematics)",
+          "section": "Neighborhood bases",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Basis members need not be open under general-neighborhood convention.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 339,
+      "original_canonical_candidate_id": "missing.b1e0a8b58dda986e68d9",
+      "original_query": "downward-closed subset under rational order",
+      "original_context": "Order theory: downward-closed or lower set A of partially ordered S; whenever a∈A and q≤a then q∈A, here specializing to rational order.",
+      "original_occurrence_ids": [
+        "occ.da75648e3d958c101989"
+      ],
+      "mathematical_definition_draft": "A lower set A⊆P in poset (P,≤) has a∈A and q≤a⇒q∈A.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Lower_set",
+          "section": "Order ideals and lower sets",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Lower set may be empty and isn't necessarily a ring ideal or a Dedekind cut.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 340,
+      "original_canonical_candidate_id": "missing.b1e7a10547ec65e37f00",
+      "original_query": "morphisms B to A and B to C",
+      "original_context": "Category theory: a span or common-domain arrow diagram B→A and B→C in an arbitrary category, not a composable arrow pair and not the dual cospan.",
+      "original_occurrence_ids": [
+        "occ.2a5787d1984c6db39e60"
+      ],
+      "mathematical_definition_draft": "A span in category C is a diagram A←B→C, two arrows with the same domain B.",
+      "external_source_evidence": [
+        {
+          "url": "https://ncatlab.org/nlab/show/span",
+          "section": "Span",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Its dual cospan has common codomain. No pushout object is assumed.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 341,
+      "original_canonical_candidate_id": "missing.b234c3c56c247169bee2",
+      "original_query": "commutative lifting diagram for schemes",
+      "original_context": "Algebraic geometry and category theory: commutative valuative square/triangles for maps Spec(K)→X and Spec(V)→S over f:X→S and inclusion Spec(K)→Spec(V), with a completing map Spec(V)→X required to commute with both legs.",
+      "original_occurrence_ids": [
+        "occ.d68ec38b98ea89038c22"
+      ],
+      "mathematical_definition_draft": "A valuative lifting diagram for morphism f:X→S consists of Spec(K)→X, Spec(V)→S and canonical Spec(K)→Spec(V) with compatible compositions; a filler is Spec(V)→X over S.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01KA",
+          "section": "Stacks Definition 26.20.3 (valuative diagram; existence and uniqueness)",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked Spec(K)→X above Spec(A)→S and optional dotted filler. Definition distinguishes existence and uniqueness from data of the solid diagram."
+        }
+      ],
+      "scope_and_edge_case": "Existence/uniqueness of fillers is a property of f; not inherent in the square.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false,
+      "source_audit_note": "Replaced previous 01KF (Proposition 26.20.6), which is a theorem about universal closedness, not the first definition of the diagram. No property of lifting asserted by the diagram alone."
+    },
+    {
+      "priority": 342,
+      "original_canonical_candidate_id": "missing.b265aa5bcc1bd7e4d539",
+      "original_query": "additive group homomorphism",
+      "original_context": "Group theory: homomorphism f:A→B of abelian groups respecting addition, f(a+a')=f(a)+f(a'), necessarily preserving additive identities and inverses.",
+      "original_occurrence_ids": [
+        "occ.0fa100e5e3f4894555b4"
+      ],
+      "mathematical_definition_draft": "An additive group homomorphism f:A→B satisfies f(a+a′)=f(a)+f(a′), preserving zero and negatives.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/GroupHomomorphism.html",
+          "section": "Group homomorphisms in additive notation",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "No scalar compatibility required; linear maps are a specialization.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 343,
+      "original_canonical_candidate_id": "missing.b35a892cf232bbd9d723",
+      "original_query": "finite zigzag of arrows between objects",
+      "original_context": "Category theory: finite zigzag of objects x=x_0,…,x_n=y in category C with for each consecutive pair at least one morphism x_i→x_{i+1} or x_{i+1}→x_i; arrows need not be invertible, and n=0 joins x to itself.",
+      "original_occurrence_ids": [
+        "occ.ae5332d66748bddd1469"
+      ],
+      "mathematical_definition_draft": "A finite zigzag joins x to y if x=x_0,…,x_n=y and for every step at least one arrow exists in one direction between consecutive objects.",
+      "external_source_evidence": [
+        {
+          "url": "https://ncatlab.org/nlab/show/connected+category",
+          "section": "Connected category — Definition",
+          "review_status": "search_excerpt_checked_full_page_unavailable",
+          "relevance": "Retrieved indexed excerpt explicitly equates connectedness with zigzags, but full page was not accessible here. Distinguish underlying zigzag from additional nonemptiness requirement on connected category."
+        }
+      ],
+      "scope_and_edge_case": "Arrows need not be invertible/composable as a directed path; n=0 allows reflexivity.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false,
+      "source_audit_note": "Previous Stacks tag 0E1V is actually Section 15.101 'Base change for derived hom' and is invalid here. Replacement is a lead supported by search excerpt, NOT full primary passage verification."
+    },
+    {
+      "priority": 344,
+      "original_canonical_candidate_id": "missing.b4aa15446fdc10566dca",
+      "original_query": "nonconstant polynomial",
+      "original_context": "Polynomial algebra: nonconstant polynomial f in K[T] over a field K, of positive degree, distinguished from constant polynomials and from the polynomial zero.",
+      "original_occurrence_ids": [
+        "occ.0b134cb1727116a75a66"
+      ],
+      "mathematical_definition_draft": "A nonconstant polynomial in K[T] is a nonzero polynomial of degree at least one.",
+      "external_source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Polynomial degree",
+          "review_status": "algebra_reference_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "Zero polynomial has no ordinary finite degree; degree-0 polynomials are nonzero constants.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 345,
+      "original_canonical_candidate_id": "missing.b7715941d4e866b5133d",
+      "original_query": "isolated point of the fibre",
+      "original_context": "Topology: isolated point x in a topological space T, characterized by openness of the singleton {x} in T; here T is the fibre Spec(S tensor_R kappa(p)) with its Zariski topology.",
+      "original_occurrence_ids": [
+        "occ.5c1e8def690bcc653a44"
+      ],
+      "mathematical_definition_draft": "A point x of space T is isolated if {x} is open in T.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/IsolatedPoint.html",
+          "section": "Isolated point",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "In a fibre, relative openness within fibre differs from openness in ambient total space.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 346,
+      "original_canonical_candidate_id": "missing.b782397ee09b076f758f",
+      "original_query": "projective resolution of an R-module",
+      "original_context": "Homological algebra: projective resolution of an R-module M, an augmented exact chain complex ⋯→P_2→P_1→P_0→M→0 with each P_i projective; finite length additionally requires vanishing P_i sufficiently far to the left.",
+      "original_occurrence_ids": [
+        "occ.a28e9cac9f4f0903edd3"
+      ],
+      "mathematical_definition_draft": "A projective resolution of module M is an exact augmented chain complex ⋯→P_1→P_0→M→0 with each P_i projective.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00O2",
+          "section": "Stacks Section 10.109, Definition 10.109.2 and Lemma 10.109.4",
+          "review_status": "primary_context_checked_full_unbounded_definition_not_exactly_stated",
+          "relevance": "Directly checked projective resolutions, including exact finite and unbounded augmented projective complexes; section supplies context, not a singled-out formal definition matching all generality."
+        }
+      ],
+      "scope_and_edge_case": "Finite-length resolution requires P_i=0 for all sufficiently large i.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false,
+      "source_audit_note": "Replaced tag 06XP (Section 13.27 Ext groups), which mentions projective resolutions but is not a definition. Generic unbounded resolution definition remains pending direct definitional citation."
+    },
+    {
+      "priority": 347,
+      "original_canonical_candidate_id": "missing.bc89c3b016673f824b11",
+      "original_query": "homomorphism from G to the multiplicative monoid of L",
+      "original_context": "Algebra: identity-preserving homomorphism φ:G→H between monoids, satisfying φ(1_G)=1_H and φ(g_1g_2)=φ(g_1)φ(g_2); here H is the multiplicative monoid underlying field L, including its zero element unless explicitly restricted.",
+      "original_occurrence_ids": [
+        "occ.aa54fce0cca1f2bfc9d1"
+      ],
+      "mathematical_definition_draft": "A monoid homomorphism φ:G→(L,·,1) preserves identity and products.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Monoid",
+          "section": "Monoid homomorphism",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "If G is group, every φ(g) is a unit because φ(g)φ(g^{-1})=1, hence cannot map to 0 of nonzero field.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 348,
+      "original_canonical_candidate_id": "missing.bcb94585c240d6354060",
+      "original_query": "map M_i→X splitting X→M_i",
+      "original_context": "Category theory: retraction r:M_i→X of cone arrow s:X→M_i, with r∘s=id_X; a section/retraction pair in the direction specified by the pro-object source.",
+      "original_occurrence_ids": [
+        "occ.16fceaaccd277a2cdecb"
+      ],
+      "mathematical_definition_draft": "A retraction r:M_i→X of section s:X→M_i satisfies r∘s=id_X.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0017",
+          "section": "Sections and retractions in categories",
+          "review_status": "categorical_source_context",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "X is a retract of M_i, not necessarily isomorphic to it.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    },
+    {
+      "priority": 349,
+      "original_canonical_candidate_id": "missing.bee72226a091890e8ea0",
+      "original_query": "image Im(f) of categorical morphism",
+      "original_context": "Abelian category theory: categorical image Im(f) of morphism f, given as kernel of coker(f), distinct from elementwise image of a function.",
+      "original_occurrence_ids": [
+        "occ.39f9dfe84228bac73d21"
+      ],
+      "mathematical_definition_draft": "In an abelian category the image of f:X→Y is ker(coker f), considered as a subobject of Y.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0106",
+          "section": "Stacks Definition 12.3.9 (5)-(8), image and coimage",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked image of f as kernel of cokernel and coimage as cokernel of kernel in preadditive setting when these exist."
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00ZX",
+          "section": "Stacks Definition 12.5.1, abelian categories",
+          "review_status": "direct_primary_passage_checked_2026_10_26",
+          "relevance": "Directly checked that canonical comparison Coim(f)→Im(f) is an isomorphism for morphisms in abelian categories."
+        }
+      ],
+      "scope_and_edge_case": "Elementwise image of functions is a special case; image/coimage comparison is canonical isomorphism in abelian categories.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false,
+      "source_audit_note": "More precise primary source for definition is 0106; 00ZX separately supports the abelian-category comparison axiom. Image and coimage must not be identified as literal equal objects."
+    },
+    {
+      "priority": 350,
+      "original_canonical_candidate_id": "missing.bfcb0543265f0a0f99cf",
+      "original_query": "alpha∪{alpha}",
+      "original_context": "Set theory: union A∪B of two arbitrary sets, with this instance A=α and B={α}; the singleton of the ordinal α is adjoined to all elements already in α.",
+      "original_occurrence_ids": [
+        "occ.6df25a58a9976e91554c"
+      ],
+      "mathematical_definition_draft": "For ordinal α, α∪{α} is its successor ordinal α+1 under von Neumann ordinals.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Successor_ordinal",
+          "section": "Successor ordinal",
+          "review_status": "source_lead",
+          "relevance": "Mathematical definition/source lead; passage verification required unless clearly tagged verified."
+        }
+      ],
+      "scope_and_edge_case": "For arbitrary set A, A∪{A} need not be an ordinal. Empty ordinal gives {∅}.",
+      "comparison_status": "NOT_COMPLETE: current independent accepted/provisional plus all previously staged must be assessed before formal meaning admission",
+      "no_recursive_research": true,
+      "source_certified": false,
+      "staged": false
+    }
+  ],
+  "source_verification_audit": {
+    "review_date": "2026-10-26",
+    "verified_priorities": [
+      322,
+      329,
+      331,
+      332,
+      341,
+      343,
+      346,
+      349
+    ],
+    "method": "Directly inspect linked Stacks primary passages; distinguish checked mathematical content from partial source contexts, exact-definition insufficiencies and nLab indexed excerpts.",
+    "blocked_gap_291_320_untouched": true,
+    "graph_mutation": false,
+    "stage_admission": false
+  }
+}

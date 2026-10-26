@@ -1,0 +1,852 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "scope": "independent mathDef Wave2 generation 01",
+  "state": "SOURCE_BACKED_REVIEW_EVIDENCE_NOT_PROVISIONAL_ADMISSION",
+  "inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "initial_generation_count": 418,
+  "priority_range": [
+    21,
+    40
+  ],
+  "candidate_count": 20,
+  "incoming_reference_count": 89,
+  "sources_checked": "Source links and substantive references gathered via targeted mathematics searches, with source limitations honestly labeled per record; not all exact section locators or context extensions fully verified.",
+  "substantive_holds": [
+    {
+      "candidate_id": "missing.fa5932b42daa1a3e0307",
+      "issue": "If f is merely nonconstant but reducible, F[x]/(f) is generally not a field.",
+      "counterexample": "F=Q, f=x²: Q[x]/(x²) has nonzero nilpotent class of x.",
+      "appropriate_distinction": "Polynomial root in a quotient F-algebra works for nonconstant f; when claiming quotient is a field, require f irreducible.",
+      "status": "review_only_unapplied"
+    },
+    {
+      "candidate_id": "missing.b599bdc9343a25050226",
+      "issue": "Generic clopen predicate in Spec(R) is not definitionally the same as the idempotent correspondence theorem.",
+      "status": "review_only_not_alias"
+    }
+  ],
+  "items": [
+    {
+      "priority": 21,
+      "original_canonical_candidate_id": "missing.170fcdda487b9180137e",
+      "original_surface_phrase": "intersection A cap U",
+      "original_context": "Set theory: binary intersection A∩U of two sets, whose elements belong to both A and U; applied to ambient open sets and a subspace.",
+      "origin_alias_candidate_ids": [
+        "missing.26ce2acc7f34d02c9cd7",
+        "missing.28ac7a42e85e9c0655d8",
+        "missing.6bf4f56fd52a2eb8dc88",
+        "missing.cd86e488d6ee7d3c34b4"
+      ],
+      "original_occurrence_ids": [
+        "occ.54c39dda33a33b9a0edc",
+        "occ.627aed5e81ce7cba26ff",
+        "occ.64b4e67c2617f2e08d7a",
+        "occ.6874279f0c0b531d22f1",
+        "occ.d19d73bfc421744d0257"
+      ],
+      "original_incoming_occurrences": 5,
+      "source_backed_preliminary_definition": "For sets A and U, their intersection is A∩U={x:x∈A and x∈U}.",
+      "sources": [
+        {
+          "url": "https://math.libretexts.org/Courses/Monroe_Community_College/MTH_220_Discrete_Math/4%3A_Sets/4.3%3A_Unions_and_Intersections",
+          "section": "Section 4.3: intersections",
+          "relevance": "Membership in a binary intersection requires membership in both sets"
+        }
+      ],
+      "source_scope_status": "direct_definition_supported",
+      "mathematical_distinctions": [
+        "Intersection is commutative, associative and idempotent.",
+        "A∩∅=∅; A∩X=A whenever A⊆X.",
+        "For a topological subspace A⊆X, A∩U is open in A when U is open in X; the subspace-topology conclusion is additional."
+      ],
+      "typed_relation_hypothesis": "set_operation_not_structured_topology",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 22,
+      "original_canonical_candidate_id": "missing.189a1049986dd4f651f4",
+      "original_surface_phrase": "difference A minus B",
+      "original_context": "Set theory: relative complement A\\B={x∈A:x∉B} for two sets A,B⊆X; in the sigma-algebra axiom A,B are members of Σ.",
+      "origin_alias_candidate_ids": [
+        "missing.8b4f1a600244dc2dfa01",
+        "missing.b149b3184163d8ed8644",
+        "missing.c521c381c9c487c1b47f",
+        "missing.e31865cbca3aea4bdc09"
+      ],
+      "original_occurrence_ids": [
+        "occ.1bcbd96fa5264d9bd02d",
+        "occ.597fd35aa9d8885be524",
+        "occ.ad1cd9c3b8abb2a4c5b9",
+        "occ.cc6ea0b67ff4dfe81aa8",
+        "occ.ce05cef165b6f8c72ea1"
+      ],
+      "original_incoming_occurrences": 5,
+      "source_backed_preliminary_definition": "For sets A,B, the difference A\\B is {x∈A:x∉B}. If A,B⊆X, it equals A∩(X\\B).",
+      "sources": [
+        {
+          "url": "https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Transition_to_Higher_Mathematics_%28Dumas_and_McCarthy%29/01%3A_New_Page/1.02%3A_New_Page",
+          "section": "Set notation and set difference",
+          "relevance": "Set-theoretic difference/relative complement operation"
+        }
+      ],
+      "source_scope_status": "source_locator_needs_exact_section_crosscheck",
+      "mathematical_distinctions": [
+        "A\\B depends on the order of A and B.",
+        "A\\A=∅, A\\∅=A and ∅\\B=∅.",
+        "Membership in a σ-algebra is a condition on A,B, not part of the set difference operation."
+      ],
+      "typed_relation_hypothesis": "general_operation_context",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 23,
+      "original_canonical_candidate_id": "missing.3b37131115a06556c3e4",
+      "original_surface_phrase": "commutative unital algebra over a field",
+      "original_context": "Commutative algebra: commutative unital algebra A over a specified base field k, with a chosen unital structure homomorphism k→A; A need not be a field, a domain or geometrically regular.",
+      "origin_alias_candidate_ids": [],
+      "original_occurrence_ids": [
+        "occ.29dc6ffd5341ec86cd59",
+        "occ.3c8a1a79c5bbd89954f8",
+        "occ.51e6889eab309227c012",
+        "occ.8c97f35eb2b710452001",
+        "occ.ead6baaa69e2d6d331c4"
+      ],
+      "original_incoming_occurrences": 5,
+      "source_backed_preliminary_definition": "Given a field k, a commutative unital k-algebra is a commutative unital ring A equipped with a specified unital ring homomorphism ι:k→A; equivalently it is a k-vector space with associative commutative k-bilinear multiplication having an identity 1_A and compatible scalar action.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00AQ",
+          "section": "Section 10.2 conventions",
+          "relevance": "Commutative rings with 1 and the zero ring convention; does not on its own define k-algebras"
+        },
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.5 and related algebra structures",
+          "relevance": "Ring homomorphism groundwork for algebra structure map k→A"
+        }
+      ],
+      "source_scope_status": "partial_source_scope_k_algebra_specific_definition_pending",
+      "mathematical_distinctions": [
+        "If A≠0 then ι is injective because its kernel is an ideal of a field and ι(1)=1_A≠0.",
+        "If zero rings are admitted, A=0 is an algebra under the unital-map convention with 1_A=0; do not silently assume injectivity for this case.",
+        "No assumption of integrality, finite dimension, geometric reducedness or being a field."
+      ],
+      "typed_relation_hypothesis": "algebra_over_field_not_equal_to_generic_ring",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 24,
+      "original_canonical_candidate_id": "missing.45359d317b7e3aba73da",
+      "original_surface_phrase": "principal ideal (p)",
+      "original_context": "Commutative algebra: principal ideal generated by one element",
+      "origin_alias_candidate_ids": [
+        "missing.285c4e09c801d29d1b2e",
+        "missing.3f2920eaf72fecd57164",
+        "missing.68c04127d4316640e660",
+        "missing.6d8a70c23c4b7120411b"
+      ],
+      "original_occurrence_ids": [
+        "occ.0e09082b01f25a8f736d",
+        "occ.a7cb1cecf97c234f0276",
+        "occ.c1a2adf80be2bd3152b5",
+        "occ.c77cf67eb615a27ba72d",
+        "occ.fc27b528afc78d358193"
+      ],
+      "original_incoming_occurrences": 5,
+      "source_backed_preliminary_definition": "For an element a of a commutative unital ring R, the principal ideal (a) is aR={ra:r∈R}. It is the smallest ideal of R containing a.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.8: principal ideals and generators",
+          "relevance": "Shows ideal generated by an element, (a)=aR for unital commutative ring"
+        }
+      ],
+      "source_scope_status": "direct_definition_supported",
+      "mathematical_distinctions": [
+        "(0) is the zero ideal; (1)=R, and (u)=R for any unit u.",
+        "In a noncommutative ring, left, right and two-sided generated ideals need separate definitions; the present context is commutative.",
+        "Being principal is an ideal's generation property, not a statement that its generator is prime."
+      ],
+      "typed_relation_hypothesis": "generated_ideal_instance",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 25,
+      "original_canonical_candidate_id": "missing.55e6dc72d6d3bc1d5669",
+      "original_surface_phrase": "bijection",
+      "original_context": "Set theory: bijective mapping f:X→Y, a function that is both injective and surjective onto the specified codomain Y; equivalently a function admitting a two-sided inverse Y→X. In structured settings this refers only to the underlying-set map, not to automatic continuity, R-linearity, group structure, or naturality.",
+      "origin_alias_candidate_ids": [
+        "missing.449b7437de739402d2f8",
+        "missing.6cbfc88338e3269764d0",
+        "missing.90ff7d0aa09b9bfcecce",
+        "missing.d40a3df5837eecdc8475"
+      ],
+      "original_occurrence_ids": [
+        "occ.5e612430ac944173302a",
+        "occ.a77f0ef6c7082b5df8b5",
+        "occ.d5c54427919d5ca52fb0",
+        "occ.d79b96f350dfd6ccbd6a",
+        "occ.ecf6c10da421b9bae27c"
+      ],
+      "original_incoming_occurrences": 5,
+      "source_backed_preliminary_definition": "A function f:X→Y is bijective if it is injective and surjective onto Y. Equivalently, there exists a unique inverse function g:Y→X such that g∘f=id_X and f∘g=id_Y.",
+      "sources": [
+        {
+          "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Applied_Discrete_Structures_%28Doerr_and_Levasseur%29/07%253A_Functions/7.02%253A_Properties_of_Functions",
+          "section": "Section 7.2 properties of functions",
+          "relevance": "Defines injectivity/surjectivity and their conjunction as bijectivity"
+        }
+      ],
+      "source_scope_status": "direct_definition_supported",
+      "mathematical_distinctions": [
+        "The unique empty function ∅→∅ is bijective.",
+        "A bijection of underlying sets is not automatically a homeomorphism, linear isomorphism or group isomorphism; structured morphism requirements are additional.",
+        "The specified codomain Y matters for surjectivity."
+      ],
+      "typed_relation_hypothesis": "set_function_property_not_structured_isomorphism",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 26,
+      "original_canonical_candidate_id": "missing.6fd10a9c752cfa68d45b",
+      "original_surface_phrase": "subfield k(B) generated by k and B",
+      "original_context": "Field theory: subfield k(B) of an extension K/k generated by k together with a subset B⊆K, the intersection of all intermediate subfields containing k∪B; for algebraically independent B, it identifies with a rational-function field in the elements of B.",
+      "origin_alias_candidate_ids": [
+        "missing.52d75efe06e035343e83",
+        "missing.5a88a833b4f301bd8db6",
+        "missing.ba59c2a6e794598ce65e",
+        "missing.ee94d2606cb29993e605"
+      ],
+      "original_occurrence_ids": [
+        "occ.0888195c31bbade8b9ee",
+        "occ.61ff64d1cf9b279fbe59",
+        "occ.9e4b102e579dd9ae4dfd",
+        "occ.d938368d4db3b96087a2",
+        "occ.fc0152bbd3fb0a31f353"
+      ],
+      "original_incoming_occurrences": 5,
+      "source_backed_preliminary_definition": "Let K/k be a field extension and B⊆K. The subfield k(B) is the smallest intermediate subfield of K containing k and every element of B, equivalently the intersection of all subfields L with k∪B⊆L⊆K.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch06.html",
+          "section": "Section 6.1 extension fields and Section 6.9 transcendental extensions",
+          "relevance": "Construction of subfields generated by elements over base field; arbitrary subset is smallest common subfield extrapolation"
+        }
+      ],
+      "source_scope_status": "partial_arbitrary_subset_source_check_pending",
+      "mathematical_distinctions": [
+        "k(∅)=k.",
+        "Elements of k(B) can be expressed as rational functions in finitely many members of B with coefficients in k and nonzero evaluated denominators.",
+        "If B is algebraically independent over k, k(B) is canonically isomorphic to a rational-function field indexed by B; without algebraic independence that identification may fail."
+      ],
+      "typed_relation_hypothesis": "generated_field_specialized_not_generic_subfield",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 27,
+      "original_canonical_candidate_id": "missing.dd36779bc0facafd958e",
+      "original_surface_phrase": "power set",
+      "original_context": "Set theory: power set of an arbitrary underlying set X, namely the collection of all subsets of X; variable names X and S are interchangeable.",
+      "origin_alias_candidate_ids": [],
+      "original_occurrence_ids": [
+        "occ.684ec18c5ff6d74a752d",
+        "occ.7196017867ec62d44f80",
+        "occ.78a277afc036f289669c",
+        "occ.7a71dabac90e93240d90",
+        "occ.9ef332e85d603bb19535"
+      ],
+      "original_incoming_occurrences": 5,
+      "source_backed_preliminary_definition": "For a set X, the power set P(X) (also written 𝒫(X)) is the set {A:A⊆X} of all subsets of X.",
+      "sources": [
+        {
+          "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Applied_Discrete_Structures_%28Doerr_and_Levasseur%29/01%3A_Set_Theory/1.03%3A_Cartesian_Products_and_Power_Sets",
+          "section": "Section 1.3 Power sets",
+          "relevance": "Power set consists of all subsets, including empty-set corner case"
+        }
+      ],
+      "source_scope_status": "direct_definition_supported",
+      "mathematical_distinctions": [
+        "P(∅)={∅}, not the empty set.",
+        "∅∈P(X) and X∈P(X) for every set X.",
+        "This definition quantifies over a set X; a proper class generally has no set-valued power set under ZFC."
+      ],
+      "typed_relation_hypothesis": "set_operation",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 28,
+      "original_canonical_candidate_id": "missing.16a17500cd760e24ed49",
+      "original_surface_phrase": "square-zero ideal I²=0",
+      "original_context": "Commutative algebra: square-zero ideal I of a commutative unital ring A, characterized by I²={0} (equivalently ab=0 for all a,b∈I). The square-zero property is strictly stronger than mere nilpotence of an unspecified positive exponent.",
+      "origin_alias_candidate_ids": [
+        "missing.1c17ac2c7c55c19a89b5",
+        "missing.8d36b58aca224f76d9a0",
+        "missing.d5cef15ebaab5f86707b"
+      ],
+      "original_occurrence_ids": [
+        "occ.193505a335cc413845cf",
+        "occ.3b0104525bbde7ad01e0",
+        "occ.86c7039633b6a484a2cb",
+        "occ.c84bc58e1b76aeb9c62e",
+        "occ.d86dd5459a2040da0b4d"
+      ],
+      "original_incoming_occurrences": 5,
+      "source_backed_preliminary_definition": "An ideal I of a commutative ring R is square-zero if I²=(0). Equivalently, xy=0 for every x,y∈I.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/04EA",
+          "section": "Section 10.149 square-zero ideal usage",
+          "relevance": "Uses explicit ideal-square-zero hypothesis I²=0"
+        },
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.8 ideal products",
+          "relevance": "Product ideal makes I²=0 meaningful, including finite sums of products"
+        }
+      ],
+      "source_scope_status": "construction_and_predicate_supported",
+      "mathematical_distinctions": [
+        "The zero ideal is square-zero.",
+        "I²=(0) implies I is nilpotent, but an ideal with I³=0 need not have I²=0.",
+        "Each x∈I satisfies x²=0; the converse that every individual element squares to zero need not imply I²=0 in characteristic 2 (mixed products may survive)."
+      ],
+      "typed_relation_hypothesis": "nilpotence_specialization_distinct_from_generic_nilpotent",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 29,
+      "original_canonical_candidate_id": "missing.2ca12da5425144816e3c",
+      "original_surface_phrase": "open neighborhood of x",
+      "original_context": "General topology: open neighborhood of a point x∈X, an open subset U of X containing x.",
+      "origin_alias_candidate_ids": [
+        "missing.246d5ba7fd484cd09f3b",
+        "missing.9d6b27a51d3105a809b3",
+        "missing.d2db78ac32d45231452b",
+        "missing.ff999343a9d3baed47b5"
+      ],
+      "original_occurrence_ids": [
+        "occ.2b1cddf5601eab219bb4",
+        "occ.4296a8df6a36d7a29e7e",
+        "occ.4a478c6689c2c5d146e2",
+        "occ.6c94d7caee146656841b",
+        "occ.f2d1cf219a43e731466d"
+      ],
+      "original_incoming_occurrences": 5,
+      "source_backed_preliminary_definition": "Let (X,τ) be a topological space and x∈X. An open neighborhood of x is an open subset U∈τ such that x∈U.",
+      "sources": [
+        {
+          "url": "https://proofwiki.org/wiki/Definition%3AOpen_Neighborhood",
+          "section": "Open neighborhood of point",
+          "relevance": "Open set containing the point; explicitly separates open from general neighborhoods"
+        },
+        {
+          "url": "https://planetmath.org/neighborhood",
+          "section": "Definition: neighborhood",
+          "relevance": "Shows neighborhood convention ambiguity requiring explicit adjective open"
+        }
+      ],
+      "source_scope_status": "direct_definition_supported_with_convention_note",
+      "mathematical_distinctions": [
+        "Some sources call any set N containing an open neighborhood of x simply a neighborhood; this is broader than the open-neighborhood concept.",
+        "If X=∅, there are no points x for which the definition is instantiated.",
+        "For any point x, X itself is an open neighborhood."
+      ],
+      "typed_relation_hypothesis": "open_neighborhood_specialization_of_neighborhood",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 30,
+      "original_canonical_candidate_id": "missing.08a2969d79ad1ddc1922",
+      "original_surface_phrase": "contracted prime p=q∩R",
+      "original_context": "Commutative algebra: for unital ring homomorphism φ:R→S and prime q⊆S, contraction p=φ^{-1}(q)⊆R, a prime ideal by inverse-image stability under ring homomorphisms; when φ is an inclusion this becomes q∩R.",
+      "origin_alias_candidate_ids": [
+        "missing.19bd1b05b35ea69f9373",
+        "missing.3a439d6ab50240ed650d",
+        "missing.68baad0cbaf9575f0b7e"
+      ],
+      "original_occurrence_ids": [
+        "occ.2cf9524b6cfdc44e86ca",
+        "occ.ade9cbfe38a5a7e57fb7",
+        "occ.c6e0dc2546c2d9e0e353",
+        "occ.f5afed993d5376bd9477"
+      ],
+      "original_incoming_occurrences": 4,
+      "source_backed_preliminary_definition": "Let φ:R→S be a unital homomorphism of commutative unital rings and q a prime ideal of S. The contraction of q to R is p=φ^{-1}(q)={r∈R:φ(r)∈q}; it is a prime ideal of R.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00AQ",
+          "section": "Section 10.2 Conventions",
+          "relevance": "Explicitly states inverse-image prime p=R∩q even for noninjective R→S; not literal set intersection in that case"
+        }
+      ],
+      "source_scope_status": "direct_context_and_notation_supported",
+      "mathematical_distinctions": [
+        "Properness uses φ(1_R)=1_S and 1_S∉q; without unitality the inverse image of a prime ideal need not be proper.",
+        "When φ is an inclusion R⊆S, the contraction is q∩R.",
+        "It is a structured instance of inverse image, not synonymous with that general set-theoretic operation."
+      ],
+      "typed_relation_hypothesis": "typed_application_of_preimage",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 31,
+      "original_canonical_candidate_id": "missing.16d2c0615065e12050a2",
+      "original_surface_phrase": "prime integer p",
+      "original_context": "Elementary number theory: positive integer p greater than one whose positive divisors are exactly 1 and p; this is an integer prime, not a prime ideal of a ring.",
+      "origin_alias_candidate_ids": [
+        "missing.0f753a121c6df759c99c",
+        "missing.b85cc7f4d3b590391584",
+        "missing.e8e2cae3a2e020dcef94"
+      ],
+      "original_occurrence_ids": [
+        "occ.af7eecfc225d82bf3cd1",
+        "occ.b4078c89bf7f563103cb",
+        "occ.e15be7f3fc6cceb61853",
+        "occ.e78c8af2e52d1e7053cd"
+      ],
+      "original_incoming_occurrences": 4,
+      "source_backed_preliminary_definition": "A positive integer p is prime if p>1 and its only positive divisors are 1 and p.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Sections 3.4, 3.10 on primes and ideals",
+          "relevance": "Prime numbers used in arithmetic and prime ideals as different mathematical types"
+        }
+      ],
+      "source_scope_status": "elementary_definition_with_exact_provider_locator_pending",
+      "mathematical_distinctions": [
+        "The integer 1 is not prime.",
+        "The number 2 is prime; no other even positive integer is prime.",
+        "This does not define a prime ideal, although (p) is prime in ℤ precisely when p is a prime integer (with the usual convention)."
+      ],
+      "typed_relation_hypothesis": "integer_prime_distinct_from_prime_ideal",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 32,
+      "original_canonical_candidate_id": "missing.3a244864ffa7450b328d",
+      "original_surface_phrase": "maximal element of a collection under inclusion",
+      "original_context": "Order theory: a maximal element m in a nonempty family F of subsets of an ambient set, ordered by inclusion, is one with no distinct member B∈F properly containing m. Maximal need not mean greatest, and for ideals the family F is any specified nonempty subcollection of the ideals of R.",
+      "origin_alias_candidate_ids": [
+        "missing.4b280bbf7a0bff241e86",
+        "missing.71c072664e830f1cd3d4",
+        "missing.8a2ef3bfa9962f1da440"
+      ],
+      "original_occurrence_ids": [
+        "occ.9ffd4d6ff8600e90b202",
+        "occ.a6f32ac000fb6ebd1932",
+        "occ.b52f81684c28fb903ba1",
+        "occ.fa27a72a01460b743955"
+      ],
+      "original_incoming_occurrences": 4,
+      "source_backed_preliminary_definition": "Let F be a family of subsets of a set X. An element M∈F is maximal with respect to inclusion if there is no B∈F satisfying M⊊B; equivalently, M⊆B for B∈F forces B=M.",
+      "sources": [
+        {
+          "url": "https://encyclopediaofmath.org/wiki/Partially_ordered_set",
+          "section": "Partially ordered set: maximal versus greatest elements",
+          "relevance": "Defines order-theoretic maximality as no strictly larger comparable member"
+        }
+      ],
+      "source_scope_status": "direct_general_order_concept_supported",
+      "mathematical_distinctions": [
+        "A maximal member need not contain every other member; that would be a greatest element.",
+        "A nonempty family can fail to possess maximal members (for example finite subsets of ℕ ordered by inclusion).",
+        "The definition applies to a specified family of ideals as well as to other ordered families; do not assume every maximal ideal in a special family is a ring-theoretic maximal proper ideal."
+      ],
+      "typed_relation_hypothesis": "maximal_vs_greatest_order_property",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 33,
+      "original_canonical_candidate_id": "missing.4322a8c550c42b8391a2",
+      "original_surface_phrase": "parallel arrows f,g:X⇉Y",
+      "original_context": "Category theory: parallel morphisms f,g:X→Y in a category, with identical source and codomain, forming a parallel-pair diagram.",
+      "origin_alias_candidate_ids": [
+        "missing.6ac7d9673e129a939de8",
+        "missing.862d46709395bdb180cc"
+      ],
+      "original_occurrence_ids": [
+        "occ.10176692473354c7ae67",
+        "occ.78e74707ae3c2b113ec2",
+        "occ.9be88d57002b2ab18dd9",
+        "occ.cf8878bcbee995fc1bb8"
+      ],
+      "original_incoming_occurrences": 4,
+      "source_backed_preliminary_definition": "In a category C, two morphisms f,g are parallel if they have the same domain X and codomain Y, so f,g:X→Y.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0014",
+          "section": "Definition 4.2.1 category and Hom sets",
+          "relevance": "Arrows have fixed domain and codomain, allowing the parallel-pair construction as two such arrows"
+        }
+      ],
+      "source_scope_status": "inferred_from_categorical_axioms_specific_term_locator_pending",
+      "mathematical_distinctions": [
+        "Parallel does not require f and g to be distinct.",
+        "The diagram f,g:X⇉Y is a pair of arrows, not necessarily an equalizer, coequalizer, or other universal construction.",
+        "Hom_C(X,Y) is the ambient collection containing both arrows."
+      ],
+      "typed_relation_hypothesis": "typed_component_of_categorical_diagram",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 34,
+      "original_canonical_candidate_id": "missing.5499c18bddb8831536d6",
+      "original_surface_phrase": "R-algebra isomorphism from the quotient to S",
+      "original_context": "Commutative algebra: isomorphism of unital R-algebras preserving both ring operations and the specified structure maps from R; not merely an abstract ring or R-module isomorphism.",
+      "origin_alias_candidate_ids": [
+        "missing.1b289c644fcca1bf08c9",
+        "missing.39a5a7a3b774594f9319",
+        "missing.b32f45a463d4c67dc230"
+      ],
+      "original_occurrence_ids": [
+        "occ.148c30d32283ef770b30",
+        "occ.c2bb39f890a696859ef7",
+        "occ.d67c71870f2e2158d27d",
+        "occ.dfbcf7942616dd5c0460"
+      ],
+      "original_incoming_occurrences": 4,
+      "source_backed_preliminary_definition": "For unital R-algebras (A,ι_A),(B,ι_B), an R-algebra isomorphism is a bijective unital ring homomorphism f:A→B satisfying f∘ι_A=ι_B; equivalently, a ring isomorphism fixing the specified action of R.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.5 ring homomorphisms and ring isomorphisms",
+          "relevance": "Ring isomorphism condition; relative R-algebra structure compatibility requires a separate exact locator"
+        }
+      ],
+      "source_scope_status": "partial_R_algebra_specific_homomorphism_check_pending",
+      "mathematical_distinctions": [
+        "The inverse of a bijective unital R-algebra homomorphism is an R-algebra homomorphism.",
+        "An underlying ring isomorphism need not preserve the specified R-algebra structures.",
+        "An R-linear module isomorphism need not preserve multiplication or identity."
+      ],
+      "typed_relation_hypothesis": "typed_specialization_of_isomorphism",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 35,
+      "original_canonical_candidate_id": "missing.60dd364a1927126e153d",
+      "original_surface_phrase": "evaluation homomorphism k[X_i:i∈I]→K",
+      "original_context": "Commutative algebra: evaluation R-algebra homomorphism ev_(a_i):R[X_i : i∈I]→A into a commutative unital R-algebra A, sending each formal indeterminate X_i to a specified a_i∈A and fixing the coefficients through the structure map R→A; includes univariate evaluation f(a) and the canonical R[X_s:s∈S]→S sending X_s to s.",
+      "origin_alias_candidate_ids": [
+        "missing.3342ccd2cfaa9316a9ae",
+        "missing.7bb7ef41b6cd46ea01ae",
+        "missing.bb8a09212d459a64a7b9"
+      ],
+      "original_occurrence_ids": [
+        "occ.4f3bdc9ba066c182f735",
+        "occ.793cb95047d185fe4fda",
+        "occ.99578c4a91419cc79be6",
+        "occ.99683c079369f268aa99"
+      ],
+      "original_incoming_occurrences": 4,
+      "source_backed_preliminary_definition": "Let R be a commutative unital ring, I a set, A a commutative unital R-algebra with structure ι:R→A, and (a_i)_{i∈I} a family of elements of A. The evaluation map ev_a:R[X_i:i∈I]→A is the unique R-algebra homomorphism with ev_a(X_i)=a_i for all i, and ev_a(r)=ι(r) on coefficients; it sends each polynomial to its finite coefficient-weighted sum of monomial evaluations.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.6 subrings generated by elements, Section 3.9 polynomial rings",
+          "relevance": "Univariate polynomial evaluation, ring homomorphism groundwork; arbitrary index set extension requires universal property source"
+        }
+      ],
+      "source_scope_status": "partial_arbitrary_index_set_source_check_pending",
+      "mathematical_distinctions": [
+        "Finite support of each polynomial makes evaluation well defined even if I is infinite.",
+        "Surjectivity requires that the elements a_i generate A as an R-algebra; it does not hold automatically.",
+        "For I=∅ this map is just the R-algebra structure homomorphism."
+      ],
+      "typed_relation_hypothesis": "universal_property_application_of_polynomial_algebra",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 36,
+      "original_canonical_candidate_id": "missing.826fb5c503bdaf25ce7f",
+      "original_surface_phrase": "integrability E|X_t|<infinity",
+      "original_context": "Probability theory: finite absolute expectation E|X_t|<∞ of the real random variable X_t for every real time t≥0 in a stochastic process.",
+      "origin_alias_candidate_ids": [
+        "missing.2c590a5b733b54c5cb9f",
+        "missing.85b92abd4a39651a191c",
+        "missing.e0654e8a4287aaa5bc7c"
+      ],
+      "original_occurrence_ids": [
+        "occ.2cf87f7b73f5c5a33bb4",
+        "occ.3eda46790ce1c2aed5c5",
+        "occ.98619b3d2a58ee9006e9",
+        "occ.b8df608b462159d8948d"
+      ],
+      "original_incoming_occurrences": 4,
+      "source_backed_preliminary_definition": "A real-valued measurable random variable X on a probability space (Ω,Σ,P) is integrable if E[|X|]=∫_Ω |X| dP is finite. For a process (X_t)_{t≥0}, requiring E[|X_t|]<∞ for every t≥0 means that each time marginal X_t is integrable.",
+      "sources": [
+        {
+          "url": "https://web.stanford.edu/~montanar/TEACHING/Stat310B/NOTES/amir_notes.pdf",
+          "section": "Definition 1.3.2, probability/measure/integration",
+          "relevance": "Absolutely integrable random variable satisfies E|X|<∞; applying separately to each t is a pointwise quantifier"
+        }
+      ],
+      "source_scope_status": "direct_definition_supported_pointwise_not_uniform",
+      "mathematical_distinctions": [
+        "Pointwise integrability for every fixed t does not imply sup_t E|X_t|<∞ or uniform integrability of the family.",
+        "An integrable X has a finite expectation E[X]; E[X] being undefined due to ∞−∞ is excluded by the absolute-integrability condition.",
+        "This does not assert stochastic-process path regularity or measurability jointly in t and ω."
+      ],
+      "typed_relation_hypothesis": "pointwise_integrability_not_uniform_integrability",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 37,
+      "original_canonical_candidate_id": "missing.9720508883754c995559",
+      "original_surface_phrase": "closed sets V(I)",
+      "original_context": "Commutative algebra/algebraic geometry: locus V(I)={p∈Spec(R):I⊆p} of prime ideals containing an ideal I in a commutative ring; these provide Zariski closed subsets.",
+      "origin_alias_candidate_ids": [
+        "missing.860252e1e54c5b7e67e8",
+        "missing.b6f995eb0e6379a2fdc8",
+        "missing.d5080f42715b51f29dfe"
+      ],
+      "original_occurrence_ids": [
+        "occ.4d8c874b6fdb344413c4",
+        "occ.5cf0b150fb14806b6d9b",
+        "occ.83c2bf6dfaa559e45ce5",
+        "occ.8efc0f89521b42331f6d"
+      ],
+      "original_incoming_occurrences": 4,
+      "source_backed_preliminary_definition": "For a commutative ring R and ideal I⊆R, define V(I)={p∈Spec(R):I⊆p}, where Spec(R) is the set of prime ideals. The sets V(I) are exactly the closed sets of the Zariski topology on Spec(R).",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00DZ",
+          "section": "Definition 10.17.1(2)",
+          "relevance": "V(T) consists of prime ideals containing T, and thus V(I) for an ideal I yields Zariski closed set"
+        }
+      ],
+      "source_scope_status": "direct_definition_supported",
+      "mathematical_distinctions": [
+        "V((0))=Spec(R), while V(R)=∅.",
+        "V(I)=V(√I).",
+        "V(IJ)=V(I)∪V(J); these equalities are properties of the locus construction, not additional definition requirements."
+      ],
+      "typed_relation_hypothesis": "zariski_specialization_of_closed_set",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 38,
+      "original_canonical_candidate_id": "missing.b599bdc9343a25050226",
+      "original_surface_phrase": "simultaneously open and closed",
+      "original_context": "Topology: subset U⊆Spec(R) both Zariski-open and Zariski-closed, an instance of the generic clopen predicate, not the idempotent correspondence itself.",
+      "origin_alias_candidate_ids": [
+        "missing.6a86b97bca52a155841a",
+        "missing.844794a0f96feb96e453"
+      ],
+      "original_occurrence_ids": [
+        "occ.00775f87f3c5601a0719",
+        "occ.1612dec2b099f44c923b",
+        "occ.417c86f577e85affc4cb",
+        "occ.982109ad4faf2e20b72d"
+      ],
+      "original_incoming_occurrences": 4,
+      "source_backed_preliminary_definition": "Let (X,τ) be a topological space. A subset U⊆X is clopen if both U and X\\U are open in X, equivalently if U is both open and closed.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/04PN",
+          "section": "Section 10.21, Lemmas 10.21.1–10.21.3",
+          "relevance": "Classifies clopen subsets of Spec(R) using idempotents; NOT the generic predicate's definition"
+        },
+        {
+          "url": "https://proofwiki.org/wiki/Definition%3AOpen_Neighborhood",
+          "section": "Topological open-subset convention",
+          "relevance": "Open is topology-relative; generic clopen separately requires open and closed, not the idempotent theorem"
+        }
+      ],
+      "source_scope_status": "generic_predicate_requires_separate_source_direct_idempotent_theorem_is_specialization",
+      "mathematical_distinctions": [
+        "∅ and X are clopen in every topological space.",
+        "If X is connected, these are the only clopen subsets.",
+        "For X=Spec(R), clopen subsets correspond to suitable ring idempotents in commutative unital algebra; this theorem is not the definition of clopen."
+      ],
+      "typed_relation_hypothesis": "general_topological_predicate_with_zariski_instance",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 39,
+      "original_canonical_candidate_id": "missing.c4ed408b10943e9c0f8e",
+      "original_surface_phrase": "closed subset of a topological space",
+      "original_context": "General topology: closed F⊆X exactly when X\\F is open in the specified topology; this depends on the ambient X and is distinct from Zariski-closed subschemes.",
+      "origin_alias_candidate_ids": [
+        "missing.46565ef03639b5dc746d",
+        "missing.622459998fd4b876125d",
+        "missing.6e6799b8a70160f31313"
+      ],
+      "original_occurrence_ids": [
+        "occ.0ff04854d19b4e548487",
+        "occ.800034e35842bdd7c12d",
+        "occ.ce8fbc7f1bafb9a1edef",
+        "occ.ecc50ed2eed656a8e728"
+      ],
+      "original_incoming_occurrences": 4,
+      "source_backed_preliminary_definition": "Let (X,τ) be a topological space. A subset F⊆X is closed if its complement X\\F is a member of τ, i.e. is open in X.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00DZ",
+          "section": "Definition 10.17.1 Zariski topology",
+          "relevance": "Contrasts generic closed set and specialized Zariski V(I); not a generic-topology definition"
+        },
+        {
+          "url": "https://wjmaths.com/courses/topology/build/topologysu15.html",
+          "section": "Topological neighborhood/open-set preliminaries",
+          "relevance": "Topological open sets require specified ambient topology; closed= open complement is fundamental"
+        }
+      ],
+      "source_scope_status": "generic_closed_definition_requires_exact_locator",
+      "mathematical_distinctions": [
+        "The empty set and X are always closed.",
+        "A subset may be both open and closed; closed does not mean 'not open'.",
+        "The definition depends on the ambient topology and is not equivalent to the extra structure of a closed subscheme."
+      ],
+      "typed_relation_hypothesis": "general_topological_predicate",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    },
+    {
+      "priority": 40,
+      "original_canonical_candidate_id": "missing.fa5932b42daa1a3e0307",
+      "original_surface_phrase": "roots of a polynomial in a field",
+      "original_context": "Polynomial algebra over fields: a root (zero) α∈K of a univariate polynomial f∈F[x] in a field extension K/F means f(α)=0_K using coefficient inclusion F→K and polynomial evaluation; includes the residue class of x in K=F[x]/(f) for nonconstant f.",
+      "origin_alias_candidate_ids": [
+        "missing.52c6aae09e7e3d1b1af5",
+        "missing.a3e41c65d6b3f8114fb7",
+        "missing.c92229847927c5ddf560"
+      ],
+      "original_occurrence_ids": [
+        "occ.29b820e470569d95f584",
+        "occ.4f0a00da35a6a75dc313",
+        "occ.5e8b4356a3bb977ed5c0",
+        "occ.9f3dda1841b64dd9f533"
+      ],
+      "original_incoming_occurrences": 4,
+      "source_backed_preliminary_definition": "Let F⊆K be a field extension, f(T)=Σ_{j=0}^n a_j T^j∈F[T], and α∈K. The element α is a root (zero) of f in K if f(α)=Σ_j a_j α^j=0_K.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch06.html",
+          "section": "Theorem 6.1.15 field extensions and polynomial evaluations",
+          "relevance": "Root α satisfies f(α)=0 with irreducible f when quotient is required to be a field"
+        },
+        {
+          "url": "https://www.maths.dur.ac.uk/users/daniel.evans/GaloisTheory/Notes/field-extensions.html",
+          "section": "Lemma 3.2",
+          "relevance": "F[x]/(f) a field iff f irreducible (for nonconstant/nonunit f)"
+        },
+        {
+          "url": "https://users.math.msu.edu/users/magyarp/Math411-2019/",
+          "section": "Math 411 field-extension notes",
+          "relevance": "An element of extension field is a polynomial root when its evaluation vanishes"
+        }
+      ],
+      "source_scope_status": "direct_definition_supported_but_candidate_context_has_error",
+      "mathematical_distinctions": [
+        "For the zero polynomial, every α∈K is a root; multiplicity conventions need a separate treatment.",
+        "The class x mod (f) is a root in the quotient F[x]/(f) for nonconstant f, but this quotient is a field only if f is irreducible; otherwise it is generally merely an F-algebra.",
+        "If f is nonconstant and irreducible, F[x]/(f) is a field and the residue class of x supplies a root in that field."
+      ],
+      "typed_relation_hypothesis": "evaluation_property_and_substantive_reducible_quotient_warning",
+      "accepted_independent_comparison_status": "preliminary_typed_comparison_only_no_source_certified_identity_resolution",
+      "provisional_population_comparison_status": "prior source-free comparison with 16 independent provisional meanings; recheck newly staged meanings at intake",
+      "new_dependencies": "defer_no_recursive_research",
+      "mathematical_certification": false,
+      "integrated": false,
+      "graph_mutation": false
+    }
+  ]
+}

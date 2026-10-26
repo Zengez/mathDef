@@ -1,0 +1,613 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "status": "SOURCE_EVIDENCE_ONLY_NOT_ADMITTED_OR_CERTIFIED",
+  "independent_corpus": "research_pipeline/experiments/reconstruction-v2-independent",
+  "initial_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "range": [
+    101,
+    120
+  ],
+  "candidate_count": 20,
+  "original_incoming_occurrences": 40,
+  "flags": [
+    {
+      "candidate_id": "missing.a6a017ccc98fac71121d",
+      "topic": "Grothendieck construction contravariant direction and strictness",
+      "status": "source_scope_review"
+    },
+    {
+      "candidate_id": "missing.ad3eb2f701d26ae8c206",
+      "topic": "k=0 moment requires finite total mass",
+      "status": "convention_scope_review"
+    },
+    {
+      "candidate_id": "missing.b86dc7cff186ed11337b",
+      "topic": "infinite discrete orthogonality requires convergence",
+      "status": "source_scope_review"
+    }
+  ],
+  "items": [
+    {
+      "priority": 101,
+      "original_canonical_candidate_id": "missing.96df95f71d6a919f6c57",
+      "original_query": "relative diagonal",
+      "original_context": "Algebraic geometry: for scheme morphism f:X→S, relative diagonal Δ_{X/S}:X→X×_S X uniquely satisfying pr₁∘Δ=id_X=pr₂∘Δ, formed from the universal property of the fibre product.",
+      "original_alias_candidate_ids": [
+        "missing.559ef8fba856a4d6c2e3"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.46e7156b74903a046e54",
+        "occ.f303d4d0035c375a6adc"
+      ],
+      "preliminary_definition": "For a morphism of schemes f:X→S, the relative diagonal Δ_{X/S}:X→X×_S X is the unique map satisfying pr₁∘Δ=id_X=pr₂∘Δ.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01KH",
+          "section": "Section 26.21, introductory definition of the relative diagonal",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "direct_primary",
+      "mathematical_assumptions_and_edge_cases": "The diagonal exists without separatedness. Separatedness adds that Δ is a closed immersion.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 102,
+      "original_canonical_candidate_id": "missing.99d02928227cf7d5004d",
+      "original_query": "difference A−λI_V",
+      "original_context": "Linear algebra: pointwise linear combination of K-linear endomorphisms of V, specifically (A−λI_V)(v)=A(v)−λv for v∈V.",
+      "original_alias_candidate_ids": [
+        "missing.bc0a34bcacc0fd814981"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.3ca1ca2e05127f89835f",
+        "occ.fabfc74a834115f715af"
+      ],
+      "preliminary_definition": "For a K-vector space V, a K-linear endomorphism A, and λ∈K, the endomorphism A−λI_V sends v∈V to A(v)−λv.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "section": "Category/additive operations background only",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "linear_algebra_definition_source_exact_locator_pending",
+      "mathematical_assumptions_and_edge_cases": "Subtraction of endomorphisms uses pointwise vector-space operations; λI_V is scalar multiplication of the identity operator. Not a matrix difference unless a basis is chosen.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 103,
+      "original_canonical_candidate_id": "missing.9b25d5ea4962f66e4ade",
+      "original_query": "two-sided identity e∈M",
+      "original_context": "Algebra: identity e of a binary operation ⋆ on M such that e⋆x=x⋆e=x for every x in M.",
+      "original_alias_candidate_ids": [
+        "missing.ede8db49707d63cb3d97"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.7134725fe551fae0e085",
+        "occ.912e69adb95e41d6d651"
+      ],
+      "preliminary_definition": "An element e∈M is a two-sided identity for a binary operation ⋆:M×M→M if e⋆x=x⋆e=x for every x∈M.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/IdentityElement.html",
+          "section": "Two-sided identity element definition",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "direct_definition_supported",
+      "mathematical_assumptions_and_edge_cases": "Identity is unique when present. No associativity is required to define an identity for an arbitrary magma.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 104,
+      "original_canonical_candidate_id": "missing.9c6846ccbcf16c917251",
+      "original_query": "norm displacement ∥v−a∥",
+      "original_context": "Normed linear space: norm of difference vector v−a in V, equal to induced norm metric distance d(v,a).",
+      "original_alias_candidate_ids": [
+        "missing.d5230864be627c5db87f"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.d8a5c6e43166230a1cbb",
+        "occ.f2c08bee83b0afe3a972"
+      ],
+      "preliminary_definition": "For a normed vector space (V,||·||) and a,v∈V, the norm displacement ||v−a|| is the distance d(v,a) induced by the norm.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Norm.html",
+          "section": "Norm on a vector space and induced distance",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "direct_definition_supported",
+      "mathematical_assumptions_and_edge_cases": "Requires v,a in the same normed vector space. Triangle inequality is norm axiom; the difference is a vector.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 105,
+      "original_canonical_candidate_id": "missing.a42c73c7effdb6ac0764",
+      "original_query": "formal derivative f′",
+      "original_context": "Commutative algebra: formal derivative D:R[X]→R[X] of a univariate polynomial over a commutative unital coefficient ring R, uniquely specified by D(Σ_{i=0}^n a_i X^i)=Σ_{i=1}^n (i·a_i)X^{i−1}; a purely algebraic operation that works in positive characteristic without requiring analytic limits.",
+      "original_alias_candidate_ids": [
+        "missing.27d8cd74f79aed438e26"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.3c7b658a7db762d410da",
+        "occ.9f3ee2f3efc55228a2f0"
+      ],
+      "preliminary_definition": "For f(X)=Σ_{i=0}^n a_i X^i∈R[X], define the formal derivative f′(X)=Σ_{i=1}^n (i·1_R)a_i X^{i−1}. This is an R-linear derivation of R[X].",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Polynomial.html",
+          "section": "Polynomial coefficient expansion; differentiation formula requires algebraic-source verification",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "formal_derivative_exact_source_locator_pending",
+      "mathematical_assumptions_and_edge_cases": "This works in any characteristic: for char(R)=p, (X^p)′=0 even though X^p is nonconstant. Do not introduce analytical limits.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 106,
+      "original_canonical_candidate_id": "missing.a60aa43eed2b99b5d184",
+      "original_query": "zero object",
+      "original_context": "Category theory: zero object of a category, an object that is both initial and terminal, yielding distinguished zero morphisms in a preadditive setting.",
+      "original_alias_candidate_ids": [
+        "missing.137c56b4f420dfc55ef9"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.7776a70b83a6358be638",
+        "occ.96b32e73029215f40046"
+      ],
+      "preliminary_definition": "An object 0 of a category C is a zero object if it is both initial and terminal.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0100",
+          "section": "Definition 12.3.3 in preadditive category",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "verified_specialized_source_general_category_definition_from_axioms",
+      "mathematical_assumptions_and_edge_cases": "General category zero-object notion does not assume preadditivity. Preadditive categories can have zero morphisms without possessing a zero object.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 107,
+      "original_canonical_candidate_id": "missing.a66bc0c6846ac92c6394",
+      "original_query": "quasi-isomorphic",
+      "original_context": "Homological algebra: quasi-isomorphism between chain complexes, a chain map inducing isomorphisms in every homology degree; comparisons in the derived category can also be mediated by zigzags of quasi-isomorphisms.",
+      "original_alias_candidate_ids": [
+        "missing.14db2376c5a1551ff52d"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.4640f2f6d89357c0a9fa",
+        "occ.b11a9040a7a3e71b26ca"
+      ],
+      "preliminary_definition": "A chain map f:C•→D• is a quasi-isomorphism if it induces isomorphisms H_i(C•)→H_i(D•) for every degree i.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/010Z",
+          "section": "Definition 12.13.4 of quasi-isomorphism",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "direct_primary",
+      "mathematical_assumptions_and_edge_cases": "A quasi-isomorphism need not be a chain homotopy equivalence. A zigzag of quasi-isomorphisms yields an isomorphism in the derived category but is distinct from a specified single quasi-isomorphism.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 108,
+      "original_canonical_candidate_id": "missing.a6a017ccc98fac71121d",
+      "original_query": "Grothendieck construction of a category-valued functor",
+      "original_context": "Category theory: Grothendieck category ∫_C F of a strict contravariant category-valued functor F:C^op→Cat, with objects (U,x∈F(U)), base-compatible arrows and canonical projection to C.",
+      "original_alias_candidate_ids": [
+        "missing.ccd1e3ecaabfc6806736"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.96081d878951a2ae9a2b",
+        "occ.ea4e1c738028497b7257"
+      ],
+      "preliminary_definition": "For a strict contravariant functor F:C^op→Cat, its Grothendieck construction ∫_C F has objects (U,x), U∈C, x∈F(U); a morphism (U,x)→(V,y) consists of f:U→V and α:x→F(f)(y) in F(U).",
+      "source_evidence": [
+        {
+          "url": "https://ncatlab.org/nlab/show/Grothendieck%2Bconstruction",
+          "section": "Grothendieck construction for indexed categories, including contravariant fibration",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "typed_construction_source_scope_partial",
+      "mathematical_assumptions_and_edge_cases": "Arrow orientation matters: covariant indexed functors give a dual/op-fibration convention. Strictness avoids pseudofunctor coherence maps; not every source defaults to strictness.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 109,
+      "original_canonical_candidate_id": "missing.aba129fc5f7d346b2d0f",
+      "original_query": "comma category (j↓H)",
+      "original_context": "Category theory: ordinary comma category of functors F:A→C, G:B→C, whose objects are triples (a,b,u:F(a)→G(b)) and morphisms are compatible commuting squares. Includes (j↓H) and (H↓j) with their opposite arrow directions as different instances; no assumption u is invertible.",
+      "original_alias_candidate_ids": [
+        "missing.8f9774ebf085c3590dac"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.a87a4f5ab40714fa773d",
+        "occ.ce97a462b21c79425803"
+      ],
+      "preliminary_definition": "For functors F:A→C and G:B→C, the comma category (F↓G) has objects (a,b,u:F(a)→G(b)) and arrows (s:a→a′,t:b→b′) with G(t)∘u=u′∘F(s).",
+      "source_evidence": [
+        {
+          "url": "https://ncatlab.org/nlab/show/comma%2Bcategory",
+          "section": "General comma category; objects and commuting-square morphisms",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "definition_supported_exact_provider_section_pending",
+      "mathematical_assumptions_and_edge_cases": "The arrow direction in (G↓F) is opposite relative to F/G. Invertible-u iso-comma construction is a specialized distinct context.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 110,
+      "original_canonical_candidate_id": "missing.ad3eb2f701d26ae8c206",
+      "original_query": "finite absolute moments ∫|x|^k dμ",
+      "original_context": "Measure-theoretic orthogonal polynomials: absolute moments ∫ |x|^k dμ(x) are finite for every prescribed nonnegative integer k.",
+      "original_alias_candidate_ids": [
+        "missing.615778c798532d6fe6e3"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.914f4b49b07f6f7abdda",
+        "occ.d2041f2f1561375850a9"
+      ],
+      "preliminary_definition": "For a nonnegative measure μ on a measurable subset of R, finite absolute moments of every order mean ∫|x|^k dμ(x)<∞ for every integer k≥0.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Moment.html",
+          "section": "Raw/absolute moments of probability measures",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "definition_supported_absolute_moment_provider_scope_to_review",
+      "mathematical_assumptions_and_edge_cases": "k=0 demands μ has finite total mass (with 0^0 interpreted via |x|^0=1), unless 'moments' begin at k≥1 by explicit convention. Countable discrete weights alone need not give finite moments.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 111,
+      "original_canonical_candidate_id": "missing.ad87c8a94e71b0501e7a",
+      "original_query": "slice category C/U",
+      "original_context": "Category theory: slice (over-)category C/U of a category C over an object U, with objects morphisms V→U and arrows commuting over U; a special ordinary comma-category construction but not the same concept as the general comma category or the existing iso-comma construction.",
+      "original_alias_candidate_ids": [
+        "missing.7cfdfb73da67a5bd4528"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.06ac641de46edec6a4ae",
+        "occ.424aa0df3710954efa7b"
+      ],
+      "preliminary_definition": "For U∈Ob(C), the slice category C/U has as objects arrows p:V→U and morphisms p→p′ arrows f:V→V′ with p′∘f=p.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "section": "Section 4.2, categories of morphisms over an object",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "direct_primary_partial_locator",
+      "mathematical_assumptions_and_edge_cases": "This is a special comma category but not all comma categories; orientation matters between slice C/U and coslice U/C.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 112,
+      "original_canonical_candidate_id": "missing.afee26ad5b8d0d34952a",
+      "original_query": "finite set of k color labels",
+      "original_context": "Discrete mathematics: integer label set {1,2,…,k} for a positive integer k, used as a finite k-element codomain with distinct labels.",
+      "original_alias_candidate_ids": [
+        "missing.72d70ff235732c7f0318"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.86ec4dd1de3501b69940",
+        "occ.e5f63261e919963b088e"
+      ],
+      "preliminary_definition": "For positive integer k, the finite palette {1,2,…,k} is a set of exactly k distinct integers, used as the codomain of a k-coloring map.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "section": "Set-indexed finite labels as standard notation, not a specialized definition",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "elementary_set_construction_source_not_needed",
+      "mathematical_assumptions_and_edge_cases": "No requirement that a coloring use all k labels: proper k-colorings are functions into this palette, not necessarily surjections.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 113,
+      "original_canonical_candidate_id": "missing.b458f6a3824dab19725b",
+      "original_query": "(Sigma,Tau)-measurable mapping",
+      "original_context": "Measure theory: measurable function f:(X,Σ)→(Y,Τ) between measurable spaces, meaning f^{-1}[B]∈Σ for every B∈Τ; does not require probability on X, real-valued codomain or almost-everywhere equivalence.",
+      "original_alias_candidate_ids": [
+        "missing.821ca412af956e862529"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.51881917d67f4b2cb564",
+        "occ.865786b09aba336071a7"
+      ],
+      "preliminary_definition": "For measurable spaces (X,Σ) and (Y,Τ), a map f:X→Y is (Σ,Τ)-measurable if f^{-1}(B)∈Σ for every B∈Τ.",
+      "source_evidence": [
+        {
+          "url": "https://stats.libretexts.org/Bookshelves/Probability_Theory/Probability_Mathematical_Statistics_and_Stochastic_Processes_%28Siegrist%29/01%3A_Foundations/1.11%3A_Measurable_Spaces",
+          "section": "Measurable functions between general measurable spaces",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "direct_definition_supported",
+      "mathematical_assumptions_and_edge_cases": "This does not require measures, real values or an almost-everywhere quotient. Inverse image preserves complements and countable unions.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 114,
+      "original_canonical_candidate_id": "missing.b86dc7cff186ed11337b",
+      "original_query": "weighted discrete orthogonality Σp_n(x)p_m(x)w_x=0",
+      "original_context": "Analysis: orthogonality of two polynomials relative to countably supported discrete positive weights, defined by a convergent weighted sum of their product equal to zero.",
+      "original_alias_candidate_ids": [
+        "missing.a428d2e9ed87f7bc0476"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.be3db94124d4b06c1b91",
+        "occ.f2defe6cdb7e0f828d47"
+      ],
+      "preliminary_definition": "For support X⊆R, positive weights (w_x)_{x∈X}, and polynomials p_n,p_m, discrete orthogonality means that the weighted sum Σ_{x∈X}p_n(x)p_m(x)w_x converges and equals 0 when n≠m.",
+      "source_evidence": [
+        {
+          "url": "https://www.mathematik.uni-kassel.de/~koepf/Diplome/PatrickNjionou-Dissertation.pdf",
+          "section": "Section 2.4 on discrete orthogonality; exact normalization requires independent source check",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "partial_absolute_convergence_condition_important",
+      "mathematical_assumptions_and_edge_cases": "If X is infinite, specify whether sums converge absolutely and whether all norms Σ p_n²w_x are finite; condition is not meaningful if the mixed series is undefined.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 115,
+      "original_canonical_candidate_id": "missing.bb72b275ee79b161d9b8",
+      "original_query": "nilpotent element r",
+      "original_context": "Algebra: element r of an associative ring R (identity not required) is nilpotent if r^n=0 for some positive integer n. Do not restrict to commutative rings without justification.",
+      "original_alias_candidate_ids": [
+        "missing.39e4d92e2f3e4374dd27"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.2954844c24784affa193",
+        "occ.8094431ada244ebe51ea"
+      ],
+      "preliminary_definition": "An element r of an associative ring R is nilpotent when r^n=0_R for some integer n≥1.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00AQ",
+          "section": "Section 10.2 ring conventions and nilpotence references",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "definition_supported_general_ring_source_scope_to_verify",
+      "mathematical_assumptions_and_edge_cases": "No commutativity or multiplicative unit is needed to define positive powers. Distinguish nilpotent element from nilpotent ideal I^n=0 and nil ring.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 116,
+      "original_canonical_candidate_id": "missing.bffc2ea0e8bb5da1d41b",
+      "original_query": "two-element subset {u,v}",
+      "original_context": "Graph/set theory: unordered doubleton {u,v}⊆V for distinct vertices u≠v, serving as a possible loopless undirected edge.",
+      "original_alias_candidate_ids": [
+        "missing.bad6d2828e5b104f3868"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.92513d13899e455a9d6d",
+        "occ.9599005e68ab44b32253"
+      ],
+      "preliminary_definition": "If u,v are distinct vertices in a simple undirected graph with vertex set V, the unordered edge candidate is the two-element subset {u,v}⊆V.",
+      "source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/SimpleGraph.html",
+          "section": "Simple undirected graph edges as unordered pairs without loops",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "definition_supported",
+      "mathematical_assumptions_and_edge_cases": "The condition u≠v is required for cardinality exactly 2. A multigraph edge has additional identity/multiplicity and need not equal the underlying vertex set pair.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 117,
+      "original_canonical_candidate_id": "missing.ca9ba1e0fc16e5162ef7",
+      "original_query": "associative ring with multiplicative identity 1_R",
+      "original_context": "Ring theory: associative ring R with a specified two-sided multiplicative identity 1_R, together with its additive abelian group and distributive multiplication; a unital ring is not merely a unital ring homomorphism.",
+      "original_alias_candidate_ids": [
+        "missing.1572a58850a1f38252f4"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.5706e152a046610e3b7a",
+        "occ.b7a5ce061641536663fb"
+      ],
+      "preliminary_definition": "A unital associative ring is a set with additive abelian-group structure and associative distributive multiplication admitting a specified two-sided multiplicative identity 1_R.",
+      "source_evidence": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.1 ring axioms, commutativity and multiplicative identities",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "definition_supported_with_unital_convention",
+      "mathematical_assumptions_and_edge_cases": "Commutativity is not required. The zero ring may be admitted with 1_R=0_R. A unital ring is an object, not a unital homomorphism.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 118,
+      "original_canonical_candidate_id": "missing.cf55f62008d08ce2df84",
+      "original_query": "isomorphic over Spec(R)",
+      "original_context": "Algebraic geometry: isomorphism of S-schemes X and Y for a fixed base scheme S, consisting of mutually inverse scheme morphisms commuting with their structure morphisms to S; in this source S=Spec(R).",
+      "original_alias_candidate_ids": [
+        "missing.165ffe7c25768d23c1ab"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.b934436a7d216ac212e5",
+        "occ.e59b6ec24ce2257f578f"
+      ],
+      "preliminary_definition": "For schemes X,Y over S=Spec R, an S-scheme isomorphism is a scheme morphism h:X→Y commuting with maps to S and admitting a two-sided inverse Y→X over S.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01HX",
+          "section": "Section 26.6 category of affine schemes, scheme morphisms over base",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "definition_supported_general_scheme_over_base_locator_pending",
+      "mathematical_assumptions_and_edge_cases": "An underlying topological homeomorphism, or a ring isomorphism on unrelated section rings, is not sufficient to be an S-scheme isomorphism.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 119,
+      "original_canonical_candidate_id": "missing.cf59d9cb388b3999576d",
+      "original_query": "every element idempotent x²=x",
+      "original_context": "Ring theory: element e in an associative ring, not necessarily commutative or unital, satisfying e·e=e; the Boolean-ring definition requires every element to have this property. Distinguish the property of e from the universal Boolean condition.",
+      "original_alias_candidate_ids": [
+        "missing.316cf556a051642025da"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.26252db72b3324ac0b9f",
+        "occ.5658840508bca82bebcb"
+      ],
+      "preliminary_definition": "An element e of an associative ring is idempotent if e²=e. A Boolean ring is a ring in which every element satisfies this identity.",
+      "source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/04PN",
+          "section": "Section 10.21 ring idempotents",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "definition_supported_distinguish_quantifiers",
+      "mathematical_assumptions_and_edge_cases": "Do not confuse the predicate for an element with the universal property of all elements. 0 and 1 qualify individually even in non-Boolean rings.",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    },
+    {
+      "priority": 120,
+      "original_canonical_candidate_id": "missing.cf69ce1240520995df04",
+      "original_query": "topological fibre product with subspace topology",
+      "original_context": "General topology: pullback X×_Y Z={(x,z)∈X×Z:f(x)=g(z)} equipped with the subspace topology induced by the product topology on X×Z, with canonical continuous projection maps. This realizes the categorical pullback in Top.",
+      "original_alias_candidate_ids": [
+        "missing.840e600e35f86bb70875"
+      ],
+      "original_occurrence_count": 2,
+      "original_occurrence_ids": [
+        "occ.94459dc2bfbe3c755b3a",
+        "occ.cc13a0dfa9f66f454c60"
+      ],
+      "preliminary_definition": "Given continuous f:X→Y and g:Z→Y, their topological fibre product X×_Y Z consists of pairs (x,z)∈X×Z with f(x)=g(z), equipped with subspace topology from the product X×Z.",
+      "source_evidence": [
+        {
+          "url": "https://suohyd.github.io/Topology-I/sec-fiber-product.html",
+          "section": "Section 2.4, Definition 2.4.1 and Remark 2.4.3",
+          "relevance": "Reference for definition or explicitly limited related construction. Full per-item scope represented by source_status."
+        }
+      ],
+      "source_scope_status": "direct_definition_supported",
+      "mathematical_assumptions_and_edge_cases": "This is the pullback in Top with universal projections. The fibre product can be empty and need not be closed in X×Z without hypotheses on Y's diagonal (e.g. Hausdorff).",
+      "relation_to_accepted_and_provisional": "Context typed, no automatic match; comprehensive 595 accepted + 16 initial provisional + earlier staged research comparison due before population admission.",
+      "research_generations": "do_not_recursively_expand",
+      "publication_certified": false,
+      "graph_mutated": false,
+      "population_admitted": false
+    }
+  ]
+}

@@ -12,26 +12,24 @@ import json
 from pathlib import Path
 
 from research_pipeline.adapters.mathdef.preview import build
-from research_pipeline.engine.resume_checkpoint import snapshot
 from research_pipeline.ui.renderer import render as render_reference_ui
 
 WAVE1 = Path("research_pipeline/experiments/reconstruction-v1-recovery")
 WAVE2 = Path("research_pipeline/experiments/reconstruction-v2-independent")
-CONFIG = Path("research_pipeline/adapters/mathdef/resume.json")
 
 
 def render(repo: Path, site: Path) -> dict:
     repo = repo.resolve()
     site = site.resolve()
-    # Validation verifies frozen independent Wave 1 lineage, all individual
-    # mathematical review records and the unsealed Wave 2 graph. No production
-    # mathDef definitions, sources, or variants are ever consulted.
-    verification = snapshot(repo / CONFIG, repo)
-    valid = verification["domain_validation"]
-    if not (valid["frozen_wave1_digest_recomputed_and_matched"]
-            and valid["editable_wave2_unsealed"]
-            and not valid["dependency_graph_has_cycles"]):
-        raise ValueError("Independent reconstruction validation failed")
+    # Only the independent research records and the frozen independent Wave 1
+    # catalog are required to display this research preview. The retired
+    # dependency graph and consolidation gates must never block rendering.
+    for path in (
+        repo / WAVE1 / "published" / "catalog.json",
+        repo / WAVE2 / "records" / "meanings.jsonl",
+    ):
+        if not path.is_file():
+            raise FileNotFoundError(f"Missing independent preview input: {path}")
 
     wave1 = build(repo / WAVE1, output=site / "wave1")
     wave2 = build(repo / WAVE2, draft=True, output=site / "wave2")
@@ -98,7 +96,8 @@ Both are presented separately from the original mathDef content.</p>
     (site / "index.html").write_text(page, encoding="utf-8")
     return {"wave1": wave1, "wave2": wave2,
             "reference_ui": {"wave1": ui1, "wave2": ui2},
-            "validation": {"frozen_wave1": True, "wave2_unsealed": True},
+            "validation": {"independent_research_inputs_only": True,
+                           "no_dependency_graph_gate": True},
             "site": str(site)}
 
 

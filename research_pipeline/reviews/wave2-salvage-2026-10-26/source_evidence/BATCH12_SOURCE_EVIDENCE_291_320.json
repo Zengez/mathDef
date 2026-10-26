@@ -1,0 +1,1100 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-26",
+  "phase": "first_generation_bounded_source_research",
+  "status": "PRELIMINARY_RESEARCH_EVIDENCE_NOT_CERTIFIED_NOT_STAGED",
+  "original_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "original_unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "priority_range": [
+    291,
+    320
+  ],
+  "original_candidate_count": 30,
+  "original_reference_count": 30,
+  "source_status_policy": {
+    "direct_passage_checked_2026_10_26": "source passage was read and matches cited scope or includes explicitly stated deduction",
+    "primary_specialization_or_partial_passage_checked": "passage read, but it supports only portion/specialization of broader candidate; no full certification",
+    "source_lead_exact_passage_pending": "promising reference only; not checked exact passage in present research"
+  },
+  "review_holds": [
+    {
+      "priorities": [
+        294
+      ],
+      "finding": "compound quotient ring and quotient module meaning must be disentangled at whole-population comparison"
+    },
+    {
+      "priorities": [
+        295,
+        303
+      ],
+      "finding": "non-strict ascending submodule chain differs from strict finite chain"
+    },
+    {
+      "priorities": [
+        302,
+        304
+      ],
+      "finding": "dual-pair snake identities differ from unit triangle coherence"
+    },
+    {
+      "priorities": [
+        306,
+        314
+      ],
+      "finding": "associated sheaf sections and further localization map are related but different object/map notions"
+    },
+    {
+      "priorities": [
+        310
+      ],
+      "finding": "coimage construction and image comparison require kernel/cokernel existence assumptions"
+    },
+    {
+      "priorities": [
+        312,
+        319
+      ],
+      "finding": "rational embeddings differ by real-number construction"
+    },
+    {
+      "priorities": [
+        297,
+        298,
+        313,
+        315
+      ],
+      "finding": "nonzero polynomial, zero-divisor convention, a<b partition and empty determinant must retain edge cases"
+    }
+  ],
+  "items": [
+    {
+      "priority": 291,
+      "original_canonical_candidate_id": "missing.8b4a695691c7d8e62f73",
+      "original_query": "Lebesgue–Stieltjes integral of x^n",
+      "original_context": "Measure theory: Lebesgue integral ∫_{(a,b)} x^n dμ(x) of a measurable real power function with respect to a Borel/Lebesgue–Stieltjes measure μ on a real interval, with endpoint conventions according to source.",
+      "original_occurrence_ids": [
+        "occ.a0c3f77092abf2cd4daf"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.a0c3f77092abf2cd4daf",
+          "from_formulation": "form.wave2.foundation.orthogonality-measure-raw-moment",
+          "original_phrase": "Lebesgue–Stieltjes integral of x^n",
+          "original_context": "Measure theory: Lebesgue integral ∫_{(a,b)} x^n dμ(x) of a measurable real power function with respect to a Borel/Lebesgue–Stieltjes measure μ on a real interval, with endpoint conventions according to source.",
+          "matching_note": "Provisional source-free contextual prerequisite, pending deduplication and source verification."
+        }
+      ],
+      "mathematical_definition_draft": "For a Borel measure μ on a real interval I, the nth raw moment (when defined) is ∫_I x^n dμ(x), the Lebesgue integral of the measurable power function; here I=(a,b) with the chosen endpoint convention.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Lebesgue%E2%80%93Stieltjes_integration",
+          "section": "Lebesgue–Stieltjes integration and measure construction",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "Relevant notion, but exact passage and interval endpoint convention require verification."
+        }
+      ],
+      "scope_and_edge_case": "A finite real moment requires integrability ∫_I |x|^n dμ<∞ for signed x^n and n≥0; an extended/nonexistent moment is not automatically a finite moment; for n=0 take x^0=1, including at zero, by convention.",
+      "semantic_integration_note": "Do not identify ordinary Lebesgue–Stieltjes integration with a Riemann–Stieltjes integral without hypotheses.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 292,
+      "original_canonical_candidate_id": "missing.8ba90699ab870d76cbca",
+      "original_query": "compositum KL",
+      "original_context": "Field theory: the compositum KL of two subfields K,L of a common overfield Ω is the smallest subfield of Ω containing both K and L, equivalently the field generated by K∪L.",
+      "original_occurrence_ids": [
+        "occ.14a33d86a8ef969a9878"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.14a33d86a8ef969a9878",
+          "from_formulation": "form.15af666c5e2af983.linearly-disjoint-extensions",
+          "original_phrase": "compositum KL",
+          "original_context": "Field theory: the compositum KL of two subfields K,L of a common overfield Ω is the smallest subfield of Ω containing both K and L, equivalently the field generated by K∪L.",
+          "matching_note": "Provisional context, subject to mathematical/candidate-equivalence audit before any source research."
+        }
+      ],
+      "mathematical_definition_draft": "For subfields K,L⊆Ω of a common overfield Ω, the compositum KL is their generated subfield, i.e. the intersection of all subfields of Ω containing K∪L.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Composite_field_(mathematics)",
+          "section": "Composite field (mathematics), Definition and properties",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checked the definition as intersection of all subfields of a common ambient field containing K and L."
+        }
+      ],
+      "scope_and_edge_case": "Requires specified embeddings into one ambient Ω; KL can depend on the embeddings and does not mean the pointwise product set {kl}.",
+      "semantic_integration_note": "Compare related tensor map K⊗_k L→KL without conflating compositum with tensor product.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only",
+      "source_audit_note": "Replaced unverified likely incorrect Wikipedia URL 'Compositum_(field_theory)' with the actual compositum article; source explicitly specifies common ambient field."
+    },
+    {
+      "priority": 293,
+      "original_canonical_candidate_id": "missing.8cc6a7cb971d28b697a1",
+      "original_query": "homogeneous component",
+      "original_context": "Graded ring theory: homogeneous degree-d component a_d in decomposition a=Σ_d a_d of a graded-ring element, with finitely many nonzero components. General Z-graded vs nonnegative conventions require global scope audit.",
+      "original_occurrence_ids": [
+        "occ.e4fff94f2fd728e1ca94"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.e4fff94f2fd728e1ca94",
+          "from_formulation": "form.29b2c34cc33d4b62.homogeneous-ideal",
+          "original_phrase": "homogeneous component",
+          "original_context": "Graded ring theory: homogeneous degree-d component a_d in decomposition a=Σ_d a_d of a graded-ring element, with finitely many nonzero components. General Z-graded vs nonnegative conventions require global scope audit.",
+          "matching_note": "Provisional source-free candidate; contextual identity with other meanings and missing records requires global review."
+        }
+      ],
+      "mathematical_definition_draft": "If S=⊕_{d∈G}S_d is a G-graded ring, each a∈S has a unique finite homogeneous decomposition a=Σ_d a_d with a_d∈S_d. The a_d are its degree-d homogeneous components.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00JL",
+          "section": "Stacks Section 10.56 graded rings, homogeneous elements",
+          "review_status": "primary_specialization_or_partial_passage_checked",
+          "relevance": "Directly checked nonnegative commutative-graded formulation; extends to general G only once its grade/monoid convention is separately checked."
+        }
+      ],
+      "scope_and_edge_case": "Finite support comes from the external direct sum, not from an arbitrary direct product; zero belongs to every homogeneous subgroup and its degree is nonunique by convention.",
+      "semantic_integration_note": "Do not collapse a homogeneous component (a_d) into an arbitrary homogeneous element or the graded ideal.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 294,
+      "original_canonical_candidate_id": "missing.8d90dbc484b53274e726",
+      "original_query": "quotient ring R/J and quotient module M/JM",
+      "original_context": "Commutative algebra: quotient ring R/J together with quotient module M/JM formed using the ideal action JM, an R/J-module; different quotient objects must not be conflated.",
+      "original_occurrence_ids": [
+        "occ.9028c4bc4186bfc8f868"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.9028c4bc4186bfc8f868",
+          "from_formulation": "form.82307b7a25fdc9fd.quasiregular-sequence-module",
+          "original_phrase": "quotient ring R/J and quotient module M/JM",
+          "original_context": "Commutative algebra: quotient ring R/J together with quotient module M/JM formed using the ideal action JM, an R/J-module; different quotient objects must not be conflated.",
+          "matching_note": "Compound reference to split in final audit; general quotient ring and quotient module meanings differ."
+        }
+      ],
+      "mathematical_definition_draft": "For ideal J⊆R in a commutative ring and an R-module M, R/J is the quotient ring of cosets r+J; JM consists of finite sums Σ_j a_jm_j with a_j∈J, m_j∈M; M/JM is an R/J-module via (r+J)(m+JM)=rm+JM.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Quotient_ring",
+          "section": "Quotient ring, Formal quotient ring construction",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checked ring cosets and multiplication from an ideal."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Quotient_module",
+          "section": "Quotient module, definition and module scalar multiplication",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checked quotient module of a submodule with induced scalar multiplication; R/J-action on M/JM is a standard additional deduction."
+        }
+      ],
+      "scope_and_edge_case": "JM must be an R-submodule; action of R/J on M/JM is well-defined because J annihilates the quotient. Both ring and module may be zero.",
+      "semantic_integration_note": "COMPOUND CANDIDATE: two constructions must be split or explicitly scoped in later semantic integration; never assert quotient ring equals quotient module.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only",
+      "source_audit_note": "This remains COMPOUND and must be split into ring and module constructions before generation admission."
+    },
+    {
+      "priority": 295,
+      "original_canonical_candidate_id": "missing.8d9fdc1b1763aba61b63",
+      "original_query": "ascending chain of submodules",
+      "original_context": "Module and order theory: an ascending chain (M_n)_{n≥1} of A-submodules of a fixed A-module M, satisfying M_n⊆M_{n+1} for every n, with equality allowed.",
+      "original_occurrence_ids": [
+        "occ.fe909999863cd17428c1"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.fe909999863cd17428c1",
+          "from_formulation": "form.wave2.foundation76.noetherian-module.02",
+          "original_phrase": "ascending chain of submodules",
+          "original_context": "Module and order theory: an ascending chain (M_n)_{n≥1} of A-submodules of a fixed A-module M, satisfying M_n⊆M_{n+1} for every n, with equality allowed.",
+          "matching_note": null
+        }
+      ],
+      "mathematical_definition_draft": "An ascending chain of submodules of M is a sequence M_1⊆M_2⊆⋯ with all M_n submodules of the same ambient module; equal adjacent submodules are permitted.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Ascending_chain_condition",
+          "section": "Ascending chains in module theory",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "Definition/context lead; ascending-chain stabilization is an additional Noetherian condition."
+        }
+      ],
+      "scope_and_edge_case": "Does not require strict inclusions or stabilization; arbitrary transfinite chains require a separately specified well-ordered index.",
+      "semantic_integration_note": "Compare priority 303 strict finite chain, but preserve non-strict chain's distinct hypotheses.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 296,
+      "original_canonical_candidate_id": "missing.8e10ca4c4067ac5928f8",
+      "original_query": "retrocompact open subset U of X",
+      "original_context": "Topology: retrocompact open subset U of X, whose intersections with each quasi-compact open subset V⊆X are quasi-compact; not equivalent to U itself being quasi-compact in arbitrary X.",
+      "original_occurrence_ids": [
+        "occ.9daaa2434c0182378674"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.9daaa2434c0182378674",
+          "from_formulation": "form.eea0cd4a31af555c.constructible-subset-stacks",
+          "original_phrase": "retrocompact open subset U of X",
+          "original_context": "Topology: retrocompact open subset U of X, whose intersections with each quasi-compact open subset V⊆X are quasi-compact; not equivalent to U itself being quasi-compact in arbitrary X.",
+          "matching_note": "Provisional context-specific prerequisite; compare all prior candidate IDs and meanings at post-pass global audit."
+        }
+      ],
+      "mathematical_definition_draft": "A subset U⊆X is retrocompact in X if the inclusion U→X is quasi-compact; equivalently, U∩V is quasi-compact for every quasi-compact open subset V⊆X. Here U is additionally assumed open.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/005A",
+          "section": "Stacks Definition 5.12.1(2),(3)",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly states the quasi-compact-inclusion definition, equivalent to intersection with quasi-compact open target subsets."
+        }
+      ],
+      "scope_and_edge_case": "A retrocompact open U need not be quasi-compact as an abstract space when X itself is not quasi-compact; if X is quasi-compact, taking V=X forces U quasi-compact.",
+      "semantic_integration_note": "Retain relative retrocompactness versus absolute quasi-compactness; do not invent a Hausdorff assumption.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 297,
+      "original_canonical_candidate_id": "missing.8e7388ef8958ac46b761",
+      "original_query": "repeated root in algebraic closure",
+      "original_context": "Polynomial algebra over a field: a multiple (repeated) root α of polynomial f in an extension field, meaning (x−α)^2 divides f after base extension, equivalently f(α)=f′(α)=0 when the formal derivative is used; distinct from the ordinary root concept.",
+      "original_occurrence_ids": [
+        "occ.70e037587a2c39934e62"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.70e037587a2c39934e62",
+          "from_formulation": "form.720eaae9156f6f4e.separable-irreducible-polynomial",
+          "original_phrase": "repeated root in algebraic closure",
+          "original_context": "Polynomial algebra over a field: a multiple (repeated) root α of polynomial f in an extension field, meaning (x−α)^2 divides f after base extension, equivalently f(α)=f′(α)=0 when the formal derivative is used; distinct from the ordinary root concept.",
+          "matching_note": "A repeated root is a root of algebraic multiplicity ≥2 in the algebraic closure, not every polynomial root or the abstract separability property."
+        }
+      ],
+      "mathematical_definition_draft": "For nonzero f∈F[T] and α in an extension of F, α is a repeated root of f if (T−α)^2 divides f in the extension polynomial ring, equivalently f(α)=0 and f′(α)=0.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09GZ",
+          "section": "Stacks Lemma 9.12.4, repeated roots and common formal derivative roots",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly explains repeated-root criterion and its relation to the derivative, including positive characteristic."
+        }
+      ],
+      "scope_and_edge_case": "All roots considered after extending coefficients to an ambient field; f=0 is excluded because multiplicity is undefined. In characteristic p the derivative can vanish identically.",
+      "semantic_integration_note": "General multiple root is not the same as an ordinary zero and is different from 'simple root'.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 298,
+      "original_canonical_candidate_id": "missing.8f2dea7e2bd1211c0cf6",
+      "original_query": "zero-divisor phenomena in S",
+      "original_context": "Ring theory: zero divisor in a commutative ring S, a nonzero element participating in a product of two nonzero elements that equals 0; source's arbitrary multiplier u allows this context.",
+      "original_occurrence_ids": [
+        "occ.6414b479b47d231c54a8"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.6414b479b47d231c54a8",
+          "from_formulation": "form.wave2.foundation.strongly-transcendental-subring-element",
+          "original_phrase": "zero-divisor phenomena in S",
+          "original_context": "Ring theory: zero divisor in a commutative ring S, a nonzero element participating in a product of two nonzero elements that equals 0; source's arbitrary multiplier u allows this context.",
+          "matching_note": "Accelerated source-free prerequisite candidate, final mathematical consistency and possible alias matching remain mandatory."
+        }
+      ],
+      "mathematical_definition_draft": "In a commutative ring S, a nonzero element s is a zero divisor under the strict convention if there is a nonzero t∈S with st=0. Alternative conventions count 0 whenever S has nonzero elements.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00EW",
+          "section": "Stacks Lemma 10.25.2, zero-divisors in a reduced ring",
+          "review_status": "primary_specialization_or_partial_passage_checked",
+          "relevance": "Directly confirms an annihilating multiplier criterion in reduced rings only; it is not a complete definition for arbitrary S."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Zero_divisor",
+          "section": "Zero divisor and convention",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "General definition lead; exact text pending."
+        }
+      ],
+      "scope_and_edge_case": "Do not assume S is reduced, a domain, or nonzero. The 0-as-zero-divisor convention varies and must be specified when used.",
+      "semantic_integration_note": "Strongly transcendental source's phrase 'arbitrary multiplier u' may require attention to t=0 versus t≠0; avoid treating 0·s=0 as proof of a zero divisor.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 299,
+      "original_canonical_candidate_id": "missing.90939810d7d17605bf00",
+      "original_query": "interchange law",
+      "original_context": "Higher category theory: interchange law for vertical and horizontal composition of 2-morphisms, expressing their functorial compatibility in a strict 2-category.",
+      "original_occurrence_ids": [
+        "occ.6e43bdf5f9e11ae648fe"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.6e43bdf5f9e11ae648fe",
+          "from_formulation": "form.ec5e3a0d13f85f3a.strict-two-category",
+          "original_phrase": "interchange law",
+          "original_context": "Higher category theory: interchange law for vertical and horizontal composition of 2-morphisms, expressing their functorial compatibility in a strict 2-category.",
+          "matching_note": "Provisional source-free contextual prerequisite; all homonym, variance, and comparison-isomorphism candidates must be audited before consolidation."
+        }
+      ],
+      "mathematical_definition_draft": "In a strict 2-category, horizontal composition ⋆ is functorial with respect to vertical composition ∘: for composable 2-cells α,α′ and β,β′, (β′∘β)⋆(α′∘α)=(β′⋆α′)∘(β⋆α), with typed source and target 1-morphisms.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/003H",
+          "section": "Stacks Definition 4.29.1(3), horizontal composition functor and 2-category axioms",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checks horizontal composition as a functor on hom categories, which entails interchange."
+        }
+      ],
+      "scope_and_edge_case": "All four 2-cells must be suitably vertically and horizontally composable; do not conflate interchange with mere associativity of either composition.",
+      "semantic_integration_note": "Keep 2-cell orientation and left/right whiskering conventions consistent with source formulation.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 300,
+      "original_canonical_candidate_id": "missing.90e938272e1caec9155e",
+      "original_query": "graded isomorphism of the displayed canonical map",
+      "original_context": "Graded module algebra: homomorphism of graded modules that respects degree and is bijective with grading-preserving inverse, here canonical map from polynomial-algebra tensor module to gr_J(M).",
+      "original_occurrence_ids": [
+        "occ.660cc1436b3bd973b532"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.660cc1436b3bd973b532",
+          "from_formulation": "form.82307b7a25fdc9fd.quasiregular-sequence-module",
+          "original_phrase": "graded isomorphism of the displayed canonical map",
+          "original_context": "Graded module algebra: homomorphism of graded modules that respects degree and is bijective with grading-preserving inverse, here canonical map from polynomial-algebra tensor module to gr_J(M).",
+          "matching_note": "Differentiate map's own isomorphism predicate from underlying graded-module isomorphism concept in global audit."
+        }
+      ],
+      "mathematical_definition_draft": "A degree-preserving graded module homomorphism φ:M→N is a graded isomorphism if it has an inverse graded module homomorphism; equivalently it is bijective and φ(M_d)⊆N_d for all d, so φ(M_d)=N_d.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00JL",
+          "section": "Stacks Section 10.56, maps of graded modules",
+          "review_status": "primary_specialization_or_partial_passage_checked",
+          "relevance": "Directly checks degree-preserving maps under Stacks' nonnegative ring and Z-graded module conventions; isomorphism follows from standard bijective graded map algebra."
+        }
+      ],
+      "scope_and_edge_case": "The inverse automatically preserves degrees for a surjective degree-preserving graded map between direct-sum graded modules; distinguish an arbitrary ungraded isomorphism.",
+      "semantic_integration_note": "Application is to canonical polynomial-tensor→gr_J(M) map; its isomorphism is a separate property/hypothesis, not automatic.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 301,
+      "original_canonical_candidate_id": "missing.91383b9c137b0e359967",
+      "original_query": "distance |a−b| on real line",
+      "original_context": "Real analysis: Euclidean distance between two real numbers a,b defined as d(a,b)=|a−b|, as an application of real absolute value, not its definition.",
+      "original_occurrence_ids": [
+        "occ.652c7e49e198a7fa6a88"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.652c7e49e198a7fa6a88",
+          "from_formulation": "form.wave2.analysis.real-absolute-value",
+          "original_phrase": "distance |a−b| on real line",
+          "original_context": "Real analysis: Euclidean distance between two real numbers a,b defined as d(a,b)=|a−b|, as an application of real absolute value, not its definition.",
+          "matching_note": "Accelerated source-free missing prerequisite, to be checked for equivalence and completeness during global mathematical consistency audit."
+        }
+      ],
+      "mathematical_definition_draft": "The standard Euclidean distance between a,b∈ℝ is d(a,b)=|a−b|, which defines a metric on ℝ.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Distance.html",
+          "section": "Distance in Euclidean space",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "Textbook-style source lead; exact specialization to real line to be checked."
+        }
+      ],
+      "scope_and_edge_case": "In particular d(a,b)=0 iff a=b, d≥0, symmetric, and triangle inequality holds. Uses rather than defines real absolute value.",
+      "semantic_integration_note": "Avoid a self-reference when describing |a−b| as the metric generated by already understood absolute value.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 302,
+      "original_canonical_candidate_id": "missing.92bfb3c3771716e14196",
+      "original_query": "triangle or snake composites",
+      "original_context": "Monoidal category theory: two snake/zigzag triangle composites built from evaluation, coevaluation, associators and unitors, required to equal the identity on X and Y.",
+      "original_occurrence_ids": [
+        "occ.d9c703665cd6da291fac"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.d9c703665cd6da291fac",
+          "from_formulation": "form.2ec41283717d02b0.left-dual-object",
+          "original_phrase": "triangle or snake composites",
+          "original_context": "Monoidal category theory: two snake/zigzag triangle composites built from evaluation, coevaluation, associators and unitors, required to equal the identity on X and Y.",
+          "matching_note": "Distinct from Mac Lane's triangle coherence axiom defining monoidal categories."
+        }
+      ],
+      "mathematical_definition_draft": "For a left dual Y of X with coevaluation η:𝟙→X⊗Y and evaluation ε:Y⊗X→𝟙, the two snake composites X→X and Y→Y, built using η,ε, associators and unitors, are required to be id_X and id_Y.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0FFJ",
+          "section": "Stacks Definition 4.43.8, two duality diagrams",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly defines left dual using exactly two identity snake/zigzag diagrams."
+        }
+      ],
+      "scope_and_edge_case": "Specify associator/unitor insertion instead of silently treating all monoidal categories as strict; orientations for left and right duals differ.",
+      "semantic_integration_note": "These are not the Mac Lane triangle coherence conditions for the tensor unit (priority 304).",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 303,
+      "original_canonical_candidate_id": "missing.92cfee91b51a427877ff",
+      "original_query": "strictly increasing finite chain of submodules",
+      "original_context": "Module theory and order theory: finite strict inclusion chain of submodules 0=M_0⊊M_1⊊⋯⊊M_n=M, with each proper inclusion counted as one step; not necessarily a composition series with simple successive factors.",
+      "original_occurrence_ids": [
+        "occ.a735b63664f0304f2f24"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.a735b63664f0304f2f24",
+          "from_formulation": "form.a95feee56dc057ee.module-composition-length",
+          "original_phrase": "strictly increasing finite chain of submodules",
+          "original_context": "Module theory and order theory: finite strict inclusion chain of submodules 0=M_0⊊M_1⊊⋯⊊M_n=M, with each proper inclusion counted as one step; not necessarily a composition series with simple successive factors.",
+          "matching_note": "Compare general ascending submodule chain candidate missing.8d9fdc1b1763aba61b63, but distinguish strictness, finiteness and fixed endpoints."
+        }
+      ],
+      "mathematical_definition_draft": "A strict finite submodule chain of M is 0=M_0⊊M_1⊊⋯⊊M_n=M with n≥0 and every M_i an R-submodule of M. Its length is n strict inclusions.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Composition_series",
+          "section": "Finite chains of submodules and composition series",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "Provides a stricter special example; chain need not be composition series since factors need not be simple."
+        }
+      ],
+      "scope_and_edge_case": "For M=0 permit n=0 with M_0=0; otherwise n≥1. No simplicity assumption on M_i/M_{i−1}.",
+      "semantic_integration_note": "Do not identify general strict chains with composition series or non-strict ascending chains (priority 295).",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 304,
+      "original_canonical_candidate_id": "missing.93b0382cbfcc0a76a69b",
+      "original_query": "triangle coherence identity",
+      "original_context": "Monoidal category: Mac Lane triangle coherence condition relating associator α and left/right unitors on tensor products of two objects.",
+      "original_occurrence_ids": [
+        "occ.8d708ac88fb33e2081e9"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.8d708ac88fb33e2081e9",
+          "from_formulation": "form.2ec41283717d02b0.monoidal-category",
+          "original_phrase": "triangle coherence identity",
+          "original_context": "Monoidal category: Mac Lane triangle coherence condition relating associator α and left/right unitors on tensor products of two objects.",
+          "matching_note": "Do not merge with left/right dual triangle identities."
+        }
+      ],
+      "mathematical_definition_draft": "In a monoidal category with associator a_{X,Y,Z}:(X⊗Y)⊗Z→X⊗(Y⊗Z), left unitor λ and right unitor ρ, the triangle coherence law is (id_X⊗λ_Y)∘a_{X,𝟙,Y}=ρ_X⊗id_Y, as arrows (X⊗𝟙)⊗Y→X⊗Y.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0FFJ",
+          "section": "Stacks diagram (4.43.0.2), unit triangle coherence",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checked equivalent triangle diagram. IMPORTANT Stacks associator φ:X⊗(𝟙⊗Y)→(X⊗𝟙)⊗Y has reverse orientation, so use φ^{-1} for a."
+        }
+      ],
+      "scope_and_edge_case": "Requires coherent natural unitors and associator. Not a statement about evaluation/coevaluation snake diagrams.",
+      "semantic_integration_note": "Keep reverse associator orientation explicit in sourcing; never copy a triangle without converting its arrows.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 305,
+      "original_canonical_candidate_id": "missing.952e94af9b62565431b7",
+      "original_query": "successor inclusion splits as a direct summand",
+      "original_context": "Module theory: split inclusion M_α↪M_{α+1} in an ordinal-indexed module filtration, having a retraction M_{α+1}→M_α and yielding a direct-summand decomposition.",
+      "original_occurrence_ids": [
+        "occ.c1a39f1c6be4ca41568a"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.c1a39f1c6be4ca41568a",
+          "from_formulation": "form.2ab2c62d4a9bd0a6.direct-sum-devissage",
+          "original_phrase": "successor inclusion splits as a direct summand",
+          "original_context": "Module theory: split inclusion M_α↪M_{α+1} in an ordinal-indexed module filtration, having a retraction M_{α+1}→M_α and yielding a direct-summand decomposition.",
+          "matching_note": "Match to splitting and direct summand constructions preserving map direction."
+        }
+      ],
+      "mathematical_definition_draft": "An inclusion i:M_α↪M_{α+1} of R-modules splits if there exists an R-linear retraction r:M_{α+1}→M_α satisfying r∘i=id_{M_α}. Then M_{α+1}≅M_α⊕ker(r).",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Split_exact_sequence",
+          "section": "Split short exact sequence and retractions",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "Standard source lead; exact module passage pending."
+        }
+      ],
+      "scope_and_edge_case": "A split inclusion need not have zero quotient and the complementary summand need not be canonical; splitting each successor does not imply extra limit-stage conditions.",
+      "semantic_integration_note": "Differentiate split injection from injection that is merely a monomorphism.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 306,
+      "original_canonical_candidate_id": "missing.95993fb9eaa92086c477",
+      "original_query": "sections of ~M on D(f)",
+      "original_context": "Sections of the associated sheaf ~M over principal open D(f), canonically identified with M_f.",
+      "original_occurrence_ids": [
+        "occ.b218b71c77a2d4fba42c"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.b218b71c77a2d4fba42c",
+          "from_formulation": "form.16ce0f7c4ee1fdca.quasicoherent-sheaf-affine",
+          "original_phrase": "sections of ~M on D(f)",
+          "original_context": "Sections of the associated sheaf ~M over principal open D(f), canonically identified with M_f.",
+          "matching_note": "Provisional source-free sheaf/localization candidate requiring later contextual alias review."
+        }
+      ],
+      "mathematical_definition_draft": "For R-module M and basic open D(f)⊆Spec R, the associated quasi-coherent sheaf \\widetilde M satisfies Γ(D(f),\\widetilde M)=M_f canonically, with restrictions induced by localization maps.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01HR",
+          "section": "Stacks Definition 26.5.3 and Lemma 26.5.4",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checks the associated sheaf construction and its sections over distinguished opens."
+        }
+      ],
+      "scope_and_edge_case": "Need f∈R; M_f means localization at multiplicative powers of f. For nilpotent f, D(f)=∅ and M_f=0. Do not identify a general sheaf of modules with an associated affine one.",
+      "semantic_integration_note": "Strong candidate for semantic overlap with priority 392; review contextual relation rather than blind merge.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 307,
+      "original_canonical_candidate_id": "missing.95b3b43b35ef7f6f817b",
+      "original_query": "compatible iterated p-power roots of elements of k",
+      "original_context": "Field theory: for each a∈k and n≥1 choose a^{1/p^n} in a fixed algebraic closure of characteristic p, compatibly so (a^{1/p^{n+1}})^p=a^{1/p^n}; these roots generate purely inseparable field extensions.",
+      "original_occurrence_ids": [
+        "occ.00b0aec2c150daff1b86"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.00b0aec2c150daff1b86",
+          "from_formulation": "form.f77b42c1adb38c56.perfect-closure",
+          "original_phrase": "compatible iterated p-power roots of elements of k",
+          "original_context": "Field theory: for each a∈k and n≥1 choose a^{1/p^n} in a fixed algebraic closure of characteristic p, compatibly so (a^{1/p^{n+1}})^p=a^{1/p^n}; these roots generate purely inseparable field extensions.",
+          "matching_note": "Provisional contextual missing identity, source-free and pending global mathematical audit."
+        }
+      ],
+      "mathematical_definition_draft": "Let k have characteristic p>0 and embed in a fixed algebraic closure Ω. For a∈k the uniquely determined roots a^{1/p^n}∈Ω satisfy (a^{1/p^{n+1}})^p=a^{1/p^n}; adjoining all these roots for all a,n produces the perfect closure k^{p^{−∞}} inside Ω.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/05DU",
+          "section": "Stacks Section 10.45 perfect fields; Lemma 10.45.2",
+          "review_status": "primary_specialization_or_partial_passage_checked",
+          "relevance": "Directly checks characterization of perfect characteristic-p fields by p-th roots, but does not independently state the full compatible tower construction."
+        }
+      ],
+      "scope_and_edge_case": "In char p, T^{p^n}−a has at most one root in a field (if it exists), so choices inside a fixed Ω are unique; extension is purely inseparable. Different k elements a require the entire tower for closure.",
+      "semantic_integration_note": "New dependencies: perfect closure, purely inseparable extension, compatibility; flag only, do not recursively research now.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 308,
+      "original_canonical_candidate_id": "missing.95eafc984a7460aa06f8",
+      "original_query": "homogeneous element f",
+      "original_context": "Graded ring theory: homogeneous element f∈S_d of specified positive degree d>0 in a graded ring, not an arbitrary polynomial or a homogeneous ideal.",
+      "original_occurrence_ids": [
+        "occ.504adcb649e5a8ada340"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.504adcb649e5a8ada340",
+          "from_formulation": "form.29b2c34cc33d4b62.degree-zero-localization",
+          "original_phrase": "homogeneous element f",
+          "original_context": "Graded ring theory: homogeneous element f∈S_d of specified positive degree d>0 in a graded ring, not an arbitrary polynomial or a homogeneous ideal.",
+          "matching_note": "Provisional context-specific prerequisite; compare all prior candidate IDs and meanings at post-pass global audit."
+        }
+      ],
+      "mathematical_definition_draft": "For a G-graded ring S=⊕_{g∈G}S_g, a homogeneous element of degree d is f∈S_d. Here the relevant f has degree d>0 in a ℤ- or ℕ-grading.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00JL",
+          "section": "Stacks Section 10.56 homogeneous elements of nonnegatively graded ring",
+          "review_status": "primary_specialization_or_partial_passage_checked",
+          "relevance": "Directly checks nonnegative graded special context; unrestricted G-grading must be verified independently."
+        }
+      ],
+      "scope_and_edge_case": "Zero is in every S_d and need not have a unique degree; f may be required nonzero in some usages, but not automatically. 'Positive degree' presumes ordered degree set.",
+      "semantic_integration_note": "Do not equate homogeneous element to homogeneous ideal or polynomial homogeneity without a chosen grading.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 309,
+      "original_canonical_candidate_id": "missing.960bd927c204df58bb49",
+      "original_query": "n-by-n matrix over entries 0,1",
+      "original_context": "Linear algebra: n×n square matrix indexed by row and column pairs with entries drawn from {0,1}, independent of graph incidence.",
+      "original_occurrence_ids": [
+        "occ.896ecc57df8d4dc72d7c"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.896ecc57df8d4dc72d7c",
+          "from_formulation": "form.wave2.alternative39.adjacency-matrix-simple-undirected",
+          "original_phrase": "n-by-n matrix over entries 0,1",
+          "original_context": "Linear algebra: n×n square matrix indexed by row and column pairs with entries drawn from {0,1}, independent of graph incidence.",
+          "matching_note": "Accelerated source-free missing prerequisite, to be checked for equivalence and completeness during global mathematical consistency audit."
+        }
+      ],
+      "mathematical_definition_draft": "An n×n {0,1}-matrix is a function A:{1,…,n}×{1,…,n}→{0,1}, equivalently A∈Mat_n({0,1}) as a set of binary arrays.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Binary_matrix",
+          "section": "Binary matrix",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "Standard lead for matrices with entries from {0,1}; verify exact conventions."
+        }
+      ],
+      "scope_and_edge_case": "When n=0 there is one empty array. To discuss matrix multiplication, choose a coefficient ring/semiring such as ℤ or 𝔽₂; {0,1} alone is not a ring under ordinary integer operations.",
+      "semantic_integration_note": "Graph adjacency requires extra symmetry/zero diagonal hypotheses not contained in the generic matrix definition.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 310,
+      "original_canonical_candidate_id": "missing.96a469cb715e650e82f0",
+      "original_query": "coimage Coim(f) of categorical morphism",
+      "original_context": "Abelian category theory: coimage Coim(f) of morphism f, given as cokernel of ker(f), under kernels and cokernels in an additive/abelian category.",
+      "original_occurrence_ids": [
+        "occ.5ca70cb4140ea8328799"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.5ca70cb4140ea8328799",
+          "from_formulation": "form.wave2.foundation15.abelian-category",
+          "original_phrase": "coimage Coim(f) of categorical morphism",
+          "original_context": "Abelian category theory: coimage Coim(f) of morphism f, given as cokernel of ker(f), under kernels and cokernels in an additive/abelian category.",
+          "matching_note": "Provisional source-free contextual prerequisite; all homonym, variance, and comparison-isomorphism candidates must be audited before consolidation."
+        }
+      ],
+      "mathematical_definition_draft": "For f:X→Y in a preadditive category with a kernel k:K→X and cokernel of k, its coimage Coim(f) is Coker(k), equipped with canonical quotient X→Coim(f).",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0106",
+          "section": "Stacks Definition 12.3.9(5),(6)",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Direct coimage as cokernel of the kernel, with existence qualification."
+        }
+      ],
+      "scope_and_edge_case": "Requires appropriate kernels and cokernels; in an abelian category comparison Coim(f)→Im(f) is canonically an isomorphism, but objects are not equal by definition.",
+      "semantic_integration_note": "Compare priority 349 image and 377 comparison; preserve construction versus relation.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 311,
+      "original_canonical_candidate_id": "missing.972ae1e91200fae874aa",
+      "original_query": "symmetry x~y implies y~x",
+      "original_context": "Set theory: symmetry property of a binary relation R⊆S×S, namely (x,y)∈R implies (y,x)∈R for all x,y∈S.",
+      "original_occurrence_ids": [
+        "occ.fb4be3286563a739cbe0"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.fb4be3286563a739cbe0",
+          "from_formulation": "form.wave2.set63.relation-reflexive-symmetric-transitive",
+          "original_phrase": "symmetry x~y implies y~x",
+          "original_context": "Set theory: symmetry property of a binary relation R⊆S×S, namely (x,y)∈R implies (y,x)∈R for all x,y∈S.",
+          "matching_note": "Source-free provisional prerequisite candidate; inspect for duplicate/contextual alias and recheck full mathematical scope in final consistency audit."
+        }
+      ],
+      "mathematical_definition_draft": "A relation R⊆S×S is symmetric if for every x,y∈S, (x,y)∈R implies (y,x)∈R.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Symmetric_relation",
+          "section": "Symmetric relation",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "General source lead; exact passage verification pending."
+        }
+      ],
+      "scope_and_edge_case": "Empty relation is symmetric, also symmetric relations need not be reflexive or transitive.",
+      "semantic_integration_note": "Distinguish symmetry of relation from antisymmetry, asymmetry and symmetry isomorphism.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 312,
+      "original_canonical_candidate_id": "missing.973624633db2f6611c19",
+      "original_query": "rational embedding q maps to {r:r<q}",
+      "original_context": "Ordered algebra: canonical injective order-preserving map ℚ→R_D sending rational q to strict lower segment {r∈ℚ:r<q}; distinct from arbitrary field embedding.",
+      "original_occurrence_ids": [
+        "occ.33089935922394b64422"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.33089935922394b64422",
+          "from_formulation": "form.wave2.real50.cut-model-reals",
+          "original_phrase": "rational embedding q maps to {r:r<q}",
+          "original_context": "Ordered algebra: canonical injective order-preserving map ℚ→R_D sending rational q to strict lower segment {r∈ℚ:r<q}; distinct from arbitrary field embedding.",
+          "matching_note": "Provisional source-free prerequisite candidate; examine canonical equivalence, order conventions and overlap with prior missing candidates at global audit."
+        }
+      ],
+      "mathematical_definition_draft": "For a rational q, its strict lower rational segment D_q={r∈ℚ:r<q} represents q under the standard Dedekind-cut construction; q↦D_q is injective and strictly order-preserving under subset inclusion.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Dedekind_cut",
+          "section": "Embedding rationals by principal strict lower cuts",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "Source lead requiring verification of the chosen lower-cut convention."
+        }
+      ],
+      "scope_and_edge_case": "Cuts in this convention are nonempty proper downward-closed sets with no greatest element; q↦D_q is consistent. Some conventions use r≤q and a different completion representation.",
+      "semantic_integration_note": "Do not assume arbitrary lower sets define Dedekind cuts, nor swap upper- vs lower-cut conventions.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 313,
+      "original_canonical_candidate_id": "missing.97b60028264b0b85a6af",
+      "original_query": "finite partition a=x_0<...<x_n=b",
+      "original_context": "Real analysis: finite partition of a real interval [a,b] into adjacent subintervals via finitely many strictly increasing points including both endpoints.",
+      "original_occurrence_ids": [
+        "occ.85c9fb8dd6dc1c9ef3a6"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.85c9fb8dd6dc1c9ef3a6",
+          "from_formulation": "form.wave2.foundation.tagged-riemann-integral",
+          "original_phrase": "finite partition a=x_0<...<x_n=b",
+          "original_context": "Real analysis: finite partition of a real interval [a,b] into adjacent subintervals via finitely many strictly increasing points including both endpoints.",
+          "matching_note": "Source-free provisional prerequisite candidate; inspect for duplicate/contextual alias and recheck full mathematical scope in final consistency audit."
+        }
+      ],
+      "mathematical_definition_draft": "For real a<b, a partition of [a,b] is an ordered finite sequence a=x_0<x_1<⋯<x_n=b with n≥1; the subintervals [x_{i−1},x_i] cover [a,b].",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/RiemannIntegral.html",
+          "section": "Riemann partitions and sums",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "Partition source lead; exact strict endpoint convention pending."
+        }
+      ],
+      "scope_and_edge_case": "If a=b, no strict partition with n≥1 exists; allow a degenerate partition separately or require a<b. Tags within each subinterval are extra data for tagged partitions.",
+      "semantic_integration_note": "Do not identify a partition with a tagged partition or its mesh.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 314,
+      "original_canonical_candidate_id": "missing.98b86874c2c07243f63a",
+      "original_query": "restriction from M_{f_i} to M_{f_i f_j}",
+      "original_context": "Localization/restriction homomorphism from M_{f_i} to M_{f_i f_j} comparing sections over overlaps.",
+      "original_occurrence_ids": [
+        "occ.c8cac8f4804df852e007"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.c8cac8f4804df852e007",
+          "from_formulation": "form.d8201788fcb507c5.compatible-localized-sections",
+          "original_phrase": "restriction from M_{f_i} to M_{f_i f_j}",
+          "original_context": "Localization/restriction homomorphism from M_{f_i} to M_{f_i f_j} comparing sections over overlaps.",
+          "matching_note": "Provisional source-free sheaf/localization candidate requiring later contextual alias review."
+        }
+      ],
+      "mathematical_definition_draft": "For f_i,f_j∈R and M an R-module, the canonical restriction/localization map M_{f_i}→M_{f_if_j} sends m/f_i^n to f_j^n m/(f_if_j)^n; equivalently it is the universal map that further inverts f_j.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01HR",
+          "section": "Stacks Section 26.5, associated sheaf and restrictions between basic opens",
+          "review_status": "primary_specialization_or_partial_passage_checked",
+          "relevance": "Directly checks restriction as localization; the displayed numerator expression is a deduction from fractions, not a verbatim source quote."
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00CM",
+          "section": "Stacks Section 10.9 localization constructions",
+          "review_status": "primary_specialization_or_partial_passage_checked",
+          "relevance": "Supporting localization universal property, not fully specific sheaf overlap map."
+        }
+      ],
+      "scope_and_edge_case": "D(f_if_j)⊆D(f_i), so direction is from M_{f_i} to M_{f_if_j}, not reverse; f_i or f_j may be nilpotent and produce zero localizations.",
+      "semantic_integration_note": "Compare candidate 365 overlap isomorphisms and priority 306 sections, but maps need not be isomorphisms.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 315,
+      "original_canonical_candidate_id": "missing.997a7843836432a6ada2",
+      "original_query": "determinant over K",
+      "original_context": "Linear algebra: determinant of a K-linear endomorphism of a finite-dimensional K-vector space, represented by determinant of any basis matrix.",
+      "original_occurrence_ids": [
+        "occ.452e9ef8eedda9a79ad2"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.452e9ef8eedda9a79ad2",
+          "from_formulation": "form.4406a87f2ff9b7d8.field-norm",
+          "original_phrase": "determinant over K",
+          "original_context": "Linear algebra: determinant of a K-linear endomorphism of a finite-dimensional K-vector space, represented by determinant of any basis matrix.",
+          "matching_note": "Source-free provisional typed prerequisite; global alias and scope audit required."
+        }
+      ],
+      "mathematical_definition_draft": "For K-linear endomorphism T:V→V of finite-dimensional K-vector space V, det_K(T) is det(A) of the square matrix A representing T in any ordered basis; independence follows from invariance under conjugation.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/Determinant.html",
+          "section": "Matrix determinant",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "Direct linear algebra relation source lead; exact endomorphism independence passage pending."
+        }
+      ],
+      "scope_and_edge_case": "Requires finite dimension; for dimension zero det(id_0)=1 by empty determinant convention. Determinant of field norm multiplication requires specify base field and K-linearity.",
+      "semantic_integration_note": "Not an arbitrary determinant over any unbased infinite-dimensional vector space.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 316,
+      "original_canonical_candidate_id": "missing.9a669bd30949842fab00",
+      "original_query": "Iverson bracket indicator [P]",
+      "original_context": "Logic and notation: Iverson bracket [P] returns numeric 1 when proposition P is true and 0 otherwise. In the Kronecker delta definition P is the equality predicate a=b on Γ; the general Iverson notation applies to arbitrary propositions, not merely to equality.",
+      "original_occurrence_ids": [
+        "occ.a06eed2e5f4c1bb96d2f"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.a06eed2e5f4c1bb96d2f",
+          "from_formulation": "form.wave2.bridge136.numeric-delta.2",
+          "original_phrase": "Iverson bracket indicator [P]",
+          "original_context": "Logic and notation: Iverson bracket [P] returns numeric 1 when proposition P is true and 0 otherwise. In the Kronecker delta definition P is the equality predicate a=b on Γ; the general Iverson notation applies to arbitrary propositions, not merely to equality.",
+          "matching_note": "Independent meaning inventory has no general Iverson-indicator formulation; do not identify the general indicator of arbitrary P with the particular Kronecker equality delta."
+        }
+      ],
+      "mathematical_definition_draft": "For any proposition P, its Iverson bracket [P] is 1 if P is true and 0 if P is false; this is the indicator of the truth set of P.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/IversonBracket.html",
+          "section": "MathWorld Iverson Bracket, defining display equation (1)",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly defines numeric 0/1 bracket for arbitrary mathematical statements."
+        }
+      ],
+      "scope_and_edge_case": "Codomain normally ℤ or {0,1}; in zero ring 0=1, so nonzero coefficient convention may matter in ring-valued variants.",
+      "semantic_integration_note": "General Iverson notation specializes to [a=b], but must not be conflated with equality-specific Kronecker delta.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 317,
+      "original_canonical_candidate_id": "missing.9a71afd4a344322c1d26",
+      "original_query": "antisymmetry of a binary relation",
+      "original_context": "Order theory: antisymmetry of a binary relation ≤ on a set S, meaning for all x,y∈S, both x≤y and y≤x imply x=y. It is not asymmetry and does not require every pair to be comparable.",
+      "original_occurrence_ids": [
+        "occ.fc3f310eca2056c85101"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.fc3f310eca2056c85101",
+          "from_formulation": "form.709d3d2f82950c5b.partially-ordered-set",
+          "original_phrase": "antisymmetry of a binary relation",
+          "original_context": "Order theory: antisymmetry of a binary relation ≤ on a set S, meaning for all x,y∈S, both x≤y and y≤x imply x=y. It is not asymmetry and does not require every pair to be comparable.",
+          "matching_note": "Distinguish antisymmetry from strict asymmetry, symmetry and trichotomy when globally deduplicating relational-property candidates."
+        }
+      ],
+      "mathematical_definition_draft": "A binary relation R on S is antisymmetric if for all x,y∈S, (x,y)∈R and (y,x)∈R together imply x=y.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Antisymmetric_relation",
+          "section": "Antisymmetric relation",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "Exact page/definition source lead requiring later verification."
+        }
+      ],
+      "scope_and_edge_case": "Does not require comparability or reflexivity. Unlike asymmetry, an antisymmetric relation may include all diagonal pairs.",
+      "semantic_integration_note": "Preserve distinct roles in partial-order construction.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 318,
+      "original_canonical_candidate_id": "missing.9bac816086ae0ec5b075",
+      "original_query": "inverse diagram M_i",
+      "original_context": "Category theory: cofiltered inverse diagram with compatible cone maps X→M_i; the existence of the cone does not assert X is its limit.",
+      "original_occurrence_ids": [
+        "occ.a561c50cb2ec822d5f0e"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.a561c50cb2ec822d5f0e",
+          "from_formulation": "form.2ed79f667742de34.essentially-constant-pro-diagram",
+          "original_phrase": "inverse diagram M_i",
+          "original_context": "Category theory: cofiltered inverse diagram with compatible cone maps X→M_i; the existence of the cone does not assert X is its limit.",
+          "matching_note": "Keep inverse diagram/cone distinct from inverse limit as a universal object."
+        }
+      ],
+      "mathematical_definition_draft": "An inverse diagram indexed by a cofiltered category I is a functor D:I→C (variance fixed by indexing convention); a compatible cone from X consists of arrows p_i:X→D(i) satisfying D(u)∘p_i=p_j for each arrow u:i→j in I.",
+      "external_source_evidence": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0030",
+          "section": "Stacks Definition 4.21.2, inverse systems over preordered sets",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checks direction M_i→M_i' for i'≤i, identities and transition-map compatibility. General cofiltered-category functor/cone formulation still needs exact categorical source comparison."
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/02MY",
+          "section": "Stacks Section 12.31 inverse systems",
+          "review_status": "direct_passage_checked_specialized_index",
+          "relevance": "Directly describes inverse systems over the preordered set N, not arbitrary cofiltered categories."
+        }
+      ],
+      "scope_and_edge_case": "An inverse system more commonly treats a directed poset with arrows j→i for i≤j or uses I^op. Existence of a cone does not imply universality or existence of inverse limit.",
+      "semantic_integration_note": "Carefully match actual source's direction of index arrows before comparing with other pro-object definitions.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only",
+      "source_audit_note": "Removed irrelevant earlier 2-category source tag 003G; retain the categorical cone condition and index-variance review."
+    },
+    {
+      "priority": 319,
+      "original_canonical_candidate_id": "missing.9d90e2f74ca22a19cb8a",
+      "original_query": "embedding rational q as constant sequence",
+      "original_context": "Ordered-field construction: canonical injection ℚ→C_ℚ/∼ sending rational q to the equivalence class of constant rational Cauchy sequence (q,q,…) and respecting field operations once well-definedness is proved.",
+      "original_occurrence_ids": [
+        "occ.8a001a3e6c12e22febc8"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.8a001a3e6c12e22febc8",
+          "from_formulation": "form.wave2.real52.cauchy-quotient-reals",
+          "original_phrase": "embedding rational q as constant sequence",
+          "original_context": "Ordered-field construction: canonical injection ℚ→C_ℚ/∼ sending rational q to the equivalence class of constant rational Cauchy sequence (q,q,…) and respecting field operations once well-definedness is proved.",
+          "matching_note": "The proof that this is a field embedding is not certified by a dependency classification."
+        }
+      ],
+      "mathematical_definition_draft": "Let C_ℚ be the ring of rational Cauchy sequences and ∼ identify sequences whose difference converges to zero. The canonical map ℚ→C_ℚ/∼ sends q to the class of constant sequence (q,q,…); it respects + and × and is injective.",
+      "external_source_evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Construction_of_the_real_numbers",
+          "section": "Cauchy-sequence quotient completion",
+          "review_status": "source_lead_exact_passage_pending",
+          "relevance": "Standard construction lead; exact passage and quotient equivalence need verification."
+        }
+      ],
+      "scope_and_edge_case": "Well-defined field embedding depends on proof that null Cauchy sequences form an ideal and that every nonzero class has multiplicative inverse; kernel of constant-sequence map is zero.",
+      "semantic_integration_note": "Retain distinction from principal Dedekind cut embedding (priority 312), even though resulting reals are isomorphic.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only"
+    },
+    {
+      "priority": 320,
+      "original_canonical_candidate_id": "missing.9e1b000eff0431817f3a",
+      "original_query": "neighbor set of vertex v",
+      "original_context": "Graph theory: neighborhood N_G(v)={u∈V:{u,v}∈E} in a simple undirected graph G=(V,E).",
+      "original_occurrence_ids": [
+        "occ.9366f9c62da2a8cc5d54"
+      ],
+      "original_provenance": [
+        {
+          "occurrence_id": "occ.9366f9c62da2a8cc5d54",
+          "from_formulation": "form.wave2.cross133.vertex-degree-simple.2",
+          "original_phrase": "neighbor set of vertex v",
+          "original_context": "Graph theory: neighborhood N_G(v)={u∈V:{u,v}∈E} in a simple undirected graph G=(V,E).",
+          "matching_note": null
+        }
+      ],
+      "mathematical_definition_draft": "In a simple undirected graph G=(V,E) with E⊆{{u,v}:u,v∈V,u≠v}, the (open) neighbor set of vertex v is N_G(v)={u∈V:{u,v}∈E}.",
+      "external_source_evidence": [
+        {
+          "url": "https://mathworld.wolfram.com/OpenGraphNeighborhood.html",
+          "section": "MathWorld Open Graph Neighborhood",
+          "review_status": "direct_passage_checked_2026_10_26",
+          "relevance": "Directly checked N(v) consists of vertices adjacent to v, excluding v; separately notes closed N[v]=N(v)∪{v}."
+        }
+      ],
+      "scope_and_edge_case": "No loops allowed, hence v∉N_G(v); closed neighborhood includes v and differs. For directed graphs distinguish in/out neighbors.",
+      "semantic_integration_note": "Do not equate vertex degree with neighbor set itself, though |N_G(v)|=deg(v) for simple undirected graphs.",
+      "source_certified": false,
+      "staged": false,
+      "comparison_status": "PENDING_INDEPENDENT_ACCEPTED_PROVISIONAL_AND_EARLIER_STAGED_FULL_MEANING_COMPARISON",
+      "new_dependencies_policy": "record_for_later_generation_only",
+      "source_audit_note": "Replaces ambiguous generic Neighborhood.html: that source describes graph neighborhoods commonly INCLUDING the vertex, incompatible with this candidate's open N_G(v) convention."
+    }
+  ],
+  "source_verification_followup": {
+    "review_date": "2026-10-26",
+    "reviewed_priorities": [
+      292,
+      294,
+      318,
+      320
+    ],
+    "note": "Direct source passage checks after first completed 418-cohort manifest audit; corrected incorrect and ambiguous source URLs, preserved mathematical types and unresolved comparison holds."
+  }
+}

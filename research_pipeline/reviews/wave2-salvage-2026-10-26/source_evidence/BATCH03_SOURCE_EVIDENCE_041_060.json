@@ -1,0 +1,672 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "scope": "independent mathDef Wave2 frozen first generation",
+  "status": "SOURCE_RESEARCH_EVIDENCE_ONLY_NOT_CERTIFIED_OR_ADMITTED",
+  "original_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "priority_range": [
+    41,
+    60
+  ],
+  "candidate_count": 20,
+  "original_incoming_occurrences": 61,
+  "mathematical_highlights": [
+    "Unrestricted groupoid needs its own foundational size decision, not replacement with explicitly set-sized groupoids.",
+    "Quotient topology requires its preimage criterion and appropriate surjectivity scope; closed-map property is separate.",
+    "Formal unramified lifting means uniqueness when a lift exists, not existence.",
+    "Hom precomposition uses arrow reversal for first argument and explicit hom-set size convention.",
+    "Almost-sure equality is not pointwise equality; conditional-expectation martingale identity adds hypotheses."
+  ],
+  "items": [
+    {
+      "priority": 41,
+      "original_canonical_candidate_id": "missing.1ebe938ec77d5606093e",
+      "original_query": "groupoid",
+      "original_context": "Category theory: ordinary (size-unrestricted) groupoid G, a category in which every morphism has a two-sided inverse; no requirement that the object collection be a set or that hom-categories be small. Distinct from an explicitly small groupoid.",
+      "original_alias_candidate_ids": [
+        "missing.467c799601bb5d539a8f",
+        "missing.6dd26585ccd4e8c7b6ce"
+      ],
+      "original_occurrence_ids": [
+        "occ.18ecb28b309e0051e055",
+        "occ.3c1bbf0f3054cde36608",
+        "occ.a1f09d511c64c5206a7b",
+        "seed.b16548259189e65c1b48"
+      ],
+      "original_incoming_occurrences": 4,
+      "definition_paraphrase": "A groupoid is a category G in which every morphism is invertible, meaning for every arrow f:x→y there is g:y→x with gf=1_x and fg=1_y. No smallness requirement is imposed at this abstract level, although the chosen foundations must make the object/morphism collections meaningful.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0018",
+          "section": "Definition 4.2.5",
+          "relevance": "Every arrow of a groupoid is an isomorphism"
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0230",
+          "section": "Section 39.13",
+          "relevance": "Detailed groupoid identities and inverses, but source uses set-sized object/arrow collections"
+        }
+      ],
+      "source_status": "partial_foundational_size_caution",
+      "mathematical_comparison_and_caveat": "Groupoids are categories with invertible arrows, not necessarily small categories; Stacks detailed construction defaults to sets.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 42,
+      "original_canonical_candidate_id": "missing.0c5a27f2980fc722cbb5",
+      "original_query": "quotient topology on Y for f",
+      "original_context": "Point-set topology: quotient (final) topology induced by a surjective continuous map q:X→Q, where U⊆Q is open exactly when q^{-1}(U) is open in X; includes canonical quotient-set maps and the map X→f(X) when equipped with final topology, independently of whether a larger codomain Y is surjected onto.",
+      "original_alias_candidate_ids": [
+        "missing.22809c7ff112b0a6ff75",
+        "missing.4225143e27de664980cb"
+      ],
+      "original_occurrence_ids": [
+        "occ.7c831677fac9d2e6a690",
+        "occ.86533d77dc0b294f8cbb",
+        "occ.da64cfe95a1945c0b36b"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "For a surjective map q:X→Q from topological space X to a set Q, the quotient topology on Q declares U⊆Q open iff q^{-1}(U) is open in X. It is the finest topology making q continuous.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/08ZK",
+          "section": "Lemma 5.6.2",
+          "relevance": "Exact quotient/final topology characterization and surjectivity"
+        }
+      ],
+      "source_status": "direct_definition_supported",
+      "mathematical_comparison_and_caveat": "An arbitrary non-surjective map to Y has the same final-topology construction, but calling Y a quotient of X requires a scope distinction; the map to image q:X→f(X) is surjective.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 43,
+      "original_canonical_candidate_id": "missing.0c99be984399f9134720",
+      "original_query": "multiplicative subset of commutative ring",
+      "original_context": "Commutative algebra: subset S of a commutative unital ring R, containing 1_R and closed under multiplication, used as denominators in ring or module localization.",
+      "original_alias_candidate_ids": [
+        "missing.be21819dbf92c119e444"
+      ],
+      "original_occurrence_ids": [
+        "occ.46d13d28b26bdd10a412",
+        "occ.6de9d42ab81ed6b58f63",
+        "occ.bc87759779f39ba996c6"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "For a commutative unital ring R, a multiplicative subset S⊆R satisfies 1_R∈S and s,t∈S⇒st∈S.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00CN",
+          "section": "Definition 10.9.1",
+          "relevance": "Exact multiplicative subset axioms"
+        }
+      ],
+      "source_status": "direct_definition_supported",
+      "mathematical_comparison_and_caveat": "Some authors require 0∉S for nontrivial localizations; Stacks does not, so 0 may appear and S^{-1}R then is the zero ring.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 44,
+      "original_canonical_candidate_id": "missing.2d82e7722cfbce9eca14",
+      "original_query": "S⊗_R R′",
+      "original_context": "Commutative algebra: tensor product S⊗_R R′ of commutative unital R-algebras S and R′, with induced commutative unital R′-algebra multiplication (s⊗r′)(t⊗u′)=st⊗r′u′; the base-change algebra underlying Spec(S⊗_R R′).",
+      "original_alias_candidate_ids": [
+        "missing.a6b162089f9cb7a865be",
+        "missing.e35e3854b55d0ec67aec"
+      ],
+      "original_occurrence_ids": [
+        "occ.41adb3d037fe4f3d25e1",
+        "occ.43928fb86cf24580095c",
+        "occ.681f7749b0747d03a3bc"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "If R→S and R→R′ are maps of commutative unital rings, S⊗_R R′ is an R′-algebra via r′·(s⊗u)=s⊗r′u, with multiplication (s⊗a)(t⊗b)=st⊗ab and identity 1_S⊗1_{R′}.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00TH",
+          "section": "Lemma 10.138.2",
+          "relevance": "Explicit base-change algebra R′⊗_R S and universal tensor-product argument"
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00RM",
+          "section": "Section 10.131",
+          "relevance": "Tensor products and base changes of commutative algebras"
+        }
+      ],
+      "source_status": "construction_supported",
+      "mathematical_comparison_and_caveat": "Algebra base-change is not merely an R-module tensor product with forgotten multiplication; ring structure and R′-algebra structure must be stated.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 45,
+      "original_canonical_candidate_id": "missing.5a53cd2d53ef5891adcb",
+      "original_query": "natural transformations lying over identity arrows",
+      "original_context": "2-category theory: natural transformation α:H⇒K between functors over C whose component arrows project to identities id_{p(x)} in C.",
+      "original_alias_candidate_ids": [
+        "missing.493dabccb9a9f17596f0",
+        "missing.ff2c23b80fc7ac4368ab"
+      ],
+      "original_occurrence_ids": [
+        "occ.1756bcfb966619929c77",
+        "occ.6ad4b014a59e8a37ed3c",
+        "occ.f2b6bf1e7b6caf84b844"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "Let p:E→C and p′:E′→C be functors. A natural transformation α:H⇒K between functors H,K:E→E′ over C has component α_x:H(x)→K(x) for each x, satisfying naturality and p′(α_x)=1_{p(x)}.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/04S9",
+          "section": "Definition 4.39.3 and 2-category context",
+          "relevance": "2-morphisms of fibred categories over C preserve base-identity components"
+        }
+      ],
+      "source_status": "contextual_component_source_pending",
+      "mathematical_comparison_and_caveat": "A general natural transformation need not be over identity arrows; requires p′H=p′K=p and commutative base projection.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 46,
+      "original_canonical_candidate_id": "missing.631bb780e939ffa2b71f",
+      "original_query": "subfield of E",
+      "original_context": "Field theory: subfield F of a field E is a subset F⊆E containing 0_E,1_E and closed under inherited field addition, additive inverses, multiplication and inverses of nonzero elements of F, with induced field operations.",
+      "original_alias_candidate_ids": [
+        "missing.bbffbb78e2458c96f328",
+        "missing.e3eb92c8d1d2700f3baa"
+      ],
+      "original_occurrence_ids": [
+        "occ.6d30563c379c4ee36e2c",
+        "occ.729c6e48a84443ccfbe7",
+        "occ.75b28d651bb19bea9b40"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "A subfield F of a field E is a subset F⊆E containing 0_E and 1_E, closed under addition, additive inverses, multiplication, and multiplicative inverses of nonzero F-elements, with operations inherited from E.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch06.html",
+          "section": "Section 6.1 Definition 6.1.1 and field-extension discussion",
+          "relevance": "A field extension is a field containing a specified subfield"
+        }
+      ],
+      "source_status": "definition_supported_with_basic_axioms",
+      "mathematical_comparison_and_caveat": "Fields share the ambient identities; a mere subring need not contain inverses.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 47,
+      "original_canonical_candidate_id": "missing.751471447065f0d756cd",
+      "original_query": "sends closed subsets to closed subsets",
+      "original_context": "General topology: a continuous map f:X→Y is a closed map if every closed F⊆X has closed image f(F)⊆Y; here it is the underlying continuous map of a scheme base change, without a Hausdorff or properness assumption.",
+      "original_alias_candidate_ids": [
+        "missing.5afce6513485dfbcf054",
+        "missing.7236610de0223e056620"
+      ],
+      "original_occurrence_ids": [
+        "occ.0273a034cfef025fe6d2",
+        "occ.252d09fd92f5662496e4",
+        "occ.53ff73a377b8fcca8cbb"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "A map f:X→Y of topological spaces is closed if the image f(F) is closed in Y for each closed subset F⊆X.",
+      "sources": [
+        {
+          "url": "https://mathworld.wolfram.com/ClosedMap.html",
+          "section": "Definition of closed map",
+          "relevance": "Images of closed subsets are closed"
+        },
+        {
+          "url": "https://archive.nptel.ac.in/content/storage2/courses/111101002/modules/lec4/1.3.html",
+          "section": "Definition 4.2",
+          "relevance": "Does not assume continuity or surjectivity in definition"
+        }
+      ],
+      "source_status": "direct_definition_supported",
+      "mathematical_comparison_and_caveat": "The original occurrence happens to involve a continuous map, but closedness as a property does not require continuity or Hausdorffness.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 48,
+      "original_canonical_candidate_id": "missing.80fe89921faf5393a2c5",
+      "original_query": "coefficient sequence (a_n)",
+      "original_context": "Real analysis: sequence (a_n) of real coefficients indexed by nonnegative integers, a function ℕ_0→ℝ; no assumption of convergence.",
+      "original_alias_candidate_ids": [
+        "missing.20d00d042c8e5abc0061",
+        "missing.fb24ed0afe52e8b2b234"
+      ],
+      "original_occurrence_ids": [
+        "occ.48da6b27da98295df652",
+        "occ.4a7e8ad825f9ca2227b9",
+        "occ.63a097d339ab539e4a7c"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "A real coefficient sequence is a function a:ℕ₀→ℝ, conventionally written (a_n)_{n≥0}. No boundedness, limit, summability, or convergence is implied by the word sequence.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "section": "Section 3.9 polynomial coefficient notation",
+          "relevance": "Sequences of coefficients occur in polynomial/series contexts but source is not a general sequence definition"
+        }
+      ],
+      "source_status": "general_real_sequence_exact_source_pending",
+      "mathematical_comparison_and_caveat": "A sequence of coefficients need not define a convergent power series; finite polynomials and infinite formal series have distinct support rules.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 49,
+      "original_canonical_candidate_id": "missing.9b77bf68dde01674ecf2",
+      "original_query": "lift S→A/I to S→A",
+      "original_context": "Commutative algebra: lift of an R-algebra homomorphism f:S→A/I across a surjective R-algebra map q:A→A/I, namely an R-algebra homomorphism g:S→A satisfying q∘g=f. Here I is square-zero and formal unramifiedness only requires uniqueness, not existence.",
+      "original_alias_candidate_ids": [
+        "missing.27872640483c961ad03d",
+        "missing.b6b60744a57acddc0dcc"
+      ],
+      "original_occurrence_ids": [
+        "occ.52f345ef74730e0004dd",
+        "occ.5e469af7e8e64c14ecc5",
+        "occ.b6b90581d7aab55eac22"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "For a surjective R-algebra map q:A→A/I and an R-algebra morphism f:S→A/I, a lift is an R-algebra morphism g:S→A with q∘g=f.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00UM",
+          "section": "Definition 10.148.1",
+          "relevance": "Square-zero lifting diagram and formal unramified uniqueness, not existence"
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00TH",
+          "section": "Definition 10.138.1",
+          "relevance": "Formally smooth means existence of lifts; contrasts uniqueness-only formal unramified"
+        }
+      ],
+      "source_status": "direct_construction_supported",
+      "mathematical_comparison_and_caveat": "Formal unramifiedness says at most one lift, not that there exists one; formal étaleness says exactly one.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 50,
+      "original_canonical_candidate_id": "missing.a2b8dbc04d465756c102",
+      "original_query": "arbitrary direct product ∏_j Q_j of R-modules",
+      "original_context": "Module theory: product of an arbitrary indexed family of R-modules (Q_j)_{j∈J}, consisting of all tuples (q_j)∈∏_jQ_j with coordinatewise addition and scalar action; unlike a direct sum, supports need not be finite.",
+      "original_alias_candidate_ids": [
+        "missing.1ebcea580e20705b243c",
+        "missing.9f74bfc8fef60ad63a96"
+      ],
+      "original_occurrence_ids": [
+        "occ.5ec574c603d7c039b190",
+        "occ.ae21f6113220db47ef54",
+        "occ.bb1ff45670917e66535f"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "Given a ring R and left R-modules Q_j indexed by J, their direct product ∏_{j∈J}Q_j is the set of all tuples (q_j) with coordinatewise addition/scalar multiplication, without finite-support restriction.",
+      "sources": [
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html",
+          "section": "Section 5.7 module products/direct sums",
+          "relevance": "Contrasts unrestricted direct products against finitely supported sums"
+        }
+      ],
+      "source_status": "definition_supported",
+      "mathematical_comparison_and_caveat": "For J=∅ the product is zero module in the category of R-modules. For infinite J, unrestricted product can exceed the direct sum.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 51,
+      "original_canonical_candidate_id": "missing.ab1dee70553ea0ff2c1c",
+      "original_query": "cone arrows L→F(i) compatible with all arrows of I",
+      "original_context": "Category theory: cone from vertex L to a diagram F:I→C, a natural transformation constant_L⇒F with compatible arrows L→F(i); not necessarily a limit cone.",
+      "original_alias_candidate_ids": [
+        "missing.bd53377bf8fd7a313f6d",
+        "missing.e9f8615c8ccefe3f5110"
+      ],
+      "original_occurrence_ids": [
+        "occ.607b2c5952de1874a968",
+        "occ.6d2df865563d435480c7",
+        "occ.814352c8967dfa16628b"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "For a diagram F:I→C and an object L∈C, a cone to F with vertex L is a family of morphisms λ_i:L→F(i) satisfying F(u)∘λ_i=λ_j for every arrow u:i→j in I; equivalently a natural transformation Δ_L⇒F.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/0013",
+          "section": "Section 4.2 category/functor definitions",
+          "relevance": "Categories and functors support diagram and naturality axioms; exact cone locator still needed"
+        }
+      ],
+      "source_status": "explicit_cone_locator_pending",
+      "mathematical_comparison_and_caveat": "A cone does not have to satisfy the universal property of a limit cone; target size and functor scope remain separate.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 52,
+      "original_canonical_candidate_id": "missing.b05a1814a9da0d01922a",
+      "original_query": "local ring homomorphisms",
+      "original_context": "Map of local rings taking preimage of target maximal ideal to source maximal ideal, stronger than an arbitrary unital ring homomorphism.",
+      "original_alias_candidate_ids": [
+        "missing.7d6fabf1bc337e0d6239",
+        "missing.82c525cf52c351433b8a"
+      ],
+      "original_occurrence_ids": [
+        "occ.32981f3c04baa9e3223d",
+        "occ.50d2e907d0a970d7c858",
+        "occ.fac8134c74a2feda5039"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "For local rings (R,m_R),(S,m_S), a local homomorphism φ:R→S is a unital ring homomorphism with φ^{-1}(m_S)=m_R (equivalently φ(m_R)⊆m_S).",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/07BH",
+          "section": "Definition 10.18.1",
+          "relevance": "Defines local homomorphisms and unique maximal ideals"
+        }
+      ],
+      "source_status": "direct_definition_supported",
+      "mathematical_comparison_and_caveat": "An arbitrary ring homomorphism between local rings need not be local.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 53,
+      "original_canonical_candidate_id": "missing.b3329d7bb30dc66927f6",
+      "original_query": "cover of Spec(R) by standard opens D(f_i)",
+      "original_context": "Algebraic geometry: family of distinguished opens D(f_i) in Spec(R) with union equal to Spec(R); the f_i need not all be the same and the localizations are taken on these opens.",
+      "original_alias_candidate_ids": [
+        "missing.a167e57024ad829fe0b0",
+        "missing.c1c78a0c700166be2f6b"
+      ],
+      "original_occurrence_ids": [
+        "occ.2b8e263884fdd0ef71e8",
+        "occ.90d65ca742bf11966ff3",
+        "occ.aacc79989b1c8c2b00c8"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "The distinguished opens D(f_i) cover Spec(R) if ⋃_i D(f_i)=Spec(R). For any family in a unital ring, this is equivalent to the ideal (f_i:i∈I) being R; by quasi-compactness a finite subcover then exists.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/00DZ",
+          "section": "Definition 10.17.1",
+          "relevance": "Principal opens D(f) and V(I)"
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01QF",
+          "section": "Lemma 28.28.3",
+          "relevance": "Finite unit-ideal generators yield covering by principal opens"
+        }
+      ],
+      "source_status": "construction_supported",
+      "mathematical_comparison_and_caveat": "Do not assume the family is finite before invoking quasi-compactness; V((f_i))=∅ ⇔ ideal generated is unit ideal.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 54,
+      "original_canonical_candidate_id": "missing.beea674f8fcd201a1af5",
+      "original_query": "R-linear span of generators m_1,…,m_n",
+      "original_context": "Module theory: submodule generated by a subset S of a left R-module M, consisting of all finite R-linear combinations of elements of S; for a finite S={m_1,...,m_n} this is the finite R-linear span Σ_i R m_i, possibly all of M.",
+      "original_alias_candidate_ids": [
+        "missing.dec3b16637f9865119b7",
+        "missing.eeb380c33872f9f6c94d"
+      ],
+      "original_occurrence_ids": [
+        "occ.03e7f2690d2d1f77a190",
+        "occ.144e8bd61f46a88e0d0f",
+        "occ.810460027f5255964f2d"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "For an R-module M and S⊆M, span_R(S) is the submodule of all finite linear combinations Σ_{k=1}^n r_k s_k with r_k∈R and s_k∈S. The empty combination is 0.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/05G7",
+          "section": "Lemma 10.16.3 proof",
+          "relevance": "Finite module generators and linear combinations"
+        },
+        {
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch05.html",
+          "section": "Section 5.6 module generation",
+          "relevance": "Linear span and finitely generated modules"
+        }
+      ],
+      "source_status": "direct_construction_supported",
+      "mathematical_comparison_and_caveat": "An S generating M means span_R(S)=M; a finite generating family need not be linearly independent.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 55,
+      "original_canonical_candidate_id": "missing.bf9f155d15473da985d2",
+      "original_query": "sheaf homomorphism O_Y→f_*O_X",
+      "original_context": "Sheaf theory: homomorphism of sheaves of unital rings O_Y→f_*O_X on Y, where (f_*O_X)(V)=O_X(f^{-1}(V)), for continuous f:X→Y.",
+      "original_alias_candidate_ids": [
+        "missing.2625abfe8c5d9a4e741d",
+        "missing.556738b88c8bde56e59f"
+      ],
+      "original_occurrence_ids": [
+        "occ.43b37334a3e5e3c5f7ea",
+        "occ.96338aebd96a3e5fb42c",
+        "occ.e5a823cb137dd6111e40"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "For continuous f:X→Y with sheaves of unital rings O_X and O_Y, a homomorphism O_Y→f_*O_X is a morphism of sheaves of rings on Y; for each open V⊆Y it assigns a unital map O_Y(V)→O_X(f^{-1}V) compatible with restrictions.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/01HA",
+          "section": "Section 26.2 morphisms of ringed spaces",
+          "relevance": "Explicit sheaf ring morphism O_Y→f_*O_X"
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/008R",
+          "section": "Section 6.24 pushforward",
+          "relevance": "Defines f_*O_X(V)=O_X(f^{-1}V)"
+        }
+      ],
+      "source_status": "direct_definition_supported",
+      "mathematical_comparison_and_caveat": "Local-ringed-space morphisms additionally require local homomorphisms on stalks. Do not conflate ringed and locally ringed morphisms.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 56,
+      "original_canonical_candidate_id": "missing.d066de85583ac1b1a7d4",
+      "original_query": "I^n M",
+      "original_context": "Module theory over a commutative unital ring R: ideal action IM on an R-module M, the R-submodule generated by all finite sums of products i*m with i∈I and m∈M; this includes (I^n)M for ideal powers I^n, but differs from ideal multiplication I^n alone and from forming a quotient module M/I^nM.",
+      "original_alias_candidate_ids": [
+        "missing.8c8f88a7b03f016cd6c8"
+      ],
+      "original_occurrence_ids": [
+        "occ.b5152a551116c69d072a",
+        "occ.c2710fc6cf7687827f9d",
+        "occ.e772e8b976e03adf5a87"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "For an ideal I⊆R and an R-module M, IM is the submodule consisting of finite sums Σ i_k m_k, with i_k∈I and m_k∈M. For n≥0, I^nM means (I^n)M.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/08Z0",
+          "section": "Lemma 47.6.4",
+          "relevance": "Uses ideal action on modules and quotient M/IM"
+        },
+        {
+          "url": "https://stacks.math.columbia.edu/tag/076D",
+          "section": "Exercise 111.8.1",
+          "relevance": "Uses quotient M/IM for a general ideal and module"
+        }
+      ],
+      "source_status": "construction_supported",
+      "mathematical_comparison_and_caveat": "I⁰M=M in a unital ring, I¹M=IM; ideal product I^n and quotient module M/I^nM are distinct objects.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 57,
+      "original_canonical_candidate_id": "missing.d0ca7fa93046fab7ab04",
+      "original_query": "factors completely into linear factors over E",
+      "original_context": "Field and polynomial algebra: polynomial P∈F[T] splits over extension E/F if its image in E[T] is a product c∏_j(T−α_j) of linear factors, including multiplicities, with nonzero scalar c and roots α_j∈E.",
+      "original_alias_candidate_ids": [
+        "missing.447be9a4b8dcf65f4638",
+        "missing.c68fb62b30b2538f5bbc"
+      ],
+      "original_occurrence_ids": [
+        "occ.3ccb6253eef2532cf72e",
+        "occ.c49a47eda3b517c67540",
+        "occ.f59bd053f74e347819b7"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "A nonconstant polynomial P∈F[T] splits over an extension E/F if P=c∏_{j=1}^n(T−α_j) in E[T] for some c∈E× and roots α_j∈E, counting multiplicities.",
+      "sources": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/09HL",
+          "section": "Section 9.15 Normal extensions",
+          "relevance": "Exact definition of polynomial splitting into linear factors"
+        }
+      ],
+      "source_status": "direct_definition_supported",
+      "mathematical_comparison_and_caveat": "If P is a nonzero constant polynomial, some authors call it split vacuously using an empty product; original candidate concerns nonconstant P.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 58,
+      "original_canonical_candidate_id": "missing.de1b7a5e3717e67b42a7",
+      "original_query": "precomposition",
+      "original_context": "Category theory: contravariant Hom operation α:T'→T sends a morphism h:T→X to h∘α:T'→X and respects compositions/identity.",
+      "original_alias_candidate_ids": [
+        "missing.37b0713211a5069fde53",
+        "missing.68e74334168781726bb9"
+      ],
+      "original_occurrence_ids": [
+        "occ.83a5a208f1e2567d6f67",
+        "occ.93da429a42228a4f3958",
+        "occ.a55f109879521cc186e2"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "For α:T′→T and h:T→X in category C, precomposition by α sends h to h∘α:T′→X, defining a map Hom_C(T,X)→Hom_C(T′,X) that respects composition and identity.",
+      "sources": [
+        {
+          "url": "https://proofwiki.org/wiki/Definition%3AHom_Functor",
+          "section": "Definition Hom bifunctor, precomposition",
+          "relevance": "Morphisms in contravariant Hom functor act via precomposition"
+        }
+      ],
+      "source_status": "definition_supported_with_size_scope_caution",
+      "mathematical_comparison_and_caveat": "For Set-valued Hom functor assume locally small Hom sets; as a class-level operation, precomposition itself needs no global smallness of objects.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 59,
+      "original_canonical_candidate_id": "missing.de3c256ab9b24566d9a4",
+      "original_query": "almost-sure equality E[X_{n+1}|F_n]=X_n",
+      "original_context": "Probability: equality of two real random variables outside a P-null exceptional set, here conditional expectation E[X_{n+1}|F_n] and X_n for each fixed n≥0. The almost-sure equality notion is reusable; the conditional-expectation martingale identity is source-specific.",
+      "original_alias_candidate_ids": [
+        "missing.a59a623d35117ed60e71",
+        "missing.ebe8b9c924f8b6212b3f"
+      ],
+      "original_occurrence_ids": [
+        "occ.014fcbb6ca191cbcec46",
+        "occ.6504b8a68b42b95f508c",
+        "occ.aea79b23421ae7fe3e17"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "For real-valued random variables U,V on the same probability space, U=V almost surely means P({ω:U(ω)=V(ω)})=1. This applies to U=E[X_{n+1}|F_n] and V=X_n for each fixed n when conditional expectation is defined.",
+      "sources": [
+        {
+          "url": "https://archive.nptel.ac.in/content/storage2/courses/111101004/modules/lec6/6.1.html",
+          "section": "Definition 6.1",
+          "relevance": "Exact P(U=V)=1 definition"
+        },
+        {
+          "url": "https://cni.iisc.ac.in/courses/random/Probability%20Foundations/lecture-14.html",
+          "section": "Example 3 Almost sure equality",
+          "relevance": "Null exceptional set view"
+        }
+      ],
+      "source_status": "direct_definition_supported",
+      "mathematical_comparison_and_caveat": "Almost-sure equality does not assert pointwise equality on every ω. For countably many n, individual almost-sure equalities can be combined on one full-measure event, but the source candidate is a single fixed-n equality.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    },
+    {
+      "priority": 60,
+      "original_canonical_candidate_id": "missing.fbe845b2e6ab78c9890f",
+      "original_query": "intersection of all closed supersets of A",
+      "original_context": "Set theory: arbitrary indexed intersection ⋂_{F∈𝔽}F of subsets of X, here 𝔽 comprises the closed F containing A; identifying this intersection with cl_X(A) is the definition of closure.",
+      "original_alias_candidate_ids": [
+        "missing.babcda8464728aa791fe",
+        "missing.d9c11dd3187956dd9ee3"
+      ],
+      "original_occurrence_ids": [
+        "occ.7b11f63c00bb137c9fd2",
+        "occ.cb8d9ed855491d9b898c",
+        "occ.e3e3e9fc920ca7f4390a"
+      ],
+      "original_incoming_occurrences": 3,
+      "definition_paraphrase": "For a family F of subsets of X, the intersection ⋂_{A∈F}A contains precisely those x∈X that belong to every A∈F. For F comprising all closed supersets of B⊆X, this gives the closure cl_X(B).",
+      "sources": [
+        {
+          "url": "https://math.libretexts.org/Courses/Monroe_Community_College/MTH_220_Discrete_Math/4%3A_Sets/4.3%3A_Unions_and_Intersections",
+          "section": "Set intersection of families",
+          "relevance": "Set intersection membership conditions, but arbitrary-family precise section should be checked"
+        },
+        {
+          "url": "https://wjmaths.com/courses/topology/build/topologysu15.html",
+          "section": "Elementary topology closed-set conventions",
+          "relevance": "Closed supersets provide a closure construction"
+        }
+      ],
+      "source_status": "arbitrary_family_and_closure_exact_locator_pending",
+      "mathematical_comparison_and_caveat": "Intersection of an empty family relative to ambient X is X; family of closed supersets of B is nonempty because X is closed.",
+      "existing_meanings_check": "typed independent accepted and provisional comparisons pending full intake; source review identifies construction vs specialization",
+      "source_certification": false,
+      "population_admission": false,
+      "recursive_new_missing_research": false
+    }
+  ]
+}
