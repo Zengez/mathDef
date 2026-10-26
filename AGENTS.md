@@ -1,6 +1,6 @@
 # mathDef — active development instructions (October 26, 2026)
 
-## Current status: initial independent Wave 2 reconstruction COMPLETE
+## Current status: independent Wave 2 COMPLETE; post-Wave2 combined research underway
 
 **As of 2026-10-26, the original 418-lead research pass is finished.**
 The independent research preview contains **958 meanings**, with **1,511**
@@ -10,12 +10,21 @@ promoted**. The completed-pass record is
 [`WAVE2_INITIAL_RECONSTRUCTION_COMPLETE_2026-10-26.md`](research_pipeline/experiments/reconstruction-v2-independent/WAVE2_INITIAL_RECONSTRUCTION_COMPLETE_2026-10-26.md).
 
 **Do not restart the original 418-lead queue or revive dependency graphs,
-stages, gates, and old audits.** The next expansion, not yet started, is a
-5–10-second-per-definition error-tolerant *new terminology candidate scan*
-of the **363 directly researched new definitions**. It must remain a lightweight
-candidate-finding pass, not a prerequisite review or endless link-reconciliation
-project. The research-and-add workflow below remains useful for *new*
-candidates once the scan actually begins.
+stages, gates, and old audits.** The quick post-Wave2 terminology scan has
+ALREADY COMPLETED across all 363 direct Wave 2 definitions and 1,014 original
+mathDef definitions (+5 variants). The merged site has 1,972 original-plus-Wave2
+baseline meanings, and the initial scan yielded 2,019 intentionally rough
+phrase leads plus 473 known-term mention patterns.
+
+**Current work is direct research and publication in the combined reference.**
+Put new researched meanings in
+`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/terms.json`
+and render them ONLY in `/reconstruction/merged/`, not the completed 958-meaning
+independent Wave 2 or original production source. The first batch adds four
+verified-source mathematical drafts. See
+`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/README.md`.
+Continue in selective practical batches; the 2,019 scan leads are suggestions,
+NOT a queue that must all be resolved. No global gates or prerequisite closure.
 
 ## New explicit authorization: original-content merger and rapid scan (2026-10-26)
 
