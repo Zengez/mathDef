@@ -303,3 +303,28 @@ Web-checked primary sources include Stacks [Definition 4.35.6](https://stacks.ma
 - Continue with batches of ~5–15 mathematically low-risk, typed source-backed candidate **dispositions**, referencing the exact currently staged **sorted 8-ID prior list**; include each newly staged ID for the next submission in that batch. Do not let documentation/audit alone substitute for stage writes. Verify successful Action and exact staged file count each time.
 - Useful next group: independently reviewed simple relation properties, elementary finite set/graph/algebra constructions, clear field/linear-algebra notation where source/context is already sound. Preserve distinctions for compound candidates and known mathematical edge cases; they can be deferred individually.
 - After several practical batches, assess need for a robust stage Action git-push retry loop (only if concurrent submissions keep causing failures); current latest run succeeded so do not preemptively overengineer. Keep draft PR and checkpoint current. No Codex credits necessary.
+
+## 2026-10-26 second practical guarded staging cohort — 16/418 persisted
+
+This section supersedes the preceding eight-record interim checkpoint **only for current staging counts**. The frozen source-evidence pass remains 418/418 candidate identities and 841/841 original missing occurrences. Exactly **16 distinct original candidate dispositions** are now committed as immutable, engine-validated `generation_staging/records/missing.*.json` on draft research PR #19, leaving **402** original candidate identities awaiting staging decisions; the authoritative graph on `main` remains `research_missing_dependencies` and `consolidation_gate_valid=true` (418 unresolved original candidates). No accepted meaning/population graph changes or publication occurred.
+
+### Second cohort: exact original priorities and mathematical disposition
+
+| Priority | Original ID | Disposition | Mathematical comparison |
+| --- | --- | --- | --- |
+| 324 | `missing.a257d0bad58dcfbd2fa7` | `new_meaning` | General initial topology; product and Galois Krull topologies are special cases |
+| 326 | `missing.a53971a78b449b0edc86` | `new_meaning` | Finite graph walk; vertex sequence works for simple graphs, repetition and length-zero convention explicit |
+| 330 | `missing.ab52c0b907fcd5ccf04f` | `new_meaning` | Sober space; unique generic points for irreducible closed subsets, vs spectral and Hausdorff spaces |
+| 338 | `missing.b176356d17d415e8f588` | `new_meaning` | General neighborhood basis, not just connected or quasi-compact neighborhood bases |
+| 339 | `missing.b1e0a8b58dda986e68d9` | `new_meaning` | General order-theoretic lower set, distinct from restrictive Dedekind lower cut |
+| 340 | `missing.b1e7a10547ec65e37f00` | `new_meaning` | Span of category arrows `A<-B->C`, not pushout or cospan |
+| 342 | `missing.b265aa5bcc1bd7e4d539` | `new_meaning` | Additive group homomorphism, distinct from its kernel or scalar-linear module homomorphism |
+| 350 | `missing.bfcb0543265f0a0f99cf` | `equivalent_to_existing` | **Exact match** to accepted `meaning.f810d472f5a4d367.successor-ordinal`: `α+1=α∪{α}` |
+
+Aggregate provisional stage dispositions now **2 `specialization`, 13 `new_meaning`, 1 `equivalent_to_existing`**, all subject to separate reviewed integration. Preserving the 350 duplicate rather than forcing a new meaning demonstrates intentional mathematical equivalence review.
+
+Research-source grade remains per record: some elementary source passages were checked directly (initial topology, graph walk, Stacks sober Definition 5.8.6, lower set, group homomorphism and successor ordinal), while neighborhood basis and span have clearly labeled leads or incomplete source passage access. Do not incorrectly report all as independently passage-certified or published. Each submission records the exact frozen candidate ID/query/context/occurrence, current source-screened/provisional hashes, real 611-meaning comparison, sorted IDs of **every earlier staged record**, and edge assumptions. GitHub Actions executed the repo's **existing** `dependency_generation.stage` hard guard to create the records.
+
+The trigger-per-GitHub-submission process may cause some cancelled runs or normal concurrent non-fast-forward pushes; do not interpret a submission commit as a successful stage without checking `generation_staging/records`. All 16 stage records were confirmed present after the latest submissions. Prefer bounded batches and confirm latest successful Action or live record state before advancing counters. Code remains on the draft research branch, no main/graph/production changes.
+
+The isolated full-suite CI previously passed at [run 40359944282](https://github.com/Zengez/mathDef/actions/runs/40359944282) after a historical seed-override replay test was corrected; later research-branch test runs should be checked separately if relevant. Continue pragmatic staged review, avoiding redundant exhaustive audits and leaving real mathematical issues in local holds. Do not use Codex routinely.
