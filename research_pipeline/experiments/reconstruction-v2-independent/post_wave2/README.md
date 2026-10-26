@@ -171,3 +171,35 @@ earlier + 18 newly researched). The combined reference is expected to have
 **2,037 contextual meanings** (958 independent Wave2 + 1,014 original mathDef +
 65 post-completion). The 2,019 earlier loose scan leads are neither fully
 checked nor a required queue, and they remain unchanged by this batch.
+
+
+## Seventh research batch (2026-10-26)
+
+Fourteen directly researched group theory and algebraic meanings added
+exclusively to the post-completion combined reference:
+
+- Free group on a set, normal closure, group presentation
+- Conjugacy class, centralizer, center and normalizer
+- Element commutator, derived (commutator) subgroup, abelianization
+- Semidirect product, group ring, group algebra over a field
+- Characteristic subgroup
+
+The batch is mathematically connected: a group presentation is a quotient
+of a free group by a normal closure; abelianization is a quotient by the
+derived subgroup; semidirect products require a specified action; the group
+ring generalizes group algebras from field to commutative-ring coefficients.
+The element commutator convention is explicitly `ghg⁻¹h⁻¹`.
+The source role for group rings is labeled an independently reasoned
+generalization of the directly checked group-algebra source, not a verbatim
+claim. Empty-generator, zero-coefficient-ring and infinite-group finite-
+support conventions are explicit.
+
+References checked include Encyclopedia of Mathematics, PlanetMath,
+LMFDB's reviewed semidirect-product entry, and mathematics lecture notes.
+These entries remain assistant-reviewed drafts, not peer certified.
+
+The post-Wave2 merged-only overlay now holds **79** meanings (65 prior + 14
+new) for an expected **2,051** combined meanings. The independent 958-meaning
+Wave2, 1,014 original definitions and first rough 2,019-lead scan stay
+untouched. Continue by adding directly useful mathematical content,
+never restarting old dependency graphs, staging, or exhaustive gates.

@@ -156,3 +156,26 @@ reconstructed Wave2 and original 1,014-entry corpus are preserved. Initial
 scan still has 2,019 noisy new-phrase leads and 473 known-title patterns.
 CI validation and deployment determine whether these expected numbers
 are published; never claim publication before successful Pages delivery.
+
+
+## Seventh expansion batch — 14 group and algebra definitions
+
+The combined-only overlay gained 14 researched terms: free group, normal
+closure, presentation by generators/relations, conjugacy class,
+centralizer, group center, group commutator, derived subgroup,
+abelianization, semidirect product, group ring, field-coefficient
+group algebra, characteristic subgroup, and normalizer.
+
+Definitions include actual mathematical statements and links in the
+post-Wave2 JSON content. Checked mathematical references and honest
+scope assumptions are stored per term. Important differences include
+normality versus characteristic status, normalizers versus centralizers,
+conjugacy under inner automorphisms, universal abelian quotient versus
+commutator element, and semidirect versus direct products.
+
+Expected counts after validation: **2,051 contextual meanings** and
+**79 post-Wave2 researched additions**; independent Wave2 remains 958
+and original mathDef 1,014 source definitions. The earlier fast scan
+reports 2,019 rough leads, unrelated to the current meanings count.
+The workflow stays immediate research, content and usable links, with
+no mandatory review queue or dependency graph.
