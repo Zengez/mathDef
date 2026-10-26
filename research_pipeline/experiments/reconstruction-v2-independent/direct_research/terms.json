@@ -498,6 +498,351 @@
         "No preservation of scalar multiplication is assumed."
       ],
       "original_disposition": "new_meaning"
+    },
+    {
+      "id": "meaning.wave2.pop139.integer-congruence",
+      "term": "congruence modulo a positive integer",
+      "context": "Elementary number theory: congruence of integers modulo a fixed positive integer",
+      "aliases": [
+        "modular congruence",
+        "congruence modulo m"
+      ],
+      "definition": "For m∈ℤ with m>0 and a,b∈ℤ, define a≡b (mod m) if and only if there exists k∈ℤ such that a−b=km. The modulus m is fixed and strictly positive.\n\nEquivalent formulation: Let m be a positive integer. For a,b∈ℤ write a≡b (mod m) precisely when the least nonnegative remainders of a and b upon division by m coincide.",
+      "sources": [
+        {
+          "title": "ProofWiki — mathematical definition",
+          "url": "https://proofwiki.org/wiki/Definition%3ACongruence_Modulo_Integer",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [],
+      "original_population_meaning_id": "meaning.wave2.pop139.integer-congruence",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop139.matrix-trace",
+      "term": "trace of a square matrix",
+      "context": "Finite-dimensional linear algebra: n-by-n square matrices over a field K, n≥1",
+      "aliases": [
+        "matrix trace"
+      ],
+      "definition": "Let K be a field, n≥1, and A=(aᵢⱼ)∈Mₙ(K). The trace of A is tr(A)=∑ᵢ₌₁ⁿ aᵢᵢ ∈ K, the finite sum of diagonal entries.",
+      "sources": [
+        {
+          "title": "ProofWiki — mathematical definition",
+          "url": "https://proofwiki.org/wiki/Definition%3ASpur_of_Matrix",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [],
+      "original_population_meaning_id": "meaning.wave2.pop139.matrix-trace",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop140.affine-hull",
+      "term": "affine hull",
+      "context": "Finite-dimensional real affine geometry: subsets of R^d, integer d≥1, with empty hull allowed",
+      "aliases": [
+        "affine span"
+      ],
+      "definition": "For an integer d≥1 and a set S⊆ℝ^d, aff(S) is the set of all vectors ∑_{i=1}^{k} αᵢxᵢ with k≥1, xᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. In particular aff(∅)=∅.\n\nEquivalent formulation: Let d≥1 and S⊆ℝ^d. Define aff(S) as the intersection of all affine-closed subsets C⊆ℝ^d containing S, where affine-closed means containing every finite affine combination of its members; the empty set is affine-closed.",
+      "sources": [
+        {
+          "title": "Harvard SEAS — Mathematical Background",
+          "url": "https://hankyang.seas.harvard.edu/Semidefinite/background.html",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.b64bc15f46fe0245.vector-space-over-field",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "original_population_meaning_id": "meaning.wave2.pop140.affine-hull",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop140.independent-pair",
+      "term": "independent events",
+      "context": "Probability theory: two measurable events in a probability space, including probability-zero cases",
+      "aliases": [
+        "independence of two events"
+      ],
+      "definition": "For measurable A,B in a probability space (Ω,Σ,P), the events A and B are independent if and only if P(A∩B)=P(A)P(B). No positive-probability assumption is required for this product-rule definition.",
+      "sources": [
+        {
+          "title": "ProofWiki — mathematical definition",
+          "url": "https://proofwiki.org/wiki/Definition:Independent_Events",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.prob90.probability-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "original_population_meaning_id": "meaning.wave2.pop140.independent-pair",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop140.mutual-event-independence",
+      "term": "mutually independent events",
+      "context": "Probability theory: joint independence of an arbitrary indexed family of measurable events",
+      "aliases": [
+        "jointly independent events"
+      ],
+      "definition": "For a probability space (Ω,Σ,P) and indexed measurable events (Aᵢ)_{i∈I}, the family is mutually independent if for every finite J⊆I, P(⋂_{j∈J} Aⱼ)=∏_{j∈J}P(Aⱼ), with the empty intersection Ω and empty product 1.",
+      "sources": [
+        {
+          "title": "ProofWiki — mathematical definition",
+          "url": "https://proofwiki.org/wiki/Definition:Independent_Events/General_Definition",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.prob90.probability-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.pop140.independent-pair",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "original_population_meaning_id": "meaning.wave2.pop140.mutual-event-independence",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop140.pairwise-event-independence",
+      "term": "pairwise independent events",
+      "context": "Probability theory: pairwise but not necessarily jointly independent indexed measurable events",
+      "aliases": [
+        "pairwise independence"
+      ],
+      "definition": "Let (Aᵢ)_{i∈I} be measurable events on one probability space. The family is pairwise independent if for every i,j∈I with i≠j, P(Aᵢ∩Aⱼ)=P(Aᵢ)P(Aⱼ). This does not in general imply joint independence for three or more events.",
+      "sources": [
+        {
+          "title": "ProofWiki — mathematical definition",
+          "url": "https://proofwiki.org/wiki/Definition:Pairwise_Independent_Events",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.pop140.independent-pair",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.pop140.mutual-event-independence",
+          "relation_type": "related"
+        }
+      ],
+      "original_population_meaning_id": "meaning.wave2.pop140.pairwise-event-independence",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop140.simple-undirected-cycle",
+      "term": "cycle in a simple undirected graph",
+      "context": "Graph theory: a finite cycle in a loopless simple undirected graph; length at least three",
+      "aliases": [
+        "graph cycle"
+      ],
+      "definition": "For a simple loopless undirected graph G=(V,E), a cycle is a finite cyclic sequence v₀,v₁,…,v_{k−1},v₀ with k≥3, the vertices v₀,…,v_{k−1} pairwise distinct, and {vᵢ,v_{(i+1) mod k}}∈E for every 0≤i<k.",
+      "sources": [
+        {
+          "title": "ProofWiki — mathematical definition",
+          "url": "https://proofwiki.org/wiki/Definition:Cycle_(Graph_Theory)",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.graph42.simple-undirected",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.direct.a53971a78b449b0edc86",
+          "relation_type": "related"
+        }
+      ],
+      "original_population_meaning_id": "meaning.wave2.pop140.simple-undirected-cycle",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop141.outer-measure",
+      "term": "outer measure",
+      "context": "Measure theory: extended nonnegative outer measure on the full power set of an arbitrary set X",
+      "aliases": [],
+      "definition": "Let X be a set. A function μ*:𝒫(X)→[0,+∞] is an outer measure on X when μ*(∅)=0, A⊆B implies μ*(A)≤μ*(B), and μ*(⋃_{n=1}^∞ Aₙ)≤∑_{n=1}^∞ μ*(Aₙ) for every sequence (Aₙ) of subsets of X.",
+      "sources": [
+        {
+          "title": "ProofWiki — mathematical definition",
+          "url": "https://proofwiki.org/wiki/Definition%3AOuter_Measure",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [],
+      "original_population_meaning_id": "meaning.wave2.pop141.outer-measure",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop141.metric-outer-measure",
+      "term": "metric outer measure",
+      "context": "Measure theory on a nonempty metric space (X,d): metric additivity strengthening of a full-power-set outer measure",
+      "aliases": [],
+      "definition": "Let (X,d) be a nonempty metric space and let μ*:𝒫(X)→[0,+∞] be an outer measure. It is a metric outer measure if μ*(A∪B)=μ*(A)+μ*(B) whenever A,B⊆X and inf{d(a,b):a∈A,b∈B}>0, taking inf∅=+∞ when one set is empty.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Outer measure",
+          "url": "https://encyclopediaofmath.org/wiki/Outer_measure",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.pop141.outer-measure",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.analysis98.metric-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "original_population_meaning_id": "meaning.wave2.pop141.metric-outer-measure",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop141.right-action",
+      "term": "right group action",
+      "context": "Abstract algebra: right action of a group G on an arbitrary set X",
+      "aliases": [
+        "right action of a group"
+      ],
+      "definition": "Let (G,·) be a group with identity e and let X be a set. A right action is a map β:X×G→X such that β(x,e)=x and β(β(x,g),h)=β(x,g·h) for all g,h∈G and x∈X.",
+      "sources": [
+        {
+          "title": "ProofWiki — mathematical definition",
+          "url": "https://proofwiki.org/wiki/Definition%3AGroup_Action/Right_Group_Action",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.foundation.group",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.6a3d6fae0a1573e0.group-left-action",
+          "relation_type": "related"
+        }
+      ],
+      "original_population_meaning_id": "meaning.wave2.pop141.right-action",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop142.bounded-linear",
+      "term": "bounded linear transformation",
+      "context": "Functional analysis: linear map X→Y between real or complex normed spaces with one global bound",
+      "aliases": [
+        "bounded linear operator"
+      ],
+      "definition": "Let X,Y be normed vector spaces over the same field F∈{ℝ,ℂ} and T:X→Y a linear map. T is bounded if there exists a real M≥0 such that ||Tx||_Y≤M||x||_X for every x∈X.",
+      "sources": [
+        {
+          "title": "ProofWiki — mathematical definition",
+          "url": "https://proofwiki.org/wiki/Definition%3ASpace_of_Bounded_Linear_Transformations",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.analysis98.normed-vector-space",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "original_population_meaning_id": "meaning.wave2.pop142.bounded-linear",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop142.bounded-operator-norm",
+      "term": "norm of a bounded linear transformation",
+      "context": "Functional analysis: operator norm on real/complex bounded linear maps between normed spaces",
+      "aliases": [
+        "operator norm"
+      ],
+      "definition": "For a bounded linear T:X→Y between real or complex normed vector spaces, define ||T||=sup{||Tx||_Y : x∈X, ||x||_X≤1}. This is a finite nonnegative real number.\n\nEquivalent formulation: For bounded linear T:X→Y between real or complex normed spaces, equivalently ||T||=inf{M>0 : ||Tx||_Y≤M||x||_X for all x∈X}, with infimum taken in [0,+∞].",
+      "sources": [
+        {
+          "title": "ProofWiki — mathematical definition",
+          "url": "https://proofwiki.org/wiki/Definition%3ANorm_on_Bounded_Linear_Transformation",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.pop142.bounded-linear",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "original_population_meaning_id": "meaning.wave2.pop142.bounded-operator-norm",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
+    },
+    {
+      "id": "meaning.wave2.pop142.contraction-map",
+      "term": "contraction mapping",
+      "context": "Metric spaces: globally Lipschitz mapping with a constant strictly below one",
+      "aliases": [
+        "contraction map",
+        "contractive mapping"
+      ],
+      "definition": "Let (X,d_X) and (Y,d_Y) be nonempty metric spaces and f:X→Y. The map f is a contraction if there exists q∈[0,1) such that d_Y(f(x),f(y))≤q·d_X(x,y) for all x,y∈X.",
+      "sources": [
+        {
+          "title": "ProofWiki — mathematical definition",
+          "url": "https://proofwiki.org/wiki/Definition%3AContraction_Mapping_%28Metric_Space%29",
+          "verification_status": "provisional_source_paraphrase_not_rechecked_2026_10_26",
+          "source_relevance": "Cited during independent provisional mathematical screening; supporting paragraph not re-checked in this content-publication pass."
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.wave2.analysis98.metric-space",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.wave2.cross104.lipschitz-global",
+          "relation_type": "related"
+        }
+      ],
+      "original_population_meaning_id": "meaning.wave2.pop142.contraction-map",
+      "original_review_state": "candidate",
+      "research_status": "independently researched provisional definition; not human certified"
     }
   ]
 }
