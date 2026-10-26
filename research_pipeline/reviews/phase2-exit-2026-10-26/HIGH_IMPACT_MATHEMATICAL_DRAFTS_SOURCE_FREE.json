@@ -1,0 +1,440 @@
+{
+  "schema_version": 1,
+  "kind": "READ_ONLY_SOURCE_FREE_OPPORTUNISTIC_MATHEMATICAL_DRAFTS",
+  "date": "2026-10-26",
+  "scope": "independent_Wave2_review_only",
+  "status": "NOT_PROVISIONAL_POPULATION__NOT_SOURCE_SCREENED__NOT_ACCEPTED__NOT_FIRST_GENERATION_RESEARCH",
+  "reason": "Phase 2 gate remains false. Owner-approved opportunistic-completion rule permits preserving near-completed mathematical drafts without fetching new missing-definition sources or modifying protected mathematical records. Research and provisional intake require the explicit gate transition.",
+  "source_queue": "FIRST_GENERATION_QUEUE_PREVIEW.json",
+  "source_inventory_sha256": "34f61b6cf7fd1e80bda932dc8eeac473a729b11dfa0ba849c6db424b7a8f8113",
+  "unresolved_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+  "source_queue_git_blob": "1773d14098fc2f48ca0946a67ad7a458247283d7",
+  "review_reference": "HIGH_IMPACT_EXISTING_MATCH_REVIEW.md",
+  "total_draft_records": 9,
+  "represented_incoming_occurrences": 187,
+  "items": [
+    {
+      "priority": 1,
+      "origin_candidate_id": "missing.fcb5ab865c6d9dbb3d79",
+      "origin_candidate_query": "category (size-unrestricted)",
+      "origin_mathematical_context": "Category theory: ordinary category with objects, morphisms, identities and associative composition, without requiring its collection of objects to be a set; any size assumptions are stated separately.",
+      "incoming_occurrence_count": 60,
+      "origin_alias_candidate_ids": [
+        "missing.2473a37ecddeac42985e",
+        "missing.5b9f93c9e8355c4bc4c0",
+        "missing.5d09c68ceead2919f965",
+        "missing.74e6fe8f36dca77abf73",
+        "missing.7dc109f22452f0217a2a"
+      ],
+      "source_queue_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+      "status": "MATHEMATICAL_PREPARATORY_DRAFT__NOT_SOURCE_RESEARCH__NOT_ADMITTED",
+      "source_verification_status": "NOT_STARTED__PHASE2_GATE_CLOSED",
+      "title": "Ordinary category without imposed smallness",
+      "draft_definition": "A (possibly large) category C consists of collections Ob(C) of objects and Mor(C) of morphisms, source and target assignments s,t:Mor(C)→Ob(C), an identity 1_X:X→X for every object X, and a composition g∘f:X→Z for each composable pair f:X→Y and g:Y→Z. Composition is associative and the identities are two-sided units. These collections and operations must be interpreted in a fixed foundation or universe framework; neither Ob(C) nor Mor(C) is required here to be a set.",
+      "conditions": [
+        "Specify a workable foundational interpretation for classes/collections and arrows; class-size language does not itself imply a particular universe scheme.",
+        "Do not assume smallness or locally small Hom sets unless a particular provider requires it."
+      ],
+      "edge_cases": [
+        "The empty category satisfies the axioms: no objects, no arrows, and identity axioms vacuous.",
+        "A small category is a size-restricted specialization, not an identical meaning.",
+        "Locally small means each Hom_C(X,Y) is a set; this is not part of the unrestricted base definition."
+      ],
+      "accepted_independent_comparisons": [
+        {
+          "existing_meaning_id": "meaning.wave2.foundation.small-category",
+          "relation": "strict_size_specialization_not_exact_identity",
+          "explanation": "Smallness imposes a set of objects (and corresponding size convention), which the generic candidate does not."
+        }
+      ],
+      "provisional_independent_comparison_status": "requires_live_comparison_after_research_gate",
+      "external_sources_used": [],
+      "source_checks_required": [
+        "Provider-specific foundational assumptions (small/local-small/large) and exact available primary locator."
+      ],
+      "classification": "strong_candidate_for_new_general_contextual_meaning_subject_to_full_comparison",
+      "graph_mutation_applied": false,
+      "future_missing_dependencies": "do_not_recurse_during_bounded_first_generation"
+    },
+    {
+      "priority": 2,
+      "origin_candidate_id": "missing.c5104821c3c70afa1f63",
+      "origin_candidate_query": "functor F:C→D",
+      "origin_mathematical_context": "Category theory: ordinary functor between arbitrary categories C and D without assuming smallness; object/arrow assignments preserve identities and compositions.",
+      "incoming_occurrence_count": 39,
+      "origin_alias_candidate_ids": [
+        "missing.2eeb694b49cd0cf12a88",
+        "missing.3e1e2c13ff8f8fae5ff6",
+        "missing.78bf491fb0c8921f9fe5",
+        "missing.7f7a9ea9ba237d4d230d",
+        "missing.830ec6095a60fa189021",
+        "missing.8b7c553a4b15276100e5",
+        "missing.a5b76bdec29c007245d6",
+        "missing.ba7c7234ba3861b43a27",
+        "missing.bd0ccff4d0afcdef7736",
+        "missing.c02e1ce9fa43e5498d67",
+        "missing.e451d61d5424959081ca",
+        "missing.f938e96ba80a0225bcee",
+        "missing.fb372790f1ca4e95b2ae"
+      ],
+      "source_queue_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+      "status": "MATHEMATICAL_PREPARATORY_DRAFT__NOT_SOURCE_RESEARCH__NOT_ADMITTED",
+      "source_verification_status": "NOT_STARTED__PHASE2_GATE_CLOSED",
+      "title": "Ordinary covariant functor between arbitrary categories",
+      "draft_definition": "Given categories C and D in a fixed common foundational framework, a covariant functor F:C→D assigns an object F(X) of D to each object X of C and a morphism F(f):F(X)→F(Y) of D to every morphism f:X→Y in C, such that F(1_X)=1_{F(X)} for every X and F(g∘f)=F(g)∘F(f) for every composable pair f,g.",
+      "conditions": [
+        "The object/arrow assignments must be legitimate collections or class maps in the chosen foundation.",
+        "Neither C nor D is assumed small."
+      ],
+      "edge_cases": [
+        "The unique functor from the empty category to any category exists; a functor from a nonempty category to the empty category does not.",
+        "Contravariant functors reverse arrow direction, or equivalently are covariant C^op→D, and require a separate variant.",
+        "Fully faithful or representable functors have additional conditions and are not synonymous with ordinary functors."
+      ],
+      "accepted_independent_comparisons": [
+        {
+          "existing_meaning_id": "meaning.wave2.foundation.category-functor",
+          "relation": "scope_generalization_not_exact_identity",
+          "explanation": "The populated definition has small-category hypotheses; this draft preserves arbitrary categories."
+        }
+      ],
+      "provisional_independent_comparison_status": "requires_live_comparison_after_research_gate",
+      "external_sources_used": [],
+      "source_checks_required": [
+        "Verify whether the chosen source permits large categories and whether it requires locally small Hom sets."
+      ],
+      "classification": "strong_candidate_for_new_general_contextual_meaning_subject_to_full_comparison",
+      "graph_mutation_applied": false,
+      "future_missing_dependencies": "do_not_recurse_during_bounded_first_generation"
+    },
+    {
+      "priority": 3,
+      "origin_candidate_id": "missing.50fc57153b93520a247a",
+      "origin_candidate_query": "quotient ring R/I",
+      "origin_mathematical_context": "Commutative algebra: quotient ring A/I of a commutative unital ring A by an ideal I, with elements additive cosets a+I, operations induced from A and canonical surjective unital quotient map A→A/I. This includes prime-ideal quotients, polynomial-ring quotients and ideal-power quotients; a quotient's being a field, local ring or R-algebra requires additional conditions.",
+      "incoming_occurrence_count": 16,
+      "origin_alias_candidate_ids": [
+        "missing.043e30fbe5cd6bcc84ea",
+        "missing.09f8aa3dc0f82f6a004d",
+        "missing.2c377c4ddfeeca905eae",
+        "missing.2fe33a0bd27720bf99b2",
+        "missing.479fe8e3f095c78996eb",
+        "missing.49bede3253e851abfc9e",
+        "missing.6a705721810089b7d8b2",
+        "missing.877b22e9077c002091db",
+        "missing.8a6a8d521d7689305ddb",
+        "missing.8e4bea8ea810c6d62953",
+        "missing.a33aa975b05df8a308a2",
+        "missing.a383ae1f00ee3e6f2431",
+        "missing.bf5b82fe75fc05142778",
+        "missing.f71ee9f2c77e5cfabd6d",
+        "missing.f86fc13002d46a7e4d8d"
+      ],
+      "source_queue_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+      "status": "MATHEMATICAL_PREPARATORY_DRAFT__NOT_SOURCE_RESEARCH__NOT_ADMITTED",
+      "source_verification_status": "NOT_STARTED__PHASE2_GATE_CLOSED",
+      "title": "Quotient of a commutative unital ring by an ideal",
+      "draft_definition": "Let A be a commutative ring with identity and I an ideal of A. The quotient ring A/I has the additive cosets a+I as elements and operations (a+I)+(b+I)=(a+b)+I and (a+I)(b+I)=ab+I; its identity is 1_A+I. The canonical map π:A→A/I, a↦a+I, is a surjective unital ring homomorphism with kernel I.",
+      "conditions": [
+        "I is an ideal, not necessarily prime, maximal or proper.",
+        "The zero ring is allowed unless the selected source explicitly excludes it."
+      ],
+      "edge_cases": [
+        "I=A gives A/I the zero ring, with 0=1; I=0 gives an isomorphic copy of A.",
+        "A/I is an integral domain exactly when I is prime (using the proper-ideal convention), and a field exactly when I is maximal.",
+        "The quotient by a non-two-sided ideal in a noncommutative ring need not be a ring; this draft is commutative."
+      ],
+      "accepted_independent_comparisons": [
+        {
+          "existing_meaning_id": "meaning.559efcb6f15ddc96.total-quotient-ring",
+          "relation": "different_construction",
+          "explanation": "The total quotient ring is a localization at regular elements; A/I is a coset quotient."
+        }
+      ],
+      "provisional_independent_comparison_status": "requires_live_comparison_after_research_gate",
+      "external_sources_used": [],
+      "source_checks_required": [
+        "Check zero-ring policy and source convention for unital homomorphisms."
+      ],
+      "classification": "strong_candidate_for_new_general_contextual_meaning_subject_to_full_comparison",
+      "graph_mutation_applied": false,
+      "future_missing_dependencies": "do_not_recurse_during_bounded_first_generation"
+    },
+    {
+      "priority": 4,
+      "origin_candidate_id": "missing.b86257b3cce62907e97e",
+      "origin_candidate_query": "inverse image",
+      "origin_mathematical_context": "Set theory: preimage or inverse image of subset B⊆Y under an arbitrary function f:X→Y, defined as f^{-1}[B]={x∈X:f(x)∈B}; notation f^{-1}[B] never presupposes that f is invertible. Includes underlying set preimages of open/measurable sets and contractions of prime ideals under ring homomorphisms, where additional structure is a separate condition.",
+      "incoming_occurrence_count": 15,
+      "origin_alias_candidate_ids": [
+        "missing.4574ed5268095dc0470d",
+        "missing.57764f31b4368f0bcc44",
+        "missing.7b950361007a7e814feb",
+        "missing.7d50d8e73432f7004287",
+        "missing.a0979f781b72b105bed6",
+        "missing.a8dbe92799509388e9e9",
+        "missing.ac2014d1422675e6730d",
+        "missing.b28297c174241fe6f8d8",
+        "missing.c789dab617c14fbe69a5",
+        "missing.d4d437b437b24a44b5cc",
+        "missing.f2afdb3c8e8d0e8518f1",
+        "missing.f5844b998c29646f5560",
+        "missing.f75350b026466bde4d1a",
+        "missing.fdd668f8f03757f23eec"
+      ],
+      "source_queue_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+      "status": "MATHEMATICAL_PREPARATORY_DRAFT__NOT_SOURCE_RESEARCH__NOT_ADMITTED",
+      "source_verification_status": "NOT_STARTED__PHASE2_GATE_CLOSED",
+      "title": "Set-theoretic preimage or inverse image",
+      "draft_definition": "Let f:X→Y be a function and B⊆Y. The inverse image (preimage) of B under f is f^{-1}[B]:={x∈X | f(x)∈B}. This construction is defined for every function f; no inverse function or injectivity/surjectivity is required.",
+      "conditions": [
+        "B is a subset of the codomain Y; f is an ordinary function."
+      ],
+      "edge_cases": [
+        "f^{-1}[∅]=∅ and f^{-1}[Y]=X, including when X=∅.",
+        "Inverse images preserve unions, intersections and relative complements.",
+        "For continuous f the preimage of an open subset is open; continuity is an additional condition, not part of this set-theoretic construction."
+      ],
+      "accepted_independent_comparisons": [
+        {
+          "existing_meaning_id": null,
+          "relation": "no_standalone_exact_meaning_in_prior_independent_high_impact_review",
+          "explanation": "A function inverse requires bijectivity and differs from its action on subsets; prime-ideal contraction is a typed use of preimage."
+        }
+      ],
+      "provisional_independent_comparison_status": "requires_live_comparison_after_research_gate",
+      "external_sources_used": [],
+      "source_checks_required": [
+        "Identify a source with general set-theoretic preimage notation and optional topological/application variants."
+      ],
+      "classification": "strong_candidate_for_new_general_contextual_meaning_subject_to_full_comparison",
+      "graph_mutation_applied": false,
+      "future_missing_dependencies": "do_not_recurse_during_bounded_first_generation"
+    },
+    {
+      "priority": 5,
+      "origin_candidate_id": "missing.9db64b2f9cdb8258e3d8",
+      "origin_candidate_query": "polynomial ring R[x_1,…,x_n]",
+      "origin_mathematical_context": "Commutative algebra: polynomial algebra R[X_i : i in I] over a commutative unital coefficient ring R, for an arbitrary set I of independent indeterminates; each polynomial has finite monomial support. Includes the one-variable and finite-variable cases and polynomial algebras over fields and quotient coefficient rings.",
+      "incoming_occurrence_count": 14,
+      "origin_alias_candidate_ids": [
+        "missing.007df25e7fcb3bf46ef8",
+        "missing.5cf1c4090501f2435721",
+        "missing.615cc6add1af23b7ca05",
+        "missing.7e74747e5d2fd9673391",
+        "missing.92d048f8c8fbac28d308",
+        "missing.94ffb14189e1cea0a2af",
+        "missing.af4d59e1fe54418bc1e5",
+        "missing.c597f6b8bf8d515910ac",
+        "missing.cbd16782c8d81f5406f0",
+        "missing.ce226241997acfab8fb4",
+        "missing.d1ff280194ed594202ae",
+        "missing.f24d162401168b6fb429"
+      ],
+      "source_queue_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+      "status": "MATHEMATICAL_PREPARATORY_DRAFT__NOT_SOURCE_RESEARCH__NOT_ADMITTED",
+      "source_verification_status": "NOT_STARTED__PHASE2_GATE_CLOSED",
+      "title": "Polynomial ring on a set of commuting indeterminates",
+      "draft_definition": "Let R be a commutative unital ring and I a set. The polynomial ring R[X_i:i∈I] consists of finitely supported functions a:ℕ^{(I)}→R, where ℕ^{(I)} denotes finitely supported exponent vectors on I. Write a as the formal finite sum Σ_α a_α X^α. Addition is coefficientwise and multiplication uses convolution (ab)_γ=Σ_{α+β=γ}a_α b_β. The constant polynomial 1_R is the identity, and the indeterminates commute with one another and R.",
+      "conditions": [
+        "I is a set of indeterminates; each individual polynomial has finite support, even if I is infinite.",
+        "R is commutative with 1; a noncommutative free algebra requires a distinct variant."
+      ],
+      "edge_cases": [
+        "I=∅ gives R canonically; R=0 yields the zero polynomial ring.",
+        "No evaluation or chosen root of a polynomial is implied by this formal construction.",
+        "A power series ring replaces finite monomial support by an appropriately defined infinite-series model, not the same meaning."
+      ],
+      "accepted_independent_comparisons": [
+        {
+          "existing_meaning_id": null,
+          "relation": "general_construction_not_equated_to_special_applications",
+          "explanation": "Individual polynomial-based constructions do not define the general polynomial ring."
+        }
+      ],
+      "provisional_independent_comparison_status": "requires_live_comparison_after_research_gate",
+      "external_sources_used": [],
+      "source_checks_required": [
+        "Check exact notation and arbitrary-index-set formulation in a credible algebra reference; verify zero ring and source-specific coefficient conventions."
+      ],
+      "classification": "strong_candidate_for_new_general_contextual_meaning_subject_to_full_comparison",
+      "graph_mutation_applied": false,
+      "future_missing_dependencies": "do_not_recurse_during_bounded_first_generation"
+    },
+    {
+      "priority": 6,
+      "origin_candidate_id": "missing.38969d113c4ee1db6e98",
+      "origin_candidate_query": "residue field of a local ring",
+      "origin_mathematical_context": "Commutative algebra and algebraic geometry: residue field A/m of a commutative local ring (A,m), including the prime-localized κ(p)=R_p/pR_p and the scheme-point κ(s)=O_{S,s}/m_s.",
+      "incoming_occurrence_count": 11,
+      "origin_alias_candidate_ids": [
+        "missing.4b86dc643de59b8fccf9"
+      ],
+      "source_queue_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+      "status": "MATHEMATICAL_PREPARATORY_DRAFT__NOT_SOURCE_RESEARCH__NOT_ADMITTED",
+      "source_verification_status": "NOT_STARTED__PHASE2_GATE_CLOSED",
+      "title": "Residue field of a local ring or at a prime",
+      "draft_definition": "For a commutative local ring (A,m), where m is its unique maximal ideal, the residue field is κ(A):=A/m. More generally, for a prime ideal p of a commutative ring R, the residue field at p is κ(p):=R_p/pR_p, the quotient of the local ring R_p by its maximal ideal. For a point x of a locally ringed space, its residue field is O_{X,x}/m_x.",
+      "conditions": [
+        "A local ring has a proper maximal ideal; the zero ring does not have a maximal ideal under the proper-ideal convention.",
+        "The point-stalk application presupposes the local ringed-space structure."
+      ],
+      "edge_cases": [
+        "R_p/pR_p is a field whether or not p is maximal in R.",
+        "For p maximal in R, κ(p) is canonically isomorphic to R/p.",
+        "Distinguish quotient residue fields from fraction fields, even when both occur in examples."
+      ],
+      "accepted_independent_comparisons": [
+        {
+          "existing_meaning_id": null,
+          "relation": "separate_construction_from_general_field_or_local_ring",
+          "explanation": "The residue field is a particular maximal-ideal quotient, not a synonym for either the ambient local ring or an abstract field."
+        }
+      ],
+      "provisional_independent_comparison_status": "requires_live_comparison_after_research_gate",
+      "external_sources_used": [],
+      "source_checks_required": [
+        "Check κ(x), κ(p) and A/m source variants and actual source convention for localization."
+      ],
+      "classification": "strong_candidate_for_new_general_contextual_meaning_subject_to_full_comparison",
+      "graph_mutation_applied": false,
+      "future_missing_dependencies": "do_not_recurse_during_bounded_first_generation"
+    },
+    {
+      "priority": 7,
+      "origin_candidate_id": "missing.5645554e6bee6b40edda",
+      "origin_candidate_query": "commutative unital ring",
+      "origin_mathematical_context": "Commutative algebra: associative commutative ring R with a specified multiplicative identity 1_R; the prime-ideal formulation does not assume the ring is an integral domain.",
+      "incoming_occurrence_count": 11,
+      "origin_alias_candidate_ids": [
+        "missing.466fc74fa077cb173f05",
+        "missing.b5ef40a4274ac2369904",
+        "missing.bbac19bf2acf527c3b47"
+      ],
+      "source_queue_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+      "status": "MATHEMATICAL_PREPARATORY_DRAFT__NOT_SOURCE_RESEARCH__NOT_ADMITTED",
+      "source_verification_status": "NOT_STARTED__PHASE2_GATE_CLOSED",
+      "title": "Commutative associative ring with identity",
+      "draft_definition": "A commutative unital ring R is a set equipped with addition +, multiplication ·, and elements 0_R,1_R such that (R,+,0_R) is an abelian group, multiplication is associative and commutative, 1_R·a=a for every a∈R, and multiplication distributes over addition on both sides.",
+      "conditions": [
+        "The structure includes a multiplicative identity; unless stated otherwise, 1_R need not differ from 0_R.",
+        "An integral-domain specialization additionally requires nonzero ring and the absence of zero divisors."
+      ],
+      "edge_cases": [
+        "If 1_R=0_R, then a=a·1_R=a·0_R=0_R for all a; the zero ring is the sole such ring.",
+        "A bare ring may be interpreted nonunital or noncommutative by other sources; never silently identify those conventions.",
+        "Ring homomorphism identity-preservation is a separate convention and should be explicit."
+      ],
+      "accepted_independent_comparisons": [
+        {
+          "existing_meaning_id": "meaning.wave2.foundation.integral-domain",
+          "relation": "strict_algebraic_specialization_not_exact_identity",
+          "explanation": "Integral domains require nonzero and no zero divisors; arbitrary commutative unital rings do not."
+        }
+      ],
+      "provisional_independent_comparison_status": "requires_live_comparison_after_research_gate",
+      "external_sources_used": [],
+      "source_checks_required": [
+        "Choose and cite a provider's ring convention; specify zero-ring allowance."
+      ],
+      "classification": "strong_candidate_for_new_general_contextual_meaning_subject_to_full_comparison",
+      "graph_mutation_applied": false,
+      "future_missing_dependencies": "do_not_recurse_during_bounded_first_generation"
+    },
+    {
+      "priority": 8,
+      "origin_candidate_id": "missing.7462fa5f90275b34779a",
+      "origin_candidate_query": "free R-module F_i",
+      "origin_mathematical_context": "Module theory: free left R-module over a unital ring with an R-basis, equivalently a direct sum R^{(I)} of copies of R, possibly infinite rank.",
+      "incoming_occurrence_count": 11,
+      "origin_alias_candidate_ids": [
+        "missing.2a10b99571105d785032",
+        "missing.65c5e47a37fcd343990a",
+        "missing.7093e5dc4231f540adb0",
+        "missing.7660e61041cb0ca6b728",
+        "missing.83efb34a5e175413bd5a",
+        "missing.a6bdb45f0f01d31de929",
+        "missing.aab0992a5e4fbef39ada",
+        "missing.bce0429e7eea287bb5d4",
+        "missing.c35de02f441df6b7e973",
+        "missing.e929548b8b678d38f815"
+      ],
+      "source_queue_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+      "status": "MATHEMATICAL_PREPARATORY_DRAFT__NOT_SOURCE_RESEARCH__NOT_ADMITTED",
+      "source_verification_status": "NOT_STARTED__PHASE2_GATE_CLOSED",
+      "title": "Free left module of arbitrary rank",
+      "draft_definition": "Let R be an associative ring with identity. A left R-module F is free if there exist a set I and elements (e_i)_{i∈I} such that every x∈F admits a unique expression x=Σ_{i∈I} r_i e_i with coefficients r_i∈R, only finitely many nonzero. Equivalently, F≅⊕_{i∈I} R as left R-modules; (e_i) is a basis indexed by I.",
+      "conditions": [
+        "The scalar action is unital: 1_R x=x.",
+        "I may be any set, finite, infinite, or empty; R need not be commutative."
+      ],
+      "edge_cases": [
+        "The empty basis gives the zero module.",
+        "For the zero ring, the zero module may admit bases indexed by distinct sets; basis cardinality is not a well-defined invariant in full generality.",
+        "An arbitrary associative unital noncommutative ring may fail invariant basis number; do not assume rank uniqueness without a suitable hypothesis.",
+        "Free does not mean finite free, projective-only, or merely locally free."
+      ],
+      "accepted_independent_comparisons": [
+        {
+          "existing_meaning_id": null,
+          "relation": "general_free_vs_existing_finite_locally_free",
+          "explanation": "Finite locally free modules need not be globally free, and arbitrary free modules can have infinite bases."
+        }
+      ],
+      "provisional_independent_comparison_status": "requires_live_comparison_after_research_gate",
+      "external_sources_used": [],
+      "source_checks_required": [
+        "Source exact rank/basis and left/right convention; check treatment of zero ring and invariant basis number."
+      ],
+      "classification": "strong_candidate_for_new_general_contextual_meaning_subject_to_full_comparison",
+      "graph_mutation_applied": false,
+      "future_missing_dependencies": "do_not_recurse_during_bounded_first_generation"
+    },
+    {
+      "priority": 9,
+      "origin_candidate_id": "missing.6baca7285e379e18e82b",
+      "origin_candidate_query": "quotient R-module by a submodule",
+      "origin_mathematical_context": "Module theory: quotient left R-module M/N by an R-submodule N, whose elements are additive cosets m+N with addition and R-scalar action induced by M. Includes ideal modules I/I², successive filtration quotient modules and regular-module quotients R/I; extra ring, graded, flatness, or field structure is not part of this quotient-module meaning.",
+      "incoming_occurrence_count": 10,
+      "origin_alias_candidate_ids": [
+        "missing.08b5fedfe37aa6ed98e6",
+        "missing.1415d92f942d888152c8",
+        "missing.53be6a4127a70e1368c7",
+        "missing.861917a003bf918b7c2f",
+        "missing.867d277e0f9823663acb",
+        "missing.868acaa00f83a4ceac5a",
+        "missing.8ba938031a9cf84a167d",
+        "missing.c9f29bd30cb952550d2a"
+      ],
+      "source_queue_fingerprint": "7b69e2fdcb30a4536883df44308d386219b7621533886d65276b8992959f4773",
+      "status": "MATHEMATICAL_PREPARATORY_DRAFT__NOT_SOURCE_RESEARCH__NOT_ADMITTED",
+      "source_verification_status": "NOT_STARTED__PHASE2_GATE_CLOSED",
+      "title": "Quotient left module by a submodule",
+      "draft_definition": "Let R be a ring, M a left R-module, and N≤M an R-submodule. The quotient module M/N consists of additive cosets m+N with operations (m+N)+(m'+N)=(m+m')+N and r(m+N)=rm+N for r∈R. The canonical map M→M/N is surjective and R-linear with kernel N.",
+      "conditions": [
+        "For the standard unital-module convention, R has 1 and 1·m=m; the quotient construction also exists for coherent nonunital-action conventions.",
+        "N is a submodule, so the induced operations are well defined."
+      ],
+      "edge_cases": [
+        "N=M gives the zero module; N=0 recovers a canonical copy of M.",
+        "For M=R as a left module and N a left ideal, R/N is an R-module; a ring multiplication on R/N additionally requires N to be two-sided.",
+        "Subquotients I/I² are instances, but do not identify the quotient-module construction with specific ideal, filtration or graded structures."
+      ],
+      "accepted_independent_comparisons": [
+        {
+          "existing_meaning_id": null,
+          "relation": "independent_general_module_quotient",
+          "explanation": "Quotient rings, quotient modules and more specialized filtration quotients differ in underlying structures and extra operations."
+        }
+      ],
+      "provisional_independent_comparison_status": "requires_live_comparison_after_research_gate",
+      "external_sources_used": [],
+      "source_checks_required": [
+        "Verify source left/right and unital conventions; distinguish submodule quotient from ideal quotient in each parent."
+      ],
+      "classification": "strong_candidate_for_new_general_contextual_meaning_subject_to_full_comparison",
+      "graph_mutation_applied": false,
+      "future_missing_dependencies": "do_not_recurse_during_bounded_first_generation"
+    }
+  ]
+}
