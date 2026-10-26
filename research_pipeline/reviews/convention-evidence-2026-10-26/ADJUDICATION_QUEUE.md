@@ -1,5 +1,20 @@
 # Prioritized chat adjudication index
 
+**Chat mathematical review completed for all 40 historical cases (2026-10-25, source-free).**
+The three case-by-case mathematical adjudications are now available:
+
+- [A01–A05: rings, modules, grading, sheaves — 16 cases](CHAT_ADJUDICATION_A01_A05.md)
+- [A06–A09: compound prerequisites, categories, topology, measure — 14 cases](CHAT_ADJUDICATION_A06_A09.md)
+- [A10–A13: inverse limits, qualifications, sets, multigraphs — 10 cases](CHAT_ADJUDICATION_A10_A13.md)
+
+These reports establish mathematical distinctions and make **provisional recommendations only**.
+They do **not** certify original source conventions, constitute user approval of a
+modeling policy, settle every missing definition, apply graph changes, or
+open the Pass 2 consolidation gate. The original evidence inventory below
+remains the authoritative reference for exact occurrence, version and
+provider provenance. Their case list was checked against the historical
+40-case inventory: 40 distinct ranks, none missing or duplicated.
+
 13 discussion cards cover exactly the historical 13 convention deferrals and 27 ambiguities. Start with A01–A06 for the ring/ideal/module family, then category theory, topology and measure theory. Cards do not authorize graph actions or consolidation. Applied corrections are listed separately in [SOURCE_DEFERRALS.md](SOURCE_DEFERRALS.md).
 
 | Card | Ranks | Related question |
