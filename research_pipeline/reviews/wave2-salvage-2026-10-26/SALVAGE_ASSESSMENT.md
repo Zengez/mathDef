@@ -73,3 +73,12 @@ The immediately useful mathematical artifacts are retained in the repository:
 - the unchanged independently researched Wave 2 `records/`, provisional `population/records/`, earlier local `wave2/` mathematical notes, source evidence, original frozen Wave1, and functioning preview.
 
 **The single current execution instruction is [WAVE2_SIMPLE_WORKFLOW.md](../../WAVE2_SIMPLE_WORKFLOW.md) and the root [AGENTS.md](../../../AGENTS.md).** Work on independently researched definitions and links directly; do not resurrect former dependency graph machinery from Git history.
+
+
+## Second cleanup: remove remaining generated bookkeeping, retain mathematical substance (2026-10-26)
+
+After the first merged removal of dependency-graph gates and 178 Actions, a second independent audit found another **728 obsolete files** occupying approximately **48.9 MiB** as Git working-tree content. This is not a new review gate; it is a record of actual removals. The removed files are generated `state/wave2_*snapshot*` variants and old stage progress logs, already-applied `intake/` packets, old per-batch `events/` edits, historical source-priority task queues, abandoned `reconstruction-v1/` pre-freeze test workspace, deprecated Stage 2–5 Python engines and their tests, and superseded review proposals.
+
+**Still retained and functionally checked:** `records/` (595 screened meanings, 639 formulations, 887 screened relations), `population/records/` (16 independent provisional meanings plus other evidence), the entire immutable 418-candidate salvage dossier including original 16 source-evidence files, 16 reviewed mathematical dispositions, `wave2/` source/mathematical review notes (aside from two generated task queues), `state/wave2_formulation_reviews.jsonl` (the current detailed mathematical review record), `events/revisions.jsonl` and the meaning-text revision attestation for provenance, the five active stage-state summaries and baseline record, frozen `reconstruction-v1-recovery/`, and `evaluation/compare.py` for a later explicitly approved *post-independent-freeze* comparison. Evaluation does not authorize reading production math as inputs to Wave 2.
+
+**Still current:** root `AGENTS.md` and `research_pipeline/WAVE2_SIMPLE_WORKFLOW.md`; existing independent preview code and shared UI. All old state snapshots and execution scripts remain recoverable from Git commit history, but **must not be treated as executable next steps**. Progress should mean researched meanings, variants and actual working links appearing in the experimental viewer.

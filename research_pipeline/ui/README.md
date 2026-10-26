@@ -27,7 +27,7 @@ node --check research_pipeline/ui/app.js
 node --check research_pipeline/ui/feedback.js
 ```
 
-The `preview_site` command first verifies independent Wave 1's frozen digest and independent Wave 2 integrity. It builds the stage-specific **experiment-only** catalogs and renders both using the portable UI. It neither seals Wave 2 nor changes either source workspace, and it is separate from the original production Pages index generation.
+The `preview_site` command reads the frozen independent Wave 1 published catalog and screened independent Wave 2 records. It checks structural integrity of the displayed meanings, source evidence and link endpoints, but **does not require or execute any retired dependency-graph scan, consolidation gate, or global reconstruction checkpoint**. It builds experiment-only catalogs and renders both using the portable UI. It neither seals Wave 2 nor changes either source workspace, and it is separate from the original production Pages index generation.
 
 ## Limitations and further verification
 
