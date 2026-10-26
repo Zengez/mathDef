@@ -64,3 +64,19 @@ The current read-only first-batch drafts do **not** replace these source or inta
 - Resume from `PHASE2_GATE_OWNER_AUTHORIZED_REVIEW_READY.json` and the **live** independent `STATE.json`. Revalidation comes before the gate, and actual source research only after it.
 
 **No repeat synonym sweeps.** Beyond the blocked gate operation, the right next effort is source-backed first-generation definitions, not new reviews of the already-prepared 20 definitions.
+
+
+## 2026-10-26 later continuation: source-free Batch 02 + exact gate intervention
+
+**This section supersedes the first-batch-only progress numbers above; the protected gate and nonresearch restrictions are unchanged.**
+
+- Additional priorities **21–40** now have concrete mathematical draft definitions and nontrivial corner-case checks in `BATCH02_MATHEMATICAL_DRAFTS_SOURCE_FREE.json`, representing **89** more incoming occurrences.
+- Their 20×16=**320** candidate/provisional identity comparisons, provisional snapshot blob, and very limited string-level screened-corpus leads are preserved in `BATCH02_PROVISIONAL_AND_ACCEPTED_LITERAL_CROSSCHECK_SOURCE_FREE.json`. One literal match for rank 38 is the accepted meaning `meaning.097db25e2f156689.clopen-subset-of-spectrum`; it expresses an idempotent characterization of clopen subsets of `Spec R`, which must not automatically be equated with the generic clopen predicate without explicit context review. This is the same previously documented rank-38 display-context issue, **not** a new mandate for synonym sweeps.
+- **Cumulative source-free preparation: 40/418 candidates, 347/841 incoming occurrences, 640 pairwise comparisons to the same 16 provisional meanings.** No external first-generation definitions researched, no new sources, no provisional population admissions.
+- **New precise context error:** rank 40, `missing.fa5932b42daa1a3e0307`, describes `F[x]/(f)` as a field for every nonconstant polynomial `f`. This fails e.g. for `f=x²` over `Q`; require irreducible `f` for the quotient to be a field, or simply call it a quotient `F`-algebra and retain the root of `f` in the ring. The correction remains an unapplied, source-review-dependent context proposal.
+- Earlier distinct case rank 16, `missing.87eab2bf93382f4b93d6`, monic degree-zero polynomial `1` needs `R≠0` only for that example; generic monicity can be defined for a nonzero polynomial without excluding the zero ring globally.
+- Independent gate was read again on 2026-10-26 and remained `consolidation_gate_valid=false`, `phase=consolidate_occurrences`, pinned to unchanged inventory and unresolved fingerprint. **Neither the legitimate authorization nor the review packet opens the gate without an applied graph inbox transaction.**
+
+**Human operator requested only for the unavoidable protected-gate submit:** Recheck pins and `inbox/applied` receipts; copy the exact JSON contents of `PHASE2_GATE_OWNER_AUTHORIZED_REVIEW_READY.json` into the independent graph inbox as `consolidate-wave2-phase2-authorized-20261026-001.json` through the repository's approved GitHub UI/PR path, and merge that *separate gate-only PR* into `main` only after checking no concurrent graph changes. CI/graph Action must record its applied receipt and `CONSOLIDATION.json` and change the state phase to `research_missing_dependencies`. No merging PR #17 merely to apply the packet. The direct GitHub connector write to that protected inbox path was blocked; do not circumvent the safety guard. No Codex expenditure is required for this one-file review/submit procedure.
+
+Once the gate is verified open, **stop creating source-free drafts and start authoritative source-backed first-generation research** from the saved first 40 candidates. Prepare the bounded first generation without recursively exploring new dependencies, then perform source and mathematical consolidation.
