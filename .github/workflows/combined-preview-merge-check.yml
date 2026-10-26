@@ -1,0 +1,61 @@
+name: Combined original mathDef + Wave2 smoke checks
+
+on:
+  pull_request:
+    paths:
+      - "research_pipeline/adapters/mathdef/original_merge.py"
+      - "research_pipeline/adapters/mathdef/preview_site.py"
+      - "research_pipeline/ui/renderer.py"
+      - "research_pipeline/tests/test_original_merge.py"
+      - ".github/workflows/combined-preview-merge-check.yml"
+  push:
+    branches: [main]
+    paths:
+      - "research_pipeline/adapters/mathdef/original_merge.py"
+      - "research_pipeline/adapters/mathdef/preview_site.py"
+      - "research_pipeline/ui/renderer.py"
+      - "research_pipeline/tests/test_original_merge.py"
+      - "definitions/**"
+      - "variants/**"
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test lossless merge and rapid scan
+        run: python -m unittest research_pipeline.tests.test_original_merge -v
+      - name: Build independent baselines and original-inclusive site
+        run: |
+          python -m research_pipeline.adapters.mathdef.preview_site --site-root /tmp/mathdef-merge-check
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("/tmp/mathdef-merge-check")
+          base=json.loads((root/"wave2/catalog.json").read_text())
+          merged=json.loads((root/"merged/catalog.json").read_text())
+          scan=json.loads((root/"merged/scan-report.json").read_text())
+          base_n=sum(len(g["meanings"]) for g in base["groups"])
+          merged_n=sum(len(g["meanings"]) for g in merged["groups"])
+          original_n=scan["scan_scope"]["original_mathdef_definitions"]
+          assert base_n==958, f"Independent Wave2 count changed: {base_n}"
+          assert scan["scan_scope"]["wave2_direct_meanings"]==363
+          assert original_n>=1007
+          assert merged_n==base_n+original_n
+          assert sum(m.get("source_origin")=="original_mathdef"
+                     for g in merged["groups"] for m in g["meanings"])==original_n
+          assert scan["counts"]["new_phrase_leads"]>=1
+          assert scan["counts"]["known_term_mentions"]>=1
+          assert (root/"merged/index.html").is_file()
+          assert (root/"merged/definitions-index.json").is_file()
+          assert (root/"wave1/index.html").is_file()
+          print("Merged-preview smoke passed:", {
+              "independent":base_n,
+              "original":original_n,
+              "combined":merged_n,
+              "rough_phrase_leads":scan["counts"]["new_phrase_leads"]
+          })
+          PY

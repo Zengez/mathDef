@@ -102,8 +102,13 @@ def to_index(catalog: dict) -> list[dict]:
             "term": group["title"],
             "aliases": group.get("aliases", []),
             "body": forms[0]["body"],
-            "category": ("Independent research · " + str(len(group["meanings"])) +
-                         (" context" if len(group["meanings"]) == 1 else " contexts")),
+            "category": ((
+                "Combined original mathDef + independent research"
+                if any(m.get("source_origin") == "original_mathdef"
+                       for m in group["meanings"])
+                else "Independent research"
+            ) + " · " + str(len(group["meanings"])) +
+                (" context" if len(group["meanings"]) == 1 else " contexts")),
             "source": forms[0]["source"],
             "source_title": "",
             "status": "screened_draft",
