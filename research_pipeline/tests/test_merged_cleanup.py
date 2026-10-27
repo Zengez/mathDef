@@ -147,6 +147,53 @@ class MergedCleanupTests(unittest.TestCase):
         self.assertEqual(sources["correction_event_history"], "not_tracked")
         self.assertEqual(len(to_index(cleaned)), 2)
 
+    def test_transitive_semantic_and_form_redirects_preserve_original_sources(self):
+        data = deepcopy(self.base)
+        data["groups"][0]["meanings"].append({
+            "id": "final", "label": "Preferred canonical definition",
+            "formulations": [{"id": "f.final",
+                "text": "A well-supported canonical condition with the same mathematics.",
+                "sources": [{"title": "Third source",
+                             "url": "https://example.org/third-proof"}]}],
+        })
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = self._repo(Path(tmp))
+            file = repo / "data/merged_cleanup_decisions.json"
+            decisions = json.loads(file.read_text(encoding="utf-8"))
+            decisions["merge_meanings"].append({
+                "case_id": "second-stage-consolidation",
+                "removed_meaning_id": "new",
+                "kept_meaning_id": "final",
+                "kept_formulation_id": "f.final",
+            })
+            decisions["metadata_assignments"] = {
+                "final": {"subject": "Commutative Algebra",
+                          "context": "Commutative rings"}
+            }
+            file.write_text(json.dumps(decisions), encoding="utf-8")
+            cleaned, report, source_registry = prepare_curated_cleanup(data, repo)
+
+        self.assertEqual(report["removed_duplicate_meanings"], 2)
+        aliases = cleaned["consolidated_ids"]
+        self.assertEqual(aliases["meaning_aliases"]["old"], "final")
+        self.assertEqual(aliases["meaning_aliases"]["new"], "final")
+        self.assertEqual(aliases["formulation_aliases"]["f.old"], "f.final")
+        self.assertEqual(aliases["formulation_aliases"]["f.new"], "f.final")
+        final = next(m for g in cleaned["groups"] for m in g["meanings"]
+                     if m["id"] == "final")
+        self.assertEqual(final["legacy_original_definition_ids"],
+                         ["commalg.artinian-ring"])
+        self.assertEqual(set(final["consolidated_from_meanings"]), {"old", "new"})
+        self.assertEqual({s["url"] for s in final["formulations"][0]["sources"]}, {
+            "https://example.org/third-proof",
+            "https://stacks.math.columbia.edu/tag/00J4",
+            "https://github.com/Zengez/mathDef/blob/main/definitions/commalg/artinian-ring.tex",
+        })
+        self.assertEqual(next(r for r in cleaned["relations"]
+                              if r["id"] == "r.incoming")["target_meaning"], "final")
+        self.assertEqual({m["id"] for g in cleaned["groups"] for m in g["meanings"]},
+                         {"final", "other"})
+
     def test_strict_required_subject_gate_and_bad_primary(self):
         with tempfile.TemporaryDirectory() as tmp:
             repo = self._repo(Path(tmp))
