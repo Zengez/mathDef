@@ -5971,6 +5971,35 @@
         "Modular convention restricts a to units modulo m."
       ],
       "research_status": "assistant-reviewed sourced frozen original candidate; not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-nonreduced-commutative-ring-20261026",
+      "candidate_id": "postwave-scan:rank-1227",
+      "term": "nonreduced commutative ring",
+      "context": "Commutative algebra · ring containing a nonzero nilpotent element",
+      "aliases": [
+        "nonreduced ring"
+      ],
+      "definition": "A commutative ring R is nonreduced if it has a nonzero nilpotent element: there exist a∈R with a≠0 and an integer n≥1 such that aⁿ=0. Equivalently its nilradical √(0) is nonzero. For a nonzero field k, the dual-number ring k[ε]/(ε²) is nonreduced because ε is a nonzero square-zero element. A reduced ring has no such nonzero nilpotents. The zero ring is reduced under the common convention, because its only element is zero. This definition does not require R to be an integral domain, and 'has zero divisors' by itself is insufficient to imply nonreducedness.",
+      "sources": [
+        {
+          "title": "The Stacks Project — Reduced schemes and reduced rings",
+          "url": "https://stacks.math.columbia.edu/tag/01IZ",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Ravi Vakil — Foundations of Algebraic Geometry, §6.2 Reducedness",
+          "url": "https://math.stanford.edu/~vakil/216blog/FOAGoct3011public.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Ring is commutative with identity; zero ring admitted.",
+        "Nonreduced means EXISTENCE of nonzero nilpotent, not merely of a nonzero zero divisor.",
+        "This is logically complementary to reduced, without adding a nilpotency index uniform for every element."
+      ],
+      "research_status": "assistant-researched from frozen original candidate; not independently peer-certified"
     }
   ]
 }
