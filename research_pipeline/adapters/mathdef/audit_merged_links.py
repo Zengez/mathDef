@@ -163,6 +163,8 @@ def audit(catalog: dict, rendered: list[dict]) -> dict:
     unlinked = Counter()
     unlinked_examples = defaultdict(list)
     covered = 0
+    specialized_context_anchors = 0
+    suppressed_known_false_positives = 0
     matched = 0
     for fid, form in form_map.items():
         body = form["text"]
@@ -197,6 +199,30 @@ def audit(catalog: dict, rendered: list[dict]) -> dict:
             if any(start == lo and end == hi and gid == target for lo, hi, target in anchors):
                 covered += 1
                 continue
+            # A CW complex's "weak topology" is correctly linked to the
+            # researched CW-topology meaning, not the unrelated weak
+            # topologies of functional analysis. Do not misreport that
+            # explicit source-specific match as a missing generic link.
+            if (target_form[fid] == "meaning.mathdef.original.alg-topology.cell-complex"
+                and label_matches_weak_topology(group_map[gid]["title"])
+                and any(
+                    meaning_group[r["target_meaning"]] != gid
+                    and r["target_meaning"] ==
+                        "meaning.mathdef.postwave.scan-weak-topology-cw-complex-20261026"
+                    and r.get("span_start") == start and r.get("span_end") == end
+                    for r in by_source[fid]
+                )):
+                specialized_context_anchors += 1
+                continue
+            # Two source definitions are deliberately about distinct
+            # *directional quasi-metric balls*, not ordinary open metric
+            # balls, so adding a generic link here would be incorrect.
+            if (target_form[fid] in {
+                    "meaning.mathdef.original.quasimetric.forward-ball",
+                    "meaning.mathdef.original.quasimetric.backward-ball",
+                } and group_map[gid]["title"].casefold() == "open ball"):
+                suppressed_known_false_positives += 1
+                continue
             # Earlier term-use in the same definition may be anchored already;
             # subsequent mentions need not be individually annotated. Count
             # only formulation/group pairs with *no* positioned reference.
@@ -211,6 +237,8 @@ def audit(catalog: dict, rendered: list[dict]) -> dict:
                     "excerpt": body[max(0,start-70):min(len(body),end+70)],
                 })
     totals["matched_existing_term_occurrences"] = matched
+    totals["specialized_context_anchors"] = specialized_context_anchors
+    totals["suppressed_known_false_positives"] = suppressed_known_false_positives
     totals["exact_anchor_matches"] = covered
     totals["unlinked_existing_term_occurrences"] = sum(unlinked.values())
     stats = {"groups": len(groups), "meanings": len(meaning_group),
@@ -239,6 +267,10 @@ def audit(catalog: dict, rendered: list[dict]) -> dict:
             "Automatic lexical links are tentative, not human-verified mathematics.",
         ],
     }
+
+
+def label_matches_weak_topology(label: str) -> bool:
+    return label.casefold() == "weak topology"
 
 
 def _safe_gap(gap: str) -> bool:
