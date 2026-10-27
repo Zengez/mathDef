@@ -35,6 +35,48 @@ CONTEXT_OVERRIDES = {
 }
 
 
+# Explicit representative meanings for headings whose independently
+# researched and original formulations describe the SAME ordinary object,
+# or whose broad convention includes all special cases. These choices
+# only order the definitions on expansion; they do not erase alternatives.
+# Restrict this to vetted identities, never all multi-meaning headings.
+BROAD_REPRESENTATIVE = {
+    "topological space": "meaning.wave2.foundation.topological-space",
+    "open set": "meaning.mathdef.original.topology.open-set",
+    "metric space": "meaning.mathdef.original.metric.metric-space",
+    "abelian group": "meaning.mathdef.original.algebra.abelian-group",
+    "bijection": "meaning.mathdef.original.functions.bijection",
+    "probability space": "meaning.mathdef.original.prob.probability-space",
+    "cardinality": "meaning.mathdef.original.sets.cardinality",
+    "measurable space": "meaning.mathdef.original.measure.measurable-space",
+    "homeomorphism": "meaning.mathdef.original.topology.homeomorphism",
+    "subspace topology": "meaning.mathdef.original.topology.subspace-topology",
+    "locally ringed space": "meaning.mathdef.original.schemes.locally-ringed-space",
+    "natural transformation": "meaning.mathdef.original.category.natural-transformation",
+    "local ring": "meaning.mathdef.original.commalg.local-ring",
+    "equivalence relation": "meaning.mathdef.original.relations.equivalence-relation",
+    "binary relation": "meaning.mathdef.original.relations.binary-relation",
+    "additive category": "meaning.mathdef.original.category.additive-category",
+    "open cover": "meaning.mathdef.original.topology.open-cover",
+    "inverse image of a subset": "meaning.wave2.direct.b86257b3cce62907e97e",
+    "borel measure": "meaning.mathdef.postwave.scan-borel-measure-basic-20261026",
+    "contravariant functor": "meaning.mathdef.original.category.contravariant-functor",
+    "natural isomorphism": "meaning.mathdef.original.category.natural-isomorphism",
+    "hausdorff space": "meaning.mathdef.original.topology.hausdorff-space",
+    "small category": "meaning.mathdef.original.category.small-category",
+    "opposite category": "meaning.mathdef.original.category.opposite-category",
+    "abelian category": "meaning.mathdef.original.category.abelian-category",
+    "equivalence class": "meaning.mathdef.original.relations.equivalence-class",
+    "exact sequence": "meaning.wave2.foundation13.exact-sequence-abelian-category",
+    "finite field extension": "meaning.mathdef.postwave.scan-finite-field-extension-20261026",
+    "limit ordinal": "meaning.mathdef.original.sets.limit-ordinal",
+    "rational number": "meaning.mathdef.original.number.rational-number",
+    "total order": "meaning.mathdef.original.relations.total-order",
+    "affine combination": "meaning.mathdef.original.geometry.affine-combination",
+    "preadditive category": "meaning.mathdef.original.category.preadditive-category",
+}
+
+
 def words(value: str) -> tuple[str, ...]:
     """Unicode-aware literal words; no stemming, hallucinated terms or embeddings."""
     value = unicodedata.normalize("NFKC", value).casefold()
@@ -129,7 +171,31 @@ def context_words(meaning):
     return set(words(label)) - generic - IGNORE_WORDS
 
 
-def choose_meaning(group, source_meaning, phrase, report):
+def record_ambiguity(report, group, source, phrase, occurrence):
+    """Keep a small, retrievable sample of actual source contexts per homonym.
+
+    The full counts may be much larger, but this audit is restricted to
+    previously existing terms and their original formulation text.
+    """
+    label = group["title"]
+    report["ambiguous_contexts"][label] += 1
+    examples = report["ambiguous_context_examples"][label]
+    if len(examples) < 6 and occurrence:
+        form_id, body, start, end = occurrence
+        examples.append({
+            "from_formulation": form_id,
+            "source_meaning": source["id"],
+            "source_context": source.get("label", ""),
+            "matched_text": body[start:end],
+            "excerpt": body[max(0, start-105):min(len(body), end+105)].replace("\\n", " "),
+            "eligible_meanings": [
+                {"id": meaning["id"], "context": meaning.get("label", "")}
+                for meaning in group["meanings"]
+            ][:12],
+        })
+
+
+def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
     """Use exact meaning IDs; abstain rather than selecting arbitrary variants."""
     override = CONTEXT_OVERRIDES.get((source_meaning["id"], phrase))
     if override:
@@ -137,12 +203,69 @@ def choose_meaning(group, source_meaning, phrase, report):
     meanings = group["meanings"]
     if len(meanings) == 1:
         return meanings[0]["id"]
+    # Use a documented broad representative for matched ordinary meanings.
+    # The full set of context-specific definitions remains displayed by the
+    # renderer; this only determines which variant appears first.
+    representative = BROAD_REPRESENTATIVE.get(group["title"].casefold())
+    if representative and any(m["id"] == representative for m in meanings):
+        return representative
+    # Some ring maps are non-unital by convention. A ring map used to specify
+    # an affine scheme morphism must preserve identities; only that precise
+    # mathematical context warrants the unital specialization automatically.
+    if group["title"].casefold() == "ring homomorphism" and (
+        {"scheme", "schemes", "affine", "commutative"} &
+        set(words(source_meaning.get("label", "")))
+    ):
+        unital = "meaning.wave2.foundation.ring-map-unital"
+        if any(m["id"] == unital for m in meanings):
+            return unital
 
+    # Infimum/supremum as real or extended-real numbers is a specialization
+    # of order-theoretic bounds. Prefer a meaningful context only if the
+    # source subject makes the intended object clear.
+    if group["title"].casefold() in {"supremum", "infimum"}:
+        subject = set(words(source_meaning.get("label", "")))
+        if subject & {"real", "numerical", "optimization", "analysis", "scv",
+                      "complex", "functional", "stochastic", "probability"}:
+            mid = ("meaning.mathdef.original.real.supremum"
+                   if group["title"].casefold() == "supremum" else
+                   "meaning.mathdef.original.real.infimum")
+            if any(m["id"] == mid for m in meanings):
+                return mid
+        if subject & {"order", "relations", "topology", "poset", "sets"}:
+            mid = ("meaning.wave2.direct.066b1d1b9032a2e86bdd"
+                   if group["title"].casefold() == "supremum" else
+                   "meaning.wave2.direct.d90bc393eeba8fd1be9e")
+            if any(m["id"] == mid for m in meanings):
+                return mid
+
+    if (group["title"].casefold() == "martingale" and
+        source_meaning["id"] == "meaning.mathdef.original.stochastic.martingale-transform"):
+        mid = "meaning.wave2.research81.martingale-discrete"
+        if any(m["id"] == mid for m in meanings):
+            return mid
+    if group["title"].casefold() == "binary operation" and (
+        {"algebra", "group", "monoid", "semigroup"} &
+        set(words(source_meaning.get("label", "")))
+    ):
+        mid = "meaning.wave2.foundation.binary-operation-internal"
+        if any(m["id"] == mid for m in meanings):
+            return mid
+    # A minimal polynomial is not the same object for an algebraic element
+    # and a linear operator. Select the arithmetic variant only when the source
+    # explicitly concerns an algebraic element or number/field extension.
+    if group["title"].casefold() == "minimal polynomial" and (
+        {"arithmetic", "algebraic", "number", "field"} &
+        set(words(source_meaning.get("label", "")))
+    ):
+        field_poly = "meaning.mathdef.original.arithmetic.minimal-polynomial"
+        if any(m["id"] == field_poly for m in meanings):
+            return field_poly
     # Context-sensitive prioritization is meaningful only with substantial
     # category overlap and a decisive winner. Otherwise mark for human review.
     source_context = context_words(source_meaning)
     if not source_context:
-        report["ambiguous_contexts"][group["title"]] += 1
+        record_ambiguity(report, group, source_meaning, phrase, occurrence)
         return None
     scores = []
     for target in meanings:
@@ -151,7 +274,7 @@ def choose_meaning(group, source_meaning, phrase, report):
     scores.sort(key=lambda x: (-x[0], x[1]))
     if scores[0][0] >= 2 and scores[0][0] >= scores[1][0] + 2:
         return scores[0][1]
-    report["ambiguous_contexts"][group["title"]] += 1
+    record_ambiguity(report, group, source_meaning, phrase, occurrence)
     return None
 
 
@@ -185,6 +308,7 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
         "skipped_overlapping": 0,
         "skipped_limit": 0,
         "ambiguous_contexts": Counter(),
+        "ambiguous_context_examples": defaultdict(list),
         "ambiguous_labels": Counter(),
         "links_by_form": {},
         "notes": [
@@ -215,6 +339,13 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
                             continue
                         if tuple(t[0] for t in tokens[pos:end_word]) != parts:
                             continue
+                        # Prevent fabricating a phrase across a hidden formula,
+                        # a paragraph break, TeX macro or punctuation. The
+                        # *original* gap, not the math-masked text, matters.
+                        if any(not re.fullmatch(r"\s+|\s*[-–]\s*",
+                                body[tokens[k][2]:tokens[k+1][1]])
+                               for k in range(pos, end_word-1)):
+                            continue
                         matches.append((parts, group_ids, end_word))
                     if not matches:
                         pos += 1
@@ -232,16 +363,19 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
                     if target_gid == group["id"]:
                         report["skipped_self"] += 1
                         continue
-                    target = choose_meaning(target_group, source, phrase, report)
+                    start = tokens[end_word-len(parts)][1]
+                    end = tokens[end_word-1][2]
+                    target = choose_meaning(
+                        target_group, source, phrase, report,
+                        (form_id, body, start, end)
+                    )
                     if not target:
                         continue
                     target_gid = meaning_gid[target]
                     if target_gid == group["id"]:
                         report["skipped_self"] += 1
                         continue
-                    hits.append((tokens[end_word-1][2]-tokens[pos-len(parts)][1],
-                                 tokens[pos-len(parts)][1], tokens[end_word-1][2],
-                                 target, phrase, target_gid))
+                    hits.append((end-start, start, end, target, phrase, target_gid))
                 # Earliest occurrence per meaning per formulation. No source
                 # text rewriting; the index renderer inserts a small marker.
                 dedup = set()
@@ -303,6 +437,14 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
         report[name+"_total_occurrences"] = sum(count for _, count in records)
         report[name] = [{"phrase": phrase, "occurrences": count}
                         for phrase, count in records[:150]]
+    report["ambiguous_context_examples"] = {
+        label: report["ambiguous_context_examples"][label]
+        for label, _ in sorted(
+            ((item["phrase"], item["occurrences"])
+             for item in report["ambiguous_contexts"]),
+            key=lambda item: -item[1],
+        )[:60]
+    }
     report["forms_with_link_fraction"] = (
         round(report["forms_with_link"] / report["forms_visited"], 4)
         if report["forms_visited"] else 0

@@ -8,7 +8,7 @@
   const SIDES = ["term", "definition"];
   const VIEW_MODES = ["standard", "nested", "inline"];
   const LIMIT = 100;
-  let savedMode = "nested";
+  let savedMode = "inline";
   try {
     const value = localStorage.getItem(config.storage_key || "research-explore-mode");
     if (VIEW_MODES.includes(value)) savedMode = value;
@@ -92,10 +92,11 @@
       return true;
     });
   }
-  function nextBlocked(blocked, deps) {
-    // At deeper levels all siblings shown at this level remain accessible,
-    // even while collapsed, as do every ancestor and its accessible siblings.
-    return new Set([...blocked, ...deps.map((dep) => dep.id)]);
+  function nextBlocked(blocked, childId) {
+    // Suppress ONLY ancestors on the current expansion path. A sibling term
+    // may legitimately occur inside another sibling's definition, and should
+    // remain expandable there until it appears on that particular path.
+    return new Set([...blocked, childId]);
   }
   function correctionButton(id, compact = false) {
     return '<button type="button" class="suggest-correction' + (compact ? ' compact' : '') +
@@ -140,10 +141,10 @@
   function renderNestedChildren(side, d, path, blocked) {
     const deps = visibleDependencies(d, blocked);
     if (!deps.length) return "";
-    const childBlocked = nextBlocked(blocked, deps);
     return '<div class="dependency-children" aria-label="Definitions used">' +
       deps.map((dep) => {
         const target = preferredTarget(dep), childPath = [...path, dep.id];
+        const childBlocked = nextBlocked(blocked, dep.id);
         const open = expanded(side, childPath);
         return '<section class="dependency-box"><div class="dependency-head">' +
           nodeButton(side, dep, childPath, false) +
@@ -171,7 +172,6 @@
     const available = visibleDependencies(d, blocked);
     const deps = (formulation.dependencies || available).filter(dep =>
       lookup.has(dep.id) && !blocked.has(dep.id));
-    const childBlocked = nextBlocked(blocked, available);
     const body = paragraphsWithPositions(formulation.body);
     const marked = new Set();
     const html = body.map((paragraph) => {
@@ -200,7 +200,7 @@
           '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +
           '<div class="dependency-feedback">' + correctionButton(dep.id, true) +
           linkReport(d.id, dep, true) + '</div></div><div class="definition">' +
-          renderFormulations(side, target, childPath, childBlocked, true) + '</div></div>';
+          renderFormulations(side, target, childPath, nextBlocked(blocked, dep.id), true) + '</div></div>';
       }).join("");
     }).join("");
     // Manually included dependencies may have no textual match. Place their
@@ -213,7 +213,7 @@
           '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +
           '<div class="dependency-feedback">' + correctionButton(dep.id, true) +
           linkReport(d.id, dep, true) + '</div></div><div class="definition">' +
-          renderFormulations(side, target, childPath, childBlocked, true) + '</div></div>' : '') + '</div>';
+          renderFormulations(side, target, childPath, nextBlocked(blocked, dep.id), true) + '</div></div>' : '') + '</div>';
     }).join("") + '</div>' : "");
   }
   function renderFormulations(side, d, path, blocked, inline) {

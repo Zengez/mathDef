@@ -103,5 +103,77 @@ class MergedLinkingTests(unittest.TestCase):
         self.assertEqual(copied["relations"][0]["source_phrase"].lower(), "vector space")
 
 
+    def test_does_not_bridge_math_paragraphs_or_tex_macros(self):
+        source = group("s", "Some object", "m.s", "f.s",
+                       r"An open $x$ set is given. Also an open." +
+                       "\n\n" + "set at the start of a new paragraph." +
+                       r" Also an open \emph{important} set.")
+        target = group("t", "Open set", "m.t", "f.t", "An element of the topology.")
+        catalog = {"groups": [source, target], "relations": []}
+        report = link_merged_catalog(catalog)
+        self.assertEqual(report["new_tentative_links"], 0)
+
+    def test_ambiguous_context_report_carries_source_examples(self):
+        parent = group("one", "Abstract object", "one-m", "one-f",
+                       "Consider the closure of an object in this setting.")
+        target = group("two", "Closure", "two-a", "two-f", "Topological closure")
+        target["meanings"].append({
+            "id": "two-b", "label": "Algebraic field closure",
+            "formulations": [{"id": "two-fb", "text": "Field theory",
+                              "sources": [{"title": "Reference",
+                                           "url": "https://example.org"}]}],
+        })
+        report = link_merged_catalog({"groups": [parent, target], "relations": []})
+        self.assertEqual(report["ambiguous_contexts_total_occurrences"], 1)
+        example = report["ambiguous_context_examples"]["Closure"][0]
+        self.assertEqual(example["from_formulation"], "one-f")
+        self.assertEqual(example["matched_text"], "closure")
+        self.assertEqual(len(example["eligible_meanings"]), 2)
+
+
+    def test_broad_representative_prioritized_without_discarding_variants(self):
+        source = group("src", "Countability", "m.src", "f.src",
+                       "Any topological space has a topology.")
+        g = group("top", "Topological space",
+                  "meaning.wave2.foundation.topological-space", "f.a",
+                  "A space with open sets.", label="General topological space")
+        g["meanings"].append({
+            "id": "meaning.mathdef.original.topology.topological-space",
+            "label": "Original mathDef · Topology",
+            "formulations": [{"id": "f.b", "text": "An alternate equivalent axiom set.",
+                              "sources": [{"title": "Reference", "url": "https://example.org"}]}],
+        })
+        c = {"groups": [source, g], "relations": []}
+        report = link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"], 1)
+        self.assertEqual(c["relations"][0]["target_meaning"],
+                         "meaning.wave2.foundation.topological-space")
+        self.assertEqual(len(g["meanings"]), 2)
+
+    def test_affine_scheme_ring_maps_are_unital_but_generic_maps_abstain(self):
+        source = group("src", "Affine scheme", "m.src", "f.src",
+                       "An affine scheme is defined through a ring homomorphism.",
+                       label="Algebraic geometry: affine scheme morphisms")
+        generic = group("gen", "Ring homomorphism",
+                        "meaning.wave2.foundation.ring-map-general", "fg",
+                        "Preserves addition and multiplication without necessarily preserving 1.")
+        generic["meanings"].append({
+            "id": "meaning.wave2.foundation.ring-map-unital",
+            "label": "Unital ring homomorphism",
+            "formulations": [{"id": "fu", "text": "Preserves 1 too",
+                              "sources": [{"title": "Source", "url": "https://example.org"}]}],
+        })
+        c = {"groups": [source, generic], "relations": []}
+        report = link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"], 1)
+        self.assertEqual(c["relations"][0]["target_meaning"],
+                         "meaning.wave2.foundation.ring-map-unital")
+        source["meanings"][0]["label"] = "General algebra"
+        c2 = {"groups": [source, generic], "relations": []}
+        report2 = link_merged_catalog(c2)
+        self.assertEqual(report2["new_tentative_links"], 0)
+        self.assertGreater(report2["ambiguous_contexts_total_occurrences"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()
