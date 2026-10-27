@@ -356,3 +356,28 @@ additions total **34** and merged-only post-Wave2 overlay is **152**
 meanings; expected merged content = 958+1,014+152 = **2,124**.
 No new candidates collected and no edits to frozen production originals
 or independent Wave2 snapshot.
+
+
+## Original scan candidates 341–540: one larger research pass
+
+Processed **200 consecutive frozen original quick-scan phrase leads**,
+without adding candidates or starting a new discovery sweep. Research
+decisions: 6 genuinely new mathematical meanings, 36 already covered,
+156 linguistic false positives, 2 genuine contextual ambiguities. The
+six new meanings are associative F-algebra, bounded continuous
+real-valued function, Cantor space, cofinal subset of a poset, complete
+discrete valuation ring, and completely multiplicative arithmetic
+function. All new meanings have source attribution, explicit assumptions
+and mathematical distinctions; all candidate examples/dispositions are
+in the existing lightweight ledger.
+
+Also corrected a genuine historical duplicate: rank 318's
+complex-analytic-subset meaning coincided with existing original
+`definitions/scv/complex-analytic-subset.tex`. Its additional source
+rationale survives in ledger reconciliation metadata; redundant overlay
+content was removed. Thus net scan-derived additions after this batch
+are **39** rather than 40.
+
+**Persistent next rank 541**; **540/2,019 candidate leads processed**.
+Overlay = **157** meanings, expected combined total **2,129**.
+Historical independent Wave2 958 and original mathDef 1,014 remain frozen.
