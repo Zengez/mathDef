@@ -40,6 +40,42 @@
       "rationale": "The induced-topology construction works for ∅, but some authors restrict the word subspace by their nonempty-space convention; this is not a new topology construction.",
       "note": "The subspace topology is defined on the empty subset as well. Sources assuming nonempty topological spaces may exclude it by convention.",
       "convention_references": []
+    },
+    {
+      "convention_id": "commalg.zero_divisor.zero_included",
+      "concept_id": "commalg.zero_divisor",
+      "canonical_meaning_id": "meaning.wave2.direct.8f2dea7e2bd1211c0cf6",
+      "affected_term": "zero divisor",
+      "boundary_object": "element 0 in a nonzero commutative ring",
+      "canonical_policy": "Zero divisors must be nonzero: a≠0 and there is b≠0 with ab=0.",
+      "alternative_restriction": "zero_element_admitted_under_other_authors_convention",
+      "rationale": "User mathematical adjudication 2026-10-27. Some conventions call zero a zero divisor in a nonzero ring; mathDef explicitly excludes it. This is an editorial choice, not a blanket statement about all sources.",
+      "note": "mathDef requires zero divisors to be nonzero; 0 is not a zero divisor. Other sources sometimes allow zero as a zero divisor.",
+      "convention_references": []
+    },
+    {
+      "convention_id": "metric.metric_space.empty_underlying_set",
+      "concept_id": "metric.metric_space",
+      "canonical_meaning_id": "meaning.wave2.analysis98.metric-space",
+      "affected_term": "metric space",
+      "boundary_object": "empty underlying set X",
+      "canonical_policy": "A metric space (X,d) requires X≠∅ in addition to the metric axioms.",
+      "alternative_restriction": "empty_underlying_set_admitted_under_other_authors_convention",
+      "rationale": "User adjudication 2026-10-27. The unique metric on the empty set satisfies the axioms vacuously but is not called a metric space in mathDef; no global attribution to a source's convention is inferred.",
+      "note": "mathDef requires the underlying set of a metric space to be nonempty; some authors also allow the empty space.",
+      "convention_references": []
+    },
+    {
+      "convention_id": "geometry.affine_hull.empty_input",
+      "concept_id": "geometry.affine_hull",
+      "canonical_meaning_id": "meaning.wave2.pop140.affine-hull",
+      "affected_term": "affine hull / affine span",
+      "boundary_object": "empty subset S of an affine space",
+      "canonical_policy": "Affine span and affine hull name the same nonempty-input construction; S must be nonempty, and aff(∅) is not defined by mathDef.",
+      "alternative_restriction": "empty_affine_hull_defined_as_empty_under_other_conventions",
+      "rationale": "User adjudication 2026-10-27. Use both terms as searchable synonyms, traditionally with differing algebra/analysis emphasis; preserve both combination and intersection characterizations. Do not claim excluded empty hull is mathematically impossible.",
+      "note": "mathDef defines the affine span/hull of nonempty sets only. Alternative conventions set the hull of the empty set to the empty set.",
+      "convention_references": []
     }
   ]
 }
