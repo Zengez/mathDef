@@ -6394,6 +6394,229 @@
         "The complex Hermitian case is explicitly distinct."
       ],
       "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-closed-graph-of-operator-20261026",
+      "candidate_id": "postwave-scan:rank-1544",
+      "term": "closed graph of a linear operator",
+      "context": "Functional analysis · graph closed in a product topological vector space",
+      "aliases": [
+        "closed graph of a map",
+        "closed graph property"
+      ],
+      "definition": "Let X and Y be topological vector spaces and T:D(T)⊆X→Y a linear operator. Its graph G(T)={(x,Tx):x∈D(T)} is called closed if it is a closed subset of X×Y in the product topology. For an everywhere-defined linear map between Banach spaces, the closed graph theorem says its graph is closed if and only if T is continuous. If D(T) is merely a proper subspace, a closed (possibly unbounded) operator need not be continuous as a map on the whole of X. Closedness is not synonymous with the graph being a compact set.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Closed Graph Theorem",
+          "url": "https://mathworld.wolfram.com/ClosedGraphTheorem.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "State the domain D(T), not necessarily all of X.",
+        "The closed graph theorem's continuity equivalence requires the appropriate complete spaces and full domain.",
+        "Topological closedness is in the product X×Y."
+      ],
+      "research_status": "assistant-reviewed from frozen original quick-scan source context; distinct searchable mathematical meaning"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-closed-halfspace-real-20261026",
+      "candidate_id": "postwave-scan:rank-1545",
+      "term": "closed half-space in Euclidean space",
+      "context": "Convex geometry · nontrivial linear inequality region",
+      "aliases": [
+        "closed halfspace",
+        "closed Euclidean half-space"
+      ],
+      "definition": "Let n≥1, a∈ℝⁿ be nonzero and b∈ℝ. The closed half-space determined by a and b is H={x∈ℝⁿ : a·x≤b}; its boundary hyperplane is {x:a·x=b}. Reversing the inequality selects the opposite closed half-space, and each includes its boundary. After an affine orthogonal coordinate change it is homeomorphic to ℝ^{n−1}×[0,∞). The nonzero-normal assumption excludes the degenerate all-space and empty-set cases.",
+      "sources": [
+        {
+          "title": "Polyhedral Combinatorics — Introduction and half-spaces",
+          "url": "https://www.math.uni-hamburg.de/home/joo/PolyComb/Polyhedral%20Combinatorics.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "n≥1 and a≠0 for a genuine separating hyperplane.",
+        "Euclidean topology on ℝⁿ and standard dot product.",
+        "The boundary hyperplane is included."
+      ],
+      "research_status": "assistant-reviewed from frozen original quick-scan source context; distinct searchable mathematical meaning"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-euclidean-metric-rn-20261026",
+      "candidate_id": "postwave-scan:rank-1593",
+      "term": "Euclidean metric on ℝⁿ",
+      "context": "Metric geometry · distance induced by the standard inner product",
+      "aliases": [
+        "standard Euclidean distance",
+        "Euclidean distance"
+      ],
+      "definition": "For n≥1 and x=(x₁,…,xₙ),y=(y₁,…,yₙ)∈ℝⁿ, the Euclidean metric is d₂(x,y)=√(∑_{i=1}^n(xᵢ−yᵢ)²)=‖x−y‖₂. It induces the usual topology of ℝⁿ, is complete, and satisfies the metric axioms. This specifically uses the standard Euclidean inner product; an arbitrary positive-definite quadratic form can induce a different (but equivalent finite-dimensional) metric.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Distance in Euclidean space",
+          "url": "https://mathworld.wolfram.com/Distance.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Use the standard real inner product and n≥1.",
+        "Do not identify this choice with every metric compatible with the Euclidean topology."
+      ],
+      "research_status": "assistant-reviewed from frozen original quick-scan source context; distinct searchable mathematical meaning"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-box-product-topology-20261026",
+      "candidate_id": "postwave-scan:rank-1602",
+      "term": "box topology on a Cartesian product",
+      "context": "General topology · unrestricted product of open sets",
+      "aliases": [
+        "box product topology",
+        "box topology"
+      ],
+      "definition": "Given an indexed family of topological spaces (Xᵢ,τᵢ)_{i∈I}, the box topology on ∏_{i∈I}Xᵢ is generated by the basis of all products ∏_{i∈I}Uᵢ with Uᵢ∈τᵢ for every i, with no requirement that Uᵢ=Xᵢ outside a finite set. The ordinary product topology uses only finitely restricted products and is always contained in the box topology. The two coincide for finite I; they may differ for infinite I. The box topology generally is not the categorical product topology in Top.",
+      "sources": [
+        {
+          "title": "nLab — Box topology",
+          "url": "https://ncatlab.org/nlab/show/box%2Btopology",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Indexed family of topological spaces, possibly infinite.",
+        "No finite-support restriction on basic open products.",
+        "The box topology may be strictly finer than product topology."
+      ],
+      "research_status": "assistant-reviewed from frozen original quick-scan source context; distinct searchable mathematical meaning"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-hom-category-in-2category-20261026",
+      "candidate_id": "postwave-scan:rank-1623",
+      "term": "hom-category of a 2-category",
+      "context": "Higher category theory · category of 1-cells and 2-cells",
+      "aliases": [
+        "hom category",
+        "2-category hom-category"
+      ],
+      "definition": "For a strict 2-category C and objects A,B of C, the hom-category C(A,B) has as objects the 1-morphisms f:A→B and as morphisms f⇒g the 2-morphisms between such 1-morphisms. Composition in C(A,B) is vertical composition of 2-morphisms, with identities inherited from C. In a bicategory, hom-categories still exist, while composition of 1-morphisms is associative only up to specified coherent isomorphisms. A hom-category is not merely a hom-set.",
+      "sources": [
+        {
+          "title": "nLab — Hom-category",
+          "url": "https://ncatlab.org/nlab/show/hom-category",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Specify strict 2-category versus bicategory conventions.",
+        "Objects are parallel 1-morphisms; arrows are 2-morphisms.",
+        "Vertical composition is categorical composition internally."
+      ],
+      "research_status": "assistant-reviewed from frozen original quick-scan source context; distinct searchable mathematical meaning"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-full-matrix-ring-20261026",
+      "candidate_id": "postwave-scan:rank-1665",
+      "term": "full matrix ring Mₙ(R)",
+      "context": "Ring theory · square matrices with entries in a ring",
+      "aliases": [
+        "matrix ring",
+        "ring of square matrices"
+      ],
+      "definition": "Let R be an associative ring and let n≥1. The full matrix ring Mₙ(R) is the set of all n×n matrices over R, with addition (A+B)ᵢⱼ=aᵢⱼ+bᵢⱼ and multiplication (AB)ᵢⱼ=∑_{k=1}^n aᵢₖbₖⱼ. If R has an identity 1_R, then Mₙ(R) is unital with diagonal identity Iₙ. For a nonzero unital ring R and n≥2, the matrix ring is noncommutative even if R is commutative. For n=1 the ring is canonically isomorphic to R, and if R is the zero ring then Mₙ(R) is the zero ring.",
+      "sources": [
+        {
+          "title": "Romyar Sharifi — Abstract Algebra, families of rings and matrix rings",
+          "url": "https://www.math.ucla.edu/~sharifi/notes/algebra-ch03.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "R associative; identity is not assumed unless explicitly invoked.",
+        "n≥1; 'noncommutative for n≥2' requires a nonzero unital base ring.",
+        "Multiplication is ordinary associative matrix multiplication."
+      ],
+      "research_status": "assistant-reviewed from frozen original quick-scan source context; distinct searchable mathematical meaning"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-regular-noetherian-local-ring-20261026",
+      "candidate_id": "postwave-scan:rank-1724",
+      "term": "regular local ring",
+      "context": "Commutative algebra · maximal ideal has dimension-many generators",
+      "aliases": [
+        "Noetherian regular local ring"
+      ],
+      "definition": "Let (R,𝔪,k) be a Noetherian local commutative ring, with maximal ideal 𝔪 and residue field k=R/𝔪. The ring R is regular local if dim_k(𝔪/𝔪²)=dim(R), its Krull dimension. Equivalently, its maximal ideal can be generated by precisely dim(R) elements. A field is a regular local ring of dimension 0. A regular local ring is a domain; regularity is stronger than simply being Noetherian and local, and is unrelated to the unrelated notion of a von Neumann regular ring.",
+      "sources": [
+        {
+          "title": "The Stacks Project — Regular local rings",
+          "url": "https://stacks.math.columbia.edu/tag/00NN",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Noetherian commutative local ring, with specified maximal ideal.",
+        "Dimension equals embedding dimension (not merely finite generators).",
+        "No regularity inferred merely from being local."
+      ],
+      "research_status": "assistant-reviewed from frozen original quick-scan source context; distinct searchable mathematical meaning"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-small-hankel-bergman-20261026",
+      "candidate_id": "postwave-scan:rank-1749",
+      "term": "small Hankel operator on the Bergman space of the disk",
+      "context": "Function-space operators · projection of reflected analytic test function",
+      "aliases": [
+        "little Hankel operator (Bergman-space convention)",
+        "small Bergman Hankel operator"
+      ],
+      "definition": "Let A²(𝔻) be the analytic Bergman space in L²(𝔻,dA), where dA is normalized area measure, and let P:L²→A² be the Bergman projection. For a bounded measurable symbol φ∈L∞(𝔻), one convention for the small Hankel operator is Γ_φ:A²→A² defined by Γ_φ f=P(φ·f̂), where f̂(z)=f(conj(z)) and thus f̂ is anti-holomorphic when f is holomorphic. This linear operator is bounded for bounded φ. Other authors use a little Hankel operator with codomain the conjugate Bergman space, related by a reflection unitary. Both differ from the big Hankel operator H_φ=(I−P)M_φ, which takes values in A²(𝔻)⊥.",
+      "sources": [
+        {
+          "title": "Bulletin des Sciences Mathématiques — The product of small Hankel operators on Bergman space",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0007449723000866",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Unit disk with reflection-invariant normalized area measure.",
+        "Symbol bounded to guarantee bounded operator in this variant.",
+        "The small/little naming and codomain conventions are not globally uniform."
+      ],
+      "research_status": "assistant-reviewed from frozen original quick-scan source context; distinct searchable mathematical meaning"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-strong-operator-topology-20261026",
+      "candidate_id": "postwave-scan:rank-1766",
+      "term": "strong operator topology on bounded operators",
+      "context": "Functional analysis · pointwise norm convergence on a Hilbert space",
+      "aliases": [
+        "SOT",
+        "topology of strong operator convergence"
+      ],
+      "definition": "For a Hilbert space H, the strong operator topology on B(H) is the weakest topology making all evaluation maps E_x:B(H)→H, E_x(T)=Tx, continuous for each fixed x∈H, where H carries its norm topology. Equivalently it is generated by seminorms p_x(T)=‖Tx‖, and a net T_α converges strongly to T exactly when ‖(T_α−T)x‖→0 for every x∈H. Operator-norm convergence implies strong operator convergence; the reverse need not hold on infinite-dimensional H. The strong operator topology also differs from the weak operator topology.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Strong Operator Topology",
+          "url": "https://mathworld.wolfram.com/StrongOperatorTopology.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "H a Hilbert space and B(H) its bounded linear operators.",
+        "Convergence is pointwise norm convergence on vectors, not uniform operator norm.",
+        "Topological convergence is stated for nets, not just sequences."
+      ],
+      "research_status": "assistant-reviewed from frozen original quick-scan source context; distinct searchable mathematical meaning"
     }
   ]
 }
