@@ -318,13 +318,21 @@ def compile_source_registry(catalog: dict, *, repo: Path | None = None) -> dict:
                         # This legacy observation should retain a locator, but
                         # cannot be assigned an invented canonical URL.
                         continue
-                    sid = _sid(url)
+                    # Independent records store the work/home URL separately
+                    # from a specific section/tag URL. Stable source identity
+                    # for correction reports must distinguish Stacks tags.
+                    locator = citation.get("locator") or url
+                    cited_url = locator if locator.startswith("https://") else url
+                    sid = _sid(cited_url)
                     provenance = not _has_external_evidence(citation)
                     row = sources.setdefault(sid, {
-                        "id": sid, "url": url, "titles": [],
-                        "occurrences": [], "visible_in_future_sources_ui": not provenance
+                        "id": sid, "url": cited_url, "work_urls": [],
+                        "titles": [], "occurrences": [],
+                        "visible_in_future_sources_ui": not provenance
                     })
-                    if row["url"] != url:
+                    if url not in row["work_urls"]:
+                        row["work_urls"].append(url)
+                    if row["url"] != cited_url:
                         raise CleanupError("Source ID hash collision")
                     row["visible_in_future_sources_ui"] |= not provenance
                     if citation.get("title") and citation["title"] not in row["titles"]:
@@ -332,7 +340,7 @@ def compile_source_registry(catalog: dict, *, repo: Path | None = None) -> dict:
                     occurrence = {
                         "group_id": group["id"], "meaning_id": meaning["id"],
                         "formulation_id": form["id"],
-                        "locator": citation.get("locator") or url,
+                        "locator": locator,
                         "verification_status": citation.get("verification_status", "untracked"),
                         "role": citation.get("role", "supporting definition"),
                         "provenance_only": provenance,
@@ -364,17 +372,22 @@ def compile_source_registry(catalog: dict, *, repo: Path | None = None) -> dict:
                 url = (citation.get("url") or "").strip()
                 if not url:
                     continue
-                sid = _sid(url)
+                locator = citation.get("locator") or url
+                cited_url = locator if locator.startswith("https://") else url
+                sid = _sid(cited_url)
                 row = sources.setdefault(sid, {
-                    "id": sid, "url": url, "titles": [],
-                    "occurrences": [], "visible_in_future_sources_ui": _has_external_evidence(citation)
+                    "id": sid, "url": cited_url, "work_urls": [],
+                    "titles": [], "occurrences": [],
+                    "visible_in_future_sources_ui": _has_external_evidence(citation)
                 })
+                if url not in row["work_urls"]:
+                    row["work_urls"].append(url)
                 if citation.get("title") and citation["title"] not in row["titles"]:
                     row["titles"].append(citation["title"])
                 occurrence = {
                     "group_id": group["id"], "meaning_id": meaning["id"],
                     "formulation_id": None,
-                    "locator": citation.get("locator") or url,
+                    "locator": locator,
                     "verification_status": citation.get("verification_status", "untracked"),
                     "role": citation.get("role", "supplemental reference"),
                     "provenance_only": not _has_external_evidence(citation),
