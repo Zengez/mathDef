@@ -726,3 +726,20 @@ No modifications were made to original mathDef source or independent Wave2.
 
 Full scope, constraints and next linking work:
 [`LINKING_FIRST_PASS_2026-10-26.md`](LINKING_FIRST_PASS_2026-10-26.md).
+
+## Linking refinement and closeout (2026-10-26)
+
+**The existing-term linking wave is closed, with a tested merged-only website.**
+The later source-aware pass resolved the largest safe equivalence/context cases,
+prevented links crossing math/TeX boundaries, and corrected recursive expansion
+to suppress only ancestors on the current path. The final successful build
+found **2,836 tentative links**, **259 previously screened links with inline
+anchors**, **1,706 of 2,246** formulations with positioned links, and **117
+intentionally unlinked ambiguous-context occurrences**. Real Chromium tests
+passed for dual independent searches, inline/nested recursive expansions,
+cycle suppression, sibling reuse, mobile layout, and default In-Line mode.
+
+No candidate discovery occurred; the original 2,019-row disposition ledger,
+historical original source and frozen independent Wave 2 remain unchanged.
+The full closeout and optional follow-up scope are in
+[`LINKING_CLOSEOUT_2026-10-26.md`](LINKING_CLOSEOUT_2026-10-26.md).
