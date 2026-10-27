@@ -53,10 +53,16 @@ def write_merged_definition_export(catalog: dict, index: list[dict], site_root: 
         record["original_ids"] = sorted(originals)
         record["meaning_ids"] = ids
         definitions.append(record)
-    if len(original_ids) != 1014:
-        raise ValueError(f"Unexpected original mathDef definition count: {len(original_ids)}")
-    if len(meaning_ids) != 2197 or len(formulation_ids) != 2246 or len(definitions) != 2048:
-        raise ValueError("Merged feed must exactly match canonical published corpus")
+    expected_originals = {m["original_definition_id"] for group in groups.values()
+                          for m in group["meanings"]
+                          if m.get("source_origin") == "original_mathdef"}
+    expected_meanings = {m["id"] for group in groups.values()
+                         for m in group["meanings"]}
+    expected_forms = {f["id"] for group in groups.values()
+                      for m in group["meanings"] for f in m["formulations"]}
+    if (original_ids != expected_originals or meaning_ids != expected_meanings
+            or formulation_ids != expected_forms or len(definitions) != len(groups)):
+        raise ValueError("Merged API must exactly match canonical published corpus")
     target = Path(site_root) / MERGED_EXPORT_PATH
     target.mkdir(parents=True, exist_ok=True)
     snapshot = {
