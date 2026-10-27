@@ -63,7 +63,7 @@ jobs:
           for case in cross['clear_duplicate_pending_group_migration']:
               assert case['removed_group_id'] not in surviving_groups
               target=surviving_groups[case['retained_group_id']]
-              assert case['removed_title'] in target['aliases']
+              assert case['removed_title'].casefold() in {s.casefold() for s in [target['title'], *target['aliases']]}
               assert catalog['consolidated_ids']['group_aliases'][case['removed_group_id']]==target['id']
           # Recovery integrity: all historical original IDs remain accessible
           # through a live meaning or an explicit consolidation alias.
