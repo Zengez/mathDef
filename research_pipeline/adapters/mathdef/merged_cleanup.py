@@ -170,6 +170,31 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
             del forms[f["id"]]
         completed.append(case)
 
+    # Within one meaning, trivial restatements can also be genuinely
+    # redundant. This explicit list is independent of source cohort.
+    completed_forms = []
+    seen_forms = set()
+    for entry in decisions.get("merge_formulations", []):
+        case, mid = entry["case_id"], entry["meaning_id"]
+        drop_id, keep_id = entry["removed_formulation_id"], entry["kept_formulation_id"]
+        if case in seen or drop_id in seen_forms or drop_id == keep_id:
+            raise CleanupError("Repeated or self-referential form consolidation: " + case)
+        seen.add(case)
+        seen_forms.add(drop_id)
+        if mid not in meanings or drop_id not in forms or keep_id not in forms:
+            raise CleanupError("Unknown meaning/formulation in within-meaning merge: " + case)
+        losing_meaning, discarded = forms[drop_id]
+        surviving_meaning, selected = forms[keep_id]
+        if losing_meaning is not surviving_meaning or surviving_meaning is not meanings[mid][1]:
+            raise CleanupError("Cross-meaning formulation merge requires independent review: " + case)
+        for citation in discarded.get("sources", []):
+            _add_source(selected.setdefault("sources", []), citation)
+        selected.setdefault("consolidated_from_formulations", []).append(drop_id)
+        surviving_meaning["formulations"].remove(discarded)
+        del forms[drop_id]
+        form_aliases[drop_id] = keep_id
+        completed_forms.append(case)
+
     # Convention-sensitive wording updates belong in this merged-only layer.
     # They must not change the frozen independent source or original .tex files.
     text_override_ids = set()
@@ -292,6 +317,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "removed_duplicate_meanings": len(meaning_aliases),
         "removed_duplicate_formulations": original_total[1] - len(all_forms),
         "semantic_decisions_completed": completed,
+        "formulation_decisions_completed": completed_forms,
         "convention_sensitive_text_translations": translation_audit,
         "registered_conventions": sorted(canonical),
         "retained_variant_groups_reviewed": retained_count,
