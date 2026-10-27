@@ -73,6 +73,12 @@ jobs:
               target=surviving_groups[case['retained_group_id']]
               assert case['removed_title'].casefold() in {s.casefold() for s in [target['title'], *target['aliases']]}
               assert catalog['consolidated_ids']['group_aliases'][case['removed_group_id']]==target['id']
+          for reviewed in cross.get('remove_misleading_aliases', []):
+              destination=surviving_groups[reviewed['group_id']]
+              assert reviewed['group_title'].casefold()==destination['title'].casefold()
+              assert reviewed['remove_alias'].casefold() not in {a.casefold() for a in destination['aliases']}
+          assert len(report['misleading_search_aliases_removed'])==len(
+              cross.get('remove_misleading_aliases', []))
           # Recovery integrity: all historical original IDs remain accessible
           # through a live meaning or an explicit consolidation alias.
           all_meanings=[m for g in catalog['groups'] for m in g['meanings']]

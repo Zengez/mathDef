@@ -201,6 +201,24 @@ def _apply_reviewed_group_aliases(catalog: dict, repo: Path) -> tuple[dict, list
         del groups[old_gid]
         redirected[old_gid] = new_gid
         group_only.append(case)
+    # Reject a small, explicitly reviewed set of misleading historical
+    # search aliases while retaining both distinct mathematical definitions.
+    # Never infer this from lexical similarity and never touch source records.
+    for item in ledger.get("remove_misleading_aliases", []):
+        case, gid = item["case_id"], item["group_id"]
+        if case in used_cases or gid not in groups:
+            raise CleanupError("Unknown/duplicated misleading alias review: " + case)
+        used_cases.add(case)
+        group = groups[gid]
+        if group["title"].casefold() != item["group_title"].casefold():
+            raise CleanupError("Alias suppression group title drift: " + case)
+        prohibited = item["remove_alias"].casefold()
+        if prohibited == group["title"].casefold():
+            raise CleanupError("Cannot suppress a canonical mathematical title: " + case)
+        found = [x for x in group.get("aliases", []) if x.casefold() == prohibited]
+        if not found:
+            raise CleanupError("Misleading alias not present for reviewed group: " + case)
+        group["aliases"] = [x for x in group["aliases"] if x.casefold() != prohibited]
     return redirected, rows, group_only
 
 
@@ -406,6 +424,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "retired_searchable_heading_aliases": len(group_aliases),
         "cross_heading_cases_applied": [x["case_id"] for x in cross_group_merges],
         "group_only_alias_cases_applied": group_only_aliases,
+        "misleading_search_aliases_removed": [r["case_id"] for r in _json(repo / "data/merged_cleanup_cross_heading_review.json").get("remove_misleading_aliases", [])],
         "starting_meanings": original_total[0],
         "starting_formulations": original_total[1],
         "starting_relations": original_total[2],

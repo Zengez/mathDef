@@ -252,6 +252,40 @@ class MergedCleanupTests(unittest.TestCase):
         self.assertNotIn("m.variant", cleaned["consolidated_ids"]["meaning_aliases"])
         self.assertEqual(len(source_registry["groups"]), 2)
 
+    def test_ambiguous_alias_suppressed_without_dropping_meaning(self):
+        data = deepcopy(self.base)
+        data["groups"].append({
+            "id": "g.radical", "title": "Radical ideal",
+            "aliases": ["radical of an ideal", "radical property"],
+            "meanings": [{"id": "m.radical", "label": "Commutative Algebra",
+                          "formulations": [{
+                              "id": "f.radical", "text": "An ideal I satisfies I=sqrt(I).",
+                              "sources": [{"url": "https://example.org/radical-ideal"}]
+                          }]}],
+        })
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = self._repo(Path(tmp))
+            (repo / "data/merged_cleanup_cross_heading_review.json").write_text(
+                json.dumps({
+                    "schema_version": 1,
+                    "clear_duplicate_pending_group_migration": [],
+                    "remove_misleading_aliases": [{
+                        "case_id": "radical-false-synonym",
+                        "group_id": "g.radical", "group_title": "Radical ideal",
+                        "remove_alias": "radical of an ideal",
+                        "reason": "An operation is not a predicate"
+                    }]
+                }), encoding="utf-8")
+            result, report, refs = prepare_curated_cleanup(data, repo)
+        g = next(g for g in result["groups"] if g["id"] == "g.radical")
+        self.assertEqual(g["title"], "Radical ideal")
+        self.assertNotIn("radical of an ideal", g["aliases"])
+        self.assertIn("radical property", g["aliases"])
+        self.assertEqual(g["meanings"][0]["formulations"][0]["id"], "f.radical")
+        self.assertEqual(report["misleading_search_aliases_removed"],
+                         ["radical-false-synonym"])
+        self.assertEqual(len(refs["groups"]), 3)
+
     def test_source_ids_distinguish_meaningful_fragments(self):
         catalog = deepcopy(self.base)
         form = catalog["groups"][0]["meanings"][0]["formulations"][0]
