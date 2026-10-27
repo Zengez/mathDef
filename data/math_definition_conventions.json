@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "registry": "mathdef_canonical_definition_conventions",
+  "notes": [
+    "A convention catalog defines mathDef's adopted meaning and notes; source assessments elsewhere describe external authors.",
+    "Canonical meaning is resolved against the *current* catalog via canonical_meaning_id, not embedded as a frozen operational predicate."
+  ],
+  "entries": [
+    {
+      "convention_id": "topology.connected.nonempty",
+      "concept_id": "topology.connected",
+      "canonical_meaning_id": "meaning.wave2.variant71.connected-empty-allowed",
+      "affected_term": "connected space",
+      "boundary_object": "empty topological space",
+      "canonical_policy": "No separation into two disjoint nonempty open subsets covering X, including X=empty.",
+      "alternative_restriction": "nonempty_required",
+      "rationale": "The no-separation predicate is meaningful and vacuously true on the empty space. mathDef includes it; some sources explicitly require nonemptiness.",
+      "note": "Some authors require connected spaces to be nonempty. mathDef uses the no-separation condition, which includes the empty space.",
+      "convention_references": [
+        {
+          "url": "https://stacks.math.columbia.edu/tag/004R",
+          "locator": "Definition 5.7.1(1); following sentence",
+          "role": "documented restrictive usage"
+        },
+        {
+          "url": "https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Connected/Basic.html",
+          "locator": "IsConnected and IsPreconnected",
+          "role": "documented distinction"
+        }
+      ]
+    }
+  ]
+}
