@@ -28,6 +28,18 @@
           "role": "documented distinction"
         }
       ]
+    },
+    {
+      "convention_id": "topology.subspace.nonempty",
+      "concept_id": "topology.subspace",
+      "canonical_meaning_id": "meaning.wave2.foundation.subspace-topology-general",
+      "affected_term": "subspace topology",
+      "boundary_object": "empty subset A of X",
+      "canonical_policy": "The induced topology on A is {A∩U:U open in X} for every A⊆X, including A=∅.",
+      "alternative_restriction": "nonempty_subspace_required",
+      "rationale": "The induced-topology construction works for ∅, but some authors restrict the word subspace by their nonempty-space convention; this is not a new topology construction.",
+      "note": "The subspace topology is defined on the empty subset as well. Sources assuming nonempty topological spaces may exclude it by convention.",
+      "convention_references": []
     }
   ]
 }
