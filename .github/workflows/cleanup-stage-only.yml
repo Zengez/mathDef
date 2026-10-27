@@ -338,6 +338,41 @@ jobs:
               'source_ids':len(sources['sources'])
           })
           PY
+      - name: Verify real-corpus Subject propagation in the read-only UI index
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from research_pipeline.ui.renderer import to_index
+          src=Path('/tmp/mathdef-cleanup-stage')
+          catalog=json.loads((src/'catalog.stage-only.json').read_text(encoding='utf-8'))
+          index=to_index(catalog)
+          registered={entry['name'] for entry in json.loads(
+              Path('data/math_subjects.json').read_text(encoding='utf-8'))['entries']
+              if entry.get('approved')}
+          forms=[form for term in index for form in term['formulations']]
+          assert len(index)==1986 and len(forms)==2104
+          assert all(form.get('subject') in registered for form in forms)
+          lookup={term['id']:term for term in index}
+          matched=unmatched=0
+          for term in index:
+              for form in term['formulations']:
+                  for dep in form['dependencies']:
+                      target=lookup[dep['id']]
+                      if len(target['formulations'])<2: continue
+                      if any(x.get('subject')==form['subject']
+                             for x in target['formulations']):
+                          matched+=1
+                      else:
+                          unmatched+=1
+          print('STAGED_LINK_EXPANSION_SUBJECT_AUDIT='+json.dumps({
+              'term_headings':len(index),
+              'formulations_with_registered_subject':len(forms),
+              'links_to_multi_formulation_targets_with_exact_match':matched,
+              'links_to_multi_formulation_targets_without_exact_match':unmatched,
+              'note':'Audit only; no relinking, export or publication'
+          }, sort_keys=True))
+          PY
       - name: Single indexed scan for cross-heading existing-term variants
         run: |
           python - <<'PY'
