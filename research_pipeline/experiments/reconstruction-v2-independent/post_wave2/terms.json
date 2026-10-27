@@ -5001,6 +5001,229 @@
         "Normalize f(1)=1 to exclude the identically-zero degenerate case."
       ],
       "research_status": "assistant-reviewed mathematical source retrieval; not formally certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-complex-euclidean-space-20261026",
+      "candidate_id": "postwave-scan:rank-541",
+      "term": "complex Euclidean space ℂⁿ",
+      "context": "Complex linear algebra · standard Hermitian space of finite complex dimension",
+      "aliases": [
+        "complex Euclidean n-space",
+        "complex Euclidean space"
+      ],
+      "definition": "For n≥0, the complex Euclidean vector space ℂⁿ is the set of n-tuples of complex numbers with coordinatewise addition and complex scalar multiplication. It carries the standard positive-definite Hermitian inner product ⟨z,w⟩=∑_{j=1}^n z_j·conj(w_j), with the first variable linear; its induced norm ∥z∥=(∑|z_j|²)^(1/2) makes it a complete metric space. As a real Euclidean vector space it has dimension 2n; as a complex vector space it has dimension n. In some complex-analysis contexts 'Euclidean' refers only to the standard topology or its equivalent metric; the chosen Hermitian form is specified here.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Hermitian space",
+          "url": "https://encyclopediaofmath.org/wiki/Hermitian_space",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Complex Euclidean space",
+          "url": "https://encyclopediaofmath.org/wiki/Complex_Euclidean_space",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-complex-vector-space-20261026",
+          "relation_type": "definition_uses"
+        },
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-finite-dimensional-euclidean-space-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "n is a nonnegative integer; n=0 is the zero space.",
+        "The inner-product convention is linear in its first argument.",
+        "Complex n-space and real 2n-space have the same underlying real metric, but different scalar-field dimensions."
+      ],
+      "research_status": "source-attributed assistant research, not independently peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-hermitian-complex-matrix-20261026",
+      "candidate_id": "postwave-scan:rank-542",
+      "term": "Hermitian complex matrix",
+      "context": "Linear algebra · self-adjoint square matrix over ℂ",
+      "aliases": [
+        "Hermitian matrix",
+        "self-adjoint complex matrix"
+      ],
+      "definition": "An n×n complex matrix A=(a_ij) is Hermitian if A*=A, where A* is its conjugate transpose: (A*)_ij=conj(a_ji). Equivalently a_ij=conj(a_ji) for every i,j. Hermitian matrices have real diagonal entries and real eigenvalues; no positive-definiteness is assumed. A positive-definite Hermitian matrix additionally satisfies z*Az>0 for every nonzero z∈ℂⁿ. When entries are real, Hermitian means symmetric.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Hermitian Matrix",
+          "url": "https://mathworld.wolfram.com/HermitianMatrix.html",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        },
+        {
+          "title": "Geometry of Mathematical Methods — Hermitian Matrices",
+          "url": "https://math.geometryof.org/books/GMM/hermitian.html",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Square complex matrix required, n≥1 under this version.",
+        "Self-adjointness does not imply positive definiteness.",
+        "Adjoint is conjugate transpose, not adjugate."
+      ],
+      "research_status": "source-attributed assistant research, not independently peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-computable-rational-sequence-20261026",
+      "candidate_id": "postwave-scan:rank-556",
+      "term": "computable sequence of rational numbers",
+      "context": "Computability theory · uniformly effectively generated rational sequence",
+      "aliases": [
+        "computable rational sequence"
+      ],
+      "definition": "A sequence (q_n)_{n∈ℕ} of rational numbers is computable when a Turing machine, given n, halts and outputs an exact finite encoding of q_n (such as a signed integer numerator and nonzero natural-number denominator), uniformly in n. Equivalently it is represented by total computable integer-valued numerator and nonzero denominator functions. Computability of all terms does not by itself give any convergence or computable convergence modulus; a convergent computable rational sequence may have a noncomputable limit. A 'computable sequence of real numbers' requires a different uniform rational-approximation representation and is not silently identified with this narrower sense.",
+      "sources": [
+        {
+          "title": "ProofWiki — Computable Rational Sequence",
+          "url": "https://proofwiki.org/wiki/Definition%3AComputable_Rational_Sequence",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        },
+        {
+          "title": "Cambridge University Press — Introduction to Computable Analysis",
+          "url": "https://www.cambridge.org/core/books/abs/computability-in-analysis-and-physics/an-introduction-to-computable-analysis/1ABA18D67DB0F873DC4796C1E1511577",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Terms are exactly rational and uniformly computable in n.",
+        "The computable limit is not assumed to exist or be computable.",
+        "Computable real sequences require a separately specified representation."
+      ],
+      "research_status": "source-attributed assistant research, not independently peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-constant-map-20261026",
+      "candidate_id": "postwave-scan:rank-567",
+      "term": "constant map",
+      "context": "Set theory and topology · function with a single value on its domain",
+      "aliases": [
+        "constant function"
+      ],
+      "definition": "For sets X,Y and a function f:X→Y, the map f is constant if there exists y₀∈Y such that f(x)=y₀ for every x∈X. When X is nonempty, this is equivalent to the image f(X) consisting of exactly one point. If X=∅ and Y is nonempty, the unique empty function is constant by this existential convention; if X=Y=∅, there is no y₀∈Y, so this version does NOT classify the unique empty-to-empty map as constant, although the alternative 'at most one value in the image' convention does. Every constant map between topological spaces is continuous, irrespective of topology.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Constant Map",
+          "url": "https://mathworld.wolfram.com/ConstantMap.html",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Constant means existence of a designated value in the codomain, including on the empty domain.",
+        "The empty-domain/empty-codomain convention differs from image-cardinality-at-most-one usage.",
+        "No topology is required for the set-level meaning."
+      ],
+      "research_status": "source-attributed assistant research, not independently peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-conull-subset-measure-space-20261026",
+      "candidate_id": "postwave-scan:rank-586",
+      "term": "conull subset of a measure space",
+      "context": "Measure theory · complement of a null measurable set",
+      "aliases": [
+        "conull set",
+        "full-measure set (complement-null convention)"
+      ],
+      "definition": "Let (X,Σ,μ) be a measure space. A measurable set A∈Σ is μ-conull if μ(X∖A)=0. Equivalently its measurable complement is μ-null. For a probability space this is equivalent to μ(A)=1; for an infinite-measure space conullness does not mean μ(A)=μ(X) as an equality of infinite values alone. If μ is not complete, a set whose complement lies inside a null measurable set may fail to be measurable itself; that weaker 'conull modulo completion' usage requires an explicit convention.",
+      "sources": [
+        {
+          "title": "Vanderbilt University — Real Analysis notes, Measures §2.2",
+          "url": "https://www.math.vanderbilt.edu/peters10/teaching/spring2017/RealAnalysis.pdf",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        },
+        {
+          "title": "University of Minnesota — Notes on Measure Theory, conull sets",
+          "url": "https://www-users.cse.umn.edu/~adams/FM5011/proutynotes.pdf",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-measure-space-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "A is measurable relative to Σ, unless working in the completed measure space.",
+        "Probability total mass 1 is only a special case.",
+        "A 'full measure' equality μ(A)=μ(X) alone is inadequate in infinite measure spaces."
+      ],
+      "research_status": "source-attributed assistant research, not independently peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-differential-graded-algebra-cochain-20261026",
+      "candidate_id": "postwave-scan:rank-639",
+      "term": "differential graded algebra (cochain convention)",
+      "context": "Homological algebra · ℤ-graded associative algebra with a degree +1 differential",
+      "aliases": [
+        "cochain dg-algebra",
+        "dg-algebra (cochain convention)",
+        "DGA (cohomological grading)"
+      ],
+      "definition": "Let R be a commutative ring and A=⊕_{n∈ℤ}Aⁿ a unital associative ℤ-graded R-algebra with AᵖAᑫ⊆A^{p+q}. A cohomological differential graded R-algebra is such an A together with an R-linear map d:Aⁿ→A^{n+1} satisfying d²=0 and, for homogeneous a∈Aᵖ and any homogeneous b∈A, d(ab)=d(a)b+(−1)^p a d(b). Graded commutativity is NOT required. Homological DGAs instead use a differential of degree −1; alternative sources may allow nonunital DGAs. The de Rham differential forms constitute a graded-commutative example.",
+      "sources": [
+        {
+          "title": "nLab — differential graded algebra",
+          "url": "https://ncatlab.org/nlab/show/differential%2Bgraded%2Balgebra",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics — Differential-algebra(2)",
+          "url": "https://encyclopediaofmath.org/wiki/Differential-algebra%282%29",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        },
+        {
+          "title": "Stacks Project — Differential graded algebra",
+          "url": "https://stacks.math.columbia.edu/download/dga.pdf",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "R is commutative; cohomological grading and degree +1 differential.",
+        "Unital associative algebra chosen; nonunital and homological-degree −1 definitions are separately recognized conventions.",
+        "Graded commutativity is not implied."
+      ],
+      "research_status": "source-attributed assistant research, not independently peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-discrete-subset-relative-topology-20261026",
+      "candidate_id": "postwave-scan:rank-650",
+      "term": "discrete subset of a topological space",
+      "context": "Point-set topology · subset discrete in subspace topology",
+      "aliases": [
+        "discrete set (relative topology)",
+        "topologically discrete subset"
+      ],
+      "definition": "Let A⊆X be a subset of a topological space X. The subset A is discrete (as a subspace) if for every a∈A there exists an open subset U of X with U∩A={a}. Equivalently A carries the discrete subspace topology. This does not require A to be closed in X: for example {1/n:n∈ℕ, n≥1} is discrete in ℝ but accumulates at 0 outside A. The empty subset is discrete by vacuity. The stronger term 'closed discrete subset' additionally requires A closed in X.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Discrete Set",
+          "url": "https://mathworld.wolfram.com/DiscreteSet.html",
+          "verification_status": "direct_public_source_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-isolated-point-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "No ambient closedness required.",
+        "Subspace discreteness differs from discreteness of X itself.",
+        "Empty subset is included."
+      ],
+      "research_status": "source-attributed assistant research, not independently peer-certified"
     }
   ]
 }
