@@ -286,11 +286,11 @@ class MergedLinkingTests(unittest.TestCase):
 
 
     def test_quasi_metric_directional_balls_not_mislinked_to_metric_ball(self):
-        parent = group("backward", "Backward open ball",
+        parent = group("backward", "Backward quasi-metric ball",
                        "meaning.mathdef.original.quasimetric.backward-ball",
                        "f.backward",
                        "The backward open ball is the set of points close in the reverse direction.")
-        parent2 = group("forward", "Forward open ball",
+        parent2 = group("forward", "Forward quasi-metric ball",
                         "meaning.mathdef.original.quasimetric.forward-ball",
                         "f.forward",
                         "The forward open ball uses the forward quasi-metric.")
