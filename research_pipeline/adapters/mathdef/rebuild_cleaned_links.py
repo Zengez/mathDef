@@ -96,14 +96,42 @@ def _assert_clean_graph(audited: dict) -> None:
         raise FinalLinkError(f"Whole-graph audit blockers: {present}; examples: {samples}")
 
 
-def rebuild(stage: Path, output: Path, *, overrides: dict | None = None) -> dict:
+def _validated_scoped_resolutions(catalog: dict, ledger: dict | None) -> dict:
+    if ledger is None:
+        return {}
+    if (ledger.get("schema_version") != 1 or not isinstance(ledger.get("rules"), list)):
+        raise FinalLinkError("Invalid reviewed scoped link resolutions")
+    meanings = {m["id"]:g["id"] for g in catalog["groups"] for m in g["meanings"]}
+    groups = {g["id"] for g in catalog["groups"]}
+    result = {}
+    for row in ledger["rules"]:
+        source = row.get("source_meaning_id")
+        gid = row.get("target_group_id")
+        target = row.get("preferred_target_meaning_id")
+        if (not source in meanings or gid not in groups or meanings.get(target) != gid
+                or not row.get("id") or not row.get("reason")):
+            raise FinalLinkError("Stale or incomplete scoped resolution: " + str(row.get("id")))
+        key = (source, gid)
+        if key in result:
+            raise FinalLinkError("Duplicate scoped source/target group resolution: "+str(key))
+        result[key] = target
+    return result
+
+
+def rebuild(stage: Path, output: Path, *, overrides: dict | None = None,
+            context_resolutions: dict | None = None) -> dict:
     stage, output = Path(stage), Path(output)
     catalog = deepcopy(_load(stage / "catalog.stage-only.json"))
     sources = _load(stage / "sources.stage-only.json")
     preexisting = {rel["id"] for rel in catalog["relations"]}
     cleanup_report = _load(stage / "cleanup-report.stage-only.json")
     fixed = inspect_existing_links(catalog)
-    linking = link_merged_catalog(catalog)
+    scoped = _validated_scoped_resolutions(catalog, context_resolutions)
+    linking = link_merged_catalog(catalog, scoped_resolutions=scoped)
+    seen = set(linking["scoped_context_selection_uses"])
+    expected = {src+" -> "+gid for src, gid in scoped}
+    if seen != expected:
+        raise FinalLinkError("Scoped resolutions not used in source text: "+str(sorted(expected-seen)))
     # Preserve existing reviewed edges and their stable IDs while admitting
     # newly generated tentative, lexically anchored links.
     surviving = {rel["id"] for rel in catalog["relations"]}
@@ -123,7 +151,7 @@ def rebuild(stage: Path, output: Path, *, overrides: dict | None = None) -> dict
     # Second linker pass should not discover any *new* lexical edges. Retain
     # the original catalog with exactly one rebuild; test idempotence on copy.
     replay = deepcopy(catalog)
-    again = link_merged_catalog(replay)
+    again = link_merged_catalog(replay, scoped_resolutions=scoped)
     if again["new_tentative_links"] or replay["relations"] != catalog["relations"]:
         raise FinalLinkError(
             "Global link rebuild is not idempotent: "+
@@ -150,6 +178,9 @@ def rebuild(stage: Path, output: Path, *, overrides: dict | None = None) -> dict
             "links_by_form", "new_tentative_link_examples", "ambiguous_context_examples")},
         "preexisting_relations_retained": len(preexisting),
         "anchor_repairs": fixed,
+        "reviewed_scoped_resolution_rules": len(scoped),
+        "reviewed_scoped_resolution_occurrences":
+            sum(linking["scoped_context_selection_uses"].values()),
         "cleanup_intentionally_dropped_links": cleanup_report.get(
             "deleted_source_text_edges_needing_global_relink", []),
         "graph_audit_anomaly_counts": audited["anomaly_counts"],
@@ -180,9 +211,12 @@ def main() -> None:
     parser.add_argument("--stage", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--overrides", type=Path)
+    parser.add_argument("--context-resolutions", type=Path)
     args = parser.parse_args()
     report = rebuild(args.stage, args.output, overrides=(
         _load(args.overrides) if args.overrides else None
+    ), context_resolutions=(
+        _load(args.context_resolutions) if args.context_resolutions else None
     ))
     print("CLEANED_GLOBAL_LINK_SUMMARY_JSON="+json.dumps(report, separators=(",", ":")))
 

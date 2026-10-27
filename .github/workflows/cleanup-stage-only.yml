@@ -10,6 +10,7 @@ on:
       - 'data/math_subjects.json'
       - 'data/math_subject_routing.json'
       - 'data/math_subject_assignments.json'
+      - 'data/global_link_context_resolutions_2026-10-27.json'
       - 'data/math_contexts.json'
       - 'data/math_definition_conventions.json'
       - 'data/math_source_convention_assessments.json'
@@ -418,7 +419,8 @@ jobs:
           python -m research_pipeline.adapters.mathdef.rebuild_cleaned_links \
             --stage /tmp/mathdef-cleanup-stage \
             --output /tmp/mathdef-cleaned-links \
-            --overrides data/definition_expansion_priority_overrides.json
+            --overrides data/definition_expansion_priority_overrides.json \
+            --context-resolutions data/global_link_context_resolutions_2026-10-27.json
           python - <<'PY'
           import json
           from pathlib import Path
@@ -433,6 +435,9 @@ jobs:
               'stats':data['stats'],
               'anomaly_counts':data['graph_audit_anomaly_counts'],
               'new_tentative_links':data['rebuild']['new_tentative_links'],
+              'reviewed_scoped_resolution_rules':data['reviewed_scoped_resolution_rules'],
+              'reviewed_scoped_resolution_occurrences':data['reviewed_scoped_resolution_occurrences'],
+              'intentionally_dropped_original_text_link_count':len(data['cleanup_intentionally_dropped_links']),
               'newly_anchored_reviewed_links':data['rebuild']['existing_screened_links_anchored'],
               'unlinked_existing_term_occurrences':data['unlinked_existing_term_occurrences'],
               'links_with_preexisting_ids':data['preexisting_relations_retained'],
