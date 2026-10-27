@@ -14,11 +14,12 @@ import argparse
 from collections import Counter
 from copy import deepcopy
 import json
+import re
 from pathlib import Path
 
 from research_pipeline.adapters.mathdef.audit_merged_links import audit
 from research_pipeline.adapters.mathdef.merged_linking import (
-    link_merged_catalog, masked_prose,
+    link_merged_catalog, masked_prose, words, name_index, WORD_RE,
 )
 from research_pipeline.ui.renderer import to_index, to_sources_index
 
@@ -86,6 +87,73 @@ def inspect_existing_links(catalog: dict) -> dict:
     return report
 
 
+
+def _literal_target_headings_in_form(catalog: dict, form_id: str) -> set[str]:
+    """Check surviving literal visible term mentions; no semantic guessing."""
+    groups = {g["id"]: g for g in catalog["groups"]}
+    body = next((f["text"] for g in catalog["groups"]
+                 for m in g["meanings"] for f in m["formulations"]
+                 if f["id"] == form_id), None)
+    if body is None:
+        raise FinalLinkError("Obsolete source formulation redirect: " + form_id)
+    idx = name_index(catalog)
+    masked = masked_prose(body)
+    tokens = [(m.group(0).casefold(),m.start(),m.end())
+              for m in WORD_RE.finditer(masked)]
+    seen = set()
+    for i in range(len(tokens)):
+        for parts,gids in idx.get(tokens[i][0],()):
+            end=i+len(parts)
+            if end>len(tokens) or tuple(t[0] for t in tokens[i:end])!=parts:
+                continue
+            if any(not re.fullmatch(r"\\s+|\\s*[-–]\\s*",body[tokens[k][2]:tokens[k+1][1]])
+                   for k in range(i,end-1)):
+                continue
+            seen.update(gids)
+    return seen
+
+
+def reconcile_deleted_source_edges(catalog: dict, cleanup_report: dict) -> dict:
+    """Explain every invalidated *historical* source-text link's disposition.
+
+    These old IDs were removed intentionally because source wording changed
+    or the original formulation was consolidated. A relation's old source
+    span cannot be copied across texts. Identify whether the surviving
+    formulation was re-linked to the identical target meaning, an alternate
+    meaning in that same heading, or no longer has a literal target mention.
+    """
+    details = cleanup_report.get("deleted_source_text_edge_details", [])
+    expected = cleanup_report.get("deleted_source_text_edges_needing_global_relink", [])
+    if len(details)!=len(expected) or {x["old_relation_id"] for x in details}!=set(expected):
+        raise FinalLinkError("Incomplete historical text-edge relocation ledger")
+    meaning_groups = {m["id"]:g["id"]
+                      for g in catalog["groups"] for m in g["meanings"]}
+    by_form = {}
+    for rel in catalog["relations"]:
+        if rel["relation_type"]!="definition_uses":continue
+        by_form.setdefault(rel["from_formulation"], []).append(rel)
+    heading_cache={}
+    result=[]
+    for row in details:
+        fid,mid=row["live_source_formulation_id"],row["live_target_meaning_id"]
+        gid=meaning_groups.get(mid)
+        if not gid: raise FinalLinkError("Historical source edge redirected to dead meaning: "+mid)
+        if fid not in heading_cache:
+            heading_cache[fid]=_literal_target_headings_in_form(catalog,fid)
+        outgoing=by_form.get(fid,[])
+        if any(r["target_meaning"]==mid for r in outgoing):
+            status="relinked_to_same_meaning"
+        elif any(meaning_groups[r["target_meaning"]]==gid for r in outgoing):
+            status="relinked_to_same_heading_alternate_meaning"
+        elif gid in heading_cache[fid]:
+            status="unlinked_literal_still_present_requires_review"
+        else:
+            status="no_longer_mentions_target_heading_in_visible_prose"
+        result.append({**row,"target_group_id":gid,"status":status})
+    counts=dict(sorted(Counter(r["status"] for r in result).items()))
+    return {"count":len(result),"status_counts":counts,"edges":result}
+
+
 def _assert_clean_graph(audited: dict) -> None:
     blockers = ("errors", "duplicate_form_target", "overlapping_spans",
                 "masked_source_anchor")
@@ -141,6 +209,7 @@ def rebuild(stage: Path, output: Path, *, overrides: dict | None = None,
     to_sources_index(catalog, sources)
     audited = audit(catalog, index)
     _assert_clean_graph(audited)
+    historical_reconciliation = reconcile_deleted_source_edges(catalog, cleanup_report)
     # The renderer must preserve term/formulation count and every link, not
     # just a majority of the original corpus.
     if len(index) != len(catalog["groups"]):
@@ -183,6 +252,8 @@ def rebuild(stage: Path, output: Path, *, overrides: dict | None = None,
             sum(linking["scoped_context_selection_uses"].values()),
         "cleanup_intentionally_dropped_links": cleanup_report.get(
             "deleted_source_text_edges_needing_global_relink", []),
+        "historical_source_text_edge_reconciliation_counts":
+            historical_reconciliation["status_counts"],
         "graph_audit_anomaly_counts": audited["anomaly_counts"],
         "unlinked_existing_term_occurrences":
             audited["known_existing_term_unlinked"]["total_occurrences"],
@@ -202,6 +273,7 @@ def rebuild(stage: Path, output: Path, *, overrides: dict | None = None,
     _save(output / "definitions-index.global-linked.json", index)
     _save(output / "link-report.global-linked.json", linking)
     _save(output / "link-audit.global-linked.json", audited)
+    _save(output / "historical-source-edge-reconciliation.json", historical_reconciliation)
     _save(output / "global-link-rebuild-summary.json", result)
     return result
 

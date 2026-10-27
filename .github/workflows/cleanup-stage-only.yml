@@ -438,6 +438,8 @@ jobs:
               'reviewed_scoped_resolution_rules':data['reviewed_scoped_resolution_rules'],
               'reviewed_scoped_resolution_occurrences':data['reviewed_scoped_resolution_occurrences'],
               'intentionally_dropped_original_text_link_count':len(data['cleanup_intentionally_dropped_links']),
+              'historical_source_text_edge_reconciliation_counts':
+                  data['historical_source_text_edge_reconciliation_counts'],
               'newly_anchored_reviewed_links':data['rebuild']['existing_screened_links_anchored'],
               'unlinked_existing_term_occurrences':data['unlinked_existing_term_occurrences'],
               'links_with_preexisting_ids':data['preexisting_relations_retained'],
@@ -450,6 +452,7 @@ jobs:
             /tmp/mathdef-cleaned-links/global-link-rebuild-summary.json
             /tmp/mathdef-cleaned-links/link-report.global-linked.json
             /tmp/mathdef-cleaned-links/link-audit.global-linked.json
+            /tmp/mathdef-cleaned-links/historical-source-edge-reconciliation.json
             /tmp/mathdef-cleaned-links/catalog.global-linked.json
             /tmp/mathdef-cleaned-links/definitions-index.global-linked.json
           retention-days: 14

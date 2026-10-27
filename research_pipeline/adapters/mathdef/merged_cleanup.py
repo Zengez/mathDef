@@ -384,6 +384,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
     # user's eventual single full link rebuild, rather than fabricating links.
     rebuilt_relations = []
     needs_relink = []
+    needs_relink_details = []
     dedup = set()
     for rel in combined["relations"]:
         cur = deepcopy(rel)
@@ -391,10 +392,28 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         if old_form in text_override_ids and cur.get("relation_type") == "definition_uses":
             # Previously anchored spans are invalidated by modified wording.
             needs_relink.append(cur["id"])
+            needs_relink_details.append({
+                "old_relation_id": cur["id"],
+                "reason": "canonical_formulation_text_rewritten",
+                "former_source_formulation_id": old_form,
+                "live_source_formulation_id": old_form,
+                "former_target_meaning_id": cur["target_meaning"],
+                "live_target_meaning_id": meaning_aliases.get(
+                    cur["target_meaning"], cur["target_meaning"]),
+            })
             continue
         if old_form in form_aliases:
             if cur.get("relation_type") == "definition_uses":
                 needs_relink.append(cur["id"])
+                needs_relink_details.append({
+                    "old_relation_id": cur["id"],
+                    "reason": "source_formulation_consolidated",
+                    "former_source_formulation_id": old_form,
+                    "live_source_formulation_id": form_aliases[old_form],
+                    "former_target_meaning_id": cur["target_meaning"],
+                    "live_target_meaning_id": meaning_aliases.get(
+                        cur["target_meaning"], cur["target_meaning"]),
+                })
                 continue
             cur["from_formulation"] = form_aliases[old_form]
             cur.pop("span_start", None)
@@ -534,6 +553,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "retained_variant_groups_reviewed": retained_count,
         "source_convention_assessments": len(assessments),
         "deleted_source_text_edges_needing_global_relink": needs_relink,
+        "deleted_source_text_edge_details": needs_relink_details,
         "subject_coverage": len(all_meanings) - len(missing_subject),
         "subject_assignment_audit": subject_assignment_audit,
         **routing_report,

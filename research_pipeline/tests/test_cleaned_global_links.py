@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 from research_pipeline.adapters.mathdef.rebuild_cleaned_links import (
-    FinalLinkError, inspect_existing_links, rebuild,
+    FinalLinkError, inspect_existing_links, rebuild, reconcile_deleted_source_edges,
 )
 from research_pipeline.ui.renderer import to_index
 
@@ -47,6 +47,41 @@ class CleanedGlobalLinksTests(unittest.TestCase):
         self.assertEqual(self.catalog["groups"][0]["meanings"][0]["formulations"][0]
                          ["text"][rel["span_start"]:rel["span_end"]],"open set")
         self.assertEqual(len(to_index(self.catalog)[0]["formulations"][0]["dependencies"]),1)
+
+    def test_historical_renamed_form_link_reconciliation(self):
+        catalog={"groups":[
+            group("old","mold","fold","Old","A borrowed vector space."),
+            group("v","mv","fv","Vector space","A module over a field."),
+        ],"relations":[{"id":"new","from_formulation":"fold","target_meaning":"mv",
+                        "relation_type":"definition_uses","span_start":11,
+                        "span_end":23,"source_phrase":"vector space"}]}
+        report={"deleted_source_text_edges_needing_global_relink":["former"],
+                "deleted_source_text_edge_details":[{
+                    "old_relation_id":"former","reason":"source_formulation_consolidated",
+                    "former_source_formulation_id":"f.deleted",
+                    "live_source_formulation_id":"fold",
+                    "former_target_meaning_id":"mv","live_target_meaning_id":"mv"
+                }]}
+        result=reconcile_deleted_source_edges(catalog,report)
+        self.assertEqual(result["status_counts"],{"relinked_to_same_meaning":1})
+
+    def test_literal_remaining_and_changed_wording_classify_without_guessing(self):
+        catalog={"groups":[
+            group("old","mold","fold","Old","A vector space is used."),
+            group("v","mv","fv","Vector space","A module over a field."),
+        ],"relations":[]}
+        report={"deleted_source_text_edges_needing_global_relink":["former"],
+                "deleted_source_text_edge_details":[{
+                    "old_relation_id":"former","reason":"source_formulation_consolidated",
+                    "former_source_formulation_id":"f.deleted",
+                    "live_source_formulation_id":"fold",
+                    "former_target_meaning_id":"mv","live_target_meaning_id":"mv"
+                }]}
+        self.assertEqual(reconcile_deleted_source_edges(catalog,report)
+                         ["status_counts"],{"unlinked_literal_still_present_requires_review":1})
+        catalog["groups"][0]["meanings"][0]["formulations"][0]["text"]="A linear space is used."
+        self.assertEqual(reconcile_deleted_source_edges(catalog,report)["status_counts"],
+                         {"no_longer_mentions_target_heading_in_visible_prose":1})
 
     def test_dangling_relationship_is_rejected_not_guessed(self):
         self.catalog["relations"][0]["target_meaning"]="m.no-such"
