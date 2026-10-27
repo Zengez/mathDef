@@ -124,6 +124,33 @@ jobs:
           assert report['source_convention_assessments']==1
           assert report['is_publication_ready'] is False
           assert len(catalog['consolidated_ids']['meaning_aliases'])==report['removed_duplicate_meanings']
+          # Real-data regression: sequential source-record mergers must
+          # resolve historical Galois IDs to the live original, not an
+          # intermediate researched meaning/formulation that was retired.
+          redirects=catalog['consolidated_ids']
+          galois=next(g for g in catalog['groups'] if g['title']=='Galois extension')
+          original_galois='meaning.mathdef.original.arithmetic.galois-extension'
+          assert {m['id'] for m in galois['meanings']}=={original_galois}
+          for old_mid in (
+              'meaning.50d335de00e5f11d.galois-extension-review',
+              'meaning.26fa733af18b53e7.galois-field-extension'
+          ):
+              assert redirects['meaning_aliases'][old_mid]==original_galois
+          for old_fid in (
+              'form.50d335de00e5f11d.galois-extension-review',
+              'form.26fa733af18b53e7.galois-field-extension'
+          ):
+              assert redirects['formulation_aliases'][old_fid]==(
+                  'form.mathdef.original.arithmetic.galois-extension.primary')
+          assert 'Galois field extension'.casefold() in {
+              x.casefold() for x in galois['aliases']
+          }
+          adapted=next(g for g in catalog['groups'] if g['title']=='Adapted process')
+          assert {m['id'] for m in adapted['meanings']}=={
+              'meaning.mathdef.original.stochastic.adapted-process',
+              'meaning.wave2.found85.adapted-discrete',
+              'meaning.wave2.found85.adapted-continuous',
+          }
           titles={g['title'].lower():g for g in catalog['groups']}
           connected=titles['connected space']
           assert len(connected['meanings'])==1, 'Canonical connected-space meaning should be unique'
