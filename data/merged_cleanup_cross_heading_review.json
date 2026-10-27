@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "status": "existing_heading_comparison_review_not_yet_applied",
+  "scope": "Only mathematical meanings/forms already present in stage-only merged catalog, never newly collected terminology.",
+  "notes": [
+    "The merging of separate searchable headings needs an alias-preserving group-ID migration stage and end-user review of genuinely uncertain cases before final linking.",
+    "Clear substantive duplicates are recorded as approved mathematical comparisons, not yet as applied group mutations. Preserve both source URLs and all original headings as searchable aliases.",
+    "Retained pairs are explicitly different constructions or assumptions; superficial text similarity is not mathematical equivalence.",
+    "Do not conflate this file with the user-facing uncertain-case review packet or the forbidden terminology-candidate queue."
+  ],
+  "clear_duplicate_pending_group_migration": [
+    {
+      "case_id": "cross-heading-smooth-ring-homomorphism",
+      "removed_group_id": "preview.term.0b723c97e198e775c089a400",
+      "retained_group_id": "preview.term.a21d19ddc2f5ed3b04fc7111",
+      "removed_meaning_id": "meaning.31325e4cfe9a4f13.smooth-ring-homomorphism",
+      "retained_meaning_id": "meaning.4b6af5c19e4a290c.smooth-ring-map",
+      "removed_title": "smooth homomorphism of rings",
+      "retained_title": "smooth ring homomorphism",
+      "reason": "Both impose finite presentation plus the naive cotangent complex quasi-isomorphic to a finite projective module concentrated in degree zero; expression NL_{S/R} is only notation. Retain distinct Stacks references 00TZ and 00T1."
+    },
+    {
+      "case_id": "cross-heading-injective-function-map",
+      "removed_group_id": "preview.term.afc1afb7afb188c6c7569f38",
+      "retained_group_id": "preview.term.771e9a6b812e3da689b882f5",
+      "removed_meaning_id": "meaning.mathdef.postwave.scan-injective-map-20261026",
+      "retained_title": "injective function",
+      "removed_title": "injective map",
+      "reason": "Both require equal outputs to imply equal inputs on a set function; categorical Set-monomorphism remark is a consequence, not a new defining construction. Retain both source sets and the 'injective map' heading as a search alias."
+    },
+    {
+      "case_id": "cross-heading-ordered-field",
+      "removed_group_id": "preview.term.e3a03ac26b67034f7043e80b",
+      "retained_group_id": "preview.term.0c4c34b334b591c748cf212e",
+      "removed_meaning_id": "meaning.wave2.real45.totally-ordered-field",
+      "retained_meaning_id": "meaning.mathdef.postwave.scan-ordered-field-20261026",
+      "removed_title": "totally ordered field",
+      "retained_title": "ordered field",
+      "reason": "Compatible total ordering and strict-positive multiplication are equivalent field-order axiom presentations; neither imposes Archimedean nor Dedekind completeness."
+    }
+  ],
+  "clearly_distinct_retain": [
+    {
+      "case_id": "cross-heading-division-ring-left-right",
+      "left_group_id": "preview.term.a71e8ff36989362dd4f2b286",
+      "right_group_id": "preview.term.2ef7d6454d8875d733922658",
+      "left_meaning_id": "meaning.wave2.scalar101.left-vector-over-division-ring",
+      "right_meaning_id": "meaning.wave2.scalar101.right-vector-over-division-ring",
+      "reason": "Noncommutative division rings have structurally different left D×V→V and right V×D→V scalar actions; high lexical similarity does not erase handedness."
+    },
+    {
+      "case_id": "cross-heading-open-interval-scope",
+      "left_group_id": "preview.term.4d007218b80c170ac24d4cdf",
+      "right_group_id": "preview.term.68cf18dec9325efe1dbafe05",
+      "left_meaning_id": "meaning.wave2.direct.8d23b7ba80f9f5e74420",
+      "right_meaning_id": "meaning.mathdef.postwave.scan-open-real-interval-20261026",
+      "reason": "One construction admits extended-real endpoints and unbounded intervals; the second explicitly specifies finite real endpoints a<b and separately describes unbounded sets. Preserve the scope distinction, not automatic cross-heading consolidation."
+    }
+  ],
+  "pending_mathematical_comparison": [
+    {
+      "left_term": "affine hull",
+      "right_term": "Affine span",
+      "reason": "Shared alias suggests synonymy, but inspect the full existing Affine span formulation including empty-set conventions before deciding."
+    },
+    {
+      "left_term": "Equinumerous sets",
+      "right_term": "equipotent sets",
+      "reason": "Both normally mean existence of a bijection; compare the existing original formulation and ensure any cardinality/scoping remarks do not supply distinct mathematical content."
+    },
+    {
+      "left_term": "Zero object",
+      "right_term": "zero object of a category",
+      "reason": "Likely same initial-and-terminal universal property, but compare full original definition and preserve categorical consequences."
+    }
+  ]
+}
