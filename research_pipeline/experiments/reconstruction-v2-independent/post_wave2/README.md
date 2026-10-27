@@ -599,3 +599,38 @@ remaining. Overlay now **169** meanings (= 118 earlier + 51 net researched
 scan additions); expected merged catalog **2,141** meanings (= 958
 independent + 1,014 original + 169 overlay). Historical source
 collections and the frozen candidate scan remain untouched.
+
+
+## Frozen original quick-scan candidate incorporation — ranks 941–1140 (2026-10-26)
+
+Processed the **next 200 consecutive original source-exact candidate phrases**
+without collecting additional candidate terminology or rescanning sources.
+The existing `scan_candidate_dispositions.json` retains original occurrence
+counts and source examples, mathematically informed outcomes, target
+mappings and concise reasoning.
+
+Eight directly incorporated **new mathematical meanings**:
+959 imperfect field; 1004 injective map; 1008 integral basis of a
+number field; 1100 large category; 1106 Lie algebra homomorphism;
+1116 localizing sequence for a local martingale; 1121 locally finite Borel
+measure; 1122 locally univalent holomorphic function. Each includes
+mathematical definitions, sourced references, explicit scope and exception
+conventions. Important distinctions: injection is not arbitrary-category
+monomorphism; Lie algebra homomorphism is bracket-preserving and need
+not integrate to a Lie group map; localizing stopping times must make
+the stopped process a martingale; locally finite Borel measure does not
+imply general Radon regularity; local univalence need not imply global
+injectivity.
+
+The other **192** original candidates were resolved as **50 existing**
+and appropriately contextualized notions, **138** grammatical fragments
+or property references, and **4** genuinely unresolved contexts (981
+infinite-dimensional complex spaces, 989 infty function with lost sign,
+1108 linear differential operator with unspecified setting, and 1138
+maximal fields). Original frozen and independent Wave2 definitions were
+not modified.
+
+**Checkpoint: 1,140/2,019 ranked candidates processed**,
+**879 remain; next rank 1141**. Post-Wave2 merged-only overlay **177**
+meanings (118 earlier + 59 net scan additions), expected merged total
+**2,149** (958 independent Wave2 + 1,014 original + 177 post-Wave2).

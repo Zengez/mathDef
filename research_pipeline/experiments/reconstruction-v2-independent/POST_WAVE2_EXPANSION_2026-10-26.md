@@ -425,3 +425,24 @@ This leaves **940/2,019 processed; resume at rank 941**. Research overlay
 contains 169 meanings, **51 net scan-driven additions** above the first
 118; combined expected 2,141. Independent Wave2 958, original production
 definitions 1,014 and the original candidate list are unchanged.
+
+
+## Original frozen candidate research ranks 941–1140
+
+Dispositioned a further **200 original ranked leads** using the unchanged
+2,019-entry quick-scan report, with all literal phrases, occurrence
+counts and source examples in the existing lightweight ledger.
+No new candidate discovery or dependency workflow.
+
+New sourced meanings from this window (8): imperfect field, injective map,
+integral basis, large category, Lie algebra homomorphism, localizing
+sequence for a local martingale, locally finite Borel measure, locally
+univalent holomorphic function. Remaining outcomes: 50 already covered,
+138 nonterms, 4 genuine ambiguities. Scope-specific assumptions and
+important edge-case differences are recorded with new definitions.
+
+**Resume at candidate 1141.** Original candidate lead processing
+1,140/2,019; post-Wave2 overlay 177 total, of which 59 net
+candidate-derived. Expected combined 2,149 meanings. Historic independent
+Wave2 (958), original production mathDef (1,014) and frozen scan
+are unchanged.

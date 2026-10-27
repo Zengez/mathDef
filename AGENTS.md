@@ -27,18 +27,19 @@ Incorporate useful mathematical content DIRECTLY. Do not reintroduce
 mandatory dependency graphs, slow gates, arbitrary verification packet stages,
 or a new external vocabulary hunt.
 
-The frozen original mathDef terminology scan has now been dispositioned through
-**rank 940 of 2,019** in
+The original fixed mathDef quick-scan candidate set has been dispositioned
+through **rank 1,140 of 2,019** using the single persistent ledger
 `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/scan_candidate_dispositions.json`.
-The merged-only post-Wave2 overlay now has **169** meanings: 118
-pre-scan additions plus **51 net scan-derived researched meanings**. The latest
-200 candidate ranks (741–940) yielded **5 sourced mathematical meanings**,
-22 already-covered concepts, 169 nonterminological fragments, and 4
-context-dependent ambiguities. Every saved disposition retains the literal
-original phrase, occurrence count, source examples and target decision.
-**NEXT ORIGINAL CANDIDATE: rank 941.** Do not collect additional vocabulary
-candidates, restart discovery scans, invoke dependency gates or otherwise
-divert from direct research/incorporation of the existing collection.
+The post-Wave2 merged-only overlay contains **177 meanings**: the original
+118 post-Wave2 additions plus **59 net new scan-derived meanings** after
+deduplication. The newest 200 consecutive candidates (941–1140)
+yielded **8 source-attributed new mathematical meanings**, **50 existing
+matches**, **138 linguistic fragments**, and **4 contextual ambiguities**.
+Every ledger item retains the source-exact phrase, frequency, examples and
+reasoning, with valid existing/new targets.
+**NEXT ORIGINAL CANDIDATE: rank 1141**, leaving 879 from the unchanged
+2,019-lead scan. No collecting more candidates, restarting discovery, or
+reintroducing dependency-graph gates while this fixed queue remains pending.
 
 Keep per-candidate source examples, concise outcome and target mapping in this
 same lightweight ledger; it is a resumption log, not a mathematical
