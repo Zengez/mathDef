@@ -1,10 +1,10 @@
 # Temporary mathematically uncertain deduplication decisions
 
 **Working branch:** `work/dedup-subject-context-sources-20261027`  
-**State:** pre-user review; **do not infer consent**, and **do not perform the final global linking rebuild**.  
+**State:** all three recorded questions were explicitly adjudicated by the user on 2026-10-27; retained historical alternatives below are no longer awaiting a decision. **Do not perform the final global linking rebuild or publish without the separately authorized final review.**  
 **Scope:** Only preexisting mathematical terms/meanings. This file is not a candidate-discovery list.
 
-Every entry reproduces **all currently existing formulations under its searchable heading** before the proposed uncertain consolidation. Source URLs are distinguished from verified evidence: a citation that is only a previous research lead is not represented as passage-verified. Stable IDs follow each form.
+The historical comparison sections below reproduce **all previously existing formulations under each searchable heading** before the user-adjudicated consolidation; their preliminary recommendations and 'Decision needed' descriptions are archival, superseded by the recorded final decisions at the end of this file. Source URLs are distinguished from verified evidence: a citation that is only a previous research lead is not represented as passage-verified. Stable IDs follow each form.
 
 ## Definition of: Zero divisor
 
@@ -28,7 +28,7 @@ Source lead: https://stacks.math.columbia.edu/tag/00EW ; recorded only as `origi
 
 **Boundary check:** In a nonzero ring, Def A includes $a=0$ while Def B excludes it. The two agree for nonzero $a$. This is a genuine boundary convention, not a different annihilation construction. The zero ring additionally needs care because Def A requires nonzero $b$.
 
-**Preliminary recommendation:** Favor one mathDef broad predicate (Def A) plus a convention note explaining the requirement $a\ne0$ in sources that positively adopt it. Preserve Def B as evidence of competing usage without attributing a restriction to its previously unchecked Stacks lead. Confirm primary source/section scope before asserting a source-specific restriction. **Status: awaiting user adjudication.**
+**Preliminary recommendation:** Favor one mathDef broad predicate (Def A) plus a convention note explaining the requirement $a\ne0$ in sources that positively adopt it. Preserve Def B as evidence of competing usage without attributing a restriction to its previously unchecked Stacks lead. Confirm primary source/section scope before asserting a source-specific restriction. **Status: adjudicated by the user on 2026-10-27; see final decisions below.**
 
 ## Definition of: Metric space
 
@@ -62,7 +62,7 @@ Source: existing independent Wave 2 research evidence associated with this formu
 
 **Boundary check:** Metric axioms on an empty $X$ are vacuous, and the unique map $\varnothing\times\varnothing\to[0,\infty)$ is a metric under Def A. Def B excludes $X=\varnothing$ explicitly. Def C likewise states nonempty, but its construction extends naturally with the empty topology.
 
-**Preliminary recommendation:** Prefer the broad canonical metric axioms (Def A), with verified nonempty assumptions tracked per source rather than a duplicate card solely for an excluded empty space. Retain Def C as a genuinely different informative induced-topology perspective after checking its scope and deciding whether to make nonemptiness an explicit hypothesis or simply let the construction extend to the empty space. **Status: awaiting user adjudication.**
+**Preliminary recommendation:** Prefer the broad canonical metric axioms (Def A), with verified nonempty assumptions tracked per source rather than a duplicate card solely for an excluded empty space. Retain Def C as a genuinely different informative induced-topology perspective after checking its scope and deciding whether to make nonemptiness an explicit hypothesis or simply let the construction extend to the empty space. **Status: adjudicated by the user on 2026-10-27; see final decisions below.**
 
 ---
 
@@ -96,4 +96,20 @@ Source for B and C: https://hankyang.seas.harvard.edu/Semidefinite/background.ht
 
 **Clearly retained:** Both terms as searchable labels, all existing primary/reference URLs with honest evidence labels, and the mathematically distinct intersection construction C.
 
-**Preliminary recommendation:** Prefer the general finite-affine-combination definition including the empty subset, add a convention note for definitions treating affine subspaces as nonempty, and retain C's affine-closed-intersection perspective. Do not discard the general affine-space scope without deliberate translation. **Status: awaiting user adjudication; no merger performed.**
+**Preliminary recommendation:** Prefer the general finite-affine-combination definition including the empty subset, add a convention note for definitions treating affine subspaces as nonempty, and retain C's affine-closed-intersection perspective. Do not discard the general affine-space scope without deliberate translation. **Status: adjudicated by the user on 2026-10-27; see final decisions below.**
+
+---
+
+## Final decisions — explicitly approved by the user 2026-10-27
+
+**These three items are CLOSED, not pending reminders.** User adjudication takes precedence over the preliminary recommendations preserved above for historical comparison. These are mathDef's canonical editorial conventions, not a factual claim that every cited author endorses the same definitions. All previously existing source URLs, citation-verification statuses, original IDs and useful alternative mathematical presentations are preserved in the staged overlay.
+
+1. **Zero divisor — nonzero required.** Canonical: a nonzero element `a` of a commutative ring `R` such that `ab=0` for some nonzero `b∈R`. In particular, **zero is never a zero divisor** under mathDef's convention. Merge the broader original meaning into the researched nonzero-only meaning (rather than displaying near-identical variants), and preserve the original historical ID, sources and the warning that some authors include zero. No Stacks-wide convention is inferred from an unchecked source lead.
+
+2. **Metric space — nonempty underlying set required.** Canonical: a pair `(X,d)` with **`X≠∅`** and the ordinary metric axioms. Fold original empty-allowing A into the researched nonempty-axioms B; retain the compatible induced-topology presentation C as an informative alternative formulation. Keep original ID and citations as provenance. Stage-local dependent wording for *totally bounded metric space*, *separable metric space* and *compact metric space* must no longer assert an empty metric space exists. This change does **not** change the convention for empty topological spaces or the mathDef connectedness predicate.
+
+3. **Affine span and affine hull — one concept, two searchable terms, nonempty input.** The user identifies “affine span” as typical algebraic terminology and “affine hull” as typical analytic terminology, describing the **same** construction. Use a general real affine space `A`, nonempty subset `S⊆A` and finite affine combinations with coefficient sum one; **exclude the empty input from the canonical definition for now**, subject to possible future community correction. Preserve the finite-combination and intersection-of-affine-closed-supersets formulations, with the nonempty hypothesis stated; preserve the original affine-span ID and both existing URLs. The 'Affine span' title must remain searchable as an alias for 'affine hull'. No source-specific nonempty convention is attributed without positive evidence.
+
+**Implementation:** `data/merged_cleanup_decisions.json` records two within-heading meaning mergers and six exact-historical-text user-approved editorial revisions; `data/merged_cleanup_cross_heading_review.json` records the affine cross-heading consolidation; `data/math_definition_conventions.json` dynamically ties all three conventions to the surviving meaning IDs. The edits are stage-only and source provenance remains distinct from verified source evidence.
+
+**Next:** Continue the planned existing-term mathematical cleanup and stage-only validation. These three adjudications require no further user decision unless subsequent research uncovers a genuinely different issue. Global final linking/publication remains separately gated.
