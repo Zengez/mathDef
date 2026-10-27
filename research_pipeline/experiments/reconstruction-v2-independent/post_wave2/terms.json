@@ -5376,6 +5376,185 @@
         "Nullary symbols contribute no variables."
       ],
       "research_status": "assistant-reviewed from frozen original scan; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-imperfect-field-20261026",
+      "candidate_id": "postwave-scan:rank-959",
+      "term": "imperfect field",
+      "context": "Field theory · characteristic-p field whose Frobenius is not surjective",
+      "aliases": [
+        "nonperfect field"
+      ],
+      "definition": "A field K is imperfect if it is not perfect: equivalently, there is an algebraic field extension of K that is inseparable over K. This can occur only in prime characteristic p>0, and then is equivalent to failure of the Frobenius map F:K→K, a↦a^p, to be surjective; equivalently, K^p={a^p:a∈K} is a proper subfield of K. For example, the rational function field F_p(t) is imperfect because t has no pth root in F_p(t). Every characteristic-zero field and every finite field is perfect, hence not imperfect.",
+      "sources": [
+        {
+          "title": "Stacks Project, Algebra §10.45 Perfect fields",
+          "url": "https://stacks.math.columbia.edu/tag/05DU",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "NPTEL algebra course, Lecture 9 §9.5 Perfect fields",
+          "url": "https://archive.nptel.ac.in/content/storage2/courses/111101001/modules/lec9/9.5.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "A field has multiplicative identity distinct from zero.",
+        "Characteristic p>0 required.",
+        "Failure of Frobenius surjectivity, not failure of injectivity, characterizes imperfect fields."
+      ],
+      "research_status": "source-attributed direct frozen-scan incorporation, assistant-reviewed"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-integral-basis-number-field-20261026",
+      "candidate_id": "postwave-scan:rank-1008",
+      "term": "integral basis of a number field",
+      "context": "Algebraic number theory · Z-module basis of the ring of integers",
+      "aliases": [
+        "integral basis"
+      ],
+      "definition": "Let K be a number field, a finite extension of Q of degree n, and let O_K be its ring of algebraic integers. An integral basis of K is an ordered n-tuple (ω₁,…,ω_n) of elements of O_K such that every α∈O_K can be expressed uniquely as α=∑_{i=1}^n m_i ω_i for integers m_i. Equivalently O_K=⊕_{i=1}^n Zω_i as a free Z-module of rank n. Such a basis is also a Q-vector-space basis for K. An arbitrary Q-basis made up of algebraic integers need not be an integral basis, since it might span a proper sublattice of O_K.",
+      "sources": [
+        {
+          "title": "ETH Zürich lecture notes, Number Theory I, Definition 3.16",
+          "url": "https://metaphor.ethz.ch/x/2022/hs/401-3111-72L/sc/Lecture_24.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Stanford commutative algebra/number theory notes, Additive Structure of a Number Ring",
+          "url": "https://crypto.stanford.edu/pbc/notes/numberfield/addstructure.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "K/Q is finite and degree n≥1.",
+        "An integral basis concerns all of O_K, not any order or arbitrary lattice.",
+        "Coefficients in the O_K expansion are integers, not arbitrary rationals."
+      ],
+      "research_status": "source-attributed direct frozen-scan incorporation, assistant-reviewed"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-lie-algebra-homomorphism-20261026",
+      "candidate_id": "postwave-scan:rank-1106",
+      "term": "Lie algebra homomorphism",
+      "context": "Lie theory · bracket-preserving linear map between Lie algebras over a fixed field",
+      "aliases": [
+        "homomorphism of Lie algebras"
+      ],
+      "definition": "Let g and h be Lie algebras over the same field F, with Lie brackets [·,·]_g and [·,·]_h. A Lie algebra homomorphism φ:g→h is an F-linear map satisfying φ([x,y]_g)=[φ(x),φ(y)]_h for all x,y∈g. Neither injectivity nor surjectivity is required. Its kernel is a Lie ideal of g, and its image is a Lie subalgebra of h. Every smooth Lie group homomorphism G→H induces such a map on Lie algebras by differentiation at the identity, but not every abstract Lie algebra homomorphism integrates to a homomorphism between arbitrary specified (non-simply-connected) Lie groups.",
+      "sources": [
+        {
+          "title": "University of Warwick notes, Lie Groups and Lie Algebras, Definition 2.2.2",
+          "url": "https://warwick.ac.uk/fac/sci/maths/people/staff/weiyi_zhang/ma4e0update.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Encyclopedia of Mathematics, Lie algebra",
+          "url": "https://encyclopediaofmath.org/wiki/Lie_algebra",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "The two Lie algebras use the same scalar field F.",
+        "Linear and bracket-preserving are BOTH required.",
+        "No assumption that Lie groups exist, or that the homomorphism integrates globally."
+      ],
+      "research_status": "source-attributed direct frozen-scan incorporation, assistant-reviewed"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-localizing-sequence-local-martingale-20261026",
+      "candidate_id": "postwave-scan:rank-1116",
+      "term": "localizing sequence for a local martingale",
+      "context": "Continuous-time stochastic processes · stopping sequence rendering a process martingale",
+      "aliases": [
+        "localizing sequence"
+      ],
+      "definition": "Let M=(M_t)_{t≥0} be an adapted real-valued process on a filtered probability space. A localizing sequence for the martingale property is a sequence of stopping times (τ_n)_{n≥1} with τ_n≤τ_{n+1} and τ_n→∞ almost surely, such that for each n the stopped process M^{τ_n}_t=M_{t∧τ_n} is an integrable martingale relative to the filtration. Existence of such a sequence means M is a local martingale. A localizing sequence must be specified relative to M and to a chosen local property; merely requiring stopping times tending to infinity does not by itself ensure the stopped processes have the desired property.",
+      "sources": [
+        {
+          "title": "University of Wisconsin, Martingale Problems and Stochastic Equations, Definition 1.4",
+          "url": "https://people.math.wisc.edu/~tgkurtz/833/m833f04.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Duke stochastic differential equations notes, §3 Localization",
+          "url": "https://sites.math.duke.edu/~agazzi/notesSDE.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-filtered-probability-space-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Time domain is [0,∞) and stopping times may be extended real valued.",
+        "Stopping times increase to +∞ almost surely.",
+        "Stopped processes must be integrable martingales for each n, not merely adapted processes."
+      ],
+      "research_status": "source-attributed direct frozen-scan incorporation, assistant-reviewed"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-locally-univalent-holomorphic-function-20261026",
+      "candidate_id": "postwave-scan:rank-1122",
+      "term": "locally univalent holomorphic function",
+      "context": "One complex variable · locally injective holomorphic map on a domain",
+      "aliases": [
+        "locally injective holomorphic function"
+      ],
+      "definition": "Let D⊆C be a nonempty open domain and f:D→C holomorphic. The function f is locally univalent on D if every z∈D has an open neighborhood U⊆D such that f restricted to U is injective. By the one-variable holomorphic inverse function theorem, this is equivalent to f′(z)≠0 at every z∈D. Local univalence need not imply global injectivity: exp(z) is locally univalent on C but not injective on C. This is a one-variable statement; Jacobian nondegeneracy is the appropriate higher-dimensional local-biholomorphism analogue.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics, Univalency conditions",
+          "url": "https://encyclopediaofmath.org/wiki/Univalency_conditions",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Single complex variable, nonempty domain D.",
+        "Local injectivity differs from global univalence.",
+        "Derivative nonzero criterion relies on holomorphy in one variable."
+      ],
+      "research_status": "source-attributed direct frozen-scan incorporation, assistant-reviewed"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-large-category-20261026",
+      "candidate_id": "postwave-scan:rank-1100",
+      "term": "large category",
+      "context": "Category theory and foundations · category not small in the adopted class/set universe",
+      "aliases": [
+        "non-small category"
+      ],
+      "definition": "Relative to a fixed foundational distinction between sets and proper classes, a category C is large if it is not small: its collection of objects and/or its total collection of morphisms is not a set. In the usual class-based convention, having a proper class of objects already forces a proper class of identity arrows. For example, the category Set of all (small) sets and functions is large but locally small, because Hom(X,Y) is a set for each pair of objects. 'Large' does not mean 'not locally small', and the classification depends on the adopted universe/set-size convention.",
+      "sources": [
+        {
+          "title": "Iowa State University lecture notes, Categories §1.2 Small categories",
+          "url": "https://jdhsmith.math.iastate.edu/class/505Categ.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Colin McLarty, Elementary Categories, Elementary Toposes, Foundations discussion",
+          "url": "https://pages.jh.edu/rrynasi1/FoundationsOFMath/Literature/Textbooks/McLarty1992ElementaryCategoriesElementaryToposes.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.locally-small-category-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "A foundation supporting proper classes (or a Grothendieck-universe distinction) is fixed.",
+        "Locally small is compatible with large.",
+        "This is not an extra set of category axioms; it is a size distinction."
+      ],
+      "research_status": "source-attributed direct frozen-scan incorporation, assistant-reviewed"
     }
   ]
 }
