@@ -8,7 +8,7 @@
   const SIDES = ["term", "definition"];
   const VIEW_MODES = ["standard", "nested", "inline"];
   const LIMIT = 100;
-  let savedMode = "nested";
+  let savedMode = "inline";
   try {
     const value = localStorage.getItem(config.storage_key || "research-explore-mode");
     if (VIEW_MODES.includes(value)) savedMode = value;
