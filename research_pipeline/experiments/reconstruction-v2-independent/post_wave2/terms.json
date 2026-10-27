@@ -5883,6 +5883,94 @@
         "Empty topological space admitted in this convention."
       ],
       "research_status": "assistant-reviewed using retrieved mathematical references; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-minimal-element-poset-20261026",
+      "candidate_id": "postwave-scan:rank-1163",
+      "term": "minimal element of a partially ordered set",
+      "context": "Order theory · element with no strictly smaller element",
+      "aliases": [
+        "minimal element"
+      ],
+      "definition": "Let (P,≤) be a partially ordered set. An element m∈P is minimal if there is no x∈P with x<m; equivalently, x≤m implies x=m. A minimal element need not be a least element: distinct incomparable minimal elements may coexist. A least element ℓ satisfies ℓ≤x for every x∈P, and, when one exists, it is the unique minimal element. A nonempty poset can have no minimal elements, e.g. the integers with their usual order.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Minimal element",
+          "url": "https://encyclopediaofmath.org/wiki/Minimal_element",
+          "verification_status": "direct_mathematical_reference_2026-10-26"
+        },
+        {
+          "title": "Original Wave2 — Least element",
+          "url": "https://en.wikipedia.org/wiki/Least_element",
+          "verification_status": "source_lead_checked_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Underlying order is partial and strict x<m means x≤m, x≠m.",
+        "Minimal and least are not equivalent in general.",
+        "The definition applies to all elements of P or a specified sub-poset, never a hidden ambient restriction."
+      ],
+      "research_status": "assistant-reviewed sourced frozen original candidate; not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-mixed-second-partial-derivative-20261026",
+      "candidate_id": "postwave-scan:rank-1165",
+      "term": "mixed second partial derivative",
+      "context": "Multivariable calculus · successive derivatives in distinct coordinates",
+      "aliases": [
+        "mixed partial derivative",
+        "cross partial derivative"
+      ],
+      "definition": "Let U⊆ℝⁿ be open, f:U→ℝ, and let i and j be distinct coordinate indices. A mixed second partial derivative is an iterated partial derivative ∂²f/(∂x_j∂x_i)=∂/∂x_j(∂f/∂x_i), wherever the successive derivatives exist. The two orders ∂_j∂_i f and ∂_i∂_j f are not automatically equal. Equality follows under suitable regularity, for example when f∈C² on a neighborhood of the point (Clairaut/Schwarz theorem). For an arbitrary twice partially differentiable function without continuity hypotheses, equality of mixed partials can fail.",
+      "sources": [
+        {
+          "title": "OpenStax — Calculus Volume 3, §4.3 Partial Derivatives",
+          "url": "https://openstax.org/books/calculus-volume-3/pages/4-3-partial-derivatives",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "University of Konstanz — Higher-Order Derivatives and Schwarz Theorem",
+          "url": "https://www.math.uni-konstanz.de/~dreher/skripten/ma4ph2.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "U open in Euclidean space, and indices distinct.",
+        "The iterated derivative is only asserted where needed successive derivatives exist.",
+        "No automatic equality of opposite orders without regularity."
+      ],
+      "research_status": "assistant-reviewed sourced frozen original candidate; not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-multiplicative-order-element-20261026",
+      "candidate_id": "postwave-scan:rank-1181",
+      "term": "multiplicative order of an element of a group",
+      "context": "Group theory and modular arithmetic · least positive exponent yielding identity",
+      "aliases": [
+        "multiplicative order"
+      ],
+      "definition": "Let G be a group written multiplicatively with identity e, and g∈G. Its multiplicative order is the least positive integer n such that gⁿ=e, if such n exists; otherwise g has infinite order. For a unit a modulo an integer m≥2, the multiplicative order mod m is the least n≥1 satisfying aⁿ≡1 (mod m). If gcd(a,m)≠1, this modular order is not defined under the usual unit-group convention. This is the size of the cyclic subgroup ⟨g⟩ and is distinct from the additive order of an element in an additive group.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Multiplicative Order",
+          "url": "https://mathworld.wolfram.com/MultiplicativeOrder.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "LibreTexts — Modular Arithmetic and Primes §5.1",
+          "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/An_Introduction_to_Number_Theory_%28Veerman%29/05%3A_Modular_Arithmetic_and_Primes/5.01%3A_New_Page",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Group multiplication is associative and the element g belongs to G.",
+        "When finite, order is a positive integer; otherwise it is infinite.",
+        "Modular convention restricts a to units modulo m."
+      ],
+      "research_status": "assistant-reviewed sourced frozen original candidate; not peer-certified"
     }
   ]
 }
