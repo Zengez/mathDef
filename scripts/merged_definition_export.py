@@ -52,6 +52,19 @@ def write_merged_definition_export(catalog: dict, index: list[dict], site_root: 
         record = deepcopy(entry)
         record["original_ids"] = sorted(originals)
         record["meaning_ids"] = ids
+        # The group identifier answers "which searchable heading?" while a
+        # meaning identifier answers "which mathematical interpretation?".
+        # Preserve both, with the source cohort, so consumers can prioritize
+        # the context cited by a theorem rather than picking the first entry.
+        record["meanings"] = [{
+            "id": m["id"],
+            "label": m.get("label", ""),
+            "display_term": m.get("display_term") or group["title"],
+            "source_origin": m.get("source_origin", "independent_research"),
+            "research_status": m.get("research_status", "research_draft"),
+            "original_definition_id": m.get("original_definition_id"),
+            "formulation_ids": [f["id"] for f in m["formulations"]],
+        } for m in group["meanings"]]
         definitions.append(record)
     expected_originals = {m["original_definition_id"] for group in groups.values()
                           for m in group["meanings"]
