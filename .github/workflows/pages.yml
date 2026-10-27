@@ -72,10 +72,12 @@ jobs:
           root=Path("_site")
           index=json.loads((root/"definitions-index.json").read_text())
           original=json.loads((root/"api/definitions/v1/snapshot.json").read_text())
-          original_terms={e["term"] for e in original["definitions"]}
-          merged_terms={e["term"] for e in index}
-          assert len(index)>=len(original_terms), "Main site lost original searchable terms"
-          assert original_terms <= merged_terms, "Main site dropped an original term"
+          merged=json.loads((root/"catalog.json").read_text())
+          original_ids={e["id"] for e in original["definitions"]}
+          preserved={m["original_definition_id"] for g in merged["groups"]
+                     for m in g["meanings"] if m.get("source_origin")=="original_mathdef"}
+          assert original_ids == preserved, "Main site dropped an original definition"
+          assert len(index)==len(merged["groups"]), "Main site index incomplete"
           assert (root/"catalog.json").is_file()
           assert (root/"link-report.json").is_file()
           assert (root/"reconstruction/merged/index.html").is_file()
