@@ -14,6 +14,7 @@ from research_pipeline.adapters.mathdef.original_merge import (
     for_display, read_original,
 )
 from research_pipeline.ui.renderer import render as render_ui
+from scripts.merged_definition_export import write_merged_definition_export
 
 
 def publish(repo: Path, site: Path) -> dict:
@@ -70,11 +71,13 @@ def publish(repo: Path, site: Path) -> dict:
     ))
     if len(published) != len(catalog["groups"]):
         raise ValueError("Main site does not contain all merged term groups")
+    merged_feed = write_merged_definition_export(catalog, published, site)
     if sum(len(group["meanings"]) for group in catalog["groups"]) < len(originals):
         raise ValueError("Main site contains fewer meanings than original mathDef")
     return {
         **counts,
         "original_definitions_preserved": len(originals),
+        "merged_feed": merged_feed,
         "merged_meanings": sum(len(group["meanings"]) for group in catalog["groups"]),
         "linked_formulations": sum(
             bool(f["dependencies"])
