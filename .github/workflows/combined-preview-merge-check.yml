@@ -63,6 +63,13 @@ jobs:
           assert (root/"merged/definitions-index.json").is_file()
           link_report=json.loads((root/"merged/link-report.json").read_text())
           assert link_report["status"]=="tentative_lexical_links_not_semantically_verified"
+          # Audit sample is drawn from ALREADY EXISTING concepts in the merged
+          # dictionary; it is not an additional terminology candidate collection.
+          print("MERGED_LINK_AMBIGUITY_TOP_JSON="+json.dumps([
+              {"phrase":item["phrase"],"occurrences":item["occurrences"],
+               "examples":link_report["ambiguous_context_examples"].get(item["phrase"],[])[:3]}
+              for item in link_report["ambiguous_contexts"][:25]
+          ],ensure_ascii=False,separators=(",",":")))
           assert link_report["forms_visited"] >= merged_n
           assert link_report["new_tentative_links"] > 50, link_report
           assert sum(r.get("review_state")=="lexical_candidate"
