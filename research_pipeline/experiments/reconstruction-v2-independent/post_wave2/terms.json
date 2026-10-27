@@ -6866,6 +6866,36 @@
         "Distinguish classical derivatives from weak or distributional interpretations."
       ],
       "research_status": "individually reviewed mathematical concept in the unchanged final original quick-scan candidate set; documented assumptions and source-context distinction"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-weak-topology-cw-complex-20261026",
+      "candidate_id": "postwave-scan:rank-2007",
+      "term": "weak topology of a CW complex",
+      "context": "Algebraic topology · final topology for cell characteristic maps",
+      "aliases": [
+        "weak CW topology",
+        "weak topology of a cell complex"
+      ],
+      "definition": "Suppose X is a set equipped with a cellular decomposition and characteristic maps Φ_α:D^{n_α}→X whose interiors map homeomorphically onto disjoint open cells covering X. The weak topology relative to the cells is the final topology for these maps: a subset A⊆X is closed exactly when Φ_α⁻¹(A) is closed in D^{n_α} for every characteristic map. Equivalently, for a CW structure, A is closed if and only if A intersects the closure of every cell in a relatively closed set; it is also the direct-limit topology of the skeleta Xⁿ. This is not the weak topology σ(E,E*) of a topological vector space in functional analysis.",
+      "sources": [
+        {
+          "title": "Allen Hatcher — Algebraic Topology, Appendix: Topology of Cell Complexes",
+          "url": "https://pi.math.cornell.edu/~hatcher/AT/ATapp.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Stephen A. Mitchell — CW-complexes",
+          "url": "https://sites.math.washington.edu/~mitchell/Morse/cw.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Characteristic maps are part of the cellular structure; all cells cover X.",
+        "For the closure-of-cells description, assume the usual CW axioms, including closure-finiteness.",
+        "The term weak topology is mathematically ambiguous across algebraic topology and functional analysis."
+      ],
+      "research_status": "research-confirmed distinct context and active ambiguity important for future mathematical term linking"
     }
   ]
 }
