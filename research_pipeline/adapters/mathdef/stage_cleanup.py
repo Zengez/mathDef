@@ -58,7 +58,7 @@ def stage(repo: Path, output: Path) -> dict:
         "no_new_candidates": True,
     }
     (output / "comparison-inventory.stage-only.json").write_text(
-        json.dumps(inventory, ensure_ascii=False, indent=2) + "\\n",
+        json.dumps(inventory, ensure_ascii=False, indent=2) + chr(10),
         encoding="utf-8",
     )
     report = write_stage_only(combined, repo, output)
