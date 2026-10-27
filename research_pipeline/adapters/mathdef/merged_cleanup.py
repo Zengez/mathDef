@@ -12,6 +12,8 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from copy import deepcopy
 from hashlib import sha256
+
+from research_pipeline.adapters.mathdef.conventions import (read_conventions, resolved_source_assessments)
 from pathlib import Path
 import json
 
@@ -167,6 +169,23 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
             del forms[f["id"]]
         completed.append(case)
 
+    # Convention-sensitive wording updates belong in this merged-only layer.
+    # They must not change the frozen independent source or original .tex files.
+    text_override_ids = set()
+    translation_audit = []
+    for fid, edit in decisions.get("text_overrides", {}).items():
+        if fid not in forms:
+            raise CleanupError("Text override references missing formulation " + fid)
+        meaning, form = forms[fid]
+        if form["text"] != edit["original_text"]:
+            raise CleanupError("Historical mathematical wording drift: " + fid)
+        if not edit.get("source_assessment_id") or not edit.get("convention_id"):
+            raise CleanupError("Convention translation requires source evidence: " + fid)
+        form["text"] = edit["text"]
+        form["editorial_translation"] = deepcopy(edit)
+        text_override_ids.add(fid)
+        translation_audit.append({"formulation_id": fid, **edit})
+
     # Repoint incoming targets; safely carry "related" edges from deleted forms.
     # An anchored definition-use relation from removed text is NOT transferable
     # to different text (offsets and phrasing may change). Record it for the
@@ -177,6 +196,10 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
     for rel in combined["relations"]:
         cur = deepcopy(rel)
         old_form = cur["from_formulation"]
+        if old_form in text_override_ids and cur.get("relation_type") == "definition_uses":
+            # Previously anchored spans are invalidated by modified wording.
+            needs_relink.append(cur["id"])
+            continue
         if old_form in form_aliases:
             if cur.get("relation_type") == "definition_uses":
                 needs_relink.append(cur["id"])
@@ -219,7 +242,23 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "meaning_aliases": meaning_aliases,
         "formulation_aliases": form_aliases,
     }
-    register = compile_source_registry(combined)
+    # Resolve registered canonical meanings against the live surviving data.
+    # This is deliberately late: nothing is pinned to the pre-cleanup wording.
+    canonical, assessments = read_conventions(repo, combined)
+    for entry in canonical.values():
+        meaning = all_meanings[entry["canonical_meaning_id"]][1]
+        notes = meaning.setdefault("convention_notes", [])
+        record = {"convention_id": entry["convention_id"], "note": entry["note"]}
+        if record not in notes:
+            notes.append(record)
+    valid_assessment_ids = {a["assessment_id"] for a in assessments}
+    for edit in translation_audit:
+        if edit["source_assessment_id"] not in valid_assessment_ids:
+            raise CleanupError("Missing actual verified convention assessment for translation")
+        a = next(a for a in assessments if a["assessment_id"] == edit["source_assessment_id"])
+        if a["status"] != "verified_applies" or a["convention_id"] != edit["convention_id"]:
+            raise CleanupError("Source wording change lacks a verified applicable restriction")
+    register = compile_source_registry(combined, repo=repo)
     subject_counts = Counter(m["subject"] for g, m in all_meanings.values()
                              if m.get("subject"))
     context_counts = Counter(m["context"] for g, m in all_meanings.values()
@@ -237,6 +276,9 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "removed_duplicate_meanings": len(meaning_aliases),
         "removed_duplicate_formulations": original_total[1] - len(all_forms),
         "semantic_decisions_completed": completed,
+        "convention_sensitive_text_translations": translation_audit,
+        "registered_conventions": sorted(canonical),
+        "source_convention_assessments": len(assessments),
         "deleted_source_text_edges_needing_global_relink": needs_relink,
         "subject_coverage": len(all_meanings) - len(missing_subject),
         "subject_missing": len(missing_subject),
@@ -253,7 +295,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
     return combined, report, register
 
 
-def compile_source_registry(catalog: dict) -> dict:
+def compile_source_registry(catalog: dict, *, repo: Path | None = None) -> dict:
     """Term-level URL registry: locators + support roles + stable source IDs.
 
     Source metadata is constructed from the *merged* corpus (not historical
@@ -297,6 +339,18 @@ def compile_source_registry(catalog: dict) -> dict:
                     }
                     if occurrence not in row["occurrences"]:
                         row["occurrences"].append(occurrence)
+                    # If two formulations supplied the same URL, preserve each
+                    # independently recorded citation evidence after a merge.
+                    for extra in citation.get("additional_evidence", []):
+                        supplementary = {
+                            **occurrence,
+                            "verification_status": extra.get("verification_status", "untracked"),
+                            "role": extra.get("role", "additional citation evidence"),
+                            "evidence_id": extra.get("evidence_id"),
+                            "source_id": extra.get("source_id"),
+                        }
+                        if supplementary not in row["occurrences"]:
+                            row["occurrences"].append(supplementary)
                     midsources.add(sid)
                     term_sources.add(sid)
                     if not provenance and _source_rank(citation)[0] >= 0:
@@ -333,12 +387,19 @@ def compile_source_registry(catalog: dict) -> dict:
                 "meaning_id": meaning["id"], "subject": meaning.get("subject"),
                 "context": meaning.get("context"),
                 "source_ids": sorted(midsources),
+                "primary_source_id": next(iter(form_primary.values()), None),
                 "primary_source_by_formulation": form_primary,
+                "convention_notes": meaning.get("convention_notes", []),
             })
         groups.append({
             "group_id": group["id"], "term": group["title"],
             "source_ids": sorted(term_sources), "meanings": meaning_entries,
         })
+    if repo is not None:
+        for row in sources.values():
+            row["source_convention_assessments"] = resolved_source_assessments(
+                repo, catalog, row["url"]
+            )
     return {
         "schema_version": 1, "scope": "merged_mathdef_term_sources",
         "primary_policy": "best available citation evidence, subject to future human override",
