@@ -5346,6 +5346,36 @@
         "Finite generation is not equivalent to finite presentation."
       ],
       "research_status": "assistant-researched against authoritative retrieved mathematical sources; not formally peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-free-variables-formula-20261026",
+      "candidate_id": "postwave-scan:rank-874",
+      "term": "set of free variables of a first-order formula",
+      "context": "Mathematical logic · syntactic free variables of first-order formulas",
+      "aliases": [
+        "free-variable set",
+        "FV of a formula"
+      ],
+      "definition": "For a first-order formula φ, FV(φ) is the set of variables with free occurrences in φ. Formally, for variables x, FV(x)={x}, while a constant symbol has no free variables; the free variables of a compound term or atomic formula are the union of those of its arguments. Negation preserves FV, binary connectives take unions, and quantifiers remove their bound variable: FV(∀x φ)=FV(∃x φ)=FV(φ) excluding x. A formula is a sentence exactly when its free-variable set is empty. This recursive definition requires a specified formal syntax and quantifier scope.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Free variable",
+          "url": "https://encyclopediaofmath.org/wiki/Free_variable",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "University of Maryland — Notes on Mathematical Logic, Definition 1.5",
+          "url": "https://www.math.umd.edu/~dkueker/712.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Syntax is first-order logic with usual binders and fixed scopes.",
+        "A bound variable does not contribute a free occurrence inside its quantifier scope.",
+        "Nullary symbols contribute no variables."
+      ],
+      "research_status": "assistant-reviewed from frozen original scan; not peer certified"
     }
   ]
 }
