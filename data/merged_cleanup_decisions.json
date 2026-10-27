@@ -679,6 +679,13 @@
       "kept_meaning_id": "meaning.wave2.pop139.integer-congruence",
       "kept_formulation_id": "form.meaning.wave2.pop139.integer-congruence",
       "reason": "User-independent mathematical comparison: both require positive integer modulus, and n|(a−b) precisely iff a−b=kn. The retained enriched researched statement additionally gives the equivalent least-nonnegative-remainder criterion. The previous direct-to-original merge now becomes a transitive direct-to-survivor alias; original quotient-group source and MathWorld divisibility lead survive by source inheritance."
+    },
+    {
+      "case_id": "group-element-order-multiplicative-notation",
+      "removed_meaning_id": "meaning.wave2.direct.6fbe5c318aee10f6742d",
+      "kept_meaning_id": "meaning.mathdef.postwave.scan-multiplicative-order-element-20261026",
+      "kept_formulation_id": "form.meaning.mathdef.postwave.scan-multiplicative-order-element-20261026",
+      "reason": "Both actual definitions give least n>0 with g^n=e, otherwise infinite. The surviving source-backed formulation adds the useful specialized order of a unit modulo m and the cyclic-subgroup perspective; ordinary additive order is the same group-theoretic invariant in additive notation, not a different mathematical meaning."
     }
   ],
   "metadata_assignments": {
@@ -1171,6 +1178,13 @@
       "text": "Let A be a real affine space and S⊆A nonempty. The affine hull (affine span) of S consists of all finite affine combinations ∑_{i=1}^{k} αᵢpᵢ with k≥1, pᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. Equivalently, it is the smallest affine subspace of A containing S.\n\nEquivalent intersection formulation: the affine hull is the intersection of all subsets C⊆A containing S that are closed under finite affine combinations of their points. For nonempty S this intersection is an affine subspace. Under mathDef's convention, the affine hull/span of the empty set is not defined.",
       "reason": "User-adjudicated same nonempty-input affine span/hull in arbitrary real affine spaces; preserve distinct finite-combination, smallest-affine-subspace and affine-closed-intersection characterizations within the original display formulation.",
       "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.meaning.mathdef.postwave.scan-multiplicative-order-element-20261026": {
+      "original_text": "Let G be a group written multiplicatively with identity e, and g∈G. Its multiplicative order is the least positive integer n such that gⁿ=e, if such n exists; otherwise g has infinite order. For a unit a modulo an integer m≥2, the multiplicative order mod m is the least n≥1 satisfying aⁿ≡1 (mod m). If gcd(a,m)≠1, this modular order is not defined under the usual unit-group convention. This is the size of the cyclic subgroup ⟨g⟩ and is distinct from the additive order of an element in an additive group.",
+      "text": "Let G be a group written multiplicatively with identity e, and g∈G. Its multiplicative order is the least positive integer n such that gⁿ=e, if such n exists; otherwise g has infinite order. For a unit a modulo an integer m≥2, the multiplicative order mod m is the least n≥1 satisfying aⁿ≡1 (mod m). If gcd(a,m)≠1, this modular order is not defined under the usual unit-group convention. When finite, the order equals the cardinality of the cyclic subgroup ⟨g⟩. In additive notation the same group-theoretic invariant is the least positive n satisfying ng=0, if one exists; otherwise it is infinite.",
+      "reason": "After reviewed semantic consolidation, distinguish group-operation notation from the element-order invariant: the inherited research sentence inaccurately suggested additive and multiplicative orders are inherently different notions. Retain useful modular-unit specialization and cyclic-subgroup property.",
+      "decision_source": "assistant_reviewed_mathematical_cleanup_2026-10-27",
       "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
     }
   }
