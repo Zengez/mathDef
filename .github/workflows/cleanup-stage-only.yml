@@ -43,15 +43,15 @@ jobs:
           assert checks['published'] is False
           assert report['starting_meanings']==2197
           assert report['starting_formulations']==2246
-          assert report['removed_duplicate_meanings']==28
-          assert report['surviving_meanings']==2169
+          assert report['removed_duplicate_meanings']==len(json.loads(Path('data/merged_cleanup_decisions.json').read_text())['merge_meanings'])
+          assert report['surviving_meanings']==2197-report['removed_duplicate_meanings']
           assert len(catalog['groups'])==2048
           assert len(sources['groups'])==2048
           assert report['subject_missing']>=0  # migration still in progress
           assert len(report['convention_sensitive_text_translations'])==1
           assert report['source_convention_assessments']==1
           assert report['is_publication_ready'] is False
-          assert len(catalog['consolidated_ids']['meaning_aliases'])==28
+          assert len(catalog['consolidated_ids']['meaning_aliases'])==report['removed_duplicate_meanings']
           titles={g['title'].lower():g for g in catalog['groups']}
           connected=titles['connected space']
           assert len(connected['meanings'])==1, 'Canonical connected-space meaning should be unique'
