@@ -209,7 +209,7 @@ def audit(catalog: dict, rendered: list[dict]) -> dict:
                     meaning_group[r["target_meaning"]] != gid
                     and r["target_meaning"] ==
                         "meaning.mathdef.postwave.scan-weak-topology-cw-complex-20261026"
-                    and r.get("span_start") == start and r.get("span_end") == end
+                    and r.get("span_start", -1) >= 0
                     for r in by_source[fid]
                 )):
                 specialized_context_anchors += 1
