@@ -220,6 +220,37 @@ def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
         if any(m["id"] == unital for m in meanings):
             return unital
 
+    # Infimum/supremum as real or extended-real numbers is a specialization
+    # of order-theoretic bounds. Prefer a meaningful context only if the
+    # source subject makes the intended object clear.
+    if group["title"].casefold() in {"supremum", "infimum"}:
+        subject = set(words(source_meaning.get("label", "")))
+        if subject & {"real", "numerical", "optimization", "analysis", "scv",
+                      "complex", "functional", "stochastic", "probability"}:
+            mid = ("meaning.mathdef.original.real.supremum"
+                   if group["title"].casefold() == "supremum" else
+                   "meaning.mathdef.original.real.infimum")
+            if any(m["id"] == mid for m in meanings):
+                return mid
+        if subject & {"order", "relations", "topology", "poset", "sets"}:
+            mid = ("meaning.wave2.direct.066b1d1b9032a2e86bdd"
+                   if group["title"].casefold() == "supremum" else
+                   "meaning.wave2.direct.d90bc393eeba8fd1be9e")
+            if any(m["id"] == mid for m in meanings):
+                return mid
+
+    if (group["title"].casefold() == "martingale" and
+        source_meaning["id"] == "meaning.mathdef.original.stochastic.martingale-transform"):
+        mid = "meaning.wave2.research81.martingale-discrete"
+        if any(m["id"] == mid for m in meanings):
+            return mid
+    if group["title"].casefold() == "binary operation" and (
+        {"algebra", "group", "monoid", "semigroup"} &
+        set(words(source_meaning.get("label", "")))
+    ):
+        mid = "meaning.wave2.foundation.binary-operation-internal"
+        if any(m["id"] == mid for m in meanings):
+            return mid
     # A minimal polynomial is not the same object for an algebraic element
     # and a linear operator. Select the arithmetic variant only when the source
     # explicitly concerns an algebraic element or number/field extension.
