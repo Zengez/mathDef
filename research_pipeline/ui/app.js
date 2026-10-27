@@ -18,6 +18,7 @@
     exploreMode: savedMode, expanded: {term: new Set(), definition: new Set()},
   };
   let entries = [], lookup = new Map();
+  const sourcesUI = window.ReferenceSourcesUI.create(config, id => lookup.get(id));
   const orderBySourceSubject = window.ReferenceSubjectPriority.orderFormulations;
   const escape = (v) => String(v).replace(/[&<>"']/g, (c) =>
     ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -241,6 +242,9 @@
         '" target="_blank" rel="noopener noreferrer">Source file ↗</a>' : '';
       return '<section class="definition-formulation" aria-label="' + escape(label) + '">' +
         '<div class="formulation-header"><h5>' + escape(label) + '</h5>' +
+        (config.sources_file ? '<button type="button" class="formulation-sources" data-show-sources="' +
+          escape(d.id) + '" data-source-formulation="' + escape(form.key) +
+          '">Sources</button>' : '') +
         formulationCorrection(d, form) + '</div><div class="definition">' + body + '</div>' +
         '<div class="formulation-provenance">' + source + location + '</div></section>';
     }).join('');
@@ -263,13 +267,18 @@
     const topicLink = d.source ? '<a class="source" href="' + escape(d.source) +
       '" target="_blank" rel="noopener noreferrer">' + escape(refLabel) + ' ↗</a>' : "";
     const paperTitle = d.source_title ? '<p class="paper-title">' + escape(d.source_title) + '</p>' : "";
-    const allSources = (d.formulations || []).flatMap(form => form.sources || []);
-    const uniqueSources = [...new Map(allSources.map(s => [s.url + "|" + s.locator, s])).values()];
-    const evidence = uniqueSources.length ?
-      '<div class="related"><h5>Sources used in reconstruction</h5><div class="source-links">' +
-      uniqueSources.map(s => '<a class="source" href="' + escape((s.locator || "").startsWith("https://") ?
-        s.locator : s.url) + '" target="_blank" rel="noopener noreferrer">' +
-        escape(s.title) + ' ↗</a>').join("") + '</div></div>' : "";
+    // The read-only curated registry is opened on demand, not repeated as
+    // scattered links in every definition or conflated with source provenance.
+    const evidence = config.sources_file ? "" :
+      (() => {
+        const sources = (d.formulations || []).flatMap(form => form.sources || []);
+        const unique = [...new Map(sources.map(s => [s.url + "|" + s.locator, s])).values()];
+        return unique.length ? '<div class="related"><h5>References in draft</h5><div class="source-links">' +
+          unique.map(s => '<a class="source" href="' + escape(
+            (s.locator || "").startsWith("https://") ? s.locator : s.url
+          ) + '" target="_blank" rel="noopener noreferrer">' +
+            escape(s.title) + ' ↗</a>').join("") + '</div></div>' : "";
+      })();
     const originalPath = sourceUrl(d);
     const reviewLabel = d.status === "screened_draft" ?
       '<span class="draft-label">Source-screened research draft · not peer verified</span>' :
@@ -278,7 +287,10 @@
        '<span class="draft-label">Prototype entry</span>');
     root.innerHTML = '<article><div class="subject">' + escape(d.category) + '</div>' +
       '<div class="definition-title-row"><h4>' + escape(d.term) + '</h4>' +
-      correctionButton(d.id) + '</div>' + reviewLabel +
+      correctionButton(d.id) +
+      (config.sources_file ? '<button type="button" class="sources-open" data-show-sources="' +
+        escape(d.id) + '">Sources</button>' : '') +
+      '</div>' + reviewLabel +
       ((d.aliases || []).length ? '<p class="aliases">Also called: ' + (d.aliases || []).map(escape).join(", ") + '</p>' : "") +
       exploration(side, d) +
       '<div class="related"><h5>Related definitions</h5><div class="related-list">' +
@@ -346,6 +358,12 @@
       if (!state.split) mode(false);
     });
     el(side + "-detail").addEventListener("click", (event) => {
+      const sourceButton = event.target.closest("button[data-show-sources]");
+      if (sourceButton) {
+        sourcesUI.open(sourceButton.dataset.showSources,
+                       sourceButton.dataset.sourceFormulation || null);
+        return;
+      }
       const toggle = event.target.closest("button[data-expand]");
       if (toggle) {
         const path = toggle.dataset.expand;

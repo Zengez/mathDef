@@ -83,6 +83,7 @@ class ReferenceUITests(unittest.TestCase):
         self.assertTrue((out / "styles.css").exists())
         self.assertTrue((out / "app.js").exists())
         self.assertTrue((out / "subject_priority.js").exists())
+        self.assertTrue((out / "sources_ui.js").exists())
         self.assertIn('src="./subject_priority.js"', markup)
         self.assertTrue((out / "feedback.js").exists())
         self.assertFalse((self.root / "definitions-index.json").exists())
@@ -243,6 +244,8 @@ class ReferenceUITests(unittest.TestCase):
         page = (out / "index.html").read_text()
         self.assertIn("sources-dialog", page)
         self.assertTrue((out / "sources-index.json").exists())
+        self.assertTrue((out / "sources_ui.js").exists())
+        self.assertIn('src="./sources_ui.js"', page)
         self.assertEqual(json.loads((out / "sources-index.json").read_text()), sources)
         self.assertIn('"sources_file": "sources-index.json"', page)
         # A generic independent stage without an explicit source registry

@@ -22,6 +22,9 @@ on:
       - 'research_pipeline/adapters/mathdef/publish_root.py'
       - 'research_pipeline/ui/subject_priority.js'
       - 'research_pipeline/ui/app.js'
+      - 'research_pipeline/ui/sources_ui.js'
+      - 'research_pipeline/tests/test_sources_ui.cjs'
+      - 'research_pipeline/ui/styles.css'
       - 'research_pipeline/ui/renderer.py'
       - 'research_pipeline/ui/template.html'
       - 'research_pipeline/ui/README.md'
@@ -48,6 +51,8 @@ jobs:
         run: |
           node --check research_pipeline/ui/app.js
           node --check research_pipeline/ui/subject_priority.js
+          node --check research_pipeline/ui/sources_ui.js
+          node --test research_pipeline/tests/test_sources_ui.cjs
           node --test research_pipeline/tests/test_subject_priority.cjs
           python -m unittest research_pipeline.tests.test_reference_ui -v
       - name: Compile merged canonical cleanup WITHOUT any global linking

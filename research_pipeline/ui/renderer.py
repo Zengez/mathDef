@@ -364,7 +364,7 @@ def render(catalog_file: Path, branding_file: Path, destination: Path,
         raise ViewError("Unresolved reusable UI branding token")
     destination = Path(destination).resolve()
     destination.mkdir(parents=True, exist_ok=True)
-    for filename in ("app.js", "subject_priority.js", "feedback.js", "styles.css"):
+    for filename in ("app.js", "subject_priority.js", "sources_ui.js", "feedback.js", "styles.css"):
         shutil.copyfile(frontend / filename, destination / filename)
     (destination / "definitions-index.json").write_text(
         json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
