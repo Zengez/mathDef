@@ -672,6 +672,13 @@
       "kept_meaning_id": "meaning.wave2.analysis98.metric-space",
       "kept_formulation_id": "form.wave2.analysis98.metric-space",
       "reason": "User decision 2026-10-27: metric spaces must have nonempty underlying set. Preserve the compatible induced-topology presentation of the same meaning; original source and ID become aliases."
+    },
+    {
+      "case_id": "congruence-original-into-enriched-modulus-formulation",
+      "removed_meaning_id": "meaning.mathdef.original.number.congruence",
+      "kept_meaning_id": "meaning.wave2.pop139.integer-congruence",
+      "kept_formulation_id": "form.meaning.wave2.pop139.integer-congruence",
+      "reason": "User-independent mathematical comparison: both require positive integer modulus, and n|(a−b) precisely iff a−b=kn. The retained enriched researched statement additionally gives the equivalent least-nonnegative-remainder criterion. The previous direct-to-original merge now becomes a transitive direct-to-survivor alias; original quotient-group source and MathWorld divisibility lead survive by source inheritance."
     }
   ],
   "metadata_assignments": {
@@ -928,9 +935,6 @@
     "meaning.mathdef.original.complex.modulus": {
       "subject": "Complex Analysis"
     },
-    "meaning.mathdef.original.number.congruence": {
-      "subject": "Number Theory"
-    },
     "meaning.mathdef.original.category.contravariant-functor": {
       "subject": "Category Theory"
     },
@@ -1071,6 +1075,9 @@
     "meaning.wave2.pop140.affine-hull": {
       "subject": "Geometry",
       "context": "Real affine spaces"
+    },
+    "meaning.wave2.pop139.integer-congruence": {
+      "subject": "Number Theory"
     }
   },
   "text_overrides": {
