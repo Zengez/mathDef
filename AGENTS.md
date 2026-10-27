@@ -34,30 +34,39 @@ Do not initiate a new candidate discovery phase unless the user separately
 authorizes it. Do not revive the discarded dependency graphs, mandatory slow
 gates, review packets, retrospective independent Wave2 edits, or old queues.
 
-**ACTIVE PHASE: LINKING EXISTING MATHEMATICAL DEFINITIONS. FIRST GLOBAL
-PASS IMPLEMENTED AND SMOKE-TESTED (2026-10-26).**
-The reusable `research_pipeline/adapters/mathdef/merged_linking.py` now links
-existing terminology in the **merged-only** reference after assembling 2,197
-meanings. Successful CI shows **2,334 new tentative definition-use links**,
-**244 previously screened links anchored to text**, and **1,544/2,246**
-formulations with positioned links. **860 ambiguous-context occurrences**
-are recorded in generated `/reconstruction/merged/link-report.json`; they are
-NOT auto-admitted without clear variant/context evidence. The matcher masks TeX
-math, supports useful plurals, avoids duplicate/self-links, and marks
-automatically inferred links **Suggested** in the inline/nested UI, where
-community link-error reports remain enabled.
+**INITIAL POST-WAVE2 MERGED LINKING WAVE COMPLETE (2026-10-26).**
+The original frozen quick-scan terminology queue is fully processed
+(**2,019/2,019**). The separate merged-only reference contains **2,197 existing
+meanings** in 2,048 headings and 2,246 formulations. A conservative,
+source-offset-checked lexical linking pass now supplies **2,836 tentative
+definition-use links** (visibly marked **Suggested**) plus **259 previously
+screened relationships newly anchored inline**. **1,706/2,246** formulations
+have positioned links. The generated `/reconstruction/merged/link-report.json`
+preserves source snippets for **117 genuinely ambiguous existing-term
+occurrences**, left unlinked rather than arbitrarily assigning a meaning.
 
-**NEXT:** targeted contextual disambiguation of the most common ambiguities,
-then browser-level verification of actual expansion, recursion, and responsive
-rendering. The checkpoint, code and validation are documented in
-`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/LINKING_FIRST_PASS_2026-10-26.md`.
-Maintain the dual independent searches and path-local circular expansion
-suppression. Keep candidate creation/discovery separate, and do not reintroduce
-staged dependency-review gates, old Wave2 rebuilding or production source edits.
+**CORPUS / UI VERIFIED:** Original production definitions and frozen
+independent Wave1/Wave2 meanings have not been altered; no new terminology
+candidates were collected. Linker regression, math/TeX boundary checks,
+candidate-source exact-match checks, JS syntax, both site builds, and real
+headless Chromium interaction checks passed. Browser testing covers separate
+term/definition search, recursive two-level inline expansion, sibling reuse,
+ancestor loop prevention, mobile viewport, and default In-Line mode (with
+previously saved user preference honored). Nested mode remains available.
 
+**NO REQUIRED REVIEW GATES REMAIN FOR THIS LINKING WAVE.** Some mathematically
+distinct variants intentionally remain unresolved in `link-report.json`
+(e.g. real-vs-general random variables, order-vs-real supremum, discrete-vs-
+continuous martingales). Only conduct targeted review or community-feedback
+corrections as needed. **Do not initiate a new terminology discovery scan
+without explicit user authorization**, and do not revive discarded dependency
+graphs or mandatory staged packet/gate workflows.
 
-See `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/README.md`
-for the completed research log and the linking handoff.
+See `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/LINKING_CLOSEOUT_2026-10-26.md`
+for the durable linking-wave closeout and
+`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/LINKING_FIRST_PASS_2026-10-26.md`
+for the original first-pass baseline. No assistance is needed from the user
+to close this linking pass.
 
 ## New explicit authorization: original-content merger and rapid scan (2026-10-26)
 
