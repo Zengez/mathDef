@@ -50,6 +50,9 @@ async function main() {
     page.on("pageerror", error => uncaught.push(error.message));
     await page.goto(url, {waitUntil: "domcontentloaded"});
     await page.locator("#total").filter({hasText: String(entries.length)}).waitFor();
+    assert.equal(await page.locator('button[data-explore-mode="inline"]')
+                       .getAttribute("aria-pressed"), "true",
+                 "New visitors should begin with inline definition expansion");
 
     // Independently filtered term and definition search controls.
     await page.locator("#term-query").fill("CW complex");
