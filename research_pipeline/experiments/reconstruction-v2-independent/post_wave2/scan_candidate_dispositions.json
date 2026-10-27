@@ -6977,11 +6977,29 @@
           "term": "Germ of a complex analytic set"
         }
       ],
-      "disposition": "new",
-      "reason": "Added complex-analytic subsets, locally common zeros of finitely many holomorphic functions; distinguished from the germ and from descriptive-set-theoretic analytic sets.",
+      "disposition": "existing",
+      "reason": "Post-batch cross-corpus duplicate correction: original definitions/scv/complex-analytic-subset.tex already specifies the same relatively closed locally holomorphic zero-set meaning. Retain the original entry; remove redundant post-Wave2 scan addition. The original analytic-set germ remains a different object.",
       "targets": [
-        "meaning.mathdef.postwave.scan-complex-analytic-subset-20261026"
-      ]
+        "definitions/scv/complex-analytic-subset.tex"
+      ],
+      "reconciliation": {
+        "merged_from": "meaning.mathdef.postwave.scan-complex-analytic-subset-20261026",
+        "supplemental_sources": [
+          {
+            "title": "Encyclopedia of Mathematics — Analytic set (complex-analytic meaning)",
+            "url": "https://encyclopediaofmath.org/wiki/Analytic_set"
+          },
+          {
+            "title": "Original mathDef — Germ of a complex analytic set",
+            "url": "https://github.com/Zengez/mathDef/blob/main/definitions/scv/analytic-set-germ.tex"
+          }
+        ],
+        "edge_case_notes": [
+          "Empty and whole complex manifold analytic subsets are admitted.",
+          "Do not conflate local analytic-set germs with global analytic subsets.",
+          "Descriptive-set-theoretic analytic sets are a different usage."
+        ]
+      }
     },
     {
       "rank": 319,
