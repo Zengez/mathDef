@@ -27,19 +27,18 @@ Incorporate useful mathematical content DIRECTLY. Do not reintroduce
 mandatory dependency graphs, slow gates, arbitrary verification packet stages,
 or a new external vocabulary hunt.
 
-The original frozen-scan incorporation has processed ranked candidates
-**1–540 of 2,019** in
+The existing frozen original terminology scan has now been dispositioned through
+**rank 740 of 2,019** in
 `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/scan_candidate_dispositions.json`.
-The scan-driven work has now produced **39 net new researched meanings**
-(after merging one previously redundant complex-analytic-subset meaning back
-into its already-existing original definition). The combined-only post-Wave2
-overlay contains **157 meanings**: 118 earlier research additions plus 39
-net new scan-derived meanings. This pass processed the actual next **200**
-ranks 341–540: **6 researched new meanings**, 36 existing equivalents or
-covered senses, 156 nonterminological fragments, and 2 genuinely ambiguous
-source contexts. The original 2,019-candidate collection remains UNCHANGED.
-**Next candidate rank is 541.** No further candidate harvesting or exploratory
-vocabulary searching is authorized while this collection is pending.
+The merged-only post-Wave2 overlay now has **164** meanings, including **46 net
+scan-derived researched meanings** above the 118 previously added post-Wave2
+ones. This newest consecutive 200-lead batch (541–740) produced 7 genuinely
+new mathematical definitions, 29 existing matches, 161 lexical false
+positives, and 3 contextual ambiguities. Every disposition contains the
+literal phrase, occurrence count, source examples and decision.
+**NEXT ORIGINAL CANDIDATE: rank 741.** There is NO authorization to add
+new candidates, discover fresh vocabulary, restart source scans, or return
+to dependency-graph audit workflows.
 
 Keep per-candidate source examples, concise outcome and target mapping in this
 same lightweight ledger; it is a resumption log, not a mathematical
