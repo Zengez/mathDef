@@ -999,5 +999,28 @@
       "translation_kind": "paraphrase_scoped_restriction_explicated",
       "audit_note": "The added nonempty condition preserves the empty-space behavior: empty X has no connected components."
     }
-  }
+  },
+  "merge_formulations": [
+    {
+      "case_id": "tree-cycle-wording",
+      "meaning_id": "meaning.wave2.cross104.tree-unrooted",
+      "removed_formulation_id": "form.wave2.cross104.tree-unrooted.2",
+      "kept_formulation_id": "form.wave2.cross104.tree-unrooted.1",
+      "reason": "For a simple graph a nontrivial closed edge-trail exists iff a cycle exists; no genuinely different construction is supplied by this alternate wording."
+    },
+    {
+      "case_id": "mapping-image-comprehension-wording",
+      "meaning_id": "meaning.wave2.cross110.image-of-mapping",
+      "removed_formulation_id": "form.wave2.cross110.image-of-mapping.2",
+      "kept_formulation_id": "form.wave2.cross110.image-of-mapping.1",
+      "reason": "The set-builder display of the attained values versus f[S]={f(s):s∈S} is a trivial notational reexpression of one defining image set."
+    },
+    {
+      "case_id": "numeric-kronecker-iverson-wording",
+      "meaning_id": "meaning.wave2.bridge136.numeric-delta",
+      "removed_formulation_id": "form.wave2.bridge136.numeric-delta.2",
+      "kept_formulation_id": "form.wave2.bridge136.numeric-delta.1",
+      "reason": "The Iverson indicator [a=b] is just a shorthand for the same piecewise 0/1 equality predicate, rather than a distinct mathematical construction."
+    }
+  ]
 }
