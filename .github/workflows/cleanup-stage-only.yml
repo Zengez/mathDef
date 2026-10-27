@@ -8,6 +8,7 @@ on:
       - 'data/merged_cleanup_decisions.json'
       - 'data/math_subjects.json'
       - 'data/math_subject_routing.json'
+      - 'data/math_subject_assignments.json'
       - 'data/math_contexts.json'
       - 'data/math_definition_conventions.json'
       - 'data/math_source_convention_assessments.json'
@@ -49,7 +50,7 @@ jobs:
           assert report['surviving_meanings']==2197-report['removed_duplicate_meanings']
           assert len(catalog['groups'])==2048
           assert len(sources['groups'])==2048
-          assert report['subject_missing']>=0  # migration still in progress
+          assert report['subject_missing']==0, "Every surviving meaning must have a mathematical Subject"
           assert len(report['convention_sensitive_text_translations'])==1
           assert report['source_convention_assessments']==1
           assert report['is_publication_ready'] is False
