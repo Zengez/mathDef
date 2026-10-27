@@ -106,7 +106,7 @@ def _literal_target_headings_in_form(catalog: dict, form_id: str) -> set[str]:
             end=i+len(parts)
             if end>len(tokens) or tuple(t[0] for t in tokens[i:end])!=parts:
                 continue
-            if any(not re.fullmatch(r"\\s+|\\s*[-–]\\s*",body[tokens[k][2]:tokens[k+1][1]])
+            if any(not re.fullmatch(r"\s+|\s*[-–]\s*",body[tokens[k][2]:tokens[k+1][1]])
                    for k in range(i,end-1)):
                 continue
             seen.update(gids)
