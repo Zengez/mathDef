@@ -155,7 +155,7 @@ jobs:
             --index /tmp/mathdef-merge-check/merged/definitions-index.json \
             --report /tmp/mathdef-whole-graph-audit.json
 
-      - name: Render main production site from merged meanings and verify original sources survive
+      - name: Render cleaned production root separately from frozen merged research preview
         run: |
           python -m research_pipeline.adapters.mathdef.publish_root --site-root /tmp/mathdef-merge-check
           python - <<'PY'
@@ -164,7 +164,14 @@ jobs:
           root=Path("/tmp/mathdef-merge-check")
           main=json.loads((root/"definitions-index.json").read_text())
           merged=json.loads((root/"merged/definitions-index.json").read_text())
-          assert main==merged, "Main site must render identical complete merged reference"
+          # Historical /merged/ is an intentionally frozen pre-cleanup view.
+          # Root must now show the user-approved canonical cleanup instead.
+          assert len(merged)>=2000, "Historical merged preview changed"
+          assert len(main)==1986, "Cleaned primary site must have 1,986 headings"
+          assert sum(len(x["formulations"]) for x in main)==2104
+          assert all(g["formulations"] for g in main)
+          assert (root/"sources-index.json").is_file()
+          assert (root/"audits/global-link-rebuild.json").is_file()
           feed=json.loads((root/"api/definitions/v2/snapshot.json").read_text())
           manifest=json.loads((root/"api/definitions/v2/manifest.json").read_text())
           assert manifest["schema"] == "mathdef.definition-manifest.v2"
@@ -174,12 +181,16 @@ jobs:
           assert manifest["formulation_count"] == sum(len(g["formulations"]) for g in feed["definitions"])
           assert manifest["original_definition_count"] == sum(len(g["original_ids"]) for g in feed["definitions"])
           assert {g["id"] for g in feed["definitions"]} == {g["id"] for g in main}
-          assert len(main) >= 2000
+          assert manifest["meaning_count"]==2065
+          assert manifest["formulation_count"]==2104
+          assert manifest["original_definition_count"]==1014
+          assert feed["consolidated_ids"]==json.loads((root/"catalog.json").read_text())["consolidated_ids"]
           assert (root/"catalog.json").is_file()
           assert (root/"link-report.json").is_file()
           assert (root/"index.html").is_file()
           assert "Expanded mathematical definitions" in (root/"index.html").read_text()
-          print("Production-root merged reference verified:",len(main),"searchable term groups")
+          print("Cleaned primary site verified:",len(main),
+                "headings; historical research preview:",len(merged),"headings")
           PY
 
       - name: Browser-check recursive inline linking and independent searches
