@@ -1138,20 +1138,6 @@
       "decision_source": "user_adjudication_2026-10-27",
       "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
     },
-    "form.wave2.pop140.affine-hull-combinations": {
-      "original_text": "For an integer d≥1 and a set S⊆ℝ^d, aff(S) is the set of all vectors ∑_{i=1}^{k} αᵢxᵢ with k≥1, xᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. In particular aff(∅)=∅.",
-      "text": "Let A be a real affine space and S⊆A a nonempty set. The affine hull (affine span) of S is the set of all finite affine combinations ∑_{i=1}^{k} αᵢpᵢ with k≥1, pᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. Equivalently, it is the smallest affine subspace of A containing S. Under mathDef's convention, the affine hull/span is not defined for S=∅.",
-      "reason": "User-approved same algebraic/analytic construction, generalized to real affine spaces and defined only for nonempty inputs.",
-      "decision_source": "user_adjudication_2026-10-27",
-      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
-    },
-    "form.wave2.pop140.affine-hull-intersection": {
-      "original_text": "Let d≥1 and S⊆ℝ^d. Define aff(S) as the intersection of all affine-closed subsets C⊆ℝ^d containing S, where affine-closed means containing every finite affine combination of its members; the empty set is affine-closed.",
-      "text": "Let A be a real affine space and S⊆A nonempty. Equivalently, aff(S) is the intersection of all subsets C⊆A containing S that are closed under finite affine combinations of their points. For nonempty S the intersection is an affine subspace of A, and this characterizes the same affine hull (affine span).",
-      "reason": "Retain informative intersection characterization while respecting nonempty inputs and general real affine spaces.",
-      "decision_source": "user_adjudication_2026-10-27",
-      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
-    },
     "form.meaning.mathdef.postwave.totally-bounded-metric-space-20261026": {
       "original_text": "A metric space (X,d) is totally bounded if, for every ε>0, there exist finitely many points x_1,…,x_n∈X such that X=⋃_{i=1}^n B_d(x_i,ε). For X=∅ one may take n=0. Equivalently, X admits a finite ε-net for every ε>0. Total boundedness implies boundedness, but not conversely.",
       "text": "A metric space (X,d) is totally bounded if, for every ε>0, there exist finitely many points x_1,…,x_n∈X such that X=⋃_{i=1}^n B_d(x_i,ε). Equivalently, X admits a finite ε-net for every ε>0. Total boundedness implies boundedness, but not conversely.",
@@ -1170,6 +1156,13 @@
       "original_text": "A metric space (X,d) is compact if every cover of X by sets open in the d-induced topology admits a finite subcover. Equivalently, every sequence in X has a convergent subsequence with limit in X; equivalently, (X,d) is complete and totally bounded. The empty metric space is compact under the open-cover convention. These equivalences are specific to metric spaces, not arbitrary topological spaces.",
       "text": "A metric space (X,d) is compact if every cover of X by sets open in the d-induced topology admits a finite subcover. Equivalently, every sequence in X has a convergent subsequence with limit in X; equivalently, (X,d) is complete and totally bounded. These equivalences are specific to metric spaces, not arbitrary topological spaces.",
       "reason": "Remove now-inapplicable empty metric-space clause without changing the topological compactness convention.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.meaning.wave2.pop140.affine-hull": {
+      "original_text": "For an integer d≥1 and a set S⊆ℝ^d, aff(S) is the set of all vectors ∑_{i=1}^{k} αᵢxᵢ with k≥1, xᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. In particular aff(∅)=∅.\n\nEquivalent formulation: Let d≥1 and S⊆ℝ^d. Define aff(S) as the intersection of all affine-closed subsets C⊆ℝ^d containing S, where affine-closed means containing every finite affine combination of its members; the empty set is affine-closed.",
+      "text": "Let A be a real affine space and S⊆A nonempty. The affine hull (affine span) of S consists of all finite affine combinations ∑_{i=1}^{k} αᵢpᵢ with k≥1, pᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. Equivalently, it is the smallest affine subspace of A containing S.\n\nEquivalent intersection formulation: the affine hull is the intersection of all subsets C⊆A containing S that are closed under finite affine combinations of their points. For nonempty S this intersection is an affine subspace. Under mathDef's convention, the affine hull/span of the empty set is not defined.",
+      "reason": "User-adjudicated same nonempty-input affine span/hull in arbitrary real affine spaces; preserve distinct finite-combination, smallest-affine-subspace and affine-closed-intersection characterizations within the original display formulation.",
       "decision_source": "user_adjudication_2026-10-27",
       "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
     }
