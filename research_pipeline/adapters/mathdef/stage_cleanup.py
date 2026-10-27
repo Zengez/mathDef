@@ -21,6 +21,7 @@ WAVE2 = Path("research_pipeline/experiments/reconstruction-v2-independent")
 def stage(repo: Path, output: Path) -> dict:
     repo = Path(repo).resolve()
     output = Path(output).resolve()
+    output.mkdir(parents=True, exist_ok=True)
     with TemporaryDirectory(prefix="mathdef-cleanup-wave2-") as tmp:
         draft = Path(tmp) / "wave2"
         build_wave2(repo / WAVE2, draft=True, output=draft)
