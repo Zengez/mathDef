@@ -1,0 +1,71 @@
+name: Stage-only mathDef cleanup (no linking rebuild)
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - work/dedup-subject-context-sources-20261027
+    paths:
+      - 'data/merged_cleanup_decisions.json'
+      - 'data/math_subjects.json'
+      - 'data/math_contexts.json'
+      - 'data/math_definition_conventions.json'
+      - 'data/math_source_convention_assessments.json'
+      - 'research_pipeline/adapters/mathdef/merged_cleanup.py'
+      - 'research_pipeline/adapters/mathdef/conventions.py'
+      - 'research_pipeline/adapters/mathdef/stage_cleanup.py'
+      - 'research_pipeline/tests/test_merged_cleanup.py'
+      - 'research_pipeline/tests/test_conventions.py'
+      - '.github/workflows/cleanup-stage-only.yml'
+permissions:
+  contents: read
+jobs:
+  stage-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test semantic cleanup and live convention fallback
+        run: python -m unittest research_pipeline.tests.test_merged_cleanup research_pipeline.tests.test_conventions -v
+      - name: Compile merged canonical cleanup WITHOUT any global linking
+        run: |
+          python -m research_pipeline.adapters.mathdef.stage_cleanup --output /tmp/mathdef-cleanup-stage
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('/tmp/mathdef-cleanup-stage')
+          report=json.loads((root/'cleanup-report.stage-only.json').read_text())
+          catalog=json.loads((root/'catalog.stage-only.json').read_text())
+          sources=json.loads((root/'sources.stage-only.json').read_text())
+          checks=json.loads((root/'build-provenance.stage-only.json').read_text())
+          assert checks['full_linking_rebuild_ran'] is False
+          assert checks['published'] is False
+          assert report['starting_meanings']==2197
+          assert report['starting_formulations']==2246
+          assert report['removed_duplicate_meanings']==28
+          assert report['surviving_meanings']==2169
+          assert len(catalog['groups'])==2048
+          assert len(sources['groups'])==2048
+          assert report['subject_missing']>=0  # migration still in progress
+          assert len(report['convention_sensitive_text_translations'])==1
+          assert report['source_convention_assessments']==1
+          assert report['is_publication_ready'] is False
+          assert len(catalog['consolidated_ids']['meaning_aliases'])==28
+          titles={g['title'].lower():g for g in catalog['groups']}
+          connected=titles['connected space']
+          assert len(connected['meanings'])==1, 'Canonical connected-space meaning should be unique'
+          assert 'convention_notes' in connected['meanings'][0]
+          component=titles['connected component']['meanings'][0]
+          assert 'nonempty connected subset' in component['formulations'][0]['text']
+          stacks=[row for row in sources['sources'].values() if row['url']=='https://stacks.math.columbia.edu/tag/004R']
+          assert len(stacks)==1
+          assert stacks[0]['source_convention_assessments'][0]['status']=='verified_applies'
+          assert stacks[0]['source_convention_assessments'][0]['restriction']=='nonempty_required'
+          print('Staged semantic merge + convention/source checks passed', {
+              'terms':len(catalog['groups']),
+              'meanings':report['surviving_meanings'],
+              'formulations':report['surviving_formulations'],
+              'source_ids':len(sources['sources'])
+          })
+          PY
