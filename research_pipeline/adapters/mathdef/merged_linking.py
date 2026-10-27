@@ -74,6 +74,22 @@ BROAD_REPRESENTATIVE = {
     "total order": "meaning.mathdef.original.relations.total-order",
     "affine combination": "meaning.mathdef.original.geometry.affine-combination",
     "preadditive category": "meaning.mathdef.original.category.preadditive-category",
+    "separable algebraic extension": "meaning.50d335de00e5f11d.separable-algebraic-extension",
+    "stochastic process": "meaning.wave2.found85.stochastic-process",
+    "full subcategory": "meaning.mathdef.postwave.full-subcategory-20261026",
+    "initial object": "meaning.mathdef.original.category.initial-object",
+    "quotient topology": "meaning.mathdef.original.topology.quotient-topology",
+    "valuation ring": "meaning.mathdef.original.arithmetic.valuation-ring",
+    "cartesian product": "meaning.mathdef.original.sets.cartesian-product",
+    "discrete topology": "meaning.mathdef.original.topology.discrete-topology",
+    "monoidal category": "meaning.mathdef.original.category.monoidal-category",
+    "normal subgroup": "meaning.mathdef.original.algebra.normal-subgroup",
+    "polynomial ring": "meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+    "principal ideal domain": "meaning.mathdef.original.arithmetic.principal-ideal-domain",
+    "quotient ring": "meaning.mathdef.original.algebra.quotient-ring",
+    "successor ordinal": "meaning.mathdef.original.sets.successor-ordinal",
+    "von neumann ordinal": "meaning.mathdef.original.sets.ordinal",
+    "affine scheme": "meaning.mathdef.original.schemes.affine-scheme",
 }
 
 
@@ -209,6 +225,87 @@ def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
     representative = BROAD_REPRESENTATIVE.get(group["title"].casefold())
     if representative and any(m["id"] == representative for m in meanings):
         return representative
+    # For an unconstrained random variable, the arbitrary measurable-space
+    # codomain definition is mathematically general enough to cover both the
+    # real-valued and nonreal cases. Where the source explicitly says "real
+    # random variable", show the real-valued formulation first instead.
+    if group["title"].casefold() == "random variable":
+        excerpt = ""
+        if occurrence:
+            _, body, start, end = occurrence
+            excerpt = body[max(0, start-30):min(len(body), end+28)]
+        real_named = re.search(
+            r"\\breal(?:-valued)?\\s+random\\s+variables?\\b",
+            excerpt, re.IGNORECASE,
+        )
+        mid = ("meaning.wave2.prob90.random-variable-real" if real_named else
+               "meaning.wave2.prob90.random-variable-general")
+        if any(m["id"] == mid for m in meanings):
+            return mid
+
+    # Ordinary functional-analysis normed spaces have real or complex scalars.
+    # Do not force this narrower convention on unrelated nonstandard scalar
+    # divisions. The explicit source meanings here have that scope.
+    if group["title"].casefold() == "normed vector space" and (
+        source_meaning["id"] in {
+            "meaning.mathdef.original.functional.banach-space",
+            "meaning.wave2.pop142.bounded-linear",
+            "meaning.mathdef.postwave.scan-closed-linear-subspace-20261026",
+        }
+    ):
+        mid = "meaning.mathdef.original.functional.normed-space"
+        if any(m["id"] == mid for m in meanings):
+            return mid
+
+    # The mathematical source identifies a subset's (derived-set) limit point,
+    # not a subsequential accumulation of an indexed sequence.
+    if group["title"].casefold() == "accumulation point" and (
+        source_meaning["id"] in {
+            "meaning.mathdef.original.real.limit-of-function",
+            "meaning.mathdef.original.topology.limit-point",
+        }
+    ):
+        mid = "meaning.wave2.cross110.set-accumulation"
+        if any(m["id"] == mid for m in meanings):
+            return mid
+
+    # Time indices in these source statements disambiguate the two researched
+    # martingale variants without imposing a global default.
+    if group["title"].casefold() == "martingale":
+        martingale_context = {
+            "meaning.mathdef.original.stochastic.martingale":
+                "meaning.wave2.research81.martingale-discrete",
+            "meaning.mathdef.original.stochastic.local-martingale":
+                "meaning.wave2.research81.martingale-continuous-index",
+            "meaning.mathdef.postwave.scan-localizing-sequence-local-martingale-20261026":
+                "meaning.wave2.research81.martingale-continuous-index",
+        }
+        mid = martingale_context.get(source_meaning["id"])
+        if mid and any(m["id"] == mid for m in meanings):
+            return mid
+
+    # An ordinary metric ball is appropriate in this metric closure statement;
+    # the forward/backward quasi-metric ball sources are deliberately left
+    # ambiguous rather than linked to a symmetric metric ball.
+    if group["title"].casefold() == "open ball" and (
+        source_meaning["id"] == "meaning.mathdef.original.topology.closure"
+    ):
+        mid = "meaning.mathdef.original.metric.open-ball"
+        if any(m["id"] == mid for m in meanings):
+            return mid
+
+    # The two scheme/reduced sources work in commutative algebra. Do not use
+    # this specialization for a possibly noncommutative reduced ring.
+    if group["title"].casefold() == "reduced ring" and (
+        source_meaning["id"] in {
+            "meaning.6c51aeb904a0fe74.geometrically-reduced-algebra",
+            "meaning.6a21c2d4f3354c8f.reduced-scheme",
+        }
+    ):
+        mid = "meaning.mathdef.original.commalg.reduced-ring"
+        if any(m["id"] == mid for m in meanings):
+            return mid
+
     # Some ring maps are non-unital by convention. A ring map used to specify
     # an affine scheme morphism must preserve identities; only that precise
     # mathematical context warrants the unital specialization automatically.
