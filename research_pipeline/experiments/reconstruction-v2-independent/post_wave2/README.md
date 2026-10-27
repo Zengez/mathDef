@@ -521,3 +521,43 @@ earlier additions. Expected combined meanings **2,129** =
 958 independent Wave2 + 1,014 original + 157 post-Wave2.
 The original frozen scan, original production definitions, and independent
 Wave2 are not edited or relabeled.
+
+
+## Original scan candidate incorporation — ranks 541–740 (2026-10-26)
+
+Processed the **next 200 actual original 2,019-lead quick-scan candidate
+records**, in strictly consecutive rank order. The existing
+`scan_candidate_dispositions.json` contains the literal phrase,
+occurrence count, original source examples, short contextual justification
+and source-valid target mapping for every rank. **No new candidates** were
+sought or appended, no dependency graphs were reintroduced.
+
+The batch contributed **seven source-attributed mathematical meanings**
+directly to merged-only `terms.json`:
+
+- Rank 541: complex Euclidean space ℂⁿ (complex and real dimensions,
+  fixed standard Hermitian inner product)
+- Rank 542: Hermitian complex matrix (A=A*, without assumed positivity)
+- Rank 556: computable sequence of rationals (uniformly effective exact
+  output, no implied effective modulus or computable limit)
+- Rank 567: constant map (explicit empty-domain and empty-codomain
+  convention)
+- Rank 586: conull measurable subset of a measure space (not simply
+  `μ(A)=μ(X)` in infinite-measure spaces)
+- Rank 639: unital cohomologically graded differential algebra
+  (degree +1 d²=0, graded Leibniz and convention choice)
+- Rank 650: discrete subset in the subspace topology (need not be closed)
+
+The other **193** ranked phrases resolved to **29** already-covered
+meanings, **161** sentence/quantifier fragments that are not named
+mathematical concepts, and **three** context ambiguities (computable
+limit 555, density function 624, empty interval 680). Definitions
+include assumptions and source references. These remain
+assistant-reviewed research, not independently certified proofs.
+
+Checkpoint: **740/2,019 original leads completed**, **1,279 remain**;
+next rank **741**. The post-Wave2 merged-only overlay now contains
+**164** meanings (118 pre-scan additions + 46 net scan-derived meanings);
+expected combined corpus **2,136** meanings (958 independent Wave2 +
+1,014 original + 164 researched overlay). Original scan and historical
+source snapshots remain untouched.
