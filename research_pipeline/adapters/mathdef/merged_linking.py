@@ -90,6 +90,22 @@ BROAD_REPRESENTATIVE = {
     "successor ordinal": "meaning.mathdef.original.sets.successor-ordinal",
     "von neumann ordinal": "meaning.mathdef.original.sets.ordinal",
     "affine scheme": "meaning.mathdef.original.schemes.affine-scheme",
+    "chromatic number": "meaning.mathdef.original.graph.chromatic-number",
+    "coequalizer": "meaning.mathdef.original.category.coequalizer",
+    "connected space": "meaning.mathdef.original.topology.connected-space",
+    "discrete valuation ring": "meaning.mathdef.original.arithmetic.discrete-valuation-ring",
+    "limit of a diagram": "meaning.mathdef.original.category.limit",
+    "locally finite borel measure": "meaning.mathdef.postwave.scan-locally-finite-borel-measure-20261026",
+    "morphism of schemes": "meaning.mathdef.original.schemes.morphism-schemes",
+    "power set": "meaning.mathdef.original.sets.power-set",
+    "prime number": "meaning.mathdef.original.number.prime-number",
+    "projective module": "meaning.mathdef.original.commalg.projective-module",
+    "quotient group": "meaning.mathdef.original.algebra.quotient-group",
+    "radical ideal": "meaning.mathdef.original.commalg.radical-ideal-property",
+    "surjective function": "meaning.mathdef.original.functions.surjective",
+    "symmetric relation": "meaning.mathdef.original.relations.symmetric-relation",
+    "transitive set": "meaning.mathdef.original.sets.transitive-set",
+    "unique factorization domain": "meaning.mathdef.original.arithmetic.unique-factorization-domain",
 }
 
 
@@ -251,6 +267,7 @@ def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
             "meaning.mathdef.original.functional.banach-space",
             "meaning.wave2.pop142.bounded-linear",
             "meaning.mathdef.postwave.scan-closed-linear-subspace-20261026",
+            "meaning.wave2.pop142.bounded-operator-norm",
         }
     ):
         mid = "meaning.mathdef.original.functional.normed-space"
@@ -305,6 +322,35 @@ def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
         mid = "meaning.mathdef.original.commalg.reduced-ring"
         if any(m["id"] == mid for m in meanings):
             return mid
+
+    # Krull dimension/height/depth are suprema of the nonnegative integer
+    # lengths of chains or regular sequences (possibly +infinity).
+    # These commutative-algebra contexts use the general order-theoretic
+    # least-upper-bound concept, not specifically a real-valued supremum.
+    if group["title"].casefold() == "supremum":
+        subject = set(words(source_meaning.get("label", "")))
+        if subject & {"commutative", "module", "ideal", "height", "dimension",
+                      "depth", "prime"}:
+            mid = "meaning.wave2.direct.066b1d1b9032a2e86bdd"
+            if any(m["id"] == mid for m in meanings):
+                return mid
+
+    # Source-precise rather than global convention choices.
+    scoped = {
+        ("open ball", "meaning.wave2.direct.23c297a4a1c27fe4ec73"):
+            "meaning.mathdef.original.metric.open-ball",
+        ("closed ball", "meaning.mathdef.original.geometry.sphere"):
+            "meaning.wave2.directional113.closed-norm",
+        ("minimal polynomial", "meaning.mathdef.original.algebra.algebraic-element"):
+            "meaning.mathdef.original.arithmetic.minimal-polynomial",
+        # In the original zero-polynomial definition 'rings with zero divisors'
+        # means nontrivial zero-divisor pairs, not the element zero itself.
+        ("zero divisor", "meaning.mathdef.postwave.scan-zero-polynomial-20261026"):
+            "meaning.wave2.direct.8f2dea7e2bd1211c0cf6",
+    }
+    mid = scoped.get((group["title"].casefold(), source_meaning["id"]))
+    if mid and any(m["id"] == mid for m in meanings):
+        return mid
 
     # Some ring maps are non-unital by convention. A ring map used to specify
     # an affine scheme morphism must preserve identities; only that precise
