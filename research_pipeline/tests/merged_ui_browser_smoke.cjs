@@ -15,12 +15,15 @@ const entries = JSON.parse(fs.readFileSync(path.join(root, "definitions-index.js
 const lookup = new Map(entries.map((d) => [d.id, d]));
 
 function validAnchoredDependency(group) {
+  const siblings = new Set((group.formulations || []).flatMap(
+    f => f.dependencies || []).map(dep => dep.id));
   for (const form of group.formulations || []) {
     for (const dep of form.dependencies || []) {
       const target = lookup.get(dep.id);
       if (!target || !(dep.start >= 0)) continue;
       const grandchild = (target.formulations || []).flatMap(f => f.dependencies || [])
-        .find(inner => inner.id !== group.id && inner.id !== dep.id && inner.start >= 0);
+        .find(inner => inner.id !== group.id && inner.id !== dep.id &&
+                 !siblings.has(inner.id) && inner.start >= 0);
       if (grandchild) return {dep, target, grandchild};
     }
   }
@@ -64,13 +67,17 @@ async function main() {
     await page.locator('#term-results button[data-id="' + chosen.d.id + '"]').click();
     await page.locator('button[data-explore-mode="inline"]').click();
 
-    const first = page.locator("#term-detail .inline-cue").first();
+    const first = page.locator(
+      '#term-detail button.inline-cue[data-expand$=">' + chosen.match.dep.id + '"]'
+    ).first();
     assert((await first.count()) > 0, "Linked definitions should appear inline");
     await first.click();
     assert((await page.locator("#term-detail .inline-insert").count()) >= 1,
            "Clicking an inline definition link must reveal the child definition");
 
     const embedded = page.locator("#term-detail .inline-insert button.inline-cue").first();
+    assert((await embedded.count()) > 0,
+           "Selected nested definition should expose another linked definition");
     if ((await embedded.count()) > 0) {
       await embedded.click();
       assert((await page.locator("#term-detail .inline-insert").count()) >= 1,
