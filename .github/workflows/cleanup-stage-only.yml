@@ -7,10 +7,12 @@ on:
     paths:
       - 'data/merged_cleanup_decisions.json'
       - 'data/math_subjects.json'
+      - 'data/math_subject_routing.json'
       - 'data/math_contexts.json'
       - 'data/math_definition_conventions.json'
       - 'data/math_source_convention_assessments.json'
       - 'research_pipeline/adapters/mathdef/merged_cleanup.py'
+      - 'research_pipeline/adapters/mathdef/subject_routing.py'
       - 'research_pipeline/adapters/mathdef/conventions.py'
       - 'research_pipeline/adapters/mathdef/stage_cleanup.py'
       - 'research_pipeline/tests/test_merged_cleanup.py'
