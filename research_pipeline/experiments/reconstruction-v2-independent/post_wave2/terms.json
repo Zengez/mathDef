@@ -6030,6 +6030,35 @@
         "Equal finite dimensions for the standard square method; well-posedness not automatic."
       ],
       "research_status": "assistant-reviewed sourced mathematical variant from frozen original scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-piecewise-polynomial-real-interval-20261026",
+      "candidate_id": "postwave-scan:rank-1318",
+      "term": "piecewise polynomial function on a real interval",
+      "context": "Numerical analysis · finite partition into polynomial pieces with no smoothness assumed",
+      "aliases": [
+        "piecewise polynomial"
+      ],
+      "definition": "Let [a,b] be a closed real interval with a<b. A function f:[a,b]→ℝ is piecewise polynomial if a finite partition a=x₀<x₁<⋯<x_N=b and real polynomials p₀,…,p_{N−1} exist such that f(x)=p_i(x) on [x_i,x_{i+1}) for 0≤i<N, and f(b)=p_{N−1}(b). No matching values or derivatives at knots is required under this general convention. A spline is a more restrictive piecewise-polynomial construction with specified smoothness or continuity across knots; piecewise polynomials need not themselves be globally continuous. Polynomial degree may be bounded uniformly over the finite pieces, or specifically fixed in specialized variants.",
+      "sources": [
+        {
+          "title": "Numerical Analysis — Piecewise Polynomial Interpolation",
+          "url": "https://cpraveen.github.io/numa/ppinterp/",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Mathematical Programming Formulations for Piecewise Polynomial Functions",
+          "url": "https://link.springer.com/article/10.1007/s10898-020-00881-4",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Finite partition of a nondegenerate closed real interval.",
+        "Half-open knot convention ensures every x receives exactly one value.",
+        "No cross-knot continuity or derivative conditions unless separately specified."
+      ],
+      "research_status": "assistant-reviewed frozen original scan candidate, not peer certified"
     }
   ]
 }
