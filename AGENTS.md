@@ -68,6 +68,16 @@ the future user-facing Sources link remains deferred. No new candidate
 discovery or premature final linking rebuild is authorized by this guidance.
 
 
+## Cleaned-corpus global linking — completed stage-only October 27, 2026
+
+**User explicitly authorized the full global linking rebuild on 2026-10-27.** It has been run successfully against the **cleaned canonical corpus** in the development branch, and its link-graph audit passed. See [GitHub Actions run 40586388342](https://github.com/Zengez/mathDef/actions/runs/40586388342). This updates the earlier staging-only prohibition against prematurely rebuilding links; it **does not** authorize production deployment or v2 feed update.
+
+- One reproducible stage-only command after `stage_cleanup.py`: `python -m research_pipeline.adapters.mathdef.rebuild_cleaned_links --stage /tmp/mathdef-cleanup-stage --output /tmp/mathdef-cleaned-links --overrides data/definition_expansion_priority_overrides.json --context-resolutions data/global_link_context_resolutions_2026-10-27.json`.
+- Results: **1,986 headings, 2,065 meanings, 2,104 formulations, 6,445 total relationships**; 3,728 surviving historical relationships retained, 2,717 newly rebuilt tentative, source-anchored definition-use links, 350 previously screened links positioned. **No dangling, duplicate, overlapping, or invalid inline anchor.** Build is idempotent.
+- **43 explicit editorial-scoped source/target decisions** resolve 44 previously ambiguous occurrences, based on existing source-definition text, without promoting research verification or merging different meanings. **Exactly five convention-sensitive occurrences intentionally remain unresolved** (2 natural numbers, 2 inner product space, 1 ring homomorphism); see the final link-audit artifact.
+- Of 140 historically dropped source-text edges (whose source formulation was consolidated or whose text was rewritten), **58 re-linked to the same meaning, 1 to an alternate meaning within the same heading, 2 became intentional redundant self-heading links, 79 no longer have a standalone literal target-heading phrase in the surviving text**. These are not new pending link errors. This classification is explicitly recorded in the final link-audit artifact.
+- No frozen corpora, new terminology candidate queues, user-approved convention evidence, or original source research data were modified. Link artifacts are in GitHub Actions `mathdef-cleaned-global-link-audit` and can be reproducibly regenerated. **Publishing and source-UI deployment remain separate decisions.**
+
 ## Current status: independent Wave 2 COMPLETE; merged mathDef catalog is the main public site
 
 **MAIN SITE PUBLICATION — 2026-10-26:** User explicitly confirmed that

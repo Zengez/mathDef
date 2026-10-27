@@ -1,8 +1,10 @@
 """Merged-only semantic cleanup, source registry and mathematical metadata.
 
-This module is deliberately NOT wired into publication yet. It is the staged
-pre-link transformation for the approved post-Wave2 cleanup. The final global
-linking build must only be enabled AFTER the user's ambiguity review.
+This module is deliberately NOT wired into production publication yet. It is
+the staged pre-link transformation for the approved post-Wave2 cleanup. The
+user authorized the complete global relink on 2026-10-27; its separate,
+reproducible rebuild and audit live in rebuild_cleaned_links.py. This file
+remains source-preserving and independent of the production publisher.
 
 Never mutates the original .tex, independently researched records, or the
 post-wave historical terms.json research inputs.
