@@ -381,3 +381,28 @@ are **39** rather than 40.
 **Persistent next rank 541**; **540/2,019 candidate leads processed**.
 Overlay = **157** meanings, expected combined total **2,129**.
 Historical independent Wave2 958 and original mathDef 1,014 remain frozen.
+
+
+## Source-exact original quick-scan incorporation, ranks 541–740
+
+Resolved 200 additional literal candidate records from the already
+collected frozen original scan, without collecting a new vocabulary
+candidate. Seven mathematical meanings were added directly to the
+merged-only overlay: complex Euclidean space, Hermitian matrix,
+computable rational sequence, constant map, conull measurable set,
+cohomologically graded differential algebra, and discrete topological
+subset. Sources, definitions, edge-case conventions and links are
+stored in the overlay; the source-exact dispositions and target
+mappings remain in the original established ledger.
+
+Additional dispositions: 29 existing, 161 lexical nonterms and
+3 genuine ambiguities. The mathematical decisions keep distinct
+complex versus real scalar fields, Hermitian versus positive-definite,
+computability of a sequence versus of its limit, measure conullness
+versus arbitrary infinite-mass equality, graded signs and square-zero
+differentials, and discrete versus closed discrete topological subsets.
+
+**Next original rank: 741.** 740/2,019 candidates reviewed.
+Overlay total 164; expected merged total 2,136 meanings.
+No new scan or candidate harvesting. Historic Wave2 958 and
+original production definitions 1,014 remain unmodified.
