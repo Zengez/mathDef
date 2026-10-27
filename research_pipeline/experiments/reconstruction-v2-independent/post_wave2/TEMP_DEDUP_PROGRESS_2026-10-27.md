@@ -138,3 +138,10 @@ are durable on the same branch.
 - Added **32** new retained-multi-formulation reasoning entries to the durable variants registry (excluding the consolidated convex-subset notation), covering genuinely different predicates, constructions or mathematical proof tests. The existing `martingale` entry was retained; `metric space` stays in the user's unresolved convention packet instead of being adjudicated here.
 - Historical source texts remain unchanged, all removed formulation IDs retain redirects, and inherited citations are copied to survivors. Current count is **5** explicit within-meaning formulation consolidations, contingent on stage-only CI. No new term candidates or global linking.
 - Remaining corpus-level checks should include the 2 surviving multi-form original-only meanings outside the independent Wave2 record list, plus cross-heading similarities not caught by the high lexical threshold.
+
+## Original multi-form audit and safe source preservation — 2026-10-27
+
+- Inspected both historical original multi-form definitions in `variants/`: **Function** and **Closure**, comparing their complete original `.tex` bodies with variant texts.
+- Original `Closure` primary already states the open-neighborhood characterization verbatim in mathematical substance. The separate neighborhood variant is therefore redundant. Record its existing source URL against the surviving original primary and alias its formulation ID; keep the metric-space `d(x,A)=0` representation, first-countable sequential characterization, and distinct Kuratowski closure-operator axiom formulation.
+- Original `Function` assignment formulation and typed graph-as-total-single-valued-relation formulation define equivalent functions using different mathematical foundational objects; deliberately preserve both.
+- Added CI checks protecting the exact original variant IDs and the closure-neighborhood alias from accidental loss during later dedup. Total explicit within-meaning removals **6**, conditional on stage-only validation. There are **82** retained-variant review headings now. User convention decisions remain deferred and no final global linker was run.

@@ -91,6 +91,27 @@ jobs:
                      for r in catalog['relations']), "Dangling stage-only relation endpoint"
           known_sources=set(sources['sources'])
           assert all(set(group['source_ids'])<=known_sources for group in sources['groups'])
+          # Check the two surviving original TeX multi-form meanings explicitly.
+          # Closure's duplicate neighborhood description was consolidated;
+          # metric, sequential and Kuratowski constructions must still survive.
+          closure_group=next(g for g in catalog['groups'] if g['title'].casefold()=='closure')
+          closure=next(m for m in closure_group['meanings']
+                       if m['id']=='meaning.mathdef.original.topology.closure')
+          cforms={f['id'] for f in closure['formulations']}
+          assert 'form.mathdef.original.topology.closure.primary' in cforms
+          assert 'form.mathdef.original.topology.closure.neighborhood' not in cforms
+          for suffix in ('metric','sequences','kuratowski'):
+              assert 'form.mathdef.original.topology.closure.'+suffix in cforms
+          assert catalog['consolidated_ids']['formulation_aliases'].get(
+              'form.mathdef.original.topology.closure.neighborhood'
+          )=='form.mathdef.original.topology.closure.primary'
+          function_group=next(g for g in catalog['groups'] if g['title'].casefold()=='function')
+          function=next(m for m in function_group['meanings']
+                        if m['id']=='meaning.mathdef.original.functions.function')
+          assert {f['id'] for f in function['formulations']}=={
+              'form.mathdef.original.functions.function.primary',
+              'form.mathdef.original.functions.function.graph'
+          }
           assert report['subject_missing']==0, "Every surviving meaning must have a mathematical Subject"
           assert report['retained_variant_groups_reviewed']>=40, "Reviewed variants must survive"
           assert len(report['convention_sensitive_text_translations'])==1
