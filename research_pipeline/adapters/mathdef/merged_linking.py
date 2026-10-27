@@ -58,6 +58,22 @@ BROAD_REPRESENTATIVE = {
     "binary relation": "meaning.mathdef.original.relations.binary-relation",
     "additive category": "meaning.mathdef.original.category.additive-category",
     "open cover": "meaning.mathdef.original.topology.open-cover",
+    "inverse image of a subset": "meaning.wave2.direct.b86257b3cce62907e97e",
+    "borel measure": "meaning.mathdef.postwave.scan-borel-measure-basic-20261026",
+    "contravariant functor": "meaning.mathdef.original.category.contravariant-functor",
+    "natural isomorphism": "meaning.mathdef.original.category.natural-isomorphism",
+    "hausdorff space": "meaning.mathdef.original.topology.hausdorff-space",
+    "small category": "meaning.mathdef.original.category.small-category",
+    "opposite category": "meaning.mathdef.original.category.opposite-category",
+    "abelian category": "meaning.mathdef.original.category.abelian-category",
+    "equivalence class": "meaning.mathdef.original.relations.equivalence-class",
+    "exact sequence": "meaning.wave2.foundation13.exact-sequence-abelian-category",
+    "finite field extension": "meaning.mathdef.postwave.scan-finite-field-extension-20261026",
+    "limit ordinal": "meaning.mathdef.original.sets.limit-ordinal",
+    "rational number": "meaning.mathdef.original.number.rational-number",
+    "total order": "meaning.mathdef.original.relations.total-order",
+    "affine combination": "meaning.mathdef.original.geometry.affine-combination",
+    "preadditive category": "meaning.mathdef.original.category.preadditive-category",
 }
 
 
@@ -197,13 +213,23 @@ def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
     # an affine scheme morphism must preserve identities; only that precise
     # mathematical context warrants the unital specialization automatically.
     if group["title"].casefold() == "ring homomorphism" and (
-        ("scheme" in words(source_meaning.get("label", ""))) or
-        ("affine" in words(source_meaning.get("label", "")))
+        {"scheme", "schemes", "affine", "commutative"} &
+        set(words(source_meaning.get("label", "")))
     ):
         unital = "meaning.wave2.foundation.ring-map-unital"
         if any(m["id"] == unital for m in meanings):
             return unital
 
+    # A minimal polynomial is not the same object for an algebraic element
+    # and a linear operator. Select the arithmetic variant only when the source
+    # explicitly concerns an algebraic element or number/field extension.
+    if group["title"].casefold() == "minimal polynomial" and (
+        {"arithmetic", "algebraic", "number", "field"} &
+        set(words(source_meaning.get("label", "")))
+    ):
+        field_poly = "meaning.mathdef.original.arithmetic.minimal-polynomial"
+        if any(m["id"] == field_poly for m in meanings):
+            return field_poly
     # Context-sensitive prioritization is meaningful only with substantial
     # category overlap and a decisive winner. Otherwise mark for human review.
     source_context = context_words(source_meaning)
