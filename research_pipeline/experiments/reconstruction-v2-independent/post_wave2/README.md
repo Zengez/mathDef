@@ -561,3 +561,41 @@ next rank **741**. The post-Wave2 merged-only overlay now contains
 expected combined corpus **2,136** meanings (958 independent Wave2 +
 1,014 original + 164 researched overlay). Original scan and historical
 source snapshots remain untouched.
+
+
+## Original frozen scan incorporation — ranks 741–940 (2026-10-26)
+
+Processed the next **200 literal original quick-scan candidate phrases**
+from the fixed 2,019-candidate scan report, preserving occurrence counts,
+source examples, each decision and canonical target mapping in the same
+`scan_candidate_dispositions.json`. **No new candidates discovered.**
+
+Research dispositions in this batch:
+- **5** mathematically distinct source-attributed meanings added directly
+  to merged-only overlay: rank 769 **field embedding** (unital injective
+  field map); 770 **filtered probability space** (time-increasing filtration,
+  no automatic usual conditions); 779 **finite-index subgroup** (cosets
+  finite, normality not required); 798 **finitely generated group** (finite
+  generators, not necessarily finite/presented); and 874 **free-variable
+  set of a first-order formula** (recursion on syntax and quantifier scope).
+- **22** existing matches, including exhaustion function, feasible point
+  as a member of a feasible set, finite measure, finite basis /
+  finite-dimensionality, closure operator, graded associative ring,
+  Hamel basis, Hermitian matrix, and homeomorphism.
+- **169** scan-generated grammatical fragments, quantifier clauses or
+  contextual descriptors, not independent terms.
+- **4** context ambiguities: 803 'fixed field' as a parameter versus an
+  automorphism-group invariant; 871 'formal series' with unspecified
+  exponent/algebra conventions; 881 'function algebra' across several
+  contexts; 933 'Hilbert function space' versus RKHS (continuous point
+  evaluations cannot be assumed).
+
+Retained crucial safeguards: finite normal extensions need NOT be
+separable/Galois; a general field embedding is not an automorphism;
+and a subgroup with finite index need not be normal.
+
+**Persistent next rank 941.** Original scan **940/2,019** processed, 1,079
+remaining. Overlay now **169** meanings (= 118 earlier + 51 net researched
+scan additions); expected merged catalog **2,141** meanings (= 958
+independent + 1,014 original + 169 overlay). Historical source
+collections and the frozen candidate scan remain untouched.
