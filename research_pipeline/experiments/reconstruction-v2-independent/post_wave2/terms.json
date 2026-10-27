@@ -6059,6 +6059,37 @@
         "No cross-knot continuity or derivative conditions unless separately specified."
       ],
       "research_status": "assistant-reviewed frozen original scan candidate, not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-one-sided-ideal-20261026",
+      "candidate_id": "postwave-scan:rank-1270",
+      "term": "one-sided ideal in a ring",
+      "context": "Noncommutative ring theory · left ideal or right ideal",
+      "aliases": [
+        "left ideal",
+        "right ideal",
+        "one-sided ideals"
+      ],
+      "definition": "Let R be an associative ring. A left ideal I⊆R is an additive subgroup such that r·a∈I for every r∈R and a∈I. A right ideal J⊆R is an additive subgroup such that a·r∈J for every a∈J and r∈R. A two-sided ideal is simultaneously left and right. If R is commutative, these notions coincide. For noncommutative R, an ideal on one side need not be an ideal on the other; the distinction is relevant for quotient ring constructions, since R/I carries a natural ring structure only when I is two-sided.",
+      "sources": [
+        {
+          "title": "Original mathDef — Ideal (two-sided, one-sided distinctions)",
+          "url": "https://github.com/Zengez/mathDef/blob/main/definitions/algebra/ideal.tex",
+          "verification_status": "direct_original_definition_checked_2026-10-26"
+        },
+        {
+          "title": "Mathematics LibreTexts — Left and Right Ideals",
+          "url": "https://math.libretexts.org/Bookshelves/Abstract_and_Geometric_Algebra/Abstract_Algebra%3A_Theory_and_Applications_%28Judson%29/16%3A_Rings/16.05%3A_Ideals",
+          "verification_status": "secondary_source_reference_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "The ring is associative and may lack multiplicative identity.",
+        "I and J are additive subgroups, not arbitrary subsets.",
+        "Left/right sidedness is specified, and two-sidedness is not assumed."
+      ],
+      "research_status": "assistant-reviewed contextual variant from frozen original candidate"
     }
   ]
 }
