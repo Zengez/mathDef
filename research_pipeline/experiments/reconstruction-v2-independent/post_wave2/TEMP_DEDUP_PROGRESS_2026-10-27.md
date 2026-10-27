@@ -262,3 +262,15 @@ The user explicitly authorized a **cursory cross-heading grouping screen of exis
 - No mathDef source files, original independent research records, mathThm, public production API, final global link graph or website deployment were modified.
 
 **Stop point:** Curated obvious duplicate and variant-heading actions are applied and validated. The next action involving disputed mathematical equivalence is user review and explicit approval for any deeper topic research; no such research is implicitly authorized by 'continue.'
+
+## Fixed 22-pair deeper mathematical review — finished 2026-10-27
+
+The user explicitly approved **one bounded deeper research pass on the 22 cross-heading comparisons** recorded in the previous surface-review packet. The one-pass dispositions are in `data/merged_cleanup_research_review_22_2026-10-27.json` and a complete source-linked table is in `TEMP_DEEP_RESEARCH_22_RESULTS_2026-10-27.md`.
+
+- **11/22 grouped as related variants**, with no semantic meaning/formulation deletion: minimal prime vs prime minimal over ideal; Hardy H^p/H^2; Bergman/weighted Bergman; Cohen–Macaulay local/global ring; Cohen–Macaulay local/global module; I-adic ring completions; general/local Tor flatness criteria; G-unramified/unramified at a prime; Zariski on scheme/affine spectrum; categorical/ring epimorphism; formally unramified/unramified ring map. All materially different hypotheses preserved in **distinct meaning records**.
+- **11/22 retained as separate terms**: algebraic closure vs relative closure; Bloch vs little Bloch; box vs product topology; RKHS vs kernel; unconditional vs conditional independence; Lebesgue vs Lebesgue–Stieltjes; ordinary short exact vs pure; free abelian group vs general free R-module; Hausdorff second-countable vs second-countable; Boolean vs spatial measured-action isomorphism; C-constrained vs σ-constrained chromatic metric maps.
+- **0 of the 22 left unresolved** for the cross-heading variant/independence decision; **44 within-heading manual-review headings still open**, untouched.
+- **0 source claims promoted to verified**, **0 frozen source files edited**, **0 new terms discovered**, **0 source identities lost**. Scope-specific original wording stays unchanged.
+- **Validated** [GitHub Actions 40567640298](https://github.com/Zengez/mathDef/actions/runs/40567640298), all stage-only checks passed. Current staged corpus **1,986 headings, 2,068 meanings, 2,110 formulations**, 62 searchable historical heading aliases, 2,662 preserved source identities and 1,014/1,014 original definition IDs traceable. No final global linking or production deployment.
+
+**Guardrail still active:** Before any future advanced mathematical research outside this now-completed 22-pair permission scope, explicitly request and receive separate user authorization.
