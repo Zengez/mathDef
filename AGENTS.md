@@ -28,18 +28,17 @@ mandatory dependency graphs, slow gates, arbitrary verification packet stages,
 or a new external vocabulary hunt.
 
 The original frozen mathDef quick-scan candidate set has now been dispositioned
-through **rank 1,340 of 2,019** using the single persistent ledger
+through **rank 1,540 of 2,019** using the single persistent ledger
 `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/scan_candidate_dispositions.json`.
-The merged-only post-Wave2 overlay contains **193 meanings**: the earlier
-118 post-Wave2 entries and **75 net new scan-derived researched meanings** after
-the prior deduplication. Latest ranks 1,141–1,340 yielded **16 researched
-new meanings/context-specific variants**, 29 existing matches, 152
-nonterminological fragments, and 3 genuinely ambiguous phrases. Each of
-the 1,340 dispositions retains the exact original phrase, frequency,
-example provenance, decision rationale and any mapped existing/new targets.
-**NEXT ORIGINAL CANDIDATE: rank 1,341**, with 679 candidates remaining.
-No new candidate collection, restart of lexical scans, dependency
-graph gate reviews or edits to completed historical snapshots are authorized.
+The merged-only post-Wave2 overlay contains **205 meanings**: the initial
+118 post-Wave2 entries plus **87 net new scan-derived meanings** after deduplication.
+Latest ranks 1,341–1,540 yielded **12 researched new meanings/context-specific
+variants**, 73 existing matches, 113 nonterminological fragments and
+2 context ambiguities. Each of the 1,540 dispositions retains source-exact
+phrase, frequency, example provenance, rationale and resolved target mapping.
+**NEXT ORIGINAL CANDIDATE: rank 1,541**, with **479 candidates remaining**.
+No new candidate collection, restart of lexical scans, dependency-graph
+gate reviews or edits to completed historical snapshots are authorized.
 
 Keep per-candidate source examples, concise outcome and target mapping in this
 same lightweight ledger; it is a resumption log, not a mathematical
