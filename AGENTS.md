@@ -1,5 +1,25 @@
 # mathDef — active development instructions (October 26, 2026)
 
+## Standing mathematical convention guidance — REQUIRED for definition reviews
+
+**Before reviewing, deduplicating, rewriting, or mathematically comparing
+definitions, read [`DEFINITION_CONVENTIONS.md`](DEFINITION_CONVENTIONS.md).**
+This is a permanent repository reference, not a temporary chat note.
+It documents tacit empty/nonempty, zero/nonzero, trivial/nontrivial,
+vacuous-truth, indexing, and other boundary-case conventions that can
+make mathematically identical core definitions appear different.
+
+**Specifically:** differences only at an omitted/excluded empty or trivial
+case are a **convention/boundary review signal**, not automatic evidence of
+a distinct mathematical variant, and also not automatic proof of equivalence.
+For example, an empty space is connected under the ordinary no-nontrivial-
+separation formulation, but some treatments impose nonemptiness. Check the
+source's stated assumptions before retaining two near-identical definitions
+or collapsing them. Keep genuine structural differences, and record
+uncertain conventions for the user's review. No new candidate discovery is
+authorized by this guidance.
+
+
 ## Current status: independent Wave 2 COMPLETE; merged mathDef catalog is the main public site
 
 **MAIN SITE PUBLICATION — 2026-10-26:** User explicitly confirmed that
