@@ -1,5 +1,73 @@
 # mathDef — active development instructions (October 26, 2026)
 
+## Standing mathematical convention guidance — REQUIRED for definition reviews
+
+**Before reviewing, deduplicating, rewriting, or mathematically comparing
+definitions, read [`DEFINITION_CONVENTIONS.md`](DEFINITION_CONVENTIONS.md).**
+This is a permanent repository reference, not a temporary chat note.
+It documents tacit empty/nonempty, zero/nonzero, trivial/nontrivial,
+vacuous-truth, indexing, and other boundary-case conventions that can
+make mathematically identical core definitions appear different.
+
+**Specifically:** differences only at an omitted/excluded empty or trivial
+case are a **convention/boundary review signal**, not automatic evidence of
+a distinct mathematical variant, and also not automatic proof of equivalence.
+For example, an empty space is connected under the no-nontrivial-
+separation predicate, but some treatments impose nonemptiness. **mathDef
+adopts the broader predicate for connected spaces**, with a short explanatory
+convention note rather than a duplicate near-identical definition card.
+Other authors' restricted definitions remain legitimate within their
+explicit or verified standing assumptions; this is a mathDef editorial
+choice, not a universal claim about terminology.
+
+**Important for dependent definitions:** if a source defines another
+concept using "connected" under a verified nonempty convention, make that
+condition **explicit in mathDef's adapted wording** wherever it is needed to
+preserve the source's mathematics (for example, "nonempty connected subset"
+in a maximal-connected-subset characterization of a component). Do not
+silently transplant the source's implicit assumptions or present an adapted
+definition as a verbatim quotation. Preserve the exact source, applicable
+scope, evidence/verification state, and the wording transformation in the
+term-level reference/source metadata. If a convention has not been checked,
+its state is **not_checked**, not assumed absent or present. Other structural
+differences and borderline cases remain subject to the user's review.
+
+**Required interpretation rule (2026-10-27 clarification):** mathematical
+authors often state **restrictive** conventions explicitly and do not
+typically announce the absence of a restriction. Keep source **evidence
+status** distinct from its **effective working interpretation**:
+
+- `verified_applies`: follow a positively established restriction at its
+  verified scope; make hidden source assumptions explicit when needed.
+- `verified_opposite`: follow the **current mathDef canonical broad meaning**
+  as the working interpretation; retain evidence that a particular
+  restriction was rejected.
+- `checked_inconclusive`: **also follow the current mathDef canonical broad
+  meaning for editorial wording**, while preserving the **inconclusive**
+  evidence status and never claiming the author explicitly endorsed it.
+  Do not manufacture a restricted variant solely because no explicit
+  rejection of nonemptiness/another restriction was found.
+- `not_checked`: no source-specific convention assessment exists; use the
+  canonical meaning as mathDef's own baseline, but do not attribute that
+  reading to the source. Check/review if a source-derived assertion
+  materially depends on unverified assumptions.
+- A verified local restriction overrides this fallback within its scope.
+
+**Dynamic inheritance:** `verified_opposite` and `checked_inconclusive`
+must resolve by reference to the **latest mathDef canonical meaning**.
+If that canonical meaning is later broadened, their working interpretations
+broaden automatically; do not freeze old predicates, introduce backward-
+compatibility assumptions, or pretend historical inconclusive checks became
+verified. Reevaluate imported definitions whose exact mathematics depends
+on the change, and correct their wording when warranted.
+
+**The permanent guide specifies a convention catalog and per-source,
+per-scope convention-assessment contract.** Its data schema/source-list
+implementation belongs to the ongoing deduplication/source-registry cleanup;
+the future user-facing Sources link remains deferred. No new candidate
+discovery or premature final linking rebuild is authorized by this guidance.
+
+
 ## Current status: independent Wave 2 COMPLETE; merged mathDef catalog is the main public site
 
 **MAIN SITE PUBLICATION — 2026-10-26:** User explicitly confirmed that
