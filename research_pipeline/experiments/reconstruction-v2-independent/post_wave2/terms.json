@@ -6090,6 +6090,310 @@
         "Left/right sidedness is specified, and two-sidedness is not assumed."
       ],
       "research_status": "assistant-reviewed contextual variant from frozen original candidate"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-properly-supported-pseudodifferential-operator-20261026",
+      "candidate_id": "postwave-scan:rank-1357",
+      "term": "properly supported pseudodifferential operator",
+      "context": "Microlocal analysis · support of the distribution kernel",
+      "aliases": [
+        "properly supported pseudo-differential operator"
+      ],
+      "definition": "Let Ω be open in ℝⁿ and let P be a pseudodifferential operator on Ω with Schwartz distribution kernel K_P on Ω×Ω. The operator is properly supported when the two restrictions π₁,π₂:supp(K_P)→Ω of the coordinate projections are proper maps: the inverse image in supp(K_P) of each compact subset of Ω is compact for either projection. In the standard calculus this ensures P maps compactly supported smooth functions into compactly supported smooth functions and extends appropriately to act on smooth functions and distributions. Proper support is a condition on the kernel's support, not a requirement that K_P itself have compact support.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Pseudo-differential operator",
+          "url": "https://encyclopediaofmath.org/wiki/Pseudo-differential_operator",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Lerner — Properly supported pseudo-differential operators",
+          "url": "https://webusers.imj-prg.fr/~nicolas.lerner/pseudom2.pdf",
+          "verification_status": "supporting_source_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Operator defined on an open set Ω with distributional Schwartz kernel.",
+        "Both restricted coordinate projections are proper.",
+        "Do not conflate proper support with globally compact kernel support."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-quasicoherent-ideal-sheaf-20261026",
+      "candidate_id": "postwave-scan:rank-1361",
+      "term": "quasi-coherent ideal sheaf on a scheme",
+      "context": "Algebraic geometry · ideal subsheaf of the structure sheaf",
+      "aliases": [
+        "quasicoherent ideal sheaf"
+      ],
+      "definition": "Let X be a scheme with structure sheaf O_X. A quasi-coherent sheaf of ideals I is a subsheaf I⊆O_X that is an ideal in every local ring of sections and is quasi-coherent as an O_X-module. Equivalently, on every affine open U=Spec(R), the restriction I|_U is isomorphic as an ideal subsheaf to the sheaf associated to an ideal J⊆R. Such a sheaf defines a closed subscheme locally cut out by J and with structure sheaf O_X/I. The same underlying closed set may carry different closed-subscheme structures.",
+      "sources": [
+        {
+          "title": "The Stacks Project — Quasi-coherent sheaves",
+          "url": "https://stacks.math.columbia.edu/tag/029N",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Original mathDef — Closed subscheme",
+          "url": "https://github.com/Zengez/mathDef/blob/main/definitions/schemes/closed-subscheme.tex",
+          "verification_status": "supporting_source_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Scheme with a specified structure sheaf.",
+        "Quasi-coherence is required; arbitrary presheaves of ideals are not enough.",
+        "Scheme-theoretic ideal data is finer than the underlying vanishing set."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-quasicoherent-sheaf-20261026",
+      "candidate_id": "postwave-scan:rank-1362",
+      "term": "quasi-coherent sheaf on a scheme",
+      "context": "Algebraic geometry · locally module-associated O_X-sheaf",
+      "aliases": [
+        "quasicoherent sheaf",
+        "quasi-coherent module"
+      ],
+      "definition": "Let X be a scheme with structure sheaf O_X. A sheaf F of O_X-modules is quasi-coherent if, for every affine open U=Spec(R) in X, the restriction F|_U is isomorphic to the sheaf M̃ associated with some R-module M. It suffices to verify this condition on an affine open covering. Quasi-coherence imposes compatibility with localization; it does not by itself mean F is locally free or finitely generated.",
+      "sources": [
+        {
+          "title": "The Stacks Project — Quasi-coherent sheaves, Definition 111.36.1",
+          "url": "https://stacks.math.columbia.edu/tag/029N",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "X is a scheme and F an O_X-module sheaf.",
+        "No finite-generation or local-freeness requirement.",
+        "Uses the scheme/affine localization notion, not arbitrary ringed-space quasi-coherence."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-quasicompact-scheme-morphism-20261026",
+      "candidate_id": "postwave-scan:rank-1363",
+      "term": "quasi-compact morphism of schemes",
+      "context": "Algebraic geometry · inverse images of affine opens",
+      "aliases": [
+        "quasi-compact scheme morphism",
+        "quasicompact morphism"
+      ],
+      "definition": "A morphism f:X→S of schemes is quasi-compact if for every affine open U⊆S its inverse image f⁻¹(U) is a quasi-compact topological space (equivalently, the underlying continuous map is quasi-compact). It is enough to test the condition on some affine open covering of S. A quasi-compact morphism need not be proper, separated, or of finite type; the condition does not require X itself to be quasi-compact unless S is quasi-compact.",
+      "sources": [
+        {
+          "title": "The Stacks Project — Quasi-compact morphisms, Definition 26.19.1",
+          "url": "https://stacks.math.columbia.edu/tag/01K2",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Both X and S are schemes.",
+        "Quasi-compactness is a relative condition; not synonymous with properness.",
+        "Equivalent testing on affine open covers."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-normalized-radix-beta-floating-point-20261026",
+      "candidate_id": "postwave-scan:rank-1367",
+      "term": "normalized radix-β floating-point number",
+      "context": "Numerical analysis · normalized finite-precision positional format",
+      "aliases": [
+        "normalized floating-point number",
+        "radix-beta floating point"
+      ],
+      "definition": "Fix an integer radix β≥2, a precision p≥1 and allowed integer exponents e_min≤e≤e_max. In one standard normalized model a nonzero floating-point number is x=(-1)^s β^e ∑_{k=0}^{p-1} d_k β⁻ᵏ, where s∈{0,1}, d₀∈{1,…,β−1} and d_k∈{0,…,β−1} for k≥1. Zero is represented separately. The nonzero leading digit is the normalization condition; other conventions shift the exponent or significand scaling. Subnormal numbers, infinities and NaNs are not included in this finite normalized set unless the model is extended.",
+      "sources": [
+        {
+          "title": "NIST FIPS 160 — Floating-point environment radix and precision model",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub160.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Finite precision and exponent range are specified.",
+        "Only normalized finite real values in this variant.",
+        "Representations and rounding conventions can differ."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-relatively-closed-subset-20261026",
+      "candidate_id": "postwave-scan:rank-1383",
+      "term": "relatively closed subset of a subspace",
+      "context": "General topology · closed relative to the subspace topology",
+      "aliases": [
+        "closed relative to a subspace",
+        "relatively closed set"
+      ],
+      "definition": "For a topological space X, a subspace Y⊆X and a set A⊆Y, A is relatively closed in Y if Y∖A is open in the subspace topology of Y. Equivalently A=Y∩F for some closed F⊆X, or A=Y∩cl_X(A). A relatively closed subset of Y need not be closed in X when Y is not closed in X.",
+      "sources": [
+        {
+          "title": "Introduction to Topology — Subspaces and relatively closed sets",
+          "url": "https://www.voutsadakis.com/TEACH/LECTURES/TOPOLOGY/Chapter3.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "The ambient space X and relative subspace Y are explicitly identified.",
+        "Closedness is in the topology inherited by Y.",
+        "Do not silently replace relative closedness by closedness in X."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-relatively-compact-subset-20261026",
+      "candidate_id": "postwave-scan:rank-1385",
+      "term": "relatively compact subset of a topological space",
+      "context": "General topology · compactness of closure",
+      "aliases": [
+        "precompact subset (topological closure convention)"
+      ],
+      "definition": "A subset A of a topological space X is relatively compact in X if its closure cl_X(A) is compact. Relative compactness depends on the ambient space. In a metric space every relatively compact set is totally bounded; conversely total boundedness implies relative compactness when the ambient metric space is complete. In general topological spaces, compactness of A itself need not imply compactness of its closure without suitable separation assumptions.",
+      "sources": [
+        {
+          "title": "EPFL Graph Search — Relatively compact subspace",
+          "url": "https://graphsearch.epfl.ch/en/concept/596600",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Compactness means every open cover of the closure has a finite subcover.",
+        "Do not identify precompactness and total boundedness without hypotheses.",
+        "Ambient space is part of the definition."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-semilocally-simply-connected-space-20261026",
+      "candidate_id": "postwave-scan:rank-1420",
+      "term": "semilocally simply connected space",
+      "context": "Algebraic topology · locally trivial image in the fundamental group",
+      "aliases": [
+        "semilocally simply-connected topological space"
+      ],
+      "definition": "A topological space X is semilocally simply connected at x∈X if there exists an open neighborhood U of x such that every loop in U based at x is null-homotopic in X; equivalently the inclusion-induced homomorphism π₁(U,x)→π₁(X,x) is trivial. X is semilocally simply connected if this holds at every point. The neighborhood U need not itself be simply connected. Local path-connectedness and path-connectedness are separate extra hypotheses in standard universal-covering existence theorems.",
+      "sources": [
+        {
+          "title": "Allen Hatcher — Algebraic Topology, covering-space classification discussion",
+          "url": "https://people.math.rochester.edu/faculty/doug/otherpapers/hatcher.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Fundamental groups and inclusion maps are based at each x.",
+        "Only null-homotopy in X is required, not inside U.",
+        "Do not infer a universal covering exists without additional hypotheses."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-small-filtered-category-20261026",
+      "candidate_id": "postwave-scan:rank-1440",
+      "term": "small filtered category",
+      "context": "Category theory · directed finite diagrams and filtered colimits",
+      "aliases": [
+        "filtered category",
+        "filtered small category"
+      ],
+      "definition": "A small category I is filtered if I is nonempty; for any objects i,j there is an object k receiving morphisms i→k and j→k; and for any parallel arrows f,g:i⇉j there exists an arrow h:j→k such that h∘f=h∘g. Equivalently every finite diagram in I admits a cocone. A category is cofiltered when its opposite category is filtered. Smallness is a size condition in the present variant; filteredness alone does not require a category to be small.",
+      "sources": [
+        {
+          "title": "Mathlib — Filtered categories, equivalent conditions",
+          "url": "https://imperialcollegelondon.github.io/FLT/docs/Mathlib/CategoryTheory/Filtered/Basic.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Nonemptiness is essential.",
+        "Parallel morphisms must eventually become equal.",
+        "Smallness is explicit because ind-object/colimit indexing is typically small."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-strong-limit-cardinal-20261026",
+      "candidate_id": "postwave-scan:rank-1468",
+      "term": "strong limit cardinal",
+      "context": "Set theory · cardinal exponentiation below κ",
+      "aliases": [
+        "strong-limit cardinal"
+      ],
+      "definition": "An infinite cardinal κ is a strong limit cardinal if 2^λ<κ for every cardinal λ<κ. Every infinite strong limit cardinal is a limit cardinal in the cardinal-sequence sense (including ℵ₀), but it need not be regular: singular strong limit cardinals may occur. An uncountable cardinal is strongly inaccessible precisely when it is both regular and a strong limit; being a strong limit alone does not imply inaccessibility.",
+      "sources": [
+        {
+          "title": "Internet Encyclopedia of Philosophy — Set Theory, strong limit and inaccessible cardinals",
+          "url": "https://iep.utm.edu/set-theo/",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Cardinals are taken in ordinary ZFC cardinal arithmetic.",
+        "Do not conflate strong limit and regularity.",
+        "ℵ₀ is included under this infinite-cardinal convention."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-superattracting-holomorphic-fixed-point-20261026",
+      "candidate_id": "postwave-scan:rank-1481",
+      "term": "superattracting fixed point of a holomorphic map",
+      "context": "Complex dynamics · fixed-point multiplier zero",
+      "aliases": [
+        "superattracting fixed point",
+        "super-attracting fixed point"
+      ],
+      "definition": "Let f be holomorphic on a neighborhood of a point z₀∈ℂ and suppose f(z₀)=z₀. The fixed point is superattracting if f′(z₀)=0. Its multiplier is zero, a stronger condition than the ordinary attracting condition |f′(z₀)|<1. For nonconstant f, the local Taylor expansion begins with a term of degree at least two at z₀. The analogous definition for a periodic point applies to the corresponding iterate.",
+      "sources": [
+        {
+          "title": "Classification of fixed points — multiplier and superattraction",
+          "url": "https://marksmath.org/classes/Spring2019ComplexDynamics/text/section-classification_of_fixed_points.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "f is holomorphic near the fixed point.",
+        "Multiplier zero is the defining condition.",
+        "Nonconstant assumption is used only for the positive-degree Taylor statement."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-symmetric-bilinear-form-20261026",
+      "candidate_id": "postwave-scan:rank-1492",
+      "term": "symmetric bilinear form on a real vector space",
+      "context": "Linear algebra · symmetric bilinearity without positivity",
+      "aliases": [
+        "symmetric bilinear map"
+      ],
+      "definition": "Let V be a vector space over ℝ. A symmetric bilinear form is a map B:V×V→ℝ linear in each argument and satisfying B(v,w)=B(w,v) for all v,w∈V. It may be degenerate or indefinite; positive definiteness is not part of the definition. In particular, an inner product is a special positive-definite symmetric bilinear form over ℝ. Over ℂ a complex-bilinear symmetric form is not the same thing as a Hermitian sesquilinear inner product.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Symmetric Bilinear Form",
+          "url": "https://mathworld.wolfram.com/SymmetricBilinearForm.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Real vector space and real-valued bilinear map.",
+        "Symmetry is required; positivity/nondegeneracy are not.",
+        "The complex Hermitian case is explicitly distinct."
+      ],
+      "research_status": "assistant-reviewed source-attributed mathematical meaning from original frozen quick scan"
     }
   ]
 }
