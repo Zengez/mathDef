@@ -32,6 +32,10 @@ on:
       - 'research_pipeline/tests/test_reference_ui.py'
       - 'research_pipeline/adapters/mathdef/conventions.py'
       - 'research_pipeline/adapters/mathdef/stage_cleanup.py'
+      - 'research_pipeline/adapters/mathdef/rebuild_cleaned_links.py'
+      - 'research_pipeline/tests/test_cleaned_global_links.py'
+      - 'research_pipeline/adapters/mathdef/merged_linking.py'
+      - 'research_pipeline/adapters/mathdef/audit_merged_links.py'
       - 'research_pipeline/tests/test_merged_cleanup.py'
       - 'research_pipeline/tests/test_conventions.py'
       - '.github/workflows/cleanup-stage-only.yml'
@@ -408,6 +412,40 @@ jobs:
               'note':'Audit only; no relinking, export or publication'
           }, sort_keys=True))
           PY
+      - name: Rebuild every surviving link and audit the whole cleaned graph
+        run: |
+          python -m unittest research_pipeline.tests.test_cleaned_global_links research_pipeline.tests.test_full_corpus_link_audit research_pipeline.tests.test_merged_linking -v
+          python -m research_pipeline.adapters.mathdef.rebuild_cleaned_links \
+            --stage /tmp/mathdef-cleanup-stage \
+            --output /tmp/mathdef-cleaned-links \
+            --overrides data/definition_expansion_priority_overrides.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path('/tmp/mathdef-cleaned-links/global-link-rebuild-summary.json')
+          data=json.loads(path.read_text())
+          assert data['idempotent']
+          assert data['source_registry_identities']==2662
+          assert data['stats']['groups']==1986
+          assert data['stats']['meanings']==2065
+          assert data['stats']['formulations']==2104
+          print('CLEANED_GLOBAL_AUDIT='+json.dumps({
+              'stats':data['stats'],
+              'anomaly_counts':data['graph_audit_anomaly_counts'],
+              'new_tentative_links':data['rebuild']['new_tentative_links'],
+              'newly_anchored_reviewed_links':data['rebuild']['existing_screened_links_anchored'],
+              'unlinked_existing_term_occurrences':data['unlinked_existing_term_occurrences'],
+              'links_with_preexisting_ids':data['preexisting_relations_retained'],
+          }, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mathdef-cleaned-global-link-audit
+          path: |
+            /tmp/mathdef-cleaned-links/global-link-rebuild-summary.json
+            /tmp/mathdef-cleaned-links/link-report.global-linked.json
+            /tmp/mathdef-cleaned-links/link-audit.global-linked.json
+          retention-days: 14
       - name: Single indexed scan for cross-heading existing-term variants
         run: |
           python - <<'PY'
