@@ -51,6 +51,24 @@ jobs:
           assert report['surviving_meanings']==2197-report['removed_duplicate_meanings']
           assert len(catalog['groups'])==2048
           assert len(sources['groups'])==2048
+          # Recovery integrity: all historical original IDs remain accessible
+          # through a live meaning or an explicit consolidation alias.
+          all_meanings=[m for g in catalog['groups'] for m in g['meanings']]
+          all_forms=[f for m in all_meanings for f in m['formulations']]
+          original_ids={x for m in all_meanings
+                        for x in ([m['original_definition_id']]
+                                  if m.get('original_definition_id') else [])
+                        + m.get('legacy_original_definition_ids',[])}
+          assert len(original_ids)==1014, f"Original ID aliases lost: {len(original_ids)} / 1014"
+          meaning_ids={m['id'] for m in all_meanings}
+          form_ids={f['id'] for f in all_forms}
+          assert len(meaning_ids)==len(all_meanings)
+          assert len(form_ids)==len(all_forms)
+          assert all(r['from_formulation'] in form_ids
+                     and r['target_meaning'] in meaning_ids
+                     for r in catalog['relations']), "Dangling stage-only relation endpoint"
+          known_sources=set(sources['sources'])
+          assert all(set(group['source_ids'])<=known_sources for group in sources['groups'])
           assert report['subject_missing']==0, "Every surviving meaning must have a mathematical Subject"
           assert report['retained_variant_groups_reviewed']>=40, "Reviewed variants must survive"
           assert len(report['convention_sensitive_text_translations'])==1
