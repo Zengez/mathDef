@@ -191,11 +191,14 @@ Def A: [complete formulation]     Source: [URL]
 Def B: [complete formulation]     Source: [URL]
 Def C: [complete formulation]     Source: [URL]
 
-Question: Are A and B separate useful meanings, or one statement with
-          an explicit boundary-case convention note?
-Boundary check: [e.g. identical for all nonempty X; disagree only on X = empty]
+Question: Are A and B separate useful meanings, or one canonical
+          predicate with a note about source-specific conventions?
+Canonical mathDef predicate: [precise mathematical condition proposed]
+Boundary check: [e.g. agree whenever X ≠ ∅; disagree only for X = ∅]
+Source-convention assessments: [source URL, scope, verified/not_checked]
+Borrowed-definition translation: [if needed: source shorthand → explicit assumption]
 Clearly retained: [e.g. C, using a distinct defining construction]
-Preliminary recommendation: [merge / retain / defer, with rationale]
+Preliminary recommendation: [merge with note / retain / defer, with rationale]
 Status: awaiting user decision
 ```
 
