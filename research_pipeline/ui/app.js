@@ -356,7 +356,7 @@
   el("split").addEventListener("click", () => mode(true));
   el("focus").addEventListener("click", () => mode(false));
   if (window.mathDefFeedback) window.mathDefFeedback.init((id) => lookup.get(id));
-  fetch("./definitions-index.json", {cache:"no-cache"}).then((response) => {
+  fetch("./" + (config.index_file || "definitions-index.json"), {cache:"no-cache"}).then((response) => {
     if (!response.ok) throw new Error("HTTP " + response.status);
     return response.json();
   }).then((data) => {
