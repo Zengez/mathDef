@@ -50,10 +50,11 @@ jobs:
           assert checks['published'] is False
           assert report['starting_meanings']==2197
           assert report['starting_formulations']==2246
-          assert report['removed_duplicate_meanings']==len(json.loads(Path('data/merged_cleanup_decisions.json').read_text())['merge_meanings'])
-          assert report['surviving_meanings']==2197-report['removed_duplicate_meanings']
           cross=json.loads(Path('data/merged_cleanup_cross_heading_review.json').read_text())
           ncross=len(cross['clear_duplicate_pending_group_migration'])
+          expected_merges=len(json.loads(Path('data/merged_cleanup_decisions.json').read_text())['merge_meanings'])+ncross
+          assert report['removed_duplicate_meanings']==expected_merges
+          assert report['surviving_meanings']==2197-report['removed_duplicate_meanings']
           assert len(catalog['groups'])==2048-ncross
           assert len(sources['groups'])==2048-ncross
           assert report['retired_searchable_heading_aliases']==ncross
