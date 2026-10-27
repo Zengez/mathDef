@@ -103,5 +103,33 @@ class MergedLinkingTests(unittest.TestCase):
         self.assertEqual(copied["relations"][0]["source_phrase"].lower(), "vector space")
 
 
+    def test_does_not_bridge_math_paragraphs_or_tex_macros(self):
+        source = group("s", "Some object", "m.s", "f.s",
+                       r"An open $x$ set is given. Also an open." +
+                       "\n\n" + "set at the start of a new paragraph." +
+                       r" Also an open \emph{important} set.")
+        target = group("t", "Open set", "m.t", "f.t", "An element of the topology.")
+        catalog = {"groups": [source, target], "relations": []}
+        report = link_merged_catalog(catalog)
+        self.assertEqual(report["new_tentative_links"], 0)
+
+    def test_ambiguous_context_report_carries_source_examples(self):
+        parent = group("one", "Abstract object", "one-m", "one-f",
+                       "Consider the closure of an object in this setting.")
+        target = group("two", "Closure", "two-a", "two-f", "Topological closure")
+        target["meanings"].append({
+            "id": "two-b", "label": "Algebraic field closure",
+            "formulations": [{"id": "two-fb", "text": "Field theory",
+                              "sources": [{"title": "Reference",
+                                           "url": "https://example.org"}]}],
+        })
+        report = link_merged_catalog({"groups": [parent, target], "relations": []})
+        self.assertEqual(report["ambiguous_contexts_total_occurrences"], 1)
+        example = report["ambiguous_context_examples"]["Closure"][0]
+        self.assertEqual(example["from_formulation"], "one-f")
+        self.assertEqual(example["matched_text"], "closure")
+        self.assertEqual(len(example["eligible_meanings"]), 2)
+
+
 if __name__ == "__main__":
     unittest.main()
