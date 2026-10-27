@@ -196,6 +196,13 @@
       "kept_meaning_id": "meaning.fc44c63c239e5c20.projective-module-hom",
       "kept_formulation_id": "form.fc44c63c239e5c20.projective-module-hom",
       "reason": "Original lifting property is explicitly retained in researched statement alongside Hom-exactness criterion."
+    },
+    {
+      "case_id": "connected-space-source-convention-not-variant",
+      "removed_meaning_id": "meaning.ab260940ea9c523d.connected-topological-space",
+      "kept_meaning_id": "meaning.wave2.variant71.connected-empty-allowed",
+      "kept_formulation_id": "form.wave2.variant71.connected.01",
+      "reason": "Stacks Definition 5.7.1 explicitly requires nonempty and excludes the empty space. This is a documented source-specific convention on the same no-separation predicate, not a separate mathematical construction. Canonical mathDef adopts no-separation allowing empty and retains Stacks citation/verified scoped restriction as convention metadata."
     }
   ],
   "metadata_assignments": {
@@ -245,10 +252,6 @@
     "meaning.wave2.directional113.open-norm": {
       "subject": "Functional Analysis",
       "context": "Normed vector spaces"
-    },
-    "meaning.ab260940ea9c523d.connected-topological-space": {
-      "subject": "Topology",
-      "context": "Nonempty topological spaces"
     },
     "meaning.mathdef.original.algebra.quotient-ring": {
       "subject": "Algebra",
@@ -320,6 +323,29 @@
     },
     "meaning.fc44c63c239e5c20.projective-module-hom": {
       "subject": "Homological Algebra"
+    },
+    "meaning.ab260940ea9c523d.connected-component-space": {
+      "subject": "Topology",
+      "context": "Connected components"
+    },
+    "meaning.ab260940ea9c523d.locally-connected-space": {
+      "subject": "Topology"
+    },
+    "meaning.ab260940ea9c523d.totally-disconnected-space": {
+      "subject": "Topology"
+    }
+  },
+  "text_overrides": {
+    "form.ab260940ea9c523d.connected-component-space": {
+      "text": "A connected component of a topological space X is a nonempty connected subset of X that is maximal under inclusion among connected subsets of X.",
+      "reason": "Stacks §5.7 explicitly requires connected spaces/subsets to be nonempty. Under mathDef's broader no-separation meaning the empty subset is connected, so make nonemptiness explicit to preserve the Stacks maximal-subset component definition when X is empty.",
+      "original_text": "A connected component of a topological space X is a connected subset maximal under inclusion among connected subsets of X.",
+      "source_url": "https://stacks.math.columbia.edu/tag/004R",
+      "source_assessment_id": "sourceconv.stacks.004R.connected.nonempty.20261027",
+      "convention_id": "topology.connected.nonempty",
+      "evidence_status": "verified_applies",
+      "translation_kind": "paraphrase_scoped_restriction_explicated",
+      "audit_note": "The added nonempty condition preserves the empty-space behavior: empty X has no connected components."
     }
   }
 }
