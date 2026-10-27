@@ -96,6 +96,62 @@ async function main() {
            "Mobile viewport should keep the selected definition visible");
     assert.deepEqual(uncaught, [], "Client-side exceptions should not occur");
 
+    // Controlled three-node graph: A refers to siblings B and C; B also
+    // refers to C; C points back to A. Sibling C must be reachable below B,
+    // while the ancestor A must not be expandable below A -> B -> C.
+    const sample = (id, term, body, links) => {
+      const deps = links.map(([targetId, targetTerm]) => {
+        const start = body.toLowerCase().indexOf(targetTerm.toLowerCase());
+        assert(start >= 0);
+        return {
+          id: targetId, label: targetTerm,
+          formulation: "f." + id, target_meaning: "m." + targetId,
+          start, end:start+targetTerm.length,
+          review_state:"lexical_candidate", source_phrase:body.slice(start,start+targetTerm.length)
+        };
+      });
+      return {
+        id, term, aliases: [], category: "Browser regression", source: "https://example.org",
+        status: "screened_draft", body, dependencies: deps, related: [],
+        formulations: [{
+          key: "f." + id, label: "Browser regression", body,
+          meaning_id: "m." + id, dependencies: deps,
+          sources: [{title:"Fixture", url:"https://example.org", locator:"https://example.org"}]
+        }]
+      };
+    };
+    const synthetic = [
+      sample("a", "Alpha concept", "A beta concept and gamma concept.", [
+        ["b", "beta concept"], ["c", "gamma concept"]]),
+      sample("b", "Beta concept", "A gamma concept and alpha concept.", [
+        ["c", "gamma concept"], ["a", "alpha concept"]]),
+      sample("c", "Gamma concept", "An alpha concept.", [
+        ["a", "alpha concept"]]),
+    ];
+    const isolated = await browser.newPage({viewport:{width:960,height:780}});
+    const isolatedErrors=[];
+    isolated.on("pageerror", e => isolatedErrors.push(e.message));
+    await isolated.route("**/definitions-index.json", route =>
+      route.fulfill({status:200,contentType:"application/json",body:JSON.stringify(synthetic)}));
+    await isolated.goto(url,{waitUntil:"domcontentloaded"});
+    await isolated.locator("#total").filter({hasText:"3"}).waitFor();
+    await isolated.locator("#term-query").fill("Alpha concept");
+    await isolated.locator('#term-results button[data-id="a"]').click();
+    await isolated.locator('button[data-explore-mode="inline"]').click();
+    await isolated.locator('#term-detail button.inline-cue[data-expand="a>b"]').click();
+    assert((await isolated.locator('#term-detail button.inline-cue[data-expand="a>b>c"]').count()) > 0,
+           "Sibling C must remain expandable beneath sibling B");
+    await isolated.locator('#term-detail button.inline-cue[data-expand="a>b>c"]').click();
+    assert((await isolated.locator('#term-detail .inline-insert').count()) >= 2,
+           "Inline recursive expansion should reach depth two");
+    assert.equal(await isolated.locator('#term-detail button[data-expand="a>b>c>a"]').count(),0,
+                 "Ancestor A must not reappear after A -> B -> C");
+    await isolated.locator('button[data-explore-mode="nested"]').click();
+    assert((await isolated.locator('#term-detail button[data-expand="a>b>c"]').count()) > 0,
+           "Nested mode should preserve the sibling link");
+    assert.deepEqual(isolatedErrors,[]);
+    await isolated.close();
+
     result = {
       name: chosen.d.term,
       first_target: chosen.match.dep.id,
@@ -103,6 +159,7 @@ async function main() {
       definition_search: "weak topology",
       recursive_inline_expansion: "passed",
       ancestor_loop_suppression: "passed",
+      sibling_reuse_under_another_path: "passed",
       narrow_viewport: "passed",
       uncaught_errors: uncaught.length,
     };
