@@ -33,6 +33,30 @@ to the old 1,014-definition standalone index or reintroduce a separate
 production-only mathDef corpus in future edits. No additional vocabulary
 candidate discovery is authorized by the publication request.
 
+**CANONICAL CROSS-PROJECT DEFINITION FEED: v2 MERGED (2026-10-26).**
+User confirmed the original-only v1 reference feed was not relied upon by
+important current consumers; mathThm is a prototype they may substantially
+rewrite. New integrations must use the merged v2 feed:
+`https://zengez.github.io/mathDef/api/definitions/v2/manifest.json`
+and `snapshot.json`. The snapshot mirrors the published merged main mathDef
+catalog (term groups, multiple contextual meanings, alternative formulations,
+original stable ID aliases, source attribution, and source-specific links).
+The v2 manifest carries SHA-256 content versioning and full group/meaning/
+formulation counts. `scripts/merged_definition_export.py` produces it on
+every mathDef Pages publication, and mandatory CI verifies complete coverage.
+The previous v1 feed remains an original-only historical endpoint rather than
+misrepresenting it as the full current library.
+
+For future mathThm/mathEd/mathThm-like consumers see `DEFINITION_EXPORT.md`
+and `examples/consume_mathdef_v2.py` for the exact manifest/snapshot
+contract, cache invalidation, SHA-256 validation, offline fallback, and
+legacy ID lookup. Consumers select their own refresh schedule (often CI
+build or daily), and no push notification or mathDef write access is needed.
+**Do not edit mathThm automatically as a prerequisite**; migration is
+documented for its future development. Existing independent corpus and
+source research records remain unchanged. This integration work does not
+authorize new terminology discovery.
+
 **WHOLE-CORPUS CROSS-CHUNK LINK AUDIT COMPLETE (2026-10-26).**
 A graph-wide, read-only audit checked **all 2,048 headings, 2,197 meanings,
 2,246 formulations and 6,825 relations** in the public merged mathDef corpus.
