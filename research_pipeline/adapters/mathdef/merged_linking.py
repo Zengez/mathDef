@@ -222,7 +222,7 @@ def record_ambiguity(report, group, source, phrase, occurrence):
     label = group["title"]
     report["ambiguous_contexts"][label] += 1
     examples = report["ambiguous_context_examples"][label]
-    if len(examples) < 6 and occurrence:
+    if len(examples) < 80 and occurrence:
         form_id, body, start, end = occurrence
         examples.append({
             "from_formulation": form_id,

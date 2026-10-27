@@ -150,7 +150,8 @@ def rebuild(stage: Path, output: Path, *, overrides: dict | None = None) -> dict
             "links_by_form", "new_tentative_link_examples", "ambiguous_context_examples")},
         "preexisting_relations_retained": len(preexisting),
         "anchor_repairs": fixed,
-        "cleanup_intentionally_dropped_links": cleanup_report.get("relations_needing_relink", []),
+        "cleanup_intentionally_dropped_links": cleanup_report.get(
+            "deleted_source_text_edges_needing_global_relink", []),
         "graph_audit_anomaly_counts": audited["anomaly_counts"],
         "unlinked_existing_term_occurrences":
             audited["known_existing_term_unlinked"]["total_occurrences"],

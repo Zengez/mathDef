@@ -445,6 +445,8 @@ jobs:
             /tmp/mathdef-cleaned-links/global-link-rebuild-summary.json
             /tmp/mathdef-cleaned-links/link-report.global-linked.json
             /tmp/mathdef-cleaned-links/link-audit.global-linked.json
+            /tmp/mathdef-cleaned-links/catalog.global-linked.json
+            /tmp/mathdef-cleaned-links/definitions-index.global-linked.json
           retention-days: 14
       - name: Single indexed scan for cross-heading existing-term variants
         run: |
