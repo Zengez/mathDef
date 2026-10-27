@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "status": "stage_only_reviewed_retained_variants",
+  "notes": [
+    "Each entry records a semantically informative variant or a scope difference deliberately NOT consolidated. The exact formulation IDs remain in the merged catalog.",
+    "The uncertainty packet TEMP_DEDUP_DECISIONS.md separately lists cases awaiting the user's adjudication.",
+    "This is a retained-variant accounting ledger, not a new term or candidate collection."
+  ],
+  "entries": [
+    {
+      "term": "accumulation point",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Sequence accumulation is formulated through subsequences/infinitely many indices; set accumulation is by neighborhoods of a subset. The defining input object differs."
+    },
+    {
+      "term": "adapted stochastic process",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Discrete-time and continuous-time filtrations have genuinely different index domains and measurability requirements."
+    },
+    {
+      "term": "Boolean ring",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Keep unital versus possibly nonunital idempotent rings distinct; duplicate nonunital wording is already consolidated."
+    },
+    {
+      "term": "Borel measure",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Basic measure, compact-finite assumptions and outer-measure presentations invoke different hypotheses/objects; do not erase them."
+    },
+    {
+      "term": "closed ball",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Metric and normed-vector-space formulations use different structures; the normed case is a metric specialization but informative."
+    },
+    {
+      "term": "coset of a subgroup",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Left coset gH and right coset Hg can be different sets when H is not normal."
+    },
+    {
+      "term": "domination of local rings",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "One formulation embeds local subrings in a common field; the other allows general compatible local-ring inclusions. Different ambient hypotheses."
+    },
+    {
+      "term": "independent sigma-algebras",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Two algebra independence versus mutual independence of a countable family have different quantification."
+    },
+    {
+      "term": "inner product space",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Real symmetric bilinear and complex Hermitian forms have different scalar fields and conjugation behavior."
+    },
+    {
+      "term": "kernel",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Concrete additive subgroup kernel of an abelian group homomorphism versus universal categorical kernel morphism."
+    },
+    {
+      "term": "kernel of linear transformation",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Linear maps of modules over rings versus of vector spaces over fields require different ambient algebraic objects."
+    },
+    {
+      "term": "linear transformation",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "R-module and field-vector linear maps have different admissible scalars."
+    },
+    {
+      "term": "locally finite Borel measure",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "One version assumes Hausdorff spaces and includes consequences about compact sets; another is defined on arbitrary topological spaces. Preserve scope pending detailed citation review."
+    },
+    {
+      "term": "mapping (function)",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Input-output assignment, bare graph subset, and typed graph object are distinct mathematical encodings, even when equivalent as functions."
+    },
+    {
+      "term": "martingale",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Discrete indexed conditional-expectation equations and continuous-time martingale filtration structure use different time domains."
+    },
+    {
+      "term": "module over a ring",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Nonunital right modules, unital left modules, and unital right modules encode different module actions/conventions."
+    },
+    {
+      "term": "natural numbers",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Inclusion versus exclusion of zero affects the underlying set and dependent constructions; do not collapse conventions silently."
+    },
+    {
+      "term": "norm on a vector space",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Normed division-ring scalar systems versus real or complex normed spaces are different ambient frameworks."
+    },
+    {
+      "term": "normal algebraic extension",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Splitting of each irreducible polynomial with a root versus splitting of each element's minimal polynomial are informative equivalent characterizations."
+    },
+    {
+      "term": "orthogonal polynomial system",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Continuous weight on an interval, discrete countable support, finite support and a general Stieltjes measure supply different orthogonality frameworks."
+    },
+    {
+      "term": "pointwise convergence of functions",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Real-valued pointwise limits and arbitrary topological-target pointwise limits have different codomain frameworks."
+    },
+    {
+      "term": "real number system (complete ordered field)",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Axiomatic complete ordered field, Dedekind-cut construction and Cauchy-completion construction describe genuinely different presentations/objects."
+    },
+    {
+      "term": "trace of a square matrix",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Trace over an arbitrary commutative ring (including 0×0 convention) versus strictly positive-size matrices over a field uses different domains."
+    },
+    {
+      "term": "uniform convergence of functions",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Real-valued uniform convergence versus general metric-valued uniform convergence has a different target structure."
+    },
+    {
+      "term": "chain complex",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Module/abelian group chain complexes versus complexes in a general additive category use different mathematical frameworks."
+    },
+    {
+      "term": "discrete valuation ring",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Valuation-group characterization versus local-PID/nonfield construction; mathematically informative equivalent characterizations."
+    },
+    {
+      "term": "exact sequence",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Specific module exactness versus categorical images and kernels in an abelian category."
+    },
+    {
+      "term": "infimum",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Real lower bounds and infimum in an arbitrary partially ordered set differ in the ambient ordered object and existence assumptions."
+    },
+    {
+      "term": "supremum",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Real least upper bound versus upper bounds in an arbitrary partially ordered set."
+    },
+    {
+      "term": "minimal polynomial",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Least-degree monic annihilating polynomial versus a monic generator of the evaluation kernel use different defining constructions."
+    },
+    {
+      "term": "open cover",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Cover of an arbitrary subset by ambient open sets versus a cover of the entire space; preserve the broader construction."
+    },
+    {
+      "term": "polynomial ring",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "One formal indeterminate versus an arbitrary family of indeterminates uses different polynomial constructions."
+    },
+    {
+      "term": "quotient ring",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Quotient of noncommutative unital ring by two-sided ideal versus commutative quotient."
+    },
+    {
+      "term": "rational number",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Real fraction representation versus formal fraction-field construction of Q."
+    },
+    {
+      "term": "reduced ring",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Definition in commutative rings versus possibly noncommutative associative rings."
+    },
+    {
+      "term": "stochastic process",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "A family of random elements potentially with differing state spaces versus an E-valued process with fixed measurable state space."
+    },
+    {
+      "term": "chromatic number",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Finite nonempty graph definition versus unrestricted graph and empty-graph convention. Retain until the precise scope and infinite-color extension are reconciled."
+    },
+    {
+      "term": "additive category",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Finite-product definition in a preadditive category versus zero object and finite biproduct construction: separate informative criterion."
+    },
+    {
+      "term": "basis for a topology",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Base as a generator on a bare underlying set versus base subordinate to an already specified topology."
+    },
+    {
+      "term": "locally uniform convergence of functions",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Compact-local complex analytic formulation versus neighborhood-local topological-source/metric-target formulation; equivalent only under additional hypotheses."
+    },
+    {
+      "term": "normed vector space",
+      "disposition": "retain_distinct_mathematical_formulations",
+      "reason": "Real/complex scalar field versus general normed division-ring scalar field."
+    }
+  ]
+}
