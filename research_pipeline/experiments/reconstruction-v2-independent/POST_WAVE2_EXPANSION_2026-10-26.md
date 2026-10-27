@@ -467,3 +467,16 @@ Checkpoint **1,340/2,019**, **next original rank 1,341**, 679
 remaining. Merged-only overlay **193 meanings**, including 75 net
 scan-derived meanings, total combined expected **2,165**. Frozen
 candidate list and independently completed source collections unmodified.
+
+
+## Original fixed quick-scan incorporation, ranks 1341–1540
+
+Processed **200 further source-exact frozen candidates** with NO new candidate search or extension of the 2,019 original rough phrase leads. Every one is in the existing `post_wave2/scan_candidate_dispositions.json` ledger with original rank, phrase, count, complete source examples, decision, rationale and a resolvable existing/new target where appropriate.
+
+**Batch dispositions:** 12 new meanings/contextual variants, 73 already-covered matches, 113 nonterminological grammatical/ordinary context fragments, and 2 unresolved ambiguities (**rank 1380:** "regular limit" versus weak/strong inaccessibility; **rank 1465:** meaning of a "strict functor" in 2-category contexts).
+
+**12 new searchable meanings:** 1357 properly supported pseudodifferential operator; 1361 quasi-coherent ideal sheaf; 1362 quasi-coherent sheaf; 1363 quasi-compact morphism of schemes; 1367 normalized radix-β floating-point number; 1383 relatively closed subset; 1385 relatively compact subset; 1420 semilocally simply connected space; 1440 small filtered category; 1468 strong limit cardinal; 1481 superattracting fixed point; 1492 symmetric bilinear form.
+
+Important differences and exception handling: a quasi-compact scheme morphism need not be proper; a quasi-coherent sheaf need not be locally free; relative closedness is relative to its subspace; relative compactness is not equivalent to metric total boundedness without completeness; semilocal simple connectivity does not by itself guarantee the existence of a universal cover; filtered and cofiltered categories are dual but not identical; strong limit cardinals may be singular, and a strong limit alone is not the same as a strongly inaccessible cardinal; symmetric bilinear forms need not be positive definite or Hermitian; strong measurability, principal fractional ideals, quasi-metric spaces and second-countability were matched to existing definitions rather than duplicated.
+
+**Checkpoint 1,540/2,019**, next **rank 1,541**, **479 remain**. Merged-only post-Wave2 overlay **205 meanings** (118 initial + 87 net scan-derived meanings), total expected combined **2,177 = 958 independent Wave2 + 1,014 original + 205 overlay**. Historical Wave2, production definitions and the original frozen scan remain unmodified.
