@@ -78,6 +78,17 @@ jobs:
                      for m in g["meanings"] if m.get("source_origin")=="original_mathdef"}
           assert original_ids == preserved, "Main site dropped an original definition"
           assert len(index)==len(merged["groups"]), "Main site index incomplete"
+          v1_manifest=json.loads((root/"api/definitions/v1/manifest.json").read_text())
+          v2_manifest=json.loads((root/"api/definitions/v2/manifest.json").read_text())
+          v2=json.loads((root/"api/definitions/v2/snapshot.json").read_text())
+          assert v1_manifest["definition_count"] == len(original_ids)
+          assert v2_manifest["dataset"] == "merged"
+          assert v2_manifest["definition_count"] == len(index)
+          assert v2_manifest["meaning_count"] == sum(len(g["meanings"]) for g in merged["groups"])
+          assert v2_manifest["original_definition_count"] == len(original_ids)
+          assert v2["schema"] == "mathdef.definition-snapshot.v2"
+          assert {x["id"] for x in v2["definitions"]} == {x["id"] for x in index}
+          assert {original_id for d in v2["definitions"] for original_id in d["original_ids"]} == original_ids
           assert (root/"catalog.json").is_file()
           assert (root/"link-report.json").is_file()
           assert (root/"reconstruction/merged/index.html").is_file()
