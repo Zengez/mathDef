@@ -160,7 +160,26 @@ jobs:
               'meaning.wave2.direct.6fbe5c318aee10f6742d']==(
               'meaning.mathdef.postwave.scan-multiplicative-order-element-20261026')
           assert len(report['user_adjudicated_canonical_editorial_edits'])==5
-          assert len(report['assistant_reviewed_mathematical_edits'])==1
+          assert len(report['assistant_reviewed_mathematical_edits'])==2
+          linear=next(g for g in catalog['groups'] if g['title']=='Linear map')
+          assert {x.casefold() for x in linear['aliases']}>={'linear transformation'}
+          assert {x['id'] for x in linear['meanings']}=={
+              'meaning.mathdef.original.linear.linear-map',
+              'meaning.wave2.cross110.module-linear'}
+          assert redirects['meaning_aliases']['meaning.wave2.cross110.field-vector-linear']==(
+              'meaning.mathdef.original.linear.linear-map')
+          assert redirects['group_aliases']['preview.term.72c829680042f65a356bd9cc']==(
+              'preview.term.091ee6a2f6976c44ce847b3b')
+          measurable=next(g for g in catalog['groups'] if g['title']=='Measurable function')
+          assert {x.casefold() for x in measurable['aliases']}>={'measurable mapping'}
+          assert {x['id'] for x in measurable['meanings']}=={
+              'meaning.mathdef.original.measure.measurable-function'}
+          measurable_text=measurable['meanings'][0]['formulations'][0]['text']
+          assert 'Borel measurability' in measurable_text
+          assert 'does not require continuity' in measurable_text
+          assert redirects['meaning_aliases'][
+              'meaning.wave2.direct.b458f6a3824dab19725b']==(
+              'meaning.mathdef.original.measure.measurable-function')
           adapted=next(g for g in catalog['groups'] if g['title']=='Adapted process')
           assert {m['id'] for m in adapted['meanings']}=={
               'meaning.mathdef.original.stochastic.adapted-process',
