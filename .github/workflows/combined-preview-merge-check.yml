@@ -70,7 +70,7 @@ jobs:
           assert (root/"merged/definitions-index.json").is_file()
           link_report=json.loads((root/"merged/link-report.json").read_text())
           assert link_report["status"]=="tentative_lexical_links_not_semantically_verified"
-          # Audit sample is drawn from ALREADY EXISTING concepts in the merged
+          # Linking closeout: audit only ALREADY EXISTING concepts in the merged\n          # corpus; never synthesize new terminology candidates here.\n          # Audit sample is drawn from ALREADY EXISTING concepts in the merged
           # dictionary; it is not an additional terminology candidate collection.
           print("MERGED_LINK_AMBIGUITY_TOP_JSON="+json.dumps([
               {"phrase":item["phrase"],"occurrences":item["occurrences"],
