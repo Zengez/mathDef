@@ -63,9 +63,38 @@ class MergedDefinitionExportTests(unittest.TestCase):
             self.assertEqual(by_term["Compact space"]["original_ids"], ["topology.compactness"])
             self.assertEqual(len(by_term["Compact space"]["meaning_ids"]), 2)
             self.assertEqual(len(by_term["Compact space"]["formulations"]), 2)
+            self.assertEqual([m["id"] for m in by_term["Compact space"]["meanings"]],
+                             by_term["Compact space"]["meaning_ids"])
+            self.assertEqual(by_term["Compact space"]["meanings"][0]["original_definition_id"],
+                             "topology.compactness")
+            self.assertEqual(by_term["Compact space"]["meanings"][0]["formulation_ids"],
+                             ["f.a"])
+            self.assertEqual(by_term["Compact space"]["meanings"][1]["formulation_ids"],
+                             ["f.b"])
             idx[0]["formulations"][1]["body"] = "New researched formulation."
             changed = write_merged_definition_export(catalog, idx, tmp)
             self.assertNotEqual(changed["version"], first["version"])
+
+    def test_unrelated_future_meaning_additions_are_accepted(self):
+        catalog, idx = sample()
+        catalog["groups"].append({
+            "id": "preview.term.c", "title": "New mathematical concept",
+            "meanings": [{
+                "id": "meaning.nextwave.new", "label": "New context",
+                "formulations": [{"id": "f.new", "text": "A new definition."}]
+            }]
+        })
+        idx.append({
+            "id": "preview.term.c", "term": "New mathematical concept",
+            "aliases": [], "body": "A new definition.",
+            "formulations": [{"key": "f.new", "body": "A new definition.",
+                              "meaning_id": "meaning.nextwave.new"}],
+            "dependencies": [], "related": [],
+        })
+        with tempfile.TemporaryDirectory() as tmp:
+            manifest = write_merged_definition_export(catalog, idx, tmp)
+        self.assertEqual(manifest["definition_count"], 3)
+        self.assertEqual(manifest["meaning_count"], 4)
 
     def test_rejects_incomplete_rendered_index(self):
         catalog, idx = sample()
