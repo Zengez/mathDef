@@ -5,7 +5,9 @@ on:
     paths:
       - "research_pipeline/adapters/mathdef/original_merge.py"
       - "research_pipeline/adapters/mathdef/preview_site.py"
+      - "research_pipeline/adapters/mathdef/publish_root.py"
       - "research_pipeline/ui/renderer.py"
+      - ".github/workflows/pages.yml"
       - "research_pipeline/tests/test_original_merge.py"
       - "research_pipeline/tests/test_merged_linking.py"
       - "research_pipeline/tests/merged_ui_browser_smoke.cjs"
@@ -19,7 +21,9 @@ on:
     paths:
       - "research_pipeline/adapters/mathdef/original_merge.py"
       - "research_pipeline/adapters/mathdef/preview_site.py"
+      - "research_pipeline/adapters/mathdef/publish_root.py"
       - "research_pipeline/ui/renderer.py"
+      - ".github/workflows/pages.yml"
       - "research_pipeline/tests/test_original_merge.py"
       - "research_pipeline/experiments/reconstruction-v2-independent/post_wave2/**"
       - "definitions/**"
@@ -130,6 +134,24 @@ jobs:
           })
           PY
 
+      - name: Render main production site from merged meanings and verify original sources survive
+        run: |
+          python -m research_pipeline.adapters.mathdef.publish_root --site-root /tmp/mathdef-merge-check
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("/tmp/mathdef-merge-check")
+          main=json.loads((root/"definitions-index.json").read_text())
+          merged=json.loads((root/"merged/definitions-index.json").read_text())
+          assert main==merged, "Main site must render identical complete merged reference"
+          assert len(main) >= 2000
+          assert (root/"catalog.json").is_file()
+          assert (root/"link-report.json").is_file()
+          assert (root/"index.html").is_file()
+          assert "Expanded mathematical definitions" in (root/"index.html").read_text()
+          print("Production-root merged reference verified:",len(main),"searchable term groups")
+          PY
+
       - name: Browser-check recursive inline linking and independent searches
         run: |
           npm install --silent --no-save --no-audit --no-fund --prefix /tmp/mathdef-browser-test playwright-core@1.56.0
@@ -137,4 +159,7 @@ jobs:
           SERVER_PID=$!
           trap 'kill $SERVER_PID' EXIT
           sleep 1
+          node research_pipeline/tests/merged_ui_browser_smoke.cjs
+          MATHDEF_PREVIEW_ROOT=/tmp/mathdef-merge-check \
+          MATHDEF_PREVIEW_URL=http://127.0.0.1:8765/ \
           node research_pipeline/tests/merged_ui_browser_smoke.cjs

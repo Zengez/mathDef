@@ -124,7 +124,7 @@ def to_index(catalog: dict) -> list[dict]:
 
 
 def render(catalog_file: Path, branding_file: Path, destination: Path,
-           stage: str, description: str) -> dict:
+           stage: str, description: str, *, production: bool = False) -> dict:
     """Build a standalone static UI without mutating independent research files."""
     catalog = read_json(catalog_file)
     brand = read_json(branding_file)
@@ -148,11 +148,46 @@ def render(catalog_file: Path, branding_file: Path, destination: Path,
     index = to_index(catalog)
     frontend = Path(__file__).resolve().parent
     template = (frontend / "template.html").read_text(encoding="utf-8")
+    if production:
+        # The completed merged collection is the main product, not a
+        # reconstruction preview. Research statuses are still visible on
+        # individual formulations; source distinctions are never hidden.
+        banner = (
+            '<aside class="research-stage-notice">'
+            '<strong>Expanded mathematical definitions.</strong> '
+            'Browse the complete original mathDef collection together with '
+            'independent research additions and alternate meanings. '
+            'Research additions are source-attributed drafts, not formally '
+            'peer-reviewed mathematical facts. '
+            '<a href="./reconstruction/">Research history</a></aside>'
+        )
+        footer = (
+            '<footer>mathDef · Mathematical definitions and variations · '
+            '<a href="./reconstruction/">Research history</a></footer>'
+        )
+    else:
+        banner = (
+            '<aside class="research-stage-notice"><strong>' +
+            html.escape(stage) + '</strong> — ' +
+            html.escape(description) +
+            ' <a href="../">All reconstruction stages ↗</a></aside>'
+        )
+        footer = (
+            '<footer>' + html.escape(brand["project_name"]) + ' · ' +
+            html.escape(stage) + ' · Independent research preview. '
+            '<a href="../">Other stages ↗</a></footer>'
+        )
+    template = template.replace("{{STAGE_BANNER}}", banner)
+    template = template.replace("{{SITE_FOOTER}}", footer)
     for key, value in fields.items():
         template = template.replace("{{" + key + "}}", html.escape(str(value), quote=True))
     config = dict(brand)
     config["stage"] = stage
     config["stage_description"] = description
+    if production:
+        # The root site has its own long-lived visitor setting, separate from
+        # experiment previews. New visitors get the shared UI's In-Line mode.
+        config["storage_key"] = "mathdef-explore-mode"
     serialized = json.dumps(config, ensure_ascii=False).replace("<", "\\u003c").replace(
         ">", "\\u003e").replace("&", "\\u0026")
     template = template.replace("{{UI_CONFIG_JSON}}", serialized)

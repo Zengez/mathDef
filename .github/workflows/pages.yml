@@ -11,7 +11,7 @@ on:
       - 'data/**'
       - 'web/**'
       - 'scripts/**'
-      - 'research_pipeline/adapters/mathdef/preview*.py'
+      - 'research_pipeline/adapters/mathdef/*.py'
       - 'research_pipeline/adapters/mathdef/preview.js'
       - 'research_pipeline/adapters/mathdef/ui_branding.json'
       - 'research_pipeline/adapters/mathdef/resume.json'
@@ -61,6 +61,30 @@ jobs:
           node --check _site/reconstruction/wave2/preview.js
           test -f _site/reconstruction/wave1/index.html
           test -f _site/reconstruction/wave2/index.html
+      - name: Publish combined mathDef collection at main site root
+        run: |
+          python -m research_pipeline.adapters.mathdef.publish_root --site-root _site
+          node --check _site/app.js
+          node --check _site/feedback.js
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          root=Path("_site")
+          index=json.loads((root/"definitions-index.json").read_text())
+          original=json.loads((root/"api/definitions/v1/snapshot.json").read_text())
+          merged=json.loads((root/"catalog.json").read_text())
+          original_ids={e["id"] for e in original["definitions"]}
+          preserved={m["original_definition_id"] for g in merged["groups"]
+                     for m in g["meanings"] if m.get("source_origin")=="original_mathdef"}
+          assert original_ids == preserved, "Main site dropped an original definition"
+          assert len(index)==len(merged["groups"]), "Main site index incomplete"
+          assert (root/"catalog.json").is_file()
+          assert (root/"link-report.json").is_file()
+          assert (root/"reconstruction/merged/index.html").is_file()
+          assert (root/"index.html").is_file()
+          assert "Expanded mathematical definitions" in (root/"index.html").read_text()
+          print("Main mathDef site published:",len(index),"term groups including",len(original["definitions"]),"original definitions")
+          PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

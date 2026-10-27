@@ -1,21 +1,21 @@
 # mathDef
 
-Current collection snapshot: **1007 definitions across 40 subject folders** (October 16, 2026). See [the definition catalog](CATALOG.md) for per-subject counts, provenance guidance, and the mathematical review checklist.
+**Main mathDef site:** [zengez.github.io/mathDef](https://zengez.github.io/mathDef/). The published library combines **2,197 contextual meanings** under **2,048 searchable term headings**, including **all 1,014 original .tex definitions**, 958 independently reconstructed Wave 2 meanings, and 225 subsequent research additions (October 2026). The [original definition catalog](CATALOG.md) documents the initial source files and their subject distribution.
 
 An interactive, GitHub-hosted collection of mathematical definitions written in LaTeX.
 
-## Current editorial status (October 16, 2026)
+## Editorial provenance and research status
 
-The repository contains **1,007 definitions in 40 subjects**. The citation-suitability audit is complete for the existing corpus: **822 sources verified as suitable without changes, 185 entries whose citations or wording were corrected, and 0 citation entries pending**. See [CITATION_AUDIT.csv](CITATION_AUDIT.csv), [CITATION_AUDIT_PROCESS.md](CITATION_AUDIT_PROCESS.md), and [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md). These counts describe citation review, **not** formal mathematical peer review or individual approval of every KaTeX rendering. Entries retain their draft/example statuses until those separate checks occur.
+The **historical October 16 original-corpus audit** covered 1,007 definitions in 40 subjects. Its citation-suitability findings were: **822 sources verified as suitable without changes, 185 entries whose citations or wording were corrected, and 0 citation entries pending**. See [CITATION_AUDIT.csv](CITATION_AUDIT.csv), [CITATION_AUDIT_PROCESS.md](CITATION_AUDIT_PROCESS.md), and [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md). These counts describe citation review, **not** formal mathematical peer review or individual approval of every KaTeX rendering. Entries retain their draft/example statuses until those separate checks occur.
 
 ## Features
 
 - Two separate live searches: **Search terms** (term name and aliases only) and **Search definitions** (definition body only).
 - Independent result selections and optional side-by-side split view.
 - Click matches to read the definition in place; click related definitions to follow links.
-- Three recursive definition exploration modes: **Standard**, **Nested** (default), and **In-Line**. During the site build, matching terms/aliases in definition bodies generate candidate links, with ambiguity checks and branch-local cycle prevention. Curated link corrections live in [data/link_overrides.json](data/link_overrides.json). See [DEPENDENCY_LINKING.md](DEPENDENCY_LINKING.md) for precise behavior and limitations.
+- Three recursive definition exploration modes: **Standard**, **Nested**, and **In-Line** (default). During the site build, matching terms/aliases in definition bodies generate candidate links, with ambiguity checks and branch-local cycle prevention. The main site's merged-meaning matcher lives in [merged_linking.py](research_pipeline/adapters/mathdef/merged_linking.py); six genuinely convention-dependent occurrences are deliberately left unresolved. Original-corpus link overrides remain in [data/link_overrides.json](data/link_overrides.json). See [DEPENDENCY_LINKING.md](DEPENDENCY_LINKING.md) for the legacy original-data matcher and the [linking review](research_pipeline/experiments/reconstruction-v2-independent/post_wave2/LINK_AMBIGUITY_REVIEW_2026-10-26.md) for current combined-corpus context choices.
 - Visitors can **suggest a missing definition**, **suggest a correction** to any displayed or recursively expanded definition, or **report an erroneous automatic link**. Suggestions become public GitHub Issues for editorial review; no changes are applied automatically. The first version requires a GitHub account to finish submitting. An optional attribution name is published only with explicit consent. See [FEEDBACK_WORKFLOW.md](FEEDBACK_WORKFLOW.md).
-- A term may show **multiple equivalent, individually sourced formulations under one heading**, ordered pedagogically where sensible. The original definition stays in the same file, and alternatives are stored under `variants/`, without adding duplicate search results or changing term IDs. **Function** now displays both its assignment formulation and its set-theoretic relation formulation. See [FORMULATIONS.md](FORMULATIONS.md).
+- A term may show **multiple equivalent or context-specific, individually sourced meanings and formulations under one heading**. The original definitions remain in `definitions/` and their manually maintained alternatives in `variants/`; the independent research records and merged-only overlay supply additional displayed contexts without rewriting those original files. **Function** now displays both its assignment formulation and its set-theoretic relation formulation. See [FORMULATIONS.md](FORMULATIONS.md).
 - Definitions are individual `.tex` files, grouped by subject.
 
 ## Add a definition
@@ -46,21 +46,28 @@ and macros outside math mode are not yet supported.
 
 ## Local preview
 
-Python 3.9+ is the only local build requirement:
+Build the expanded main library from its original and independent research inputs:
 
 ```sh
 python3 scripts/build_index.py
+python3 -m research_pipeline.adapters.mathdef.preview_site --site-root _site/reconstruction
+python3 -m research_pipeline.adapters.mathdef.publish_root --site-root _site
 python3 -m http.server 8000 --directory _site
 ```
 
-Visit http://localhost:8000/. KaTeX loads from jsDelivr and needs internet access.
+Visit http://localhost:8000/ for the merged mathDef main site. The independent research comparison views remain available under `/reconstruction/`. KaTeX loads from jsDelivr and needs internet access.
 
 ## GitHub Pages
 
-A GitHub Actions workflow validates all definitions, constructs the index,
-and publishes the generated site from `main`. If necessary, set
+A GitHub Actions workflow validates the original data, constructs the merged index,
+and publishes the **combined** collection as the main site from `main`.
+Every original .tex definition and its formulations are verified as retained
+within the published meanings. The research previews remain under
+`/reconstruction/`. The prior original-only snapshot export remains
+separately available under `/api/definitions/v1/` for provenance.
+If necessary, set
 **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-Intended site URL: https://zengez.github.io/mathDef/
+Main site URL: https://zengez.github.io/mathDef/
 
 Definition searches presently match words in the body and raw LaTeX source.
 The site is an editorially audited **draft** mathematical reference, not yet a formally peer-reviewed encyclopedia.
