@@ -588,6 +588,62 @@
       "kept_meaning_id": "meaning.wave2.foundation.ring-map-unital",
       "kept_formulation_id": "form.wave2.foundation.ring-map-unital",
       "reason": "Both require preservation of addition, multiplication and 1 between unital associative rings. Distinct ring-map convention not preserving 1 remains separate."
+    },
+    {
+      "case_id": "research-division-ring",
+      "removed_meaning_id": "meaning.wave2.direct.3913df323abde5188991",
+      "kept_meaning_id": "meaning.wave2.scalar101.division-ring",
+      "kept_formulation_id": "form.wave2.scalar101.division-ring",
+      "reason": "Both define nonzero associative unital ring with all nonzero elements two-sided invertible; commutativity is not imposed. Preserve UCLA lead as additional source, not as verified evidence."
+    },
+    {
+      "case_id": "research-finite-field-extension",
+      "removed_meaning_id": "meaning.4777518984e96a98.finite-field-extension",
+      "kept_meaning_id": "meaning.mathdef.postwave.scan-finite-field-extension-20261026",
+      "kept_formulation_id": "form.meaning.mathdef.postwave.scan-finite-field-extension-20261026",
+      "reason": "Finite field extension is finite dimension over base field in both. Keep richer explanatory text and preserve Stacks 09G2 alongside postwave sources."
+    },
+    {
+      "case_id": "research-galois-extension",
+      "removed_meaning_id": "meaning.50d335de00e5f11d.galois-extension-review",
+      "kept_meaning_id": "meaning.26fa733af18b53e7.galois-field-extension",
+      "kept_formulation_id": "form.26fa733af18b53e7.galois-field-extension",
+      "reason": "Same algebraic normal separable field extension. Preserve finite automorphism criterion as informative consequence and both Stacks loci."
+    },
+    {
+      "case_id": "research-locally-finite-family",
+      "removed_meaning_id": "meaning.b1c99b8dae7a6bde.locally-finite-collection",
+      "kept_meaning_id": "meaning.mathdef.postwave.locally-finite-set-family-20261026",
+      "kept_formulation_id": "form.meaning.mathdef.postwave.locally-finite-set-family-20261026",
+      "reason": "Same local neighborhood meets only finitely many indexed members condition; point-finite contrast is an explanatory comparison, not a different definition."
+    },
+    {
+      "case_id": "research-purely-inseparable-extension",
+      "removed_meaning_id": "meaning.50d335de00e5f11d.purely-inseparable-extension-review",
+      "kept_meaning_id": "meaning.12e554f8d49d5361.purely-inseparable-extension",
+      "kept_formulation_id": "form.12e554f8d49d5361.purely-inseparable-extension",
+      "reason": "Both require characteristic p>0 and, for each element, a p-power in the base field; algebraicity follows automatically. Preserve both Stacks reference tags."
+    },
+    {
+      "case_id": "research-quasicompact-morphism",
+      "removed_meaning_id": "meaning.bcda9860a078827b.quasicompact-morphism-schemes",
+      "kept_meaning_id": "meaning.mathdef.postwave.scan-quasicompact-scheme-morphism-20261026",
+      "kept_formulation_id": "form.meaning.mathdef.postwave.scan-quasicompact-scheme-morphism-20261026",
+      "reason": "Inverse images of affine open subsets are quasi-compact in both; checking quasi-compact opens or an affine cover gives equivalent criteria, already explained in retained text. Preserve Stacks tag 01K2."
+    },
+    {
+      "case_id": "research-separable-extension",
+      "removed_meaning_id": "meaning.720eaae9156f6f4e.separable-algebraic-field-extension",
+      "kept_meaning_id": "meaning.50d335de00e5f11d.separable-algebraic-extension",
+      "kept_formulation_id": "form.50d335de00e5f11d.separable-algebraic-extension",
+      "reason": "Every extension element separable over base field expands to exactly the retained no-repeated-roots minimal-polynomial condition; keep both cited Stacks loci."
+    },
+    {
+      "case_id": "research-boolean-ring-nonunital",
+      "removed_meaning_id": "meaning.wave2.direct.cf59d9cb388b3999576d",
+      "kept_meaning_id": "meaning.wave2.alternative39.boolean-ring-nonunital",
+      "kept_formulation_id": "form.wave2.alternative39.boolean-ring-nonunital",
+      "reason": "Both allow nonunital associative rings satisfying x²=x for all x. Preserve the unital Boolean ring as a genuinely distinct ring convention; record Stacks tag 04PN as unverified source lead."
     }
   ],
   "metadata_assignments": {
@@ -902,6 +958,33 @@
     "meaning.wave2.foundation.ring-map-general": {
       "subject": "Algebra",
       "context": "Identity preservation not required"
+    },
+    "meaning.wave2.scalar101.division-ring": {
+      "subject": "Algebra",
+      "context": "Unital associative rings"
+    },
+    "meaning.mathdef.postwave.scan-finite-field-extension-20261026": {
+      "subject": "Field Theory"
+    },
+    "meaning.26fa733af18b53e7.galois-field-extension": {
+      "subject": "Field Theory"
+    },
+    "meaning.mathdef.postwave.locally-finite-set-family-20261026": {
+      "subject": "Topology"
+    },
+    "meaning.12e554f8d49d5361.purely-inseparable-extension": {
+      "subject": "Field Theory",
+      "context": "Positive-characteristic fields"
+    },
+    "meaning.mathdef.postwave.scan-quasicompact-scheme-morphism-20261026": {
+      "subject": "Algebraic Geometry"
+    },
+    "meaning.50d335de00e5f11d.separable-algebraic-extension": {
+      "subject": "Field Theory"
+    },
+    "meaning.wave2.alternative39.boolean-ring-nonunital": {
+      "subject": "Algebra",
+      "context": "Nonunital rings"
     }
   },
   "text_overrides": {
