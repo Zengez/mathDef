@@ -146,9 +146,12 @@ def main() -> None:
     parser.add_argument("--catalog", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--limit", type=int, default=60)
+    parser.add_argument("--cutoff", type=float, default=0.73)
     args = parser.parse_args()
     catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
-    result = screen(catalog, limit=args.limit)
+    if not 0 < args.cutoff <= 1:
+        parser.error('--cutoff must be in (0,1]')
+    result = screen(catalog, limit=args.limit, cutoff=args.cutoff)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n",
                            encoding="utf-8")
