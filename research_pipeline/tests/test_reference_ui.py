@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from research_pipeline.ui.renderer import ViewError, render, to_index
+from research_pipeline.ui.renderer import ViewError, render, to_index, to_sources_index
 
 
 class ReferenceUITests(unittest.TestCase):
@@ -156,6 +156,126 @@ class ReferenceUITests(unittest.TestCase):
         planet = next(x for x in index if x["term"] == "Planet")
         self.assertEqual(planet["dependencies"][0]["formulation"], "form.planet.two")
         self.assertEqual(planet["dependencies"][0]["preferred_formulation"], "form.orbit.two")
+
+
+    def _source_registry(self):
+        # A domain-produced registry, not a source rank invented by the UI.
+        return {
+            "schema_version": 1, "scope": "example_sources",
+            "sources": {
+                "s.catalog": {
+                    "id": "s.catalog", "url": "https://example.org/catalog/orbit",
+                    "titles": ["Scientific catalog"],
+                    "occurrences": [{
+                        "group_id": "concept.orbit", "meaning_id": "meaning.orbit.one",
+                        "formulation_id": "form.orbit.one",
+                        "locator": "https://example.org/catalog/orbit",
+                        "role": "supporting definition",
+                        "verification_status": "direct_source_passage_checked",
+                        "provenance_only": False,
+                    }],
+                    "source_convention_assessments": [],
+                },
+                "s.handbook": {
+                    "id": "s.handbook", "url": "https://example.org/handbook/orbit",
+                    "titles": ["Scientific handbook"],
+                    "occurrences": [{
+                        "group_id": "concept.orbit", "meaning_id": "meaning.orbit.two",
+                        "formulation_id": "form.orbit.two",
+                        "locator": "https://example.org/handbook/orbit",
+                        "role": "supporting definition",
+                        "verification_status": "untracked",
+                        "provenance_only": False,
+                    }],
+                },
+                "s.planet": {
+                    "id": "s.planet", "url": "https://example.org/catalog/planet",
+                    "titles": ["Scientific catalog — planets"],
+                    "occurrences": [{
+                        "group_id": "concept.planet", "meaning_id": "meaning.planet",
+                        "formulation_id": "form.planet",
+                        "role": "source-file provenance",
+                        "verification_status": "untracked",
+                        "provenance_only": True,
+                    }],
+                },
+            },
+            "groups": [
+                {"group_id": "concept.orbit", "term": "Orbit",
+                 "source_ids": ["s.catalog", "s.handbook"],
+                 "meanings": [
+                     {"meaning_id": "meaning.orbit.one", "subject": "Astronomy",
+                      "context": None,
+                      "source_ids": ["s.catalog"],
+                      "primary_source_by_formulation": {"form.orbit.one": "s.catalog"},
+                      "convention_notes": []},
+                     {"meaning_id": "meaning.orbit.two", "subject": "Mathematical Dynamics",
+                      "context": None,
+                      "source_ids": ["s.handbook"],
+                      "primary_source_by_formulation": {"form.orbit.two": "s.handbook"},
+                      "convention_notes": []}
+                 ]},
+                {"group_id": "concept.planet", "term": "Planet",
+                 "source_ids": ["s.planet"],
+                 "meanings": [
+                     {"meaning_id": "meaning.planet", "subject": "Astronomy",
+                      "context": None,
+                      "source_ids": ["s.planet"],
+                      "primary_source_by_formulation": {},
+                      "convention_notes": []}
+                 ]}
+            ]
+        }
+
+    def test_sources_index_preserves_metadata_without_claiming_verification(self):
+        sources = self._source_registry()
+        validated = to_sources_index(self.catalog, sources)
+        self.assertIs(validated, sources)
+        self.assertEqual(validated["sources"]["s.catalog"]["occurrences"][0]
+                         ["verification_status"], "direct_source_passage_checked")
+        self.assertEqual(validated["sources"]["s.planet"]["occurrences"][0]
+                         ["provenance_only"], True)
+        self.assertEqual(validated["groups"][0]["meanings"][0]
+                         ["primary_source_by_formulation"]["form.orbit.one"], "s.catalog")
+        out = self.root / "sources-viewer"
+        render(self.root / "catalog.json", self.root / "brand.json", out,
+               "Draft", "Synthetic", source_registry=sources)
+        page = (out / "index.html").read_text()
+        self.assertIn("sources-dialog", page)
+        self.assertTrue((out / "sources-index.json").exists())
+        self.assertEqual(json.loads((out / "sources-index.json").read_text()), sources)
+        self.assertIn('"sources_file": "sources-index.json"', page)
+        # A generic independent stage without an explicit source registry
+        # should not fabricate primary-source selections.
+        out2 = self.root / "no-sources"
+        render(self.root / "catalog.json", self.root / "brand.json",
+               out2, "Draft", "Synthetic")
+        self.assertFalse((out2 / "sources-index.json").exists())
+
+    def test_sources_index_rejects_stale_primary_and_missing_occurrence(self):
+        import copy
+        base = self._source_registry()
+        for edited in ("stale_form", "unknown_source", "false_primary",
+                       "wrong_owner", "missing_group"):
+            registry = copy.deepcopy(base)
+            if edited == "stale_form":
+                registry["groups"][0]["meanings"][0]["primary_source_by_formulation"] = {
+                    "form.not-present": "s.catalog"
+                }
+            elif edited == "unknown_source":
+                registry["groups"][0]["meanings"][0]["primary_source_by_formulation"] = {
+                    "form.orbit.one": "s.not-present"
+                }
+            elif edited == "false_primary":
+                registry["groups"][1]["meanings"][0]["primary_source_by_formulation"] = {
+                    "form.planet": "s.planet"
+                }
+            elif edited == "wrong_owner":
+                registry["sources"]["s.catalog"]["occurrences"][0]["group_id"] = "concept.planet"
+            elif edited == "missing_group":
+                registry["groups"].pop()
+            with self.subTest(edited=edited), self.assertRaises(ViewError):
+                to_sources_index(self.catalog, registry)
 
     def test_reject_bad_source_and_relation(self):
         self.catalog["groups"][0]["meanings"][0]["formulations"][0]["sources"] = []

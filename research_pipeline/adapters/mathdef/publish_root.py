@@ -13,6 +13,7 @@ from pathlib import Path
 from research_pipeline.adapters.mathdef.original_merge import (
     for_display, read_original,
 )
+from research_pipeline.adapters.mathdef.merged_cleanup import compile_source_registry
 from research_pipeline.ui.renderer import render as render_ui
 from scripts.merged_definition_export import write_merged_definition_export
 
@@ -52,6 +53,9 @@ def publish(repo: Path, site: Path) -> dict:
             if actual.get(fid) != for_display(form["body"]):
                 raise ValueError(f"Original formulation not preserved: {fid}")
     branding = repo / "research_pipeline/adapters/mathdef/ui_branding.json"
+    # Produce source evidence for exactly this publication catalog. The
+    # independent historical preview is never passed the cleaned registry.
+    source_registry = compile_source_registry(catalog, repo=repo)
     counts = render_ui(
         catalog_path,
         branding,
@@ -62,6 +66,7 @@ def publish(repo: Path, site: Path) -> dict:
         # Future accepted visitor suggestions must be explicitly approved
         # here before changing any displayed definition's priority.
         expansion_overrides_file=repo / "data/definition_expansion_priority_overrides.json",
+        source_registry=source_registry,
     )
     # The canonical site publishes the complete meaning-level catalog and link
     # evidence too. The original .tex sources and comparison previews remain

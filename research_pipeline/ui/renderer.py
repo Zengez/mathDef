@@ -207,9 +207,89 @@ def to_index(catalog: dict, *, expansion_overrides: dict | None = None) -> list[
     return sorted(result, key=lambda x: (x["term"].casefold(), x["id"]))
 
 
+
+def to_sources_index(catalog: dict, registry: dict) -> dict:
+    """Validate a source registry for the *same* catalog being displayed.
+
+    Source identity and primary citation assignments are supplied by the
+    producing domain adapter; the portable renderer neither ranks research
+    references nor interprets source verification states. All source evidence
+    and internal source-file provenance remain distinct and traceable.
+    """
+    if (not isinstance(registry, dict) or registry.get("schema_version") != 1
+            or not isinstance(registry.get("groups"), list)
+            or not isinstance(registry.get("sources"), dict)):
+        raise ViewError("Invalid source registry display contract")
+    catalog_groups = {g["id"]: g for g in catalog["groups"]}
+    form_owners = {}
+    meaning_owners = {}
+    for gid, group in catalog_groups.items():
+        for meaning in group["meanings"]:
+            meaning_owners[meaning["id"]] = gid
+            for form in meaning["formulations"]:
+                form_owners[form["id"]] = (gid, meaning["id"])
+    source_ids = set(registry["sources"])
+    for sid, source in registry["sources"].items():
+        if (not isinstance(source, dict) or source.get("id") != sid
+                or not isinstance(source.get("url"), str)
+                or not source["url"].startswith("https://")
+                or not isinstance(source.get("occurrences"), list)):
+            raise ViewError("Invalid source registry citation identity: " + sid)
+        for occurrence in source["occurrences"]:
+            if not isinstance(occurrence, dict):
+                raise ViewError("Malformed source occurrence: " + sid)
+            gid, mid, fid = (occurrence.get(k) for k in
+                              ("group_id", "meaning_id", "formulation_id"))
+            if meaning_owners.get(mid) != gid:
+                raise ViewError("Stale source occurrence meaning: " + sid)
+            if fid is not None and form_owners.get(fid) != (gid, mid):
+                raise ViewError("Stale source occurrence formulation: " + sid)
+    seen_groups = set()
+    for row in registry["groups"]:
+        if not isinstance(row, dict):
+            raise ViewError("Invalid source registry term entry")
+        gid = row.get("group_id")
+        if gid not in catalog_groups or gid in seen_groups:
+            raise ViewError("Unknown or duplicate source registry term: " + str(gid))
+        seen_groups.add(gid)
+        actual = catalog_groups[gid]
+        if row.get("term") != actual["title"]:
+            raise ViewError("Stale source registry term label: " + gid)
+        actual_meanings = {m["id"]: m for m in actual["meanings"]}
+        meaning_rows = row.get("meanings", [])
+        if {m.get("meaning_id") for m in meaning_rows} != set(actual_meanings):
+            raise ViewError("Missing/stale meaning-level source registry: " + gid)
+        for mr in meaning_rows:
+            mid = mr["meaning_id"]
+            actual_forms = {f["id"] for f in actual_meanings[mid]["formulations"]}
+            primary_by_form = mr.get("primary_source_by_formulation", {})
+            if not isinstance(primary_by_form, dict):
+                raise ViewError("Malformed primary-source mapping: " + mid)
+            if not set(primary_by_form).issubset(actual_forms):
+                raise ViewError("Stale primary source formulation: " + mid)
+            if not set(mr.get("source_ids", [])).issubset(source_ids):
+                raise ViewError("Missing source identity in registry: " + mid)
+            for fid, sid in primary_by_form.items():
+                if sid not in source_ids or not any(
+                    occurrence.get("formulation_id") == fid and
+                    occurrence.get("meaning_id") == mid and
+                    not occurrence.get("provenance_only")
+                    for occurrence in registry["sources"][sid]["occurrences"]
+                ):
+                    raise ViewError("Primary source lacks supporting occurrence: " + fid)
+        if not set(row.get("source_ids", [])).issubset(source_ids):
+            raise ViewError("Missing source identity for term: " + gid)
+    if seen_groups != set(catalog_groups):
+        raise ViewError("Source registry does not cover every displayed term")
+    # Return the source registry as-is, preserving all cited evidence and
+    # scope notes for the deliberately separate user-facing Sources dialog.
+    return registry
+
+
 def render(catalog_file: Path, branding_file: Path, destination: Path,
            stage: str, description: str, *, production: bool = False,
-           expansion_overrides_file: Path | None = None) -> dict:
+           expansion_overrides_file: Path | None = None,
+           source_registry: dict | None = None) -> dict:
     """Build a standalone static UI without mutating independent research files."""
     catalog = read_json(catalog_file)
     brand = read_json(branding_file)
@@ -271,6 +351,8 @@ def render(catalog_file: Path, branding_file: Path, destination: Path,
     config = dict(brand)
     config["stage"] = stage
     config["stage_description"] = description
+    if source_registry is not None:
+        config["sources_file"] = "sources-index.json"
     if production:
         # The root site has its own long-lived visitor setting, separate from
         # experiment previews. New visitors get the shared UI's In-Line mode.
@@ -286,6 +368,14 @@ def render(catalog_file: Path, branding_file: Path, destination: Path,
         shutil.copyfile(frontend / filename, destination / filename)
     (destination / "definitions-index.json").write_text(
         json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    if source_registry is not None:
+        validated = to_sources_index(catalog, source_registry)
+        (destination / "sources-index.json").write_text(
+            json.dumps(validated, ensure_ascii=False, separators=(",", ":")) + "\n",
+            encoding="utf-8",
+        )
     (destination / "index.html").write_text(template, encoding="utf-8")
     return {"terms": len(index), "formulations": sum(len(x["formulations"]) for x in index),
-            "relations": len(catalog["relations"]), "stage": stage}
+            "relations": len(catalog["relations"]), "stage": stage,
+            "sources_available": source_registry is not None,
+            "source_identities": len(source_registry["sources"]) if source_registry else 0}

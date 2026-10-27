@@ -345,12 +345,16 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          from research_pipeline.ui.renderer import to_index
+          from research_pipeline.ui.renderer import to_index, to_sources_index, render
           src=Path('/tmp/mathdef-cleanup-stage')
           catalog=json.loads((src/'catalog.stage-only.json').read_text(encoding='utf-8'))
           overrides=json.loads(Path('data/definition_expansion_priority_overrides.json')
                                .read_text(encoding='utf-8'))
           index=to_index(catalog, expansion_overrides=overrides)
+          registry=json.loads((src/'sources.stage-only.json').read_text(encoding='utf-8'))
+          checked=to_sources_index(catalog, registry)
+          assert len(checked['sources'])==2662
+          assert len(checked['groups'])==len(index)
           assert overrides['schema_version']==1
           registered={entry['name'] for entry in json.loads(
               Path('data/math_subjects.json').read_text(encoding='utf-8'))['entries']
@@ -358,6 +362,16 @@ jobs:
           forms=[form for term in index for form in term['formulations']]
           assert len(index)==1986 and len(forms)==2104
           assert all(form.get('subject') in registered for form in forms)
+          brand=Path('research_pipeline/adapters/mathdef/ui_branding.json')
+          site=src/'sources-interface-preview'
+          rendered=render(src/'catalog.stage-only.json',brand,site,
+                          'stage-only sources audit','Not published',
+                          expansion_overrides_file=Path('data/definition_expansion_priority_overrides.json'),
+                          source_registry=registry)
+          assert rendered['sources_available']
+          assert rendered['source_identities']==2662
+          assert (site/'sources-index.json').is_file()
+          assert (site/'index.html').is_file()
           lookup={term['id']:term for term in index}
           matched=unmatched=0
           for term in index:
@@ -381,6 +395,8 @@ jobs:
               'formulations_with_registered_subject':len(forms),
               'approved_priority_override_rules':approved_count,
               'links_with_approved_display_priority':len(rendered_override_deps),
+              'source_registry_groups_rendered':len(checked['groups']),
+              'source_registry_identities_rendered':len(checked['sources']),
               'links_to_multi_formulation_targets_with_exact_match':matched,
               'links_to_multi_formulation_targets_without_exact_match':unmatched,
               'note':'Audit only; no relinking, export or publication'
