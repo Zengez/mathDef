@@ -25,6 +25,7 @@ on:
   push:
     branches: [main]
     paths:
+      - ".github/workflows/combined-preview-merge-check.yml"
       - "research_pipeline/adapters/mathdef/original_merge.py"
       - "research_pipeline/adapters/mathdef/preview_site.py"
       - "research_pipeline/adapters/mathdef/publish_root.py"
