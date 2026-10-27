@@ -32,6 +32,35 @@ term-level reference/source metadata. If a convention has not been checked,
 its state is **not_checked**, not assumed absent or present. Other structural
 differences and borderline cases remain subject to the user's review.
 
+**Required interpretation rule (2026-10-27 clarification):** mathematical
+authors often state **restrictive** conventions explicitly and do not
+typically announce the absence of a restriction. Keep source **evidence
+status** distinct from its **effective working interpretation**:
+
+- `verified_applies`: follow a positively established restriction at its
+  verified scope; make hidden source assumptions explicit when needed.
+- `verified_opposite`: follow the **current mathDef canonical broad meaning**
+  as the working interpretation; retain evidence that a particular
+  restriction was rejected.
+- `checked_inconclusive`: **also follow the current mathDef canonical broad
+  meaning for editorial wording**, while preserving the **inconclusive**
+  evidence status and never claiming the author explicitly endorsed it.
+  Do not manufacture a restricted variant solely because no explicit
+  rejection of nonemptiness/another restriction was found.
+- `not_checked`: no source-specific convention assessment exists; use the
+  canonical meaning as mathDef's own baseline, but do not attribute that
+  reading to the source. Check/review if a source-derived assertion
+  materially depends on unverified assumptions.
+- A verified local restriction overrides this fallback within its scope.
+
+**Dynamic inheritance:** `verified_opposite` and `checked_inconclusive`
+must resolve by reference to the **latest mathDef canonical meaning**.
+If that canonical meaning is later broadened, their working interpretations
+broaden automatically; do not freeze old predicates, introduce backward-
+compatibility assumptions, or pretend historical inconclusive checks became
+verified. Reevaluate imported definitions whose exact mathematics depends
+on the change, and correct their wording when warranted.
+
 **The permanent guide specifies a convention catalog and per-source,
 per-scope convention-assessment contract.** Its data schema/source-list
 implementation belongs to the ongoing deduplication/source-registry cleanup;

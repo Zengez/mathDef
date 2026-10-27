@@ -21,13 +21,13 @@ The editorial goal is to retain meaningful mathematical perspectives, not manufa
 **Two different layers must not be conflated:**
 
 1. **Canonical mathDef meaning:** the mathematically precise predicate/structure mathDef elects to state for a term, with explicit assumptions and boundary cases. When a property is naturally defined by a universal condition that also makes sense on an empty or trivial object, **prefer the broad formulation, including that object**, unless the mathematics itself or a well-supported editorial choice calls for a restriction. Avoid silently importing an author's convenient nonempty/nonzero standing assumption into the base definition.
-2. **Source-specific convention:** a qualification a particular book, paper, chapter, section, or formal library imposes on its own use of the term. Such a convention can be perfectly legitimate *within that source* while differing from mathDef's preferred general wording. Record the difference as a source convention, **not automatically as a second core mathematical definition**.
+2. **Source-specific convention:** a qualification a particular book, paper, chapter, section, or formal library imposes on its own use of the term. Such a convention can be perfectly legitimate *within that source* while differing from mathDef's preferred general wording. Record the difference as a source convention, **not automatically as a second core mathematical definition**. **A restriction generally requires affirmative evidence to override mathDef's broad reading**: authors routinely announce restrictive standing assumptions, but may have no reason to explicitly declare that they are *not* adopting a restriction. The absence of an explicit rejection must therefore not force an unnecessary second definition.
 
 This is an **editorial default, not an assertion that there is one universally accepted definition**. Some objects require a nonzero or nonempty condition by their actual axioms; some fields have genuinely competing conventions, and some restrictions determine substantively different structures. Investigate those instead of indiscriminately broadening definitions. Preserve mathematically useful alternate constructions even if they are logically equivalent.
 
 **Place short convention notes after the pertinent canonical definition** (once the user-facing UI is implemented), not inside the defining predicate itself. A note explains common restricted usage without falsely changing what mathDef defines. The full per-source evidence belongs in the term's future **Sources** view, not as repeated inline citations. Until that UI exists, persist the canonical note and source-convention records as metadata.
 
-**Definitions borrowed from a source with a narrower convention require an explicit translation.** When adapting a definition that uses a source-defined word, make the inherited restriction visible *in mathDef's actual statement*, e.g., say **"nonempty connected subspace"** instead of simply **"connected subspace"** when the source requires nonemptiness and mathDef's unqualified term permits the empty subspace. Do this only when the restriction is genuinely required, is not already logically implied, and preserves the source's intended mathematical meaning. Record that the source uses a narrower convention and what wording mathDef made explicit.
+**Definitions borrowed from a source with a verified narrower convention require an explicit translation.** When adapting a definition that uses a source-defined word, make the inherited restriction visible *in mathDef's actual statement*, e.g., say **"nonempty connected subspace"** instead of simply **"connected subspace"** when the source establishes nonemptiness and mathDef's unqualified term permits the empty subspace. Do this only when the restriction is genuinely required, is not already logically implied, and preserves the source's intended mathematical meaning. Record that the source uses a narrower convention and what wording mathDef made explicit. **If review was inconclusive, default to mathDef's current broad interpretation instead of inventing the narrower source restriction**; keep the inconclusive status and revise later if new evidence establishes it.
 
 Do not present an adapted paraphrase as a verbatim quotation. If the translation changes the mathematical claim rather than merely surfacing an implicit condition, pause for mathematical/source review instead of silently editing.
 
@@ -101,21 +101,46 @@ If a new mathDef definition uses a term with multiple accepted mathematical mean
 
 A source assessment describes **that source**, **not all of Stacks, Wikipedia, a publisher, or an author's entire career**. Different articles, sections, editions, or authors can use different assumptions.
 
-### 4.2 Source assessments must distinguish unknown from negative
+### 4.2 Two separate questions: evidence status and working interpretation
 
-For each **relevant encountered convention**, use an explicit state such as:
+**Critical editorial asymmetry:** mathematical authors often **explicitly adopt a restriction** such as "all connected spaces in this work are nonempty," but would not ordinarily write "we do *not* make that restriction." Therefore a checked source with no discernible restriction should usually be **interpreted using mathDef's canonical broad definition**, *without* treating that interpretation as a verified claim about the author.
 
-| State | Interpretation |
-|---|---|
-| `not_checked` | No review of that source and convention; no inference permitted. This is the **default**, including when no corresponding record exists. |
-| `verified_applies` | The applicable source passage or a valid inherited convention **positively establishes** the restriction. Store the locator and scope. |
-| `verified_opposite` | The source explicitly establishes the opposing interpretation; store exact evidence and scope. |
-| `checked_inconclusive` | Relevant passage inspected, but no determination can safely be made. Not the same as `verified_opposite`. |
-| `conflicting_scopes` | Different applicable portions differ; select the local scope and/or ask for review. |
+For each source/convention pairing, keep **two logically separate dimensions**:
 
-A mere occurrence of the word `connected` does not verify nonemptiness, and absence of an explicit stipulation does not prove the broad opposite. `not_checked` and `checked_inconclusive` must not be converted to an assumption about the source's position.
+- **Evidence status:** what we actually found (or did not find) after inspection.
+- **Effective interpretation for mathDef's editorial work:** how to read a term *when using that source right now*, subject to known applicable restrictions. A working default is a defeasible assumption, not verified source evidence.
 
-### 4.3 Suggested machine-readable record (illustrative, not yet populated)
+| Evidence status | What is known | Effective interpretation when wording/adapting definitions |
+|---|---|---|
+| `not_checked` | Source/convention not reviewed; **unknown**, not negative evidence | mathDef's canonical meaning is the baseline for *our writing*, but do not attribute agreement to the unchecked source. If correct source translation depends materially on the missing check, inspect the source or log an unresolved case. |
+| `verified_applies` | Positive evidence for a specific narrower convention in its applicable scope | Apply the **verified restriction**, preserving its actual conditions and scope. Make any required qualification explicit when translating a dependent definition. |
+| `verified_opposite` | Positive evidence that the **particular restriction under investigation** does not apply | **Inherit the current mathDef canonical meaning** for this convention unless another independently verified restriction applies. Keep the source's evidence; do not freeze the then-current canonical breadth as a source-specific value. |
+| `checked_inconclusive` | Source/convention examined, no conclusive positive or negative evidence | **Inherit the current mathDef canonical meaning**, provisionally and operationally, **just as for `verified_opposite`**. Keep `checked_inconclusive` as the evidence label, *not* `verified_opposite`; no restriction is inserted into borrowed wording without affirmative evidence. |
+| `conflicting_scopes` | Verified statements differ across sections/chapters/local contexts, or applicability is genuinely uncertain | Resolve by the **most specific applicable verified scope**. If irreconcilable and the choice affects mathematics, log for review; do not silently pretend there is one source-wide rule. |
+
+**Default for inconclusive sources:** If we have examined a source and cannot substantiate a restrictive convention, we proceed *prima facie* as though it uses mathDef's broad definition. We do **not** remain undecided about how to word the imported definition solely because the source did not explicitly reject a restriction. If later evidence shows that the restriction did apply, update the source record and the dependent formulations accordingly.
+
+This rule is about interpreting **unproven restrictions**. It does not cancel a narrower assumption clearly stated in the mathematical passage itself, an established applicable standing convention, or a substantive nonempty/nonzero axiom. When an apparent convention alters a mathematical construction beyond a simple qualification, compare the actual mathematics before editing.
+
+### 4.3 Follow the *current* canonical definition dynamically, not a historical snapshot
+
+**The effective interpretation of both `verified_opposite` and `checked_inconclusive` follows the *current* mathDef canonical meaning** for the affected concept. If mathDef subsequently broadens that meaning, these source interpretations **broaden automatically by default**; they are not pinned to the version that existed when the source was checked. No legacy-compatibility requirement should preserve an obsolete narrower working assumption.
+
+For example:
+
+1. mathDef currently takes "connected" to mean "no nontrivial separation" (so `∅` qualifies).
+2. Source A positively requires nonemptiness (`verified_applies`): imports from A use the explicit nonempty qualifier where necessary.
+3. Source B explicitly rejects that added restriction (`verified_opposite`): imports from B follow mathDef's current connectedness predicate.
+4. Source C was inspected but no convention could be determined (`checked_inconclusive`): imports from C **also** follow mathDef's current predicate, *without claiming C explicitly endorses it*.
+5. If mathDef later adopts a genuinely broader predicate for a term, B and C inherit that new predicate as the working default without source-specific compatibility shims. A remains constrained by its **verified** nonempty requirement (or any other exact restriction supported by evidence).
+
+**Data-model requirement:** represent the fallback as `effective_interpretation: "inherit_current_mathdef_canonical"` (or equivalent resolution logic) tied to a stable **concept/convention ID**. Do **not** save `empty_allowed`, an old predicate, or a snapshot revision as a *fixed* operational value for `verified_opposite` / `checked_inconclusive`. The former may be recorded as *historical evidence*, but operational semantics must be computed from the latest canonical definition.
+
+A change to the canonical meaning should trigger a **targeted recheck of dependent imported definitions**, especially those with previously inserted qualifiers or semantic transformations, so their actual mathematical statements remain correct. This is not a requirement to preserve the old interpretation or compatibility: revise affected definitions when necessary. The fallback is intended to minimize unnecessary restrictions, **not** to excuse mathematically false source attributions or contradictions in explicit source axioms.
+
+### 4.4 Source assessment records and source-scope inheritance
+
+The following is a suggested machine-readable record (illustrative, not yet populated):
 
 ```json
 {
@@ -128,37 +153,39 @@ A mere occurrence of the word `connected` does not verify nonemptiness, and abse
   "conventions": [
     {
       "convention_id": "topology.connected.nonempty",
-      "status": "not_checked",
-      "value": null,
-      "scope": null,
+      "status": "checked_inconclusive",
+      "effective_interpretation": "inherit_current_mathdef_canonical",
+      "canonical_concept_id": "topology.connected",
+      "explicit_source_restriction": null,
+      "scope": "section reviewed; no source-wide conclusion verified",
       "evidence_url": null,
       "evidence_locator": null,
       "checked_at": null,
-      "notes": "No source-wide nonempty convention has yet been verified."
+      "notes": "Relevant sections reviewed without conclusive evidence of a restrictive standing convention; mathDef's current canonical meaning is the provisional default, not an attributed source claim."
     }
   ]
 }
 ```
 
-Here the URL and identity are **placeholders**, not a report about an actual source. For a verified local assumption, set `status` to `verified_applies`, specify that `value` is `nonempty_required`, and record the relevant chapter/section/page and direct evidence. A verified broad interpretation would be `verified_opposite` with `value: "empty_allowed"`. A source-wide value can be inherited by later sections **only when its stated scope truly includes them**; a narrower local statement overrides the parent.
+Here the URL and identity are **placeholders**, not a report about an actual source. To record a verified restrictive convention, set `status` to `verified_applies`, `explicit_source_restriction` to `nonempty_required`, and include the evidence, chapter/section/page, and exact applicability scope. For `verified_opposite`, retain the evidence explicitly rejecting the restriction, but use `effective_interpretation: "inherit_current_mathdef_canonical"`. For `checked_inconclusive`, use the **same operational interpretation** with the **different evidence status**. A source-wide restriction is inherited by subsequent passages only where the verified scope actually includes them; a narrower local override takes precedence. A source with **no assessment** is `not_checked`, not silently `checked_inconclusive`.
 
 The eventual schema should support multiple independent conventions per source, even if most have not been checked. The term-level **Sources** link should show accessible references and useful convention warnings, while correction reports and source-reliability analytics remain **internal-only** and separate, as specified in the deduplication plan.
 
-### 4.4 Translation audit trail for reused definitions
+### 4.5 Translation audit trail for reused definitions
 
 When an imported source definition has been rewritten to expose a convention, track:
 
 1. Source identity, exact original passage location, and whether the mathematical text was *quoted* or *paraphrased*.
 2. The convention ID, **verified applicable** source assessment and scope.
-3. The original predicate expressed using the source's interpretation.
-4. The explicit mathDef formulation (for example, adding `nonempty` to `connected subset`), with a short mathematical equivalence justification.
+3. The original predicate expressed using the source's interpretation. Distinguish a **verified restriction** from the **provisional canonical fallback** for inconclusive checks.
+4. The explicit mathDef formulation (for example, adding `nonempty` to `connected subset` **only when a nonempty source convention is verified**), with a short mathematical equivalence justification. Record when the formulation simply follows the current mathDef canonical predicate.
 5. Which term/meaning/formulation was affected, and any related concepts whose definitions might need review.
 
 This audit trail prevents inadvertent semantic drift or attribution errors. It also allows later editors to revisit inherited assumptions if an author's convention was misunderstood. When exact equivalence cannot be demonstrated, preserve the original as a candidate for *manual adjudication* rather than treating it as a straightforward wording repair.
 
-### 4.5 When to apply this infrastructure
+### 4.6 When to apply this infrastructure
 
-The current **deduplication and source-registry cleanup** should adopt this data model as appropriate and record actual verified source conventions as sources are reviewed. Do **not** launch a separate retrospective crawl solely to fill every source–convention combination, and do not mark unchecked items as verified to improve a coverage metric. Counts of checked/unchecked assessments can be added later.
+The current **deduplication and source-registry cleanup** should adopt this data model as appropriate and record actual verified source conventions as sources are reviewed. Its import/duplicate decisions must implement the **canonical-default behavior of checked-inconclusive sources**, without promoting their evidence status. Do **not** launch a separate retrospective crawl solely to fill every source–convention combination, and do not mark unchecked or inconclusive items as verified to improve a coverage metric. Counts of checked/unchecked assessments can be added later.
 
 Do not implement the user-facing **Sources** drawer, source-reliability scoring, or extra UI behavior merely because this contract is documented. The user wishes to revisit display choices *after* mathematical deduplication. Preserve the agreed **user review of uncertain duplicates before the final global linking rebuild**.
 
@@ -195,7 +222,8 @@ Question: Are A and B separate useful meanings, or one canonical
           predicate with a note about source-specific conventions?
 Canonical mathDef predicate: [precise mathematical condition proposed]
 Boundary check: [e.g. agree whenever X ≠ ∅; disagree only for X = ∅]
-Source-convention assessments: [source URL, scope, verified/not_checked]
+Source-convention assessments: [source URL, scope, verified_applies /
+  verified_opposite / checked_inconclusive / not_checked, plus working fallback]
 Borrowed-definition translation: [if needed: source shorthand → explicit assumption]
 Clearly retained: [e.g. C, using a distinct defining construction]
 Preliminary recommendation: [merge with note / retain / defer, with rationale]
