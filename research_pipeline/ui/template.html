@@ -19,7 +19,7 @@
       <p class="subtitle">{{SUBTITLE}}</p></div>
     <a class="github" href="{{REPOSITORY_URL}}" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
   </header>
-  <aside class="research-stage-notice"><strong>{{STAGE_NAME}}</strong> — {{STAGE_DESCRIPTION}} <a href="../">All reconstruction stages ↗</a></aside>
+  {{STAGE_BANNER}}
   <main>
     <div class="intro"><div><h2>Find a {{NOUN}}</h2><p>Results narrow as you type. Select any match to read its complete {{NOUN}}.</p></div><span class="badge" id="total">Loading…</span></div>
     <div class="searches">
@@ -50,7 +50,7 @@
     </div>
     <p id="error" role="alert" hidden></p>
   </main>
-  <footer>{{PROJECT_NAME}} · {{STAGE_NAME}} · Independent research preview. <a href="../">Other stages ↗</a></footer>
+  {{SITE_FOOTER}}
 </div>
 
 <dialog id="feedback-dialog" class="feedback-dialog" aria-labelledby="feedback-title" aria-describedby="feedback-context">
