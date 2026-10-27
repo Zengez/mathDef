@@ -5,7 +5,8 @@
   "notes": [
     "Only specified meaning and formulation IDs are consolidated; no similarity-based deletion.",
     "Source citations from removed formulations transfer to the surviving meaning's selected formulation. Original source-file links are provenance, not an external mathematical reference.",
-    "This is a first explicit subset, not a claim of whole-corpus review; do not invoke final combined linking rebuild before user adjudicates unresolved cases."
+    "This is a first explicit subset, not a claim of whole-corpus review; do not invoke final combined linking rebuild before user adjudicates unresolved cases.",
+    "2026-10-27 user approval: resolved the three remaining 44-case source-scope reviews (Bounded linear operator, Free module, Operator norm) through explicit source-preserving meaning consolidations. Normed-space scalar contexts use the canonical real/complex setting; free modules use explicit unital left modules over associative unital rings. Unverified source-specific conventions are not asserted."
   ],
   "merge_meanings": [
     {
@@ -700,6 +701,27 @@
       "kept_meaning_id": "meaning.wave2.group116.set-partition",
       "kept_formulation_id": "form.wave2.group116.set-partition.1",
       "reason": "Internal variant pass: original and researched definitions both describe exactly a family of nonempty pairwise disjoint blocks with union S. Merge their source citations and original historical ID into the researched disjoint-cover form; keep the separate unique-block-membership characterization untouched. The original explicitly notes empty-set convention, while the surviving set-theoretic conditions already admit the empty family when S is empty."
+    },
+    {
+      "case_id": "user-approved-bounded-linear-operator-scalar-scope",
+      "removed_meaning_id": "meaning.mathdef.original.functional.bounded-linear-operator",
+      "kept_meaning_id": "meaning.wave2.pop142.bounded-linear",
+      "kept_formulation_id": "form.meaning.wave2.pop142.bounded-linear",
+      "reason": "User-approved 2026-10-27: unqualified normed vector spaces use the standard real/complex Banach/functional-analysis scalar context for this entry; the inequality is identical. Retain the explicit real/complex formulation and transfer original source, stable ID and historical formulation redirect; do not attribute an independently verified broader source convention."
+    },
+    {
+      "case_id": "user-approved-free-module-unital-left-context",
+      "removed_meaning_id": "meaning.mathdef.original.commalg.free-module",
+      "kept_meaning_id": "meaning.wave2.direct.7462fa5f90275b34779a",
+      "kept_formulation_id": "form.meaning.wave2.direct.7462fa5f90275b34779a",
+      "reason": "User-approved 2026-10-27: adopt explicit associative unital ring and unital left-module setting as canonical. The earlier unqualified R-module basis/direct-sum condition restates the same freeness criterion under its conventional module hypotheses; the general formulation retains the empty basis and arbitrary rank. Transfer original citations and ID; do not claim original source separately verified all generalized ring contexts."
+    },
+    {
+      "case_id": "user-approved-operator-norm-scalar-scope",
+      "removed_meaning_id": "meaning.mathdef.original.functional.operator-norm",
+      "kept_meaning_id": "meaning.wave2.pop142.bounded-operator-norm",
+      "kept_formulation_id": "form.meaning.wave2.pop142.bounded-operator-norm",
+      "reason": "User-approved 2026-10-27: use standard real/complex normed spaces to disambiguate previously unqualified normed-space usage. Identical unit-ball supremum; preserve the researched infimum characterization and original source/ID via redirects, without inventing a source-specific scalar convention."
     }
   ],
   "metadata_assignments": {
@@ -1045,10 +1067,6 @@
       "subject": "Functional Analysis",
       "context": "Real or complex normed spaces"
     },
-    "meaning.mathdef.original.functional.bounded-linear-operator": {
-      "subject": "Functional Analysis",
-      "context": "Normed vector spaces"
-    },
     "meaning.mathdef.postwave.scan-small-filtered-category-20261026": {
       "subject": "Category Theory",
       "context": "Small categories"
@@ -1059,9 +1077,6 @@
     "meaning.wave2.direct.7462fa5f90275b34779a": {
       "subject": "Module Theory",
       "context": "Unital left modules"
-    },
-    "meaning.mathdef.original.commalg.free-module": {
-      "subject": "Module Theory"
     },
     "meaning.wave2.direct.8d23b7ba80f9f5e74420": {
       "subject": "Real Analysis",
@@ -1074,10 +1089,6 @@
     "meaning.wave2.pop142.bounded-operator-norm": {
       "subject": "Functional Analysis",
       "context": "Real or complex normed spaces"
-    },
-    "meaning.mathdef.original.functional.operator-norm": {
-      "subject": "Functional Analysis",
-      "context": "Normed vector spaces"
     },
     "meaning.mathdef.original.sets.complement": {
       "subject": "Set Theory",

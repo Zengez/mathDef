@@ -426,8 +426,42 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
             meaning.pop("context", None)
     routing_report = route_subjects(combined, repo, allowed_subjects)
     all_meanings, all_forms, _ = _ids(combined)
+    # Audit the canonical Subject registry at all three presentation levels.
+    # Subjects belong to mathematical *meanings*, not source/formulation records:
+    # every attached formulation inherits its meaning's approved Subject, and a
+    # searchable heading inherits the (possibly plural) subjects of its meanings.
+    # Do not invent a single heading-wide Subject for a multi-context term.
     missing_subject = sorted(mid for mid, (g, m) in all_meanings.items()
                              if not m.get("subject"))
+    missing_formulation_subject = sorted(
+        f["id"] for g in combined["groups"] for m in g["meanings"]
+        if not m.get("subject") for f in m["formulations"]
+    )
+    missing_heading_subject = sorted(
+        g["id"] for g in combined["groups"]
+        if not any(m.get("subject") for m in g["meanings"])
+    )
+    unregistered_subjects = sorted({
+        m["subject"] for g in combined["groups"] for m in g["meanings"]
+        if m.get("subject") and m["subject"] not in allowed_subjects
+    })
+    if unregistered_subjects:
+        raise CleanupError("Unregistered mathematical Subjects: " +
+                           ", ".join(unregistered_subjects))
+    subject_assignment_audit = {
+        "subject_registry_count": len(allowed_subjects),
+        "heading_count": len(combined["groups"]),
+        "headings_without_subject": len(missing_heading_subject),
+        "meaning_count": len(all_meanings),
+        "meanings_without_subject": len(missing_subject),
+        "formulation_count": len(all_forms),
+        "formulations_without_inherited_subject": len(missing_formulation_subject),
+        "unregistered_subject_values": unregistered_subjects,
+        "unassigned_heading_ids": missing_heading_subject,
+        "unassigned_meaning_ids": missing_subject,
+        "unassigned_formulation_ids": missing_formulation_subject,
+        "inheritance_rule": "Formulation inherits Subject from its owning meaning; heading represents union of its meanings' Subjects.",
+    }
     if require_full_metadata and missing_subject:
         raise CleanupError("%d meanings remain without curated mathematical subject"
                            % len(missing_subject))
@@ -501,6 +535,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "source_convention_assessments": len(assessments),
         "deleted_source_text_edges_needing_global_relink": needs_relink,
         "subject_coverage": len(all_meanings) - len(missing_subject),
+        "subject_assignment_audit": subject_assignment_audit,
         **routing_report,
         "subject_missing": len(missing_subject),
         "subjects_assigned_counts": dict(sorted(subject_counts.items())),

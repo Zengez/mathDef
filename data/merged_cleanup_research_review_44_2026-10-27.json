@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "phase": "second_level_research_review_of_44_only",
-  "status": "research_review_complete_three_scopes_deferred",
+  "status": "complete_all_44_decisions_user_adjudicated_stage_only",
   "baseline_staged_counts": {
     "headings": 1986,
     "meanings": 2068,
@@ -12,12 +12,13 @@
   "decision_policy": "Retain mathematically informative equivalences rather than deleting theorems or interesting alternate constructions. Merge only near-tautological rewordings; preserve historical source identities and aliases. Positive source verification statuses were not changed.",
   "classification_counts": {
     "retain_informative_alternative": 35,
-    "manual_review_scope_convention": 3,
+    "manual_review_scope_convention": 0,
     "retain_distinct_scope": 3,
-    "merge_trivial_duplicate": 3
+    "merge_trivial_duplicate": 3,
+    "merge_after_user_scope_adjudication": 3
   },
   "all_cases_reviewed": 44,
-  "unresolved_manual_count": 3,
+  "unresolved_manual_count": 0,
   "records": [
     {
       "case_number": 1,
@@ -67,8 +68,8 @@
     {
       "case_number": 4,
       "term": "Bounded linear operator",
-      "classification": "manual_review_scope_convention",
-      "rationale": "Identical norm inequalities, but the original's unqualified 'normed spaces' and the researched real/complex restriction need not have identical ambient scalar-field scope in mathDef; retain separate contexts.",
+      "classification": "merge_after_user_scope_adjudication",
+      "rationale": "User-approved 2026-10-27: unqualified normed vector spaces use the standard real/complex Banach/functional-analysis scalar context for this entry; the inequality is identical. Retain the explicit real/complex formulation and transfer original source, stable ID and historical formulation redirect; do not attribute an independently verified broader source convention.",
       "original_attached_meaning_ids": [
         "meaning.wave2.pop142.bounded-linear",
         "meaning.mathdef.original.functional.bounded-linear-operator"
@@ -77,7 +78,15 @@
         "form.meaning.wave2.pop142.bounded-linear",
         "form.mathdef.original.functional.bounded-linear-operator.primary"
       ],
-      "review_reference_urls": []
+      "review_reference_urls": [],
+      "disposition": "merge_original_into_explicit_canonical_scope",
+      "user_adjudicated_2026_10_27": true,
+      "merge": {
+        "removed_meaning_id": "meaning.mathdef.original.functional.bounded-linear-operator",
+        "kept_meaning_id": "meaning.wave2.pop142.bounded-linear",
+        "removed_formulation_id": "form.mathdef.original.functional.bounded-linear-operator.primary",
+        "kept_formulation_id": "form.meaning.wave2.pop142.bounded-linear"
+      }
     },
     {
       "case_number": 5,
@@ -287,8 +296,8 @@
     {
       "case_number": 18,
       "term": "Free module",
-      "classification": "manual_review_scope_convention",
-      "rationale": "Unital left R-module over associative ring is explicit in researched form; original R-module is under-specified as to handedness/unital convention, so do not erase either without source convention adjudication.",
+      "classification": "merge_after_user_scope_adjudication",
+      "rationale": "User-approved 2026-10-27: adopt explicit associative unital ring and unital left-module setting as canonical. The earlier unqualified R-module basis/direct-sum condition restates the same freeness criterion under its conventional module hypotheses; the general formulation retains the empty basis and arbitrary rank. Transfer original citations and ID; do not claim original source separately verified all generalized ring contexts.",
       "original_attached_meaning_ids": [
         "meaning.wave2.direct.7462fa5f90275b34779a",
         "meaning.mathdef.original.commalg.free-module"
@@ -297,7 +306,15 @@
         "form.meaning.wave2.direct.7462fa5f90275b34779a",
         "form.mathdef.original.commalg.free-module.primary"
       ],
-      "review_reference_urls": []
+      "review_reference_urls": [],
+      "disposition": "merge_original_into_explicit_canonical_scope",
+      "user_adjudicated_2026_10_27": true,
+      "merge": {
+        "removed_meaning_id": "meaning.mathdef.original.commalg.free-module",
+        "kept_meaning_id": "meaning.wave2.direct.7462fa5f90275b34779a",
+        "removed_formulation_id": "form.mathdef.original.commalg.free-module.primary",
+        "kept_formulation_id": "form.meaning.wave2.direct.7462fa5f90275b34779a"
+      }
     },
     {
       "case_number": 19,
@@ -546,8 +563,8 @@
     {
       "case_number": 35,
       "term": "Operator norm",
-      "classification": "manual_review_scope_convention",
-      "rationale": "Identical unit-ball supremum but unqualified original ambient normed-space wording versus explicitly real/complex researched meaning; preserve scalar-scope distinctions pending any separate canonical convention editing.",
+      "classification": "merge_after_user_scope_adjudication",
+      "rationale": "User-approved 2026-10-27: use standard real/complex normed spaces to disambiguate previously unqualified normed-space usage. Identical unit-ball supremum; preserve the researched infimum characterization and original source/ID via redirects, without inventing a source-specific scalar convention.",
       "original_attached_meaning_ids": [
         "meaning.wave2.pop142.bounded-operator-norm",
         "meaning.mathdef.original.functional.operator-norm"
@@ -556,7 +573,15 @@
         "form.meaning.wave2.pop142.bounded-operator-norm",
         "form.mathdef.original.functional.operator-norm.primary"
       ],
-      "review_reference_urls": []
+      "review_reference_urls": [],
+      "disposition": "merge_original_into_explicit_canonical_scope",
+      "user_adjudicated_2026_10_27": true,
+      "merge": {
+        "removed_meaning_id": "meaning.mathdef.original.functional.operator-norm",
+        "kept_meaning_id": "meaning.wave2.pop142.bounded-operator-norm",
+        "removed_formulation_id": "form.mathdef.original.functional.operator-norm.primary",
+        "kept_formulation_id": "form.meaning.wave2.pop142.bounded-operator-norm"
+      }
     },
     {
       "case_number": 36,
@@ -692,5 +717,6 @@
       ],
       "review_reference_urls": []
     }
-  ]
+  ],
+  "user_adjudication": "User approved all three final recommendations on October 27, 2026; evidence status for citations unchanged; all legacy original IDs and source identities are preserved by merged cleanup aliases."
 }

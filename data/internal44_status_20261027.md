@@ -1,17 +1,20 @@
-# All 44 within-heading variants reviewed — 2026-10-27
+# All 44 within-heading variants reviewed and final 3 approved — 2026-10-27
 
-The 44-case fixed packet was researched once. Authoritative, per-case dispositions and evidence links: [review JSON](merged_cleanup_research_review_44_2026-10-27.json).
+The bounded deeper-research pass reviewed all 44 cases. The user then approved resolutions for the remaining three scope/convention cases. The authoritative per-case mathematical rationale and stable IDs are in [the 44-case review ledger](merged_cleanup_research_review_44_2026-10-27.json).
 
-| Outcome | Count |
+| Disposition | Count |
 |---|---:|
-| Retain useful alternative characterizations | 35 |
-| Retain distinct mathematical scopes | 3 |
-| Merge tautologically duplicate formulations | 3 |
-| Await user convention decision | 3 |
-| **All cases reviewed** | **44** |
+| Retain informative alternative characterizations | 35 |
+| Retain genuinely different mathematical scopes | 3 |
+| Consolidate three tautologically duplicate formulations | 3 |
+| Consolidate three final user-approved source-scope meanings | 3 |
+| **Cases reviewed and adjudicated** | **44** |
+| **Remaining manual decisions** | **0** |
 
-The three source-preserving merges concern simple-graph vertex degree (incident edges versus neighbors), the eigenvalue condition (nontrivial kernel versus eigenvector existence), and the eigenvector condition (equation versus kernel membership). Formulation IDs redirect to live IDs and all sources remain listed.
+The three earlier formulation-only consolidations are **vertex degree**, **eigenvalue**, and **eigenvector**. The new user-approved meaning consolidations are **Bounded linear operator**, **Free module**, and **Operator norm**. For the operator cases, the standard real/complex normed-space context is explicitly adopted; for free modules, the adopted definition explicitly uses unital left modules over associative unital rings. No assumption about an **unverified source convention** is upgraded to verified.
 
-The only pending cases are **Bounded linear operator** (case 4), **Free module** (case 18), and **Operator norm** (case 35). They involve unresolved scalar-field scope or implicit module handedness/unitality. No deep source verification state was upgraded and no change was made to these forms.
+All three originally cited formulations redirect to living retained forms, their source citations are transferred, and historical original definition IDs remain accessible. No frozen source corpus was modified.
 
-[Stage-only CI passed](https://github.com/Zengez/mathDef/actions/runs/40570468997): 1,986 headings, 2,068 meanings, 2,107 formulations, 2,662 distinct source identities, 1,014 original historical IDs reachable. No publication or global relinking.
+**Stage-only**: No global link rebuild, public API export, website deployment, Sources UI, or vocabulary expansion has been authorized by this adjudication. Subject assignments and inheriting term/formulation coverage are checked separately in the stage report.
+
+The last CI-verified preapproval baseline was [run 40570468997](https://github.com/Zengez/mathDef/actions/runs/40570468997): 1,986 headings, 2,068 meanings, 2,107 formulations, 2,662 distinct source identities and all 1,014 historical original IDs reachable. After these three meaning merges, expected stage-only counts are **1,986 headings, 2,065 meanings, and 2,104 formulations** pending CI validation.

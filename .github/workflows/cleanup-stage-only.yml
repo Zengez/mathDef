@@ -119,6 +119,17 @@ jobs:
               'form.mathdef.original.functions.function.graph'
           }
           assert report['subject_missing']==0, "Every surviving meaning must have a mathematical Subject"
+          # The official Subject is meaning-level; attached formulations and
+          # multi-meaning headings inherit approved Subject(s) structurally.
+          coverage=report['subject_assignment_audit']
+          assert coverage['heading_count']==len(catalog['groups'])
+          assert coverage['meaning_count']==len(all_meanings)
+          assert coverage['formulation_count']==len(all_forms)
+          assert coverage['headings_without_subject']==0
+          assert coverage['meanings_without_subject']==0
+          assert coverage['formulations_without_inherited_subject']==0
+          assert not coverage['unregistered_subject_values']
+          print('OFFICIAL_SUBJECT_COVERAGE='+json.dumps(coverage,sort_keys=True))
           assert report['retained_variant_groups_reviewed']>=40, "Reviewed variants must survive"
           assert len(report['convention_sensitive_text_translations'])==1
           assert report['source_convention_assessments']==1
@@ -186,6 +197,34 @@ jobs:
           assert {z['id'] for z in partition['meanings'][0]['formulations']}=={
               'form.wave2.group116.set-partition.1',
               'form.wave2.group116.set-partition.2'}
+          # User-approved final 44-case dispositions must be reflected
+          # in all three meaning/formulation redirects with original IDs.
+          final_three = (
+              ('bounded linear operator',
+               'meaning.wave2.pop142.bounded-linear',
+               'meaning.mathdef.original.functional.bounded-linear-operator',
+               'form.meaning.wave2.pop142.bounded-linear',
+               'form.mathdef.original.functional.bounded-linear-operator.primary'),
+              ('free module',
+               'meaning.wave2.direct.7462fa5f90275b34779a',
+               'meaning.mathdef.original.commalg.free-module',
+               'form.meaning.wave2.direct.7462fa5f90275b34779a',
+               'form.mathdef.original.commalg.free-module.primary'),
+              ('operator norm',
+               'meaning.wave2.pop142.bounded-operator-norm',
+               'meaning.mathdef.original.functional.operator-norm',
+               'form.meaning.wave2.pop142.bounded-operator-norm',
+               'form.mathdef.original.functional.operator-norm.primary'))
+          for term, kept_mid, old_mid, kept_fid, old_fid in final_three:
+              g=next(g for g in catalog['groups'] if g['title'].casefold()==term)
+              assert {m['id'] for m in g['meanings']}=={kept_mid}
+              assert redirects['meaning_aliases'][old_mid]==kept_mid
+              assert redirects['formulation_aliases'][old_fid]==kept_fid
+              assert any(m.get('legacy_original_definition_ids')
+                         for m in g['meanings']), term
+          review44=json.loads(Path('data/merged_cleanup_research_review_44_2026-10-27.json').read_text())
+          assert review44['unresolved_manual_count']==0
+          assert review44['classification_counts']['merge_after_user_scope_adjudication']==3
           assert len(sources['sources'])==2662
           linear=next(g for g in catalog['groups'] if g['title']=='Linear map')
           assert {x.casefold() for x in linear['aliases']}>={'linear transformation'}
