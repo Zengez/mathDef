@@ -7,6 +7,8 @@ on:
       - "research_pipeline/adapters/mathdef/preview_site.py"
       - "research_pipeline/ui/renderer.py"
       - "research_pipeline/tests/test_original_merge.py"
+      - "research_pipeline/tests/test_merged_linking.py"
+      - "research_pipeline/adapters/mathdef/merged_linking.py"
       - "research_pipeline/experiments/reconstruction-v2-independent/post_wave2/**"
       - ".github/workflows/combined-preview-merge-check.yml"
   push:
@@ -29,7 +31,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Test lossless merge and rapid scan
-        run: python -m unittest research_pipeline.tests.test_original_merge -v
+        run: python -m unittest research_pipeline.tests.test_original_merge research_pipeline.tests.test_merged_linking -v
+      - name: Syntax-check reusable inline expansion UI
+        run: node --check research_pipeline/ui/app.js
       - name: Build independent baselines and original-inclusive site
         run: |
           python -m research_pipeline.adapters.mathdef.preview_site --site-root /tmp/mathdef-merge-check
@@ -57,6 +61,23 @@ jobs:
           assert scan["counts"]["known_term_mentions"]>=1
           assert (root/"merged/index.html").is_file()
           assert (root/"merged/definitions-index.json").is_file()
+          link_report=json.loads((root/"merged/link-report.json").read_text())
+          assert link_report["status"]=="tentative_lexical_links_not_semantically_verified"
+          assert link_report["forms_visited"] >= merged_n
+          assert link_report["new_tentative_links"] > 50, link_report
+          assert sum(r.get("review_state")=="lexical_candidate"
+                     for r in merged["relations"]) == link_report["new_tentative_links"]
+          assert all(r["from_formulation"] and r["target_meaning"]
+                     for r in merged["relations"] if r.get("review_state")=="lexical_candidate")
+          form_text={f["id"]: f["text"] for g in merged["groups"]
+                     for m in g["meanings"] for f in m["formulations"]}
+          for rel in merged["relations"]:
+              if rel.get("review_state")!="lexical_candidate":
+                  continue
+              start,end=rel["span_start"],rel["span_end"]
+              body=form_text[rel["from_formulation"]]
+              assert 0<=start<end<=len(body), rel["id"]
+              assert body[start:end]==rel["source_phrase"], rel["id"]
           assert (root/"wave1/index.html").is_file()
           # Confirm dispositions describe literal, ranked records from the
           # completed original scan (rather than a newly generated term list).

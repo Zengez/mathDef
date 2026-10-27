@@ -16,6 +16,7 @@ from research_pipeline.adapters.mathdef.direct_additions import add_direct_resea
 from research_pipeline.adapters.mathdef.original_merge import (
     read_original, merge_original, fast_scan, scan_report_html,
 )
+from research_pipeline.adapters.mathdef.merged_linking import link_merged_catalog
 from research_pipeline.ui.renderer import render as render_reference_ui
 
 WAVE1 = Path("research_pipeline/experiments/reconstruction-v1-recovery")
@@ -74,8 +75,16 @@ def render(repo: Path, site: Path) -> dict:
     merge_counts["post_wave2_meanings"] = post_wave2_added
     merge_counts["combined_meanings"] += post_wave2_added
     merge_counts["combined_term_groups"] = len(merged["groups"])
+    # A fast contextual *link* pass, not new candidate discovery. Apply only
+    # to this merged copy, after original + independent + new meanings exist.
+    link_report = link_merged_catalog(merged)
+    merge_counts["new_tentative_links"] = link_report["new_tentative_links"]
+    merge_counts["anchored_screened_links"] = link_report["existing_screened_links_anchored"]
     combined_folder = site / "merged"
     combined_folder.mkdir(parents=True, exist_ok=True)
+    (combined_folder / "link-report.json").write_text(
+        json.dumps(link_report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
     (combined_folder / "catalog.json").write_text(
         json.dumps(merged, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
@@ -92,7 +101,10 @@ def render(repo: Path, site: Path) -> dict:
     (combined_folder / "scan-report.html").write_text(
         scan_report_html(scan, merge_counts), encoding="utf-8"
     )
-    print(json.dumps({"combined_merge": merge_counts, "rapid_scan": scan["counts"]}))
+    print(json.dumps({"combined_merge": merge_counts, "rapid_scan": scan["counts"],
+                      "merged_linking": {k: link_report[k] for k in (
+                          "forms_visited", "forms_with_link", "new_tentative_links",
+                          "existing_screened_links_anchored", "ambiguous_contexts_total_occurrences")}}))
 
     def card(href, title, description, count):
         return ('<a class="stage" href="' + href + '/"><h2>' +

@@ -58,14 +58,17 @@ def to_index(catalog: dict) -> list[dict]:
         target = meaning_to_group.get(rel.get("target_meaning"))
         if source is None or target is None:
             raise ViewError("Broken displayed relation endpoint")
-        if rel.get("review_state", "screened") != "screened":
-            raise ViewError("Cannot render unscreened relationship")
+        if rel.get("review_state", "screened") not in ("screened", "lexical_candidate"):
+            raise ViewError("Cannot render unsupported relationship state")
         if rel.get("relation_type") == "definition_uses":
             dep_by_form[rel["from_formulation"]].append({
                 "id": target, "label": group_by_id[target]["title"],
                 "formulation": rel["from_formulation"],
                 "target_meaning": rel["target_meaning"],
-                "start": -1, "end": -1
+                "start": rel.get("span_start", -1),
+                "end": rel.get("span_end", -1),
+                "review_state": rel.get("review_state", "screened"),
+                "source_phrase": rel.get("source_phrase", ""),
             })
         else:
             related_by_group[source].add(target)

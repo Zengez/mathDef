@@ -34,17 +34,27 @@ Do not initiate a new candidate discovery phase unless the user separately
 authorizes it. Do not revive the discarded dependency graphs, mandatory slow
 gates, review packets, retrospective independent Wave2 edits, or old queues.
 
-**NEXT RECOMMENDED PHASE: LINKING EXISTING MATHEMATICAL DEFINITIONS.**
-Favor a fast permissive lexical matching pass over known terms in the existing
-merged corpus; record candidate links; then check context-specific meaning
-selection and clear ambiguities without holding all progress hostage to perfect
-research. Use explicit variant contexts (e.g., 'weak topology' means something
-different for CW complexes and functional analysis). Preserve the web/UI
-behavior: search by term vs definition independently, recursive inline linked
-definitions with path-local circular suppression, and useful multiple-definition
-variant ordering. Test on the merged reference and keep original/independent
-corpora intact. This linking work is separate from adding terms and should not
-trigger vocabulary crawling or dependency-reconstruction stages.
+**ACTIVE PHASE: LINKING EXISTING MATHEMATICAL DEFINITIONS. FIRST GLOBAL
+PASS IMPLEMENTED AND SMOKE-TESTED (2026-10-26).**
+The reusable `research_pipeline/adapters/mathdef/merged_linking.py` now links
+existing terminology in the **merged-only** reference after assembling 2,197
+meanings. Successful CI shows **2,334 new tentative definition-use links**,
+**244 previously screened links anchored to text**, and **1,544/2,246**
+formulations with positioned links. **860 ambiguous-context occurrences**
+are recorded in generated `/reconstruction/merged/link-report.json`; they are
+NOT auto-admitted without clear variant/context evidence. The matcher masks TeX
+math, supports useful plurals, avoids duplicate/self-links, and marks
+automatically inferred links **Suggested** in the inline/nested UI, where
+community link-error reports remain enabled.
+
+**NEXT:** targeted contextual disambiguation of the most common ambiguities,
+then browser-level verification of actual expansion, recursion, and responsive
+rendering. The checkpoint, code and validation are documented in
+`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/LINKING_FIRST_PASS_2026-10-26.md`.
+Maintain the dual independent searches and path-local circular expansion
+suppression. Keep candidate creation/discovery separate, and do not reintroduce
+staged dependency-review gates, old Wave2 rebuilding or production source edits.
+
 
 See `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/README.md`
 for the completed research log and the linking handoff.

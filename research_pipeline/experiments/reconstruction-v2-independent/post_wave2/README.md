@@ -711,3 +711,18 @@ The original quick-scan candidate set is **closed for this research pass**. All 
 **Completed corpus size:** 958 frozen independent Wave2 meanings + 1,014 unchanged original mathDef meanings + 225 post-Wave2 merged-only additions = **2,197 merged searchable meanings**; post-Wave2 total includes the initial 118 general research meanings and 107 scan-driven additions. Baseline original and independent data remain unchanged.
 
 **Recommended NEXT PHASE: linking the existing combined corpus.** First rapidly extract potential term references in definition text and attach likely links to *existing* meaning IDs. Then research meaning selection and contextual variants for ambiguous terms, ensure repeated/cyclic expansion is handled on the UI's active path, and validate broken links, search, and inline recursive expansion. Do not create a new corpus-wide slow dependency-review system or reopen frozen candidate discovery. Record durable progress in this project's current checkpoint.
+
+## Linking phase — first global pass complete (2026-10-26)
+
+The original frozen candidate process is finished at 2,019/2,019. The merged
+2,197-meaning collection now has a **fast, display-only** literal term-link
+matcher in `research_pipeline/adapters/mathdef/merged_linking.py`. Successful
+CI produced **2,334 new tentative** definition-use links and inlined **244
+existing screened** relations across **1,544 of 2,246** formulations. A
+`/reconstruction/merged/link-report.json` quality report records **860
+ambiguous-context occurrences** for targeted follow-up. These are *link*
+candidates, not newly discovered term candidates or mathematical certification.
+No modifications were made to original mathDef source or independent Wave2.
+
+Full scope, constraints and next linking work:
+[`LINKING_FIRST_PASS_2026-10-26.md`](LINKING_FIRST_PASS_2026-10-26.md).
