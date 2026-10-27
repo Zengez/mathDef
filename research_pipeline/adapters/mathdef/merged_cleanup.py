@@ -261,6 +261,20 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         if a["status"] != "verified_applies" or a["convention_id"] != edit["convention_id"]:
             raise CleanupError("Source wording change lacks a verified applicable restriction")
     register = compile_source_registry(combined, repo=repo)
+    retained = _json(repo / "data/merged_cleanup_retained_variants.json")
+    if retained.get("schema_version") != 1:
+        raise CleanupError("Missing retained-variant review ledger")
+    by_name = {g["title"].casefold(): g for g in combined["groups"]}
+    retained_count = 0
+    for record in retained["entries"]:
+        term = record["term"]
+        group = by_name.get(term.casefold())
+        if not group:
+            raise CleanupError("Retained mathematical variant group absent: " + term)
+        nforms = sum(len(m["formulations"]) for m in group["meanings"])
+        if nforms < 2:
+            raise CleanupError("Retained variant lost its independent formulation: " + term)
+        retained_count += 1
     subject_counts = Counter(m["subject"] for g, m in all_meanings.values()
                              if m.get("subject"))
     context_counts = Counter(m["context"] for g, m in all_meanings.values()
@@ -280,6 +294,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "semantic_decisions_completed": completed,
         "convention_sensitive_text_translations": translation_audit,
         "registered_conventions": sorted(canonical),
+        "retained_variant_groups_reviewed": retained_count,
         "source_convention_assessments": len(assessments),
         "deleted_source_text_edges_needing_global_relink": needs_relink,
         "subject_coverage": len(all_meanings) - len(missing_subject),
