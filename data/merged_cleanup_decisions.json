@@ -1033,6 +1033,20 @@
       "removed_formulation_id": "form.wave2.bridge136.numeric-delta.2",
       "kept_formulation_id": "form.wave2.bridge136.numeric-delta.1",
       "reason": "The Iverson indicator [a=b] is just a shorthand for the same piecewise 0/1 equality predicate, rather than a distinct mathematical construction."
+    },
+    {
+      "case_id": "convex-set-point-vs-set-notation",
+      "meaning_id": "meaning.wave2.bridge136.convex-real",
+      "removed_formulation_id": "form.wave2.bridge136.convex-real.2",
+      "kept_formulation_id": "form.wave2.bridge136.convex-real.1",
+      "reason": "The notation tC+(1−t)C⊆C is exactly the quantified pointwise condition tx+(1−t)y∈C for all x,y∈C, t∈[0,1]; it introduces no independent mathematical construction or hypothesis."
+    },
+    {
+      "case_id": "convex-hull-least-vs-intersection-paraphrase",
+      "meaning_id": "meaning.wave2.cross133.convex-hull-real",
+      "removed_formulation_id": "form.wave2.cross133.convex-hull-real.3",
+      "kept_formulation_id": "form.wave2.cross133.convex-hull-real.2",
+      "reason": "The assertion that the convex hull is the unique inclusion-least convex superset is the universal-property restatement of the explicit intersection-of-all-convex-supersets construction already retained; keep the distinct finite-convex-combination construction separately."
     }
   ]
 }
