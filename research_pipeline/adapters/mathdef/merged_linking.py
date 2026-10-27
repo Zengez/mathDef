@@ -235,7 +235,7 @@ def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
             _, body, start, end = occurrence
             excerpt = body[max(0, start-30):min(len(body), end+28)]
         real_named = re.search(
-            r"\\breal(?:-valued)?\\s+random\\s+variables?\\b",
+            r"\breal(?:-valued)?\s+random\s+variables?\b",
             excerpt, re.IGNORECASE,
         )
         mid = ("meaning.wave2.prob90.random-variable-real" if real_named else
