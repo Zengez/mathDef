@@ -77,20 +77,13 @@ jobs:
                       assert Path(target).is_file(), f"Unknown source target: {target}"
                   else:
                       raise AssertionError(f"Malformed disposition target: {target}")
-          print(f"Initial-scan incorporation ledger validated: {len(decisions)} actual ranked candidates")
-          # Read-only candidate visibility for scan-driven incorporation:
-          # each record is from the original unchanged scan-report.json.
-          # Not an admission gate or an automatically approved term queue.
-          print("ORIGINAL_SCAN_CANDIDATES_JSON="+json.dumps(
-              scan["possible_new_terminology"][:100], ensure_ascii=False,
-              separators=(",", ":")))
-          # Next existing frozen scan ranks 1781–2019: read-only research extract.
-          # Read-only next frozen-scan window for the active incorporation pass;
-          # no new lexical scan, candidate hunt, or file changes to the report.
-          start_rank = len(decisions)
-          for rank, scanned in enumerate(scan["possible_new_terminology"][start_rank:start_rank+240], start=start_rank+1):
-            print("ORIGINAL_SCAN_NEXT_RANK_JSON="+json.dumps(
-                {"rank":rank, **scanned}, ensure_ascii=False, separators=(",", ":")))
+          # Frozen original candidate-research phase is complete.
+          # Verify exact full coverage without re-running discovery or
+          # exporting another candidate-research work queue.
+          assert len(scan["possible_new_terminology"])==2019
+          assert len(decisions)==len(scan["possible_new_terminology"]), (
+              "Original frozen terminology candidates not all dispositioned")
+          print(f"Frozen original quick-scan research COMPLETE: {len(decisions)} verified ranked candidate dispositions")
           print("Merged-preview smoke passed:", {
               "independent":base_n,
               "original":original_n,

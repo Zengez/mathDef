@@ -6642,6 +6642,260 @@
         "Transpose is not conjugate transpose over complex numbers."
       ],
       "research_status": "assistant-reviewed source-attributed meaning from frozen candidate rank 1772"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-wedge-product-differential-forms-20261026",
+      "candidate_id": "postwave-scan:rank-1803",
+      "term": "wedge product of differential forms",
+      "context": "Differential geometry · exterior algebra of alternating covariant tensors",
+      "aliases": [
+        "exterior product of differential forms",
+        "wedge product"
+      ],
+      "definition": "Let V be a finite-dimensional real vector space, α∈ΛᵖV* and β∈ΛᑫV*. Their wedge product α∧β∈Λᵖ⁺ᑫV* is defined by α∧β=((p+q)!/(p!q!))Alt(α⊗β), where Alt denotes averaging over all permutations with their signs. It is bilinear, associative and graded-commutative: α∧β=(−1)^{pq}β∧α. In particular the wedge of a one-form with itself vanishes, while the wedge of two even-degree forms need not be zero. On smooth manifolds this construction is applied pointwise to differential forms.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Wedge Product",
+          "url": "https://mathworld.wolfram.com/WedgeProduct.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Finite-dimensional real V and p,q≥0; tensor alternation uses the normalized averaging convention.",
+        "For differential forms on a manifold, coefficients and regularity are specified locally; this is pointwise algebra.",
+        "General wedge products of vectors and multivectors are related but have their own grading conventions."
+      ],
+      "research_status": "individually reviewed mathematical concept in the unchanged final original quick-scan candidate set; documented assumptions and source-context distinction"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-weighted-minkowski-combination-20261026",
+      "candidate_id": "postwave-scan:rank-1806",
+      "term": "weighted Minkowski combination of subsets",
+      "context": "Convex geometry · set addition with real nonnegative weights",
+      "aliases": [
+        "weighted Minkowski sum",
+        "positive linear combination of sets"
+      ],
+      "definition": "Let V be a real vector space, A,B⊆V, and s,t≥0. Their weighted Minkowski combination is sA+tB={sa+tb:a∈A,b∈B}, where sA={sa:a∈A} and similarly for tB. If A or B is empty, the combination is empty, even when a coefficient is zero, under this literal image-of-set convention. For nonempty convex A,B and s+t=1 it gives convex interpolation; for s=t=1 it is the ordinary Minkowski sum.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Minkowski addition",
+          "url": "https://encyclopediaofmath.org/wiki/Minkowski_addition",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Real vector space, subsets A,B and nonnegative weights.",
+        "Empty-set behavior stated explicitly.",
+        "For convex-body interpolation typically assume nonempty convex A,B and weights summing to one."
+      ],
+      "research_status": "individually reviewed mathematical concept in the unchanged final original quick-scan candidate set; documented assumptions and source-context distinction"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-deterministic-turing-transition-20261026",
+      "candidate_id": "postwave-scan:rank-1852",
+      "term": "transition function of a deterministic Turing machine",
+      "context": "Computability theory · single-valued next-step rule",
+      "aliases": [
+        "deterministic Turing transition function"
+      ],
+      "definition": "For a conventional single-tape deterministic Turing machine with state set Q and tape alphabet Γ, a transition function is a (possibly partial) function δ:Q×Γ⇀Q×Γ×{L,R}. If δ(q,a)=(q′,b,D), the machine in state q reading symbol a writes b, enters state q′, and moves its head in direction D. An undefined transition may represent halting. Equivalent formalizations separate accepting/rejecting halting states or permit a stationary move; the essential feature is that each state-and-symbol input has at most one permitted successor.",
+      "sources": [
+        {
+          "title": "Stanford Encyclopedia of Philosophy — Turing Machines",
+          "url": "https://plato.stanford.edu/entries/turing-machine/",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Single-tape standard model for a concrete signature.",
+        "Transition may be partial; halting conventions vary.",
+        "Determinism means at most one successor, not necessarily totality."
+      ],
+      "research_status": "individually reviewed mathematical concept in the unchanged final original quick-scan candidate set; documented assumptions and source-context distinction"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-nondeterministic-turing-transition-20261026",
+      "candidate_id": "postwave-scan:rank-1853",
+      "term": "transition relation of a nondeterministic Turing machine",
+      "context": "Computability theory · multiple possible next-step configurations",
+      "aliases": [
+        "nondeterministic Turing transition relation"
+      ],
+      "definition": "For a conventional single-tape nondeterministic Turing machine with finite states Q and tape alphabet Γ, its transition relation is Δ⊆(Q×Γ)×(Q×Γ×{L,R}). Thus an input pair (q,a) can have zero, one or several allowed triples (q′,b,D), defining branching computation paths. The machine accepts an input when some computation branch reaches an accepting configuration. The transition relation becomes single-valued in a deterministic machine; optional stationary moves or explicitly designated halting states depend on the chosen machine convention.",
+      "sources": [
+        {
+          "title": "Nondeterministic Turing machine — formal definition",
+          "url": "https://en.wikipedia.org/wiki/Nondeterministic_Turing_machine",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Single-tape finite-state and finite-alphabet model.",
+        "Acceptance is existential over branches; totality and halting conditions must be imposed separately.",
+        "Distinct from a stochastic transition kernel assigning probabilities."
+      ],
+      "research_status": "individually reviewed mathematical concept in the unchanged final original quick-scan candidate set; documented assumptions and source-context distinction"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-galerkin-trial-test-spaces-20261026",
+      "candidate_id": "postwave-scan:rank-1854",
+      "term": "trial and test spaces in a Galerkin method",
+      "context": "Numerical PDE · variational approximation with distinct discrete solution and testing spaces",
+      "aliases": [
+        "Galerkin trial space",
+        "Galerkin test space",
+        "Petrov–Galerkin trial and test spaces"
+      ],
+      "definition": "Let a:V×W→𝔽 be a bilinear (or suitably sesquilinear) form and ℓ:W→𝔽 a continuous linear functional, with a variational problem a(u,v)=ℓ(v) for all v∈W. Choose finite-dimensional subspaces V_h⊆V and W_h⊆W. The trial space V_h contains the discrete unknown u_h, while the test space W_h indexes the equations a(u_h,w_h)=ℓ(w_h) for all w_h∈W_h. When V=W and V_h=W_h this is a standard Galerkin choice; if V_h and W_h differ it is commonly called a Petrov–Galerkin method. Existence or uniqueness of u_h additionally requires an appropriate discrete stability or nonsingularity condition.",
+      "sources": [
+        {
+          "title": "Guermond — Galerkin approximation, trial and test space definitions",
+          "url": "https://people.tamu.edu/~guermond/M661_FALL_2015/chap16.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Specified bilinear variational problem with finite-dimensional subspaces.",
+        "Do not assume trial and test spaces are necessarily equal.",
+        "A discrete square system may require dim(V_h)=dim(W_h), depending on the formulation; not automatic from the labels."
+      ],
+      "research_status": "individually reviewed mathematical concept in the unchanged final original quick-scan candidate set; documented assumptions and source-context distinction"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-weakly-inaccessible-cardinal-20261026",
+      "candidate_id": "postwave-scan:rank-1873",
+      "term": "weakly inaccessible cardinal",
+      "context": "Axiomatic set theory · uncountable regular limit cardinal",
+      "aliases": [
+        "uncountable regular limit cardinal",
+        "weak inaccessible cardinal"
+      ],
+      "definition": "Assuming ZFC, a cardinal κ is weakly inaccessible when κ>ℵ₀, κ is regular (cf(κ)=κ), and κ is a limit cardinal, meaning κ is not the successor of any smaller cardinal. Unlike a strongly inaccessible cardinal, it need not be a strong limit: the condition 2^λ<κ for every λ<κ is not required. Under GCH the weak and strong notions coincide. ZFC cannot prove the existence of any weakly inaccessible cardinal if ZFC is consistent.",
+      "sources": [
+        {
+          "title": "Stanford Encyclopedia of Philosophy — Set Theory, large cardinals",
+          "url": "https://plato.stanford.edu/entries/set-theory/",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Work in ZFC so cardinals and cofinality have the standard well-ordered interpretation.",
+        "Exclude ℵ₀ explicitly despite its being a regular limit cardinal.",
+        "Strong limit is not part of the weakly inaccessible definition."
+      ],
+      "research_status": "individually reviewed mathematical concept in the unchanged final original quick-scan candidate set; documented assumptions and source-context distinction"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-unital-monoid-homomorphism-20261026",
+      "candidate_id": "postwave-scan:rank-1902",
+      "term": "monoid homomorphism",
+      "context": "Algebra · multiplication- and identity-preserving mapping",
+      "aliases": [
+        "unital monoid homomorphism",
+        "identity-preserving monoid map"
+      ],
+      "definition": "For monoids (M,·,e_M) and (N,*,e_N), a monoid homomorphism f:M→N is a function satisfying f(x·y)=f(x)*f(y) for all x,y∈M and f(e_M)=e_N. Both conditions are needed in general: a semigroup homomorphism need not preserve monoid identities. In the standard convention, the adjective 'unital' simply emphasizes identity preservation already required of a monoid homomorphism.",
+      "sources": [
+        {
+          "title": "nLab — Homomorphism, identity-preserving monoids",
+          "url": "https://ncatlab.org/nlab/show/homomorphism",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Both domain and codomain monoids have designated identities.",
+        "No commutativity or invertibility assumption.",
+        "Do not omit the identity equation."
+      ],
+      "research_status": "individually reviewed mathematical concept in the unchanged final original quick-scan candidate set; documented assumptions and source-context distinction"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-two-valued-countably-additive-measure-20261026",
+      "candidate_id": "postwave-scan:rank-1920",
+      "term": "two-valued countably additive measure",
+      "context": "Measure theory and set theory · {0,1}-valued probability measure",
+      "aliases": [
+        "two-valued measure",
+        "0–1 valued σ-additive probability measure"
+      ],
+      "definition": "On a measurable space (X,Σ), a two-valued countably additive probability measure is a function μ:Σ→{0,1} with μ(∅)=0, μ(X)=1, and μ(⋃_{n≥1}A_n)=∑_{n≥1}μ(A_n) for pairwise disjoint measurable A_n. On the full power set P(κ), the additional requirements μ({α})=0 for every α<κ (nonprincipal) and additivity across disjoint families of size <κ (κ-completeness) characterize the measure side of the usual measurable-cardinal definition. Mere countable additivity alone is not the same as κ-completeness for arbitrary κ.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Measurable Cardinal",
+          "url": "https://mathworld.wolfram.com/MeasurableCardinal.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "A specified σ-algebra for countable additivity.",
+        "No singleton nullity assumed for the general two-valued probability measure.",
+        "Cardinal application requires nonprincipality, domain P(κ), and κ-completeness; distinguish all these requirements."
+      ],
+      "research_status": "individually reviewed mathematical concept in the unchanged final original quick-scan candidate set; documented assumptions and source-context distinction"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-variable-coefficient-linear-differential-operator-20261026",
+      "candidate_id": "postwave-scan:rank-1924",
+      "term": "variable-coefficient linear differential operator",
+      "context": "Differential equations · coefficients vary with independent variables",
+      "aliases": [
+        "variable-coefficient differential operator",
+        "linear PDE operator with variable coefficients"
+      ],
+      "definition": "For an open set Ω⊆ℝⁿ, a linear differential operator of order at most m with variable coefficients has the form Lu(x)=∑_{|α|≤m}a_α(x)∂^αu(x), where α ranges over multi-indices and coefficient functions a_α:Ω→𝔽 are prescribed independently of the unknown u. It is called variable-coefficient when at least one coefficient function is nonconstant; otherwise it has constant coefficients. Appropriate differentiability of u and regularity of a_α must be specified for a classical, weak, or distributional interpretation. Allowing dependence on u itself generally makes the operator nonlinear.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Linear Partial Differential Equation",
+          "url": "https://mathworld.wolfram.com/LinearPartialDifferentialEquation.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Ω open and m finite.",
+        "Coefficients depend on independent variables, not the unknown solution.",
+        "Distinguish classical derivatives from weak or distributional interpretations."
+      ],
+      "research_status": "individually reviewed mathematical concept in the unchanged final original quick-scan candidate set; documented assumptions and source-context distinction"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-weak-topology-cw-complex-20261026",
+      "candidate_id": "postwave-scan:rank-2007",
+      "term": "weak topology of a CW complex",
+      "context": "Algebraic topology · final topology for cell characteristic maps",
+      "aliases": [
+        "weak CW topology",
+        "weak topology of a cell complex"
+      ],
+      "definition": "Suppose X is a set equipped with a cellular decomposition and characteristic maps Φ_α:D^{n_α}→X whose interiors map homeomorphically onto disjoint open cells covering X. The weak topology relative to the cells is the final topology for these maps: a subset A⊆X is closed exactly when Φ_α⁻¹(A) is closed in D^{n_α} for every characteristic map. Equivalently, for a CW structure, A is closed if and only if A intersects the closure of every cell in a relatively closed set; it is also the direct-limit topology of the skeleta Xⁿ. This is not the weak topology σ(E,E*) of a topological vector space in functional analysis.",
+      "sources": [
+        {
+          "title": "Allen Hatcher — Algebraic Topology, Appendix: Topology of Cell Complexes",
+          "url": "https://pi.math.cornell.edu/~hatcher/AT/ATapp.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Stephen A. Mitchell — CW-complexes",
+          "url": "https://sites.math.washington.edu/~mitchell/Morse/cw.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Characteristic maps are part of the cellular structure; all cells cover X.",
+        "For the closure-of-cells description, assume the usual CW axioms, including closure-finiteness.",
+        "The term weak topology is mathematically ambiguous across algebraic topology and functional analysis."
+      ],
+      "research_status": "research-confirmed distinct context and active ambiguity important for future mathematical term linking"
     }
   ]
 }

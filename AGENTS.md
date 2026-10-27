@@ -16,42 +16,38 @@ mathDef definitions (+5 variants). The merged site has 1,972 original-plus-Wave2
 baseline meanings, and the initial scan yielded 2,019 intentionally rough
 phrase leads plus 473 known-term mention patterns.
 
-**ACTIVE OWNER DIRECTIVE (2026-10-26): Process the ACTUAL 2,019
-quick-scan terminology candidates now. Do NOT independently hunt for new terms
-while this existing candidate collection is pending.** New-term discovery is a
-different, separately authorized phase. Review the existing candidate's source
-examples; compare against the independent + original + post-Wave2 catalog;
-record a quick disposition (new meaning, existing/duplicate/synonym,
-mathematically distinct variant, context ambiguity or lexical false positive).
-Incorporate useful mathematical content DIRECTLY. Do not reintroduce
-mandatory dependency graphs, slow gates, arbitrary verification packet stages,
-or a new external vocabulary hunt.
-
-The original frozen mathDef quick-scan candidate set has now been dispositioned
-through **rank 1,780 of 2,019** using the same persistent ledger
+**FROZEN ORIGINAL QUICK-SCAN CANDIDATE PHASE COMPLETE (2026-10-26).**
+The original unchanged 2,019 phrase leads, gathered in the original-inclusive
+rapid scan, have all been processed through rank **2,019 / 2,019** in
 `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/scan_candidate_dispositions.json`.
-The merged-only post-Wave2 overlay has **215 meanings** (initial 118
-post-Wave2 + **97 net new scan-derived researched meanings**).
-Latest ranks 1,541–1,780 yielded **10 new meanings**, 154 existing matches,
-74 nonterminological fragments, and 2 context ambiguities. Every one of the
-1,780 decisions preserves the original rank, phrase, count, source examples,
-rationale and valid existing/new target mappings.
-**NEXT ORIGINAL CANDIDATE: rank 1,781**; **239 remain** from the original
-unchanged 2,019. Do not collect new candidates or revive old dependency graphs,
-staging gates, preliminary audits or historical Wave2 edits.
+The final batch (ranks 1,781–2,019): **10 new mathematical meanings; 95
+existing matches; 134 lexical/contextual fragments; 0 additional ambiguities**.
+Existing ambiguities in earlier ranks remain documented in the ledger.
 
-Keep per-candidate source examples, concise outcome and target mapping in this
-same lightweight ledger; it is a resumption log, not a mathematical
-admission gate. The original report is `/reconstruction/merged/scan-report.json`
-and its lexical leads may include false positives.
+The post-Wave2 overlay `post_wave2/terms.json` has **225 meanings**:
+118 initial researched meanings + 107 distinct scan-research additions.
+The merged reference has **2,197 meanings**, composed of 958 independent
+Wave2 + 1,014 original mathDef + 225 merged-only meanings. The 958 independent
+Wave2 snapshot, original production `definitions/`, and original candidate
+scan are unchanged. **There is no pending frozen terminology candidate rank.**
+Do not initiate a new candidate discovery phase unless the user separately
+authorizes it. Do not revive the discarded dependency graphs, mandatory slow
+gates, review packets, retrospective independent Wave2 edits, or old queues.
 
-For new meanings, use
-`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/terms.json`
-and render them ONLY in `/reconstruction/merged/`, not the completed 958-meaning
-independent Wave 2 or original production source. The preceding nine general
-research batches added 118 meanings; the current scan-driven batch is a
-DIFFERENT focus, not a restart of those unrelated expansions.
-See `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/README.md`.
+**NEXT RECOMMENDED PHASE: LINKING EXISTING MATHEMATICAL DEFINITIONS.**
+Favor a fast permissive lexical matching pass over known terms in the existing
+merged corpus; record candidate links; then check context-specific meaning
+selection and clear ambiguities without holding all progress hostage to perfect
+research. Use explicit variant contexts (e.g., 'weak topology' means something
+different for CW complexes and functional analysis). Preserve the web/UI
+behavior: search by term vs definition independently, recursive inline linked
+definitions with path-local circular suppression, and useful multiple-definition
+variant ordering. Test on the merged reference and keep original/independent
+corpora intact. This linking work is separate from adding terms and should not
+trigger vocabulary crawling or dependency-reconstruction stages.
+
+See `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/README.md`
+for the completed research log and the linking handoff.
 
 ## New explicit authorization: original-content merger and rapid scan (2026-10-26)
 
