@@ -52,6 +52,7 @@ jobs:
           node --check research_pipeline/ui/app.js
           node --check research_pipeline/ui/subject_priority.js
           node --check research_pipeline/ui/sources_ui.js
+          node --check research_pipeline/ui/feedback.js
           node --test research_pipeline/tests/test_sources_ui.cjs
           node --test research_pipeline/tests/test_subject_priority.cjs
           python -m unittest research_pipeline.tests.test_reference_ui -v

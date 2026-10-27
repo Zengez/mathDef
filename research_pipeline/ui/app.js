@@ -231,12 +231,12 @@
       const body = inline ? renderInlineBody(side, d, path, blocked, form) : latexBody(form.body);
       if (!multiple) return '<div class="definition">' + body + '</div>';
       const label = 'Definition ' + (index + 1) + ' — ' + form.label;
-      const sources = form.sources || [];
+      const sources = config.sources_file ? [] : (form.sources || []);
       const source = sources.length ? sources.map(s =>
         '<a href="' + escape((s.locator || "").startsWith("https://") ?
           s.locator : s.url) + '" target="_blank" rel="noopener noreferrer">' +
           escape(s.title) + ' ↗</a>').join("") :
-        form.source ? '<a href="' + escape(form.source) +
+        (!config.sources_file && form.source) ? '<a href="' + escape(form.source) +
           '" target="_blank" rel="noopener noreferrer">Reference ↗</a>' : '';
       const location = form.path ? '<a href="' + escape(sourceUrl(form)) +
         '" target="_blank" rel="noopener noreferrer">Source file ↗</a>' : '';

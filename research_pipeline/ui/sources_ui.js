@@ -58,6 +58,11 @@
     };
     const fmt = raw => String(raw || "").replace(/_/g, " ");
     const unique = values => [...new Set(values.filter(Boolean))];
+    const interpretationLabel = value => ({
+      verified_source_restriction: "Source-specific restriction verified within the stated scope",
+      inherit_current_mathdef_canonical: "Use the current mathDef default; no new author endorsement is implied",
+      requires_scoped_review: "Further scope-specific review may be required",
+    }[value] || fmt(value));
     function showReferences(parent, references, kind) {
       for (const ref of references.slice().sort((a,b) =>
         Number(b.primary)-Number(a.primary) ||
@@ -86,12 +91,15 @@
           child(details,"summary","Source-specific convention assessment");
           child(details,"p","Status: " + fmt(assessment.status || "not checked"));
           if (assessment.scope?.name) child(details,"p",
-            "Scope: " + assessment.scope.name);
+            "Scope: " + assessment.scope.name +
+            (assessment.scope.locator ? " — " + assessment.scope.locator : ""));
+          if (assessment.restriction)
+            child(details,"p","Verified restriction: " + fmt(assessment.restriction));
           if (assessment.evidence_summary) child(details,"p",
             assessment.evidence_summary);
-          if (assessment.working_interpretation)
-            child(details,"p","mathDef working interpretation: " +
-              String(assessment.working_interpretation));
+          if (assessment.effective_interpretation)
+            child(details,"p","mathDef editorial interpretation: " +
+              interpretationLabel(assessment.effective_interpretation));
         }
       }
     }
@@ -137,7 +145,7 @@
           section(formBox,"Original file / editorial provenance (not an independent mathematical source)",
             provenance,"sources-provenance");
           if(!form.references.length) child(formBox,"p",
-            "No cited sources recorded for this formulation.","sources-empty");
+            "No linkable source references are recorded for this formulation.","sources-empty");
         }
         section(outer,"Other encountered references (not automatically supporting definitions)",
           meaning.encountered.filter(x=>!x.provenance));
