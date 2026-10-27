@@ -686,6 +686,13 @@
       "kept_meaning_id": "meaning.mathdef.postwave.scan-multiplicative-order-element-20261026",
       "kept_formulation_id": "form.meaning.mathdef.postwave.scan-multiplicative-order-element-20261026",
       "reason": "Both actual definitions give least n>0 with g^n=e, otherwise infinite. The surviving source-backed formulation adds the useful specialized order of a unit modulo m and the cyclic-subgroup perspective; ordinary additive order is the same group-theoretic invariant in additive notation, not a different mathematical meaning."
+    },
+    {
+      "case_id": "field-linear-transformation-into-linear-map",
+      "removed_meaning_id": "meaning.wave2.cross110.field-vector-linear",
+      "kept_meaning_id": "meaning.mathdef.original.linear.linear-map",
+      "kept_formulation_id": "form.mathdef.original.linear.linear-map.primary",
+      "reason": "Both are field-vector-space linear maps T:V→W over the same field, preserving addition and scalar multiplication; T(av+w)=aT(v)+T(w) is exactly equivalent to T(av+bw)=aT(v)+bT(w). Preserve the researched R-module linearity as a separate mathematical scope; sources and researched field version historic ID merge into original."
     }
   ],
   "metadata_assignments": {
@@ -1184,6 +1191,13 @@
       "original_text": "Let G be a group written multiplicatively with identity e, and g∈G. Its multiplicative order is the least positive integer n such that gⁿ=e, if such n exists; otherwise g has infinite order. For a unit a modulo an integer m≥2, the multiplicative order mod m is the least n≥1 satisfying aⁿ≡1 (mod m). If gcd(a,m)≠1, this modular order is not defined under the usual unit-group convention. This is the size of the cyclic subgroup ⟨g⟩ and is distinct from the additive order of an element in an additive group.",
       "text": "Let G be a group written multiplicatively with identity e, and g∈G. Its multiplicative order is the least positive integer n such that gⁿ=e, if such n exists; otherwise g has infinite order. For a unit a modulo an integer m≥2, the multiplicative order mod m is the least n≥1 satisfying aⁿ≡1 (mod m). If gcd(a,m)≠1, this modular order is not defined under the usual unit-group convention. When finite, the order equals the cardinality of the cyclic subgroup ⟨g⟩. In additive notation the same group-theoretic invariant is the least positive n satisfying ng=0, if one exists; otherwise it is infinite.",
       "reason": "After reviewed semantic consolidation, distinguish group-operation notation from the element-order invariant: the inherited research sentence inaccurately suggested additive and multiplicative orders are inherently different notions. Retain useful modular-unit specialization and cyclic-subgroup property.",
+      "decision_source": "assistant_reviewed_mathematical_cleanup_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.mathdef.original.measure.measurable-function.primary": {
+      "original_text": "For measurable spaces $(X,\\Sigma)$ and $(Y,\\mathcal T)$, a function $f:X\\to Y$ is measurable if $f^{-1}(B)\\in\\Sigma$ for every $B\\in\\mathcal T$. This means that $f$ respects the prescribed $\\sigma$-algebras; it does not require continuity, and measurability depends on the choice of measurable structure on both spaces.",
+      "text": "For measurable spaces $(X,\\Sigma)$ and $(Y,\\mathcal T)$, a function $f:X\\to Y$ is measurable if $f^{-1}(B)\\in\\Sigma$ for every $B\\in\\mathcal T$. This means that $f$ respects the prescribed $\\sigma$-algebras; it does not require continuity, and measurability depends on the choice of measurable structure on both spaces. When $Y$ is a topological space and $\\mathcal T$ is its Borel $\\sigma$-algebra, this condition is called Borel measurability.",
+      "reason": "Mathematical source comparison found 'measurable mapping' identical to original general measurable function. Preserve researched Borel-case explanation as a correct specialized consequence without a redundant definition card; source lead stays explicitly unverified.",
       "decision_source": "assistant_reviewed_mathematical_cleanup_2026-10-27",
       "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
     }
