@@ -243,7 +243,7 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
                         # Prevent fabricating a phrase across a hidden formula,
                         # a paragraph break, TeX macro or punctuation. The
                         # *original* gap, not the math-masked text, matters.
-                        if any(not re.fullmatch(r"\\s+|\\s*[-–]\\s*",
+                        if any(not re.fullmatch(r"\s+|\s*[-–]\s*",
                                 body[tokens[k][2]:tokens[k+1][1]])
                                for k in range(pos, end_word-1)):
                             continue
