@@ -79,6 +79,12 @@ class MergedCleanupTests(unittest.TestCase):
             (data / filename).write_text(json.dumps({
                 "schema_version": 1, "entries": [{"name": s} for s in names]
             }), encoding="utf-8")
+        (data / "math_definition_conventions.json").write_text(json.dumps({
+            "schema_version": 1, "entries": []
+        }), encoding="utf-8")
+        (data / "math_source_convention_assessments.json").write_text(json.dumps({
+            "schema_version": 1, "assessments": []
+        }), encoding="utf-8")
         (data / "merged_cleanup_decisions.json").write_text(json.dumps({
             "schema_version": 1,
             "merge_meanings": [{
