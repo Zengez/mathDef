@@ -18,7 +18,11 @@ from research_pipeline.ui.renderer import render as render_ui
 
 def publish(repo: Path, site: Path) -> dict:
     repo, site = repo.resolve(), site.resolve()
+    # The GitHub Pages artifact nests previews under /reconstruction.
+    # A standalone reconstruction smoke build already uses its own root.
     preview = site / "reconstruction" / "merged"
+    if not (preview / "catalog.json").is_file():
+        preview = site / "merged"
     catalog_path = preview / "catalog.json"
     if not catalog_path.is_file():
         raise FileNotFoundError(
