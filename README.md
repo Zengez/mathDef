@@ -8,6 +8,23 @@ An interactive, GitHub-hosted collection of mathematical definitions written in 
 
 The **historical October 16 original-corpus audit** covered 1,007 definitions in 40 subjects. Its citation-suitability findings were: **822 sources verified as suitable without changes, 185 entries whose citations or wording were corrected, and 0 citation entries pending**. See [CITATION_AUDIT.csv](CITATION_AUDIT.csv), [CITATION_AUDIT_PROCESS.md](CITATION_AUDIT_PROCESS.md), and [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md). These counts describe citation review, **not** formal mathematical peer review or individual approval of every KaTeX rendering. Entries retain their draft/example statuses until those separate checks occur.
 
+## Whole-corpus internal link audit (October 2026)
+
+The fully merged 2,197-meaning library has undergone a **single graph-wide
+link audit** covering all 6,825 screened and tentative relationships,
+including original/reconstructed/post-Wave2 cross-links. The audit found
+**no broken link endpoints, invalid positioned links, duplicate target
+relations, rendered-index discrepancies, or unexplained gaps in references
+to existing search terms**. Six mathematically convention-dependent
+references remain intentionally unlinked and eligible for visitor feedback.
+
+The audit is required during each GitHub Pages deployment, with current
+machine-readable results at
+[`/audits/full-link-graph.json`](https://zengez.github.io/mathDef/audits/full-link-graph.json).
+See [the full audit record](research_pipeline/experiments/reconstruction-v2-independent/post_wave2/FULL_CORPUS_LINK_AUDIT_2026-10-26.md).
+These are automated structural/context coverage checks: **Suggested**
+automatic links are not individually human-certified.
+
 ## Features
 
 - Two separate live searches: **Search terms** (term name and aliases only) and **Search definitions** (definition body only).
