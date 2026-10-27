@@ -24,8 +24,10 @@ STOP = frozenset(("the", "and", "with", "for", "that", "such", "are", "has",
 
 
 def _title(s: str) -> str:
-    # Preserve Greek letters and normalize numeric subscripts: T₀ != T₁,\n    # and σ-compactness is not compactness.\n    s = unicodedata.normalize("NFKC", s.casefold())\n    return " ".join(re.findall(r"[^\\W_]+", s, flags=re.UNICODE))
-
+    # Preserve Greek letters and numeric subscripts: T0 != T1,
+    # and sigma-compactness is not compactness.
+    s = unicodedata.normalize("NFKC", s.casefold())
+    return " ".join(re.findall(r"[^\W_]+", s, flags=re.UNICODE))
 
 def _tokens(body: str) -> frozenset[str]:
     # This intentionally lossy index is used ONLY to find review comparisons.
