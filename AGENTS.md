@@ -33,6 +33,33 @@ to the old 1,014-definition standalone index or reintroduce a separate
 production-only mathDef corpus in future edits. No additional vocabulary
 candidate discovery is authorized by the publication request.
 
+**WHOLE-CORPUS CROSS-CHUNK LINK AUDIT COMPLETE (2026-10-26).**
+A graph-wide, read-only audit checked **all 2,048 headings, 2,197 meanings,
+2,246 formulations and 6,825 relations** in the public merged mathDef corpus.
+There are 4,522 definition-use references (3,200 positioned, 1,322 screened
+unpositioned) and 2,303 other directed relationships. All source/target IDs,
+source offsets and phrases, deduplications, overlapping ranges, UI-visible
+dependencies, rendered groups, and cross-cohort references passed. The
+additional independent existing-term mention scan found **no unexplained
+missing links**: six intentionally unresolved original mathematical
+conventions remain, alongside two correctly suppressed directional metric-
+ball false positives and correctly specialized CW weak-topology references.
+
+Eleven links now internal to a single merged heading (five related, six
+definition-use) remain in provenance metadata intentionally and are
+suppressed as redundant navigation by the current UI, which shows all
+meanings within the heading. They are **not broken or missing definitions**.
+
+`research_pipeline/adapters/mathdef/audit_merged_links.py` is a **required
+whole-graph publishing/CI validation** and generates a report at
+`/audits/full-link-graph.json` on the public site. The verified report
+and explicit limitations are recorded at
+`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/FULL_CORPUS_LINK_AUDIT_2026-10-26.md`.
+The audit does not assert all suggested lexical links are human
+mathematically certified; visitor suggestions remain welcome.
+**Do NOT reclassify this existing-term link audit as permission to gather
+new terminology candidates. No such discovery phase has begun.**
+
 **As of 2026-10-26, the original 418-lead research pass is finished.**
 The independent research preview contains **958 meanings**, with **1,511**
 contextual relations (including **115 screened-to-direct incoming links**).

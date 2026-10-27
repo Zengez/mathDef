@@ -14,6 +14,8 @@ on:
       - "research_pipeline/ui/app.js"
       - "research_pipeline/ui/template.html"
       - "research_pipeline/adapters/mathdef/merged_linking.py"
+      - "research_pipeline/adapters/mathdef/audit_merged_links.py"
+      - "research_pipeline/tests/test_full_corpus_link_audit.py"
       - "research_pipeline/experiments/reconstruction-v2-independent/post_wave2/**"
       - ".github/workflows/combined-preview-merge-check.yml"
   push:
@@ -31,6 +33,8 @@ on:
       - "research_pipeline/ui/app.js"
       - "research_pipeline/ui/template.html"
       - "research_pipeline/adapters/mathdef/merged_linking.py"
+      - "research_pipeline/adapters/mathdef/audit_merged_links.py"
+      - "research_pipeline/tests/test_full_corpus_link_audit.py"
       - "research_pipeline/tests/merged_ui_browser_smoke.cjs"
 
 jobs:
@@ -42,7 +46,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Test lossless merge and rapid scan
-        run: python -m unittest research_pipeline.tests.test_original_merge research_pipeline.tests.test_merged_linking -v
+        run: python -m unittest research_pipeline.tests.test_original_merge research_pipeline.tests.test_merged_linking research_pipeline.tests.test_full_corpus_link_audit -v
       - name: Syntax-check reusable inline expansion UI
         run: node --check research_pipeline/ui/app.js
       - name: Build independent baselines and original-inclusive site
@@ -133,6 +137,13 @@ jobs:
               "rough_phrase_leads":scan["counts"]["new_phrase_leads"]
           })
           PY
+
+      - name: Full-graph cross-chunk link audit (all meanings, all links, existing terms only)
+        run: |
+          python -m research_pipeline.adapters.mathdef.audit_merged_links \
+            --catalog /tmp/mathdef-merge-check/merged/catalog.json \
+            --index /tmp/mathdef-merge-check/merged/definitions-index.json \
+            --report /tmp/mathdef-whole-graph-audit.json
 
       - name: Render main production site from merged meanings and verify original sources survive
         run: |

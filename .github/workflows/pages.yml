@@ -85,6 +85,13 @@ jobs:
           assert "Expanded mathematical definitions" in (root/"index.html").read_text()
           print("Main mathDef site published:",len(index),"term groups including",len(original["definitions"]),"original definitions")
           PY
+      - name: Audit every published mathematical link across all cohorts
+        run: |
+          python -m research_pipeline.adapters.mathdef.audit_merged_links \
+            --catalog _site/catalog.json \
+            --index _site/definitions-index.json \
+            --report _site/audits/full-link-graph.json
+          test -s _site/audits/full-link-graph.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
