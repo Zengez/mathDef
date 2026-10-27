@@ -152,6 +152,53 @@ jobs:
               'meaning.wave2.found85.adapted-continuous',
           }
           titles={g['title'].lower():g for g in catalog['groups']}
+          # User's 2026-10-27 decisions must be reflected in live definitions,
+          # searchable aliases, provenance and mathematically dependent text.
+          assert len(report['user_adjudicated_canonical_editorial_edits'])==6
+          zero=titles['zero divisor']
+          assert {m['id'] for m in zero['meanings']}=={
+              'meaning.wave2.direct.8f2dea7e2bd1211c0cf6'}
+          assert 'a≠0' in zero['meanings'][0]['formulations'][0]['text']
+          assert 'b≠0' in zero['meanings'][0]['formulations'][0]['text']
+          assert 'commalg.zero_divisor.zero_included' in {
+              x['convention_id'] for x in zero['meanings'][0]['convention_notes']}
+          assert 'commalg.zero-divisor' in zero['meanings'][0].get(
+              'legacy_original_definition_ids',[])
+          metric=titles['metric space']
+          assert {m['id'] for m in metric['meanings']}=={
+              'meaning.wave2.analysis98.metric-space'}
+          assert {f['id'] for f in metric['meanings'][0]['formulations']}=={
+              'form.wave2.analysis98.metric-space',
+              'form.wave2.analysis98.metric-space.compatible'}
+          assert all('nonempty' in f['text'].lower()
+                     for f in metric['meanings'][0]['formulations'])
+          assert 'metric.metric_space.empty_underlying_set' in {
+              x['convention_id'] for x in metric['meanings'][0]['convention_notes']}
+          assert 'metric.metric-space' in metric['meanings'][0].get(
+              'legacy_original_definition_ids',[])
+          affine=titles['affine hull']
+          assert 'affine span' in {s.casefold() for s in affine['aliases']}
+          assert {m['id'] for m in affine['meanings']}=={
+              'meaning.wave2.pop140.affine-hull'}
+          assert {f['id'] for f in affine['meanings'][0]['formulations']}=={
+              'form.wave2.pop140.affine-hull-combinations',
+              'form.wave2.pop140.affine-hull-intersection'}
+          assert all('nonempty' in f['text'] for f in
+                     affine['meanings'][0]['formulations'])
+          assert 'geometry.affine_hull.empty_input' in {
+              x['convention_id'] for x in affine['meanings'][0]['convention_notes']}
+          assert 'geometry.affine-span' in affine['meanings'][0].get(
+              'legacy_original_definition_ids',[])
+          for term in ('totally bounded metric space','separable metric space',
+                       'compact metric space'):
+              group=titles[term]
+              for m in group['meanings']:
+                  for f in m['formulations']:
+                      assert 'empty metric space' not in f['text'].lower()
+                      assert 'For X=∅' not in f['text']
+          aliases=redirects
+          assert aliases['group_aliases']['preview.term.ce7752ecc3d022d0846cffac']==(
+              'preview.term.79c6caff00b6628e57970aed')
           connected=titles['connected space']
           assert len(connected['meanings'])==1, 'Canonical connected-space meaning should be unique'
           assert 'convention_notes' in connected['meanings'][0]
