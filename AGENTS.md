@@ -27,18 +27,18 @@ Incorporate useful mathematical content DIRECTLY. Do not reintroduce
 mandatory dependency graphs, slow gates, arbitrary verification packet stages,
 or a new external vocabulary hunt.
 
-The existing frozen original terminology scan has now been dispositioned through
-**rank 740 of 2,019** in
+The frozen original mathDef terminology scan has now been dispositioned through
+**rank 940 of 2,019** in
 `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/scan_candidate_dispositions.json`.
-The merged-only post-Wave2 overlay now has **164** meanings, including **46 net
-scan-derived researched meanings** above the 118 previously added post-Wave2
-ones. This newest consecutive 200-lead batch (541–740) produced 7 genuinely
-new mathematical definitions, 29 existing matches, 161 lexical false
-positives, and 3 contextual ambiguities. Every disposition contains the
-literal phrase, occurrence count, source examples and decision.
-**NEXT ORIGINAL CANDIDATE: rank 741.** There is NO authorization to add
-new candidates, discover fresh vocabulary, restart source scans, or return
-to dependency-graph audit workflows.
+The merged-only post-Wave2 overlay now has **169** meanings: 118
+pre-scan additions plus **51 net scan-derived researched meanings**. The latest
+200 candidate ranks (741–940) yielded **5 sourced mathematical meanings**,
+22 already-covered concepts, 169 nonterminological fragments, and 4
+context-dependent ambiguities. Every saved disposition retains the literal
+original phrase, occurrence count, source examples and target decision.
+**NEXT ORIGINAL CANDIDATE: rank 941.** Do not collect additional vocabulary
+candidates, restart discovery scans, invoke dependency gates or otherwise
+divert from direct research/incorporation of the existing collection.
 
 Keep per-candidate source examples, concise outcome and target mapping in this
 same lightweight ledger; it is a resumption log, not a mathematical
