@@ -194,6 +194,45 @@ class MergedCleanupTests(unittest.TestCase):
         self.assertEqual({m["id"] for g in cleaned["groups"] for m in g["meanings"]},
                          {"final", "other"})
 
+    def test_user_canonical_edits_are_audited_and_invalidate_old_text_spans(self):
+        data = deepcopy(self.base)
+        original = deepcopy(data)
+        data["relations"].append({
+            "id": "r.use_surviving_before_edit",
+            "from_formulation": "f.new", "target_meaning": "other",
+            "relation_type": "definition_uses", "review_state": "screened",
+            "span_start": 2, "span_end": 9, "source_phrase": "commutative",
+        })
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = self._repo(Path(tmp))
+            file = repo / "data/merged_cleanup_decisions.json"
+            decisions = json.loads(file.read_text(encoding="utf-8"))
+            decisions["canonical_editorial_edits"] = {
+                "f.new": {
+                    "original_text": "A commutative ring R is Artinian if the descending chain condition holds.",
+                    "text": "A commutative ring R is Artinian when every descending ideal chain stabilizes.",
+                    "reason": "Explicit mathematical scope choice by the user.",
+                    "decision_source": "user_adjudication_2026-10-27",
+                    "evidence_scope": "mathdef_editorial_canonical_not_source_verified",
+                }
+            }
+            file.write_text(json.dumps(decisions), encoding="utf-8")
+            cleaned, report, _ = prepare_curated_cleanup(data, repo)
+            self.assertEqual(len(report["user_adjudicated_canonical_editorial_edits"]), 1)
+            self.assertIn("r.use_surviving_before_edit",
+                          report["deleted_source_text_edges_needing_global_relink"])
+            form = cleaned["groups"][0]["meanings"][0]["formulations"][0]
+            self.assertIn("every descending ideal chain", form["text"])
+            self.assertEqual(form["canonical_editorial_edit"]["evidence_scope"],
+                             "mathdef_editorial_canonical_not_source_verified")
+            self.assertEqual(len(report["convention_sensitive_text_translations"]), 0)
+            decisions["canonical_editorial_edits"]["f.new"]["original_text"] = "WRONG historical quote"
+            file.write_text(json.dumps(decisions), encoding="utf-8")
+            with self.assertRaisesRegex(CleanupError, "source text drift"):
+                prepare_curated_cleanup(data, repo)
+        self.assertEqual(data["groups"], original["groups"],
+                         "Canonical edits must not mutate historical input")
+
     def test_strict_required_subject_gate_and_bad_primary(self):
         with tempfile.TemporaryDirectory() as tmp:
             repo = self._repo(Path(tmp))
