@@ -175,5 +175,160 @@ class MergedLinkingTests(unittest.TestCase):
         self.assertGreater(report2["ambiguous_contexts_total_occurrences"], 0)
 
 
+    def test_random_variable_general_and_explicit_real_context(self):
+        target = group("rv", "Random variable",
+                       "meaning.wave2.prob90.random-variable-general",
+                       "f.general", "A measurable map into a measurable state space.")
+        target["meanings"].extend([
+            {"id": "meaning.wave2.prob90.random-variable-real",
+             "label": "Real-valued random variable",
+             "formulations": [{"id":"f.real","text":"A measurable real-valued map.",
+                               "sources":[{"title":"Ref","url":"https://example.org"}]}]},
+            {"id": "meaning.mathdef.original.prob.random-variable",
+             "label":"Original mathDef · Probability",
+             "formulations":[{"id":"f.old","text":"A random variable.",
+                              "sources":[{"title":"Ref","url":"https://example.org"}]}]},
+        ])
+        generic = group("g", "Almost-sure equality", "m.g", "f.g",
+                        "Two random variables are equal almost surely.")
+        real = group("v", "Bernoulli distribution", "m.v", "f.v",
+                     "A real random variable follows a Bernoulli distribution.")
+        c={"groups":[target,generic,real],"relations":[]}
+        report=link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"],2)
+        by_form={rel["from_formulation"]:rel["target_meaning"] for rel in c["relations"]}
+        self.assertEqual(by_form["f.g"],"meaning.wave2.prob90.random-variable-general")
+        self.assertEqual(by_form["f.v"],"meaning.wave2.prob90.random-variable-real")
+        self.assertEqual(report["ambiguous_contexts_total_occurrences"],0)
+
+    def test_distinct_inner_product_and_natural_number_conventions_still_abstain(self):
+        nats=group("n","Natural numbers","meaning.wave2.set63.natural-including-zero",
+                   "fn0","Natural numbers can include zero.")
+        nats["meanings"].append({
+            "id":"meaning.wave2.set63.natural-positive-convention","label":"Positive convention",
+            "formulations":[{"id":"fn1","text":"Natural numbers start at one.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        ip=group("ip","Inner product space",
+                 "meaning.wave2.analysis98.real-inner-product-space",
+                 "fip1","Positive symmetric bilinear product.")
+        ip["meanings"].append({
+            "id":"meaning.wave2.analysis98.complex-inner-product-space",
+            "label":"Complex positive-definite Hermitian inner product",
+            "formulations":[{"id":"fip2","text":"Hermitian positive product.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        source=group("a","Orthogonal complement","ma","fa",
+                     "In an inner product space, take the orthogonal complement "
+                     "of a sequence indexed by natural numbers.")
+        c={"groups":[nats,ip,source],"relations":[]}
+        report=link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"],0)
+        self.assertEqual(report["ambiguous_contexts_total_occurrences"],2)
+
+    def test_discrete_martingale_source_override_not_continuous_by_default(self):
+        source=group("m","Martingale transform",
+                     "meaning.mathdef.original.stochastic.martingale-transform",
+                     "fm","A martingale transform uses increments of a martingale.")
+        target=group("t","Martingale","meaning.wave2.research81.martingale-discrete",
+                     "fd","An adapted integrable discrete sequence.")
+        target["meanings"].append({
+            "id":"meaning.wave2.research81.martingale-continuous-index",
+            "label":"Real-valued martingale indexed continuously",
+            "formulations":[{"id":"fc","text":"Adapted continuous-time process",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        c={"groups":[source,target],"relations":[]}
+        report=link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"],1)
+        self.assertEqual(c["relations"][0]["target_meaning"],
+                         "meaning.wave2.research81.martingale-discrete")
+
+
+
+    def test_krull_dimension_supremum_chooses_general_order_concept(self):
+        source=group("src","Height of a prime ideal","m.height","f.height",
+                     "The height is the supremum of lengths of prime chains.",
+                     label="Commutative algebra: prime ideal height")
+        target=group("target","Supremum",
+                     "meaning.wave2.direct.066b1d1b9032a2e86bdd","f.ord",
+                     "Least upper bound in a partially ordered set.")
+        target["meanings"].append({
+            "id":"meaning.mathdef.original.real.supremum", "label":"Real analysis",
+            "formulations":[{"id":"f.real","text":"Least upper bound of real numbers.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        c={"groups":[source,target],"relations":[]}
+        report=link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"],1)
+        self.assertEqual(c["relations"][0]["target_meaning"],
+                         "meaning.wave2.direct.066b1d1b9032a2e86bdd")
+
+    def test_zero_divisor_conventions_scoped_to_nontrivial_pair(self):
+        source=group("s","Zero polynomial",
+                     "meaning.mathdef.postwave.scan-zero-polynomial-20261026",
+                     "f.s","Over rings with zero divisors, the zero polynomial exists.")
+        target=group("t","Zero divisor",
+                     "meaning.mathdef.original.commalg.zero-divisor",
+                     "f.broad","Some zero products occur in commutative rings.")
+        target["meanings"].append({
+            "id":"meaning.wave2.direct.8f2dea7e2bd1211c0cf6",
+            "label":"Nonzero zero divisor convention",
+            "formulations":[{"id":"f.narrow","text":"Two nonzero elements annihilate one another.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        c={"groups":[source,target],"relations":[]}
+        report=link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"],1)
+        self.assertEqual(c["relations"][0]["target_meaning"],
+                         "meaning.wave2.direct.8f2dea7e2bd1211c0cf6")
+
+
+
+    def test_quasi_metric_directional_balls_not_mislinked_to_metric_ball(self):
+        parent = group("backward", "Backward quasi-metric ball",
+                       "meaning.mathdef.original.quasimetric.backward-ball",
+                       "f.backward",
+                       "The backward open ball is the set of points close in the reverse direction.")
+        parent2 = group("forward", "Forward quasi-metric ball",
+                        "meaning.mathdef.original.quasimetric.forward-ball",
+                        "f.forward",
+                        "The forward open ball uses the forward quasi-metric.")
+        target = group("ball", "Open ball",
+                       "meaning.mathdef.original.metric.open-ball",
+                       "f.ball", "A set defined by a symmetric metric.")
+        target["meanings"].append({
+            "id":"meaning.wave2.directional113.open-norm",
+            "label":"Normed-space open ball",
+            "formulations":[{"id":"f.norm","text":"A norm-based open ball.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        data={"groups":[parent,parent2,target],"relations":[]}
+        report=link_merged_catalog(data)
+        self.assertEqual(report["new_tentative_links"],0)
+        self.assertEqual(report["skipped_context_false_positive"],2)
+        self.assertEqual(report["ambiguous_contexts_total_occurrences"],0)
+
+    def test_original_krull_dimension_supremum_is_order_theoretic(self):
+        source=group("krull","Krull dimension",
+                     "meaning.mathdef.original.commalg.krull-dimension",
+                     "f.krull",
+                     "Dimension is the supremum of lengths of prime chains.")
+        target=group("sup","Supremum",
+                     "meaning.wave2.direct.066b1d1b9032a2e86bdd",
+                     "f.ord","Least upper bound in a poset.")
+        target["meanings"].append({
+            "id":"meaning.mathdef.original.real.supremum",
+            "label":"Real analysis",
+            "formulations":[{"id":"f.real","text":"Supremum of real numbers.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        d={"groups":[source,target],"relations":[]}
+        report=link_merged_catalog(d)
+        self.assertEqual(report["new_tentative_links"],1)
+        self.assertEqual(d["relations"][0]["target_meaning"],
+                         "meaning.wave2.direct.066b1d1b9032a2e86bdd")
+
+
 if __name__ == "__main__":
     unittest.main()

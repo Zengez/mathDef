@@ -74,8 +74,50 @@ BROAD_REPRESENTATIVE = {
     "total order": "meaning.mathdef.original.relations.total-order",
     "affine combination": "meaning.mathdef.original.geometry.affine-combination",
     "preadditive category": "meaning.mathdef.original.category.preadditive-category",
+    "separable algebraic extension": "meaning.50d335de00e5f11d.separable-algebraic-extension",
+    "stochastic process": "meaning.wave2.found85.stochastic-process",
+    "full subcategory": "meaning.mathdef.postwave.full-subcategory-20261026",
+    "initial object": "meaning.mathdef.original.category.initial-object",
+    "quotient topology": "meaning.mathdef.original.topology.quotient-topology",
+    "valuation ring": "meaning.mathdef.original.arithmetic.valuation-ring",
+    "cartesian product": "meaning.mathdef.original.sets.cartesian-product",
+    "discrete topology": "meaning.mathdef.original.topology.discrete-topology",
+    "monoidal category": "meaning.mathdef.original.category.monoidal-category",
+    "normal subgroup": "meaning.mathdef.original.algebra.normal-subgroup",
+    "polynomial ring": "meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+    "principal ideal domain": "meaning.mathdef.original.arithmetic.principal-ideal-domain",
+    "quotient ring": "meaning.mathdef.original.algebra.quotient-ring",
+    "successor ordinal": "meaning.mathdef.original.sets.successor-ordinal",
+    "von neumann ordinal": "meaning.mathdef.original.sets.ordinal",
+    "affine scheme": "meaning.mathdef.original.schemes.affine-scheme",
+    "chromatic number": "meaning.mathdef.original.graph.chromatic-number",
+    "coequalizer": "meaning.mathdef.original.category.coequalizer",
+    "connected space": "meaning.mathdef.original.topology.connected-space",
+    "discrete valuation ring": "meaning.mathdef.original.arithmetic.discrete-valuation-ring",
+    "limit of a diagram": "meaning.mathdef.original.category.limit",
+    "locally finite borel measure": "meaning.mathdef.postwave.scan-locally-finite-borel-measure-20261026",
+    "morphism of schemes": "meaning.mathdef.original.schemes.morphism-schemes",
+    "power set": "meaning.mathdef.original.sets.power-set",
+    "prime number": "meaning.mathdef.original.number.prime-number",
+    "projective module": "meaning.mathdef.original.commalg.projective-module",
+    "quotient group": "meaning.mathdef.original.algebra.quotient-group",
+    "radical ideal": "meaning.mathdef.original.commalg.radical-ideal-property",
+    "surjective function": "meaning.mathdef.original.functions.surjective",
+    "symmetric relation": "meaning.mathdef.original.relations.symmetric-relation",
+    "transitive set": "meaning.mathdef.original.sets.transitive-set",
+    "unique factorization domain": "meaning.mathdef.original.arithmetic.unique-factorization-domain",
 }
 
+
+
+# A word-level substring in a longer name is not necessarily a reference to
+# that shorter, mathematically distinct concept. In these two definitions,
+# the "open ball" text denotes the asymmetric forward/backward quasi-metric
+# ball being defined, NOT an ordinary symmetric metric-ball definition.
+SUPPRESSED_CONTEXT_MATCHES = {
+    ("meaning.mathdef.original.quasimetric.forward-ball", "open ball"),
+    ("meaning.mathdef.original.quasimetric.backward-ball", "open ball"),
+}
 
 def words(value: str) -> tuple[str, ...]:
     """Unicode-aware literal words; no stemming, hallucinated terms or embeddings."""
@@ -209,6 +251,119 @@ def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
     representative = BROAD_REPRESENTATIVE.get(group["title"].casefold())
     if representative and any(m["id"] == representative for m in meanings):
         return representative
+    # For an unconstrained random variable, the arbitrary measurable-space
+    # codomain definition is mathematically general enough to cover both the
+    # real-valued and nonreal cases. Where the source explicitly says "real
+    # random variable", show the real-valued formulation first instead.
+    if group["title"].casefold() == "random variable":
+        excerpt = ""
+        if occurrence:
+            _, body, start, end = occurrence
+            excerpt = body[max(0, start-30):min(len(body), end+28)]
+        real_named = re.search(
+            r"\breal(?:-valued)?\s+random\s+variables?\b",
+            excerpt, re.IGNORECASE,
+        )
+        mid = ("meaning.wave2.prob90.random-variable-real" if real_named else
+               "meaning.wave2.prob90.random-variable-general")
+        if any(m["id"] == mid for m in meanings):
+            return mid
+
+    # Ordinary functional-analysis normed spaces have real or complex scalars.
+    # Do not force this narrower convention on unrelated nonstandard scalar
+    # divisions. The explicit source meanings here have that scope.
+    if group["title"].casefold() == "normed vector space" and (
+        source_meaning["id"] in {
+            "meaning.mathdef.original.functional.banach-space",
+            "meaning.wave2.pop142.bounded-linear",
+            "meaning.mathdef.postwave.scan-closed-linear-subspace-20261026",
+            "meaning.wave2.pop142.bounded-operator-norm",
+        }
+    ):
+        mid = "meaning.mathdef.original.functional.normed-space"
+        if any(m["id"] == mid for m in meanings):
+            return mid
+
+    # The mathematical source identifies a subset's (derived-set) limit point,
+    # not a subsequential accumulation of an indexed sequence.
+    if group["title"].casefold() == "accumulation point" and (
+        source_meaning["id"] in {
+            "meaning.mathdef.original.real.limit-of-function",
+            "meaning.mathdef.original.topology.limit-point",
+        }
+    ):
+        mid = "meaning.wave2.cross110.set-accumulation"
+        if any(m["id"] == mid for m in meanings):
+            return mid
+
+    # Time indices in these source statements disambiguate the two researched
+    # martingale variants without imposing a global default.
+    if group["title"].casefold() == "martingale":
+        martingale_context = {
+            "meaning.mathdef.original.stochastic.martingale":
+                "meaning.wave2.research81.martingale-discrete",
+            "meaning.mathdef.original.stochastic.local-martingale":
+                "meaning.wave2.research81.martingale-continuous-index",
+            "meaning.mathdef.postwave.scan-localizing-sequence-local-martingale-20261026":
+                "meaning.wave2.research81.martingale-continuous-index",
+        }
+        mid = martingale_context.get(source_meaning["id"])
+        if mid and any(m["id"] == mid for m in meanings):
+            return mid
+
+    # An ordinary metric ball is appropriate in this metric closure statement;
+    # the forward/backward quasi-metric ball sources are deliberately left
+    # ambiguous rather than linked to a symmetric metric ball.
+    if group["title"].casefold() == "open ball" and (
+        source_meaning["id"] == "meaning.mathdef.original.topology.closure"
+    ):
+        mid = "meaning.mathdef.original.metric.open-ball"
+        if any(m["id"] == mid for m in meanings):
+            return mid
+
+    # The two scheme/reduced sources work in commutative algebra. Do not use
+    # this specialization for a possibly noncommutative reduced ring.
+    if group["title"].casefold() == "reduced ring" and (
+        source_meaning["id"] in {
+            "meaning.6c51aeb904a0fe74.geometrically-reduced-algebra",
+            "meaning.6a21c2d4f3354c8f.reduced-scheme",
+        }
+    ):
+        mid = "meaning.mathdef.original.commalg.reduced-ring"
+        if any(m["id"] == mid for m in meanings):
+            return mid
+
+    # Krull dimension/height/depth are suprema of the nonnegative integer
+    # lengths of chains or regular sequences (possibly +infinity).
+    # These commutative-algebra contexts use the general order-theoretic
+    # least-upper-bound concept, not specifically a real-valued supremum.
+    if group["title"].casefold() == "supremum":
+        subject = set(words(source_meaning.get("label", "")))
+        if subject & {"commutative", "module", "ideal", "height", "dimension",
+                      "depth", "prime"}:
+            mid = "meaning.wave2.direct.066b1d1b9032a2e86bdd"
+            if any(m["id"] == mid for m in meanings):
+                return mid
+
+    # Source-precise rather than global convention choices.
+    scoped = {
+        ("open ball", "meaning.wave2.direct.23c297a4a1c27fe4ec73"):
+            "meaning.mathdef.original.metric.open-ball",
+        ("closed ball", "meaning.mathdef.original.geometry.sphere"):
+            "meaning.wave2.directional113.closed-norm",
+        ("minimal polynomial", "meaning.mathdef.original.algebra.algebraic-element"):
+            "meaning.mathdef.original.arithmetic.minimal-polynomial",
+        ("supremum", "meaning.mathdef.original.commalg.krull-dimension"):
+            "meaning.wave2.direct.066b1d1b9032a2e86bdd",
+        # In the original zero-polynomial definition 'rings with zero divisors'
+        # means nontrivial zero-divisor pairs, not the element zero itself.
+        ("zero divisor", "meaning.mathdef.postwave.scan-zero-polynomial-20261026"):
+            "meaning.wave2.direct.8f2dea7e2bd1211c0cf6",
+    }
+    mid = scoped.get((group["title"].casefold(), source_meaning["id"]))
+    if mid and any(m["id"] == mid for m in meanings):
+        return mid
+
     # Some ring maps are non-unital by convention. A ring map used to specify
     # an affine scheme morphism must preserve identities; only that precise
     # mathematical context warrants the unital specialization automatically.
@@ -306,6 +461,7 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
         "skipped_existing": 0,
         "skipped_self": 0,
         "skipped_overlapping": 0,
+        "skipped_context_false_positive": 0,
         "skipped_limit": 0,
         "ambiguous_contexts": Counter(),
         "ambiguous_context_examples": defaultdict(list),
@@ -355,6 +511,9 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
                     parts, group_ids, end_word = matches[0]
                     phrase = " ".join(parts)
                     pos = end_word
+                    if (source["id"], phrase) in SUPPRESSED_CONTEXT_MATCHES:
+                        report["skipped_context_false_positive"] += 1
+                        continue
                     if len(group_ids) != 1:
                         report["ambiguous_labels"][phrase] += 1
                         continue

@@ -34,39 +34,43 @@ Do not initiate a new candidate discovery phase unless the user separately
 authorizes it. Do not revive the discarded dependency graphs, mandatory slow
 gates, review packets, retrospective independent Wave2 edits, or old queues.
 
-**INITIAL POST-WAVE2 MERGED LINKING WAVE COMPLETE (2026-10-26).**
-The original frozen quick-scan terminology queue is fully processed
-(**2,019/2,019**). The separate merged-only reference contains **2,197 existing
-meanings** in 2,048 headings and 2,246 formulations. A conservative,
-source-offset-checked lexical linking pass now supplies **2,836 tentative
-definition-use links** (visibly marked **Suggested**) plus **259 previously
-screened relationships newly anchored inline**. **1,706/2,246** formulations
-have positioned links. The generated `/reconstruction/merged/link-report.json`
-preserves source snippets for **117 genuinely ambiguous existing-term
-occurrences**, left unlinked rather than arbitrarily assigning a meaning.
+**MERGED MATHEMATICAL LINKING AND FOLLOW-UP AMBIGUITY REVIEW COMPLETE (2026-10-26).**
+The original frozen candidate queue remains **2,019/2,019 dispositioned**
+(no new terminology discovery). The original corpus (**1,014 meanings**),
+independent Wave2 (**958 meanings**), and merged-only overlay (**225 meanings**)
+remain unchanged. The separate merged reference has **2,197 meanings** in
+**2,048 headings**, comprising **2,246 formulations**.
 
-**CORPUS / UI VERIFIED:** Original production definitions and frozen
-independent Wave1/Wave2 meanings have not been altered; no new terminology
-candidates were collected. Linker regression, math/TeX boundary checks,
-candidate-source exact-match checks, JS syntax, both site builds, and real
-headless Chromium interaction checks passed. Browser testing covers separate
-term/definition search, recursive two-level inline expansion, sibling reuse,
-ancestor loop prevention, mobile viewport, and default In-Line mode (with
-previously saved user preference honored). Nested mode remains available.
+The latest CI-verified linking pass creates **2,952 tentative, exact-source-
+anchored** definition-use links (UI displays **Suggested**), positions **248
+previously-screened** relations inline, and gives **1,732/2,246 formulations**
+positioned links. Targeted context-based review addressed **111 of the
+previously 117 ambiguous link occurrences**, either by research-backed
+existing-meaning selection or suppression of source-specific false positives.
 
-**NO REQUIRED REVIEW GATES REMAIN FOR THIS LINKING WAVE.** Some mathematically
-distinct variants intentionally remain unresolved in `link-report.json`
-(e.g. real-vs-general random variables, order-vs-real supremum, discrete-vs-
-continuous martingales). Only conduct targeted review or community-feedback
-corrections as needed. **Do not initiate a new terminology discovery scan
-without explicit user authorization**, and do not revive discarded dependency
-graphs or mandatory staged packet/gate workflows.
+**ONLY 6 deliberate link ambiguities remain:** three `natural numbers`
+occurrences (zero-included vs positive convention), two `inner product space`
+occurrences (real vs complex scalar field), and one `ring homomorphism`
+occurrence whose source expressly contrasts unital and non-unital
+conventions. The generated `/reconstruction/merged/link-report.json`
+records those examples for possible user feedback. They are **not** new
+term candidates or missing definitions; do not force arbitrary meaning
+selection. Other mathematical variants remain displayed without merging.
 
-See `research_pipeline/experiments/reconstruction-v2-independent/post_wave2/LINKING_CLOSEOUT_2026-10-26.md`
-for the durable linking-wave closeout and
-`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/LINKING_FIRST_PASS_2026-10-26.md`
-for the original first-pass baseline. No assistance is needed from the user
-to close this linking pass.
+**VALIDATION:** 19 Python regression tests, exact anchored source-text,
+independent and combined site builds, and actual headless Chromium tests
+of two independent searches, nested/inline recursion, sibling reuse,
+ancestor loop blocking, and mobile layout all passed.
+
+**NO REQUIRED LINKING WORK GATES REMAIN.** Community suggestions can
+address the remaining legitimate conventions if users encounter them.
+Do not restart terminology searches, dependency graphs, per-edge
+review packets, or edits to frozen independent Wave2/original sources.
+
+Persistent follow-up research:
+`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/LINK_AMBIGUITY_REVIEW_2026-10-26.md`.
+Earlier general linking closeout:
+`research_pipeline/experiments/reconstruction-v2-independent/post_wave2/LINKING_CLOSEOUT_2026-10-26.md`.
 
 ## New explicit authorization: original-content merger and rapid scan (2026-10-26)
 
