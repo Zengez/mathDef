@@ -5616,6 +5616,480 @@
         "On arbitrary spaces 'compact-finite' may not be equivalent without additional hypotheses."
       ],
       "research_status": "research from frozen original quick scan, assistant reviewed"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-noncommutative-ring-20261026",
+      "candidate_id": "postwave-scan:rank-1198",
+      "term": "noncommutative ring",
+      "context": "Ring theory · multiplication not commutative",
+      "aliases": [
+        "non-commutative ring"
+      ],
+      "definition": "An associative ring R is noncommutative in the strict sense if there exist elements a,b in R for which ab≠ba. No requirement for a multiplicative identity is imposed unless stated. For instance, the ring of 2×2 matrices over any nonzero field is noncommutative. Some authors use 'noncommutative ring' permissively to mean a ring without an imposed commutativity axiom, which may include commutative examples; this entry uses the strict sense of actually noncommuting elements.",
+      "sources": [
+        {
+          "title": "Mathematics LibreTexts — Introduction to Ring Theory, Definition 9.4",
+          "url": "https://math.libretexts.org/Bookshelves/Abstract_and_Geometric_Algebra/Elementary_Abstract_Algebra_%28Clark%29/01%3A_Chapters/1.09%3A_Introduction_to_Ring_Theory",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "University of Manchester — Notes on Noncommutative Algebra",
+          "url": "https://personalpages.manchester.ac.uk/staff/mike.prest/NCAlgSecs01.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Associative addition/multiplication ring structure, identity optional.",
+        "Noncommutative is strict failure of commutativity in this variant.",
+        "The trivial ring is commutative and therefore excluded in the strict sense."
+      ],
+      "research_status": "assistant-reviewed using retrieved mathematical references; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-nondecreasing-function-real-interval-20261026",
+      "candidate_id": "postwave-scan:rank-1201",
+      "term": "nondecreasing real-valued function on an interval",
+      "context": "Real analysis · monotone nondecreasing function",
+      "aliases": [
+        "nondecreasing function",
+        "monotone increasing (weak sense)"
+      ],
+      "definition": "Let I be a real interval and f:I→ℝ. The function f is nondecreasing if for all x,y∈I with x≤y, f(x)≤f(y). Equality is allowed, so constant functions are nondecreasing. The stronger strictly increasing condition requires f(x)<f(y) whenever x<y. No continuity or differentiability is assumed. The definition is vacuously true on an empty or singleton interval, if such intervals are admitted.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Nondecreasing Function",
+          "url": "https://mathworld.wolfram.com/NondecreasingFunction.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Real order on the domain interval and codomain.",
+        "No strict inequality, continuity, or smoothness assumed.",
+        "Empty/singleton intervals satisfy the condition vacuously."
+      ],
+      "research_status": "assistant-reviewed using retrieved mathematical references; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-normed-field-absolute-value-20261026",
+      "candidate_id": "postwave-scan:rank-1239",
+      "term": "normed field (field with an absolute value)",
+      "context": "Valued fields · real-valued multiplicative field absolute value",
+      "aliases": [
+        "absolute-valued field",
+        "field equipped with an absolute value"
+      ],
+      "definition": "A normed or absolute-valued field is a field K with a function |·|:K→[0,∞) such that |x|=0 exactly when x=0, |xy|=|x||y|, and |x+y|≤|x|+|y| for all x,y∈K. The associated metric is d(x,y)=|x−y|. Completeness and the ultrametric inequality are not assumed. The trivial absolute value |x|=1 for nonzero x is allowed; a nonarchimedean valued field has the stronger inequality |x+y|≤max(|x|,|y|). Some contexts call a multiplicative nonarchimedean absolute value a 'valuation'; an additive valuation is a different normalization.",
+      "sources": [
+        {
+          "title": "Boston University — Valued Fields and Normed Spaces, §1.1",
+          "url": "https://math.bu.edu/people/yangzhe/FvdP_RigidGeometryApplications.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Non-archimedean Excursions — Chapter 1, Valued fields",
+          "url": "https://escholarship.org/uc/item/8jj7z3sk",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Nonzero field with commutative multiplication.",
+        "Absolute value is nonnegative and multiplicative, not merely a general vector-space norm.",
+        "Completeness and nonarchimedean property are optional refinements."
+      ],
+      "research_status": "assistant-reviewed using retrieved mathematical references; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-order-preserving-map-posets-20261026",
+      "candidate_id": "postwave-scan:rank-1280",
+      "term": "order-preserving map of partially ordered sets",
+      "context": "Order theory · monotone (isotone) map",
+      "aliases": [
+        "isotone map",
+        "monotone map between posets",
+        "increasing mapping"
+      ],
+      "definition": "For partially ordered sets (P,≤_P) and (Q,≤_Q), a map f:P→Q is order-preserving (isotone) if x≤_P y implies f(x)≤_Q f(y) for every x,y∈P. Such a map need not be injective or reflect order: a constant map into a nonempty Q is order-preserving, but is generally not an order embedding. An order embedding satisfies the stronger equivalence x≤_P y if and only if f(x)≤_Q f(y). The empty-domain function is order-preserving by vacuity.",
+      "sources": [
+        {
+          "title": "University of Turku — Ordered Sets, Isotone Mappings",
+          "url": "https://users.utu.fi/harju/orderedsets/Mainorder.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Original mathDef — Order Embedding",
+          "url": "https://github.com/Zengez/mathDef/blob/main/definitions/relations/order-embedding.tex",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "P and Q are partially ordered, but the forward implication also makes sense for preorders.",
+        "No injectivity, order reflection, or surjectivity required.",
+        "Does not conflate weakly order-preserving with strictly increasing."
+      ],
+      "research_status": "assistant-reviewed using retrieved mathematical references; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-ordered-field-20261026",
+      "candidate_id": "postwave-scan:rank-1281",
+      "term": "ordered field",
+      "context": "Ordered algebra · field with compatible linear order",
+      "aliases": [
+        "totally ordered field"
+      ],
+      "definition": "An ordered field is a field K equipped with a total order ≤ such that x≤y implies x+z≤y+z for all x,y,z in K, and whenever 0≤x and 0≤y then 0≤xy. Equivalently the positive elements form a positive cone compatible with addition and multiplication. Every ordered field has characteristic zero; ℚ and ℝ have their usual compatible orders, whereas ℂ admits no compatible field order. An ordered field is not necessarily Archimedean or real closed. Some conventions express the order axioms using strict inequalities.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Ordered field",
+          "url": "https://encyclopediaofmath.org/wiki/Ordered_field",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "A linear (total) order is chosen and compatible with both field operations.",
+        "No completeness, Archimedean property, or real-closedness assumed.",
+        "Field has 1≠0."
+      ],
+      "research_status": "assistant-reviewed using retrieved mathematical references; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-biordered-group-20261026",
+      "candidate_id": "postwave-scan:rank-1282",
+      "term": "linearly ordered group with bi-invariant order",
+      "context": "Ordered group theory · two-sided-invariant total ordering",
+      "aliases": [
+        "bi-ordered group",
+        "ordered group (two-sided convention)"
+      ],
+      "definition": "A bi-ordered group is a group G equipped with a total order < such that a<b implies ga<gb and ag<bg for every a,b,g∈G. Thus both left and right translations preserve order. The group need not be abelian; a nontrivial finite group admits no such order because bi-orderable groups are torsion-free. The one-element group is orderable. A 'left-ordered group' assumes only left-translation invariance, and 'partially ordered group' replaces totality with a partial order; these are genuinely different conventions, not automatic synonyms.",
+      "sources": [
+        {
+          "title": "American Mathematical Society — Orderable Groups and Their Algebraic Properties, Chapter 1",
+          "url": "https://www.ams.org/bookstore/pspdf/gsm-176-prev.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Original Wave2 — Isomorphism of Ordered Groups",
+          "url": "https://en.wikipedia.org/wiki/Ordered_group",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Order is total, and invariant under BOTH left and right group multiplications.",
+        "No abelian or Archimedean assumption.",
+        "Left-orderability alone is not equivalent to bi-orderability."
+      ],
+      "research_status": "assistant-reviewed using retrieved mathematical references; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-partial-computable-function-naturals-20261026",
+      "candidate_id": "postwave-scan:rank-1305",
+      "term": "partial computable function on natural numbers",
+      "context": "Computability theory · Turing-computable partial map",
+      "aliases": [
+        "partial recursive function",
+        "partial Turing-computable function"
+      ],
+      "definition": "A partial function f:ℕ^k⇀ℕ is partial computable if a Turing machine M exists such that on every input x∈dom(f), M halts with output f(x), while for x outside dom(f), M does not halt. Thus the domain is the halting set for that machine and is computably enumerable. A partial computable function need not be total, and some such functions have no total computable extension. For k=0 the usual arity convention requires clarification; here k≥1. Equivalent characterizations use partial recursive functions built with minimization.",
+      "sources": [
+        {
+          "title": "Cambridge University Press — Domains and Lambda-Calculi, Summary of Recursion Theory",
+          "url": "https://www.cambridge.org/core/books/abs/domains-and-lambdacalculi/summary-of-recursion-theory/EF308DD89B78EC406F1D4EC640E2CD21",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Shen and Vereshchagin — Computable Functions, Partial Recursive Functions §6",
+          "url": "https://moodle.umontpellier.fr/pluginfile.php/1652584/mod_folder/content/0/Shen%2C%20Vereshchagin%20-%202003%20-%20Computable%20Functions.pdf?forcedownload=1",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.partial-function-20261026",
+          "relation_type": "related"
+        }
+      ],
+      "assumptions": [
+        "Natural numbers are encoded effectively and input arity k≥1.",
+        "Exact computational-domain convention: machine halts exactly where f is defined.",
+        "Partial computability does NOT mean restriction of some total computable function."
+      ],
+      "research_status": "assistant-reviewed using retrieved mathematical references; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-polish-topological-group-20261026",
+      "candidate_id": "postwave-scan:rank-1322",
+      "term": "Polish topological group",
+      "context": "Descriptive set theory · topological group with Polish underlying space",
+      "aliases": [
+        "Polish group"
+      ],
+      "definition": "A Polish group G is a topological group whose underlying topological space is separable and completely metrizable: its topology is induced by some complete metric and it has a countable dense subset. Group multiplication G×G→G and inversion G→G are continuous. The compatible complete metric need not be the particular metric initially supplied, and need not be bi-invariant. Examples include any countable discrete group, ℝ under addition, and the infinite symmetric group with its pointwise-convergence topology. A Polish group is not necessarily compact or locally compact.",
+      "sources": [
+        {
+          "title": "Cornell University — A Crash Course in Topological Groups",
+          "url": "https://pi.math.cornell.edu/~ismythe/Olivetti_Nov_2011_slides.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "McGill University — Descriptive Set Theory, §17.B Polish Groups",
+          "url": "https://www.math.mcgill.ca/atserunyan/Teaching_notes/dst_lectures.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [
+        {
+          "target_meaning": "meaning.mathdef.postwave.scan-polish-space-20261026",
+          "relation_type": "definition_uses"
+        }
+      ],
+      "assumptions": [
+        "Group topology makes multiplication and inversion continuous.",
+        "Polish means topology admits SOME complete compatible metric, not that every compatible metric is complete.",
+        "No bi-invariant complete metric or local compactness required."
+      ],
+      "research_status": "assistant-reviewed using retrieved mathematical references; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-polish-space-20261026",
+      "candidate_id": "postwave-scan:rank-1323",
+      "term": "Polish space",
+      "context": "General topology and descriptive set theory · separable completely metrizable topology",
+      "aliases": [
+        "completely metrizable separable topological space"
+      ],
+      "definition": "A topological space X is Polish if it is separable (it has a countable dense subset) and completely metrizable (some metric inducing its topology is complete). Completeness of the particular metric initially displayed is not required: (0,1) with its usual topology is Polish even though the restricted Euclidean metric is incomplete. Countable discrete spaces, ℝ, Cantor space 2^ℕ, and separable Banach spaces are Polish. A nonseparable complete metric space need not be Polish. Under a convention admitting the empty topological space, the empty space is Polish by vacuity.",
+      "sources": [
+        {
+          "title": "Cornell University — A Crash Course in Topological Groups",
+          "url": "https://pi.math.cornell.edu/~ismythe/Olivetti_Nov_2011_slides.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "University of Bonn — Polish Spaces, Definition 1.4",
+          "url": "https://www.math.uni-bonn.de/ag/logik/Data/Diplomarbeiten/Enders.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Topology is separable and has at least one compatible complete metric.",
+        "No assumption that a given metric presenting the topology is complete.",
+        "Empty topological space admitted in this convention."
+      ],
+      "research_status": "assistant-reviewed using retrieved mathematical references; not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-minimal-element-poset-20261026",
+      "candidate_id": "postwave-scan:rank-1163",
+      "term": "minimal element of a partially ordered set",
+      "context": "Order theory · element with no strictly smaller element",
+      "aliases": [
+        "minimal element"
+      ],
+      "definition": "Let (P,≤) be a partially ordered set. An element m∈P is minimal if there is no x∈P with x<m; equivalently, x≤m implies x=m. A minimal element need not be a least element: distinct incomparable minimal elements may coexist. A least element ℓ satisfies ℓ≤x for every x∈P, and, when one exists, it is the unique minimal element. A nonempty poset can have no minimal elements, e.g. the integers with their usual order.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics — Minimal element",
+          "url": "https://encyclopediaofmath.org/wiki/Minimal_element",
+          "verification_status": "direct_mathematical_reference_2026-10-26"
+        },
+        {
+          "title": "Original Wave2 — Least element",
+          "url": "https://en.wikipedia.org/wiki/Least_element",
+          "verification_status": "source_lead_checked_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Underlying order is partial and strict x<m means x≤m, x≠m.",
+        "Minimal and least are not equivalent in general.",
+        "The definition applies to all elements of P or a specified sub-poset, never a hidden ambient restriction."
+      ],
+      "research_status": "assistant-reviewed sourced frozen original candidate; not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-mixed-second-partial-derivative-20261026",
+      "candidate_id": "postwave-scan:rank-1165",
+      "term": "mixed second partial derivative",
+      "context": "Multivariable calculus · successive derivatives in distinct coordinates",
+      "aliases": [
+        "mixed partial derivative",
+        "cross partial derivative"
+      ],
+      "definition": "Let U⊆ℝⁿ be open, f:U→ℝ, and let i and j be distinct coordinate indices. A mixed second partial derivative is an iterated partial derivative ∂²f/(∂x_j∂x_i)=∂/∂x_j(∂f/∂x_i), wherever the successive derivatives exist. The two orders ∂_j∂_i f and ∂_i∂_j f are not automatically equal. Equality follows under suitable regularity, for example when f∈C² on a neighborhood of the point (Clairaut/Schwarz theorem). For an arbitrary twice partially differentiable function without continuity hypotheses, equality of mixed partials can fail.",
+      "sources": [
+        {
+          "title": "OpenStax — Calculus Volume 3, §4.3 Partial Derivatives",
+          "url": "https://openstax.org/books/calculus-volume-3/pages/4-3-partial-derivatives",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "University of Konstanz — Higher-Order Derivatives and Schwarz Theorem",
+          "url": "https://www.math.uni-konstanz.de/~dreher/skripten/ma4ph2.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "U open in Euclidean space, and indices distinct.",
+        "The iterated derivative is only asserted where needed successive derivatives exist.",
+        "No automatic equality of opposite orders without regularity."
+      ],
+      "research_status": "assistant-reviewed sourced frozen original candidate; not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-multiplicative-order-element-20261026",
+      "candidate_id": "postwave-scan:rank-1181",
+      "term": "multiplicative order of an element of a group",
+      "context": "Group theory and modular arithmetic · least positive exponent yielding identity",
+      "aliases": [
+        "multiplicative order"
+      ],
+      "definition": "Let G be a group written multiplicatively with identity e, and g∈G. Its multiplicative order is the least positive integer n such that gⁿ=e, if such n exists; otherwise g has infinite order. For a unit a modulo an integer m≥2, the multiplicative order mod m is the least n≥1 satisfying aⁿ≡1 (mod m). If gcd(a,m)≠1, this modular order is not defined under the usual unit-group convention. This is the size of the cyclic subgroup ⟨g⟩ and is distinct from the additive order of an element in an additive group.",
+      "sources": [
+        {
+          "title": "Wolfram MathWorld — Multiplicative Order",
+          "url": "https://mathworld.wolfram.com/MultiplicativeOrder.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "LibreTexts — Modular Arithmetic and Primes §5.1",
+          "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/An_Introduction_to_Number_Theory_%28Veerman%29/05%3A_Modular_Arithmetic_and_Primes/5.01%3A_New_Page",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Group multiplication is associative and the element g belongs to G.",
+        "When finite, order is a positive integer; otherwise it is infinite.",
+        "Modular convention restricts a to units modulo m."
+      ],
+      "research_status": "assistant-reviewed sourced frozen original candidate; not peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-nonreduced-commutative-ring-20261026",
+      "candidate_id": "postwave-scan:rank-1227",
+      "term": "nonreduced commutative ring",
+      "context": "Commutative algebra · ring containing a nonzero nilpotent element",
+      "aliases": [
+        "nonreduced ring"
+      ],
+      "definition": "A commutative ring R is nonreduced if it has a nonzero nilpotent element: there exist a∈R with a≠0 and an integer n≥1 such that aⁿ=0. Equivalently its nilradical √(0) is nonzero. For a nonzero field k, the dual-number ring k[ε]/(ε²) is nonreduced because ε is a nonzero square-zero element. A reduced ring has no such nonzero nilpotents. The zero ring is reduced under the common convention, because its only element is zero. This definition does not require R to be an integral domain, and 'has zero divisors' by itself is insufficient to imply nonreducedness.",
+      "sources": [
+        {
+          "title": "The Stacks Project — Reduced schemes and reduced rings",
+          "url": "https://stacks.math.columbia.edu/tag/01IZ",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Ravi Vakil — Foundations of Algebraic Geometry, §6.2 Reducedness",
+          "url": "https://math.stanford.edu/~vakil/216blog/FOAGoct3011public.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Ring is commutative with identity; zero ring admitted.",
+        "Nonreduced means EXISTENCE of nonzero nilpotent, not merely of a nonzero zero divisor.",
+        "This is logically complementary to reduced, without adding a nilpotency index uniform for every element."
+      ],
+      "research_status": "assistant-researched from frozen original candidate; not independently peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-petrov-galerkin-finite-element-20261026",
+      "candidate_id": "postwave-scan:rank-1317",
+      "term": "Petrov–Galerkin finite-element method",
+      "context": "Numerical PDE · finite-dimensional variational discretization with distinct trial/test spaces",
+      "aliases": [
+        "Petrov-Galerkin finite element method",
+        "Petrov–Galerkin FEM"
+      ],
+      "definition": "Suppose an abstract weak problem asks for u∈U with b(u,v)=ℓ(v) for every v∈V, where b:U×V→ℝ (or a sesquilinear form over ℂ) is given. A finite-dimensional Petrov–Galerkin method chooses mesh-associated trial and test spaces U_h⊆U and V_h⊆V, not required to be equal, and seeks u_h∈U_h satisfying b(u_h,v_h)=ℓ(v_h) for every v_h∈V_h. In the standard square discrete setting dim(U_h)=dim(V_h)<∞; separate discrete stability, e.g. an inf-sup condition, is needed for reliable solvability. Standard Bubnov–Galerkin takes U_h=V_h and is a special case. Calling a method 'Petrov–Galerkin' does NOT by itself guarantee the discrete problem has a unique solution.",
+      "sources": [
+        {
+          "title": "University of Maryland — Theory of Adaptive Finite Element Methods, §3.1",
+          "url": "https://math.umd.edu/~rhn/lectures/adaptivity.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "NPTEL — Finite Element Methods, Lecture 36",
+          "url": "https://archive.nptel.ac.in/content/storage2/courses/105105043/Lecture36_Questions.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Weak form and finite-dimensional trial/test subspaces are supplied.",
+        "Distinct trial and test spaces allowed; equality recovers classical Galerkin.",
+        "Equal finite dimensions for the standard square method; well-posedness not automatic."
+      ],
+      "research_status": "assistant-reviewed sourced mathematical variant from frozen original scan"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-piecewise-polynomial-real-interval-20261026",
+      "candidate_id": "postwave-scan:rank-1318",
+      "term": "piecewise polynomial function on a real interval",
+      "context": "Numerical analysis · finite partition into polynomial pieces with no smoothness assumed",
+      "aliases": [
+        "piecewise polynomial"
+      ],
+      "definition": "Let [a,b] be a closed real interval with a<b. A function f:[a,b]→ℝ is piecewise polynomial if a finite partition a=x₀<x₁<⋯<x_N=b and real polynomials p₀,…,p_{N−1} exist such that f(x)=p_i(x) on [x_i,x_{i+1}) for 0≤i<N, and f(b)=p_{N−1}(b). No matching values or derivatives at knots is required under this general convention. A spline is a more restrictive piecewise-polynomial construction with specified smoothness or continuity across knots; piecewise polynomials need not themselves be globally continuous. Polynomial degree may be bounded uniformly over the finite pieces, or specifically fixed in specialized variants.",
+      "sources": [
+        {
+          "title": "Numerical Analysis — Piecewise Polynomial Interpolation",
+          "url": "https://cpraveen.github.io/numa/ppinterp/",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Mathematical Programming Formulations for Piecewise Polynomial Functions",
+          "url": "https://link.springer.com/article/10.1007/s10898-020-00881-4",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Finite partition of a nondegenerate closed real interval.",
+        "Half-open knot convention ensures every x receives exactly one value.",
+        "No cross-knot continuity or derivative conditions unless separately specified."
+      ],
+      "research_status": "assistant-reviewed frozen original scan candidate, not peer certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-one-sided-ideal-20261026",
+      "candidate_id": "postwave-scan:rank-1270",
+      "term": "one-sided ideal in a ring",
+      "context": "Noncommutative ring theory · left ideal or right ideal",
+      "aliases": [
+        "left ideal",
+        "right ideal",
+        "one-sided ideals"
+      ],
+      "definition": "Let R be an associative ring. A left ideal I⊆R is an additive subgroup such that r·a∈I for every r∈R and a∈I. A right ideal J⊆R is an additive subgroup such that a·r∈J for every a∈J and r∈R. A two-sided ideal is simultaneously left and right. If R is commutative, these notions coincide. For noncommutative R, an ideal on one side need not be an ideal on the other; the distinction is relevant for quotient ring constructions, since R/I carries a natural ring structure only when I is two-sided.",
+      "sources": [
+        {
+          "title": "Original mathDef — Ideal (two-sided, one-sided distinctions)",
+          "url": "https://github.com/Zengez/mathDef/blob/main/definitions/algebra/ideal.tex",
+          "verification_status": "direct_original_definition_checked_2026-10-26"
+        },
+        {
+          "title": "Mathematics LibreTexts — Left and Right Ideals",
+          "url": "https://math.libretexts.org/Bookshelves/Abstract_and_Geometric_Algebra/Abstract_Algebra%3A_Theory_and_Applications_%28Judson%29/16%3A_Rings/16.05%3A_Ideals",
+          "verification_status": "secondary_source_reference_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "The ring is associative and may lack multiplicative identity.",
+        "I and J are additive subgroups, not arbitrary subsets.",
+        "Left/right sidedness is specified, and two-sidedness is not assumed."
+      ],
+      "research_status": "assistant-reviewed contextual variant from frozen original candidate"
     }
   ]
 }
