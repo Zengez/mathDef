@@ -658,6 +658,20 @@
       "kept_meaning_id": "meaning.mathdef.original.arithmetic.galois-extension",
       "kept_formulation_id": "form.mathdef.original.arithmetic.galois-extension.primary",
       "reason": "After aliasing Galois field extension to Galois extension, both define precisely an algebraic normal separable extension. The original additionally states the informative finite-extension automorphism criterion already included in the researched meaning; no independent mathematical formulation is lost. Carry all Stacks and original citations, both researched historical IDs, and normalize the two-step alias chain to the live original."
+    },
+    {
+      "case_id": "user-adjudicated-zero-divisor-nonzero-only",
+      "removed_meaning_id": "meaning.mathdef.original.commalg.zero-divisor",
+      "kept_meaning_id": "meaning.wave2.direct.8f2dea7e2bd1211c0cf6",
+      "kept_formulation_id": "form.meaning.wave2.direct.8f2dea7e2bd1211c0cf6",
+      "reason": "User decision 2026-10-27: canonical zero divisors are nonzero elements a with ab=0 for some nonzero b; zero itself excluded. The broader alternative is kept in editorial convention history and source provenance, not as another search-card meaning."
+    },
+    {
+      "case_id": "user-adjudicated-metric-space-nonempty",
+      "removed_meaning_id": "meaning.mathdef.original.metric.metric-space",
+      "kept_meaning_id": "meaning.wave2.analysis98.metric-space",
+      "kept_formulation_id": "form.wave2.analysis98.metric-space",
+      "reason": "User decision 2026-10-27: metric spaces must have nonempty underlying set. Preserve the compatible induced-topology presentation of the same meaning; original source and ID become aliases."
     }
   ],
   "metadata_assignments": {
@@ -1046,6 +1060,17 @@
     },
     "meaning.mathdef.original.arithmetic.galois-extension": {
       "subject": "Field Theory"
+    },
+    "meaning.wave2.direct.8f2dea7e2bd1211c0cf6": {
+      "subject": "Commutative Algebra",
+      "context": "Commutative rings"
+    },
+    "meaning.wave2.analysis98.metric-space": {
+      "subject": "Metric Geometry"
+    },
+    "meaning.wave2.pop140.affine-hull": {
+      "subject": "Geometry",
+      "context": "Real affine spaces"
     }
   },
   "text_overrides": {
@@ -1104,5 +1129,49 @@
       "kept_formulation_id": "form.mathdef.original.topology.closure.primary",
       "reason": "Original closure primary already explicitly states the every-open-neighborhood-meets-A characterization. The separate original neighborhood variant repeats that same condition; retain the source URL in the primary. Preserve metric-ball, sequential/first-countable, and Kuratowski operator characterizations."
     }
-  ]
+  ],
+  "canonical_editorial_edits": {
+    "form.meaning.wave2.direct.8f2dea7e2bd1211c0cf6": {
+      "original_text": "Under the nonzero-element convention, an element a of a commutative ring R is a zero divisor if a≠0 and there is a nonzero b∈R with ab=0. Some authors also call 0 a zero divisor in a nonzero ring, so the convention matters.",
+      "text": "Let R be a commutative ring. An element a∈R is a zero divisor if a≠0 and there exists b∈R with b≠0 and ab=0. This is mathDef's adopted convention. Some sources also call 0 a zero divisor in nonzero rings; mathDef excludes 0.",
+      "reason": "Canonical nonzero-element zero-divisor convention approved by user.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.wave2.pop140.affine-hull-combinations": {
+      "original_text": "For an integer d≥1 and a set S⊆ℝ^d, aff(S) is the set of all vectors ∑_{i=1}^{k} αᵢxᵢ with k≥1, xᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. In particular aff(∅)=∅.",
+      "text": "Let A be a real affine space and S⊆A a nonempty set. The affine hull (affine span) of S is the set of all finite affine combinations ∑_{i=1}^{k} αᵢpᵢ with k≥1, pᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. Equivalently, it is the smallest affine subspace of A containing S. Under mathDef's convention, the affine hull/span is not defined for S=∅.",
+      "reason": "User-approved same algebraic/analytic construction, generalized to real affine spaces and defined only for nonempty inputs.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.wave2.pop140.affine-hull-intersection": {
+      "original_text": "Let d≥1 and S⊆ℝ^d. Define aff(S) as the intersection of all affine-closed subsets C⊆ℝ^d containing S, where affine-closed means containing every finite affine combination of its members; the empty set is affine-closed.",
+      "text": "Let A be a real affine space and S⊆A nonempty. Equivalently, aff(S) is the intersection of all subsets C⊆A containing S that are closed under finite affine combinations of their points. For nonempty S the intersection is an affine subspace of A, and this characterizes the same affine hull (affine span).",
+      "reason": "Retain informative intersection characterization while respecting nonempty inputs and general real affine spaces.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.meaning.mathdef.postwave.totally-bounded-metric-space-20261026": {
+      "original_text": "A metric space (X,d) is totally bounded if, for every ε>0, there exist finitely many points x_1,…,x_n∈X such that X=⋃_{i=1}^n B_d(x_i,ε). For X=∅ one may take n=0. Equivalently, X admits a finite ε-net for every ε>0. Total boundedness implies boundedness, but not conversely.",
+      "text": "A metric space (X,d) is totally bounded if, for every ε>0, there exist finitely many points x_1,…,x_n∈X such that X=⋃_{i=1}^n B_d(x_i,ε). Equivalently, X admits a finite ε-net for every ε>0. Total boundedness implies boundedness, but not conversely.",
+      "reason": "Remove empty metric-space case under canonical nonempty metric-space convention.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.meaning.mathdef.postwave.separable-metric-space-20261026": {
+      "original_text": "A metric space (X,d) is separable if there exists a finite or countably infinite subset D⊆X such that for every x∈X and every ε>0 some y∈D satisfies d(x,y)<ε. Equivalently cl_X(D)=X. The empty metric space is separable with D=∅. Total boundedness implies separability, but the converse need not hold.",
+      "text": "A metric space (X,d) is separable if there exists a finite or countably infinite subset D⊆X such that for every x∈X and every ε>0 some y∈D satisfies d(x,y)<ε. Equivalently cl_X(D)=X. Total boundedness implies separability, but the converse need not hold.",
+      "reason": "Remove incompatible assertion that an empty metric space is separable.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.meaning.mathdef.postwave.scan-compact-metric-space-20261026": {
+      "original_text": "A metric space (X,d) is compact if every cover of X by sets open in the d-induced topology admits a finite subcover. Equivalently, every sequence in X has a convergent subsequence with limit in X; equivalently, (X,d) is complete and totally bounded. The empty metric space is compact under the open-cover convention. These equivalences are specific to metric spaces, not arbitrary topological spaces.",
+      "text": "A metric space (X,d) is compact if every cover of X by sets open in the d-induced topology admits a finite subcover. Equivalently, every sequence in X has a convergent subsequence with limit in X; equivalently, (X,d) is complete and totally bounded. These equivalences are specific to metric spaces, not arbitrary topological spaces.",
+      "reason": "Remove now-inapplicable empty metric-space clause without changing the topological compactness convention.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    }
+  }
 }
