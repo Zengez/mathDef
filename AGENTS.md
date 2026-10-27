@@ -12,12 +12,31 @@ make mathematically identical core definitions appear different.
 **Specifically:** differences only at an omitted/excluded empty or trivial
 case are a **convention/boundary review signal**, not automatic evidence of
 a distinct mathematical variant, and also not automatic proof of equivalence.
-For example, an empty space is connected under the ordinary no-nontrivial-
-separation formulation, but some treatments impose nonemptiness. Check the
-source's stated assumptions before retaining two near-identical definitions
-or collapsing them. Keep genuine structural differences, and record
-uncertain conventions for the user's review. No new candidate discovery is
-authorized by this guidance.
+For example, an empty space is connected under the no-nontrivial-
+separation predicate, but some treatments impose nonemptiness. **mathDef
+adopts the broader predicate for connected spaces**, with a short explanatory
+convention note rather than a duplicate near-identical definition card.
+Other authors' restricted definitions remain legitimate within their
+explicit or verified standing assumptions; this is a mathDef editorial
+choice, not a universal claim about terminology.
+
+**Important for dependent definitions:** if a source defines another
+concept using "connected" under a verified nonempty convention, make that
+condition **explicit in mathDef's adapted wording** wherever it is needed to
+preserve the source's mathematics (for example, "nonempty connected subset"
+in a maximal-connected-subset characterization of a component). Do not
+silently transplant the source's implicit assumptions or present an adapted
+definition as a verbatim quotation. Preserve the exact source, applicable
+scope, evidence/verification state, and the wording transformation in the
+term-level reference/source metadata. If a convention has not been checked,
+its state is **not_checked**, not assumed absent or present. Other structural
+differences and borderline cases remain subject to the user's review.
+
+**The permanent guide specifies a convention catalog and per-source,
+per-scope convention-assessment contract.** Its data schema/source-list
+implementation belongs to the ongoing deduplication/source-registry cleanup;
+the future user-facing Sources link remains deferred. No new candidate
+discovery or premature final linking rebuild is authorized by this guidance.
 
 
 ## Current status: independent Wave 2 COMPLETE; merged mathDef catalog is the main public site
