@@ -109,6 +109,16 @@ BROAD_REPRESENTATIVE = {
 }
 
 
+
+# A word-level substring in a longer name is not necessarily a reference to
+# that shorter, mathematically distinct concept. In these two definitions,
+# the "open ball" text denotes the asymmetric forward/backward quasi-metric
+# ball being defined, NOT an ordinary symmetric metric-ball definition.
+SUPPRESSED_CONTEXT_MATCHES = {
+    ("meaning.mathdef.original.quasimetric.forward-ball", "open ball"),
+    ("meaning.mathdef.original.quasimetric.backward-ball", "open ball"),
+}
+
 def words(value: str) -> tuple[str, ...]:
     """Unicode-aware literal words; no stemming, hallucinated terms or embeddings."""
     value = unicodedata.normalize("NFKC", value).casefold()
@@ -343,6 +353,8 @@ def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
             "meaning.wave2.directional113.closed-norm",
         ("minimal polynomial", "meaning.mathdef.original.algebra.algebraic-element"):
             "meaning.mathdef.original.arithmetic.minimal-polynomial",
+        ("supremum", "meaning.mathdef.original.commalg.krull-dimension"):
+            "meaning.wave2.direct.066b1d1b9032a2e86bdd",
         # In the original zero-polynomial definition 'rings with zero divisors'
         # means nontrivial zero-divisor pairs, not the element zero itself.
         ("zero divisor", "meaning.mathdef.postwave.scan-zero-polynomial-20261026"):
@@ -449,6 +461,7 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
         "skipped_existing": 0,
         "skipped_self": 0,
         "skipped_overlapping": 0,
+        "skipped_context_false_positive": 0,
         "skipped_limit": 0,
         "ambiguous_contexts": Counter(),
         "ambiguous_context_examples": defaultdict(list),
@@ -498,6 +511,9 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
                     parts, group_ids, end_word = matches[0]
                     phrase = " ".join(parts)
                     pos = end_word
+                    if (source["id"], phrase) in SUPPRESSED_CONTEXT_MATCHES:
+                        report["skipped_context_false_positive"] += 1
+                        continue
                     if len(group_ids) != 1:
                         report["ambiguous_labels"][phrase] += 1
                         continue
