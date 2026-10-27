@@ -12,6 +12,7 @@ from itertools import combinations
 from pathlib import Path
 import json
 import re
+import unicodedata
 
 TOK = re.compile(r"[a-z][a-z0-9]{2,}", re.I)
 STOP = frozenset(("the", "and", "with", "for", "that", "such", "are", "has",
@@ -23,7 +24,7 @@ STOP = frozenset(("the", "and", "with", "for", "that", "such", "are", "has",
 
 
 def _title(s: str) -> str:
-    return " ".join(re.findall(r"[a-z0-9]+", s.casefold()))
+    # Preserve Greek letters and normalize numeric subscripts: T₀ != T₁,\n    # and σ-compactness is not compactness.\n    s = unicodedata.normalize("NFKC", s.casefold())\n    return " ".join(re.findall(r"[^\\W_]+", s, flags=re.UNICODE))
 
 
 def _tokens(body: str) -> frozenset[str]:
