@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "phase": "second_level_research_review_of_44_only",
-  "status": "classified_waiting_for_batch_stage_validation",
+  "status": "research_review_complete_three_scopes_deferred",
   "baseline_staged_counts": {
     "headings": 1986,
     "meanings": 2068,
@@ -12,11 +12,12 @@
   "decision_policy": "Retain mathematically informative equivalences rather than deleting theorems or interesting alternate constructions. Merge only near-tautological rewordings; preserve historical source identities and aliases. Positive source verification statuses were not changed.",
   "classification_counts": {
     "retain_informative_alternative": 35,
-    "retain_distinct_scope": 6,
+    "manual_review_scope_convention": 3,
+    "retain_distinct_scope": 3,
     "merge_trivial_duplicate": 3
   },
   "all_cases_reviewed": 44,
-  "unresolved_manual_count": 0,
+  "unresolved_manual_count": 3,
   "records": [
     {
       "case_number": 1,
@@ -66,7 +67,7 @@
     {
       "case_number": 4,
       "term": "Bounded linear operator",
-      "classification": "retain_distinct_scope",
+      "classification": "manual_review_scope_convention",
       "rationale": "Identical norm inequalities, but the original's unqualified 'normed spaces' and the researched real/complex restriction need not have identical ambient scalar-field scope in mathDef; retain separate contexts.",
       "original_attached_meaning_ids": [
         "meaning.wave2.pop142.bounded-linear",
@@ -286,7 +287,7 @@
     {
       "case_number": 18,
       "term": "Free module",
-      "classification": "retain_distinct_scope",
+      "classification": "manual_review_scope_convention",
       "rationale": "Unital left R-module over associative ring is explicit in researched form; original R-module is under-specified as to handedness/unital convention, so do not erase either without source convention adjudication.",
       "original_attached_meaning_ids": [
         "meaning.wave2.direct.7462fa5f90275b34779a",
@@ -545,7 +546,7 @@
     {
       "case_number": 35,
       "term": "Operator norm",
-      "classification": "retain_distinct_scope",
+      "classification": "manual_review_scope_convention",
       "rationale": "Identical unit-ball supremum but unqualified original ambient normed-space wording versus explicitly real/complex researched meaning; preserve scalar-scope distinctions pending any separate canonical convention editing.",
       "original_attached_meaning_ids": [
         "meaning.wave2.pop142.bounded-operator-norm",
