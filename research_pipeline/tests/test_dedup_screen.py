@@ -30,6 +30,14 @@ class ExistingDedupScreenTests(unittest.TestCase):
         self.assertEqual(report["kind"], "existing_definitions_only_no_vocabulary_discovery")
         self.assertNotIn("term_candidates", report)
 
+    def test_unicode_math_qualifiers_are_not_discarded(self):
+        from research_pipeline.adapters.mathdef.dedup_screen import _title
+        self.assertNotEqual(_title("T₀ topological space"),
+                            _title("T₁ topological space"))
+        self.assertNotEqual(_title("σ-compact topological space"),
+                            _title("compact topological space"))
+        self.assertEqual(_title("T₀ space"), _title("T0 space"))
+
     def test_same_heading_formulations_do_not_appear_as_cross_heading_pairs(self):
         body = "A topological space whose every open cover has a finite subcover."
         c = {"groups": [{"id": "g", "title": "Compact space", "aliases": [],
