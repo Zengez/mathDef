@@ -406,3 +406,22 @@ differentials, and discrete versus closed discrete topological subsets.
 Overlay total 164; expected merged total 2,136 meanings.
 No new scan or candidate harvesting. Historic Wave2 958 and
 original production definitions 1,014 remain unmodified.
+
+
+## Original quick-scan candidate batch, ranks 741–940
+
+Completed 200 strictly consecutive phrases from the original 2,019-record
+candidate list, without searching for additional terminology. All exact
+original source examples/counts and 200 classifications live in the same
+lightweight disposition ledger. Five useful new terms added to the
+merged-only research overlay: field embedding, filtered probability space,
+finite-index subgroup, finitely generated group, and the syntactic
+free-variable set of a first-order formula. They contain source citations,
+explicit mathematical definitions and necessary edge-case assumptions.
+
+Additional decisions: 22 already covered, 169 linguistic false positives,
+4 context ambiguities retained without forcing mathematical equivalences.
+This leaves **940/2,019 processed; resume at rank 941**. Research overlay
+contains 169 meanings, **51 net scan-driven additions** above the first
+118; combined expected 2,141. Independent Wave2 958, original production
+definitions 1,014 and the original candidate list are unchanged.
