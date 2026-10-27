@@ -446,3 +446,24 @@ important edge-case differences are recorded with new definitions.
 candidate-derived. Expected combined 2,149 meanings. Historic independent
 Wave2 (958), original production mathDef (1,014) and frozen scan
 are unchanged.
+
+
+## Original fixed quick-scan incorporation, ranks 1141–1340
+
+Processed the next 200 literal original terminology candidates directly,
+without expanding the candidate pool or restarting scanning. The shared
+disposition ledger stores every exact rank/phrase/occurrence count/example,
+mathematical research outcome and any existing/new target. This pass
+added 16 sourced meanings or contextual variants, including
+order-preserving maps versus order embeddings, ordered fields and
+bi-ordered groups, Polish spaces/groups, normed fields, partial
+computability, nonreduced rings, mixed partials, minimal elements
+distinct from least, one-sided ideals, piecewise polynomials
+and Petrov–Galerkin finite elements. The other outcomes were
+29 existing meanings, 152 lexical nonterms, and three genuinely
+ambiguous conventions.
+
+Checkpoint **1,340/2,019**, **next original rank 1,341**, 679
+remaining. Merged-only overlay **193 meanings**, including 75 net
+scan-derived meanings, total combined expected **2,165**. Frozen
+candidate list and independently completed source collections unmodified.
