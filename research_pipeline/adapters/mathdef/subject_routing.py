@@ -47,7 +47,7 @@ def route_subjects(catalog: dict, repo: Path, approved_subjects: set[str]) -> di
             candidates = []
             for prefix, subject in explicit_prefix_map.items():
                 if label == prefix or any(label.startswith(prefix + delim)
-                                          for delim in (":", " ·", " —", " -", " (", ";")):
+                                          for delim in (":", " ·", " —", " -", " (", ";", " ")):
                     candidates.append((len(prefix), prefix, subject))
             if candidates:
                 candidates.sort(key=lambda v: (-v[0], v[1]))
