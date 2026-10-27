@@ -243,7 +243,7 @@ def audit(catalog: dict, rendered: list[dict]) -> dict:
 
 def _safe_gap(gap: str) -> bool:
     import re
-    return bool(re.fullmatch(r"\\s+|\\s*[-–]\\s*", gap))
+    return bool(re.fullmatch(r"\s+|\s*[-–]\s*", gap))
 
 
 def main():
@@ -255,7 +255,7 @@ def main():
     result = audit(json.loads(args.catalog.read_text(encoding="utf-8")),
                    json.loads(args.index.read_text(encoding="utf-8")))
     args.report.parent.mkdir(parents=True, exist_ok=True)
-    args.report.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\\n",
+    args.report.write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n",
                            encoding="utf-8")
     print("GLOBAL_LINK_AUDIT_SUMMARY_JSON=" + json.dumps({
         "stats": result["stats"], "relation_totals": result["relation_totals"],
