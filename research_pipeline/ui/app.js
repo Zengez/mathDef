@@ -115,7 +115,7 @@
     return '<button type="button" class="suggest-link' + (compact ? ' compact' : '') +
       '" data-feedback-action="link" data-feedback-source-id="' + escape(sourceId) +
       '" data-feedback-target-id="' + escape(dep.id) +
-      '" data-feedback-phrase="' + escape(dep.label || '') +
+      '" data-feedback-phrase="' + escape(dep.source_phrase || dep.label || '') +
       '" data-feedback-formulation="' + escape(dep.formulation || 'primary') +
       '" aria-label="Report link from ' + escape(source.term) + ' to ' + escape(target.term) +
       '" title="Report an incorrect definition link">⚑' +
