@@ -246,5 +246,44 @@ class MergedLinkingTests(unittest.TestCase):
 
 
 
+    def test_krull_dimension_supremum_chooses_general_order_concept(self):
+        source=group("src","Height of a prime ideal","m.height","f.height",
+                     "The height is the supremum of lengths of prime chains.",
+                     label="Commutative algebra: prime ideal height")
+        target=group("target","Supremum",
+                     "meaning.wave2.direct.066b1d1b9032a2e86bdd","f.ord",
+                     "Least upper bound in a partially ordered set.")
+        target["meanings"].append({
+            "id":"meaning.mathdef.original.real.supremum", "label":"Real analysis",
+            "formulations":[{"id":"f.real","text":"Least upper bound of real numbers.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        c={"groups":[source,target],"relations":[]}
+        report=link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"],1)
+        self.assertEqual(c["relations"][0]["target_meaning"],
+                         "meaning.wave2.direct.066b1d1b9032a2e86bdd")
+
+    def test_zero_divisor_conventions_scoped_to_nontrivial_pair(self):
+        source=group("s","Zero polynomial",
+                     "meaning.mathdef.postwave.scan-zero-polynomial-20261026",
+                     "f.s","Over rings with zero divisors, the zero polynomial exists.")
+        target=group("t","Zero divisor",
+                     "meaning.mathdef.original.commalg.zero-divisor",
+                     "f.broad","Some zero products occur in commutative rings.")
+        target["meanings"].append({
+            "id":"meaning.wave2.direct.8f2dea7e2bd1211c0cf6",
+            "label":"Nonzero zero divisor convention",
+            "formulations":[{"id":"f.narrow","text":"Two nonzero elements annihilate one another.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        c={"groups":[source,target],"relations":[]}
+        report=link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"],1)
+        self.assertEqual(c["relations"][0]["target_meaning"],
+                         "meaning.wave2.direct.8f2dea7e2bd1211c0cf6")
+
+
+
 if __name__ == "__main__":
     unittest.main()
