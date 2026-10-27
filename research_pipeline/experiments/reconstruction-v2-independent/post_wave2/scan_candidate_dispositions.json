@@ -5,8 +5,8 @@
     "possible_new_terminology": 2019,
     "known_title_mentions": 473
   },
-  "scope": "Exact original quick-scan ranked leads 1–540 of 2,019; no new discovery or rescanning",
-  "conventions": "Use only frozen original scan, research any legitimate meanings and variants, map already-covered concepts, reject lexical fragments; preserve source examples and contextual ambiguities. Prior redundant rank318 meaning merged back to original mathDef.",
+  "scope": "Exact original frozen quick-scan candidates ranks 1–740 of 2,019",
+  "conventions": "Continue ONLY original frozen candidates, researching genuine notions directly; variants and duplicates map to existing meanings, lexical noise rejected, material ambiguity noted; no discovery scan.",
   "dispositions": [
     {
       "rank": 1,
@@ -10414,6 +10414,3078 @@
       "targets": [
         "definitions/functional/banach-algebra.tex"
       ]
+    },
+    {
+      "rank": 541,
+      "phrase": "complex euclidean spaces",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.biholomorphic-map:0",
+          "term": "Biholomorphic map"
+        }
+      ],
+      "disposition": "new",
+      "reason": "The source context concerns standard complex Euclidean ℂⁿ, now incorporated with explicit Hermitian metric and real/complex dimensional distinction.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-complex-euclidean-space-20261026"
+      ]
+    },
+    {
+      "rank": 542,
+      "phrase": "complex hermitian matrix",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.positive-definite:0",
+          "term": "Positive definite matrix"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added a Hermitian complex matrix, A=A*, distinguished from positive-definite Hermitian matrices.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-hermitian-complex-matrix-20261026"
+      ]
+    },
+    {
+      "rank": 543,
+      "phrase": "complex linear space",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.multiplier-of-function-space:0",
+          "term": "Multiplier of a function space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Complex linear space is a complex vector space, already defined. No topology or completeness implied.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-complex-vector-space-20261026"
+      ]
+    },
+    {
+      "rank": 544,
+      "phrase": "complex matrix",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "numerical.spectral-norm:0",
+          "term": "Matrix spectral norm"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "A complex matrix is simply a matrix over the scalar field ℂ, within the original general matrix definition.",
+      "targets": [
+        "definitions/linear/matrix.tex"
+      ]
+    },
+    {
+      "rank": 545,
+      "phrase": "complex normed spaces",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.pop142.bounded-operator-norm",
+          "term": "norm of a bounded linear transformation"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing normed-vector-space definition covers complex-scalar norms.",
+      "targets": [
+        "definitions/functional/normed-space.tex"
+      ]
+    },
+    {
+      "rank": 546,
+      "phrase": "complex normed vector spaces",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.pop142.bounded-operator-norm",
+          "term": "norm of a bounded linear transformation"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The plural form and explicit complex scalar field require no additional norm axiom.",
+      "targets": [
+        "definitions/functional/normed-space.tex"
+      ]
+    },
+    {
+      "rank": 547,
+      "phrase": "complex valued functions",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.lebesgue-integral:0",
+          "term": "Lebesgue integral"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing complex-valued-function meaning handles ℂ-codomain functions with no implied holomorphy.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-complex-valued-function-20261026"
+      ]
+    },
+    {
+      "rank": 548,
+      "phrase": "complex vector spaces",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "numerical.normal-equations:0",
+          "term": "Normal equations"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing original or independently researched mathematical definition covers this source usage; no redundant addition.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-complex-vector-space-20261026"
+      ]
+    },
+    {
+      "rank": 549,
+      "phrase": "complexes set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.derived-category:0",
+          "term": "Derived category"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Malformed parse: 'complexes set' describes the sets of complexes in a derived category, not a mathematical term.",
+      "targets": []
+    },
+    {
+      "rank": 550,
+      "phrase": "component tags which set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.03f1f6a4d6b405f4f3e3",
+          "term": "indexed disjoint union"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 551,
+      "phrase": "composition conversely any category",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.preorder-category:0",
+          "term": "Preorder as a category"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 552,
+      "phrase": "comprises all finite sums",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.c7af43259e1e3a875f6e",
+          "term": "extension of an ideal along a ring homomorphism"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 553,
+      "phrase": "comprises holomorphic functions",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.bloch-space:0",
+          "term": "Bloch space on the disk"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 554,
+      "phrase": "comprises sets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.23c297a4a1c27fe4ec73",
+          "term": "metric-induced topology"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 555,
+      "phrase": "computable limit",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.computable-real:0",
+          "term": "Computable real number"
+        }
+      ],
+      "disposition": "ambiguous",
+      "reason": "'Computable limit' could mean merely a computable limit value or a limit effectively obtainable from the sequence by a computable modulus; these are not equivalent. Source's computable-real definition does not collapse them.",
+      "targets": []
+    },
+    {
+      "rank": 556,
+      "phrase": "computable sequence",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.computable-real:0",
+          "term": "Computable real number"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Source-grounded mathematical meaning inserted directly into merged-only research overlay.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-computable-rational-sequence-20261026"
+      ]
+    },
+    {
+      "rank": 557,
+      "phrase": "computably enumerable sets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.arithmetical-hierarchy:0",
+          "term": "Arithmetical hierarchy"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The original recursively enumerable language entry represents a computably enumerable set of coded finite strings; a natural-number encoding gives the corresponding c.e. set convention.",
+      "targets": [
+        "definitions/computability/recursively-enumerable.tex"
+      ]
+    },
+    {
+      "rank": 558,
+      "phrase": "computation may decide sets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.oracle-machine:0",
+          "term": "Oracle Turing machine"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 559,
+      "phrase": "conforming galerkin finite element",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "numerical.finite-element-method:0",
+          "term": "Galerkin finite-element method"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original finite-element-method.tex is titled 'Galerkin finite-element method' and explicitly covers the conforming Galerkin setting.",
+      "targets": [
+        "definitions/numerical/finite-element-method.tex"
+      ]
+    },
+    {
+      "rank": 560,
+      "phrase": "conjugates the holonomy groups",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "solenoids.dynamical-commensurator:0",
+          "term": "Dynamical commensurator group at a point"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 561,
+      "phrase": "connected complex manifold",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.caratheodory-pseudodistance:0",
+          "term": "Carathéodory pseudodistance"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 562,
+      "phrase": "connected open subset",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.hartogs-figure:0",
+          "term": "Standard Hartogs figure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 563,
+      "phrase": "connection nabla satisfying metric",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.levi-civita-connection:0",
+          "term": "Levi-Civita connection"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Merely metric compatibility of a connection does NOT imply Levi–Civita without the torsion-free condition; the scanned fragment is not a new defined object.",
+      "targets": []
+    },
+    {
+      "rank": 564,
+      "phrase": "consequently every tangent space",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.symplectic-form:0",
+          "term": "Symplectic form"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 565,
+      "phrase": "consider the uniform algebra",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.bergman-shilov-boundary:0",
+          "term": "Bergman--Shilov boundary of a bounded domain"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 566,
+      "phrase": "constant coefficient linear differential",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.fundamental-solution:0",
+          "term": "Fundamental solution of a linear PDE"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 567,
+      "phrase": "constant map",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.contractible:0",
+          "term": "Contractible space"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added a constant map with codomain-value existential convention and noted both empty-domain edge cases.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-constant-map-20261026"
+      ]
+    },
+    {
+      "rank": 568,
+      "phrase": "containing the attracting point",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.basin-attraction:0",
+          "term": "Basin of attraction"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 569,
+      "phrase": "containing the cycle points",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.immediate-basin:0",
+          "term": "Immediate attracting basin"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 570,
+      "phrase": "containing the empty function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.5896e9304ebced2e5ea7",
+          "term": "indexed Cartesian product"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 571,
+      "phrase": "containing the open sets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.borel-sigma-algebra:0",
+          "term": "Borel sigma-algebra"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 572,
+      "phrase": "contains every morphism",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.subcat-full:0",
+          "term": "Full subcategory"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 573,
+      "phrase": "contains exactly the elements",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "sets.union:0",
+          "term": "Union of a family of sets"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 574,
+      "phrase": "contains exactly those elements",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.170fcdda487b9180137e",
+          "term": "intersection of sets"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 575,
+      "phrase": "contains sets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.arithmetical-hierarchy:0",
+          "term": "Arithmetical hierarchy"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 576,
+      "phrase": "contains the constant functions",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.uniform-algebra:0",
+          "term": "Uniform algebra"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 577,
+      "phrase": "continuity for general maps",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.continuous-open-map:0",
+          "term": "Open map"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 578,
+      "phrase": "continuous maps",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.homotopy-group:0",
+          "term": "Higher homotopy group"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Continuous maps already have an original topological definition; plural and domain context do not produce a new notion.",
+      "targets": [
+        "definitions/topology/continuity.tex"
+      ]
+    },
+    {
+      "rank": 579,
+      "phrase": "continuous negative plurisubharmonic function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.hyperconvex-domain:0",
+          "term": "Hyperconvex domain"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Continuous negative plurisubharmonic function is a descriptive conjunction of properties used in the hyperconvex-domain definition.",
+      "targets": []
+    },
+    {
+      "rank": 580,
+      "phrase": "continuous plurisubharmonic exhaustion function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.pseudoconvex-domain:0",
+          "term": "Pseudoconvex domain"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "A continuous plurisubharmonic exhaustion function is a compound hypothesis in the pseudoconvex-domain definition, not necessarily every convention for a pseudoconvex domain.",
+      "targets": []
+    },
+    {
+      "rank": 581,
+      "phrase": "continuous self maps",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.topological-conjugacy:0",
+          "term": "Topological conjugacy"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Continuous self-maps are continuous functions X→X; this specialization is covered by the existing continuity definition.",
+      "targets": [
+        "definitions/topology/continuity.tex"
+      ]
+    },
+    {
+      "rank": 582,
+      "phrase": "continuous semimartingales this limit",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "stochastic.quadratic-variation:0",
+          "term": "Quadratic variation"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 583,
+      "phrase": "continuous such map",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.section:0",
+          "term": "Section of a bundle"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 584,
+      "phrase": "continuous with this topology",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.quotient-topology:0",
+          "term": "Quotient topology"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 585,
+      "phrase": "contravariant functors",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.a8c70a2a13320680c54c",
+          "term": "natural transformation"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing original or independently researched mathematical definition covers this source usage; no redundant addition.",
+      "targets": [
+        "definitions/category/contravariant-functor.tex"
+      ]
+    },
+    {
+      "rank": 586,
+      "phrase": "conull set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measured-actions.boolean-isomorphism:0",
+          "term": "Boolean isomorphism of measured actions"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added conull measurable sets as complements of null measurable sets, distinguishing total-mass-one and infinite-measure contexts.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-conull-subset-measure-space-20261026"
+      ]
+    },
+    {
+      "rank": 587,
+      "phrase": "convention every complex polynomial",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.polynomial:0",
+          "term": "Complex polynomial"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 588,
+      "phrase": "convention the empty space",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.path-connected:0",
+          "term": "Path-connected space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 589,
+      "phrase": "convergence every complex polynomial",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.entire-function:0",
+          "term": "Entire function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 590,
+      "phrase": "convergent complex power series",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.holomorphic-function:0",
+          "term": "Holomorphic function"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Prior scanned meaning already defines convergent complex power series using positive radius; not to be duplicated.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-convergent-power-series-20261026"
+      ]
+    },
+    {
+      "rank": 591,
+      "phrase": "convex feasible set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.convex-optimization:0",
+          "term": "Convex optimization problem"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 592,
+      "phrase": "convex sets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.locally-convex-space:0",
+          "term": "Locally convex space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 593,
+      "phrase": "coordinates for rational maps",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.repelling-periodic-point:0",
+          "term": "Repelling periodic point"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 594,
+      "phrase": "cosets defines the quotient",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.normal-subgroup:0",
+          "term": "Normal subgroup"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 595,
+      "phrase": "countable basis",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.second-countable:0",
+          "term": "Second-countable space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "A countable basis is the existence criterion for a second-countable space, covered by the original topological definition.",
+      "targets": [
+        "definitions/topology/second-countable.tex"
+      ]
+    },
+    {
+      "rank": 596,
+      "phrase": "countable dense subset",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.separable-banach:0",
+          "term": "Separable Banach space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing separability definition invokes a countable dense subset.",
+      "targets": [
+        "definitions/topology/separable-space.tex"
+      ]
+    },
+    {
+      "rank": 597,
+      "phrase": "countable includes finite sets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "sets.countably-infinite-set:0",
+          "term": "Countably infinite set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "One convention calls finite sets countable and another reserves countable for denumerably infinite; the scanned sentence is commentary on this ambiguity, not an additional definition.",
+      "targets": []
+    },
+    {
+      "rank": 598,
+      "phrase": "countable unions its elements",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.measurable-space:0",
+          "term": "Measurable space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 599,
+      "phrase": "countably additive measure",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.probability-measure:0",
+          "term": "Probability measure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 600,
+      "phrase": "countably infinite sequence",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.blaschke-condition:0",
+          "term": "Blaschke condition for zeros"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 601,
+      "phrase": "countably infinite the set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "sets.uncountable-set:0",
+          "term": "Uncountable set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 602,
+      "phrase": "countably many support points",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.dd62440daef1ff9237d5",
+          "term": "countably supported discrete weight system"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Independent Wave2 meaning covers a weight system with countably many support points.",
+      "targets": [
+        "meaning.wave2.direct.dd62440daef1ff9237d5"
+      ]
+    },
+    {
+      "rank": 603,
+      "phrase": "csubseteqkappa every stationary subset",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "sets.stationary-set:0",
+          "term": "Stationary subset of a cardinal"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 604,
+      "phrase": "cut and the map",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.973624633db2f6611c19",
+          "term": "canonical rational embedding into Dedekind cuts"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 605,
+      "phrase": "decomposition partitions the space",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.positive-set-signed-measure:0",
+          "term": "Positive set for a signed measure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 606,
+      "phrase": "dedekind cut real field",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.973624633db2f6611c19",
+          "term": "canonical rational embedding into Dedekind cuts"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 607,
+      "phrase": "define everywhere defined maps",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.meromorphic-function-on-manifold:0",
+          "term": "Meromorphic function on a complex manifold"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 608,
+      "phrase": "define the wirtinger derivatives",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.wirtinger-derivatives:0",
+          "term": "Wirtinger derivatives"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing original or independently researched mathematical definition covers this source usage; no redundant addition.",
+      "targets": [
+        "definitions/complex/wirtinger-derivatives.tex"
+      ]
+    },
+    {
+      "rank": 609,
+      "phrase": "define zero morphisms",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.a60aa43eed2b99b5d184",
+          "term": "zero object of a category"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 610,
+      "phrase": "defined for every function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.b86257b3cce62907e97e",
+          "term": "inverse image of a subset"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 611,
+      "phrase": "defines the directional derivative",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.53a329590803a0850dc6",
+          "term": "directional difference quotient"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 612,
+      "phrase": "defines the linear operator",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.multiplier-of-function-space:0",
+          "term": "Multiplier of a function space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 613,
+      "phrase": "defining ideals",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.closed-subscheme:0",
+          "term": "Closed subscheme"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 614,
+      "phrase": "definite hermitian inner product",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.hermitian-manifold:0",
+          "term": "Hermitian manifold"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 615,
+      "phrase": "definite hermitian sesquilinear map",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "linear.inner-product:0",
+          "term": "Inner product"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "A Hermitian sesquilinear form becomes an inner product upon positive definiteness, but the scanned adjective phrase is not a separate new matrix definition.",
+      "targets": []
+    },
+    {
+      "rank": 616,
+      "phrase": "definition also permits fields",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.principal-ideal-domain:0",
+          "term": "Principal ideal domain"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 617,
+      "phrase": "degenerate point",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "prob.normal-distribution:0",
+          "term": "Normal distribution"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 618,
+      "phrase": "degree zero differential",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.differential-form:0",
+          "term": "Differential k-form"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 619,
+      "phrase": "degrees all successive differential",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.0cef0a8e358745284bfe",
+          "term": "two-term chain complex"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 620,
+      "phrase": "denote the homotopy category",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.derived-category:0",
+          "term": "Derived category"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 621,
+      "phrase": "denote weak wirtinger derivatives",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.quasiconformal-map:0",
+          "term": "Planar quasiconformal mapping"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 622,
+      "phrase": "denotes the algebra",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.bounded-operator-algebra:0",
+          "term": "Bounded-operator algebra"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 623,
+      "phrase": "densely ordered field",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.d2189c6f07c197ca9bcb",
+          "term": "usual order on the rational numbers"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 624,
+      "phrase": "density function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "prob.distribution:0",
+          "term": "Probability distribution"
+        }
+      ],
+      "disposition": "ambiguous",
+      "reason": "'Density function' can denote a probability density relative to a reference measure, a Radon–Nikodym derivative, or other density notions; context-specific existing probability definitions do not resolve the unqualified phrase.",
+      "targets": []
+    },
+    {
+      "rank": 625,
+      "phrase": "dependent conull subset",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measured-actions.boolean-isomorphism:0",
+          "term": "Boolean isomorphism of measured actions"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 626,
+      "phrase": "describes first order",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "numerical.condition-number:0",
+          "term": "Relative condition number"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 627,
+      "phrase": "designated function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "numerical.interpolation:0",
+          "term": "Interpolation"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 628,
+      "phrase": "deterministic polynomial",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.class-np:0",
+          "term": "Complexity class NP"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 629,
+      "phrase": "diffeomorphism between smooth manifolds",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.diffeomorphism:0",
+          "term": "Diffeomorphism"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing diffeomorphism requires a smooth inverse, not just a bijective smooth map; the source states the full condition.",
+      "targets": [
+        "definitions/manifold/diffeomorphism.tex"
+      ]
+    },
+    {
+      "rank": 630,
+      "phrase": "diffeomorphisms between open subsets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.smooth-atlas:0",
+          "term": "Smooth atlas"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 631,
+      "phrase": "differ from the interior",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.eeb1ff5cf448091c3d57",
+          "term": "domain of convergence of a real power series"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 632,
+      "phrase": "different equivalent dirichlet space",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functionspaces.dirichlet-reproducing-kernel:0",
+          "term": "Reproducing kernel of the Dirichlet space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 633,
+      "phrase": "different formal representation",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "graph.edge:0",
+          "term": "Edge"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 634,
+      "phrase": "different orders",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "combin.composition:0",
+          "term": "Integer composition"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 635,
+      "phrase": "differentiable interior point",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.subgradient:0",
+          "term": "Subgradient"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 636,
+      "phrase": "differentiable map",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "numerical.condition-number:0",
+          "term": "Relative condition number"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 637,
+      "phrase": "differentiable real valued function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.gradient:0",
+          "term": "Gradient"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 638,
+      "phrase": "differentiable vector field",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.divergence:0",
+          "term": "Divergence"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 639,
+      "phrase": "differential graded algebra",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.ebf92c196007c438f394",
+          "term": "de Rham complex"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added unital cohomologically graded differential algebra, d²=0 and graded Leibniz rule; homological grading and nonunital conventions separately noted.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-differential-graded-algebra-cochain-20261026"
+      ]
+    },
+    {
+      "rank": 640,
+      "phrase": "differential operator",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.principal-symbol:0",
+          "term": "Principal symbol"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "This source is about the principal symbol of an operator; 'differential operator' in isolation has variable-order and algebraic contexts and requires its own scoped research before insertion.",
+      "targets": []
+    },
+    {
+      "rank": 641,
+      "phrase": "differentiates vector fields",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.affine-connection:0",
+          "term": "Affine connection"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 642,
+      "phrase": "dimensional complex hilbert space",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.calkin-algebra:0",
+          "term": "Calkin algebra"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 643,
+      "phrase": "dimensional complex linear subspaces",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.complex-projective-space:0",
+          "term": "Complex projective space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 644,
+      "phrase": "dimensional lebesgue measure",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.lebesgue-measure:0",
+          "term": "Lebesgue measure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 645,
+      "phrase": "dimensional real affine space",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "geometry.euclidean-plane:0",
+          "term": "Euclidean plane"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 646,
+      "phrase": "direct extension",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.analytic-continuation:0",
+          "term": "Analytic continuation"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original analytic continuation defines a direct holomorphic extension as a special case.",
+      "targets": [
+        "definitions/complex/analytic-continuation.tex"
+      ]
+    },
+    {
+      "rank": 647,
+      "phrase": "direct sum",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "commalg.free-module:0",
+          "term": "Free module"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Independent Wave2 already defines the direct sum of modules.",
+      "targets": [
+        "meaning.wave2.direct.134e1c9f45dd933fdc36"
+      ]
+    },
+    {
+      "rank": 648,
+      "phrase": "disc valued holomorphic functions",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.caratheodory-pseudodistance:0",
+          "term": "Carathéodory pseudodistance"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 649,
+      "phrase": "discrete additive subgroup",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.complex-torus:0",
+          "term": "Complex torus"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 650,
+      "phrase": "discrete set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.meromorphic-function:0",
+          "term": "Meromorphic function"
+        }
+      ],
+      "disposition": "new",
+      "reason": "Added subspace-discrete subsets, distinguishing a nonclosed discrete subset from a closed discrete subset.",
+      "targets": [
+        "meaning.mathdef.postwave.scan-discrete-subset-relative-topology-20261026"
+      ]
+    },
+    {
+      "rank": 651,
+      "phrase": "discrete space",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.discrete-topology:0",
+          "term": "Discrete topology"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing original or independently researched mathematical definition covers this source usage; no redundant addition.",
+      "targets": [
+        "definitions/topology/discrete-topology.tex"
+      ]
+    },
+    {
+      "rank": 652,
+      "phrase": "disjoint measurable sets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.mutually-singular-measures:0",
+          "term": "Mutually singular measures"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 653,
+      "phrase": "disks along boundary maps",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.cell-complex:0",
+          "term": "CW complex"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 654,
+      "phrase": "distinct critical points",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.critical-value:0",
+          "term": "Critical value"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 655,
+      "phrase": "distinct elements",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.periodic-point:0",
+          "term": "Periodic point"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 656,
+      "phrase": "distinct from measure",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.topological-mixing:0",
+          "term": "Topological mixing"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 657,
+      "phrase": "distinct points",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.caratheodory-pseudodistance:0",
+          "term": "Carathéodory pseudodistance"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 658,
+      "phrase": "distinguished from the measure",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.total-variation:0",
+          "term": "Total variation measure of a signed measure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 659,
+      "phrase": "distinguished point",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.based-space:0",
+          "term": "Pointed topological space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "An original pointed topological space has a distinguished base point; the descriptor is already covered.",
+      "targets": [
+        "definitions/alg-topology/based-space.tex"
+      ]
+    },
+    {
+      "rank": 660,
+      "phrase": "distinguished zero morphism",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.zero-object:0",
+          "term": "Zero object"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 661,
+      "phrase": "distribution function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "stochastic.quantile:0",
+          "term": "Quantile function"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original CDF defines F(t)=P(X≤t), not a probability density.",
+      "targets": [
+        "definitions/prob/cdf.tex"
+      ]
+    },
+    {
+      "rank": 662,
+      "phrase": "diverges the symbolic sum",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "real.series:0",
+          "term": "Infinite series"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The symbolic series diverges in the source context; a grammatical sentence fragment is not a new type of series.",
+      "targets": []
+    },
+    {
+      "rank": 663,
+      "phrase": "divisor the usual extension",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "number.greatest-common-divisor:0",
+          "term": "Greatest common divisor"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 664,
+      "phrase": "divisors function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "number.perfect-number:0",
+          "term": "Perfect number"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 665,
+      "phrase": "domain for noncommutative rings",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.prime-ideal:0",
+          "term": "Prime ideal"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 666,
+      "phrase": "domain its integral closure",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "commalg.integral-closure:0",
+          "term": "Integral closure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 667,
+      "phrase": "domain nonzero fractional ideals",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.fractional-ideal:0",
+          "term": "Fractional ideal"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 668,
+      "phrase": "dxi for schwartz functions",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "pde.pseudodifferential-operator:0",
+          "term": "Pseudodifferential operator in Kohn--Nirenberg form"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 669,
+      "phrase": "dynamics both critical points",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.critical-value:0",
+          "term": "Critical value"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 670,
+      "phrase": "each holomorphic tangent space",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.hermitian-manifold:0",
+          "term": "Hermitian manifold"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 671,
+      "phrase": "each interior",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "commalg.exact-sequence:0",
+          "term": "Exact sequence"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 672,
+      "phrase": "each local homology group",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "alg-topology.fundamental-class:0",
+          "term": "Fundamental class"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 673,
+      "phrase": "each scalar function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.pettis-integrable:0",
+          "term": "Pettis integrable function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 674,
+      "phrase": "each sequence",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.normal-family:0",
+          "term": "Normal family of meromorphic functions"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 675,
+      "phrase": "each sublevel set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.exhaustion-function:0",
+          "term": "Exhaustion function on a topological space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 676,
+      "phrase": "each tangent space",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.riemannian-manifold:0",
+          "term": "Riemannian manifold"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 677,
+      "phrase": "element labelled set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "combin.stirling-number:0",
+          "term": "Stirling number of the second kind"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 678,
+      "phrase": "element subsets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "combin.binomial-coefficient:0",
+          "term": "Binomial coefficient"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 679,
+      "phrase": "embedded lie subgroup",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.lie-subgroup:0",
+          "term": "Lie subgroup"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Existing original or independently researched mathematical definition covers this source usage; no redundant addition.",
+      "targets": [
+        "definitions/manifold/lie-subgroup.tex"
+      ]
+    },
+    {
+      "rank": 680,
+      "phrase": "empty interval",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.8d23b7ba80f9f5e74420",
+          "term": "open interval of real numbers"
+        }
+      ],
+      "disposition": "ambiguous",
+      "reason": "'Empty interval' can be an ordinary interval with endpoints ordered so it contains no points, or a null interval under a specified convention; the earlier scanned nonempty open interval requires a<b.",
+      "targets": []
+    },
+    {
+      "rank": 681,
+      "phrase": "empty the projection",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.580d76c9d98b74d1be9b",
+          "term": "coordinate projection"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 682,
+      "phrase": "empty the set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.subdifferential:0",
+          "term": "Convex subdifferential"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 683,
+      "phrase": "equal adjacent submodules",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.8d9fdc1b1763aba61b63",
+          "term": "ascending chain of submodules"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 684,
+      "phrase": "equals the derivative",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.logarithmic-derivative:0",
+          "term": "Logarithmic derivative"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 685,
+      "phrase": "equinumerous this ordinal representation",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "sets.cardinality:0",
+          "term": "Cardinality"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 686,
+      "phrase": "equipped with face maps",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.simplicial-set:0",
+          "term": "Simplicial set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 687,
+      "phrase": "equipped with projection",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.tangent-bundle:0",
+          "term": "Tangent bundle"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 688,
+      "phrase": "equipped with structure morphisms",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.cf55f62008d08ce2df84",
+          "term": "isomorphism of schemes over a fixed base"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 689,
+      "phrase": "equipped with the subspace",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "manifold.embedding:0",
+          "term": "Smooth embedding"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 690,
+      "phrase": "equivalence for first order",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "logic.consistency:0",
+          "term": "Consistency"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 691,
+      "phrase": "equivalently every cauchy sequence",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.banach-space:0",
+          "term": "Banach space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 692,
+      "phrase": "equivalently every morphism",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.abelian-category:0",
+          "term": "Abelian category"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 693,
+      "phrase": "equivalently its fundamental group",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.simply-connected-domain:0",
+          "term": "Simply connected domain"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "The original simply-connected-domain entry addresses the fundamental-group criterion.",
+      "targets": [
+        "definitions/complex/simply-connected-domain.tex"
+      ]
+    },
+    {
+      "rank": 694,
+      "phrase": "equivalently its minimal polynomial",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.algebraic-integer:0",
+          "term": "Algebraic integer"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 695,
+      "phrase": "equivalently its taylor series",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.entire-function:0",
+          "term": "Entire function"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Entire-function definition includes local Taylor-series representations with infinite radius.",
+      "targets": [
+        "definitions/complex/entire-function.tex"
+      ]
+    },
+    {
+      "rank": 696,
+      "phrase": "equivalently near every point",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "complex.meromorphic-function:0",
+          "term": "Meromorphic function"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original meromorphic-function definition already includes the stated local equivalence.",
+      "targets": [
+        "definitions/complex/meromorphic-function.tex"
+      ]
+    },
+    {
+      "rank": 697,
+      "phrase": "equivalently polynomial",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.runge-domain:0",
+          "term": "Runge domain (polynomial approximation)"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 698,
+      "phrase": "equivalently the evaluation map",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.fc9d2d39de952e727a69",
+          "term": "finitely generated commutative algebra"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 699,
+      "phrase": "equivalently the local mapping",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.critical-point:0",
+          "term": "Critical point of a holomorphic map"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original holomorphic critical-point entry supplies the equivalent derivative-vanishing criterion.",
+      "targets": [
+        "definitions/holodynamics/critical-point.tex"
+      ]
+    },
+    {
+      "rank": 700,
+      "phrase": "equivalently the only subsets",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.connected-space:0",
+          "term": "Connected space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 701,
+      "phrase": "equivalently the product",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "algebra.integral-domain:0",
+          "term": "Integral domain"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 702,
+      "phrase": "equivalently the relation",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functions.function:1",
+          "term": "Function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 703,
+      "phrase": "equivalently the set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "dynamics.omega-limit-set:0",
+          "term": "Omega-limit set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 704,
+      "phrase": "equivalently the sigma algebra",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.borel-sigma-algebra:0",
+          "term": "Borel sigma-algebra"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 705,
+      "phrase": "equivalently the sum",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "number.perfect-number:0",
+          "term": "Perfect number"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 706,
+      "phrase": "equivalently the two measures",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.mutually-singular-measures:0",
+          "term": "Mutually singular measures"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 707,
+      "phrase": "equivalently two elements",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.eeaf8a205d5ed2ed6eeb",
+          "term": "equivalence relation generated by pairs"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 708,
+      "phrase": "equivariant measure",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measured-actions.spatial-isomorphism:0",
+          "term": "Spatial isomorphism of measured actions"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 709,
+      "phrase": "essentially bounded measurable functions",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.lp-space:0",
+          "term": "Lebesgue $L^p$ space"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original Lp-space definition explicitly includes L∞ classes of essentially bounded measurable functions.",
+      "targets": [
+        "definitions/measure/lp-space.tex"
+      ]
+    },
+    {
+      "rank": 710,
+      "phrase": "euclidean function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.euclidean-domain:0",
+          "term": "Euclidean domain"
+        }
+      ],
+      "disposition": "existing",
+      "reason": "Original Euclidean-domain entry defines an appropriate Euclidean function with its division-and-remainder property.",
+      "targets": [
+        "definitions/arithmetic/euclidean-domain.tex"
+      ]
+    },
+    {
+      "rank": 711,
+      "phrase": "even when the extension",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.galois-group:0",
+          "term": "Galois group"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 712,
+      "phrase": "every borel subset",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.standard-borel-space:0",
+          "term": "Standard Borel space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 713,
+      "phrase": "every bounded measurable function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "stochastic.strong-markov-property:0",
+          "term": "Strong Markov property"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 714,
+      "phrase": "every category",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.pullback:0",
+          "term": "Categorical pullback"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 715,
+      "phrase": "every cauchy sequence",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.metric-completeness:0",
+          "term": "Complete metric space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 716,
+      "phrase": "every closed unbounded subset",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "sets.stationary-set:0",
+          "term": "Stationary subset of a cardinal"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 717,
+      "phrase": "every compact set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.holomorphically-convex:0",
+          "term": "Holomorphically convex complex manifold"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 718,
+      "phrase": "every compact subset",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "scv.runge-domain:0",
+          "term": "Runge domain (polynomial approximation)"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 719,
+      "phrase": "every compact time interval",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "stochastic.semimartingale:0",
+          "term": "Semimartingale"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 720,
+      "phrase": "every complete metric space",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.metric-completeness:0",
+          "term": "Complete metric space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 721,
+      "phrase": "every continuity point",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "stochastic.convergence-distribution:0",
+          "term": "Convergence in distribution"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 722,
+      "phrase": "every convergent sequence",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "topology.cauchy-sequence:0",
+          "term": "Cauchy sequence"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 723,
+      "phrase": "every convex function",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.quasiconvex-function:0",
+          "term": "Quasiconvex function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 724,
+      "phrase": "every countably infinite set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.research408",
+          "term": "aleph-null"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 725,
+      "phrase": "every finite measure",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.sigma-finite:0",
+          "term": "Sigma-finite measure"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 726,
+      "phrase": "every gingamma the subgroup",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "solenoids.odometer-isomorphism-group:0",
+          "term": "Isomorphism group of an odometer"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 727,
+      "phrase": "every hilbert schmidt operator",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.hilbert-schmidt-operator:0",
+          "term": "Hilbert--Schmidt operator"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 728,
+      "phrase": "every induced hom set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "category.full-functor:0",
+          "term": "Full functor"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 729,
+      "phrase": "every irreducible separable polynomial",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.4718f86f0f56333c82f1",
+          "term": "separably closed field"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "The quantified condition about every irreducible separable polynomial is a property in the definition of separably closed fields, not itself a standalone term.",
+      "targets": []
+    },
+    {
+      "rank": 730,
+      "phrase": "every local ring",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "schemes.reduced-scheme:0",
+          "term": "Reduced scheme"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 731,
+      "phrase": "every measurable null set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "measure.completion-of-measure:0",
+          "term": "Completion of a measure space"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 732,
+      "phrase": "every nonstrict sublevel set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.sublevel-set:0",
+          "term": "Sublevel set"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 733,
+      "phrase": "every nonzero element",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.c1c39d573d410c3ccdb6",
+          "term": "field of complex numbers"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 734,
+      "phrase": "every nonzero prime ideal",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "arithmetic.dedekind-domain:0",
+          "term": "Dedekind domain"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 735,
+      "phrase": "every peak point",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "functional.peak-point:0",
+          "term": "Peak point of a uniform algebra"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 736,
+      "phrase": "every polynomial",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.60dd364a1927126e153d",
+          "term": "polynomial evaluation homomorphism"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 737,
+      "phrase": "every random bit sequence",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "computability.class-bpp:0",
+          "term": "Complexity class BPP"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 738,
+      "phrase": "every repelling periodic point",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "holodynamics.repelling-periodic-point:0",
+          "term": "Repelling periodic point"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
+    },
+    {
+      "rank": 739,
+      "phrase": "every square zero ideal",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "wave2_direct",
+          "source": "meaning.wave2.direct.16a17500cd760e24ed49",
+          "term": "square-zero ideal"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "'Every square-zero ideal' is a universal quantifier in the source definition, not a synonym for the zero ideal.",
+      "targets": []
+    },
+    {
+      "rank": 740,
+      "phrase": "every sublevel set",
+      "occurrences": 1,
+      "examples": [
+        {
+          "origin": "original_mathdef",
+          "source": "optimization.quasiconvex-function:0",
+          "term": "Quasiconvex function"
+        }
+      ],
+      "disposition": "nonterm",
+      "reason": "Extracted grammar fragment, quantifier, anaphoric phrase or context-bound property; it is not an independent mathematical term beyond the source's existing definition.",
+      "targets": []
     }
   ]
 }
