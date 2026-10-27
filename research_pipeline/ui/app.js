@@ -124,11 +124,15 @@
   function nodeButton(side, dep, path, inline) {
     const target = lookup.get(dep.id);
     const open = expanded(side, path);
-    const button = '<button type="button" class="' + (inline ? 'inline-cue' : 'dependency-toggle') +
+    const candidate = dep.review_state === "lexical_candidate";
+    const button = '<button type="button" title="' + (candidate ?
+      'Suggested lexical link; mathematical context may need review' :
+      'View the linked mathematical definition') + '" class="' +
+      (inline ? 'inline-cue' : 'dependency-toggle') +
       '" data-expand="' + escape(key(path)) + '" aria-expanded="' + String(open) + '">' +
-      (inline ? '(definition: ' + escape(target.term) + ')' :
+      (inline ? '(' + (candidate ? 'suggested: ' : 'definition: ') + escape(target.term) + ')' :
        '<span class="dependency-arrow" aria-hidden="true">' + (open ? '▾' : '▸') +
-       '</span> Definition: ' + escape(target.term)) + '</button>';
+       '</span> ' + (candidate ? 'Suggested: ' : 'Definition: ') + escape(target.term)) + '</button>';
     if (!inline) return button;
     return '<span class="inline-cue-actions">' + button +
       linkReport(path[path.length - 2], dep, true) + '</span>';
