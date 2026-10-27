@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "status": "partial_curated_review_NOT_final_build_authorization",
+  "source_baseline": "main:a5762f78a67b2c0f4260399d8d5d2ce8f0d83e7f",
+  "notes": [
+    "Only specified meaning and formulation IDs are consolidated; no similarity-based deletion.",
+    "Source citations from removed formulations transfer to the surviving meaning's selected formulation. Original source-file links are provenance, not an external mathematical reference.",
+    "This is a first explicit subset, not a claim of whole-corpus review; do not invoke final combined linking rebuild before user adjudicates unresolved cases."
+  ],
+  "merge_meanings": [
+    {
+      "case_id": "artinian-ring",
+      "removed_meaning_id": "meaning.mathdef.original.commalg.artinian-ring",
+      "kept_meaning_id": "meaning.9442fc10b22be057.artinian-commutative-ring",
+      "kept_formulation_id": "form.9442fc10b22be057.artinian-commutative-ring",
+      "reason": "Same descending chain condition for ideals of a commutative ring; prefer the Stacks-specific precise formulation."
+    },
+    {
+      "case_id": "abelian-group",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.abelian-group",
+      "kept_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "kept_formulation_id": "form.wave2.foundation.abelian-group",
+      "reason": "Both require commutativity of the group law. Notes about additive notation and cyclic groups do not define a different object."
+    },
+    {
+      "case_id": "group",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.group",
+      "kept_meaning_id": "meaning.wave2.foundation.group",
+      "kept_formulation_id": "form.wave2.foundation.group",
+      "reason": "Same binary operation with associativity, two-sided identity, and inverses. Different symbols and order do not distinguish definitions."
+    },
+    {
+      "case_id": "monoid",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.monoid",
+      "kept_meaning_id": "meaning.wave2.foundation.monoid",
+      "kept_formulation_id": "form.wave2.foundation.monoid",
+      "reason": "Same associative internal operation with two-sided identity and no inverse axiom."
+    },
+    {
+      "case_id": "quotient-group",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.quotient-group",
+      "kept_meaning_id": "meaning.wave2.quot119.quotient-group",
+      "kept_formulation_id": "form.wave2.quot119.quotient-group",
+      "reason": "Same left-coset multiplication by a normal subgroup. The old identity/inverse descriptions are consequences of the same construction."
+    },
+    {
+      "case_id": "power-set",
+      "removed_meaning_id": "meaning.mathdef.original.sets.power-set",
+      "kept_meaning_id": "meaning.wave2.direct.dd36779bc0facafd958e",
+      "kept_formulation_id": "form.meaning.wave2.direct.dd36779bc0facafd958e",
+      "reason": "Both define the collection of every subset. Cantor's theorem and the power-set axiom are related facts, not a different definition."
+    },
+    {
+      "case_id": "open-ball-metric",
+      "removed_meaning_id": "meaning.mathdef.original.metric.open-ball",
+      "kept_meaning_id": "meaning.wave2.directional113.open-metric",
+      "kept_formulation_id": "form.wave2.directional113.open-metric",
+      "reason": "Same metric ball set {x:d(x,a)<r}. Keep the separate normed-vector-space formulation, whose structure includes a norm."
+    },
+    {
+      "case_id": "equivalence-relation",
+      "removed_meaning_id": "meaning.mathdef.original.relations.equivalence-relation",
+      "kept_meaning_id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive",
+      "kept_formulation_id": "form.wave2.set63.relation-reflexive-symmetric-transitive",
+      "reason": "Same reflexivity, symmetry, and transitivity predicate for a binary relation; equivalence-class partition statement is a consequence."
+    },
+    {
+      "case_id": "binary-operation-internal",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.binary-operation",
+      "kept_meaning_id": "meaning.wave2.foundation.binary-operation-internal",
+      "kept_formulation_id": "form.wave2.foundation.binary-operation-internal",
+      "reason": "Both define an operation S×S→S. The separate heterogeneous S×T→U formulation remains a distinct general construction."
+    },
+    {
+      "case_id": "connected-space-empty-allowed",
+      "removed_meaning_id": "meaning.mathdef.original.topology.connected-space",
+      "kept_meaning_id": "meaning.wave2.variant71.connected-empty-allowed",
+      "kept_formulation_id": "form.wave2.variant71.connected.01",
+      "reason": "Same no-separation definition allowing the empty space. The Stacks-sourced NONEMPTY convention remains its own meaning; preserve nontrivial clopen and continuous-map formulations."
+    },
+    {
+      "case_id": "noetherian-ring",
+      "removed_meaning_id": "meaning.mathdef.original.commalg.noetherian-ring",
+      "kept_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
+      "kept_formulation_id": "form.86b5d488b98c612f.noetherian-commutative-ring",
+      "reason": "Original packs finite-generation and ascending-chain criteria into one paragraph; the researched meaning retains both as separately useful formulations, plus maximal-condition and module criteria."
+    }
+  ],
+  "metadata_assignments": {
+    "meaning.9442fc10b22be057.artinian-commutative-ring": {
+      "subject": "Commutative Algebra",
+      "context": "Commutative rings"
+    },
+    "meaning.wave2.foundation.abelian-group": {
+      "subject": "Algebra"
+    },
+    "meaning.wave2.foundation.group": {
+      "subject": "Algebra"
+    },
+    "meaning.wave2.foundation.monoid": {
+      "subject": "Algebra"
+    },
+    "meaning.wave2.quot119.quotient-group": {
+      "subject": "Algebra",
+      "context": "Normal subgroups"
+    },
+    "meaning.wave2.direct.dd36779bc0facafd958e": {
+      "subject": "Set Theory"
+    },
+    "meaning.wave2.directional113.open-metric": {
+      "subject": "Metric Geometry",
+      "context": "Metric spaces"
+    },
+    "meaning.wave2.set63.relation-reflexive-symmetric-transitive": {
+      "subject": "Set Theory"
+    },
+    "meaning.wave2.foundation.binary-operation-internal": {
+      "subject": "Algebra",
+      "context": "Internal binary operations"
+    },
+    "meaning.wave2.variant71.connected-empty-allowed": {
+      "subject": "Topology",
+      "context": "Empty space allowed"
+    },
+    "meaning.86b5d488b98c612f.noetherian-commutative-ring": {
+      "subject": "Commutative Algebra",
+      "context": "Commutative rings"
+    },
+    "meaning.wave2.foundation.binary-operation-general": {
+      "subject": "Algebra",
+      "context": "General binary operations"
+    },
+    "meaning.wave2.directional113.open-norm": {
+      "subject": "Functional Analysis",
+      "context": "Normed vector spaces"
+    },
+    "meaning.ab260940ea9c523d.connected-topological-space": {
+      "subject": "Topology",
+      "context": "Nonempty topological spaces"
+    },
+    "meaning.mathdef.original.algebra.quotient-ring": {
+      "subject": "Algebra",
+      "context": "Unital associative rings"
+    },
+    "meaning.wave2.direct.50fc57153b93520a247a": {
+      "subject": "Commutative Algebra",
+      "context": "Commutative rings"
+    },
+    "meaning.mathdef.original.alg-topology.chain-complex": {
+      "subject": "Homological Algebra",
+      "context": "Abelian groups or modules"
+    },
+    "meaning.wave2.direct.12cbff3823a07d544a1e": {
+      "subject": "Homological Algebra",
+      "context": "Additive categories"
+    },
+    "meaning.mathdef.original.category.abelian-category": {
+      "subject": "Category Theory"
+    },
+    "meaning.wave2.foundation15.abelian-category": {
+      "subject": "Category Theory"
+    }
+  }
+}
