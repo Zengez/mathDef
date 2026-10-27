@@ -24,6 +24,23 @@ def route_subjects(catalog: dict, repo: Path, approved_subjects: set[str]) -> di
     pending = []
     assignments = Counter()
     needs_attention = []
+    individual = json.loads((Path(repo) / "data/math_subject_assignments.json").read_text(encoding="utf-8"))
+    if individual.get("schema_version") != 1:
+        raise ValueError("Invalid individually reviewed subject assignments")
+    all_meanings = {m["id"]: m for g in catalog["groups"] for m in g["meanings"]}
+    reviewed_ids = set()
+    for record in individual["assignments"]:
+        mid, sub = record["meaning_id"], record["subject"]
+        if mid in reviewed_ids or mid not in all_meanings or sub not in approved_subjects:
+            raise ValueError("Duplicate, missing, or unregistered individual Subject: " + mid)
+        reviewed_ids.add(mid)
+        meaning = all_meanings[mid]
+        if meaning.get("subject") and meaning["subject"] != sub:
+            raise ValueError("Individual Subject conflicts with a curated semantic decision: " + mid)
+        if not meaning.get("subject"):
+            meaning["subject"] = sub
+            meaning["subject_assignment_method"] = "individual_mathematical_review"
+            assignments["individual_mathematical_review"] += 1
     for group in catalog["groups"]:
         for meaning in group["meanings"]:
             if meaning.get("subject"):
