@@ -285,5 +285,50 @@ class MergedLinkingTests(unittest.TestCase):
 
 
 
+    def test_quasi_metric_directional_balls_not_mislinked_to_metric_ball(self):
+        parent = group("backward", "Backward open ball",
+                       "meaning.mathdef.original.quasimetric.backward-ball",
+                       "f.backward",
+                       "The backward open ball is the set of points close in the reverse direction.")
+        parent2 = group("forward", "Forward open ball",
+                        "meaning.mathdef.original.quasimetric.forward-ball",
+                        "f.forward",
+                        "The forward open ball uses the forward quasi-metric.")
+        target = group("ball", "Open ball",
+                       "meaning.mathdef.original.metric.open-ball",
+                       "f.ball", "A set defined by a symmetric metric.")
+        target["meanings"].append({
+            "id":"meaning.wave2.directional113.open-norm",
+            "label":"Normed-space open ball",
+            "formulations":[{"id":"f.norm","text":"A norm-based open ball.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        data={"groups":[parent,parent2,target],"relations":[]}
+        report=link_merged_catalog(data)
+        self.assertEqual(report["new_tentative_links"],0)
+        self.assertEqual(report["skipped_context_false_positive"],2)
+        self.assertEqual(report["ambiguous_contexts_total_occurrences"],0)
+
+    def test_original_krull_dimension_supremum_is_order_theoretic(self):
+        source=group("krull","Krull dimension",
+                     "meaning.mathdef.original.commalg.krull-dimension",
+                     "f.krull",
+                     "Dimension is the supremum of lengths of prime chains.")
+        target=group("sup","Supremum",
+                     "meaning.wave2.direct.066b1d1b9032a2e86bdd",
+                     "f.ord","Least upper bound in a poset.")
+        target["meanings"].append({
+            "id":"meaning.mathdef.original.real.supremum",
+            "label":"Real analysis",
+            "formulations":[{"id":"f.real","text":"Supremum of real numbers.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        d={"groups":[source,target],"relations":[]}
+        report=link_merged_catalog(d)
+        self.assertEqual(report["new_tentative_links"],1)
+        self.assertEqual(d["relations"][0]["target_meaning"],
+                         "meaning.wave2.direct.066b1d1b9032a2e86bdd")
+
+
 if __name__ == "__main__":
     unittest.main()
