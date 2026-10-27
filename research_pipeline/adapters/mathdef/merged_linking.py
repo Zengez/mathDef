@@ -97,6 +97,24 @@ def name_index(catalog):
             if len(parts) == 1 and (len(parts[0]) < 7 or parts[0] in BAD_SINGLE):
                 continue
             labels[parts].add(group["id"])
+    # A modest, explicit plural inflection is useful in ordinary definition
+    # prose (open set/open sets; vector space/vector spaces). Do not generalize
+    # arbitrarily or stem mathematical terminology.
+    singular = list(labels.items())
+    irregular = {"matrix": "matrices", "index": "indices", "vertex": "vertices",
+                 "basis": "bases", "category": "categories", "topology": "topologies",
+                 "property": "properties", "family": "families"}
+    for parts, gids in singular:
+        if len(parts) < 2:
+            continue
+        final = parts[-1]
+        plural = irregular.get(final)
+        if plural is None and final.endswith("s"):
+            continue
+        if plural is None and len(final) > 2:
+            plural = final + "s"
+        if plural:
+            labels[(*parts[:-1], plural)].update(gids)
     for parts, gids in labels.items():
         index[parts[0]].append((parts, tuple(sorted(gids))))
     for entries in index.values():
