@@ -420,6 +420,34 @@
       "kept_meaning_id": "meaning.wave2.directional113.homeomorphism-topological",
       "kept_formulation_id": "form.wave2.directional113.homeomorphism-topological.1",
       "reason": "Same bijective continuous map with continuous inverse. Research retains open-set image iff equivalence as a second genuine characterization."
+    },
+    {
+      "case_id": "quotient-topology",
+      "removed_meaning_id": "meaning.wave2.direct.0c5a27f2980fc722cbb5",
+      "kept_meaning_id": "meaning.mathdef.original.topology.quotient-topology",
+      "kept_formulation_id": "form.mathdef.original.topology.quotient-topology.primary",
+      "reason": "Same final quotient topology induced by a surjection; original includes useful continuity universal property."
+    },
+    {
+      "case_id": "topological-space",
+      "removed_meaning_id": "meaning.wave2.foundation.topological-space",
+      "kept_meaning_id": "meaning.mathdef.original.topology.topological-space",
+      "kept_formulation_id": "form.mathdef.original.topology.topological-space.primary",
+      "reason": "Same open-set axioms on an arbitrary set, including empty; no substantive variant."
+    },
+    {
+      "case_id": "subspace-topology-general",
+      "removed_meaning_id": "meaning.mathdef.original.topology.subspace-topology",
+      "kept_meaning_id": "meaning.wave2.foundation.subspace-topology-general",
+      "kept_formulation_id": "form.wave2.foundation.subspace-topology-general",
+      "reason": "Same induced subspace topology on any subset. Coarsest-topology property is a consequence and not a different predicate."
+    },
+    {
+      "case_id": "subspace-topology-nonempty-convention",
+      "removed_meaning_id": "meaning.wave2.foundation.subspace-topology-nonempty",
+      "kept_meaning_id": "meaning.wave2.foundation.subspace-topology-general",
+      "kept_formulation_id": "form.wave2.foundation.subspace-topology-general",
+      "reason": "Nonempty restriction stated as hypothetical source convention rather than a distinct induced topology; canonical mathDef includes empty. Retain restriction as a convention note, not verified source assumption."
     }
   ],
   "metadata_assignments": {
@@ -656,6 +684,16 @@
     "meaning.wave2.cross104.lipschitz-at-point-anchored": {
       "subject": "Metric Geometry",
       "context": "Point-anchored Lipschitz bounds"
+    },
+    "meaning.mathdef.original.topology.quotient-topology": {
+      "subject": "Topology"
+    },
+    "meaning.mathdef.original.topology.topological-space": {
+      "subject": "Topology"
+    },
+    "meaning.wave2.foundation.subspace-topology-general": {
+      "subject": "Topology",
+      "context": "Empty subspace allowed"
     }
   },
   "text_overrides": {
