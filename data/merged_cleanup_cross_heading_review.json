@@ -100,6 +100,36 @@
       "removed_title": "box topology on a Cartesian product",
       "retained_title": "box topology on a product of topological spaces",
       "reason": "The same box-basic-open-set construction consists of all products of coordinatewise open sets, with no finite-support requirement; finite-index comparison and categorical-product remarks are consequences. Preserve independent nLab and PlanetMath source references."
+    },
+    {
+      "case_id": "cross-heading-reflexive-relation",
+      "removed_group_id": "preview.term.f32965076f54b224d16701a1",
+      "retained_group_id": "preview.term.8359fd24f6e0b0ec9758e344",
+      "removed_meaning_id": "meaning.wave2.direct.7176b5fd74d3e3e5dc95",
+      "retained_meaning_id": "meaning.mathdef.original.relations.reflexive-relation",
+      "removed_title": "reflexive binary relation",
+      "retained_title": "Reflexive relation",
+      "reason": "Both impose (x,x)∈R for all x∈X on a binary relation R⊆X×X, including vacuous truth at X=∅. Research wording repeats original draft, with the same caveat about symmetry/transitivity; retain MathWorld and Wikipedia source URLs with original verification states."
+    },
+    {
+      "case_id": "cross-heading-brownian-wiener",
+      "removed_group_id": "preview.term.40de586f6f64b88b12da131e",
+      "retained_group_id": "preview.term.8940292616cd3ae9311e1b54",
+      "removed_meaning_id": "meaning.mathdef.original.stochastic.wiener-process",
+      "retained_meaning_id": "meaning.mathdef.original.stochastic.brownian-motion",
+      "removed_title": "Wiener process",
+      "retained_title": "Standard Brownian motion",
+      "reason": "Both explicitly require B0=0, almost-surely continuous paths, independent Gaussian increments with variance t−s. The Wiener formulation directly declares itself standard Brownian motion; no drift/variance alternative is present. Retain both original Wikipedia section-anchor URLs and original ID alias."
+    },
+    {
+      "case_id": "cross-heading-finite-presentation-module",
+      "removed_group_id": "preview.term.a7e04de5d3b98032e2a82a94",
+      "retained_group_id": "preview.term.9054b78e92bd7e119ea83f10",
+      "removed_meaning_id": "meaning.db846ebeca42b9ee.finitely-presented-module-stacks",
+      "retained_meaning_id": "meaning.415a1503ae7ed97d.finitely-presented-module",
+      "removed_title": "finite presentation",
+      "retained_title": "finitely presented module",
+      "reason": "Both define a finitely presented R-module by a finite free presentation R^m→R^n→M→0 and finite generators/relations. No differing module conventions or ambient objects in the statements; preserve separate Stacks references 0517 and 05N4."
     }
   ],
   "clearly_distinct_retain": [
@@ -181,6 +211,50 @@
       "removed_title": "Relative complement",
       "retained_title": "set difference",
       "reason": "The construction X\\\\A with A⊆X is a specialized relative-complement view of arbitrary A\\\\B. Preserve the explicit choice of ambient universe and notation-scope distinction as an informative formulation."
+    }
+  ],
+  "distinct_cross_heading_meaning_pairs": [
+    {
+      "case_id": "higher-cats-fibred-sets-vs-setoids",
+      "left_meaning_id": "meaning.3653fa0ad844d187.two-category-fibred-sets",
+      "right_meaning_id": "meaning.74cd6dc48e0606fc.two-category-fibred-setoids",
+      "reason": "Fibred sets versus fibred setoids impose different fibre groupoid/category structures; do not merge 2-categories just because their morphism/2-morphism descriptions look similar."
+    },
+    {
+      "case_id": "irreducible-space-vs-closed-subset",
+      "left_meaning_id": "meaning.wave2.direct.436a89a3c048eae81a6c",
+      "right_meaning_id": "meaning.mathdef.original.schemes.irreducible-space",
+      "reason": "Intrinsic irreducibility of a nonempty topological space versus an irreducible subset that is also closed in a specified ambient X: the closedness and ambient embedding are additional data."
+    },
+    {
+      "case_id": "cohen-macaulay-module-vs-ring",
+      "left_meaning_id": "meaning.e97dccfabb3dd0c7.cohen-macaulay-local-module",
+      "right_meaning_id": "meaning.d4ab743e56d30cb4.cohen-macaulay-local-ring",
+      "reason": "Depth of a finitely generated module measured against dimension of its support differs in mathematical input from local-ring Cohen–Macaulayness depth(R)=dim(R)."
+    },
+    {
+      "case_id": "split-fibred-groupoid-vs-category",
+      "left_meaning_id": "meaning.f0d993a60533fc99.split-fibred-groupoid",
+      "right_meaning_id": "meaning.f7206eb9332b9389.split-fibred-category",
+      "reason": "Grothendieck constructions of strict Groupoids-valued versus general Categories-valued contravariant functors encode different allowed fibre types."
+    },
+    {
+      "case_id": "finite-algebra-vs-essentially-finite-ring-map",
+      "left_meaning_id": "meaning.415a1503ae7ed97d.finitely-presented-algebra",
+      "right_meaning_id": "meaning.93ca4dd46b3ed2ee.essentially-finite-presentation-ring-map",
+      "reason": "Algebra finite presentation is distinct from a localization of a finitely presented algebra: localizing can enlarge the class of permitted ring maps."
+    },
+    {
+      "case_id": "simple-bipartite-vs-general-undirected",
+      "left_meaning_id": "meaning.wave2.bridge136.simple-bipartite",
+      "right_meaning_id": "meaning.wave2.alternative39.bipartite-undirected",
+      "reason": "Simple-graph assumption versus an otherwise unspecified undirected edge model changes the input graph class. Do not conflate without confirming graph conventions."
+    },
+    {
+      "case_id": "edge-multiplicity-vs-multigraph",
+      "left_meaning_id": "meaning.wave2.direct.17fcbd3c3e67f2b21f6b",
+      "right_meaning_id": "meaning.wave2.graph42.loopless-undirected-multigraph",
+      "reason": "Multiplicity of a vertex pair is an integer-valued property; a loopless multigraph is a graph object admitting parallel edge copies."
     }
   ]
 }
