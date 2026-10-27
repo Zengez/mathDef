@@ -52,8 +52,18 @@ jobs:
           assert report['starting_formulations']==2246
           assert report['removed_duplicate_meanings']==len(json.loads(Path('data/merged_cleanup_decisions.json').read_text())['merge_meanings'])
           assert report['surviving_meanings']==2197-report['removed_duplicate_meanings']
-          assert len(catalog['groups'])==2048
-          assert len(sources['groups'])==2048
+          cross=json.loads(Path('data/merged_cleanup_cross_heading_review.json').read_text())
+          ncross=len(cross['clear_duplicate_pending_group_migration'])
+          assert len(catalog['groups'])==2048-ncross
+          assert len(sources['groups'])==2048-ncross
+          assert report['retired_searchable_heading_aliases']==ncross
+          assert len(catalog['consolidated_ids']['group_aliases'])==ncross
+          surviving_groups={g['id']:g for g in catalog['groups']}
+          for case in cross['clear_duplicate_pending_group_migration']:
+              assert case['removed_group_id'] not in surviving_groups
+              target=surviving_groups[case['retained_group_id']]
+              assert case['removed_title'] in target['aliases']
+              assert catalog['consolidated_ids']['group_aliases'][case['removed_group_id']]==target['id']
           # Recovery integrity: all historical original IDs remain accessible
           # through a live meaning or an explicit consolidation alias.
           all_meanings=[m for g in catalog['groups'] for m in g['meanings']]

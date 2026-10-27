@@ -80,6 +80,7 @@ class MergedCleanupTests(unittest.TestCase):
                 "schema_version": 1, "entries": [{"name": s} for s in names]
             }), encoding="utf-8")
         (data / "merged_cleanup_retained_variants.json").write_text(json.dumps({"schema_version": 1, "entries": []}), encoding="utf-8")
+        (data / "merged_cleanup_cross_heading_review.json").write_text(json.dumps({"schema_version": 1, "clear_duplicate_pending_group_migration": []}), encoding="utf-8")
         (data / "math_subject_assignments.json").write_text(json.dumps({"schema_version": 1, "assignments": []}), encoding="utf-8")
         (data / "math_subject_routing.json").write_text(json.dumps({
             "schema_version": 1,
@@ -157,6 +158,56 @@ class MergedCleanupTests(unittest.TestCase):
             filename.write_text(json.dumps(entry))
             with self.assertRaisesRegex(CleanupError, "Invalid kept formulation"):
                 prepare_curated_cleanup(self.base, repo)
+
+    def test_cross_heading_alias_migration_is_source_preserving(self):
+        data = deepcopy(self.base)
+        data["groups"].append({
+            "id": "g.alias", "title": "Artinian commutative ring",
+            "aliases": ["ring satisfying descending-chain condition"],
+            "meanings": [{"id": "m.alias", "label": "Commutative Algebra",
+                          "formulations": [{
+                            "id": "f.alias",
+                            "text": "A commutative ring R is Artinian when descending ideal chains stabilize.",
+                            "sources": [{
+                                "title": "Secondary source",
+                                "url": "https://example.org/another-artinian"
+                            }]
+                          }]}]
+        })
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = self._repo(Path(tmp))
+            (repo / "data/merged_cleanup_cross_heading_review.json").write_text(
+                json.dumps({
+                    "schema_version": 1,
+                    "clear_duplicate_pending_group_migration": [{
+                        "case_id": "alternate-artinian-heading",
+                        "removed_group_id": "g.alias",
+                        "retained_group_id": "g",
+                        "removed_meaning_id": "m.alias",
+                        "retained_meaning_id": "new",
+                        "removed_title": "Artinian commutative ring",
+                        "retained_title": "Artinian ring",
+                        "reason": "Same descending chain condition"
+                    }]
+                }), encoding="utf-8"
+            )
+            cleaned, report, refs = prepare_curated_cleanup(data, repo)
+        self.assertEqual(report["starting_groups"], 3)
+        self.assertEqual(report["surviving_groups"], 2)
+        self.assertEqual(report["removed_duplicate_meanings"], 2)
+        self.assertEqual(report["retired_searchable_heading_aliases"], 1)
+        self.assertEqual(cleaned["consolidated_ids"]["group_aliases"],
+                         {"g.alias": "g"})
+        self.assertEqual(cleaned["consolidated_ids"]["meaning_aliases"]["m.alias"],
+                         "new")
+        target = next(g for g in cleaned["groups"] if g["id"] == "g")
+        self.assertIn("Artinian commutative ring", target["aliases"])
+        self.assertIn("ring satisfying descending-chain condition", target["aliases"])
+        sources = target["meanings"][0]["formulations"][0]["sources"]
+        self.assertTrue(any(s.get("url") == "https://example.org/another-artinian"
+                            for s in sources))
+        self.assertEqual(len(refs["groups"]), 2)
+        self.assertEqual(len(to_index(cleaned)), 2)
 
     def test_source_ids_distinguish_meaningful_fragments(self):
         catalog = deepcopy(self.base)

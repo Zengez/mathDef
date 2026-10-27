@@ -115,6 +115,65 @@ def _ids(catalog: dict) -> tuple[dict, dict, dict]:
     return meanings, forms, groups
 
 
+
+def _apply_reviewed_group_aliases(catalog: dict, repo: Path) -> tuple[dict, list[dict]]:
+    """Move clear duplicate *existing* headings into canonical searchable aliases.
+
+    This is a stage-local deterministic operation, NOT the full link rebuild.
+    Every dropped term ID is retained in group_aliases. Never compare or infer
+    equivalence from names here: every allowed pair is explicitly adjudicated.
+    """
+    file = Path(repo) / "data" / "merged_cleanup_cross_heading_review.json"
+    ledger = _json(file) if file.is_file() else {
+        "schema_version": 1, "clear_duplicate_pending_group_migration": []
+    }
+    if ledger.get("schema_version") != 1:
+        raise CleanupError("Unrecognized cross-heading review ledger")
+    groups = {g["id"]: g for g in catalog["groups"]}
+    redirected = {}
+    rows = []
+    used_cases = set()
+    for item in ledger.get("clear_duplicate_pending_group_migration", []):
+        case = item["case_id"]
+        old_gid, new_gid = item["removed_group_id"], item["retained_group_id"]
+        old_mid, new_mid = item["removed_meaning_id"], item.get("retained_meaning_id")
+        if case in used_cases or old_gid == new_gid or old_gid in redirected:
+            raise CleanupError("Repeated cross-heading review decision: " + case)
+        used_cases.add(case)
+        if old_gid not in groups or new_gid not in groups:
+            raise CleanupError("Missing referenced existing heading: " + case)
+        old, dest = groups[old_gid], groups[new_gid]
+        if (old["title"] != item["removed_title"]
+                or dest["title"] != item["retained_title"]):
+            raise CleanupError("Cross-heading name drift: " + case)
+        if len(old["meanings"]) != 1 or old["meanings"][0]["id"] != old_mid:
+            raise CleanupError("Cross-heading source not a single exact meaning: " + case)
+        winner = next((m for m in dest["meanings"] if m["id"] == new_mid), None)
+        if winner is None or not winner["formulations"]:
+            raise CleanupError("Cross-heading canonical meaning missing: " + case)
+        for name in [old["title"], *old.get("aliases", [])]:
+            if (name.casefold() != dest["title"].casefold()
+                    and name.casefold() not in {
+                        x.casefold() for x in dest.get("aliases", [])
+                    }):
+                dest.setdefault("aliases", []).append(name)
+        old_meaning = old["meanings"][0]
+        old_meaning["term_group_id"] = new_gid
+        dest["meanings"].append(old_meaning)
+        dest["meanings"].sort(key=lambda m: (m.get("label", "").casefold(), m["id"]))
+        dest["aliases"].sort(key=str.casefold)
+        catalog["groups"].remove(old)
+        del groups[old_gid]
+        redirected[old_gid] = new_gid
+        rows.append({
+            "case_id": case, "removed_meaning_id": old_mid,
+            "kept_meaning_id": new_mid,
+            "kept_formulation_id": winner["formulations"][0]["id"],
+            "reason": item["reason"],
+        })
+    return redirected, rows
+
+
 def prepare_curated_cleanup(catalog: dict, repo: Path,
                             *, require_full_metadata: bool = False) -> tuple[dict, dict, dict]:
     """Apply *only explicit human/mathematically reviewed* pair decisions.
@@ -131,11 +190,14 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
     combined = deepcopy(catalog)
     meanings, forms, _ = _ids(combined)
     original_total = (len(meanings), len(forms), len(combined["relations"]))
+    original_groups = len(combined["groups"])
+    group_aliases, cross_group_merges = _apply_reviewed_group_aliases(combined, repo)
+    meanings, forms, _ = _ids(combined)
     meaning_aliases = {}
     form_aliases = {}
     completed = []
     seen = set()
-    for row in decisions["merge_meanings"]:
+    for row in [*decisions["merge_meanings"], *cross_group_merges]:
         loser_id, winner_id = row["removed_meaning_id"], row["kept_meaning_id"]
         preferred_fid = row["kept_formulation_id"]
         case = row["case_id"]
@@ -266,6 +328,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         raise CleanupError("%d meanings remain without curated mathematical subject"
                            % len(missing_subject))
     combined["consolidated_ids"] = {
+        "group_aliases": group_aliases,
         "meaning_aliases": meaning_aliases,
         "formulation_aliases": form_aliases,
     }
@@ -308,6 +371,10 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "phase": "stage_only_before_user_review",
         "is_publication_ready": False,
         "source_baseline": decisions.get("source_baseline"),
+        "starting_groups": original_groups,
+        "surviving_groups": len(combined["groups"]),
+        "retired_searchable_heading_aliases": len(group_aliases),
+        "cross_heading_cases_applied": [x["case_id"] for x in cross_group_merges],
         "starting_meanings": original_total[0],
         "starting_formulations": original_total[1],
         "starting_relations": original_total[2],
