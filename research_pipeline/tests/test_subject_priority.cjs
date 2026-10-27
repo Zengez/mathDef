@@ -65,7 +65,7 @@ test("approved editorial override supersedes exact Subject and linked-meaning pr
   assert.deepEqual(orderFormulations(forms,"m.linked","Algebra","override").map(x=>x.key),
     ["override","match","fallback"]);
   assert.deepEqual(orderFormulations(forms,"m.linked","Algebra",null).map(x=>x.key),
-    ["match","fallback","override"].sort((a,b)=>a==="match"?-1:b==="match"?1:0));
+    ["match","override","fallback"]);
   assert.equal(orderFormulations(forms,"m.linked","Algebra","invalid")[0].key,"match",
     "An obsolete unknown override must not hide a definition");
 });
