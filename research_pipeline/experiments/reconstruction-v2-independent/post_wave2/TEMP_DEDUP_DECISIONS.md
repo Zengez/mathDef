@@ -67,3 +67,33 @@ Source: existing independent Wave 2 research evidence associated with this formu
 ---
 
 More genuinely uncertain cases may be appended during the remaining whole-corpus comparison. Clear duplicates and mathematically distinct objects are handled in the durable machine-readable cleanup ledger without seeking unnecessary user review.
+
+## Definition of: Affine span / affine hull (two existing searchable headings)
+
+**Proposed Subject:** Geometry / Convex Geometry. **Contexts:** General real affine spaces versus subsets of finite-dimensional R^d; empty versus nonempty subsets.
+
+**Def A — original mathDef, heading "Affine span"** (meaning.mathdef.original.geometry.affine-span; form.mathdef.original.geometry.affine-span.primary):
+
+> For a nonempty subset $S$ of a real affine space, its \emph{affine span} (affine hull) is the smallest affine subspace containing $S$. Equivalently, it consists of all finite affine combinations $\sum_{i=1}^k a_ip_i$ with $p_i\in S$ and $\sum_i a_i=1$. For $S=\varnothing$, some conventions give the empty affine hull.
+
+Source: https://en.wikipedia.org/wiki/Affine_hull (historical original editorial citation; its nonempty convention has not been independently verified).
+
+**Def B — researched "affine hull", finite-combination construction** (meaning.wave2.pop140.affine-hull; first statement of form.meaning.wave2.pop140.affine-hull):
+
+> For an integer d≥1 and a set S⊆ℝ^d, aff(S) is the set of all vectors ∑_{i=1}^{k} αᵢxᵢ with k≥1, xᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. In particular aff(∅)=∅.
+
+**Def C — researched "affine hull", intersection construction** (same researched meaning and same formulation ID as Def B; a second statement within the existing text, not a separately indexed form):
+
+> Equivalent formulation: Let d≥1 and S⊆ℝ^d. Define aff(S) as the intersection of all affine-closed subsets C⊆ℝ^d containing S, where affine-closed means containing every finite affine combination of its members; the empty set is affine-closed.
+
+Source for B and C: https://hankyang.seas.harvard.edu/Semidefinite/background.html (provisional_source_paraphrase_not_rechecked_2026_10_26; previously recorded research lead, not passage-verified here).
+
+**Precise mathematical comparison:** For nonempty S⊆ℝ^d, the original smallest-affine-subspace definition and researched finite-affine-combination construction yield the same set. Original A, however, gives a nonempty hypothesis and does not definitively define the hull of ∅, whereas B/C set aff(∅)=∅ by allowing the empty affine-closed set. A permits arbitrary real affine spaces, whereas B/C explicitly use finite-dimensional Euclidean coordinate space.
+
+**Source convention evidence:** Neither source has a documented source-specific nonempty standing-convention assessment. Both remain not_checked. We do not infer that either author positively excluded or admitted the empty case. Future checked_inconclusive status, if documented, would operationally inherit mathDef's latest broad canonical meaning, without asserting author agreement.
+
+**Decision needed:** Should A and B consolidate into one broad, empty-allowed canonical meaning with a note on the usual nonempty affine-subspace formulation, while keeping C as a useful distinct affine-closed-intersection characterization? Or should the general affine-space and finite-dimensional coordinate formulations remain separate contexts?
+
+**Clearly retained:** Both terms as searchable labels, all existing primary/reference URLs with honest evidence labels, and the mathematically distinct intersection construction C.
+
+**Preliminary recommendation:** Prefer the general finite-affine-combination definition including the empty subset, add a convention note for definitions treating affine subspaces as nonempty, and retain C's affine-closed-intersection perspective. Do not discard the general affine-space scope without deliberate translation. **Status: awaiting user adjudication; no merger performed.**

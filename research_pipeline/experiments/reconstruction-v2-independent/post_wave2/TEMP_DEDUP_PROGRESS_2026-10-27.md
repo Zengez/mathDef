@@ -145,3 +145,10 @@ are durable on the same branch.
 - Original `Closure` primary already states the open-neighborhood characterization verbatim in mathematical substance. The separate neighborhood variant is therefore redundant. Record its existing source URL against the surviving original primary and alias its formulation ID; keep the metric-space `d(x,A)=0` representation, first-countable sequential characterization, and distinct Kuratowski closure-operator axiom formulation.
 - Original `Function` assignment formulation and typed graph-as-total-single-valued-relation formulation define equivalent functions using different mathematical foundational objects; deliberately preserve both.
 - Added CI checks protecting the exact original variant IDs and the closure-neighborhood alias from accidental loss during later dedup. Total explicit within-meaning removals **6**, conditional on stage-only validation. There are **82** retained-variant review headings now. User convention decisions remain deferred and no final global linker was run.
+
+## Subject/Context cleanup and affine-boundary review packet — 2026-10-27
+
+- Added six mathematical Context values to distinguish real/complex scalars, categorical smallness, unital left modules, extended versus finite real interval endpoints, and fixed-ambient relative complements.
+- Added explicit Subject and (when warranted) Context to 11 surviving meanings across the six group-only alias migrations; Subject remains mathematical, not source-cohort provenance.
+- The pending affine hull/span question now includes ALL three source mathematical formulations in TEMP_DEDUP_DECISIONS.md (one original and two expressions inside the researched form) with source verification states and the empty-boundary issue. No nonempty author convention was fabricated.
+- Two prior ambiguous headings (metric space and zero divisor) still await user review. Final linking and publication remain deferred.
