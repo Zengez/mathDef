@@ -285,6 +285,94 @@ jobs:
               'source_ids':len(sources['sources'])
           })
           PY
+      - name: Single indexed scan for cross-heading existing-term variants
+        run: |
+          python - <<'PY'
+          import json, re, collections, math, unicodedata
+          from pathlib import Path
+          g=json.loads(Path('/tmp/mathdef-cleanup-stage/catalog.stage-only.json').read_text())['groups']
+          stop={'of','a','an','the','in','on','from','for','to','with','at','over','under','by','and','as','its','relative','given','fixed'}
+          same={'mapping':'map','maps':'map','function':'map','functions':'map','homomorphisms':'homomorphism',
+                'transformations':'transformation','subsets':'subset','spaces':'space','rings':'ring',
+                'categories':'category','modules':'module','groups':'group','morphisms':'morphism',
+                'colouring':'coloring','colours':'color','graphs':'graph','homeomorphisms':'homeomorphism',
+                'boundedness':'bounded','quasicompact':'quasi compact','quasicoherent':'quasi coherent',
+                'locally':'locally','fibred':'fibered','fibre':'fiber','generated':'generate',
+                'generators':'generator','convergent':'convergence','sigma':'sigma','algebras':'algebra',
+                'linear':'linear','isomorphisms':'isomorphism'}
+          def norm(x):
+              x=unicodedata.normalize('NFKD',x.casefold()).replace('σ','sigma').replace('ℵ','aleph').replace('∅','empty').replace('∞','infinite')
+              t=re.findall(r'[a-z0-9]+',x)
+              return [same.get(v,v) for v in t if v not in stop]
+          def key(x):
+              return ' '.join(sorted(norm(x)))
+          postings=collections.defaultdict(set)
+          alias_hits=collections.defaultdict(set)
+          docs=[]
+          for i,a in enumerate(g):
+              m=a['meanings']
+              f=[x for y in m for x in y['formulations']]
+              record={'i':i,'id':a['id'],'title':a['title'],'aliases':a.get('aliases',[]),
+                      'subjects':list(dict.fromkeys(y.get('subject') for y in m)),
+                      'contexts':list(dict.fromkeys(y.get('context') for y in m if y.get('context'))),
+                      'meanings':len(m),'forms':len(f),
+                      'first_text':f[0]['text'][:310] if f else ''}
+              docs.append(record)
+              keys=set()
+              for title in [a['title'],*a.get('aliases',[])]:
+                  k=key(title)
+                  if not k: continue
+                  alias_hits[k].add(i)
+                  tokens=set(norm(title))
+                  # indexed (at least two shared content tokens) rather than N^2
+                  for x in tokens: postings[x].add(i)
+          pairs=collections.defaultdict(set)
+          for k,ids in alias_hits.items():
+              if len(ids)>1 and len(ids)<24:
+                  for i in sorted(ids):
+                      for j in sorted(ids):
+                          if i<j:pairs[(i,j)].add('exact_or_permuted_search_label:'+k)
+          # strong content-title overlap, with rare terminology weighting
+          df={k:len(v) for k,v in postings.items()}
+          scores=collections.defaultdict(int)
+          for token,ids in postings.items():
+              if len(ids)>175:continue
+              for i in sorted(ids):
+                  for j in sorted(ids):
+                      if i<j:scores[(i,j)]+=1
+          for (i,j),n in scores.items():
+              a,b=docs[i],docs[j]
+              wa=set(norm(a['title']));wb=set(norm(b['title']))
+              shared=wa&wb
+              if n<2 or len(shared)<2:continue
+              # 'map' or 'ring' alone never causes a match.
+              specificity=sum(1/math.sqrt(max(df.get(t,1),1)) for t in shared)
+              cover=min(len(shared)/max(len(wa),1),len(shared)/max(len(wb),1))
+              if cover>=.57 and specificity>.12:
+                  pairs[(i,j)].add('indexed_title_overlap:'+str(round(cover,2)))
+          # Also index unusual meaning tokens to catch exact-phrasing synonyms.
+          text_post=collections.defaultdict(set)
+          for d in docs:
+              tokens=set(norm(d['first_text'][:250]))
+              for t in tokens:
+                  if len(t)>5:text_post[t].add(d['i'])
+          text_scores=collections.Counter()
+          for token,ids in text_post.items():
+              if not (2<=len(ids)<=18):continue
+              for i in sorted(ids):
+                  for j in sorted(ids):
+                      if i<j:text_scores[(i,j)]+=1
+          for (i,j),matches in text_scores.items():
+              if matches>=10 and len(set(norm(docs[i]['first_text'][:250]))&set(norm(docs[j]['first_text'][:250])))>=10:
+                  pairs[(i,j)].add('shared_specific_definition_vocabulary:'+str(matches))
+          result=[{'a':docs[i], 'b':docs[j], 'reasons':sorted(why)}
+                  for (i,j),why in pairs.items()]
+          result.sort(key=lambda x:(-int(any(s.startswith('exact_') for s in x['reasons'])),
+                                     -len(x['reasons']),x['a']['title'].casefold(),x['b']['title'].casefold()))
+          print('CROSS_TERM_INDEX_SUMMARY='+json.dumps({'headings':len(docs),'candidate_pairs':len(result),
+               'alias_index_keys':len(alias_hits),'text_index_keys':len(text_post)}))
+          print('CROSS_TERM_CANDIDATES_JSON='+json.dumps(result,ensure_ascii=False,separators=(',',':')))
+          PY
       - name: Inventory remaining variants within their EXISTING heading ONLY
         run: |
           python - <<'PY'
