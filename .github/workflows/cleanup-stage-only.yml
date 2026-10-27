@@ -181,7 +181,8 @@ jobs:
           partition=next(g for g in catalog['groups']
                          if g['title'].casefold()=='set partition')
           assert {m['id'] for m in partition['meanings']}=={
-              'meaning.wave2.group116.set-partition'}
+              'meaning.wave2.group116.set-partition',
+              'meaning.wave2.direct.5399f58d78b20ca1ec30'}
           assert {z['id'] for z in partition['meanings'][0]['formulations']}=={
               'form.wave2.group116.set-partition.1',
               'form.wave2.group116.set-partition.2'}
