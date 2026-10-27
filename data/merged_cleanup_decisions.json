@@ -203,6 +203,62 @@
       "kept_meaning_id": "meaning.wave2.variant71.connected-empty-allowed",
       "kept_formulation_id": "form.wave2.variant71.connected.01",
       "reason": "Stacks Definition 5.7.1 explicitly requires nonempty and excludes the empty space. This is a documented source-specific convention on the same no-separation predicate, not a separate mathematical construction. Canonical mathDef adopts no-separation allowing empty and retains Stacks citation/verified scoped restriction as convention metadata."
+    },
+    {
+      "case_id": "bijection",
+      "removed_meaning_id": "meaning.mathdef.original.functions.bijection",
+      "kept_meaning_id": "meaning.wave2.direct.55e6dc72d6d3bc1d5669",
+      "kept_formulation_id": "form.meaning.wave2.direct.55e6dc72d6d3bc1d5669",
+      "reason": "Original is injective+surjective, precisely included in research text together with useful inverse characterization; no extra meaning."
+    },
+    {
+      "case_id": "affine-combination",
+      "removed_meaning_id": "meaning.wave2.direct.63acc9193a56ae7003b9",
+      "kept_meaning_id": "meaning.mathdef.original.geometry.affine-combination",
+      "kept_formulation_id": "form.mathdef.original.geometry.affine-combination.primary",
+      "reason": "Both use n≥1 real affine points and coefficient sum 1. Retain original's useful independence-of-origin and convex-combination remarks."
+    },
+    {
+      "case_id": "measurable-space",
+      "removed_meaning_id": "meaning.wave2.prob90.measurable-space",
+      "kept_meaning_id": "meaning.mathdef.original.measure.measurable-space",
+      "kept_formulation_id": "form.mathdef.original.measure.measurable-space.primary",
+      "reason": "Both define the pair (X,Σ) with a sigma-algebra; the original explicitly states the sigma-algebra axioms."
+    },
+    {
+      "case_id": "outer-measure",
+      "removed_meaning_id": "meaning.wave2.pop141.outer-measure",
+      "kept_meaning_id": "meaning.mathdef.original.measure.outer-measure",
+      "kept_formulation_id": "form.mathdef.original.measure.outer-measure.primary",
+      "reason": "Same empty-set normalization, monotonicity, and countable subadditivity for μ*:P(X)→[0,∞]; no distinct construction."
+    },
+    {
+      "case_id": "prime-number",
+      "removed_meaning_id": "meaning.wave2.direct.16d2c0615065e12050a2",
+      "kept_meaning_id": "meaning.mathdef.original.number.prime-number",
+      "kept_formulation_id": "form.mathdef.original.number.prime-number.primary",
+      "reason": "Same integer p>1 with exactly two positive divisors. Remarks about prime elements/ideals are related facts."
+    },
+    {
+      "case_id": "probability-space",
+      "removed_meaning_id": "meaning.wave2.prob90.probability-space",
+      "kept_meaning_id": "meaning.mathdef.original.prob.probability-space",
+      "kept_formulation_id": "form.mathdef.original.prob.probability-space.primary",
+      "reason": "Same measurable triple with countably additive total-one measure; keep explicit axioms and events description."
+    },
+    {
+      "case_id": "random-variable-real",
+      "removed_meaning_id": "meaning.mathdef.original.prob.random-variable",
+      "kept_meaning_id": "meaning.wave2.prob90.random-variable-real",
+      "kept_formulation_id": "form.wave2.prob90.random-variable-real",
+      "reason": "Same measurability X:Ω→R against the Borel σ-algebra; the general S-valued random variable remains independent."
+    },
+    {
+      "case_id": "sigma-algebra",
+      "removed_meaning_id": "meaning.mathdef.original.prob.sigma-algebra",
+      "kept_meaning_id": "meaning.wave2.foundation.sigma-algebra",
+      "kept_formulation_id": "form.wave2.foundation.sigma-algebra",
+      "reason": "Identical sigma-algebra axioms; researched second formulation is a genuinely informative equivalent characterization and stays."
     }
   ],
   "metadata_assignments": {
@@ -333,6 +389,36 @@
     },
     "meaning.ab260940ea9c523d.totally-disconnected-space": {
       "subject": "Topology"
+    },
+    "meaning.wave2.direct.55e6dc72d6d3bc1d5669": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.geometry.affine-combination": {
+      "subject": "Geometry",
+      "context": "Real affine spaces"
+    },
+    "meaning.mathdef.original.measure.measurable-space": {
+      "subject": "Measure Theory"
+    },
+    "meaning.mathdef.original.measure.outer-measure": {
+      "subject": "Measure Theory"
+    },
+    "meaning.mathdef.original.number.prime-number": {
+      "subject": "Number Theory"
+    },
+    "meaning.mathdef.original.prob.probability-space": {
+      "subject": "Probability Theory"
+    },
+    "meaning.wave2.prob90.random-variable-real": {
+      "subject": "Probability Theory",
+      "context": "Real-valued random variables"
+    },
+    "meaning.wave2.foundation.sigma-algebra": {
+      "subject": "Measure Theory"
+    },
+    "meaning.wave2.prob90.random-variable-general": {
+      "subject": "Probability Theory",
+      "context": "General measurable state spaces"
     }
   },
   "text_overrides": {
