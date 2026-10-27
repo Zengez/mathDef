@@ -1,0 +1,1304 @@
+{
+  "schema_version": 1,
+  "phase": "one_pass_internal_attached_variants_only",
+  "working_branch": "work/dedup-subject-context-sources-20261027",
+  "scope": "Only formulas/meanings already grouped under the SAME searchable term in the compiled 2026-10-27 staging catalog. No cross-heading synonyms or new candidate search.",
+  "scanned_headings": 2013,
+  "headings_with_one_formulation": 1923,
+  "headings_with_attached_variants": 90,
+  "original_attached_variant_formulations": 196,
+  "classification_counts_before_merges": {
+    "obviously_mathematically_distinct": 44,
+    "manual_review": 42,
+    "obvious_duplicate": 4
+  },
+  "classification_policy": {
+    "obvious_duplicate": "Same mathematical predicate/construction with only cosmetic or explanatory differences; merge redundant formulation and union all source references.",
+    "obviously_mathematically_distinct": "Different mathematical input structures, parameter domains, handedness, field/ring conventions, or other explicitly distinct mathematical definitions; preserve both.",
+    "manual_review": "Equivalent but substantially different characterizations, substantive boundary/convention differences, or any remaining potential overlap; do not merge without user review."
+  },
+  "records": [
+    {
+      "term": "accumulation point",
+      "group_id": "preview.term.0f1ab78a88a508914417dd35",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Sequence accumulation is formulated through subsequences/infinitely many indices; set accumulation is by neighborhoods of a subset. The defining input object differs.",
+      "attached_meaning_ids": [
+        "meaning.wave2.cross110.sequence-accumulation",
+        "meaning.wave2.cross110.set-accumulation"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.cross110.sequence-accumulation",
+        "form.wave2.cross110.set-accumulation"
+      ]
+    },
+    {
+      "term": "Adapted process",
+      "group_id": "preview.term.fa86ad082c9b98b730f413b0",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Discrete-time and continuous-time filtrations have genuinely different index domains and measurability requirements. The original general-index notion is retained alongside these narrower index contexts in the now-shared heading.",
+      "attached_meaning_ids": [
+        "meaning.wave2.found85.adapted-discrete",
+        "meaning.mathdef.original.stochastic.adapted-process",
+        "meaning.wave2.found85.adapted-continuous"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.found85.adapted-discrete",
+        "form.mathdef.original.stochastic.adapted-process.primary",
+        "form.wave2.found85.adapted-continuous"
+      ]
+    },
+    {
+      "term": "additive category",
+      "group_id": "preview.term.cc085aca3350b90dc1f1e734",
+      "classification": "manual_review",
+      "reason": "Finite-product definition in a preadditive category versus zero object and finite biproduct construction: separate informative criterion.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.original.category.additive-category",
+        "meaning.wave2.foundation15.additive-category"
+      ],
+      "attached_formulation_ids": [
+        "form.mathdef.original.category.additive-category.primary",
+        "form.wave2.foundation15.additive-category"
+      ]
+    },
+    {
+      "term": "Basis for a topology",
+      "group_id": "preview.term.fe31d24452421e35c2838014",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Base as a generator on a bare underlying set versus base subordinate to an already specified topology.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.postwave.topology-basis-20261026",
+        "meaning.mathdef.original.topology.basis-topology"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.mathdef.postwave.topology-basis-20261026",
+        "form.mathdef.original.topology.basis-topology.primary"
+      ]
+    },
+    {
+      "term": "binary operation",
+      "group_id": "preview.term.aabd77a7a8b898ab8dd5deea",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "An internal binary law S×S→S differs in declared type and closure from a general two-input map S×T→U; neither substitutes for the other.",
+      "attached_meaning_ids": [
+        "meaning.wave2.foundation.binary-operation-internal",
+        "meaning.wave2.foundation.binary-operation-general"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.foundation.binary-operation-internal",
+        "form.wave2.foundation.binary-operation-general"
+      ]
+    },
+    {
+      "term": "binary relation",
+      "group_id": "preview.term.dc014230ed2e7e6980196442",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Relations as subsets of S×S and typed relations between potentially different sets are different ambient data; retain the generalized representation.",
+      "attached_meaning_ids": [
+        "meaning.wave2.foundation.binary-relation-subset",
+        "meaning.wave2.foundation.binary-relation-typed"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.foundation.binary-relation-subset",
+        "form.wave2.foundation.binary-relation-typed"
+      ]
+    },
+    {
+      "term": "bipartite simple undirected graph",
+      "group_id": "preview.term.f16e7078e43689a959292cc6",
+      "classification": "manual_review",
+      "reason": "Partition of vertices into two independent parts versus a proper two-coloring function are distinct constructions with the same existence predicate.",
+      "attached_meaning_ids": [
+        "meaning.wave2.bridge136.simple-bipartite"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.bridge136.simple-bipartite.1",
+        "form.wave2.bridge136.simple-bipartite.2"
+      ]
+    },
+    {
+      "term": "Boolean ring",
+      "group_id": "preview.term.5e37ea76ee5c4b6418f2977e",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Keep unital versus possibly nonunital idempotent rings distinct; duplicate nonunital wording is already consolidated.",
+      "attached_meaning_ids": [
+        "meaning.wave2.alternative39.boolean-ring-nonunital",
+        "meaning.wave2.alternative39.boolean-ring-unital"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.alternative39.boolean-ring-nonunital",
+        "form.wave2.alternative39.boolean-ring-unital"
+      ]
+    },
+    {
+      "term": "Borel measure",
+      "group_id": "preview.term.46c361a6ab314ced7bbf926f",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Basic measure, compact-finite assumptions and outer-measure presentations invoke different hypotheses/objects; do not erase them.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.postwave.scan-borel-measure-compact-finite-20261026",
+        "meaning.mathdef.postwave.scan-borel-measure-basic-20261026",
+        "meaning.mathdef.postwave.scan-borel-outer-measure-20261026"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.mathdef.postwave.scan-borel-measure-compact-finite-20261026",
+        "form.meaning.mathdef.postwave.scan-borel-measure-basic-20261026",
+        "form.meaning.mathdef.postwave.scan-borel-outer-measure-20261026"
+      ]
+    },
+    {
+      "term": "boundary of a subset in a topological space",
+      "group_id": "preview.term.99dd24f404139c257e6fb5cb",
+      "classification": "manual_review",
+      "reason": "Closure minus interior versus intersection of closures of a set and its complement give distinct set-theoretic expressions.",
+      "attached_meaning_ids": [
+        "meaning.wave2.cross107.topological-boundary"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.cross107.topological-boundary.1",
+        "form.wave2.cross107.topological-boundary.2"
+      ]
+    },
+    {
+      "term": "Bounded linear operator",
+      "group_id": "preview.term.eee5144010a080f51c86a85d",
+      "classification": "obvious_duplicate",
+      "reason": "The same global norm bound ‖Tx‖≤C‖x‖ is stated in both, with only variable names and an explicit usual real/complex scalar field differing.",
+      "attached_meaning_ids": [
+        "meaning.wave2.pop142.bounded-linear",
+        "meaning.mathdef.original.functional.bounded-linear-operator"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.pop142.bounded-linear",
+        "form.mathdef.original.functional.bounded-linear-operator.primary"
+      ],
+      "duplicate_merger": {
+        "keep_formulation_id": "form.meaning.wave2.pop142.bounded-linear",
+        "remove_formulation_ids": [
+          "form.mathdef.original.functional.bounded-linear-operator.primary"
+        ]
+      },
+      "after_merge": "single_or_distinct_surviving_formulation"
+    },
+    {
+      "term": "chain complex",
+      "group_id": "preview.term.86a9617a708527fec4e90cbc",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Module/abelian group chain complexes versus complexes in a general additive category use different mathematical frameworks.",
+      "attached_meaning_ids": [
+        "meaning.wave2.direct.12cbff3823a07d544a1e",
+        "meaning.mathdef.original.alg-topology.chain-complex"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.direct.12cbff3823a07d544a1e",
+        "form.mathdef.original.alg-topology.chain-complex.primary"
+      ]
+    },
+    {
+      "term": "chromatic number",
+      "group_id": "preview.term.d20772c3494a6d836d44b1b5",
+      "classification": "manual_review",
+      "reason": "Finite nonempty graph definition versus unrestricted graph and empty-graph convention. Retain until the precise scope and infinite-color extension are reconciled.",
+      "attached_meaning_ids": [
+        "meaning.wave2.research81.chromatic-proper-coloring",
+        "meaning.mathdef.original.graph.chromatic-number"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.research81.chromatic-proper-coloring.01",
+        "form.mathdef.original.graph.chromatic-number.primary"
+      ]
+    },
+    {
+      "term": "closed ball",
+      "group_id": "preview.term.d1d2b72d5eb5b68084611e3d",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Metric and normed-vector-space formulations use different structures; the normed case is a metric specialization but informative.",
+      "attached_meaning_ids": [
+        "meaning.wave2.directional113.closed-metric",
+        "meaning.wave2.directional113.closed-norm"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.directional113.closed-metric",
+        "form.wave2.directional113.closed-norm"
+      ]
+    },
+    {
+      "term": "Closure",
+      "group_id": "preview.term.2a22ec7dd68e8a268344dd28",
+      "classification": "manual_review",
+      "reason": "Original primary already includes smallest closed superset and neighborhood characterization; remove repeated neighborhood card, retain metric distance-to-A=0, first-countable sequential limits, and Kuratowski closure-operator axioms as mathematically different objects/assumptions.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.original.topology.closure"
+      ],
+      "attached_formulation_ids": [
+        "form.mathdef.original.topology.closure.primary",
+        "form.mathdef.original.topology.closure.metric",
+        "form.mathdef.original.topology.closure.sequences",
+        "form.mathdef.original.topology.closure.kuratowski"
+      ]
+    },
+    {
+      "term": "closure of a subset in a topological space",
+      "group_id": "preview.term.a00b27480c14bf7a9e1f2056",
+      "classification": "obvious_duplicate",
+      "reason": "The least closed superset is precisely the intersection of closed supersets, a near-verbatim restatement of the same construction.",
+      "attached_meaning_ids": [
+        "meaning.wave2.cross107.topological-closure"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.cross107.topological-closure.1",
+        "form.wave2.cross107.topological-closure.2"
+      ],
+      "duplicate_merger": {
+        "keep_formulation_id": "form.wave2.cross107.topological-closure.1",
+        "remove_formulation_ids": [
+          "form.wave2.cross107.topological-closure.2"
+        ]
+      },
+      "after_merge": "single_or_distinct_surviving_formulation"
+    },
+    {
+      "term": "compact topological space",
+      "group_id": "preview.term.2e1aac05acef2e932b0fa4cc",
+      "classification": "manual_review",
+      "reason": "Finite subcovers versus finite intersection property of closed sets are mathematically informative dual criteria; the empty-family convention remains explicit.",
+      "attached_meaning_ids": [
+        "meaning.wave2.broad67.compact-topological-space"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.broad67.compact-open-cover",
+        "form.wave2.broad67.compact-closed-fip"
+      ]
+    },
+    {
+      "term": "connected space",
+      "group_id": "preview.term.afbb896f788d6d25ec168722",
+      "classification": "manual_review",
+      "reason": "No separation, absence of nontrivial clopen subsets, and nonexistence of a continuous surjection onto the discrete two-point space are distinct characterizations under mathDef's empty-allowed convention.",
+      "attached_meaning_ids": [
+        "meaning.wave2.variant71.connected-empty-allowed"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.variant71.connected.01",
+        "form.wave2.variant71.connected.02",
+        "form.wave2.variant71.connected.03"
+      ]
+    },
+    {
+      "term": "continuous map",
+      "group_id": "preview.term.34c1dd5bd34ada605b378003",
+      "classification": "manual_review",
+      "reason": "Preimages of open subsets versus pointwise local-neighborhood behavior are distinct characterizations.",
+      "attached_meaning_ids": [
+        "meaning.wave2.foundation76.continuous-topological-map"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.foundation76.continuous-topological-map.01",
+        "form.wave2.foundation76.continuous-topological-map.02"
+      ]
+    },
+    {
+      "term": "convex hull of a subset of a real vector space",
+      "group_id": "preview.term.cafea9d1701c09742910fd79",
+      "classification": "manual_review",
+      "reason": "Finite convex-combination construction versus intersection of all convex supersets are distinct, informative perspectives; trivial least-superset paraphrase consolidated.",
+      "attached_meaning_ids": [
+        "meaning.wave2.cross133.convex-hull-real"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.cross133.convex-hull-real.1",
+        "form.wave2.cross133.convex-hull-real.2"
+      ]
+    },
+    {
+      "term": "coprime polynomials",
+      "group_id": "preview.term.3b83f92f991091ef668fdbfe",
+      "classification": "manual_review",
+      "reason": "Unit ideal generated by the pair versus no common zero in an algebraic closure uses ideal and algebraic-geometric formulations.",
+      "attached_meaning_ids": [
+        "meaning.e606496d592fe305.relatively-prime-polynomials"
+      ],
+      "attached_formulation_ids": [
+        "form.e606496d592fe305.relatively-prime-polynomials",
+        "form.e606496d592fe305.relatively-prime-polynomials-roots"
+      ]
+    },
+    {
+      "term": "coset of a subgroup",
+      "group_id": "preview.term.665c489dee8229154c6a07ee",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Left coset gH and right coset Hg can be different sets when H is not normal.",
+      "attached_meaning_ids": [
+        "meaning.wave2.prereq122.left-coset",
+        "meaning.wave2.prereq122.right-coset"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.prereq122.left-coset",
+        "form.wave2.prereq122.right-coset"
+      ]
+    },
+    {
+      "term": "degree of a vertex in a simple undirected graph",
+      "group_id": "preview.term.f180c25a0c58f1e4a8691f31",
+      "classification": "manual_review",
+      "reason": "Cardinality of incident edges versus cardinality of adjacent vertices uses two different sets; equality relies on graph simplicity.",
+      "attached_meaning_ids": [
+        "meaning.wave2.cross133.vertex-degree-simple"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.cross133.vertex-degree-simple.1",
+        "form.wave2.cross133.vertex-degree-simple.2"
+      ]
+    },
+    {
+      "term": "discrete valuation ring",
+      "group_id": "preview.term.1b9562e2584f847137bf995e",
+      "classification": "manual_review",
+      "reason": "Valuation-group characterization versus local-PID/nonfield construction; mathematically informative equivalent characterizations.",
+      "attached_meaning_ids": [
+        "meaning.f72779e263dd3e51.discrete-valuation-ring-value-group",
+        "meaning.mathdef.original.arithmetic.discrete-valuation-ring"
+      ],
+      "attached_formulation_ids": [
+        "form.f72779e263dd3e51.discrete-valuation-ring-value-group",
+        "form.mathdef.original.arithmetic.discrete-valuation-ring.primary"
+      ]
+    },
+    {
+      "term": "domination of local rings",
+      "group_id": "preview.term.2658e1e36e425db0a4737cc4",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "One formulation embeds local subrings in a common field; the other allows general compatible local-ring inclusions. Different ambient hypotheses.",
+      "attached_meaning_ids": [
+        "meaning.wave2.direct.8270eec9d7801be60879",
+        "meaning.f72779e263dd3e51.domination-local-rings"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.direct.8270eec9d7801be60879",
+        "form.f72779e263dd3e51.domination-local-rings"
+      ]
+    },
+    {
+      "term": "eigenvalue of a field-linear operator",
+      "group_id": "preview.term.ee015fa9d63fd59f18544c31",
+      "classification": "manual_review",
+      "reason": "Nontrivial kernel versus existence of a nonzero eigenvector use different algebraic presentations.",
+      "attached_meaning_ids": [
+        "meaning.wave2.branch129.operator-eigenvalue"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.branch129.operator-eigenvalue.1",
+        "form.wave2.branch129.operator-eigenvalue.2"
+      ]
+    },
+    {
+      "term": "eigenvector of a linear operator",
+      "group_id": "preview.term.893eb2a47e871887577069b8",
+      "classification": "manual_review",
+      "reason": "Av=λv condition versus nonzero membership in ker(A−λI) introduces the kernel construction.",
+      "attached_meaning_ids": [
+        "meaning.wave2.conv126.eigenvector-linear-operator"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.conv126.eigenvector-linear-operator.1",
+        "form.wave2.conv126.eigenvector-linear-operator.2"
+      ]
+    },
+    {
+      "term": "exact sequence",
+      "group_id": "preview.term.baea2e44fbe1b8da99fd372f",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Specific module exactness versus categorical images and kernels in an abelian category.",
+      "attached_meaning_ids": [
+        "meaning.wave2.foundation13.exact-sequence-abelian-category",
+        "meaning.mathdef.original.commalg.exact-sequence"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.foundation13.exact-sequence-abelian-category",
+        "form.mathdef.original.commalg.exact-sequence.primary"
+      ]
+    },
+    {
+      "term": "filtered category",
+      "group_id": "preview.term.651247601abdb144354bd15c",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "A small filtered category is a genuine smallness specialization of filtered categories without that size restriction.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.postwave.scan-small-filtered-category-20261026",
+        "meaning.9d27e470d02eae69.filtered-category"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.mathdef.postwave.scan-small-filtered-category-20261026",
+        "form.9d27e470d02eae69.filtered-category"
+      ]
+    },
+    {
+      "term": "filtration of sigma-algebras",
+      "group_id": "preview.term.272220a45b9032a23c9961c7",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "The original definition permits an increasing family indexed by an arbitrary ordered index set T. The researched instance explicitly fixes n>=0; retain this useful discrete-time specialization and preserve separate sources.",
+      "attached_meaning_ids": [
+        "meaning.wave2.found85.discrete-filtration",
+        "meaning.mathdef.original.stochastic.filtration"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.found85.discrete-filtration",
+        "form.mathdef.original.stochastic.filtration.primary"
+      ]
+    },
+    {
+      "term": "formally unramified ring homomorphism",
+      "group_id": "preview.term.df6c797a6a5276f91f59583d",
+      "classification": "manual_review",
+      "reason": "Uniqueness of square-zero liftings versus vanishing of Kähler differentials uses different universal and infinitesimal constructions.",
+      "attached_meaning_ids": [
+        "meaning.44fae2299dfd2f0a.formally-unramified-map"
+      ],
+      "attached_formulation_ids": [
+        "form.44fae2299dfd2f0a.formally-unramified-map",
+        "form.44fae2299dfd2f0a.formally-unramified-differential-test"
+      ]
+    },
+    {
+      "term": "fraction field of an integral domain",
+      "group_id": "preview.term.447072a58364c04788945d42",
+      "classification": "manual_review",
+      "reason": "Explicit construction by equivalence classes of fractions versus the universal mapping property are different mathematical perspectives.",
+      "attached_meaning_ids": [
+        "meaning.wave2.integer59.fraction-field-integral-domain"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.integer59.fraction-field-integral-domain",
+        "form.wave2.integer59.fraction-field-universal"
+      ]
+    },
+    {
+      "term": "Free module",
+      "group_id": "preview.term.732348eb19da8780d82366bf",
+      "classification": "manual_review",
+      "reason": "One definition explicitly assumes unital left modules while the other just says R-module. Retain both for review of the ring/module convention.",
+      "attached_meaning_ids": [
+        "meaning.wave2.direct.7462fa5f90275b34779a",
+        "meaning.mathdef.original.commalg.free-module"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.direct.7462fa5f90275b34779a",
+        "form.mathdef.original.commalg.free-module.primary"
+      ]
+    },
+    {
+      "term": "Function",
+      "group_id": "preview.term.91b58957da2d2c972a443af8",
+      "classification": "manual_review",
+      "reason": "The assignment X→Y formulation and the graph-as-total-single-valued-relation subset of X×Y are distinct foundational encodings. Preserve both, including typed domain/codomain.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.original.functions.function"
+      ],
+      "attached_formulation_ids": [
+        "form.mathdef.original.functions.function.primary",
+        "form.mathdef.original.functions.function.graph"
+      ]
+    },
+    {
+      "term": "geometrically integral algebra",
+      "group_id": "preview.term.87c8a883a241b602a02a8269",
+      "classification": "manual_review",
+      "reason": "All field extensions remaining domains versus the algebraic-closure base-change test are informative distinct criteria.",
+      "attached_meaning_ids": [
+        "meaning.831db4eab7a244a4.geometrically-integral-algebra"
+      ],
+      "attached_formulation_ids": [
+        "form.831db4eab7a244a4.geometrically-integral-algebra",
+        "form.831db4eab7a244a4.geometrically-integral-algebra-closure-test"
+      ]
+    },
+    {
+      "term": "geometrically normal algebra",
+      "group_id": "preview.term.d3e2fef9528ac9a4aeb032d7",
+      "classification": "manual_review",
+      "reason": "Testing all field extensions versus the single perfect-closure scalar extension is an informative reduction of the verification domain.",
+      "attached_meaning_ids": [
+        "meaning.2a93c6a662a51d67.geometrically-normal-algebra"
+      ],
+      "attached_formulation_ids": [
+        "form.2a93c6a662a51d67.geometrically-normal-algebra",
+        "form.2a93c6a662a51d67.geometrically-normal-perfect-closure-test"
+      ]
+    },
+    {
+      "term": "geometrically reduced algebra",
+      "group_id": "preview.term.7ce02bfac1799ed3a7f8dd82",
+      "classification": "manual_review",
+      "reason": "Every field scalar extension versus perfect-closure test gives an informative simplification of the extension quantifier.",
+      "attached_meaning_ids": [
+        "meaning.6c51aeb904a0fe74.geometrically-reduced-algebra"
+      ],
+      "attached_formulation_ids": [
+        "form.6c51aeb904a0fe74.geometrically-reduced-algebra",
+        "form.6c51aeb904a0fe74.geometric-reducedness-perfect-test"
+      ]
+    },
+    {
+      "term": "Hausdorff space",
+      "group_id": "preview.term.ff38d2a62cfaaa738d17980e",
+      "classification": "manual_review",
+      "reason": "Separating distinct points by open neighborhoods versus closedness of the diagonal in X×X are genuinely distinct tests.",
+      "attached_meaning_ids": [
+        "meaning.e62923cd8ef99cd1.hausdorff-space"
+      ],
+      "attached_formulation_ids": [
+        "form.e62923cd8ef99cd1.hausdorff-space",
+        "form.e62923cd8ef99cd1.hausdorff-diagonal-characterization"
+      ]
+    },
+    {
+      "term": "homeomorphism",
+      "group_id": "preview.term.a3ee16092836e520282b44b0",
+      "classification": "manual_review",
+      "reason": "Continuous bijection with continuous inverse versus preservation and reflection of open sets are distinct useful tests.",
+      "attached_meaning_ids": [
+        "meaning.wave2.directional113.homeomorphism-topological"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.directional113.homeomorphism-topological.1",
+        "form.wave2.directional113.homeomorphism-topological.2"
+      ]
+    },
+    {
+      "term": "independent sigma-algebras",
+      "group_id": "preview.term.cd200396eff73ac3588c2104",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Two algebra independence versus mutual independence of a countable family have different quantification.",
+      "attached_meaning_ids": [
+        "meaning.wave2.cross104.independent-sigma-pair",
+        "meaning.wave2.cross104.independent-sigma-countable"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.cross104.independent-sigma-pair",
+        "form.wave2.cross104.independent-sigma-countable"
+      ]
+    },
+    {
+      "term": "infimum",
+      "group_id": "preview.term.897e4e470a4277317d174f7d",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Real lower bounds and infimum in an arbitrary partially ordered set differ in the ambient ordered object and existence assumptions.",
+      "attached_meaning_ids": [
+        "meaning.wave2.direct.d90bc393eeba8fd1be9e",
+        "meaning.mathdef.original.real.infimum"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.direct.d90bc393eeba8fd1be9e",
+        "form.mathdef.original.real.infimum.primary"
+      ]
+    },
+    {
+      "term": "inner product space",
+      "group_id": "preview.term.45dee5bcad1e41616da6917c",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Real symmetric bilinear and complex Hermitian forms have different scalar fields and conjugation behavior.",
+      "attached_meaning_ids": [
+        "meaning.wave2.analysis98.complex-inner-product-space",
+        "meaning.wave2.analysis98.real-inner-product-space"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.analysis98.complex-inner-product-space",
+        "form.wave2.analysis98.real-inner-product-space"
+      ]
+    },
+    {
+      "term": "Jacobson radical",
+      "group_id": "preview.term.ac9de1a0af078b052768e7ab",
+      "classification": "manual_review",
+      "reason": "Intersection of maximal ideals versus invertibility of 1−xy for all y uses distinct ideal versus unit tests.",
+      "attached_meaning_ids": [
+        "meaning.90b0d1ecfa394230.jacobson-radical-ring"
+      ],
+      "attached_formulation_ids": [
+        "form.90b0d1ecfa394230.jacobson-radical-ring",
+        "form.90b0d1ecfa394230.jacobson-radical-unit-test"
+      ]
+    },
+    {
+      "term": "Jacobson ring",
+      "group_id": "preview.term.0ed760d4f210057981767fd8",
+      "classification": "manual_review",
+      "reason": "Radical-ideal intersection criterion versus the prime-ideal-only criterion is a substantive commutative-algebra equivalence.",
+      "attached_meaning_ids": [
+        "meaning.03b55b8ca41abb20.jacobson-ring"
+      ],
+      "attached_formulation_ids": [
+        "form.03b55b8ca41abb20.jacobson-ring",
+        "form.03b55b8ca41abb20.jacobson-ring-prime-characterization"
+      ]
+    },
+    {
+      "term": "kernel",
+      "group_id": "preview.term.0cfa9728aa127866a3ccaadc",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Concrete additive subgroup kernel of an abelian group homomorphism versus universal categorical kernel morphism.",
+      "attached_meaning_ids": [
+        "meaning.wave2.foundation13.abelian-group-homomorphism-kernel",
+        "meaning.wave2.foundation13.preadditive-category-kernel"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.foundation13.abelian-group-homomorphism-kernel",
+        "form.wave2.foundation13.preadditive-category-kernel"
+      ]
+    },
+    {
+      "term": "kernel of linear transformation",
+      "group_id": "preview.term.d4c72ae421e3ed871e77c069",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Linear maps of modules over rings versus of vector spaces over fields require different ambient algebraic objects.",
+      "attached_meaning_ids": [
+        "meaning.wave2.cross107.module-linear-kernel",
+        "meaning.wave2.cross107.field-vector-linear-kernel"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.cross107.module-linear-kernel",
+        "form.wave2.cross107.field-vector-linear-kernel"
+      ]
+    },
+    {
+      "term": "Linear map",
+      "group_id": "preview.term.091ee6a2f6976c44ce847b3b",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "After consolidating the searchable 'linear transformation' heading into 'Linear map', keep the independent general left R-module map and field-vector-space specialization as distinct and pedagogically informative ambient settings. The redundant researched vector-space formula merges into the existing original Linear map meaning.",
+      "attached_meaning_ids": [
+        "meaning.wave2.cross110.module-linear",
+        "meaning.mathdef.original.linear.linear-map"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.cross110.module-linear",
+        "form.mathdef.original.linear.linear-map.primary"
+      ]
+    },
+    {
+      "term": "Lipschitz continuity",
+      "group_id": "preview.term.426a107c15fd267b04a70c6b",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Global Lipschitz inequality for all pairs differs from a point-anchored bound at a fixed base point; one is generally stronger.",
+      "attached_meaning_ids": [
+        "meaning.wave2.cross104.lipschitz-global",
+        "meaning.wave2.cross104.lipschitz-at-point-anchored"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.cross104.lipschitz-global",
+        "form.wave2.cross104.lipschitz-at-point-anchored"
+      ]
+    },
+    {
+      "term": "local ring",
+      "group_id": "preview.term.08feacd9054c87c94f33767d",
+      "classification": "manual_review",
+      "reason": "Unique maximal ideal versus the ideal of nonunits provides a distinct criterion.",
+      "attached_meaning_ids": [
+        "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+      ],
+      "attached_formulation_ids": [
+        "form.4f7edb6d32334f67.local-ring-unique-maximal",
+        "form.4f7edb6d32334f67.local-ring-nonunit-ideal"
+      ]
+    },
+    {
+      "term": "locally finite Borel measure",
+      "group_id": "preview.term.76dcb56c41851f79796ac1b6",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "One version assumes Hausdorff spaces and includes consequences about compact sets; another is defined on arbitrary topological spaces. Preserve scope pending detailed citation review.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.postwave.scan-locally-finite-borel-measure-20261026",
+        "meaning.mathdef.postwave.locally-finite-borel-measure-20261026"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.mathdef.postwave.scan-locally-finite-borel-measure-20261026",
+        "form.meaning.mathdef.postwave.locally-finite-borel-measure-20261026"
+      ]
+    },
+    {
+      "term": "locally uniform convergence of functions",
+      "group_id": "preview.term.1b59f847bb43b2a1fc2c8b3e",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Compact-local complex analytic formulation versus neighborhood-local topological-source/metric-target formulation; equivalent only under additional hypotheses.",
+      "attached_meaning_ids": [
+        "meaning.wave2.conv126.locally-uniform-metric",
+        "meaning.mathdef.original.complex.locally-uniform-convergence"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.conv126.locally-uniform-metric",
+        "form.mathdef.original.complex.locally-uniform-convergence.primary"
+      ]
+    },
+    {
+      "term": "mapping (function)",
+      "group_id": "preview.term.1902d71c9287ba23f94990fb",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Input-output assignment, bare graph subset, and typed graph object are distinct mathematical encodings, even when equivalent as functions.",
+      "attached_meaning_ids": [
+        "meaning.wave2.foundation.mapping-element-assignment",
+        "meaning.wave2.foundation.mapping-bare-graph",
+        "meaning.wave2.foundation.mapping-typed-graph"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.foundation.mapping-element-assignment",
+        "form.wave2.foundation.mapping-bare-graph",
+        "form.wave2.foundation.mapping-typed-graph"
+      ]
+    },
+    {
+      "term": "martingale",
+      "group_id": "preview.term.ceb6b8999d117e4dbad53ba0",
+      "classification": "manual_review",
+      "reason": "Discrete indexed conditional-expectation equations and continuous-time martingale filtration structure use different time domains.",
+      "attached_meaning_ids": [
+        "meaning.wave2.research81.martingale-discrete",
+        "meaning.wave2.research81.martingale-continuous-index"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.research81.martingale-discrete.01",
+        "form.wave2.research81.martingale-discrete.02",
+        "form.wave2.research81.martingale-continuous-index.01"
+      ]
+    },
+    {
+      "term": "metric space",
+      "group_id": "preview.term.4b03aa52d6e7cf254030fecb",
+      "classification": "manual_review",
+      "reason": "Metric axioms and metric-induced compatible topology are related but not near-verbatim variants; retain for manual editorial decision.",
+      "attached_meaning_ids": [
+        "meaning.wave2.analysis98.metric-space"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.analysis98.metric-space",
+        "form.wave2.analysis98.metric-space.compatible"
+      ]
+    },
+    {
+      "term": "minimal polynomial",
+      "group_id": "preview.term.3d1aea08556ce5f234a4f1b7",
+      "classification": "manual_review",
+      "reason": "Least-degree monic annihilating polynomial versus a monic generator of the evaluation kernel use different defining constructions.",
+      "attached_meaning_ids": [
+        "meaning.3aaa8d6f2195bb8e.minimal-polynomial",
+        "meaning.mathdef.original.arithmetic.minimal-polynomial"
+      ],
+      "attached_formulation_ids": [
+        "form.3aaa8d6f2195bb8e.minimal-polynomial",
+        "form.mathdef.original.arithmetic.minimal-polynomial.primary"
+      ]
+    },
+    {
+      "term": "module over a ring",
+      "group_id": "preview.term.9e7ff9873116b378f971e21c",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Nonunital right modules, unital left modules, and unital right modules encode different module actions/conventions.",
+      "attached_meaning_ids": [
+        "meaning.wave2.module94.right-module-nonunital",
+        "meaning.wave2.module94.unital-left-module",
+        "meaning.wave2.module94.unital-right-module"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.module94.right-module-nonunital",
+        "form.wave2.module94.unital-left-module",
+        "form.wave2.module94.unital-right-module"
+      ]
+    },
+    {
+      "term": "natural numbers",
+      "group_id": "preview.term.8822944a61d66f6d2bedbd36",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Inclusion versus exclusion of zero affects the underlying set and dependent constructions; do not collapse conventions silently.",
+      "attached_meaning_ids": [
+        "meaning.wave2.set63.natural-including-zero",
+        "meaning.wave2.set63.natural-positive-convention"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.set63.natural-including-zero",
+        "form.wave2.set63.natural-positive-convention"
+      ]
+    },
+    {
+      "term": "Noetherian module",
+      "group_id": "preview.term.038a61237136becad1075686",
+      "classification": "manual_review",
+      "reason": "Finite generation of submodules, ACC, and inclusion-maximal-element conditions are useful alternate tests.",
+      "attached_meaning_ids": [
+        "meaning.wave2.foundation76.noetherian-module"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.foundation76.noetherian-module.01",
+        "form.wave2.foundation76.noetherian-module.02",
+        "form.wave2.foundation76.noetherian-module.03"
+      ]
+    },
+    {
+      "term": "Noetherian ring",
+      "group_id": "preview.term.a62fa51861bd09da2bf774c5",
+      "classification": "manual_review",
+      "reason": "Finitely generated ideals, ACC, maximal condition, and module Noetherianity give useful mathematically different tests.",
+      "attached_meaning_ids": [
+        "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+      ],
+      "attached_formulation_ids": [
+        "form.86b5d488b98c612f.noetherian-commutative-ring",
+        "form.wave2.variant71.noetherian.ascending-chain-condition",
+        "form.wave2.variant71.noetherian.maximal-condition",
+        "form.wave2.variant71.noetherian.noetherian-as-module"
+      ]
+    },
+    {
+      "term": "norm on a vector space",
+      "group_id": "preview.term.18a7eb3d45130d24661f2688",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Normed division-ring scalar systems versus real or complex normed spaces are different ambient frameworks.",
+      "attached_meaning_ids": [
+        "meaning.wave2.analysis98.norm-over-normed-division-ring",
+        "meaning.wave2.analysis98.norm-over-real-or-complex"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.analysis98.norm-over-normed-division-ring",
+        "form.wave2.analysis98.norm-over-real-or-complex"
+      ]
+    },
+    {
+      "term": "normal algebraic extension",
+      "group_id": "preview.term.848328b709e503fba7b2b12c",
+      "classification": "manual_review",
+      "reason": "Splitting of each irreducible polynomial with a root versus splitting of each element's minimal polynomial are informative equivalent characterizations.",
+      "attached_meaning_ids": [
+        "meaning.50d335de00e5f11d.normal-algebraic-extension",
+        "meaning.ac17dab9530c0b80.normal-algebraic-field-extension"
+      ],
+      "attached_formulation_ids": [
+        "form.50d335de00e5f11d.normal-algebraic-extension",
+        "form.ac17dab9530c0b80.normal-algebraic-field-extension"
+      ]
+    },
+    {
+      "term": "normal subgroup",
+      "group_id": "preview.term.a21b716a3643a4592212a256",
+      "classification": "manual_review",
+      "reason": "Coset equality, equality under conjugation, and conjugation inclusion for every group element are distinct useful algebraic tests.",
+      "attached_meaning_ids": [
+        "meaning.wave2.quot119.normal-subgroup"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.quot119.normal-subgroup.1",
+        "form.wave2.quot119.normal-subgroup.2",
+        "form.wave2.quot119.normal-subgroup.3"
+      ]
+    },
+    {
+      "term": "normed vector space",
+      "group_id": "preview.term.2432a1cc387564cfcfadeeb4",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Real/complex scalar field versus general normed division-ring scalar field.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.original.functional.normed-space",
+        "meaning.wave2.analysis98.normed-vector-space"
+      ],
+      "attached_formulation_ids": [
+        "form.mathdef.original.functional.normed-space.primary",
+        "form.wave2.analysis98.normed-vector-space"
+      ]
+    },
+    {
+      "term": "open ball",
+      "group_id": "preview.term.2ec63b326ba72e4796072211",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Metric-space ball d(x,a)<r and norm-space ball ∥x−a∥<r reflect different given structures; normed-space version is informative specialization.",
+      "attached_meaning_ids": [
+        "meaning.wave2.directional113.open-metric",
+        "meaning.wave2.directional113.open-norm"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.directional113.open-metric",
+        "form.wave2.directional113.open-norm"
+      ]
+    },
+    {
+      "term": "open cover",
+      "group_id": "preview.term.8e7bcb0d8c723d66c5ad5167",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Cover of an arbitrary subset by ambient open sets versus a cover of the entire space; preserve the broader construction.",
+      "attached_meaning_ids": [
+        "meaning.wave2.direct.62983821c35d185a119d",
+        "meaning.mathdef.original.topology.open-cover"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.direct.62983821c35d185a119d",
+        "form.mathdef.original.topology.open-cover.primary"
+      ]
+    },
+    {
+      "term": "open interval of real numbers",
+      "group_id": "preview.term.4d007218b80c170ac24d4cdf",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Extended-real endpoints include unbounded open intervals while finite endpoints cover only bounded intervals.",
+      "attached_meaning_ids": [
+        "meaning.wave2.direct.8d23b7ba80f9f5e74420",
+        "meaning.mathdef.postwave.scan-open-real-interval-20261026"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.direct.8d23b7ba80f9f5e74420",
+        "form.meaning.mathdef.postwave.scan-open-real-interval-20261026"
+      ]
+    },
+    {
+      "term": "Open set",
+      "group_id": "preview.term.5f786430303abc2aa77cc930",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Metric-ball openness and arbitrary topological openness require different input structures.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.original.metric.open-set",
+        "meaning.mathdef.original.topology.open-set"
+      ],
+      "attached_formulation_ids": [
+        "form.mathdef.original.metric.open-set.primary",
+        "form.mathdef.original.topology.open-set.primary"
+      ]
+    },
+    {
+      "term": "Operator norm",
+      "group_id": "preview.term.5cb3ac87c11761b120ed7dbe",
+      "classification": "obvious_duplicate",
+      "reason": "Both state exactly the same supremum over the unit ball; the researched surviving form also records an additional equivalent bound characterization.",
+      "attached_meaning_ids": [
+        "meaning.wave2.pop142.bounded-operator-norm",
+        "meaning.mathdef.original.functional.operator-norm"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.pop142.bounded-operator-norm",
+        "form.mathdef.original.functional.operator-norm.primary"
+      ],
+      "duplicate_merger": {
+        "keep_formulation_id": "form.meaning.wave2.pop142.bounded-operator-norm",
+        "remove_formulation_ids": [
+          "form.mathdef.original.functional.operator-norm.primary"
+        ]
+      },
+      "after_merge": "single_or_distinct_surviving_formulation"
+    },
+    {
+      "term": "orbit of an element under a group action",
+      "group_id": "preview.term.5016493f522d5cd084807b77",
+      "classification": "manual_review",
+      "reason": "Explicit translate set G·x versus equivalence class under the action-induced equivalence relation are different constructions.",
+      "attached_meaning_ids": [
+        "meaning.wave2.group116.group-orbit"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.group116.group-orbit.1",
+        "form.wave2.group116.group-orbit.2"
+      ]
+    },
+    {
+      "term": "orthogonal polynomial system",
+      "group_id": "preview.term.0c1a3884aca3d9d0c7f27ac5",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Continuous weight on an interval, discrete countable support, finite support and a general Stieltjes measure supply different orthogonality frameworks.",
+      "attached_meaning_ids": [
+        "meaning.wave2.analysis.orthogonal-polynomials-interval",
+        "meaning.wave2.analysis.orthogonal-polynomials-countable",
+        "meaning.wave2.analysis.orthogonal-polynomials-finite",
+        "meaning.wave2.analysis.orthogonal-polynomials-measure"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.analysis.orthogonal-polynomials-interval",
+        "form.wave2.analysis.orthogonal-polynomials-countable",
+        "form.wave2.analysis.orthogonal-polynomials-finite",
+        "form.wave2.analysis.orthogonal-polynomials-measure"
+      ]
+    },
+    {
+      "term": "pointwise convergence of functions",
+      "group_id": "preview.term.b82e038e9d27954f2d54ac48",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Real-valued pointwise limits and arbitrary topological-target pointwise limits have different codomain frameworks.",
+      "attached_meaning_ids": [
+        "meaning.wave2.conv126.pointwise-real",
+        "meaning.wave2.conv126.pointwise-topological"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.conv126.pointwise-real",
+        "form.wave2.conv126.pointwise-topological"
+      ]
+    },
+    {
+      "term": "polynomial ring",
+      "group_id": "preview.term.8db5bca164e3c67e14de5ad0",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "One formal indeterminate versus an arbitrary family of indeterminates uses different polynomial constructions.",
+      "attached_meaning_ids": [
+        "meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+        "meaning.mathdef.original.algebra.polynomial-ring"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.direct.9db64b2f9cdb8258e3d8",
+        "form.mathdef.original.algebra.polynomial-ring.primary"
+      ]
+    },
+    {
+      "term": "product topology of a family of topological spaces",
+      "group_id": "preview.term.26ac1794536841cb497facc1",
+      "classification": "manual_review",
+      "reason": "Projection-inverse-image subbasis versus finite-support box basis uses distinct generating families.",
+      "attached_meaning_ids": [
+        "meaning.wave2.branch129.indexed-product-topology"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.branch129.indexed-product-topology.1",
+        "form.wave2.branch129.indexed-product-topology.2"
+      ]
+    },
+    {
+      "term": "profinite space via finite inverse limits",
+      "group_id": "preview.term.226bcb78b9174a32e281fc03",
+      "classification": "manual_review",
+      "reason": "Inverse-limit construction versus compact Hausdorff totally disconnected characterization are substantially different frameworks.",
+      "attached_meaning_ids": [
+        "meaning.7368f71dcc6adfef.profinite-topological-space"
+      ],
+      "attached_formulation_ids": [
+        "form.7368f71dcc6adfef.profinite-topological-space",
+        "form.7368f71dcc6adfef.profinite-space-compact-characterization"
+      ]
+    },
+    {
+      "term": "pure ideal",
+      "group_id": "preview.term.1e001f82238f1662bec86d87",
+      "classification": "manual_review",
+      "reason": "Flatness of R/I versus I∩J=IJ for every ideal J uses different module/ideal conditions.",
+      "attached_meaning_ids": [
+        "meaning.3fe40ac4fb74bff2.pure-ideal"
+      ],
+      "attached_formulation_ids": [
+        "form.3fe40ac4fb74bff2.pure-ideal",
+        "form.3fe40ac4fb74bff2.pure-ideal-intersection-test"
+      ]
+    },
+    {
+      "term": "quotient ring",
+      "group_id": "preview.term.417e9d1aa80723f7614b6143",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Quotient of noncommutative unital ring by two-sided ideal versus commutative quotient.",
+      "attached_meaning_ids": [
+        "meaning.wave2.direct.50fc57153b93520a247a",
+        "meaning.mathdef.original.algebra.quotient-ring"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.direct.50fc57153b93520a247a",
+        "form.mathdef.original.algebra.quotient-ring.primary"
+      ]
+    },
+    {
+      "term": "random variable",
+      "group_id": "preview.term.a47cd7498d859dacd8601c56",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "General measurable-state-space random elements versus real-valued measurable functions use different codomains and sigma-algebras.",
+      "attached_meaning_ids": [
+        "meaning.wave2.prob90.random-variable-general",
+        "meaning.wave2.prob90.random-variable-real"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.prob90.random-variable-general",
+        "form.wave2.prob90.random-variable-real"
+      ]
+    },
+    {
+      "term": "rational number",
+      "group_id": "preview.term.6bf21a4b085866707a1b346d",
+      "classification": "manual_review",
+      "reason": "Real fraction representation versus formal fraction-field construction of Q.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.original.number.rational-number",
+        "meaning.wave2.rational55.rational-number"
+      ],
+      "attached_formulation_ids": [
+        "form.mathdef.original.number.rational-number.primary",
+        "form.wave2.rational55.rational-number"
+      ]
+    },
+    {
+      "term": "real number system (complete ordered field)",
+      "group_id": "preview.term.966202b25a1bc8e39e8148e3",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Axiomatic complete ordered field, Dedekind-cut construction and Cauchy-completion construction describe genuinely different presentations/objects.",
+      "attached_meaning_ids": [
+        "meaning.wave2.real45.complete-ordered-real-field",
+        "meaning.wave2.real50.cut-model-reals",
+        "meaning.wave2.real52.cauchy-quotient-reals"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.real45.complete-ordered-real-field",
+        "form.wave2.real50.cut-model-reals",
+        "form.wave2.real52.cauchy-quotient-reals"
+      ]
+    },
+    {
+      "term": "reduced ring",
+      "group_id": "preview.term.9c0ed6de6032ac3ad1c2905f",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Definition in commutative rings versus possibly noncommutative associative rings.",
+      "attached_meaning_ids": [
+        "meaning.wave2.foundation.reduced-ring",
+        "meaning.mathdef.original.commalg.reduced-ring"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.foundation.reduced-ring",
+        "form.mathdef.original.commalg.reduced-ring.primary"
+      ]
+    },
+    {
+      "term": "reduced scheme",
+      "group_id": "preview.term.b7219ad69f31d461f99151e1",
+      "classification": "manual_review",
+      "reason": "Every local ring reduced versus all open-section rings reduced is a different local-to-global formulation.",
+      "attached_meaning_ids": [
+        "meaning.6a21c2d4f3354c8f.reduced-scheme"
+      ],
+      "attached_formulation_ids": [
+        "form.6a21c2d4f3354c8f.reduced-scheme",
+        "form.6a21c2d4f3354c8f.reduced-scheme-sections-equivalent"
+      ]
+    },
+    {
+      "term": "ring homomorphism",
+      "group_id": "preview.term.2d6c6232da27c0d30d9733f6",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "A ring homomorphism that must preserve identity is not interchangeable with an additive multiplicative map whose preservation of 1 is not required. Keep both conventions explicit.",
+      "attached_meaning_ids": [
+        "meaning.wave2.foundation.ring-map-general",
+        "meaning.wave2.foundation.ring-map-unital"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.foundation.ring-map-general",
+        "form.wave2.foundation.ring-map-unital"
+      ]
+    },
+    {
+      "term": "set difference",
+      "group_id": "preview.term.2b42a9e4576524bfa4f6dd4d",
+      "classification": "manual_review",
+      "reason": "Relative complement of a specified subset in an ambient set versus unrestricted A\\B have different stated inputs; their exact redundancy is not adjudicated.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.original.sets.complement",
+        "meaning.mathdef.original.sets.difference"
+      ],
+      "attached_formulation_ids": [
+        "form.mathdef.original.sets.complement.primary",
+        "form.mathdef.original.sets.difference.primary"
+      ]
+    },
+    {
+      "term": "Set partition",
+      "group_id": "preview.term.504bbb95cf6c5140e60898fe",
+      "classification": "obvious_duplicate",
+      "reason": "Both require exactly a pairwise disjoint family of nonempty blocks whose union is the original set. The third, unique-membership characterization is NOT discarded.",
+      "attached_meaning_ids": [
+        "meaning.mathdef.original.combin.set-partition",
+        "meaning.wave2.group116.set-partition"
+      ],
+      "attached_formulation_ids": [
+        "form.mathdef.original.combin.set-partition.primary",
+        "form.wave2.group116.set-partition.1",
+        "form.wave2.group116.set-partition.2"
+      ],
+      "duplicate_merger": {
+        "keep_formulation_id": "form.wave2.group116.set-partition.1",
+        "remove_formulation_ids": [
+          "form.mathdef.original.combin.set-partition.primary"
+        ]
+      },
+      "after_merge": "manual_review_of_remaining_unique_membership_characterization"
+    },
+    {
+      "term": "sigma-algebra",
+      "group_id": "preview.term.704b0114ba075e1e7e463d1b",
+      "classification": "manual_review",
+      "reason": "Complement closure plus countable unions versus differences plus disjoint countable unions use different closure axioms.",
+      "attached_meaning_ids": [
+        "meaning.wave2.foundation.sigma-algebra"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.foundation.sigma-algebra",
+        "form.wave2.broad67.sigma-difference-disjoint-countable"
+      ]
+    },
+    {
+      "term": "Stirling numbers of the second kind",
+      "group_id": "preview.term.ced56e2edecfaa78271741ad",
+      "classification": "manual_review",
+      "reason": "Recurrence and initial conditions versus expansion coefficients in a falling-factorial polynomial basis are mathematically different characterizations.",
+      "attached_meaning_ids": [
+        "meaning.wave2.cross133.stirling-second-kind"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.cross133.stirling-second-kind.1",
+        "form.wave2.cross133.stirling-second-kind.2"
+      ]
+    },
+    {
+      "term": "stochastic process",
+      "group_id": "preview.term.00a422883a8b361f24e309a3",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "A family of random elements potentially with differing state spaces versus an E-valued process with fixed measurable state space.",
+      "attached_meaning_ids": [
+        "meaning.wave2.found85.stochastic-process",
+        "meaning.mathdef.original.prob.stochastic-process"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.found85.stochastic-process",
+        "form.mathdef.original.prob.stochastic-process.primary"
+      ]
+    },
+    {
+      "term": "supremum",
+      "group_id": "preview.term.d718709d322c64a894187286",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Real least upper bound versus upper bounds in an arbitrary partially ordered set.",
+      "attached_meaning_ids": [
+        "meaning.wave2.direct.066b1d1b9032a2e86bdd",
+        "meaning.mathdef.original.real.supremum"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.direct.066b1d1b9032a2e86bdd",
+        "form.mathdef.original.real.supremum.primary"
+      ]
+    },
+    {
+      "term": "trace of a square matrix",
+      "group_id": "preview.term.3af55b804f90312bbe52b180",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Trace over an arbitrary commutative ring (including 0×0 convention) versus strictly positive-size matrices over a field uses different domains.",
+      "attached_meaning_ids": [
+        "meaning.wave2.pop139.matrix-trace",
+        "meaning.wave2.direct.c4602d674cca1ee0141b"
+      ],
+      "attached_formulation_ids": [
+        "form.meaning.wave2.pop139.matrix-trace",
+        "form.meaning.wave2.direct.c4602d674cca1ee0141b"
+      ]
+    },
+    {
+      "term": "uniform convergence of functions",
+      "group_id": "preview.term.ff2392efcd19d53bf4557741",
+      "classification": "obviously_mathematically_distinct",
+      "reason": "Real-valued uniform convergence versus general metric-valued uniform convergence has a different target structure.",
+      "attached_meaning_ids": [
+        "meaning.wave2.conv126.uniform-real",
+        "meaning.wave2.conv126.uniform-metric"
+      ],
+      "attached_formulation_ids": [
+        "form.wave2.conv126.uniform-real",
+        "form.wave2.conv126.uniform-metric"
+      ]
+    }
+  ],
+  "notes": [
+    "All 90 variant-bearing headings classified in one inventory pass. Earlier source/subject audits are not repeated here.",
+    "The four clear duplicate actions remove four formulations and consolidate any now-redundant meanings, keeping all historical IDs and citation URL provenance.",
+    "A heading can still have meaningful surviving variants after its obvious duplicate is removed; Set partition has a separate remaining characterization."
+  ]
+}
