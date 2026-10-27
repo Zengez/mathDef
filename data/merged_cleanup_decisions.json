@@ -259,6 +259,167 @@
       "kept_meaning_id": "meaning.wave2.foundation.sigma-algebra",
       "kept_formulation_id": "form.wave2.foundation.sigma-algebra",
       "reason": "Identical sigma-algebra axioms; researched second formulation is a genuinely informative equivalent characterization and stays."
+    },
+    {
+      "case_id": "lipschitz-global",
+      "removed_meaning_id": "meaning.mathdef.original.real.lipschitz-continuity",
+      "kept_meaning_id": "meaning.wave2.cross104.lipschitz-global",
+      "kept_formulation_id": "form.wave2.cross104.lipschitz-global",
+      "reason": "Same global metric-pair Lipschitz bound. Retain distinct point-anchored condition."
+    },
+    {
+      "case_id": "antisymmetric-relation",
+      "removed_meaning_id": "meaning.wave2.direct.9a71afd4a344322c1d26",
+      "kept_meaning_id": "meaning.mathdef.original.relations.antisymmetric-relation",
+      "kept_formulation_id": "form.mathdef.original.relations.antisymmetric-relation.primary",
+      "reason": "Same implication xRy and yRx implies x=y; original clarifies difference from symmetry."
+    },
+    {
+      "case_id": "binary-relation-graph",
+      "removed_meaning_id": "meaning.mathdef.original.relations.binary-relation",
+      "kept_meaning_id": "meaning.wave2.foundation.binary-relation-subset",
+      "kept_formulation_id": "form.wave2.foundation.binary-relation-subset",
+      "reason": "Same subset R⊆S×T construction. Retain genuinely distinct typed-triple (S,T,R) formulation."
+    },
+    {
+      "case_id": "directed-set",
+      "removed_meaning_id": "meaning.709d3d2f82950c5b.directed-preordered-set",
+      "kept_meaning_id": "meaning.mathdef.original.relations.directed-set",
+      "kept_formulation_id": "form.mathdef.original.relations.directed-set.primary",
+      "reason": "Same nonempty directed preorder and common upper-bound condition; original explains no antisymmetry."
+    },
+    {
+      "case_id": "equivalence-class",
+      "removed_meaning_id": "meaning.wave2.set63.set-of-related-elements",
+      "kept_meaning_id": "meaning.mathdef.original.relations.equivalence-class",
+      "kept_formulation_id": "form.mathdef.original.relations.equivalence-class.primary",
+      "reason": "Same equivalence-class subset of representatives; original records the partition consequence."
+    },
+    {
+      "case_id": "order-isomorphism",
+      "removed_meaning_id": "meaning.wave2.direct.e892b9d8b91c184b0801",
+      "kept_meaning_id": "meaning.mathdef.original.relations.order-isomorphism",
+      "kept_formulation_id": "form.mathdef.original.relations.order-isomorphism.primary",
+      "reason": "Same bijective order-preserving-and-reflecting map; original includes equivalent inverse criterion."
+    },
+    {
+      "case_id": "symmetric-relation",
+      "removed_meaning_id": "meaning.wave2.direct.972ae1e91200fae874aa",
+      "kept_meaning_id": "meaning.mathdef.original.relations.symmetric-relation",
+      "kept_formulation_id": "form.mathdef.original.relations.symmetric-relation.primary",
+      "reason": "Same xRy implies yRx condition; remarks about antisymmetry do not create another meaning."
+    },
+    {
+      "case_id": "total-order",
+      "removed_meaning_id": "meaning.wave2.direct.22a110eb8988efe59f29",
+      "kept_meaning_id": "meaning.mathdef.original.relations.total-order",
+      "kept_formulation_id": "form.mathdef.original.relations.total-order.primary",
+      "reason": "Reflexive, antisymmetric, transitive and pairwise comparable relation; no separate object or convention."
+    },
+    {
+      "case_id": "affine-scheme",
+      "removed_meaning_id": "meaning.4c7d59ba7058613b.affine-scheme",
+      "kept_meaning_id": "meaning.mathdef.original.schemes.affine-scheme",
+      "kept_formulation_id": "form.mathdef.original.schemes.affine-scheme.primary",
+      "reason": "Same locally ringed space isomorphic to Spec(R) with structure sheaf, for a commutative ring."
+    },
+    {
+      "case_id": "locally-ringed-space",
+      "removed_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space",
+      "kept_meaning_id": "meaning.mathdef.original.schemes.locally-ringed-space",
+      "kept_formulation_id": "form.mathdef.original.schemes.locally-ringed-space.primary",
+      "reason": "Same sheaf-of-rings/stalks-are-local condition; ringed-space wording is equivalent."
+    },
+    {
+      "case_id": "reduced-scheme",
+      "removed_meaning_id": "meaning.mathdef.original.schemes.reduced-scheme",
+      "kept_meaning_id": "meaning.6a21c2d4f3354c8f.reduced-scheme",
+      "kept_formulation_id": "form.6a21c2d4f3354c8f.reduced-scheme",
+      "reason": "Same reduced stalks; keep the researched alternative reduced-sections characterization."
+    },
+    {
+      "case_id": "scheme",
+      "removed_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
+      "kept_meaning_id": "meaning.mathdef.original.schemes.scheme",
+      "kept_formulation_id": "form.mathdef.original.schemes.scheme.primary",
+      "reason": "Same locally ringed space locally isomorphic to affine schemes; open-cover vs per-point neighborhood are trivial reformulations."
+    },
+    {
+      "case_id": "cardinality",
+      "removed_meaning_id": "meaning.081430bc340a055a.cardinality",
+      "kept_meaning_id": "meaning.mathdef.original.sets.cardinality",
+      "kept_formulation_id": "form.mathdef.original.sets.cardinality.primary",
+      "reason": "Least equipotent ordinal formulation already present in original, along with equipotence via bijection."
+    },
+    {
+      "case_id": "cartesian-product-binary",
+      "removed_meaning_id": "meaning.wave2.foundation.cartesian-product-binary",
+      "kept_meaning_id": "meaning.mathdef.original.sets.cartesian-product",
+      "kept_formulation_id": "form.mathdef.original.sets.cartesian-product.primary",
+      "reason": "Same binary product of sets of ordered pairs. Original also discusses indexed products without defining a separate variant."
+    },
+    {
+      "case_id": "limit-ordinal",
+      "removed_meaning_id": "meaning.f810d472f5a4d367.limit-ordinal",
+      "kept_meaning_id": "meaning.mathdef.original.sets.limit-ordinal",
+      "kept_formulation_id": "form.mathdef.original.sets.limit-ordinal.primary",
+      "reason": "Same nonzero nonsuccessor ordinal. Original also states union characterization."
+    },
+    {
+      "case_id": "kuratowski-ordered-pair",
+      "removed_meaning_id": "meaning.wave2.direct.2d4e4af6f3b83da929a6",
+      "kept_meaning_id": "meaning.mathdef.original.sets.ordered-pair",
+      "kept_formulation_id": "form.mathdef.original.sets.ordered-pair.primary",
+      "reason": "Same precise Kuratowski encoding {{a},{a,b}} and coordinate uniqueness."
+    },
+    {
+      "case_id": "subset-nonstrict",
+      "removed_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "kept_meaning_id": "meaning.mathdef.original.sets.subset",
+      "kept_formulation_id": "form.mathdef.original.sets.subset.primary",
+      "reason": "Same inclusion predicate; equality allowed in both, original distinguishes proper subset."
+    },
+    {
+      "case_id": "successor-ordinal-source-one",
+      "removed_meaning_id": "meaning.f810d472f5a4d367.successor-ordinal",
+      "kept_meaning_id": "meaning.mathdef.original.sets.successor-ordinal",
+      "kept_formulation_id": "form.mathdef.original.sets.successor-ordinal.primary",
+      "reason": "Same ordinal successor α∪{α} and successor property; original specifies zero and limits excluded."
+    },
+    {
+      "case_id": "successor-ordinal-source-two",
+      "removed_meaning_id": "meaning.wave2.direct.bfcb0543265f0a0f99cf",
+      "kept_meaning_id": "meaning.mathdef.original.sets.successor-ordinal",
+      "kept_formulation_id": "form.mathdef.original.sets.successor-ordinal.primary",
+      "reason": "Another exact von Neumann ordinal successor construction, differing only in explanatory greatest-member remark."
+    },
+    {
+      "case_id": "transitive-set",
+      "removed_meaning_id": "meaning.mathdef.original.sets.transitive-set",
+      "kept_meaning_id": "meaning.wave2.direct.research401",
+      "kept_formulation_id": "form.meaning.wave2.direct.research401",
+      "reason": "Both define every member y of A being a subset of A; researched formulation additionally retains the informative union criterion ∪A⊆A."
+    },
+    {
+      "case_id": "discrete-topology",
+      "removed_meaning_id": "meaning.wave2.foundation76.discrete-topology",
+      "kept_meaning_id": "meaning.mathdef.original.topology.discrete-topology",
+      "kept_formulation_id": "form.mathdef.original.topology.discrete-topology.primary",
+      "reason": "Same topology P(X). Nonemptiness restriction in research formulation is a boundary convention, not a different topology construction; mathDef uses broad X including empty. No unsupported attribution of source intent."
+    },
+    {
+      "case_id": "hausdorff-space",
+      "removed_meaning_id": "meaning.mathdef.original.topology.hausdorff-space",
+      "kept_meaning_id": "meaning.e62923cd8ef99cd1.hausdorff-space",
+      "kept_formulation_id": "form.e62923cd8ef99cd1.hausdorff-space",
+      "reason": "Same disjoint neighborhoods for every pair of distinct points. Retain informative closed-diagonal characterization as separate researched formulation."
+    },
+    {
+      "case_id": "homeomorphism",
+      "removed_meaning_id": "meaning.mathdef.original.topology.homeomorphism",
+      "kept_meaning_id": "meaning.wave2.directional113.homeomorphism-topological",
+      "kept_formulation_id": "form.wave2.directional113.homeomorphism-topological.1",
+      "reason": "Same bijective continuous map with continuous inverse. Research retains open-set image iff equivalence as a second genuine characterization."
     }
   ],
   "metadata_assignments": {
@@ -419,6 +580,82 @@
     "meaning.wave2.prob90.random-variable-general": {
       "subject": "Probability Theory",
       "context": "General measurable state spaces"
+    },
+    "meaning.wave2.cross104.lipschitz-global": {
+      "subject": "Metric Geometry",
+      "context": "Metric spaces"
+    },
+    "meaning.mathdef.original.relations.antisymmetric-relation": {
+      "subject": "Set Theory"
+    },
+    "meaning.wave2.foundation.binary-relation-subset": {
+      "subject": "Set Theory",
+      "context": "Relations as subsets"
+    },
+    "meaning.mathdef.original.relations.directed-set": {
+      "subject": "Order Theory"
+    },
+    "meaning.mathdef.original.relations.equivalence-class": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.relations.order-isomorphism": {
+      "subject": "Order Theory"
+    },
+    "meaning.mathdef.original.relations.symmetric-relation": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.relations.total-order": {
+      "subject": "Order Theory"
+    },
+    "meaning.mathdef.original.schemes.affine-scheme": {
+      "subject": "Algebraic Geometry"
+    },
+    "meaning.mathdef.original.schemes.locally-ringed-space": {
+      "subject": "Algebraic Geometry"
+    },
+    "meaning.6a21c2d4f3354c8f.reduced-scheme": {
+      "subject": "Algebraic Geometry"
+    },
+    "meaning.mathdef.original.schemes.scheme": {
+      "subject": "Algebraic Geometry"
+    },
+    "meaning.mathdef.original.sets.cardinality": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.cartesian-product": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.limit-ordinal": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.ordered-pair": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.subset": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.successor-ordinal": {
+      "subject": "Set Theory"
+    },
+    "meaning.wave2.direct.research401": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.topology.discrete-topology": {
+      "subject": "Topology"
+    },
+    "meaning.e62923cd8ef99cd1.hausdorff-space": {
+      "subject": "Topology"
+    },
+    "meaning.wave2.directional113.homeomorphism-topological": {
+      "subject": "Topology"
+    },
+    "meaning.wave2.foundation.binary-relation-typed": {
+      "subject": "Set Theory",
+      "context": "Typed relations"
+    },
+    "meaning.wave2.cross104.lipschitz-at-point-anchored": {
+      "subject": "Metric Geometry",
+      "context": "Point-anchored Lipschitz bounds"
     }
   },
   "text_overrides": {
