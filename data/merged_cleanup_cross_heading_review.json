@@ -118,6 +118,12 @@
       "left_meaning_id": "meaning.wave2.direct.8d23b7ba80f9f5e74420",
       "right_meaning_id": "meaning.mathdef.postwave.scan-open-real-interval-20261026",
       "reason": "One construction admits extended-real endpoints and unbounded intervals; the second explicitly specifies finite real endpoints a<b and separately describes unbounded sets. Preserve the scope distinction, not automatic cross-heading consolidation."
+    },
+    {
+      "case_id": "cross-heading-radical-operation-vs-property",
+      "left_group_id": "preview.term.84729ab91dfb061c8cea89dc",
+      "right_group_id": "preview.term.e55469f65a30fbe5b61bc6df",
+      "reason": "Radical of an ideal is the ideal-valued operation I↦√I. A radical ideal is an input ideal satisfying I=√I. They are mathematically different types: construction versus predicate. Do not collapse or group these two headings merely because of shared word 'radical'."
     }
   ],
   "pending_mathematical_comparison": [
@@ -125,6 +131,56 @@
       "left_term": "affine hull",
       "right_term": "Affine span",
       "reason": "Shared alias suggests synonymy, but inspect the full existing Affine span formulation including empty-set conventions before deciding."
+    }
+  ],
+  "group_only_alias_merges": [
+    {
+      "case_id": "alias-bounded-linear-operator-variants",
+      "removed_group_id": "preview.term.60ea3ac022a7140b6a081e95",
+      "retained_group_id": "preview.term.eee5144010a080f51c86a85d",
+      "removed_title": "bounded linear transformation",
+      "retained_title": "Bounded linear operator",
+      "reason": "Both express global norm-bounded linear maps; preserve the researched explicit real/complex scalar restriction and the original's unrestricted normed-space ambient statement as separate contextual meanings. Both URLs survive."
+    },
+    {
+      "case_id": "alias-filtered-vs-small-filtered-category",
+      "removed_group_id": "preview.term.f2c3546e768ed92f9686db0f",
+      "retained_group_id": "preview.term.651247601abdb144354bd15c",
+      "removed_title": "small filtered category",
+      "retained_title": "filtered category",
+      "reason": "Both impose nonemptiness, joint cocones for object pairs and eventual equalization of parallel arrows, but one additionally requires smallness; retain the substantive size qualifier and both citations."
+    },
+    {
+      "case_id": "alias-free-left-module",
+      "removed_group_id": "preview.term.7ed1ac61356035c89dc9f928",
+      "retained_group_id": "preview.term.732348eb19da8780d82366bf",
+      "removed_title": "free left module",
+      "retained_title": "Free module",
+      "reason": "Both describe module bases/direct sums, but the researched variant explicitly chooses a unital left R-module over a possibly noncommutative unital ring; original leaves the handedness and unital convention tacit. Keep as distinct contextual meanings."
+    },
+    {
+      "case_id": "alias-finite-vs-extended-open-interval",
+      "removed_group_id": "preview.term.68cf18dec9325efe1dbafe05",
+      "retained_group_id": "preview.term.4d007218b80c170ac24d4cdf",
+      "removed_title": "open interval in the real line",
+      "retained_title": "open interval of real numbers",
+      "reason": "Both use the real order, but one permits infinite extended-real endpoints and the other explicitly requires finite a<b. Preserve scope and all references rather than declaring these formulations redundant."
+    },
+    {
+      "case_id": "alias-operator-norm-alternative-characterization",
+      "removed_group_id": "preview.term.01f08332bb83933eb66e9320",
+      "retained_group_id": "preview.term.5cb3ac87c11761b120ed7dbe",
+      "removed_title": "norm of a bounded linear transformation",
+      "retained_title": "Operator norm",
+      "reason": "The same operator norm under real/complex scalars, but the researched passage additionally presents its infimum-of-global-bounds characterization. Retain the mathematically informative characterization alongside the original supremum definition."
+    },
+    {
+      "case_id": "alias-relative-complement-set-difference",
+      "removed_group_id": "preview.term.ee240ba0a2e890bb1fe24fc4",
+      "retained_group_id": "preview.term.2b42a9e4576524bfa4f6dd4d",
+      "removed_title": "Relative complement",
+      "retained_title": "set difference",
+      "reason": "The construction X\\\\A with A⊆X is a specialized relative-complement view of arbitrary A\\\\B. Preserve the explicit choice of ambient universe and notation-scope distinction as an informative formulation."
     }
   ]
 }

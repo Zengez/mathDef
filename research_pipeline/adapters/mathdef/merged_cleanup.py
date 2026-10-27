@@ -116,7 +116,7 @@ def _ids(catalog: dict) -> tuple[dict, dict, dict]:
 
 
 
-def _apply_reviewed_group_aliases(catalog: dict, repo: Path) -> tuple[dict, list[dict]]:
+def _apply_reviewed_group_aliases(catalog: dict, repo: Path) -> tuple[dict, list[dict], list[str]]:
     """Move clear duplicate *existing* headings into canonical searchable aliases.
 
     This is a stage-local deterministic operation, NOT the full link rebuild.
@@ -171,7 +171,37 @@ def _apply_reviewed_group_aliases(catalog: dict, repo: Path) -> tuple[dict, list
             "kept_formulation_id": winner["formulations"][0]["id"],
             "reason": item["reason"],
         })
-    return redirected, rows
+    # A searchable synonym can also refer to a meaningful contextual variant.
+    # Move its definitions to the canonical heading WITHOUT deleting any
+    # meaning, formulation, source citation or mathematical distinction.
+    group_only = []
+    for item in ledger.get("group_only_alias_merges", []):
+        case = item["case_id"]
+        old_gid, new_gid = item["removed_group_id"], item["retained_group_id"]
+        if case in used_cases or old_gid == new_gid or old_gid in redirected:
+            raise CleanupError("Repeated group-only alias decision: " + case)
+        used_cases.add(case)
+        if old_gid not in groups or new_gid not in groups:
+            raise CleanupError("Group-only alias references missing heading: " + case)
+        old, dest = groups[old_gid], groups[new_gid]
+        if old["title"] != item["removed_title"] or dest["title"] != item["retained_title"]:
+            raise CleanupError("Group-only alias title drift: " + case)
+        if not old["meanings"] or not dest["meanings"]:
+            raise CleanupError("Empty source/target for group-only alias: " + case)
+        for name in [old["title"], *old.get("aliases", [])]:
+            if (name.casefold() != dest["title"].casefold()
+                    and name.casefold() not in {x.casefold() for x in dest.get("aliases", [])}):
+                dest.setdefault("aliases", []).append(name)
+        for meaning in old["meanings"]:
+            meaning["term_group_id"] = new_gid
+            dest["meanings"].append(meaning)
+        dest["meanings"].sort(key=lambda m: (m.get("label", "").casefold(), m["id"]))
+        dest["aliases"].sort(key=str.casefold)
+        catalog["groups"].remove(old)
+        del groups[old_gid]
+        redirected[old_gid] = new_gid
+        group_only.append(case)
+    return redirected, rows, group_only
 
 
 def prepare_curated_cleanup(catalog: dict, repo: Path,
@@ -191,7 +221,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
     meanings, forms, _ = _ids(combined)
     original_total = (len(meanings), len(forms), len(combined["relations"]))
     original_groups = len(combined["groups"])
-    group_aliases, cross_group_merges = _apply_reviewed_group_aliases(combined, repo)
+    group_aliases, cross_group_merges, group_only_aliases = _apply_reviewed_group_aliases(combined, repo)
     meanings, forms, _ = _ids(combined)
     meaning_aliases = {}
     form_aliases = {}
@@ -375,6 +405,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "surviving_groups": len(combined["groups"]),
         "retired_searchable_heading_aliases": len(group_aliases),
         "cross_heading_cases_applied": [x["case_id"] for x in cross_group_merges],
+        "group_only_alias_cases_applied": group_only_aliases,
         "starting_meanings": original_total[0],
         "starting_formulations": original_total[1],
         "starting_relations": original_total[2],

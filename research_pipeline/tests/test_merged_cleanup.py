@@ -209,6 +209,49 @@ class MergedCleanupTests(unittest.TestCase):
         self.assertEqual(len(refs["groups"]), 2)
         self.assertEqual(len(to_index(cleaned)), 2)
 
+    def test_group_only_alias_preserves_meanings_and_distinct_sources(self):
+        data = deepcopy(self.base)
+        data["groups"].append({
+            "id": "g.variant", "title": "Artinian commutative rings",
+            "aliases": ["commutative artinian ring"],
+            "meanings": [{"id": "m.variant", "label": "Commutative ring context",
+                          "formulations": [{"id": "f.variant",
+                              "text": "A specialized mathematical formulation with more explicit hypotheses.",
+                              "sources": [{"url": "https://example.org/specialized",
+                                           "title": "Separate primary work"}]}]}]
+        })
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = self._repo(Path(tmp))
+            (repo / "data/merged_cleanup_cross_heading_review.json").write_text(
+                json.dumps({
+                    "schema_version": 1, "clear_duplicate_pending_group_migration": [],
+                    "group_only_alias_merges": [{
+                        "case_id": "artinian-context-group",
+                        "removed_group_id": "g.variant",
+                        "retained_group_id": "g",
+                        "removed_title": "Artinian commutative rings",
+                        "retained_title": "Artinian ring",
+                        "reason": "Distinct mathematical context survives."
+                    }]
+                }), encoding="utf-8"
+            )
+            cleaned, report, source_registry = prepare_curated_cleanup(data, repo)
+        self.assertEqual(report["surviving_groups"], 2)
+        self.assertEqual(report["retired_searchable_heading_aliases"], 1)
+        self.assertEqual(report["removed_duplicate_meanings"], 1)
+        self.assertEqual(report["group_only_alias_cases_applied"],
+                         ["artinian-context-group"])
+        target = next(g for g in cleaned["groups"] if g["id"] == "g")
+        self.assertEqual({m["id"] for m in target["meanings"]}, {"new", "m.variant"})
+        self.assertIn("Artinian commutative rings", target["aliases"])
+        form = next(m for m in target["meanings"] if m["id"] == "m.variant")["formulations"][0]
+        self.assertEqual(form["id"], "f.variant")
+        self.assertEqual(form["sources"][0]["url"], "https://example.org/specialized")
+        self.assertEqual(cleaned["consolidated_ids"]["group_aliases"],
+                         {"g.variant": "g"})
+        self.assertNotIn("m.variant", cleaned["consolidated_ids"]["meaning_aliases"])
+        self.assertEqual(len(source_registry["groups"]), 2)
+
     def test_source_ids_distinguish_meaningful_fragments(self):
         catalog = deepcopy(self.base)
         form = catalog["groups"][0]["meanings"][0]["formulations"][0]
