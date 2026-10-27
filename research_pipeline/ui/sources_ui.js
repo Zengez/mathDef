@@ -22,10 +22,16 @@
           o.group_id === entry.id &&
           o.meaning_id === meaning.meaning_id &&
           o.formulation_id === formId);
-        return evidence.length ? [{...source, evidence,
-          primary: formId != null &&
-            (meaning.primary_source_by_formulation || {})[formId] === sid,
-          provenance: evidence.every(e => e.provenance_only)}] : [];
+        // A source ID can carry both independent citation evidence and
+        // original-file provenance across merged records. Classify each
+        // occurrence independently so provenance NEVER becomes support.
+        return [false,true].flatMap(provenance => {
+          const portion=evidence.filter(e=>Boolean(e.provenance_only)===provenance);
+          return portion.length ? [{...source,evidence:portion,
+            primary: !provenance && formId != null &&
+              (meaning.primary_source_by_formulation || {})[formId] === sid,
+            provenance}] : [];
+        });
       });
       return {...meaning,
         title: forms[0]?.label || (entry.formulations || []).find(f =>

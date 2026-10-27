@@ -229,7 +229,11 @@
     const forms = formulations(d), multiple = forms.length > 1;
     return forms.map((form, index) => {
       const body = inline ? renderInlineBody(side, d, path, blocked, form) : latexBody(form.body);
-      if (!multiple) return '<div class="definition">' + body + '</div>';
+      if (!multiple) return '<div class="definition">' + body + '</div>' +
+        (config.sources_file && path.length > 1 ?
+          '<button type="button" class="formulation-sources" data-show-sources="' +
+          escape(d.id) + '" data-source-formulation="' + escape(form.key) +
+          '">Sources for this definition</button>' : '');
       const label = 'Definition ' + (index + 1) + ' — ' + form.label;
       const sources = config.sources_file ? [] : (form.sources || []);
       const source = sources.length ? sources.map(s =>

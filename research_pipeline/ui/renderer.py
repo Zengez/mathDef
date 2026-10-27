@@ -269,6 +269,11 @@ def to_sources_index(catalog: dict, registry: dict) -> dict:
                 raise ViewError("Stale primary source formulation: " + mid)
             if not set(mr.get("source_ids", [])).issubset(source_ids):
                 raise ViewError("Missing source identity in registry: " + mid)
+            for sid in mr.get("source_ids", []):
+                if not any(o.get("group_id") == gid and
+                           o.get("meaning_id") == mid
+                           for o in registry["sources"][sid]["occurrences"]):
+                    raise ViewError("Source identity not cited by meaning: " + mid)
             for fid, sid in primary_by_form.items():
                 if sid not in source_ids or not any(
                     occurrence.get("formulation_id") == fid and
@@ -279,6 +284,10 @@ def to_sources_index(catalog: dict, registry: dict) -> dict:
                     raise ViewError("Primary source lacks supporting occurrence: " + fid)
         if not set(row.get("source_ids", [])).issubset(source_ids):
             raise ViewError("Missing source identity for term: " + gid)
+        for sid in row.get("source_ids", []):
+            if not any(o.get("group_id") == gid
+                       for o in registry["sources"][sid]["occurrences"]):
+                raise ViewError("Source identity not cited by term: " + gid)
     if seen_groups != set(catalog_groups):
         raise ViewError("Source registry does not cover every displayed term")
     # Return the source registry as-is, preserving all cited evidence and

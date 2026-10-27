@@ -49,3 +49,19 @@ test("no invented evidence and missing term return empty view",()=>{
  const view=summarize(registry,{id:"g.basis",formulations:[]});
  assert.equal(view.meanings.length,0);
 });
+
+test("mixed evidence at the same URL never promotes provenance to mathematical support",()=>{
+ const copy=structuredClone(registry);
+ copy.sources["s.alg"].occurrences.push({
+   group_id:"g.basis",meaning_id:"m.alg",formulation_id:"f.alg",
+   provenance_only:true,role:"source-file provenance",
+   verification_status:"untracked"
+ });
+ const view=summarize(copy,entry);
+ const refs=view.meanings[1].forms[0].references.filter(x=>x.id==="s.alg");
+ assert.equal(refs.length,2);
+ assert.equal(refs.filter(x=>x.primary).length,1);
+ assert.equal(refs.filter(x=>x.provenance).length,1);
+ assert(refs.find(x=>x.provenance).evidence.every(x=>x.provenance_only));
+ assert(refs.find(x=>x.primary).evidence.every(x=>!x.provenance_only));
+});
