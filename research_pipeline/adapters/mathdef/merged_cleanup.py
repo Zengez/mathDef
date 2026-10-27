@@ -339,21 +339,23 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
     text_override_ids = set()
     translation_audit = []
     canonical_editorial_audit = []
-    # A user-selected canonical definition is a mathDef editorial decision,
-    # NOT evidence that any external source endorses that convention. Keep it
-    # separate from the verified-source translation mechanism below, which
-    # rightly requires positive scoped source-convention evidence.
+    # A user-selected convention or a separately reviewed mathematical text
+    # clarification is an editorial decision, NOT evidence that any cited
+    # source endorses it. Keep these changes distinct from verified-source
+    # convention translations, which require positive scoped evidence.
     for fid, edit in decisions.get("canonical_editorial_edits", {}).items():
         if fid not in forms:
             raise CleanupError("Canonical editorial edit references missing form " + fid)
         meaning, form = forms[fid]
         if form["text"] != edit.get("original_text"):
             raise CleanupError("Canonical editorial source text drift: " + fid)
-        if (edit.get("decision_source") != "user_adjudication_2026-10-27"
+        if (edit.get("decision_source") not in {
+                    "user_adjudication_2026-10-27",
+                    "assistant_reviewed_mathematical_cleanup_2026-10-27"}
                 or edit.get("evidence_scope") != "mathdef_editorial_canonical_not_source_verified"
                 or not edit.get("reason") or not edit.get("text")
                 or edit["text"] == form["text"]):
-            raise CleanupError("Canonical edit needs precise user approval and provenance: " + fid)
+            raise CleanupError("Canonical edit needs exact editorial review provenance: " + fid)
         form["text"] = edit["text"]
         form["canonical_editorial_edit"] = deepcopy(edit)
         # Historical source-derived hashes no longer describe the adapted
@@ -490,7 +492,10 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "semantic_decisions_completed": completed,
         "formulation_decisions_completed": completed_forms,
         "convention_sensitive_text_translations": translation_audit,
-        "user_adjudicated_canonical_editorial_edits": canonical_editorial_audit,
+        "user_adjudicated_canonical_editorial_edits": [x for x in canonical_editorial_audit
+            if x["decision_source"] == "user_adjudication_2026-10-27"],
+        "assistant_reviewed_mathematical_edits": [x for x in canonical_editorial_audit
+            if x["decision_source"] == "assistant_reviewed_mathematical_cleanup_2026-10-27"],
         "registered_conventions": sorted(canonical),
         "retained_variant_groups_reviewed": retained_count,
         "source_convention_assessments": len(assessments),
