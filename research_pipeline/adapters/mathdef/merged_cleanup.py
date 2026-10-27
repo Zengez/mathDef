@@ -268,11 +268,19 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
                 _add_source(preferred.setdefault("sources", []), source)
         for source in loser.get("other_sources", []):
             _add_source(winner.setdefault("other_sources", []), source)
-        winner.setdefault("consolidated_from_meanings", []).append(loser_id)
-        if loser.get("original_definition_id"):
-            winner.setdefault("legacy_original_definition_ids", []).append(
-                loser["original_definition_id"]
-            )
+        # In sequential consolidations, the losing meaning may itself be
+        # the survivor of a previous reviewed duplicate. Preserve the full
+        # provenance chain, not just the immediately discarded ID.
+        provenance = winner.setdefault("consolidated_from_meanings", [])
+        for previous in [loser_id, *loser.get("consolidated_from_meanings", [])]:
+            if previous not in provenance:
+                provenance.append(previous)
+        original_aliases = winner.setdefault("legacy_original_definition_ids", [])
+        for previous in ([loser["original_definition_id"]]
+                         if loser.get("original_definition_id") else []) + loser.get(
+                             "legacy_original_definition_ids", []):
+            if previous not in original_aliases:
+                original_aliases.append(previous)
         meaning_aliases[loser_id] = winner_id
         losing_group["meanings"].remove(loser)
         del meanings[loser_id]
@@ -304,6 +312,27 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         del forms[drop_id]
         form_aliases[drop_id] = keep_id
         completed_forms.append(case)
+
+    # A source-derived meaning may have been folded into another reviewed
+    # source-derived meaning before that survivor was itself folded into an
+    # original meaning. Historical IDs must resolve directly to LIVE targets,
+    # not to intermediate (already removed) IDs. Detect cycles and missing
+    # destinations rather than producing broken links or archival aliases.
+    def resolve_aliases(mapping: dict[str, str], live: set[str], label: str) -> None:
+        for old in mapping:
+            destination = mapping[old]
+            visited = {old}
+            while destination in mapping:
+                if destination in visited:
+                    raise CleanupError("Cyclic " + label + " redirect: " + old)
+                visited.add(destination)
+                destination = mapping[destination]
+            if destination not in live:
+                raise CleanupError("Invalid live " + label + " redirect: " + old)
+            mapping[old] = destination
+
+    resolve_aliases(meaning_aliases, set(meanings), "meaning")
+    resolve_aliases(form_aliases, set(forms), "formulation")
 
     # Convention-sensitive wording updates belong in this merged-only layer.
     # They must not change the frozen independent source or original .tex files.
