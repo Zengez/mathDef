@@ -93,6 +93,10 @@ def to_index(catalog: dict) -> list[dict]:
                     "path": "",
                     "dependencies": deps,
                     "meaning_id": meaning["id"],
+                    # Official mathematical Subject is inherited by every
+                    # formulation of a given meaning. Never use the display
+                    # category, historical cohort or term title in its place.
+                    "subject": meaning.get("subject"),
                 })
                 for dep in deps:
                     if dep["id"] != group["id"] and dep["id"] not in seen_edges:
@@ -195,7 +199,7 @@ def render(catalog_file: Path, branding_file: Path, destination: Path,
         raise ViewError("Unresolved reusable UI branding token")
     destination = Path(destination).resolve()
     destination.mkdir(parents=True, exist_ok=True)
-    for filename in ("app.js", "feedback.js", "styles.css"):
+    for filename in ("app.js", "subject_priority.js", "feedback.js", "styles.css"):
         shutil.copyfile(frontend / filename, destination / filename)
     (destination / "definitions-index.json").write_text(
         json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

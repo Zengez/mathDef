@@ -18,6 +18,13 @@ on:
       - 'research_pipeline/tests/test_dedup_screen.py'
       - 'data/merged_cleanup_cross_heading_review.json'
       - 'research_pipeline/adapters/mathdef/subject_routing.py'
+      - 'research_pipeline/ui/subject_priority.js'
+      - 'research_pipeline/ui/app.js'
+      - 'research_pipeline/ui/renderer.py'
+      - 'research_pipeline/ui/template.html'
+      - 'research_pipeline/ui/README.md'
+      - 'research_pipeline/tests/test_subject_priority.cjs'
+      - 'research_pipeline/tests/test_reference_ui.py'
       - 'research_pipeline/adapters/mathdef/conventions.py'
       - 'research_pipeline/adapters/mathdef/stage_cleanup.py'
       - 'research_pipeline/tests/test_merged_cleanup.py'
@@ -35,6 +42,12 @@ jobs:
           python-version: '3.12'
       - name: Test semantic cleanup and live convention fallback
         run: python -m unittest research_pipeline.tests.test_merged_cleanup research_pipeline.tests.test_conventions -v
+      - name: Check subject-aware expansion priority and shared UI serialization
+        run: |
+          node --check research_pipeline/ui/app.js
+          node --check research_pipeline/ui/subject_priority.js
+          node --test research_pipeline/tests/test_subject_priority.cjs
+          python -m unittest research_pipeline.tests.test_reference_ui -v
       - name: Compile merged canonical cleanup WITHOUT any global linking
         run: |
           python -m research_pipeline.adapters.mathdef.stage_cleanup --output /tmp/mathdef-cleanup-stage

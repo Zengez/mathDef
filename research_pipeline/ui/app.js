@@ -18,6 +18,7 @@
     exploreMode: savedMode, expanded: {term: new Set(), definition: new Set()},
   };
   let entries = [], lookup = new Map();
+  const orderBySourceSubject = window.ReferenceSubjectPriority.orderFormulations;
   const escape = (v) => String(v).replace(/[&<>"']/g, (c) =>
     ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const normalized = (v) => String(v)
@@ -73,15 +74,17 @@
       source: d.source, path: d.path, dependencies: d.dependencies || []
     }];
   }
-  function preferredTarget(dep) {
+  function preferredTarget(dep, sourceFormulation) {
     const target = lookup.get(dep.id);
-    if (!target || !dep.target_meaning || !(target.formulations || []).length) return target;
-    // Keep the complete set of independently researched contexts, but
-    // show the specific linked meaning first in nested/inline expansion.
-    const forms = [...target.formulations].sort((a, b) =>
-      Number(b.meaning_id === dep.target_meaning) -
-      Number(a.meaning_id === dep.target_meaning));
-    return {...target, formulations: forms};
+    if (!target || !(target.formulations || []).length) return target;
+    // The particular definition containing the link establishes its Subject.
+    // If any linked-term formulation shares that official Subject, place
+    // such matches first, then prefer the explicitly linked meaning among
+    // equal matches. Without a match, keep the old linked-meaning priority.
+    const ordered = orderBySourceSubject(
+      target.formulations, dep.target_meaning, sourceFormulation?.subject
+    );
+    return {...target, formulations: ordered};
   }
 
   function visibleDependencies(d, blocked) {
@@ -143,7 +146,11 @@
     if (!deps.length) return "";
     return '<div class="dependency-children" aria-label="Definitions used">' +
       deps.map((dep) => {
-        const target = preferredTarget(dep), childPath = [...path, dep.id];
+        // Nested controls are assembled at heading level; the relation
+        // carries the original formulation ID, so recover THAT definition's
+        // Subject rather than guessing from the heading's first meaning.
+        const sourceForm = formulations(d).find(f => f.key === dep.formulation);
+        const target = preferredTarget(dep, sourceForm), childPath = [...path, dep.id];
         const childBlocked = nextBlocked(blocked, dep.id);
         const open = expanded(side, childPath);
         return '<section class="dependency-box"><div class="dependency-head">' +
@@ -195,7 +202,7 @@
       });
       const children = situated.filter((dep) => expanded(side, [...path, dep.id]));
       return item + children.map((dep) => {
-        const childPath = [...path, dep.id], target = preferredTarget(dep);
+        const childPath = [...path, dep.id], target = preferredTarget(dep, formulation);
         return '<div class="inline-insert"><div class="inline-insert-heading">' +
           '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +
           '<div class="dependency-feedback">' + correctionButton(dep.id, true) +
@@ -207,7 +214,7 @@
     // controls below the text instead of silently dropping them in inline mode.
     const extra = deps.filter((dep) => !marked.has(dep.id));
     return html + (extra.length ? '<div class="inline-extras">' + extra.map((dep) => {
-      const childPath = [...path, dep.id], target = preferredTarget(dep);
+      const childPath = [...path, dep.id], target = preferredTarget(dep, formulation);
       return '<div>' + nodeButton(side, dep, childPath, true) +
         (expanded(side, childPath) ? '<div class="inline-insert"><div class="inline-insert-heading">' +
           '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +

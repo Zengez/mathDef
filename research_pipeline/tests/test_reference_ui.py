@@ -17,12 +17,14 @@ class ReferenceUITests(unittest.TestCase):
                 {"id": "concept.orbit", "title": "Orbit", "aliases": [],
                  "meanings": [
                      {"id": "meaning.orbit.one", "label": "Celestial mechanics",
+                      "subject": "Astronomy",
                       "formulations": [
                           {"id": "form.orbit.one", "text": "A gravitational trajectory.",
                            "sources": [{"title": "Scientific catalog",
                                         "url": "https://example.org/catalog",
                                         "locator": "https://example.org/catalog/orbit"}]}]},
                      {"id": "meaning.orbit.two", "label": "Dynamical systems",
+                      "subject": "Mathematical Dynamics",
                       "formulations": [
                           {"id": "form.orbit.two", "text": "Iterates of a transformation.",
                            "sources": [{"title": "Scientific handbook",
@@ -31,6 +33,7 @@ class ReferenceUITests(unittest.TestCase):
                  ]},
                 {"id": "concept.planet", "title": "Planet", "aliases": ["world"],
                  "meanings": [{"id": "meaning.planet", "label": "Planetary science",
+                               "subject": "Astronomy",
                                "formulations": [
                                    {"id": "form.planet", "text": "A celestial body.",
                                     "sources": [{"title": "Scientific catalog",
@@ -73,9 +76,14 @@ class ReferenceUITests(unittest.TestCase):
         self.assertEqual(by_name["Planet"]["dependencies"][0]["id"], by_name["Orbit"]["id"])
         self.assertEqual(by_name["Orbit"]["formulations"][0]["sources"][0]["title"],
                          "Scientific catalog")
+        self.assertEqual([f["subject"] for f in by_name["Orbit"]["formulations"]],
+                         ["Astronomy", "Mathematical Dynamics"])
+        self.assertEqual(by_name["Planet"]["formulations"][0]["subject"], "Astronomy")
         self.assertEqual(by_name["Planet"]["path"], "")
         self.assertTrue((out / "styles.css").exists())
         self.assertTrue((out / "app.js").exists())
+        self.assertTrue((out / "subject_priority.js").exists())
+        self.assertIn('src="./subject_priority.js"', markup)
         self.assertTrue((out / "feedback.js").exists())
         self.assertFalse((self.root / "definitions-index.json").exists())
 
