@@ -101,7 +101,13 @@ def _literal_target_headings_in_form(catalog: dict, form_id: str) -> set[str]:
     tokens = [(m.group(0).casefold(),m.start(),m.end())
               for m in WORD_RE.finditer(masked)]
     seen = set()
-    for i in range(len(tokens)):
+    i = 0
+    while i < len(tokens):
+        selected = None
+        # A longer established term beats its shorter overlapping substring.
+        # The ordinary lexical linker uses this same longest-first rule;
+        # otherwise reconciliation would falsely flag "local ring" inside
+        # a self-reference to "regular local ring" as a missing link.
         for parts,gids in idx.get(tokens[i][0],()):
             end=i+len(parts)
             if end>len(tokens) or tuple(t[0] for t in tokens[i:end])!=parts:
@@ -109,7 +115,14 @@ def _literal_target_headings_in_form(catalog: dict, form_id: str) -> set[str]:
             if any(not re.fullmatch(r"\s+|\s*[-–]\s*",body[tokens[k][2]:tokens[k+1][1]])
                    for k in range(i,end-1)):
                 continue
-            seen.update(gids)
+            selected=(gids,end)
+            break
+        if selected is None:
+            i += 1
+            continue
+        gids,end = selected
+        seen.update(gids)
+        i = end
     return seen
 
 
@@ -128,6 +141,8 @@ def reconcile_deleted_source_edges(catalog: dict, cleanup_report: dict) -> dict:
         raise FinalLinkError("Incomplete historical text-edge relocation ledger")
     meaning_groups = {m["id"]:g["id"]
                       for g in catalog["groups"] for m in g["meanings"]}
+    form_groups = {f["id"]:g["id"] for g in catalog["groups"]
+                   for m in g["meanings"] for f in m["formulations"]}
     by_form = {}
     for rel in catalog["relations"]:
         if rel["relation_type"]!="definition_uses":continue
@@ -141,7 +156,12 @@ def reconcile_deleted_source_edges(catalog: dict, cleanup_report: dict) -> dict:
         if fid not in heading_cache:
             heading_cache[fid]=_literal_target_headings_in_form(catalog,fid)
         outgoing=by_form.get(fid,[])
-        if any(r["target_meaning"]==mid for r in outgoing):
+        if form_groups[fid] == gid:
+            # Consolidation can move two formerly independent headings into
+            # one. The UI already displays all meanings under this heading;
+            # self-definition expansion is intentionally suppressed.
+            status="self_heading_reference_deliberately_suppressed"
+        elif any(r["target_meaning"]==mid for r in outgoing):
             status="relinked_to_same_meaning"
         elif any(meaning_groups[r["target_meaning"]]==gid for r in outgoing):
             status="relinked_to_same_heading_alternate_meaning"
