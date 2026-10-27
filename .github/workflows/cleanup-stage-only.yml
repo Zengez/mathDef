@@ -171,7 +171,7 @@ jobs:
           assert reviewed_internal['classification_counts_before_merges']=={
               'obviously_mathematically_distinct':44,
               'manual_review':44, 'obvious_duplicate':2}
-          assert len(report['formulation_decisions_completed'])==7
+          assert len(report['formulation_decisions_completed'])==10
           assert catalog['consolidated_ids']['formulation_aliases'][
               'form.wave2.cross107.topological-closure.2']==(
               'form.wave2.cross107.topological-closure.1')
