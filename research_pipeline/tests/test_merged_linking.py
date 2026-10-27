@@ -175,5 +175,76 @@ class MergedLinkingTests(unittest.TestCase):
         self.assertGreater(report2["ambiguous_contexts_total_occurrences"], 0)
 
 
+    def test_random_variable_general_and_explicit_real_context(self):
+        target = group("rv", "Random variable",
+                       "meaning.wave2.prob90.random-variable-general",
+                       "f.general", "A measurable map into a measurable state space.")
+        target["meanings"].extend([
+            {"id": "meaning.wave2.prob90.random-variable-real",
+             "label": "Real-valued random variable",
+             "formulations": [{"id":"f.real","text":"A measurable real-valued map.",
+                               "sources":[{"title":"Ref","url":"https://example.org"}]}]},
+            {"id": "meaning.mathdef.original.prob.random-variable",
+             "label":"Original mathDef · Probability",
+             "formulations":[{"id":"f.old","text":"A random variable.",
+                              "sources":[{"title":"Ref","url":"https://example.org"}]}]},
+        ])
+        generic = group("g", "Almost-sure equality", "m.g", "f.g",
+                        "Two random variables are equal almost surely.")
+        real = group("v", "Bernoulli distribution", "m.v", "f.v",
+                     "A real random variable follows a Bernoulli distribution.")
+        c={"groups":[target,generic,real],"relations":[]}
+        report=link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"],2)
+        by_form={rel["from_formulation"]:rel["target_meaning"] for rel in c["relations"]}
+        self.assertEqual(by_form["f.g"],"meaning.wave2.prob90.random-variable-general")
+        self.assertEqual(by_form["f.v"],"meaning.wave2.prob90.random-variable-real")
+        self.assertEqual(report["ambiguous_contexts_total_occurrences"],0)
+
+    def test_distinct_inner_product_and_natural_number_conventions_still_abstain(self):
+        nats=group("n","Natural numbers","meaning.wave2.set63.natural-including-zero",
+                   "fn0","Natural numbers can include zero.")
+        nats["meanings"].append({
+            "id":"meaning.wave2.set63.natural-positive-convention","label":"Positive convention",
+            "formulations":[{"id":"fn1","text":"Natural numbers start at one.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        ip=group("ip","Inner product space",
+                 "meaning.wave2.analysis98.real-inner-product-space",
+                 "fip1","Positive symmetric bilinear product.")
+        ip["meanings"].append({
+            "id":"meaning.wave2.analysis98.complex-inner-product-space",
+            "label":"Complex positive-definite Hermitian inner product",
+            "formulations":[{"id":"fip2","text":"Hermitian positive product.",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        source=group("a","Orthogonal complement","ma","fa",
+                     "In an inner product space, take the orthogonal complement "
+                     "of a sequence indexed by natural numbers.")
+        c={"groups":[nats,ip,source],"relations":[]}
+        report=link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"],0)
+        self.assertEqual(report["ambiguous_contexts_total_occurrences"],2)
+
+    def test_discrete_martingale_source_override_not_continuous_by_default(self):
+        source=group("m","Martingale transform",
+                     "meaning.mathdef.original.stochastic.martingale-transform",
+                     "fm","A martingale transform uses increments of a martingale.")
+        target=group("t","Martingale","meaning.wave2.research81.martingale-discrete",
+                     "fd","An adapted integrable discrete sequence.")
+        target["meanings"].append({
+            "id":"meaning.wave2.research81.martingale-continuous-index",
+            "label":"Real-valued martingale indexed continuously",
+            "formulations":[{"id":"fc","text":"Adapted continuous-time process",
+                             "sources":[{"title":"Ref","url":"https://example.org"}]}],
+        })
+        c={"groups":[source,target],"relations":[]}
+        report=link_merged_catalog(c)
+        self.assertEqual(report["new_tentative_links"],1)
+        self.assertEqual(c["relations"][0]["target_meaning"],
+                         "meaning.wave2.research81.martingale-discrete")
+
+
+
 if __name__ == "__main__":
     unittest.main()
