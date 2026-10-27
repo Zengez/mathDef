@@ -140,6 +140,19 @@ That checkpoint reviewed **41 older entries** in commutative algebra and scheme 
 
 At that intermediate October 15, 2026 checkpoint, the repository contained 995 definitions. Work then audited all 36 original PDE definitions and all 35 numerical-analysis definitions, while adding 12 graduate-level microlocal-analysis and pseudodifferential-operator entries. Every edit and unresolved caveat is recorded in [WORK_CHECKPOINT.md](WORK_CHECKPOINT.md), and all newly added entries are draft pending individual mathematical validation.
 
-## Public cross-project definition export
+## Public cross-project definition feed (canonical v2)
 
-The standard Pages build publishes a read-only, SHA-256 versioned definition snapshot and a small update manifest so companion projects such as mathThm can detect changes and refresh their local definition cache. See [DEFINITION_EXPORT.md](DEFINITION_EXPORT.md) for the stable endpoints, consumer protocol, scope, and validation details. Independent Wave 1 and Wave 2 research previews are not part of this production feed.
+Projects such as mathThm can obtain the **entire published merged mathDef corpus**
+(2,048 searchable term groups, 2,197 contextual meanings and all source
+formulations as of October 2026) through a read-only, SHA-256-versioned
+public feed. No GitHub account is required.
+
+- **[Merged feed manifest](https://zengez.github.io/mathDef/api/definitions/v2/manifest.json)** — small update signal; compare the version with the last verified local snapshot.
+- **[Merged feed snapshot](https://zengez.github.io/mathDef/api/definitions/v2/snapshot.json)** — all mathematical term headings, aliases, alternative meanings, source-attributed formulations and contextual links.
+- **[Integration manual](DEFINITION_EXPORT.md)** — schema, version checks, caching, safe refresh, original-ID lookup and recommended update schedules.
+- **[Runnable consumer example](examples/consume_mathdef_v2.py)** — Python standard library; verifies SHA-256, downloads only when changed and falls back to the last verified cache.
+
+The old `/api/definitions/v1/` feed is **original .tex only**, retained as a
+historical export, and should not be used for new integrations. The v2 feed
+is generated from exactly the same merged records as the main website; future
+corpus changes update its snapshot and manifest automatically.
