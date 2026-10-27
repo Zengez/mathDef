@@ -15,6 +15,7 @@ on:
       - "research_pipeline/ui/template.html"
       - "research_pipeline/adapters/mathdef/merged_linking.py"
       - "research_pipeline/adapters/mathdef/audit_merged_links.py"
+      - "research_pipeline/tests/test_full_corpus_link_audit.py"
       - "research_pipeline/experiments/reconstruction-v2-independent/post_wave2/**"
       - ".github/workflows/combined-preview-merge-check.yml"
   push:
@@ -33,6 +34,7 @@ on:
       - "research_pipeline/ui/template.html"
       - "research_pipeline/adapters/mathdef/merged_linking.py"
       - "research_pipeline/adapters/mathdef/audit_merged_links.py"
+      - "research_pipeline/tests/test_full_corpus_link_audit.py"
       - "research_pipeline/tests/merged_ui_browser_smoke.cjs"
 
 jobs:
@@ -44,7 +46,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Test lossless merge and rapid scan
-        run: python -m unittest research_pipeline.tests.test_original_merge research_pipeline.tests.test_merged_linking -v
+        run: python -m unittest research_pipeline.tests.test_original_merge research_pipeline.tests.test_merged_linking research_pipeline.tests.test_full_corpus_link_audit -v
       - name: Syntax-check reusable inline expansion UI
         run: node --check research_pipeline/ui/app.js
       - name: Build independent baselines and original-inclusive site
