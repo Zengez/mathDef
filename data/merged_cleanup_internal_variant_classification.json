@@ -9,8 +9,8 @@
   "original_attached_variant_formulations": 196,
   "classification_counts_before_merges": {
     "obviously_mathematically_distinct": 44,
-    "manual_review": 42,
-    "obvious_duplicate": 4
+    "manual_review": 44,
+    "obvious_duplicate": 2
   },
   "classification_policy": {
     "obvious_duplicate": "Same mathematical predicate/construction with only cosmetic or explanatory differences; merge redundant formulation and union all source references.",
@@ -163,8 +163,8 @@
     {
       "term": "Bounded linear operator",
       "group_id": "preview.term.eee5144010a080f51c86a85d",
-      "classification": "obvious_duplicate",
-      "reason": "The same global norm bound ‖Tx‖≤C‖x‖ is stated in both, with only variable names and an explicit usual real/complex scalar field differing.",
+      "classification": "manual_review",
+      "reason": "Original statement does not explicitly restrict the scalar field, while the researched one restricts to real or complex normed spaces. Although the displayed formula is the same, the unqualified ambient normed-space convention is potentially broader; do not merge without user review.",
       "attached_meaning_ids": [
         "meaning.wave2.pop142.bounded-linear",
         "meaning.mathdef.original.functional.bounded-linear-operator"
@@ -172,14 +172,7 @@
       "attached_formulation_ids": [
         "form.meaning.wave2.pop142.bounded-linear",
         "form.mathdef.original.functional.bounded-linear-operator.primary"
-      ],
-      "duplicate_merger": {
-        "keep_formulation_id": "form.meaning.wave2.pop142.bounded-linear",
-        "remove_formulation_ids": [
-          "form.mathdef.original.functional.bounded-linear-operator.primary"
-        ]
-      },
-      "after_merge": "single_or_distinct_surviving_formulation"
+      ]
     },
     {
       "term": "chain complex",
@@ -962,8 +955,8 @@
     {
       "term": "Operator norm",
       "group_id": "preview.term.5cb3ac87c11761b120ed7dbe",
-      "classification": "obvious_duplicate",
-      "reason": "Both state exactly the same supremum over the unit ball; the researched surviving form also records an additional equivalent bound characterization.",
+      "classification": "manual_review",
+      "reason": "Original statement does not explicitly restrict the scalar field, while the researched one restricts to real or complex normed spaces. Although the displayed formula is the same, the unqualified ambient normed-space convention is potentially broader; do not merge without user review.",
       "attached_meaning_ids": [
         "meaning.wave2.pop142.bounded-operator-norm",
         "meaning.mathdef.original.functional.operator-norm"
@@ -971,14 +964,7 @@
       "attached_formulation_ids": [
         "form.meaning.wave2.pop142.bounded-operator-norm",
         "form.mathdef.original.functional.operator-norm.primary"
-      ],
-      "duplicate_merger": {
-        "keep_formulation_id": "form.meaning.wave2.pop142.bounded-operator-norm",
-        "remove_formulation_ids": [
-          "form.mathdef.original.functional.operator-norm.primary"
-        ]
-      },
-      "after_merge": "single_or_distinct_surviving_formulation"
+      ]
     },
     {
       "term": "orbit of an element under a group action",
@@ -1298,7 +1284,7 @@
   ],
   "notes": [
     "All 90 variant-bearing headings classified in one inventory pass. Earlier source/subject audits are not repeated here.",
-    "The four clear duplicate actions remove four formulations and consolidate any now-redundant meanings, keeping all historical IDs and citation URL provenance.",
+    "The two unambiguous duplicate actions remove two formulations: one within a meaning and one entire redundant meaning, unioning all sources and preserving historical IDs.",
     "A heading can still have meaningful surviving variants after its obvious duplicate is removed; Set partition has a separate remaining characterization."
   ]
 }
