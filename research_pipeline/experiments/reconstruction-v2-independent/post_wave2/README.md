@@ -479,3 +479,45 @@ processed; original scan-derived mathematical meanings **34**.
 Post-Wave2 overlay **152**, expected combined **2,124** meanings
 (958 independent Wave2 + 1,014 original source + 152 post-Wave2).
 No changes to completed historical Wave2 or original production definitions.
+
+
+## Original quick-scan candidate processing — ranks 341–540 (2026-10-26)
+
+In a larger consecutive batch, dispositioned the **next 200 literal original
+candidate records** from the already-frozen 2,019-lead scan. The existing
+`scan_candidate_dispositions.json` retains their exact original phrases,
+counts, source examples, mappings and decisions. **No new terminology
+candidates were searched for, collected, or appended.**
+
+- **6** genuinely new researched mathematical meanings: rank 413
+  associative algebra over a field (nonunital base convention), rank 470
+  bounded continuous real-valued function, rank 482 Cantor space,
+  rank 506 cofinal subset of a partially ordered set, rank 532
+  complete discrete valuation ring, rank 537 completely multiplicative
+  arithmetic function. Each is added directly to `terms.json` with
+  external research sources, scoped assumptions and links.
+- **36** already-covered terms or justified specializations, including
+  Bargmann–Fock space, centered finite difference, chromatic metric
+  space, Bessel-potential Sobolev space and compact operators.
+- **156** grammatical fragments/nonterms, rather than forcing low-quality
+  new definitions. Special notes guard against the incorrect claims
+  'bijective smooth map = diffeomorphism' and 'bijective monotone map =
+  order isomorphism' absent inverse smoothness/monotonicity.
+- **2** source/convention ambiguities (524 compact complex Lie group versus
+  connected complex torus; 534 general complete nonarchimedean local
+  field versus a characteristic-zero p-adic field).
+
+**Deduplication correction:** original
+`definitions/scv/complex-analytic-subset.tex` already contains the
+meaning that was redundantly added at former scan rank 318. The
+extra post-Wave2 overlay entry was removed, rank 318 was changed to an
+existing-definition disposition, and research citations/edge-case notes
+were retained in the ledger's `reconciliation` field. Rank 539 likewise
+maps to the existing original definition.
+
+**Checkpoint: 540 of 2,019 original candidates processed; next rank 541.**
+Post-Wave2 overlay **157**, with **39 net scan-derived meanings** and 118
+earlier additions. Expected combined meanings **2,129** =
+958 independent Wave2 + 1,014 original + 157 post-Wave2.
+The original frozen scan, original production definitions, and independent
+Wave2 are not edited or relabeled.
