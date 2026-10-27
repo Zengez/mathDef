@@ -5555,6 +5555,67 @@
         "This is not an extra set of category axioms; it is a size distinction."
       ],
       "research_status": "source-attributed direct frozen-scan incorporation, assistant-reviewed"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-injective-map-20261026",
+      "candidate_id": "postwave-scan:rank-1004",
+      "term": "injective map",
+      "context": "Set theory · one-to-one function between sets",
+      "aliases": [
+        "injection",
+        "one-to-one function",
+        "injective function"
+      ],
+      "definition": "A function f:A→B between sets is injective if, for all a,a′∈A, f(a)=f(a′) implies a=a′. Equivalently, distinct elements of A have distinct images in B. No surjectivity assumption is made. When A is empty, the unique function A→B is injective for every B, including the empty set. In the category of sets an injective function is a categorical monomorphism, but in an arbitrary category a monomorphism need not be an injective underlying set map.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics, Injection",
+          "url": "https://encyclopediaofmath.org/wiki/Injection",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "Wolfram MathWorld, Injection",
+          "url": "https://mathworld.wolfram.com/Injection.html",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Domain and codomain are sets, with an ordinary single-valued total function.",
+        "Injectivity is not surjectivity and not invertibility unless additional conditions hold.",
+        "Categorical monomorphism equivalence is restricted to Set, not asserted across all categories."
+      ],
+      "research_status": "research from frozen original quick scan, assistant reviewed"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-locally-finite-borel-measure-20261026",
+      "candidate_id": "postwave-scan:rank-1121",
+      "term": "locally finite Borel measure",
+      "context": "Measure theory on topological spaces · every point has a finite-measure neighborhood",
+      "aliases": [
+        "locally finite measure on a topological space"
+      ],
+      "definition": "Let X be a topological space equipped with its Borel σ-algebra and let μ be a nonnegative Borel measure. Then μ is locally finite if every x∈X has an open neighborhood U containing x for which μ(U)<∞. Some authors instead use 'finite on compact sets' as a starting convention for a Borel measure; under local compactness/Hausdorff or related hypotheses these conditions are closely related, but they should not be silently identified for arbitrary topological spaces. Local finiteness alone does not imply inner or outer regularity and thus is not, in general, synonymous with a Radon measure. The zero measure is locally finite.",
+      "sources": [
+        {
+          "title": "Encyclopedia of Mathematics, Radon measure (local finiteness condition)",
+          "url": "https://encyclopediaofmath.org/wiki/Radon_measure",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "University of Warsaw measure theory notes, Borel measures on locally compact spaces",
+          "url": "https://www.fuw.edu.pl/~derezins/mat-m.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Borel measure is nonnegative and may assign infinite mass to X.",
+        "Local finiteness means a finite-measure open neighborhood of EACH point.",
+        "Regularity and Radon hypotheses are not assumed.",
+        "On arbitrary spaces 'compact-finite' may not be equivalent without additional hypotheses."
+      ],
+      "research_status": "research from frozen original quick scan, assistant reviewed"
     }
   ]
 }
