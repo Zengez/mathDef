@@ -743,3 +743,20 @@ No candidate discovery occurred; the original 2,019-row disposition ledger,
 historical original source and frozen independent Wave 2 remain unchanged.
 The full closeout and optional follow-up scope are in
 [`LINKING_CLOSEOUT_2026-10-26.md`](LINKING_CLOSEOUT_2026-10-26.md).
+
+## Targeted ambiguity follow-up: 117 to 6 unresolved (2026-10-26)
+
+After the completed first linking wave, an existing-meanings-only research pass
+resolved or suppressed **111 of 117** ambiguous source occurrences. The final
+linked combined output (unchanged **2,197 meanings**) has **2,952 tentative
+definition-use links**, **248 existing screened links newly positioned inline**,
+and **1,732/2,246** formulations with positioned links. Only **6** intentionally
+unlinked convention choices remain (natural numbers starting 0/1: 3,
+real/complex inner-product space: 2, unital/non-unital ring homomorphism: 1).
+All 19 Python tests, source-span and catalog consistency checks, and Chromium
+recursive expansion/dual search checks passed.
+
+See [`LINK_AMBIGUITY_REVIEW_2026-10-26.md`](LINK_AMBIGUITY_REVIEW_2026-10-26.md)
+for audited choice logic, suppressed quasi-metric false positives, and the six
+outstanding references. No new terminology candidates were created. Optional
+community feedback is enough for genuinely unspecified conventions.
