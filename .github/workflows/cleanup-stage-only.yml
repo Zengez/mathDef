@@ -101,3 +101,30 @@ jobs:
               'source_ids':len(sources['sources'])
           })
           PY
+      - name: Test existing-definition comparison screen
+        run: python -m unittest research_pipeline.tests.test_dedup_screen -v
+      - name: Screen live existing definitions without new terms or link rebuild
+        run: |
+          python -m research_pipeline.adapters.mathdef.dedup_screen \
+            --catalog /tmp/mathdef-cleanup-stage/catalog.stage-only.json \
+            --output /tmp/mathdef-cleanup-stage/existing-dedup-screen.stage-only.json \
+            --limit 60
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('/tmp/mathdef-cleanup-stage')
+          data=json.loads((root/'existing-dedup-screen.stage-only.json').read_text())
+          catalog=json.loads((root/'catalog.stage-only.json').read_text())
+          gids={g['id'] for g in catalog['groups']}
+          mids={m['id'] for g in catalog['groups'] for m in g['meanings']}
+          fids={f['id'] for g in catalog['groups'] for m in g['meanings']
+                for f in m['formulations']}
+          assert data['kind']=='existing_definitions_only_no_vocabulary_discovery'
+          assert data['counts']['groups']==len(gids)
+          for x in data['cross_heading_lexical_screen']:
+              assert x['left_group'] in gids and x['right_group'] in gids
+              assert x['left_meaning'] in mids and x['right_meaning'] in mids
+              assert x['left_formulation'] in fids and x['right_formulation'] in fids
+              assert x['left_group']!=x['right_group']
+          print('Screened ONLY existing canonical IDs for manual deduplication review.')
+          PY
