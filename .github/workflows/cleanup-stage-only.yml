@@ -145,6 +145,22 @@ jobs:
           assert 'Galois field extension'.casefold() in {
               x.casefold() for x in galois['aliases']
           }
+          # Element-order title consolidation: only notation changes. The
+          # modular unit example is preserved; additive group order must NOT
+          # be declared a different abstract invariant.
+          orders=next(g for g in catalog['groups'] if g['title']=='order of a group element')
+          assert {m['id'] for m in orders['meanings']}=={
+              'meaning.mathdef.postwave.scan-multiplicative-order-element-20261026'}
+          assert 'multiplicative order of an element of a group' in orders['aliases']
+          order_text=orders['meanings'][0]['formulations'][0]['text']
+          assert 'least positive integer n' in order_text
+          assert 'In additive notation the same group-theoretic invariant' in order_text
+          assert 'distinct from the additive order' not in order_text
+          assert redirects['meaning_aliases'][
+              'meaning.wave2.direct.6fbe5c318aee10f6742d']==(
+              'meaning.mathdef.postwave.scan-multiplicative-order-element-20261026')
+          assert len(report['user_adjudicated_canonical_editorial_edits'])==5
+          assert len(report['assistant_reviewed_mathematical_edits'])==1
           adapted=next(g for g in catalog['groups'] if g['title']=='Adapted process')
           assert {m['id'] for m in adapted['meanings']}=={
               'meaning.mathdef.original.stochastic.adapted-process',
