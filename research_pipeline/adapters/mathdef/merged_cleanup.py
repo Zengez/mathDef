@@ -338,6 +338,31 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
     # They must not change the frozen independent source or original .tex files.
     text_override_ids = set()
     translation_audit = []
+    canonical_editorial_audit = []
+    # A user-selected canonical definition is a mathDef editorial decision,
+    # NOT evidence that any external source endorses that convention. Keep it
+    # separate from the verified-source translation mechanism below, which
+    # rightly requires positive scoped source-convention evidence.
+    for fid, edit in decisions.get("canonical_editorial_edits", {}).items():
+        if fid not in forms:
+            raise CleanupError("Canonical editorial edit references missing form " + fid)
+        meaning, form = forms[fid]
+        if form["text"] != edit.get("original_text"):
+            raise CleanupError("Canonical editorial source text drift: " + fid)
+        if (edit.get("decision_source") != "user_adjudication_2026-10-27"
+                or edit.get("evidence_scope") != "mathdef_editorial_canonical_not_source_verified"
+                or not edit.get("reason") or not edit.get("text")
+                or edit["text"] == form["text"]):
+            raise CleanupError("Canonical edit needs precise user approval and provenance: " + fid)
+        form["text"] = edit["text"]
+        form["canonical_editorial_edit"] = deepcopy(edit)
+        # Historical source-derived hashes no longer describe the adapted
+        # wording. Retain the historical hash as provenance, not as a hash of
+        # the new canonical formulation.
+        if "sha256" in form:
+            form["source_sha256_before_editorial_edit"] = form.pop("sha256")
+        text_override_ids.add(fid)
+        canonical_editorial_audit.append({"formulation_id": fid, **edit})
     for fid, edit in decisions.get("text_overrides", {}).items():
         if fid not in forms:
             raise CleanupError("Text override references missing formulation " + fid)
@@ -465,6 +490,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "semantic_decisions_completed": completed,
         "formulation_decisions_completed": completed_forms,
         "convention_sensitive_text_translations": translation_audit,
+        "user_adjudicated_canonical_editorial_edits": canonical_editorial_audit,
         "registered_conventions": sorted(canonical),
         "retained_variant_groups_reviewed": retained_count,
         "source_convention_assessments": len(assessments),
