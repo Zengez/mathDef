@@ -1,12 +1,14 @@
 {
   "schema_version": 1,
-  "status": "existing_heading_comparison_review_not_yet_applied",
+  "status": "clear_cross_heading_merges_applied_in_stage_only_not_published",
   "scope": "Only mathematical meanings/forms already present in stage-only merged catalog, never newly collected terminology.",
   "notes": [
-    "The merging of separate searchable headings needs an alias-preserving group-ID migration stage and end-user review of genuinely uncertain cases before final linking.",
-    "Clear substantive duplicates are recorded as approved mathematical comparisons, not yet as applied group mutations. Preserve both source URLs and all original headings as searchable aliases.",
-    "Retained pairs are explicitly different constructions or assumptions; superficial text similarity is not mathematical equivalence.",
-    "Do not conflate this file with the user-facing uncertain-case review packet or the forbidden terminology-candidate queue."
+    "Every clear_duplicate_pending_group_migration entry is now applied by the stage-only alias migration; this legacy array key names its earlier review status, not a pending action.",
+    "Old searchable titles are preserved as aliases and every retired group ID is mapped to its surviving canonical group ID.",
+    "Retired meaning and formulation IDs are also mapped via the stage-only consolidated_ids block; original .tex and all historical independent records remain unchanged.",
+    "No final global linking rebuild or public v2 feed update has run; the user review checkpoint for genuinely uncertain mathematical conventions remains mandatory.",
+    "All entries compare ONLY existing original/researched terms and sources; no terminology candidates were created.",
+    "Source IDs remain independent of group IDs so future corrections can be attributed to the precise source URL/tag without source-scoring analytics."
   ],
   "clear_duplicate_pending_group_migration": [
     {
