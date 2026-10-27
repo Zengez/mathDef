@@ -260,6 +260,28 @@ jobs:
               'source_ids':len(sources['sources'])
           })
           PY
+      - name: Inventory remaining variants within their EXISTING heading ONLY
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          catalog=json.loads(Path('/tmp/mathdef-cleanup-stage/catalog.stage-only.json').read_text())
+          groups=[]
+          for g in catalog['groups']:
+              forms=[{'meaning_id':m['id'], 'subject':m.get('subject'),
+                      'context':m.get('context'), 'form_id':f['id'],
+                      'text':f['text']}
+                     for m in g['meanings'] for f in m['formulations']]
+              if len(forms)>1:
+                  groups.append({'title':g['title'],'group_id':g['id'],
+                                 'meanings':len(g['meanings']),'forms':forms})
+          print('INTERNAL_VARIANTS_JSON='+json.dumps(groups,ensure_ascii=False,separators=(',',':')))
+          print('INTERNAL_VARIANT_COUNTS='+json.dumps({
+            'all_headings':len(catalog['groups']),
+            'headings_with_multiple_attached_variants':len(groups),
+            'variant_formulations':sum(len(g['forms']) for g in groups)
+          }))
+          PY
       - name: Test existing-definition comparison screen
         run: python -m unittest research_pipeline.tests.test_dedup_screen -v
       - name: Screen live existing definitions without new terms or link rebuild
