@@ -18,6 +18,8 @@ on:
       - 'research_pipeline/tests/test_dedup_screen.py'
       - 'data/merged_cleanup_cross_heading_review.json'
       - 'research_pipeline/adapters/mathdef/subject_routing.py'
+      - 'data/definition_expansion_priority_overrides.json'
+      - 'research_pipeline/adapters/mathdef/publish_root.py'
       - 'research_pipeline/ui/subject_priority.js'
       - 'research_pipeline/ui/app.js'
       - 'research_pipeline/ui/renderer.py'
@@ -346,7 +348,10 @@ jobs:
           from research_pipeline.ui.renderer import to_index
           src=Path('/tmp/mathdef-cleanup-stage')
           catalog=json.loads((src/'catalog.stage-only.json').read_text(encoding='utf-8'))
-          index=to_index(catalog)
+          overrides=json.loads(Path('data/definition_expansion_priority_overrides.json')
+                               .read_text(encoding='utf-8'))
+          index=to_index(catalog, expansion_overrides=overrides)
+          assert overrides['schema_version']==1
           registered={entry['name'] for entry in json.loads(
               Path('data/math_subjects.json').read_text(encoding='utf-8'))['entries']
               if entry.get('approved')}
@@ -365,9 +370,17 @@ jobs:
                           matched+=1
                       else:
                           unmatched+=1
+          approved_count=len(overrides['overrides'])
+          rendered_override_deps=[
+              dep for term in index for form in term['formulations']
+              for dep in form['dependencies'] if dep.get('preferred_formulation')
+          ]
+          assert approved_count==0 or rendered_override_deps, 'No approved override applied'
           print('STAGED_LINK_EXPANSION_SUBJECT_AUDIT='+json.dumps({
               'term_headings':len(index),
               'formulations_with_registered_subject':len(forms),
+              'approved_priority_override_rules':approved_count,
+              'links_with_approved_display_priority':len(rendered_override_deps),
               'links_to_multi_formulation_targets_with_exact_match':matched,
               'links_to_multi_formulation_targets_without_exact_match':unmatched,
               'note':'Audit only; no relinking, export or publication'

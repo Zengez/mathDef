@@ -82,7 +82,8 @@
     // such matches first, then prefer the explicitly linked meaning among
     // equal matches. Without a match, keep the old linked-meaning priority.
     const ordered = orderBySourceSubject(
-      target.formulations, dep.target_meaning, sourceFormulation?.subject
+      target.formulations, dep.target_meaning, sourceFormulation?.subject,
+      dep.preferred_formulation
     );
     return {...target, formulations: ordered};
   }

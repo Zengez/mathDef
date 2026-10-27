@@ -87,6 +87,76 @@ class ReferenceUITests(unittest.TestCase):
         self.assertTrue((out / "feedback.js").exists())
         self.assertFalse((self.root / "definitions-index.json").exists())
 
+    def _approved_override(self, **updates):
+        item = {
+            "id": "accepted-example",
+            "status": "approved",
+            "source_formulation_id": "form.planet",
+            "target_group_id": "concept.orbit",
+            "preferred_formulation_id": "form.orbit.two",
+            "approval_reference": "https://github.com/example/astroref/issues/12",
+            "reason": "Editor accepted the narrower mathematical context",
+        }
+        item.update(updates)
+        return {"schema_version": 1, "overrides": [item]}
+
+    def test_approved_priority_override_attaches_to_original_link_not_catalog(self):
+        approved = self._approved_override()
+        index = to_index(self.catalog, expansion_overrides=approved)
+        planet = next(x for x in index if x["term"] == "Planet")
+        dep = planet["formulations"][0]["dependencies"][0]
+        self.assertEqual(dep["preferred_formulation"], "form.orbit.two")
+        self.assertEqual(dep["priority_override_id"], "accepted-example")
+        self.assertEqual(planet["dependencies"][0]["preferred_formulation"], "form.orbit.two")
+        self.assertNotIn("preferred_formulation", self.catalog["relations"][0])
+        (self.root / "approved.json").write_text(json.dumps(approved), encoding="utf-8")
+        out = self.root / "approved-viewer"
+        render(self.root / "catalog.json", self.root / "brand.json",
+               out, "Draft", "Synthetic", expansion_overrides_file=self.root / "approved.json")
+        published = json.loads((out / "definitions-index.json").read_text())
+        self.assertEqual(next(x for x in published if x["term"] == "Planet")
+                         ["formulations"][0]["dependencies"][0]["preferred_formulation"],
+                         "form.orbit.two")
+
+    def test_occurrence_specific_override_supersedes_general_and_bad_rules_fail(self):
+        second = dict(self.catalog["relations"][0])
+        self.catalog["relations"][0].update({"span_start": 2, "span_end": 8})
+        second.update({"id": "rel.other", "span_start": 12, "span_end": 18})
+        self.catalog["relations"].append(second)
+        broad = self._approved_override()["overrides"][0]
+        specific = dict(broad, id="exact-other", preferred_formulation_id="form.orbit.one",
+                        source_span={"start": 12, "end": 18})
+        overrides = {"schema_version": 1, "overrides": [broad, specific]}
+        first, second_dep = next(x for x in to_index(
+            self.catalog, expansion_overrides=overrides) if x["term"] == "Planet"
+        )["formulations"][0]["dependencies"]
+        self.assertEqual(first["preferred_formulation"], "form.orbit.two")
+        self.assertEqual(second_dep["preferred_formulation"], "form.orbit.one")
+        for bad in (
+            self._approved_override(preferred_formulation_id="form.planet"),
+            self._approved_override(status="pending"),
+            self._approved_override(source_formulation_id="does-not-exist"),
+            self._approved_override(target_group_id="other-group"),
+            self._approved_override(source_span={"start": 70, "end": 80}),
+            {"schema_version": 1, "overrides": [broad, broad]},
+        ):
+            with self.subTest(bad=bad), self.assertRaises(ViewError):
+                to_index(self.catalog, expansion_overrides=bad)
+
+    def test_nested_priority_follows_approved_later_source_formulation(self):
+        other = {"id": "form.planet.two", "text": "Another discussion of orbits.",
+                 "sources": [{"title": "Reference", "url": "https://example.org/ref"}]}
+        self.catalog["groups"][1]["meanings"][0]["formulations"].append(other)
+        relation = {"id": "later", "from_formulation": "form.planet.two",
+                    "target_meaning": "meaning.orbit.two",
+                    "relation_type": "definition_uses", "review_state": "screened"}
+        self.catalog["relations"].append(relation)
+        rule = self._approved_override(source_formulation_id="form.planet.two")
+        index = to_index(self.catalog, expansion_overrides=rule)
+        planet = next(x for x in index if x["term"] == "Planet")
+        self.assertEqual(planet["dependencies"][0]["formulation"], "form.planet.two")
+        self.assertEqual(planet["dependencies"][0]["preferred_formulation"], "form.orbit.two")
+
     def test_reject_bad_source_and_relation(self):
         self.catalog["groups"][0]["meanings"][0]["formulations"][0]["sources"] = []
         with self.assertRaisesRegex(ViewError, "source evidence"):

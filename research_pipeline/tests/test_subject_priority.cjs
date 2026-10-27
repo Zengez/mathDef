@@ -55,3 +55,22 @@ test("official Subject comparisons are case and whitespace insensitive", () => {
   const forms=[form("a","Topology","x"),form("b","Algebra","y")];
   assert.equal(orderFormulations(forms,"x","  algebra  ")[0].key,"b");
 });
+
+test("approved editorial override supersedes exact Subject and linked-meaning preference", () => {
+  const forms=[
+    form("match","Algebra","m.linked"),
+    form("override","Topology","m.other"),
+    form("fallback","Geometry","m.geometry")
+  ];
+  assert.deepEqual(orderFormulations(forms,"m.linked","Algebra","override").map(x=>x.key),
+    ["override","match","fallback"]);
+  assert.deepEqual(orderFormulations(forms,"m.linked","Algebra",null).map(x=>x.key),
+    ["match","fallback","override"].sort((a,b)=>a==="match"?-1:b==="match"?1:0));
+  assert.equal(orderFormulations(forms,"m.linked","Algebra","invalid")[0].key,"match",
+    "An obsolete unknown override must not hide a definition");
+});
+
+test("override works even when source Subject is absent", () => {
+  const forms=[form("a",null,"a"),form("b","Algebra","b")];
+  assert.equal(orderFormulations(forms,"a",undefined,"b")[0].key,"b");
+});

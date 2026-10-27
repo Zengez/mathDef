@@ -59,6 +59,9 @@ def publish(repo: Path, site: Path) -> dict:
         "Complete mathematical definitions",
         "Original mathDef and research-added meanings, definitions, and links.",
         production=True,
+        # Future accepted visitor suggestions must be explicitly approved
+        # here before changing any displayed definition's priority.
+        expansion_overrides_file=repo / "data/definition_expansion_priority_overrides.json",
     )
     # The canonical site publishes the complete meaning-level catalog and link
     # evidence too. The original .tex sources and comparison previews remain
