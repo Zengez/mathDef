@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "passed_ci_stage_only",
+  "date": "2026-10-27",
+  "run_url": "https://github.com/Zengez/mathDef/actions/runs/40586388342",
+  "code_commit": "3a7128dab59fbd8725c7ff29d8bee92f8d28cb04",
+  "branch": "work/dedup-subject-context-sources-20261027",
+  "output_artifact_name": "mathdef-cleaned-global-link-audit",
+  "counts": {
+    "headings": 1986,
+    "meanings": 2065,
+    "formulations": 2104,
+    "relations": 6445,
+    "preexisting_surviving_relations_retained": 3728,
+    "new_tentative_links": 2717,
+    "previously_screened_newly_anchored": 350,
+    "reviewed_context_resolution_rules": 43,
+    "reviewed_context_resolution_occurrences": 44,
+    "remaining_unlinked_existing_term_occurrences": 5,
+    "remaining_unlinked_labels": 3
+  },
+  "historical_discarded_links": {
+    "total": 140,
+    "relinked_same_meaning": 58,
+    "relinked_different_meaning_same_heading": 1,
+    "intentional_redundant_self_references": 2,
+    "no_standalone_target_heading_mention_in_survivor_text": 79,
+    "unresolved_literal_still_needing_review": 0
+  },
+  "audit": {
+    "dangling_edges": 0,
+    "invalid_spans": 0,
+    "overlap": 0,
+    "duplicate_form_target": 0,
+    "masked_anchor": 0,
+    "idempotent": true,
+    "original_and_independent_corpora_unchanged": true
+  },
+  "intentionally_unresolved_conventions": [
+    "natural numbers: two occurrences, zero-included vs positive",
+    "inner product space: two occurrences, real vs complex",
+    "ring homomorphism: one occurrence, unital vs nonunital"
+  ],
+  "not_authorized": [
+    "public release",
+    "v2 API regeneration",
+    "new mathematical candidate research"
+  ],
+  "notes": [
+    "Graph-integrity success does not constitute mathematical peer verification of all tentative lexical links.",
+    "The original/mathDef/Wave1/independent Wave2 source definition contents have not been rewritten."
+  ]
+}

@@ -1,0 +1,1251 @@
+{
+  "schema_version": 1,
+  "status": "partial_curated_review_NOT_final_build_authorization",
+  "source_baseline": "main:a5762f78a67b2c0f4260399d8d5d2ce8f0d83e7f",
+  "notes": [
+    "Only specified meaning and formulation IDs are consolidated; no similarity-based deletion.",
+    "Source citations from removed formulations transfer to the surviving meaning's selected formulation. Original source-file links are provenance, not an external mathematical reference.",
+    "This is a first explicit subset, not a claim of whole-corpus review; do not invoke final combined linking rebuild before user adjudicates unresolved cases.",
+    "2026-10-27 user approval: resolved the three remaining 44-case source-scope reviews (Bounded linear operator, Free module, Operator norm) through explicit source-preserving meaning consolidations. Normed-space scalar contexts use the canonical real/complex setting; free modules use explicit unital left modules over associative unital rings. Unverified source-specific conventions are not asserted."
+  ],
+  "merge_meanings": [
+    {
+      "case_id": "artinian-ring",
+      "removed_meaning_id": "meaning.mathdef.original.commalg.artinian-ring",
+      "kept_meaning_id": "meaning.9442fc10b22be057.artinian-commutative-ring",
+      "kept_formulation_id": "form.9442fc10b22be057.artinian-commutative-ring",
+      "reason": "Same descending chain condition for ideals of a commutative ring; prefer the Stacks-specific precise formulation."
+    },
+    {
+      "case_id": "abelian-group",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.abelian-group",
+      "kept_meaning_id": "meaning.wave2.foundation.abelian-group",
+      "kept_formulation_id": "form.wave2.foundation.abelian-group",
+      "reason": "Both require commutativity of the group law. Notes about additive notation and cyclic groups do not define a different object."
+    },
+    {
+      "case_id": "group",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.group",
+      "kept_meaning_id": "meaning.wave2.foundation.group",
+      "kept_formulation_id": "form.wave2.foundation.group",
+      "reason": "Same binary operation with associativity, two-sided identity, and inverses. Different symbols and order do not distinguish definitions."
+    },
+    {
+      "case_id": "monoid",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.monoid",
+      "kept_meaning_id": "meaning.wave2.foundation.monoid",
+      "kept_formulation_id": "form.wave2.foundation.monoid",
+      "reason": "Same associative internal operation with two-sided identity and no inverse axiom."
+    },
+    {
+      "case_id": "quotient-group",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.quotient-group",
+      "kept_meaning_id": "meaning.wave2.quot119.quotient-group",
+      "kept_formulation_id": "form.wave2.quot119.quotient-group",
+      "reason": "Same left-coset multiplication by a normal subgroup. The old identity/inverse descriptions are consequences of the same construction."
+    },
+    {
+      "case_id": "power-set",
+      "removed_meaning_id": "meaning.mathdef.original.sets.power-set",
+      "kept_meaning_id": "meaning.wave2.direct.dd36779bc0facafd958e",
+      "kept_formulation_id": "form.meaning.wave2.direct.dd36779bc0facafd958e",
+      "reason": "Both define the collection of every subset. Cantor's theorem and the power-set axiom are related facts, not a different definition."
+    },
+    {
+      "case_id": "open-ball-metric",
+      "removed_meaning_id": "meaning.mathdef.original.metric.open-ball",
+      "kept_meaning_id": "meaning.wave2.directional113.open-metric",
+      "kept_formulation_id": "form.wave2.directional113.open-metric",
+      "reason": "Same metric ball set {x:d(x,a)<r}. Keep the separate normed-vector-space formulation, whose structure includes a norm."
+    },
+    {
+      "case_id": "equivalence-relation",
+      "removed_meaning_id": "meaning.mathdef.original.relations.equivalence-relation",
+      "kept_meaning_id": "meaning.wave2.set63.relation-reflexive-symmetric-transitive",
+      "kept_formulation_id": "form.wave2.set63.relation-reflexive-symmetric-transitive",
+      "reason": "Same reflexivity, symmetry, and transitivity predicate for a binary relation; equivalence-class partition statement is a consequence."
+    },
+    {
+      "case_id": "binary-operation-internal",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.binary-operation",
+      "kept_meaning_id": "meaning.wave2.foundation.binary-operation-internal",
+      "kept_formulation_id": "form.wave2.foundation.binary-operation-internal",
+      "reason": "Both define an operation S×S→S. The separate heterogeneous S×T→U formulation remains a distinct general construction."
+    },
+    {
+      "case_id": "connected-space-empty-allowed",
+      "removed_meaning_id": "meaning.mathdef.original.topology.connected-space",
+      "kept_meaning_id": "meaning.wave2.variant71.connected-empty-allowed",
+      "kept_formulation_id": "form.wave2.variant71.connected.01",
+      "reason": "Same no-separation definition allowing the empty space. The Stacks-sourced NONEMPTY convention remains its own meaning; preserve nontrivial clopen and continuous-map formulations."
+    },
+    {
+      "case_id": "noetherian-ring",
+      "removed_meaning_id": "meaning.mathdef.original.commalg.noetherian-ring",
+      "kept_meaning_id": "meaning.86b5d488b98c612f.noetherian-commutative-ring",
+      "kept_formulation_id": "form.86b5d488b98c612f.noetherian-commutative-ring",
+      "reason": "Original packs finite-generation and ascending-chain criteria into one paragraph; the researched meaning retains both as separately useful formulations, plus maximal-condition and module criteria."
+    },
+    {
+      "case_id": "normal-subgroup",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.normal-subgroup",
+      "kept_meaning_id": "meaning.wave2.quot119.normal-subgroup",
+      "kept_formulation_id": "form.wave2.quot119.normal-subgroup.1",
+      "reason": "The conjugation and coset criteria already appear separately among the researched formulations; old paragraph combines the same criteria."
+    },
+    {
+      "case_id": "principal-ideal-domain",
+      "removed_meaning_id": "meaning.mathdef.original.arithmetic.principal-ideal-domain",
+      "kept_meaning_id": "meaning.05531f966e3a206f.principal-ideal-domain",
+      "kept_formulation_id": "form.05531f966e3a206f.principal-ideal-domain",
+      "reason": "Identical requirement that all ideals of an integral domain be singly generated; field/UFD remarks are consequences."
+    },
+    {
+      "case_id": "splitting-field",
+      "removed_meaning_id": "meaning.mathdef.original.arithmetic.splitting-field",
+      "kept_meaning_id": "meaning.471f985f2fbe7b49.splitting-field",
+      "kept_formulation_id": "form.471f985f2fbe7b49.splitting-field",
+      "reason": "Both define the extension generated by all roots in which the polynomial splits; uniqueness/normality remarks are consequences."
+    },
+    {
+      "case_id": "unique-factorization-domain",
+      "removed_meaning_id": "meaning.mathdef.original.arithmetic.unique-factorization-domain",
+      "kept_meaning_id": "meaning.05531f966e3a206f.unique-factorization-domain",
+      "kept_formulation_id": "form.05531f966e3a206f.unique-factorization-domain",
+      "reason": "Same existence and uniqueness-up-to-unit-and-order of irreducible factorizations in an integral domain."
+    },
+    {
+      "case_id": "valuation-ring",
+      "removed_meaning_id": "meaning.mathdef.original.arithmetic.valuation-ring",
+      "kept_meaning_id": "meaning.f72779e263dd3e51.valuation-ring-fraction-field",
+      "kept_formulation_id": "form.f72779e263dd3e51.valuation-ring-fraction-field",
+      "reason": "The x-or-inverse criterion forces the ambient field to be the fraction field, so the object class is the same; note local/integrally closed are consequences."
+    },
+    {
+      "case_id": "coequalizer",
+      "removed_meaning_id": "meaning.mathdef.original.category.coequalizer",
+      "kept_meaning_id": "meaning.ce0580b5d7dc0b7c.coequalizer-category",
+      "kept_formulation_id": "form.ce0580b5d7dc0b7c.coequalizer-category",
+      "reason": "Both impose the same universal factorization property on q for a parallel pair; uniqueness up to isomorphism is a consequence."
+    },
+    {
+      "case_id": "initial-object",
+      "removed_meaning_id": "meaning.mathdef.original.category.initial-object",
+      "kept_meaning_id": "meaning.141c0f3fd90dc7b4.initial-object",
+      "kept_formulation_id": "form.141c0f3fd90dc7b4.initial-object",
+      "reason": "Same unique-arrow-out universal property; colimit/dual remarks are consequences."
+    },
+    {
+      "case_id": "monoidal-category",
+      "removed_meaning_id": "meaning.mathdef.original.category.monoidal-category",
+      "kept_meaning_id": "meaning.2ec41283717d02b0.monoidal-category",
+      "kept_formulation_id": "form.2ec41283717d02b0.monoidal-category",
+      "reason": "Same tensor bifunctor, unit, associator, pentagon and triangle coherence data; braiding is additional structure."
+    },
+    {
+      "case_id": "natural-isomorphism",
+      "removed_meaning_id": "meaning.mathdef.original.category.natural-isomorphism",
+      "kept_meaning_id": "meaning.wave2.direct.718fa3e492d42c0ced8e",
+      "kept_formulation_id": "form.meaning.wave2.direct.718fa3e492d42c0ced8e",
+      "reason": "Componentwise invertibility of a natural transformation; existence of natural inverse is already present in the researched text."
+    },
+    {
+      "case_id": "natural-transformation",
+      "removed_meaning_id": "meaning.mathdef.original.category.natural-transformation",
+      "kept_meaning_id": "meaning.wave2.direct.a8c70a2a13320680c54c",
+      "kept_formulation_id": "form.meaning.wave2.direct.a8c70a2a13320680c54c",
+      "reason": "Same components and naturality square for covariant functors; contravariant case is handled via opposite category, not a separate predicate."
+    },
+    {
+      "case_id": "opposite-category",
+      "removed_meaning_id": "meaning.mathdef.original.category.opposite-category",
+      "kept_meaning_id": "meaning.fef4e69e96c25bfa.opposite-category",
+      "kept_formulation_id": "form.fef4e69e96c25bfa.opposite-category",
+      "reason": "Identical reversal of arrows and composition with unchanged objects; double-opposite identity is a consequence."
+    },
+    {
+      "case_id": "preadditive-category",
+      "removed_meaning_id": "meaning.wave2.foundation15.preadditive-category",
+      "kept_meaning_id": "meaning.mathdef.original.category.preadditive-category",
+      "kept_formulation_id": "form.mathdef.original.category.preadditive-category.primary",
+      "reason": "Same abelian-group hom-sets and bilinear composition; keep older mathematically precise formulas and zero-object qualification."
+    },
+    {
+      "case_id": "small-category",
+      "removed_meaning_id": "meaning.wave2.foundation.small-category",
+      "kept_meaning_id": "meaning.mathdef.original.category.small-category",
+      "kept_formulation_id": "form.mathdef.original.category.small-category.primary",
+      "reason": "The new text spells out ordinary category data with set-sized objects/hom-sets; the older definition states precisely the smallness condition and distinguishes locally small."
+    },
+    {
+      "case_id": "bell-number",
+      "removed_meaning_id": "meaning.wave2.cross133.bell-number",
+      "kept_meaning_id": "meaning.mathdef.original.combin.bell-number",
+      "kept_formulation_id": "form.mathdef.original.combin.bell-number.primary",
+      "reason": "Both count all partitions of an n-element set, including n=0; retain the older formulation's informative Stirling-number identity."
+    },
+    {
+      "case_id": "local-ring",
+      "removed_meaning_id": "meaning.mathdef.original.commalg.local-ring",
+      "kept_meaning_id": "meaning.4f7edb6d32334f67.local-ring-unique-maximal",
+      "kept_formulation_id": "form.4f7edb6d32334f67.local-ring-unique-maximal",
+      "reason": "Both require a nonzero commutative ring with exactly one maximal ideal; retain the researched equivalent nonunit-ideal criterion."
+    },
+    {
+      "case_id": "projective-module",
+      "removed_meaning_id": "meaning.mathdef.original.commalg.projective-module",
+      "kept_meaning_id": "meaning.fc44c63c239e5c20.projective-module-hom",
+      "kept_formulation_id": "form.fc44c63c239e5c20.projective-module-hom",
+      "reason": "Original lifting property is explicitly retained in researched statement alongside Hom-exactness criterion."
+    },
+    {
+      "case_id": "connected-space-source-convention-not-variant",
+      "removed_meaning_id": "meaning.ab260940ea9c523d.connected-topological-space",
+      "kept_meaning_id": "meaning.wave2.variant71.connected-empty-allowed",
+      "kept_formulation_id": "form.wave2.variant71.connected.01",
+      "reason": "Stacks Definition 5.7.1 explicitly requires nonempty and excludes the empty space. This is a documented source-specific convention on the same no-separation predicate, not a separate mathematical construction. Canonical mathDef adopts no-separation allowing empty and retains Stacks citation/verified scoped restriction as convention metadata."
+    },
+    {
+      "case_id": "bijection",
+      "removed_meaning_id": "meaning.mathdef.original.functions.bijection",
+      "kept_meaning_id": "meaning.wave2.direct.55e6dc72d6d3bc1d5669",
+      "kept_formulation_id": "form.meaning.wave2.direct.55e6dc72d6d3bc1d5669",
+      "reason": "Original is injective+surjective, precisely included in research text together with useful inverse characterization; no extra meaning."
+    },
+    {
+      "case_id": "affine-combination",
+      "removed_meaning_id": "meaning.wave2.direct.63acc9193a56ae7003b9",
+      "kept_meaning_id": "meaning.mathdef.original.geometry.affine-combination",
+      "kept_formulation_id": "form.mathdef.original.geometry.affine-combination.primary",
+      "reason": "Both use n≥1 real affine points and coefficient sum 1. Retain original's useful independence-of-origin and convex-combination remarks."
+    },
+    {
+      "case_id": "measurable-space",
+      "removed_meaning_id": "meaning.wave2.prob90.measurable-space",
+      "kept_meaning_id": "meaning.mathdef.original.measure.measurable-space",
+      "kept_formulation_id": "form.mathdef.original.measure.measurable-space.primary",
+      "reason": "Both define the pair (X,Σ) with a sigma-algebra; the original explicitly states the sigma-algebra axioms."
+    },
+    {
+      "case_id": "outer-measure",
+      "removed_meaning_id": "meaning.wave2.pop141.outer-measure",
+      "kept_meaning_id": "meaning.mathdef.original.measure.outer-measure",
+      "kept_formulation_id": "form.mathdef.original.measure.outer-measure.primary",
+      "reason": "Same empty-set normalization, monotonicity, and countable subadditivity for μ*:P(X)→[0,∞]; no distinct construction."
+    },
+    {
+      "case_id": "prime-number",
+      "removed_meaning_id": "meaning.wave2.direct.16d2c0615065e12050a2",
+      "kept_meaning_id": "meaning.mathdef.original.number.prime-number",
+      "kept_formulation_id": "form.mathdef.original.number.prime-number.primary",
+      "reason": "Same integer p>1 with exactly two positive divisors. Remarks about prime elements/ideals are related facts."
+    },
+    {
+      "case_id": "probability-space",
+      "removed_meaning_id": "meaning.wave2.prob90.probability-space",
+      "kept_meaning_id": "meaning.mathdef.original.prob.probability-space",
+      "kept_formulation_id": "form.mathdef.original.prob.probability-space.primary",
+      "reason": "Same measurable triple with countably additive total-one measure; keep explicit axioms and events description."
+    },
+    {
+      "case_id": "random-variable-real",
+      "removed_meaning_id": "meaning.mathdef.original.prob.random-variable",
+      "kept_meaning_id": "meaning.wave2.prob90.random-variable-real",
+      "kept_formulation_id": "form.wave2.prob90.random-variable-real",
+      "reason": "Same measurability X:Ω→R against the Borel σ-algebra; the general S-valued random variable remains independent."
+    },
+    {
+      "case_id": "sigma-algebra",
+      "removed_meaning_id": "meaning.mathdef.original.prob.sigma-algebra",
+      "kept_meaning_id": "meaning.wave2.foundation.sigma-algebra",
+      "kept_formulation_id": "form.wave2.foundation.sigma-algebra",
+      "reason": "Identical sigma-algebra axioms; researched second formulation is a genuinely informative equivalent characterization and stays."
+    },
+    {
+      "case_id": "lipschitz-global",
+      "removed_meaning_id": "meaning.mathdef.original.real.lipschitz-continuity",
+      "kept_meaning_id": "meaning.wave2.cross104.lipschitz-global",
+      "kept_formulation_id": "form.wave2.cross104.lipschitz-global",
+      "reason": "Same global metric-pair Lipschitz bound. Retain distinct point-anchored condition."
+    },
+    {
+      "case_id": "antisymmetric-relation",
+      "removed_meaning_id": "meaning.wave2.direct.9a71afd4a344322c1d26",
+      "kept_meaning_id": "meaning.mathdef.original.relations.antisymmetric-relation",
+      "kept_formulation_id": "form.mathdef.original.relations.antisymmetric-relation.primary",
+      "reason": "Same implication xRy and yRx implies x=y; original clarifies difference from symmetry."
+    },
+    {
+      "case_id": "binary-relation-graph",
+      "removed_meaning_id": "meaning.mathdef.original.relations.binary-relation",
+      "kept_meaning_id": "meaning.wave2.foundation.binary-relation-subset",
+      "kept_formulation_id": "form.wave2.foundation.binary-relation-subset",
+      "reason": "Same subset R⊆S×T construction. Retain genuinely distinct typed-triple (S,T,R) formulation."
+    },
+    {
+      "case_id": "directed-set",
+      "removed_meaning_id": "meaning.709d3d2f82950c5b.directed-preordered-set",
+      "kept_meaning_id": "meaning.mathdef.original.relations.directed-set",
+      "kept_formulation_id": "form.mathdef.original.relations.directed-set.primary",
+      "reason": "Same nonempty directed preorder and common upper-bound condition; original explains no antisymmetry."
+    },
+    {
+      "case_id": "equivalence-class",
+      "removed_meaning_id": "meaning.wave2.set63.set-of-related-elements",
+      "kept_meaning_id": "meaning.mathdef.original.relations.equivalence-class",
+      "kept_formulation_id": "form.mathdef.original.relations.equivalence-class.primary",
+      "reason": "Same equivalence-class subset of representatives; original records the partition consequence."
+    },
+    {
+      "case_id": "order-isomorphism",
+      "removed_meaning_id": "meaning.wave2.direct.e892b9d8b91c184b0801",
+      "kept_meaning_id": "meaning.mathdef.original.relations.order-isomorphism",
+      "kept_formulation_id": "form.mathdef.original.relations.order-isomorphism.primary",
+      "reason": "Same bijective order-preserving-and-reflecting map; original includes equivalent inverse criterion."
+    },
+    {
+      "case_id": "symmetric-relation",
+      "removed_meaning_id": "meaning.wave2.direct.972ae1e91200fae874aa",
+      "kept_meaning_id": "meaning.mathdef.original.relations.symmetric-relation",
+      "kept_formulation_id": "form.mathdef.original.relations.symmetric-relation.primary",
+      "reason": "Same xRy implies yRx condition; remarks about antisymmetry do not create another meaning."
+    },
+    {
+      "case_id": "total-order",
+      "removed_meaning_id": "meaning.wave2.direct.22a110eb8988efe59f29",
+      "kept_meaning_id": "meaning.mathdef.original.relations.total-order",
+      "kept_formulation_id": "form.mathdef.original.relations.total-order.primary",
+      "reason": "Reflexive, antisymmetric, transitive and pairwise comparable relation; no separate object or convention."
+    },
+    {
+      "case_id": "affine-scheme",
+      "removed_meaning_id": "meaning.4c7d59ba7058613b.affine-scheme",
+      "kept_meaning_id": "meaning.mathdef.original.schemes.affine-scheme",
+      "kept_formulation_id": "form.mathdef.original.schemes.affine-scheme.primary",
+      "reason": "Same locally ringed space isomorphic to Spec(R) with structure sheaf, for a commutative ring."
+    },
+    {
+      "case_id": "locally-ringed-space",
+      "removed_meaning_id": "meaning.52683cac2ccf3bad.locally-ringed-space",
+      "kept_meaning_id": "meaning.mathdef.original.schemes.locally-ringed-space",
+      "kept_formulation_id": "form.mathdef.original.schemes.locally-ringed-space.primary",
+      "reason": "Same sheaf-of-rings/stalks-are-local condition; ringed-space wording is equivalent."
+    },
+    {
+      "case_id": "reduced-scheme",
+      "removed_meaning_id": "meaning.mathdef.original.schemes.reduced-scheme",
+      "kept_meaning_id": "meaning.6a21c2d4f3354c8f.reduced-scheme",
+      "kept_formulation_id": "form.6a21c2d4f3354c8f.reduced-scheme",
+      "reason": "Same reduced stalks; keep the researched alternative reduced-sections characterization."
+    },
+    {
+      "case_id": "scheme",
+      "removed_meaning_id": "meaning.bdc3e54fd4523fad.scheme-local-affine",
+      "kept_meaning_id": "meaning.mathdef.original.schemes.scheme",
+      "kept_formulation_id": "form.mathdef.original.schemes.scheme.primary",
+      "reason": "Same locally ringed space locally isomorphic to affine schemes; open-cover vs per-point neighborhood are trivial reformulations."
+    },
+    {
+      "case_id": "cardinality",
+      "removed_meaning_id": "meaning.081430bc340a055a.cardinality",
+      "kept_meaning_id": "meaning.mathdef.original.sets.cardinality",
+      "kept_formulation_id": "form.mathdef.original.sets.cardinality.primary",
+      "reason": "Least equipotent ordinal formulation already present in original, along with equipotence via bijection."
+    },
+    {
+      "case_id": "cartesian-product-binary",
+      "removed_meaning_id": "meaning.wave2.foundation.cartesian-product-binary",
+      "kept_meaning_id": "meaning.mathdef.original.sets.cartesian-product",
+      "kept_formulation_id": "form.mathdef.original.sets.cartesian-product.primary",
+      "reason": "Same binary product of sets of ordered pairs. Original also discusses indexed products without defining a separate variant."
+    },
+    {
+      "case_id": "limit-ordinal",
+      "removed_meaning_id": "meaning.f810d472f5a4d367.limit-ordinal",
+      "kept_meaning_id": "meaning.mathdef.original.sets.limit-ordinal",
+      "kept_formulation_id": "form.mathdef.original.sets.limit-ordinal.primary",
+      "reason": "Same nonzero nonsuccessor ordinal. Original also states union characterization."
+    },
+    {
+      "case_id": "kuratowski-ordered-pair",
+      "removed_meaning_id": "meaning.wave2.direct.2d4e4af6f3b83da929a6",
+      "kept_meaning_id": "meaning.mathdef.original.sets.ordered-pair",
+      "kept_formulation_id": "form.mathdef.original.sets.ordered-pair.primary",
+      "reason": "Same precise Kuratowski encoding {{a},{a,b}} and coordinate uniqueness."
+    },
+    {
+      "case_id": "subset-nonstrict",
+      "removed_meaning_id": "meaning.wave2.foundation.subset-nonstrict",
+      "kept_meaning_id": "meaning.mathdef.original.sets.subset",
+      "kept_formulation_id": "form.mathdef.original.sets.subset.primary",
+      "reason": "Same inclusion predicate; equality allowed in both, original distinguishes proper subset."
+    },
+    {
+      "case_id": "successor-ordinal-source-one",
+      "removed_meaning_id": "meaning.f810d472f5a4d367.successor-ordinal",
+      "kept_meaning_id": "meaning.mathdef.original.sets.successor-ordinal",
+      "kept_formulation_id": "form.mathdef.original.sets.successor-ordinal.primary",
+      "reason": "Same ordinal successor α∪{α} and successor property; original specifies zero and limits excluded."
+    },
+    {
+      "case_id": "successor-ordinal-source-two",
+      "removed_meaning_id": "meaning.wave2.direct.bfcb0543265f0a0f99cf",
+      "kept_meaning_id": "meaning.mathdef.original.sets.successor-ordinal",
+      "kept_formulation_id": "form.mathdef.original.sets.successor-ordinal.primary",
+      "reason": "Another exact von Neumann ordinal successor construction, differing only in explanatory greatest-member remark."
+    },
+    {
+      "case_id": "transitive-set",
+      "removed_meaning_id": "meaning.mathdef.original.sets.transitive-set",
+      "kept_meaning_id": "meaning.wave2.direct.research401",
+      "kept_formulation_id": "form.meaning.wave2.direct.research401",
+      "reason": "Both define every member y of A being a subset of A; researched formulation additionally retains the informative union criterion ∪A⊆A."
+    },
+    {
+      "case_id": "discrete-topology",
+      "removed_meaning_id": "meaning.wave2.foundation76.discrete-topology",
+      "kept_meaning_id": "meaning.mathdef.original.topology.discrete-topology",
+      "kept_formulation_id": "form.mathdef.original.topology.discrete-topology.primary",
+      "reason": "Same topology P(X). Nonemptiness restriction in research formulation is a boundary convention, not a different topology construction; mathDef uses broad X including empty. No unsupported attribution of source intent."
+    },
+    {
+      "case_id": "hausdorff-space",
+      "removed_meaning_id": "meaning.mathdef.original.topology.hausdorff-space",
+      "kept_meaning_id": "meaning.e62923cd8ef99cd1.hausdorff-space",
+      "kept_formulation_id": "form.e62923cd8ef99cd1.hausdorff-space",
+      "reason": "Same disjoint neighborhoods for every pair of distinct points. Retain informative closed-diagonal characterization as separate researched formulation."
+    },
+    {
+      "case_id": "homeomorphism",
+      "removed_meaning_id": "meaning.mathdef.original.topology.homeomorphism",
+      "kept_meaning_id": "meaning.wave2.directional113.homeomorphism-topological",
+      "kept_formulation_id": "form.wave2.directional113.homeomorphism-topological.1",
+      "reason": "Same bijective continuous map with continuous inverse. Research retains open-set image iff equivalence as a second genuine characterization."
+    },
+    {
+      "case_id": "quotient-topology",
+      "removed_meaning_id": "meaning.wave2.direct.0c5a27f2980fc722cbb5",
+      "kept_meaning_id": "meaning.mathdef.original.topology.quotient-topology",
+      "kept_formulation_id": "form.mathdef.original.topology.quotient-topology.primary",
+      "reason": "Same final quotient topology induced by a surjection; original includes useful continuity universal property."
+    },
+    {
+      "case_id": "topological-space",
+      "removed_meaning_id": "meaning.wave2.foundation.topological-space",
+      "kept_meaning_id": "meaning.mathdef.original.topology.topological-space",
+      "kept_formulation_id": "form.mathdef.original.topology.topological-space.primary",
+      "reason": "Same open-set axioms on an arbitrary set, including empty; no substantive variant."
+    },
+    {
+      "case_id": "subspace-topology-general",
+      "removed_meaning_id": "meaning.mathdef.original.topology.subspace-topology",
+      "kept_meaning_id": "meaning.wave2.foundation.subspace-topology-general",
+      "kept_formulation_id": "form.wave2.foundation.subspace-topology-general",
+      "reason": "Same induced subspace topology on any subset. Coarsest-topology property is a consequence and not a different predicate."
+    },
+    {
+      "case_id": "subspace-topology-nonempty-convention",
+      "removed_meaning_id": "meaning.wave2.foundation.subspace-topology-nonempty",
+      "kept_meaning_id": "meaning.wave2.foundation.subspace-topology-general",
+      "kept_formulation_id": "form.wave2.foundation.subspace-topology-general",
+      "reason": "Nonempty restriction stated as hypothetical source convention rather than a distinct induced topology; canonical mathDef includes empty. Retain restriction as a convention note, not verified source assumption."
+    },
+    {
+      "case_id": "categorical-isomorphism",
+      "removed_meaning_id": "meaning.wave2.direct.15bb96cb26d587868bbe",
+      "kept_meaning_id": "meaning.mathdef.original.category.isomorphism",
+      "kept_formulation_id": "form.mathdef.original.category.isomorphism.primary",
+      "reason": "Same inverse-morphism universal predicate with 2-sided compositional inverse; original notes mono+epi implication."
+    },
+    {
+      "case_id": "cofinality-ordinal",
+      "removed_meaning_id": "meaning.cbdedf7241d6bd76.cofinality-ordinal",
+      "kept_meaning_id": "meaning.mathdef.original.sets.cofinality",
+      "kept_formulation_id": "form.mathdef.original.sets.cofinality.primary",
+      "reason": "Same least order type of cofinal subset of ordinal; least cardinal-size equivalent, with original 0/successor conventions explicit."
+    },
+    {
+      "case_id": "category-colimit",
+      "removed_meaning_id": "meaning.8f7683667fac9d28.category-colimit",
+      "kept_meaning_id": "meaning.mathdef.original.category.colimit",
+      "kept_formulation_id": "form.mathdef.original.category.colimit.primary",
+      "reason": "Same cocone initial object/universal unique-factorization property."
+    },
+    {
+      "case_id": "complex-modulus",
+      "removed_meaning_id": "meaning.wave2.direct.research413",
+      "kept_meaning_id": "meaning.mathdef.original.complex.modulus",
+      "kept_formulation_id": "form.mathdef.original.complex.modulus.primary",
+      "reason": "Same sqrt(x²+y²) Euclidean modulus; old formulation includes useful algebraic identities."
+    },
+    {
+      "case_id": "integer-congruence",
+      "removed_meaning_id": "meaning.wave2.direct.9f6f3ee9e141231a54d4",
+      "kept_meaning_id": "meaning.mathdef.original.number.congruence",
+      "kept_formulation_id": "form.mathdef.original.number.congruence.primary",
+      "reason": "Same n divides a−b predicate for positive integer modulus; equivalence and compatibility consequences do not redefine."
+    },
+    {
+      "case_id": "contravariant-functor",
+      "removed_meaning_id": "meaning.fef4e69e96c25bfa.contravariant-functor",
+      "kept_meaning_id": "meaning.mathdef.original.category.contravariant-functor",
+      "kept_formulation_id": "form.mathdef.original.category.contravariant-functor.primary",
+      "reason": "Same functor C^op→D; original includes full identities and reversed composition."
+    },
+    {
+      "case_id": "full-subcategory",
+      "removed_meaning_id": "meaning.mathdef.postwave.full-subcategory-20261026",
+      "kept_meaning_id": "meaning.mathdef.original.category.subcat-full",
+      "kept_formulation_id": "form.mathdef.original.category.subcat-full.primary",
+      "reason": "Same all-ambient-morphisms inclusion; fully-faithful inclusion is an equivalent property, not a different structure."
+    },
+    {
+      "case_id": "injective-function",
+      "removed_meaning_id": "meaning.wave2.direct.4ba0cfe171bbe93d0c9a",
+      "kept_meaning_id": "meaning.mathdef.original.functions.injective",
+      "kept_formulation_id": "form.mathdef.original.functions.injective.primary",
+      "reason": "Same one-to-one predicate for functions, equivalent rewording."
+    },
+    {
+      "case_id": "inverse-image",
+      "removed_meaning_id": "meaning.wave2.direct.b86257b3cce62907e97e",
+      "kept_meaning_id": "meaning.mathdef.original.sets.inverse-image",
+      "kept_formulation_id": "form.mathdef.original.sets.inverse-image.primary",
+      "reason": "Same preimage of a subset under any function; original includes union preservation identity."
+    },
+    {
+      "case_id": "category-limit",
+      "removed_meaning_id": "meaning.8f7683667fac9d28.category-limit",
+      "kept_meaning_id": "meaning.mathdef.original.category.limit",
+      "kept_formulation_id": "form.mathdef.original.category.limit.primary",
+      "reason": "Same cone terminal-object and unique factorization universal property."
+    },
+    {
+      "case_id": "scheme-morphism",
+      "removed_meaning_id": "meaning.bdc3e54fd4523fad.scheme-morphism",
+      "kept_meaning_id": "meaning.mathdef.original.schemes.morphism-schemes",
+      "kept_formulation_id": "form.mathdef.original.schemes.morphism-schemes.primary",
+      "reason": "Same morphism of locally ringed spaces: continuous map, compatible sheaf map and stalkwise localness."
+    },
+    {
+      "case_id": "nowhere-dense",
+      "removed_meaning_id": "meaning.c15e2b26c207d87e.nowhere-dense-subset",
+      "kept_meaning_id": "meaning.mathdef.original.topology.nowhere-dense",
+      "kept_formulation_id": "form.mathdef.original.topology.nowhere-dense.primary",
+      "reason": "Same closure with empty interior. Original provides equivalent open-set characterization and contrast with measure zero."
+    },
+    {
+      "case_id": "pairwise-disjoint",
+      "removed_meaning_id": "meaning.wave2.direct.6e9f40397260239679d4",
+      "kept_meaning_id": "meaning.mathdef.original.sets.disjoint-family",
+      "kept_formulation_id": "form.mathdef.original.sets.disjoint-family.primary",
+      "reason": "Same pairwise-empty intersection for distinct indices. Source's empty/one-member vacuity is a consequence, not a distinct family."
+    },
+    {
+      "case_id": "radical-ideal",
+      "removed_meaning_id": "meaning.wave2.direct.2592ffd1f6be0b4d46bf",
+      "kept_meaning_id": "meaning.mathdef.original.commalg.radical-ideal-property",
+      "kept_formulation_id": "form.mathdef.original.commalg.radical-ideal-property.primary",
+      "reason": "Same I=sqrt(I) and power-closed condition in commutative ring; source retains supporting URL."
+    },
+    {
+      "case_id": "set-difference",
+      "removed_meaning_id": "meaning.wave2.direct.189a1049986dd4f651f4",
+      "kept_meaning_id": "meaning.mathdef.original.sets.difference",
+      "kept_formulation_id": "form.mathdef.original.sets.difference.primary",
+      "reason": "Same A∖B relative complement operation; alternative writing in common ambient X follows immediately."
+    },
+    {
+      "case_id": "stalk-of-sheaf",
+      "removed_meaning_id": "meaning.mathdef.original.schemes.stalk",
+      "kept_meaning_id": "meaning.wave2.direct.7413d0506040cdeb60af",
+      "kept_formulation_id": "form.meaning.wave2.direct.7413d0506040cdeb60af",
+      "reason": "Same filtered colimit over open neighborhoods, with researched text retaining informative equivalent germ construction."
+    },
+    {
+      "case_id": "surjective-function",
+      "removed_meaning_id": "meaning.wave2.direct.c8a3e68d130a4f68d108",
+      "kept_meaning_id": "meaning.mathdef.original.functions.surjective",
+      "kept_formulation_id": "form.mathdef.original.functions.surjective.primary",
+      "reason": "Same every-codomain-element-has-preimage predicate, with f(X)=Y equivalent."
+    },
+    {
+      "case_id": "von-neumann-ordinal",
+      "removed_meaning_id": "meaning.f810d472f5a4d367.von-neumann-ordinal",
+      "kept_meaning_id": "meaning.mathdef.original.sets.ordinal",
+      "kept_formulation_id": "form.mathdef.original.sets.ordinal.primary",
+      "reason": "Same transitive set well-ordered by ∈; original explains ordinal-indexing convention."
+    },
+    {
+      "case_id": "flat-module-commutative",
+      "removed_meaning_id": "meaning.e91cf25c30aa59b9.flat-module",
+      "kept_meaning_id": "meaning.mathdef.original.commalg.flat-module",
+      "kept_formulation_id": "form.mathdef.original.commalg.flat-module.primary",
+      "reason": "Both define flatness by exactness of −⊗_R M for modules over a commutative ring; cited Stacks chapter 10 establishes commutative algebra setting. Preserve warning that noncommutative case requires left/right typing."
+    },
+    {
+      "case_id": "unital-ring-homomorphism",
+      "removed_meaning_id": "meaning.mathdef.original.algebra.ring-homomorphism",
+      "kept_meaning_id": "meaning.wave2.foundation.ring-map-unital",
+      "kept_formulation_id": "form.wave2.foundation.ring-map-unital",
+      "reason": "Both require preservation of addition, multiplication and 1 between unital associative rings. Distinct ring-map convention not preserving 1 remains separate."
+    },
+    {
+      "case_id": "research-division-ring",
+      "removed_meaning_id": "meaning.wave2.direct.3913df323abde5188991",
+      "kept_meaning_id": "meaning.wave2.scalar101.division-ring",
+      "kept_formulation_id": "form.wave2.scalar101.division-ring",
+      "reason": "Both define nonzero associative unital ring with all nonzero elements two-sided invertible; commutativity is not imposed. Preserve UCLA lead as additional source, not as verified evidence."
+    },
+    {
+      "case_id": "research-finite-field-extension",
+      "removed_meaning_id": "meaning.4777518984e96a98.finite-field-extension",
+      "kept_meaning_id": "meaning.mathdef.postwave.scan-finite-field-extension-20261026",
+      "kept_formulation_id": "form.meaning.mathdef.postwave.scan-finite-field-extension-20261026",
+      "reason": "Finite field extension is finite dimension over base field in both. Keep richer explanatory text and preserve Stacks 09G2 alongside postwave sources."
+    },
+    {
+      "case_id": "research-galois-extension",
+      "removed_meaning_id": "meaning.50d335de00e5f11d.galois-extension-review",
+      "kept_meaning_id": "meaning.26fa733af18b53e7.galois-field-extension",
+      "kept_formulation_id": "form.26fa733af18b53e7.galois-field-extension",
+      "reason": "Same algebraic normal separable field extension. Preserve finite automorphism criterion as informative consequence and both Stacks loci."
+    },
+    {
+      "case_id": "research-locally-finite-family",
+      "removed_meaning_id": "meaning.b1c99b8dae7a6bde.locally-finite-collection",
+      "kept_meaning_id": "meaning.mathdef.postwave.locally-finite-set-family-20261026",
+      "kept_formulation_id": "form.meaning.mathdef.postwave.locally-finite-set-family-20261026",
+      "reason": "Same local neighborhood meets only finitely many indexed members condition; point-finite contrast is an explanatory comparison, not a different definition."
+    },
+    {
+      "case_id": "research-purely-inseparable-extension",
+      "removed_meaning_id": "meaning.50d335de00e5f11d.purely-inseparable-extension-review",
+      "kept_meaning_id": "meaning.12e554f8d49d5361.purely-inseparable-extension",
+      "kept_formulation_id": "form.12e554f8d49d5361.purely-inseparable-extension",
+      "reason": "Both require characteristic p>0 and, for each element, a p-power in the base field; algebraicity follows automatically. Preserve both Stacks reference tags."
+    },
+    {
+      "case_id": "research-quasicompact-morphism",
+      "removed_meaning_id": "meaning.bcda9860a078827b.quasicompact-morphism-schemes",
+      "kept_meaning_id": "meaning.mathdef.postwave.scan-quasicompact-scheme-morphism-20261026",
+      "kept_formulation_id": "form.meaning.mathdef.postwave.scan-quasicompact-scheme-morphism-20261026",
+      "reason": "Inverse images of affine open subsets are quasi-compact in both; checking quasi-compact opens or an affine cover gives equivalent criteria, already explained in retained text. Preserve Stacks tag 01K2."
+    },
+    {
+      "case_id": "research-separable-extension",
+      "removed_meaning_id": "meaning.720eaae9156f6f4e.separable-algebraic-field-extension",
+      "kept_meaning_id": "meaning.50d335de00e5f11d.separable-algebraic-extension",
+      "kept_formulation_id": "form.50d335de00e5f11d.separable-algebraic-extension",
+      "reason": "Every extension element separable over base field expands to exactly the retained no-repeated-roots minimal-polynomial condition; keep both cited Stacks loci."
+    },
+    {
+      "case_id": "research-boolean-ring-nonunital",
+      "removed_meaning_id": "meaning.wave2.direct.cf59d9cb388b3999576d",
+      "kept_meaning_id": "meaning.wave2.alternative39.boolean-ring-nonunital",
+      "kept_formulation_id": "form.wave2.alternative39.boolean-ring-nonunital",
+      "reason": "Both allow nonunital associative rings satisfying x²=x for all x. Preserve the unital Boolean ring as a genuinely distinct ring convention; record Stacks tag 04PN as unverified source lead."
+    },
+    {
+      "case_id": "abelian-category",
+      "removed_meaning_id": "meaning.wave2.foundation15.abelian-category",
+      "kept_meaning_id": "meaning.mathdef.original.category.abelian-category",
+      "kept_formulation_id": "form.mathdef.original.category.abelian-category.primary",
+      "reason": "The original formulation already states both the normal mono/epi kernel-cokernel characterization and the equivalent coimage-image criterion. The source-screened Stacks Definition 12.5.1 repeats the latter rather than offering an independent construction. Preserve the Stacks citation and original Wikipedia citation; distinguish this from merely additive categories."
+    },
+    {
+      "case_id": "cross-heading-galois-field-extension-into-original",
+      "removed_meaning_id": "meaning.26fa733af18b53e7.galois-field-extension",
+      "kept_meaning_id": "meaning.mathdef.original.arithmetic.galois-extension",
+      "kept_formulation_id": "form.mathdef.original.arithmetic.galois-extension.primary",
+      "reason": "After aliasing Galois field extension to Galois extension, both define precisely an algebraic normal separable extension. The original additionally states the informative finite-extension automorphism criterion already included in the researched meaning; no independent mathematical formulation is lost. Carry all Stacks and original citations, both researched historical IDs, and normalize the two-step alias chain to the live original."
+    },
+    {
+      "case_id": "user-adjudicated-zero-divisor-nonzero-only",
+      "removed_meaning_id": "meaning.mathdef.original.commalg.zero-divisor",
+      "kept_meaning_id": "meaning.wave2.direct.8f2dea7e2bd1211c0cf6",
+      "kept_formulation_id": "form.meaning.wave2.direct.8f2dea7e2bd1211c0cf6",
+      "reason": "User decision 2026-10-27: canonical zero divisors are nonzero elements a with ab=0 for some nonzero b; zero itself excluded. The broader alternative is kept in editorial convention history and source provenance, not as another search-card meaning."
+    },
+    {
+      "case_id": "user-adjudicated-metric-space-nonempty",
+      "removed_meaning_id": "meaning.mathdef.original.metric.metric-space",
+      "kept_meaning_id": "meaning.wave2.analysis98.metric-space",
+      "kept_formulation_id": "form.wave2.analysis98.metric-space",
+      "reason": "User decision 2026-10-27: metric spaces must have nonempty underlying set. Preserve the compatible induced-topology presentation of the same meaning; original source and ID become aliases."
+    },
+    {
+      "case_id": "congruence-original-into-enriched-modulus-formulation",
+      "removed_meaning_id": "meaning.mathdef.original.number.congruence",
+      "kept_meaning_id": "meaning.wave2.pop139.integer-congruence",
+      "kept_formulation_id": "form.meaning.wave2.pop139.integer-congruence",
+      "reason": "User-independent mathematical comparison: both require positive integer modulus, and n|(a−b) precisely iff a−b=kn. The retained enriched researched statement additionally gives the equivalent least-nonnegative-remainder criterion. The previous direct-to-original merge now becomes a transitive direct-to-survivor alias; original quotient-group source and MathWorld divisibility lead survive by source inheritance."
+    },
+    {
+      "case_id": "group-element-order-multiplicative-notation",
+      "removed_meaning_id": "meaning.wave2.direct.6fbe5c318aee10f6742d",
+      "kept_meaning_id": "meaning.mathdef.postwave.scan-multiplicative-order-element-20261026",
+      "kept_formulation_id": "form.meaning.mathdef.postwave.scan-multiplicative-order-element-20261026",
+      "reason": "Both actual definitions give least n>0 with g^n=e, otherwise infinite. The surviving source-backed formulation adds the useful specialized order of a unit modulo m and the cyclic-subgroup perspective; ordinary additive order is the same group-theoretic invariant in additive notation, not a different mathematical meaning."
+    },
+    {
+      "case_id": "field-linear-transformation-into-linear-map",
+      "removed_meaning_id": "meaning.wave2.cross110.field-vector-linear",
+      "kept_meaning_id": "meaning.mathdef.original.linear.linear-map",
+      "kept_formulation_id": "form.mathdef.original.linear.linear-map.primary",
+      "reason": "Both are field-vector-space linear maps T:V→W over the same field, preserving addition and scalar multiplication; T(av+w)=aT(v)+T(w) is exactly equivalent to T(av+bw)=aT(v)+bT(w). Preserve the researched R-module linearity as a separate mathematical scope; sources and researched field version historic ID merge into original."
+    },
+    {
+      "case_id": "internal-only-set-partition-repeat-disjoint-cover",
+      "removed_meaning_id": "meaning.mathdef.original.combin.set-partition",
+      "kept_meaning_id": "meaning.wave2.group116.set-partition",
+      "kept_formulation_id": "form.wave2.group116.set-partition.1",
+      "reason": "Internal variant pass: original and researched definitions both describe exactly a family of nonempty pairwise disjoint blocks with union S. Merge their source citations and original historical ID into the researched disjoint-cover form; keep the separate unique-block-membership characterization untouched. The original explicitly notes empty-set convention, while the surviving set-theoretic conditions already admit the empty family when S is empty."
+    },
+    {
+      "case_id": "user-approved-bounded-linear-operator-scalar-scope",
+      "removed_meaning_id": "meaning.mathdef.original.functional.bounded-linear-operator",
+      "kept_meaning_id": "meaning.wave2.pop142.bounded-linear",
+      "kept_formulation_id": "form.meaning.wave2.pop142.bounded-linear",
+      "reason": "User-approved 2026-10-27: unqualified normed vector spaces use the standard real/complex Banach/functional-analysis scalar context for this entry; the inequality is identical. Retain the explicit real/complex formulation and transfer original source, stable ID and historical formulation redirect; do not attribute an independently verified broader source convention."
+    },
+    {
+      "case_id": "user-approved-free-module-unital-left-context",
+      "removed_meaning_id": "meaning.mathdef.original.commalg.free-module",
+      "kept_meaning_id": "meaning.wave2.direct.7462fa5f90275b34779a",
+      "kept_formulation_id": "form.meaning.wave2.direct.7462fa5f90275b34779a",
+      "reason": "User-approved 2026-10-27: adopt explicit associative unital ring and unital left-module setting as canonical. The earlier unqualified R-module basis/direct-sum condition restates the same freeness criterion under its conventional module hypotheses; the general formulation retains the empty basis and arbitrary rank. Transfer original citations and ID; do not claim original source separately verified all generalized ring contexts."
+    },
+    {
+      "case_id": "user-approved-operator-norm-scalar-scope",
+      "removed_meaning_id": "meaning.mathdef.original.functional.operator-norm",
+      "kept_meaning_id": "meaning.wave2.pop142.bounded-operator-norm",
+      "kept_formulation_id": "form.meaning.wave2.pop142.bounded-operator-norm",
+      "reason": "User-approved 2026-10-27: use standard real/complex normed spaces to disambiguate previously unqualified normed-space usage. Identical unit-ball supremum; preserve the researched infimum characterization and original source/ID via redirects, without inventing a source-specific scalar convention."
+    }
+  ],
+  "metadata_assignments": {
+    "meaning.9442fc10b22be057.artinian-commutative-ring": {
+      "subject": "Commutative Algebra",
+      "context": "Commutative rings"
+    },
+    "meaning.wave2.foundation.abelian-group": {
+      "subject": "Algebra"
+    },
+    "meaning.wave2.foundation.group": {
+      "subject": "Algebra"
+    },
+    "meaning.wave2.foundation.monoid": {
+      "subject": "Algebra"
+    },
+    "meaning.wave2.quot119.quotient-group": {
+      "subject": "Algebra",
+      "context": "Normal subgroups"
+    },
+    "meaning.wave2.direct.dd36779bc0facafd958e": {
+      "subject": "Set Theory"
+    },
+    "meaning.wave2.directional113.open-metric": {
+      "subject": "Metric Geometry",
+      "context": "Metric spaces"
+    },
+    "meaning.wave2.set63.relation-reflexive-symmetric-transitive": {
+      "subject": "Set Theory"
+    },
+    "meaning.wave2.foundation.binary-operation-internal": {
+      "subject": "Algebra",
+      "context": "Internal binary operations"
+    },
+    "meaning.wave2.variant71.connected-empty-allowed": {
+      "subject": "Topology",
+      "context": "Empty space allowed"
+    },
+    "meaning.86b5d488b98c612f.noetherian-commutative-ring": {
+      "subject": "Commutative Algebra",
+      "context": "Commutative rings"
+    },
+    "meaning.wave2.foundation.binary-operation-general": {
+      "subject": "Algebra",
+      "context": "General binary operations"
+    },
+    "meaning.wave2.directional113.open-norm": {
+      "subject": "Functional Analysis",
+      "context": "Normed vector spaces"
+    },
+    "meaning.mathdef.original.algebra.quotient-ring": {
+      "subject": "Algebra",
+      "context": "Unital associative rings"
+    },
+    "meaning.wave2.direct.50fc57153b93520a247a": {
+      "subject": "Commutative Algebra",
+      "context": "Commutative rings"
+    },
+    "meaning.mathdef.original.alg-topology.chain-complex": {
+      "subject": "Homological Algebra",
+      "context": "Abelian groups or modules"
+    },
+    "meaning.wave2.direct.12cbff3823a07d544a1e": {
+      "subject": "Homological Algebra",
+      "context": "Additive categories"
+    },
+    "meaning.mathdef.original.category.abelian-category": {
+      "subject": "Category Theory"
+    },
+    "meaning.wave2.quot119.normal-subgroup": {
+      "subject": "Algebra"
+    },
+    "meaning.05531f966e3a206f.principal-ideal-domain": {
+      "subject": "Commutative Algebra"
+    },
+    "meaning.471f985f2fbe7b49.splitting-field": {
+      "subject": "Field Theory"
+    },
+    "meaning.05531f966e3a206f.unique-factorization-domain": {
+      "subject": "Commutative Algebra"
+    },
+    "meaning.f72779e263dd3e51.valuation-ring-fraction-field": {
+      "subject": "Commutative Algebra"
+    },
+    "meaning.ce0580b5d7dc0b7c.coequalizer-category": {
+      "subject": "Category Theory"
+    },
+    "meaning.141c0f3fd90dc7b4.initial-object": {
+      "subject": "Category Theory"
+    },
+    "meaning.2ec41283717d02b0.monoidal-category": {
+      "subject": "Category Theory"
+    },
+    "meaning.wave2.direct.718fa3e492d42c0ced8e": {
+      "subject": "Category Theory"
+    },
+    "meaning.wave2.direct.a8c70a2a13320680c54c": {
+      "subject": "Category Theory"
+    },
+    "meaning.fef4e69e96c25bfa.opposite-category": {
+      "subject": "Category Theory"
+    },
+    "meaning.mathdef.original.category.preadditive-category": {
+      "subject": "Category Theory"
+    },
+    "meaning.mathdef.original.category.small-category": {
+      "subject": "Category Theory"
+    },
+    "meaning.mathdef.original.combin.bell-number": {
+      "subject": "Combinatorics"
+    },
+    "meaning.4f7edb6d32334f67.local-ring-unique-maximal": {
+      "subject": "Commutative Algebra",
+      "context": "Nonzero commutative rings"
+    },
+    "meaning.fc44c63c239e5c20.projective-module-hom": {
+      "subject": "Homological Algebra"
+    },
+    "meaning.ab260940ea9c523d.connected-component-space": {
+      "subject": "Topology",
+      "context": "Connected components"
+    },
+    "meaning.ab260940ea9c523d.locally-connected-space": {
+      "subject": "Topology"
+    },
+    "meaning.ab260940ea9c523d.totally-disconnected-space": {
+      "subject": "Topology"
+    },
+    "meaning.wave2.direct.55e6dc72d6d3bc1d5669": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.geometry.affine-combination": {
+      "subject": "Geometry",
+      "context": "Real affine spaces"
+    },
+    "meaning.mathdef.original.measure.measurable-space": {
+      "subject": "Measure Theory"
+    },
+    "meaning.mathdef.original.measure.outer-measure": {
+      "subject": "Measure Theory"
+    },
+    "meaning.mathdef.original.number.prime-number": {
+      "subject": "Number Theory"
+    },
+    "meaning.mathdef.original.prob.probability-space": {
+      "subject": "Probability Theory"
+    },
+    "meaning.wave2.prob90.random-variable-real": {
+      "subject": "Probability Theory",
+      "context": "Real-valued random variables"
+    },
+    "meaning.wave2.foundation.sigma-algebra": {
+      "subject": "Measure Theory"
+    },
+    "meaning.wave2.prob90.random-variable-general": {
+      "subject": "Probability Theory",
+      "context": "General measurable state spaces"
+    },
+    "meaning.wave2.cross104.lipschitz-global": {
+      "subject": "Metric Geometry",
+      "context": "Metric spaces"
+    },
+    "meaning.mathdef.original.relations.antisymmetric-relation": {
+      "subject": "Set Theory"
+    },
+    "meaning.wave2.foundation.binary-relation-subset": {
+      "subject": "Set Theory",
+      "context": "Relations as subsets"
+    },
+    "meaning.mathdef.original.relations.directed-set": {
+      "subject": "Order Theory"
+    },
+    "meaning.mathdef.original.relations.equivalence-class": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.relations.order-isomorphism": {
+      "subject": "Order Theory"
+    },
+    "meaning.mathdef.original.relations.symmetric-relation": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.relations.total-order": {
+      "subject": "Order Theory"
+    },
+    "meaning.mathdef.original.schemes.affine-scheme": {
+      "subject": "Algebraic Geometry"
+    },
+    "meaning.mathdef.original.schemes.locally-ringed-space": {
+      "subject": "Algebraic Geometry"
+    },
+    "meaning.6a21c2d4f3354c8f.reduced-scheme": {
+      "subject": "Algebraic Geometry"
+    },
+    "meaning.mathdef.original.schemes.scheme": {
+      "subject": "Algebraic Geometry"
+    },
+    "meaning.mathdef.original.sets.cardinality": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.cartesian-product": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.limit-ordinal": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.ordered-pair": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.subset": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.successor-ordinal": {
+      "subject": "Set Theory"
+    },
+    "meaning.wave2.direct.research401": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.topology.discrete-topology": {
+      "subject": "Topology"
+    },
+    "meaning.e62923cd8ef99cd1.hausdorff-space": {
+      "subject": "Topology"
+    },
+    "meaning.wave2.directional113.homeomorphism-topological": {
+      "subject": "Topology"
+    },
+    "meaning.wave2.foundation.binary-relation-typed": {
+      "subject": "Set Theory",
+      "context": "Typed relations"
+    },
+    "meaning.wave2.cross104.lipschitz-at-point-anchored": {
+      "subject": "Metric Geometry",
+      "context": "Point-anchored Lipschitz bounds"
+    },
+    "meaning.mathdef.original.topology.quotient-topology": {
+      "subject": "Topology"
+    },
+    "meaning.mathdef.original.topology.topological-space": {
+      "subject": "Topology"
+    },
+    "meaning.wave2.foundation.subspace-topology-general": {
+      "subject": "Topology",
+      "context": "Empty subspace allowed"
+    },
+    "meaning.mathdef.original.category.isomorphism": {
+      "subject": "Category Theory"
+    },
+    "meaning.mathdef.original.sets.cofinality": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.category.colimit": {
+      "subject": "Category Theory"
+    },
+    "meaning.mathdef.original.complex.modulus": {
+      "subject": "Complex Analysis"
+    },
+    "meaning.mathdef.original.category.contravariant-functor": {
+      "subject": "Category Theory"
+    },
+    "meaning.mathdef.original.category.subcat-full": {
+      "subject": "Category Theory"
+    },
+    "meaning.mathdef.original.functions.injective": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.inverse-image": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.category.limit": {
+      "subject": "Category Theory"
+    },
+    "meaning.mathdef.original.schemes.morphism-schemes": {
+      "subject": "Algebraic Geometry"
+    },
+    "meaning.mathdef.original.topology.nowhere-dense": {
+      "subject": "Topology"
+    },
+    "meaning.mathdef.original.sets.disjoint-family": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.commalg.radical-ideal-property": {
+      "subject": "Commutative Algebra",
+      "context": "Commutative rings"
+    },
+    "meaning.mathdef.original.sets.difference": {
+      "subject": "Set Theory"
+    },
+    "meaning.wave2.direct.7413d0506040cdeb60af": {
+      "subject": "Algebraic Geometry",
+      "context": "Sheaf stalks"
+    },
+    "meaning.mathdef.original.functions.surjective": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.sets.ordinal": {
+      "subject": "Set Theory"
+    },
+    "meaning.mathdef.original.commalg.flat-module": {
+      "subject": "Commutative Algebra",
+      "context": "Commutative rings"
+    },
+    "meaning.wave2.foundation.ring-map-unital": {
+      "subject": "Algebra",
+      "context": "Unital associative rings"
+    },
+    "meaning.wave2.foundation.ring-map-general": {
+      "subject": "Algebra",
+      "context": "Identity preservation not required"
+    },
+    "meaning.wave2.scalar101.division-ring": {
+      "subject": "Algebra",
+      "context": "Unital associative rings"
+    },
+    "meaning.mathdef.postwave.scan-finite-field-extension-20261026": {
+      "subject": "Field Theory"
+    },
+    "meaning.mathdef.postwave.locally-finite-set-family-20261026": {
+      "subject": "Topology"
+    },
+    "meaning.12e554f8d49d5361.purely-inseparable-extension": {
+      "subject": "Field Theory",
+      "context": "Positive-characteristic fields"
+    },
+    "meaning.mathdef.postwave.scan-quasicompact-scheme-morphism-20261026": {
+      "subject": "Algebraic Geometry"
+    },
+    "meaning.50d335de00e5f11d.separable-algebraic-extension": {
+      "subject": "Field Theory"
+    },
+    "meaning.wave2.alternative39.boolean-ring-nonunital": {
+      "subject": "Algebra",
+      "context": "Nonunital rings"
+    },
+    "meaning.mathdef.original.stochastic.filtration": {
+      "subject": "Probability Theory",
+      "context": "General ordered index sets"
+    },
+    "meaning.wave2.found85.discrete-filtration": {
+      "subject": "Probability Theory",
+      "context": "Discrete-time filtrations"
+    },
+    "meaning.wave2.pop142.bounded-linear": {
+      "subject": "Functional Analysis",
+      "context": "Real or complex normed spaces"
+    },
+    "meaning.mathdef.postwave.scan-small-filtered-category-20261026": {
+      "subject": "Category Theory",
+      "context": "Small categories"
+    },
+    "meaning.9d27e470d02eae69.filtered-category": {
+      "subject": "Category Theory"
+    },
+    "meaning.wave2.direct.7462fa5f90275b34779a": {
+      "subject": "Module Theory",
+      "context": "Unital left modules"
+    },
+    "meaning.wave2.direct.8d23b7ba80f9f5e74420": {
+      "subject": "Real Analysis",
+      "context": "Extended-real interval endpoints"
+    },
+    "meaning.mathdef.postwave.scan-open-real-interval-20261026": {
+      "subject": "Real Analysis",
+      "context": "Finite real interval endpoints"
+    },
+    "meaning.wave2.pop142.bounded-operator-norm": {
+      "subject": "Functional Analysis",
+      "context": "Real or complex normed spaces"
+    },
+    "meaning.mathdef.original.sets.complement": {
+      "subject": "Set Theory",
+      "context": "Relative complements in an ambient set"
+    },
+    "meaning.mathdef.original.arithmetic.galois-extension": {
+      "subject": "Field Theory"
+    },
+    "meaning.wave2.direct.8f2dea7e2bd1211c0cf6": {
+      "subject": "Commutative Algebra",
+      "context": "Commutative rings"
+    },
+    "meaning.wave2.analysis98.metric-space": {
+      "subject": "Metric Geometry"
+    },
+    "meaning.wave2.pop140.affine-hull": {
+      "subject": "Geometry",
+      "context": "Real affine spaces"
+    },
+    "meaning.wave2.pop139.integer-congruence": {
+      "subject": "Number Theory"
+    }
+  },
+  "text_overrides": {
+    "form.ab260940ea9c523d.connected-component-space": {
+      "text": "A connected component of a topological space X is a nonempty connected subset of X that is maximal under inclusion among connected subsets of X.",
+      "reason": "Stacks §5.7 explicitly requires connected spaces/subsets to be nonempty. Under mathDef's broader no-separation meaning the empty subset is connected, so make nonemptiness explicit to preserve the Stacks maximal-subset component definition when X is empty.",
+      "original_text": "A connected component of a topological space X is a connected subset maximal under inclusion among connected subsets of X.",
+      "source_url": "https://stacks.math.columbia.edu/tag/004R",
+      "source_assessment_id": "sourceconv.stacks.004R.connected.nonempty.20261027",
+      "convention_id": "topology.connected.nonempty",
+      "evidence_status": "verified_applies",
+      "translation_kind": "paraphrase_scoped_restriction_explicated",
+      "audit_note": "The added nonempty condition preserves the empty-space behavior: empty X has no connected components."
+    }
+  },
+  "merge_formulations": [
+    {
+      "case_id": "tree-cycle-wording",
+      "meaning_id": "meaning.wave2.cross104.tree-unrooted",
+      "removed_formulation_id": "form.wave2.cross104.tree-unrooted.2",
+      "kept_formulation_id": "form.wave2.cross104.tree-unrooted.1",
+      "reason": "For a simple graph a nontrivial closed edge-trail exists iff a cycle exists; no genuinely different construction is supplied by this alternate wording."
+    },
+    {
+      "case_id": "mapping-image-comprehension-wording",
+      "meaning_id": "meaning.wave2.cross110.image-of-mapping",
+      "removed_formulation_id": "form.wave2.cross110.image-of-mapping.2",
+      "kept_formulation_id": "form.wave2.cross110.image-of-mapping.1",
+      "reason": "The set-builder display of the attained values versus f[S]={f(s):s∈S} is a trivial notational reexpression of one defining image set."
+    },
+    {
+      "case_id": "numeric-kronecker-iverson-wording",
+      "meaning_id": "meaning.wave2.bridge136.numeric-delta",
+      "removed_formulation_id": "form.wave2.bridge136.numeric-delta.2",
+      "kept_formulation_id": "form.wave2.bridge136.numeric-delta.1",
+      "reason": "The Iverson indicator [a=b] is just a shorthand for the same piecewise 0/1 equality predicate, rather than a distinct mathematical construction."
+    },
+    {
+      "case_id": "convex-set-point-vs-set-notation",
+      "meaning_id": "meaning.wave2.bridge136.convex-real",
+      "removed_formulation_id": "form.wave2.bridge136.convex-real.2",
+      "kept_formulation_id": "form.wave2.bridge136.convex-real.1",
+      "reason": "The notation tC+(1−t)C⊆C is exactly the quantified pointwise condition tx+(1−t)y∈C for all x,y∈C, t∈[0,1]; it introduces no independent mathematical construction or hypothesis."
+    },
+    {
+      "case_id": "convex-hull-least-vs-intersection-paraphrase",
+      "meaning_id": "meaning.wave2.cross133.convex-hull-real",
+      "removed_formulation_id": "form.wave2.cross133.convex-hull-real.3",
+      "kept_formulation_id": "form.wave2.cross133.convex-hull-real.2",
+      "reason": "The assertion that the convex hull is the unique inclusion-least convex superset is the universal-property restatement of the explicit intersection-of-all-convex-supersets construction already retained; keep the distinct finite-convex-combination construction separately."
+    },
+    {
+      "case_id": "original-closure-neighborhood-restatement",
+      "meaning_id": "meaning.mathdef.original.topology.closure",
+      "removed_formulation_id": "form.mathdef.original.topology.closure.neighborhood",
+      "kept_formulation_id": "form.mathdef.original.topology.closure.primary",
+      "reason": "Original closure primary already explicitly states the every-open-neighborhood-meets-A characterization. The separate original neighborhood variant repeats that same condition; retain the source URL in the primary. Preserve metric-ball, sequential/first-countable, and Kuratowski operator characterizations."
+    },
+    {
+      "case_id": "internal-only-topological-closure-least-vs-intersection",
+      "meaning_id": "meaning.wave2.cross107.topological-closure",
+      "removed_formulation_id": "form.wave2.cross107.topological-closure.2",
+      "kept_formulation_id": "form.wave2.cross107.topological-closure.1",
+      "reason": "Internal variant pass: least closed superset and intersection of all closed supersets are the same construction with no separate mathematical hypothesis; combine citations and alias the redundant least-superset formulation. Other closure constructions occur under a separate Closure heading and are not examined here."
+    },
+    {
+      "case_id": "deep-reviewed-internal-44-12",
+      "meaning_id": "meaning.wave2.cross133.vertex-degree-simple",
+      "removed_formulation_id": "form.wave2.cross133.vertex-degree-simple.2",
+      "kept_formulation_id": "form.wave2.cross133.vertex-degree-simple.1",
+      "reason": "Duplicate described by one-to-one correspondence between incident simple edges and adjacent neighbors. Consolidate to the incident-edge form.. Original citation identities are merged into the retained form and old formulation ID remains redirected."
+    },
+    {
+      "case_id": "deep-reviewed-internal-44-14",
+      "meaning_id": "meaning.wave2.branch129.operator-eigenvalue",
+      "removed_formulation_id": "form.wave2.branch129.operator-eigenvalue.2",
+      "kept_formulation_id": "form.wave2.branch129.operator-eigenvalue.1",
+      "reason": "The existential nonzero eigenvector statement is the literal expansion of a nontrivial kernel, without extra mathematical content; retain one definition.. Original citation identities are merged into the retained form and old formulation ID remains redirected."
+    },
+    {
+      "case_id": "deep-reviewed-internal-44-15",
+      "meaning_id": "meaning.wave2.conv126.eigenvector-linear-operator",
+      "removed_formulation_id": "form.wave2.conv126.eigenvector-linear-operator.2",
+      "kept_formulation_id": "form.wave2.conv126.eigenvector-linear-operator.1",
+      "reason": "Condition v≠0 and (A−λI)v=0 repeats v≠0 and Av=λv with no new mathematical restriction; retain one definition.. Original citation identities are merged into the retained form and old formulation ID remains redirected."
+    }
+  ],
+  "canonical_editorial_edits": {
+    "form.meaning.wave2.direct.8f2dea7e2bd1211c0cf6": {
+      "original_text": "Under the nonzero-element convention, an element a of a commutative ring R is a zero divisor if a≠0 and there is a nonzero b∈R with ab=0. Some authors also call 0 a zero divisor in a nonzero ring, so the convention matters.",
+      "text": "Let R be a commutative ring. An element a∈R is a zero divisor if a≠0 and there exists b∈R with b≠0 and ab=0. This is mathDef's adopted convention. Some sources also call 0 a zero divisor in nonzero rings; mathDef excludes 0.",
+      "reason": "Canonical nonzero-element zero-divisor convention approved by user.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.meaning.mathdef.postwave.totally-bounded-metric-space-20261026": {
+      "original_text": "A metric space (X,d) is totally bounded if, for every ε>0, there exist finitely many points x_1,…,x_n∈X such that X=⋃_{i=1}^n B_d(x_i,ε). For X=∅ one may take n=0. Equivalently, X admits a finite ε-net for every ε>0. Total boundedness implies boundedness, but not conversely.",
+      "text": "A metric space (X,d) is totally bounded if, for every ε>0, there exist finitely many points x_1,…,x_n∈X such that X=⋃_{i=1}^n B_d(x_i,ε). Equivalently, X admits a finite ε-net for every ε>0. Total boundedness implies boundedness, but not conversely.",
+      "reason": "Remove empty metric-space case under canonical nonempty metric-space convention.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.meaning.mathdef.postwave.separable-metric-space-20261026": {
+      "original_text": "A metric space (X,d) is separable if there exists a finite or countably infinite subset D⊆X such that for every x∈X and every ε>0 some y∈D satisfies d(x,y)<ε. Equivalently cl_X(D)=X. The empty metric space is separable with D=∅. Total boundedness implies separability, but the converse need not hold.",
+      "text": "A metric space (X,d) is separable if there exists a finite or countably infinite subset D⊆X such that for every x∈X and every ε>0 some y∈D satisfies d(x,y)<ε. Equivalently cl_X(D)=X. Total boundedness implies separability, but the converse need not hold.",
+      "reason": "Remove incompatible assertion that an empty metric space is separable.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.meaning.mathdef.postwave.scan-compact-metric-space-20261026": {
+      "original_text": "A metric space (X,d) is compact if every cover of X by sets open in the d-induced topology admits a finite subcover. Equivalently, every sequence in X has a convergent subsequence with limit in X; equivalently, (X,d) is complete and totally bounded. The empty metric space is compact under the open-cover convention. These equivalences are specific to metric spaces, not arbitrary topological spaces.",
+      "text": "A metric space (X,d) is compact if every cover of X by sets open in the d-induced topology admits a finite subcover. Equivalently, every sequence in X has a convergent subsequence with limit in X; equivalently, (X,d) is complete and totally bounded. These equivalences are specific to metric spaces, not arbitrary topological spaces.",
+      "reason": "Remove now-inapplicable empty metric-space clause without changing the topological compactness convention.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.meaning.wave2.pop140.affine-hull": {
+      "original_text": "For an integer d≥1 and a set S⊆ℝ^d, aff(S) is the set of all vectors ∑_{i=1}^{k} αᵢxᵢ with k≥1, xᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. In particular aff(∅)=∅.\n\nEquivalent formulation: Let d≥1 and S⊆ℝ^d. Define aff(S) as the intersection of all affine-closed subsets C⊆ℝ^d containing S, where affine-closed means containing every finite affine combination of its members; the empty set is affine-closed.",
+      "text": "Let A be a real affine space and S⊆A nonempty. The affine hull (affine span) of S consists of all finite affine combinations ∑_{i=1}^{k} αᵢpᵢ with k≥1, pᵢ∈S, αᵢ∈ℝ and ∑_{i=1}^{k} αᵢ=1. Equivalently, it is the smallest affine subspace of A containing S.\n\nEquivalent intersection formulation: the affine hull is the intersection of all subsets C⊆A containing S that are closed under finite affine combinations of their points. For nonempty S this intersection is an affine subspace. Under mathDef's convention, the affine hull/span of the empty set is not defined.",
+      "reason": "User-adjudicated same nonempty-input affine span/hull in arbitrary real affine spaces; preserve distinct finite-combination, smallest-affine-subspace and affine-closed-intersection characterizations within the original display formulation.",
+      "decision_source": "user_adjudication_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.meaning.mathdef.postwave.scan-multiplicative-order-element-20261026": {
+      "original_text": "Let G be a group written multiplicatively with identity e, and g∈G. Its multiplicative order is the least positive integer n such that gⁿ=e, if such n exists; otherwise g has infinite order. For a unit a modulo an integer m≥2, the multiplicative order mod m is the least n≥1 satisfying aⁿ≡1 (mod m). If gcd(a,m)≠1, this modular order is not defined under the usual unit-group convention. This is the size of the cyclic subgroup ⟨g⟩ and is distinct from the additive order of an element in an additive group.",
+      "text": "Let G be a group written multiplicatively with identity e, and g∈G. Its multiplicative order is the least positive integer n such that gⁿ=e, if such n exists; otherwise g has infinite order. For a unit a modulo an integer m≥2, the multiplicative order mod m is the least n≥1 satisfying aⁿ≡1 (mod m). If gcd(a,m)≠1, this modular order is not defined under the usual unit-group convention. When finite, the order equals the cardinality of the cyclic subgroup ⟨g⟩. In additive notation the same group-theoretic invariant is the least positive n satisfying ng=0, if one exists; otherwise it is infinite.",
+      "reason": "After reviewed semantic consolidation, distinguish group-operation notation from the element-order invariant: the inherited research sentence inaccurately suggested additive and multiplicative orders are inherently different notions. Retain useful modular-unit specialization and cyclic-subgroup property.",
+      "decision_source": "assistant_reviewed_mathematical_cleanup_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    },
+    "form.mathdef.original.measure.measurable-function.primary": {
+      "original_text": "For measurable spaces $(X,\\Sigma)$ and $(Y,\\mathcal T)$, a function $f:X\\to Y$ is measurable if $f^{-1}(B)\\in\\Sigma$ for every $B\\in\\mathcal T$. This means that $f$ respects the prescribed $\\sigma$-algebras; it does not require continuity, and measurability depends on the choice of measurable structure on both spaces.",
+      "text": "For measurable spaces $(X,\\Sigma)$ and $(Y,\\mathcal T)$, a function $f:X\\to Y$ is measurable if $f^{-1}(B)\\in\\Sigma$ for every $B\\in\\mathcal T$. This means that $f$ respects the prescribed $\\sigma$-algebras; it does not require continuity, and measurability depends on the choice of measurable structure on both spaces. When $Y$ is a topological space and $\\mathcal T$ is its Borel $\\sigma$-algebra, this condition is called Borel measurability.",
+      "reason": "Mathematical source comparison found 'measurable mapping' identical to original general measurable function. Preserve researched Borel-case explanation as a correct specialized consequence without a redundant definition card; source lead stays explicitly unverified.",
+      "decision_source": "assistant_reviewed_mathematical_cleanup_2026-10-27",
+      "evidence_scope": "mathdef_editorial_canonical_not_source_verified"
+    }
+  }
+}

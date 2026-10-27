@@ -1,0 +1,722 @@
+{
+  "schema_version": 1,
+  "phase": "second_level_research_review_of_44_only",
+  "status": "complete_all_44_decisions_user_adjudicated_stage_only",
+  "baseline_staged_counts": {
+    "headings": 1986,
+    "meanings": 2068,
+    "formulations": 2110,
+    "source_identities": 2662
+  },
+  "research_scope": "Exactly the previously flagged 44 within-heading cases, original attached formulations as listed. No cross-heading research, new vocabulary, final global linking, or production publishing.",
+  "decision_policy": "Retain mathematically informative equivalences rather than deleting theorems or interesting alternate constructions. Merge only near-tautological rewordings; preserve historical source identities and aliases. Positive source verification statuses were not changed.",
+  "classification_counts": {
+    "retain_informative_alternative": 35,
+    "manual_review_scope_convention": 0,
+    "retain_distinct_scope": 3,
+    "merge_trivial_duplicate": 3,
+    "merge_after_user_scope_adjudication": 3
+  },
+  "all_cases_reviewed": 44,
+  "unresolved_manual_count": 0,
+  "records": [
+    {
+      "case_number": 1,
+      "term": "additive category",
+      "classification": "retain_informative_alternative",
+      "rationale": "Preadditive category with zero object and binary biproducts is equivalent to the formulation with all finite products; retains constructive morphism-matrix and product criteria.",
+      "original_attached_meaning_ids": [
+        "meaning.mathdef.original.category.additive-category",
+        "meaning.wave2.foundation15.additive-category"
+      ],
+      "original_attached_formulation_ids": [
+        "form.mathdef.original.category.additive-category.primary",
+        "form.wave2.foundation15.additive-category"
+      ],
+      "review_reference_urls": [
+        "https://proofwiki.org/wiki/Definition:Additive_Category"
+      ]
+    },
+    {
+      "case_number": 2,
+      "term": "bipartite simple undirected graph",
+      "classification": "retain_informative_alternative",
+      "rationale": "Two independent graph bipartition sets and a vertex 2-coloring encode the same condition via different useful data.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.bridge136.simple-bipartite"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.bridge136.simple-bipartite.1",
+        "form.wave2.bridge136.simple-bipartite.2"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 3,
+      "term": "boundary of a subset in a topological space",
+      "classification": "retain_informative_alternative",
+      "rationale": "For A⊆X, cl(A)∖int(A)=cl(A)∩cl(X∖A). The second describes points approachable from both A and its complement, an informative geometric criterion.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.cross107.topological-boundary"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.cross107.topological-boundary.1",
+        "form.wave2.cross107.topological-boundary.2"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 4,
+      "term": "Bounded linear operator",
+      "classification": "merge_after_user_scope_adjudication",
+      "rationale": "User-approved 2026-10-27: unqualified normed vector spaces use the standard real/complex Banach/functional-analysis scalar context for this entry; the inequality is identical. Retain the explicit real/complex formulation and transfer original source, stable ID and historical formulation redirect; do not attribute an independently verified broader source convention.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.pop142.bounded-linear",
+        "meaning.mathdef.original.functional.bounded-linear-operator"
+      ],
+      "original_attached_formulation_ids": [
+        "form.meaning.wave2.pop142.bounded-linear",
+        "form.mathdef.original.functional.bounded-linear-operator.primary"
+      ],
+      "review_reference_urls": [],
+      "disposition": "merge_original_into_explicit_canonical_scope",
+      "user_adjudicated_2026_10_27": true,
+      "merge": {
+        "removed_meaning_id": "meaning.mathdef.original.functional.bounded-linear-operator",
+        "kept_meaning_id": "meaning.wave2.pop142.bounded-linear",
+        "removed_formulation_id": "form.mathdef.original.functional.bounded-linear-operator.primary",
+        "kept_formulation_id": "form.meaning.wave2.pop142.bounded-linear"
+      }
+    },
+    {
+      "case_number": 5,
+      "term": "chromatic number",
+      "classification": "retain_distinct_scope",
+      "rationale": "The finite nonempty version takes a positive integer k. The original handles empty graph by χ=0 and possibly arbitrary graphs; retains materially different size/convention scope.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.research81.chromatic-proper-coloring",
+        "meaning.mathdef.original.graph.chromatic-number"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.research81.chromatic-proper-coloring.01",
+        "form.mathdef.original.graph.chromatic-number.primary"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 6,
+      "term": "Closure",
+      "classification": "retain_informative_alternative",
+      "rationale": "General closure-by-closed-sets, metric distance, first-countable sequential description and Kuratowski closure operator have different inputs or nontrivial equivalence requirements.",
+      "original_attached_meaning_ids": [
+        "meaning.mathdef.original.topology.closure"
+      ],
+      "original_attached_formulation_ids": [
+        "form.mathdef.original.topology.closure.primary",
+        "form.mathdef.original.topology.closure.metric",
+        "form.mathdef.original.topology.closure.sequences",
+        "form.mathdef.original.topology.closure.kuratowski"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 7,
+      "term": "compact topological space",
+      "classification": "retain_informative_alternative",
+      "rationale": "Finite open subcovers versus nonempty closed-family FIP are dual equivalence statements, with empty X correctly handled by the nonempty-family qualifier.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.broad67.compact-topological-space"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.broad67.compact-open-cover",
+        "form.wave2.broad67.compact-closed-fip"
+      ],
+      "review_reference_urls": [
+        "https://www.clinicalbiostats.com/tutorials/finite-intersection-property/"
+      ]
+    },
+    {
+      "case_number": 8,
+      "term": "connected space",
+      "classification": "retain_informative_alternative",
+      "rationale": "No separation, no nontrivial clopen subset and no onto continuous map to discrete two-point space are different structural tests under mathDef's empty-connected convention.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.variant71.connected-empty-allowed"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.variant71.connected.01",
+        "form.wave2.variant71.connected.02",
+        "form.wave2.variant71.connected.03"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 9,
+      "term": "continuous map",
+      "classification": "retain_informative_alternative",
+      "rationale": "Open-set inverse-image criterion versus pointwise neighborhood criterion are useful locally/global proofs of continuity.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.foundation76.continuous-topological-map"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.foundation76.continuous-topological-map.01",
+        "form.wave2.foundation76.continuous-topological-map.02"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 10,
+      "term": "convex hull of a subset of a real vector space",
+      "classification": "retain_informative_alternative",
+      "rationale": "Finite convex combinations and intersection of all convex supersets are useful algebraic/geometric constructions of convex hull, not near-verbatim representations.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.cross133.convex-hull-real"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.cross133.convex-hull-real.1",
+        "form.wave2.cross133.convex-hull-real.2"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 11,
+      "term": "coprime polynomials",
+      "classification": "retain_informative_alternative",
+      "rationale": "Unit ideal (f,g)=(1) versus no common root over algebraic closure gives a genuinely different algebraic-geometric criterion. Stacks Lemma 9.11.2 verifies equivalence.",
+      "original_attached_meaning_ids": [
+        "meaning.e606496d592fe305.relatively-prime-polynomials"
+      ],
+      "original_attached_formulation_ids": [
+        "form.e606496d592fe305.relatively-prime-polynomials",
+        "form.e606496d592fe305.relatively-prime-polynomials-roots"
+      ],
+      "review_reference_urls": [
+        "https://stacks.math.columbia.edu/tag/09GW"
+      ]
+    },
+    {
+      "case_number": 12,
+      "term": "degree of a vertex in a simple undirected graph",
+      "classification": "merge_trivial_duplicate",
+      "rationale": "Duplicate described by one-to-one correspondence between incident simple edges and adjacent neighbors. Consolidate to the incident-edge form.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.cross133.vertex-degree-simple"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.cross133.vertex-degree-simple.1",
+        "form.wave2.cross133.vertex-degree-simple.2"
+      ],
+      "review_reference_urls": [],
+      "merge": {
+        "kept_formulation_id": "form.wave2.cross133.vertex-degree-simple.1",
+        "removed_formulation_id": "form.wave2.cross133.vertex-degree-simple.2"
+      }
+    },
+    {
+      "case_number": 13,
+      "term": "discrete valuation ring",
+      "classification": "retain_informative_alternative",
+      "rationale": "An ordered value-group ℤ characterization versus local PID nonfield/valuation construction supplies different substantial characterizations of a DVR.",
+      "original_attached_meaning_ids": [
+        "meaning.f72779e263dd3e51.discrete-valuation-ring-value-group",
+        "meaning.mathdef.original.arithmetic.discrete-valuation-ring"
+      ],
+      "original_attached_formulation_ids": [
+        "form.f72779e263dd3e51.discrete-valuation-ring-value-group",
+        "form.mathdef.original.arithmetic.discrete-valuation-ring.primary"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 14,
+      "term": "eigenvalue of a field-linear operator",
+      "classification": "merge_trivial_duplicate",
+      "rationale": "The existential nonzero eigenvector statement is the literal expansion of a nontrivial kernel, without extra mathematical content; retain one definition.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.branch129.operator-eigenvalue"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.branch129.operator-eigenvalue.1",
+        "form.wave2.branch129.operator-eigenvalue.2"
+      ],
+      "review_reference_urls": [],
+      "merge": {
+        "kept_formulation_id": "form.wave2.branch129.operator-eigenvalue.1",
+        "removed_formulation_id": "form.wave2.branch129.operator-eigenvalue.2"
+      }
+    },
+    {
+      "case_number": 15,
+      "term": "eigenvector of a linear operator",
+      "classification": "merge_trivial_duplicate",
+      "rationale": "Condition v≠0 and (A−λI)v=0 repeats v≠0 and Av=λv with no new mathematical restriction; retain one definition.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.conv126.eigenvector-linear-operator"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.conv126.eigenvector-linear-operator.1",
+        "form.wave2.conv126.eigenvector-linear-operator.2"
+      ],
+      "review_reference_urls": [],
+      "merge": {
+        "kept_formulation_id": "form.wave2.conv126.eigenvector-linear-operator.1",
+        "removed_formulation_id": "form.wave2.conv126.eigenvector-linear-operator.2"
+      }
+    },
+    {
+      "case_number": 16,
+      "term": "formally unramified ring homomorphism",
+      "classification": "retain_informative_alternative",
+      "rationale": "At-most-one square-zero lift and vanishing module Ω_{S/R} are different powerful tests of formal unramifiedness. Stacks establishes equivalence.",
+      "original_attached_meaning_ids": [
+        "meaning.44fae2299dfd2f0a.formally-unramified-map"
+      ],
+      "original_attached_formulation_ids": [
+        "form.44fae2299dfd2f0a.formally-unramified-map",
+        "form.44fae2299dfd2f0a.formally-unramified-differential-test"
+      ],
+      "review_reference_urls": [
+        "https://stacks.math.columbia.edu/tag/00UU"
+      ]
+    },
+    {
+      "case_number": 17,
+      "term": "fraction field of an integral domain",
+      "classification": "retain_informative_alternative",
+      "rationale": "Fractions constructed from (a,b)/~ versus an initial/universal field of fractions property use distinct construction and mapping property.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.integer59.fraction-field-integral-domain"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.integer59.fraction-field-integral-domain",
+        "form.wave2.integer59.fraction-field-universal"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 18,
+      "term": "Free module",
+      "classification": "merge_after_user_scope_adjudication",
+      "rationale": "User-approved 2026-10-27: adopt explicit associative unital ring and unital left-module setting as canonical. The earlier unqualified R-module basis/direct-sum condition restates the same freeness criterion under its conventional module hypotheses; the general formulation retains the empty basis and arbitrary rank. Transfer original citations and ID; do not claim original source separately verified all generalized ring contexts.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.direct.7462fa5f90275b34779a",
+        "meaning.mathdef.original.commalg.free-module"
+      ],
+      "original_attached_formulation_ids": [
+        "form.meaning.wave2.direct.7462fa5f90275b34779a",
+        "form.mathdef.original.commalg.free-module.primary"
+      ],
+      "review_reference_urls": [],
+      "disposition": "merge_original_into_explicit_canonical_scope",
+      "user_adjudicated_2026_10_27": true,
+      "merge": {
+        "removed_meaning_id": "meaning.mathdef.original.commalg.free-module",
+        "kept_meaning_id": "meaning.wave2.direct.7462fa5f90275b34779a",
+        "removed_formulation_id": "form.mathdef.original.commalg.free-module.primary",
+        "kept_formulation_id": "form.meaning.wave2.direct.7462fa5f90275b34779a"
+      }
+    },
+    {
+      "case_number": 19,
+      "term": "Function",
+      "classification": "retain_informative_alternative",
+      "rationale": "Assignment of one value to each input and total single-valued graph relation are distinct foundational encodings, especially because codomain is part of typed map data.",
+      "original_attached_meaning_ids": [
+        "meaning.mathdef.original.functions.function"
+      ],
+      "original_attached_formulation_ids": [
+        "form.mathdef.original.functions.function.primary",
+        "form.mathdef.original.functions.function.graph"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 20,
+      "term": "geometrically integral algebra",
+      "classification": "retain_informative_alternative",
+      "rationale": "All field extensions remaining domains versus just algebraic-closure scalar extension being a domain are equivalent but nontrivial reduction; Stacks Lemma 10.49.3.",
+      "original_attached_meaning_ids": [
+        "meaning.831db4eab7a244a4.geometrically-integral-algebra"
+      ],
+      "original_attached_formulation_ids": [
+        "form.831db4eab7a244a4.geometrically-integral-algebra",
+        "form.831db4eab7a244a4.geometrically-integral-algebra-closure-test"
+      ],
+      "review_reference_urls": [
+        "https://stacks.math.columbia.edu/tag/0FWF"
+      ]
+    },
+    {
+      "case_number": 21,
+      "term": "geometrically normal algebra",
+      "classification": "retain_informative_alternative",
+      "rationale": "All scalar extensions normal versus the single perfect-closure test is a nontrivial descent/base-change criterion; Stacks Lemma 10.165.1.",
+      "original_attached_meaning_ids": [
+        "meaning.2a93c6a662a51d67.geometrically-normal-algebra"
+      ],
+      "original_attached_formulation_ids": [
+        "form.2a93c6a662a51d67.geometrically-normal-algebra",
+        "form.2a93c6a662a51d67.geometrically-normal-perfect-closure-test"
+      ],
+      "review_reference_urls": [
+        "https://stacks.math.columbia.edu/tag/037Y"
+      ]
+    },
+    {
+      "case_number": 22,
+      "term": "geometrically reduced algebra",
+      "classification": "retain_informative_alternative",
+      "rationale": "All scalar extensions reduced versus single perfect-closure test is nontrivial; Stacks Lemma 10.44.4.",
+      "original_attached_meaning_ids": [
+        "meaning.6c51aeb904a0fe74.geometrically-reduced-algebra"
+      ],
+      "original_attached_formulation_ids": [
+        "form.6c51aeb904a0fe74.geometrically-reduced-algebra",
+        "form.6c51aeb904a0fe74.geometric-reducedness-perfect-test"
+      ],
+      "review_reference_urls": [
+        "https://stacks.math.columbia.edu/tag/030V"
+      ]
+    },
+    {
+      "case_number": 23,
+      "term": "Hausdorff space",
+      "classification": "retain_informative_alternative",
+      "rationale": "Two-point open separation versus the diagonal closed in X×X are substantive distinct tests for Hausdorffness.",
+      "original_attached_meaning_ids": [
+        "meaning.e62923cd8ef99cd1.hausdorff-space"
+      ],
+      "original_attached_formulation_ids": [
+        "form.e62923cd8ef99cd1.hausdorff-space",
+        "form.e62923cd8ef99cd1.hausdorff-diagonal-characterization"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 24,
+      "term": "homeomorphism",
+      "classification": "retain_informative_alternative",
+      "rationale": "Continuous bijection with continuous inverse versus open-set preservation/reflection are distinct useful tests for homeomorphisms.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.directional113.homeomorphism-topological"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.directional113.homeomorphism-topological.1",
+        "form.wave2.directional113.homeomorphism-topological.2"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 25,
+      "term": "Jacobson radical",
+      "classification": "retain_informative_alternative",
+      "rationale": "Intersection of maximal ideals versus 1−xy invertible for every y is a useful radical membership test; Stacks supports the characterization.",
+      "original_attached_meaning_ids": [
+        "meaning.90b0d1ecfa394230.jacobson-radical-ring"
+      ],
+      "original_attached_formulation_ids": [
+        "form.90b0d1ecfa394230.jacobson-radical-ring",
+        "form.90b0d1ecfa394230.jacobson-radical-unit-test"
+      ],
+      "review_reference_urls": [
+        "https://stacks.math.columbia.edu/tag/0AMD"
+      ]
+    },
+    {
+      "case_number": 26,
+      "term": "Jacobson ring",
+      "classification": "retain_informative_alternative",
+      "rationale": "Every radical ideal an intersection of maximal ideals versus a condition on each prime ideal are nontrivially equivalent; Stacks Section 10.35.",
+      "original_attached_meaning_ids": [
+        "meaning.03b55b8ca41abb20.jacobson-ring"
+      ],
+      "original_attached_formulation_ids": [
+        "form.03b55b8ca41abb20.jacobson-ring",
+        "form.03b55b8ca41abb20.jacobson-ring-prime-characterization"
+      ],
+      "review_reference_urls": [
+        "https://stacks.math.columbia.edu/tag/00FZ"
+      ]
+    },
+    {
+      "case_number": 27,
+      "term": "local ring",
+      "classification": "retain_informative_alternative",
+      "rationale": "Unique maximal ideal versus set of nonunits forming an ideal gives a structural unit-based test for localness.",
+      "original_attached_meaning_ids": [
+        "meaning.4f7edb6d32334f67.local-ring-unique-maximal"
+      ],
+      "original_attached_formulation_ids": [
+        "form.4f7edb6d32334f67.local-ring-unique-maximal",
+        "form.4f7edb6d32334f67.local-ring-nonunit-ideal"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 28,
+      "term": "martingale",
+      "classification": "retain_distinct_scope",
+      "rationale": "Discrete one-step/two-time conditional expectations are equivalent by the tower property; continuous-index condition needs an uncountable time parameter and is a different scope. Preserve the tests and index variants.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.research81.martingale-discrete",
+        "meaning.wave2.research81.martingale-continuous-index"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.research81.martingale-discrete.01",
+        "form.wave2.research81.martingale-discrete.02",
+        "form.wave2.research81.martingale-continuous-index.01"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 29,
+      "term": "metric space",
+      "classification": "retain_informative_alternative",
+      "rationale": "Metric axioms define (X,d), whereas compatible induced topology τ_d is an additional construction and identifies what data is recovered; informationally distinct.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.analysis98.metric-space"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.analysis98.metric-space",
+        "form.wave2.analysis98.metric-space.compatible"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 30,
+      "term": "minimal polynomial",
+      "classification": "retain_informative_alternative",
+      "rationale": "Monic minimal-degree annihilator versus monic generator of evaluation kernel are nontrivial perspectives on minimal polynomial.",
+      "original_attached_meaning_ids": [
+        "meaning.3aaa8d6f2195bb8e.minimal-polynomial",
+        "meaning.mathdef.original.arithmetic.minimal-polynomial"
+      ],
+      "original_attached_formulation_ids": [
+        "form.3aaa8d6f2195bb8e.minimal-polynomial",
+        "form.mathdef.original.arithmetic.minimal-polynomial.primary"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 31,
+      "term": "Noetherian module",
+      "classification": "retain_informative_alternative",
+      "rationale": "Submodules finitely generated, ascending-chain stabilization, and inclusion-maximal-submodule property are informative independent criteria for Noetherianness.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.foundation76.noetherian-module"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.foundation76.noetherian-module.01",
+        "form.wave2.foundation76.noetherian-module.02",
+        "form.wave2.foundation76.noetherian-module.03"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 32,
+      "term": "Noetherian ring",
+      "classification": "retain_informative_alternative",
+      "rationale": "Ideal finite generation, ACC, maximal ideal condition, and viewing R as a Noetherian R-module are informative algebraic characterizations.",
+      "original_attached_meaning_ids": [
+        "meaning.86b5d488b98c612f.noetherian-commutative-ring"
+      ],
+      "original_attached_formulation_ids": [
+        "form.86b5d488b98c612f.noetherian-commutative-ring",
+        "form.wave2.variant71.noetherian.ascending-chain-condition",
+        "form.wave2.variant71.noetherian.maximal-condition",
+        "form.wave2.variant71.noetherian.noetherian-as-module"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 33,
+      "term": "normal algebraic extension",
+      "classification": "retain_informative_alternative",
+      "rationale": "Irreducible polynomials over base field splitting upon one root versus each element's minimal polynomial splitting are distinct tests for normal algebraic extension.",
+      "original_attached_meaning_ids": [
+        "meaning.50d335de00e5f11d.normal-algebraic-extension",
+        "meaning.ac17dab9530c0b80.normal-algebraic-field-extension"
+      ],
+      "original_attached_formulation_ids": [
+        "form.50d335de00e5f11d.normal-algebraic-extension",
+        "form.ac17dab9530c0b80.normal-algebraic-field-extension"
+      ],
+      "review_reference_urls": [
+        "https://math.iisc.ac.in/~gadgil/PfsProgs25doc/Mathlib/FieldTheory/Normal.html"
+      ]
+    },
+    {
+      "case_number": 34,
+      "term": "normal subgroup",
+      "classification": "retain_informative_alternative",
+      "rationale": "Equality of left/right cosets, invariance under all conjugations, and universal one-sided conjugation inclusion are distinct useful group criteria (last uses inverse element).",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.quot119.normal-subgroup"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.quot119.normal-subgroup.1",
+        "form.wave2.quot119.normal-subgroup.2",
+        "form.wave2.quot119.normal-subgroup.3"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 35,
+      "term": "Operator norm",
+      "classification": "merge_after_user_scope_adjudication",
+      "rationale": "User-approved 2026-10-27: use standard real/complex normed spaces to disambiguate previously unqualified normed-space usage. Identical unit-ball supremum; preserve the researched infimum characterization and original source/ID via redirects, without inventing a source-specific scalar convention.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.pop142.bounded-operator-norm",
+        "meaning.mathdef.original.functional.operator-norm"
+      ],
+      "original_attached_formulation_ids": [
+        "form.meaning.wave2.pop142.bounded-operator-norm",
+        "form.mathdef.original.functional.operator-norm.primary"
+      ],
+      "review_reference_urls": [],
+      "disposition": "merge_original_into_explicit_canonical_scope",
+      "user_adjudicated_2026_10_27": true,
+      "merge": {
+        "removed_meaning_id": "meaning.mathdef.original.functional.operator-norm",
+        "kept_meaning_id": "meaning.wave2.pop142.bounded-operator-norm",
+        "removed_formulation_id": "form.mathdef.original.functional.operator-norm.primary",
+        "kept_formulation_id": "form.meaning.wave2.pop142.bounded-operator-norm"
+      }
+    },
+    {
+      "case_number": 36,
+      "term": "orbit of an element under a group action",
+      "classification": "retain_informative_alternative",
+      "rationale": "Orbit as all translates and orbit as equivalence class for the action-induced equivalence relation are two substantive constructions of orbit.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.group116.group-orbit"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.group116.group-orbit.1",
+        "form.wave2.group116.group-orbit.2"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 37,
+      "term": "product topology of a family of topological spaces",
+      "classification": "retain_informative_alternative",
+      "rationale": "Projection-inverse-image subbasis versus finite-support product-box basis explains different ways of generating the SAME product topology.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.branch129.indexed-product-topology"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.branch129.indexed-product-topology.1",
+        "form.wave2.branch129.indexed-product-topology.2"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 38,
+      "term": "profinite space via finite inverse limits",
+      "classification": "retain_informative_alternative",
+      "rationale": "Inverse limit of finite discrete spaces versus compact Hausdorff totally disconnected space is a deep structural characterization; Stacks Lemma 5.22.2.",
+      "original_attached_meaning_ids": [
+        "meaning.7368f71dcc6adfef.profinite-topological-space"
+      ],
+      "original_attached_formulation_ids": [
+        "form.7368f71dcc6adfef.profinite-topological-space",
+        "form.7368f71dcc6adfef.profinite-space-compact-characterization"
+      ],
+      "review_reference_urls": [
+        "https://stacks.math.columbia.edu/tag/08ZW"
+      ]
+    },
+    {
+      "case_number": 39,
+      "term": "pure ideal",
+      "classification": "retain_informative_alternative",
+      "rationale": "R/I flat and I∩J=IJ for every ideal (even f.g. J suffices) are important different module/ideal criteria; Stacks Lemma 10.108.2.",
+      "original_attached_meaning_ids": [
+        "meaning.3fe40ac4fb74bff2.pure-ideal"
+      ],
+      "original_attached_formulation_ids": [
+        "form.3fe40ac4fb74bff2.pure-ideal",
+        "form.3fe40ac4fb74bff2.pure-ideal-intersection-test"
+      ],
+      "review_reference_urls": [
+        "https://stacks.math.columbia.edu/tag/04PQ"
+      ]
+    },
+    {
+      "case_number": 40,
+      "term": "rational number",
+      "classification": "retain_informative_alternative",
+      "rationale": "Rational as a real number expressible a/b versus formal fraction-field construction of Q are genuinely different foundational presentations.",
+      "original_attached_meaning_ids": [
+        "meaning.mathdef.original.number.rational-number",
+        "meaning.wave2.rational55.rational-number"
+      ],
+      "original_attached_formulation_ids": [
+        "form.mathdef.original.number.rational-number.primary",
+        "form.wave2.rational55.rational-number"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 41,
+      "term": "reduced scheme",
+      "classification": "retain_informative_alternative",
+      "rationale": "Reduced stalks everywhere versus reduced section ring on every open set gives local-to-global criterion for reduced schemes.",
+      "original_attached_meaning_ids": [
+        "meaning.6a21c2d4f3354c8f.reduced-scheme"
+      ],
+      "original_attached_formulation_ids": [
+        "form.6a21c2d4f3354c8f.reduced-scheme",
+        "form.6a21c2d4f3354c8f.reduced-scheme-sections-equivalent"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 42,
+      "term": "set difference",
+      "classification": "retain_distinct_scope",
+      "rationale": "Relative complement X∖A with specified ambient X and generic set subtraction A∖B agree through substitution, but contain useful differing input/notation warnings (A^c requires universe). Preserve distinct explanatory variants.",
+      "original_attached_meaning_ids": [
+        "meaning.mathdef.original.sets.complement",
+        "meaning.mathdef.original.sets.difference"
+      ],
+      "original_attached_formulation_ids": [
+        "form.mathdef.original.sets.complement.primary",
+        "form.mathdef.original.sets.difference.primary"
+      ],
+      "review_reference_urls": []
+    },
+    {
+      "case_number": 43,
+      "term": "sigma-algebra",
+      "classification": "retain_informative_alternative",
+      "rationale": "Complement-and-countable-union axioms versus difference closure and disjoint countable unions require nontrivial disjointification proof; retain alternative axiom sets.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.foundation.sigma-algebra"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.foundation.sigma-algebra",
+        "form.wave2.broad67.sigma-difference-disjoint-countable"
+      ],
+      "review_reference_urls": [
+        "https://web.stanford.edu/~lindrew/18.102.pdf"
+      ]
+    },
+    {
+      "case_number": 44,
+      "term": "Stirling numbers of the second kind",
+      "classification": "retain_informative_alternative",
+      "rationale": "Recurrence with initial values versus coefficient extraction in falling factorial polynomial basis give nontrivial distinct specifications of Stirling numbers.",
+      "original_attached_meaning_ids": [
+        "meaning.wave2.cross133.stirling-second-kind"
+      ],
+      "original_attached_formulation_ids": [
+        "form.wave2.cross133.stirling-second-kind.1",
+        "form.wave2.cross133.stirling-second-kind.2"
+      ],
+      "review_reference_urls": []
+    }
+  ],
+  "user_adjudication": "User approved all three final recommendations on October 27, 2026; evidence status for citations unchanged; all legacy original IDs and source identities are preserved by merged cleanup aliases."
+}

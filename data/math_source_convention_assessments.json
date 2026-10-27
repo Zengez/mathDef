@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "registry": "source_scoped_convention_assessments",
+  "notes": [
+    "A missing source/convention assessment is not_checked, never checked_inconclusive.",
+    "verified_applies requires positive source evidence and scoped restriction.",
+    "checked_inconclusive and verified_opposite inherit latest canonical meaning dynamically, without claiming source endorsement.",
+    "Do not populate fabricated checks for sources never examined."
+  ],
+  "assessments": [
+    {
+      "assessment_id": "sourceconv.stacks.004R.connected.nonempty.20261027",
+      "source_url": "https://stacks.math.columbia.edu/tag/004R",
+      "source_title": "The Stacks Project — Section 5.7 Connected components",
+      "source_version": null,
+      "convention_id": "topology.connected.nonempty",
+      "status": "verified_applies",
+      "explicit_source_restriction": "nonempty_required",
+      "scope": {
+        "kind": "section",
+        "name": "Section 5.7",
+        "locator": "Definition 5.7.1(1) and uses in §5.7; no global Stacks claim"
+      },
+      "evidence_url": "https://stacks.math.columbia.edu/tag/004R",
+      "evidence_locator": "Definition 5.7.1(1), following sentence, Definition 5.7.1(2)",
+      "checked_on": "2026-10-27",
+      "evidence_summary": "Definition 5.7.1(1) explicitly requires X nonempty and states that the empty space is not connected. Definition 5.7.1(2) uses connected subsets to define components.",
+      "notes": "Only verified for the cited Stacks §5.7 use. mathDef's own connected predicate includes empty space. Component formulation in mathDef must explicitly require a nonempty component."
+    }
+  ]
+}

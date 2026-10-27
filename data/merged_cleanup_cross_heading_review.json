@@ -1,0 +1,651 @@
+{
+  "schema_version": 1,
+  "status": "clear_cross_heading_merges_applied_in_stage_only_not_published",
+  "scope": "Only mathematical meanings/forms already present in stage-only merged catalog, never newly collected terminology.",
+  "notes": [
+    "Every clear_duplicate_pending_group_migration entry is now applied by the stage-only alias migration; this legacy array key names its earlier review status, not a pending action.",
+    "Old searchable titles are preserved as aliases and every retired group ID is mapped to its surviving canonical group ID.",
+    "Retired meaning and formulation IDs are also mapped via the stage-only consolidated_ids block; original .tex and all historical independent records remain unchanged.",
+    "No final global linking rebuild or public v2 feed update has run; the user review checkpoint for genuinely uncertain mathematical conventions remains mandatory.",
+    "All entries compare ONLY existing original/researched terms and sources; no terminology candidates were created.",
+    "Source IDs remain independent of group IDs so future corrections can be attributed to the precise source URL/tag without source-scoring analytics."
+  ],
+  "clear_duplicate_pending_group_migration": [
+    {
+      "case_id": "cross-heading-smooth-ring-homomorphism",
+      "removed_group_id": "preview.term.0b723c97e198e775c089a400",
+      "retained_group_id": "preview.term.a21d19ddc2f5ed3b04fc7111",
+      "removed_meaning_id": "meaning.31325e4cfe9a4f13.smooth-ring-homomorphism",
+      "retained_meaning_id": "meaning.4b6af5c19e4a290c.smooth-ring-map",
+      "removed_title": "smooth homomorphism of rings",
+      "retained_title": "smooth ring homomorphism",
+      "reason": "Both impose finite presentation plus the naive cotangent complex quasi-isomorphic to a finite projective module concentrated in degree zero; expression NL_{S/R} is only notation. Retain distinct Stacks references 00TZ and 00T1."
+    },
+    {
+      "case_id": "cross-heading-injective-function-map",
+      "removed_group_id": "preview.term.afc1afb7afb188c6c7569f38",
+      "retained_group_id": "preview.term.771e9a6b812e3da689b882f5",
+      "removed_meaning_id": "meaning.mathdef.postwave.scan-injective-map-20261026",
+      "retained_title": "injective function",
+      "removed_title": "injective map",
+      "reason": "Both require equal outputs to imply equal inputs on a set function; categorical Set-monomorphism remark is a consequence, not a new defining construction. Retain both source sets and the 'injective map' heading as a search alias.",
+      "retained_meaning_id": "meaning.mathdef.original.functions.injective"
+    },
+    {
+      "case_id": "cross-heading-ordered-field",
+      "removed_group_id": "preview.term.e3a03ac26b67034f7043e80b",
+      "retained_group_id": "preview.term.0c4c34b334b591c748cf212e",
+      "removed_meaning_id": "meaning.wave2.real45.totally-ordered-field",
+      "retained_meaning_id": "meaning.mathdef.postwave.scan-ordered-field-20261026",
+      "removed_title": "totally ordered field",
+      "retained_title": "ordered field",
+      "reason": "Compatible total ordering and strict-positive multiplication are equivalent field-order axiom presentations; neither imposes Archimedean nor Dedekind completeness."
+    },
+    {
+      "case_id": "cross-heading-equinumerous-equipotent",
+      "removed_group_id": "preview.term.d803dfa99852693e0ae0cb3e",
+      "retained_group_id": "preview.term.c013d18c325f428e8ade486f",
+      "removed_meaning_id": "meaning.wave2.direct.3e301ed859563004e0bc",
+      "retained_meaning_id": "meaning.mathdef.original.sets.equinumerous",
+      "removed_title": "equipotent sets",
+      "retained_title": "Equinumerous sets",
+      "reason": "Both assert the existence of a bijection A→B for arbitrary sets A,B; cardinality notation is an equivalent consequence. Retain the MathWorld and original editorial source URLs."
+    },
+    {
+      "case_id": "cross-heading-zero-object",
+      "removed_group_id": "preview.term.99267b654dabce96f2582926",
+      "retained_group_id": "preview.term.a08aa0a8ba1e373824bf3b8b",
+      "removed_meaning_id": "meaning.wave2.direct.a60aa43eed2b99b5d184",
+      "retained_meaning_id": "meaning.mathdef.original.category.zero-object",
+      "removed_title": "zero object of a category",
+      "retained_title": "Zero object",
+      "reason": "Both require an object simultaneously initial and terminal. Uniqueness and the induced zero morphisms already appear in the original formulation; retain both citations."
+    },
+    {
+      "case_id": "cross-heading-closed-set",
+      "removed_group_id": "preview.term.a5a4d04462ac8b46d7789e50",
+      "retained_group_id": "preview.term.fd5425c642351b4ce9ab45d9",
+      "removed_meaning_id": "meaning.wave2.direct.c4ed408b10943e9c0f8e",
+      "retained_meaning_id": "meaning.mathdef.original.topology.closed-set",
+      "removed_title": "closed subset of a topological space",
+      "retained_title": "Closed set",
+      "reason": "Same complement-open predicate for F⊆X, without a Hausdorff condition. Original additional closure laws are consequences; carry Stacks 00DZ source lead without upgrading its verification status."
+    },
+    {
+      "case_id": "cross-heading-residue-field",
+      "removed_group_id": "preview.term.6610074bd0ba08b02e270eb6",
+      "retained_group_id": "preview.term.7e6836f2da20c56898aea797",
+      "removed_meaning_id": "meaning.wave2.direct.38969d113c4ee1db6e98",
+      "retained_meaning_id": "meaning.mathdef.original.arithmetic.residue-field",
+      "removed_title": "residue field of a local ring",
+      "retained_title": "Residue field",
+      "reason": "Both specify R/m for a local ring and κ(p)=R_p/pR_p at a prime. The original already contains the generalization; retain the directly checked Stacks 07BH reference along with the original external source."
+    },
+    {
+      "case_id": "cross-heading-algebraic-closure",
+      "removed_group_id": "preview.term.4d41a46a66a7d98fb422a6f9",
+      "retained_group_id": "preview.term.f511e8e180930c001ca64ce5",
+      "removed_meaning_id": "meaning.39488f3e396a1c77.algebraic-closure",
+      "retained_meaning_id": "meaning.mathdef.original.field.algebraic-closure",
+      "removed_title": "algebraic closure",
+      "retained_title": "Algebraic closure of a field",
+      "reason": "Both define an extension algebraic over F and algebraically closed. The original adds uniqueness up to F-isomorphism as a theorem, not new defining structure. Preserve independent Stacks references 09GP and 09GS."
+    },
+    {
+      "case_id": "cross-heading-box-topology",
+      "removed_group_id": "preview.term.1a6232b4dafdf574c3d3e1a4",
+      "retained_group_id": "preview.term.47c7049d8e9d5783f9f40c62",
+      "removed_meaning_id": "meaning.mathdef.postwave.scan-box-product-topology-20261026",
+      "retained_meaning_id": "meaning.mathdef.postwave.box-product-topology-20261026",
+      "removed_title": "box topology on a Cartesian product",
+      "retained_title": "box topology on a product of topological spaces",
+      "reason": "The same box-basic-open-set construction consists of all products of coordinatewise open sets, with no finite-support requirement; finite-index comparison and categorical-product remarks are consequences. Preserve independent nLab and PlanetMath source references."
+    },
+    {
+      "case_id": "cross-heading-reflexive-relation",
+      "removed_group_id": "preview.term.f32965076f54b224d16701a1",
+      "retained_group_id": "preview.term.8359fd24f6e0b0ec9758e344",
+      "removed_meaning_id": "meaning.wave2.direct.7176b5fd74d3e3e5dc95",
+      "retained_meaning_id": "meaning.mathdef.original.relations.reflexive-relation",
+      "removed_title": "reflexive binary relation",
+      "retained_title": "Reflexive relation",
+      "reason": "Both impose (x,x)∈R for all x∈X on a binary relation R⊆X×X, including vacuous truth at X=∅. Research wording repeats original draft, with the same caveat about symmetry/transitivity; retain MathWorld and Wikipedia source URLs with original verification states."
+    },
+    {
+      "case_id": "cross-heading-brownian-wiener",
+      "removed_group_id": "preview.term.40de586f6f64b88b12da131e",
+      "retained_group_id": "preview.term.8940292616cd3ae9311e1b54",
+      "removed_meaning_id": "meaning.mathdef.original.stochastic.wiener-process",
+      "retained_meaning_id": "meaning.mathdef.original.stochastic.brownian-motion",
+      "removed_title": "Wiener process",
+      "retained_title": "Standard Brownian motion",
+      "reason": "Both explicitly require B0=0, almost-surely continuous paths, independent Gaussian increments with variance t−s. The Wiener formulation directly declares itself standard Brownian motion; no drift/variance alternative is present. Retain both original Wikipedia section-anchor URLs and original ID alias."
+    },
+    {
+      "case_id": "cross-heading-finite-presentation-module",
+      "removed_group_id": "preview.term.a7e04de5d3b98032e2a82a94",
+      "retained_group_id": "preview.term.9054b78e92bd7e119ea83f10",
+      "removed_meaning_id": "meaning.db846ebeca42b9ee.finitely-presented-module-stacks",
+      "retained_meaning_id": "meaning.415a1503ae7ed97d.finitely-presented-module",
+      "removed_title": "finite presentation",
+      "retained_title": "finitely presented module",
+      "reason": "Both define a finitely presented R-module by a finite free presentation R^m→R^n→M→0 and finite generators/relations. No differing module conventions or ambient objects in the statements; preserve separate Stacks references 0517 and 05N4."
+    },
+    {
+      "case_id": "cross-heading-field-extension-synonym",
+      "removed_group_id": "preview.term.85c132e9a7f9e71dca8b2413",
+      "retained_group_id": "preview.term.8c25fe507633c49cf3b2a355",
+      "removed_meaning_id": "meaning.7210832bc589f307.field-extension",
+      "retained_meaning_id": "meaning.mathdef.original.algebra.field-extension",
+      "removed_title": "extension field",
+      "retained_title": "Field extension",
+      "reason": "Both define an extension of fields as an inclusion, equivalently an injective field homomorphism identifying the base with a subfield. The original additionally introduces extension degree as associated information, not a distinct definition. Keep its original citation and the independent source evidence."
+    },
+    {
+      "case_id": "cross-heading-topology-basis-existing-topology",
+      "removed_group_id": "preview.term.dbc01c0b8410b88cb844e499",
+      "retained_group_id": "preview.term.fe31d24452421e35c2838014",
+      "removed_meaning_id": "meaning.6a3376e5ecb82bfb.topology-basis",
+      "retained_meaning_id": "meaning.mathdef.postwave.topology-basis-20261026",
+      "removed_title": "topology basis",
+      "retained_title": "Basis for a topology",
+      "reason": "The removed definition and retained post-wave meaning both describe a family of open sets refining every point-in-open-neighborhood in a given topology. Retain the original separate bare-set basis-generation construction already adjudicated as informative, and collect all independent citations."
+    },
+    {
+      "case_id": "cross-heading-topology-subbasis",
+      "removed_group_id": "preview.term.b5bc7b1cac65c2b5e27aa822",
+      "retained_group_id": "preview.term.6e06024ef018011970321343",
+      "removed_meaning_id": "meaning.6a3376e5ecb82bfb.topology-subbasis",
+      "retained_meaning_id": "meaning.mathdef.postwave.topology-subbasis-20261026",
+      "removed_title": "topology subbasis",
+      "retained_title": "subbasis for a topology",
+      "reason": "Both say finite intersections of subbasic opens, including the empty intersection X, form a basis of the given topology. The retained source also explains empty subbases and unions, with no separate mathematical framework introduced."
+    },
+    {
+      "case_id": "cross-heading-cofiltered-indexing-category",
+      "removed_group_id": "preview.term.381e40ec8591aa90cd7c53fa",
+      "retained_group_id": "preview.term.0a940c01927125b54d58bc7c",
+      "removed_meaning_id": "meaning.9f75052b1742ab3f.cofiltered-category",
+      "retained_meaning_id": "meaning.mathdef.postwave.cofiltered-category-20261026",
+      "removed_title": "cofiltered indexing category",
+      "retained_title": "cofiltered category",
+      "reason": "Both impose nonemptiness, common sources for pairs of objects, and precomposition equalizing parallel arrows, equivalently filteredness of the opposite category. Indexing use adds no extra defining axiom; preserve the independent citations and Stacks locator."
+    },
+    {
+      "case_id": "cross-heading-algebraic-field-extension",
+      "removed_group_id": "preview.term.fdbd1a5fccbff7e1bde5bcf8",
+      "retained_group_id": "preview.term.b62d19bac0c0333f83bc0bfe",
+      "removed_meaning_id": "meaning.50d335de00e5f11d.algebraic-extension",
+      "retained_meaning_id": "meaning.d0a078e59e1495da.algebraic-field-extension",
+      "removed_title": "algebraic field extension",
+      "retained_title": "algebraic extension",
+      "reason": "Both use precisely the same field-extension algebraicity predicate: every extension element annihilates some nonzero polynomial over the base field. The names are synonymous, not different mathematical scopes or characterizations; retain the independent source locators and full original ID alias."
+    },
+    {
+      "case_id": "cross-heading-characteristic-polynomial-square",
+      "removed_group_id": "preview.term.405b23cc879f86e8d196e3e5",
+      "retained_group_id": "preview.term.fd3f42867c3aa9aba58044d1",
+      "removed_meaning_id": "meaning.30083611f9483a64.characteristic-polynomial-matrix",
+      "retained_meaning_id": "meaning.mathdef.original.linear.characteristic-polynomial",
+      "removed_title": "characteristic polynomial of a square matrix",
+      "retained_title": "Characteristic polynomial",
+      "reason": "Both identify det(tI_n−A)∈R[t] as the characteristic polynomial of a square matrix over a commutative ring. mathDef's canonical Ring explicitly has 1_R, so the identity matrix exists; the original also retains the informative sign-convention note. No independent construction or predicate in the removed entry."
+    },
+    {
+      "case_id": "cross-heading-characteristic-polynomial-matrix",
+      "removed_group_id": "preview.term.8fd39b1dbcf827c0179ed67e",
+      "retained_group_id": "preview.term.fd3f42867c3aa9aba58044d1",
+      "removed_meaning_id": "meaning.wave2.direct.ad7de6dcfac982c1ff16",
+      "retained_meaning_id": "meaning.mathdef.original.linear.characteristic-polynomial",
+      "removed_title": "characteristic polynomial of a matrix",
+      "retained_title": "Characteristic polynomial",
+      "reason": "Identical determinant det(tI_n−A) for square matrices over unital commutative rings. The n=0 remark is the usual empty-determinant value 1 when zero-size matrices are admitted, not a distinct characteristic-polynomial construction; keep the MathWorld citation and retain the original's sign-convention explanation."
+    },
+    {
+      "case_id": "cross-heading-additive-group-homomorphism",
+      "removed_group_id": "preview.term.3c08be1cab10f3e712113e88",
+      "retained_group_id": "preview.term.1622e41177287660d28393fc",
+      "removed_meaning_id": "meaning.wave2.direct.b265aa5bcc1bd7e4d539",
+      "retained_meaning_id": "meaning.mathdef.original.algebra.group-homomorphism",
+      "removed_title": "additive group homomorphism",
+      "retained_title": "Group homomorphism",
+      "reason": "An arbitrary group homomorphism preserves its binary group law. Writing the law additively gives f(a+a')=f(a)+f(a') with the same identity/inverse consequences, and the independent wording specifies only groups written in additive notation, not a different required algebraic structure. This is notation, not a distinct construction; retain the MathWorld and original sources and the additive search alias."
+    },
+    {
+      "case_id": "user-adjudicated-affine-span-affine-hull",
+      "removed_group_id": "preview.term.ce7752ecc3d022d0846cffac",
+      "retained_group_id": "preview.term.79c6caff00b6628e57970aed",
+      "removed_meaning_id": "meaning.mathdef.original.geometry.affine-span",
+      "retained_meaning_id": "meaning.wave2.pop140.affine-hull",
+      "removed_title": "Affine span",
+      "retained_title": "affine hull",
+      "reason": "User adjudication 2026-10-27: affine span (often algebra) and affine hull (often analysis) describe the same nonempty-subset affine-combination construction. Preserve both searchable titles, all primary/reference citations, original ID alias, and researched combination/intersection characterizations. Exclude S=empty from the canonical definition; retain information about permissive alternatives as convention notes."
+    },
+    {
+      "case_id": "cross-heading-regular-noetherian-local-ring",
+      "removed_group_id": "preview.term.4297fc51b37f31382df8b221",
+      "retained_group_id": "preview.term.1b1579806f0b027b99fdf69d",
+      "removed_meaning_id": "meaning.14c44fee62bf6075.regular-local-ring",
+      "retained_meaning_id": "meaning.mathdef.postwave.scan-regular-noetherian-local-ring-20261026",
+      "removed_title": "regular Noetherian local ring",
+      "retained_title": "regular local ring",
+      "reason": "Both already specify a commutative Noetherian local ring and require embedding dimension dim_{R/m}(m/m²) equal Krull dimension (equivalently exactly d generators of maximal ideal). Retain the more informative regular-local-ring formulation, field dimension-zero example and distinctions; source citations and researched IDs resolve to the surviving meaning."
+    },
+    {
+      "case_id": "cross-heading-measurable-map-function",
+      "removed_group_id": "preview.term.ca53d68ae7563b66982c977d",
+      "retained_group_id": "preview.term.d4e5a8babcfcc59ecc4f7dcc",
+      "removed_meaning_id": "meaning.wave2.direct.b458f6a3824dab19725b",
+      "retained_meaning_id": "meaning.mathdef.original.measure.measurable-function",
+      "removed_title": "measurable mapping",
+      "retained_title": "Measurable function",
+      "reason": "Both prescribe f⁻¹(B) in Σ for every B in the codomain σ-algebra Τ, for general measurable spaces X and Y. Function versus mapping changes no input or mathematical predicate. Keep the original broader explanatory formulation, preserve the separately researched Borel-measurability case by a provenance-audited editorial note, and keep both historic reference URLs/IDs."
+    },
+    {
+      "case_id": "cross-heading-surface-20261027-1",
+      "removed_group_id": "preview.term.8c74d79a1a2d0082501ff9b4",
+      "retained_group_id": "preview.term.74571570651c686e50df4258",
+      "removed_meaning_id": "meaning.wave2.direct.research408",
+      "retained_meaning_id": "meaning.mathdef.original.sets.aleph-null",
+      "removed_title": "aleph-null",
+      "retained_title": "Aleph-null cardinal",
+      "reason": "Surface-level exact-definition comparison: Same cardinal ℵ₀, the size of the natural numbers. Preserve original and researched source citations and historical aliases."
+    },
+    {
+      "case_id": "cross-heading-surface-20261027-2",
+      "removed_group_id": "preview.term.407e4c1f2e4d8be64643e2dd",
+      "retained_group_id": "preview.term.2eb631a6f774b4c2b17de6b1",
+      "removed_meaning_id": "meaning.d0a078e59e1495da.algebraic-element-extension",
+      "retained_meaning_id": "meaning.mathdef.original.algebra.algebraic-element",
+      "removed_title": "algebraic element over a field",
+      "retained_title": "Algebraic element",
+      "reason": "Surface-level exact-definition comparison: Both say an extension element annihilated by a nonzero polynomial over the base field. Preserve original and researched source citations and historical aliases."
+    },
+    {
+      "case_id": "cross-heading-surface-20261027-3",
+      "removed_group_id": "preview.term.6aab17230241e9ed6de325fa",
+      "retained_group_id": "preview.term.95db9105b98954ca07bfa0f3",
+      "removed_meaning_id": "meaning.wave2.alternative39.bipartite-undirected",
+      "retained_meaning_id": "meaning.mathdef.original.graph.bipartite-graph",
+      "removed_title": "bipartite undirected graph",
+      "retained_title": "Bipartite graph",
+      "reason": "Surface-level exact-definition comparison: Same partition-of-vertices criterion with every edge crossing the two parts. Preserve original and researched source citations and historical aliases."
+    },
+    {
+      "case_id": "cross-heading-surface-20261027-4",
+      "removed_group_id": "preview.term.3010efafb3b69452c047f3aa",
+      "retained_group_id": "preview.term.bb038c6b57bf65b536175be4",
+      "removed_meaning_id": "meaning.wave2.alternative39.borel-sigma-algebra-topological",
+      "retained_meaning_id": "meaning.mathdef.original.measure.borel-sigma-algebra",
+      "removed_title": "Borel sigma-algebra of a topological space",
+      "retained_title": "Borel sigma-algebra",
+      "reason": "Surface-level exact-definition comparison: Same sigma-algebra generated by the open subsets of a topological space. Preserve original and researched source citations and historical aliases."
+    },
+    {
+      "case_id": "cross-heading-surface-20261027-5",
+      "removed_group_id": "preview.term.a667dc43720d7bd0dd1e13db",
+      "retained_group_id": "preview.term.789bd73d63936876fb756691",
+      "removed_meaning_id": "meaning.wave2.prereq122.real-series-convergent",
+      "retained_meaning_id": "meaning.wave2.direct.7913d8a82788b1402bf9",
+      "removed_title": "convergent series of real numbers",
+      "retained_title": "convergent infinite real series",
+      "reason": "Surface-level exact-definition comparison: Same convergence of finite partial sums of a real series; elementary epsilon detail adds no different mathematical scope. Preserve original and researched source citations and historical aliases."
+    },
+    {
+      "case_id": "cross-heading-surface-20261027-6",
+      "removed_group_id": "preview.term.1fc896c1b07c660edbac0a72",
+      "retained_group_id": "preview.term.e945c5ccfc1ac0f7661a729d",
+      "removed_meaning_id": "meaning.wave2.direct.bb72b275ee79b161d9b8",
+      "retained_meaning_id": "meaning.mathdef.original.commalg.nilpotent-element",
+      "removed_title": "nilpotent element of a ring",
+      "retained_title": "Nilpotent element",
+      "reason": "Surface-level exact-definition comparison: Both impose r^n=0 for some positive n in a ring; comments about the nilradical/zero ring are consequences. Preserve original and researched source citations and historical aliases."
+    },
+    {
+      "case_id": "cross-heading-surface-20261027-7",
+      "removed_group_id": "preview.term.bd966c00ed678b810f08c1ca",
+      "retained_group_id": "preview.term.328a7b6e9c9a5cbc9d1703ea",
+      "removed_meaning_id": "meaning.wave2.direct.321f1c1041b950cab75b",
+      "retained_meaning_id": "meaning.mathdef.original.real.riemann-sum",
+      "removed_title": "tagged Riemann sum",
+      "retained_title": "Riemann sum",
+      "reason": "Surface-level exact-definition comparison: Both use a partition, tags in each subinterval and the identical weighted sum. Preserve original and researched source citations and historical aliases."
+    }
+  ],
+  "clearly_distinct_retain": [
+    {
+      "case_id": "cross-heading-division-ring-left-right",
+      "left_group_id": "preview.term.a71e8ff36989362dd4f2b286",
+      "right_group_id": "preview.term.2ef7d6454d8875d733922658",
+      "left_meaning_id": "meaning.wave2.scalar101.left-vector-over-division-ring",
+      "right_meaning_id": "meaning.wave2.scalar101.right-vector-over-division-ring",
+      "reason": "Noncommutative division rings have structurally different left D×V→V and right V×D→V scalar actions; high lexical similarity does not erase handedness."
+    },
+    {
+      "case_id": "cross-heading-open-interval-scope",
+      "left_group_id": "preview.term.4d007218b80c170ac24d4cdf",
+      "right_group_id": "preview.term.68cf18dec9325efe1dbafe05",
+      "left_meaning_id": "meaning.wave2.direct.8d23b7ba80f9f5e74420",
+      "right_meaning_id": "meaning.mathdef.postwave.scan-open-real-interval-20261026",
+      "reason": "One construction admits extended-real endpoints and unbounded intervals; the second explicitly specifies finite real endpoints a<b and separately describes unbounded sets. Preserve the scope distinction, not automatic cross-heading consolidation."
+    },
+    {
+      "case_id": "cross-heading-radical-operation-vs-property",
+      "left_group_id": "preview.term.84729ab91dfb061c8cea89dc",
+      "right_group_id": "preview.term.e55469f65a30fbe5b61bc6df",
+      "reason": "Radical of an ideal is the ideal-valued operation I↦√I. A radical ideal is an input ideal satisfying I=√I. They are mathematically different types: construction versus predicate. Do not collapse or group these two headings merely because of shared word 'radical'."
+    }
+  ],
+  "pending_mathematical_comparison": [],
+  "group_only_alias_merges": [
+    {
+      "case_id": "alias-bounded-linear-operator-variants",
+      "removed_group_id": "preview.term.60ea3ac022a7140b6a081e95",
+      "retained_group_id": "preview.term.eee5144010a080f51c86a85d",
+      "removed_title": "bounded linear transformation",
+      "retained_title": "Bounded linear operator",
+      "reason": "Both express global norm-bounded linear maps; preserve the researched explicit real/complex scalar restriction and the original's unrestricted normed-space ambient statement as separate contextual meanings. Both URLs survive."
+    },
+    {
+      "case_id": "alias-filtered-vs-small-filtered-category",
+      "removed_group_id": "preview.term.f2c3546e768ed92f9686db0f",
+      "retained_group_id": "preview.term.651247601abdb144354bd15c",
+      "removed_title": "small filtered category",
+      "retained_title": "filtered category",
+      "reason": "Both impose nonemptiness, joint cocones for object pairs and eventual equalization of parallel arrows, but one additionally requires smallness; retain the substantive size qualifier and both citations."
+    },
+    {
+      "case_id": "alias-free-left-module",
+      "removed_group_id": "preview.term.7ed1ac61356035c89dc9f928",
+      "retained_group_id": "preview.term.732348eb19da8780d82366bf",
+      "removed_title": "free left module",
+      "retained_title": "Free module",
+      "reason": "Both describe module bases/direct sums, but the researched variant explicitly chooses a unital left R-module over a possibly noncommutative unital ring; original leaves the handedness and unital convention tacit. Keep as distinct contextual meanings."
+    },
+    {
+      "case_id": "alias-finite-vs-extended-open-interval",
+      "removed_group_id": "preview.term.68cf18dec9325efe1dbafe05",
+      "retained_group_id": "preview.term.4d007218b80c170ac24d4cdf",
+      "removed_title": "open interval in the real line",
+      "retained_title": "open interval of real numbers",
+      "reason": "Both use the real order, but one permits infinite extended-real endpoints and the other explicitly requires finite a<b. Preserve scope and all references rather than declaring these formulations redundant."
+    },
+    {
+      "case_id": "alias-operator-norm-alternative-characterization",
+      "removed_group_id": "preview.term.01f08332bb83933eb66e9320",
+      "retained_group_id": "preview.term.5cb3ac87c11761b120ed7dbe",
+      "removed_title": "norm of a bounded linear transformation",
+      "retained_title": "Operator norm",
+      "reason": "The same operator norm under real/complex scalars, but the researched passage additionally presents its infimum-of-global-bounds characterization. Retain the mathematically informative characterization alongside the original supremum definition."
+    },
+    {
+      "case_id": "alias-relative-complement-set-difference",
+      "removed_group_id": "preview.term.ee240ba0a2e890bb1fe24fc4",
+      "retained_group_id": "preview.term.2b42a9e4576524bfa4f6dd4d",
+      "removed_title": "Relative complement",
+      "retained_title": "set difference",
+      "reason": "The construction X\\\\A with A⊆X is a specialized relative-complement view of arbitrary A\\\\B. Preserve the explicit choice of ambient universe and notation-scope distinction as an informative formulation."
+    },
+    {
+      "case_id": "alias-partition-of-set-set-partition",
+      "removed_group_id": "preview.term.424c52f99ea62e07f006aded",
+      "retained_group_id": "preview.term.504bbb95cf6c5140e60898fe",
+      "removed_title": "partition of a set",
+      "retained_title": "Set partition",
+      "reason": "Both concern partitions into nonempty pairwise disjoint blocks covering S. Preserve the original covering characterization and the independently supplied unique-block membership characterization as distinct informative formulations rather than discarding it. The empty-set partition convention is compatible. Retain both labels and distinct sources."
+    },
+    {
+      "case_id": "alias-galois-field-extension-synonym",
+      "removed_group_id": "preview.term.953ff0efe0dd240c10868747",
+      "retained_group_id": "preview.term.5d575edfd3181ef96cf24e49",
+      "removed_title": "Galois field extension",
+      "retained_title": "Galois extension",
+      "reason": "These are synonymous names for algebraic normal separable field extensions. Move all historically researched records into the canonical original Galois extension heading first; the earlier within-research duplicate then its survivor are individually consolidated by the semantic ledger. Transitive form/meaning aliases must resolve straight to the live original, carrying source IDs and the finite automorphism characterization."
+    },
+    {
+      "case_id": "alias-adapted-stochastic-process",
+      "removed_group_id": "preview.term.9bebdcaee4b71b08690dcb3c",
+      "retained_group_id": "preview.term.fa86ad082c9b98b730f413b0",
+      "removed_title": "adapted stochastic process",
+      "retained_title": "Adapted process",
+      "reason": "Both titles denote a stochastic process measurable at each time with respect to the corresponding filtration sigma-algebra. Preserve the original arbitrary-time-index definition and the researched discrete-time and continuous-time real-valued contextual examples as separate informative meanings; carry their sources and all historical group and formulation IDs under one searchable heading."
+    },
+    {
+      "case_id": "alias-positive-integer-congruence-into-original",
+      "removed_group_id": "preview.term.ee61e87a39eb7e24dc6e7490",
+      "retained_group_id": "preview.term.615187632a35bd8c310d68a6",
+      "removed_title": "congruence modulo a positive integer",
+      "retained_title": "congruence modulo an integer",
+      "reason": "The canonical original heading already contains two mathematically identical original/direct meanings (one previously consolidated). The researched positive-modulus label names exactly the same congruence relation for positive modulus. Group the two searchable names first, then consolidate into the researched enriched remainder-characterization meaning, preserving historical original and direct-research IDs through transitive redirects."
+    },
+    {
+      "case_id": "alias-multiplicative-order-of-element-into-element-order",
+      "removed_group_id": "preview.term.2a7509af010a48e988b7bf83",
+      "retained_group_id": "preview.term.e55b26a1d1c9251eadc0b343",
+      "removed_title": "multiplicative order of an element of a group",
+      "retained_title": "order of a group element",
+      "reason": "The order of g in a multiplicatively written group is the same abstract least-positive-exponent invariant as element order in any group (ng=0 in additive notation). Preserve the broader canonical searchable heading and its older meaning ID, but retain the richer post-Wave2 modular-unit specialization and its citations as the single surviving formulation; correct misleading claim that additive notation creates a distinct invariant."
+    },
+    {
+      "case_id": "alias-linear-transformation-under-linear-map",
+      "removed_group_id": "preview.term.72c829680042f65a356bd9cc",
+      "retained_group_id": "preview.term.091ee6a2f6976c44ce847b3b",
+      "removed_title": "linear transformation",
+      "retained_title": "Linear map",
+      "reason": "The original linear map in vector spaces over one field agrees with the researched field-vector linear-transformation meaning. General left R-module linearity is a valuable separate context: preserve it in the common Linear map heading, then consolidate ONLY the researched field-vector formulation into the original. Keep both searchable titles, source citations, module variant and retired-ID redirects."
+    },
+    {
+      "case_id": "cross-heading-surface-variant-20261027-2",
+      "removed_group_id": "preview.term.7040408aa3a7e672d499aff1",
+      "retained_group_id": "preview.term.6072a1df67a32bf60d7b3275",
+      "removed_title": "distinguished principal open subset",
+      "retained_title": "Distinguished open subset",
+      "reason": "Surface-level grouping of closely related meanings: retain BOTH independently sourced mathematical formulations and their distinct scope/construction. Do not infer exact equivalence."
+    },
+    {
+      "case_id": "cross-heading-surface-variant-20261027-3",
+      "removed_group_id": "preview.term.5016493f522d5cd084807b77",
+      "retained_group_id": "preview.term.e8bd3b5b3e654a2a808f1ec8",
+      "removed_title": "orbit of an element under a group action",
+      "retained_title": "Orbit of a group action",
+      "reason": "Surface-level grouping of closely related meanings: retain BOTH independently sourced mathematical formulations and their distinct scope/construction. Do not infer exact equivalence."
+    },
+    {
+      "case_id": "cross-heading-surface-variant-20261027-4",
+      "removed_group_id": "preview.term.2b19913315cae1a084497c15",
+      "retained_group_id": "preview.term.ced56e2edecfaa78271741ad",
+      "removed_title": "Stirling number of the second kind",
+      "retained_title": "Stirling numbers of the second kind",
+      "reason": "Surface-level grouping of closely related meanings: retain BOTH independently sourced mathematical formulations and their distinct scope/construction. Do not infer exact equivalence."
+    },
+    {
+      "case_id": "cross-heading-surface-variant-20261027-5",
+      "removed_group_id": "preview.term.13e4226b68a4b7b6274bfe9a",
+      "retained_group_id": "preview.term.1d7530697d507bf6931cc68d",
+      "removed_title": "transitive binary relation",
+      "retained_title": "Transitive relation",
+      "reason": "Surface-level grouping of closely related meanings: retain BOTH independently sourced mathematical formulations and their distinct scope/construction. Do not infer exact equivalence."
+    },
+    {
+      "case_id": "cross-heading-surface-variant-20261027-6",
+      "removed_group_id": "preview.term.363ac31299961d65a52aae76",
+      "retained_group_id": "preview.term.c1f8613bf1b4f777b2a03db3",
+      "removed_title": "ordinary generating function of a real sequence",
+      "retained_title": "Ordinary generating function",
+      "reason": "Surface-level grouping of closely related meanings: retain BOTH independently sourced mathematical formulations and their distinct scope/construction. Do not infer exact equivalence."
+    },
+    {
+      "case_id": "cross-heading-surface-variant-20261027-7",
+      "removed_group_id": "preview.term.8e140563aa408f6c8e773e73",
+      "retained_group_id": "preview.term.c7bfbf6c3354392c6877751e",
+      "removed_title": "proper vertex k-coloring",
+      "retained_title": "Proper vertex coloring",
+      "reason": "Surface-level grouping of closely related meanings: retain BOTH independently sourced mathematical formulations and their distinct scope/construction. Do not infer exact equivalence."
+    },
+    {
+      "case_id": "cross-heading-surface-variant-20261027-8",
+      "removed_group_id": "preview.term.dc75220f828375bc05e6b708",
+      "retained_group_id": "preview.term.b82e038e9d27954f2d54ac48",
+      "removed_title": "Pointwise convergence",
+      "retained_title": "pointwise convergence of functions",
+      "reason": "Surface-level grouping of closely related meanings: retain BOTH independently sourced mathematical formulations and their distinct scope/construction. Do not infer exact equivalence."
+    },
+    {
+      "case_id": "cross-heading-surface-variant-20261027-9",
+      "removed_group_id": "preview.term.b08cece914e663a2b71b32c0",
+      "retained_group_id": "preview.term.504bbb95cf6c5140e60898fe",
+      "removed_title": "indexed partition of a set",
+      "retained_title": "Set partition",
+      "reason": "Surface-level grouping of closely related meanings: retain BOTH independently sourced mathematical formulations and their distinct scope/construction. Do not infer exact equivalence."
+    },
+    {
+      "case_id": "cross-heading-surface-variant-simple-bipartite-20261027",
+      "removed_group_id": "preview.term.f16e7078e43689a959292cc6",
+      "retained_group_id": "preview.term.95db9105b98954ca07bfa0f3",
+      "removed_title": "bipartite simple undirected graph",
+      "retained_title": "Bipartite graph",
+      "reason": "Same bipartite graph condition, but simple-graph scope is explicit only in the specialized variant; place both under one searchable heading and preserve both interpretations/source citations, without asserting their graph-model scopes identical."
+    },
+    {
+      "case_id": "deep-reviewed-22-related-variant-01",
+      "removed_group_id": "preview.term.cefb6e6bccca4ea3be84ecae",
+      "retained_group_id": "preview.term.cf1de4134f25336724cb9236",
+      "removed_title": "prime minimal over an ideal",
+      "retained_title": "minimal prime ideal",
+      "reason": "The relative minimal prime above I specializes to the ring's minimal primes when I=0. Keep the I-parameterized meaning separately. Reviewed across the fixed 22-case list; no semantic meaning or source-formulation discarded."
+    },
+    {
+      "case_id": "deep-reviewed-22-related-variant-02",
+      "removed_group_id": "preview.term.dd075fce2352f2976823bc53",
+      "retained_group_id": "preview.term.6003afb5d6824d3eef52a272",
+      "removed_title": "Hardy Hilbert space on the disk",
+      "retained_title": "Analytic Hardy space on the disk",
+      "reason": "H^2(D) is the p=2 Hilbert specialization of the family H^p(D); preserve the coefficient characterization and distinct parameter contexts. Reviewed across the fixed 22-case list; no semantic meaning or source-formulation discarded."
+    },
+    {
+      "case_id": "deep-reviewed-22-related-variant-03",
+      "removed_group_id": "preview.term.0230fd685cb7a8555dcf0050",
+      "retained_group_id": "preview.term.b902150184ed35428f0e76ef",
+      "removed_title": "Weighted Bergman space",
+      "retained_title": "Bergman space",
+      "reason": "The weight-one case of the weighted Bergman construction is the usual unweighted Bergman space. Preserve the added weight parameter rather than merging meanings. Reviewed across the fixed 22-case list; no semantic meaning or source-formulation discarded."
+    },
+    {
+      "case_id": "deep-reviewed-22-related-variant-04",
+      "removed_group_id": "preview.term.d27d084e0196503e6fd5b5f9",
+      "retained_group_id": "preview.term.77d9b8d741b4e3628b57634e",
+      "removed_title": "Cohen–Macaulay local ring",
+      "retained_title": "Cohen–Macaulay ring",
+      "reason": "Global Cohen–Macaulayness requires all prime localizations to have local depth equal to dimension; keep the single-local-ring predicate as another mathematical scope. Reviewed across the fixed 22-case list; no semantic meaning or source-formulation discarded."
+    },
+    {
+      "case_id": "deep-reviewed-22-related-variant-05",
+      "removed_group_id": "preview.term.d71e420b97d2b93b37a6c385",
+      "retained_group_id": "preview.term.f02d71e9993475656a73a04c",
+      "removed_title": "Cohen–Macaulay local module",
+      "retained_title": "global Cohen–Macaulay module",
+      "reason": "The local module depth/dimension-of-support predicate and its prime-localization global condition are mathematically related with different declared data. Preserve each source-backed scope. Reviewed across the fixed 22-case list; no semantic meaning or source-formulation discarded."
+    },
+    {
+      "case_id": "deep-reviewed-22-related-variant-06",
+      "removed_group_id": "preview.term.97a2f4a2e8ef0ad360c63e51",
+      "retained_group_id": "preview.term.ce8253404206e95ad50ae320",
+      "removed_title": "I-adic completion of a Noetherian ring",
+      "retained_title": "I-adic completion of a ring",
+      "reason": "Both use the inverse limit R/I^n, but the Noetherian assumption is additional; preserve specialized ring scope and exact source provenance. Reviewed across the fixed 22-case list; no semantic meaning or source-formulation discarded."
+    },
+    {
+      "case_id": "deep-reviewed-22-related-variant-07",
+      "removed_group_id": "preview.term.914b5d2b2451b36164c81127",
+      "retained_group_id": "preview.term.da0e131d932416083cfcb31b",
+      "removed_title": "Tor-based local criterion for module flatness",
+      "retained_title": "Tor-vanishing criterion for module flatness",
+      "reason": "The local residue-field criterion applies to finite modules over a Noetherian local map; the broad criterion uses all finitely generated ideals. Keep hypotheses separate, as established by Stacks Lemma 10.99.7. Reviewed across the fixed 22-case list; no semantic meaning or source-formulation discarded."
+    },
+    {
+      "case_id": "deep-reviewed-22-related-variant-08",
+      "removed_group_id": "preview.term.c8641c77fdf7d91f4edd4b84",
+      "retained_group_id": "preview.term.3930c6ec7fe115d9249275eb",
+      "removed_title": "G-unramified at a target prime",
+      "retained_title": "unramified at a target prime",
+      "reason": "G-unramified demands finite presentation instead of finite type after localization. Stacks Definition 10.151.1 explicitly treats these as different conventions; retain two distinct meanings. Reviewed across the fixed 22-case list; no semantic meaning or source-formulation discarded."
+    },
+    {
+      "case_id": "deep-reviewed-22-related-variant-09",
+      "removed_group_id": "preview.term.687f2bd4af7ce0826a184eeb",
+      "retained_group_id": "preview.term.3465edfbc80577eba2376cab",
+      "removed_title": "Zariski topology on a spectrum",
+      "retained_title": "Zariski topology on a scheme",
+      "reason": "The Zariski spectrum topology using basic D(f) gives the affine chart specialization of the Zariski topology on a general scheme. Preserve affine-versus-general input. Reviewed across the fixed 22-case list; no semantic meaning or source-formulation discarded."
+    },
+    {
+      "case_id": "deep-reviewed-22-related-variant-10",
+      "removed_group_id": "preview.term.78cd5bf804fbc5f58cfbea19",
+      "retained_group_id": "preview.term.2ecc42e0616936211c3ad2aa",
+      "removed_title": "categorical epimorphism of rings",
+      "retained_title": "Categorical epimorphism",
+      "reason": "General categorical right-cancellability and the commutative-ring category's tensor-product criterion represent general-versus-specialized contexts, not separate names for completely independent objects. Reviewed across the fixed 22-case list; no semantic meaning or source-formulation discarded."
+    },
+    {
+      "case_id": "deep-reviewed-22-related-variant-11",
+      "removed_group_id": "preview.term.df6c797a6a5276f91f59583d",
+      "retained_group_id": "preview.term.8c419ab9a9558c0a3517a0ea",
+      "removed_title": "formally unramified ring homomorphism",
+      "retained_title": "unramified ring homomorphism",
+      "reason": "Formal unramifiedness is the square-zero lifting uniqueness property. Unramifiedness under Stacks additionally requires finite type; retain source conventions and formal/finite-type meanings separately. Reviewed across the fixed 22-case list; no semantic meaning or source-formulation discarded."
+    }
+  ],
+  "distinct_cross_heading_meaning_pairs": [
+    {
+      "case_id": "higher-cats-fibred-sets-vs-setoids",
+      "left_meaning_id": "meaning.3653fa0ad844d187.two-category-fibred-sets",
+      "right_meaning_id": "meaning.74cd6dc48e0606fc.two-category-fibred-setoids",
+      "reason": "Fibred sets versus fibred setoids impose different fibre groupoid/category structures; do not merge 2-categories just because their morphism/2-morphism descriptions look similar."
+    },
+    {
+      "case_id": "irreducible-space-vs-closed-subset",
+      "left_meaning_id": "meaning.wave2.direct.436a89a3c048eae81a6c",
+      "right_meaning_id": "meaning.mathdef.original.schemes.irreducible-space",
+      "reason": "Intrinsic irreducibility of a nonempty topological space versus an irreducible subset that is also closed in a specified ambient X: the closedness and ambient embedding are additional data."
+    },
+    {
+      "case_id": "cohen-macaulay-module-vs-ring",
+      "left_meaning_id": "meaning.e97dccfabb3dd0c7.cohen-macaulay-local-module",
+      "right_meaning_id": "meaning.d4ab743e56d30cb4.cohen-macaulay-local-ring",
+      "reason": "Depth of a finitely generated module measured against dimension of its support differs in mathematical input from local-ring Cohen–Macaulayness depth(R)=dim(R)."
+    },
+    {
+      "case_id": "split-fibred-groupoid-vs-category",
+      "left_meaning_id": "meaning.f0d993a60533fc99.split-fibred-groupoid",
+      "right_meaning_id": "meaning.f7206eb9332b9389.split-fibred-category",
+      "reason": "Grothendieck constructions of strict Groupoids-valued versus general Categories-valued contravariant functors encode different allowed fibre types."
+    },
+    {
+      "case_id": "finite-algebra-vs-essentially-finite-ring-map",
+      "left_meaning_id": "meaning.415a1503ae7ed97d.finitely-presented-algebra",
+      "right_meaning_id": "meaning.93ca4dd46b3ed2ee.essentially-finite-presentation-ring-map",
+      "reason": "Algebra finite presentation is distinct from a localization of a finitely presented algebra: localizing can enlarge the class of permitted ring maps."
+    },
+    {
+      "case_id": "simple-bipartite-vs-general-undirected",
+      "left_meaning_id": "meaning.wave2.bridge136.simple-bipartite",
+      "right_meaning_id": "meaning.wave2.alternative39.bipartite-undirected",
+      "reason": "Simple-graph assumption versus an otherwise unspecified undirected edge model changes the input graph class. Do not conflate without confirming graph conventions."
+    },
+    {
+      "case_id": "edge-multiplicity-vs-multigraph",
+      "left_meaning_id": "meaning.wave2.direct.17fcbd3c3e67f2b21f6b",
+      "right_meaning_id": "meaning.wave2.graph42.loopless-undirected-multigraph",
+      "reason": "Multiplicity of a vertex pair is an integer-valued property; a loopless multigraph is a graph object admitting parallel edge copies."
+    }
+  ],
+  "remove_misleading_aliases": [
+    {
+      "case_id": "ambiguous-radical-of-ideal-alias",
+      "group_id": "preview.term.e55469f65a30fbe5b61bc6df",
+      "group_title": "radical ideal",
+      "remove_alias": "radical of an ideal",
+      "reason": "The radical of an ideal is the ideal-valued map I↦√I; a radical ideal satisfies the fixed-point predicate I=√I. This alias misroutes the operation term to the property term."
+    }
+  ]
+}

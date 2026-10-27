@@ -138,8 +138,12 @@
       if(!trigger)return;
       const action=trigger.dataset.feedbackAction;
       if(action==="new")return start("new");
-      if(action==="correct")return start("correction",trigger.dataset.feedbackId,
-        null,trigger.dataset.feedbackFormulation);
+      if(action==="correct"){
+        const opened=start("correction",trigger.dataset.feedbackId,
+          null,trigger.dataset.feedbackFormulation);
+        if(trigger.dataset.feedbackCategory==="citation")fields.category.value="citation";
+        return opened;
+      }
       if(action==="link"){
         const source=lookup(trigger.dataset.feedbackSourceId);
         const target=lookup(trigger.dataset.feedbackTargetId);

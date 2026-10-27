@@ -230,7 +230,7 @@ def audit(catalog: dict, rendered: list[dict]) -> dict:
                 continue
             label = group_map[gid]["title"]
             unlinked[label] += 1
-            if len(unlinked_examples[label]) < 3:
+            if len(unlinked_examples[label]) < 80:
                 unlinked_examples[label].append({
                     "formulation": fid, "from_term": group_map[form_group[fid]]["title"],
                     "phrase": body[start:end],

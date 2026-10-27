@@ -9,6 +9,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
   <script defer src="./feedback.js"></script>
+  <script defer src="./subject_priority.js"></script>
+  <script defer src="./sources_ui.js"></script>
   <script defer src="./app.js"></script>
 </head>
 <body>
@@ -52,6 +54,21 @@
   </main>
   {{SITE_FOOTER}}
 </div>
+
+<dialog id="sources-dialog" class="sources-dialog" aria-labelledby="sources-dialog-title" aria-describedby="sources-intro">
+  <div class="sources-dialog-inner">
+    <header class="sources-dialog-header">
+      <div><p class="sources-eyebrow">REFERENCE EVIDENCE</p><h2 id="sources-dialog-title">Sources</h2></div>
+      <button type="button" class="sources-close" id="sources-close" aria-label="Close Sources">×</button>
+    </header>
+    <p class="sources-intro" id="sources-intro">Primary means the best available recorded citation for a formulation, not a guarantee of independent verification.</p>
+    <div id="sources-content" aria-live="polite"></div>
+    <footer class="sources-dialog-footer">
+      <button type="button" id="sources-correct" class="sources-correction" data-feedback-action="correct" data-feedback-category="citation">Suggest a source correction</button>
+      <button type="button" id="sources-done" class="sources-close-secondary">Close</button>
+    </footer>
+  </div>
+</dialog>
 
 <dialog id="feedback-dialog" class="feedback-dialog" aria-labelledby="feedback-title" aria-describedby="feedback-context">
   <form id="feedback-form">

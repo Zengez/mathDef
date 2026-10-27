@@ -75,6 +75,31 @@ class MergedDefinitionExportTests(unittest.TestCase):
             changed = write_merged_definition_export(catalog, idx, tmp)
             self.assertNotEqual(changed["version"], first["version"])
 
+
+    def test_consolidated_original_ids_and_canonical_subjects_in_v2(self):
+        catalog, idx = sample()
+        original = catalog["groups"][0]["meanings"][0]
+        original["legacy_original_definition_ids"]=["algebra.another-original"]
+        original["subject"]="Topology"
+        original["context"]="Compact objects"
+        catalog["consolidated_ids"]={
+            "group_aliases":{"old.group":"preview.term.a"},
+            "meaning_aliases":{"old.meaning":original["id"]},
+            "formulation_aliases":{"old.formulation":"f.a"}
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            report=write_merged_definition_export(catalog,idx,tmp)
+            self.assertEqual(report["original_definition_count"],2)
+            snapshot=json.loads((Path(tmp)/MERGED_EXPORT_PATH/"snapshot.json").read_text())
+            group=next(x for x in snapshot["definitions"] if x["id"]=="preview.term.a")
+            self.assertEqual(group["original_ids"],
+                             ["algebra.another-original","topology.compactness"])
+            self.assertEqual(group["meanings"][0]["subject"],"Topology")
+            self.assertEqual(group["meanings"][0]["context"],"Compact objects")
+            self.assertEqual(snapshot["consolidated_ids"]["meaning_aliases"]["old.meaning"],
+                             original["id"])
+            self.assertEqual(report["retired_formulation_alias_count"],1)
+
     def test_unrelated_future_meaning_additions_are_accepted(self):
         catalog, idx = sample()
         catalog["groups"].append({

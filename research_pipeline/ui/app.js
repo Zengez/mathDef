@@ -18,6 +18,8 @@
     exploreMode: savedMode, expanded: {term: new Set(), definition: new Set()},
   };
   let entries = [], lookup = new Map();
+  const sourcesUI = window.ReferenceSourcesUI.create(config, id => lookup.get(id));
+  const orderBySourceSubject = window.ReferenceSubjectPriority.orderFormulations;
   const escape = (v) => String(v).replace(/[&<>"']/g, (c) =>
     ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const normalized = (v) => String(v)
@@ -73,15 +75,18 @@
       source: d.source, path: d.path, dependencies: d.dependencies || []
     }];
   }
-  function preferredTarget(dep) {
+  function preferredTarget(dep, sourceFormulation) {
     const target = lookup.get(dep.id);
-    if (!target || !dep.target_meaning || !(target.formulations || []).length) return target;
-    // Keep the complete set of independently researched contexts, but
-    // show the specific linked meaning first in nested/inline expansion.
-    const forms = [...target.formulations].sort((a, b) =>
-      Number(b.meaning_id === dep.target_meaning) -
-      Number(a.meaning_id === dep.target_meaning));
-    return {...target, formulations: forms};
+    if (!target || !(target.formulations || []).length) return target;
+    // The particular definition containing the link establishes its Subject.
+    // If any linked-term formulation shares that official Subject, place
+    // such matches first, then prefer the explicitly linked meaning among
+    // equal matches. Without a match, keep the old linked-meaning priority.
+    const ordered = orderBySourceSubject(
+      target.formulations, dep.target_meaning, sourceFormulation?.subject,
+      dep.preferred_formulation
+    );
+    return {...target, formulations: ordered};
   }
 
   function visibleDependencies(d, blocked) {
@@ -143,7 +148,11 @@
     if (!deps.length) return "";
     return '<div class="dependency-children" aria-label="Definitions used">' +
       deps.map((dep) => {
-        const target = preferredTarget(dep), childPath = [...path, dep.id];
+        // Nested controls are assembled at heading level; the relation
+        // carries the original formulation ID, so recover THAT definition's
+        // Subject rather than guessing from the heading's first meaning.
+        const sourceForm = formulations(d).find(f => f.key === dep.formulation);
+        const target = preferredTarget(dep, sourceForm), childPath = [...path, dep.id];
         const childBlocked = nextBlocked(blocked, dep.id);
         const open = expanded(side, childPath);
         return '<section class="dependency-box"><div class="dependency-head">' +
@@ -195,7 +204,7 @@
       });
       const children = situated.filter((dep) => expanded(side, [...path, dep.id]));
       return item + children.map((dep) => {
-        const childPath = [...path, dep.id], target = preferredTarget(dep);
+        const childPath = [...path, dep.id], target = preferredTarget(dep, formulation);
         return '<div class="inline-insert"><div class="inline-insert-heading">' +
           '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +
           '<div class="dependency-feedback">' + correctionButton(dep.id, true) +
@@ -207,7 +216,7 @@
     // controls below the text instead of silently dropping them in inline mode.
     const extra = deps.filter((dep) => !marked.has(dep.id));
     return html + (extra.length ? '<div class="inline-extras">' + extra.map((dep) => {
-      const childPath = [...path, dep.id], target = preferredTarget(dep);
+      const childPath = [...path, dep.id], target = preferredTarget(dep, formulation);
       return '<div>' + nodeButton(side, dep, childPath, true) +
         (expanded(side, childPath) ? '<div class="inline-insert"><div class="inline-insert-heading">' +
           '<div class="inline-insert-title">Definition: ' + escape(target.term) + '</div>' +
@@ -220,19 +229,26 @@
     const forms = formulations(d), multiple = forms.length > 1;
     return forms.map((form, index) => {
       const body = inline ? renderInlineBody(side, d, path, blocked, form) : latexBody(form.body);
-      if (!multiple) return '<div class="definition">' + body + '</div>';
+      if (!multiple) return '<div class="definition">' + body + '</div>' +
+        (config.sources_file && path.length > 1 ?
+          '<button type="button" class="formulation-sources" data-show-sources="' +
+          escape(d.id) + '" data-source-formulation="' + escape(form.key) +
+          '">Sources for this definition</button>' : '');
       const label = 'Definition ' + (index + 1) + ' — ' + form.label;
-      const sources = form.sources || [];
+      const sources = config.sources_file ? [] : (form.sources || []);
       const source = sources.length ? sources.map(s =>
         '<a href="' + escape((s.locator || "").startsWith("https://") ?
           s.locator : s.url) + '" target="_blank" rel="noopener noreferrer">' +
           escape(s.title) + ' ↗</a>').join("") :
-        form.source ? '<a href="' + escape(form.source) +
+        (!config.sources_file && form.source) ? '<a href="' + escape(form.source) +
           '" target="_blank" rel="noopener noreferrer">Reference ↗</a>' : '';
       const location = form.path ? '<a href="' + escape(sourceUrl(form)) +
         '" target="_blank" rel="noopener noreferrer">Source file ↗</a>' : '';
       return '<section class="definition-formulation" aria-label="' + escape(label) + '">' +
         '<div class="formulation-header"><h5>' + escape(label) + '</h5>' +
+        (config.sources_file ? '<button type="button" class="formulation-sources" data-show-sources="' +
+          escape(d.id) + '" data-source-formulation="' + escape(form.key) +
+          '">Sources</button>' : '') +
         formulationCorrection(d, form) + '</div><div class="definition">' + body + '</div>' +
         '<div class="formulation-provenance">' + source + location + '</div></section>';
     }).join('');
@@ -255,13 +271,18 @@
     const topicLink = d.source ? '<a class="source" href="' + escape(d.source) +
       '" target="_blank" rel="noopener noreferrer">' + escape(refLabel) + ' ↗</a>' : "";
     const paperTitle = d.source_title ? '<p class="paper-title">' + escape(d.source_title) + '</p>' : "";
-    const allSources = (d.formulations || []).flatMap(form => form.sources || []);
-    const uniqueSources = [...new Map(allSources.map(s => [s.url + "|" + s.locator, s])).values()];
-    const evidence = uniqueSources.length ?
-      '<div class="related"><h5>Sources used in reconstruction</h5><div class="source-links">' +
-      uniqueSources.map(s => '<a class="source" href="' + escape((s.locator || "").startsWith("https://") ?
-        s.locator : s.url) + '" target="_blank" rel="noopener noreferrer">' +
-        escape(s.title) + ' ↗</a>').join("") + '</div></div>' : "";
+    // The read-only curated registry is opened on demand, not repeated as
+    // scattered links in every definition or conflated with source provenance.
+    const evidence = config.sources_file ? "" :
+      (() => {
+        const sources = (d.formulations || []).flatMap(form => form.sources || []);
+        const unique = [...new Map(sources.map(s => [s.url + "|" + s.locator, s])).values()];
+        return unique.length ? '<div class="related"><h5>References in draft</h5><div class="source-links">' +
+          unique.map(s => '<a class="source" href="' + escape(
+            (s.locator || "").startsWith("https://") ? s.locator : s.url
+          ) + '" target="_blank" rel="noopener noreferrer">' +
+            escape(s.title) + ' ↗</a>').join("") + '</div></div>' : "";
+      })();
     const originalPath = sourceUrl(d);
     const reviewLabel = d.status === "screened_draft" ?
       '<span class="draft-label">Source-screened research draft · not peer verified</span>' :
@@ -270,7 +291,10 @@
        '<span class="draft-label">Prototype entry</span>');
     root.innerHTML = '<article><div class="subject">' + escape(d.category) + '</div>' +
       '<div class="definition-title-row"><h4>' + escape(d.term) + '</h4>' +
-      correctionButton(d.id) + '</div>' + reviewLabel +
+      correctionButton(d.id) +
+      (config.sources_file ? '<button type="button" class="sources-open" data-show-sources="' +
+        escape(d.id) + '">Sources</button>' : '') +
+      '</div>' + reviewLabel +
       ((d.aliases || []).length ? '<p class="aliases">Also called: ' + (d.aliases || []).map(escape).join(", ") + '</p>' : "") +
       exploration(side, d) +
       '<div class="related"><h5>Related definitions</h5><div class="related-list">' +
@@ -338,6 +362,12 @@
       if (!state.split) mode(false);
     });
     el(side + "-detail").addEventListener("click", (event) => {
+      const sourceButton = event.target.closest("button[data-show-sources]");
+      if (sourceButton) {
+        sourcesUI.open(sourceButton.dataset.showSources,
+                       sourceButton.dataset.sourceFormulation || null);
+        return;
+      }
       const toggle = event.target.closest("button[data-expand]");
       if (toggle) {
         const path = toggle.dataset.expand;

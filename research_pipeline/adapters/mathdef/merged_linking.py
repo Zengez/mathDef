@@ -222,7 +222,7 @@ def record_ambiguity(report, group, source, phrase, occurrence):
     label = group["title"]
     report["ambiguous_contexts"][label] += 1
     examples = report["ambiguous_context_examples"][label]
-    if len(examples) < 6 and occurrence:
+    if len(examples) < 80 and occurrence:
         form_id, body, start, end = occurrence
         examples.append({
             "from_formulation": form_id,
@@ -237,8 +237,16 @@ def record_ambiguity(report, group, source, phrase, occurrence):
         })
 
 
-def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
+def choose_meaning(group, source_meaning, phrase, report, occurrence=None,
+                   scoped_resolutions=None):
     """Use exact meaning IDs; abstain rather than selecting arbitrary variants."""
+    scoped_key = (source_meaning["id"], group["id"])
+    if scoped_resolutions and scoped_key in scoped_resolutions:
+        mid = scoped_resolutions[scoped_key]
+        if not any(m["id"] == mid for m in group["meanings"]):
+            raise ValueError("Scoped link context resolution targets missing meaning: " + mid)
+        report["scoped_context_selection_uses"][source_meaning["id"]+" -> "+group["id"]] += 1
+        return mid
     override = CONTEXT_OVERRIDES.get((source_meaning["id"], phrase))
     if override:
         return override
@@ -433,7 +441,8 @@ def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
     return None
 
 
-def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> dict:
+def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35,
+                        scoped_resolutions: dict | None = None) -> dict:
     """Add occurrence-anchored, *tentative* definition-use links in-place.
 
     The input is the already merged independent + original + post-Wave2 catalog.
@@ -463,6 +472,7 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
         "skipped_overlapping": 0,
         "skipped_context_false_positive": 0,
         "skipped_limit": 0,
+        "scoped_context_selection_uses": Counter(),
         "ambiguous_contexts": Counter(),
         "ambiguous_context_examples": defaultdict(list),
         "ambiguous_labels": Counter(),
@@ -526,7 +536,8 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
                     end = tokens[end_word-1][2]
                     target = choose_meaning(
                         target_group, source, phrase, report,
-                        (form_id, body, start, end)
+                        (form_id, body, start, end),
+                        scoped_resolutions=scoped_resolutions
                     )
                     if not target:
                         continue
@@ -590,6 +601,9 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
                     report["links_by_form"][form_id] = written
                 report["new_tentative_links"] += written
 
+    report["scoped_context_selection_uses"] = dict(sorted(
+        report["scoped_context_selection_uses"].items()
+    ))
     # Flatten non-JSON-native Counters to sortable, bounded diagnostics.
     for name in ("ambiguous_contexts", "ambiguous_labels"):
         records = sorted(report[name].items(), key=lambda x: (-x[1], x[0]))

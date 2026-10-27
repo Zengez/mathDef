@@ -1,0 +1,595 @@
+name: Stage-only mathDef cleanup (no linking rebuild)
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - work/dedup-subject-context-sources-20261027
+    paths:
+      - 'data/merged_cleanup_decisions.json'
+      - 'data/merged_cleanup_retained_variants.json'
+      - 'data/math_subjects.json'
+      - 'data/math_subject_routing.json'
+      - 'data/math_subject_assignments.json'
+      - 'data/global_link_context_resolutions_2026-10-27.json'
+      - 'data/math_contexts.json'
+      - 'data/math_definition_conventions.json'
+      - 'data/math_source_convention_assessments.json'
+      - 'research_pipeline/adapters/mathdef/merged_cleanup.py'
+      - 'research_pipeline/adapters/mathdef/dedup_screen.py'
+      - 'research_pipeline/tests/test_dedup_screen.py'
+      - 'data/merged_cleanup_cross_heading_review.json'
+      - 'research_pipeline/adapters/mathdef/subject_routing.py'
+      - 'data/definition_expansion_priority_overrides.json'
+      - 'research_pipeline/adapters/mathdef/publish_root.py'
+      - 'research_pipeline/ui/subject_priority.js'
+      - 'research_pipeline/ui/app.js'
+      - 'research_pipeline/ui/sources_ui.js'
+      - 'research_pipeline/tests/test_sources_ui.cjs'
+      - 'research_pipeline/ui/styles.css'
+      - 'research_pipeline/ui/renderer.py'
+      - 'research_pipeline/ui/template.html'
+      - 'research_pipeline/ui/README.md'
+      - 'research_pipeline/tests/test_subject_priority.cjs'
+      - 'research_pipeline/tests/test_reference_ui.py'
+      - 'research_pipeline/adapters/mathdef/conventions.py'
+      - 'research_pipeline/adapters/mathdef/stage_cleanup.py'
+      - 'research_pipeline/adapters/mathdef/rebuild_cleaned_links.py'
+      - 'research_pipeline/tests/test_cleaned_global_links.py'
+      - 'research_pipeline/adapters/mathdef/merged_linking.py'
+      - 'research_pipeline/adapters/mathdef/audit_merged_links.py'
+      - 'research_pipeline/tests/test_merged_cleanup.py'
+      - 'research_pipeline/tests/test_conventions.py'
+      - '.github/workflows/cleanup-stage-only.yml'
+permissions:
+  contents: read
+jobs:
+  stage-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test semantic cleanup and live convention fallback
+        run: python -m unittest research_pipeline.tests.test_merged_cleanup research_pipeline.tests.test_conventions -v
+      - name: Check subject-aware expansion priority and shared UI serialization
+        run: |
+          node --check research_pipeline/ui/app.js
+          node --check research_pipeline/ui/subject_priority.js
+          node --check research_pipeline/ui/sources_ui.js
+          node --check research_pipeline/ui/feedback.js
+          node --test research_pipeline/tests/test_sources_ui.cjs
+          node --test research_pipeline/tests/test_subject_priority.cjs
+          python -m unittest research_pipeline.tests.test_reference_ui -v
+      - name: Compile merged canonical cleanup WITHOUT any global linking
+        run: |
+          python -m research_pipeline.adapters.mathdef.stage_cleanup --output /tmp/mathdef-cleanup-stage
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('/tmp/mathdef-cleanup-stage')
+          report=json.loads((root/'cleanup-report.stage-only.json').read_text())
+          catalog=json.loads((root/'catalog.stage-only.json').read_text())
+          sources=json.loads((root/'sources.stage-only.json').read_text())
+          checks=json.loads((root/'build-provenance.stage-only.json').read_text())
+          assert checks['full_linking_rebuild_ran'] is False
+          assert checks['published'] is False
+          assert report['starting_meanings']==2197
+          assert report['starting_formulations']==2246
+          cross=json.loads(Path('data/merged_cleanup_cross_heading_review.json').read_text())
+          ncross=len(cross['clear_duplicate_pending_group_migration'])
+          ngroup_only=len(cross.get('group_only_alias_merges', []))
+          nalias=ncross+ngroup_only
+          expected_merges=len(json.loads(Path('data/merged_cleanup_decisions.json').read_text())['merge_meanings'])+ncross
+          assert report['removed_duplicate_meanings']==expected_merges
+          assert report['surviving_meanings']==2197-report['removed_duplicate_meanings']
+          assert len(catalog['groups'])==2048-nalias
+          assert len(sources['groups'])==2048-nalias
+          assert report['retired_searchable_heading_aliases']==nalias
+          assert len(report['group_only_alias_cases_applied'])==ngroup_only
+          assert len(catalog['consolidated_ids']['group_aliases'])==nalias
+          surviving_groups={g['id']:g for g in catalog['groups']}
+          for case in cross['clear_duplicate_pending_group_migration']:
+              assert case['removed_group_id'] not in surviving_groups
+              target=surviving_groups[case['retained_group_id']]
+              assert case['removed_title'].casefold() in {s.casefold() for s in [target['title'], *target['aliases']]}
+              assert catalog['consolidated_ids']['group_aliases'][case['removed_group_id']]==target['id']
+          for case in cross.get('group_only_alias_merges', []):
+              assert case['removed_group_id'] not in surviving_groups
+              target=surviving_groups[case['retained_group_id']]
+              assert case['removed_title'].casefold() in {s.casefold() for s in [target['title'], *target['aliases']]}
+              assert catalog['consolidated_ids']['group_aliases'][case['removed_group_id']]==target['id']
+          for reviewed in cross.get('remove_misleading_aliases', []):
+              destination=surviving_groups[reviewed['group_id']]
+              assert reviewed['group_title'].casefold()==destination['title'].casefold()
+              assert reviewed['remove_alias'].casefold() not in {a.casefold() for a in destination['aliases']}
+          assert len(report['misleading_search_aliases_removed'])==len(
+              cross.get('remove_misleading_aliases', []))
+          # Recovery integrity: all historical original IDs remain accessible
+          # through a live meaning or an explicit consolidation alias.
+          all_meanings=[m for g in catalog['groups'] for m in g['meanings']]
+          all_forms=[f for m in all_meanings for f in m['formulations']]
+          original_ids={x for m in all_meanings
+                        for x in ([m['original_definition_id']]
+                                  if m.get('original_definition_id') else [])
+                        + m.get('legacy_original_definition_ids',[])}
+          assert len(original_ids)==1014, f"Original ID aliases lost: {len(original_ids)} / 1014"
+          meaning_ids={m['id'] for m in all_meanings}
+          form_ids={f['id'] for f in all_forms}
+          assert len(meaning_ids)==len(all_meanings)
+          assert len(form_ids)==len(all_forms)
+          assert all(r['from_formulation'] in form_ids
+                     and r['target_meaning'] in meaning_ids
+                     for r in catalog['relations']), "Dangling stage-only relation endpoint"
+          known_sources=set(sources['sources'])
+          assert all(set(group['source_ids'])<=known_sources for group in sources['groups'])
+          # Check the two surviving original TeX multi-form meanings explicitly.
+          # Closure's duplicate neighborhood description was consolidated;
+          # metric, sequential and Kuratowski constructions must still survive.
+          closure_group=next(g for g in catalog['groups'] if g['title'].casefold()=='closure')
+          closure=next(m for m in closure_group['meanings']
+                       if m['id']=='meaning.mathdef.original.topology.closure')
+          cforms={f['id'] for f in closure['formulations']}
+          assert 'form.mathdef.original.topology.closure.primary' in cforms
+          assert 'form.mathdef.original.topology.closure.neighborhood' not in cforms
+          for suffix in ('metric','sequences','kuratowski'):
+              assert 'form.mathdef.original.topology.closure.'+suffix in cforms
+          assert catalog['consolidated_ids']['formulation_aliases'].get(
+              'form.mathdef.original.topology.closure.neighborhood'
+          )=='form.mathdef.original.topology.closure.primary'
+          function_group=next(g for g in catalog['groups'] if g['title'].casefold()=='function')
+          function=next(m for m in function_group['meanings']
+                        if m['id']=='meaning.mathdef.original.functions.function')
+          assert {f['id'] for f in function['formulations']}=={
+              'form.mathdef.original.functions.function.primary',
+              'form.mathdef.original.functions.function.graph'
+          }
+          assert report['subject_missing']==0, "Every surviving meaning must have a mathematical Subject"
+          # The official Subject is meaning-level; attached formulations and
+          # multi-meaning headings inherit approved Subject(s) structurally.
+          coverage=report['subject_assignment_audit']
+          assert coverage['heading_count']==len(catalog['groups'])
+          assert coverage['meaning_count']==len(all_meanings)
+          assert coverage['formulation_count']==len(all_forms)
+          assert coverage['headings_without_subject']==0
+          assert coverage['meanings_without_subject']==0
+          assert coverage['formulations_without_inherited_subject']==0
+          assert not coverage['unregistered_subject_values']
+          print('OFFICIAL_SUBJECT_COVERAGE='+json.dumps(coverage,sort_keys=True))
+          assert report['retained_variant_groups_reviewed']>=40, "Reviewed variants must survive"
+          assert len(report['convention_sensitive_text_translations'])==1
+          assert report['source_convention_assessments']==1
+          assert report['is_publication_ready'] is False
+          assert len(catalog['consolidated_ids']['meaning_aliases'])==report['removed_duplicate_meanings']
+          # Real-data regression: sequential source-record mergers must
+          # resolve historical Galois IDs to the live original, not an
+          # intermediate researched meaning/formulation that was retired.
+          redirects=catalog['consolidated_ids']
+          galois=next(g for g in catalog['groups'] if g['title']=='Galois extension')
+          original_galois='meaning.mathdef.original.arithmetic.galois-extension'
+          assert {m['id'] for m in galois['meanings']}=={original_galois}
+          for old_mid in (
+              'meaning.50d335de00e5f11d.galois-extension-review',
+              'meaning.26fa733af18b53e7.galois-field-extension'
+          ):
+              assert redirects['meaning_aliases'][old_mid]==original_galois
+          for old_fid in (
+              'form.50d335de00e5f11d.galois-extension-review',
+              'form.26fa733af18b53e7.galois-field-extension'
+          ):
+              assert redirects['formulation_aliases'][old_fid]==(
+                  'form.mathdef.original.arithmetic.galois-extension.primary')
+          assert 'Galois field extension'.casefold() in {
+              x.casefold() for x in galois['aliases']
+          }
+          # Element-order title consolidation: only notation changes. The
+          # modular unit example is preserved; additive group order must NOT
+          # be declared a different abstract invariant.
+          orders=next(g for g in catalog['groups'] if g['title']=='order of a group element')
+          assert {m['id'] for m in orders['meanings']}=={
+              'meaning.mathdef.postwave.scan-multiplicative-order-element-20261026'}
+          assert 'multiplicative order of an element of a group' in orders['aliases']
+          order_text=orders['meanings'][0]['formulations'][0]['text']
+          assert 'least positive integer n' in order_text
+          assert 'In additive notation the same group-theoretic invariant' in order_text
+          assert 'distinct from the additive order' not in order_text
+          assert redirects['meaning_aliases'][
+              'meaning.wave2.direct.6fbe5c318aee10f6742d']==(
+              'meaning.mathdef.postwave.scan-multiplicative-order-element-20261026')
+          assert len(report['user_adjudicated_canonical_editorial_edits'])==5
+          assert len(report['assistant_reviewed_mathematical_edits'])==2
+          # Single-pass INTERNAL variant disposition: two obvious duplicate
+          # formations consolidated with historical aliases and citations.
+          reviewed_internal=json.loads(Path(
+              'data/merged_cleanup_internal_variant_classification.json').read_text())
+          assert reviewed_internal['scanned_headings']==2013
+          assert reviewed_internal['headings_with_attached_variants']==90
+          assert len(reviewed_internal['records'])==90
+          assert reviewed_internal['classification_counts_before_merges']=={
+              'obviously_mathematically_distinct':44,
+              'manual_review':44, 'obvious_duplicate':2}
+          assert len(report['formulation_decisions_completed'])==10
+          assert catalog['consolidated_ids']['formulation_aliases'][
+              'form.wave2.cross107.topological-closure.2']==(
+              'form.wave2.cross107.topological-closure.1')
+          assert catalog['consolidated_ids']['meaning_aliases'][
+              'meaning.mathdef.original.combin.set-partition']==(
+              'meaning.wave2.group116.set-partition')
+          partition=next(g for g in catalog['groups']
+                         if g['title'].casefold()=='set partition')
+          assert {m['id'] for m in partition['meanings']}=={
+              'meaning.wave2.group116.set-partition',
+              'meaning.wave2.direct.5399f58d78b20ca1ec30'}
+          assert {z['id'] for z in partition['meanings'][0]['formulations']}=={
+              'form.wave2.group116.set-partition.1',
+              'form.wave2.group116.set-partition.2'}
+          # User-approved final 44-case dispositions must be reflected
+          # in all three meaning/formulation redirects with original IDs.
+          final_three = (
+              ('bounded linear operator',
+               'meaning.wave2.pop142.bounded-linear',
+               'meaning.mathdef.original.functional.bounded-linear-operator',
+               'form.meaning.wave2.pop142.bounded-linear',
+               'form.mathdef.original.functional.bounded-linear-operator.primary'),
+              ('free module',
+               'meaning.wave2.direct.7462fa5f90275b34779a',
+               'meaning.mathdef.original.commalg.free-module',
+               'form.meaning.wave2.direct.7462fa5f90275b34779a',
+               'form.mathdef.original.commalg.free-module.primary'),
+              ('operator norm',
+               'meaning.wave2.pop142.bounded-operator-norm',
+               'meaning.mathdef.original.functional.operator-norm',
+               'form.meaning.wave2.pop142.bounded-operator-norm',
+               'form.mathdef.original.functional.operator-norm.primary'))
+          for term, kept_mid, old_mid, kept_fid, old_fid in final_three:
+              g=next(g for g in catalog['groups'] if g['title'].casefold()==term)
+              assert {m['id'] for m in g['meanings']}=={kept_mid}
+              assert redirects['meaning_aliases'][old_mid]==kept_mid
+              assert redirects['formulation_aliases'][old_fid]==kept_fid
+              assert any(m.get('legacy_original_definition_ids')
+                         for m in g['meanings']), term
+          review44=json.loads(Path('data/merged_cleanup_research_review_44_2026-10-27.json').read_text())
+          assert review44['unresolved_manual_count']==0
+          assert review44['classification_counts']['merge_after_user_scope_adjudication']==3
+          assert len(sources['sources'])==2662
+          linear=next(g for g in catalog['groups'] if g['title']=='Linear map')
+          assert {x.casefold() for x in linear['aliases']}>={'linear transformation'}
+          assert {x['id'] for x in linear['meanings']}=={
+              'meaning.mathdef.original.linear.linear-map',
+              'meaning.wave2.cross110.module-linear'}
+          assert redirects['meaning_aliases']['meaning.wave2.cross110.field-vector-linear']==(
+              'meaning.mathdef.original.linear.linear-map')
+          assert redirects['group_aliases']['preview.term.72c829680042f65a356bd9cc']==(
+              'preview.term.091ee6a2f6976c44ce847b3b')
+          measurable=next(g for g in catalog['groups'] if g['title']=='Measurable function')
+          assert {x.casefold() for x in measurable['aliases']}>={'measurable mapping'}
+          assert {x['id'] for x in measurable['meanings']}=={
+              'meaning.mathdef.original.measure.measurable-function'}
+          measurable_text=measurable['meanings'][0]['formulations'][0]['text']
+          assert 'Borel measurability' in measurable_text
+          assert 'does not require continuity' in measurable_text
+          assert redirects['meaning_aliases'][
+              'meaning.wave2.direct.b458f6a3824dab19725b']==(
+              'meaning.mathdef.original.measure.measurable-function')
+          adapted=next(g for g in catalog['groups'] if g['title']=='Adapted process')
+          assert {m['id'] for m in adapted['meanings']}=={
+              'meaning.mathdef.original.stochastic.adapted-process',
+              'meaning.wave2.found85.adapted-discrete',
+              'meaning.wave2.found85.adapted-continuous',
+          }
+          titles={g['title'].lower():g for g in catalog['groups']}
+          # User's 2026-10-27 decisions must be reflected in live definitions,
+          # searchable aliases, provenance and mathematically dependent text.
+          assert len(report['user_adjudicated_canonical_editorial_edits'])==5
+          zero=titles['zero divisor']
+          assert {m['id'] for m in zero['meanings']}=={
+              'meaning.wave2.direct.8f2dea7e2bd1211c0cf6'}
+          assert 'a≠0' in zero['meanings'][0]['formulations'][0]['text']
+          assert 'b≠0' in zero['meanings'][0]['formulations'][0]['text']
+          assert 'commalg.zero_divisor.zero_included' in {
+              x['convention_id'] for x in zero['meanings'][0]['convention_notes']}
+          assert 'commalg.zero-divisor' in zero['meanings'][0].get(
+              'legacy_original_definition_ids',[])
+          metric=titles['metric space']
+          assert {m['id'] for m in metric['meanings']}=={
+              'meaning.wave2.analysis98.metric-space'}
+          assert {f['id'] for f in metric['meanings'][0]['formulations']}=={
+              'form.wave2.analysis98.metric-space',
+              'form.wave2.analysis98.metric-space.compatible'}
+          assert all('nonempty' in f['text'].lower()
+                     for f in metric['meanings'][0]['formulations'])
+          assert 'metric.metric_space.empty_underlying_set' in {
+              x['convention_id'] for x in metric['meanings'][0]['convention_notes']}
+          assert 'metric.metric-space' in metric['meanings'][0].get(
+              'legacy_original_definition_ids',[])
+          affine=titles['affine hull']
+          assert 'affine span' in {s.casefold() for s in affine['aliases']}
+          assert {m['id'] for m in affine['meanings']}=={
+              'meaning.wave2.pop140.affine-hull'}
+          assert {f['id'] for f in affine['meanings'][0]['formulations']}=={
+              'form.meaning.wave2.pop140.affine-hull'}
+          affine_text=affine['meanings'][0]['formulations'][0]['text']
+          assert 'nonempty' in affine_text
+          assert 'finite affine combinations' in affine_text
+          assert 'intersection' in affine_text
+          assert 'geometry.affine_hull.empty_input' in {
+              x['convention_id'] for x in affine['meanings'][0]['convention_notes']}
+          assert 'geometry.affine-span' in affine['meanings'][0].get(
+              'legacy_original_definition_ids',[])
+          for term in ('totally bounded metric space','separable metric space',
+                       'compact metric space'):
+              group=titles[term]
+              for m in group['meanings']:
+                  for f in m['formulations']:
+                      assert 'empty metric space' not in f['text'].lower()
+                      assert 'For X=∅' not in f['text']
+          aliases=redirects
+          assert aliases['group_aliases']['preview.term.ce7752ecc3d022d0846cffac']==(
+              'preview.term.79c6caff00b6628e57970aed')
+          connected=titles['connected space']
+          assert len(connected['meanings'])==1, 'Canonical connected-space meaning should be unique'
+          assert 'convention_notes' in connected['meanings'][0]
+          component=titles['connected component']['meanings'][0]
+          assert 'nonempty connected subset' in component['formulations'][0]['text']
+          stacks=[row for row in sources['sources'].values() if row['url']=='https://stacks.math.columbia.edu/tag/004R']
+          assert len(stacks)==1
+          assert stacks[0]['source_convention_assessments'][0]['status']=='verified_applies'
+          assert stacks[0]['source_convention_assessments'][0]['restriction']=='nonempty_required'
+          inv=json.loads((root/'comparison-inventory.stage-only.json').read_text())
+          print('EXISTING_ORIGINAL_NEW_GROUPS='+json.dumps([
+              {'term':x['title'],'old':x['original_ids'],'new':x['researched_ids']}
+              for x in inv['original_versus_researched']
+          ],ensure_ascii=False,separators=(',',':')))
+          print('EXISTING_RESEARCH_ONLY_MULTI_GROUPS='+json.dumps([
+              {'term':x['title'],'new':x['researched_ids']}
+              for x in inv['within_research']
+          ],ensure_ascii=False,separators=(',',':')))
+          print('Staged semantic merge + convention/source checks passed', {
+              'terms':len(catalog['groups']),
+              'meanings':report['surviving_meanings'],
+              'formulations':report['surviving_formulations'],
+              'source_ids':len(sources['sources'])
+          })
+          PY
+      - name: Verify real-corpus Subject propagation in the read-only UI index
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from research_pipeline.ui.renderer import to_index, to_sources_index, render
+          src=Path('/tmp/mathdef-cleanup-stage')
+          catalog=json.loads((src/'catalog.stage-only.json').read_text(encoding='utf-8'))
+          overrides=json.loads(Path('data/definition_expansion_priority_overrides.json')
+                               .read_text(encoding='utf-8'))
+          index=to_index(catalog, expansion_overrides=overrides)
+          registry=json.loads((src/'sources.stage-only.json').read_text(encoding='utf-8'))
+          checked=to_sources_index(catalog, registry)
+          assert len(checked['sources'])==2662
+          assert len(checked['groups'])==len(index)
+          assert overrides['schema_version']==1
+          registered={entry['name'] for entry in json.loads(
+              Path('data/math_subjects.json').read_text(encoding='utf-8'))['entries']
+              if entry.get('approved')}
+          forms=[form for term in index for form in term['formulations']]
+          assert len(index)==1986 and len(forms)==2104
+          assert all(form.get('subject') in registered for form in forms)
+          brand=Path('research_pipeline/adapters/mathdef/ui_branding.json')
+          site=src/'sources-interface-preview'
+          rendered=render(src/'catalog.stage-only.json',brand,site,
+                          'stage-only sources audit','Not published',
+                          expansion_overrides_file=Path('data/definition_expansion_priority_overrides.json'),
+                          source_registry=registry)
+          assert rendered['sources_available']
+          assert rendered['source_identities']==2662
+          assert (site/'sources-index.json').is_file()
+          assert (site/'index.html').is_file()
+          lookup={term['id']:term for term in index}
+          matched=unmatched=0
+          for term in index:
+              for form in term['formulations']:
+                  for dep in form['dependencies']:
+                      target=lookup[dep['id']]
+                      if len(target['formulations'])<2: continue
+                      if any(x.get('subject')==form['subject']
+                             for x in target['formulations']):
+                          matched+=1
+                      else:
+                          unmatched+=1
+          approved_count=len(overrides['overrides'])
+          rendered_override_deps=[
+              dep for term in index for form in term['formulations']
+              for dep in form['dependencies'] if dep.get('preferred_formulation')
+          ]
+          assert approved_count==0 or rendered_override_deps, 'No approved override applied'
+          print('STAGED_LINK_EXPANSION_SUBJECT_AUDIT='+json.dumps({
+              'term_headings':len(index),
+              'formulations_with_registered_subject':len(forms),
+              'approved_priority_override_rules':approved_count,
+              'links_with_approved_display_priority':len(rendered_override_deps),
+              'source_registry_groups_rendered':len(checked['groups']),
+              'source_registry_identities_rendered':len(checked['sources']),
+              'links_to_multi_formulation_targets_with_exact_match':matched,
+              'links_to_multi_formulation_targets_without_exact_match':unmatched,
+              'note':'Audit only; no relinking, export or publication'
+          }, sort_keys=True))
+          PY
+      - name: Rebuild every surviving link and audit the whole cleaned graph
+        run: |
+          python -m unittest research_pipeline.tests.test_cleaned_global_links research_pipeline.tests.test_full_corpus_link_audit research_pipeline.tests.test_merged_linking -v
+          python -m research_pipeline.adapters.mathdef.rebuild_cleaned_links \
+            --stage /tmp/mathdef-cleanup-stage \
+            --output /tmp/mathdef-cleaned-links \
+            --overrides data/definition_expansion_priority_overrides.json \
+            --context-resolutions data/global_link_context_resolutions_2026-10-27.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path('/tmp/mathdef-cleaned-links/global-link-rebuild-summary.json')
+          data=json.loads(path.read_text())
+          assert data['idempotent']
+          assert data['source_registry_identities']==2662
+          assert data['stats']['groups']==1986
+          assert data['stats']['meanings']==2065
+          assert data['stats']['formulations']==2104
+          print('CLEANED_GLOBAL_AUDIT='+json.dumps({
+              'stats':data['stats'],
+              'anomaly_counts':data['graph_audit_anomaly_counts'],
+              'new_tentative_links':data['rebuild']['new_tentative_links'],
+              'reviewed_scoped_resolution_rules':data['reviewed_scoped_resolution_rules'],
+              'reviewed_scoped_resolution_occurrences':data['reviewed_scoped_resolution_occurrences'],
+              'intentionally_dropped_original_text_link_count':len(data['cleanup_intentionally_dropped_links']),
+              'historical_source_text_edge_reconciliation_counts':
+                  data['historical_source_text_edge_reconciliation_counts'],
+              'newly_anchored_reviewed_links':data['rebuild']['existing_screened_links_anchored'],
+              'unlinked_existing_term_occurrences':data['unlinked_existing_term_occurrences'],
+              'links_with_preexisting_ids':data['preexisting_relations_retained'],
+          }, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mathdef-cleaned-global-link-audit
+          path: |
+            /tmp/mathdef-cleaned-links/global-link-rebuild-summary.json
+            /tmp/mathdef-cleaned-links/link-report.global-linked.json
+            /tmp/mathdef-cleaned-links/link-audit.global-linked.json
+            /tmp/mathdef-cleaned-links/historical-source-edge-reconciliation.json
+            /tmp/mathdef-cleaned-links/catalog.global-linked.json
+            /tmp/mathdef-cleaned-links/definitions-index.global-linked.json
+          retention-days: 14
+      - name: Single indexed scan for cross-heading existing-term variants
+        run: |
+          python - <<'PY'
+          import json, re, collections, math, unicodedata
+          from pathlib import Path
+          g=json.loads(Path('/tmp/mathdef-cleanup-stage/catalog.stage-only.json').read_text())['groups']
+          stop={'of','a','an','the','in','on','from','for','to','with','at','over','under','by','and','as','its','relative','given','fixed'}
+          same={'mapping':'map','maps':'map','function':'map','functions':'map','homomorphisms':'homomorphism',
+                'transformations':'transformation','subsets':'subset','spaces':'space','rings':'ring',
+                'categories':'category','modules':'module','groups':'group','morphisms':'morphism',
+                'colouring':'coloring','colours':'color','graphs':'graph','homeomorphisms':'homeomorphism',
+                'boundedness':'bounded','quasicompact':'quasi compact','quasicoherent':'quasi coherent',
+                'locally':'locally','fibred':'fibered','fibre':'fiber','generated':'generate',
+                'generators':'generator','convergent':'convergence','sigma':'sigma','algebras':'algebra',
+                'linear':'linear','isomorphisms':'isomorphism'}
+          def norm(x):
+              x=unicodedata.normalize('NFKD',x.casefold()).replace('σ','sigma').replace('ℵ','aleph').replace('∅','empty').replace('∞','infinite')
+              t=re.findall(r'[a-z0-9]+',x)
+              return [same.get(v,v) for v in t if v not in stop]
+          def key(x):
+              return ' '.join(sorted(norm(x)))
+          postings=collections.defaultdict(set)
+          alias_hits=collections.defaultdict(set)
+          docs=[]
+          for i,a in enumerate(g):
+              m=a['meanings']
+              f=[x for y in m for x in y['formulations']]
+              record={'i':i,'id':a['id'],'title':a['title'],'aliases':a.get('aliases',[]),
+                      'subjects':list(dict.fromkeys(y.get('subject') for y in m)),
+                      'contexts':list(dict.fromkeys(y.get('context') for y in m if y.get('context'))),
+                      'meanings':len(m),'forms':len(f),
+                      'first_text':f[0]['text'][:310] if f else ''}
+              docs.append(record)
+              keys=set()
+              for title in [a['title'],*a.get('aliases',[])]:
+                  k=key(title)
+                  if not k: continue
+                  alias_hits[k].add(i)
+                  tokens=set(norm(title))
+                  # indexed (at least two shared content tokens) rather than N^2
+                  for x in tokens: postings[x].add(i)
+          pairs=collections.defaultdict(set)
+          for k,ids in alias_hits.items():
+              if len(ids)>1 and len(ids)<24:
+                  for i in sorted(ids):
+                      for j in sorted(ids):
+                          if i<j:pairs[(i,j)].add('exact_or_permuted_search_label:'+k)
+          # strong content-title overlap, with rare terminology weighting
+          df={k:len(v) for k,v in postings.items()}
+          scores=collections.defaultdict(int)
+          for token,ids in postings.items():
+              if len(ids)>175:continue
+              for i in sorted(ids):
+                  for j in sorted(ids):
+                      if i<j:scores[(i,j)]+=1
+          for (i,j),n in scores.items():
+              a,b=docs[i],docs[j]
+              wa=set(norm(a['title']));wb=set(norm(b['title']))
+              shared=wa&wb
+              if n<2 or len(shared)<2:continue
+              # 'map' or 'ring' alone never causes a match.
+              specificity=sum(1/math.sqrt(max(df.get(t,1),1)) for t in shared)
+              cover=min(len(shared)/max(len(wa),1),len(shared)/max(len(wb),1))
+              if cover>=.57 and specificity>.12:
+                  pairs[(i,j)].add('indexed_title_overlap:'+str(round(cover,2)))
+          # Also index unusual meaning tokens to catch exact-phrasing synonyms.
+          text_post=collections.defaultdict(set)
+          for d in docs:
+              tokens=set(norm(d['first_text'][:250]))
+              for t in tokens:
+                  if len(t)>5:text_post[t].add(d['i'])
+          text_scores=collections.Counter()
+          for token,ids in text_post.items():
+              if not (2<=len(ids)<=18):continue
+              for i in sorted(ids):
+                  for j in sorted(ids):
+                      if i<j:text_scores[(i,j)]+=1
+          for (i,j),matches in text_scores.items():
+              if matches>=10 and len(set(norm(docs[i]['first_text'][:250]))&set(norm(docs[j]['first_text'][:250])))>=10:
+                  pairs[(i,j)].add('shared_specific_definition_vocabulary:'+str(matches))
+          result=[{'a':docs[i], 'b':docs[j], 'reasons':sorted(why)}
+                  for (i,j),why in pairs.items()]
+          result.sort(key=lambda x:(-int(any(s.startswith('exact_') for s in x['reasons'])),
+                                     -len(x['reasons']),x['a']['title'].casefold(),x['b']['title'].casefold()))
+          print('CROSS_TERM_INDEX_SUMMARY='+json.dumps({'headings':len(docs),'candidate_pairs':len(result),
+               'alias_index_keys':len(alias_hits),'text_index_keys':len(text_post)}))
+          print('CROSS_TERM_CANDIDATES_JSON='+json.dumps(result,ensure_ascii=False,separators=(',',':')))
+          PY
+      - name: Inventory remaining variants within their EXISTING heading ONLY
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          catalog=json.loads(Path('/tmp/mathdef-cleanup-stage/catalog.stage-only.json').read_text())
+          groups=[]
+          for g in catalog['groups']:
+              forms=[{'meaning_id':m['id'], 'subject':m.get('subject'),
+                      'context':m.get('context'), 'form_id':f['id'],
+                      'text':f['text']}
+                     for m in g['meanings'] for f in m['formulations']]
+              if len(forms)>1:
+                  groups.append({'title':g['title'],'group_id':g['id'],
+                                 'meanings':len(g['meanings']),'forms':forms})
+          print('INTERNAL_VARIANTS_JSON='+json.dumps(groups,ensure_ascii=False,separators=(',',':')))
+          print('INTERNAL_VARIANT_COUNTS='+json.dumps({
+            'all_headings':len(catalog['groups']),
+            'headings_with_multiple_attached_variants':len(groups),
+            'variant_formulations':sum(len(g['forms']) for g in groups)
+          }))
+          PY
+      - name: Test existing-definition comparison screen
+        run: python -m unittest research_pipeline.tests.test_dedup_screen -v
+      - name: Screen live existing definitions without new terms or link rebuild
+        run: |
+          python -m research_pipeline.adapters.mathdef.dedup_screen \
+            --catalog /tmp/mathdef-cleanup-stage/catalog.stage-only.json \
+            --output /tmp/mathdef-cleanup-stage/existing-dedup-screen.stage-only.json \
+            --limit 120 --cutoff 0.56
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('/tmp/mathdef-cleanup-stage')
+          data=json.loads((root/'existing-dedup-screen.stage-only.json').read_text())
+          catalog=json.loads((root/'catalog.stage-only.json').read_text())
+          gids={g['id'] for g in catalog['groups']}
+          mids={m['id'] for g in catalog['groups'] for m in g['meanings']}
+          fids={f['id'] for g in catalog['groups'] for m in g['meanings']
+                for f in m['formulations']}
+          assert data['kind']=='existing_definitions_only_no_vocabulary_discovery'
+          assert data['counts']['groups']==len(gids)
+          for x in data['cross_heading_lexical_screen']:
+              assert x['left_group'] in gids and x['right_group'] in gids
+              assert x['left_meaning'] in mids and x['right_meaning'] in mids
+              assert x['left_formulation'] in fids and x['right_formulation'] in fids
+              assert x['left_group']!=x['right_group']
+          print('Screened ONLY existing canonical IDs for manual deduplication review.')
+          PY
