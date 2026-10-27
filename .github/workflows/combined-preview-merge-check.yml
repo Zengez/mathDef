@@ -6,6 +6,10 @@ on:
       - "research_pipeline/adapters/mathdef/original_merge.py"
       - "research_pipeline/adapters/mathdef/preview_site.py"
       - "research_pipeline/adapters/mathdef/publish_root.py"
+      - "scripts/merged_definition_export.py"
+      - "tests/test_merged_definition_export.py"
+      - "tests/test_merged_feed_consumer.py"
+      - "examples/consume_mathdef_v2.py"
       - "research_pipeline/ui/renderer.py"
       - ".github/workflows/pages.yml"
       - "research_pipeline/tests/test_original_merge.py"
@@ -24,6 +28,10 @@ on:
       - "research_pipeline/adapters/mathdef/original_merge.py"
       - "research_pipeline/adapters/mathdef/preview_site.py"
       - "research_pipeline/adapters/mathdef/publish_root.py"
+      - "scripts/merged_definition_export.py"
+      - "tests/test_merged_definition_export.py"
+      - "tests/test_merged_feed_consumer.py"
+      - "examples/consume_mathdef_v2.py"
       - "research_pipeline/ui/renderer.py"
       - ".github/workflows/pages.yml"
       - "research_pipeline/tests/test_original_merge.py"
@@ -47,6 +55,8 @@ jobs:
           python-version: "3.12"
       - name: Test lossless merge and rapid scan
         run: python -m unittest research_pipeline.tests.test_original_merge research_pipeline.tests.test_merged_linking research_pipeline.tests.test_full_corpus_link_audit -v
+      - name: Test v2 content-addressed feed and consumer cache/refetch contract
+        run: python -m unittest tests.test_merged_definition_export tests.test_merged_feed_consumer -v
       - name: Syntax-check reusable inline expansion UI
         run: node --check research_pipeline/ui/app.js
       - name: Build independent baselines and original-inclusive site
@@ -155,6 +165,15 @@ jobs:
           main=json.loads((root/"definitions-index.json").read_text())
           merged=json.loads((root/"merged/definitions-index.json").read_text())
           assert main==merged, "Main site must render identical complete merged reference"
+          feed=json.loads((root/"api/definitions/v2/snapshot.json").read_text())
+          manifest=json.loads((root/"api/definitions/v2/manifest.json").read_text())
+          assert manifest["schema"] == "mathdef.definition-manifest.v2"
+          assert manifest["dataset"] == "merged"
+          assert manifest["definition_count"] == len(main)
+          assert manifest["meaning_count"] == sum(len(g["meanings"]) for g in feed["definitions"])
+          assert manifest["formulation_count"] == sum(len(g["formulations"]) for g in feed["definitions"])
+          assert manifest["original_definition_count"] == sum(len(g["original_ids"]) for g in feed["definitions"])
+          assert {g["id"] for g in feed["definitions"]} == {g["id"] for g in main}
           assert len(main) >= 2000
           assert (root/"catalog.json").is_file()
           assert (root/"link-report.json").is_file()
