@@ -14,6 +14,7 @@ from copy import deepcopy
 from hashlib import sha256
 
 from research_pipeline.adapters.mathdef.conventions import (read_conventions, resolved_source_assessments)
+from research_pipeline.adapters.mathdef.subject_routing import route_subjects
 from pathlib import Path
 import json
 
@@ -232,6 +233,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
             meaning["context"] = fields["context"]
         else:
             meaning.pop("context", None)
+    routing_report = route_subjects(combined, repo, allowed_subjects)
     all_meanings, all_forms, _ = _ids(combined)
     missing_subject = sorted(mid for mid, (g, m) in all_meanings.items()
                              if not m.get("subject"))
@@ -281,6 +283,7 @@ def prepare_curated_cleanup(catalog: dict, repo: Path,
         "source_convention_assessments": len(assessments),
         "deleted_source_text_edges_needing_global_relink": needs_relink,
         "subject_coverage": len(all_meanings) - len(missing_subject),
+        **routing_report,
         "subject_missing": len(missing_subject),
         "subjects_assigned_counts": dict(sorted(subject_counts.items())),
         "contexts_assigned_counts": dict(sorted(context_counts.items())),
