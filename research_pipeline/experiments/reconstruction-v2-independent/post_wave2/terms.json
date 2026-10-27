@@ -6000,6 +6000,36 @@
         "This is logically complementary to reduced, without adding a nilpotency index uniform for every element."
       ],
       "research_status": "assistant-researched from frozen original candidate; not independently peer-certified"
+    },
+    {
+      "id": "meaning.mathdef.postwave.scan-petrov-galerkin-finite-element-20261026",
+      "candidate_id": "postwave-scan:rank-1317",
+      "term": "Petrov–Galerkin finite-element method",
+      "context": "Numerical PDE · finite-dimensional variational discretization with distinct trial/test spaces",
+      "aliases": [
+        "Petrov-Galerkin finite element method",
+        "Petrov–Galerkin FEM"
+      ],
+      "definition": "Suppose an abstract weak problem asks for u∈U with b(u,v)=ℓ(v) for every v∈V, where b:U×V→ℝ (or a sesquilinear form over ℂ) is given. A finite-dimensional Petrov–Galerkin method chooses mesh-associated trial and test spaces U_h⊆U and V_h⊆V, not required to be equal, and seeks u_h∈U_h satisfying b(u_h,v_h)=ℓ(v_h) for every v_h∈V_h. In the standard square discrete setting dim(U_h)=dim(V_h)<∞; separate discrete stability, e.g. an inf-sup condition, is needed for reliable solvability. Standard Bubnov–Galerkin takes U_h=V_h and is a special case. Calling a method 'Petrov–Galerkin' does NOT by itself guarantee the discrete problem has a unique solution.",
+      "sources": [
+        {
+          "title": "University of Maryland — Theory of Adaptive Finite Element Methods, §3.1",
+          "url": "https://math.umd.edu/~rhn/lectures/adaptivity.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        },
+        {
+          "title": "NPTEL — Finite Element Methods, Lecture 36",
+          "url": "https://archive.nptel.ac.in/content/storage2/courses/105105043/Lecture36_Questions.pdf",
+          "verification_status": "source_passage_retrieved_2026-10-26"
+        }
+      ],
+      "links": [],
+      "assumptions": [
+        "Weak form and finite-dimensional trial/test subspaces are supplied.",
+        "Distinct trial and test spaces allowed; equality recovers classical Galerkin.",
+        "Equal finite dimensions for the standard square method; well-posedness not automatic."
+      ],
+      "research_status": "assistant-reviewed sourced mathematical variant from frozen original scan"
     }
   ]
 }
