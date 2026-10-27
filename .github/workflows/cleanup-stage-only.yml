@@ -6,6 +6,7 @@ on:
       - work/dedup-subject-context-sources-20261027
     paths:
       - 'data/merged_cleanup_decisions.json'
+      - 'data/merged_cleanup_retained_variants.json'
       - 'data/math_subjects.json'
       - 'data/math_subject_routing.json'
       - 'data/math_subject_assignments.json'
@@ -51,6 +52,7 @@ jobs:
           assert len(catalog['groups'])==2048
           assert len(sources['groups'])==2048
           assert report['subject_missing']==0, "Every surviving meaning must have a mathematical Subject"
+          assert report['retained_variant_groups_reviewed']>=40, "Reviewed variants must survive"
           assert len(report['convention_sensitive_text_translations'])==1
           assert report['source_convention_assessments']==1
           assert report['is_publication_ready'] is False
