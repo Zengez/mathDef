@@ -35,6 +35,32 @@ CONTEXT_OVERRIDES = {
 }
 
 
+# Explicit representative meanings for headings whose independently
+# researched and original formulations describe the SAME ordinary object,
+# or whose broad convention includes all special cases. These choices
+# only order the definitions on expansion; they do not erase alternatives.
+# Restrict this to vetted identities, never all multi-meaning headings.
+BROAD_REPRESENTATIVE = {
+    "topological space": "meaning.wave2.foundation.topological-space",
+    "open set": "meaning.mathdef.original.topology.open-set",
+    "metric space": "meaning.mathdef.original.metric.metric-space",
+    "abelian group": "meaning.mathdef.original.algebra.abelian-group",
+    "bijection": "meaning.mathdef.original.functions.bijection",
+    "probability space": "meaning.mathdef.original.prob.probability-space",
+    "cardinality": "meaning.mathdef.original.sets.cardinality",
+    "measurable space": "meaning.mathdef.original.measure.measurable-space",
+    "homeomorphism": "meaning.mathdef.original.topology.homeomorphism",
+    "subspace topology": "meaning.mathdef.original.topology.subspace-topology",
+    "locally ringed space": "meaning.mathdef.original.schemes.locally-ringed-space",
+    "natural transformation": "meaning.mathdef.original.category.natural-transformation",
+    "local ring": "meaning.mathdef.original.commalg.local-ring",
+    "equivalence relation": "meaning.mathdef.original.relations.equivalence-relation",
+    "binary relation": "meaning.mathdef.original.relations.binary-relation",
+    "additive category": "meaning.mathdef.original.category.additive-category",
+    "open cover": "meaning.mathdef.original.topology.open-cover",
+}
+
+
 def words(value: str) -> tuple[str, ...]:
     """Unicode-aware literal words; no stemming, hallucinated terms or embeddings."""
     value = unicodedata.normalize("NFKC", value).casefold()
@@ -161,6 +187,22 @@ def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
     meanings = group["meanings"]
     if len(meanings) == 1:
         return meanings[0]["id"]
+    # Use a documented broad representative for matched ordinary meanings.
+    # The full set of context-specific definitions remains displayed by the
+    # renderer; this only determines which variant appears first.
+    representative = BROAD_REPRESENTATIVE.get(group["title"].casefold())
+    if representative and any(m["id"] == representative for m in meanings):
+        return representative
+    # Some ring maps are non-unital by convention. A ring map used to specify
+    # an affine scheme morphism must preserve identities; only that precise
+    # mathematical context warrants the unital specialization automatically.
+    if group["title"].casefold() == "ring homomorphism" and (
+        ("scheme" in words(source_meaning.get("label", ""))) or
+        ("affine" in words(source_meaning.get("label", "")))
+    ):
+        unital = "meaning.wave2.foundation.ring-map-unital"
+        if any(m["id"] == unital for m in meanings):
+            return unital
 
     # Context-sensitive prioritization is meaningful only with substantial
     # category overlap and a decisive winner. Otherwise mark for human review.
