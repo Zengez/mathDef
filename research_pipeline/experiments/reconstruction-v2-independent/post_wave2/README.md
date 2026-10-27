@@ -634,3 +634,41 @@ not modified.
 **879 remain; next rank 1141**. Post-Wave2 merged-only overlay **177**
 meanings (118 earlier + 59 net scan additions), expected merged total
 **2,149** (958 independent Wave2 + 1,014 original + 177 post-Wave2).
+
+
+## Original frozen candidate scan incorporation — ranks 1141–1340 (2026-10-26)
+
+Processed **200** further consecutive original candidates using ONLY the
+frozen 2,019-item original quick-scan report; no discovery,
+recollection or extra candidate collection. Every source-exact
+phrase/count/example and its outcome is in the established
+`scan_candidate_dispositions.json` ledger.
+
+Research decisions: **16 new researched mathematical meanings/variants**,
+**29 existing matches**, **152 scan-produced nonterms/grammatical
+fragments**, and **3 context ambiguities** (1161 meromorphic maps,
+1199 'noncommutative rings' convention and 1285 ordered set conventions).
+
+The 16 direct additions to merged-only `post_wave2/terms.json`
+are: rank 1163 minimal element of a poset (NOT necessarily least);
+1165 mixed second partial derivative (opposite orders not equal
+without regularity); 1181 multiplicative order of a group element;
+1198 strictly noncommutative ring; 1201 nondecreasing real function;
+1227 nonreduced commutative ring; 1239 normed/absolute-valued
+field; 1270 one-sided left or right ideal (NOT automatically
+two-sided); 1280 order-preserving map (NOT necessarily an
+embedding); 1281 ordered field; 1282 bi-invariant ordered group;
+1305 partial computable function (nonhalting versus undefined);
+1317 Petrov–Galerkin finite element discretization (distinct
+trial and test spaces); 1318 piecewise polynomial function
+(no automatic spline regularity); 1322 Polish topological
+group; 1323 Polish space (topologically completely metrizable,
+not necessarily complete for every compatible metric).
+
+New definitions include source attribution, context, and assumptions.
+Uncertain mathematical equivalences were not asserted. Historical
+original definitions and independent Wave2 stay unchanged.
+**Checkpoint 1,340/2,019 processed; next rank 1,341; 679 remain.**
+Overlay: **193**, including **75 net scan-derived meanings** beyond
+118 pre-scan meanings. Expected merged total:
+**2,165 = 958 independent + 1,014 original + 193 merged overlay**.
