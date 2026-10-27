@@ -129,7 +129,31 @@ def context_words(meaning):
     return set(words(label)) - generic - IGNORE_WORDS
 
 
-def choose_meaning(group, source_meaning, phrase, report):
+def record_ambiguity(report, group, source, phrase, occurrence):
+    """Keep a small, retrievable sample of actual source contexts per homonym.
+
+    The full counts may be much larger, but this audit is restricted to
+    previously existing terms and their original formulation text.
+    """
+    label = group["title"]
+    report["ambiguous_contexts"][label] += 1
+    examples = report["ambiguous_context_examples"][label]
+    if len(examples) < 6 and occurrence:
+        form_id, body, start, end = occurrence
+        examples.append({
+            "from_formulation": form_id,
+            "source_meaning": source["id"],
+            "source_context": source.get("label", ""),
+            "matched_text": body[start:end],
+            "excerpt": body[max(0, start-105):min(len(body), end+105)].replace("\\n", " "),
+            "eligible_meanings": [
+                {"id": meaning["id"], "context": meaning.get("label", "")}
+                for meaning in group["meanings"]
+            ][:12],
+        })
+
+
+def choose_meaning(group, source_meaning, phrase, report, occurrence=None):
     """Use exact meaning IDs; abstain rather than selecting arbitrary variants."""
     override = CONTEXT_OVERRIDES.get((source_meaning["id"], phrase))
     if override:
@@ -142,7 +166,7 @@ def choose_meaning(group, source_meaning, phrase, report):
     # category overlap and a decisive winner. Otherwise mark for human review.
     source_context = context_words(source_meaning)
     if not source_context:
-        report["ambiguous_contexts"][group["title"]] += 1
+        record_ambiguity(report, group, source_meaning, phrase, occurrence)
         return None
     scores = []
     for target in meanings:
@@ -151,7 +175,7 @@ def choose_meaning(group, source_meaning, phrase, report):
     scores.sort(key=lambda x: (-x[0], x[1]))
     if scores[0][0] >= 2 and scores[0][0] >= scores[1][0] + 2:
         return scores[0][1]
-    report["ambiguous_contexts"][group["title"]] += 1
+    record_ambiguity(report, group, source_meaning, phrase, occurrence)
     return None
 
 
@@ -185,6 +209,7 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
         "skipped_overlapping": 0,
         "skipped_limit": 0,
         "ambiguous_contexts": Counter(),
+        "ambiguous_context_examples": defaultdict(list),
         "ambiguous_labels": Counter(),
         "links_by_form": {},
         "notes": [
@@ -215,6 +240,13 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
                             continue
                         if tuple(t[0] for t in tokens[pos:end_word]) != parts:
                             continue
+                        # Prevent fabricating a phrase across a hidden formula,
+                        # a paragraph break, TeX macro or punctuation. The
+                        # *original* gap, not the math-masked text, matters.
+                        if any(not re.fullmatch(r"\\s+|\\s*[-–]\\s*",
+                                body[tokens[k][2]:tokens[k+1][1]])
+                               for k in range(pos, end_word-1)):
+                            continue
                         matches.append((parts, group_ids, end_word))
                     if not matches:
                         pos += 1
@@ -232,16 +264,19 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
                     if target_gid == group["id"]:
                         report["skipped_self"] += 1
                         continue
-                    target = choose_meaning(target_group, source, phrase, report)
+                    start = tokens[end_word-len(parts)][1]
+                    end = tokens[end_word-1][2]
+                    target = choose_meaning(
+                        target_group, source, phrase, report,
+                        (form_id, body, start, end)
+                    )
                     if not target:
                         continue
                     target_gid = meaning_gid[target]
                     if target_gid == group["id"]:
                         report["skipped_self"] += 1
                         continue
-                    hits.append((tokens[end_word-1][2]-tokens[pos-len(parts)][1],
-                                 tokens[pos-len(parts)][1], tokens[end_word-1][2],
-                                 target, phrase, target_gid))
+                    hits.append((end-start, start, end, target, phrase, target_gid))
                 # Earliest occurrence per meaning per formulation. No source
                 # text rewriting; the index renderer inserts a small marker.
                 dedup = set()
@@ -303,6 +338,14 @@ def link_merged_catalog(catalog: dict, *, max_auto_links_per_form: int = 35) -> 
         report[name+"_total_occurrences"] = sum(count for _, count in records)
         report[name] = [{"phrase": phrase, "occurrences": count}
                         for phrase, count in records[:150]]
+    report["ambiguous_context_examples"] = {
+        label: report["ambiguous_context_examples"][label]
+        for label, _ in sorted(
+            ((item["phrase"], item["occurrences"])
+             for item in report["ambiguous_contexts"]),
+            key=lambda item: -item[1],
+        )[:60]
+    }
     report["forms_with_link_fraction"] = (
         round(report["forms_with_link"] / report["forms_visited"], 4)
         if report["forms_visited"] else 0
