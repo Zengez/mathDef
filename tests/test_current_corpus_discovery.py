@@ -170,6 +170,24 @@ class CurrentCorpusDiscoveryTests(unittest.TestCase):
                               checkpoint=state, checkpoint_out=state, force_rescan=True)
             self.assertEqual(all_sources["counts"]["source_checkpoint"]["explicitly_rescanned_formulations"], 2)
 
+    def test_requesting_candidate_phrase_rescans_its_sources_only(self):
+        cat=example()
+        with tempfile.TemporaryDirectory() as tmp:
+            site=Path(tmp)/"site"
+            state=Path(tmp)/"checkpoint.json"
+            make_site(site,cat)
+            run(site,Path(tmp)/"first",Path(tmp)/"none.json",
+                checkpoint=state,checkpoint_out=state)
+            result=run(site,Path(tmp)/"revisit",Path(tmp)/"none.json",
+                       checkpoint=state,checkpoint_out=state,
+                       force_phrases=["completion ring"])
+            counts=result["counts"]
+            self.assertEqual(counts["explicitly_revisited_leads"],1)
+            self.assertEqual(counts["source_checkpoint"]["explicitly_rescanned_formulations"],1)
+            self.assertEqual(counts["source_checkpoint"]["unchanged_formulations_skipped"],1)
+            self.assertEqual(counts["new_leads_this_run"],0)
+            self.assertIn("completion ring",(Path(tmp)/"revisit/revisited_candidates.tsv").read_text())
+
     def test_added_heading_uses_cached_tokens_without_rescanning_sources(self):
         cat=example()
         with tempfile.TemporaryDirectory() as tmp:
