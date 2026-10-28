@@ -1,0 +1,27 @@
+name: Validate mathDef contextual candidate review
+on:
+  push:
+    branches:
+      - 'work/deep-candidate-triage-*'
+    paths:
+      - 'research_pipeline/discovery/contextual_review_20261028/**'
+      - 'scripts/validate_contextual_review.py'
+      - '.github/workflows/contextual-review-integrity.yml'
+  pull_request:
+    paths:
+      - 'research_pipeline/discovery/contextual_review_20261028/**'
+      - 'scripts/validate_contextual_review.py'
+      - '.github/workflows/contextual-review-integrity.yml'
+permissions:
+  contents: read
+jobs:
+  verify-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all 9071 source-linked decisions and checksums
+        run: python -m scripts.validate_contextual_review
