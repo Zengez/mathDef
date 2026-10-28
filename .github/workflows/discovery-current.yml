@@ -65,7 +65,7 @@ jobs:
           from pathlib import Path
           from scripts.current_corpus_discovery import run
           force = os.getenv("FORCE_RESCAN", "false").lower() == "true"
-          forms, groups = [], []
+          forms, groups, phrases = [], [], []
           if os.getenv("GITHUB_REF", "").startswith("refs/heads/discovery/"):
               changed = subprocess.check_output(
                   ["git", "diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"],
@@ -80,15 +80,19 @@ jobs:
                   force = force or config.get("force_rescan", False)
                   forms = config.get("force_formulations", [])
                   groups = config.get("force_groups", [])
+                  phrases = config.get("force_phrases", [])
                   if not isinstance(forms, list) or not all(isinstance(s, str) for s in forms):
                       raise ValueError("force_formulations must be a list of IDs")
                   if not isinstance(groups, list) or not all(isinstance(s, str) for s in groups):
                       raise ValueError("force_groups must be a list of IDs")
+                  if not isinstance(phrases, list) or not all(isinstance(s, str) for s in phrases):
+                      raise ValueError("force_phrases must be a list of terms")
           summary=run(Path("_site"), Path("_discovery"),
                       Path("research_pipeline/discovery/decisions.json"),
                       checkpoint=Path("_discovery/checkpoint.previous.json"),
                       checkpoint_out=Path("_discovery/checkpoint.next.json"),
-                      force_rescan=force,force_formulations=forms,force_groups=groups)
+                      force_rescan=force,force_formulations=forms,force_groups=groups,
+                      force_phrases=phrases)
           print(json.dumps(summary,indent=2))
           PY
       - name: Persist checkpoint after successful discovery (without modifying production sources)
@@ -118,6 +122,7 @@ jobs:
             _discovery/candidates.json
             _discovery/candidates.tsv
             _discovery/new_candidates.tsv
+            _discovery/revisited_candidates.tsv
             _discovery/checkpoint.next.json
             _discovery/summary.json
             _site/api/definitions/v2/manifest.json
