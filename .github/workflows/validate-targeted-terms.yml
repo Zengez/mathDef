@@ -1,0 +1,49 @@
+name: Verify 2175 targeted mathDef terminology reviews
+on:
+  push:
+    branches:
+      - 'work/targeted-2175-review-*'
+    paths:
+      - '.github/workflows/validate-targeted-terms.yml'
+      - 'scripts/review_targeted_technical_terms.py'
+      - 'scripts/validate_targeted_technical_review.py'
+      - 'research_pipeline/discovery/targeted_technical_review_20261028/**'
+  pull_request:
+    paths:
+      - '.github/workflows/validate-targeted-terms.yml'
+      - 'scripts/review_targeted_technical_terms.py'
+      - 'scripts/validate_targeted_technical_review.py'
+      - 'research_pipeline/discovery/targeted_technical_review_20261028/**'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all source IDs, reasons, checksums, and active worklist
+        run: python -m scripts.validate_targeted_technical_review
+      - name: Reproduce review from prior preserved research queues
+        run: |
+          python -m scripts.review_targeted_technical_terms \
+            --survivor-dir research_pipeline/discovery/independent_term_review_20261028/survivor_batches \
+            --context-dir research_pipeline/discovery/contextual_review_20261028/batches \
+            --output /tmp/reproduced-technical-review > /tmp/review-summary.txt
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          path=Path('research_pipeline/discovery/targeted_technical_review_20261028/decisions')
+          out={}
+          for file in sorted(path.glob('*.tsv')):
+              with file.open(encoding='utf8',newline='') as h:
+                  for row in csv.DictReader(h,delimiter='\t'):
+                      out[row['candidate_id']]=(row['review_status'],row['reason_code'])
+          with open('/tmp/reproduced-technical-review/full_review.tsv',encoding='utf8',newline='') as h:
+              reproduce={row['candidate_id']:(row['review_status'],row['reason_code']) for row in csv.DictReader(h,delimiter='\t')}
+          assert len(out)==2175 and out==reproduce
+          print('Reproduction verified:',len(out),'source-linked reviews')
+          PY
