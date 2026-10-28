@@ -1,0 +1,59 @@
+name: Discover terms in current merged mathDef corpus
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'discovery/**'
+      - 'work/repeatable-corpus-discovery-*'
+    paths:
+      - 'definitions/**'
+      - 'variants/**'
+      - 'data/**'
+      - 'research_pipeline/experiments/reconstruction-v2-independent/post_wave2/terms.json'
+      - 'research_pipeline/adapters/mathdef/**'
+      - 'research_pipeline/discovery/**'
+      - 'scripts/**'
+      - 'tests/test_current_corpus_discovery.py'
+      - 'discovery_requests/**'
+      - '.github/workflows/discovery-current.yml'
+permissions:
+  contents: read
+concurrency:
+  group: discovery-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test dynamic source/feed integrity and Pass 1 extraction
+        run: |
+          python -m unittest tests.test_merged_definition_export tests.test_current_corpus_discovery -v
+          python -m unittest research_pipeline.tests.test_merged_cleanup research_pipeline.tests.test_cleaned_global_links -v
+      - name: Assemble exact cleaned corpus (no deployment or source edits)
+        run: |
+          python scripts/build_index.py
+          python -m research_pipeline.adapters.mathdef.preview_site --site-root _site/reconstruction
+          python -m research_pipeline.adapters.mathdef.publish_root --site-root _site
+          python -m scripts.validate_published_corpus --site-root _site
+      - name: Scan ALL current term meanings and formulations
+        run: |
+          python -m scripts.current_corpus_discovery --site-root _site --output _discovery
+          cat _discovery/summary.json
+      - name: Upload reproducible review inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mathdef-current-corpus-discovery
+          path: |
+            _discovery/candidates.json
+            _discovery/candidates.tsv
+            _discovery/summary.json
+            _site/api/definitions/v2/manifest.json
+          if-no-files-found: warn
+          retention-days: 90
