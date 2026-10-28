@@ -1,0 +1,61 @@
+name: Triage existing high-recall mathDef leads
+on:
+  push:
+    branches:
+      - 'discovery/false-positive-pass-*'
+    paths:
+      - 'scripts/discovery_pass2_triage.py'
+      - '.github/workflows/discovery-pass2-triage.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mathdef-pass2-screening-state
+  cancel-in-progress: false
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify conservative screening safeguards
+        run: python -m unittest tests.test_discovery_pass2_screening -v
+      - name: Fetch durable discovery checkpoint
+        run: |
+          git fetch origin +refs/heads/discovery-checkpoints:refs/remotes/origin/discovery-checkpoints
+          mkdir -p _pass2
+          git show origin/discovery-checkpoints:research_pipeline/discovery/checkpoint.json > _pass2/checkpoint.json
+      - name: Triage existing high-recall candidate phrases
+        run: |
+          python scripts/discovery_pass2_triage.py --checkpoint _pass2/checkpoint.json --output _pass2/results
+      - name: Save auditable exclusions and active queues in persistent screening branch
+        run: |
+          git fetch origin +refs/heads/discovery-screening:refs/remotes/origin/discovery-screening || true
+          if git show-ref --quiet refs/remotes/origin/discovery-screening; then
+            git worktree add -B discovery-screening /tmp/mathdef-screening origin/discovery-screening
+          else
+            git worktree add -b discovery-screening /tmp/mathdef-screening HEAD
+          fi
+          mkdir -p /tmp/mathdef-screening/research_pipeline/discovery/screening
+          cp _pass2/results/auto_rejections.json /tmp/mathdef-screening/research_pipeline/discovery/screening/auto_rejections.json
+          cp _pass2/results/active_review_queue.tsv /tmp/mathdef-screening/research_pipeline/discovery/screening/active_review_queue.tsv
+          cp _pass2/results/higher_thinking_review.tsv /tmp/mathdef-screening/research_pipeline/discovery/screening/higher_thinking_review.tsv
+          cp _pass2/results/plausible_term_review.tsv /tmp/mathdef-screening/research_pipeline/discovery/screening/plausible_term_review.tsv
+          cp _pass2/results/summary.json /tmp/mathdef-screening/research_pipeline/discovery/screening/summary.json
+          cd /tmp/mathdef-screening
+          git config user.name "mathDef screening workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_pipeline/discovery/screening/
+          if ! git diff --cached --quiet; then
+            git commit -m "Persist reversible high-confidence false-positive screening"
+            git push origin HEAD:refs/heads/discovery-screening
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mathdef-pass2-high-recall-triage
+          path: _pass2/results/
+          retention-days: 90
