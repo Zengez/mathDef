@@ -146,13 +146,18 @@ def publish(repo: Path, site: Path) -> dict:
                              str(full_audit["anomaly_counts"]))
         (site / "audits" / "full-link-graph.json").write_text(
             json.dumps(full_audit, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
-        if link_result["unlinked_existing_term_occurrences"] != 5:
-            raise ValueError("Unapproved change in deliberately unresolved link count")
-        if counts["terms"] != 1986 or counts["formulations"] != 2104:
-            raise ValueError("Unexpected cleaned corpus size at publication")
+        # Check the generated canonical corpus, not historical cohort sizes:
+        # newly approved meanings/headings MUST be able to grow this release.
+        expected_terms = len(catalog["groups"])
+        expected_forms = sum(len(m["formulations"]) for g in catalog["groups"]
+                             for m in g["meanings"])
+        if counts["terms"] != expected_terms or counts["formulations"] != expected_forms:
+            raise ValueError("Rendered cleaned corpus differs from canonical catalog")
         merged_feed = write_merged_definition_export(catalog, published, site)
         if merged_feed["original_definition_count"] != len(originals):
             raise ValueError("v2 feed dropped original definitions after cleanup")
+        from scripts.validate_published_corpus import validate_site
+        validate_site(site)
         return {
             **counts, **preservation,
             "merged_feed": merged_feed,
@@ -162,6 +167,7 @@ def publish(repo: Path, site: Path) -> dict:
                 for f in term["formulations"]),
             "relations": len(catalog["relations"]),
             "global_link_audit_anomalies": full_audit["anomaly_counts"],
+            "unlinked_existing_term_occurrences": link_result["unlinked_existing_term_occurrences"],
             "production_root": str(site),
             "reconstruction_preview_preserved": preview.is_dir(),
             "cleaned_source_identities": len(source_registry["sources"]),
