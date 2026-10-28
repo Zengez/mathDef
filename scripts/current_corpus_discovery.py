@@ -215,16 +215,17 @@ def read_decisions(path: Path) -> dict:
 
 def run(site: Path, out: Path, decisions: Path, *,
         checkpoint: Path | None = None, checkpoint_out: Path | None = None,
-        force_rescan: bool = False, force_formulations=(), force_groups=()) -> dict:
+        force_rescan: bool = False, force_formulations=(), force_groups=(),
+        force_phrases=()) -> dict:
     from scripts.discovery_checkpoint import incremental_discover, read_checkpoint, new_checkpoint
     manifest_counts = validate_site(site)
     catalog = json.loads((site / "catalog.json").read_text(encoding="utf-8"))
     snapshot = json.loads((site / "api/definitions/v2/snapshot.json").read_text(encoding="utf-8"))
     state = read_checkpoint(checkpoint) if checkpoint else new_checkpoint()
-    report, next_state, fresh = incremental_discover(
+    report, next_state, fresh, revisited = incremental_discover(
         catalog, snapshot, state, decisions=read_decisions(decisions),
         force=force_rescan, force_forms=set(force_formulations),
-        force_groups=set(force_groups),
+        force_groups=set(force_groups), force_phrases=set(force_phrases),
     )
     report["input_feed_sha256"] = manifest_counts["sha256"]
     next_state["last_feed_sha256"] = manifest_counts["sha256"]
@@ -250,6 +251,14 @@ def run(site: Path, out: Path, decisions: Path, *,
             writer.writerow([item["id"], item["phrase"], item["classification"],
                              item["occurrences"], item["formulation_count"],
                              "|".join(x["formulation_id"] for x in item["examples"])])
+    with (out / "revisited_candidates.tsv").open("w", encoding="utf-8", newline="") as file:
+        writer = csv.writer(file, dialect="excel-tab")
+        writer.writerow(["candidate_id", "phrase", "classification", "occurrences",
+                         "formulation_count", "source_formulation_ids"])
+        for item in revisited:
+            writer.writerow([item["id"], item["phrase"], item["classification"],
+                             item["occurrences"], item["formulation_count"],
+                             "|".join(x["formulation_id"] for x in item["examples"])])
     summary = {k: report[k] for k in
                ("schema", "status", "input_feed_sha256", "scope", "counts", "notes")}
     (out / "summary.json").write_text(
@@ -271,6 +280,8 @@ def main():
     p.add_argument("--checkpoint-out", type=Path, help="Next checkpoint to persist")
     p.add_argument("--force-rescan", action="store_true",
                    help="Explicitly rescan every formulation, including unchanged ones")
+    p.add_argument("--force-phrase", action="append", default=[],
+                   help="Explicitly revisit a previously encountered candidate phrase")
     p.add_argument("--force-formulation", action="append", default=[],
                    help="Explicitly rescan a specific stable formulation ID")
     p.add_argument("--force-group", action="append", default=[],
@@ -281,6 +292,7 @@ def main():
         checkpoint=args.checkpoint, checkpoint_out=args.checkpoint_out,
         force_rescan=args.force_rescan,
         force_formulations=args.force_formulation, force_groups=args.force_group,
+        force_phrases=args.force_phrase,
     ), indent=2))
 
 
