@@ -60,6 +60,11 @@ jobs:
         run: python -m unittest tests.test_merged_definition_export tests.test_merged_feed_consumer -v
       - name: Syntax-check reusable inline expansion UI
         run: node --check research_pipeline/ui/app.js
+      - name: Generate original v1 API for complete historical-ID validation
+        run: |
+          python scripts/build_index.py
+          mkdir -p /tmp/mathdef-merge-check/api/definitions
+          cp -a _site/api/definitions/v1 /tmp/mathdef-merge-check/api/definitions/v1
       - name: Build independent baselines and original-inclusive site
         run: |
           python -m research_pipeline.adapters.mathdef.preview_site --site-root /tmp/mathdef-merge-check
