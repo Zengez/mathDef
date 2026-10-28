@@ -113,6 +113,9 @@ jobs:
             git commit -m "Checkpoint completed incremental term discovery"
             git push origin HEAD:refs/heads/discovery-checkpoints
           fi
+      - name: Triage all retained high-recall leads without rejecting candidates
+        run: |
+          python scripts/discovery_pass2_triage.py --checkpoint _discovery/checkpoint.next.json --output _discovery/pass2
       - name: Upload reproducible review inventory
         if: always()
         uses: actions/upload-artifact@v4
@@ -125,6 +128,7 @@ jobs:
             _discovery/revisited_candidates.tsv
             _discovery/checkpoint.next.json
             _discovery/summary.json
+            _discovery/pass2/
             _site/api/definitions/v2/manifest.json
           if-no-files-found: warn
           retention-days: 90
