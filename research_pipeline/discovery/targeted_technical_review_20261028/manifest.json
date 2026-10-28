@@ -1,0 +1,128 @@
+{
+  "schema": "mathdef.targeted-technical-review-state.v1",
+  "review_date": "2026-10-28",
+  "input_source": "research_pipeline/discovery/independent_term_review_20261028/survivor_batches/",
+  "context_source": "research_pipeline/discovery/contextual_review_20261028/batches/",
+  "source_feed_sha256": "0441b9c5fc2f7a515c3210a7471a3a3e8f9ca0b8dc63f570dcc8e1cb38a08fe2",
+  "review_input": 2175,
+  "reviewed": 2175,
+  "counts": {
+    "descriptive_not_separate_term": 940,
+    "false_positive": 67,
+    "possible_independent_term": 42,
+    "recognizable_technical_term": 598,
+    "requires_deeper_research": 508,
+    "term_variant": 20
+  },
+  "active_research": 1148,
+  "provisionally_suppressed": 1027,
+  "original_candidate_ids_sha256": "87ea7671ddea68ef168aadf7652f69bbb6f7e96495b18d90e452a4dca32f937e",
+  "active_ids_sha256": "f6d04e02529fa453c398ccdff7daeea61875084b48168350646863a564923afd",
+  "review_program": "scripts/review_targeted_technical_terms.py",
+  "decisions": [
+    {
+      "name": "000.tsv",
+      "records": 176,
+      "sha256": "ed19ce3409e1a2dc963828925f8e794f1232a4c6c4f7c817bfa3121c5e3dc141",
+      "bytes": 108821
+    },
+    {
+      "name": "001.tsv",
+      "records": 209,
+      "sha256": "361e87e21a32de82b8dd384a8b598de662bf58d5e8a1262c77eb68fff401cc77",
+      "bytes": 107448
+    },
+    {
+      "name": "002.tsv",
+      "records": 233,
+      "sha256": "93a2f2499ee6c1eb937bb20654da03b16e8f39069a4a2517bdf66111ef383b3c",
+      "bytes": 106665
+    },
+    {
+      "name": "003.tsv",
+      "records": 236,
+      "sha256": "eb9fbe231b03b2c640fa578d8b59a6a5e61c06064d991d15778f17f462dc3f2c",
+      "bytes": 106703
+    },
+    {
+      "name": "004.tsv",
+      "records": 234,
+      "sha256": "321af7cd50449fe12a2f9f2b89490593422ddb8d9a2b722c02a57f67a6eb2e23",
+      "bytes": 106792
+    },
+    {
+      "name": "005.tsv",
+      "records": 234,
+      "sha256": "282f7bd2b9fd287ef4c7ddf81f189a0b6d9fca370ba2b98fdda821e93f6a59c8",
+      "bytes": 106767
+    },
+    {
+      "name": "006.tsv",
+      "records": 231,
+      "sha256": "d8ba2384997e369fa376daad7c74b1343198cb91d4d4d8e5fabf3c31d9afc798",
+      "bytes": 106545
+    },
+    {
+      "name": "007.tsv",
+      "records": 231,
+      "sha256": "8ed728afcfdf507af98864309e12da7377dc1214eff63595d90aabd844986dff",
+      "bytes": 106664
+    },
+    {
+      "name": "008.tsv",
+      "records": 228,
+      "sha256": "40bd5751e92ef845a888c9e3dd9557354a78714f1c07bee5f9aea6adea23a093",
+      "bytes": 106849
+    },
+    {
+      "name": "009.tsv",
+      "records": 163,
+      "sha256": "5b0bc9c43cc179052c9ad87c6bf7ff2bfa4dd572e1a202b210bbec348a442780",
+      "bytes": 77234
+    }
+  ],
+  "active": [
+    {
+      "name": "000.tsv",
+      "records": 198,
+      "sha256": "be57f7ef0cd740832317f87cf70394530b286b674c417e65bd4bb7292d592d18",
+      "bytes": 108105
+    },
+    {
+      "name": "001.tsv",
+      "records": 236,
+      "sha256": "360d8418fde1830e210a6e2d9c302e083021260074ec75abedf41fdd98b2f30f",
+      "bytes": 106467
+    },
+    {
+      "name": "002.tsv",
+      "records": 234,
+      "sha256": "b44aef7b105be85da7e245cef168de980b116deddbe2dffb19a63ddc062e64a5",
+      "bytes": 106445
+    },
+    {
+      "name": "003.tsv",
+      "records": 232,
+      "sha256": "df66b754b09af954cf5cefeeec5f74d11f70d10b4a98455cb2c7b18784b76194",
+      "bytes": 106844
+    },
+    {
+      "name": "004.tsv",
+      "records": 228,
+      "sha256": "b7b92224fde49ca1a35263628c4be4c02121a7f3cab6736dda8beeeea159f6d4",
+      "bytes": 107030
+    },
+    {
+      "name": "005.tsv",
+      "records": 20,
+      "sha256": "931c629fe7aee6e36eaec3a7a57598a502013a273f32a9f7c379a2baea54a98a",
+      "bytes": 9988
+    }
+  ],
+  "notes": [
+    "All statuses are reversible editorial screening, not mathematical validity proofs.",
+    "Legitimate technical terms may already have definitions or be compositional; no promotion is automatic.",
+    "Only verified external links are attached to selected records, not the whole set.",
+    "Original production definitions and historical discovery leads are unchanged."
+  ]
+}
