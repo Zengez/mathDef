@@ -140,13 +140,15 @@ def discover(catalog: dict, snapshot: dict, *, decisions: dict | None = None) ->
                             "matched_group_ids": sorted(matched),
                             "occurrences": 0,
                             "formulation_count": 0,
+                            "_formulations": set(),
                             "examples": [],
                         }
                         if status == "previously_reviewed":
                             candidate_map[key]["prior_decision"] = previous[norm]
                     entry = candidate_map[key]
                     entry["occurrences"] += 1
-                    if not entry["examples"] or entry["examples"][-1]["formulation_id"] != f["id"]:
+                    if f["id"] not in entry["_formulations"]:
+                        entry["_formulations"].add(f["id"])
                         entry["formulation_count"] += 1
                     # Keep a bounded, deterministic sample. Never embed entire sources.
                     if len(entry["examples"]) < EXAMPLE_LIMIT:
@@ -157,6 +159,8 @@ def discover(catalog: dict, snapshot: dict, *, decisions: dict | None = None) ->
                         }
                         if source not in entry["examples"]:
                             entry["examples"].append(source)
+    for item in candidate_map.values():
+        del item["_formulations"]
     entries = sorted(candidate_map.values(), key=lambda x: (
         {"unreviewed_candidate": 0, "possible_variant": 1,
          "previously_reviewed": 2, "already_defined": 3}[x["classification"]],
