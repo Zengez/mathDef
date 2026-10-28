@@ -56,6 +56,8 @@ def confident_false_positive(phrase):
     may be a genuine term and therefore must NOT be removed here.
     """
     w = phrase.split()
+    if phrase in {"if and only if", "only if"}:
+        return None
     if not w:
         return "empty phrase"
     if w[0] in {"a", "an", "the", "this", "these", "those", "that",
