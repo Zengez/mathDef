@@ -56,7 +56,8 @@ def _digest(text):
 
 
 def incremental_discover(catalog, snapshot, checkpoint, *,
-                         decisions=None, force=False, force_forms=(), force_groups=()):
+                         decisions=None, force=False, force_forms=(), force_groups=(),
+                         force_phrases=()):
     if snapshot.get("schema") != "mathdef.definition-snapshot.v2":
         raise ValueError("Incremental discovery requires exact canonical v2 feed")
     definitions = snapshot["definitions"]
@@ -77,6 +78,11 @@ def incremental_discover(catalog, snapshot, checkpoint, *,
             variants_index[variant].update(gids)
 
     old = checkpoint["formulations"]
+    requested_phrases = {normalize(p) for p in force_phrases}
+    if "" in requested_phrases:
+        raise ValueError("Cannot force a blank candidate phrase")
+    forms_for_phrases = {fid for fid, record in old.items()
+                         if requested_phrases.intersection(record["phrase_counts"])}
     prev_heads = set(checkpoint["heads"])
     additional_heads = heads - prev_heads
     # A checkpoint without coverage is a new baseline, not a deliberate rescan.
@@ -91,7 +97,8 @@ def incremental_discover(catalog, snapshot, checkpoint, *,
                 fid = f["id"]
                 signature = _digest(f["text"])
                 former = old.get(fid)
-                explicitly_forced = force or fid in force_forms or d["id"] in force_groups
+                explicitly_forced = (force or fid in force_forms or
+                                     d["id"] in force_groups or fid in forms_for_phrases)
                 changed = former is not None and former["sha256"] != signature
                 must_scan = former is None or changed or explicitly_forced
                 if must_scan:
@@ -174,6 +181,10 @@ def incremental_discover(catalog, snapshot, checkpoint, *,
             entry["discovery_state"] = "editorially_reviewed"
         else:
             entry["discovery_state"] = "published"
+    revisited = [entry for entry in entries if entry["normalized"] in requested_phrases]
+    for entry in revisited:
+        if entry.get("discovery_state") == "previously_encountered":
+            entry["discovery_state"] = "explicitly_revisited"
     after_seen = previous_seen | {
         entry["normalized"] for entry in entries
         if entry["classification"] in ("unreviewed_candidate",
@@ -200,6 +211,7 @@ def incremental_discover(catalog, snapshot, checkpoint, *,
             "distinct_phrases": len(entries),
             "distinct_by_classification": dict(sorted(classes.items())),
             "new_leads_this_run": len(fresh),
+            "explicitly_revisited_leads": len(revisited),
             "previously_encountered_leads": sum(
                 x["discovery_state"] == "previously_encountered" for x in entries),
             "source_checkpoint": dict(sorted(stats.items())),
@@ -213,4 +225,4 @@ def incremental_discover(catalog, snapshot, checkpoint, *,
         ],
         "entries": entries,
     }
-    return report, next_checkpoint, fresh
+    return report, next_checkpoint, fresh, revisited
