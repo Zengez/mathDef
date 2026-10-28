@@ -1,11 +1,27 @@
 name: Validate cleaned mathDef release without publishing
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - 'definitions/**'
+      - 'variants/**'
+      - 'data/**'
+      - 'scripts/**'
+      - 'research_pipeline/adapters/mathdef/**'
+      - 'research_pipeline/experiments/**'
+      - 'research_pipeline/ui/**'
+      - 'tests/**'
+      - 'research_pipeline/tests/release_browser_smoke.cjs'
+      - '.github/workflows/pages.yml'
+      - '.github/workflows/release-candidate.yml'
   push:
-    branches: [work/dedup-subject-context-sources-20261027]
+    branches: [work/dedup-subject-context-sources-20261027, 'work/repeatable-corpus-discovery-*']
     paths:
       - 'research_pipeline/adapters/mathdef/publish_root.py'
       - 'scripts/merged_definition_export.py'
+      - 'scripts/validate_published_corpus.py'
+      - 'scripts/current_corpus_discovery.py'
+      - 'tests/test_current_corpus_discovery.py'
       - 'research_pipeline/tests/release_browser_smoke.cjs'
       - 'tests/test_merged_definition_export.py'
       - '.github/workflows/release-candidate.yml'
@@ -21,7 +37,7 @@ jobs:
           python-version: '3.12'
       - name: Test export, cleanup and release safeguards
         run: |
-          python -m unittest tests.test_merged_definition_export -v
+          python -m unittest tests.test_merged_definition_export tests.test_current_corpus_discovery -v
           python -m unittest research_pipeline.tests.test_merged_cleanup research_pipeline.tests.test_conventions research_pipeline.tests.test_cleaned_global_links research_pipeline.tests.test_full_corpus_link_audit research_pipeline.tests.test_reference_ui -v
           node --test research_pipeline/tests/test_sources_ui.cjs research_pipeline/tests/test_subject_priority.cjs
           node --test tests/test_feedback.cjs tests/test_feedback_ui.cjs
@@ -32,38 +48,58 @@ jobs:
       - name: Assemble the exact cleaned root site (NO DEPLOYMENT)
         run: |
           python -m research_pipeline.adapters.mathdef.publish_root --site-root _site
+          python -m scripts.validate_published_corpus --site-root _site
+      - name: Regression - append a NEW sourced heading, rebuild v2, then restore source
+        run: |
           python - <<'PY'
-          import json,hashlib
+          import json, shutil, subprocess, sys, tempfile
           from pathlib import Path
-          root=Path('_site')
-          index=json.loads((root/'definitions-index.json').read_text())
-          cat=json.loads((root/'catalog.json').read_text())
-          v1=json.loads((root/'api/definitions/v1/snapshot.json').read_text())
-          m=json.loads((root/'api/definitions/v2/manifest.json').read_text())
-          blob=(root/'api/definitions/v2/snapshot.json').read_bytes()
-          v2=json.loads(blob)
-          aliases=cat.get('consolidated_ids',{})
-          orig={d['id'] for d in v1['definitions']}
-          present={oid for g in cat['groups'] for meaning in g['meanings'] for oid in
-             ([meaning.get('original_definition_id')] + meaning.get('legacy_original_definition_ids',[]))
-             if oid}
-          assert orig==present and len(orig)==1014,(len(orig),len(present))
-          assert len(index)==len(cat['groups'])==m['definition_count']==1986
-          assert m['meaning_count']==2065 and m['formulation_count']==2104
-          assert len(cat['relations'])==6445
-          assert m['original_definition_count']==1014
-          assert hashlib.sha256(blob).hexdigest()==m['sha256']
-          assert v2['consolidated_ids']==aliases
-          assert {oid for d in v2['definitions'] for oid in d['original_ids']}==orig
-          assert len(v2['definitions'])==1986
-          assert (root/'sources-index.json').is_file()
-          assert (root/'audits/full-link-graph.json').is_file()
-          assert (root/'reconstruction/wave2/catalog.json').is_file()
-          print('CLEANED_RELEASE_BUILD='+json.dumps({
-             'headings':len(index),'meanings':m['meaning_count'],
-             'formulations':m['formulation_count'],'relations':len(cat['relations']),
-             'original_ids':len(orig),'aliases':{k:len(v) for k,v in aliases.items()}
-          },sort_keys=True))
+          from scripts.validate_published_corpus import validate_site
+          before=validate_site(Path("_site"))
+          file=Path("research_pipeline/experiments/reconstruction-v2-independent/post_wave2/terms.json")
+          original=file.read_bytes()
+          try:
+              data=json.loads(original)
+              sample={
+                  "id":"meaning.mathdef.postwave.ci-only-growth-check",
+                  "term":"Synthetic corpus growth witness",
+                  "context":"Post-Wave2 · algebra · temporary CI regression",
+                  "aliases":["Temporary mathematical growth witness"],
+                  "definition":"A synthetic corpus growth witness is a test-only algebraic object.",
+                  "sources":[{
+                      "title":"Synthetic release regression fixture (not a real reference)",
+                      "url":"https://example.org/ci-only-not-published",
+                      "verification_status":"synthetic_test_only"}],
+                  "links":[],
+                  "research_status":"temporary CI regression; never publish",
+              }
+              assert not any(x["id"]==sample["id"] for x in data["entries"])
+              data["entries"].append(sample)
+              file.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n")
+              with tempfile.TemporaryDirectory() as temp:
+                  site=Path(temp)/"site"
+                  original_api=Path("_site/api/definitions/v1")
+                  shutil.copytree(original_api, site/"api/definitions/v1")
+                  subprocess.run([sys.executable,"-m",
+                      "research_pipeline.adapters.mathdef.preview_site",
+                      "--site-root",str(site/"reconstruction")],
+                      check=True,stdout=subprocess.DEVNULL)
+                  subprocess.run([sys.executable,"-m",
+                      "research_pipeline.adapters.mathdef.publish_root",
+                      "--site-root",str(site)],check=True,stdout=subprocess.DEVNULL)
+                  after=validate_site(site)
+                  assert after["definition_count"]==before["definition_count"]+1,(before,after)
+                  assert after["meaning_count"]==before["meaning_count"]+1
+                  assert after["formulation_count"]==before["formulation_count"]+1
+                  assert after["original_definition_count"]==before["original_definition_count"]
+                  assert after["sha256"]!=before["sha256"]
+                  v2=json.loads((site/"api/definitions/v2/snapshot.json").read_text())
+                  witness=[x for x in v2["definitions"] if x["term"]==sample["term"]]
+                  assert len(witness)==1
+                  assert sample["aliases"][0] in witness[0]["aliases"]
+                  print("GROWTH_AND_FEED_REFRESH_VERIFIED",json.dumps(after,sort_keys=True))
+          finally:
+              file.write_bytes(original)
           PY
       - name: Run complete link audit and verify generated script syntax
         run: |

@@ -1,6 +1,6 @@
 # mathDef
 
-**Main mathDef site:** [zengez.github.io/mathDef](https://zengez.github.io/mathDef/). The published library combines **2,197 contextual meanings** under **2,048 searchable term headings**, including **all 1,014 original .tex definitions**, 958 independently reconstructed Wave 2 meanings, and 225 subsequent research additions (October 2026). The [original definition catalog](CATALOG.md) documents the initial source files and their subject distribution.
+**Main mathDef site:** [zengez.github.io/mathDef](https://zengez.github.io/mathDef/). The live counts of searchable headings, contextual meanings, formulations, and original definitions are published automatically in the [v2 manifest](https://zengez.github.io/mathDef/api/definitions/v2/manifest.json). The site combines original .tex definitions, the independent Wave 2 research, and later curated additions; the frozen historical research cohorts remain preserved. The [original definition catalog](CATALOG.md) documents the initial source files and their subject distribution.
 
 An interactive, GitHub-hosted collection of mathematical definitions written in LaTeX.
 
@@ -10,13 +10,13 @@ The **historical October 16 original-corpus audit** covered 1,007 definitions in
 
 ## Whole-corpus internal link audit (October 2026)
 
-The fully merged 2,197-meaning library has undergone a **single graph-wide
-link audit** covering all 6,825 screened and tentative relationships,
-including original/reconstructed/post-Wave2 cross-links. The audit found
+A historical 2,197-meaning merged library underwent a **single graph-wide
+link audit** covering 6,825 screened and tentative relationships,
+including original/reconstructed/post-Wave2 cross-links. That audit found
 **no broken link endpoints, invalid positioned links, duplicate target
 relations, rendered-index discrepancies, or unexplained gaps in references
-to existing search terms**. Six mathematically convention-dependent
-references remain intentionally unlinked and eligible for visitor feedback.
+to existing search terms**. Some mathematically convention-dependent references were intentionally left
+unlinked; their current count is reported in the generated link audit.
 
 The audit is required during each GitHub Pages deployment, with current
 machine-readable results at
@@ -143,8 +143,7 @@ At that intermediate October 15, 2026 checkpoint, the repository contained 995 d
 ## Public cross-project definition feed (canonical v2)
 
 Projects such as mathThm can obtain the **entire published merged mathDef corpus**
-(2,048 searchable term groups, 2,197 contextual meanings and all source
-formulations as of October 2026) through a read-only, SHA-256-versioned
+(all currently published term groups, contextual meanings and source formulations) through a read-only, SHA-256-versioned
 public feed. No GitHub account is required.
 
 - **[Merged feed manifest](https://zengez.github.io/mathDef/api/definitions/v2/manifest.json)** — small update signal; compare the version with the last verified local snapshot.

@@ -60,6 +60,11 @@ jobs:
         run: python -m unittest tests.test_merged_definition_export tests.test_merged_feed_consumer -v
       - name: Syntax-check reusable inline expansion UI
         run: node --check research_pipeline/ui/app.js
+      - name: Generate original v1 API for complete historical-ID validation
+        run: |
+          python scripts/build_index.py
+          mkdir -p /tmp/mathdef-merge-check/api/definitions
+          cp -a _site/api/definitions/v1 /tmp/mathdef-merge-check/api/definitions/v1
       - name: Build independent baselines and original-inclusive site
         run: |
           python -m research_pipeline.adapters.mathdef.preview_site --site-root /tmp/mathdef-merge-check
@@ -168,8 +173,8 @@ jobs:
           # Historical /merged/ is an intentionally frozen pre-cleanup view.
           # Root must now show the user-approved canonical cleanup instead.
           assert len(merged)>=2000, "Historical merged preview changed"
-          assert len(main)==1986, "Cleaned primary site must have 1,986 headings"
-          assert sum(len(x["formulations"]) for x in main)==2104
+          assert len(main)==len(json.loads((root/"catalog.json").read_text())["groups"])
+          assert all(x["formulations"] for x in main)
           assert all(g["formulations"] for g in main)
           assert (root/"sources-index.json").is_file()
           assert (root/"audits/global-link-rebuild.json").is_file()
@@ -182,14 +187,13 @@ jobs:
           assert manifest["formulation_count"] == sum(len(g["formulations"]) for g in feed["definitions"])
           assert manifest["original_definition_count"] == sum(len(g["original_ids"]) for g in feed["definitions"])
           assert {g["id"] for g in feed["definitions"]} == {g["id"] for g in main}
-          assert manifest["meaning_count"]==2065
-          assert manifest["formulation_count"]==2104
-          assert manifest["original_definition_count"]==1014
           assert feed["consolidated_ids"]==json.loads((root/"catalog.json").read_text())["consolidated_ids"]
           assert (root/"catalog.json").is_file()
           assert (root/"link-report.json").is_file()
           assert (root/"index.html").is_file()
           assert "Expanded mathematical definitions" in (root/"index.html").read_text()
+          from scripts.validate_published_corpus import validate_site
+          validate_site(root)
           print("Cleaned primary site verified:",len(main),
                 "headings; historical research preview:",len(merged),"headings")
           PY

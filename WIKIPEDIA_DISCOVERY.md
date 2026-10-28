@@ -28,6 +28,24 @@ Nothing is inserted into the public definition collection automatically.
 The scanner downloads category listing metadata, not copyrighted article prose.
 Always inspect the actual mathematics; Wikipedia errors are possible.
 
+## Current merged-corpus coverage (2026-10-28)
+
+The historical .tex-only command above is retained for reproducing the old
+original-corpus study. For current discovery, build mathDef's canonical cleaned
+release and supply its generated v2 snapshot:
+
+    python scripts/build_index.py
+    python -m research_pipeline.adapters.mathdef.preview_site --site-root _site/reconstruction
+    python -m research_pipeline.adapters.mathdef.publish_root --site-root _site
+    python scripts/wikipedia_candidate_scan.py --snapshot _site/api/definitions/v2/snapshot.json --seed 'Complex analysis'
+
+The GitHub Actions Wikipedia workflows perform this build and pass the
+snapshot automatically. All published meanings and aliases are then recognized
+without editing a hand-maintained count or original-only term list. An article
+title not found in the catalog remains a **research lead**, not an accepted
+mathematical definition. The main, repeatable internal-corpus phrase scanner is
+documented separately in research_pipeline/discovery/README.md.
+
 ## Cross-reference sources
 
 - Encyclopedia of Mathematics — https://encyclopediaofmath.org

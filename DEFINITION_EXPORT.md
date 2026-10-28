@@ -19,7 +19,8 @@ with the main mathDef website; consumers decide when to check for updates.
 **These v2 URLs are the canonical feed.** The old
 `/api/definitions/v1/manifest.json` and `/api/definitions/v1/snapshot.json`
 remain accessible only as an **original .tex-only historical feed**, containing
-the 1,014 original definitions but *not* the integrated research. Do not use
+only the original definitions (see its live manifest for the current count),
+but *not* the integrated research. Do not use
 v1 for new projects, and do not misinterpret its `dataset: "production"` tag
 as claiming to reflect the new main website. v2 is the actual production
 merged collection. Retaining v1 costs little and allows old experiments to

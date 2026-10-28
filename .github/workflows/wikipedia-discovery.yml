@@ -20,12 +20,18 @@ permissions:
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Build current full merged term inventory for coverage comparison
+        run: |
+          python scripts/build_index.py
+          python -m research_pipeline.adapters.mathdef.preview_site --site-root _site/reconstruction
+          python -m research_pipeline.adapters.mathdef.publish_root --site-root _site
+          python -m scripts.validate_published_corpus --site-root _site
       - name: Offline scanner tests
         run: python -m unittest discover -s tests
       - name: Inventory Wikipedia category titles and compare mathDef terms
@@ -36,6 +42,7 @@ jobs:
           python scripts/wikipedia_candidate_scan.py \
             --seed "$WIKI_CATEGORY" --depth "$WIKI_DEPTH" \
             --max-categories 12 --max-pages 1500 \
+            --snapshot _site/api/definitions/v2/snapshot.json \
             --out _wikipedia_candidates.csv
       - name: Audit mathDef citation and coverage metadata
         run: python -m scripts.audit_corpus --out _definition_audit.csv

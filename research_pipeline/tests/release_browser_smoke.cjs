@@ -8,8 +8,8 @@ const root=process.env.MATHDEF_PREVIEW_ROOT || "_site";
 const url=process.env.MATHDEF_PREVIEW_URL || "http://127.0.0.1:8765/";
 const data=JSON.parse(fs.readFileSync(path.join(root,"definitions-index.json"),"utf8"));
 const sources=JSON.parse(fs.readFileSync(path.join(root,"sources-index.json"),"utf8"));
-assert.equal(data.length,1986);
-assert.equal(sources.groups.length,1986);
+assert(data.length>0,"Release has no term groups");
+assert.equal(sources.groups.length,data.length);
 const chrome=["/usr/bin/google-chrome","/usr/bin/google-chrome-stable",
   "/usr/bin/chromium","/usr/bin/chromium-browser"].find(fs.existsSync);
 assert(chrome,"Chrome/Chromium browser must be available for release");
@@ -21,7 +21,7 @@ try {
  let errors=[];
  page.on("pageerror",e=>errors.push(e.message));
  await page.goto(url,{waitUntil:"domcontentloaded"});
- await page.locator("#total").filter({hasText:"1986"}).waitFor();
+ await page.locator("#total").filter({hasText:String(data.length)}).waitFor();
  assert.equal(await page.locator('button[data-explore-mode="inline"]')
    .getAttribute("aria-pressed"),"true");
  // Both search fields filter independently.
