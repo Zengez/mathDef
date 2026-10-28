@@ -1,6 +1,19 @@
 name: Validate cleaned mathDef release without publishing
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - 'definitions/**'
+      - 'variants/**'
+      - 'data/**'
+      - 'scripts/**'
+      - 'research_pipeline/adapters/mathdef/**'
+      - 'research_pipeline/experiments/**'
+      - 'research_pipeline/ui/**'
+      - 'tests/**'
+      - 'research_pipeline/tests/release_browser_smoke.cjs'
+      - '.github/workflows/pages.yml'
+      - '.github/workflows/release-candidate.yml'
   push:
     branches: [work/dedup-subject-context-sources-20261027, 'work/repeatable-corpus-discovery-*']
     paths:
