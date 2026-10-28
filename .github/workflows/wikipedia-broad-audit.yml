@@ -9,7 +9,7 @@ permissions:
 jobs:
   categories:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 35
     strategy:
       fail-fast: false
       matrix:
@@ -27,6 +27,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Build current full merged term inventory for coverage comparison
+        run: |
+          python scripts/build_index.py
+          python -m research_pipeline.adapters.mathdef.preview_site --site-root _site/reconstruction
+          python -m research_pipeline.adapters.mathdef.publish_root --site-root _site
+          python -m scripts.validate_published_corpus --site-root _site
       - name: Test existing corpus and scanner
         run: python -m unittest discover -s tests
       - name: Traverse Wikipedia mathematical categories, recording title-only candidates
@@ -39,6 +45,7 @@ jobs:
           for seed in "${SEEDS[@]}"; do ARGS+=(--seed "$seed"); done
           python scripts/wikipedia_candidate_scan.py "${ARGS[@]}" \
             --depth 2 --max-categories 55 --max-pages 5000 --delay 1.1 \
+            --snapshot _site/api/definitions/v2/snapshot.json \
             --out "_wikipedia_candidates_${MATHDEF_GROUP}.csv" \
             > "_wikipedia_summary_${MATHDEF_GROUP}.json"
           cat "_wikipedia_summary_${MATHDEF_GROUP}.json"
