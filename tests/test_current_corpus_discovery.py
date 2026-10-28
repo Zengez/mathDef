@@ -89,6 +89,18 @@ class CurrentCorpusDiscoveryTests(unittest.TestCase):
             self.assertEqual(match[0]["classification"], "already_defined")
             self.assertNotEqual(first["input_feed_sha256"], second["input_feed_sha256"])
 
+    def test_wikipedia_coverage_can_use_complete_merged_feed(self):
+        from scripts.wikipedia_candidate_scan import load_merged_terms
+        cat = example()
+        cat["groups"].append(group("group.postwave", "Local cohomology spectrum",
+                                   "form.postwave", "A mathematical object."))
+        with tempfile.TemporaryDirectory() as tmp:
+            make_site(tmp, cat)
+            path = Path(tmp) / "api/definitions/v2/snapshot.json"
+            names = load_merged_terms(path)
+            self.assertEqual(names["local cohomology spectrum"], {"group.postwave"})
+            self.assertEqual(names["vector space"], {"group.vector"})
+
     def test_previous_editorial_decisions_do_not_auto_publish(self):
         cat = example()
         with tempfile.TemporaryDirectory() as tmp:
