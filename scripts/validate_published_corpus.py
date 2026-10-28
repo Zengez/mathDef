@@ -88,7 +88,7 @@ def validate_site(root: Path) -> dict:
         raise ValueError("Feed redirects differ from canonical catalog")
     for kind in ("group_aliases", "meaning_aliases", "formulation_aliases"):
         expected_count = len(catalog.get("consolidated_ids", {}).get(kind, {}))
-        if manifest.get("retired_" + kind[:-1] + "_count") != expected_count:
+        if manifest.get("retired_" + kind.replace("_aliases", "_alias") + "_count") != expected_count:
             raise ValueError("Stale redirected-ID count: " + kind)
     for rel in catalog["relations"]:
         if rel.get("from_formulation") not in form_ids or rel.get("target_meaning") not in meaning_ids:
