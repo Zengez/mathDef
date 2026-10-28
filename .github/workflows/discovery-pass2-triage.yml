@@ -21,6 +21,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Verify conservative screening safeguards
+        run: python -m unittest tests.test_discovery_pass2_screening -v
       - name: Fetch durable discovery checkpoint
         run: |
           git fetch origin +refs/heads/discovery-checkpoints:refs/remotes/origin/discovery-checkpoints
