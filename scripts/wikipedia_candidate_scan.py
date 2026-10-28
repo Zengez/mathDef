@@ -66,6 +66,20 @@ def load_terms(definitions):
     return terms
 
 
+def load_merged_terms(snapshot: Path):
+    """Use the complete canonical v2 feed instead of historical .tex sources."""
+    data = json.loads(snapshot.read_text(encoding="utf-8"))
+    if data.get("schema") != "mathdef.definition-snapshot.v2":
+        raise ValueError("Wikipedia coverage scan requires canonical v2 snapshot")
+    terms = {}
+    for entry in data["definitions"]:
+        for name in [entry["term"], *entry.get("aliases", [])]:
+            normalized = normalize(name)
+            if normalized:
+                terms.setdefault(normalized, set()).add(entry["id"])
+    return terms
+
+
 def classify(title, category, terms):
     key = normalize(title)
     matches = sorted(terms.get(key, ()))
@@ -188,6 +202,8 @@ def main():
     parser.add_argument("--max-pages", type=int, default=1500)
     parser.add_argument("--delay", type=float, default=1.1)
     parser.add_argument("--definitions", type=Path, default=ROOT / "definitions")
+    parser.add_argument("--snapshot", type=Path,
+                        help="Canonical generated v2 snapshot (preferred over original .tex)")
     parser.add_argument("--out", type=Path, default=Path("_wikipedia_candidates.csv"))
     args = parser.parse_args()
     if not 0 <= args.depth <= 2:
@@ -198,7 +214,7 @@ def main():
         parser.error("--max-pages must be 1..10000")
     seeds = args.seed or DEFAULTS
     seeds = [c if c.startswith("Category:") else "Category:" + c for c in seeds]
-    terms = load_terms(args.definitions)
+    terms = load_merged_terms(args.snapshot) if args.snapshot else load_terms(args.definitions)
     print(f"Loaded {sum(map(len, terms.values()))} term/alias IDs from mathDef", file=sys.stderr)
     records, categories = inventory(
         WikipediaReader(args.delay), seeds, args.depth, args.max_categories,
