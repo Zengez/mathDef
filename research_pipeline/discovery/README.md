@@ -50,12 +50,18 @@ The separate editorial `decisions.json` controls actual decisions.
 Force a full rescan from the Actions manual-run `force_rescan` checkbox,
 or with local command `--force-rescan`. For a targeted rescan use
 `--force-formulation FORM_ID` or `--force-group GROUP_ID` locally.
+For an individual previously discovered candidate phrase, specify
+`--force-phrase 'candidate phrase'` locally or include `force_phrases` in the
+branch request JSON. Its containing formulation(s) will be explicitly rescanned,
+and it will appear separately in `revisited_candidates.tsv`; no previous
+rejection is assumed.
+
 When triggering from a `discovery/**` branch, add a JSON file as the
 single request file in the trigger commit, e.g.:
 ```json
 {"force_rescan": true}
 ```
-Or specify `force_formulations` / `force_groups` arrays instead.
+Or specify `force_formulations`, `force_groups`, or `force_phrases` arrays instead.
 The workflow saves checkpoint data in `discovery-checkpoints` after
 successful runs. Those commits do not affect the published mathDef site.
 A missing checkpoint causes a full initial scan; later runs are incremental.
