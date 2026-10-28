@@ -35,7 +35,7 @@ jobs:
               for p in sorted((root/folder).glob('*.tsv')):
                   blob=p.read_bytes()
                   with p.open(encoding='utf8',newline='') as f:
-                      rows=sum(1 for _ in csv.DictReader(f,delimiter='\\t'))
+                      rows=sum(1 for _ in csv.DictReader(f,delimiter='\t'))
                   print(f'BATCH_DIGEST|{folder}/{p.name}|{len(blob)}|{hashlib.sha256(blob).hexdigest()}|{rows}')
           PY
       - name: Verify the 7240 individual decisions and 3109 survivor IDs
