@@ -1,11 +1,18 @@
 name: Discover terms in current merged mathDef corpus
 on:
   workflow_dispatch:
+    inputs:
+      force_rescan:
+        description: "Explicitly rescan all previously scanned formulations"
+        type: boolean
+        required: false
+        default: false
   push:
     branches:
       - main
       - 'discovery/**'
       - 'work/repeatable-corpus-discovery-*'
+      - 'work/discovery-persistent-history-*'
     paths:
       - 'definitions/**'
       - 'variants/**'
@@ -15,13 +22,14 @@ on:
       - 'research_pipeline/discovery/**'
       - 'scripts/**'
       - 'tests/test_current_corpus_discovery.py'
+      - 'scripts/discovery_checkpoint.py'
       - 'discovery_requests/**'
       - '.github/workflows/discovery-current.yml'
 permissions:
-  contents: read
+  contents: write
 concurrency:
-  group: discovery-${{ github.ref }}
-  cancel-in-progress: true
+  group: mathdef-discovery-checkpoint-global
+  cancel-in-progress: false
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -41,10 +49,66 @@ jobs:
           python -m research_pipeline.adapters.mathdef.preview_site --site-root _site/reconstruction
           python -m research_pipeline.adapters.mathdef.publish_root --site-root _site
           python -m scripts.validate_published_corpus --site-root _site
-      - name: Scan ALL current term meanings and formulations
+      - name: Load latest durable checkpoint from separate discovery state branch
         run: |
-          python -m scripts.current_corpus_discovery --site-root _site --output _discovery
-          cat _discovery/summary.json
+          mkdir -p _discovery
+          git fetch origin +refs/heads/discovery-checkpoints:refs/remotes/origin/discovery-checkpoints || true
+          if git show-ref --quiet refs/remotes/origin/discovery-checkpoints; then
+            git show origin/discovery-checkpoints:research_pipeline/discovery/checkpoint.json > _discovery/checkpoint.previous.json || true
+          fi
+      - name: Incremental scan - skip already scanned unchanged formulations
+        env:
+          FORCE_RESCAN: ${{ inputs.force_rescan || 'false' }}
+        run: |
+          python - <<'PY'
+          import json, os, subprocess
+          from pathlib import Path
+          from scripts.current_corpus_discovery import run
+          force = os.getenv("FORCE_RESCAN", "false").lower() == "true"
+          forms, groups = [], []
+          if os.getenv("GITHUB_REF", "").startswith("refs/heads/discovery/"):
+              changed = subprocess.check_output(
+                  ["git", "diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"],
+                  text=True).splitlines()
+              configs = sorted(p for p in changed if p.startswith("discovery_requests/") and p.endswith(".json"))
+              if len(configs) > 1:
+                  raise ValueError("Use exactly one discovery request JSON per trigger commit")
+              if configs:
+                  config = json.loads(Path(configs[0]).read_text())
+                  if not isinstance(config.get("force_rescan", False), bool):
+                      raise ValueError("force_rescan must be a JSON boolean")
+                  force = force or config.get("force_rescan", False)
+                  forms = config.get("force_formulations", [])
+                  groups = config.get("force_groups", [])
+                  if not isinstance(forms, list) or not all(isinstance(s, str) for s in forms):
+                      raise ValueError("force_formulations must be a list of IDs")
+                  if not isinstance(groups, list) or not all(isinstance(s, str) for s in groups):
+                      raise ValueError("force_groups must be a list of IDs")
+          summary=run(Path("_site"), Path("_discovery"),
+                      Path("research_pipeline/discovery/decisions.json"),
+                      checkpoint=Path("_discovery/checkpoint.previous.json"),
+                      checkpoint_out=Path("_discovery/checkpoint.next.json"),
+                      force_rescan=force,force_formulations=forms,force_groups=groups)
+          print(json.dumps(summary,indent=2))
+          PY
+      - name: Persist checkpoint after successful discovery (without modifying production sources)
+        if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/discovery/')
+        run: |
+          if git show-ref --quiet refs/remotes/origin/discovery-checkpoints; then
+            git worktree add -B discovery-checkpoints /tmp/mathdef-discovery-state origin/discovery-checkpoints
+          else
+            git worktree add -b discovery-checkpoints /tmp/mathdef-discovery-state HEAD
+          fi
+          mkdir -p /tmp/mathdef-discovery-state/research_pipeline/discovery
+          cp _discovery/checkpoint.next.json /tmp/mathdef-discovery-state/research_pipeline/discovery/checkpoint.json
+          cd /tmp/mathdef-discovery-state
+          git config user.name "mathDef discovery workflow"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_pipeline/discovery/checkpoint.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Checkpoint completed incremental term discovery"
+            git push origin HEAD:refs/heads/discovery-checkpoints
+          fi
       - name: Upload reproducible review inventory
         if: always()
         uses: actions/upload-artifact@v4
@@ -53,6 +117,8 @@ jobs:
           path: |
             _discovery/candidates.json
             _discovery/candidates.tsv
+            _discovery/new_candidates.tsv
+            _discovery/checkpoint.next.json
             _discovery/summary.json
             _site/api/definitions/v2/manifest.json
           if-no-files-found: warn
