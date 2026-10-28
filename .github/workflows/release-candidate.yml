@@ -2,10 +2,13 @@ name: Validate cleaned mathDef release without publishing
 on:
   workflow_dispatch:
   push:
-    branches: [work/dedup-subject-context-sources-20261027]
+    branches: [work/dedup-subject-context-sources-20261027, 'work/repeatable-corpus-discovery-*']
     paths:
       - 'research_pipeline/adapters/mathdef/publish_root.py'
       - 'scripts/merged_definition_export.py'
+      - 'scripts/validate_published_corpus.py'
+      - 'scripts/current_corpus_discovery.py'
+      - 'tests/test_current_corpus_discovery.py'
       - 'research_pipeline/tests/release_browser_smoke.cjs'
       - 'tests/test_merged_definition_export.py'
       - '.github/workflows/release-candidate.yml'
@@ -21,7 +24,7 @@ jobs:
           python-version: '3.12'
       - name: Test export, cleanup and release safeguards
         run: |
-          python -m unittest tests.test_merged_definition_export -v
+          python -m unittest tests.test_merged_definition_export tests.test_current_corpus_discovery -v
           python -m unittest research_pipeline.tests.test_merged_cleanup research_pipeline.tests.test_conventions research_pipeline.tests.test_cleaned_global_links research_pipeline.tests.test_full_corpus_link_audit research_pipeline.tests.test_reference_ui -v
           node --test research_pipeline/tests/test_sources_ui.cjs research_pipeline/tests/test_subject_priority.cjs
           node --test tests/test_feedback.cjs tests/test_feedback_ui.cjs
@@ -32,39 +35,7 @@ jobs:
       - name: Assemble the exact cleaned root site (NO DEPLOYMENT)
         run: |
           python -m research_pipeline.adapters.mathdef.publish_root --site-root _site
-          python - <<'PY'
-          import json,hashlib
-          from pathlib import Path
-          root=Path('_site')
-          index=json.loads((root/'definitions-index.json').read_text())
-          cat=json.loads((root/'catalog.json').read_text())
-          v1=json.loads((root/'api/definitions/v1/snapshot.json').read_text())
-          m=json.loads((root/'api/definitions/v2/manifest.json').read_text())
-          blob=(root/'api/definitions/v2/snapshot.json').read_bytes()
-          v2=json.loads(blob)
-          aliases=cat.get('consolidated_ids',{})
-          orig={d['id'] for d in v1['definitions']}
-          present={oid for g in cat['groups'] for meaning in g['meanings'] for oid in
-             ([meaning.get('original_definition_id')] + meaning.get('legacy_original_definition_ids',[]))
-             if oid}
-          assert orig==present and len(orig)==1014,(len(orig),len(present))
-          assert len(index)==len(cat['groups'])==m['definition_count']==1986
-          assert m['meaning_count']==2065 and m['formulation_count']==2104
-          assert len(cat['relations'])==6445
-          assert m['original_definition_count']==1014
-          assert hashlib.sha256(blob).hexdigest()==m['sha256']
-          assert v2['consolidated_ids']==aliases
-          assert {oid for d in v2['definitions'] for oid in d['original_ids']}==orig
-          assert len(v2['definitions'])==1986
-          assert (root/'sources-index.json').is_file()
-          assert (root/'audits/full-link-graph.json').is_file()
-          assert (root/'reconstruction/wave2/catalog.json').is_file()
-          print('CLEANED_RELEASE_BUILD='+json.dumps({
-             'headings':len(index),'meanings':m['meaning_count'],
-             'formulations':m['formulation_count'],'relations':len(cat['relations']),
-             'original_ids':len(orig),'aliases':{k:len(v) for k,v in aliases.items()}
-          },sort_keys=True))
-          PY
+          python -m scripts.validate_published_corpus --site-root _site
       - name: Run complete link audit and verify generated script syntax
         run: |
           python -m research_pipeline.adapters.mathdef.audit_merged_links --catalog _site/catalog.json --index _site/definitions-index.json --report /tmp/mathdef-published-audit.json
