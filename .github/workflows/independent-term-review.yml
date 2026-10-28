@@ -1,0 +1,44 @@
+name: Validate mathDef independent-term screening
+on:
+  push:
+    branches:
+      - 'work/independent-term-filter-*'
+    paths:
+      - 'research_pipeline/discovery/independent_term_review_20261028/**'
+      - 'scripts/mathdef_independent_term_filter.py'
+      - 'scripts/validate_independent_term_review.py'
+      - '.github/workflows/independent-term-review.yml'
+  pull_request:
+    paths:
+      - 'research_pipeline/discovery/independent_term_review_20261028/**'
+      - 'scripts/mathdef_independent_term_filter.py'
+      - 'scripts/validate_independent_term_review.py'
+      - '.github/workflows/independent-term-review.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inspect committed batch byte hashes and row counts
+        run: |
+          python - <<'PY'
+          import csv,hashlib
+          from pathlib import Path
+          root=Path('research_pipeline/discovery/independent_term_review_20261028')
+          for folder in ('batches','survivor_batches'):
+              for p in sorted((root/folder).glob('*.tsv')):
+                  blob=p.read_bytes()
+                  with p.open(encoding='utf8',newline='') as f:
+                      rows=sum(1 for _ in csv.DictReader(f,delimiter='\t'))
+                  print(f'BATCH_DIGEST|{folder}/{p.name}|{len(blob)}|{hashlib.sha256(blob).hexdigest()}|{rows}')
+          PY
+      - name: Verify the 7240 individual decisions and 3109 survivor IDs
+        run: python -m scripts.validate_independent_term_review
+      - name: Compile reproducible original-source screening script
+        run: python -m py_compile scripts/mathdef_independent_term_filter.py
