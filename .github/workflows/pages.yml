@@ -54,7 +54,7 @@ jobs:
         run: python -m unittest discover -s tests
       - name: Validate cleaned-release code and historical redirects
         run: |
-          python -m unittest tests.test_merged_definition_export -v
+          python -m unittest tests.test_merged_definition_export tests.test_current_corpus_discovery -v
           python -m unittest research_pipeline.tests.test_merged_cleanup research_pipeline.tests.test_conventions research_pipeline.tests.test_cleaned_global_links research_pipeline.tests.test_full_corpus_link_audit research_pipeline.tests.test_reference_ui -v
           node --test research_pipeline/tests/test_sources_ui.cjs research_pipeline/tests/test_subject_priority.cjs
       - name: Generate definition index
@@ -74,47 +74,7 @@ jobs:
           node --check _site/feedback.js
           node --check _site/subject_priority.js
           node --check _site/sources_ui.js
-          python - <<'PY'
-          from pathlib import Path
-          import json
-          root=Path("_site")
-          index=json.loads((root/"definitions-index.json").read_text())
-          original=json.loads((root/"api/definitions/v1/snapshot.json").read_text())
-          merged=json.loads((root/"catalog.json").read_text())
-          original_ids={e["id"] for e in original["definitions"]}
-          preserved={oid for g in merged["groups"] for m in g["meanings"]
-                     for oid in ([m.get("original_definition_id")] +
-                                  m.get("legacy_original_definition_ids", [])) if oid}
-          assert original_ids == preserved, "Main site dropped a historical original ID"
-          assert len(original_ids)==1014
-          assert len(index)==len(merged["groups"])==1986, "Main site index incomplete"
-          assert sum(len(g["meanings"]) for g in merged["groups"])==2065
-          assert sum(len(m["formulations"]) for g in merged["groups"]
-                     for m in g["meanings"])==2104
-          assert len(merged["relations"])==6445
-          v1_manifest=json.loads((root/"api/definitions/v1/manifest.json").read_text())
-          v2_manifest=json.loads((root/"api/definitions/v2/manifest.json").read_text())
-          v2=json.loads((root/"api/definitions/v2/snapshot.json").read_text())
-          assert v1_manifest["definition_count"] == len(original_ids)
-          assert v2_manifest["dataset"] == "merged"
-          assert v2_manifest["definition_count"] == len(index)
-          assert v2_manifest["meaning_count"] == sum(len(g["meanings"]) for g in merged["groups"])
-          assert v2_manifest["original_definition_count"] == len(original_ids)
-          assert v2["schema"] == "mathdef.definition-snapshot.v2"
-          assert {x["id"] for x in v2["definitions"]} == {x["id"] for x in index}
-          assert {original_id for d in v2["definitions"] for original_id in d["original_ids"]} == original_ids
-          assert v2["consolidated_ids"]==merged["consolidated_ids"]
-          assert v2_manifest["formulation_count"]==2104
-          assert v2_manifest["original_definition_count"]==1014
-          assert (root/"catalog.json").is_file()
-          assert (root/"link-report.json").is_file()
-          assert (root/"sources-index.json").is_file()
-          assert (root/"audits/global-link-rebuild.json").is_file()
-          assert (root/"reconstruction/merged/index.html").is_file()
-          assert (root/"index.html").is_file()
-          assert "Expanded mathematical definitions" in (root/"index.html").read_text()
-          print("Main mathDef site published:",len(index),"term groups including",len(original["definitions"]),"original definitions")
-          PY
+          python -m scripts.validate_published_corpus --site-root _site
       - name: Audit every published mathematical link across all cohorts
         run: |
           python -m research_pipeline.adapters.mathdef.audit_merged_links \
