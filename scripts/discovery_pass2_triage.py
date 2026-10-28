@@ -12,7 +12,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
-SCHEMA = "mathdef.discovery-pass2-triage.v1"
+SCHEMA = "mathdef.discovery-pass2-triage.v2"
 FUNCTION_WORDS = frozenset("""
 a an the and or but if then than that which where whose who whom when
 with without from into onto over under between within through across along
@@ -49,6 +49,32 @@ def classify(phrase):
         return "higher_thinking_review", "long compound; needs contextual mathematical judgment"
     return "plausible_term_review", "lexically plausible term; mathematical validation needed"
 
+def confident_false_positive(phrase):
+    """High precision grammar-only exclusions, NOT broad mathematical inference.
+
+    Example: 'the category' is a prose fragment, while 'category of sets'
+    may be a genuine term and therefore must NOT be removed here.
+    """
+    w = phrase.split()
+    if not w:
+        return "empty phrase"
+    if w[0] in {"a", "an", "the", "this", "these", "those", "that",
+                "such", "each", "every", "some", "any", "our", "their"}:
+        return "starts with determiner/pronominal prose, not a term heading"
+    if w[-1] in {"and", "or", "but", "if", "then", "than", "with", "without",
+                 "from", "into", "onto", "to", "of", "for", "by", "as", "the",
+                 "a", "an", "is", "are", "was", "were", "can", "may", "must"}:
+        return "ends in open grammatical connector / finite verb"
+    if any(x in {"we", "they", "them", "you", "your", "our", "their", "he",
+                 "she", "his", "her", "it", "its"} for x in w):
+        return "contains unambiguous prose pronoun"
+    if any(x in {"is", "are", "was", "were", "has", "have", "had", "can",
+                 "must", "should", "will", "satisfies", "contains", "consists",
+                 "implies", "yields", "becomes", "defines", "generates"} for x in w[1:]):
+        return "contains unambiguous finite clause"
+    return None
+
+
 def run(checkpoint, output):
     state = json.loads(Path(checkpoint).read_text(encoding="utf-8"))
     if state.get("schema") != "mathdef.discovery-checkpoint.v1":
@@ -73,9 +99,17 @@ def run(checkpoint, output):
     results=[]
     for phrase in sorted(known_leads & leads.keys()):
         entry = leads[phrase]
+        reason_reject = confident_false_positive(phrase)
         status, reason = classify(phrase)
+        if reason_reject:
+            status, reason = "removed_confident_false_positive", reason_reject
+        elif status == "likely_false_positive":
+            status = "higher_thinking_review"
+            reason = "Potential grammatical false positive, but not safe to discard: " + reason
         results.append({**entry,"triage":status,"reason":reason,
-                        "mathematically_validated":False,"editorial_rejection":False})
+                        "mathematically_validated":False,
+                        "editorial_rejection":bool(reason_reject),
+                        "reversible":True})
     counts=Counter(x["triage"] for x in results)
     output=Path(output)
     output.mkdir(parents=True,exist_ok=True)
@@ -86,7 +120,7 @@ def run(checkpoint, output):
             writer.writerow([x["phrase"],x["triage"],x["reason"],x["occurrences"],
                              x["formulation_count"],
                              "|".join(y["formulation_id"] for y in x["examples"])])
-    for kind in ("higher_thinking_review","plausible_term_review","likely_false_positive"):
+    for kind in ("higher_thinking_review","plausible_term_review","removed_confident_false_positive"):
         with (output/(kind+".tsv")).open("w",encoding="utf-8",newline="") as file:
             writer=csv.writer(file,delimiter="\t")
             writer.writerow(["phrase","reason","occurrences","source_formulations"])
@@ -94,16 +128,39 @@ def run(checkpoint, output):
                 if x["triage"]==kind:
                     writer.writerow([x["phrase"],x["reason"],x["occurrences"],
                         "|".join(y["formulation_id"] for y in x["examples"])])
+    rejected=[{"phrase":x["phrase"],"status":"rejected",
+               "reason":x["reason"],"evidence":"deterministic high-precision grammar filter",
+               "source_formulation_ids":[y["formulation_id"] for y in x["examples"]],
+               "reversible":True}
+              for x in results if x["triage"]=="removed_confident_false_positive"]
+    (output/"auto_rejections.json").write_text(
+        json.dumps({"schema":"mathdef.discovery-auto-rejections.v1",
+                    "source":"pass2-high-precision-grammar",
+                    "decisions":rejected},ensure_ascii=False,indent=2)+"\n",
+        encoding="utf-8")
+    for name, subset in (
+        ("active_review_queue.tsv", [x for x in results if not x["editorial_rejection"]]),
+        ("rejected_audit.tsv", [x for x in results if x["editorial_rejection"]])):
+        with (output/name).open("w",encoding="utf-8",newline="") as file:
+            writer=csv.writer(file,delimiter="\t")
+            writer.writerow(["phrase","triage","reason","occurrences","formulation_count","source_formulations"])
+            for x in subset:
+                writer.writerow([x["phrase"],x["triage"],x["reason"],x["occurrences"],
+                                 x["formulation_count"],
+                                 "|".join(y["formulation_id"] for y in x["examples"])])
     summary={"schema":SCHEMA,"input":"durable discovery-checkpoints branch",
              "source_formulations":len(state["formulations"]),
              "previously_encountered_leads":len(known_leads),
              "triaged_active_leads":len(results),
              "historical_leads_no_longer_in_active_corpus":len(missing),
              "counts":dict(sorted(counts.items())),
+             "remaining_active_review":len(results)-len(rejected),
+             "rejected_with_reversible_audit_record":len(rejected),
+             "sample_confident_rejections":[x["phrase"] for x in results if x["editorial_rejection"]][:25],
              "notes":["This is conservative lexical triage, not mathematical validation.",
-                      "Likely false positives are NOT editorially rejected or removed.",
+                      "Only obvious grammatical fragments are removed from active review, with reversible decisions.",
                       "Ambiguous and long phrases are flagged for higher-thinking review.",
-                      "No definition, checkpoint, or editorial decision is changed."]}
+                      "Mathematical definitions and source-scan checkpoint are unchanged; decisions are staged in auto_rejections.json."]}
     (output/"summary.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(summary,indent=2))
     return summary
