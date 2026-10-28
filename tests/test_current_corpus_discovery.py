@@ -117,6 +117,97 @@ class CurrentCorpusDiscoveryTests(unittest.TestCase):
             self.assertEqual(selected["classification"], "previously_reviewed")
             self.assertEqual(selected["prior_decision"]["status"], "deferred")
 
+    def test_incremental_checkpoint_skips_every_unchanged_formulation(self):
+        cat = example()
+        with tempfile.TemporaryDirectory() as tmp:
+            site = Path(tmp) / "site"
+            state = Path(tmp) / "checkpoint.json"
+            make_site(site, cat)
+            first = run(site, Path(tmp) / "first", Path(tmp) / "none.json",
+                        checkpoint=state, checkpoint_out=state)
+            self.assertEqual(first["counts"]["source_checkpoint"]["new_formulations_scanned"], 2)
+            second = run(site, Path(tmp) / "second", Path(tmp) / "none.json",
+                         checkpoint=state, checkpoint_out=state)
+            self.assertEqual(second["counts"]["source_checkpoint"]["unchanged_formulations_skipped"], 2)
+            self.assertNotIn("new_formulations_scanned", second["counts"]["source_checkpoint"])
+            self.assertEqual(second["counts"]["new_leads_this_run"], 0)
+            full = json.loads((Path(tmp)/"second/candidates.json").read_text())
+            self.assertTrue(any(e["phrase"]=="completion ring" for e in full["entries"]))
+            self.assertEqual((Path(tmp)/"second/new_candidates.tsv").read_text().count("\n"), 1)
+
+    def test_change_only_rescans_changed_source_and_retains_previous_queue(self):
+        cat = example()
+        with tempfile.TemporaryDirectory() as tmp:
+            site = Path(tmp) / "site"
+            state = Path(tmp) / "checkpoint.json"
+            make_site(site, cat)
+            run(site, Path(tmp) / "first", Path(tmp) / "none.json",
+                checkpoint=state, checkpoint_out=state)
+            cat["groups"][1]["meanings"][0]["formulations"][0]["text"] += (
+                " Another exotic vector space is proposed.")
+            make_site(site, cat)
+            result = run(site, Path(tmp) / "second", Path(tmp) / "none.json",
+                         checkpoint=state, checkpoint_out=state)
+            stats = result["counts"]["source_checkpoint"]
+            self.assertEqual(stats["changed_formulations_scanned"], 1)
+            self.assertEqual(stats["unchanged_formulations_skipped"], 1)
+            self.assertGreaterEqual(result["counts"]["new_leads_this_run"], 1)
+
+    def test_force_rescan_is_opt_in_and_can_target_one_formulation(self):
+        cat = example()
+        with tempfile.TemporaryDirectory() as tmp:
+            site = Path(tmp) / "site"
+            state = Path(tmp) / "checkpoint.json"
+            make_site(site, cat)
+            run(site, Path(tmp) / "initial", Path(tmp) / "none.json",
+                checkpoint=state, checkpoint_out=state)
+            one = run(site, Path(tmp) / "one", Path(tmp) / "none.json",
+                      checkpoint=state, checkpoint_out=state,
+                      force_formulations=["form.ring"])
+            self.assertEqual(one["counts"]["source_checkpoint"]["explicitly_rescanned_formulations"], 1)
+            self.assertEqual(one["counts"]["source_checkpoint"]["unchanged_formulations_skipped"], 1)
+            all_sources = run(site, Path(tmp) / "all", Path(tmp) / "none.json",
+                              checkpoint=state, checkpoint_out=state, force_rescan=True)
+            self.assertEqual(all_sources["counts"]["source_checkpoint"]["explicitly_rescanned_formulations"], 2)
+
+    def test_requesting_candidate_phrase_rescans_its_sources_only(self):
+        cat=example()
+        with tempfile.TemporaryDirectory() as tmp:
+            site=Path(tmp)/"site"
+            state=Path(tmp)/"checkpoint.json"
+            make_site(site,cat)
+            run(site,Path(tmp)/"first",Path(tmp)/"none.json",
+                checkpoint=state,checkpoint_out=state)
+            result=run(site,Path(tmp)/"revisit",Path(tmp)/"none.json",
+                       checkpoint=state,checkpoint_out=state,
+                       force_phrases=["completion ring"])
+            counts=result["counts"]
+            self.assertEqual(counts["explicitly_revisited_leads"],1)
+            self.assertEqual(counts["source_checkpoint"]["explicitly_rescanned_formulations"],1)
+            self.assertEqual(counts["source_checkpoint"]["unchanged_formulations_skipped"],1)
+            self.assertEqual(counts["new_leads_this_run"],0)
+            self.assertIn("completion ring",(Path(tmp)/"revisit/revisited_candidates.tsv").read_text())
+
+    def test_added_heading_uses_cached_tokens_without_rescanning_sources(self):
+        cat=example()
+        with tempfile.TemporaryDirectory() as tmp:
+            site=Path(tmp)/"site"
+            state=Path(tmp)/"checkpoint.json"
+            make_site(site,cat)
+            run(site,Path(tmp)/"first",Path(tmp)/"none.json",
+                checkpoint=state,checkpoint_out=state)
+            cat["groups"].append(group("group.completion","Completion ring",
+                                       "form.completion","A completion ring is a structure."))
+            make_site(site,cat)
+            result=run(site,Path(tmp)/"second",Path(tmp)/"none.json",
+                       checkpoint=state,checkpoint_out=state)
+            stats=result["counts"]["source_checkpoint"]
+            self.assertEqual(stats["new_formulations_scanned"],1)
+            self.assertEqual(stats["unchanged_formulations_skipped"],2)
+            report=json.loads((Path(tmp)/"second/candidates.json").read_text())
+            phrase=next(x for x in report["entries"] if x["phrase"]=="completion ring")
+            self.assertEqual(phrase["classification"],"already_defined")
+
     def test_manifest_sha_and_corpus_integrity_fail_closed(self):
         cat = example()
         with tempfile.TemporaryDirectory() as tmp:

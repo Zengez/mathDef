@@ -213,28 +213,60 @@ def read_decisions(path: Path) -> dict:
     return result
 
 
-def run(site: Path, out: Path, decisions: Path) -> dict:
+def run(site: Path, out: Path, decisions: Path, *,
+        checkpoint: Path | None = None, checkpoint_out: Path | None = None,
+        force_rescan: bool = False, force_formulations=(), force_groups=(),
+        force_phrases=()) -> dict:
+    from scripts.discovery_checkpoint import incremental_discover, read_checkpoint, new_checkpoint
     manifest_counts = validate_site(site)
     catalog = json.loads((site / "catalog.json").read_text(encoding="utf-8"))
     snapshot = json.loads((site / "api/definitions/v2/snapshot.json").read_text(encoding="utf-8"))
-    report = discover(catalog, snapshot, decisions=read_decisions(decisions))
+    state = read_checkpoint(checkpoint) if checkpoint else new_checkpoint()
+    report, next_state, fresh, revisited = incremental_discover(
+        catalog, snapshot, state, decisions=read_decisions(decisions),
+        force=force_rescan, force_forms=set(force_formulations),
+        force_groups=set(force_groups), force_phrases=set(force_phrases),
+    )
     report["input_feed_sha256"] = manifest_counts["sha256"]
+    next_state["last_feed_sha256"] = manifest_counts["sha256"]
     out.mkdir(parents=True, exist_ok=True)
     (out / "candidates.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     with (out / "candidates.tsv").open("w", encoding="utf-8", newline="") as file:
         writer = csv.writer(file, dialect="excel-tab")
-        writer.writerow(["candidate_id", "phrase", "classification", "occurrences",
-                         "formulation_count", "source_formulation_ids", "matched_group_ids"])
+        writer.writerow(["candidate_id", "phrase", "classification", "discovery_state",
+                         "occurrences", "formulation_count", "source_formulation_ids",
+                         "matched_group_ids"])
         for item in report["entries"]:
             writer.writerow([item["id"], item["phrase"], item["classification"],
-                             item["occurrences"], item["formulation_count"],
+                             item["discovery_state"], item["occurrences"],
+                             item["formulation_count"],
                              "|".join(x["formulation_id"] for x in item["examples"]),
                              "|".join(item["matched_group_ids"])])
+    with (out / "new_candidates.tsv").open("w", encoding="utf-8", newline="") as file:
+        writer = csv.writer(file, dialect="excel-tab")
+        writer.writerow(["candidate_id", "phrase", "classification", "occurrences",
+                         "formulation_count", "source_formulation_ids"])
+        for item in fresh:
+            writer.writerow([item["id"], item["phrase"], item["classification"],
+                             item["occurrences"], item["formulation_count"],
+                             "|".join(x["formulation_id"] for x in item["examples"])])
+    with (out / "revisited_candidates.tsv").open("w", encoding="utf-8", newline="") as file:
+        writer = csv.writer(file, dialect="excel-tab")
+        writer.writerow(["candidate_id", "phrase", "classification", "occurrences",
+                         "formulation_count", "source_formulation_ids"])
+        for item in revisited:
+            writer.writerow([item["id"], item["phrase"], item["classification"],
+                             item["occurrences"], item["formulation_count"],
+                             "|".join(x["formulation_id"] for x in item["examples"])])
     summary = {k: report[k] for k in
                ("schema", "status", "input_feed_sha256", "scope", "counts", "notes")}
     (out / "summary.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    target = checkpoint_out or (out / "checkpoint.next.json")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(next_state, ensure_ascii=False, sort_keys=True) + "\n",
+                      encoding="utf-8")
     return summary
 
 
@@ -244,8 +276,24 @@ def main():
     p.add_argument("--output", type=Path, default=Path("_discovery"))
     p.add_argument("--decisions", type=Path,
                    default=Path("research_pipeline/discovery/decisions.json"))
+    p.add_argument("--checkpoint", type=Path, help="Durable previous scan checkpoint")
+    p.add_argument("--checkpoint-out", type=Path, help="Next checkpoint to persist")
+    p.add_argument("--force-rescan", action="store_true",
+                   help="Explicitly rescan every formulation, including unchanged ones")
+    p.add_argument("--force-phrase", action="append", default=[],
+                   help="Explicitly revisit a previously encountered candidate phrase")
+    p.add_argument("--force-formulation", action="append", default=[],
+                   help="Explicitly rescan a specific stable formulation ID")
+    p.add_argument("--force-group", action="append", default=[],
+                   help="Explicitly rescan every formulation in a term group")
     args = p.parse_args()
-    print(json.dumps(run(args.site_root, args.output, args.decisions), indent=2))
+    print(json.dumps(run(
+        args.site_root, args.output, args.decisions,
+        checkpoint=args.checkpoint, checkpoint_out=args.checkpoint_out,
+        force_rescan=args.force_rescan,
+        force_formulations=args.force_formulation, force_groups=args.force_group,
+        force_phrases=args.force_phrase,
+    ), indent=2))
 
 
 if __name__ == "__main__":
