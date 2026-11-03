@@ -6,10 +6,12 @@
   <title>{{PROJECT_NAME}} — {{STAGE_NAME}}</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./subject_groups.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
   <script defer src="./feedback.js"></script>
   <script defer src="./subject_priority.js"></script>
+  <script defer src="./subject_groups.js"></script>
   <script defer src="./sources_ui.js"></script>
   <script defer src="./app.js"></script>
 </head>
@@ -43,11 +45,11 @@
     <div id="workspace" class="workspace split">
       <section id="term-pane" class="pane" aria-labelledby="term-title">
         <header class="pane-head"><div><small>TERM SEARCH</small><h3 id="term-title">Matching terms</h3></div><span id="term-count" class="result-count"></span></header>
-        <div id="term-results" class="results"></div><div id="term-detail" class="detail"></div>
+        <div id="term-results" class="results subject-results"></div><div id="term-detail" class="detail"></div>
       </section>
       <section id="definition-pane" class="pane" aria-labelledby="definition-title">
         <header class="pane-head"><div><small>DEFINITION SEARCH</small><h3 id="definition-title">Matching definitions</h3></div><span id="definition-count" class="result-count"></span></header>
-        <div id="definition-results" class="results"></div><div id="definition-detail" class="detail"></div>
+        <div id="definition-results" class="results subject-results"></div><div id="definition-detail" class="detail"></div>
       </section>
     </div>
     <p id="error" role="alert" hidden></p>

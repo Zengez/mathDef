@@ -1,0 +1,35 @@
+/* Subject collections for searchable reference results.
+ * Intentionally separate from the site's general layout and mathematical content. */
+.results.subject-results {max-height:380px}
+.subject-collection {border-bottom:1px solid #e6edf5}
+.subject-collection:last-child {border-bottom:0}
+.subject-collection-heading {font:inherit;margin:0}
+.subject-collection-toggle {
+  display:flex;align-items:center;gap:8px;width:100%;
+  border:0;background:transparent;text-align:left;
+  padding:11px 10px;border-radius:8px;color:#294867;
+}
+.subject-collection-toggle:hover {background:#edf5fe}
+.subject-collection-toggle[aria-expanded="true"] {background:#f1f6fc}
+.subject-collection-arrow {flex:0 0 16px;color:#6488ae;font-size:17px;text-align:center}
+.subject-collection-name {font-size:13px;line-height:1.45;font-weight:750;overflow-wrap:anywhere;min-width:0}
+.subject-collection-count {margin-left:auto;flex-shrink:0;font-size:11px;color:#7189a1;white-space:nowrap}
+.subject-collection-items {padding:4px 7px 10px 24px}
+.subject-collection-items[hidden] {display:none}
+.subject-collection-items .result {padding:8px 10px}
+.subject-collection-items .result .name {min-width:0}
+.subject-collection-items .result .category-label {max-width:48%;overflow:hidden;text-overflow:ellipsis}
+.subject-collection-more {
+  margin:6px 0 2px;padding:7px 10px;background:#edf5ff;
+  border:1px solid #c7dbed;border-radius:8px;color:#285e93;
+  font-size:12px;font-weight:700;text-align:left;
+}
+.subject-collection-more:hover {background:#e0eefc}
+@media (min-width:850px) {
+  .workspace.focused .results.subject-results {max-height:560px}
+}
+@media (max-width:600px) {
+  .subject-collection-toggle {padding:12px 7px;gap:5px}
+  .subject-collection-items {padding-left:13px;padding-right:3px}
+  .subject-collection-count {font-size:10px}
+}

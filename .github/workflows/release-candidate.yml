@@ -39,7 +39,7 @@ jobs:
         run: |
           python -m unittest tests.test_merged_definition_export tests.test_current_corpus_discovery -v
           python -m unittest research_pipeline.tests.test_merged_cleanup research_pipeline.tests.test_conventions research_pipeline.tests.test_cleaned_global_links research_pipeline.tests.test_full_corpus_link_audit research_pipeline.tests.test_reference_ui -v
-          node --test research_pipeline/tests/test_sources_ui.cjs research_pipeline/tests/test_subject_priority.cjs
+          node --test research_pipeline/tests/test_sources_ui.cjs research_pipeline/tests/test_subject_priority.cjs research_pipeline/tests/test_subject_groups.cjs
           node --test tests/test_feedback.cjs tests/test_feedback_ui.cjs
       - name: Generate original historical API and frozen previews
         run: |
@@ -107,6 +107,7 @@ jobs:
           node --check _site/app.js
           node --check _site/sources_ui.js
           node --check _site/subject_priority.js
+          node --check _site/subject_groups.js
           node --check _site/feedback.js
       - name: Install headless test browser adapter
         run: npm install --prefix /tmp/mathdef-browser-test --no-audit --no-fund playwright-core@1.56.1
