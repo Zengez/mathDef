@@ -24,11 +24,25 @@ try {
  await page.locator("#total").filter({hasText:String(data.length)}).waitFor();
  assert.equal(await page.locator('button[data-explore-mode="inline"]')
    .getAttribute("aria-pressed"),"true");
+ // Before searching, every official subject is available but collapsed.
+ const subjectButtons=page.locator("#term-results button[data-subject-toggle]");
+ assert(await subjectButtons.count()>0,"Subject headings must render before a search");
+ assert.equal(await page.locator("#term-results button[data-id]").count(),0,
+   "No term buttons should be visible before expanding a subject");
+ assert.equal(await subjectButtons.first().getAttribute("aria-expanded"),"false");
+ await subjectButtons.first().click();
+ assert(await page.locator("#term-results button[data-id]").count()>0,
+   "Expanding a subject reveals its terms");
+ await subjectButtons.first().click();
+ assert.equal(await page.locator("#term-results button[data-id]").count(),0);
  // Both search fields filter independently.
  await page.locator("#term-query").fill("Basis");
  await page.locator("#definition-query").fill("topology");
  assert(await page.locator("#term-results [data-id]").count()>0);
  assert(await page.locator("#definition-results [data-id]").count()>0);
+ assert.equal(await page.locator("#term-results button[data-subject-toggle]")
+   .first().getAttribute("aria-expanded"),"true",
+   "Searching should open every matching subject");
  const group=data.find(d=>d.formulations.length>1 &&
    sources.groups.find(s=>s.group_id===d.id)?.source_ids.length);
  assert(group,"At least one term with multiple source-attributed formulations");
