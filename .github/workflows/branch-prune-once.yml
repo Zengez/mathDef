@@ -1,0 +1,68 @@
+name: One-time branch pruning — mathDef
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/branch-prune-once.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  prune:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Delete only exact pinned obsolete branch refs; preserve active PRs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          import os, json, urllib.request, urllib.error, urllib.parse
+          repo = os.environ["GITHUB_REPOSITORY"]
+          token = os.environ["GH_TOKEN"]
+          expected_repo = "Zengez/mathDef"
+          if repo != expected_repo:
+              raise SystemExit("Unexpected repository; refusing cleanup: " + repo)
+          targets = json.loads(r'''[{"name":"audit/full-corpus-link-consistency-20261026","sha":"ea625347cc0316bcb5307531082208eea0134061"},{"name":"audit/portable-resume-reliability-20261020","sha":"3f28fcecf70f21a0b653668509cd94343b0212bf"},{"name":"cleanup/remove-wave2-dependency-gates-2026-10-26","sha":"58dca4f76686a11ddee08f64dcce8e47c6b1fadc"},{"name":"cleanup/remove-wave2-generated-intermediates-2026-10-26","sha":"22d824da7de516c0228a930f8be502f33f663953"},{"name":"codex/wave2-consistency-worklist","sha":"c4a960892dd0a4503173b9cd768b5c1145bf07c6"},{"name":"codex/wave2-consolidation-readiness","sha":"3215a1e97e8fc3fb297d9a15ed9b29d9ed5fbbd7"},{"name":"codex/wave2-contextual-consolidation-review","sha":"1720635f1af10a0c4659c19d1e95d236dd82b507"},{"name":"codex/wave2-dependency-cycle-audit","sha":"2b1e7e078fc72dc5be4b6e24984403116842c93a"},{"name":"codex/wave2-fip-nonempty-family","sha":"961761f214ab2a3e9c194542a2402fa96eb5468f"},{"name":"codex/wave2-mprimary-postapplication-verification-2026-10-25","sha":"5a426fd7c0d7117e4a0c9fbf38084e733b7bedfb"},{"name":"codex/wave2-mprimary-self-reference-trial-2026-10-25","sha":"9a3f394c9469b48c026fc1f0a2db10e32eb91541"},{"name":"codex/wave2-orderzero-resolution-postcheck-2026-10-25","sha":"e639118d80709c5aba4dfe7caceec8ca3080b4c8"},{"name":"codex/wave2-orderzero-slinear-resolution-preflight-2026-10-25","sha":"d9c919c8f83cde8079632be297761c8dcde3f555"},{"name":"codex/wave2-pass2-convention-adjudication","sha":"6ed0e6ad80e016645f07c86f9f740e1e835d70a0"},{"name":"codex/wave2-stage2-mathematical-edge-preflight-2026-10-25","sha":"061d8ed0712aac5bbd2ca7d01ff3c50c359def64"},{"name":"codex/wave2-stage2-posttransaction-verification-2026-10-25","sha":"aa519a2560a36e713c20b401384403f0fa5f08e9"},{"name":"discovery/checkpoint-skip-smoke-20261028","sha":"b77151052604e6535f0a082c17c3cd0963086151"},{"name":"discovery/current-corpus-full-pass-20261028","sha":"661eea7bc7b987ae87121e3b0d7e3aaa73f0cfea"},{"name":"discovery/false-positive-pass-20261028","sha":"a77244fa0b075139181ad0c22f75df5a79de12ab"},{"name":"discovery/instant-smoke-20261028","sha":"f5a622d06d31c04c62c34dc124911baec8ac9a89"},{"name":"discovery-screening","sha":"8e67af0116f3e94462fca07398f9851a7d3d9629"},{"name":"docs/canonical-semantics-and-source-scoped-conventions-20261027","sha":"af3d28f1199b8e583768579b57da749fcd9e634e"},{"name":"docs/dynamic-canonical-fallback-for-inconclusive-conventions-20261027","sha":"a51b76cb2809f4be51dac550115338b4ea734e55"},{"name":"docs/permanent-definition-convention-review-guidance-20261027","sha":"8d778b41e0b230aa0414f7051c5a15481e877bf5"},{"name":"engineering/wave2-bounded-generation-guarded-auto-gates-2026-10-26","sha":"a4126db720e6ecf01b95271e7e998b01803d99da"},{"name":"feature/independent-reconstruction-pages-preview","sha":"3b8207b900c307dc05c2fa6bd51df2014c5667f8"},{"name":"feature/reusable-math-reference-interface-20261020","sha":"218f3a6ec8253ccd0d47c60597bf30abf7c5c991"},{"name":"feature/subject-grouped-search-results","sha":"e0316dee7500408becbff694f823e6cc55816d78"},{"name":"feature/wave2-direct-content-followup-2026-10-26","sha":"a1610aae3d0159e19dcc1efd35590988b8b73ce6"},{"name":"feature/wave2-direct-searchable-terms-2026-10-26","sha":"6bb78f84ba82dbaeca96aaed8e3847cf731b205a"},{"name":"integration/merged-definitions-v2-20261026","sha":"1b742122696128e7c7ec699ed20745206e45e86e"},{"name":"maintenance/cleanup-obsolete-pipelines-20261103","sha":"7aa7120f3de80c2073cbe8f5f50e71ee9a2c16e2"},{"name":"post-wave2-merged-research-batch1-20261026","sha":"b03e43f35760267a02ed9f8b698a7982d6bafc79"},{"name":"post-wave2-merged-research-batch2-20261026","sha":"efa73ddb9c0552a43a6323e897291f69d2554507"},{"name":"post-wave2-merged-research-batch3-20261026","sha":"af9f8ec0080bd9bfebe0ccdcb9280b320d867884"},{"name":"post-wave2-merged-research-batch4-20261026","sha":"d145abb8d60fd820e18e52fd7806a03bf25c963e"},{"name":"post-wave2-merged-research-batch5-20261026","sha":"d1229dcd2b01e203fe6cefa34570eedc20b4c1c2"},{"name":"post-wave2-merged-research-batch6-20261026","sha":"02bd88c653025d23d6e52568a90664e4ee770eb0"},{"name":"post-wave2-merged-research-batch7-20261026","sha":"6debfe2d711a2405524ad4ed21fc69411162a4f8"},{"name":"post-wave2-merged-research-batch8-20261026","sha":"5637656b2742452eb8aae07a4a0f2da102b862e3"},{"name":"post-wave2-merged-research-batch9-20261026","sha":"a38a189a459e21c570598b493b2392ee9dcc35ab"},{"name":"publish/merged-corpus-main-site-20261026","sha":"ebe832eee138c4deed45509ec1ae37ffa5f38300"},{"name":"research/frozen-scan-1341-1540-20261026","sha":"145af2117f11357aafdd1d0358402a8bf2ba02c2"},{"name":"research/frozen-scan-1541-1780-20261026","sha":"770aa76d18e2a983a7a30610bbdedf4fb582b78f"},{"name":"research/frozen-scan-final-1781-2019-20261026","sha":"8eeaddc523ff26aafa4c2b93939c18727b730add"},{"name":"research/merged-fast-inline-linking-20261026","sha":"20e6b58021247032786f88f94f90e365c4aa59d9"},{"name":"research/merged-link-ambiguity-cleanup-20261026","sha":"aa85e60292883fa92d92f3ea939034991bf23af8"},{"name":"research/merged-linking-context-review-20261026","sha":"ad7fda20fb0f8b33fa9c319447375afa9f1acf3d"},{"name":"research/occurrence-first-stage-gates","sha":"fbd28760532184d7a84e1a49cd5abe8db73b59d8"},{"name":"research/original-scan-dispositions-221-340-20261026","sha":"5c9e9ba396cdfa12f8b2e0d6c584973e03fd39fa"},{"name":"research/original-scan-dispositions-341-540-20261026","sha":"0d863f57a22bb3665e66d39c740a0286474ff1ec"},{"name":"research/original-scan-dispositions-541-740-20261026","sha":"27971dfa86065bbac87d27f2d5d1d0522dfe517f"},{"name":"research/original-scan-dispositions-741-940-20261026","sha":"4cd90209ed87242dd2ac1a2a852988169a050b5f"},{"name":"research/original-scan-dispositions-941-1140-20261026","sha":"559c059dd437fd99f6ff41ab554d0a913e7bdecc"},{"name":"research/original-scan-dispositions-1141-1340-20261026","sha":"72557b66084efcb8bb9d6283e515f6323688e8c3"},{"name":"research/population-promotion-pilot","sha":"8719ee592657802fb3313cec55107e1088648dec"},{"name":"research/population-reconcile-engine","sha":"7b26a61ff55329769ef5daabfe4f357b9c7c4b6b"},{"name":"research/population-revision-crash-recovery","sha":"8913708c6a674c3af2bfb0e72034dd23ba4522ec"},{"name":"research/quickscan-disposition-ranks-101-140-20261026","sha":"4f6e564f965704b1317cf0910c4710775a440669"},{"name":"research/quickscan-disposition-ranks-141-180-20261026","sha":"fda6e0f9fadfe1b1660337050c212e92e144ec79"},{"name":"research/quickscan-disposition-ranks-181-220-20261026","sha":"c3b4381f33c29bfbf9687f8223d12d500ff9b5f6"},{"name":"research/wave2-firstgen-b01-source-evidence-2026-10-26","sha":"d88ad7f989cf3cb39343cd3a8d4a1b43cd683ad7"},{"name":"review/wave2-phase2-gate-authorized-2026-10-26","sha":"a7ce2ba3cdd07e6d0b9809d4e39014fb8533228c"},{"name":"scan-ledger-candidate-incorporation-20261026","sha":"de0c6e95cd1c9dd7a09281123060b4093ccf7215"},{"name":"scan-ledger-candidates-61-100-20261026","sha":"7d818a1f7446fbde5279931a4501c41eb993f851"},{"name":"wave2-add-provisional-definitions-20261026","sha":"9397fe75eaa8b0e5b8e39f21f62709568298099e"},{"name":"wave2-completion-link-integration-20261026","sha":"4c0cadd3300e9d4d49039411b4c80ef0af5b85d8"},{"name":"wave2-direct-18-foundational-terms-20261026","sha":"28b918ecde95bc6655f94216e6bd902ca2d9677c"},{"name":"wave2-direct-algebra-category-20261026","sha":"2ea755baf147c967352a6f14058a5d73a93fcf18"},{"name":"wave2-direct-concepts-25-20261026","sha":"2bf5a730e17d3c842d6959a88dbe3e0352ea1e04"},{"name":"wave2-direct-core-plus-20261026","sha":"09b01b924ce1f4052b5d3c6dda4f9f752833ccc5"},{"name":"wave2-direct-final-distinct-20261026","sha":"d5a1d7c26cd21f17881df752698b8918d454352d"},{"name":"wave2-direct-foundational-26-20261026","sha":"fe08ae8170f7316864afa01cf150fd4267d6242c"},{"name":"wave2-direct-math-cluster-20261026","sha":"2263576818c3f2f181cc9c002f39d9290fdbe756"},{"name":"wave2-direct-math-contexts-33-20261026","sha":"52bc1a42c01c8ce0286b86befe0823b454039890"},{"name":"wave2-direct-meaning-growth-32-20261026","sha":"69377046260a16622763e1f28f2bb2930b106061"},{"name":"wave2-direct-structures-20261026","sha":"e9dafe729e53633e74153c0df4dc2189a977eb6c"},{"name":"wave2-direct-worklist-finish-20261026","sha":"abc10bedbe86c12f0b2563b4ed34a8dd33003c23"},{"name":"wave2-initial-reconstruction-complete-20261026","sha":"8c2e04e30b90230197a179cbda29bb26d0aff9c9"},{"name":"wave2-origin-merge-and-rapid-scan-20261026","sha":"c76ae61cd8ed97e0f41e1d1780fe4b0a54189d53"},{"name":"work/dedup-subject-context-sources-20261027","sha":"ce94c4b796828d3c5d4331d2548c4b3269bf727b"},{"name":"work/deep-candidate-triage-20261028","sha":"6708238fe35348757be2b88287003536218c7796"},{"name":"work/discovery-persistent-history-20261028","sha":"f311eaab8c90a113efd44c1c4d3c8cec61f94cb3"},{"name":"work/independent-term-filter-20261028","sha":"cea5f9e8d310052427c6d362317b8f66064eb31f"},{"name":"work/repeatable-corpus-discovery-20261028","sha":"a46a6ec08ca101d63c68ff3b5aef74c284961fa1"},{"name":"work/targeted-2175-review-20261028","sha":"42290618839f6ba6580817668de66dae45c999b0"}]''')
+          reserved = set(json.loads(r'''["main","discovery-checkpoints"]'''))
+          def api(method, endpoint):
+              url = "https://api.github.com/" + endpoint
+              req = urllib.request.Request(url, method=method, headers={
+                  "Authorization": "Bearer " + token,
+                  "Accept": "application/vnd.github+json",
+                  "X-GitHub-Api-Version": "2022-11-28"
+              })
+              with urllib.request.urlopen(req, timeout=35) as res:
+                  body = res.read()
+                  return json.loads(body) if body else None
+          prs = api("GET", f"repos/{repo}/pulls?state=open&per_page=100")
+          reserved.update({p["head"]["ref"] for p in prs if p.get("head", {}).get("repo", {}) and p["head"]["repo"]["full_name"] == repo})
+          reserved.update({p["base"]["ref"] for p in prs})
+          if len(prs) >= 100:
+              raise RuntimeError("Open PR pagination exceeds safety limit; abort")
+          deleted, skipped = [], []
+          print("Planned branch cleanup:",len(targets),"protected:",sorted(reserved),flush=True)
+          for target in targets:
+              branch, sha = target["name"], target["sha"]
+              if branch in reserved or branch == "main":
+                  print("SKIP protected:",branch,flush=True)
+                  skipped.append(branch)
+                  continue
+              path = "repos/" + repo + "/git/ref/heads/" + urllib.parse.quote(branch,safe="/")
+              try:
+                  current = api("GET",path)
+              except urllib.error.HTTPError as err:
+                  if err.code == 404:
+                      print("SKIP already gone:",branch,flush=True)
+                      skipped.append(branch)
+                      continue
+                  raise
+              actual = current["object"]["sha"]
+              if actual != sha:
+                  print("SKIP moved head:",branch,"expected",sha,"actual",actual,flush=True)
+                  skipped.append(branch)
+                  continue
+              api("DELETE", "repos/" + repo + "/git/refs/heads/" + urllib.parse.quote(branch,safe="/"))
+              print("DELETED",branch,sha,flush=True)
+              deleted.append(branch)
+          print("RESULT",json.dumps({"deleted":len(deleted),"skipped":len(skipped),"planned":len(targets)}),flush=True)
