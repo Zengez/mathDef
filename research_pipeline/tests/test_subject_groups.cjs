@@ -34,7 +34,7 @@ test("initial browsing is collapsed; a search opens every matching subject", () 
   const searched=ui.render("term","basis",[entries[0]],subjects,item);
   assert.equal((searched.match(/aria-expanded="true"/g)||[]).length,2);
   assert.equal((searched.match(/data-entry="1"/g)||[]).length,2);
-  assert(!searched.includes("Algebra definitions"),"Only matching groups appear after filtering");
+  assert(!searched.includes('data-subject-toggle="Algebra"'),"Only matching groups appear after filtering");
 });
 
 test("manual disclosures persist on selection but reset on a new query or clear", () => {
