@@ -56,7 +56,7 @@ jobs:
         run: |
           python -m unittest tests.test_merged_definition_export tests.test_current_corpus_discovery -v
           python -m unittest research_pipeline.tests.test_merged_cleanup research_pipeline.tests.test_conventions research_pipeline.tests.test_cleaned_global_links research_pipeline.tests.test_full_corpus_link_audit research_pipeline.tests.test_reference_ui -v
-          node --test research_pipeline/tests/test_sources_ui.cjs research_pipeline/tests/test_subject_priority.cjs
+          node --test research_pipeline/tests/test_sources_ui.cjs research_pipeline/tests/test_subject_priority.cjs research_pipeline/tests/test_subject_groups.cjs
       - name: Generate definition index
         run: python scripts/build_index.py
       - name: Render separate independent reconstruction previews
@@ -73,6 +73,7 @@ jobs:
           node --check _site/app.js
           node --check _site/feedback.js
           node --check _site/subject_priority.js
+          node --check _site/subject_groups.js
           node --check _site/sources_ui.js
           python -m scripts.validate_published_corpus --site-root _site
       - name: Audit every published mathematical link across all cohorts
