@@ -83,8 +83,13 @@ class ReferenceUITests(unittest.TestCase):
         self.assertTrue((out / "styles.css").exists())
         self.assertTrue((out / "app.js").exists())
         self.assertTrue((out / "subject_priority.js").exists())
+        self.assertTrue((out / "subject_groups.js").exists())
+        self.assertTrue((out / "subject_groups.css").exists())
         self.assertTrue((out / "sources_ui.js").exists())
         self.assertIn('src="./subject_priority.js"', markup)
+        self.assertIn('src="./subject_groups.js"', markup)
+        self.assertIn('href="./subject_groups.css"', markup)
+        self.assertIn('class="results subject-results"', markup)
         self.assertTrue((out / "feedback.js").exists())
         self.assertFalse((self.root / "definitions-index.json").exists())
 
