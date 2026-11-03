@@ -7,7 +7,6 @@
   const countLabel = config.count_label || nounPlural;
   const SIDES = ["term", "definition"];
   const VIEW_MODES = ["standard", "nested", "inline"];
-  const LIMIT = 100;
   let savedMode = "inline";
   try {
     const value = localStorage.getItem(config.storage_key || "research-explore-mode");
@@ -19,6 +18,9 @@
   };
   let entries = [], lookup = new Map();
   const sourcesUI = window.ReferenceSourcesUI.create(config, id => lookup.get(id));
+  const subjectGroups = window.ReferenceSubjectGroups.create({
+    label: nounPlural, itemLabel: "term", pageSize: 100
+  });
   const orderBySourceSubject = window.ReferenceSubjectPriority.orderFormulations;
   const escape = (v) => String(v).replace(/[&<>"']/g, (c) =>
     ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -311,19 +313,20 @@
     const q = el(side + "-query").value.trim();
     const found = entries.filter((d) => matches(d, side, q)).sort((a,b) =>
       score(a,q) - score(b,q) || a.term.localeCompare(b.term) || a.id.localeCompare(b.id));
+    // Count unique term headings, even when distinct meanings place a term
+    // under more than one official mathematical Subject.
     el(side + "-count").textContent = found.length + (found.length === 1 ? " result" : " results");
     const root = el(side + "-results");
-    root.innerHTML = found.length ? found.slice(0, LIMIT).map((d) => {
-      const picked = d.id === state.selected[side];
-      return '<button type="button" class="result' + (picked ? ' selected' : '') +
-        '" data-id="' + escape(d.id) + '" aria-pressed="' + String(picked) +
-        '"><span class="name">' + escape(d.term) + '</span><span class="category-label">' +
-        escape(d.category) + '</span></button>';
-    }).join("") +
-      (found.length > LIMIT ? '<div class="empty">First ' + LIMIT + ' shown. Narrow your search for more.</div>' : "") :
-      '<div class="empty">No matching definitions. Try another phrase.</div>';
-    root.querySelectorAll("[data-id]").forEach((button) =>
-      button.addEventListener("click", () => select(side, button.dataset.id)));
+    const markup = subjectGroups.render(side, q, found,
+      d => (d.formulations || []).map(form => form.subject),
+      d => {
+        const picked = d.id === state.selected[side];
+        return '<button type="button" class="result' + (picked ? ' selected' : '') +
+          '" data-id="' + escape(d.id) + '" aria-pressed="' + String(picked) +
+          '"><span class="name">' + escape(d.term) + '</span><span class="category-label">' +
+          escape(d.category) + '</span></button>';
+      });
+    root.innerHTML = markup || '<div class="empty">No matching definitions. Try another phrase.</div>';
     math(root);
     detail(side);
   }
@@ -350,6 +353,24 @@
     SIDES.forEach(detail);
   }
   for (const side of SIDES) {
+    el(side + "-results").addEventListener("click", (event) => {
+      const toggle = event.target.closest("button[data-subject-toggle]");
+      const more = event.target.closest("button[data-subject-more]");
+      if (toggle || more) {
+        const subject = toggle ? toggle.dataset.subjectToggle : more.dataset.subjectMore;
+        if (toggle) subjectGroups.toggle(side, subject);
+        else subjectGroups.showMore(side, subject);
+        render(side);
+        // Replacing the group markup must not strand keyboard focus.
+        const button = Array.from(el(side + "-results")
+          .querySelectorAll("button[data-subject-toggle]"))
+          .find(candidate => candidate.dataset.subjectToggle === subject);
+        if (button) button.focus({preventScroll:true});
+        return;
+      }
+      const choice = event.target.closest("button[data-id]");
+      if (choice) select(side, choice.dataset.id);
+    });
     el(side + "-query").addEventListener("input", () => {
       state.active = side;
       const old = lookup.get(state.selected[side]);
